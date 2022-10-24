@@ -1,0 +1,63 @@
+name: build-test-deploy-book
+
+# Run on pushes and pull requests
+on: [push, pull_request]
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  build-test-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Upgrade pip
+      run: |
+        # install pip=>20.1 to use "pip cache dir"
+        python3 -m pip install --upgrade pip
+    - name: Get pip cache dir
+      id: pip-cache
+      run: echo "::set-output name=dir::$(pip cache dir)"
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.pip-cache.outputs.dir }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: python3 -m pip install nox
+
+    - name: Build book
+      run: nox -s docs
+
+    # Test for bad links and ensure alt tags for usability
+    - name: Check HTML using htmlproofer
+      uses: chabad360/htmlproofer@master
+      with:
+        directory: '_build'
+        arguments: |
+           --ignore-files "/.+\/_static/"
+
+    # Save html as artifact
+    - name: Save book html as artifact for viewing
+      uses: actions/upload-artifact@v3
+      with:
+        name: book-html
+        path: |
+          _build/html/
+
+    # Push the book's HTML to github-pages
+    - name: Push to GitHub Pages 
+      # Only push if on main branch
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3.8.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
