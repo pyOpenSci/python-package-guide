@@ -1,12 +1,4 @@
-# Python Packaging Guide for Maintainers Submitting to PyOpenSci
-
-Welcome to pyOpenSci! We assume you are here because 
-
-1. you are considering submitting a package to pyOpenSci and want to understand the best practices that we suggest 
-2. You are looking for guidance on creating your first Python package. 
-3. Or you're just looiking for resources associated with Python packaging.
-
-Well, my friend you've come to the right place! 
+# ttt
 
 If you are looking for a more comprehensive guide to Python packaging we suggest 
 you review the following excellent resources:
