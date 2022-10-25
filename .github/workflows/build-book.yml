@@ -37,14 +37,6 @@ jobs:
     - name: Build book
       run: nox -s docs
 
-    # Test for bad links and ensure alt tags for usability
-    - name: Check HTML using htmlproofer
-      uses: chabad360/htmlproofer@master
-      with:
-        directory: '_build'
-        arguments: |
-           --ignore-files "/.+\/_static/"
-
     # Save html as artifact
     - name: Save book html as artifact for viewing
       uses: actions/upload-artifact@v3
