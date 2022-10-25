@@ -53,3 +53,13 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
+
+    # Test for bad links and ensure alt tags for usability
+    - name: Check HTML using htmlproofer
+      uses: chabad360/htmlproofer@master
+      with:
+        directory: "./_build/html"
+        arguments: |
+         --ignore-files ".+\/_static\/.+"
+
+    
