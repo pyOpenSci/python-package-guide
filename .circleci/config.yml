@@ -1,0 +1,27 @@
+version: 2.1
+jobs:
+  build_book:
+    docker:
+      - image: cimg/python:3.9
+    steps:
+      - checkout
+      - run:
+          name: setup environment
+          command: |
+            pip install --upgrade pip
+            pip install nox
+            pip list
+      - run:
+          name: Build book html 
+          command: nox -s docs
+
+      - store_artifacts:
+          path: _build/html
+          destination: html
+
+# Tell CircleCI to use this workflow when it builds the site
+workflows:
+  version: 2
+  build_book:
+    jobs:
+      - build_book
