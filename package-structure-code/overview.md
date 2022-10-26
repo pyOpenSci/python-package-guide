@@ -35,22 +35,6 @@ This section has descriptions of all the packaging requirements for pyOpenSci.
 Most of the sections also include Good/Better/Best recommendations.
 Good meets the requirements, but going beyond the minimum can make package maintenance easier.
 
-### README
-All packages should have a README.md in their root directory. The README should include, from top to bottom:
-
-- The package name
-- Badges for continuous integration and test coverage. See [the badges section](#badges) for more information.
-- Short description of goals of package, with descriptive links to all vignettes (rendered, i.e. readable, cf the documentation website section) unless the package is small and there’s only one vignette repeating the README.
-- Installation instructions
-- Any additional setup required (authentication tokens, etc)
-- Brief demonstration usage
-- Direction to more detailed documentation (e.g. your documentation files or website).
-- If applicable, how the package compares to other similar packages and/or how it relates to other packages
-- Citation information
-
-**Good/Better/Best Recommendations:**
-- **Good:** README with name, description, installation instructions, and direction to further documentation.
-- **Better/Best:** All the above plus usage examples, citation information, and CI and/or test coverage badges.
 
 ### Documentation
 All external package functions, classes, and methods should be fully documented with examples.
