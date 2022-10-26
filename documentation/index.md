@@ -1,5 +1,8 @@
 # Get Started with Documenting Your Python Package
 
+🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+
+
 Documentation is as important to the success of your Python open source package 
 as the code itself. While quality code is valuable as it gets the tasks that your
 package seeks to achieve, completed, if users don't understand how to use the 
@@ -59,11 +62,4 @@ pyOpenSci encourages authors to consult [PEP 8](https://www.python.org/dev/peps/
 ### Linting
 An automatic linter (e.g. flake8) can help ensure your code is clean and free of syntax errors. These can be integrated with your CI.
 
-### Badges
 
-Badges are a useful way to draw attention to the quality of your project and to
-assure users that it is well-designed, tested, and maintained.
-It is common to provide a collection of badges in a table for others
-to quickly browse.
-
-[See this example of a badge table](https://github.com/ropensci/drake). Such a table should be more wide than high. (Note that the badge for pyOpenSci peer-review will be provided upon acceptance.)

@@ -1,5 +1,8 @@
 # Collaboration Guide
 
+🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+
+
 Note: pyOpenSci is still building out this section of our guidebook. Many of the examples come from rOpenSci. If you have suggestions for changes, check out the [GitHub repo](https://github.com/pyOpenSci/contributing-guide).
 
 ## Make your repo contribution and collaboration friendly

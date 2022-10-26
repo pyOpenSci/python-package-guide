@@ -1,5 +1,8 @@
 # Python package Documentation
 
+🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+
+
 ## Package documentation 
 
 Your package should be well documented. While the readme is a great first step, 

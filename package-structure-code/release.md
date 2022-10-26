@@ -1,5 +1,7 @@
-(releasing)=
 # Releasing a package
+
+🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+
 
 This section covers releasing your package to PyPI as well as releasing future versions. Your package should have different versions over time: snapshots of a state of the package that you can release to PyPI for instance. These versions should be properly _numbered_, _released_ and _described in a NEWS file_. More details below.
 

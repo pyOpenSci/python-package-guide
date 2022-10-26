@@ -1,5 +1,8 @@
 # Tests and Continuous Integration 
 
+🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+
+
 On this page you will explore the various levels of testing that pyOpenSci suggests
 for your package. This page will be useful for you if you are new to creating a 
 Python package as it will provide you with and overview of what you need to consider 

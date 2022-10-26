@@ -1,9 +1,11 @@
 # Python package structure information 
 
+🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+
 If you are looking for a more comprehensive guide to Python packaging we suggest 
 you review the following excellent resources:
 
-TODO: add resource list 
+# TODO: add resource list 
 
 
 Most of the sections also include Good/Better/Best recommendations.

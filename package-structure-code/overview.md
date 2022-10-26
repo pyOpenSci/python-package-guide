@@ -1,5 +1,7 @@
 # Overview
 
+🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+
 This section provides guidelines and tips for creating a Python package to submit for peer-review.
 
 pyOpenSci packages must:
