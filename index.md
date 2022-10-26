@@ -95,17 +95,10 @@ Good meets the requirements, but going beyond the minimum can make package maint
 
 ```{toctree}
 :hidden:
-:caption: new test
-About <documentation/intro.md>
-I work here <documentation/package-documentation-tutorials.md>
-I dont work <documentation/create-readme-files.md>
-```
-
-```{toctree}
-:hidden:
 :caption: Documentation
-I don't work either <documentation/index.md>
+I dont work <documentation/index.md>
 I dont work <documentation/create-readme-files.md>
+I work here <documentation/package-documentation-tutorials.md>
 ```
 
 ```{toctree}
