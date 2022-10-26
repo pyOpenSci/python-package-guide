@@ -104,8 +104,8 @@ I work here <documentation/package-documentation-tutorials.md>
 ```{toctree}
 :hidden:
 :caption: Package structure
-I work <package-structure-code/index.md>
-So do i <package-structure-code/code-structure-style.md>
+I don't work <package-structure-code/index.md>
+I work <package-structure-code/code-structure-style.md>
 ```
 
 ```{toctree}

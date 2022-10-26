@@ -1,4 +1,4 @@
-# ttt
+# Python package structure information 
 
 If you are looking for a more comprehensive guide to Python packaging we suggest 
 you review the following excellent resources:
@@ -10,7 +10,7 @@ Most of the sections also include Good/Better/Best recommendations.
 Good meets the requirements, but going beyond the minimum can make package maintenance easier.
 
 
-# TODO maybe add a few links to really good guides on python package. 
+# TODO add a few links to really good guides on python package. 
 
 Before you submit your package for review, you may want to check out the 
 basic editor checks that we look for before a review can begin. These are bare-minimum 
