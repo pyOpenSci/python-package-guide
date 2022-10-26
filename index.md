@@ -96,28 +96,28 @@ Good meets the requirements, but going beyond the minimum can make package maint
 ```{toctree}
 :hidden:
 :caption: new test
-About </documentation/intro.md>
+About <documentation/intro.md>
+I work here <documentation/package-documentation-tutorials.md>
+I dont work <documentation/create-readme-files.md>
 ```
 
 ```{toctree}
 :hidden:
 :caption: Documentation
-Intro to Documentation </documentation/intro.md>
-<documentation/readme-files>
-documentation/package-documentation-tutorials
+I don't work either <documentation/index.md>
+I dont work <documentation/create-readme-files.md>
 ```
 
 ```{toctree}
 :hidden:
-:caption: Code Style & Structure
-
-code-style-structure/intro
+:caption: Package structure
+I work <package-structure-code/index.md>
+So do i <package-structure-code/code-structure-style.md>
 ```
 
 ```{toctree}
 :hidden:
 :caption: Test your code
-
 testing-infrastructure/test-code
 testing-infrastructure/continuous-integration
 ```

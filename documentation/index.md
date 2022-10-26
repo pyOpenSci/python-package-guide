@@ -1,6 +1,5 @@
 # Get Started with Documenting Your Python Package
 
-
 Documentation is as important to the success of your Python open source package 
 as the code itself. While quality code is valuable as it gets the tasks that your
 package seeks to achieve, completed, if users don't understand how to use the 
