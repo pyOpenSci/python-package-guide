@@ -3,6 +3,11 @@ name: build-test-deploy-book
 # Run on pushes and pull requests
 on: [push, pull_request]
 
+# Manage / avoid concurrent builds of the same thing
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   build-test-book:

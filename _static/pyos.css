@@ -1,19 +1,11 @@
-/* ---
-# Does this support sass? maybe not?
----
-
-$header-font: 'Raleway', sans-serif; 
-$body-font: 'Open Sans', sans-serif;
-$body-font-color: #999; */
-
 html, body {
-    font-size: 1.1rem
+    font-size: 1.1rem;
 }
 
 body p {
     /* font-family: $header-font; */
     font-size: 1em;
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Verdana', sans-serif!important;
     color: #555!important;
     line-height: 1.5em;
 }
@@ -28,10 +20,33 @@ h1 {
 }
 
 h3 {
-    padding-top: 1.2em;
-    margin-bottom: .09em;
+    padding-top: 1.4em;
+    margin-bottom: 14px;
 }
-/* HEADER BLOCK */ 
+
+/* hide the right sidebar */
+.col-md-3 .bd-toc .show .noprint {
+    display: none!important;
+}
+
+#main-content {
+    max-width: 80%;
+}
+
+.bd-toc {
+    color: #1abc9c;
+}
+
+@media (min-width: 720px){
+.col-md-3 {
+  flex: 0 0 25%;
+  /* max-width: 25%; */
+  display: none!important;
+    }
+}
+
+
+/* HEADER BLOCK 2 */ 
 div.header__block { 
 color: #222;
 }
@@ -41,18 +56,18 @@ background-color: #ccc;
 } 
 
 .header-item.announcement, .header-item.announcement .noprint {
-background-color:#ccc;
+    background-color:#ccc;
 }
 
 div .announcement .header-item .noprint, header-item.announcement {
-background-color: #ccc!important;
+    background-color: #ccc!important;
 }
 
 /* notes */
 
 div.admonition.note .admonition-title, div.admonition.note .admonition-title::before {
-background-color: #C1CFD4;
-color: #222;
+    background-color: #C1CFD4;
+    color: #222;
 
 }
 

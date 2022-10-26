@@ -1,36 +1,29 @@
 # README File Guidelines and Resources
 
-## Hello 
-specified
+ The **README.md** file is often the first thing that someone sees when they consider
+installing your package. Thus, it is important that you spend some time up front creating a high quality 
+**README.md** file for your Python package.
 
+This file is the landing page of:
 
-```{note}
-### Readme Resources 
-
-* [The art of the README GitHub Repo](https://github.com/hackergrrl/art-of-readme)
-```
-
-
-The **README.md** file is often the first thing that someone sees when they consider
-installing your package. This file is the landing page of:
-
-* your file on package manager landing pages like PyPI and Anaconda
-* your package's GitHub repository
+* Your file on package manager landing pages like PyPI and Anaconda
+* Your package's GitHub repository
 
 # TODO screenshots of landing pages in github and pypi 
 
-It is important that you spend some time up front creating a high quality 
-**README.md** file for your Python package. This file should be located in the root 
-of your GitHUb repository. 
+Your README.md file should be located in the root 
+of your GitHub repository. 
 
 # TODO provide some screenshots of our repo with a readme file
 ## Organizing your README File from the most broad information to the most specific - Cognitive funneling
 
 We suggest organizing the content in your README file so that the most broad information is at the top of the file. Information then becomes more specific 
-and potentially more technical as the user moves down the file. This approach 
-will make your README file more accessible to a broader group of users who 
-may find your tool useful but get lost in overly complex language early on 
-in the document. 
+and potentially more technical as the user moves down the file. 
+
+This approach of starting broad and progressively getting more specific
+will make your README file more accessible and easier-to-digest for a broader group of users. An overly complex or poorly organized README 
+file will likely result in users getting lost, not understanding 
+what your package does and how it could be useful to them.
 
 ```{note}
 [Cognitive funneling approach](https://github.com/hackergrrl/art-of-readme#cognitive-funneling) refers to content structure where the most 
@@ -41,53 +34,89 @@ and possibly technical lower down in the file.
 
 Your **README.md** file should at a minimum include (from top to bottom):
 
-### ✅  Your package's name
+### ✅ Your package's name
 Ideally your GitHub repository's name is also the name of your package. The more 
 self explanatory that name is, the better. 
 
-### ✅  Badges for current package version, continuous integration and test coverage
+### ✅ Badges for current package version, continuous integration and test coverage
 
-See [the badges section](#badges) for more information. (But beware of the overuse of badges!)
+Badges are a useful way to draw attention to the quality of your project and to
+assure users that your package is well-designed, tested, and maintained.
+It is common to provide a collection of badges towards the top of your 
+README file for others to quickly browse.
 
-# TODO - find the badges section and add here?
+Some badges that you might consider adding to your README file include:
 
-### ✅  A short, easy-to-understand description of what your package does 
+* Current version of the package on pypi / conda forge (the example below is a github release value given our package guide isn't an installable tool.)
 
-(it's function) and it's goals. The language in this description should use less technical terms so that a variety of users with varying scientific backgrounds can understand it. Consider writing for a 12th grade reading level which is an ideal level for more scientific content that serves a broad user base. The goal of this description to maximize accessibility of your **README** file.
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
 
-### ✅ Descriptive links to package documentation, tutorials or vignettes.
+* Status of tests (pass or fail)
 
-We suggest that you link to the package's documentation page. 
-Then add descriptive links to any tutorials or vignettes that you create 
+[![CircleCI](https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg)](https://circleci.com/gh/pyOpenSci/python-package-guide)
 
-Tutorials nested within the readme. - we suggest including a single quickstart tutorial in your readme and then linking to other tutorials found in your 
-documentation website rather than including too much information in the README.md 
-itself. 
+![Docs Building](https://github.com/pyOpenSci/python-package-guide/actions/workflows/build-book.yml/badge.svg)
+
+* DOI (for citation) [![DOI](https://zenodo.org/badge/556814582.svg)](https://zenodo.org/badge/latestdoi/556814582)
+
+Once you package is accepted to pyOpenSci, we will provide you with 
+a badge to add to your repository that shows that it has been reviewed! 
+
+# TODO: add a pyopensci accepted badge here
+
+```{note}
+Beware of the overuse of badges! There is such a thing as too much of a good thing (which can overload a potential user!).
+```
+
+### ✅ A short, easy-to-understand description of what your package does 
+
+At the top of your README file you should have a short, easy-to-understand, 1-3 sentence description of what your package does. And your goals for the package. The language in this description should use less technical terms so that a variety of users with varying scientific (and development) backgrounds can understand it. 
+
+Consider writing for a 12th grade reading level which is an ideal level for more scientific content that serves a broad user base. The goal of this description to maximize accessibility of your **README** file.
 
 
 
 ### ✅ Installation instructions
 
-Be sure to include Instructions for installing your package. Include instructions for both PiP and Conda if you have published to both. 
+Include instructions for installing your package. If you have published 
+the package on both PyPI and Conda be sure to include instructions for both. 
 
-### ✅
- Any additional setup required (authentication tokens, etc)
+### ✅ Document any addition setup required
+
+Add any additional setup required  such as authentication tokens,  to 
+get started using your package.
 
 ### ✅ Brief demonstration of how to use the package
 
 This description ideally includes a quick start vignette that provides a code sample demonstrating use
 
-### ✅ Links to documentation, tutorials and/or vignettes
- A link to your online documentation
+### ✅ Descriptive links to package documentation, tutorials or vignettes.
+
+Include descriptive links to to:
+
+* The package's documentation page. 
+* Tutorials or vignettes that demonstrate application of your package. 
+
+```{note}
+### TOO MUCH OF A GOOD thing
+
+Try to avoid including several tutorials in the readme file itself. This too will overwhelm the user with information. 
+
+A short quickstart vignette that shows a user how to use your package is plenty for the README file. All other tutorials and documentation should be presented as descriptive links. 
+```
 
 ### ✅ Discussion of how this package fits within the broader scientific python landscape.
 
-- If applicable, how the package compares to other similar packages and/or how it relates to other packages
+If applicable, describe how the package compares to other similar packages or complementary packages in the scientific Python ecosystem. This discussion can be brief. 
 
 ### ✅ Citation information
 
-- Instructions on how to CITE your package. It's ok if you 
+Finally be sure to include instructions on how to cite your package. 
 
+
+### ✅ Links to Contributing Guide, Code of Conduct 
+Last but not least it's a good idea to link to direct users to your 
+contributing guide in case they want to contribute. And also to link to your project's code of conduct. 
 
 
 **Good/Better/Best Recommendations:**
@@ -101,3 +130,15 @@ of how the tool might be used.
 The a clear explanation of what your package does, a quick-start vignette and instructions
 to install your package provide users with an easy to digest understanding of 
 how your package might be useful to them. 
+
+
+```{note}
+### README Resources 
+
+Below are some resources on creating great README.md files that you 
+might find helpful.
+
+* [The art of the README GitHub Repo](https://github.com/hackergrrl/art-of-readme)
+* [Write a great readme - Bane Sullivan](https://github.com/banesullivan/README)
+```
+

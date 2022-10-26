@@ -27,7 +27,8 @@ Removing button for the time being
 Get Involved (Maybe a link to a get involved page)
 
 % SVG rendering breaks latex builds for the GitHub badge, so only include in HTML
-``` -->
+``` 
+-->
 
 ```{only} html
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -67,19 +68,18 @@ covered include: README files, tutorials and full docs.
 ^^^
 Get a basic overview of our open peer review process for Python scientific open source software.
 :::
-
 ::::
 
 
 ### Python Packaging Guide for Maintainers Submitting to PyOpenSci
 
-Welcome to pyOpenSci! We assume you are here because 
+Welcome to pyOpenSci! We assume you are here because: 
 
-1. you are considering submitting a package to pyOpenSci and want to understand the best practices that we suggest 
-2. You are looking for guidance on creating your first Python package. 
+1. You are considering submitting a package to pyOpenSci and want to understand the best practices that we suggest 
+2. You are looking for guidance on creating a Python package. 
 3. Or you're just looking for resources associated with Python packaging.
 
-Well, my friend you've come to the right place! 
+Well, my friend, you've come to the right place! 
 
 ## What you will find in this guidebook 
 
@@ -88,7 +88,6 @@ This guidebook contains:
 * Explanation for "Good enough" minimum requirements associated with being reviewed by pyOpenSci
 * Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!
 * A curated list of resources to help you get your package into documented, usable and tested shape. 
-
 
 Most of the sections also include Good/Better/Best recommendations.
 Good meets the requirements, but going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.
