@@ -47,9 +47,10 @@ html_theme_options = {
     "repository_url": "https://github.com/pyopensci/python-package-guide",
     "use_repository_button": True,
     "google_analytics_id": "UA-141260825-1",
+    "show_toc_level": 1,
+    "toc_title": "On this page",
     "external_links": [
-      {"name": "link-one-name", "url": "https://www.pyopensci.org"},
-      {"name": "link-two-name", "url": "https://pyopensci.org"}
+      {"pyOpenSci Website": "link-one-name", "url": "https://www.pyopensci.org"}
   ],
   "announcement": "🚧 UNDER CONSTRUCTION: this guide is under heavy construction right now. 🚧"
 }
@@ -79,6 +80,7 @@ exclude_patterns = [
 #
 html_theme = 'sphinx_book_theme'
 html_static_path = ["_static"]
+html_css_files = ["pyos.css"]
 html_title = "pyOpenSci Package Guide"
 html_logo = "images/logo/logo.png"
 

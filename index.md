@@ -95,10 +95,15 @@ Good meets the requirements, but going beyond the minimum can make package maint
 
 ```{toctree}
 :hidden:
-:caption: Documentation
+:caption: new test
+About </documentation/intro.md>
+```
 
-documentation/intro
-documentation/readme-files
+```{toctree}
+:hidden:
+:caption: Documentation
+Intro to Documentation </documentation/intro.md>
+<documentation/readme-files>
 documentation/package-documentation-tutorials
 ```
 
@@ -126,7 +131,7 @@ Removing button for the time being
 Get Involved (Maybe a link to a get involved page)
 ``` -->
 
-
+<!-- 
 # README.md File Best Practices 
 
 ## Adding a Readme file.. Python Package Documentation
@@ -223,4 +228,4 @@ It is common to provide a collection of badges in a table for others
 to quickly browse.
 
 [See this example of a badge table](https://github.com/ropensci/drake). Such a table should be more wide than high. (Note that the badge for pyOpenSci peer-review will be provided upon acceptance.)
-
+-->
