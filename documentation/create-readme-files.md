@@ -1,7 +1,5 @@
 # README File Guidelines and Resources
 
-https://devguide.ropensci.org/building.html#readme
-
 The **README.md** file is often the first thing that someone sees when they consider
 installing your package. 
 
@@ -172,5 +170,9 @@ might find helpful.
 
 * [The art of the README GitHub Repo](https://github.com/hackergrrl/art-of-readme)
 * [Write a great readme - Bane Sullivan](https://github.com/banesullivan/README)
+* [Readme resources from rOpenSci](https://devguide.ropensci.org/building.html#readme)
 ```
+
+
+
 
