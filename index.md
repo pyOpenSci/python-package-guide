@@ -1,6 +1,9 @@
-# Welcome to the pyOpenSci Python Package Development Guide  
+# pyOpenSci Python Open Source Package Development Guide  
 
-## pyOpenSci provides recommendations and a curated list of community resources that Python package infrastructure for the scientific community.
+## Welcome, Python open source enthusiast! 
+
+Here you will find guidelines for what we look for in your scientific 
+Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and documentation. 
 
 ::::{grid} 2
 :reverse:
@@ -47,7 +50,7 @@ Get Involved (Maybe a link to a get involved page)
 :gutter: 3
 
 :::{grid-item-card}
-:link: documentation/intro
+:link: documentation/index
 :link-type: doc
 :class-header: bg-light
 
@@ -64,22 +67,34 @@ covered include: README files, tutorials and full docs.
 :link-type: doc
 :class-header: bg-light
 
-✨Code style and structure✨
+✨ Coming soon... ✨
 ^^^
-Get a basic overview of our open peer review process for Python scientific open source software.
+<!-- 
+Get a basic overview of our open peer review process for Python scientific open source software. -->
+:::
+
+:::{grid-item-card}
+:link: CONTRIBUTING
+:link-type: doc
+:class-header: bg-light
+
+✨ Want to contribute? ✨
+^^^
+We welcome contributions to this guide. Learn more about how you can 
+contribute.
 :::
 ::::
 
 
-### Python Packaging Guide for Maintainers Submitting to PyOpenSci
+## Who this guidebook is for 
 
-Welcome to pyOpenSci! We assume you are here because: 
+We assume that you are here because you are: 
 
-1. You are considering submitting a package to pyOpenSci and want to understand the best practices that we suggest 
-2. You are looking for guidance on creating a Python package. 
-3. Or you're just looking for resources associated with Python packaging.
+1. Considering submitting a package to pyOpenSci and want to understand what we are looking for when we review your package
+2. Looking for guidance on creating a Python package. 
+3. Looking for resources associated with Python packaging.
 
-Well, my friend, you've come to the right place! 
+Well, friend, you've come to the right place! 
 
 ## What you will find in this guidebook 
 
@@ -89,15 +104,23 @@ This guidebook contains:
 * Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!
 * A curated list of resources to help you get your package into documented, usable and tested shape. 
 
-Most of the sections also include Good/Better/Best recommendations.
-Good meets the requirements, but going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.
+## Where this guide is headed 
+
+Most of the sections in this guide will ultimately include Good/Better/Best recommendations for Python open source software packaging. 
+
+Good meets the requirements. Going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.
+
+This guide is now a work in progress. If you have ideas of things you'd like 
+to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
 
 ```{toctree}
 :hidden:
 :caption: Documentation
-I dont work <documentation/index.md>
+
+dI dont work <documentation/index>
 I dont work <documentation/create-readme-files.md>
-I work here <documentation/package-documentation-tutorials.md>
+Package docs & tutorials <documentation/package-documentation-tutorials>
+Contributing & license files <documentation/contributing>
 ```
 
 ```{toctree}
