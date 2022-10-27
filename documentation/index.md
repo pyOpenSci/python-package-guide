@@ -3,6 +3,7 @@
 ```{attention}
 🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
 ```
+## Documentation is critical to the success of your Python open source package 
 
 Documentation is as important to the success of your Python open source package 
 as the code itself. While quality code is valuable as it gets the tasks that your
@@ -20,7 +21,7 @@ package documentation including:
 4. A **CONTRIBUTING.md** file that has clear instructions that others can follow to setup a development environment. This will support others contributing to your project. 
 5. A license file that helps people 
 
-# TODO LINK TO CI BUILD examples FOR Documentation - we have plenty in our repos already for folks to look at.
+<!-- # TODO LINK TO CI BUILD examples FOR Documentation - we have plenty in our repos already for folks to look at. -->
 
 
 

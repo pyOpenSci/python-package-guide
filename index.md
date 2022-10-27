@@ -1,5 +1,7 @@
 # pyOpenSci Python Open Source Package Development Guide  
 
+<!-- Github community standards 
+https://github.com/pyOpenSci/python-package-guide/community -->
 ## Welcome, Python open source enthusiast! 
 
 Here you will find guidelines for what we look for in your scientific 
@@ -85,9 +87,7 @@ contribute.
 :::
 ::::
 
-
 ## Who this guidebook is for 
-
 We assume that you are here because you are: 
 
 1. Considering submitting a package to pyOpenSci and want to understand what we are looking for when we review your package
@@ -117,8 +117,8 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :hidden:
 :caption: Documentation
 
-dI dont work <documentation/index>
-I dont work <documentation/create-readme-files.md>
+Intro to Documentation <documentation/index>
+The README File <documentation/create-readme-files.md>
 Package docs & tutorials <documentation/package-documentation-tutorials>
 Contributing & license files <documentation/contributing>
 ```
