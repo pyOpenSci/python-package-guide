@@ -1,4 +1,4 @@
-# <img src="images/logo/logo.png" width=40 /> pyOpenSci Governance
+# <img src="images/logo/logo.png" width=40 /> pyOpenSci Scientific Python Open Source Packaging Guide
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
 
