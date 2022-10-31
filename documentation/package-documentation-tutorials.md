@@ -2,7 +2,7 @@
 
 ## Package documentation 
 
-Your package should be well documented. While the readme is a great first step, 
+Your package should be well documented. While the README.md file is a great first step, 
 you should also have a documentation website. Many prefer to use Sphinx to create 
 they Python package documentation. Sphinx is great because it offers some extensions
 that support things like documenting your api (see below), running and testing code 
@@ -118,3 +118,4 @@ def extent_to_json(ext_obj):
     """
 
 ```
+

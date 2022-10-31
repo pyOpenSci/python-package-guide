@@ -174,5 +174,38 @@ might find helpful.
 ```
 
 
+<!-- 
+OLD TEXT 
 
+Will ultimately remove this but slowly moving things from difference places
+into the same page. this is all commented out for now. 
+
+### Badges
+
+Badges are a useful way to draw attention to the quality of your project and to
+assure users that it is well-designed, tested, and maintained.
+It is common to provide a collection of badges in a table for others
+to quickly browse.
+
+[See this example of a badge table](https://github.com/ropensci/drake). Such a table should be more wide than high. (Note that the badge for pyOpenSci peer-review will be provided upon acceptance.)
+
+
+# README.md File Best Practices 
+
+## Adding a Readme file.. Python Package Documentation
+
+Documentation is as important to the success of your Python open source package 
+as the code itself. While quality code is valuable as it gets the tasks that your
+package seeks to achieve, completed, if users don't understand how to use the 
+tools in your package then they won't use your tool. 
+
+## Documentation elements that we look for when reviewing a Python package
+
+In the pyOpenSci peer review process we look for several things when evaluating
+package documentation including:
+
+1. A clear and to the point README file 
+2. Documentation of the funcaintliy of your code. This is often setup using Sphinx/ Read the docs or some other documentation platform 
+3.  Sufficient API documentation of your packages API (this means that docstrings are formatted with explanations of each variable and better yet quick vignettes that demonstrate how to use the function or class)
+ -->
 
