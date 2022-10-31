@@ -1,7 +1,14 @@
 name: build-test-deploy-book
 
-# Run on pushes and pull requests
-on: [push, pull_request]
+# Only build PRs, the main branch, and releases. Pushes to branches will only
+# be built when a PR is opened. This avoids duplicated buids in PRs comming
+# from branches in the origin repository (1 for PR and 1 for push).
+# This came from Leo's work with fatiando
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
