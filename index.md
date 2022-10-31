@@ -102,11 +102,23 @@ documentation/readme-files
 documentation/package-documentation-tutorials
 ```
 
+
+```{toctree}
+:hidden:
+:caption: Package structure & code style
+
+intro <package-structure-code/intro>
+package-structure-code/code-structure-style
+package-structure-code/release
+package-structure-code/overview
+package-structure-code/collaboration
+```
+
 ```{toctree}
 :hidden:
 :caption: Code Style & Structure
 
-code-style-structure/intro
+code-style-structure/index
 ```
 
 ```{toctree}
