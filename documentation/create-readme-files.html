@@ -1,0 +1,668 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>README File Guidelines and Resources &#8212; pyOpenSci Package Guide</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Package Documentation" href="package-documentation-tutorials.html" />
+    <link rel="prev" title="Intro: Document Your Python Package" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-141260825-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">🚧 UNDER CONSTRUCTION: this guide is under heavy construction right now. 🚧</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">pyOpenSci Package Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Intro to Documentation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The README File
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="package-documentation-tutorials.html">
+   Package docs &amp; tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing.html">
+   Contributing &amp; license files
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/pyopensci/python-package-guide"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/documentation/create-readme-files.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> On this page
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organizing-your-readme-file-from-the-most-broad-information-to-the-most-specific-cognitive-funneling">
+   Organizing your README File from the most broad information to the most specific - Cognitive funneling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-your-readme-md-file-should-contain-bare-minimum">
+   What your README.md file should contain (bare minimum)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#your-package-s-name">
+     ✅ Your package’s name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#badges-for-current-package-version-continuous-integration-and-test-coverage">
+     ✅ Badges for current package version, continuous integration and test coverage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-short-easy-to-understand-description-of-what-your-package-does">
+     ✅ A short, easy-to-understand description of what your package does
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brief-quickstart-code-demonstration-of-how-to-use-the-package">
+     ✅ BRIEF quickstart code demonstration of how to use the package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descriptive-links-to-package-documentation-tutorials-or-vignettes">
+     ✅ Descriptive links to package documentation, tutorials or vignettes.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-of-how-this-package-fits-within-the-broader-scientific-python-landscape">
+     ✅ Discussion of how this package fits within the broader scientific python landscape.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-instructions">
+     ✅ Installation instructions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#document-any-addition-setup-required-to-use-you-package">
+     ✅ Document any addition setup required to use you package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation-information">
+     ✅ Citation information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links-to-contributing-guide-code-of-conduct">
+     ✅ Links to Contributing Guide, Code of Conduct
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>README File Guidelines and Resources</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> On this page </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organizing-your-readme-file-from-the-most-broad-information-to-the-most-specific-cognitive-funneling">
+   Organizing your README File from the most broad information to the most specific - Cognitive funneling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-your-readme-md-file-should-contain-bare-minimum">
+   What your README.md file should contain (bare minimum)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#your-package-s-name">
+     ✅ Your package’s name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#badges-for-current-package-version-continuous-integration-and-test-coverage">
+     ✅ Badges for current package version, continuous integration and test coverage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-short-easy-to-understand-description-of-what-your-package-does">
+     ✅ A short, easy-to-understand description of what your package does
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brief-quickstart-code-demonstration-of-how-to-use-the-package">
+     ✅ BRIEF quickstart code demonstration of how to use the package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descriptive-links-to-package-documentation-tutorials-or-vignettes">
+     ✅ Descriptive links to package documentation, tutorials or vignettes.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-of-how-this-package-fits-within-the-broader-scientific-python-landscape">
+     ✅ Discussion of how this package fits within the broader scientific python landscape.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-instructions">
+     ✅ Installation instructions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#document-any-addition-setup-required-to-use-you-package">
+     ✅ Document any addition setup required to use you package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citation-information">
+     ✅ Citation information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links-to-contributing-guide-code-of-conduct">
+     ✅ Links to Contributing Guide, Code of Conduct
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="readme-file-guidelines-and-resources">
+<h1>README File Guidelines and Resources<a class="headerlink" href="#readme-file-guidelines-and-resources" title="Permalink to this headline">#</a></h1>
+<p>The <strong>README.md</strong> file is often the first thing that someone sees when they consider
+installing your package.</p>
+<p>This file is both the landing page of:</p>
+<ul class="simple">
+<li><p>Your file on package manager landing pages like PyPI and Anaconda</p></li>
+<li><p>Your package’s GitHub repository</p></li>
+</ul>
+<p>Thus, it is important that you spend some time up front creating a high quality
+<strong>README.md</strong> file for your Python package.</p>
+<!-- # TODO screenshots of landing pages in github and pypi  -->
+<p>Your README.md file should be located in the root
+of your GitHub repository.</p>
+<!-- # TODO provide some screenshots of our repo with a readme file -->
+<section id="organizing-your-readme-file-from-the-most-broad-information-to-the-most-specific-cognitive-funneling">
+<h2>Organizing your README File from the most broad information to the most specific - Cognitive funneling<a class="headerlink" href="#organizing-your-readme-file-from-the-most-broad-information-to-the-most-specific-cognitive-funneling" title="Permalink to this headline">#</a></h2>
+<p>We suggest organizing the content in your <strong>README</strong> file so that the most broad information is at the top of the file. Information then
+becomes more specific
+and potentially more technical as the user moves down the file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://github.com/hackergrrl/art-of-readme#cognitive-funneling">Cognitive funneling approach</a> refers to content structure where the most
+broad information is at the top and becomes increasingly more specific
+and possibly technical lower down in the file.</p>
+</div>
+<p>This approach of starting broad and progressively getting more specific
+will make your <strong>README</strong> file more accessible and easier-to-digest for a broader group of users. An overly complex or poorly organized <strong>README</strong>
+file will likely result in users getting lost, not understanding
+what your package does and how it could be useful to them.</p>
+<!-- # TODO make a checklist block style -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An editor or the editor in chief will ask you to revise your README file
+before a review begins if it does not meet the criteria specified below.</p>
+<p>Please go through this list before submitting your package to pyOpenSci</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### pyOpenSci README checklist </span>
+
+<span class="n">Your</span> <span class="n">README</span> <span class="n">file</span> <span class="n">should</span> <span class="n">have</span> <span class="n">the</span> <span class="n">following</span> <span class="n">information</span><span class="p">:</span> 
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">package</span>
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">Badges</span> <span class="k">for</span> <span class="n">the</span> <span class="n">packages</span> <span class="n">current</span> <span class="n">published</span> <span class="n">version</span><span class="p">,</span> <span class="n">documentation</span> <span class="ow">and</span> <span class="n">test</span> <span class="n">suite</span> <span class="n">build</span><span class="o">.</span> <span class="p">(</span><span class="n">OPTIONAL</span><span class="p">:</span> <span class="n">test</span> <span class="n">coverage</span><span class="p">)</span> 
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">Easy</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">understand</span> <span class="n">explanation</span> <span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span> <span class="n">sentences</span><span class="p">)</span> <span class="n">of</span> <span class="n">what</span> <span class="n">your</span> <span class="n">tool</span> <span class="n">does</span>
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">Context</span> <span class="k">for</span> <span class="n">how</span> <span class="n">the</span> <span class="n">tool</span> <span class="n">fits</span> <span class="n">into</span> <span class="n">the</span> <span class="n">broader</span> <span class="n">ecosystem</span> 
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">If</span> <span class="n">it</span><span class="s1">&#39;s your package is a wrapper, link to the package that it is wrapping and any associated documentation. (If you do&#39;</span><span class="n">nt</span> <span class="n">know</span> <span class="n">what</span> <span class="n">a</span> <span class="n">wrapper</span> <span class="ow">is</span> <span class="o">-</span> <span class="n">this</span> <span class="n">probably</span> <span class="n">doesn</span><span class="s1">&#39;t apply to you!)</span>
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">A</span> <span class="n">simple</span> <span class="n">quickstart</span> <span class="n">code</span> <span class="n">example</span> <span class="n">that</span> <span class="n">a</span> <span class="n">user</span> <span class="n">can</span> <span class="n">follow</span> <span class="n">to</span> <span class="n">provide</span> <span class="n">a</span> <span class="n">demonstration</span> <span class="n">of</span> <span class="n">what</span> <span class="n">the</span> <span class="n">package</span> <span class="n">can</span> <span class="n">do</span> <span class="k">for</span> <span class="n">them</span> 
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">Links</span> <span class="n">to</span> <span class="n">your</span> <span class="n">packages</span> <span class="n">documentation</span> <span class="o">/</span> <span class="n">website</span><span class="o">.</span>
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">A</span> <span class="n">few</span> <span class="n">descriptive</span> <span class="n">links</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">tutorials</span> <span class="n">you</span><span class="s1">&#39;ve created for your pacakge.</span>
+</pre></div>
+</div>
+</div>
+<p>A more detailed explanation of every element in this check list is below.</p>
+</section>
+<section id="what-your-readme-md-file-should-contain-bare-minimum">
+<h2>What your README.md file should contain (bare minimum)<a class="headerlink" href="#what-your-readme-md-file-should-contain-bare-minimum" title="Permalink to this headline">#</a></h2>
+<p>At a minimum, your package’s <strong>README.md</strong> file should include
+(from top to bottom):</p>
+<section id="your-package-s-name">
+<h3>✅ Your package’s name<a class="headerlink" href="#your-package-s-name" title="Permalink to this headline">#</a></h3>
+<p>Ideally your GitHub repository’s name is also the name of your package. The more
+self explanatory that name is, the better.</p>
+</section>
+<section id="badges-for-current-package-version-continuous-integration-and-test-coverage">
+<h3>✅ Badges for current package version, continuous integration and test coverage<a class="headerlink" href="#badges-for-current-package-version-continuous-integration-and-test-coverage" title="Permalink to this headline">#</a></h3>
+<p>Badges are a useful way to draw attention to the quality of your project and to
+assure users that your package is well-designed, tested, and maintained.
+It is common to provide a collection of badges towards the top of your
+README file for others to quickly browse.</p>
+<p>Some badges that you should adding to your README file include:</p>
+<ul class="simple">
+<li><p>Current version of the package on pypi / conda forge (the example badge below provides a github release value in our package guide isn’t an installable tool.)</p></li>
+</ul>
+<p><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&amp;display_name=tag&amp;style=plastic" /></p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Github release 
+![<span class="nt">GitHub release (latest by date)</span>](<span class="na">https://img.shields.io/github/v/release/your-github-org-name/package-repo-name?color=purple&amp;display_name=tag&amp;style=plastic</span>)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Continuous integration Status of tests (pass or fail)</p></li>
+</ul>
+<p>Circle CI badge:
+<a class="reference external" href="https://circleci.com/gh/pyOpenSci/python-package-guide"><img alt="CircleCI" src="https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg" /></a></p>
+<p>Example GitHub actions badge:</p>
+<p><img alt="Docs Building" src="https://github.com/pyOpenSci/python-package-guide/actions/workflows/build-book.yml/badge.svg" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>![Docs Building](https://github.com/pyOpenSci/python-package-guide/actions/workflows/build-book.yml/badge.svg)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Citation badge (DOI). It is OK if you do not have a DOI prior to the review. <a class="reference external" href="https://zenodo.org/badge/latestdoi/556814582"><img alt="DOI" src="https://zenodo.org/badge/556814582.svg" /></a></p></li>
+</ul>
+<p>Once you package is accepted to pyOpenSci, we will provide you with
+a badge to add to your repository that shows that it has been reviewed and accepted into the pyOpenSci scientific Python open source ecosystem!</p>
+<!-- # TODO: add a pyopensci accepted badge here -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Beware of the overuse of badges! There is such a thing as too much of a good thing (which can overload a potential user!).</p>
+</div>
+</section>
+<section id="a-short-easy-to-understand-description-of-what-your-package-does">
+<h3>✅ A short, easy-to-understand description of what your package does<a class="headerlink" href="#a-short-easy-to-understand-description-of-what-your-package-does" title="Permalink to this headline">#</a></h3>
+<p>At the top of your README file you should have a short, easy-to-understand, description that details the goals of your package and what purpose it serves.  The language in this description should use less technical terms so that a variety of users with varying scientific (and development) backgrounds can understand it.</p>
+<p>Consider writing for a 12th grade reading level which is an ideal level for more scientific content that serves a broad user base. The goal of this description to maximize accessibility of your <strong>README</strong> file.</p>
+</section>
+<section id="brief-quickstart-code-demonstration-of-how-to-use-the-package">
+<h3>✅ BRIEF quickstart code demonstration of how to use the package<a class="headerlink" href="#brief-quickstart-code-demonstration-of-how-to-use-the-package" title="Permalink to this headline">#</a></h3>
+<p>Include a code quickstart that demonstrates how to use your package.
+This quickstart should be simple.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="rubric">TOO MUCH OF A GOOD thing</p>
+<p>Try to avoid including several tutorials in the readme file itself. This too will overwhelm the user with information.</p>
+<p>A short quickstart vignette that shows a user how to use your package is plenty for the README file. All other tutorials and documentation should be presented as descriptive links.</p>
+</div>
+</section>
+<section id="descriptive-links-to-package-documentation-tutorials-or-vignettes">
+<h3>✅ Descriptive links to package documentation, tutorials or vignettes.<a class="headerlink" href="#descriptive-links-to-package-documentation-tutorials-or-vignettes" title="Permalink to this headline">#</a></h3>
+<p>Include descriptive links in your README file to:</p>
+<ul class="simple">
+<li><p>The package’s documentation page.</p></li>
+<li><p>Tutorials or vignettes that demonstrate application of your package.</p></li>
+</ul>
+</section>
+<section id="discussion-of-how-this-package-fits-within-the-broader-scientific-python-landscape">
+<h3>✅ Discussion of how this package fits within the broader scientific python landscape.<a class="headerlink" href="#discussion-of-how-this-package-fits-within-the-broader-scientific-python-landscape" title="Permalink to this headline">#</a></h3>
+<p>If applicable, describe how the package compares to other similar packages or complementary packages in the scientific Python ecosystem. This discussion can be brief. It’s important for package maintainers to consider their package in the context of the broader ecosystem. You will be asked to do this when you submit your package for review for pyOpenSci.</p>
+</section>
+<section id="installation-instructions">
+<h3>✅ Installation instructions<a class="headerlink" href="#installation-instructions" title="Permalink to this headline">#</a></h3>
+<p>Include instructions for installing your package. If you have published
+the package on both <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> and <code class="docutils literal notranslate"><span class="pre">Conda</span></code> be sure to include instructions for both.</p>
+</section>
+<section id="document-any-addition-setup-required-to-use-you-package">
+<h3>✅ Document any addition setup required to use you package<a class="headerlink" href="#document-any-addition-setup-required-to-use-you-package" title="Permalink to this headline">#</a></h3>
+<p>Add any additional setup required that someone will need to do before using your package. Examples of additional setup steps including authentication tokens, or critical dependencies that don’t get automatically installed when your package is installed.</p>
+</section>
+<section id="citation-information">
+<h3>✅ Citation information<a class="headerlink" href="#citation-information" title="Permalink to this headline">#</a></h3>
+<p>Finally be sure to include instructions on how to cite your package.</p>
+</section>
+<section id="links-to-contributing-guide-code-of-conduct">
+<h3>✅ Links to Contributing Guide, Code of Conduct<a class="headerlink" href="#links-to-contributing-guide-code-of-conduct" title="Permalink to this headline">#</a></h3>
+<p>Last but not least provide direct links to your
+<strong>CONTRIBUTING</strong> guide and to your project’s <strong>code of conduct</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="rubric">README Resources</p>
+<p>Below are some resources on creating great README.md files that you
+might find helpful.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/hackergrrl/art-of-readme">The art of the README GitHub Repo</a></p></li>
+<li><p><a class="reference external" href="https://github.com/banesullivan/README">Write a great readme - Bane Sullivan</a></p></li>
+<li><p><a class="reference external" href="https://devguide.ropensci.org/building.html#readme">Readme resources from rOpenSci</a></p></li>
+</ul>
+</div>
+<!-- 
+OLD TEXT 
+
+Will ultimately remove this but slowly moving things from difference places
+into the same page. this is all commented out for now. 
+
+### Badges
+
+Badges are a useful way to draw attention to the quality of your project and to
+assure users that it is well-designed, tested, and maintained.
+It is common to provide a collection of badges in a table for others
+to quickly browse.
+
+[See this example of a badge table](https://github.com/ropensci/drake). Such a table should be more wide than high. (Note that the badge for pyOpenSci peer-review will be provided upon acceptance.)
+
+
+# README.md File Best Practices 
+
+## Adding a Readme file.. Python Package Documentation
+
+Documentation is as important to the success of your Python open source package 
+as the code itself. While quality code is valuable as it gets the tasks that your
+package seeks to achieve, completed, if users don't understand how to use the 
+tools in your package then they won't use your tool. 
+
+## Documentation elements that we look for when reviewing a Python package
+
+In the pyOpenSci peer review process we look for several things when evaluating
+package documentation including:
+
+1. A clear and to the point README file 
+2. Documentation of the funcaintliy of your code. This is often setup using Sphinx/ Read the docs or some other documentation platform 
+3.  Sufficient API documentation of your packages API (this means that docstrings are formatted with explanations of each variable and better yet quick vignettes that demonstrate how to use the function or class)
+ -->
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro: Document Your Python Package</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="package-documentation-tutorials.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Package Documentation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Leah Wasser<br/>
+  
+      &copy; Copyright 2022, pyOpenSci.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

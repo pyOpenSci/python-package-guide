@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Python Package Documentation &#8212; pyOpenSci Package Guide</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CONTRIBUTING file and License" href="contributing.html" />
+    <link rel="prev" title="README File Guidelines and Resources" href="create-readme-files.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-141260825-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">🚧 UNDER CONSTRUCTION: this guide is under heavy construction right now. 🚧</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">pyOpenSci Package Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Intro to Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="create-readme-files.html">
+   The README File
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Package docs &amp; tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing.html">
+   Contributing &amp; license files
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/pyopensci/python-package-guide"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/documentation/package-documentation-tutorials.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> On this page
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package-documentation">
+   Package documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-landing-page-best-practices">
+   Documentation landing page best practices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sphinx-themes">
+     Sphinx themes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#myst-vs-rst-syntax-to-create-your-docs">
+     myST vs rst syntax to create your docs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#publish-your-docs-on-another-platform-directly-from-github-readthedocs-org">
+     Publish your docs on another platform directly from GitHub: ReadTheDocs.org
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-facing-documentation-for-your-python-package">
+   User-facing documentation for your Python package:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-package-api-documentation">
+   Python package API documentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docstring-examples-better-and-best">
+     Docstring examples Better and Best
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#best-a-docstring-with-example-use-of-the-function">
+     Best - a docstring with example use of the function
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Python Package Documentation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> On this page </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package-documentation">
+   Package documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-landing-page-best-practices">
+   Documentation landing page best practices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sphinx-themes">
+     Sphinx themes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#myst-vs-rst-syntax-to-create-your-docs">
+     myST vs rst syntax to create your docs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#publish-your-docs-on-another-platform-directly-from-github-readthedocs-org">
+     Publish your docs on another platform directly from GitHub: ReadTheDocs.org
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-facing-documentation-for-your-python-package">
+   User-facing documentation for your Python package:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-package-api-documentation">
+   Python package API documentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docstring-examples-better-and-best">
+     Docstring examples Better and Best
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#best-a-docstring-with-example-use-of-the-function">
+     Best - a docstring with example use of the function
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="python-package-documentation">
+<h1>Python Package Documentation<a class="headerlink" href="#python-package-documentation" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Examples of documentation that we love:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://geopandas.org/en/stable/">geopandas</a></p>
+<ul>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst">View rst to create landing page</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.fatiando.org/verde/latest/">verde</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/fatiando/verde/blob/main/doc/index.rst">View verde landing page code - rst file.</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/blob/main/index.md">Here is our documentation if you want to see a myST example of a landing page.</a></p></li>
+</ul>
+</div>
+<section id="package-documentation">
+<h2>Package documentation<a class="headerlink" href="#package-documentation" title="Permalink to this headline">#</a></h2>
+<p>Your package should have user-facing and API focused documentation. We suggest
+that you setup a website to host your documentation.
+Many prefer to use Sphinx to create
+their Python package documentation. Sphinx is a useful tool as it offers extensions
+that support things like:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">automatically documenting your API using docstrings</a></p></li>
+<li><p>running and testing code examples in your docstrings</p></li>
+</ul>
+</section>
+<section id="documentation-landing-page-best-practices">
+<h2>Documentation landing page best practices<a class="headerlink" href="#documentation-landing-page-best-practices" title="Permalink to this headline">#</a></h2>
+<p>To make it easy for users to find what they need quickly, all packages should
+have 4 elements on the home page of their documentation:</p>
+<ul class="simple">
+<li><p><strong>Getting started:</strong> This section should provide the user with a quick start for installing your package. A small example of how to use the package is good to have here as well.</p></li>
+<li><p><strong>About:</strong> Describe your project, state project goals and what it does.</p></li>
+<li><p><strong>Community:</strong> Instructions for ho to help and/or get involved. This section might include a development guide.</p></li>
+<li><p><strong>Documentation:</strong> The actual project documentation. You may have two sections of documentation - the user facing documentation and your API reference.</p></li>
+</ul>
+<p>NOTE: in many cases you can include your <strong>README</strong> file and your <strong>CONTRIBUTING</strong> files
+in your documentation given those files may have some of the components listed above.
+Some packages</p>
+<section id="sphinx-themes">
+<h3>Sphinx themes<a class="headerlink" href="#sphinx-themes" title="Permalink to this headline">#</a></h3>
+<p>Sphinx also offers numerous themes that you can use to customize your documentation.
+A few Sphinx themes that are commonly used in the Scientific Python community that you might
+consider include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/stable/">pydata sphinx theme</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/stable/">sphinx book theme</a></p></li>
+</ul>
+<p>This contributing guide is created using a modified version of the Spinx Book
+theme.</p>
+</section>
+<section id="myst-vs-rst-syntax-to-create-your-docs">
+<h3>myST vs rst syntax to create your docs<a class="headerlink" href="#myst-vs-rst-syntax-to-create-your-docs" title="Permalink to this headline">#</a></h3>
+<p>There are two commonly used syntaxes for creating docs:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/intro.html">myST:</a> myST is a fusion of markdown and rST. It is a nice option if you are more comfortable writing markdown. But more flexible than markdown.</p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">rST:</a> this is the native syntax that sphinx supports.</p></li>
+</ol>
+<p>There is no wrong or right when choosing a syntax to write your documentation.
+Choose whichever syntax works best for you and your community!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are on the fence about myST vs rst, you might find that <em>myST</em> is easier
+for more people to contribute to.</p>
+</div>
+</section>
+<section id="publish-your-docs-on-another-platform-directly-from-github-readthedocs-org">
+<h3>Publish your docs on another platform directly from GitHub: ReadTheDocs.org<a class="headerlink" href="#publish-your-docs-on-another-platform-directly-from-github-readthedocs-org" title="Permalink to this headline">#</a></h3>
+<p>If you don’t want to maintain a documentation website for your Python package, we
+suggest using the <a class="reference external" href="https://www.readthedocs.org">READTHEDOCS platform</a> which
+allows you to easily host your documentation and track versions of your docs
+as you release updates.</p>
+<p>Beyond a well designed <a class="reference internal" href="create-readme-files.html"><span class="doc std std-doc">README FILE</span></a> there are several
+core components of Python package documentation including:</p>
+<ol class="arabic simple">
+<li><p>User facing documentation</p></li>
+<li><p>API documentation</p></li>
+</ol>
+</section>
+</section>
+<section id="user-facing-documentation-for-your-python-package">
+<h2>User-facing documentation for your Python package:<a class="headerlink" href="#user-facing-documentation-for-your-python-package" title="Permalink to this headline">#</a></h2>
+<p>User-facing documentation is often an easy to navigate website written with
+user friendly, less technical language. User facing documentation should be:</p>
+<ul class="simple">
+<li><p>easy to read (consider writing for a 12th grade audience)</p></li>
+<li><p>contain tutorials or vignettes that support getting started using your package</p></li>
+</ul>
+</section>
+<section id="python-package-api-documentation">
+<h2>Python package API documentation<a class="headerlink" href="#python-package-api-documentation" title="Permalink to this headline">#</a></h2>
+<p>API documentation refers to explanation about the function, inputs and outputs
+of every (<em>within reason</em>) function, class, method in your package. API documentation
+in python requires that you use a docstring for each class, function or method that:</p>
+<ul class="simple">
+<li><p>Explains what the function, method or class does</p></li>
+<li><p>Explains what every input and output variable’s (type) is (ie. <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">np.array</span></code>)</p></li>
+<li><p>Explains the expected output <code class="docutils literal notranslate"><span class="pre">return</span></code> of the object, method or function.</p></li>
+</ul>
+<section id="docstring-examples-better-and-best">
+<h3>Docstring examples Better and Best<a class="headerlink" href="#docstring-examples-better-and-best" title="Permalink to this headline">#</a></h3>
+<p>Below is a good example of a well documented function. Notice that this function’s
+docstring includes all parameter inputs and outputs. The description of the function
+is short and to the point (2 to 3 sentences). And the return of the function is
+specified.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert bounds to a shapely geojson like spatial object.</span>
+<span class="sd">    This format is what shapely uses. The output object can be used</span>
+<span class="sd">    to crop a raster image.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ext_obj: list or geopandas geodataframe</span>
+<span class="sd">        If provided with a geopandas geodataframe, the extent</span>
+<span class="sd">        will be generated from that. Otherwise, extent values</span>
+<span class="sd">        should be in the order: minx, miny, maxx, maxy.</span>
+<span class="sd">    Return</span>
+<span class="sd">    ------</span>
+<span class="sd">    extent_json: A GeoJSON style dictionary of corner coordinates</span>
+<span class="sd">    for the extent</span>
+<span class="sd">        A GeoJSON style dictionary of corner coordinates representing</span>
+<span class="sd">        the spatial extent of the provided spatial object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="best-a-docstring-with-example-use-of-the-function">
+<h3>Best - a docstring with example use of the function<a class="headerlink" href="#best-a-docstring-with-example-use-of-the-function" title="Permalink to this headline">#</a></h3>
+<p>This example contains an example of using the function that is also tested in
+sphinx using <a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctest</a>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert bounds to a shapely geojson like spatial object.</span>
+<span class="sd">    This format is what shapely uses. The output object can be used</span>
+<span class="sd">    to crop a raster image.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ext_obj: list or geopandas geodataframe</span>
+<span class="sd">        If provided with a geopandas geodataframe, the extent</span>
+<span class="sd">        will be generated from that. Otherwise, extent values</span>
+<span class="sd">        should be in the order: minx, miny, maxx, maxy.</span>
+<span class="sd">    Return</span>
+<span class="sd">    ------</span>
+<span class="sd">    extent_json: A GeoJSON style dictionary of corner coordinates</span>
+<span class="sd">    for the extent</span>
+<span class="sd">        A GeoJSON style dictionary of corner coordinates representing</span>
+<span class="sd">        the spatial extent of the provided spatial object.</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import geopandas as gpd</span>
+<span class="sd">    &gt;&gt;&gt; import earthpy.spatial as es</span>
+<span class="sd">    &gt;&gt;&gt; from earthpy.io import path_to_example</span>
+<span class="sd">    &gt;&gt;&gt; rmnp = gpd.read_file(path_to_example(&#39;rmnp.shp&#39;))</span>
+<span class="sd">    &gt;&gt;&gt; es.extent_to_json(rmnp)</span>
+<span class="sd">    {&#39;type&#39;: &#39;Polygon&#39;, &#39;coordinates&#39;: (((-105.4935937, 40.1580827), ...),)}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="create-readme-files.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">README File Guidelines and Resources</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="contributing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CONTRIBUTING file and License</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Leah Wasser<br/>
+  
+      &copy; Copyright 2022, pyOpenSci.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
