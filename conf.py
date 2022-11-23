@@ -24,7 +24,6 @@ author = 'Leah Wasser'
 # The full version, including alpha/beta/rc tags
 release = '0.1'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -34,7 +33,10 @@ extensions = [
     "myst_nb",
     "sphinx_design",
     "sphinx_copybutton",
-    "sphinx.ext.intersphinx"
+    "sphinx.ext.intersphinx",
+    "sphinx_sitemap",
+    "sphinxcontrib.gtagjs",
+    "sphinxext.opengraph",
 ]
 
 # colon fence for card support in md
@@ -45,16 +47,19 @@ myst_enable_extensions = ["colon_fence"]
 html_theme_options = {
     "repository_url": "https://github.com/pyopensci/python-package-guide",
     "use_repository_button": True,
-    "google_analytics_id": "UA-141260825-1",
-    "show_toc_level": 1,
-    "toc_title": "On this page",
+    #"google_analytics_id": "UA-141260825-1",
+    #"show_toc_level": 1,
+    #"toc_title": "On this page",
     "external_links": [
       {"pyOpenSci Website": "link-one-name", "url": "https://www.pyopensci.org"}
   ],
   "announcement": "🚧 UNDER CONSTRUCTION: this guide is under heavy construction right now. 🚧"
 }
 
-
+# Add analytics to furo theme
+gtagjs_ids = [
+    'UA-141260825-1',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -71,13 +76,15 @@ exclude_patterns = [
     "README.md"
     ]
 
+# For sitemap
+html_baseurl = 'https://www.pyopensci.org/package-review-guide/'
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_book_theme'
+html_theme = 'furo'
 html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
 html_title = "pyOpenSci Package Guide"
