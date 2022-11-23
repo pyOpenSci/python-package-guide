@@ -22,8 +22,7 @@ Python package when reviewing. You will also find best practice recommendations 
 :class: sd-fs-3
 
 
-```{button-ref} https://www.pyopensci.org/about-peer-review/
-:ref-type: doc
+```{button-link} https://www.pyopensci.org/about-peer-review/
 :color: primary
 :class: sd-rounded-pill float-left
 Learn about our open peer review process
