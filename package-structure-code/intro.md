@@ -1,9 +1,12 @@
 # Python package structure information 
 
+```{tip}
+### Resources that we love 
+can i make the language in the yellow bar instead ofa  heading
 
-Resources 
+* [Python packaging for research software engineers](https://merely-useful.tech/py-rse/)
 
-https://merely-useful.tech/py-rse/
+```
 
 If you plan to submit a package for review to pyOpenSci and are looking for 
 some guidance on package structure, code formats and style, then this section is for you. 

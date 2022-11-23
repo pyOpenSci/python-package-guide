@@ -107,22 +107,23 @@ Good meets the requirements. Going beyond the minimum can make package maintenan
 This guide is now a work in progress. If you have ideas of things you'd like 
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
 
+
 ```{toctree}
 :hidden:
 :caption: Documentation
 
 Intro to Documentation <documentation/index>
 The README File <documentation/create-readme-files.md>
+README Files <documentation/readme-files>
 Package docs & tutorials <documentation/package-documentation-tutorials>
 Contributing & license files <documentation/contributing>
 ```
-
 
 ```{toctree}
 :hidden:
 :caption: Package structure & code style
 
-intro <package-structure-code/intro>
+Intro <package-structure-code/intro>
 package-structure-code/code-structure-style
 package-structure-code/release
 package-structure-code/overview
