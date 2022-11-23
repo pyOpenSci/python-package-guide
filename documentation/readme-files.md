@@ -21,6 +21,28 @@ Your README.md file should be located in the root of your GitHub repository.
 
 ## TODO provide some screenshots of our repo with a readme file
 
+
+````{note}
+An editor or the editor in chief will ask you to revise your README file
+before a review begins if it does not meet the criteria specified below. 
+
+Please go through this list before submitting your package to pyOpenSci
+
+```
+### pyOpenSci README checklist 
+
+Your README file should have the following information: 
+- [ ] The name of the package
+- [ ] Badges for the packages current published version, documentation and test suite build. (OPTIONAL: test coverage) 
+- [ ] Easy-to-understand explanation (2-4 sentences) of what your tool does
+- [ ] Context for how the tool fits into the broader ecosystem 
+- [ ] If it's your package is a wrapper, link to the package that it is wrapping and any associated documentation. (If you do'nt know what a wrapper is - this probably doesn't apply to you!)
+- [ ] A simple quickstart code example that a user can follow to provide a demonstration of what the package can do for them 
+- [ ] Links to your packages documentation / website.
+- [ ] A few descriptive links to any tutorials you've created for your pacakge.
+```
+````
+
 ## What your README.md file should contain
 
 Your **README.md** file should contain the following things (listed from top to bottom):

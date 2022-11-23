@@ -63,7 +63,7 @@ covered include: README files, tutorials and full docs.
 :link-type: doc
 :class-header: bg-light
 
-✨ Coming soon... ✨
+✨ Package Structure & Code ✨
 ^^^
 <!-- 
 Get a basic overview of our open peer review process for Python scientific open source software. -->
@@ -115,7 +115,7 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 Intro to Documentation <documentation/index>
 The README File <documentation/create-readme-files.md>
 README Files <documentation/readme-files>
-Package docs & tutorials <documentation/package-documentation-tutorials>
+Package documentation <documentation/package-documentation-sphinx>
 Contributing & license files <documentation/contributing>
 ```
 
