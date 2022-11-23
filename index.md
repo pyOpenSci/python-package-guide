@@ -2,6 +2,7 @@
 
 <!-- Github community standards 
 https://github.com/pyOpenSci/python-package-guide/community -->
+
 ## Welcome, Python open source enthusiast! 
 
 Here you will find guidelines for what we look for in your scientific 
@@ -21,19 +22,12 @@ Python package when reviewing. You will also find best practice recommendations 
 :class: sd-fs-3
 
 
-<!-- 
-Removing button for the time being
-```{button-ref} start/your-first-book
+```{button-ref} https://www.pyopensci.org/about-peer-review/
 :ref-type: doc
 :color: primary
 :class: sd-rounded-pill float-left
-
-
-Get Involved (Maybe a link to a get involved page)
-
-% SVG rendering breaks latex builds for the GitHub badge, so only include in HTML
-``` 
--->
+Learn about our open peer review process
+```
 
 ```{only} html
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -123,11 +117,23 @@ Package docs & tutorials <documentation/package-documentation-tutorials>
 Contributing & license files <documentation/contributing>
 ```
 
+
 ```{toctree}
 :hidden:
-:caption: Package structure
-I don't work <package-structure-code/index.md>
-I work <package-structure-code/code-structure-style.md>
+:caption: Package structure & code style
+
+intro <package-structure-code/intro>
+package-structure-code/code-structure-style
+package-structure-code/release
+package-structure-code/overview
+package-structure-code/collaboration
+```
+
+```{toctree}
+:hidden:
+:caption: Code Style & Structure
+
+code-style-structure/index
 ```
 
 ```{toctree}
