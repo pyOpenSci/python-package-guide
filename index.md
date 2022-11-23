@@ -144,14 +144,7 @@ testing-infrastructure/test-code
 testing-infrastructure/continuous-integration
 ```
 
-<!-- 
-Removing button for the time being
-```{button-ref} start/your-first-book
-:ref-type: doc
-:color: primary
-:class: sd-rounded-pill float-left
-Get Involved (Maybe a link to a get involved page)
-``` -->
+
 
 
 
