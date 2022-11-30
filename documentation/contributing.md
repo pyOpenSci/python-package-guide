@@ -1,19 +1,14 @@
-# CONTRIBUTING file and License
+# Contributing and License Files in your Python Package
 
-## CONTRIBUTING.md File for your Python Package 
+Your python package should include a file called **CONTRIBUTING.md** located in the 
+root of your repository (with your **README.md** file).
 
-Your python package should include a file called CONTRIBUTING.md located in the 
-root of your repository (with your readme file).
+## What should be in the contributing guide
 
-### Local development environment information 
+The contributing file should include information about the types 
+of contributions that you welcome, and how you'd like to see 
+contributions happen. 
 
-The contributing file should include information to support a new contributing 
-building your package locally. This includes:
-
-* instructions for setting up a development environment locally to work on your package
-* instructions for how the test suite is setup and run 
-
-### Community contribution guidelines
 This guide should also include information for someone interested in asking questions, 
 submitting issues or pull requests:
 
@@ -21,7 +16,32 @@ submitting issues or pull requests:
 * A link to your code of conduct
 * A link to or include how your code of conduct is enforced.
 
-```{note}
+It should also include informative descriptive links for a 
+development guide (see below) that has instructions for:
+
+* Setting up a development environment locally to work on your package
+* How the test suite is setup and run 
+* How you can build docs locally
+
+## Development guide for your package 
+
+
+
+### Why a development guide is important 
+
+While a well thought-out continuous integration setup in your repository 
+can allow users to skip building the package locally (especially if they are just updating text), it's valuable to have a development guide, in the case that you wish to:
+
+* onboard new maintainers
+* allow technically inclined contributors to make thoughtful code based pr's
+
+It also is important to pyOpenSci that the maintenance workflow is 
+documented in the case that we need to help you onboard new 
+maintainers in the future. 
+
+
+
+```{tip}
 [The mozilla open workshop has a nice outline of things to consider when 
 creating a contributing guide](https://mozillascience.github.io/working-open-workshop/contributing/)
 ```
