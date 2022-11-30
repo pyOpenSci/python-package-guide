@@ -111,11 +111,10 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :hidden:
 :caption: Documentation
 
-Intro to Documentation <documentation/index>
-The README File <documentation/create-readme-files.md>
-README Files <documentation/readme-files>
-Package documentation <documentation/package-documentation-sphinx>
-Contributing & license files <documentation/contributing>
+Documentation Overview <documentation/index>
+The README File <documentation/readme-file-best-practices.md>
+Package Documentation <documentation/package-documentation-sphinx>
+Contributing & License files <documentation/contributing-file>
 ```
 
 ```{toctree}
