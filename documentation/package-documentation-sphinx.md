@@ -196,4 +196,16 @@ def extent_to_json(ext_obj):
 
 ```
 
+```{figure} ../images/sphinx-rendering-extent-to-json-earthpy.png
+---
+name: directive-fig
+width: 80%
+---
+Using the above numpy-style docstring in sphinx, the autodoc extension will 
+create the about documentation section for the `extent_to_json` function. The 
+output of the `es.extent_to_json(rmnp)` command can even be tested using 
+doctest adding another quality check to your package. 
+```
+
+
 
