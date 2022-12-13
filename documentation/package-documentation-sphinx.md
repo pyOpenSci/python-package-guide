@@ -1,65 +1,72 @@
 # Python Package Documentation
 
-In addition to a well designed [README FILE](create-readme-files) 
-there are several core components of Python package documentation 
+
+```{note}
+Examples of documentation that we love:
+
+* [geopandas](https://geopandas.org/en/stable/)
+    * [View rst to create landing page](https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst)
+* [verde](https://www.fatiando.org/verde/latest/)
+    * [View verde landing page code - rst file.](https://github.com/fatiando/verde/blob/main/doc/index.rst)
+* [Here is our documentation if you want to see a myST example of a landing page.](https://github.com/pyOpenSci/python-package-guide/blob/main/index.md)
+```
+
+In addition to a well designed [README FILE](readme-file-best-practices), and a  
+[contributing file](contributing-file), 
+there are several core components of Python package documentation, 
 including:
 
-* **User-facing documentation:** This refers to easy-to-read documentation that a user will review. This documentation should help users install and use your package.  
-* **API  documentation:** this is documentation contained within the docstrings of all user-facing functions, methods and classes in your package.  
+* **User-facing documentation:** This refers to easy-to-read documentation that helps a user work with your package. This documentation should help users both install and use the functionality of your package.  
+* **API  documentation:** API documentation is generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your code. Ideally you have docstrings for all user-facing functions, methods and classes in your Python package.  
 
 ## User-facing documentation for your Python package: 
 
-User-facing documentation is often an easy to navigate website written with 
-user friendly, less technical language. User facing documentation should be:
+User-facing documentation should be published on a easy-to-navigate website. All language should be written with non-developer users in mind. This means 
+using language that is less technical.
 
-* easy to read (consider writing for a 12th grade audience)
-* contain tutorials or vignettes that support getting started using your package 
+A few tips to make sure your documentation is accessible include: 
 
-### What tools to use in building your documentation: sphinx
+* Whenever possible, define technical terms and jargon.
+* Consider writing writing instructions for a 12th grade level reader. 
+* Include step by step code examples, tutorials or vignettes that support getting started using your package.
 
-Most python packages maintainers use [sphinx](https://www.sphinx-doc.org/) to build their documentation. 
-Sphinx has documentation themes that give your docuemntation a clean online look that are easy to apply to your 
-package's documentation. 
+### What tools to use to build your documentation: sphinx
 
-While you are free to use whatever theme works for you,
-the most common modern templates that we see in the scientific 
-community currently and recommend are: 
+Most python packages use [sphinx](https://www.sphinx-doc.org/) to build their documentation. 
+Sphinx has documentation themes that are easy to apply and help you quickly and easily build an easy-to navigate website.
+
+Sphinx also offers extensions that support:
+
+* [automatically documenting your API using docstrings in your code](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+* [running and testing code examples in your docstrings (doctest)](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html)
+
+While you are free to use whatever sphinx theme you prefer,
+the most common modern templates that recommend for the Python scientific 
+community are:  
 
 * [pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/) 
 * [sphinx-book-theme](https://sphinx-book-theme.readthedocs.io/)
 * [furo](https://pradyunsg.me/furo/quickstart/)
 
-Both of the above themes support [myst](https://myst-parser.readthedocs.io/) which allows you to build your package 
-documentation in `markdown` rather than `.rst`. 
-
-Sphinx also offers extensions that support things like:
-
-* [automatically documenting your API using docstrings in your code](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
-* [running and testing code examples in your docstrings (doctest)](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html)
+All of the above themes support [myst](https://myst-parser.readthedocs.io/) 
+which allows you to build your package documentation in using `markdown` 
+rather than `.rst`. More on that below.
 
 ```{tip}
 This book is created using sphinx and the `furo` theme.
-
 ```
-
-### How to host your documentation
-
-We suggest that you setup a website to host your documentation. There are two ways 
-to do this:
-
-1. You can host your documentation yourself using gh-pages or another online hosting service. 
-2. You can host your documentation using ReadTheDocs.
-
-If you don't want to maintain a documentation website for your Python package, we 
-suggest using the [READTHEDOCS platform](https://www.readthedocs.org) which 
-allows you to easily host your documentation and track versions of your docs
-as you release updates. 
 
 ### myST vs rst syntax to create your docs 
 There are two commonly used syntaxes for creating docs:
 
 1. [myST:](https://myst-parser.readthedocs.io/en/latest/intro.html) myST is a fusion of markdown and rST. It is a nice option if you are more comfortable writing markdown. But more flexible than markdown. 
 2. [rST:](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) this is the native syntax that sphinx supports. 
+
+Markdown is often a preferred syntax to use because:
+
+* It is often thought to be simpler and thus easier to learn;
+* Most of your core python package text files, such as your README.md file, are already in `.md` format
+* `GitHub` and `Jupyter Notebooks` support this default text file format.
 
 There is no wrong or right when choosing a syntax to write your documentation. 
 Choose whichever syntax works best for you and your community! 
@@ -68,6 +75,20 @@ Choose whichever syntax works best for you and your community!
 If you are on the fence about myST vs rst, you might find that *myST* is easier 
 for more people to contribute to.  
 ```
+
+### How to host your Python package documentation
+
+We suggest that you setup a website to host your documentation. There are two 
+ways to do quickly create a documentation website:
+
+1. You can host your documentation yourself using [GitHub Pages](https://pages.github.com/) or another online hosting service. 
+2. You can host your documentation using [Read the Docs](https://readthedocs.org/).
+
+If you don't want to maintain a documentation website for your Python package, 
+we suggest using Read the Docs. Read the Docs allows you to:
+
+* quickly launch a website using the documentation found in your GitHub repository.  
+* track versions of your documentation as you release updates
 
 
 
@@ -93,8 +114,6 @@ Below is an example of doing this using `myst` syntax.
 ````
 `````
 
-
-
 ## Python package API documentation 
 
 API documentation refers to explanation about the function, inputs and outputs 
@@ -105,6 +124,16 @@ in python requires that you use a docstring for each class, function or method t
 * Explains what every input and output variable's (type) is (ie. `string`, `int`, `np.array`)
 * Explains the expected output `return` of the object, method or function.
 
+### Python docstring format best-practices 
+
+There are several Python docstring formats that you can chose to use when documenting 
+your package. We suggest using [numpy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard).
+
+```{tip}
+If you are using `numpy-style` docstrings, be sure to include the sphinx napoleon 
+extension in your documentation `conf.py` file. This extension allows sphinx 
+to properly read and format numpy-style docstrings. 
+```
 
 ### Docstring examples Better and Best 
 
@@ -168,12 +197,3 @@ def extent_to_json(ext_obj):
 ```
 
 
-```{note}
-Examples of documentation that we love:
-
-* [geopandas](https://geopandas.org/en/stable/)
-    * [View rst to create landing page](https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst)
-* [verde](https://www.fatiando.org/verde/latest/)
-    * [View verde landing page code - rst file.](https://github.com/fatiando/verde/blob/main/doc/index.rst)
-* [Here is our documentation if you want to see a myST example of a landing page.](https://github.com/pyOpenSci/python-package-guide/blob/main/index.md)
-```
