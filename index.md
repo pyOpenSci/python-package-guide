@@ -123,24 +123,10 @@ Contributing & license files <documentation/contributing>
 :caption: Package structure & code style
 
 Intro <package-structure-code/intro>
-package-structure-code/code-structure-style
+Code Style & Format <package-structure-code/code-structure-style>
 package-structure-code/release
 package-structure-code/overview
 package-structure-code/collaboration
-```
-
-```{toctree}
-:hidden:
-:caption: Code Style & Structure
-
-code-style-structure/index
-```
-
-```{toctree}
-:hidden:
-:caption: Test your code
-testing-infrastructure/test-code
-testing-infrastructure/continuous-integration
 ```
 
 
