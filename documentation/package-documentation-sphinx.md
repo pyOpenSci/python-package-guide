@@ -99,7 +99,7 @@ have 4 elements on the home page of their documentation:
 
 * **Getting started:** This section should provide the user with a quick start for installing your package. A small example of how to use the package is good to have here as well. 
 * **About:** Describe your project, state project goals and what it does. 
-* **Community:** Instructions for ho to help and/or get involved. This section might include a development guide. 
+* **Community:** Instructions for how to help and/or get involved. This section might include a development guide. 
 * **Documentation:** The actual project documentation. You may have two sections of documentation - the user facing documentation and your API reference. 
 
 NOTE: in many cases you can include your **README** file and your **CONTRIBUTING** files 
