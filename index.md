@@ -113,7 +113,7 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 
 Documentation Overview <documentation/index>
 The README File <documentation/readme-file-best-practices.md>
-Package Documentation <documentation/package-documentation-sphinx>
+Package Documentation <documentation/python-package-documentation>
 Contributing & License files <documentation/contributing-file>
 ```
 

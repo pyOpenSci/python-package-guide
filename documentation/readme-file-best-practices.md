@@ -104,7 +104,12 @@ the broader scientific Python package ecosystem. If there are other similar pack
 or complementary package mentions them here in 1-2 sentences. 
 
 ```{tip}
-Consider writing for a 12th grade reading level which is an ideal level for more scientific content that serves a broad user base. The goal of this description to maximize accessibility of your **README** file.
+Consider writing for a high school level (or equivalent) level. This 
+level of writing is often consider level for scientific content that 
+serves a variety of users with varying backgrounds. 
+
+The goal of this description to maximize 
+accessibility of your **README** file.
 ```
 
 ### ✔️ Installation instructions
@@ -121,7 +126,8 @@ your README file.
 
 ### ✔️ Brief demonstration of how to use the package
 
-This description ideally includes a quick start vignette that provides a code sample demonstrating use of your package. 
+This description ideally includes a quick start tutorial guide that 
+provides a code sample demonstrating use of your package. 
 
 ### ✔️ Descriptive links to package documentation, short tutorials
 
