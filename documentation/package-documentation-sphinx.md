@@ -87,8 +87,8 @@ ways to do quickly create a documentation website:
 If you don't want to maintain a documentation website for your Python package, 
 we suggest using Read the Docs. Read the Docs allows you to:
 
-* quickly launch a website using the documentation found in your GitHub repository.  
-* track versions of your documentation as you release updates
+* Quickly launch a website using the documentation found in your GitHub repository.  
+* Track versions of your documentation as you release updates.
 
 
 

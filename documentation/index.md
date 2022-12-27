@@ -34,7 +34,7 @@ alt: Image showing the files in the Moving Pandas GitHub repository.
 An example GitHub repository with all of the major files in it including CONTRIBUTING.md, README.md, CODE_OF_CONDUCT.md and a LICENSE.txt file. *(screen shot taken Nov 23 2022)*
 ```
 
-The above files are ones that are evaluated in many online package health
+The above files are evaluated on many online platforms that track package health.
 platforms. Below you can see the community standards page that everyone 
 has in their GitHub repository. 
 
