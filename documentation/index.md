@@ -16,9 +16,9 @@ explicit information about how to contribute is critical.
 In the pyOpenSci open peer review process we look for several files and elements
 when evaluating package documentation, including:
 
-1. [A clear and to the point **README.md** file](readme-files)
+1. [A clear and to the point **README.md** file](readme-file-best-practices)
 2. **User oriented package documentation** that helps users understand how to install, use and cite your package. 
-3. **Package API documentation.** Package API documentation refers to documentation for each class, function, method and attribute that is user-facing (*available for a user to see*) in your package. This mean that your package methods and classes should have [thoughtful docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) that  describe both the purpose of the code element and each input and output. To help your users better understand how to use your package, you can include short code examples that demonstrate how to use the function or class in each docstring. If you don't know what API documentation means this section of the pyOpenSci Python packaging guide is for you! 
+3. **Package API documentation.** Package API documentation refers to documentation for each class, function, method and attribute that is user-facing (*available for a user to see*) in your package. This mean that your package methods and classes should have [thoughtful docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) that describe both the purpose of the code element and each input and output. To help your users better understand how to use your package, you can include short code examples that demonstrate how to use the function or class in each docstring. If you don't know what API documentation means this section of the pyOpenSci Python packaging guide is for you! 
 4. A **CONTRIBUTING.md** file that outlines how others can contribute to your package. This file should also link to your development guide and code of conduct. A well-crafted contributing guide will make it much easier for the community to contribute to your project.
 5. A **CODE_OF_CONDUCT.md** file.  
 5. **LICENSE.txt file & Citation instructions:** A license file and instructions for citing your package. 

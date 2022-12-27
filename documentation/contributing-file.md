@@ -33,7 +33,7 @@ technically proficient users how to:
 * Run the test suite 
 * Build documentation locally
 
-It's also helpful to specify the types of tests your request if a contributor submits a new feature or a change to an existing feature that will not be covered by your existing test suite. 
+It's also helpful to specify the types of tests you request if a contributor submits a new feature or a change to an existing feature that will not be covered by your existing test suite. 
 
 If you have time to document it, it's also helpful to document your maintainer workflow and release processes. 
 

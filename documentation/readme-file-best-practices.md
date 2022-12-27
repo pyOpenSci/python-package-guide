@@ -42,8 +42,8 @@ Your README file should have the following information:
 - [ ] Context for how the tool fits into the broader ecosystem 
 - [ ] If it's your package is a wrapper, link to the package that it is wrapping and any associated documentation. (If you do'nt know what a wrapper is - this probably doesn't apply to you!)
 - [ ] A simple quickstart code example that a user can follow to provide a demonstration of what the package can do for them 
-- [ ] Links to your packages documentation / website.
-- [ ] A few descriptive links to any tutorials you've created for your pacakge.
+- [ ] Links to your package documentation / website.
+- [ ] A few descriptive links to any tutorials you've created for your package.
 ```
 ````
 
@@ -60,7 +60,7 @@ self explanatory that name is, the better.
 Badges are a useful way to draw attention to the quality of your project. Badges 
 assure users that your package is well-designed, tested, and maintained. They 
 are also a useful maintenance tool to evaluate if things are building properly. 
-A great example of this is adding a readthedocs bade to your readme to quickly
+A great example of this is adding a readthedocs badge to your readme to quickly
 see when the build on that site fails. 
 
 It is common to provide a collection of badges towards the top of your 
@@ -113,18 +113,18 @@ the package on both PyPI and Conda be sure to include instructions for both.
 
 ### ✔️ Document any addition setup required
 
-Add any additional setup required such as authentication tokens,  to 
+Add any additional setup required such as authentication tokens, to 
 get started using your package. If setup is complex, consider linking to a 
 installation page in your online documentation here rather than over complicating
 your README file. 
 
 ### ✔️ Brief demonstration of how to use the package
 
-This description ideally includes a quick start vignette that provides a code sample demonstrating use of our package. 
+This description ideally includes a quick start vignette that provides a code sample demonstrating use of your package. 
 
 ### ✔️ Descriptive links to package documentation, tutorials or vignettes.
 
-Include descriptive links to to:
+Include descriptive links to:
 
 * The package's documentation page. 
 * Tutorials or vignettes that demonstrate application of your package. 
