@@ -5,12 +5,13 @@ install your package.
 
 The README.md file is the landing page of:
 
-* Your file on package manager landing pages like PyPI and Anaconda
+* Your package's landing page on a repository site such as PyPI or Anaconda
 * Your package's GitHub repository
 
-It is also used to measure:
-* community health by github
-* and included in package health landing pages such as snyk 
+Your README.md file is also used as a measure of package and community 
+health on sites such as:
+* [GitHub community health (available for all repositories - this link demonstrates movingpandas)](https://github.com/anitagraser/movingpandas/community), and
+* [snyk - moving pandas example)  
 
 
 ```{figure} ../images/pandera-python-package-readme-github.png
@@ -40,9 +41,9 @@ Your README file should have the following information:
 - [ ] Badges for the packages current published version, documentation and test suite build. (OPTIONAL: test coverage) 
 - [ ] Easy-to-understand explanation (2-4 sentences) of what your tool does
 - [ ] Context for how the tool fits into the broader ecosystem 
-- [ ] If it's your package is a wrapper, link to the package that it is wrapping and any associated documentation. (If you do'nt know what a wrapper is - this probably doesn't apply to you!)
-- [ ] A simple quickstart code example that a user can follow to provide a demonstration of what the package can do for them 
-- [ ] Links to your package documentation / website.
+- [ ] If your package "wraps" around another package, link to the package that it is wrapping and any associated documentation. *(HINT: If you don't know what a wrapper is, this probably doesn't apply to you!)*
+- [ ] A simple quick-start code example that a user can follow to provide a demonstration of what the package can do for them 
+- [ ] Links to your packages documentation / website.
 - [ ] A few descriptive links to any tutorials you've created for your package.
 ```
 ````
@@ -122,33 +123,41 @@ your README file.
 
 This description ideally includes a quick start vignette that provides a code sample demonstrating use of your package. 
 
-### ✔️ Descriptive links to package documentation, tutorials or vignettes.
+### ✔️ Descriptive links to package documentation, short tutorials
 
 Include descriptive links to:
 
 * The package's documentation page. 
-* Tutorials or vignettes that demonstrate application of your package. 
+* Short tutorials that demonstrate application of your package. 
 
 ```{tip}
-### TOO MUCH OF A GOOD thing
+### Too Much Of A Good Thing
 
-Try to avoid including several tutorials in the readme file itself. This too will overwhelm the user with information. 
+Try to avoid including several tutorials in the README.md file itself. This too will overwhelm the user with information. 
 
-A short quick-start vignette that shows a user how to use your package is plenty for the README file. All other tutorials and documentation should be presented as descriptive links. 
+A short quick-start tutorial that shows a user how to use your package 
+is plenty of content for the README file. All other tutorials and 
+documentation 
+should be presented as descriptive links. 
 ```
 
 ### ✔️ A Community Section with Links to Contributing Guide, Code of Conduct 
-In your readme file direct users to more information on:
-* contributing to your package 
-* development setup for more advanced technical contributors 
-* your code of conduct. 
 
-All of the above files are important for building community around your project.
+Use your README.md file to direct users to more information on:
+
+* Contributing to your package 
+* Development setup for more advanced technical contributors 
+* Your code of conduct
+* Licensing information
+
+All of the above files are important for building community around your 
+project.
 
 ### ✔️ Citation information
 
 Finally be sure to include instructions on how to cite your package. 
- 
+Citation should include the DOI that you want used when citing your package, 
+and any language that you'd like to see associated with the citation. 
 
 ```{tip}
 ### README Resources 

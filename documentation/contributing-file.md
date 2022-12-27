@@ -5,7 +5,7 @@ A healthy Python package repository (or any open source software repository) sho
 * Contributing.md file
 * A development guide (if possible)
 * A License file and 
-* A code of conduct file 
+* A CODE_OF_CONDUCT.md file 
 
 ## What a CONTRIBUTING.md file should contain
 
@@ -22,6 +22,7 @@ submitting issues or pull requests:
 * Any guidelines that you have in place for users submitting issues, pull requests or asking questions. 
 * A link to your code of conduct
 * A link to a development guide if you have one
+* A link to licensing information found in your README file. 
 
 ## What the development guide for your Python package should contain 
 
@@ -68,16 +69,17 @@ review. Some maintainers may also opt to include the development information in 
 creating a contributing guide](https://mozillascience.github.io/working-open-workshop/contributing/)
 ```
 
-## Your repository should have a license file
+## Your repository should have a LICENSE.md file
 
-The root of your GitHub repository sshould also have a License.txt file. 
+The root of your GitHub repository should also have a LICENSE.txt file. 
 
-To be reviewed by pyOpenSci your project should use an open source software license that is approved 
+To be reviewed by pyOpenSci your project should use an open source 
+software license that is approved 
 by the Open Software Initiative (OSI). OSI's website has a 
 [list of popular licenses](https://opensource.org/licenses). GitHub also has a 
 [handy tool](https://choosealicense.com/) for choosing a license. 
 
-If you chose your license through GitHub, you can also automatically get a copy of the license file to add to your repository. 
+If you choose your license through GitHub, you can also automatically get a copy of the license file to add to your repository. 
 
 <!-- 
 pyOpenSci packages must:
