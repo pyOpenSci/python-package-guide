@@ -1,5 +1,14 @@
 # Python Package Documentation
 
+In addition to a well designed [README.md file](readme-file-best-practices), and a  
+[CONTRIBUTING.md file](contributing-file), 
+there are several core components of Python package documentation, 
+including:
+
+* **User-facing documentation website:** This refers to easy-to-read documentation that helps a user work with your package. This documentation should help users both install and use the functionality of your package.  
+* **API documentation:** API documentation is generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your code. Ideally you have docstrings for all user-facing functions, methods and classes in your Python package. 
+
+
 
 ```{note}
 Examples of documentation that we love:
@@ -27,8 +36,43 @@ using language that is less technical.
 A few tips to make sure your documentation is accessible include: 
 
 * Whenever possible, define technical terms and jargon.
-* Consider writing writing instructions for a 12th grade level reader. 
+* Consider writing instructions for a high-school level reader. 
 * Include step by step code examples, tutorials or vignettes that support getting started using your package.
+
+
+
+## API's and Docstrings
+
+### What is an API?
+
+API standards for **A**pplied **P**rogramming **I**nterface. When 
+discussed in the context of a (Python) package, the API refers to 
+the interface and tools that you, as a package user, use in a package. 
+
+A simple example of a package API element:
+For instance, a package might have a function called `add_numbers()` 
+that adds up a bunch of numbers. To add up numbers, you as the user 
+simply call `add_numbers(1,2,3)` and the package function calculates the value and returns `6`. In using the `add_numbers` function, a user is 
+using the package's API. 
+
+ Package API's can consist of functions and/or classes (or object) that provide an easier-to-user interface (the API) for a user. 
+
+### What is a docstring and how does it relate to documentation? 
+In Python a docstring refers to text in a function, method or class 
+that describes what the function does and its inputs, outputs and what it 
+returns.
+
+The docstring is thus important for:
+
+* When you, as a user, call `help()` e.g. `help(add_numbers)` in Python, it returns the elements in your docstring to help guide a user towards using the function more effectively. 
+* When you build your package's documentation, the docstrings can be also used to automagically create full API documentation that provides a clean view of all functions methods and classes in a package.  
+
+```{tip}
+Example API Documentation (Documentation for all functions and classes in a package)
+* [View example high level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does](https://www.fatiando.org/verde/latest/api/index.html)
+* [You can further dig down to see what a specific function does within the package by clicking on an API element](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)
+```
+
 
 ### What tools to use to build your documentation: sphinx
 
