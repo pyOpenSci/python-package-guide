@@ -11,7 +11,7 @@ Examples of documentation that we love:
 * [Here is our documentation if you want to see a myST example of a landing page.](https://github.com/pyOpenSci/python-package-guide/blob/main/index.md)
 ```
 
-In addition to a well designed [README FILE](readme-file-best-practices), and a  
+In addition to a well designed [README FILE](readme-file-best-practices), and a 
 [contributing file](contributing-file), 
 there are several core components of Python package documentation, 
 including:

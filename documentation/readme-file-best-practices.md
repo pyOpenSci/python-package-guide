@@ -18,7 +18,7 @@ It is also used to measure:
 name: directive-fig
 width: 80%
 ---
-Your GitHub repository landing page highlights the README.md file. Here you can see the README.md file for [Pandera](https://github.com/unionai-oss/pandera), a pyOpenSci vetted package. *(screen shot taken Nov 23 2022)*
+Your GitHub repository landing page highlights the README.md file. Here you can see the README.md file for the pyOpenSci package [Pandera](https://github.com/unionai-oss/pandera). *(screen shot taken Nov 23 2022)*
 ```
 
 Thus, it is important that you spend some time up front creating a high quality 
