@@ -112,10 +112,11 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :caption: Documentation
 
 Documentation Overview <documentation/index>
+Package Documentation Best Practices <documentation/package-documentation-best-practices>
+Package Documentation Tools <documentation/python-package-documentation-tools>
+Host & Help People Find Your Docs <documentation/website-hosting-optimizing-your-docs>
 The README File <documentation/readme-file-best-practices.md>
 Contributing & License files <documentation/contributing-file>
-Package Documentation Tools <documentation/python-package-documentation-tools>
-Package Documentation Best Practices <documentation/package-documentation-best-practices>
 ```
 
 ```{toctree}

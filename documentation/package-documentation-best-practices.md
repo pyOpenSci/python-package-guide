@@ -31,6 +31,16 @@ have 4 elements on the home page of their documentation:
 * **Community:** Instructions for how to help and/or get involved. This section might include a development guide. 
 * **Documentation:** The actual project documentation. You may have two sections of documentation - the user facing documentation and your API reference. 
 
+
+```{figure} ../images/geopandas-documentation-landing-page.png
+---
+name: directive-fig
+width: 80%
+alt: Image showing the landing page for GeoPandas documentation which has 4 sections including Getting started, Documentation, About GeoPandas, Community. 
+---
+The documentation landing page of GeoPandas, a spatial Python library, has the 4 element specified above. Notice that the landing page is simple and directs users to each element using a Sphinx card.
+```
+
 NOTE: in many cases you can include your **README** file and your **CONTRIBUTING** files 
 in your documentation given those files may have some of the components listed above.
 
@@ -42,11 +52,6 @@ Below is an example of doing this using `myst` syntax.
 ```
 ````
 `````
-
-## Documentation tutorials 
-
-* sphinx gallery vs ()
-* best practices... 
 
 ## API's and Docstrings
 
