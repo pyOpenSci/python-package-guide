@@ -113,8 +113,9 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 
 Documentation Overview <documentation/index>
 The README File <documentation/readme-file-best-practices.md>
-Package Documentation <documentation/python-package-documentation>
 Contributing & License files <documentation/contributing-file>
+Package Documentation Tools <documentation/python-package-documentation-tools>
+Package Documentation Best Practices <documentation/package-documentation-best-practices>
 ```
 
 ```{toctree}

@@ -41,9 +41,9 @@ Your README file should have the following information:
 - [ ] Badges for the packages current published version, documentation and test suite build. (OPTIONAL: test coverage) 
 - [ ] Easy-to-understand explanation (2-4 sentences) of what your tool does
 - [ ] Context for how the tool fits into the broader ecosystem 
-- [ ] If your package "wraps" around another package, link to the package that it is wrapping and any associated documentation. *(HINT: If you don't know what a wrapper is, this probably doesn't apply to you!)*
+- [ ] If your library/package "wraps" around another package, link to the package that it is wrapping and any associated documentation. *(HINT: If you don't know what a wrapper is, this probably doesn't apply to you!)*
 - [ ] A simple quick-start code example that a user can follow to provide a demonstration of what the package can do for them 
-- [ ] Links to your packages documentation / website.
+- [ ] Links to your package's documentation / website.
 - [ ] A few descriptive links to any tutorials you've created for your package.
 ```
 ````
@@ -126,8 +126,8 @@ your README file.
 
 ### ✔️ Brief demonstration of how to use the package
 
-This description ideally includes a quick start tutorial guide that 
-provides a code sample demonstrating use of your package. 
+This description ideally includes a brief, quick start code 
+example that shows a user how to get started using your package. 
 
 ### ✔️ Descriptive links to package documentation, short tutorials
 
@@ -141,7 +141,7 @@ Include descriptive links to:
 
 Try to avoid including several tutorials in the README.md file itself. This too will overwhelm the user with information. 
 
-A short quick-start tutorial that shows a user how to use your package 
+A short quick-start code example that shows someone how to use your package 
 is plenty of content for the README file. All other tutorials and 
 documentation 
 should be presented as descriptive links. 
