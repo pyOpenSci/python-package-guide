@@ -1,11 +1,23 @@
 # Best practices for writing user-facing documentation for your Python package 
 
+```{important}
+## Quick takeaways: best practices
+
+Your package: 
+* Should have a documentation website 
+* All of its functions and classes (the API) documented
+* Your package should use numpy-style docstrings 
+* Your documentation landing page should direct users to 4 core sections: get started, documentation content, about and community.
+* Documentation should include short quick-start tutorials
+```
+
 In addition to a well designed [README.md file](readme-file-best-practices), 
 and a [CONTRIBUTING.md file](contributing-file), 
 there are several core components of Python package documentation, 
 including:
 
 * **User-facing documentation website:** This refers to easy-to-read documentation that helps a user work with your package. This documentation should help users both install and use the functionality of your package.  
+    * Your user facing documentation should also include [short tutorials that show a user how to quickly get started using your package](python-package-documentation-tools.html#create-python-package-tutorials-that-both-help-users-and-test-your-package-s-code). If you use a tool such as sphinx-gallery or nbsphinx that runs the code in your tutorials, then these tutorials can also become an important part of your package's test suite.   
 * **API documentation:** The API refers to the functions and classes in a 
 package that makes up the user interface. API documentation is generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your 
 code. Ideally you have docstrings for all user-facing functions, methods and classes in 
@@ -53,11 +65,20 @@ Below is an example of doing this using `myst` syntax.
 ````
 `````
 
-## API's and Docstrings
+## Create tutorials in your documentation 
+Your package should have tutorials that make it easy for a user 
+to get started using your package. Ideally, those tutorials 
+also can be run from start to finish providing a second set of 
+checks (on top of your test suite) to your package's code base. 
+
+In the [documentation tools page](python-package-documentation-tools) we talk about two sphinx extensions (sphinx gallery and nbsphinx)
+that  allow you to create reproducible tutorials that are run 
+when your sphinx documentation builds. 
+
+## Documenting the code in your package's API using docstrings
 
 ### What is an API?
-
-API standards for **A**pplied **P**rogramming **I**nterface. When 
+API stands for **A**pplied **P**rogramming **I**nterface. When 
 discussed in the context of a (Python) package, the API refers to 
 the interface and tools that you, as a package user, use in a package. 
 

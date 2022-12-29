@@ -81,9 +81,13 @@ by the Open Software Initiative (OSI). OSI's website has a
 
 If you choose your license through GitHub, you can also automatically get a copy of the license file to add to your repository.
 
-## Code of conducT
-
-contributors convenant...
+## The CODE_OF_CONDUCT.md file
+Your package should have a CODE_OF_CONDUCT.md file located 
+the root of the repository. If you are not comfortable creating 
+your own code of conduct text, we encourage you to adopt the 
+code of conduct language used in the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/). 
+[Many other communities](https://www.contributor-covenant.org/adopters/) have adopted this code of conduct as 
+their own including the [Fatiando](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md) scientific geoscience community.  
 
 <!-- 
 pyOpenSci packages must:
