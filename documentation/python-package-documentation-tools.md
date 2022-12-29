@@ -10,13 +10,13 @@ important points page -->
 * Use Sphinx to build your documentation
 * Publish your documentation on ReadTheDocs (or GitHub pages if you are more advanced and also prefer to maintain your website locally)
 * Use `myST` syntax to write your documentation 
-* Use sphinx gallery to write tutorials using .py files that automagically have downloadable .py and jupyter notebook files. Use nbsphinx if you prefer writing tutorials in jupyter notebook format and don't need a grid formatted gallery. 
+* Use sphinx gallery to write tutorials using .py files that automagically have downloadable .py and jupyter notebook files. Use nbsphinx if you prefer writing tutorials in jupyter notebook format and don't need a grid formatted gallery. *Both of these tools will run your tutorials from beginning to end providing an addition layer of testing to your package!*
 
 ```
 
 In addition to your:
-* [README.md file](readme-file-best-practices.md), 
-* [CONTRIBUTING.md and development guides and LICENSE file](contributing-file.md),
+* [README.md file](readme-file-best-practices), 
+* [CONTRIBUTING.md and development guides and LICENSE file](contributing-license-coc),
 
 you should also have user-facing documentation for your Python 
 package. Most often, user-facing documentation is contained on a hosted 
@@ -30,9 +30,9 @@ Here, we focus on tools and infrastructure that you can use.
 [Click here if you want to learn more about documentation best practices](package-documentation-best-practices.md).
 
 ```{note}
-Examples of documentation that we love:
+Examples of documentation websites that we love:
 
-* [geopandas](https://geopandas.org/en/stable/)
+* [GeoPandas](https://geopandas.org/en/stable/)
     * [View rst to create landing page](https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst)
 * [verde](https://www.fatiando.org/verde/latest/)
     * [View verde landing page code - rst file.](https://github.com/fatiando/verde/blob/main/doc/index.rst)
@@ -107,7 +107,7 @@ If you are on the fence about myST vs rst, you might find that **myST** is easie
 for more people to contribute to.  
 ```
 
-## Sphinx extensions to support python package tutorials 
+## Create python package tutorials that both help users and test your package's code
 
 Adding well constructed tutorials to your package will make it easier for someone 
 new to begin using your package. 
@@ -135,12 +135,34 @@ your documentation, the gallery extension:
 1. Creates a rendered  **.html** page with the code elements and code outputs in a user-friendly tutorial gallery.  
 1. Creates a gallery landing page with visual thumbnails for each tutorial that you create
 
-<!-- TODO: Add thumbnails out tutorial outputs  -->
+
+```{figure} ../images/sphinx-gallery-overview.png
+---
+name: directive-fig
+width: 80%
+alt: Image showing the gallery output provided by sphinx-gallery where each tutorial is in a grid and the tutorial thumbnails are created from a graphic in the tutorial.
+---
+`sphinx-gallery` makes it easy to create a user-friendly tutorial gallery.
+Each tutorial has a download link where the user can download a **.py** file or a Jupyter Notebook. And it renders the tutorials in a user-friendly grid. 
+```
+
+Below you can see what a tutorial looks like created with sphinx-gallery.
+
+```{figure} ../images/sphinx-gallery-tutorial.png
+---
+name: directive-fig
+width: 80%
+alt: Image showing ta single tutorial from sphinx gallery. The tutorial shows a simple matplotlib created plot and associated code. 
+---
+`sphinx-gallery` tutorials by default include download links for both the 
+python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at the bottom. 
+```
 
 ### Sphinx Gallery benefits 
 * easy-to-download notebook and .py outputs for each tutorials
 * .py files are easy to work with in the GitHub pull request environment. 
-* Nice gridded gallery output 
+* Nice gridded gallery output
+* Build execution time data per tutorial [Example](https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html)
 
 #### Sphinx gallery challenges 
 
@@ -157,13 +179,31 @@ These nuances can make it challenging for potential contributors to add
 tutorials to your package. This can also present maintenance challenge.
 
 Add about the gallery setup - 
+
+```bash 
+$ docs % make html 
+
+Sphinx-Gallery successfully executed 2 out of 2 files
+```
+File directory structure: 
+
 ```bash
 tutorials/
     index.rst # landing page for your gallery
-    tutorial.py # a tutorial 
-    plot_tutorial.py # a tutorial that produces a plot output
-tutorial_outputs/ 
-    add fils here... 
+    plot_tutorial.py # a tutorial 
+    plot_tutorial-2.py # a tutorial that produces a plot output
+_build/
+    build_examples/ # This is where the downloadable tutorial files live 
+        plot_sample-1.ipynb
+        plot_sample-1.py
+        ...
+    html/ 
+        built_examples/ # You can specify this dir name in gallery settings
+            index.html 
+            plot_sample-1.html 
+            plot_sample.html 
+            sg_execution_times.html # in case you want to see build times for each tutorial 
+
 ```
 
 ### [nbsphinx - tutorials using Jupyter Notebooks](https://nbsphinx.readthedocs.io/en/latest/)
@@ -193,8 +233,19 @@ tutorials/
     index.md # Landing page for your gallery
     tutorial.ipynb # A tutorial in a jupyter notebook
     another_tutorial.ipynb
-tutorial_outputs/ 
-    add fils here... 
-```
+# This shows you what the build directory looks like when you build with sphinx-build
+_build/
+    html/
+        # Notice that nbsphinx runs each notebook and produces an 
+        # html file with all of the outputs of your code 
+        # you can link to the notebook in your docs by modifying 
+        # the nbsphinx build - we will cover this in a separate tutorial series focused on python packaging!
+        tutorials/ 
+            index.html
+            index.md 
+            plot_sample-2.html 
+            plot_sample-2.ipynb
+            ...
+``` 
 
 
