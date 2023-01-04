@@ -4,27 +4,6 @@ Below, we discuss some of the tools that are commonly used
 to build Python packages. This page is intended to help 
 maintainers select a build tool to use. 
 
-
-<!--
-Where i'm leaving off here 
-
-* setuptools is the OG clearly a lot of ppl use it. but the code base seems 
-really messy and it's built on top of disutils that may be sunsetted i python 3.12 ?? so does it make sense for us all to use it or should we consider 
-an example using hatch which seems really nice. extensible and has vcs built 
-in as far as i can tell 
-
-
-Below talk about each tool and the potential drawbacks.
-post on slack about setuptools (next week) and also maybe discord.
-
-I think this page should be it's own separate PR as i really want eyes on it. 
-So more eyes == better. 
-I can then have another Pr that has package structure...
-
-setuptools vs hatch
-
--->
-
 ## Python package distribution files 
 
 Before we dive into specific build tools, it's important 
@@ -39,7 +18,7 @@ To understand the two distributions below, it is important to understand two dif
 There are two types of distribution files that you will create to support 
 publishing your Python package (on PyPI):
 
-1. SDIST and 
+1. SDist and 
 1. Wheel 
 
 <!-- 
