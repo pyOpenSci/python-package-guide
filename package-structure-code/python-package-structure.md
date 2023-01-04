@@ -16,7 +16,10 @@ Below you will learn about the pros and cons of both layouts.
 Currently most scientific packages use the **flat-layout** given:
 
 * It's the most commonly found layout with the scientific Python ecosystem 
-* Many Python tools depend upon tools in other language and / or complex builds with compilation steps. Many developers thus appreciate features of the flat layout such as tests being included with the package when they are installed) to support troubleshooting across installations.
+* Many Python tools depend upon tools in other language and / or complex builds 
+with compilation steps. Many developers thus appreciate features of the flat 
+layout such as tests being included with the package when they are installed) to 
+support troubleshooting across installations.
 
  In the end, the advantages of using the **src/** layout for scientific packages 
  that already use this approach do not 
@@ -39,7 +42,8 @@ Currently most scientific packages use the **flat-layout** given:
 
 It would be a significant maintenance cost and burden to move all of these
 packages to a different layout. The potential benefits of the source layout 
-for these tools is not worth the maintenance investment. To avoid dividing the scientific Python community, 
+for these tools is not worth the maintenance investment. To avoid dividing the 
+scientific Python community, 
 pyOpenSci supports maintainers using a flat layout for scientific packages. 
 ```
 
@@ -47,7 +51,8 @@ pyOpenSci supports maintainers using a flat layout for scientific packages.
 
 The flat layout's primary characteristics are: 
 
-* The source code for your package lives in a directory with your package's name in the root of your directory 
+* The source code for your package lives in a directory with your package's 
+name in the root of your directory 
 * Often the `tests/` directory also lives within that same `package-name` directory.
 
 Below you can see the recommended structure of a scientific Python package 
@@ -148,16 +153,6 @@ myPackage
    └── ...                     ┘ Package tests
 ```
 
-
-
-<!-- Not sure why i added this here? -->
-To install your package in editable mode use:
-
-```bash
-$ cd package-name
-$ pip install -e .`
-```
-
 ## Core file requirements for a Python package
 
 In the above example, notice that all of the core documentation files that 
@@ -192,26 +187,6 @@ If your package tests require data, we suggest that you NOT include that
 data within your package structure. We will discuss this in more detail in a 
 tutorial.
 ```
-
-<!--
-```{note}
-### Src vs. flat layouts for Python packaging
-While you will see other structures, [such as the `src/` 
-layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/) recommended by the [Python packaging authority](https://py-pkgs.org/04-package-structure) and others, all scientific
-Python packages have used a flat layout. This structure has been 
-prevalent for almost a decade. 
-
-Because a core goal shared by both pyOpenSci and the Scientific Python 
-project, is to see increased standardization in Python packaging, we 
-are advocating for a structure that is used by existing packages in the 
-ecosystem. 
-
-Many of our core scientific Python packages wrap around other compiled languages, such as C++. They thus have source code that requires compilation. It would be challenging and potentially time-consuming for all of those packages to modify their current 
-structure. And further it would not provide them with any core benefit.
-
-
-```
--->
 
 ## Use a pyproject.toml file for your package configuration & metadata
 
