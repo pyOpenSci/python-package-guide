@@ -89,6 +89,15 @@ We assume that you are here because you are:
 
 Well, friend, you've come to the right place! 
 
+
+<!-- TODO: add caption -->
+:::{figure-md} fig-target
+
+<img src="/images/python-flying-xkcd.png" alt="." width="400px">
+
+Caption 
+:::
+
 ## What you will find in this guidebook 
 
 This guidebook contains: 
@@ -122,11 +131,8 @@ Contributing & license files <documentation/contributing>
 :hidden:
 :caption: Package structure & code style
 
-Intro <package-structure-code/intro>
-package-structure-code/code-structure-style
-package-structure-code/release
-package-structure-code/overview
-package-structure-code/collaboration
+Manage Package Versions <package-structure-code/python-package-versions>
+Publish Package PyPI Conda <package-structure-code/publish-python-package-pypi-conda>
 ```
 
 ```{toctree}
