@@ -143,6 +143,7 @@ Contributing & license files <documentation/contributing>
 
 Manage Package Versions <package-structure-code/python-package-versions>
 Publish Package PyPI Conda <package-structure-code/publish-python-package-pypi-conda>
+Code Style & Format <package-structure-code/code-style-linting-format>
 ```
 
 ```{toctree}
