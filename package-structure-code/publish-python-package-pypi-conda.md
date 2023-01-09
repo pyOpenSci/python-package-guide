@@ -18,7 +18,7 @@ Below you will learn more specifics about the differences between PyPI and conda
 ```
 
 
-### What is PyPi 
+### What is PyPI
 
 [PyPI](https://pypi.org/) is an online Python package repository that 
 you can use to both find and install and publish your Python package. There is 
@@ -26,13 +26,13 @@ also a test PyPI repository where you can test publishing your package
 prior to the final publication on PyPI. 
 
 Many Python packages can be found on PyPI. However, in some cases, if a 
-package's build has includes tools written in other languages, you might only 
+package's build includes tools written in other languages, you might only 
 find it in the **conda** ecosystem. 
 
 <!-- TODO add link to build page below when this page is published -->
 ```{tip}
 On the package build page, we discussed the [two package distribution 
-types that you will create when making a Python package](link-to-page-on-sdist): SDist (packaged as a .tar.gz) and 
+types that you will create when making a Python package](link-to-page-on-sdist): SDist (packaged as a .tar.gz or .zip) and 
 Wheel (.whl) which is really a zip file. Both of those file "bundles" will 
 be published on PyPI when you use [a standard build tool](link-to-build-page) to build 
 your package. 
@@ -41,7 +41,7 @@ your package.
 ### What is Anaconda Cloud and Conda? 
 
 Conda is an open source package and environment management tool. 
-Conda can be used to install tools both from the [Anaconda Cloud 
+Conda can be used to install tools from the [Anaconda Cloud 
 repository](https://repo.anaconda.com/). 
 
 Anaconda cloud (anaconda.org) contains public and private repositories for 
@@ -118,11 +118,11 @@ package repository. Thus environments that contain packages
 installed from both pip and conda are more likely to yield 
 dependency conflicts.  
 
-Similarly installing packages frm the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.
+Similarly installing packages from the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.
 
-Many install packages directly from conda defaults channel. Howeve,r because 
+Many install packages directly from conda defaults channel. However, because 
 this channel is managed by Anaconda, the packages available on it are 
-limited. Conda-forge was, in fact, created to tackle this issue of 
+limited and not frequently updated. Conda-forge was, in fact, created to tackle this issue of 
 scientific packaging not being on the default Anaconda channel. 
 
 Conda-forge allows scientists to add any package to the conda-forge channel. 
@@ -146,7 +146,7 @@ on that below*).
 
 ## How to submit to conda-forge 
 
-While pyOpenSci doesn't require you to add your package to conda-force, 
+While pyOpenSci doesn't require you to add your package to conda-forge, 
 we encourage you to consider doing so! 
 
 Once your package is on PyPI, the process to add your package to conda-forge 
@@ -157,7 +157,7 @@ Generally those steps are:
 
 1. Fork the staged recipes conda-forge GitHub repository
 1. Create a new recipe using the `grayskull` tool 
-1. Add the recipe file created by `grayskill` in a folder within the recipes/ directory of the [**conda-force/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository. 
+1. Add the recipe file created by `grayskill` in a folder within the recipes/ directory of the [**conda-forge/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository. 
 1. Open a pull request with your change. Your package will be tested on Windows, Mac and Linux using the repository CI.
 
 Once you have submitted a recipe to conda-forge, a maintainer will work 
