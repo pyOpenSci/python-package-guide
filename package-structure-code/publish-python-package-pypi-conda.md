@@ -26,7 +26,7 @@ also a test PyPI repository where you can test publishing your package
 prior to the final publication on PyPI. 
 
 Many Python packages can be found on PyPI. However, in some cases, if a 
-package's build has includes tools written in other languages, you might only 
+package's build includes tools written in other languages, you might only 
 find it in the **conda** ecosystem. 
 
 <!-- TODO add link to build page below when this page is published -->
