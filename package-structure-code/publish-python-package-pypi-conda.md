@@ -32,7 +32,7 @@ find it in the **conda** ecosystem.
 <!-- TODO add link to build page below when this page is published -->
 ```{tip}
 On the package build page, we discussed the [two package distribution 
-types that you will create when making a Python package](link-to-page-on-sdist): SDist (packaged as a .tar.gz) and 
+types that you will create when making a Python package](link-to-page-on-sdist): SDist (packaged as a .tar.gz or .zip) and 
 Wheel (.whl) which is really a zip file. Both of those file "bundles" will 
 be published on PyPI when you use [a standard build tool](link-to-build-page) to build 
 your package. 
