@@ -18,7 +18,7 @@ Below you will learn more specifics about the differences between PyPI and conda
 ```
 
 
-### What is PyPi 
+### What is PyPI
 
 [PyPI](https://pypi.org/) is an online Python package repository that 
 you can use to both find and install and publish your Python package. There is 
