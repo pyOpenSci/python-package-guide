@@ -168,6 +168,8 @@ def extent_to_json(ext_obj):
     """
 ```
 
+<!-- I can't seem to get doc targets across pages to work-->
+(docstring_best_practice)=
 ### Best - a docstring with example use of the function
 
 This example contains an example of using the function that is also tested in 
@@ -178,15 +180,16 @@ def extent_to_json(ext_obj):
     """Convert bounds to a shapely geojson like spatial object.
     This format is what shapely uses. The output object can be used
     to crop a raster image.
-    Parameters
+
+        Parameters
     ----------
-    ext_obj: list or geopandas.GeoDataFrame
+    ext_obj : list or geopandas.GeoDataFrame
         If provided with a `geopandas.GeoDataFrame`, the extent
         will be generated from that. Otherwise, extent values
         should be in the order: minx, miny, maxx, maxy.
     Return
     ------
-    extent_json: A GeoJSON style dictionary of corner coordinates
+    extent_json : A GeoJSON style dictionary of corner coordinates
     for the extent
         A GeoJSON style dictionary of corner coordinates representing
         the spatial extent of the provided spatial object.
@@ -198,7 +201,14 @@ def extent_to_json(ext_obj):
     >>> import geopandas as gpd
     >>> import earthpy.spatial as es
     >>> from earthpy.io import path_to_example
+
+	We start by loading a Shapefile.
+
     >>> rmnp = gpd.read_file(path_to_example('rmnp.shp'))
+
+	And then use `extent_to_json` to do the conversion from `shp` to
+    `geopandas.GeoDataFrame`.
+
     >>> es.extent_to_json(rmnp)
     {'type': 'Polygon', 'coordinates': (((-105.4935937, 40.1580827), ...),)}
 

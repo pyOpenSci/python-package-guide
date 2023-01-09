@@ -65,8 +65,6 @@ review. Some maintainers may also opt to include the development information in 
 ```
 
 
-
-
 ```{tip}
 [The mozilla open workshop has a nice outline of things to consider when 
 creating a contributing guide](https://mozillascience.github.io/working-open-workshop/contributing/)
@@ -83,6 +81,22 @@ by the Open Software Initiative (OSI). OSI's website has a
 [handy tool](https://choosealicense.com/) for choosing a license. 
 
 If you choose your license through GitHub, you can also automatically get a copy of the license file to add to your repository.
+
+### Important: make sure that you closely follow the guidelines outlines by the License that you chose
+
+Every license has different guidelines in terms of what code 
+you can use in your package and also how others can (or can not) use the code in your package. 
+
+If you borrow code from other tools or online sources, make 
+sure that the license for the code that you are using also complies 
+with the license that you selected for your package. 
+
+```{note} 
+An example of code that would not comply with a BSD or MIT license would be any code copied from StackOverflow website. 
+[Stack overflow users a Creative Commons Share Alike license.](https://stackoverflow.com/help/licensing) The sharealike license requires you to use the same sharealike license when you reuse any code from stackoverflow. Thus, if you use code from stack overflow in your package and have a MIT license applied to your package, you are violating stack overflow's license requirements! Proceed with caution here!
+```
+
+[The SciPy documentation has an excellent license discussion that is worth reading and considering for your project's development guide.](https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing)
 
 ## The CODE_OF_CONDUCT.md file
 Your package should have a CODE_OF_CONDUCT.md file located 

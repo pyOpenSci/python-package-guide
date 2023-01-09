@@ -11,7 +11,7 @@ important points page -->
 * Publish your documentation on ReadTheDocs (or GitHub pages if you are more advanced and also prefer to maintain your website locally)
 * Use `myST` syntax to write your documentation 
 * Use sphinx gallery to write tutorials using .py files that automagically have downloadable .py and jupyter notebook files. Use nbsphinx if you prefer writing tutorials in jupyter notebook format and don't need a grid formatted gallery. *Both of these tools will run your tutorials from beginning to end providing an addition layer of testing to your package!*
-
+* OPTIONAL: Use [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) to run the examples in your code's docstrings as a way to make sure that your code's functions and methods (the API) are running as you expect them to. 
 ```
 
 In addition to your:
@@ -125,12 +125,12 @@ Both of these tools act as sphinx extensions and:
 
 ### [sphinx gallery:](https://sphinx-gallery.github.io/stable/index.html) 
 
-If you prefer to write your tutorials using python **.py** scripts, you 
+If you prefer to write your tutorials using Python **.py** scripts, you 
 may enjoy using sphinx gallery. Sphinx gallery uses **.py** files with 
-text and code sections that mimics the Jupyter Notebook format. When you build 
+text and code sections that mimic the Jupyter Notebook format. When you build 
 your documentation, the gallery extension: 
 
-1. Runs the code in each tutorial: this acts as a check to ensure your package is working as you think it is!
+1. Runs the code in each tutorial. Running your tutorial this acts as a check to ensure your package functions and classes (ie the API) are working as they should. 
 1. Creates a downloadable Jupyter Notebook **.ipynb** file and a  **.py** script for your tutorial that a user can quickly download and run. 
 1. Creates a rendered  **.html** page with the code elements and code outputs in a user-friendly tutorial gallery.  
 1. Creates a gallery landing page with visual thumbnails for each tutorial that you create
@@ -248,4 +248,52 @@ _build/
             ...
 ``` 
 
+## Using doctest to run docstring examples in your packages methods and functions
+<!-- This link isn't working no matter how i create the target. not sure 
+why -->
+[In the package documentation page we provided some examples of good, better, best docstring formats](package-documentation-best-practices.html#docstring_best_practice). If you wish, you can also add the [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx build
+as an addition check for docstrings with example code in them. 
+Doctest, runs the example code in your docstring `Examples` checking 
+that the expected output is in fact correct. Similar to running
+tutorials in your documentation, doctest can be a useful step that 
+assures that your packages code (API) runs as you expect it to.
 
+```{note} 
+It's important to keep in mind that examples in your docstrings 
+help users using your package. Running `doctest` on those examples provides a 
+check of your package's API. doctest ensures that the functions and methods in your package 
+run as you expect them to. Neither of these items replace a separate, 
+stand-alone test suite that is designed to test your package's core functionality 
+across operating systems and Python versions. 
+```
+
+Below is an example of a docstring with an example. 
+doctest will run the example below and test that if you provide 
+`add_me` with the values 1 and 3 it will return 4.  
+
+
+```python
+def add_me(aNum, aNum2):
+    """A function that prints a number that it is provided. 
+    
+    Parameters
+    ----------
+    aNum : int
+        An integer value to be printed
+    
+    Returns 
+    -------
+        Prints the integer that you provide the function.
+    
+    """
+   return aNum + aNum2
+
+Examples
+--------
+Below you can see how the `print_me` function will print a number that 
+you provide it.
+
+>>> add_me(1+3)
+4
+
+```
