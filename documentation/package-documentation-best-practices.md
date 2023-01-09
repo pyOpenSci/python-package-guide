@@ -190,14 +190,18 @@ def extent_to_json(ext_obj):
     for the extent
         A GeoJSON style dictionary of corner coordinates representing
         the spatial extent of the provided spatial object.
+    
     Example
     -------
+    Convert a geopandas GeoDataFrame to an extent dictionary:
+
     >>> import geopandas as gpd
     >>> import earthpy.spatial as es
     >>> from earthpy.io import path_to_example
     >>> rmnp = gpd.read_file(path_to_example('rmnp.shp'))
     >>> es.extent_to_json(rmnp)
     {'type': 'Polygon', 'coordinates': (((-105.4935937, 40.1580827), ...),)}
+    
     """
 
 ```
