@@ -37,7 +37,7 @@ documentation.
 
 If you are interested in optimizing your documentation for search engines such as Google, you want a sitemap.xml file. You can submit this sitemap to Google and it will index your entire site. This over time can make the content on your site more visible to others when they search. 
 
-This extension is light weight.
+This extension is lightweight.
 
 It [requires that you to add it to your sphinx `conf.py` extension list and site your documentation base url.](https://sphinx-sitemap.readthedocs.io/en/latest/getting-started.html).
 
