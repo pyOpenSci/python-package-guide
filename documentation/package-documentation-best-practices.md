@@ -180,8 +180,8 @@ def extent_to_json(ext_obj):
     to crop a raster image.
     Parameters
     ----------
-    ext_obj: list or geopandas geodataframe
-        If provided with a geopandas geodataframe, the extent
+    ext_obj: list or geopandas.GeoDataFrame
+        If provided with a `geopandas.GeoDataFrame`, the extent
         will be generated from that. Otherwise, extent values
         should be in the order: minx, miny, maxx, maxy.
     Return
@@ -193,7 +193,7 @@ def extent_to_json(ext_obj):
     
     Example
     -------
-    Convert a geopandas GeoDataFrame to an extent dictionary:
+    Convert a `geopandas.GeoDataFrame` to an extent dictionary:
 
     >>> import geopandas as gpd
     >>> import earthpy.spatial as es
@@ -201,7 +201,7 @@ def extent_to_json(ext_obj):
     >>> rmnp = gpd.read_file(path_to_example('rmnp.shp'))
     >>> es.extent_to_json(rmnp)
     {'type': 'Polygon', 'coordinates': (((-105.4935937, 40.1580827), ...),)}
-    
+
     """
 
 ```
