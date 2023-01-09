@@ -3,7 +3,7 @@
 ## How to host your Python package documentation
 
 We suggest that you setup a hosting service for your Python package 
-documentation. Two, free and most commonly used ways to
+documentation. Two free and commonly used ways to
 quickly create a documentation website hosting environment are below. 
 
 1. You can host your documentation yourself using [GitHub Pages](https://pages.github.com/) or another online hosting service. 
