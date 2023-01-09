@@ -19,12 +19,11 @@ tools that will help you build your documentation.
 ## Documentation is critical to the success of your Python open source package 
 
 Documentation is as important to the success of your Python open source package 
-as the code itself. Quality code is of course valuable as it gets the tasks 
-that your package seeks to achieve, done. However, if users don't understand 
+as the code itself. Quality code is of course valuable as its how your package gets the tasks done. However, if users don't understand 
 how to use your package in their workflows, then they won't use it. 
 
-Further, if you wish to build a base of contributors to your package, having 
-explicit information about how to contribute is critical.
+Further, explicitly documenting how to contribute is critical if you wish 
+to build a base of contributors to your package. 
 
 ## Documentation elements that pyOpenSci looks for when reviewing a Python package
 
