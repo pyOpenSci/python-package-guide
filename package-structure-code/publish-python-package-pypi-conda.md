@@ -146,7 +146,7 @@ on that below*).
 
 ## How to submit to conda-forge 
 
-While pyOpenSci doesn't require you to add your package to conda-force, 
+While pyOpenSci doesn't require you to add your package to conda-forge, 
 we encourage you to consider doing so! 
 
 Once your package is on PyPI, the process to add your package to conda-forge 
