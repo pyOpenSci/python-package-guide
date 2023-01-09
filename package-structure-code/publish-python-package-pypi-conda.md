@@ -41,7 +41,7 @@ your package.
 ### What is Anaconda Cloud and Conda? 
 
 Conda is an open source package and environment management tool. 
-Conda can be used to install tools both from the [Anaconda Cloud 
+Conda can be used to install tools from the [Anaconda Cloud 
 repository](https://repo.anaconda.com/). 
 
 Anaconda cloud (anaconda.org) contains public and private repositories for 
