@@ -34,6 +34,9 @@ technically proficient users how to:
 * Run the test suite 
 * Build documentation locally
 
+The development guide should also have guidelines for:
+* code standards including docstring style, code format and any specific code approaches that the package follows. 
+
 It's also helpful to specify the types of tests you request if a contributor submits a new feature or a change to an existing feature that will not be covered by your existing test suite. 
 
 If you have time to document it, it's also helpful to document your maintainer workflow and release processes. 
