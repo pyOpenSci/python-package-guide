@@ -1,4 +1,4 @@
-# Documentation for your Open Source Python Package - An Overview
+# Documentation for your Open Source Python Package: An Overview
 
 ```{important}
 ## Quick Takeaways: Documentation must haves
