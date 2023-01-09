@@ -122,7 +122,7 @@ Similarly installing packages from the default anaconda package mixed with the c
 
 Many install packages directly from conda defaults channel. However, because 
 this channel is managed by Anaconda, the packages available on it are 
-limited. Conda-forge was, in fact, created to tackle this issue of 
+limited and not frequently updated. Conda-forge was, in fact, created to tackle this issue of 
 scientific packaging not being on the default Anaconda channel. 
 
 Conda-forge allows scientists to add any package to the conda-forge channel. 
