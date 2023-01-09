@@ -118,7 +118,7 @@ package repository. Thus environments that contain packages
 installed from both pip and conda are more likely to yield 
 dependency conflicts.  
 
-Similarly installing packages frm the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.
+Similarly installing packages from the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.
 
 Many install packages directly from conda defaults channel. Howeve,r because 
 this channel is managed by Anaconda, the packages available on it are 
