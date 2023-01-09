@@ -155,7 +155,7 @@ def extent_to_json(ext_obj):
     Parameters
     ----------
     ext_obj : list or geopandas.GeoDataFrame
-        If provided with a geopandas.GeoDataFrame, the extent
+        If provided with a `geopandas.GeoDataFrame`, the extent
         will be generated from that. Otherwise, extent values
         should be in the order: minx, miny, maxx, maxy.
 
