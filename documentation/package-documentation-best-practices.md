@@ -5,9 +5,9 @@
 
 Your package: 
 * Should have a documentation website 
-* All of its functions and classes (the API) documented
-* Your package should use numpy-style docstrings 
-* Your documentation landing page should direct users to 4 core sections: get started, documentation content, about and community.
+* Should have all of its public (user-facing) functions and classes (the API) documented
+* Should use numpy-style docstrings 
+* Documentation landing page should direct users to 4 core sections: get started, documentation content, about and community.
 * Documentation should include short quick-start tutorials
 ```
 
