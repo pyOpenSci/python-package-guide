@@ -25,9 +25,12 @@ you can use to both find and install and publish your Python package. There is
 also a test PyPI repository where you can test publishing your package 
 prior to the final publication on PyPI. 
 
-Many Python packages can be found on PyPI. However, in some cases, if a 
-package's build includes tools written in other languages, you might only 
-find it in the **conda** ecosystem. 
+Many if not most Python packages can be found on PyPI and are thus installable using `pip`.
+
+The biggest different between using pip and conda to install 
+a package is that conda can install any package regardless 
+of the language(s) that it is written in. Whereas `pip` can 
+only install Python packages. 
 
 <!-- TODO add link to build page below when this page is published -->
 ```{tip}
@@ -40,8 +43,8 @@ your package.
 
 ### What is Anaconda Cloud and Conda? 
 
-Conda is an open source package and environment management tool. 
-Conda can be used to install tools from the [Anaconda Cloud 
+`Conda` is an open source package and environment management tool. 
+`Conda` can be used to install tools from the [Anaconda Cloud 
 repository](https://repo.anaconda.com/). 
 
 Anaconda cloud (anaconda.org) contains public and private repositories for 
@@ -54,11 +57,14 @@ The most common public channels are:
 * bioconda 
 
 
-<!-- ASK FILIPE about GDAL -->
+<!-- ASK FILIPE - specifically whether this 
+below is why it's easier to handle spatial packages with 
+conda vs pip which always seems to yield conflicts :)
+-->
 ```{tip}
 While **conda** was originally created to support Python packages, it 
 is now used across all languages. This cross-language support 
-makes it easier for some packages to to include and have access to 
+makes it easier for some packages to include and have access to 
 tools written in other languages (such as gdal??)
 ``` 
 
