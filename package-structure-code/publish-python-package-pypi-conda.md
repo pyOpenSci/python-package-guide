@@ -120,7 +120,7 @@ dependency conflicts.
 
 Similarly installing packages from the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.
 
-Many install packages directly from conda defaults channel. Howeve,r because 
+Many install packages directly from conda defaults channel. However, because 
 this channel is managed by Anaconda, the packages available on it are 
 limited. Conda-forge was, in fact, created to tackle this issue of 
 scientific packaging not being on the default Anaconda channel. 
