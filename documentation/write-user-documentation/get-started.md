@@ -12,11 +12,20 @@ Your package:
 ``` -->
 
 ## Core components of user-facing Python package documentation 
-Your user-facing documentation for your Python package should include several core components: 
+Below we break documentation into two broad types.
+
+**User-facing documentation **refers to documentation that describes the way the 
+tools within a package is broadly used in workflows. **API documentation, documentation of your functions, classes and methods in your code,** is written 
+at a more granular level. It is documentation for each specific function, class, 
+method or attribute that a user can use in the package. this is the documentation 
+that a user sees when they type `help(function-name)`. 
+
+Your user-facing documentation for your Python package should include several 
+core components. 
 
 * **Documentation Website:** This refers to easy-to-read documentation that helps someone use your package. This documentation should help users both install and use your package.
 * **Short Tutorials:** Your user-facing documentation should also include [**short tutorials** that show case core features of your package](create-package-tutorials).   
-* **Package Code / API documentation:** You packages functions and methods (the API) should also be documented. API documentation can be generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your 
+* **Package Code / API documentation:** You package's functions, methods, attributes and classes (the API) should also be documented. API documentation can be generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your 
 code. Ideally, you have docstrings for all user-facing functions, methods and classes in 
 your Python package. [We discuss code documentation and docstrings in greater detail here.](document-your-code-api-docstrings)
 
