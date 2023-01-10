@@ -91,7 +91,8 @@ look for are listed below.
 ---
 name: directive-fig
 width: 80%
-alt: Image showing that the MovingPandas GitHub repository has the required package health files. 
+alt: Image showing the files in the the MovingPandas GitHub repository. Files there include code of conduct.md,
+Contributing.md, license.txt, readme.md. 
 ---
 An example from the MovingPandas GitHub repository with all of the major files in it including CONTRIBUTING.md, README.md, CODE_OF_CONDUCT.md and a LICENSE.txt file. *(screen shot taken Nov 23 2022)*
 ```
@@ -105,7 +106,7 @@ standards page that everyone has in their GitHub repository.
 ---
 name: directive-fig
 width: 80%
-alt: Image showing that the MovingPandas GitHub repository community health page with green checks next to each file.
+alt: Image showing that the MovingPandas GitHub repository community health page with green checks next to each file including: description, README, code of conduct, contributing, license and issue templates. Note that Security policy has a yellow circle next to it as that is missing from the repo.
 ---
 GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/anitagraser/movingpandas/community) *(screen shot taken Nov 23 2022)*
 ```
@@ -118,7 +119,7 @@ measure of community health.
 ---
 name: directive-fig
 width: 80%
-alt: Screenshot of the Snyk page for movingpandas, that indicates the community is active, that it has a readme, contributing.md, and code of conduct. The page also shows 30 contributors and no funding.
+alt: Screenshot of the Snyk page for movingpandas. It shows that the repository has a README file, contributing file, code of conduct. It also shows that it has 30 contributors and no funding. The package health score is 78/100.
 ---
 Screenshot showing [SNYK](https://snyk.io/advisor/python/movingpandas) package health for moving pandas. Notice both platforms look for a README file. *(screen shot taken Nov 23 2022)*
 ```

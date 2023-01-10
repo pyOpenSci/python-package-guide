@@ -18,6 +18,10 @@ health on sites such as:
 ---
 name: directive-fig
 width: 80%
+alt: README landing page screenshot for the Pandera package. It has the pandera logo at the top - which has two arrows in a chevron pattern pointing downward within a circle. Subtitle: statistical data testing toolkit. A data validation library for scientists, engineering, and analytics seeking correctness. 
+Below that are a series of badges including CI tests passing, docs passing, version of pandera on pypi (0.13.4), MIT license and that it has been pyOpenSci peer reviewed. There are numerous badges below that. 
+Finally below the badges the text reads:
+Pandera provides a flexible and expressive API for performing data validation on dataframe-like objects to make data processing pipelines more readable and robust.
 ---
 Your GitHub repository landing page highlights the README.md file. Here you can see the README.md file for the pyOpenSci package [Pandera](https://github.com/unionai-oss/pandera). *(screen shot taken Nov 23 2022)*
 ```
@@ -59,7 +63,7 @@ self explanatory that name is, the better.
 Badges are a useful way to draw attention to the quality of your project. Badges 
 assure users that your package is well-designed, tested, and maintained. They 
 are also a useful maintenance tool to evaluate if things are building properly. 
-A great example of this is adding a readthedocs badge to your readme to quickly
+A great example of this is adding a [Read the Docs status badge](https://docs.readthedocs.io/en/stable/badges.html) to your README.md file to quickly
 see when the build on that site fails. 
 
 It is common to provide a collection of badges towards the top of your 

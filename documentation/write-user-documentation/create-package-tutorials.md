@@ -12,7 +12,7 @@ In the [documentation tools page](python-package-documentation-tools) we talk ab
 that  allow you to create reproducible tutorials that are run 
 when your Sphinx documentation builds. 
 
-## CreatePythonpackage tutorials that both help users and test your package's code
+## Create Python package tutorials that run when you build your docs
 
 Adding well constructed tutorials to your package will make it easier for someone 
 new to begin using your package. 

@@ -66,9 +66,11 @@ to properly read and format NumPy format docstrings.
 ### Docstring examples Better and Best 
 
 Below is a good example of a well documented function. Notice that this 
-function's docstring describes every function inputs and the function's output 
-(or return value). The description of the function is short and to the point 
-(2 to 3 sentences). And the return of the function is specified. 
+function's docstring describes the function's inputs and the function's output 
+(or return value). The initial description of the function is short (one line). 
+Following that single line description there is a slightly longer description of 
+what the function does (2 to 3 sentences). The return of the function is also
+specified. 
 
 ```Python
 def extent_to_json(ext_obj):
@@ -113,8 +115,9 @@ def extent_to_json(ext_obj):
         If provided with a `geopandas.GeoDataFrame`, the extent
         will be generated from that. Otherwise, extent values
         should be in the order: minx, miny, maxx, maxy.
-    Return
-    ------
+
+    Returns
+    -------
     extent_json : A GeoJSON style dictionary of corner coordinates
     for the extent
         A GeoJSON style dictionary of corner coordinates representing
@@ -147,7 +150,7 @@ def extent_to_json(ext_obj):
 name: directive-fig
 width: 80%
 ---
-Using the above NumPy format  docstring in sphinx, the autodoc extension will 
+Using the above NumPy format docstring in sphinx, the autodoc extension will 
 create the about documentation section for the `extent_to_json` function. The 
 output of the `es.extent_to_json(rmnp)` command can even be tested using 
 doctest adding another quality check to your package. 
