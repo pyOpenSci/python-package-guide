@@ -30,7 +30,7 @@ Your package should at a minimum have:
 * CODE_OF_CONDUCT.md 
 * LICENSE.txt 
 * User-facing documentation website with tutorials 
-* API documentation (often found in the user facing documentation website)
+* API documentation (often found in the user-facing documentation website)
 
 The pages in this section of our guide provide you with more 
 detail about creating each of the above elements. We also suggest 
@@ -79,7 +79,7 @@ look for are listed below.
 1. Individual files in your GitHub (or GitLab) repository including:
     * [A clear and to the point **README.md** file](readme-file-best-practices) that includes information about how to cite your package.
     * A [**CONTRIBUTING.md** file](contributing-license-coc) that outlines how others can contribute to your package. This file should also link to your development guide and code of conduct. A well-crafted contributing guide will make it much easier for the community to contribute to your project.
-    * A [**CODE_OF_CONDUCT.md**](contributing-license-coc.html#the-code-of-conduct-md-file) file. This file sets up the guidelines for how your community interacts. It ideally ensures that everyone feels safe and can report inappropriate behavior if need be.   <!--<not sure why header targets aren't working here with sphinx they work online> -->
+    * A [**CODE_OF_CONDUCT.md**](contributing-license-coc.html#the-code-of-conduct-md-file) file. This file sets up the guidelines for how your community interacts. It ideally ensures that everyone feels safe and can report inappropriate behavior if need be.   <!--<not sure why header targets aren't working here with Sphinx they work online> -->
     * [**A LICENSE.txt file**](contributing-license-coc.html#your-repository-should-have-a-license-md-file) A license file declaring the OSI-approved license that you select and instructions for citing your package.
     * We also suggest (but don't require) that you include a development guide that details the infrastructure used in your package. Sometimes this file is included in the user-facing documentation website (discussed below).  
 1. [**User focused package documentation**](package-documentation-best-practices) that helps users understand how to install, setup and use your package. Documentation is most often contained in a stand-alone website. The user-focused documentation should include:
@@ -91,7 +91,7 @@ look for are listed below.
 ---
 name: directive-fig
 width: 80%
-alt: Image showing the files in the Moving Pandas GitHub repository. 
+alt: Image showing that the MovingPandas GitHub repository has the required package health files. 
 ---
 An example from the MovingPandas GitHub repository with all of the major files in it including CONTRIBUTING.md, README.md, CODE_OF_CONDUCT.md and a LICENSE.txt file. *(screen shot taken Nov 23 2022)*
 ```
@@ -105,11 +105,12 @@ standards page that everyone has in their GitHub repository.
 ---
 name: directive-fig
 width: 80%
+alt: Image showing that the MovingPandas GitHub repository community health page with green checks next to each file.
 ---
 GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/anitagraser/movingpandas/community) *(screen shot taken Nov 23 2022)*
 ```
 
-SNYK is another well-known company that keeps tabs on package health.
+[Snyk](https://snyk.io/advisor/python) is another well-known company that keeps tabs on package health.
 Below you can see a similar evaluation of files in the Github repo as a 
 measure of community health. 
 
@@ -117,6 +118,7 @@ measure of community health.
 ---
 name: directive-fig
 width: 80%
+alt: Screenshot of the Snyk page for movingpandas, that indicates the community is active, that it has a readme, contributing.md, and code of conduct. The page also shows 30 contributors and no funding.
 ---
 Screenshot showing [SNYK](https://snyk.io/advisor/python/movingpandas) package health for moving pandas. Notice both platforms look for a README file. *(screen shot taken Nov 23 2022)*
 ```

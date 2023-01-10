@@ -28,7 +28,7 @@ documented in the case that we need to help you onboard new
 maintainers in the future. 
 
 ```{note}
-A well thought-out continuous integration setup in your repository 
+A well thought out continuous integration setup in your repository 
 can allow users to skip building the package locally (especially if they are just updating text).
 ``` 
 
@@ -40,7 +40,7 @@ review. Some maintainers may also opt to include the development information in 
 
 
 ```{tip}
-[The mozilla open workshop has a nice outline of things to consider when 
+[The Mozilla Science Lab website has a nice outline of things to consider when 
 creating a contributing guide](https://mozillascience.github.io/working-open-workshop/contributing/)
 ```
 
