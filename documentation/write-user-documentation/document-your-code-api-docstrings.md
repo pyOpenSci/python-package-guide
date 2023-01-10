@@ -3,43 +3,45 @@
 ## What is an API?
 API stands for **A**pplied **P**rogramming **I**nterface. When 
 discussed in the context of a (Python) package, the API refers to 
-the interface and tools that you, as a package user, use in a package. 
+the functions, methods and classes that a package maintainer creates for users. 
 
 A simple example of a package API element:
 For instance, a package might have a function called `add_numbers()` 
 that adds up a bunch of numbers. To add up numbers, you as the user 
-simply call `add_numbers(1,2,3)` and the package function calculates the value and returns `6`. In using the `add_numbers` function, a user is 
+simply call `add_numbers(1,2,3)` and the package function calculates the value and returns `6`. By calling the `add_numbers` function, you are 
 using the package's API. 
 
- Package API's can consist of functions and/or classes (or object) that provide an easier-to-user interface (the API) for a user. 
+Package APIs consist of functions and/or classes, methods and attributes that create a user interface (known as the API). 
 
 ## What is a docstring and how does it relate to documentation? 
 In Python a docstring refers to text in a function, method or class 
-that describes what the function does and its inputs, outputs and what it 
-returns.
+that describes what the function does and its inputs and outputs. Python programmers usually refer to the inputs to functions as ["parameters"](https://docs.python.org/3/glossary.html#term-parameter) or ["arguments"](https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter), and the outputs are often called "return values"
 
 The docstring is thus important for:
 
-* When you, as a user, call `help()` e.g. `help(add_numbers)` in Python, it returns the elements in your docstring to help guide a user towards using the function more effectively. 
-* When you build your package's documentation, the docstrings can be also used to automagically create full API documentation that provides a clean view of all functions methods and classes in a package.  
+* When you call `help()` in Python, for example, `help(add_numbers)`, the text of the function's docstring is printed. The docstring thus helps a user better understand how to applying the function more effectively to their workflow. 
+* When you build your package's documentation, the docstrings can be also used to automagically create full API documentation that provides a clean view of all its functions, methods, attributes, and classes.   
 
 ```{tip}
-Example API Documentation (Documentation for all functions and classes in a package)
+Example API Documentation for all functions, methods, attributes and classes in a package.
 * [View example high level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does](https://www.fatiando.org/verde/latest/api/index.html)
 * [You can further dig down to see what a specific function does within the package by clicking on an API element](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)
 ```
 
 ## Python package API documentation 
 
-API documentation refers to explanation about the function, inputs and outputs 
-of every (*within reason*) function, class, method in your package. API documentation
-in python requires that you use a docstring for each class, function or method that:
+If you have a descriptive docstring for every user-facing 
+class, method, attribute and/or function in your package (*within reason*), then your package's API is considered well-documented.  
 
-* Explains what the function, method or class does 
-* Explains what every input and output variable's (type) is (ie. `string`, `int`, `np.array`)
+In Python, this means that you need to add a docstring for 
+every user-facing 
+class, method, attribute and/or function in your package (*within reason*) that:
+
+* Explains what the function, method, attribute or class does 
+* Defines the `type` inputs and outputs (ie. `string`, `int`, `np.array`)
 * Explains the expected output `return` of the object, method or function.
 
-### Python docstring best practices 
+### Three Python docstring formats and why we like NumPy style
 
 There are several Python docstring formats that you can chose to use when documenting 
 your package including:
@@ -52,12 +54,12 @@ your package including:
 We suggest using [NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard) for your 
 Python documentation because:
 
-* NumPy style docstrings are human readable (unlike reST which is harder to quickly scan and takes up more lines of code in your modules)
-* NumPy format docstrings are core to the scientific Python ecosystem and defined in the [NumPy style guide](https://numpydoc.readthedocs.io/en/latest/format.html). Thus you will find them widely used there. 
+* NumPy style docstrings are core to the scientific Python ecosystem and defined in the [NumPy style guide](https://numpydoc.readthedocs.io/en/latest/format.html). Thus you will find them widely used there. 
+* The Numpy style docstring is simplified and thus easier-to-read both in the code and when calling `help()` in Python. In contrast, some  feel that reST style docstrings is harder to quickly scan, and can take up more lines of code in modules.
 
 ```{tip}
-If you are using `NumPy format` docstrings, be sure to include the [sphinx napoleon 
-extension](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html) in your documentation `conf.py` file. This extension allows sphinx 
+If you are using NumPy style docstrings, be sure to include the [sphinx napoleon 
+extension](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html) in your documentation `conf.py` file. This extension allows Sphinx 
 to properly read and format NumPy format docstrings. 
 ```
 
@@ -71,6 +73,7 @@ function's docstring describes every function inputs and the function's output
 ```Python
 def extent_to_json(ext_obj):
     """Convert bounds to a shapely geojson like spatial object.
+    
     This format is what shapely uses. The output object can be used
     to crop a raster image.
 
@@ -92,7 +95,7 @@ def extent_to_json(ext_obj):
 
 <!-- I can't seem to get doc targets across pages to work-->
 (docstring_best_practice)=
-### Best - a docstring with example use of the function
+### Best: a docstring with example use of the function
 
 This example contains an example of using the function that is also tested in 
 sphinx using [doctest](https://docs.python.org/3/library/doctest.html).
@@ -100,10 +103,11 @@ sphinx using [doctest](https://docs.python.org/3/library/doctest.html).
 ```Python
 def extent_to_json(ext_obj):
     """Convert bounds to a shapely geojson like spatial object.
+    
     This format is what shapely uses. The output object can be used
     to crop a raster image.
 
-        Parameters
+    Parameters
     ----------
     ext_obj : list or geopandas.GeoDataFrame
         If provided with a `geopandas.GeoDataFrame`, the extent

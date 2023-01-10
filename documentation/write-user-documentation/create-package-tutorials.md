@@ -1,37 +1,37 @@
 # Create tutorials in your Python package documentation 
 
 <!-- TODO: modify the nbsphinx example to use nbgallery 
-as a front end vs sphinx gallery - will look better that way
+as a front end vs Sphinx gallery - will look better that way
 -->
 Your package should have tutorials that make it easy for a user 
 to get started using your package. Ideally, those tutorials 
 also can be run from start to finish providing a second set of 
 checks (on top of your test suite) to your package's code base. 
 
-In the [documentation tools page](python-package-documentation-tools) we talk about two sphinx extensions (`sphinx-gallery` and `nbsphinx`)
+In the [documentation tools page](python-package-documentation-tools) we talk about two Sphinx extensions (`sphinx-gallery` and `nbsphinx`)
 that  allow you to create reproducible tutorials that are run 
-when your sphinx documentation builds. 
+when your Sphinx documentation builds. 
 
-## Create python package tutorials that both help users and test your package's code
+## CreatePythonpackage tutorials that both help users and test your package's code
 
 Adding well constructed tutorials to your package will make it easier for someone 
 new to begin using your package. 
 
-There are two sphinx tools that make it easy to add tutorials to your package:
+There are two Sphinx tools that make it easy to add tutorials to your package:
 
 * [Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) and 
 * [NbSphinx](https://nbsphinx.readthedocs.io/en/latest/)
 
-Both of these tools act as sphinx extensions and:
+Both of these tools act as Sphinx extensions and:
 
-* Support creating a gallery type page in your sphinx documentation where users can explore tutorials via thumbnails.
+* Support creating a gallery type page in your Sphinx documentation where users can explore tutorials via thumbnails.
 * Run the code in your tutorials adding another level of "testing" for your package as used. 
 * Render your tutorials with Python code and plot outputs
 
 ### [sphinx gallery:](https://sphinx-gallery.github.io/stable/index.html) 
 
 If you prefer to write your tutorials using Python **.py** scripts, you 
-may enjoy using sphinx gallery. Sphinx gallery uses **.py** files with 
+may enjoy using Sphinx gallery. Sphinx gallery uses **.py** files with 
 text and code sections that mimic the Jupyter Notebook format. When you build 
 your documentation, the gallery extension: 
 
@@ -57,7 +57,7 @@ Below you can see what a tutorial looks like created with sphinx-gallery.
 ---
 name: directive-fig
 width: 80%
-alt: Image showing ta single tutorial from sphinx gallery. The tutorial shows a simple matplotlib created plot and associated code. 
+alt: Image showing ta single tutorial from Sphinx gallery. The tutorial shows a simple matplotlib created plot and associated code. 
 ---
 `sphinx-gallery` tutorials by default include download links for both the 
 python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at the bottom. 
@@ -71,7 +71,7 @@ python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at the bot
 
 #### Sphinx gallery challenges 
 
-The downsides of using sphinx gallery include: 
+The downsides of using Sphinx gallery include: 
 
 * the **.py** files can be finicky to configure, particularly if you have matplotlib plot outputs. 
 
@@ -114,7 +114,7 @@ _build/
 ### [nbsphinx - tutorials using Jupyter Notebooks](https://nbsphinx.readthedocs.io/en/latest/)
 
 If you prefer to use Jupyter Notebooks to create tutorials you can use nbsphinx.
-nbsphinx operates similarly to sphinx gallery in that:
+nbsphinx operates similarly to Sphinx gallery in that:
 
 * It runs your notebooks and produces outputs in the rendered tutorials 
 
@@ -128,7 +128,7 @@ name: directive-fig
 width: 80%
 alt: Image showing the gallery output provided by nbsphinx using the sphinx-gallery front end interface. 
 ---
-`nbsphinx` can be combined with sphinx gallery to create a gallery of tutorials. 
+`nbsphinx` can be combined with Sphinx gallery to create a gallery of tutorials. 
 However, rather render the gallery as a grid, it lists all of the gallery 
 elements in a single column. 
 ```
@@ -144,7 +144,7 @@ _build/
         # Notice that nbsphinx runs each notebook and produces an 
         # html file with all of the outputs of your code 
         # you can link to the notebook in your docs by modifying 
-        # the nbsphinx build - we will cover this in a separate tutorial series focused on python packaging!
+        # the nbsphinx build - we will cover this in a separate tutorial series focused onPythonpackaging!
         tutorials/ 
             index.html
             index.md 

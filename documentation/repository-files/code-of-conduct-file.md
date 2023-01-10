@@ -31,4 +31,4 @@ If you are not comfortable
 with creating your own code of conduct text, we encourage you to adopt the 
 code of conduct language used in the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/). 
 [Many other communities](https://www.contributor-covenant.org/adopters/) have adopted this code of conduct as 
-their own including the [Fatiando](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md) scientific geoscience community.  
+their own. See the [Fatiando a Terra Geoscience Python community's example here.](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)

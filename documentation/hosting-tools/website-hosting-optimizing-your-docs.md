@@ -1,7 +1,7 @@
 # Optimizing your documentation so search engines (and other users) find it
 
 If you are interested in more people finding your package, you may want to 
-add some core sphinx extensions (and theme settings) that will help search 
+add some core Sphinx extensions (and theme settings) that will help search 
 engines such as Google find your documentation. 
 
 ### Google Analytics
@@ -34,7 +34,7 @@ more visible to others when they search.
 
 This extension is lightweight.
 
-It [requires that you to add it to your sphinx `conf.py` extension list and site your documentation base url.](https://sphinx-sitemap.readthedocs.io/en/latest/getting-started.html).
+It [requires that you to add it to your Sphinx `conf.py` extension list and site your documentation base url.](https://sphinx-sitemap.readthedocs.io/en/latest/getting-started.html).
 
 ### [sphinxext.opengraph](https://github.com/wpilibsuite/sphinxext-opengraph)
 

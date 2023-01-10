@@ -1,16 +1,17 @@
 # README File Guidelines and Resources
 
-The **README.md** file is often the first thing that someone sees before they
-install your package. 
+Your **README.md** file should be located in the root of your GitHub repository. 
+The **README.md** file is important as it is often the first thing that someone 
+sees before they install your package. 
 
 The README.md file is the landing page of:
 
-* Your package's landing page on a repository site such as PyPI or Anaconda
+* Your package as it appears on a repository site such as PyPI or Anaconda
 * Your package's GitHub repository
 
 Your README.md file is also used as a measure of package and community 
 health on sites such as:
-* [GitHub community health for MovingPandas (available for all repositories)](https://github.com/anitagraser/movingpandas/community) and [snyk - moving pandas example](https://snyk.io/advisor/python/movingpandas)  
+* [GitHub community health for MovingPandas (available for all repositories)](https://github.com/anitagraser/movingpandas/community) and [Snyk - moving pandas example](https://snyk.io/advisor/python/movingpandas)  
 
 
 ```{figure} /images/pandera-python-package-readme-github.png
@@ -23,8 +24,6 @@ Your GitHub repository landing page highlights the README.md file. Here you can 
 
 Thus, it is important that you spend some time up front creating a high quality 
 **README.md** file for your Python package.
-
-Your README.md file should be located in the root of your GitHub repository. 
 
 ````{note}
 An editor or the editor in chief will ask you to revise your README file
@@ -68,7 +67,7 @@ README file for others to quickly browse.
 
 Some badges that you might consider adding to your README file include:
 
-* Current version of the package on pypi / conda 
+* Current version of the package on PyPI / Anaconda Cloud 
 
 Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)](https://pypi.org/project/pandera/)
 
@@ -104,22 +103,22 @@ or complementary package mentions them here in 1-2 sentences.
 
 ```{tip}
 Consider writing for a high school level (or equivalent) level. This 
-level of writing is often consider level for scientific content that 
+level of writing is often considered an appropriate level for scientific content that 
 serves a variety of users with varying backgrounds. 
 
-The goal of this description to maximize 
-accessibility of your **README** file.
+The goal of this description is to maximize accessibility of your **README** 
+file.
 ```
 
 ### ✔️ Installation instructions
 
 Include instructions for installing your package. If you have published 
-the package on both PyPI and Conda be sure to include instructions for both. 
+the package on both PyPI and Anaconda Cloud be sure to include instructions for both. 
 
 ### ✔️ Document any addition setup required
 
 Add any additional setup required such as authentication tokens, to 
-get started using your package. If setup is complex, consider linking to a 
+get started using your package. If setup is complex, consider linking to an 
 installation page in your online documentation here rather than over complicating
 your README file. 
 
@@ -170,7 +169,7 @@ and any language that you'd like to see associated with the citation.
 Below are some resources on creating great README.md files that you 
 might find helpful.
 
-* [Write a great readme - Bane Sullivan](https://github.com/banesullivan/README)
-* [The art of the README GitHub Repo](https://github.com/hackergrrl/art-of-readme)
+* [How to Write a Great README - Bane Sullivan](https://github.com/banesullivan/README)
+* [Art of README - Kira (@hackergrrl)](https://github.com/hackergrrl/art-of-readme)
 
 ```

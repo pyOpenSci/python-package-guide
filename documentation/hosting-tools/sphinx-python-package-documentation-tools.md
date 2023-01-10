@@ -10,7 +10,7 @@ important points page -->
 * Use Sphinx to build your documentation
 * Publish your documentation on ReadTheDocs (or GitHub pages if you are more advanced and also prefer to maintain your website locally)
 * Use `myST` syntax to write your documentation 
-* Use sphinx gallery to write tutorials using .py files that automagically have downloadable .py and jupyter notebook files. Use nbsphinx if you prefer writing tutorials in jupyter notebook format and don't need a grid formatted gallery. *Both of these tools will run your tutorials from beginning to end providing an addition layer of testing to your package!*
+* Use Sphinx gallery to write tutorials using .py files that automagically have downloadable .py and jupyter notebook files. Use nbsphinx if you prefer writing tutorials in jupyter notebook format and don't need a grid formatted gallery. *Both of these tools will run your tutorials from beginning to end providing an addition layer of testing to your package!*
 * OPTIONAL: Use [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) to run the examples in your code's docstrings as a way to make sure that your code's functions and methods (the API) are running as you expect them to. 
 ``` -->
 
@@ -44,14 +44,14 @@ The functionality of Sphinx can be extended using extensions
 and themes. A few examples include:
 
 * You can apply documentation themes for quick generation of beautiful documentation.
-* You can [automatically create documentation for your package's functions and classes (that package's API) from docstrings in your code using the autodoc extension](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+* You can [automatically create documentation for your package's functions and classes (the package's API) from docstrings in your code using the autodoc extension](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
 * You can [run and test code examples in your docstrings using the doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html)
-* While sphinx natively supports the `rST` syntax. You can add custom syntax parsers to support easier-to-write syntax using tools such as [myst](https://myst-parser.readthedocs.io/).
+* While Sphinx natively supports the `rST` syntax. You can add custom syntax parsers to support easier-to-write syntax using tools such as [the MyST parser](https://myst-parser.readthedocs.io/).
 
-### Commonly used sphinx themes 
+### Commonly used Sphinx themes 
 
-You are free to use whatever sphinx theme that you prefer. 
-However, the most common sphinx themes used in the Python 
+You are free to use whatever Sphinx theme that you prefer. 
+However, the most common Sphinx themes used in the Python 
 scientific community include:  
 
 * [pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/) 
