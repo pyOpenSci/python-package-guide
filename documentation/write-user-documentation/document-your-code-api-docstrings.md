@@ -138,7 +138,7 @@ def extent_to_json(ext_obj):
 
 ```
 
-```{figure} ../images/sphinx-rendering-extent-to-json-earthpy.png
+```{figure} /images/sphinx-rendering-extent-to-json-earthpy.png
 ---
 name: directive-fig
 width: 80%
@@ -150,7 +150,7 @@ doctest adding another quality check to your package.
 ```
 
 
-## Using doctest to run docstring examples in your packages methods and functions
+## Using doctest to run docstring examples in your package's methods and functions
 <!-- This link isn't working no matter how i create the target. not sure 
 why -->
 Above, we provided some examples of good, better, best docstring formats. If you are using Sphinx to create your docs, you can add the [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx build. Doctest provides an additiona; check for docstrings with example code in them. 

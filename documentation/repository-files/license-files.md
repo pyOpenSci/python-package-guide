@@ -25,3 +25,12 @@ An example of code that would not comply with a BSD or MIT license would be any 
 ```
 
 [The SciPy documentation has an excellent license discussion that is worth reading and considering for your project's development guide.](https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing)
+
+
+<!-- TODO: Add discussion of GitHub citation.cff files ??
+i think we need to better understand how this works before adding it...
+
+
+These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. if it's not dynamic it could be problematic
+
+-->

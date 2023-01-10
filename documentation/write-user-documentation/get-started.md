@@ -1,6 +1,6 @@
-# Get started with documentation
+# Create User Facing Documentation for your Python Package 
 
-```{important}
+<!-- ```{important}
 ## Quick takeaways: best practices
 
 Your package: 
@@ -9,27 +9,27 @@ Your package:
 * Should use numpy-style docstrings 
 * Documentation landing page should direct users to 4 core sections: get started, documentation content, about and community.
 * Documentation should include short quick-start tutorials
-```
+``` -->
 
-## Core components of Python package documentation 
-In addition to the [core files that should be in your GitHub 
-Repository](/documentation/repository-files/intro), 
-there are several core components of Python package documentation, 
-including:
+## Core components of user facing Python package documentation 
+Your user-facing documentation for your Python package should include several core components: 
 
-* **User-facing documentation website:** This refers to easy-to-read documentation that helps a user work with your package. This documentation should help users both install and use the functionality of your package. User-facing documentation should include a get-started page that shows a user how to install your package and begin using it. 
-* **Short Tutorials:** Your user facing documentation should also include [**short tutorials** that show a user how to quickly get started using your package](create-package-tutorials).   
-* **API documentation:** The API refers to the functions and classes in a 
-package that makes up the user interface. API documentation is generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your 
-code. Ideally you have docstrings for all user-facing functions, methods and classes in 
+* **Documentation Website:** This refers to easy-to-read documentation that helps someone use your package. This documentation should help users both install and use your package.
+* **Short Tutorials:** Your user-facing documentation should also include [**short tutorials** that show case core features of your package](create-package-tutorials).   
+* **Package Code / API documentation:** You packages functions and methods (the API) should also be documented. API documentation can be generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your 
+code. Ideally, you have docstrings for all user-facing functions, methods and classes in 
 your Python package. [We discuss code documentation and docstrings in greater detail here.](document-your-code-api-docstrings)
 
-### Write easy-to-read documentation 
+### Write usable documentation 
 
-User-facing documentation should be published on a easy-to-navigate website. All language should be written with non-developer users in mind. This means 
-using language that is less technical.
+User-facing documentation should be published on a 
+easy-to-navigate website. All language should be written for 
+users who are not developers or experts. Rather, the language 
+that you use in your documentation should not be 
+highly technical. 
 
-A few tips to make sure your documentation is accessible include: 
+To make the language of your documentation more accessible 
+to a broader audience: 
 
 * Whenever possible, define technical terms and jargon.
 * Consider writing instructions for a high-school level reader. 
@@ -37,13 +37,14 @@ A few tips to make sure your documentation is accessible include:
 
 ## Documentation landing page best practices 
 
-To make it easy for users to find what they need quickly, all packages should 
-have 4 elements on the home page of their documentation:
+To make it easy for users to find what they need quickly, 
+consider adding quick links on your packages landing 
+page to the following elements:
 
-* **Getting started:** This section should provide the user with a quick start for installing your package. A small example of how to use the package is good to have here as well. 
+* **Getting started:** This section should provide the user with a quick start for installing your package. A small example of how to use the package is good to have here as well. Or you can link to useful tutorials in the get started section.  
 * **About:** Describe your project, state project goals and what it does. 
-* **Community:** Instructions for how to help and/or get involved. This section might include a development guide. 
-* **Documentation:** The actual project documentation. You may have two sections of documentation - the user facing documentation and your API reference. 
+* **Community:** Instructions for how to help and/or get involved. This might include links to your issues (if that is where you let users ask questions) or the discussion part of your GitHub repo. This section might include a development guide for those who might contribute to your package. 
+* **API Documentation:** This is the actual project documentation. Here you store documentation your package's api including all user-facing functions, methods classes. 
 
 
 ```{figure} /images/geopandas-documentation-landing-page.png

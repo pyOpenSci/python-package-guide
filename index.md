@@ -113,10 +113,10 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :hidden:
 :caption: Documentation
 
-Intro to documentation <documentation/index>
+Documentation Overview <documentation/index>
 Write User Documentation <documentation/write-user-documentation/intro>
 Core GitHub Repository Files <documentation/repository-files/intro>
-Tools & Hosting  <documentation/hosting-tools/intro>
+Documentation Tools & Hosting  <documentation/hosting-tools/intro>
 ```
 
 

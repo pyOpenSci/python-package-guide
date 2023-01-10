@@ -1,11 +1,11 @@
 # Tools to Build and Host your Documentation 
 
-The mmostsot common tool for building documentation in the Python 
-ecosystem is Sphinx. However, some are using tools like 
-mkdocs for documentation. In the end it is up to you to 
+The most common tool for building documentation in the Python 
+ecosystem currently is Sphinx. However, some maintainers 
+are using tools like [mkdocs](https://www.mkdocs.org/) for documentation. It is up to you to 
 use the platform that you prefer for your documentation!
 
-In this section, we introduce sphinx as a common tool to 
+In this section, we introduce Sphinx as a common tool to 
 build documentation. We also talk about ways to publish your 
 documentation online and Sphinx tools that might help you optimize 
 your documentation website. 
@@ -13,7 +13,8 @@ your documentation website.
 ```{toctree}
 :maxdepth: 2
 
-Sphinx Tools <python-package-documentation-tools.md>
+Sphinx for Docs <sphinx-python-package-documentation-tools.md>
+myST vs Markdown vs rst <myst-markdown-rst-doc-syntax.md>
 Publish Your Docs <publish-documentation-online.md>
 Website Hosting and Optimization <website-hosting-optimizing-your-docs.md>
 ```
