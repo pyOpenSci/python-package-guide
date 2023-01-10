@@ -1,30 +1,8 @@
-# Hosting your Python package documentation and optimizing online content 
-
-## How to host your Python package documentation
-
-We suggest that you setup a hosting service for your Python package 
-documentation. Two free and commonly used ways to
-quickly create a documentation website hosting environment are below. 
-
-1. You can host your documentation yourself using [GitHub Pages](https://pages.github.com/) or another online hosting service. 
-1. You can host your documentation using [Read the Docs](https://readthedocs.org/).
-
-If you don't want to maintain a documentation website for your Python package, 
-we suggest using the Read the Docs website. Read the Docs allows you to:
-
-* Quickly launch a website using the documentation found in your GitHub repository.  
-* Track versions of your documentation as you release updates.
-* Provides support for Google analytics.
-* Allows you to turn on integration with pull requests where you can view documentation build progress (success vs failure).
-
-
-
-## Optimizing your documentation so search engines (and other users) find it
+# Optimizing your documentation so search engines (and other users) find it
 
 If you are interested in more people finding your package, you may want to 
 add some core sphinx extensions (and theme settings) that will help search 
 engines such as Google find your documentation. 
-
 
 ### Google Analytics
 Some of the [sphinx themes such as the `pydata-sphinx-theme` and 

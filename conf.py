@@ -40,19 +40,25 @@ extensions = [
 ]
 
 # colon fence for card support in md
-myst_enable_extensions = ["colon_fence"]
-
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+]
+#myst_heading_anchors = 3
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
-    "repository_url": "https://github.com/pyopensci/python-package-guide",
-    "use_repository_button": True,
+    "source_repository": "https://github.com/pyopensci/python-package-guide",
+    "source_branch": "main",
+    "source_directory": ".",
+    # "repository_url": "https://github.com/pyopensci/python-package-guide",
+    # "use_repository_button": True,
     #"google_analytics_id": "UA-141260825-1",
     #"show_toc_level": 1,
     #"toc_title": "On this page",
-    "external_links": [
-      {"pyOpenSci Website": "link-one-name", "url": "https://www.pyopensci.org"}
-  ],
+#     "external_links": [
+#       {"pyOpenSci Website": "link-one-name", "url": "https://www.pyopensci.org"}
+#   ],
   "announcement": "🚧 UNDER CONSTRUCTION: this guide is under heavy construction right now. 🚧"
 }
 

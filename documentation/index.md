@@ -1,5 +1,15 @@
 # Documentation for your Open Source Python Package: An Overview
 
+<!-- ```{toctree}
+:hidden:
+
+Best Practices for Docs <package-documentation-best-practices>
+Tools to Build Your Docs <python-package-documentation-tools>
+Host & Help People Find Your Docs <website-hosting-optimizing-your-docs>
+The README File <readme-file-best-practices.md>
+Contributing & License files <contributing-license-coc>
+``` -->
+
 ```{important}
 ## Quick Takeaways: Documentation must haves
 

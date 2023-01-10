@@ -1,83 +1,6 @@
-# Best practices for writing user-facing documentation for your Python package 
+# Document the code in your package's API using docstrings
 
-```{important}
-## Quick takeaways: best practices
-
-Your package: 
-* Should have a documentation website 
-* Should have all of its public (user-facing) functions and classes (the API) documented
-* Should use numpy-style docstrings 
-* Documentation landing page should direct users to 4 core sections: get started, documentation content, about and community.
-* Documentation should include short quick-start tutorials
-```
-
-In addition to a well designed [README.md file](readme-file-best-practices), 
-and a [CONTRIBUTING.md file](contributing-file), 
-there are several core components of Python package documentation, 
-including:
-
-* **User-facing documentation website:** This refers to easy-to-read documentation that helps a user work with your package. This documentation should help users both install and use the functionality of your package.  
-    * Your user facing documentation should also include [short tutorials that show a user how to quickly get started using your package](python-package-documentation-tools.html#create-python-package-tutorials-that-both-help-users-and-test-your-package-s-code). If you use a tool such as sphinx-gallery or nbsphinx that runs the code in your tutorials, then these tutorials can also become an important part of your package's test suite.   
-* **API documentation:** The API refers to the functions and classes in a 
-package that makes up the user interface. API documentation is generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your 
-code. Ideally you have docstrings for all user-facing functions, methods and classes in 
-your Python package. We will discuss API's and docstrings in greater detail below. 
-
-
-User-facing documentation should be published on a easy-to-navigate website. All language should be written with non-developer users in mind. This means 
-using language that is less technical.
-
-A few tips to make sure your documentation is accessible include: 
-
-* Whenever possible, define technical terms and jargon.
-* Consider writing instructions for a high-school level reader. 
-* Include step-by-step code examples, tutorials or vignettes that support getting started using your package.
-
-## Documentation landing page best practices 
-
-To make it easy for users to find what they need quickly, all packages should 
-have 4 elements on the home page of their documentation:
-
-* **Getting started:** This section should provide the user with a quick start for installing your package. A small example of how to use the package is good to have here as well. 
-* **About:** Describe your project, state project goals and what it does. 
-* **Community:** Instructions for how to help and/or get involved. This section might include a development guide. 
-* **Documentation:** The actual project documentation. You may have two sections of documentation - the user facing documentation and your API reference. 
-
-
-```{figure} ../images/geopandas-documentation-landing-page.png
----
-name: directive-fig
-width: 80%
-alt: Image showing the landing page for GeoPandas documentation which has 4 sections including Getting started, Documentation, About GeoPandas, Community. 
----
-The documentation landing page of GeoPandas, a spatial Python library, has the 4 element specified above. Notice that the landing page is simple and directs users to each element using a Sphinx card.
-```
-
-NOTE: in many cases you can include your **README** file and your **CONTRIBUTING** files 
-in your documentation given those files may have some of the components listed above.
-
-`````{tip}
-You can include files in sphinx using the include directive.
-Below is an example of doing this using `myst` syntax. 
-````
-```{include} ../README.md
-```
-````
-`````
-
-## Create tutorials in your documentation 
-Your package should have tutorials that make it easy for a user 
-to get started using your package. Ideally, those tutorials 
-also can be run from start to finish providing a second set of 
-checks (on top of your test suite) to your package's code base. 
-
-In the [documentation tools page](python-package-documentation-tools) we talk about two sphinx extensions (sphinx gallery and nbsphinx)
-that  allow you to create reproducible tutorials that are run 
-when your sphinx documentation builds. 
-
-## Documenting the code in your package's API using docstrings
-
-### What is an API?
+## What is an API?
 API stands for **A**pplied **P**rogramming **I**nterface. When 
 discussed in the context of a (Python) package, the API refers to 
 the interface and tools that you, as a package user, use in a package. 
@@ -90,7 +13,7 @@ using the package's API.
 
  Package API's can consist of functions and/or classes (or object) that provide an easier-to-user interface (the API) for a user. 
 
-### What is a docstring and how does it relate to documentation? 
+## What is a docstring and how does it relate to documentation? 
 In Python a docstring refers to text in a function, method or class 
 that describes what the function does and its inputs, outputs and what it 
 returns.
@@ -105,7 +28,6 @@ Example API Documentation (Documentation for all functions and classes in a pack
 * [View example high level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does](https://www.fatiando.org/verde/latest/api/index.html)
 * [You can further dig down to see what a specific function does within the package by clicking on an API element](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)
 ```
-
 
 ## Python package API documentation 
 
@@ -227,3 +149,52 @@ output of the `es.extent_to_json(rmnp)` command can even be tested using
 doctest adding another quality check to your package. 
 ```
 
+
+## Using doctest to run docstring examples in your packages methods and functions
+<!-- This link isn't working no matter how i create the target. not sure 
+why -->
+Above, we provided some examples of good, better, best docstring formats. If you are using Sphinx to create your docs, you can add the [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx build. Doctest provides an additiona; check for docstrings with example code in them. 
+Doctest runs the example code in your docstring `Examples` checking 
+that the expected output is correct. Similar to running
+tutorials in your documentation, `doctest` can be a useful step that 
+assures that your package's code (API) runs as you expect it to.
+
+```{note} 
+It's important to keep in mind that examples in your docstrings 
+help users using your package. Running `doctest` on those examples provides a 
+check of your package's API. doctest ensures that the functions and methods in your package 
+run as you expect them to. Neither of these items replace a separate, 
+stand-alone test suite that is designed to test your package's core functionality 
+across operating systems and Python versions. 
+```
+
+Below is an example of a docstring with an example. 
+doctest will run the example below and test that if you provide 
+`add_me` with the values 1 and 3 it will return 4.  
+
+
+```python
+def add_me(aNum, aNum2):
+    """A function that prints a number that it is provided. 
+    
+    Parameters
+    ----------
+    aNum : int
+        An integer value to be printed
+    
+    Returns 
+    -------
+        Prints the integer that you provide the function.
+    
+    """
+   return aNum + aNum2
+
+Examples
+--------
+Below you can see how the `print_me` function will print a number that 
+you provide it.
+
+>>> add_me(1+3)
+4
+
+```
