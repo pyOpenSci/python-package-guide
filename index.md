@@ -52,9 +52,10 @@ Learn about our open peer review process
 ✨ Documentation Criteria & Recommendations ✨
 ^^^
 
-Learn about the good, better and best practices 
-associated with Python package documentation. Topics 
-covered include: README files, tutorials and full docs. 
+Learn more about the best practices for Python package 
+documentation and also some of the tools for creating 
+documentation that are 
+commonly used in the scientific Python community. 
 :::
 
 :::{grid-item-card}
@@ -64,8 +65,9 @@ covered include: README files, tutorials and full docs.
 
 ✨ Package Structure & Code ✨
 ^^^
-<!-- 
-Get a basic overview of our open peer review process for Python scientific open source software. -->
+Under Construction - Coming Spring 2023! 
+Learn more about standards for packaging structure and 
+builds in the scientific Python community. 
 :::
 
 :::{grid-item-card}
@@ -111,11 +113,12 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :hidden:
 :caption: Documentation
 
-Intro to Documentation <documentation/index>
-The README File <documentation/create-readme-files.md>
-README Files <documentation/readme-files>
-Package documentation <documentation/package-documentation-sphinx>
-Contributing & license files <documentation/contributing>
+Documentation Overview <documentation/index>
+Best Practices for Docs <documentation/package-documentation-best-practices>
+Tools to Build Your Docs <documentation/python-package-documentation-tools>
+Host & Help People Find Your Docs <documentation/website-hosting-optimizing-your-docs>
+The README File <documentation/readme-file-best-practices.md>
+Contributing & License files <documentation/contributing-license-coc>
 ```
 
 ```{toctree}
