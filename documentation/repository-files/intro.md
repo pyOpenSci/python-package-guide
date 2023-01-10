@@ -7,7 +7,8 @@ to support documentation:
 :maxdepth: 2
 
 README file <readme-file-best-practices.md>
-CONTRIBUTING File & Code of Conduct <contributing-and-code-of-conduct.md>
+Contributing File <contributing-file.md>
+Code of Conduct File <code-of-conduct-file.md>
 Development Guide <development-guide.md>
 LICENSE files <license-files.md>
 ```

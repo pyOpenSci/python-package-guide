@@ -10,11 +10,10 @@ The README.md file is the landing page of:
 
 Your README.md file is also used as a measure of package and community 
 health on sites such as:
-* [GitHub community health (available for all repositories - this link demonstrates movingpandas)](https://github.com/anitagraser/movingpandas/community), and
-* [snyk - moving pandas example)  
+* [GitHub community health for MovingPandas (available for all repositories)](https://github.com/anitagraser/movingpandas/community) and [snyk - moving pandas example](https://snyk.io/advisor/python/movingpandas)  
 
 
-```{figure} ../images/pandera-python-package-readme-github.png
+```{figure} /images/pandera-python-package-readme-github.png
 ---
 name: directive-fig
 width: 80%

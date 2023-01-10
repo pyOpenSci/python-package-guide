@@ -6,7 +6,7 @@ documentation for Python packages.
 ```{toctree}
 :maxdepth: 2
 
-Get Started <get-started>
+Create Your Docs <get-started>
 Document Your Code (API) <document-your-code-api-docstrings.md>
 Create Package Tutorials <create-package-tutorials.md>
 ```

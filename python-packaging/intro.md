@@ -1,4 +1,4 @@
-# Coming soon... 
+# Python Packaging Tools... Coming soon... 
 
 
 In this section we will cover:
@@ -7,3 +7,5 @@ In this section we will cover:
 * publishing to PyPI and Conda 
 * Built front-end tools to support your development workflow 
 * Managing dependencies
+
+Stay tuned as this section is currently under development as of January 2023!!
