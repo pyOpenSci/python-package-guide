@@ -113,37 +113,28 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :hidden:
 :caption: Documentation
 
-Documentation Overview <documentation/index>
-Best Practices for Docs <documentation/package-documentation-best-practices>
-Tools to Build Your Docs <documentation/python-package-documentation-tools>
-Host & Help People Find Your Docs <documentation/website-hosting-optimizing-your-docs>
-The README File <documentation/readme-file-best-practices.md>
-Contributing & License files <documentation/contributing-license-coc>
+Intro to documentation <documentation/index>
+Write User Documentation <documentation/write-user-documentation/intro>
+Core GitHub Repository Files <documentation/repository-files/intro>
+Tools & Hosting  <documentation/hosting-tools/intro>
 ```
+
 
 ```{toctree}
 :hidden:
 :caption: Package structure & code style
 
-Intro <package-structure-code/intro>
-package-structure-code/code-structure-style
-package-structure-code/release
-package-structure-code/overview
-package-structure-code/collaboration
+Intro <python-packaging/intro>
+
 ```
+
+
 
 ```{toctree}
 :hidden:
-:caption: Code Style & Structure
+:caption: CI and Testing
 
-code-style-structure/index
-```
-
-```{toctree}
-:hidden:
-:caption: Test your code
-testing-infrastructure/test-code
-testing-infrastructure/continuous-integration
+Intro <ci-and-testing/intro>
 ```
 
 
