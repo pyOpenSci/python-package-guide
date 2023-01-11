@@ -1,4 +1,4 @@
-# Documentation for your Open Source Python Package: An Overview
+# Documentation for your Open Source Python Package
 
 ```{important} 
 Please note that the tools discussed here are those that 
@@ -37,7 +37,7 @@ detail about creating each of the above elements. We also suggest
 tools that will help you build your documentation. 
 ``` -->
 
-## Documentation is critical to the success of your Python open source package 
+## Documentation is critical for your Python package's success 
 
 Documentation is as important to the success of your Python open source package 
 as the code itself. 
@@ -51,41 +51,77 @@ to build a base of contributors to your package.
 ## Two types of Python package users 
 
 The documentation that you write for your 
-package should target a two types of users:
+package should target two types of users:
 
 ### 1. Basic Tool Users 
 
-There are people who will use your code in their Python workflows. They might be new(er) to Python and/or data science. Or expert programmers. They need to known
+Basic tool users are the people who will use your package code in their 
+Python workflows. They might be new(er) to Python and/or data science. Or 
+expert programmers. But they might not have a background in software 
+development. These users need to know:
+
  * How to install your package
- * And dependencies it requires to run the code in your package (for instance perhaps a tool like GDAL needs to be installed on a machine first)
+ * How to install dependencies that your package requires
  * How to get started using the code base
- * Information on how to cite your code / give you credit if they are using it in a research application.
- * Information on the license that your code uses so they know how they can or can't use the code in an operational setting that may include money exchanges.
+ * Information on how to cite your code / give you credit if they are using it 
+ in a research application.
+ * Information on the license that your code uses so they know how they can 
+ or can't use the code in an operational setting.
 
 ### 2. Potential tool contributors 
 
-The other subset of users are more experienced using Python or developing tools. Potential contributors are likely using your tool. But they also might contribute bug fixes or updates to your documentation. They need all of the things that a basic user needs. But, they also need direction in terms of how you'd like for them to contribute to your package. These potential contributors need:
+The other subset of users are more experienced and/or more engaged 
+with your package. As such they are 
+potential contributors. These users:
+
+* might have a software development background,
+* might also be able to contribute bug fixes to your package or updates to your documentation
+* might also just be users who will find spelling errors in your documentation, or bugs in your tutorials.
+
+These users need all of the things that a basic user needs. But, they 
+also need to understand how you'd like for them to contribute to your 
+package. These potential contributors need:
 
 * A development guide to help them understand the infrastructure used in your package repository.
 * Contributing guidelines that clarify the types of contributions that you welcome and how you'd prefer those contributions to be submitted.
 
+```{important}
+It's important to remember that the definition of what a contribution is can be 
+broad. A contribution could be something as simple as a bug report. Or fixing a 
+spelling issue in your documentation. Or it could be a code fix that includes a 
+new test that covers an edge-case that they discovered. 
+```
 
-## Documentation elements that pyOpenSci looks for when reviewing a Python package
 
-In the pyOpenSci open peer review process, we look for 
-a documentation structure that suypports both your tool users and potential contributors. The files and elements that we 
-look for are listed below.
+## Documentation elements that pyOpenSci looks for reviewing a Python package
 
+In the pyOpenSci open peer review, we look for 
+a documentation structure that supports both your tool users and potential 
+contributors. The files and elements that we look for specifically can be 
+found in our peer review check list (see link below).
+
+In this guide, we discuss each required element, and also discuss other elements
+that you should consider in your package's documentation in more detail. 
+
+<!-- TODO: EIC checks are missing: code of conduct -->
+
+
+```{button-link} https://www.pyopensci.org/peer-review-guide/software-peer-review-guide/editor-in-chief-guide.html#editor-checklist-template
+:color: primary
+:class: sd-rounded-pill float-left
+View pyOpenSci peer review check list
+```
+<!-- 
 1. Individual files in your GitHub (or GitLab) repository including:
     * [A clear and to the point **README.md** file](readme-file-best-practices) that includes information about how to cite your package.
     * A [**CONTRIBUTING.md** file](contributing-license-coc) that outlines how others can contribute to your package. This file should also link to your development guide and code of conduct. A well-crafted contributing guide will make it much easier for the community to contribute to your project.
-    * A [**CODE_OF_CONDUCT.md**](contributing-license-coc.html#the-code-of-conduct-md-file) file. This file sets up the guidelines for how your community interacts. It ideally ensures that everyone feels safe and can report inappropriate behavior if need be.   <!--<not sure why header targets aren't working here with Sphinx they work online> -->
+    * A [**CODE_OF_CONDUCT.md**](contributing-license-coc.html#the-code-of-conduct-md-file) file. This file sets up the guidelines for how your community interacts. It ideally ensures that everyone feels safe and can report inappropriate behavior if need be.   
     * [**A LICENSE.txt file**](contributing-license-coc.html#your-repository-should-have-a-license-md-file) A license file declaring the OSI-approved license that you select and instructions for citing your package.
-    * We also suggest (but don't require) that you include a development guide that details the infrastructure used in your package. Sometimes this file is included in the user-facing documentation website (discussed below).  
+    * We also suggest (but don't require) that you include a development guide that details the infrastructure used in your package. Sometimes this file is included in the user-facing documentation website (discussed below).     
 1. [**User focused package documentation**](package-documentation-best-practices) that helps users understand how to install, setup and use your package. Documentation is most often contained in a stand-alone website. The user-focused documentation should include:
     * **Tutorials and quick start code examples** that help a user get started using your package. 
     * **Documentation for user-facing functions, objects and methods in your package (the API).** Package API documentation refers to documentation for each class, function, method and user-facing attribute (*available for a user to see*) in your package. This means that your package methods and classes should have [thoughtful docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) that describe both the purpose of the code element and each input and output.
-
+ -->
 
 ```{figure} ../images/moving-pandas-python-package-github-main-repo.png
 ---
@@ -97,32 +133,6 @@ Contributing.md, license.txt, readme.md.
 An example from the MovingPandas GitHub repository with all of the major files in it including CONTRIBUTING.md, README.md, CODE_OF_CONDUCT.md and a LICENSE.txt file. *(screen shot taken Nov 23 2022)*
 ```
 
-The files mentions above (README, Code of Conduct, license 
-file, etc) are used as a measure of package community health 
-on many online platforms. Below, you can see the community 
-standards page that everyone has in their GitHub repository. 
-
-```{figure} ../images/moving-pandas-python-package-github-community-standards.png
----
-name: directive-fig
-width: 80%
-alt: Image showing that the MovingPandas GitHub repository community health page with green checks next to each file including: description, README, code of conduct, contributing, license and issue templates. Note that Security policy has a yellow circle next to it as that is missing from the repo.
----
-GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/anitagraser/movingpandas/community) *(screen shot taken Nov 23 2022)*
-```
-
-[Snyk](https://snyk.io/advisor/python) is another well-known company that keeps tabs on package health.
-Below you can see a similar evaluation of files in the Github repo as a 
-measure of community health. 
-
-```{figure} ../images/moving-pandas-python-package-snyk-health.png
----
-name: directive-fig
-width: 80%
-alt: Screenshot of the Snyk page for movingpandas. It shows that the repository has a README file, contributing file, code of conduct. It also shows that it has 30 contributors and no funding. The package health score is 78/100.
----
-Screenshot showing [SNYK](https://snyk.io/advisor/python/movingpandas) package health for moving pandas. Notice both platforms look for a README file. *(screen shot taken Nov 23 2022)*
-```
 
 
 ## What's next in this Python package documentation section?
@@ -131,8 +141,6 @@ In this section of the pyOpenSci package guide, we will walk
 you through best practices for setting up
 documentation for your Python package. We will also suggest 
 tools that you can use to build your user-facing documentation website. 
-
-
 
 
 <!-- 
