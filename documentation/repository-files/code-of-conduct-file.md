@@ -17,6 +17,8 @@ Others in the community might want to contribute to your tool.
 They might fix bugs, update documentation and engage with the 
 maintainer team.
 
+## Why you need a code of conduct
+
 In order to keep this community healthy and to protect yourself,
 your mainatianer team and your users from unhealthy behavior, 
 it is important to have a [code of conduct](https://opensource.guide/code-of-conduct/). 
