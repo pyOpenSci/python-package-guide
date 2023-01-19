@@ -52,9 +52,10 @@ Learn about our open peer review process
 ✨ Documentation Criteria & Recommendations ✨
 ^^^
 
-Learn about the good, better and best practices 
-associated with Python package documentation. Topics 
-covered include: README files, tutorials and full docs. 
+Learn more about the best practices for Python package 
+documentation and also some of the tools for creating 
+documentation that are 
+commonly used in the scientific Python community. 
 :::
 
 :::{grid-item-card}
@@ -64,8 +65,9 @@ covered include: README files, tutorials and full docs.
 
 ✨ Package Structure & Code ✨
 ^^^
-<!-- 
-Get a basic overview of our open peer review process for Python scientific open source software. -->
+Under Construction - Coming Spring 2023! 
+Learn more about standards for packaging structure and 
+builds in the scientific Python community. 
 :::
 
 :::{grid-item-card}
@@ -111,36 +113,28 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :hidden:
 :caption: Documentation
 
-Intro to Documentation <documentation/index>
-The README File <documentation/create-readme-files.md>
-README Files <documentation/readme-files>
-Package documentation <documentation/package-documentation-sphinx>
-Contributing & license files <documentation/contributing>
+Documentation Overview <documentation/index>
+Write User Documentation <documentation/write-user-documentation/intro>
+Core GitHub Repository Files <documentation/repository-files/intro>
+Documentation Tools & Hosting  <documentation/hosting-tools/intro>
 ```
+
 
 ```{toctree}
 :hidden:
 :caption: Package structure & code style
 
-Intro <package-structure-code/intro>
-package-structure-code/code-structure-style
-package-structure-code/release
-package-structure-code/overview
-package-structure-code/collaboration
+Intro <python-packaging/intro>
+
 ```
+
+
 
 ```{toctree}
 :hidden:
-:caption: Code Style & Structure
+:caption: CI and Testing
 
-code-style-structure/index
-```
-
-```{toctree}
-:hidden:
-:caption: Test your code
-testing-infrastructure/test-code
-testing-infrastructure/continuous-integration
+Intro <ci-and-testing/intro>
 ```
 
 

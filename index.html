@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="Welcome, Python open source enthusiast!: Here you will find guidelines for what we look for in your scientific Python package when reviewing. You will also find best practice recommendations and cu..." />
 <meta name="description" content="Welcome, Python open source enthusiast!: Here you will find guidelines for what we look for in your scientific Python package when reviewing. You will also find best practice recommendations and cu..." />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Intro: Document Your Python Package" href="documentation/index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Documentation for your Open Source Python Package" href="documentation/index.html" />
         <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/index.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
@@ -184,9 +184,39 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="documentation/index.html">Intro to Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation/create-readme-files.html">The README File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation/contributing.html">Contributing &amp; license files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation/index.html">Documentation Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/write-user-documentation/intro.html">Write User Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation/write-user-documentation/intro.html">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/write-user-documentation/get-started.html">Create Your Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/write-user-documentation/document-your-code-api-docstrings.html">Document Your Code (API)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/write-user-documentation/create-package-tutorials.html">Create Package Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/repository-files/intro.html">Core GitHub Repository Files</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation/repository-files/intro.html">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/repository-files/readme-file-best-practices.html">README file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/repository-files/contributing-file.html">Contributing File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/repository-files/code-of-conduct-file.html">Code of Conduct File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/repository-files/development-guide.html">Development Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/repository-files/license-files.html">LICENSE files</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation/hosting-tools/intro.html">Documentation Tools &amp; Hosting</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation/hosting-tools/intro.html">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx for Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/hosting-tools/myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/hosting-tools/publish-documentation-online.html">Publish Your Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation/hosting-tools/website-hosting-optimizing-your-docs.html">Website Hosting and Optimization</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python-packaging/intro.html">Intro</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CI and Testing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ci-and-testing/intro.html">Intro</a></li>
 </ul>
 
 </div>
@@ -206,8 +236,16 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/pyopensci/python-package-guide/edit/main/./index.md" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -250,9 +288,10 @@ Python package when reviewing. You will also find best practice recommendations 
 <p class="sd-card-text">✨ Documentation Criteria &amp; Recommendations ✨</p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Learn about the good, better and best practices
-associated with Python package documentation. Topics
-covered include: README files, tutorials and full docs.</p>
+<p class="sd-card-text">Learn more about the best practices for Python package
+documentation and also some of the tools for creating
+documentation that are
+commonly used in the scientific Python community.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="documentation/index.html"><span class="doc"></span></a></div>
 </div>
@@ -262,8 +301,9 @@ covered include: README files, tutorials and full docs.</p>
 <p class="sd-card-text">✨ Package Structure &amp; Code ✨</p>
 </div>
 <div class="sd-card-body docutils">
-<!-- 
-Get a basic overview of our open peer review process for Python scientific open source software. -->
+<p class="sd-card-text">Under Construction - Coming Spring 2023!
+Learn more about standards for packaging structure and
+builds in the scientific Python community.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="code-style-structure/intro.html"><span class="doc"></span></a></div>
 </div>
@@ -306,8 +346,6 @@ contribute.</p>
 <p>Good meets the requirements. Going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.</p>
 <p>This guide is now a work in progress. If you have ideas of things you’d like
 to see here, <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">we invite you to open an issue on GitHub that details any changes or additions that you’d like to see.</a>.</p>
-<div class="toctree-wrapper compound">
-</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -358,7 +396,7 @@ An automatic linter (e.g. flake8) can help ensure your code is clean and free of
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Intro: Document Your Python Package</div>
+                <div class="title">Documentation for your Open Source Python Package</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
