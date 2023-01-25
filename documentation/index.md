@@ -106,7 +106,7 @@ that you should consider in your package's documentation in more detail.
 <!-- TODO: EIC checks are missing: code of conduct -->
 
 
-```{button-link} https://www.pyopensci.org/peer-review-guide/software-peer-review-guide/editor-in-chief-guide.html#editor-checklist-template
+```{button-link} https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template
 :color: primary
 :class: sd-rounded-pill float-left
 View pyOpenSci peer review check list
