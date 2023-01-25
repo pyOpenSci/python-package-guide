@@ -12,7 +12,7 @@ jobs:
             pip install nox
             pip list
       - run:
-          name: Build book html 
+          name: Build book html
           command: nox -s docs
 
       - store_artifacts:

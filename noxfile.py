@@ -1,4 +1,4 @@
-import os 
+import os
 import pathlib
 import shutil
 import nox
@@ -35,12 +35,12 @@ docs_dir = os.path.join("_build", "html")
 @nox.session(name="docs-clean")
 def clean_dir(dir_path=docs_dir):
     """
-    Clean out the docs directory used in the 
+    Clean out the docs directory used in the
     live build.
     """
     dir_path = pathlib.Path(dir_path)
     dir_contents = dir_path.glob('*')
-    
+
     for content in dir_contents:
         print(content)
         if content.is_dir():

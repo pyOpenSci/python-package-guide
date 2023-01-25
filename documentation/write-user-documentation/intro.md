@@ -1,20 +1,20 @@
-# Writing user-facing documentation for your Python package 
+# Writing user-facing documentation for your Python package
 
-This section walks you through best practices for with writing 
+This section walks you through best practices for with writing
 documentation for your Python package.
 
 We talk about the elements that you should consider adding to your documentation,
-the different types of users who might read your documentation and how to 
+the different types of users who might read your documentation and how to
 create tutorials for your package.
 
-Here we also cover sphinx extensions that you can user to make documentation 
+Here we also cover sphinx extensions that you can user to make documentation
 easier such as:
 
-* autodoc to automagically populate documentation for your code's functions, 
+* autodoc to automagically populate documentation for your code's functions,
 classes, methods and attributes (API documentation) and
-* sphinx gallery for tutorials. 
+* sphinx gallery for tutorials.
 
-## User-facing documentation sections 
+## User-facing documentation sections
 
 ```{toctree}
 :maxdepth: 2
@@ -24,4 +24,3 @@ Create Your Docs <get-started>
 Document Your Code (API) <document-your-code-api-docstrings.md>
 Create Package Tutorials <create-package-tutorials.md>
 ```
-

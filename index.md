@@ -1,12 +1,12 @@
-# pyOpenSci Python Open Source Package Development Guide  
+# pyOpenSci Python Open Source Package Development Guide
 
-<!-- Github community standards 
+<!-- Github community standards
 https://github.com/pyOpenSci/python-package-guide/community -->
 
-## Welcome, Python open source enthusiast! 
+## Welcome, Python open source enthusiast!
 
-Here you will find guidelines for what we look for in your scientific 
-Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and documentation. 
+Here you will find guidelines for what we look for in your scientific
+Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and documentation.
 
 ::::{grid} 2
 :reverse:
@@ -15,7 +15,7 @@ Python package when reviewing. You will also find best practice recommendations 
 :columns: 4
 :class: sd-m-auto
 
-:::  
+:::
 
 :::{grid-item}
 :columns: 8
@@ -52,10 +52,10 @@ Learn about our open peer review process
 ✨ Documentation Criteria & Recommendations ✨
 ^^^
 
-Learn more about the best practices for Python package 
-documentation and also some of the tools for creating 
-documentation that are 
-commonly used in the scientific Python community. 
+Learn more about the best practices for Python package
+documentation and also some of the tools for creating
+documentation that are
+commonly used in the scientific Python community.
 :::
 
 :::{grid-item-card}
@@ -65,9 +65,9 @@ commonly used in the scientific Python community.
 
 ✨ Package Structure & Code ✨
 ^^^
-Under Construction - Coming Spring 2023! 
-Learn more about standards for packaging structure and 
-builds in the scientific Python community. 
+Under Construction - Coming Spring 2023!
+Learn more about standards for packaging structure and
+builds in the scientific Python community.
 :::
 
 :::{grid-item-card}
@@ -77,35 +77,35 @@ builds in the scientific Python community.
 
 ✨ Want to contribute? ✨
 ^^^
-We welcome contributions to this guide. Learn more about how you can 
+We welcome contributions to this guide. Learn more about how you can
 contribute.
 :::
 ::::
 
-## Who this guidebook is for 
-We assume that you are here because you are: 
+## Who this guidebook is for
+We assume that you are here because you are:
 
 1. Considering submitting a package to pyOpenSci and want to understand what we are looking for when we review your package
-2. Looking for guidance on creating a Python package. 
+2. Looking for guidance on creating a Python package.
 3. Looking for resources associated with Python packaging.
 
-Well, friend, you've come to the right place! 
+Well, friend, you've come to the right place!
 
-## What you will find in this guidebook 
+## What you will find in this guidebook
 
-This guidebook contains: 
+This guidebook contains:
 
 * Explanation for "Good enough" minimum requirements associated with being reviewed by pyOpenSci
 * Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!
-* A curated list of resources to help you get your package into documented, usable and tested shape. 
+* A curated list of resources to help you get your package into documented, usable and tested shape.
 
-## Where this guide is headed 
+## Where this guide is headed
 
-Most of the sections in this guide will ultimately include Good/Better/Best recommendations for Python open source software packaging. 
+Most of the sections in this guide will ultimately include Good/Better/Best recommendations for Python open source software packaging.
 
 Good meets the requirements. Going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.
 
-This guide is now a work in progress. If you have ideas of things you'd like 
+This guide is now a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
 
 
@@ -141,15 +141,15 @@ Intro <ci-and-testing/intro>
 
 
 
-<!-- 
-COMMENTED OUT TEXT TO BE MOVED 
+<!--
+COMMENTED OUT TEXT TO BE MOVED
 
 
 # TODO LINK TO CI BUILDS FOR Documentation>
 Maybe we can curate a list of CI builds that people can use??? or is that moving too close to a cookie cutter situation
 
-The text below is being moved to the packaging infrastructure section which 
-doesn't exist YET... but will soon . 
+The text below is being moved to the packaging infrastructure section which
+doesn't exist YET... but will soon .
 pyOpenSci packages must:
 
 - Contain full documentation for any user-facing functions.
