@@ -1,7 +1,7 @@
 name: build-test-deploy-book
 
 # Only build PRs, the main branch, and releases. Pushes to branches will only
-# be built when a PR is opened. This avoids duplicated buids in PRs comming
+# be built when a PR is opened. This avoids duplicated buids in PRs coming
 # from branches in the origin repository (1 for PR and 1 for push).
 # This came from Leo's work with fatiando
 on:
@@ -53,7 +53,7 @@ jobs:
           _build/html/
 
     # Push the book's HTML to github-pages
-    - name: Push to GitHub Pages 
+    - name: Push to GitHub Pages
       # Only push if on main branch
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3.8.0
@@ -69,5 +69,3 @@ jobs:
         arguments: |
           --ignore-files "/.+\/_static\/.+/,/genindex.html/"
           --ignore-status-codes "404, 403, 503"
-
-    

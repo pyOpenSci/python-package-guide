@@ -1,7 +1,7 @@
-# Documentation Files That Should be in your Python Package Repository 
+# Documentation Files That Should be in your Python Package Repository
 
-In this section of the Python packaging guide, we review all of the files that 
-you should have in your Python package repository. Your Python package should, 
+In this section of the Python packaging guide, we review all of the files that
+you should have in your Python package repository. Your Python package should,
 at a minimum have the following files:
 
 ```{toctree}
@@ -15,11 +15,11 @@ Development Guide <development-guide.md>
 LICENSE files <license-files.md>
 ```
 
-The files mentions above (README, Code of Conduct, license 
-file, etc) are used as a measure of package community health 
-on many online platforms. Below, you can see an example how Github 
-evaluates community health. This community health link is available for 
-all GitHub repositories.  
+The files mentions above (README, Code of Conduct, license
+file, etc) are used as a measure of package community health
+on many online platforms. Below, you can see an example how Github
+evaluates community health. This community health link is available for
+all GitHub repositories.
 
 ```{figure} /images/moving-pandas-python-package-github-community-standards.png
 ---
@@ -30,9 +30,9 @@ alt: Image showing that the MovingPandas GitHub repository community health page
 GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/anitagraser/movingpandas/community) *(screen shot taken Nov 23 2022)*
 ```
 
-[Snyk](https://snyk.io/advisor/python) is another well-known company that 
-keeps tabs on package health. Below you can see a similar evaluation of files 
-in the Github repo as a measure of community health. 
+[Snyk](https://snyk.io/advisor/python) is another well-known company that
+keeps tabs on package health. Below you can see a similar evaluation of files
+in the Github repo as a measure of community health.
 
 ```{figure} /images/moving-pandas-python-package-snyk-health.png
 ---
@@ -42,4 +42,3 @@ alt: Screenshot of the Snyk page for movingpandas. It shows that the repository 
 ---
 Screenshot showing [SNYK](https://snyk.io/advisor/python/movingpandas) package health for moving pandas. Notice both platforms look for a README file. *(screen shot taken Nov 23 2022)*
 ```
-
