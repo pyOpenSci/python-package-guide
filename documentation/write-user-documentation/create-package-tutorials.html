@@ -261,7 +261,7 @@
         <article role="main">
           <section id="create-tutorials-in-your-python-package-documentation">
 <h1>Create tutorials in your Python package documentation<a class="headerlink" href="#create-tutorials-in-your-python-package-documentation" title="Permalink to this heading">#</a></h1>
-<!-- TODO: modify the nbsphinx example to use nbgallery 
+<!-- TODO: modify the nbsphinx example to use nbgallery
 as a front end vs Sphinx gallery - will look better that way
 -->
 <p>Your package should have tutorials that make it easy for a user
@@ -336,7 +336,7 @@ at the beginning.</p>
 <p>These nuances can make it challenging for potential contributors to add
 tutorials to your package. This can also present maintenance challenge.</p>
 <p>Add about the gallery setup -</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docs<span class="w"> </span>%<span class="w"> </span>make<span class="w"> </span>html<span class="w"> </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docs<span class="w"> </span>%<span class="w"> </span>make<span class="w"> </span>html
 
 Sphinx-Gallery<span class="w"> </span>successfully<span class="w"> </span>executed<span class="w"> </span><span class="m">2</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">2</span><span class="w"> </span>files
 </pre></div>
@@ -344,19 +344,19 @@ Sphinx-Gallery<span class="w"> </span>successfully<span class="w"> </span>execut
 <p>File directory structure:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tutorials/
 <span class="w">    </span>index.rst<span class="w"> </span><span class="c1"># landing page for your gallery</span>
-<span class="w">    </span>plot_tutorial.py<span class="w"> </span><span class="c1"># a tutorial </span>
+<span class="w">    </span>plot_tutorial.py<span class="w"> </span><span class="c1"># a tutorial</span>
 <span class="w">    </span>plot_tutorial-2.py<span class="w"> </span><span class="c1"># a tutorial that produces a plot output</span>
 _build/
-<span class="w">    </span>build_examples/<span class="w"> </span><span class="c1"># This is where the downloadable tutorial files live </span>
+<span class="w">    </span>build_examples/<span class="w"> </span><span class="c1"># This is where the downloadable tutorial files live</span>
 <span class="w">        </span>plot_sample-1.ipynb
 <span class="w">        </span>plot_sample-1.py
 <span class="w">        </span>...
-<span class="w">    </span>html/<span class="w"> </span>
+<span class="w">    </span>html/
 <span class="w">        </span>built_examples/<span class="w"> </span><span class="c1"># You can specify this dir name in gallery settings</span>
-<span class="w">            </span>index.html<span class="w"> </span>
-<span class="w">            </span>plot_sample-1.html<span class="w"> </span>
-<span class="w">            </span>plot_sample.html<span class="w"> </span>
-<span class="w">            </span>sg_execution_times.html<span class="w"> </span><span class="c1"># in case you want to see build times for each tutorial </span>
+<span class="w">            </span>index.html
+<span class="w">            </span>plot_sample-1.html
+<span class="w">            </span>plot_sample.html
+<span class="w">            </span>sg_execution_times.html<span class="w"> </span><span class="c1"># in case you want to see build times for each tutorial</span>
 </pre></div>
 </div>
 </section>
@@ -385,14 +385,14 @@ elements in a single column.</span><a class="headerlink" href="#id2" title="Perm
 <span class="c1"># This shows you what the build directory looks like when you build with sphinx-build</span>
 _build/
 <span class="w">    </span>html/
-<span class="w">        </span><span class="c1"># Notice that nbsphinx runs each notebook and produces an </span>
-<span class="w">        </span><span class="c1"># html file with all of the outputs of your code </span>
-<span class="w">        </span><span class="c1"># you can link to the notebook in your docs by modifying </span>
+<span class="w">        </span><span class="c1"># Notice that nbsphinx runs each notebook and produces an</span>
+<span class="w">        </span><span class="c1"># html file with all of the outputs of your code</span>
+<span class="w">        </span><span class="c1"># you can link to the notebook in your docs by modifying</span>
 <span class="w">        </span><span class="c1"># the nbsphinx build - we will cover this in a separate tutorial series focused onPythonpackaging!</span>
-<span class="w">        </span>tutorials/<span class="w"> </span>
+<span class="w">        </span>tutorials/
 <span class="w">            </span>index.html
-<span class="w">            </span>index.md<span class="w"> </span>
-<span class="w">            </span>plot_sample-2.html<span class="w"> </span>
+<span class="w">            </span>index.md
+<span class="w">            </span>plot_sample-2.html
 <span class="w">            </span>plot_sample-2.ipynb
 <span class="w">            </span>...
 </pre></div>
