@@ -69,18 +69,9 @@ In this section of our Python packaging guide, we try to:
 * Suggest tools and approaches that will allow you to expand upon a workflow that may begin as a pure Python tool and evolve into a tool that requires addition layers of complexity in the packaging build.
 * Align our suggestions with the most current, accepted
 [PEPs (Python Enhancement Protocols)](https://peps.python.org/pep-0000/) and the [scientific-python community SPECs](https://scientific-python.org/specs/).
-* In an effort to maintain consistency withint our community , we also align with existing best practices being implemented by developers of core Scientific Python packages such as numpy, scipy and others.
+* In an effort to maintain consistency within our community , we also align with existing best practices being implemented by developers of core Scientific Python packages such as Numpy, SciPy and others.
 
 
-
-
-<!--
-
-These checks include several items
-
-- **Sufficient Documentation** The package has sufficient documentation available online (README, sphinx docs) to allow us to evaluate package function and scope *without installing the package*. This includes:
-  Get started tutorials or vignettes that help a user understand how to use the package and what it can do for them (often these have a name like "Getting started")
-- **API documentation** - this includes clearly written doc strings with variables defined using a standard docstring format -->
 <!--
 ```{tip}
 ### Python packaging resources that we love
