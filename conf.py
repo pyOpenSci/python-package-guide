@@ -128,7 +128,7 @@ html_baseurl = 'https://www.pyopensci.org/package-review-guide/'
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
-html_title = "pyOpenSci Package Guide"
+html_title = "pyOpenSci Python Packaging Guide"
 html_logo = "images/logo/logo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
