@@ -147,7 +147,7 @@ def extent_to_json(ext_obj):
 
 ```{figure} /images/sphinx-rendering-extent-to-json-earthpy.png
 ---
-name: directive-fig
+name: earthpy-json-example
 width: 80%
 ---
 Using the above NumPy format docstring in sphinx, the autodoc extension will
@@ -193,15 +193,17 @@ def add_me(aNum, aNum2):
     -------
         Prints the integer that you provide the function.
 
+    Examples
+    --------
+    Below you can see how the `print_me` function will print a number that
+    you provide it.
+
+    >>> add_me(1+3)
+    4
+
     """
-   return aNum + aNum2
 
-Examples
---------
-Below you can see how the `print_me` function will print a number that
-you provide it.
+    return aNum + aNum2
 
->>> add_me(1+3)
-4
 
 ```

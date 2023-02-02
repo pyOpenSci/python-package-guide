@@ -2,8 +2,8 @@
 
 ## What a CONTRIBUTING.md file should contain
 
-```{tip}
-## Example contributing files
+```{admonition} Example contributing files
+:class: tip
 
 * [pyGMT contributing file](https://github.com/GenericMappingTools/pygmt/blob/main/CONTRIBUTING.md)
 * [fatiando verde's contributing file](https://github.com/fatiando/verde/blob/main/CONTRIBUTING.md)

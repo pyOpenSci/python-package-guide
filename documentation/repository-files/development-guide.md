@@ -15,7 +15,7 @@ It's also helpful to specify the types of tests you request if a contributor sub
 
 If you have time to document it, it's also helpful to document your maintainer workflow and release processes.
 
-### Why a development guide is important
+## Why a development guide is important
 
 It's valuable to have a development guide, in the
 case that you wish to:

@@ -10,7 +10,7 @@ by the Open Software Initiative (OSI). OSI's website has a
 
 If you choose your license through GitHub, you can also automatically get a copy of the license file to add to your repository.
 
-### Important: make sure that you closely follow the guidelines outlines by the License that you chose
+## Important: make sure that you closely follow the guidelines outlines by the License that you chose
 
 Every license has different guidelines in terms of what code
 you can use in your package and also how others can (or can not) use the code in your package.

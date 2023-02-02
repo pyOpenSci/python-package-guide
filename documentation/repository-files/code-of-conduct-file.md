@@ -1,7 +1,7 @@
 # The CODE_OF_CONDUCT.md file In Your Python Open Source Package
 
-```{tip}
-## Example Code of Conduct files
+```{admonition} Example Code of Conduct files
+:class: tip
 
 * [SciPy Code of Conduct file - notice they included theirs in their documentation](https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html)
 * [fatiando code of conduct file](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)

@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'python-package-guide'
-copyright = '2022, pyOpenSci'
-author = 'Leah Wasser'
+copyright = '2023, pyOpenSci'
+author = 'pyOpenSci Community'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
@@ -44,22 +44,57 @@ myst_enable_extensions = [
     "colon_fence",
     "deflist",
 ]
-#myst_heading_anchors = 3
+myst_heading_anchors = 3
+
+# For generating sitemap
+html_baseurl = 'https://www.pyopensci.org/software-peer-review/'
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
-    "source_repository": "https://github.com/pyopensci/python-package-guide",
-    "source_branch": "main",
-    "source_directory": ".",
-    # "repository_url": "https://github.com/pyopensci/python-package-guide",
-    # "use_repository_button": True,
-    #"google_analytics_id": "UA-141260825-1",
-    #"show_toc_level": 1,
-    #"toc_title": "On this page",
-#     "external_links": [
-#       {"pyOpenSci Website": "link-one-name", "url": "https://www.pyopensci.org"}
-#   ],
-  "announcement": "🚧 UNDER CONSTRUCTION: this guide is under heavy construction right now. 🚧"
+    "announcement": "🚧 This guide is currently under heavy construction 🚧 ",
+    "external_links": [
+        {
+            "url": "https://www.pyopensci.org",
+            "name": "pyOpenSci Website",
+        },
+        {
+            "url": "https://www.pyopensci.org/python-package-guide",
+            "name": "Python Packaging Guide",
+        },
+        {
+            "url": "https://pyopensci.org/governance",
+            "name": "Governance",
+        },
+    ],
+    "icon_links": [
+        {
+            "name": "Mastodon",
+            "url": "https://fosstodon.org/@pyOpenSci",
+            "icon": "fa-brands fa-mastodon",
+        },
+    ],
+    "logo": {
+        "text": "Python Package Guide",
+        "image_dark": "logo.png",
+        "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo",
+    },
+    "header_links_before_dropdown": 4,
+    "use_edit_page_button": True,
+    "show_toc_level": 1,
+    #"navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
+    "github_url": "https://github.com/pyopensci/python-package-guide",
+    "twitter_url": "https://twitter.com/pyopensci",
+    "footer_items": ["copyright"],
+}
+
+html_theme_options["analytics"] = {
+    "google_analytics_id": "UA-141260825-1",
+}
+
+html_context = {
+    "github_user": "pyopensci",
+    "github_repo": "python-package-guide",
+    "github_version": "main",
 }
 
 # Add analytics to furo theme
@@ -90,7 +125,7 @@ html_baseurl = 'https://www.pyopensci.org/package-review-guide/'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'furo'
+html_theme = 'pydata_sphinx_theme'
 html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
 html_title = "pyOpenSci Package Guide"

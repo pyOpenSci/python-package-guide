@@ -4,9 +4,10 @@ If you are interested in more people finding your package, you may want to
 add some core Sphinx extensions (and theme settings) that will help search
 engines such as Google find your documentation.
 
-### Google Analytics
+## Google Analytics
 
 ```{important}
+
 Google analytics [is not compliant with the European General Data Protection Regulation (GDPR)](https://matomo.org/blog/2022/05/google-analytics-4-gdpr/). While there are many components to this regulation, one of the core elements is that you have to let users know on your site that you are collecting data and they have to consent. WHile it is possible to add infrastructure around Google Analytics to make it close to following GDPR regulations, the community is slowly shifting away from Google using open tools such as [Plausible](https://plausible.io/), [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) and [Matomo](https://matomo.org) for web analytics.
 
 pyOpenSci is currently looking into free options for open source

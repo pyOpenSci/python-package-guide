@@ -4,17 +4,6 @@ In this section of the Python packaging guide, we review all of the files that
 you should have in your Python package repository. Your Python package should,
 at a minimum have the following files:
 
-```{toctree}
-:maxdepth: 2
-
-Intro <self>
-README file <readme-file-best-practices.md>
-Contributing File <contributing-file.md>
-Code of Conduct File <code-of-conduct-file.md>
-Development Guide <development-guide.md>
-LICENSE files <license-files.md>
-```
-
 The files mentions above (README, Code of Conduct, license
 file, etc) are used as a measure of package community health
 on many online platforms. Below, you can see an example how Github
@@ -23,7 +12,7 @@ all GitHub repositories.
 
 ```{figure} /images/moving-pandas-python-package-github-community-standards.png
 ---
-name: directive-fig
+name: moving-pandas-github-community
 width: 80%
 alt: Image showing that the MovingPandas GitHub repository community health page with green checks next to each file including a description, README, code of conduct, contributing, license and issue templates. Note that Security policy has a yellow circle next to it as that is missing from the repo.
 ---
@@ -36,7 +25,7 @@ in the Github repo as a measure of community health.
 
 ```{figure} /images/moving-pandas-python-package-snyk-health.png
 ---
-name: directive-fig
+name: moving-pandas-snyk
 width: 80%
 alt: Screenshot of the Snyk page for movingpandas. It shows that the repository has a README file, contributing file, code of conduct. It also shows that it has 30 contributors and no funding. The package health score is 78/100.
 ---
