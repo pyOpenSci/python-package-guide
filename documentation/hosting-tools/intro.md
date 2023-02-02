@@ -12,15 +12,3 @@ when writing Sphinx documentation including mySt and rST.
 We also talk about ways to publish your
 documentation online and Sphinx tools that might help you optimize
 your documentation website.
-
-## Documentation build tools outline
-
-```{toctree}
-:maxdepth: 2
-
-Intro <self>
-Sphinx for Docs <sphinx-python-package-documentation-tools.md>
-myST vs Markdown vs rst <myst-markdown-rst-doc-syntax.md>
-Publish Your Docs <publish-documentation-online.md>
-Website Hosting and Optimization <website-hosting-optimizing-your-docs.md>
-```

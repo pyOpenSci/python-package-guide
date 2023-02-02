@@ -1,5 +1,27 @@
 # pyOpenSci Python Open Source Package Development Guide
 
+
+```{toctree}
+:hidden:
+:caption: Documentation
+
+Documentation <documentation/index>
+```
+
+```{toctree}
+:hidden:
+:caption: Packaging
+
+Packaging  <python-packaging/intro>
+```
+
+```{toctree}
+:hidden:
+:caption: CI and Testing
+
+CI & Tests  <ci-and-testing/intro>
+```
+
 <!-- Github community standards
 https://github.com/pyOpenSci/python-package-guide/community -->
 
@@ -40,7 +62,7 @@ Learn about our open peer review process
 
 <!-- I think this is the end of the header - below begins the next grid-->
 
-::::{grid} 1 1 1 2
+::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 3
 
@@ -58,17 +80,6 @@ documentation that are
 commonly used in the scientific Python community.
 :::
 
-:::{grid-item-card}
-:link: code-style-structure/intro
-:link-type: doc
-:class-header: bg-light
-
-✨ Package Structure & Code ✨
-^^^
-Under Construction - Coming Spring 2023!
-Learn more about standards for packaging structure and
-builds in the scientific Python community.
-:::
 
 :::{grid-item-card}
 :link: CONTRIBUTING
@@ -107,36 +118,6 @@ Good meets the requirements. Going beyond the minimum can make package maintenan
 
 This guide is now a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
-
-
-```{toctree}
-:hidden:
-:caption: Documentation
-
-Documentation Overview <documentation/index>
-Write User Documentation <documentation/write-user-documentation/intro>
-Core GitHub Repository Files <documentation/repository-files/intro>
-Documentation Tools & Hosting  <documentation/hosting-tools/intro>
-```
-
-
-```{toctree}
-:hidden:
-:caption: Package structure & code style
-
-Intro <python-packaging/intro>
-
-```
-
-
-
-```{toctree}
-:hidden:
-:caption: CI and Testing
-
-Intro <ci-and-testing/intro>
-```
-
 
 
 

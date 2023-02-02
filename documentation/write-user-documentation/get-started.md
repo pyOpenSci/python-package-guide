@@ -57,7 +57,7 @@ page to the following elements:
 
 ```{figure} /images/geopandas-documentation-landing-page.png
 ---
-name: directive-fig
+name: geopandas-landing
 width: 80%
 alt: Image showing the landing page for GeoPandas documentation which has 4 sections including Getting started, Documentation, About GeoPandas, Community.
 ---

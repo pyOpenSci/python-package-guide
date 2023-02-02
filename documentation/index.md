@@ -1,5 +1,49 @@
 # Documentation for your Open Source Python Package
 
+```{toctree}
+:hidden:
+:caption: Intro
+
+Documentation Overview <self>
+```
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+:caption: Write User Documentation
+
+Intro <write-user-documentation/intro.md>
+Create Your Docs <write-user-documentation/get-started>
+Document Your Code (API) <write-user-documentation/document-your-code-api-docstrings.md>
+Create Package Tutorials <write-user-documentation/create-package-tutorials.md>
+```
+
+```{toctree}
+:hidden:
+:caption: Core Repository Files
+:maxdepth: 2
+
+Intro <repository-files/intro.md>
+README file <repository-files/readme-file-best-practices.md>
+Contributing File <repository-files/contributing-file.md>
+Code of Conduct File <repository-files/code-of-conduct-file.md>
+Development Guide <repository-files/development-guide.md>
+LICENSE files <repository-files/license-files.md>
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Documentation & Hosting Tools
+
+Intro <hosting-tools/intro>
+Sphinx for Docs <hosting-tools/sphinx-python-package-documentation-tools>
+myST vs Markdown vs rst <hosting-tools/myst-markdown-rst-doc-syntax>
+Publish Your Docs <hosting-tools/publish-documentation-online>
+Website Hosting and Optimization <hosting-tools/website-hosting-optimizing-your-docs>
+```
+
+
 ```{important}
 Please note that the tools discussed here are those that
 we see commonly used in the community. As tools evolve we
@@ -125,10 +169,9 @@ View pyOpenSci peer review check list
 
 ```{figure} ../images/moving-pandas-python-package-github-main-repo.png
 ---
-name: directive-fig
+name: moving-pandas-github-repo-image
 width: 80%
-alt: Image showing the files in the the MovingPandas GitHub repository. Files there include code of conduct.md,
-Contributing.md, license.txt, readme.md.
+alt: Image showing the files in the the MovingPandas GitHub repository. Files in the image include code of conduct.md contributing.md license.txt and readme.md.
 ---
 An example from the MovingPandas GitHub repository with all of the major files in it including CONTRIBUTING.md, README.md, CODE_OF_CONDUCT.md and a LICENSE.txt file. *(screen shot taken Nov 23 2022)*
 ```
