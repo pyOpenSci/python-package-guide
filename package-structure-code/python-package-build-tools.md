@@ -4,6 +4,7 @@ Below, we discuss some of the tools that are commonly used
 to build Python packages. This page is intended to help
 maintainers select a build tool to use.
 
+<<<<<<< HEAD
 
 <!--
 Where i'm leaving off here
@@ -26,6 +27,9 @@ setuptools vs hatch
 -->
 
 ## Python package distribution files
+=======
+## Python package distribution files
+>>>>>>> 9d2a82c (FIX: remove large comment in tools file)
 
 Before we dive into specific build tools, it's important
 to review the pieces of a "built" Python package.
@@ -39,8 +43,13 @@ To understand the two distributions below, it is important to understand two dif
 There are two types of distribution files that you will create to support
 publishing your Python package (on PyPI):
 
+<<<<<<< HEAD
 1. SDIST and
 1. Wheel
+=======
+1. SDist and
+1. Wheel
+>>>>>>> 9d2a82c (FIX: remove large comment in tools file)
 
 <!--
 * **SDist (Source Distribution):** This file, packaged as a **.tar.gz** tarball represents all of the unbuilt source files needed to build your package into an installable bundle. But the files within the package are not yet "built" if your package requires a  build step. Pure python packages most often do not require a build step.
