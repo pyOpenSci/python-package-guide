@@ -13,14 +13,3 @@ easier such as:
 * autodoc to automagically populate documentation for your code's functions,
 classes, methods and attributes (API documentation) and
 * sphinx gallery for tutorials.
-
-## User-facing documentation sections
-
-```{toctree}
-:maxdepth: 2
-
-Intro <self>
-Create Your Docs <get-started>
-Document Your Code (API) <document-your-code-api-docstrings.md>
-Create Package Tutorials <create-package-tutorials.md>
-```

@@ -16,12 +16,9 @@ health on sites such as:
 
 ```{figure} /images/pandera-python-package-readme-github.png
 ---
-name: directive-fig
+name: pandera-readme
 width: 80%
-alt: README landing page screenshot for the Pandera package. It has the pandera logo at the top - which has two arrows in a chevron pattern pointing downward within a circle. Subtitle: statistical data testing toolkit. A data validation library for scientists, engineering, and analytics seeking correctness.
-Below that are a series of badges including CI tests passing, docs passing, version of pandera on pypi (0.13.4), MIT license and that it has been pyOpenSci peer reviewed. There are numerous badges below that.
-Finally below the badges the text reads:
-Pandera provides a flexible and expressive API for performing data validation on dataframe-like objects to make data processing pipelines more readable and robust.
+alt: README landing page screenshot for the Pandera package. It has the Pandera logo at the top - which has two arrows in a chevron pattern pointing downward within a circle. Subtitle is statistical data testing toolkit. A data validation library for scientists, engineering, and analytics seeking correctness. Below that are a series of badges including CI tests passing, docs passing, version of Pandera on pypi (0.13.4), MIT license and that it has been pyOpenSci peer reviewed. There are numerous badges below that. Finally below the badges the text says, Pandera provides a flexible and expressive API for performing data validation on dataframe-like objects to make data processing pipelines more readable and robust.
 ---
 Your GitHub repository landing page highlights the README.md file. Here you can see the README.md file for the pyOpenSci package [Pandera](https://github.com/unionai-oss/pandera). *(screen shot taken Nov 23 2022)*
 ```
@@ -138,8 +135,8 @@ Include descriptive links to:
 * The package's documentation page.
 * Short tutorials that demonstrate application of your package.
 
-```{tip}
-### Too Much Of A Good Thing
+```{admonition} Too Much Of A Good Thing
+:class: tip
 
 Try to avoid including several tutorials in the README.md file itself. This too will overwhelm the user with information.
 
@@ -167,8 +164,8 @@ Finally be sure to include instructions on how to cite your package.
 Citation should include the DOI that you want used when citing your package,
 and any language that you'd like to see associated with the citation.
 
-```{tip}
-### README Resources
+```{tip} README Resources
+:class: tip
 
 Below are some resources on creating great README.md files that you
 might find helpful.

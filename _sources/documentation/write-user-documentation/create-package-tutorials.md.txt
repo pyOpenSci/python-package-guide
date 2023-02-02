@@ -8,7 +8,7 @@ to get started using your package. Ideally, those tutorials
 also can be run from start to finish providing a second set of
 checks (on top of your test suite) to your package's code base.
 
-In the [documentation tools page](python-package-documentation-tools) we talk about two Sphinx extensions (`sphinx-gallery` and `nbsphinx`)
+On this page, we review two Sphinx extensions (`sphinx-gallery` and `nbsphinx`)
 that  allow you to create reproducible tutorials that are run
 when your Sphinx documentation builds.
 
@@ -43,7 +43,7 @@ your documentation, the gallery extension:
 
 ```{figure} /images/sphinx-gallery-overview.png
 ---
-name: directive-fig
+name: sphinx-gallery
 width: 80%
 alt: Image showing the gallery output provided by sphinx-gallery where each tutorial is in a grid and the tutorial thumbnails are created from a graphic in the tutorial.
 ---
@@ -55,7 +55,7 @@ Below you can see what a tutorial looks like created with sphinx-gallery.
 
 ```{figure} /images/sphinx-gallery-tutorial.png
 ---
-name: directive-fig
+name: spinx-gallery-tutorial
 width: 80%
 alt: Image showing ta single tutorial from Sphinx gallery. The tutorial shows a simple matplotlib created plot and associated code.
 ---
