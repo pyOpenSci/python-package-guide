@@ -122,6 +122,24 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 
 ```{toctree}
 :hidden:
+
+🏠 Home <self>
+```
+
+```{toctree}
+:hidden:
+:caption: Package structure
+
+Intro <package-structure-code/intro>
+Python package structure <package-structure-code/python-package-structure>
+What are SDIst & Wheel Files? <package-structure-code/python-package-distribution-files-sdist-wheel.md>
+Package Build Tools <package-structure-code/python-package-build-tools>
+
+```
+
+
+```{toctree}
+:hidden:
 :caption: Documentation
 
 Documentation Overview <documentation/index>
@@ -140,8 +158,6 @@ Python package structure <package-structure-code/python-package-structure>
 What are SDIst & Wheel Files? <package-structure-code/python-package-distribution-files-sdist-wheel.md>
 Package Build Tools <package-structure-code/python-package-build-tools>
 Package Versions <package-structure-code/python-package-versions>
-package-structure-code/overview
-package-structure-code/collaboration
 Code Style & Format <package-structure-code/code-structure-style>
 ```
 
