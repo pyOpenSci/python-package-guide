@@ -266,16 +266,16 @@ However each tool has different features and limits on the types of packaging
 steps that it supports.
 ```{admonition} Pure Python Packages vs. packages with extensions in other languages
 
-You can classify Python package complexity into three general categories. These 
-categories can in turn help you select the correct package front-end and 
+You can classify Python package complexity into three general categories. These
+categories can in turn help you select the correct package front-end and
 back end tools.
 
 1.  **Pure-python packages:** these are packages that only rely on Python to function. Building a pure Python package is simpler. As such, you can chose a tool below that
 has the features that you want and be done with your decision!
-2.  **Python packages with non-Python extensions:** These packages have additional components called extensions written in other languages (such as `C` or `C++`). If you have a package with non-python extensions, then you need to select a build back-end tool that allows you to add additional build steps needed to compile your extension code. Further, if you wish to use a front-end tool to support your workflow, you will need to select a tool that 
-supports additional build setps. In this case, you could use setuptools. However, we suggest that you chose build tool that supports custom build steps such as Hatch with Hatchling or PDM. PDM is an excellent choice as it allows you to also select your build back end of choice. We will discuss this at a high level on the complex builds page. 
+2.  **Python packages with non-Python extensions:** These packages have additional components called extensions written in other languages (such as `C` or `C++`). If you have a package with non-python extensions, then you need to select a build back-end tool that allows you to add additional build steps needed to compile your extension code. Further, if you wish to use a front-end tool to support your workflow, you will need to select a tool that
+supports additional build setps. In this case, you could use setuptools. However, we suggest that you chose build tool that supports custom build steps such as Hatch with Hatchling or PDM. PDM is an excellent choice as it allows you to also select your build back end of choice. We will discuss this at a high level on the complex builds page.
 3. **Python packages that have extensions written in different languages (e.g. fortran and C++) or that have non Python dependencies that are difficult to install (e.g. GDAL)** These packages often have complex build steps (more complex than a package with just a few C extensions for instance). As such, these packages require tools such as [scikit-build](https://scikit-build.readthedocs.io/en/latest/)
-or [meson-python](https://mesonbuild.com/Python-module.html) to build. NOTE: you can use meson-python with PDM. 
+or [meson-python](https://mesonbuild.com/Python-module.html) to build. NOTE: you can use meson-python with PDM.
 
 On this page, we will focus on using front-end tools to package pure python
 packages. We will note if a package does have the flexibility to support other
@@ -294,16 +294,16 @@ discussed below is:
 * How configurable they are and
 * How much you need to configure them to ensure the correct files are included in your SDist and Wheel files.
 
-It is also important to note that some back-ends, such as Flit-core, only support 
+It is also important to note that some back-ends, such as Flit-core, only support
 pure Python builds. Other back ends support C and C++ extensions:
 
-* setuptools supports builds using C / C++ extensions 
+* setuptools supports builds using C / C++ extensions
 * Hatchling supports C extensions via plugins that the developer creates to customize a build
-* PDM-pep517 supports C extensions by using setuptools 
-* Poetry supports C/C++ extensions however this functionality is currently undocmented. As such we don't recommend exploring it now for non pure Python builds. 
+* PDM-pep517 supports C extensions by using setuptools
+* Poetry supports C/C++ extensions however this functionality is currently undocmented. As such we don't recommend exploring it now for non pure Python builds.
 
-While we won't discuss more complex builds below, we will identify which tools 
-allow for C and C++ extensions as we discuss each tool below.  
+While we won't discuss more complex builds below, we will identify which tools
+allow for C and C++ extensions as we discuss each tool below.
 
 
 <!--
