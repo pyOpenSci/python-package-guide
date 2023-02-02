@@ -137,6 +137,7 @@ Intro <python-packaging/intro>
 Intro <package-structure-code/intro>
 
 Python package structure <package-structure-code/python-package-structure>
+What are SDIst & Wheel Files? <package-structure-code/python-package-distribution-files-sdist-wheel.md>
 Package Build Tools <package-structure-code/python-package-build-tools>
 Package Versions <package-structure-code/python-package-versions>
 package-structure-code/overview
