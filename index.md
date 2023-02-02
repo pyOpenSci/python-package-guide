@@ -120,6 +120,31 @@ This guide is now a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
 
 
+```{toctree}
+:hidden:
+:caption: Documentation
+
+Documentation Overview <documentation/index>
+
+```
+
+
+```{toctree}
+:hidden:
+:caption: Package structure & code style
+
+Intro <python-packaging/intro>
+Intro <package-structure-code/intro>
+
+Python package structure <package-structure-code/python-package-structure>
+Package Build Tools <package-structure-code/python-package-build-tools>
+Package Versions <package-structure-code/python-package-versions>
+package-structure-code/overview
+package-structure-code/collaboration
+Code Style & Format <package-structure-code/code-structure-style>
+```
+
+
 
 
 <!--
