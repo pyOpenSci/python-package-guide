@@ -15,8 +15,16 @@ Below you will learn about the pros and cons of both layouts.
 
 Currently most scientific packages use the **flat-layout** given:
 
+<<<<<<< HEAD
 * It's the most commonly found layout with the scientific Python ecosystem
 * Many Python tools depend upon tools in other language and / or complex builds with compilation steps. Many developers thus appreciate features of the flat layout such as tests being included with the package when they are installed) to support troubleshooting across installations.
+=======
+* It's the most commonly found layout with the scientific Python ecosystem 
+* Many Python tools depend upon tools in other language and / or complex builds 
+with compilation steps. Many developers thus appreciate features of the flat 
+layout such as tests being included with the package when they are installed) to 
+support troubleshooting across installations.
+>>>>>>> 1fdcef1 (Fix: remove more commented out blocks)
 
  In the end, the advantages of using the **src/** layout for scientific packages
  that already use this approach do not
@@ -38,16 +46,28 @@ Currently most scientific packages use the **flat-layout** given:
 * [scikit-learn](https://github.com/scikit-learn/scikit-learn)
 
 It would be a significant maintenance cost and burden to move all of these
+<<<<<<< HEAD
 packages to a different layout. The potential benefits of the source layout
 for these tools is not worth the maintenance investment. To avoid dividing the scientific Python community,
 pyOpenSci supports maintainers using a flat layout for scientific packages.
+=======
+packages to a different layout. The potential benefits of the source layout 
+for these tools is not worth the maintenance investment. To avoid dividing the 
+scientific Python community, 
+pyOpenSci supports maintainers using a flat layout for scientific packages. 
+>>>>>>> 1fdcef1 (Fix: remove more commented out blocks)
 ```
 
 ## What does the flat layout structure look like?
 
 The flat layout's primary characteristics are:
 
+<<<<<<< HEAD
 * The source code for your package lives in a directory with your package's name in the root of your directory
+=======
+* The source code for your package lives in a directory with your package's 
+name in the root of your directory 
+>>>>>>> 1fdcef1 (Fix: remove more commented out blocks)
 * Often the `tests/` directory also lives within that same `package-name` directory.
 
 Below you can see the recommended structure of a scientific Python package
@@ -148,16 +168,6 @@ myPackage
    └── ...                     ┘ Package tests
 ```
 
-
-
-<!-- Not sure why i added this here? -->
-To install your package in editable mode use:
-
-```bash
-$ cd package-name
-$ pip install -e .`
-```
-
 ## Core file requirements for a Python package
 
 In the above example, notice that all of the core documentation files that
@@ -193,6 +203,7 @@ data within your package structure. We will discuss this in more detail in a
 tutorial.
 ```
 
+<<<<<<< HEAD
 <!--
 ```{note}
 ### Src vs. flat layouts for Python packaging
@@ -213,6 +224,8 @@ structure. And further it would not provide them with any core benefit.
 ```
 -->
 
+=======
+>>>>>>> 1fdcef1 (Fix: remove more commented out blocks)
 ## Use a pyproject.toml file for your package configuration & metadata
 
 We strongly recommend that you [include all project based metadata and build system specifications in a `pyproject.toml` file.](https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/) [Using setup.py to manage both package setup and hold metadata can present numerous risks.](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html)
