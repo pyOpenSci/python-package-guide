@@ -86,3 +86,16 @@ the `src` directory.
 * [PyPA packaging guide](https://packaging.python.org/en/latest/)
 ```
 -->
+
+
+```{toctree}
+:hidden:
+:caption: Package structure & code style
+
+Intro <self>
+
+Python package structure <python-package-structure>
+What are SDIst & Wheel Files? <python-package-distribution-files-sdist-wheel>
+Package Build Tools <python-package-build-tools>
+Complex Builds <complex-python-package-builds>
+```
