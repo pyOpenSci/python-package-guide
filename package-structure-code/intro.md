@@ -95,7 +95,7 @@ the `src` directory.
 Intro <self>
 
 Python package structure <python-package-structure>
-What are SDIst & Wheel Files? <python-package-distribution-files-sdist-wheel>
+What are SDist & Wheel Files? <python-package-distribution-files-sdist-wheel>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>
 ```
