@@ -115,7 +115,7 @@ https://scikit-hep.org/developer/pep621
 A wheel or `.whl` file, is a zipped file that has
 the extension `.whl`. The wheel does not contain any of your packages
 configuration files such as **setup.cfg** or **pyproject.toml**. This distribution
-is a pre-build, ready-to-install format.
+is already built so it's ready to install.
 
 Because it is prebuilt, the wheel file will be faster to install for pure Python
 projects and can lead to consistent installs across machines.
