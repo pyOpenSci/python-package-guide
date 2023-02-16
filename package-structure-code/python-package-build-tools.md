@@ -293,7 +293,7 @@ included in the table.
 
 Default Build Back-end, Flit-core, Hatch-core, PDM, Poetry
 Use Other Build Backends,✖ , ✖,✅  ,✖
-Dependency management, ✖,✖,✅, ✖
+Dependency management, ✖,✖,✅,✅
 Publish to PyPI, ✅,✅,✅,✅
 Version Control based versioning,✖,✅,✅,✖
 Version bumping,✖,✅, ✅, ✅
