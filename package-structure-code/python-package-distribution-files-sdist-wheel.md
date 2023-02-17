@@ -1,20 +1,22 @@
-<!-- TODO: break out into new page so this focuses just on tools -->
-# What is a SDist and Wheel? About Python Package Distribution Files
+# The Python Package Source and Wheel Distributions
 
-This pages will help you understand the two core packaging files
+There are two core distribution files
 that you need to create to publish your Python package to
-PyPI - the Source Distribution (SDist) and the Wheel (.whl).
+PyPI:
+
+1. a Source Distribution (SDist)
+2. a Wheel (.whl).
 
 ## Source vs. Binary Files
 
-To begin, it's important to understand the two "types" of
-distribution files. When it comes to packaging, you can think about files as either source or
-binary:
+It's important to understand the two "types" of distribution files. You can
+think about files as either source or binary:
 
 **Source files:** source files are the unbuilt files needed to build your
 package. These are the "raw / as-is" files that you store on GitHub or whatever
 platform you are using to manage your code repository.
-**Binary files:** binary files are the source files after they've been built. These files have been compiled (if they require compilation) and are ready
+**Binary files:** binary files are the source files after they've been built.
+These files have been compiled (if they require compilation) and are ready
 to be installed.
 
 ### Python package distribution types: SDist and Wheels
@@ -34,13 +36,15 @@ build / compilation steps then the SDIST and Wheel files will have
 similar content.
 ```
 
-### What is a SDist file?
+### What is a source distribution (SDist)?
 
-SDist, short for **S**ource **D**istribution file is a packaged file in `.tar.gz`
-format (often called a "tarball") that has all of the files needed to build your
-package. In the SDist format, your package's files are not included in a built
-format. Thus, anyone using this file, will have to build the files first before
-they can be installed.
+**S**ource **D**istributions, referred to as SDist, is a set of files saves as
+a `.tar.gz` archive (often called a "tarball"). The SDist has all of the files
+needed to build your
+package. As the name implies, a SDIST contains the source code; it has not been
+built or compiled in any way. Thus, when a user installs your source
+distribution using pip, pip needs to run a build step first.
+
 
 <!-- TODO: will work on cleaning up this after adding MANIFEST and then
 add a section on the MANIFEST file for packaging and link to
@@ -93,9 +97,13 @@ stravalib-1.1.0.post2-SDist.tar.gz file contents
 
 ```
 
-```{tip}
-When you make a release on GitHub, it creates a SDist file (`.tar.gz`) that
-anyone can download and use.
+```{admonition} GitHub archive vs SDist
+:class: tip
+When you make a release on GitHub, it creates a `git archive` that contains all
+of the files in your GitHub repository. While these files are similar to an
+SDist, these two archives are not the same. The SDist contains a few other
+items including a metadata directory and if you use `setuptools_scm` or `hatch_vcs`
+the SDist will also contain a `_version.py` file.
 ```
 
 <!--
@@ -112,20 +120,32 @@ https://scikit-hep.org/developer/pep621
 
 ### Wheel (.whl files):
 
-A wheel or `.whl` file, is a zipped file that has
-the extension `.whl`. The wheel does not contain any of your packages
-configuration files such as **setup.cfg** or **pyproject.toml**. This distribution
-is already built so it's ready to install.
+A wheel file is a ZIP-format archive whose filename follows a specific format
+(below) and has the extension `.whl`. The `.whl` archive contains a specific
+set of files, including metadata that are generated from your project's
+pyproject.toml file. The pyproject.toml and other files that may be included in
+source distributions are not included in wheels because it is a built
+distribution.
 
-Because it is prebuilt, the wheel file will be faster to install for pure Python
+ The wheel does not contain any of your
+packages configuration files such as **setup.cfg** or **pyproject.toml**. This
+distribution is already built so it's ready to install.
+
+Because it is built, the wheel file will be faster to install for pure Python
 projects and can lead to consistent installs across machines.
+
+
+<!-- TODO - i need to clarify this as i've gotten mixed feedback on the
+real security issues with this IF the whl is already built and that file isn't
+included what is the issue? i need more input here-->
+
 
 ```{tip}
 Wheels are also useful in the case that a package
-needs a **setup.py** file to support a more complex built.
+needs a **setup.py** file to support a more complex build.
 In this case, because the files in the wheel bundle
 are pre built, the user installing doesn't have to
-work about malicious code injections when it is installed.
+worry about malicious code injections when it is installed.
 ```
 
 The filename of a wheel contains important metadata about your package.
