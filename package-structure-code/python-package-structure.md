@@ -263,7 +263,13 @@ name = "examplePy"
 authors = [
     {name = "Some Maintainer", email = "some-email@pyopensci.org"}
 ]
-maintainers = [{name = "All the contributors"}]
+authors = [
+    {name = "Original Author", email = "original-author@pyopensci.org"}
+]
+maintainers = [
+    {name = "Current Maintainer 1"},
+    {name = "Current Maintainer 2", email = "maintainer2@pyopensci.org"},
+]
 license = {text = "BSD 3-Clause"}
 description = "An example Python package used to support Python packaging tutorials"
 keywords = ["pyOpenSci", "python packaging"]
