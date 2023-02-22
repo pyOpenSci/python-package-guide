@@ -1,41 +1,61 @@
 # Python Package Structure for Scientific Python Projects
 
+## Directories that should be in all Python packages
+
+There are several core directories that should be included in all Python packages:
+
+* **docs/:** discussed in our docs chapter, this directory contains your user-facing documentation website
+* **tests/** this directory contains the tests for your project code
+* **package-name/**: this is the directory that contains the code for your Python project. It is normally named using your project's name.
+
+
+## Src vs flat layouts
 There are two different layouts that you will commonly see
 within the Python packaging ecosystem:
 [src and flat layouts.](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 Both layouts have advantages for different groups of maintainers.
 
-On this page you will learn more about both layouts.
-Here we:
+The **src/package-name** approach nests your **package-name** directory, mentioned above as the directory where your code lives, into a **src/** directory like this:
 
-1. Suggest the **src/package-name** layout structure for new packages. This layout prevents some commonly found issues with the flat layout (discussed below)
-2. Introduce the flat layout as it is used in the scientific ecosystem. Currently this layout is the most common. As such it's good to be familiar with it in case you contribute to a package using a flat layout in the future! wOr you maintain one now!
+**src/package-name**
 
-```{important}
-pyOpenSci however will never require a specific package structure for its
-peer review process. We understand that it would be tremendous effort for existing
+In a flat layout approach, your package's code lives in a **package-name** directory
+at the root of your package's repository.
+
+On this page we:
+
+1. Suggest the **src/package-name** layout structure for new packages. This layout prevents some commonly found issues with the flat layout (discussed below).
+2. Introduce the flat layout as it is used in the scientific ecosystem. Currently this layout is the most common. As such it's good to be familiar with it in case you contribute to a package using a flat layout in the future!
+
+```{admonition} pyOpenSci will never require a specific package structure for peer review
+:class: important
+
+We understand that it would be tremendous effort for existing
 maintainers to move to a new layout.
 
-The overview on this page presents recommendations that may be particularly useful
-for those getting started with Python packaging.
+The overview on this page presents recommendations that we think are best for
+something getting started with Python packaging or someone who's package is
+has a simple build and might be open to moving to a more fail-proof approach.
 ```
 
 ## The src/ layout for Python packages
 
-The **src/package-name** layout is included in the [PyPA packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/). It is also the approach that we suggest
-for new maintainers. We suggest the src/package-name layout because it makes it
-easier for you to create a package build workflow that tests your package
-as it will be installed on a users computer.
+The **src/package-name** layout is the approach that we suggest
+for new maintainers. It is also recommended in the
+[PyPA packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/). We suggest the **src/package-name** layout because it
+makes it easier for you to create a package build workflow that tests your
+package as it will be installed on a users computer.
 
 The key characteristic of this layout is that your package
-uses a `src/package-name` directory structure. With this layout it is also common
-to include your `tests/` directory outside of the package
+uses a **src/package-name** directory structure. With this layout it is also
+common to include your `tests/` directory outside of the package
 directory. However, you may see some packages
-that includes tests within the `src/package-name` directory.
+that includes tests within the **src/package-name** directory.
 
 ```{admonition} Example scientific packages that use **src/package-name** layout
 
 * [Sourmash](https://github.com/sourmash-bio/sourmash)
+* [bokeh](https://github.com/bokeh/bokeh)
 * [openscm](https://github.com/openscm/openscm-runner)
 * [awkward](https://github.com/scikit-hep/awkward)
 ```
@@ -49,14 +69,14 @@ package rather than on the flat files imported directly from your package. If yo
 * If `tests/` are outside of the **src/package-name** directory, they aren't by default
 delivered to a user
 installing your package. However, you can chose to add them to the package archive. When tests are not included in the package archive your package size will be slightly smaller.
-* The `src/package-name` layout is semantically more clear. Code is always found in the
-`src/package-name` directory, `tests/` and `docs/`are in the root directory.
+* The **src/package-name** layout is semantically more clear. Code is always found in the
+**src/package-name** directory, `tests/` and `docs/`are in the root directory.
 
 ```{tip}
 * [Read more about reasons to use the **src/package-name** layout](https://hynek.me/articles/testing-packaging/)
 ```
 
-An example of the **src/package-name** layout structure can be seen below:
+An example of the **src/package-name** layout structure can be seen below.
 
 ```
 myPackage
@@ -141,23 +161,6 @@ that you consider using a  **src/package-name** layout.
 
 ## What does the flat layout structure look like?
 
-
-```{admonition} Core scientific Python packages that use the flat layout
-:class: tip
-
-* [numpy](https://github.com/numpy/numpy)
-* [scipy](https://github.com/scipy/scipy)
-* [pandas](https://github.com/pandas-dev/pandas)
-* [xarray](https://github.com/pydata/xarray)
-* [Jupyter-core](https://github.com/jupyter/jupyter_core)
-* [Jupyter notebook](https://github.com/jupyter/notebook)
-* [scikit-learn](https://github.com/scikit-learn/scikit-learn)
-
-It would be a significant maintenance cost and burden to move all of these
-packages to a different layout. The potential benefits of the source layout
-for these tools is not worth the maintenance investment.
-```
-
 The flat layout's primary characteristics are:
 
 * The source code for your package lives in a directory with your package's
@@ -187,22 +190,31 @@ myPackage/
 ```
 
 
-```{note}
-If you look at
-[the `matplotlib` repository on GitHub](https://github.com/matplotlib/matplotlib),
-you will notice it too has a  **src/package-name** directory, however
-that structure is there because `matplotlib` has uncompiled source code in that
-directory. it is not adhering to the **src/package-name** layout explicitly.
-```
-
 ### Benefits of using the flat layout in your Python package
 
 There are some benefits to the scientific community in using the flat layout.
 
 * This structure has historically been used across the ecosystem and packages
 using it are unlikely to change.
-* You can directly import the package directly from the root directory. For 
-some this is engrained in their respective workflows. However for a beginner 
-the danger of doing this is that you are not developing and testing against the 
-installed version of your package. Rather, you are working directly with the 
+* You can directly import the package directly from the root directory. For
+some this is engrained in their respective workflows. However, for a beginner
+the danger of doing this is that you are not developing and testing against the
+installed version of your package. Rather, you are working directly with the
 flat files.
+
+
+```{admonition} Core scientific Python packages that use the flat layout
+:class: tip
+
+* [numpy](https://github.com/numpy/numpy)
+* [scipy](https://github.com/scipy/scipy)
+* [pandas](https://github.com/pandas-dev/pandas)
+* [xarray](https://github.com/pydata/xarray)
+* [Jupyter-core](https://github.com/jupyter/jupyter_core)
+* [Jupyter notebook](https://github.com/jupyter/notebook)
+* [scikit-learn](https://github.com/scikit-learn/scikit-learn)
+
+It would be a significant maintenance cost and burden to move all of these
+packages to a different layout. The potential benefits of the source layout
+for these tools is not worth the maintenance investment.
+```

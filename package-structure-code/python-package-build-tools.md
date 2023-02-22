@@ -36,11 +36,6 @@ support pure-Python package builds. A pure-Python build refers
 to a package build that does not have extensions that are written in another
 programming language (such as `C` or `C++`).
 
-```{note}
-**PDM** does have some support for `C`/[`Cython`](https://cython.org/) extensions. [Click here to
-learn more.](https://pdm.fming.dev/latest/pyproject/build/#build-platform-specific-wheels
-)
-```
 
 Other packages that have C and C++ extensions (or that wrap other languages such as fortran) require additional code compilation steps when built.
 Back-ends such as and **setuptools.build**, **meson.build**
@@ -54,14 +49,12 @@ Build front-ends have a user-friendly interface that allow you to perform
 common Python packaging tasks such as building your package, creating an
 environment to run package tests and build documentation, and pushing to PyPI.
 
-
-
-For instance, you can use **Flit**, **Hatch** and **PDM** to both build your
+For instance, you can use **Flit**, **Hatch**, **Poetry** and **PDM** to both build your
 package and to publish your package to PyPI (or test PyPI). However, if you
 want a tool that also support environment management and versioning your package,
-then you might prefer to use **Hatch** or **PDM**.
+then you might prefer to use **Hatch**, **Poetry** or **PDM**.
 
-Using a tool like **Flit**, **Hatch** or **PDM** will simplify your workflow.
+Using a tool like **Flit**, **Hatch**, **Poetry** or **PDM** will simplify your workflow.
 
 Example to build your package with **Flit**:
 
@@ -112,7 +105,6 @@ locking, you can use **PDM** or **Poetry** but not **Hatch**.
 If you are using **Setuptools**, there is no user-friendly build front-end that performs multiple tasks. You will need to use **build** to build your package and **twine** to publish to PyPI.
 ```
 
-
 ### Example build steps that can be simplified using a front-end tool
 
 Below, you can see how a build tool streamlines your packaging experience. Example to build your package with **Hatch**:
@@ -124,6 +116,7 @@ hatch build
 # Example to publish to PyPI:
 hatch publish --repository testpypi
 ```
+
 Example build steps using the **setuptools** backend and **build**:
 
 ```bash
@@ -134,49 +127,51 @@ python3 -m build
 twine upload -r testpypi dist/*
 ```
 
-### Build back-ends
+## Choosing a build back-end
 
 Most front-end packaging tools have their own back-end build tool. The build
 tool creates your package's (SDist and Wheel) distribution files. For pure
 Python packages, the main difference between the different build back-ends
 discussed below is:
 
-* How configurable they are and
-* How much you need to configure them to ensure the correct files are included in your SDist and Wheel files.
+* How configurable they are - for example, do they allow you to add build steps that support non python extensions?
+* How much you need to configure them to ensure the correct files are included in your SDist and Wheel distributions.
 
-It is also important to note that some back-ends, such as Flit-core, only support
-pure Python builds. Other back ends support C and C++ extensions:
+
+### Build backend support for non pure-python packages
+
+It is important to note that some build back-ends, such as **Flit-core**, only support
+pure Python builds. Other back ends support C and C++ extensions as follows:
 
 * setuptools supports builds using C / C++ extensions
-* Hatchling supports C extensions via plugins that the developer creates to customize a build
+* Hatchling (hatch's backend) supports C / C++ extensions via plugins that the developer creates to customize a build
 * PDM's backend supports C / C++ extensions by using setuptools
-* Poetry supports C/C++ extensions however this functionality is currently undocumented. As such we don't recommend using Poetry for complex builds until it is documented.
+* Poetry's backend supports C/C++ extensions however this functionality is currently undocumented. As such we don't recommend using Poetry for complex or non pure Python builds until it is documented.
 
 While we won't discuss more complex builds below, we will identify which tools
-allow for C and C++ extensions.
-
-
-<!--
-From Eli:
-
-poetry: supports it (c extensions), but is undocumented and uses setuptools under the hood, they plan to change how this works and then document it
-pdm-backend: supports it, and documents it -- and also uses setuptools under the hood
-hatchling: permits you to define hooks for you to write your own custom build steps, including to build C++ extensions
-
--->
-
-<!-- ```{note}
-**PDM** does have some support for `C`/[`Cython`](https://cython.org/) extensions. [Click here to
-learn more.](https://pdm.fming.dev/latest/pyproject/build/#build-platform-specific-wheels). This functionality uses setuptools "under the
-hood".
-``` -->
-
+have documented support for C / C++ extensions.
 
 
 ## An ecosystem of Python build tools
 
 Below we introduce several of the most commonly used Python packaging build
-tools (see chart below).
+front-end tools. We highlight the features that each tool offers as a way to
+help you decide what tool might be best for your workflow.
+
+```{admonition} We do not suggest using setuptools
+:class: note
+
+We suggest that you pick one of the modern tools listed above rather than
+setuptools because setuptools will require some additional knowledge
+to set up correctly.
+
+We review setuptools as a backend because it is still popular. However it is
+not the most user friendly option.
+```
+
+The most commonly used tools in the ecosystem are
+setuptools backend (with build) and Poetry (a front end tool with numerous
+features and excellent documentation).
 
 :::{figure-md} pypa-survey-plot
 
@@ -186,7 +181,7 @@ The Python developers survey results (n=>8,000 PyPI users) show setuptools and p
 :::
 
 
-## How to chose a build workflow tool
+## Chose a build workflow tool
 
 The tools that we review below include:
 
@@ -195,10 +190,6 @@ The tools that we review below include:
 * Hatch
 * PDM
 * Poetry
-
-We suggest that you pick one of the modern tools listed above rather than
-setuptools because setuptools will require some additional knowledge
-to set up correctly.
 
 When you are selecting a tool, you might consider this general workflow of
 questions:
@@ -209,7 +200,8 @@ questions:
 **PDM** for the time being. It is the only tool in the list below that has documented
 workflow to support such extensions. It also supports other backends such as scikit build and meson-python that will allow you to fully customize your build.
 
-NOTE: You can also use Hatch but you will need to write your own plugin for this support.
+NOTE: You can also use Hatch for non pure python builds but you will need to
+write your own plugin for this support.
 
 
 
@@ -239,7 +231,7 @@ included in the table.
 :header: Feature, Flit, Hatch, PDM, Poetry
 :widths: 36, 10,10,10,10
 
-Default Build Back-end, Flit-core, Hatch-core, PDM, Poetry-core
+Default Build Back-end, Flit-core, hatchling, PDM, Poetry-core
 Use Other Build Backends,✖ , ✖,✅  ,✖
 Dependency management, ✖,✖,✅,✅
 Publish to PyPI, ✅,✅,✅,✅
@@ -580,4 +572,17 @@ dev = [
   "boost-histogram>=1.0",
 ]
 ```
+
+From Eli:
+
+poetry: supports it (c extensions), but is undocumented and uses setuptools under the hood, they plan to change how this works and then document it
+pdm-backend: supports it, and documents it -- and also uses setuptools under the hood
+hatchling: permits you to define hooks for you to write your own custom build steps, including to build C++ extensions
+
+
+**PDM** does have some support for `C`/[`Cython`](https://cython.org/) extensions. [Click here to
+learn more.](https://pdm.fming.dev/latest/pyproject/build/#build-platform-specific-wheels). This functionality uses setuptools "under the
+hood".
+
+
 -->

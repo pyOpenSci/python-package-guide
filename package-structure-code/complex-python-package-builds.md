@@ -141,3 +141,12 @@ pdm and poetry both rely on setuptools for C extensions. pdm's support claims to
 
 https://pdm.fming.dev/latest/pyproject/build/#build-platform-specific-wheels
 -->
+
+
+<!-- https://github.com/pyOpenSci/python-package-guide/pull/23#discussion_r1071541329
+ELI: A complex build could mean running a python script that processes some data file and produces a pure python module file.
+
+Probably not common in the scientific community specifically, but I've seen quite a few setup.py files that contain custom build stages which e.g. build gettext locale catalogs.
+
+The main point is that it is more "complex" than simply copying files or directories as-is into the built wheel.
+-->

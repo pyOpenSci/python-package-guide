@@ -2,53 +2,36 @@
 
 There are two core distribution files
 that you need to create to publish your Python package to
-PyPI:
+PyPI SDist and Wheel. The SDist (Source Distribution) contains the raw source
+code for your package. The Wheel (.whl) contains the built / compiled files
+that can be directly installed onto anyones' computer.
 
-1. a Source Distribution (SDist)
-2. a Wheel (.whl).
-
-## Source vs. Binary Files
-
-It's important to understand the two "types" of distribution files. You can
-think about files as either source or binary:
-
-**Source files:** source files are the unbuilt files needed to build your
-package. These are the "raw / as-is" files that you store on GitHub or whatever
-platform you are using to manage your code repository.
-**Binary files:** binary files are the source files after they've been built.
-These files have been compiled (if they require compilation) and are ready
-to be installed.
-
-### Python package distribution types: SDist and Wheels
-There are two types of distribution files that you will create to support
-publishing your Python package on PyPI:
-
-1. SDist and
-1. Wheel
-
-<!--
-* **SDist (Source Distribution):** This file, packaged as a **.tar.gz** tarball represents all of the unbuilt source files needed to build your package into an installable bundle. But the files within the package are not yet "built" if your package requires a  build step. Pure python packages most often do not require a build step.
-* **Wheel:** A wheel (**.whl**) is a **.zip** file containing all of the files needed to directly install your package. All of the files in a wheel are binaries - this means that code is already compiled / built. Wheels are thus faster to install - particularly if you have a package that requires build steps. -->
+Learn more about both distributions below.
 
 ```{note}
 If your package is a pure python package with no additional
-build / compilation steps then the SDIST and Wheel files will have
-similar content.
+build / compilation steps then the SDist and Wheel distributions will have
+similar content. However if your package has extensions in other languages
+or is more complex in its build, the two distributions will be very different.
+
+Also note that we are not discussing conda build workflows in this section.
+[You can learn more about conda builds here.](https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
 ```
 
-### What is a source distribution (SDist)?
+### Source Distribution (SDist)
 
-**S**ource **D**istributions, referred to as SDist, is a set of files saves as
-a `.tar.gz` archive (often called a "tarball"). The SDist has all of the files
-needed to build your
-package. As the name implies, a SDIST contains the source code; it has not been
+**Source files** are the unbuilt files needed to build your
+package. These are the "raw / as-is" files that you store on GitHub or whatever
+platform you use to manage your code.
+
+**S**ource **D**istributions are referred to as SDist.  As the name implies, a SDIST contains the source code; it has not been
 built or compiled in any way. Thus, when a user installs your source
-distribution using pip, pip needs to run a build step first.
+distribution using pip, pip needs to run a build step first. SDist is normally stored as a `.tar.gz` archive (often called a "tarball").
 
+Below is an example SDist for the stravalib Python package:
 
-<!-- TODO: will work on cleaning up this after adding MANIFEST and then
-add a section on the MANIFEST file for packaging and link to
-https://packaging.python.org/en/latest/guides/using-manifest-in/-->
+<!-- TODO: we should likely use a different pure python package with a src/ layout for
+consistency -->
 
 ```
 stravalib-1.1.0.post2-SDist.tar.gz file contents
@@ -126,6 +109,8 @@ set of files, including metadata that are generated from your project's
 pyproject.toml file. The pyproject.toml and other files that may be included in
 source distributions are not included in wheels because it is a built
 distribution.
+
+The wheel (.whl) is your built binary distribution. **Binary files** are the built / compiled source files. These files are ready to be installed. A wheel (**.whl**) is a **.zip** file containing all of the files needed to directly install your package. All of the files in a wheel are binaries - this means that code is already compiled / built. Wheels are thus faster to install - particularly if you have a package that requires build steps.
 
  The wheel does not contain any of your
 packages configuration files such as **setup.cfg** or **pyproject.toml**. This
