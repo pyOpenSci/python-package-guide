@@ -95,6 +95,7 @@ the `src` directory.
 Intro <self>
 
 Python package structure <python-package-structure>
+pyproject.toml Package Metadata <pyproject-toml-python-package-metadata>
 What are SDist & Wheel Files? <python-package-distribution-files-sdist-wheel>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>

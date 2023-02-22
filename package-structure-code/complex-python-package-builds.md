@@ -1,5 +1,30 @@
 # Complex Python package builds
 
+This guide is focused on packages that are either pure-python or that
+have a few simple extensions in another language such as C or C++.
+
+If your package is more complex, [you may want to refer to this guide
+created by Ralf Gommers on Python packaging.](https://pypackaging-native.github.io/)
+
+## Pure Python Packages vs. packages with extensions in other languages
+
+You can classify Python package complexity into three general categories. These
+categories can in turn help you select the correct package front-end and
+back end tools.
+
+1. **Pure-python packages:** these are packages that only rely on Python to function. Building a pure Python package is simpler. As such, you can chose a tool below that
+has the features that you want and be done with your decision!
+2. **Python packages with non-Python extensions:** These packages have additional components called extensions written in other languages (such as `C` or `C++`). If you have a package with non-python extensions, then you need to select a build back-end tool that allows you to add additional build steps needed to compile your extension code. Further, if you wish to use a front-end tool to support your workflow, you will need to select a tool that
+supports additional build setps. In this case, you could use setuptools. However, we suggest that you chose build tool that supports custom build steps such as Hatch with Hatchling or PDM. PDM is an excellent choice as it allows you to also select your build back end of choice. We will discuss this at a high level on the complex builds page.
+3.**Python packages that have extensions written in different languages (e.g. fortran and C++) or that have non Python dependencies that are difficult to install (e.g. GDAL)** These packages often have complex build steps (more complex than a package with just a few C extensions for instance). As such, these packages require tools such as [scikit-build](https://scikit-build.readthedocs.io/en/latest/)
+or [meson-python](https://mesonbuild.com/Python-module.html) to build. NOTE: you can use meson-python with PDM.
+
+
+<!--
+On this page, we will focus on using front-end tools to package pure python
+packages. We will note if a package does have the flexibility to support other
+back-ends and in turn more complex builds (*mentioned in #2 and #3 above*). -->
+<!--
 ## COmbine the two sets of statement below...
 ELI:
 PDM supports C/Cython extensions too: https://pdm.fming.dev/latest/pyproject/build/#build-platform-specific-wheels
@@ -86,9 +111,7 @@ CORRECTIONS:
 pdm doesn't use plugins. Hatch does.
 pdm and poetry both rely on setuptools for C extensions. pdm's support claims to be fully developed and documented. poetry claims nothing, and doesn't document it.
 
--->
 
-```{note}
 ??
 Poetry supports extensions written in other languages but this functionality is
 currently undocumented.
@@ -101,7 +124,6 @@ package builds.
 Some front-end packaging tools, such as PDM, allow you to use other
 build back-ends such as **meson** and **scikit-build**.
 
-```
 
 me:
 pdm, hatch and poetry all have "ways" of supporting c extensions via pdm-build, hatchling and poetry's build back end.
@@ -118,3 +140,4 @@ pdm and poetry both rely on setuptools for C extensions. pdm's support claims to
 
 
 https://pdm.fming.dev/latest/pyproject/build/#build-platform-specific-wheels
+-->
