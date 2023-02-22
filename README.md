@@ -1,6 +1,6 @@
 # <img src="images/logo/logo.png" width=40 /> pyOpenSci Scientific Python Open Source Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -97,6 +97,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rgommers/"><img src="https://avatars.githubusercontent.com/u/98330?v=4?s=100" width="100px;" alt="Ralf Gommers"/><br /><sub><b>Ralf Gommers</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=rgommers" title="Code">💻</a> <a href="#design-rgommers" title="Design">🎨</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Argommers" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://pradyunsg.me"><img src="https://avatars.githubusercontent.com/u/3275593?v=4?s=100" width="100px;" alt="Pradyun Gedam"/><br /><sub><b>Pradyun Gedam</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=pradyunsg" title="Code">💻</a> <a href="#design-pradyunsg" title="Design">🎨</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Apradyunsg" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ofek.dev"><img src="https://avatars.githubusercontent.com/u/9677399?v=4?s=100" width="100px;" alt="Ofek Lev"/><br /><sub><b>Ofek Lev</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=ofek" title="Code">💻</a> <a href="#design-ofek" title="Design">🎨</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Aofek" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
