@@ -2,15 +2,13 @@
 
 <!-- TODO: add a small discussion on what pinning is?-->
 
-There are a several different build tools that you can use to [create your Python package's *SDist* and *Wheel* distributions](python-package-distribution-files-sdist-wheel). Below, we discuss the features,
+There are a several different build tools that you can use to [create your Python package's _sdist_ and _wheel_ distributions](python-package-distribution-files-sdist-wheel). Below, we discuss the features,
 benefits and limitations of the most commonly used Python packaging tools.
 We focus on pure-python packages in this guide. However, we also
 highlight tools that currently support packages with C/C++ and other language
 extensions.
 
-
 <!-- TODO: create build tool selection diagram - https://www.canva.com/design/DAFawXrierc/O7DTnqW5fmMEZ31ao-TK9w/edit -->
-
 
 :::{figure-md} fig-target
 
@@ -29,19 +27,20 @@ To better understand your options, when it comes to building a Python package, i
 build tool front-end and build back-end.
 
 ### Build back-ends
+
 Most packaging tools have a back-end
 build tool that builds you package and creates associated
-[(SDist and wheel) distribution files](python-package-distribution-files-sdist-wheel). Some tools, such as **Flit**, only
+[(sdist and wheel) distribution files](python-package-distribution-files-sdist-wheel). Some tools, such as **Flit**, only
 support pure-Python package builds. A pure-Python build refers
 to a package build that does not have extensions that are written in another
 programming language (such as `C` or `C++`).
-
 
 Other packages that have C and C++ extensions (or that wrap other languages such as fortran) require additional code compilation steps when built.
 Back-ends such as and **setuptools.build**, **meson.build**
 and **scikit-build** support complex builds with custom steps. If your
 build is particularly complex (i.e. you have more than a few `C`/`C++`
 extensions), then we suggest you use **meson.build** or **scikit-build**.
+
 <!--
 ### Build front-ends
 
@@ -85,19 +84,19 @@ Example build steps using setuptools:
 A packaging front-end tool refers to a tool that makes it easier for you to
 perform common packaging tasks using similar commands. These tasks include:
 
-* [Build your packages (create the SDist and Wheel distributions](python-package-distribution-files-sdist-wheel)
-* Installing your package in a development mode (so it updates when you update your code)
-* Publishing to PyPI
-* Running tests
-* Building documentation
-* Managing an environment or multiple environments in which you need to run tests and develop your package
+- [Build your packages (create the sdist and wheel distributions](python-package-distribution-files-sdist-wheel)
+- Installing your package in a development mode (so it updates when you update your code)
+- Publishing to PyPI
+- Running tests
+- Building documentation
+- Managing an environment or multiple environments in which you need to run tests and develop your package
 
 There are several Python packaging tools that you can use for pure Python
 builds. Each front-end tool discussed below supports a slightly different set of Python
 packaging tasks.
 
 For instance, you can use the packaging tools **Flit**, **Hatch** or **PDM**
-to both build and publish your package to PyPI. However while  **Hatch** and
+to both build and publish your package to PyPI. However while **Hatch** and
 **PDM** support versioning and environment management, **Flit** does not. If you want a tool that supports dependency
 locking, you can use **PDM** or **Poetry** but not **Hatch**.
 
@@ -130,27 +129,25 @@ twine upload -r testpypi dist/*
 ## Choosing a build back-end
 
 Most front-end packaging tools have their own back-end build tool. The build
-tool creates your package's (SDist and Wheel) distribution files. For pure
+tool creates your package's (sdist and wheel) distribution files. For pure
 Python packages, the main difference between the different build back-ends
 discussed below is:
 
-* How configurable they are - for example, do they allow you to add build steps that support non python extensions?
-* How much you need to configure them to ensure the correct files are included in your SDist and Wheel distributions.
-
+- How configurable they are - for example, do they allow you to add build steps that support non python extensions?
+- How much you need to configure them to ensure the correct files are included in your sdist and wheel distributions.
 
 ### Build backend support for non pure-python packages
 
 It is important to note that some build back-ends, such as **Flit-core**, only support
 pure Python builds. Other back ends support C and C++ extensions as follows:
 
-* setuptools supports builds using C / C++ extensions
-* Hatchling (hatch's backend) supports C / C++ extensions via plugins that the developer creates to customize a build
-* PDM's backend supports C / C++ extensions by using setuptools
-* Poetry's backend supports C/C++ extensions however this functionality is currently undocumented. As such we don't recommend using Poetry for complex or non pure Python builds until it is documented.
+- setuptools supports builds using C / C++ extensions
+- Hatchling (hatch's backend) supports C / C++ extensions via plugins that the developer creates to customize a build
+- PDM's backend supports C / C++ extensions by using setuptools
+- Poetry's backend supports C/C++ extensions however this functionality is currently undocumented. As such we don't recommend using Poetry for complex or non pure Python builds until it is documented.
 
 While we won't discuss more complex builds below, we will identify which tools
 have documented support for C / C++ extensions.
-
 
 ## An ecosystem of Python build tools
 
@@ -180,30 +177,29 @@ features and excellent documentation).
 The Python developers survey results (n=>8,000 PyPI users) show setuptools and poetry as the most commonly used Python packaging tools. The core tools that we've seen being used in the scientific community are included here. [You can view the full survey results by clicking here.](https://drive.google.com/file/d/1U5d5SiXLVkzDpS0i1dJIA4Hu5Qg704T9/view) NOTE: this data represent maintainers across domains and is likely heavily represented by those in web development. So this represents a snapshot across the broader Python ecosystem.
 :::
 
-
 ## Chose a build workflow tool
 
 The tools that we review below include:
 
-* Twine, Build + setuptools
-* Flit
-* Hatch
-* PDM
-* Poetry
+- Twine, Build + setuptools
+- Flit
+- Hatch
+- PDM
+- Poetry
 
 When you are selecting a tool, you might consider this general workflow of
 questions:
 
 1. **Is your tool pure python? Yes?** You can use any tool that you wish! Pick the tool that has the features that you want to use in your build workflow. We suggest:
-* flit, hatch, PDM or poetry (read below for more)
+
+- Flit, Hatch, PDM or Poetry (read below for more)
+
 1. **Does your tool have a few C or C++ extensions?** Great, we suggest using
-**PDM** for the time being. It is the only tool in the list below that has documented
-workflow to support such extensions. It also supports other backends such as scikit build and meson-python that will allow you to fully customize your build.
+   **PDM** for the time being. It is the only tool in the list below that has documented
+   workflow to support such extensions. It also supports other backends such as scikit-build and meson-python that will allow you to fully customize your build.
 
 NOTE: You can also use Hatch for non pure python builds but you will need to
 write your own plugin for this support.
-
-
 
 <!-- ### Build tools for Python packages with complex build steps
 If your package is not pure Python, or it has complex build steps (or build
@@ -217,13 +213,12 @@ These tools allow you to customize your workflow with build steps needed
 to compile code. -->
 
 ## Python packaging tools summary
-<!-- NOTE - add language around the front end means that you have less individual tools in your build - such as nox / make with hatch -->
 
+<!-- NOTE - add language around the front end means that you have less individual tools in your build - such as nox / make with hatch -->
 
 Below, we summarize features offered by the most popular build front end tools.
 Note that because setuptools does not offer a front-end interface, it is not
 included in the table.
-
 
 ### Package tool features table
 
@@ -242,8 +237,8 @@ More than one maintainer? (bus factor),✖,✖, ✖, ✅
 
 Notes:
 
-* *Hatch plans to support using other backends and dependency management in the future*
-* Poetry supports semantic versioning. Thus, it will support version bumping following commit messages if you use a tool such as Python Semantic Release
+- _Hatch plans to support using other backends and dependency management in the future_
+- Poetry supports semantic versioning. Thus, it will support version bumping following commit messages if you use a tool such as Python Semantic Release
 
 ## PDM
 
@@ -266,22 +261,22 @@ packages them with the pure Python files.
 :widths: 20,5,50
 
 Use Other Build Backends, ✅, When you setup PDM it allows you to select from Hatch; PDM-517 and PDM-core build tools. PDM also can work with Meson-Python which supports move complex python builds.
-Dependency management & lock files ,✅,PDM and Poetry are currently the only tools that support creating dependency lock files. However their approach to locking files is different: Poetry uses an upper bound lock approach `^`. <!--Most users won't know what upper bound means--> PDM uses an open lock `>=` Lock files might be most useful to developers creating web apps where locking the environment is critical for consistent user experience.
+Dependency management & lock files ,✅,PDM and Poetry are currently the only tools that support creating dependency lock files. However their default approach to creating lock files is different: Poetry uses an upper bound lock approach `^` by default. <!--Most users won't know what upper bound means--> PDM uses an open lock `>=` approach. Lock files might be most useful to developers creating web apps where locking the environment is critical for consistent user experience.
 Select your environment manager of choice (conda; venv; etc),✅ , PDM allows you to select the environment manager that you want to use for managing your package.
 Publish to PyPI,✅,PDM supports publishing to both test PyPI and PyPI
-Version Control based versioning,✅ , PDM has a setuptools_scm like tool built into it's package which allows you to use dynamic versioning that rely on git tags.
+Version Control based versioning,✅ , PDM has a setuptools_scm like tool built into it which allows you to use dynamic versioning that rely on git tags.
 Version bumping, ✅ , PDM supports you bumping the version of your package using standard semantic version terms patch; minor; major
 Follows current packaging standards,✅,PDM supports current packaging standards for adding metadata to the **pyproject.toml** file. It also supports pep 517? dependency management which relies upon a local directory containing a users environment.
-Install your package in editable mode,✅,PDM supports installing your package in editable mode. **TODO: add info - does it support this and what does that look like? i think it does it when you create an envt??**
-Build your SDist and wheel distributions,✅,
-✨Optional use of PEP 582 / local environment directory✨,✅, PDM is currently the only tool that optionally supports PEP 582 (havig a local environment configuration stored within a `__packages__` directory in your working package directory).
+Install your package in editable mode,✅,PDM supports installing your package in editable mode.
+Build your sdist and wheel distributions,✅,
+✨Optional use of PEP 582 / local environment directory✨,✅, PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a `__packages__` directory in your working package directory).
 ```
 
 ```{admonition} PDM vs. Poetry
 The functionality of PDM is similar to Poetry. However, PDM also offers
 additional, documented support for C extensions and version control based
 versioning. If you are deciding between the two tools, the main difference between these two tools
-is that Poetry follows strict semantic versioning. Strict adherence to semantic
+is that Poetry (by default) follows strict semantic versioning when creating lock files. However there are some work arounds to this if you want to use Poetry rather than PDM. Strict adherence to semantic
 versioning can be problematic in some cases (more on that below).
 ```
 
@@ -289,16 +284,15 @@ versioning can be problematic in some cases (more on that below).
 
 PDM is a full-featured packaging tool. However it is not without challenges:
 
-* Its documentation can be confusing, especially if you are new to
-packaging. For example, PDM doesn't provide an end to end beginning workflow in its documentation.
-* PDM also only has one maintainer currently. We consider individual maintainer
-teams to be a potential risk. If the maintainer finds they no longer have time
-to work on the project, it leaves users with a gap in support. Hatch and Flit
-also have single maintainer teams.
+- Its documentation can be confusing, especially if you are new to
+  packaging. For example, PDM doesn't provide an end to end beginning workflow in its documentation.
+- PDM also only has one maintainer currently. We consider individual maintainer
+  teams to be a potential risk. If the maintainer finds they no longer have time
+  to work on the project, it leaves users with a gap in support. Hatch and Flit
+  also have single maintainer teams.
 
 [You can view an example of a package that uses PDM here](https://github.com/pyOpenSci/examplePy/tree/main/example4_pdm). The README file for this directly provides you with
 an overview of what the PDM command line interface looks like when you use it.
-
 
 ## Flit
 
@@ -316,7 +310,7 @@ Publish to PyPI and test PyPI,✅,Flit supports publishing to both test PyPI and
 Helps you add metadata to your pyproject.toml file,✅, .
 Follows current packaging standards,✅,Flit supports current packaging standards for adding metadata to the **pyproject.toml** file.
 Install your package in editable mode,✅,Flit supports installing your package in editable mode. However it does use a slightly different syntax from the usual `pip install -e .` to do so.
-Build your SDist and wheel distributions,✅, .
+Build your sdist and wheel distributions,✅, .
 ```
 
 ```{admonition} Learn more about flit
@@ -330,16 +324,16 @@ beginner you may want to select Hatch or PDM which will offer you more support
 in common operations.
 You may NOT want to use flit if:
 
-* You want to setup more advanced version tracking and management (using version control for version bumping)
-* You want a tool that handles dependency versions (use PDM instead)
-* You have a project that is not pure Python (Use Hatch, PDM or setuptools)
-* Version Support: Flit uses the version from your package's ` __version__`.
+- You want to setup more advanced version tracking and management (using version control for version bumping)
+- You want a tool that handles dependency versions (use PDM instead)
+- You have a project that is not pure Python (Use Hatch, PDM or setuptools)
+- Version Support: Flit uses the version from your package's ` __version__`.
 
 ## Hatch
 
 [**Hatch**](https://hatch.pypa.io/latest/), similar to Poetry and PDM, provides a
 unified command line interface. To separate Hatch from Poetry and PDM, it also
-provides an environment manager for testing that will  make it easier for
+provides an environment manager for testing that will make it easier for
 you to run tests locally across different versions of Python. It also offers a
 nox / makefile like feature that allows you to create custom build workflows such
 as building your documentation locally, that you may have created in the past
@@ -359,14 +353,14 @@ Version Control based versioning,✅ , Hatch offers `hatch_vcs` which is a plugi
 Version bumping, ✅ , Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
 Follows current packaging standards,✅,Hatch supports current packaging standards for adding metadata to the **pyproject.toml** file.
 Install your package in editable mode,✅,Hatch supports installing your package in editable mode. **TODO: add info - does it support this and what does that look like? i think it does it when you create an envt??**
-Build your SDist and wheel distributions,✅, Hatch will build the SDist and wheel distributions
+Build your sdist and wheel distributions,✅, Hatch will build the sdist and wheel distributions
 ✨Matrix environment creation to support testing across Python versions✨,✅, The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
 ✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨, ✅, This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.
 ✨A flexible build backend: **hatchling**✨, ✅, **The hatchling build back-end offered by the maintainer of Hatch allows developers to easily build plugins to support custom build steps when packaging.
 
 ```
 
-_** There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility_
+_\*\* There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility_
 
 <!-- QUESTION: Does hatch allow you to use other envt managers like conda?? i don't see that it does
 so it might be similar to Poetry in that regard -->
@@ -377,12 +371,13 @@ There are a few features that hatch is missing that may be important for some.
 These include:
 
 Hatch:
-* Doesn't support dependency pinning
-* Currently doesn't support use with other build back ends. Lack of support for other build back ends makes Hatch less desirable for users with more complex package builds. If your package is pure
-Python, this won't be an issue. NOTE: there is a plan for this feature to be added in the upcoming months.
-* Doesn't allow you to select what environment manager you use. <!-- (is this right??) -->
-* Hatch doesn't provide an end to end beginning workflow in it's documentation.
-* Hatch, similar to PDM and Flit currently only has one maintainer.
+
+- Doesn't support dependency pinning
+- Currently doesn't support use with other build back ends. Lack of support for other build back ends makes Hatch less desirable for users with more complex package builds. If your package is pure
+  Python, this won't be an issue. NOTE: there is a plan for this feature to be added in the upcoming months.
+- Doesn't allow you to select what environment manager you use. <!-- (is this right??) -->
+- Hatch doesn't provide an end to end beginning workflow in it's documentation.
+- Hatch, similar to PDM and Flit currently only has one maintainer.
 
 ```{note}
 You can customize any aspect of the Hatch build by creating plugins.
@@ -406,27 +401,27 @@ is currently undocumented. Thus, we don't recommend using Poetry for more comple
 :widths: 20,5,50
 
 Dependency management,✅,Poetry helps you add dependencies to your `pyproject.toml` metadata. _NOTE: currently Poetry adds dependencies using an approach that is slightly out of alignment with current Python peps - however there is a plan to fix this in an upcoming release._ Allows you to organize dependencies in groups: docs; package; tests.
-Dependency pinning,✖✅ ,Poetry offers dependency pinning however it does so in a way that can be problematic for some packages. Read below for more.
-Select your environment manager of choice (conda; venv; etc),✅ , Poetry allows you to either use its simple environment management tool or  select the environment manager that you want to use for managing your package. [Read more about its built in environment management options](https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment).
+Dependency pinning,✖✅ ,Poetry offers dependency pinning however it's default approach can be problematic for some packages. Read below for more.
+Select your environment manager of choice (conda; venv; etc),✅ , Poetry allows you to either use its simple environment management tool or select the environment manager that you want to use for managing your package. [Read more about its built in environment management options](https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment).
 Publish to PyPI and test PyPI,✅,Poetry supports publishing to both test PyPI and PyPI
 Version Control based versioning,✅ , The plugin (Poetry dynamic versioning)[https://github.com/mtkennerly/poetry-dynamic-versioning] supports versioning using git tags with Poetry.
 Version bumping, ✅ , Poetry supports you bumping the version of your package using standard semantic version terms patch; minor; major
 Follows current packaging standards,✖✅,Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
 Install your package in editable mode,✅,Poetry supports installing your package in editable mode using `--editable`
-Build your SDist and wheel distributions,✅,
+Build your sdist and wheel distributions,✅,
 ```
 
 <!-- TODO: update this given responses here: https://github.com/python-poetry/poetry/discussions/7525 -->
+
 ### Challenges with Poetry
 
 Some challenges of Poetry include:
 
-* Poetry pins dependencies using an "upper bound" limit specified with the `^` symbol by default. See breakout below for more regarding why this is potentially problematic.
-* Doesn't support version control based versioning without a plugin
-* *Minor:* The way Poetry currently adds metadata to your pyproject.toml file does not does not follow current Python standards. However, this is going to be addressed when they release version 2.0.
+- Poetry, by default, pins dependencies using an "upper bound" limit specified with the `^` symbol by default. See breakout below for more regarding why this is potentially problematic.
+- _Minor:_ The way Poetry currently adds metadata to your pyproject.toml file does not does not follow current Python standards. However, this is going to be addressed when they release version 2.0.
 
-Poetry is an excellent tool. Use caution when pinning dependencies as
-Poetry's approach to pinning has been showing to be problematic for many builds.
+Poetry is an excellent tool. Use caution when using it to pin dependencies as
+Poetry's approach to pinning can be problematic for many builds.
 
 <!--https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750
 discusses the slight differences in how poetry adds deps....-->
@@ -434,18 +429,18 @@ discusses the slight differences in how poetry adds deps....-->
 ```{admonition} Challenges with Poetry dependency pinning
 :class: important
 
-Poetry pins dependencies using `^` by default. This `^` symbol means that there is
+By default, Poetry pins dependencies using `^` by default. This `^` symbol means that there is
 an "upper bound" to the dependency. Thus poetry will bump a dependency
 version to a new major version. Thus, if your package uses a dependency that
 is at version 1.2.3, Poetry will never bump the dependency to 2.0 even if
 there is a new major version of the package. Poetry will instead bump up to 1.9.x.
 
-Poetry does this because it adheres to strict sesmantic versioning which stats
+Poetry does this because it adheres to strict semantic versioning which states
 that a major version bump (from 1.0 to 2.0 for example) means there are breaking
-changes in the tool. however, not all tools follow strict semantic versioning.
+changes in the tool. However, not all tools follow strict semantic versioning.
 [This approach has been found to be problematic by many of our core scientific packages.](https://iscinumpy.dev/post/bound-version-constraints/)
 
-This approach also won't support over ways of versioning tools, for instance,
+This approach also won't support others ways of versioning tools, for instance,
 some tools use [calver](https://calver.org/) which creates new versions based on the date.
 ```
 
@@ -457,8 +452,8 @@ Hatch: offers matrix environment management that allows you to run tests across
 Python versions. It also offers a Nox / Make file like tool to streamline your
 build workflow.
 PDM: does not offer matrix environments of Nox / Makefile like tools. It does
-offer dependency management but adheres to a >= approach when pinning. This
-avoids the issue described below with Poetry's upper bound pinning.
+offer dependency management but adheres to a >= approach when pinning (open bounds). This
+avoids the issue described below with Poetry's default upper bound pinning.
 ```
 
 ## Using Setuptools Back-end for Python Packaging
@@ -481,39 +476,34 @@ contributors may benefit from understanding it.
 
 Some of features of setuptools include:
 
-* Fully customizable build workflow
-* Many scientific Python packages use it.
-* It offers version control based package versioning using **setuptools_scm**
-* It supports modern packaging using **pyproject.toml** for metadata
-* Supports backwards compatibly for older packaging approaches.
+- Fully customizable build workflow
+- Many scientific Python packages use it.
+- It offers version control based package versioning using **setuptools_scm**
+- It supports modern packaging using **pyproject.toml** for metadata
+- Supports backwards compatibly for older packaging approaches.
 
 ### Challenges using setuptools
 
 Setuptools has a few challenges:
 
-* Because **setuptools** has to maintain backwards compatibility across a range of packages, it is
-not as flexible in its adoption of modern Python packaging
-standards.
-* The above-mentioned backwards compatibility makes for a more complex code-base.
-* Your experience as a user will be less streamlined and simple using setuptools compared to other tools discussed on this page.
+- Because **setuptools** has to maintain backwards compatibility across a range of packages, it is
+  not as flexible in its adoption of modern Python packaging
+  standards.
+- The above-mentioned backwards compatibility makes for a more complex code-base.
+- Your experience as a user will be less streamlined and simple using setuptools compared to other tools discussed on this page.
 
 There are also some problematic default settings that users should be aware of
 when using setuptools. For instance:
 
-* setuptools will build a project without a name or version if you are not using a **pyproject.toml** file
-to store metadata.
-*Setuptools also will include all of the files in your package
-repository if you do not explicitly tell it to exclude files using a
-**MANIFEST.in** file
-
-
-
+- setuptools will build a project without a name or version if you are not using a **pyproject.toml** file
+  to store metadata.
+  \*Setuptools also will include all of the files in your package
+  repository if you do not explicitly tell it to exclude files using a
+  **MANIFEST.in** file
 
 <!-- From stefan: build, run tests on built version, load the built version into
 Python (?how is this different from install??), make editable install, build
 wheel, build sdist -->
-
-
 
 <!--
 The example below is taken from [this thread in GitHub](https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750).
