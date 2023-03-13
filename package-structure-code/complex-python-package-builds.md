@@ -3,8 +3,7 @@
 This guide is focused on packages that are either pure-python or that
 have a few simple extensions in another language such as C or C++.
 
-If your package is more complex, [you may want to refer to this guide
-created by Ralf Gommers on Python packaging.](https://pypackaging-native.github.io/)
+We would love to provide resources on packages with more complex builds. Please feel free to discuss on our board or to open an issue! There are many nuances to building and distributing Python packages that have compiled extensions requiring non-Python dependencies at build time. For an overview and thorough discussion of these nuances, please see [this site.](https://pypackaging-native.github.io/)
 
 ## Pure Python Packages vs. packages with extensions in other languages
 
