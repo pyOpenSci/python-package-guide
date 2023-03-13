@@ -396,7 +396,7 @@ Poetry is user-friendly and has clean and easy-to-read documentation.
 
 ```{note}
 While some have used Poetry for Python builds with C/C++ extensions, this support
-is currently undocumented. Thus we don't recommend it for more complex builds.
+is currently undocumented. Thus, we don't recommend using Poetry for more complex builds.
 ```
 
 ### Poetry features
@@ -421,8 +421,8 @@ Build your SDist and wheel distributions,✅,
 
 Some challenges of Poetry include:
 
-* Poetry pins dependencies using an "upper bound" limit specified with the `^` symbol. See breakout below for more regarding why this is potentially problematic.
-* Doesn't support version control based versioning
+* Poetry pins dependencies using an "upper bound" limit specified with the `^` symbol by default. See breakout below for more regarding why this is potentially problematic.
+* Doesn't support version control based versioning without a plugin
 * *Minor:* The way Poetry currently adds metadata to your pyproject.toml file does not does not follow current Python standards. However, this is going to be addressed when they release version 2.0.
 
 Poetry is an excellent tool. Use caution when pinning dependencies as
@@ -434,7 +434,7 @@ discusses the slight differences in how poetry adds deps....-->
 ```{admonition} Challenges with Poetry dependency pinning
 :class: important
 
-Poetry pins dependencies using `^`. This `^` symbol means that there is
+Poetry pins dependencies using `^` by default. This `^` symbol means that there is
 an "upper bound" to the dependency. Thus poetry will bump a dependency
 version to a new major version. Thus, if your package uses a dependency that
 is at version 1.2.3, Poetry will never bump the dependency to 2.0 even if

@@ -2,7 +2,7 @@
 
 There are two core distribution files
 that you need to create to publish your Python package to
-PyPI SDist and Wheel. The SDist (Source Distribution) contains the raw source
+PyPI source distribution (often called an sdist) and wheel. The SDist contains the raw source
 code for your package. The Wheel (.whl) contains the built / compiled files
 that can be directly installed onto anyones' computer.
 
