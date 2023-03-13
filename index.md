@@ -89,7 +89,7 @@ commonly used in the scientific Python community.
 
 ✨ Python packaging tools & structure ✨
 ^^^
-All of the modern tools discussed in this guide will help you build an efficient packaging workflow. This section helps you select the one that will work best for your workflow.
+All of the modern tools discussed in this guide will help you build an efficient packaging workflow. This section helps you select the one that will work best for you.
 :::
 
 
