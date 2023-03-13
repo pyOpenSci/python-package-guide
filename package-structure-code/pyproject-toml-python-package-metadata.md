@@ -5,8 +5,8 @@ metadata is called a **pyproject.toml**](https://packaging.python.org/en/latest/
 and package dependencies to a **pyproject.toml** file replaces storing that
 information in a setup.py or setup.cfg file.
 
-The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is founded on key: value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`.
-Below that table identifier are key value pairs that
+The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is founded on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`.
+Below that table identifier are key/value pairs that
 support configuration for that particular table.
 
 ### Benefits of using a pyproject.toml file
@@ -61,7 +61,7 @@ Notice that dependencies are specified in this file.
 ### Example pyproject.toml for building using setuptools
 
 The package metadata including authors, keywords, etc is also easy to read.
-Below you can see the same toml file that uses a different build system (setuptools).
+Below you can see the same TOML file that uses a different build system (setuptools).
 Notice how simple it is to swap out the tools needed to build this package!
 
 In this example package setup you use:

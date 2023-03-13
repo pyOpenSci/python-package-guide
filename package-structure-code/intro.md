@@ -35,7 +35,7 @@ In this section of our Python packaging guide, we:
 
 The flexibility of the Python programming language lends itself to a diverse
 range of tool options for creating a Python package. Python is so flexible that
-it is one of the few languages that can be used to wrap around other languages.
+it is one of the few languages that can be used to wrap around other languages. The ability of Python to wrap other languages one the reasons why you will often hear Python described as a ["glue" language](https://numpy.org/doc/stable/user/c-info.python-as-glue.html)"
 
 If you are building a pure Python package, then your packaging setup can be
 simple. However, some scientific packages have complex requirements as they may
