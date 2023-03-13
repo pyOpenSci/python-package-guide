@@ -27,7 +27,7 @@ In this section of our Python packaging guide, we:
 - Suggest tools and approaches that will allow you to expand upon a workflow that may begin as a pure Python tool and evolve into a tool that requires addition layers of complexity in the packaging build.
 - Align our suggestions with the most current, accepted
   [PEPs (Python Enhancement Protocols)](https://peps.python.org/pep-0000/) and the [scientific-python community SPECs](https://scientific-python.org/specs/).
-- In an effort to maintain consistency within our community , we also align with existing best practices being implemented by developers of core Scientific Python packages such as Numpy, SciPy and others.
+- In an effort to maintain consistency within our community, we also align with existing best practices being implemented by developers of core Scientific Python packages such as Numpy, SciPy and others.
 
 ## Guidelines for pyOpenSci's packaging recommendations
 
