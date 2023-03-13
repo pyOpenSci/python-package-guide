@@ -58,6 +58,7 @@ that includes tests within the **src/package-name** directory.
 * [bokeh](https://github.com/bokeh/bokeh)
 * [openscm](https://github.com/openscm/openscm-runner)
 * [awkward](https://github.com/scikit-hep/awkward)
+* [poliastro](https://github.com/poliastro/poliastro/)
 ```
 
 #### Pros of the src/ layout
