@@ -21,6 +21,18 @@ NOTE: this is still a DRAFT so i'm not going to spend time truly cleaning it up 
 If you want to know more about Python packages that have extensions written in
 other languages, [check out the page on complex package builds.](complex-python-package-builds)
 
+### Tools that we review here
+
+In this section we have selected tools that were returned
+as the most popular packaging tools in the PyPA survey.
+You will learn more about the following tools on this page:
+
+- [Twine](https://twine.readthedocs.io/en/stable/), [Build](https://pypa-build.readthedocs.io/en/stable/) + [setuptools](https://setuptools.pypa.io/en/latest/)
+- [Flit](https://flit.pypa.io/en/stable/)
+- [Hatch](https://hatch.pypa.io/latest/)
+- [PDM](https://pdm.fming.dev/latest/)
+- [Poetry](https://python-poetry.org/docs/)
+
 ## Build front-end vs. build back-end tools
 
 To better understand your options, when it comes to building a Python package, it's important to first understand the difference between a
@@ -99,6 +111,7 @@ For instance, you can use the packaging tools **Flit**, **Hatch** or **PDM**
 to both build and publish your package to PyPI. However while **Hatch** and
 **PDM** support versioning and environment management, **Flit** does not. If you want a tool that supports dependency
 locking, you can use **PDM** or **Poetry** but not **Hatch**.
+If you only need to build your package's sdist and wheel distribution files, then you can stick with PyPA's Build. You'd then use Twine to publish to PyPI.
 
 ```{note}
 If you are using **Setuptools**, there is no user-friendly build front-end that performs multiple tasks. You will need to use **build** to build your package and **twine** to publish to PyPI.
@@ -116,7 +129,7 @@ hatch build
 hatch publish --repository testpypi
 ```
 
-Example build steps using the **setuptools** backend and **build**:
+Example build steps using the **setuptools** back-end and **build**:
 
 ```bash
 # Build the package
@@ -136,15 +149,15 @@ discussed below is:
 - How configurable they are - for example, do they allow you to add build steps that support non python extensions?
 - How much you need to configure them to ensure the correct files are included in your sdist and wheel distributions.
 
-### Build backend support for non pure-python packages
+### Build back-end support for non pure-python packages
 
 It is important to note that some build back-ends, such as **Flit-core**, only support
-pure Python builds. Other back ends support C and C++ extensions as follows:
+pure Python builds. Other back-ends support C and C++ extensions as follows:
 
 - setuptools supports builds using C / C++ extensions
-- Hatchling (hatch's backend) supports C / C++ extensions via plugins that the developer creates to customize a build
-- PDM's backend supports C / C++ extensions by using setuptools
-- Poetry's backend supports C/C++ extensions however this functionality is currently undocumented. As such we don't recommend using Poetry for complex or non pure Python builds until it is documented.
+- Hatchling (hatch's back-end) supports C / C++ extensions via plugins that the developer creates to customize a build
+- PDM's back-end supports C / C++ extensions by using setuptools
+- Poetry's back-end supports C/C++ extensions however this functionality is currently undocumented. As such we don't recommend using Poetry for complex or non pure Python builds until it is documented.
 
 While we won't discuss more complex builds below, we will identify which tools
 have documented support for C / C++ extensions.
@@ -162,12 +175,12 @@ We suggest that you pick one of the modern tools listed above rather than
 setuptools because setuptools will require some additional knowledge
 to set up correctly.
 
-We review setuptools as a backend because it is still popular. However it is
+We review setuptools as a back-end because it is still popular. However it is
 not the most user friendly option.
 ```
 
 The most commonly used tools in the ecosystem are
-setuptools backend (with build) and Poetry (a front end tool with numerous
+setuptools back-end (with build) and Poetry (a front end tool with numerous
 features and excellent documentation).
 
 :::{figure-md} pypa-survey-plot
@@ -196,7 +209,7 @@ questions:
 
 1. **Does your tool have a few C or C++ extensions?** Great, we suggest using
    **PDM** for the time being. It is the only tool in the list below that has documented
-   workflow to support such extensions. It also supports other backends such as scikit-build and meson-python that will allow you to fully customize your build.
+   workflow to support such extensions. It also supports other back-ends such as scikit-build and meson-python that will allow you to fully customize your build.
 
 NOTE: You can also use Hatch for non pure python builds but you will need to
 write your own plugin for this support.
@@ -237,7 +250,7 @@ More than one maintainer? (bus factor),✖,✖, ✖, ✅
 
 Notes:
 
-- _Hatch plans to support using other backends and dependency management in the future_
+- _Hatch plans to support using other back-ends and dependency management in the future_
 - Poetry supports semantic versioning. Thus, it will support version bumping following commit messages if you use a tool such as Python Semantic Release
 
 ## PDM
@@ -248,9 +261,9 @@ support for projects that have C and C++ extensions.
 
 ```{admonition} PDM support for C and C++ extensions
 
-PDM supports using the PDM-backend and setuptools at the same time.
+PDM supports using the PDM-back-end and setuptools at the same time.
 This means that you can run setuptools to compile and build C extensions.
-PDM's build backend receives the compiled extension files (.so, .pyd) and
+PDM's build back-end receives the compiled extension files (.so, .pyd) and
 packages them with the pure Python files.
 ```
 
@@ -345,7 +358,7 @@ using a tool like **Make** or **Nox**.
 :header: Feature, Hatch, Notes
 :widths: 20,5,50
 
-Use Other Build Backends,✖, Switching out build back ends is not currently an option when using Hatch. However this feature is coming to the package in the near future.
+Use Other Build Backends,✖, Switching out build back-ends is not currently an option when using Hatch. However this feature is coming to the package in the near future.
 Dependency management,✅,Hatch can help you add dependencies to your `pyproject.toml` metadata.
 **??does hatch support this - i forget?** Select your environment manager of choice (conda; venv; etc),✅ , Hatch allows you to select the environment manager that you want to use for managing your package.
 Publish to PyPI and test PyPI,✅,Hatch supports publishing to both test PyPI and PyPI
@@ -356,7 +369,7 @@ Install your package in editable mode,✅,Hatch supports installing your package
 Build your sdist and wheel distributions,✅, Hatch will build the sdist and wheel distributions
 ✨Matrix environment creation to support testing across Python versions✨,✅, The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
 ✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨, ✅, This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.
-✨A flexible build backend: **hatchling**✨, ✅, **The hatchling build back-end offered by the maintainer of Hatch allows developers to easily build plugins to support custom build steps when packaging.
+✨A flexible build back-end: **hatchling**✨, ✅, **The hatchling build back-end offered by the maintainer of Hatch allows developers to easily build plugins to support custom build steps when packaging.
 
 ```
 
@@ -373,7 +386,7 @@ These include:
 Hatch:
 
 - Doesn't support dependency pinning
-- Currently doesn't support use with other build back ends. Lack of support for other build back ends makes Hatch less desirable for users with more complex package builds. If your package is pure
+- Currently doesn't support use with other build back-ends. Lack of support for other build back-ends makes Hatch less desirable for users with more complex package builds. If your package is pure
   Python, this won't be an issue. NOTE: there is a plan for this feature to be added in the upcoming months.
 - Doesn't allow you to select what environment manager you use. <!-- (is this right??) -->
 - Hatch doesn't provide an end to end beginning workflow in it's documentation.
@@ -566,7 +579,7 @@ dev = [
 From Eli:
 
 poetry: supports it (c extensions), but is undocumented and uses setuptools under the hood, they plan to change how this works and then document it
-pdm-backend: supports it, and documents it -- and also uses setuptools under the hood
+pdm-back-end: supports it, and documents it -- and also uses setuptools under the hood
 hatchling: permits you to define hooks for you to write your own custom build steps, including to build C++ extensions
 
 

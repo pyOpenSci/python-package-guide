@@ -1,13 +1,13 @@
 # pyOpenSci Python Open Source Package Development Guide
 
-
 ```{toctree}
 :hidden:
 :caption: Documentation
 
-Documentation Overview <documentation/index>
+Documentation <documentation/index>
 
 ```
+
 ```{toctree}
 :hidden:
 :caption: Packaging
@@ -45,7 +45,6 @@ community make decisions around how to create scientific Python packages. We are
 :columns: 8
 :class: sd-fs-3
 
-
 ```{button-link} https://www.pyopensci.org/about-peer-review/
 :color: primary
 :class: sd-rounded-pill float-left
@@ -60,7 +59,6 @@ Learn about our open peer review process
 
 :::
 ::::
-
 
 <!-- I think this is the end of the header - below begins the next grid-->
 
@@ -92,7 +90,6 @@ commonly used in the scientific Python community.
 All of the modern tools discussed in this guide will help you build an efficient packaging workflow. This section helps you select the tool that will work best for you.
 :::
 
-
 :::{grid-item-card}
 :link: CONTRIBUTING
 :link-type: doc
@@ -106,6 +103,7 @@ contribute.
 ::::
 
 ## Who this guidebook is for
+
 We assume that you are here because you are:
 
 1. Looking for guidance on creating a Python package.
@@ -118,9 +116,9 @@ Well, friend, you've come to the right place!
 
 This guidebook contains:
 
-* Explanation for "Good enough" minimum requirements associated with being reviewed by pyOpenSci
-* Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!
-* A curated list of resources to help you get your package into documented, usable and tested shape.
+- Explanation for "Good enough" minimum requirements associated with being reviewed by pyOpenSci
+- Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!
+- A curated list of resources to help you get your package into documented, usable and tested shape.
 
 ## Where this guide is headed
 
@@ -130,9 +128,6 @@ Good meets the requirements. Going beyond the minimum can make package maintenan
 
 This guide is now a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
-
-
-
 
 <!--
 COMMENTED OUT TEXT TO BE MOVED

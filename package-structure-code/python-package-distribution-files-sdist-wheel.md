@@ -2,7 +2,7 @@
 
 There are two core distribution files
 that you need to create to publish your Python package to
-PyPI source distribution (often called an sdist) and wheel. The SDist contains the raw source
+PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source
 code for your package. The Wheel (.whl) contains the built / compiled files
 that can be directly installed onto anyones' computer.
 
@@ -10,7 +10,7 @@ Learn more about both distributions below.
 
 ```{note}
 If your package is a pure python package with no additional
-build / compilation steps then the SDist and Wheel distributions will have
+build / compilation steps then the sdist and Wheel distributions will have
 similar content. However if your package has extensions in other languages
 or is more complex in its build, the two distributions will be very different.
 
@@ -18,17 +18,17 @@ Also note that we are not discussing conda build workflows in this section.
 [You can learn more about conda builds here.](https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
 ```
 
-### Source Distribution (SDist)
+### Source Distribution (sdist)
 
 **Source files** are the unbuilt files needed to build your
 package. These are the "raw / as-is" files that you store on GitHub or whatever
 platform you use to manage your code.
 
-**S**ource **D**istributions are referred to as SDist.  As the name implies, a SDIST contains the source code; it has not been
+**S**ource **D**istributions are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
 built or compiled in any way. Thus, when a user installs your source
-distribution using pip, pip needs to run a build step first. SDist is normally stored as a `.tar.gz` archive (often called a "tarball").
+distribution using pip, pip needs to run a build step first. Sdist is normally stored as a `.tar.gz` archive (often called a "tarball").
 
-Below is an example SDist for the stravalib Python package:
+Below is an example sdist for the stravalib Python package:
 
 <!-- TODO: we should likely use a different pure python package with a src/ layout for
 consistency -->
@@ -112,18 +112,16 @@ distribution.
 
 The wheel (.whl) is your built binary distribution. **Binary files** are the built / compiled source files. These files are ready to be installed. A wheel (**.whl**) is a **.zip** file containing all of the files needed to directly install your package. All of the files in a wheel are binaries - this means that code is already compiled / built. Wheels are thus faster to install - particularly if you have a package that requires build steps.
 
- The wheel does not contain any of your
+The wheel does not contain any of your
 packages configuration files such as **setup.cfg** or **pyproject.toml**. This
 distribution is already built so it's ready to install.
 
 Because it is built, the wheel file will be faster to install for pure Python
 projects and can lead to consistent installs across machines.
 
-
 <!-- TODO - i need to clarify this as i've gotten mixed feedback on the
 real security issues with this IF the whl is already built and that file isn't
 included what is the issue? i need more input here-->
-
 
 ```{tip}
 Wheels are also useful in the case that a package
@@ -137,12 +135,12 @@ The filename of a wheel contains important metadata about your package.
 
 Example: **stravalib-1.1.0.post2-py3-none.whl**
 
-* packageName: stravalib
-* packageVersion: 1.1.0
-* build-number: 2 (post2) [(read more about post here)](https://peps.python.org/pep-0440/#post-release-separators)
-* py3: supports Python 3.x
-* none: is not operating system specific (runs on windows, mac, linux)
-* any: runs on any computer processor / architecture
+- packageName: stravalib
+- packageVersion: 1.1.0
+- build-number: 2 (post2) [(read more about post here)](https://peps.python.org/pep-0440/#post-release-separators)
+- py3: supports Python 3.x
+- none: is not operating system specific (runs on windows, mac, linux)
+- any: runs on any computer processor / architecture
 
 What a wheel file looks like when unpacked (unzipped):
 

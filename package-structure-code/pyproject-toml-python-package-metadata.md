@@ -30,15 +30,16 @@ resources working with complex builds in the future.
 ```
 
 ### Example pyproject.toml for building using PDM
+
 Below is an example build configuration for a Python project. This example
 package setup uses:
 
-* **pdm.pep517.api** to build the [package's SDist and wheels](python-package-distribution-files-sdist-wheel)
+- **pdm.pep517.api** to build the [package's sdist and wheels](python-package-distribution-files-sdist-wheel)
 
 ```
 [build-system]
 requires = ["pdm-pep517>=1.0.0"]
-build-backend = "pdm.pep517.api"
+build-back-end = "pdm.pep517.api"
 
 [project]
 name = "examplePy"
@@ -56,6 +57,7 @@ dependencies = [
     "dependency-package-name-2",
 ]
 ```
+
 Notice that dependencies are specified in this file.
 
 ### Example pyproject.toml for building using setuptools
@@ -66,19 +68,19 @@ Notice how simple it is to swap out the tools needed to build this package!
 
 In this example package setup you use:
 
-* **setuptools** to build the [package's SDist and wheels](python-package-distribution-files-sdist-wheel)
-* **setuptools_scm** to manage package version updates using version control tags
+- **setuptools** to build the [package's sdist and wheels](python-package-distribution-files-sdist-wheel)
+- **setuptools_scm** to manage package version updates using version control tags
 
 In the example below `[build-system]` is the first table
-of values. It has two keys that specify the build front end and backend for a package:
+of values. It has two keys that specify the build front end and back-end for a package:
 
 1. `requires =`
-1. `build-backend =`
+1. `build-back-end =`
 
 ```
 [build-system]
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
-build-backend = "setuptools.build_meta"
+build-back-end = "setuptools.build_meta"
 
 [project]
 name = "examplePy"
@@ -96,8 +98,6 @@ dependencies = [
     "dependency-package-name-2",
 ]
 ```
-
-
 
 ```{note}
 [Click here to read about our packaging build tools including PDM, setuptools, Poetry and Hatch.](/package-structure-code/python-package-build-tools)
