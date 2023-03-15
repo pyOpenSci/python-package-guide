@@ -51,7 +51,7 @@ Hatch has the worst take on building compiled code by some distance. Unless its 
 
  HEnry: Poetry will move to PEP 621 configuration in version 2.
 
-* pdm, hatch and poetry all have "ways" of supporting c extensions via pdm-build, hatchling and poetry's build back end.
+* pdm, hatch and poetry all have "ways" of supporting c extensions via pdm-backend, hatchling and poetry's build back end.
 * poetry's support for C extensions is not fully developed and documented (yet). * Poetry doesn't offer a way to facilitate "communication" between poetry front end and another back end like meson to build via a build hook. so while some have used it with other back end builds it's not ideal for this application
 * pdm and poetry both rely on setuptools for C extensions. pdm's support claims to be fully developed and documented. poetry claims nothing, and doesn't document it.
 * hatch both offers a plugin type approach to support custom build steps
