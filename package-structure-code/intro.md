@@ -15,7 +15,6 @@ performs before a review begins. These checks are useful to explore
 for both authors planning to submit a package to us for review and for
 anyone who is just getting started with creating a Python package.
 
-In general these are basic items that should be in any open software repository.
 ```
 
 ## What you will learn here
