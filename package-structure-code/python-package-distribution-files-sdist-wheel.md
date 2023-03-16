@@ -110,7 +110,7 @@ pyproject.toml file. The pyproject.toml and other files that may be included in
 source distributions are not included in wheels because it is a built
 distribution.
 
-The wheel (.whl) is your built binary distribution. **Binary files** are the built / compiled source files. These files are ready to be installed. A wheel (**.whl**) is a **.zip** file containing all of the files needed to directly install your package. All of the files in a wheel are binaries - this means that code is already compiled / built. Wheels are thus faster to install - particularly if you have a package that requires build steps.
+The wheel (.whl) is your built binary distribution. **Binary files** are the built / compiled source files. These files are ready to be installed. A wheel (**.whl**) is a **zip** file containing all of the files needed to directly install your package. All of the files in a wheel are binaries - this means that code is already compiled / built. Wheels are thus faster to install - particularly if you have a package that requires build steps.
 
 The wheel does not contain any of your
 packages configuration files such as **setup.cfg** or **pyproject.toml**. This
