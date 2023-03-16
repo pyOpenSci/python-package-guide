@@ -8,8 +8,6 @@ We focus on pure-python packages in this guide. However, we also
 highlight tools that currently support packages with C/C++ and other language
 extensions.
 
-<!-- TODO: create build tool selection diagram - https://www.canva.com/design/DAFawXrierc/O7DTnqW5fmMEZ31ao-TK9w/edit -->
-
 :::{figure-md} fig-target
 
 <img src="../images/python-package-tools-decision-tree.png" alt="Figure showing... will finish this once we are all happy with the figure and it's not going to change more..." width="700px">
@@ -52,44 +50,6 @@ Back-ends such as and **setuptools.build**, **meson.build**
 and **scikit-build** support complex builds with custom steps. If your
 build is particularly complex (i.e. you have more than a few `C`/`C++`
 extensions), then we suggest you use **meson.build** or **scikit-build**.
-
-<!--
-### Build front-ends
-
-Build front-ends have a user-friendly interface that allow you to perform
-common Python packaging tasks such as building your package, creating an
-environment to run package tests and build documentation, and pushing to PyPI.
-
-For instance, you can use **Flit**, **Hatch**, **Poetry** and **PDM** to both build your
-package and to publish your package to PyPI (or test PyPI). However, if you
-want a tool that also support environment management and versioning your package,
-then you might prefer to use **Hatch**, **Poetry** or **PDM**.
-
-Using a tool like **Flit**, **Hatch**, **Poetry** or **PDM** will simplify your workflow.
-
-Example to build your package with **Flit**:
-
-`flit build`
-
-Example to publish to PyPI:
-`flit publish --repository testpypi`
-
-In the Python package build space **setuptools** is
-the "OG" -the original tool that everyone used to use.
-With a tool like  `setuptools` you have the flexibility
-to publish python pure python packages and packages with custom build steps. However, you will also need to use other tools. For example, you will use `twine` to publish to PyPI.
-
-## An ecosystem of Python build tools
-
-Below we introduce several of the most commonly used
-Python packaging build  tools. Each tool has various
-features that might make you chose to use it
-or not use it. There is no right or wrong tool to use
-as far as pyOpenSci is concerned. We are just trying to
-help you find the tool that works best for
-your workflow.
-Example build steps using setuptools:
-======= -->
 
 ### Python package build front-ends
 
@@ -213,17 +173,6 @@ questions:
 
 NOTE: You can also use Hatch for non pure python builds but you will need to
 write your own plugin for this support.
-
-<!-- ### Build tools for Python packages with complex build steps
-If your package is not pure Python, or it has complex build steps (or build
-steps that you need to customize), then you should consider using:
-
-* Setuptools
-* Hatch
-* PDM
-
-These tools allow you to customize your workflow with build steps needed
-to compile code. -->
 
 ## Python packaging tools summary
 
@@ -379,9 +328,6 @@ Build your sdist and wheel distributions|✅| Hatch will build the sdist and whe
 
 _\*\* There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility_
 
-<!-- QUESTION: Does hatch allow you to use other envt managers like conda?? i don't see that it does
-so it might be similar to Poetry in that regard -->
-
 ### Why you might not want to use Hatch
 
 There are a few features that hatch is missing that may be important for some.
@@ -427,7 +373,7 @@ Install your package in editable mode|✅|Poetry supports installing your packag
 Build your sdist and wheel distributions|✅|Poetry will build your sdist and wheel distributions using `poetry build`
 ```
 
-<!-- TODO: update this given responses here: https://github.com/python-poetry/poetry/discussions/7525 -->
+<!-- TODO: responses here on poetry's future dev work: https://github.com/python-poetry/poetry/discussions/7525 -->
 
 ### Challenges with Poetry
 
@@ -516,79 +462,3 @@ when using setuptools. For instance:
   \*Setuptools also will include all of the files in your package
   repository if you do not explicitly tell it to exclude files using a
   **MANIFEST.in** file
-
-<!-- From stefan: build, run tests on built version, load the built version into
-Python (?how is this different from install??), make editable install, build
-wheel, build sdist -->
-
-<!--
-The example below is taken from [this thread in GitHub](https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750).
-
-```toml
-[tool.poetry.dependencies]
-python = ">=3.6" # This is muddled in as a dependency, while it's not like the others
-numpy = ">=1.13.3"
-typing_extensions = { version = ">=3.7", python = "<3.8" }
-
-sphinx = {version = "^4.0", optional = true}
-sphinx_book_theme = { version = ">=0.0.40", optional = true }
-sphinx_copybutton = { version = ">=0.3.1", optional = true }
-pytest = { version = ">=6", optional = true }
-importlib_metadata = { version = ">=1.0", optional = true, python = "<3.8" } # TOML error to add an ending comma or new line, even if this gets long
-boost-histogram = { version = ">=1.0", optional = true }
-
-[tool.poetry.dev-dependencies]
-pytest = ">=5.2"  # All the optional stuff above doesn't help here!
-importlib_metadata = {version = ">=1.0", python = "<3.8" }
-boost_histogram = ">=1.0"
-
-[tool.poetry.extras]
-docs = ["sphinx", "sphinx_book_theme", "sphinx_copybutton"]
-test = ["pytest", "importlib_metadata", "boost_histogram" ]
-```
-
-vs PDM
-
-```toml
-[project]
-requires-python = ">=3.6"
-dependencies = [
-  "numpy>=1.13.3",
-  "typing-extensions>=3.7; python_version<'3.8'",
-]
-
-# Only needed for extras
-[project.optional-dependencies]
-docs = [
-  "sphinx>=4.0",
-  "sphinx-book-theme>=0.0.40",
-  "sphinx-copybutton>=0.3.1",
-]
-test = [
-  "pytest>=6",
-  "importlib-metadata>=1.0; python_version<'3.8'",
-  "boost-histogram>=1.0",
-]
-
-# Only needed for "dev" installs
-[tool.pdm.dev-dependencies]
-dev = [
-  "pytest>=6",
-  "importlib-metadata>=1.0; python_version<'3.8'",
-  "boost-histogram>=1.0",
-]
-```
-
-From Eli:
-
-poetry: supports it (c extensions), but is undocumented and uses setuptools under the hood, they plan to change how this works and then document it
-pdm-back-end: supports it, and documents it -- and also uses setuptools under the hood
-hatchling: permits you to define hooks for you to write your own custom build steps, including to build C++ extensions
-
-
-**PDM** does have some support for `C`/[`Cython`](https://cython.org/) extensions. [Click here to
-learn more.](https://pdm.fming.dev/latest/pyproject/build/#build-platform-specific-wheels). This functionality uses setuptools "under the
-hood".
-
-
--->
