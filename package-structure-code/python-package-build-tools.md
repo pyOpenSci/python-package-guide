@@ -86,7 +86,7 @@ Below, you can see how a build tool streamlines your packaging experience. Examp
 hatch build
 
 # Example to publish to PyPI:
-hatch publish --repository testpypi
+hatch publish --repo test
 ```
 
 Example build steps using the **setuptools** back-end and **build**:
