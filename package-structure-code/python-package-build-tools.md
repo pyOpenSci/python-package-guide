@@ -238,14 +238,15 @@ included in the table.
 ```{csv-table}
 :header: Feature, Flit, Hatch, PDM, Poetry
 :widths: 36, 10,10,10,10
+:delim: "|"
 
-Default Build Back-end, Flit-core, hatchling, PDM, Poetry-core
-Use Other Build Backends,✖ , ✖,✅  ,✖
-Dependency management, ✖,✖,✅,✅
-Publish to PyPI, ✅,✅,✅,✅
-Version Control based versioning (using `git tags`),✖,✅,✅,✅
-Version bumping,✖,✅, ✅, ✅
-More than one maintainer? (bus factor),✖,✖, ✖, ✅
+Default Build Back-end| Flit-core| hatchling| PDM| Poetry-core
+Use Other Build Backends|✖ | ✖|✅  |✖
+Dependency management| ✖|✖|✅|✅
+Publish to PyPI| ✅|✅|✅|✅
+Version Control based versioning (using `git tags`)|✖|✅|✅|✅
+Version bumping|✖|✅| ✅| ✅
+More than one maintainer? (bus factor)|✖|✖| ✖| ✅
 ```
 
 Notes:
@@ -272,17 +273,18 @@ packages them with the pure Python files.
 ```{csv-table}
 :header: Feature, PDM, Notes
 :widths: 20,5,50
+:delim: "|"
 
-Use Other Build Backends, ✅, When you setup PDM it allows you to select from Hatch; PDM-517 and PDM-core build tools. PDM also can work with Meson-Python which supports move complex python builds.
-Dependency management & lock files ,✅,PDM and Poetry are currently the only tools that support creating dependency lock files. Their default dependency constraint approach to creating lock files is different: Poetry uses a default [upper bound lock](https://python-poetry.org/docs/dependency-specification/#version-constraints) `^`. This means that Poetry will always never bump a dependency to the next major version (ie from 1.2 to 2.0). PDM uses an open lock `>=` approach by default but also allows you to [customize how you want locking constraints to be implemented](https://pdm.fming.dev/latest/usage/dependency/#about-update-strategy). Thus with PDM you can explicitly tell it to lock using upper bounds like Poetry. Or you can tell it to use other strategies. This makes PDM one of the most flexible tools for creating lock files. Lock files are often most useful to developers creating web apps where locking the environment is critical for consistent user experience.
-Select your environment manager of choice (conda; venv; etc),✅ , PDM allows you to select the environment manager that you want to use for managing your package.
-Publish to PyPI,✅,PDM supports publishing to both test PyPI and PyPI
-Version Control based versioning,✅ , PDM has a setuptools_scm like tool built into it which allows you to use dynamic versioning that rely on git tags.
-Version bumping, ✅ , PDM supports you bumping the version of your package using standard semantic version terms patch; minor; major
-Follows current packaging standards,✅,PDM supports current packaging standards for adding metadata to the **pyproject.toml** file. It also supports pep 517? dependency management which relies upon a local directory containing a users environment.
-Install your package in editable mode,✅,PDM supports installing your package in editable mode.
-Build your sdist and wheel distributions,✅, Similar to all of the other tools PDM builds your packages sdist and wheel files for you.
-✨Optional use of PEP 582 / local environment directory✨,✅, PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a `__packages__` directory in your working package directory).
+Use Other Build Backends| ✅| When you setup PDM it allows you to select from Hatch; PDM-517 and PDM-core build tools. PDM also can work with Meson-Python which supports move complex python builds.
+Dependency management & lock files |✅|PDM and Poetry are currently the only tools that support creating dependency lock files. Their default dependency constraint approach to creating lock files is different: Poetry uses a default [upper bound lock](https://python-poetry.org/docs/dependency-specification/#version-constraints) `^`. This means that Poetry will always never bump a dependency to the next major version (ie from 1.2 to 2.0). PDM uses an open lock `>=` approach by default but also allows you to [customize how you want locking constraints to be implemented](https://pdm.fming.dev/latest/usage/dependency/#about-update-strategy). Thus with PDM you can explicitly tell it to lock using upper bounds like Poetry. Or you can tell it to use other strategies. This makes PDM one of the most flexible tools for creating lock files. Lock files are often most useful to developers creating web apps where locking the environment is critical for consistent user experience.
+Select your environment manager of choice (conda; venv; etc)|✅ | PDM allows you to select the environment manager that you want to use for managing your package.
+Publish to PyPI|✅|PDM supports publishing to both test PyPI and PyPI
+Version Control based versioning|✅ | PDM has a setuptools_scm like tool built into it which allows you to use dynamic versioning that rely on git tags.
+Version bumping| ✅ | PDM supports you bumping the version of your package using standard semantic version terms patch; minor; major
+Follows current packaging standards|✅|PDM supports current packaging standards for adding metadata to the **pyproject.toml** file. It also supports pep 517? dependency management which relies upon a local directory containing a users environment.
+Install your package in editable mode|✅|PDM supports installing your package in editable mode.
+Build your sdist and wheel distributions|✅| Similar to all of the other tools PDM builds your packages sdist and wheel files for you.
+✨Optional use of PEP 582 / local environment directory✨|✅| PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a `__packages__` directory in your working package directory).
 ```
 
 ```{admonition} PDM vs. Poetry
@@ -318,12 +320,13 @@ building a basic package to use in a local workflow that doesn't require any adv
 ```{csv-table}
 :header: Feature, Flit, Notes
 :widths: 20,5,50
+:delim: "|"
 
-Publish to PyPI and test PyPI,✅,Flit supports publishing to both test PyPI and PyPI
-Helps you add metadata to your pyproject.toml file,✅, .
-Follows current packaging standards,✅,Flit supports current packaging standards for adding metadata to the **pyproject.toml** file.
-Install your package in editable mode,✅,Flit supports installing your package in editable mode. However it does use a slightly different syntax from the usual `pip install -e .` to do so.
-Build your sdist and wheel distributions,✅, .
+Publish to PyPI and test PyPI|✅|Flit supports publishing to both test PyPI and PyPI
+Helps you add metadata to your **pyproject.toml** file|✅| .
+Follows current packaging standards|✅|Flit supports current packaging standards for adding metadata to the **pyproject.toml** file.
+Install your package in editable mode|✅|Flit supports installing your package in editable mode. However, it does use a slightly different syntax from the usual `pip install -e .` to do so.
+Build your sdist and wheel distributions|✅| Flit can be used to build your packages sdist and wheel distributions.
 ```
 
 ```{admonition} Learn more about flit
@@ -357,19 +360,20 @@ using a tool like **Make** or **Nox**.
 ```{csv-table}
 :header: Feature, Hatch, Notes
 :widths: 20,5,50
+:delim: "|"
 
-Use Other Build Backends,✖, Switching out build back-ends is not currently an option when using Hatch. However this feature is coming to the package in the near future.
-Dependency management,✅,Hatch can help you add dependencies to your `pyproject.toml` metadata.
-Select your environment manager of choice (conda; venv; etc),✅ , Hatch does allow you to select the (pip) environment that you want to use for managing and building your package. However if you want to use conda [you will need to use a plugin](https://github.com/OldGrumpyViking/hatch-conda).
-Publish to PyPI and test PyPI,✅,Hatch supports publishing to both test PyPI and PyPI
-Version Control based versioning,✅ , Hatch offers `hatch_vcs` which is a plugin that uses setuptools_scm to support versioning using git tags. The workflow with `hatch_vcs` is the same as that with `setuptools_scm`.
-Version bumping, ✅ , Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
-Follows current packaging standards,✅,Hatch supports current packaging standards for adding metadata to the **pyproject.toml** file.
-Install your package in editable mode,✖✅, You can install your package in editable mode using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
-Build your sdist and wheel distributions,✅, Hatch will build the sdist and wheel distributions
-✨Matrix environment creation to support testing across Python versions✨,✅, The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
-✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨, ✅, This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.
-✨A flexible build back-end: **hatchling**✨, ✅, **The hatchling build back-end offered by the maintainer of Hatch allows developers to easily build plugins to support custom build steps when packaging.
+Use Other Build Backends|✖| Switching out build back-ends is not currently an option when using Hatch. However this feature is coming to the package in the near future.
+Dependency management|✅|Hatch can help you add dependencies to your **pyproject.toml** metadata.
+Select your environment manager of choice (conda, venv, etc)|✅ | Hatch does allow you to select the (pip) environment that you want to use for managing and building your package. However if you want to use conda [you will need to use a plugin](https://github.com/OldGrumpyViking/hatch-conda).
+Publish to PyPI and test PyPI|✅|Hatch supports publishing to both test PyPI and PyPI
+Version Control based versioning|✅ | Hatch offers `hatch_vcs` which is a plugin that uses setuptools_scm to support versioning using git tags. The workflow with `hatch_vcs` is the same as that with `setuptools_scm`.
+Version bumping| ✅ | Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
+Follows current packaging standards|✅|Hatch supports current packaging standards for adding metadata to the **pyproject.toml** file.
+Install your package in editable mode|✖✅| You can install your package in editable mode using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
+Build your sdist and wheel distributions|✅| Hatch will build the sdist and wheel distributions
+✨Matrix environment creation to support testing across Python versions✨|✅| The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
+✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨| ✅| This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.
+✨A flexible build back-end: **hatchling**✨| ✅| **The hatchling build back-end offered by the maintainer of Hatch allows developers to easily build plugins to support custom build steps when packaging.
 
 ```
 
@@ -382,8 +386,6 @@ so it might be similar to Poetry in that regard -->
 
 There are a few features that hatch is missing that may be important for some.
 These include:
-
-Hatch:
 
 - Doesn't support dependency pinning
 - Currently doesn't support use with other build back-ends. Lack of support for other build back-ends makes Hatch less desirable for users with more complex package builds. If your package is pure
@@ -412,16 +414,17 @@ is currently undocumented. Thus, we don't recommend using Poetry for more comple
 ```{csv-table}
 :header: Feature, Poetry, Notes
 :widths: 20,5,50
+:delim: "|"
 
-Dependency management,✅,Poetry helps you add dependencies to your `pyproject.toml` metadata. _NOTE: currently Poetry adds dependencies using an approach that is slightly out of alignment with current Python peps - however there is a plan to fix this in an upcoming release._ Allows you to organize dependencies in groups: docs; package; tests.
-Dependency pinning,✅ ,Poetry offers dependency pinning however it's default approach can be problematic for some packages. Read below for more.
-Select your environment manager of choice (conda; venv; etc),✅ , Poetry allows you to either use its simple environment management tool or select the environment manager that you want to use for managing your package. [Read more about its built in environment management options](https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment).
-Publish to PyPI and test PyPI,✅,Poetry supports publishing to both test PyPI and PyPI
-Version Control based versioning,✅ , The plugin [Poetry dynamic versioning](https://github.com/mtkennerly/poetry-dynamic-versioning) supports versioning using git tags with Poetry.
-Version bumping, ✅ , Poetry supports you bumping the version of your package using standard semantic version terms patch; minor; major
-Follows current packaging standards,✖✅,Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
-Install your package in editable mode,✅,Poetry supports installing your package in editable mode using `--editable`
-Build your sdist and wheel distributions,✅,Poetry will build your sdist and wheel distributions using `poetry build`
+Dependency management|✅|Poetry helps you add dependencies to your `pyproject.toml` metadata. _NOTE: currently Poetry adds dependencies using an approach that is slightly out of alignment with current Python peps - however there is a plan to fix this in an upcoming release._ Allows you to organize dependencies in groups: docs; package; tests.
+Dependency pinning|✅ |Poetry offers dependency pinning however it's default approach can be problematic for some packages. Read below for more.
+Select your environment manager of choice (conda; venv; etc)|✅ | Poetry allows you to either use its simple environment management tool or select the environment manager that you want to use for managing your package. [Read more about its built in environment management options](https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment).
+Publish to PyPI and test PyPI|✅|Poetry supports publishing to both test PyPI and PyPI
+Version Control based versioning|✅ | The plugin [Poetry dynamic versioning](https://github.com/mtkennerly/poetry-dynamic-versioning) supports versioning using git tags with Poetry.
+Version bumping| ✅ | Poetry supports you bumping the version of your package using standard semantic version terms patch; minor; major
+Follows current packaging standards|✖✅|Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
+Install your package in editable mode|✅|Poetry supports installing your package in editable mode using `--editable`
+Build your sdist and wheel distributions|✅|Poetry will build your sdist and wheel distributions using `poetry build`
 ```
 
 <!-- TODO: update this given responses here: https://github.com/python-poetry/poetry/discussions/7525 -->

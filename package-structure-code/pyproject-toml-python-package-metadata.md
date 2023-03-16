@@ -34,12 +34,12 @@ resources working with complex builds in the future.
 Below is an example build configuration for a Python project. This example
 package setup uses:
 
-- **pdm.pep517.api** to build the [package's sdist and wheels](python-package-distribution-files-sdist-wheel)
+- **pdm.backend** to build the [package's sdist and wheels](python-package-distribution-files-sdist-wheel)
 
 ```
 [build-system]
-requires = ["pdm-pep517>=1.0.0"]
-build-back-end = "pdm.pep517.api"
+requires = ["pdm-backend>=1.0.0"]
+build-back-end = "pdm.backend"
 
 [project]
 name = "examplePy"
