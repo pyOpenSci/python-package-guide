@@ -86,7 +86,7 @@ When you make a release on GitHub, it creates a `git archive` that contains all
 of the files in your GitHub repository. While these files are similar to an
 SDist, these two archives are not the same. The SDist contains a few other
 items including a metadata directory and if you use `setuptools_scm` or `hatch_vcs`
-the SDist will also contain a `_version.py` file.
+the SDist may also contain a file that stores the version.
 ```
 
 <!--
