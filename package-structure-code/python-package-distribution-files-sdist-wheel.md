@@ -26,7 +26,9 @@ platform you use to manage your code.
 
 **S**ource **D**istributions are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
 built or compiled in any way. Thus, when a user installs your source
-distribution using pip, pip needs to run a build step first. Sdist is normally stored as a `.tar.gz` archive (often called a "tarball").
+distribution using pip, pip needs to run a build step first. For this reason, you could define a source distribution as a compressed archive that contains everything required to build a wheel (except for project dependencies) without network access.
+
+Sdist is normally stored as a `.tar.gz` archive (often called a "tarball"). Thus, when a user installs your source distribution using pip, pip needs to run a build step first.
 
 Below is an example sdist for the stravalib Python package:
 
@@ -88,18 +90,6 @@ SDist, these two archives are not the same. The SDist contains a few other
 items including a metadata directory and if you use `setuptools_scm` or `hatch_vcs`
 the SDist may also contain a file that stores the version.
 ```
-
-<!--
-* one of the benefits of wheel is pretty much avoiding setup.py which
-has code mixed in. makes you more vulnerable to a code injection on install.
-
-assuming this means if the package is already pre-built than setup.py isn't running anything on install because install is just moving files across to the machine to be run.
-
-And having metadata separate allows someone to view the metadata without
-running any python code as it's a machine and human readable format.
-
-https://scikit-hep.org/developer/pep621
--->
 
 ### Wheel (.whl files):
 

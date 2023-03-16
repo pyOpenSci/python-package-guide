@@ -1,12 +1,18 @@
 # Python Package Structure for Scientific Python Projects
 
-## Directories that should be in all Python packages
+## Directories that should be in your starting Python package repository
 
 There are several core directories that should be included in all Python packages:
 
 - **docs/:** discussed in our docs chapter, this directory contains your user-facing documentation website
 - **tests/** this directory contains the tests for your project code
-- **package-name/**: this is the directory that contains the code for your Python project. It is normally named using your project's name.
+- **src/package-name/**: this is the directory that contains the code for your Python project. It is normally named using your project's name.
+
+```{admonition} Multiple packages in a src/ folder
+:class: tip
+
+In some more advanced cases you may have more than one package in your src/ directory. See [black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However for most beginners you will likely only have one sub-directory in your src/ folder.
+```
 
 ## Src vs flat layouts
 
@@ -63,6 +69,16 @@ that includes tests within the **src/package-name** directory.
 
 #### Pros of the src/ layout
 
+```{admonition} How Python discovers and prioritizes importing modules
+One of the main technical advantages of using the src/ layout, if you are just getting started with a new package,relates to how Python discovers packages. By default, Python adds a module in your current working directory to the  front of the Python module search path.
+
+This means that if you currently in your packages working directory, and your module code lives in the root e.g.: /package-name/module.py, python will discovers package-name/module.py before it the package as installed by pip or conda in a virtual environment.
+
+However, if your package lives in a directory structure that is **src/package-name** then it won't be, by default, added to the Python path. This means that when you run import package, python will be forced to first search the active environment (which has your package installed).
+
+Note that modern Python versions (3.11 and above) do have an option to adjust how the Python path finds modules (`PYTHONSAFEPATH`) however this is still a setting that a user would need to adjust in order to avoid the behavior of Python importing a module from your current working directory first.
+```
+
 The benefits of the **src/package-name** layout include:
 
 - It ensures that tests always run on the installed version of your
@@ -79,7 +95,11 @@ will want to ensure that large tests datasets are not included in your package d
 - The **src/package-name** layout is semantically more clear. Code is always found in the
   **src/package-name** directory, `tests/` and `docs/`are in the root directory.
 
-```{tip}
+```{admonition} A few notes about the src/ layout
+:class: tip
+
+It is important to note here that sometimes when using the src/package-name structure the directory name (e.g. package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a sub directory within **src/**.
+
 * [Read more about reasons to use the **src/package-name** layout](https://hynek.me/articles/testing-packaging/)
 ```
 

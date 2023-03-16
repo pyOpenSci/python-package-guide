@@ -128,35 +128,3 @@ Good meets the requirements. Going beyond the minimum can make package maintenan
 
 This guide is now a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
-
-<!--
-COMMENTED OUT TEXT TO BE MOVED
-
-
-# TODO LINK TO CI BUILDS FOR Documentation>
-Maybe we can curate a list of CI builds that people can use??? or is that moving too close to a cookie cutter situation
-
-The text below is being moved to the packaging infrastructure section which
-doesn't exist YET... but will soon .
-pyOpenSci packages must:
-
-- Contain full documentation for any user-facing functions.
-- Have a test suite that covers the major functionality of the package.
-- Use continuous integration.
-- Use an OSI approved software license.
-
-
-## Other recommendations
-### Python version support
-You should always be explicit about which versions of Python your package supports.
-Keeping compatibility with old Python versions can be difficult as functionality changes.
-A good rule of thumb is that the package should support, at least,
-the latest three Python versions (e.g., 3.8, 3.7, 3.6).
-
-### Code Style
-pyOpenSci encourages authors to consult [PEP 8](https://www.python.org/dev/peps/pep-0008/) for information on how to style your code.
-
-### Linting
-An automatic linter (e.g. flake8) can help ensure your code is clean and free of syntax errors. These can be integrated with your CI.
-
--->

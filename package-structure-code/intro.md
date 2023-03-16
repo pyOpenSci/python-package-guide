@@ -61,21 +61,6 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.
 Please check out our [package scope page](https://www.pyopensci.org/software-peer-review/about/package-scope.html) and [review requirements in our author guide](https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#) if you are looking for pyOpenSci's Python package review requirements!
 ```
 
-<!--
-```{tip}
-### Python packaging resources that we love
-
-We think the resources below are excellent but each have particular opinions
-that you may or may not find in our packaging guide. For instance, the PyPA
-guide encourages users to store their package in a `src/package-name` directory.
-While we accept that approach many of our community members prefer to not use
-the `src` directory.
-
-* [Python packaging for research software engineers](https://merely-useful.tech/py-rse/)
-* [PyPA packaging guide](https://packaging.python.org/en/latest/)
-```
--->
-
 ```{toctree}
 :hidden:
 :caption: Package structure & code style

@@ -168,17 +168,16 @@ questions:
 - Flit, Hatch, PDM or Poetry (read below for more)
 
 1. **Does your tool have a few C or C++ extensions?** Great, we suggest using
-   **PDM** for the time being. It is the only tool in the list below that has documented
-   workflow to support such extensions. It also supports other back-ends such as scikit-build and meson-python that will allow you to fully customize your build.
+   **PDM** for the time being. It is the only tool in the list below that has both documented
+   workflow to support such extensions and support for other back-ends in the case that build hooks are not enough for your workflow. PDM supports other back-ends such as scikit-build and meson-python that will allow you to fully customize your package's build.
 
-NOTE: You can also use Hatch for non pure python builds but you will need to
-write your own plugin for this support.
+NOTE: You can also use Hatch for non pure python builds. Hatch, similar to PDM, allows you to write your own build hooks or plugins to support custom build steps. But currently, hatch does not support other build back ends. Many of the core scientific packages are moving to meson-python to build their packages. Thus, we appreciate that PDM can work with meson-python specifically.
 
 ## Python packaging tools summary
 
-<!-- NOTE - add language around the front end means that you have less individual tools in your build - such as nox / make with hatch -->
+Below, we summarize features offered by the most popular build front end tools. It is important to keep in mind that these
+front-end tools remove the need to use other core tools in your workflow. For example if you use setuptools, you will need to also use Build and Twine to build your package and publish to PyPI. But if you use Poetry, Hatch or PDM you can do all of those things using the same tool (e.g. `hatch build`, `hatch publish` or `pdm build`, `pdm publish`).
 
-Below, we summarize features offered by the most popular build front end tools.
 Note that because setuptools does not offer a front-end interface, it is not
 included in the table.
 
@@ -313,7 +312,7 @@ using a tool like **Make** or **Nox**.
 
 Use Other Build Backends|✖| Switching out build back-ends is not currently an option when using Hatch. However this feature is coming to the package in the near future.
 Dependency management|✅|Hatch can help you add dependencies to your **pyproject.toml** metadata.
-Select your environment manager of choice (conda, venv, etc)|✅ | Hatch does allow you to select the (pip) environment that you want to use for managing and building your package. However if you want to use conda [you will need to use a plugin](https://github.com/OldGrumpyViking/hatch-conda).
+Select your environment manager of choice (conda, venv, etc)|✅ | Hatch does allow you to select the (pip) environment that you want to use for managing and building your package. However if you want to use Conda [you will need to use a plugin](https://github.com/OldGrumpyViking/hatch-conda).
 Publish to PyPI and test PyPI|✅|Hatch supports publishing to both test PyPI and PyPI
 Version Control based versioning|✅ | Hatch offers `hatch_vcs` which is a plugin that uses setuptools_scm to support versioning using git tags. The workflow with `hatch_vcs` is the same as that with `setuptools_scm`.
 Version bumping| ✅ | Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
@@ -336,7 +335,7 @@ These include:
 - Doesn't support dependency pinning
 - Currently doesn't support use with other build back-ends. Lack of support for other build back-ends makes Hatch less desirable for users with more complex package builds. If your package is pure
   Python, this won't be an issue. NOTE: there is a plan for this feature to be added in the upcoming months.
-- Doesn't allow you to select what environment manager you use. <!-- (is this right??) -->
+- Hatch won't by default support Conda environments. [But you can use a plugin for this!](https://github.com/OldGrumpyViking/hatch-conda).
 - Hatch doesn't provide an end to end beginning workflow in it's documentation.
 - Hatch, similar to PDM and Flit currently only has one maintainer.
 

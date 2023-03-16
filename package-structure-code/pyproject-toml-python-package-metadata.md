@@ -79,7 +79,7 @@ of values. It has two keys that specify the build front end and back-end for a p
 
 ```
 [build-system]
-requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools>=45"]
 build-back-end = "setuptools.build_meta"
 
 [project]
