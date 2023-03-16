@@ -135,8 +135,8 @@ The filename of a wheel contains important metadata about your package.
 
 Example: **stravalib-1.1.0.post2-py3-none.whl**
 
-- packageName: stravalib
-- packageVersion: 1.1.0
+- name: stravalib
+- version: 1.1.0
 - build-number: 2 (post2) [(read more about post here)](https://peps.python.org/pep-0440/#post-release-separators)
 - py3: supports Python 3.x
 - none: is not operating system specific (runs on windows, mac, linux)
