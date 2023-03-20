@@ -1,8 +1,13 @@
 # Python Package Structure for Scientific Python Projects
 
+We strongly suggest, but do not require, that you use the **src/** layout (discussed below)
+for creating your new Python package.
+
+We will review packages that use a flat layout as well. Learn more about both approaches below.
+
 ## Directories that should be in your starting Python package repository
 
-There are several core directories that should be included in all Python packages:
+There are several core directories that should be included in all Python source distributions / package structures:
 
 - **docs/:** discussed in our docs chapter, this directory contains your user-facing documentation website
 - **tests/** this directory contains the tests for your project code
@@ -55,8 +60,7 @@ package as it will be installed on a users computer.
 The key characteristic of this layout is that your package
 uses a **src/package-name** directory structure. With this layout it is also
 common to include your `tests/` directory outside of the package
-directory. However, you may see some packages
-that includes tests within the **src/package-name** directory.
+directory.
 
 ```{admonition} Example scientific packages that use **src/package-name** layout
 
@@ -65,6 +69,7 @@ that includes tests within the **src/package-name** directory.
 * [openscm](https://github.com/openscm/openscm-runner)
 * [awkward](https://github.com/scikit-hep/awkward)
 * [poliastro](https://github.com/poliastro/poliastro/)
+
 ```
 
 #### Pros of the src/ layout
@@ -88,7 +93,9 @@ The benefits of the **src/package-name** layout include:
   installing your package. However, you can chose to add them to the package archive (which is a good idea). When test files (.py files only) are not included in the package archive your package size will be slightly smaller.
 
 ```{admonition} A note about including tests and data in your package distribution
-If you decide to include tests in your package, be sure to read the testing section of our guide. Large datasets associated with tests will slow down your package's install which can be frustrating to users. It also will consume more storage space on PyPI which is largely supported by volunteer maintainers and has storage costs to consider for it's 400,000+ packages. As such you
+If you decide to include tests in your package, be sure to read the [pytest documentation](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules).
+
+Also check out the testing section of our guide. Large datasets associated with tests will slow down your package's install which can be frustrating to users. It also will consume more storage space on PyPI which is largely supported by volunteer maintainers and has storage costs to consider for it's 400,000+ packages. As such you
 will want to ensure that large tests datasets are not included in your package distribution.
 ```
 
