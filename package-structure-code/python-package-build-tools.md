@@ -465,7 +465,7 @@ Some of features of setuptools include:
 
 Setuptools has a few challenges:
 
-- Setuptools does not support interactive IDE based tools such as [pylance](https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#editable-install-modules-not-found) in VSCODE. If you are using flit, hatch, PDM, and a current version of pip, editable installs will support interactive features such as tab completion when using an IDE like VSCODE or pycharm. However if you use `pip install -e .` with setuptools as your back end, you will not have this interactive IDE support.
+- Setuptools does not support interactive features such as auto / tab completion by default if you are working in an IDE like VSCODE and using an editable install for development. [See notes here about pylance support](https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#editable-install-modules-not-found). In comparison, tools such as flit, hatch, PDM support interactive features such as tab / auto completion when using an IDE like VSCODE or pycharm (as long as your version of pip is current!).
 - Because **setuptools** has to maintain backwards compatibility across a range of packages, it is
   not as flexible in its adoption of modern Python packaging
   standards.
