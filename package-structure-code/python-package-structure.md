@@ -57,10 +57,11 @@ for new maintainers. It is also recommended in the
 makes it easier for you to create a package build workflow that tests your
 package as it will be installed on a users computer.
 
-The key characteristic of this layout is that your package
-uses a **src/package-name** directory structure. With this layout it is also
-common to include your `tests/` directory outside of the package
-directory.
+The key characteristics of this layout include:
+
+- Your package uses a **src/package-name** directory structure,
+- You include a `tests/` directory outside of the package
+  directory.
 
 ```{admonition} Example scientific packages that use **src/package-name** layout
 
@@ -90,14 +91,32 @@ The benefits of the **src/package-name** layout include:
   package rather than on the flat files imported directly from your package. If you run your tests on your flat files, you may be missing issues that users encounter when your package is installed.
 - If `tests/` are outside of the **src/package-name** directory, they aren't by default
   delivered to a user
-  installing your package. However, you can chose to add them to the package archive (which is a good idea). When test files (.py files only) are not included in the package archive your package size will be slightly smaller.
+  installing your package. When test files (.py files only) are not included in the package wheel your package size will be slightly smaller. This places a smaller storage burden on PyPI which has over 400,000 packages to support.
 
-```{admonition} A note about including tests and data in your package distribution
-If you decide to include tests in your package, be sure to read the [pytest documentation](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules).
+````{admonition} A note about including tests and data in your package distribution
+If you decide to include tests in your package, your directory structure
+will look like the example below. Notice that below the tests directory
+is contained within the src/package-name directory ensuring the tests will be included in your package's wheel.
 
-Also check out the testing section of our guide. Large datasets associated with tests will slow down your package's install which can be frustrating to users. It also will consume more storage space on PyPI which is largely supported by volunteer maintainers and has storage costs to consider for it's 400,000+ packages. As such you
-will want to ensure that large tests datasets are not included in your package distribution.
+```bash
+src/
+  package-name/
+    tests/
+docs/
 ```
+
+Be sure to read the [pytest documentation](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules).
+
+### **Don't include test suite datasets in your package**
+
+Large datasets associated with tests will slow down your package's install which can be frustrating to users. It also will consume more storage space on PyPI which is largely supported by volunteer maintainers and has storage costs to consider for it's 400,000+ packages.
+
+As such you
+should never include datasets needed for your tests in your package
+distribution. Rather consider hosting them on a data repository such as figshare or zenodo and using a tool such as [Pooch](https://www.fatiando.org/pooch/latest/) to access them when you run tests.
+Check out the testing section of our guide for more information about tests.
+
+````
 
 - The **src/package-name** layout is semantically more clear. Code is always found in the
   **src/package-name** directory, `tests/` and `docs/`are in the root directory.
