@@ -18,16 +18,16 @@
             gtag('config', 'UA-141260825-1');
             
         </script>
-    <meta property="og:title" content="The CODE_OF_CONDUCT.md file In Your Python Open Source Package" />
+    <meta property="og:title" content="The Python Package Source and Wheel Distributions" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="documentation/repository-files/code-of-conduct-file.html" />
+<meta property="og:url" content="package-structure-code/python-package-distribution-files-sdist-wheel.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package itself as having a community around it. ..." />
-<meta property="og:image" content="/_images/social_previews/summary_documentation_repository-files_code-of-conduct-file_9e54b2bf.png" />
-<meta property="og:image:alt" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package..." />
-<meta name="description" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package itself as having a community around it. ..." />
+<meta property="og:description" content="There are two core distribution files that you need to create to publish your Python package to PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source code fo..." />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-distribution-files-sdist-wheel_714f58ff.png" />
+<meta property="og:image:alt" content="There are two core distribution files that you need to create to publish your Python package to PyPI source distribution (often called an sdist) and wheel. T..." />
+<meta name="description" content="There are two core distribution files that you need to create to publish your Python package to PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source code fo..." />
 
-    <title>The CODE_OF_CONDUCT.md file In Your Python Open Source Package &#8212; pyOpenSci Python Packaging Guide</title>
+    <title>The Python Package Source and Wheel Distributions &#8212; pyOpenSci Python Packaging Guide</title>
   
   
   
@@ -37,35 +37,35 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -73,13 +73,13 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/repository-files/code-of-conduct-file';</script>
-    <script src="../../_static/matomo.js"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/documentation/repository-files/code-of-conduct-file.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="What the development guide for your Python package should contain" href="development-guide.html" />
-    <link rel="prev" title="Contributing File in your Python Open Source Package" href="contributing-file.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-distribution-files-sdist-wheel';</script>
+    <script src="../_static/matomo.js"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-distribution-files-sdist-wheel.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Package Build Tools" href="python-package-build-tools.html" />
+    <link rel="prev" title="Use a pyproject.toml file for your package configuration &amp; metadata" href="pyproject-toml-python-package-metadata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -107,7 +107,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -141,7 +141,7 @@
       <div class="navbar-item">
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -151,8 +151,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
   
   
     <p class="title logo__title">Python Package Guide</p>
@@ -175,22 +175,22 @@
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
                         Packaging
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../ci-and-testing/intro.html">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
                         CI & Tests
                       </a>
                     </li>
@@ -341,22 +341,22 @@ document.write(`
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
                         Packaging
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../ci-and-testing/intro.html">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
                         CI & Tests
                       </a>
                     </li>
@@ -458,33 +458,14 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Overview</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Write User Documentation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/get-started.html">Create Your Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/document-your-code-api-docstrings.html">Document Your Code (API)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/create-package-tutorials.html">Create Package Tutorials</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Repository Files</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="readme-file-best-practices.html">README file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing-file.html">Contributing File</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code of Conduct File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="development-guide.html">Development Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license-files.html">LICENSE files</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation &amp; Hosting Tools</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx for Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/publish-documentation-online.html">Publish Your Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/website-hosting-optimizing-your-docs.html">Website Hosting and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 </div>
 </nav></div>
@@ -518,14 +499,14 @@ document.write(`
   <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation for your Open Source Python Package</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">The CODE_OF_CONDUCT.md file In Your Python Open Source Package</li>
+    <li class="breadcrumb-item active" aria-current="page">The Python Package Source and Wheel Distributions</li>
   </ul>
 </nav>
 </div>
@@ -542,38 +523,160 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="the-code-of-conduct-md-file-in-your-python-open-source-package">
-<h1>The CODE_OF_CONDUCT.md file In Your Python Open Source Package<a class="headerlink" href="#the-code-of-conduct-md-file-in-your-python-open-source-package" title="Permalink to this heading">#</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Example Code of Conduct files</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html">SciPy Code of Conduct file - notice they included theirs in their documentation</a></p></li>
-<li><p><a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">fatiando code of conduct file</a></p></li>
-</ul>
+  <section id="the-python-package-source-and-wheel-distributions">
+<h1>The Python Package Source and Wheel Distributions<a class="headerlink" href="#the-python-package-source-and-wheel-distributions" title="Permalink to this heading">#</a></h1>
+<p>There are two core distribution files
+that you need to create to publish your Python package to
+PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source
+code for your package. The Wheel (.whl) contains the built / compiled files
+that can be directly installed onto anyones’ computer.</p>
+<p>Learn more about both distributions below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your package is a pure python package with no additional
+build / compilation steps then the sdist and Wheel distributions will have
+similar content. However if your package has extensions in other languages
+or is more complex in its build, the two distributions will be very different.</p>
+<p>Also note that we are not discussing conda build workflows in this section.
+<a class="reference external" href="https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html">You can learn more about conda builds here.</a></p>
 </div>
-<p>Your package should have a <strong>CODE_OF_CONDUCT.md</strong> file located
-the root of the repository. Once you have people using your
-package, you can consider the package itself as having a community
-around it. Some of this community uses your tool. These users
-may have questions or encounter challenges using your package.</p>
-<p>Others in the community might want to contribute to your tool.
-They might fix bugs, update documentation and engage with the
-maintainer team.</p>
-<section id="why-you-need-a-code-of-conduct">
-<h2>Why you need a code of conduct<a class="headerlink" href="#why-you-need-a-code-of-conduct" title="Permalink to this heading">#</a></h2>
-<p>In order to keep this community healthy and to protect yourself,
-your mainatianer team and your users from unhealthy behavior,
-it is important to have a <a class="reference external" href="https://opensource.guide/code-of-conduct/">code of conduct</a>.</p>
-<p>The code of conduct is important
-as it establishes what you expect in terms of how users and
-contributors interact with maintainers and each other. It also
-establishes rules and expectations which can then be enforced
-if need be to protect others from harmful and/or negative  behaviors.</p>
-<p>If you are not comfortable
-with creating your own code of conduct text, we encourage you to adopt the
-code of conduct language used in the <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/">Contributor Covenant</a>.
-<a class="reference external" href="https://www.contributor-covenant.org/adopters/">Many other communities</a> have adopted this code of conduct as
-their own. See the <a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">Fatiando a Terra Geoscience Python community’s example here.</a></p>
+<section id="source-distribution-sdist">
+<h2>Source Distribution (sdist)<a class="headerlink" href="#source-distribution-sdist" title="Permalink to this heading">#</a></h2>
+<p><strong>Source files</strong> are the unbuilt files needed to build your
+package. These are the “raw / as-is” files that you store on GitHub or whatever
+platform you use to manage your code.</p>
+<p><strong>S</strong>ource <strong>D</strong>istributions are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
+built or compiled in any way. Thus, when a user installs your source
+distribution using pip, pip needs to run a build step first. For this reason, you could define a source distribution as a compressed archive that contains everything required to build a wheel (except for project dependencies) without network access.</p>
+<p>Sdist is normally stored as a <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archive (often called a “tarball”). Thus, when a user installs your source distribution using pip, pip needs to run a build step first.</p>
+<p>Below is an example sdist for the stravalib Python package:</p>
+<!-- TODO: we should likely use a different pure python package with a src/ layout for
+consistency -->
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stravalib-1.1.0.post2-SDist.tar.gz file contents
+
+├─ 📂 stravalib
+│  ├─ tests
+│  │  ├─ integration
+│  │  │  ├─ __init__.py
+│  │  │  ├─ conftest.py
+│  │  │  ├─ strava_api_stub.py
+│  │  │  └─ test_client.py
+│  │  ├─ unit
+│  │  │  ├─ __init__.py
+│  │  │  ├─ test_attributes.py
+│  │  │  ├─ ...
+│  │  ├─ __init__.py
+│  │  ├─ auth_responder.py
+│  │  └─ test.ini-example
+│  ├─ util
+│  │  ├─ __init__.py
+│  │  └─ limiter.py
+│  ├─ __init__.py
+│  ├─ _version.py
+│  ├─ _version_generated.py
+│  ├─ attributes.py
+│  ├─ ...
+├─ stravalib.egg-info
+│  ├─ PKG-INFO
+│  ├─ SOURCES.txt
+│  ├─ dependency_links.txt
+│  ├─ requires.txt
+│  └─ top_level.txt
+├─ CODE_OF_CONDUCT.md
+├─ CONTRIBUTING.md
+├─ LICENSE.txt
+├─ MANIFEST.in
+├─ Makefile
+├─ PKG-INFO
+├─ README.md
+├─ changelog.md
+├─ environment.yml
+├─ pyproject.toml
+├─ requirements-build.txt
+├─ requirements.txt
+└─ setup.cfg
+
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">GitHub archive vs SDist</p>
+<p>When you make a release on GitHub, it creates a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">archive</span></code> that contains all
+of the files in your GitHub repository. While these files are similar to an
+SDist, these two archives are not the same. The SDist contains a few other
+items including a metadata directory and if you use <code class="docutils literal notranslate"><span class="pre">setuptools_scm</span></code> or <code class="docutils literal notranslate"><span class="pre">hatch_vcs</span></code>
+the SDist may also contain a file that stores the version.</p>
+</div>
+</section>
+<section id="wheel-whl-files">
+<h2>Wheel (.whl files):<a class="headerlink" href="#wheel-whl-files" title="Permalink to this heading">#</a></h2>
+<p>A wheel file is a ZIP-format archive whose filename follows a specific format
+(below) and has the extension <code class="docutils literal notranslate"><span class="pre">.whl</span></code>. The <code class="docutils literal notranslate"><span class="pre">.whl</span></code> archive contains a specific
+set of files, including metadata that are generated from your project’s
+pyproject.toml file. The pyproject.toml and other files that may be included in
+source distributions are not included in wheels because it is a built
+distribution.</p>
+<p>The wheel (.whl) is your built binary distribution. <strong>Binary files</strong> are the built / compiled source files. These files are ready to be installed. A wheel (<strong>.whl</strong>) is a <strong>zip</strong> file containing all of the files needed to directly install your package. All of the files in a wheel are binaries - this means that code is already compiled / built. Wheels are thus faster to install - particularly if you have a package that requires build steps.</p>
+<p>The wheel does not contain any of your
+packages configuration files such as <strong>setup.cfg</strong> or <strong>pyproject.toml</strong>. This
+distribution is already built so it’s ready to install.</p>
+<p>Because it is built, the wheel file will be faster to install for pure Python
+projects and can lead to consistent installs across machines.</p>
+<!-- TODO - i need to clarify this as i've gotten mixed feedback on the
+real security issues with this IF the whl is already built and that file isn't
+included what is the issue? i need more input here-->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Wheels are also useful in the case that a package
+needs a <strong>setup.py</strong> file to support a more complex build.
+In this case, because the files in the wheel bundle
+are pre built, the user installing doesn’t have to
+worry about malicious code injections when it is installed.</p>
+</div>
+<p>The filename of a wheel contains important metadata about your package.</p>
+<p>Example: <strong>stravalib-1.1.0.post2-py3-none.whl</strong></p>
+<ul class="simple">
+<li><p>name: stravalib</p></li>
+<li><p>version: 1.1.0</p></li>
+<li><p>build-number: 2 (post2) <a class="reference external" href="https://peps.python.org/pep-0440/#post-release-separators">(read more about post here)</a></p></li>
+<li><p>py3: supports Python 3.x</p></li>
+<li><p>none: is not operating system specific (runs on windows, mac, linux)</p></li>
+<li><p>any: runs on any computer processor / architecture</p></li>
+</ul>
+<p>What a wheel file looks like when unpacked (unzipped):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stravalib-1.1.0.post2-py3-none.whl file contents:
+
+├─ 📂 stravalib
+│  ├─ tests
+│  │  ├─ functional
+│  │  │  ├─ __init__.py
+│  │  │  ├─ test_client.py
+│  │  ├─ unit
+│  │  │  ├─ __init__.py
+│  │  │  ├─ test_attributes.py
+│  │  ├─ __init__.py
+│  │  ├─ auth_responder.py
+│  │  └─ test.ini-example
+│  ├─ util
+│  │  ├─ __init__.py
+│  │  └─ limiter.py
+│  ├─ __init__.py
+│  ├─ _version.py
+│  ├─ _version_generated.py
+│  ├─ attributes.py
+│  ├─ client.py
+└─ stravalib-1.1.0.post2.dist-info  # Package metadata are stored here
+   ├─ LICENSE.txt
+   ├─ METADATA
+   ├─ RECORD
+   ├─ WHEEL
+   └─ top_level.txt
+
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference external" href="https://pythonwheels.com/">Read more about the wheel format here</a></p>
+</div>
 </section>
 </section>
 
@@ -586,20 +689,20 @@ their own. See the <a class="reference external" href="https://github.com/fatian
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="contributing-file.html"
+       href="pyproject-toml-python-package-metadata.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contributing File in your Python Open Source Package</p>
+        <p class="prev-next-title">Use a pyproject.toml file for your package configuration &amp; metadata</p>
       </div>
     </a>
     <a class="right-next"
-       href="development-guide.html"
+       href="python-package-build-tools.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What the development guide for your Python package should contain</p>
+        <p class="prev-next-title">Python Package Build Tools</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -618,14 +721,15 @@ their own. See the <a class="reference external" href="https://github.com/fatian
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-need-a-code-of-conduct">Why you need a code of conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-distribution-sdist">Source Distribution (sdist)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wheel-whl-files">Wheel (.whl files):</a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/repository-files/code-of-conduct-file.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/python-package-distribution-files-sdist-wheel.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -639,7 +743,7 @@ their own. See the <a class="reference external" href="https://github.com/fatian
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../../_sources/documentation/repository-files/code-of-conduct-file.md.txt">
+    <a href="../_sources/package-structure-code/python-package-distribution-files-sdist-wheel.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
@@ -658,8 +762,8 @@ their own. See the <a class="reference external" href="https://github.com/fatian
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

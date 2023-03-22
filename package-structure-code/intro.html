@@ -18,16 +18,16 @@
             gtag('config', 'UA-141260825-1');
             
         </script>
-    <meta property="og:title" content="The CODE_OF_CONDUCT.md file In Your Python Open Source Package" />
+    <meta property="og:title" content="Python package structure information" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="documentation/repository-files/code-of-conduct-file.html" />
+<meta property="og:url" content="package-structure-code/intro.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package itself as having a community around it. ..." />
-<meta property="og:image" content="/_images/social_previews/summary_documentation_repository-files_code-of-conduct-file_9e54b2bf.png" />
-<meta property="og:image:alt" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package..." />
-<meta name="description" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package itself as having a community around it. ..." />
+<meta property="og:description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_intro_3894ec6c.png" />
+<meta property="og:image:alt" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to su..." />
+<meta name="description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
 
-    <title>The CODE_OF_CONDUCT.md file In Your Python Open Source Package &#8212; pyOpenSci Python Packaging Guide</title>
+    <title>Python package structure information &#8212; pyOpenSci Python Packaging Guide</title>
   
   
   
@@ -37,35 +37,35 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -73,13 +73,13 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/repository-files/code-of-conduct-file';</script>
-    <script src="../../_static/matomo.js"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/documentation/repository-files/code-of-conduct-file.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="What the development guide for your Python package should contain" href="development-guide.html" />
-    <link rel="prev" title="Contributing File in your Python Open Source Package" href="contributing-file.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/intro';</script>
+    <script src="../_static/matomo.js"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/intro.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Package Structure for Scientific Python Projects" href="python-package-structure.html" />
+    <link rel="prev" title="Optimizing your documentation so search engines (and other users) find it" href="../documentation/hosting-tools/website-hosting-optimizing-your-docs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -107,7 +107,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -141,7 +141,7 @@
       <div class="navbar-item">
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -151,8 +151,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
   
   
     <p class="title logo__title">Python Package Guide</p>
@@ -175,22 +175,22 @@
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Packaging
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../ci-and-testing/intro.html">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
                         CI & Tests
                       </a>
                     </li>
@@ -341,22 +341,22 @@ document.write(`
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Packaging
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../ci-and-testing/intro.html">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
                         CI & Tests
                       </a>
                     </li>
@@ -458,33 +458,14 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Overview</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Write User Documentation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/get-started.html">Create Your Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/document-your-code-api-docstrings.html">Document Your Code (API)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/create-package-tutorials.html">Create Package Tutorials</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Repository Files</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="readme-file-best-practices.html">README file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing-file.html">Contributing File</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code of Conduct File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="development-guide.html">Development Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license-files.html">LICENSE files</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation &amp; Hosting Tools</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx for Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/publish-documentation-online.html">Publish Your Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/website-hosting-optimizing-your-docs.html">Website Hosting and Optimization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 </div>
 </nav></div>
@@ -518,14 +499,11 @@ document.write(`
   <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation for your Open Source Python Package</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">The CODE_OF_CONDUCT.md file In Your Python Open Source Package</li>
+    <li class="breadcrumb-item active" aria-current="page">Python package structure information</li>
   </ul>
 </nav>
 </div>
@@ -542,38 +520,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="the-code-of-conduct-md-file-in-your-python-open-source-package">
-<h1>The CODE_OF_CONDUCT.md file In Your Python Open Source Package<a class="headerlink" href="#the-code-of-conduct-md-file-in-your-python-open-source-package" title="Permalink to this heading">#</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Example Code of Conduct files</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html">SciPy Code of Conduct file - notice they included theirs in their documentation</a></p></li>
-<li><p><a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">fatiando code of conduct file</a></p></li>
-</ul>
+  <section id="python-package-structure-information">
+<h1>Python package structure information<a class="headerlink" href="#python-package-structure-information" title="Permalink to this heading">#</a></h1>
+<p>This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to
+support building and publishing your package.</p>
+<p>If you are confused by Python packaging, you are not alone!
+The good news is there are some great modern packaging
+tools that ensure that you’re following best practices. Here, we
+review tool features and suggest tools that might be best fitted for your workflow.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are considering submitting a package for peer review, have a look at the
+bare-minimum <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template">editor checks</a> that pyOpenSci
+performs before a review begins. These checks are useful to explore
+for both authors planning to submit a package to us for review and for
+anyone who is just getting started with creating a Python package.</p>
 </div>
-<p>Your package should have a <strong>CODE_OF_CONDUCT.md</strong> file located
-the root of the repository. Once you have people using your
-package, you can consider the package itself as having a community
-around it. Some of this community uses your tool. These users
-may have questions or encounter challenges using your package.</p>
-<p>Others in the community might want to contribute to your tool.
-They might fix bugs, update documentation and engage with the
-maintainer team.</p>
-<section id="why-you-need-a-code-of-conduct">
-<h2>Why you need a code of conduct<a class="headerlink" href="#why-you-need-a-code-of-conduct" title="Permalink to this heading">#</a></h2>
-<p>In order to keep this community healthy and to protect yourself,
-your mainatianer team and your users from unhealthy behavior,
-it is important to have a <a class="reference external" href="https://opensource.guide/code-of-conduct/">code of conduct</a>.</p>
-<p>The code of conduct is important
-as it establishes what you expect in terms of how users and
-contributors interact with maintainers and each other. It also
-establishes rules and expectations which can then be enforced
-if need be to protect others from harmful and/or negative  behaviors.</p>
-<p>If you are not comfortable
-with creating your own code of conduct text, we encourage you to adopt the
-code of conduct language used in the <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/">Contributor Covenant</a>.
-<a class="reference external" href="https://www.contributor-covenant.org/adopters/">Many other communities</a> have adopted this code of conduct as
-their own. See the <a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">Fatiando a Terra Geoscience Python community’s example here.</a></p>
+<section id="what-you-will-learn-here">
+<h2>What you will learn here<a class="headerlink" href="#what-you-will-learn-here" title="Permalink to this heading">#</a></h2>
+<p>In this section of our Python packaging guide, we:</p>
+<ul class="simple">
+<li><p>Provide an overview of the options available to you when packaging your tool</p></li>
+<li><p>Suggest tools and approaches that both meet your needs and also support existing standards.</p></li>
+<li><p>Suggest tools and approaches that will allow you to expand upon a workflow that may begin as a pure Python tool and evolve into a tool that requires addition layers of complexity in the packaging build.</p></li>
+<li><p>Align our suggestions with the most current, accepted
+<a class="reference external" href="https://peps.python.org/pep-0000/">PEPs (Python Enhancement Protocols)</a> and the <a class="reference external" href="https://scientific-python.org/specs/">scientific-python community SPECs</a>.</p></li>
+<li><p>In an effort to maintain consistency within our community, we also align with existing best practices being implemented by developers of core Scientific Python packages such as Numpy, SciPy and others.</p></li>
+</ul>
+</section>
+<section id="guidelines-for-pyopensci-s-packaging-recommendations">
+<h2>Guidelines for pyOpenSci’s packaging recommendations<a class="headerlink" href="#guidelines-for-pyopensci-s-packaging-recommendations" title="Permalink to this heading">#</a></h2>
+<!-- Might belong on the LANDING page for this entire guide?-->
+<p>The flexibility of the Python programming language lends itself to a diverse
+range of tool options for creating a Python package. Python is so flexible that
+it is one of the few languages that can be used to wrap around other languages. The ability of Python to wrap other languages one the reasons why you will often hear Python described as a <a class="reference external" href="https://numpy.org/doc/stable/user/c-info.python-as-glue.html">“glue” language</a>”</p>
+<p>If you are building a pure Python package, then your packaging setup can be
+simple. However, some scientific packages have complex requirements as they may
+need to support extensions or tools written in other languages such as C or C++.</p>
+<p>To support the many different uses of Python, there are many ways to create a
+Python package. In this guide, we suggest approaches for packaging approaches and tools based
+upon:</p>
+<ol class="arabic simple">
+<li><p>What we think will be best and easiest to adopt for those who are newer to packaging</p></li>
+<li><p>Tools that we think are well maintained and documented.</p></li>
+<li><p>A shared goal of standardizing packaging approaches across this (scientific) Python ecosystem.</p></li>
+</ol>
+<p>Here, we also try to align our suggestions with the most current, accepted
+<a class="reference external" href="https://packaging.python.org/en/latest/">Python community</a> and <a class="reference external" href="https://scientific-python.org/specs/">scientific community</a>.</p>
+<div class="important admonition">
+<p class="admonition-title">Suggestions in this guide are not pyOpenSci review requirements</p>
+<p>The suggestions for package layout in this section are made with the
+intent of being helpful; they are not specific requirements for your
+package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p>
+<p>Please check out our <a class="reference external" href="https://www.pyopensci.org/software-peer-review/about/package-scope.html">package scope page</a> and <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#">review requirements in our author guide</a> if you are looking for pyOpenSci’s Python package review requirements!</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 
@@ -586,20 +588,20 @@ their own. See the <a class="reference external" href="https://github.com/fatian
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="contributing-file.html"
+       href="../documentation/hosting-tools/website-hosting-optimizing-your-docs.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contributing File in your Python Open Source Package</p>
+        <p class="prev-next-title">Optimizing your documentation so search engines (and other users) find it</p>
       </div>
     </a>
     <a class="right-next"
-       href="development-guide.html"
+       href="python-package-structure.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What the development guide for your Python package should contain</p>
+        <p class="prev-next-title">Python Package Structure for Scientific Python Projects</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -618,14 +620,15 @@ their own. See the <a class="reference external" href="https://github.com/fatian
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-need-a-code-of-conduct">Why you need a code of conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn-here">What you will learn here</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-pyopensci-s-packaging-recommendations">Guidelines for pyOpenSci’s packaging recommendations</a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/repository-files/code-of-conduct-file.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/intro.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -639,7 +642,7 @@ their own. See the <a class="reference external" href="https://github.com/fatian
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../../_sources/documentation/repository-files/code-of-conduct-file.md.txt">
+    <a href="../_sources/package-structure-code/intro.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
@@ -658,8 +661,8 @@ their own. See the <a class="reference external" href="https://github.com/fatian
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

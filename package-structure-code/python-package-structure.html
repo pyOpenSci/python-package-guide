@@ -1,0 +1,874 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-141260825-1');
+            
+        </script>
+    <meta property="og:title" content="Python Package Structure for Scientific Python Projects" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="package-structure-code/python-package-structure.html" />
+<meta property="og:site_name" content="python-package-guide" />
+<meta property="og:description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-structure_8a84082a.png" />
+<meta property="og:image:alt" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for diff..." />
+<meta name="description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
+
+    <title>Python Package Structure for Scientific Python Projects &#8212; pyOpenSci Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-structure';</script>
+    <script src="../_static/matomo.js"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-structure.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use a pyproject.toml file for your package configuration &amp; metadata" href="pyproject-toml-python-package-metadata.html" />
+    <link rel="prev" title="Python package structure information" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">🚧 This guide is currently under heavy construction 🚧 </div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
+  
+  
+    <p class="title logo__title">Python Package Guide</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
+                    Python Packaging Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
+                    Python Packaging Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Python Package Structure for Scientific Python Projects</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="python-package-structure-for-scientific-python-projects">
+<h1>Python Package Structure for Scientific Python Projects<a class="headerlink" href="#python-package-structure-for-scientific-python-projects" title="Permalink to this heading">#</a></h1>
+<p>There are two different layouts that you will commonly see
+within the Python packaging ecosystem:
+<a class="reference external" href="https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/">src and flat layouts.</a>
+Both layouts have advantages for different groups of maintainers.</p>
+<p>We strongly suggest, but do not require, that you use the <strong>src/</strong> layout (discussed below)
+for creating your Python package. This layout is also recommended in the
+<a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">PyPA packaging guide</a>.</p>
+<div class="important admonition">
+<p class="admonition-title">pyOpenSci will never require a specific package structure for peer review</p>
+<p>We understand that it would be tremendous effort for existing
+maintainers to move to a new layout.</p>
+<p>The overview on this page presents recommendations that we think are best for
+something getting started with Python packaging or someone who’s package is
+has a simple build and might be open to moving to a more fail-proof approach.</p>
+</div>
+<p>An example of the <strong>src/package</strong> layout structure can be seen below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>myPackageRepoName
+├── CHANGELOG.md               ┐
+├── CODE_OF_CONDUCT.md         │
+├── CONTRIBUTING.md            │
+├── docs                       │ Package documentation
+│   └── index.md
+│   └── ...                    │
+├── LICENSE                    │
+├── README.md                  ┘
+├── pyproject.toml             ┐
+├── src                        │
+│   └── myPackage              │ Package source code, metadata,
+│       ├── __init__.py        │ and build instructions
+│       ├── moduleA.py         │
+│       └── moduleB.py         ┘
+└── tests                      ┐
+   └── ...                     ┘ Package tests
+</pre></div>
+</div>
+<p>Note the location of the following directories in the example above:</p>
+<ul class="simple">
+<li><p><strong>docs/:</strong> discussed in our docs chapter, this directory contains your user-facing documentation website. In a <strong>src/</strong> layout docs/ are normally included at the same directory level of the <strong>src/</strong> folder.</p></li>
+<li><p><strong>tests/</strong> this directory contains the tests for your project code. In a <strong>src/</strong> layout tests are normally included at the same directory level of the <strong>src/</strong> folder.</p></li>
+<li><p><strong>src/package/</strong>: this is the directory that contains the code for your Python project. “Package” is normally your project’s name.</p></li>
+</ul>
+<p>Also in the above example, notice that all of the core documentation files that
+pyOpenSci requires live in the root of your project directory. These files
+include:</p>
+<ul class="simple">
+<li><p>CHANGELOG.md</p></li>
+<li><p>CODE_OF_CONDUCT.md</p></li>
+<li><p>CONTRIBUTING.md</p></li>
+<li><p>LICENSE.txt</p></li>
+<li><p>README.md</p></li>
+</ul>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill reference external" href="https://www.pyopensci.org/python-package-guide/documentation"><span>Click here to read about our packaging documentation requirements.</span></a></p>
+<p>While we recommend the <strong>src/</strong> layout we also review the <strong>flat</strong> layout here. Both are used in the Python ecosystem.</p>
+<div class="admonition-example-scientific-packages-that-use-src-package-layout admonition">
+<p class="admonition-title">Example scientific packages that use <strong>src/package</strong> layout</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sourmash-bio/sourmash">Sourmash</a></p></li>
+<li><p><a class="reference external" href="https://github.com/bokeh/bokeh">bokeh</a></p></li>
+<li><p><a class="reference external" href="https://github.com/openscm/openscm-runner">openscm</a></p></li>
+<li><p><a class="reference external" href="https://github.com/scikit-hep/awkward">awkward</a></p></li>
+<li><p><a class="reference external" href="https://github.com/poliastro/poliastro/">poliastro</a></p></li>
+</ul>
+</div>
+<section id="the-src-layout-and-testing">
+<h2>The src/ layout and testing<a class="headerlink" href="#the-src-layout-and-testing" title="Permalink to this heading">#</a></h2>
+<p>The benefit of using the <strong>src/package</strong> layout, particularly if you
+are creating a new package, is that it ensures tests are run against the
+installed version of your package rather than the files in your package
+working directory. If you run your tests on your files rather than the
+installed version, you may be missing issues that users encounter when
+your package is installed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">tests/</span></code> are outside of the <strong>src/package</strong> directory, they aren’t included in the package wheel. This makes your package size slightly smaller which then places places a smaller storage burden on PyPI which has over 400,000 packages to support.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://hynek.me/articles/testing-packaging/">Read more about reasons to use the <strong>src/package</strong> layout</a></p></li>
+</ul>
+<div class="admonition-how-python-discovers-and-prioritizes-importing-modules admonition">
+<p class="admonition-title">How Python discovers and prioritizes importing modules</p>
+<p>By default, Python adds a module in your current working directory to the front of the Python module search path.</p>
+<p>This means that if you run your tests in your packages working directory, using a flat layout, <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code>, Python will discover <code class="docutils literal notranslate"><span class="pre">package-name/module.py</span></code> file before it discovers the installed package.</p>
+<p>However, if your package lives in a src/ directory structure <strong>src/package</strong> then it won’t be, by default, added to the Python path. This means that when you import your package, Python will be forced to  search the active environment (which has your package installed).</p>
+<p>Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g. <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code>).</p>
+</div>
+<section id="sometimes-tests-are-needed-in-a-distribution">
+<h3>Sometimes tests are needed in a distribution<a class="headerlink" href="#sometimes-tests-are-needed-in-a-distribution" title="Permalink to this heading">#</a></h3>
+<p>We do not recommend including tests as part of your package wheel by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package is functioning correctly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory into the <strong>src/package</strong> directory (see example below).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>src/
+<span class="w">  </span>package-name/
+<span class="w">    </span>tests/
+docs/
+</pre></div>
+</div>
+<p>Including the <strong>tests/</strong> directory in your <strong>src/package</strong> directory ensures that tests will be included in your package’s wheel.</p>
+<p>Be sure to read the <a class="reference external" href="https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules">pytest documentation for more about including tests in your package distribution</a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Challenges with including tests and data in a package wheel</p>
+<p>Tests, especially when accompanied by test data can create a few small challenges including:</p>
+<ul class="simple">
+<li><p>Take up space in your distribution which will build up over time as storage space on PyPI</p></li>
+<li><p>Large file sizes can also slow down package install.</p></li>
+</ul>
+<p>However, in some cases, particularly in the scientific Python ecosystems you may need to include tests.</p>
+</div>
+</section>
+</section>
+<section id="don-t-include-test-suite-datasets-in-your-package">
+<h2><strong>Don’t include test suite datasets in your package</strong><a class="headerlink" href="#don-t-include-test-suite-datasets-in-your-package" title="Permalink to this heading">#</a></h2>
+<p>If you do include your tests in your package distribution, we strongly
+discourage you from including data in your test suite directory. Rather,
+host your test data in a repository such as Figshare or Zenodo. Use a
+tool such as <a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a> to access
+the data when you (or a user) runs tests.</p>
+<p>Check out the testing section of our guide for more information about tests.</p>
+<ul class="simple">
+<li><p>The <strong>src/package</strong> layout is semantically more clear. Code is always found in the
+<strong>src/package</strong> directory, <code class="docutils literal notranslate"><span class="pre">tests/</span></code> and <code class="docutils literal notranslate"><span class="pre">docs/</span></code>are in the root directory.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If your package tests require data, we suggest that you do NOT include that
+data within your package structure. We will discuss this in more detail in a
+tutorial. Include data in your package structure increases the size of your
+distribution files. This places a maintenance toll on repositories like PyPI and
+anaconda cloud that have to deal with thousands of package uploads.</p>
+</div>
+</section>
+<section id="about-the-flat-python-package-layout">
+<h2>About the flat Python package layout<a class="headerlink" href="#about-the-flat-python-package-layout" title="Permalink to this heading">#</a></h2>
+<p>Currently most scientific packages use the <strong>flat-layout</strong> given:</p>
+<ul class="simple">
+<li><p>It’s the most commonly found layout with the scientific Python ecosystem and
+people tend to look to other packages / maintainers that they respect for examples
+of how to build Python packages.</p></li>
+<li><p>Many Python tools depend upon tools in other language and / or complex builds
+with compilation steps. Many developers thus appreciate / are used to features
+of the flat layout.</p></li>
+</ul>
+<p>While we present this layout here in our guide, we suggest that those just
+getting started with python packaging start with the src/package layout
+discussed above. Numerous packages in the ecosystem <a class="reference external" href="https://github.com/scikit-build/cmake-python-distributions/pull/145">have had to move to a
+src/ layout</a></p>
+<div class="tip admonition">
+<p class="admonition-title">Why most scientific Python packages do not use source</p>
+<p>In most cases the advantages of using the <strong>src/package</strong> layout for
+larger scientific packages that already use flat approach are not worth it.
+Moving from a flat layout to a <strong>src/package</strong> layout would come at a significant cost to
+maintainers.</p>
+<p>However, the advantages of using the  <strong>src/package</strong> layout for a beginner are significant.
+As such, we recommend that if you are getting started with creating a package,
+that you consider using a  <strong>src/package</strong> layout.</p>
+</div>
+</section>
+<section id="what-does-the-flat-layout-structure-look-like">
+<h2>What does the flat layout structure look like?<a class="headerlink" href="#what-does-the-flat-layout-structure-look-like" title="Permalink to this heading">#</a></h2>
+<p>The flat layout’s primary characteristics are:</p>
+<ul class="simple">
+<li><p>The source code for your package lives in a directory with your package’s
+name in the root of your directory</p></li>
+<li><p>Often the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory also lives within that same <code class="docutils literal notranslate"><span class="pre">package-name</span></code> directory.</p></li>
+</ul>
+<p>Below you can see the recommended structure of a scientific Python package
+using the flat layout.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>myPackage/
+├──<span class="w"> </span>CHANGELOG.md<span class="w">             </span>┐
+├──<span class="w"> </span>CODE_OF_CONDUCT.md<span class="w">       </span>│
+├──<span class="w"> </span>CONTRIBUTING.md<span class="w">          </span>│
+├──<span class="w"> </span>docs/<span class="w">                    </span>│<span class="w"> </span>Package<span class="w"> </span>documentation
+│<span class="w">   </span>└──<span class="w"> </span>...<span class="w">                  </span>│
+├──<span class="w"> </span>LICENSE<span class="w">                  </span>│
+├──<span class="w"> </span>README.md<span class="w">                </span>┘
+├──<span class="w"> </span>pyproject.toml<span class="w">           </span><span class="o">]</span><span class="w"> </span>Package<span class="w"> </span>metadata<span class="w"> </span>and<span class="w"> </span>build<span class="w"> </span>configuration
+<span class="p">|</span><span class="w">   </span>myPackage/<span class="w">               </span>┐
+│<span class="w">     </span>├──<span class="w"> </span>__init__.py<span class="w">        </span>│<span class="w"> </span>Package<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code
+│<span class="w">     </span>├──<span class="w"> </span>moduleA.py<span class="w">         </span>│
+│<span class="w">     </span>└──<span class="w"> </span>moduleB.py<span class="w">         </span>┘
+<span class="w">      </span>tests/<span class="w">                 </span>┐
+<span class="w">        </span>└──<span class="w"> </span>test-file1.py<span class="w">    </span><span class="p">|</span><span class="w"> </span>Package<span class="w"> </span>tests
+<span class="w">        </span>└──<span class="w"> </span>....<span class="w">             </span>┘
+</pre></div>
+</div>
+<section id="benefits-of-using-the-flat-layout-in-your-python-package">
+<h3>Benefits of using the flat layout in your Python package<a class="headerlink" href="#benefits-of-using-the-flat-layout-in-your-python-package" title="Permalink to this heading">#</a></h3>
+<p>There are some benefits to the scientific community in using the flat layout.</p>
+<ul class="simple">
+<li><p>This structure has historically been used across the ecosystem and packages
+using it are unlikely to change.</p></li>
+<li><p>You can directly import the package directly from the root directory. For
+some this is engrained in their respective workflows. However, for a beginner
+the danger of doing this is that you are not developing and testing against the
+installed version of your package. Rather, you are working directly with the
+flat files.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Core scientific Python packages that use the flat layout</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/numpy/numpy">numpy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/scipy/scipy">scipy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pandas-dev/pandas">pandas</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pydata/xarray">xarray</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jupyter/jupyter_core">Jupyter-core</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jupyter/notebook">Jupyter notebook</a></p></li>
+<li><p><a class="reference external" href="https://github.com/scikit-learn/scikit-learn">scikit-learn</a></p></li>
+</ul>
+<p>It would be a significant maintenance cost and burden to move all of these
+packages to a different layout. The potential benefits of the source layout
+for these tools is not worth the maintenance investment.</p>
+</div>
+<!--
+Not sure where to put this now ... most new users won't have multiple packages. maybe this goes into the complex packing page as we build that out?
+
+```{admonition} Multiple packages in a src/ folder
+:class: tip
+
+In some more advanced cases you may have more than one package in your src/ directory. See [black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However, for most beginners you will likely only have one sub-directory in your **src/** folder.
+``` -->
+<!--
+```{admonition} A few notes about the src/ layout
+:class: tip
+
+It is important to note here that sometimes when using the src/package structure the directory name (e.g. package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a sub directory within **src/**.
+``` -->
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python package structure information</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pyproject-toml-python-package-metadata.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Use a pyproject.toml file for your package configuration &amp; metadata</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-src-layout-and-testing">The src/ layout and testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sometimes-tests-are-needed-in-a-distribution">Sometimes tests are needed in a distribution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-include-test-suite-datasets-in-your-package"><strong>Don’t include test suite datasets in your package</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-flat-python-package-layout">About the flat Python package layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-flat-layout-structure-look-like">What does the flat layout structure look like?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-the-flat-layout-in-your-python-package">Benefits of using the flat layout in your Python package</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/python-package-structure.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/package-structure-code/python-package-structure.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

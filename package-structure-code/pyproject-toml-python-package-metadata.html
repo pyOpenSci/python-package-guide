@@ -18,16 +18,16 @@
             gtag('config', 'UA-141260825-1');
             
         </script>
-    <meta property="og:title" content="Python Packaging Tools… Coming soon…" />
+    <meta property="og:title" content="Use a pyproject.toml file for your package configuration & metadata" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="python-packaging/intro.html" />
+<meta property="og:url" content="package-structure-code/pyproject-toml-python-package-metadata.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="In this section we will cover: build tools to build your package, publishing to PyPI and the Anaconda Cloud repositories, Built front-end tools to support your development workflow, Managing depend..." />
-<meta property="og:image" content="/_images/social_previews/summary_python-packaging_intro_93d8367c.png" />
-<meta property="og:image:alt" content="In this section we will cover: build tools to build your package, publishing to PyPI and the Anaconda Cloud repositories, Built front-end tools to support yo..." />
-<meta name="description" content="In this section we will cover: build tools to build your package, publishing to PyPI and the Anaconda Cloud repositories, Built front-end tools to support your development workflow, Managing depend..." />
+<meta property="og:description" content="The standard file that Python packages use to specify build requirements and metadata is called a pyproject.toml. Adding metadata, build requirements and package dependencies to a pyproject.toml fi..." />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_4fb05649.png" />
+<meta property="og:image:alt" content="The standard file that Python packages use to specify build requirements and metadata is called a pyproject.toml. Adding metadata, build requirements and pac..." />
+<meta name="description" content="The standard file that Python packages use to specify build requirements and metadata is called a pyproject.toml. Adding metadata, build requirements and package dependencies to a pyproject.toml fi..." />
 
-    <title>Python Packaging Tools… Coming soon… &#8212; pyOpenSci Python Packaging Guide</title>
+    <title>Use a pyproject.toml file for your package configuration &amp; metadata &#8212; pyOpenSci Python Packaging Guide</title>
   
   
   
@@ -73,11 +73,13 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'python-packaging/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/pyproject-toml-python-package-metadata';</script>
     <script src="../_static/matomo.js"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/python-packaging/intro.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/pyproject-toml-python-package-metadata.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Python Package Source and Wheel Distributions" href="python-package-distribution-files-sdist-wheel.html" />
+    <link rel="prev" title="Python Package Structure for Scientific Python Projects" href="python-package-structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +182,8 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
                         Packaging
                       </a>
                     </li>
@@ -321,7 +323,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -346,8 +348,8 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
                         Packaging
                       </a>
                     </li>
@@ -452,6 +454,23 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -484,7 +503,10 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Python Packaging Tools… Coming soon…</li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Use a pyproject.toml file for your package configuration &amp; metadata</li>
   </ul>
 </nav>
 </div>
@@ -501,16 +523,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="python-packaging-tools-coming-soon">
-<h1>Python Packaging Tools… Coming soon…<a class="headerlink" href="#python-packaging-tools-coming-soon" title="Permalink to this heading">#</a></h1>
-<p>In this section we will cover:</p>
+  <section id="use-a-pyproject-toml-file-for-your-package-configuration-metadata">
+<h1>Use a pyproject.toml file for your package configuration &amp; metadata<a class="headerlink" href="#use-a-pyproject-toml-file-for-your-package-configuration-metadata" title="Permalink to this heading">#</a></h1>
+<p>The standard file that Python packages use to <a class="reference external" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/">specify build requirements and
+metadata is called a <strong>pyproject.toml</strong></a>. Adding metadata, build requirements
+and package dependencies to a <strong>pyproject.toml</strong> file replaces storing that
+information in a setup.py or setup.cfg file.</p>
+<p>The <strong>pyproject.toml</strong> file is written in <a class="reference external" href="https://toml.io/en/">TOML (Tom’s Obvious, Minimal Language) format</a>. TOML is an easy-to-read structure that is founded on key/value pairs. Each section in the <strong>pyproject.toml</strong> file contains a <code class="docutils literal notranslate"><span class="pre">[table</span> <span class="pre">identifier]</span></code>.
+Below that table identifier are key/value pairs that
+support configuration for that particular table.</p>
+<section id="benefits-of-using-a-pyproject-toml-file">
+<h2>Benefits of using a pyproject.toml file<a class="headerlink" href="#benefits-of-using-a-pyproject-toml-file" title="Permalink to this heading">#</a></h2>
+<p>Including your package’s metadata in a separate human-readable <strong>pyproject.toml</strong>
+format also allows someone to view the project’s metadata in a GitHub repository.</p>
+<!-- setup.cfg for project metadata is being deprecated - set setuptools guide and
+https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+pypa -
+https://packaging.python.org/en/latest/specifications/declaring-project-metadata/ -->
+<div class="tip admonition">
+<p class="admonition-title">Setup.py is still useful for complex package builds</p>
+<p>Using <strong>setup.py</strong> to manage package builds and metadata <a class="reference external" href="https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html">can cause problems with package development</a>.
+In some cases where a Python package build is complex, a <strong>setup.py</strong> file may
+be required. While this guide will not cover complex builds, we will provide
+resources working with complex builds in the future.</p>
+</div>
+</section>
+<section id="example-pyproject-toml-for-building-using-pdm">
+<h2>Example pyproject.toml for building using PDM<a class="headerlink" href="#example-pyproject-toml-for-building-using-pdm" title="Permalink to this heading">#</a></h2>
+<p>Below is an example build configuration for a Python project. This example
+package setup uses:</p>
 <ul class="simple">
-<li><p>build tools to build your package</p></li>
-<li><p>publishing to PyPI and the Anaconda Cloud repositories</p></li>
-<li><p>Built front-end tools to support your development workflow</p></li>
-<li><p>Managing dependencies</p></li>
+<li><p><strong>pdm.backend</strong> to build the <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">package’s sdist and wheels</span></a></p></li>
 </ul>
-<p>Stay tuned as this section is currently under development as of January 2023!!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pdm-backend&gt;=1.0.0&quot;</span><span class="p">]</span>
+<span class="n">build</span><span class="o">-</span><span class="n">back</span><span class="o">-</span><span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;pdm.backend&quot;</span>
+
+<span class="p">[</span><span class="n">project</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">}]</span>
+<span class="n">license</span> <span class="o">=</span> <span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;BSD 3-Clause&quot;</span><span class="p">}</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
+<span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span> <span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
+<span class="n">readme</span> <span class="o">=</span> <span class="s2">&quot;README.md&quot;</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Notice that dependencies are specified in this file.</p>
+</section>
+<section id="example-pyproject-toml-for-building-using-setuptools">
+<h2>Example pyproject.toml for building using setuptools<a class="headerlink" href="#example-pyproject-toml-for-building-using-setuptools" title="Permalink to this heading">#</a></h2>
+<p>The package metadata including authors, keywords, etc is also easy to read.
+Below you can see the same TOML file that uses a different build system (setuptools).
+Notice how simple it is to swap out the tools needed to build this package!</p>
+<p>In this example package setup you use:</p>
+<ul class="simple">
+<li><p><strong>setuptools</strong> to build the <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">package’s sdist and wheels</span></a></p></li>
+<li><p><strong>setuptools_scm</strong> to manage package version updates using version control tags</p></li>
+</ul>
+<p>In the example below <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> is the first table
+of values. It has two keys that specify the build front end and back-end for a package:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build-back-end</span> <span class="pre">=</span></code></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&gt;=45&quot;</span><span class="p">]</span>
+<span class="n">build</span><span class="o">-</span><span class="n">back</span><span class="o">-</span><span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+
+<span class="p">[</span><span class="n">project</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">}]</span>
+<span class="n">license</span> <span class="o">=</span> <span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;BSD 3-Clause&quot;</span><span class="p">}</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
+<span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span> <span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
+<span class="n">readme</span> <span class="o">=</span> <span class="s2">&quot;README.md&quot;</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">Click here to read about our packaging build tools including PDM, setuptools, Poetry and Hatch.</span></a></p>
+</div>
+</section>
 </section>
 
 
@@ -521,6 +630,24 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="python-package-structure.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Package Structure for Scientific Python Projects</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-package-distribution-files-sdist-wheel.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Python Package Source and Wheel Distributions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -531,9 +658,21 @@ document.write(`
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-a-pyproject-toml-file">Benefits of using a pyproject.toml file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pyproject-toml-for-building-using-pdm">Example pyproject.toml for building using PDM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pyproject-toml-for-building-using-setuptools">Example pyproject.toml for building using setuptools</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/python-packaging/intro.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/pyproject-toml-python-package-metadata.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -547,7 +686,7 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../_sources/python-packaging/intro.md.txt">
+    <a href="../_sources/package-structure-code/pyproject-toml-python-package-metadata.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
