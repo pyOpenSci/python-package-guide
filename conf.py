@@ -17,12 +17,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'python-package-guide'
-copyright = '2023, pyOpenSci'
-author = 'pyOpenSci Community'
+project = "python-package-guide"
+copyright = "2023, pyOpenSci"
+author = "pyOpenSci Community"
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = "0.1"
 
 # -- General configuration ---------------------------------------------------
 
@@ -47,7 +47,7 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 # For generating sitemap
-html_baseurl = 'https://www.pyopensci.org/software-peer-review/'
+html_baseurl = "https://www.pyopensci.org/software-peer-review/"
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
@@ -81,7 +81,7 @@ html_theme_options = {
     "header_links_before_dropdown": 4,
     "use_edit_page_button": True,
     "show_toc_level": 1,
-    #"navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
+    # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
     "twitter_url": "https://twitter.com/pyopensci",
     "footer_items": ["copyright"],
@@ -99,11 +99,11 @@ html_context = {
 
 # Add analytics to furo theme
 gtagjs_ids = [
-    'UA-141260825-1',
+    "UA-141260825-1",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -114,20 +114,20 @@ exclude_patterns = [
     ".DS_Store",
     ".github",
     ".nox",
-    "README.md"
-    ]
+    "README.md",
+]
 
 # For sitemap
-html_baseurl = 'https://www.pyopensci.org/package-review-guide/'
+html_baseurl = "https://www.pyopensci.org/package-review-guide/"
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'pydata_sphinx_theme'
+html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
+html_title = "pyOpenSci Python Packaging Guide"
 html_js_files = ["matomo.js"]
-html_title = "pyOpenSci Package Guide"
 html_logo = "images/logo/logo.png"

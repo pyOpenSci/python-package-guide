@@ -1,18 +1,19 @@
 # pyOpenSci Python Open Source Package Development Guide
 
-
 ```{toctree}
 :hidden:
 :caption: Documentation
 
 Documentation <documentation/index>
+
 ```
 
 ```{toctree}
 :hidden:
 :caption: Packaging
 
-Packaging  <python-packaging/intro>
+Packaging <package-structure-code/intro>
+
 ```
 
 ```{toctree}
@@ -28,7 +29,8 @@ https://github.com/pyOpenSci/python-package-guide/community -->
 ## Welcome, Python open source enthusiast!
 
 Here you will find guidelines for what we look for in your scientific
-Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and documentation.
+Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and documentation. Our goal is to help the
+community make decisions around how to create scientific Python packages. We are working towards a shared vision of packaging that helps users better understand where to start.
 
 ::::{grid} 2
 :reverse:
@@ -42,7 +44,6 @@ Python package when reviewing. You will also find best practice recommendations 
 :::{grid-item}
 :columns: 8
 :class: sd-fs-3
-
 
 ```{button-link} https://www.pyopensci.org/about-peer-review/
 :color: primary
@@ -58,7 +59,6 @@ Learn about our open peer review process
 
 :::
 ::::
-
 
 <!-- I think this is the end of the header - below begins the next grid-->
 
@@ -80,6 +80,15 @@ documentation that are
 commonly used in the scientific Python community.
 :::
 
+:::{grid-item-card}
+:link: package-structure-code/intro
+:link-type: doc
+:class-header: bg-light
+
+✨ Python packaging tools & structure ✨
+^^^
+All of the modern tools discussed in this guide will help you build an efficient packaging workflow. This section helps you select the tool that will work best for you.
+:::
 
 :::{grid-item-card}
 :link: CONTRIBUTING
@@ -94,11 +103,12 @@ contribute.
 ::::
 
 ## Who this guidebook is for
+
 We assume that you are here because you are:
 
+1. Looking for guidance on creating a Python package.
+1. Looking for resources associated with Python packaging.
 1. Considering submitting a package to pyOpenSci and want to understand what we are looking for when we review your package
-2. Looking for guidance on creating a Python package.
-3. Looking for resources associated with Python packaging.
 
 Well, friend, you've come to the right place!
 
@@ -106,9 +116,9 @@ Well, friend, you've come to the right place!
 
 This guidebook contains:
 
-* Explanation for "Good enough" minimum requirements associated with being reviewed by pyOpenSci
-* Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!
-* A curated list of resources to help you get your package into documented, usable and tested shape.
+- Explanation for "Good enough" minimum requirements associated with being reviewed by pyOpenSci
+- Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!
+- A curated list of resources to help you get your package into documented, usable and tested shape.
 
 ## Where this guide is headed
 
@@ -118,38 +128,3 @@ Good meets the requirements. Going beyond the minimum can make package maintenan
 
 This guide is now a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
-
-
-
-
-<!--
-COMMENTED OUT TEXT TO BE MOVED
-
-
-# TODO LINK TO CI BUILDS FOR Documentation>
-Maybe we can curate a list of CI builds that people can use??? or is that moving too close to a cookie cutter situation
-
-The text below is being moved to the packaging infrastructure section which
-doesn't exist YET... but will soon .
-pyOpenSci packages must:
-
-- Contain full documentation for any user-facing functions.
-- Have a test suite that covers the major functionality of the package.
-- Use continuous integration.
-- Use an OSI approved software license.
-
-
-## Other recommendations
-### Python version support
-You should always be explicit about which versions of Python your package supports.
-Keeping compatibility with old Python versions can be difficult as functionality changes.
-A good rule of thumb is that the package should support, at least,
-the latest three Python versions (e.g., 3.8, 3.7, 3.6).
-
-### Code Style
-pyOpenSci encourages authors to consult [PEP 8](https://www.python.org/dev/peps/pep-0008/) for information on how to style your code.
-
-### Linting
-An automatic linter (e.g. flake8) can help ensure your code is clean and free of syntax errors. These can be integrated with your CI.
-
--->
