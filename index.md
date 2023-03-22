@@ -69,7 +69,6 @@ Learn about our open peer review process
 :::{grid-item-card}
 :link: documentation/index
 :link-type: doc
-:class-header: bg-light
 
 ✨ Documentation Criteria & Recommendations ✨
 ^^^
@@ -83,7 +82,6 @@ commonly used in the scientific Python community.
 :::{grid-item-card}
 :link: package-structure-code/intro
 :link-type: doc
-:class-header: bg-light
 
 ✨ Python packaging tools & structure ✨
 ^^^
@@ -93,7 +91,6 @@ All of the modern tools discussed in this guide will help you build an efficient
 :::{grid-item-card}
 :link: CONTRIBUTING
 :link-type: doc
-:class-header: bg-light
 
 ✨ Want to contribute? ✨
 ^^^
