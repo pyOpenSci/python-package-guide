@@ -10,7 +10,7 @@ extensions.
 
 :::{figure-md} fig-target
 
-<img src="../images/python-package-tools-decision-tree.svg" alt="Figure showing... will finish this once we are all happy with the figure and it's not going to change more..." width="700px">
+<img src="../images/python-package-tools-decision-tree.png" alt="Decision tree diagram showing the various front and back end packaging tools. You can decide what packaging tool to use by thinking about what features you need. PDM is currently the most flexible tool that also supports both non pure Python projects and also using different build back-ends. As such currently PDM is the tool we think beginners might appreciate most with Poetry being a close second. Poetry is ideal for pure python projects." width="700px">
 
 Diagram showing the various from end build tools that you can select from. Each tool has different features as highlighted below.
 NOTE: this is still a DRAFT so i'm not going to spend time truly cleaning it up until i get lots of feedback on the general approach!!
