@@ -8,6 +8,13 @@ The good news is there are some great modern packaging
 tools that ensure that you're following best practices. Here, we
 review tool features and suggest tools that might be best fitted for your workflow.
 
+:::{figure-md} fig-target
+
+<img src="../images/python-package-tools-decision-tree.png" alt="Figure showing a decision tree with the various packaging tool front end and back end options." width="700px">
+
+Diagram showing the various from end build tools that you can select from. See the packaging tools page to learn more about each tool.
+:::
+
 ```{note}
 If you are considering submitting a package for peer review, have a look at the
 bare-minimum [editor checks](https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template) that pyOpenSci
