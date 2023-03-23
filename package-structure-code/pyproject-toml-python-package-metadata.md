@@ -39,7 +39,7 @@ package setup uses:
 ```
 [build-system]
 requires = ["pdm-backend>=1.0.0"]
-build-back-end = "pdm.backend"
+build-backend = "pdm.backend"
 
 [project]
 name = "examplePy"
@@ -72,7 +72,7 @@ In this example package setup you use:
 - **setuptools_scm** to manage package version updates using version control tags
 
 In the example below `[build-system]` is the first table
-of values. It has two keys that specify the build front end and back-end for a package:
+of values. It has two keys that specify the build frontend and backend for a package:
 
 1. `requires =`
 1. `build-back-end =`
@@ -80,7 +80,7 @@ of values. It has two keys that specify the build front end and back-end for a p
 ```
 [build-system]
 requires = ["setuptools>=45"]
-build-back-end = "setuptools.build_meta"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "examplePy"
