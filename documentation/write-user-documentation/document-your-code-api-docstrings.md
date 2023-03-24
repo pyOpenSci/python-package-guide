@@ -207,3 +207,107 @@ def add_me(aNum, aNum2):
 
 
 ```
+
+
+## Beyond docstrings: type hints
+
+We can use docstrings to describe data types that we pass into functions as parameters or 
+into classes as attributes. We do it with package users in mind.
+
+What with us – developers? We can think of ourselves and the new contributors 
+and start using *type hinting* to make our journey safer!
+
+There are solid reasons why to use type hints:
+
+- Development and debugging is faster,
+- We clearly see data flow and its transformations,
+- We can use tools like `mypy` or integrated tools of Python IDEs for static type checking and code debugging.
+
+We should consider type hinting if our package performs data processing, 
+functions require complex inputs, and we want to lower the entrance barrier for our contributors. 
+The icing on the cake is that the code in our package will be aligned with the best industry standards.
+
+But there are reasons to *skip* type hinting:
+
+- Type hints may make code unreadable, especially when a parameter’s input takes multiple data types and we list them all,
+- It doesn’t make sense to write type hints for simple scripts and functions that perform obvious operations.
+
+Fortunately for us, type hinting is not all black and white. 
+We can gradually describe the parameters and outputs of some functions but leave others as they are. 
+Type hinting can be an introductory task for new contributors in seasoned packages, 
+that way their learning curve about data flow and dependencies between API endpoints will be smoother.
+
+## Type hints in practice
+
+Type hinting was introduced with Python 3.5 and is described in [PEP 484](https://peps.python.org/pep-0484/). 
+**PEP 484** defines the scope of type hinting. Is Python drifting towards compiled languages with type hinting?
+It is not. Type hints are optional and static and they will work like that in the future where Python is Python.
+The power of type hints lies somewhere between docstrings and unit tests, and with it we can avoid many bugs 
+throughout development.
+
+We've seen type hints in the simple example earlier, and we will change it slightly:
+
+
+```python
+from typing import Dict, List
+
+
+def extent_to_json(ext_obj: List) -> Dict:
+    """Convert bounds to a shapely geojson like spatial object."""
+    pass
+```
+
+Here we focus on the new syntax. First, we have described the parameter `ext_obj` as the `List` class. How do we do it? By adding a colon after parameter and the name of a class that is passed into a function. It’s not over and we see that the function definition after closing parenthesis is expanded. If we want to inform type checker what type function returns, then we create the arrow sign `->` that points to a returned type and after it we have function’s colon. Our function returns Python dictonray (`Dict`).
+
+```{note}
+We have exported classes `List` and `Dict` from `typing` module but we may use 
+`list` or `dict` keywords instead. We will achieve the same result. 
+Capitalized keywords are required when our package uses Python versions that are lower than
+Python 3.9. Python 3.7 will be deprecated in June 2023, Python 3.8 in October 2024.
+Thus, if your package supports the whole ecosystem, it should use `typing` module syntax.
+```
+
+### Type hints: basic example
+
+The best way to learn is by example. We will use the [pystiche](https://github.com/pystiche/pystiche/tree/main) package.
+To avoid confusion, we start from a mathematical operation with basic data types:
+
+```python
+import torch
+
+
+def _norm(x: torch.Tensor, dim: int = 1, eps: float = 1e-8) -> torch.Tensor:
+    ...
+
+```
+
+The function has three parameters:
+
+- `x` that is required and its type is `torch.Tensor`,
+- `dim`, optional `int` with a default value equal to `1`,
+- `eps`, optional `float` with a default value equal to `1e-8`.
+
+As we see, we can use basic data types to mark simple variables. The basic set of those types is:
+
+- `int`,
+- `float`,
+- `str`,
+- `bool`
+- `complex`.
+
+Most frequently we will use those types within a simple functions that are *close to data*.
+However, sometimes our variable will be a data structure that isn't built-in within Python itself 
+but comes from other packages:
+
+- `Tensor` from `pytorch`,
+- `ndarray` from `numpy`,
+- `DataFrame` from `pandas`,
+- `Session` from `requests`.
+
+To perform type checking we must import those classes, then we can set those as a parameter's type.
+The same is true if we want to use classes from within our package (but we should avoid **circular imports**, 
+the topic that we will uncover later).
+
+### Type hints: complex data types
+
+
