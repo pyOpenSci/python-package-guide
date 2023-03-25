@@ -310,4 +310,154 @@ the topic that we will uncover later).
 
 ### Type hints: complex data types
 
+We can use type hints to describe other objects available in Python.
+The little sample of those objects are: 
+
+- `List` (= `list`)
+- `Dict` (= `dict`)
+- `Tuple` (= `tuple`)
+- `Set` (= `set`)
+
+How do `pystiche` developers use those objects in their code? Let's take a look at the example below:
+
+```python
+from typing import List, Optional
+import torch
+
+
+def _extract_prev(self, idx: int, idcs: List[int]) -> Optional[str]:
+    ...
+
+```
+
+The function has two parameters. Parameter `idcs` is a list of integers. We may write it as `List[int]` or `List` without 
+square brackets and data type that is within a list.
+
+The `_extract_prev` function returns `Optional` type. It is a special type that is used to describe inputs and output 
+that can be `None`. There are more interesting types that we can use in our code:
+
+- `Union` – we can use it to describe a variable that can be of multiple types, the common example could be:
+
+```python
+from typing import List, Union
+import numpy as np
+import pandas as pd
+
+
+def process_data(data: Union[np.ndarray, pd.DataFrame, List]) -> np.ndarray:
+    ...
+
+```
+
+What's the problem with the example above? With more data types that can be passed into parameter `data`, the function definition 
+becomes unreadable. We have two solutions for this issue. The first one is to use `Any` type that is a wildcard type:
+
+```python
+from typing import Any
+
+
+def process_data(data: Any) -> np.ndarray:
+    ...
+
+```
+
+The second solution is to think what is a high level representation of passed data types. The examples are:
+
+- `Sequence` – we can use it to describe a variable that is a sequence of elements. Sequential are `list`, `tuple`, `range` and `str`.
+- `Iterable` – we can use it to describe a variable that is iterable. Iterables are `list`, `tuple`, `range`, `str`, `dict` and `set`.
+- `Mapping` – we can use it to describe a variable that is a mapping. Mappings are `dict` and `defaultdict`.
+- `Hashable` – we can use it to describe a variable that is hashable. Hashables are `int`, `float`, `str`, `tuple` and `frozenset`.
+- `Collection` - we can use it to describe a variable that is a collection. Collections are `list`, `tuple`, `range`, `str`, `dict`, `set` and `frozenset`.
+
+Thus, the function could look like:
+
+```python
+from typing import Iterable
+
+
+def process_data(data: Iterable) -> np.ndarray:
+    ...
+
+```
+
+### Type hints: special typing objects
+
+The `typing` module provides us with more objects that we can use to describe our variables. 
+Interesting object is `Callable` that we can use to describe a variable that is a function. Usually,
+when we write decorators or wrappers, we use `Callable` type. The example in the context of `pystiche` package:
+
+```python
+from typing import Callable
+
+
+def _deprecate(fn: Callable) -> Callable:
+    ...
+
+
+```
+
+The `Callable`can be used as a single word or as a word with square brackets that has two parameters: `Callable[[arg1, arg2], return_type]`. 
+The first parameter is a list of arguments, the second one is a return type.
+
+There is one more important case around type hints. Sometimes we want to describe a variable that comes from within 
+our package. Usually we can do it without any problems:
+
+```python
+from my_package import my_data_class
+
+
+def my_function(data: my_data_class) -> None:
+    ...
+
+```
+
+and it will work fine. But we may encounter *circual imports* that are a problem. What is a *circular import*? 
+It is a case when we want to import module B into module A but module A is already imported into module B. 
+It seems like we are importing the same module twice into itself. The issue is rare when we program without type
+hinting. However, with type hints it could be tedious.
+
+Thus, if you encounter this error:
+
+```python
+from my_package import my_data_class
+
+
+def my_function(data: my_data_class) -> None:
+    ...
+
+```
+
+```shell
+ImportError: cannot import name 'my_data_class' from partially initialized module 'my_package' (most likely due to a circular import) (/home/user/my_package/__init__.py)
+```
+
+Then you should use `typing.TYPE_CHECKING` clause to avoid circular imports. The example:
+
+```python
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from my_package import my_data_class
+
+
+def my_function(data: my_data_class) -> None:
+    ...
+
+```
+
+Unfortunately, the solution is dirty because we have to 
+use `if TYPE_CHECKING` clause and `from __future__ import annotations` import to make it work! Type hinting
+is not only roses and butterflies!
+
+### Type hinting: final remarks and tools
+
+There are few tools designed for static type checking. The most popular one is [`mypy`](https://mypy.readthedocs.io/en/stable/).
+It's a good idea to add it to your Continuous Integration (CI) pipeline.
+Other tools are integrated with popular IDEs like `PyCharm` or `VSCode`, most of them are based on `mypy` logic.
+
+At this point, we have a good understanding of type hints and how to use them in our code. There is one last thing to 
+remember. **Type hints are not required in all our functions and we can introduce those gradually, it won't damage our code**.
+It is very convenient way of using this extraordinary feature!
+
 
