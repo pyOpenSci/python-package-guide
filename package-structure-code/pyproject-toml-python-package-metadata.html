@@ -557,7 +557,7 @@ package setup uses:</p>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
 <span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pdm-backend&gt;=1.0.0&quot;</span><span class="p">]</span>
-<span class="n">build</span><span class="o">-</span><span class="n">back</span><span class="o">-</span><span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;pdm.backend&quot;</span>
+<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;pdm.backend&quot;</span>
 
 <span class="p">[</span><span class="n">project</span><span class="p">]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
@@ -589,14 +589,14 @@ Notice how simple it is to swap out the tools needed to build this package!</p>
 <li><p><strong>setuptools_scm</strong> to manage package version updates using version control tags</p></li>
 </ul>
 <p>In the example below <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> is the first table
-of values. It has two keys that specify the build front end and back-end for a package:</p>
+of values. It has two keys that specify the build frontend and backend for a package:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build-back-end</span> <span class="pre">=</span></code></p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
 <span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&gt;=45&quot;</span><span class="p">]</span>
-<span class="n">build</span><span class="o">-</span><span class="n">back</span><span class="o">-</span><span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
 
 <span class="p">[</span><span class="n">project</span><span class="p">]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
