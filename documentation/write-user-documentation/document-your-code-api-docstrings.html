@@ -600,7 +600,7 @@ your package including:</p>
 Python documentation because:</p>
 <ul class="simple">
 <li><p>NumPy style docstrings are core to the scientific Python ecosystem and defined in the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">NumPy style guide</a>. Thus you will find them widely used there.</p></li>
-<li><p>The Numpy style docstring is simplified and thus easier-to-read both in the code and when calling <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Python. In contrast, some  feel that reST style docstrings is harder to quickly scan, and can take up more lines of code in modules.</p></li>
+<li><p>The Numpy style docstring is simplified and thus easier-to-read both in the code and when calling <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Python. In contrast, some feel that reST style docstrings is harder to quickly scan, and can take up more lines of code in modules.</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -746,6 +746,70 @@ doctest will run the example below and test that if you provide
 </pre></div>
 </div>
 </section>
+<section id="adding-type-hints-to-your-docstrings">
+<h2>Adding type hints to your docstrings<a class="headerlink" href="#adding-type-hints-to-your-docstrings" title="Permalink to this heading">#</a></h2>
+<p>In the example above, you saw the use of numpy-style docstrings to describe data types
+that are passed into functions as parameters or
+into classes as attributes. In a numpy-style docstring you add those
+types in the Parameters section of the docstring. Below you can see that
+the parameter <code class="docutils literal notranslate"><span class="pre">aNum</span></code> should be a Python <code class="docutils literal notranslate"><span class="pre">int</span></code> (integer) value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">Parameters</span>
+    <span class="o">----------</span>
+    <span class="n">aNum</span> <span class="p">:</span> <span class="nb">int</span>
+        <span class="n">An</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">to</span> <span class="n">be</span> <span class="n">printed</span>
+</pre></div>
+</div>
+<p>Describing the expected data type that a function or method requires
+helps users better understand how to call a function or method.</p>
+<p>Type-hints add another layer of type documentation to your code. Type-hints
+make make it easier for new developers, your future self or contributors
+to get to know your code base quickly.</p>
+<p>Type hints are added to the definition of your function. In the example below, the parameters aNum and aNum2 are defined as being type = int (integer).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_me</span><span class="p">(</span><span class="n">aNum</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">aNum2</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="s2">&quot;&quot;&quot;A function that prints a number that it is provided.</span>
+</pre></div>
+</div>
+<p>You can further describe the expected function output using <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>. Below
+the output of the function is also an int.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_me</span><span class="p">(</span><span class="n">aNum</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">aNum2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s2">&quot;&quot;&quot;A function that prints a number that it is provided.</span>
+</pre></div>
+</div>
+<section id="why-use-type-hints">
+<h3>Why use type hints<a class="headerlink" href="#why-use-type-hints" title="Permalink to this heading">#</a></h3>
+<p>Type hints:</p>
+<ul class="simple">
+<li><p>Make development and debugging faster,</p></li>
+<li><p>Make it easier for a user to see the data format inputs and outputs of methods and functions,</p></li>
+<li><p>Support using static type checking tools such as <a class="reference external" href="https://mypy-lang.org/"><code class="docutils literal notranslate"><span class="pre">mypy</span></code></a> which will check your code to ensure types are correct.</p></li>
+</ul>
+<p>You should consider adding type hinting to your code if:</p>
+<ul class="simple">
+<li><p>Your package performs data processing,</p></li>
+<li><p>You use functions that require complex inputs</p></li>
+<li><p>You want to lower the entrance barrier for new contributors to help you with your code.</p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Beware of too much type hinting</p>
+<p>As you add type hints to your code consider that in some cases:</p>
+<ul class="simple">
+<li><p>If you have a complex code base, type hints may make code more difficult to read. This is especially true when a parameter’s input takes multiple data types and you list each one.</p></li>
+<li><p>Writing type hints for simple scripts and functions that perform obvious operations don’t make sense.</p></li>
+</ul>
+</div>
+</section>
+<section id="gradually-adding-type-hints">
+<h3>Gradually adding type hints<a class="headerlink" href="#gradually-adding-type-hints" title="Permalink to this heading">#</a></h3>
+<p>Adding type hints can take a lot of time. However, you can add
+type hints incrementally as you work on your code.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Adding type hints is also a great task for new contributors. It will
+help them get to know your package’s code and structure better before
+digging into more complex contributions.</p>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -804,6 +868,11 @@ doctest will run the example below and test that if you provide
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions">Using doctest to run docstring examples in your package’s methods and functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-type-hints-to-your-docstrings">Adding type hints to your docstrings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-type-hints">Why use type hints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradually-adding-type-hints">Gradually adding type hints</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
