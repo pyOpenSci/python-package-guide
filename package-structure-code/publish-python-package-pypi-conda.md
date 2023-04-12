@@ -61,7 +61,8 @@ The most common public channels are:
 While **conda** was originally created to support Python packages, it 
 is now used across all languages. This cross-language support 
 makes it easier for some packages to include and have access to 
-tools written in other languages (such as gdal??)
+tools written in other languages such as c/c++ (gdal), Julia, or R.
+Creating environment that mixes all those packages are usually easier and more consistent with full fledged package managers like conda.
 ``` 
 
 ### Conda channels 
