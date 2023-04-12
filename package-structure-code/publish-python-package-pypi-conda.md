@@ -1,4 +1,4 @@
-# Publishing Your Package In A Community Repository:  PyPI and Anaconda Cloud 
+# Publishing Your Package In A Community Repository:  PyPI or Anaconda Cloud 
 
 <!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
 
