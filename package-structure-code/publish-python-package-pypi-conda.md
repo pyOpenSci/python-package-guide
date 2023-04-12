@@ -57,10 +57,6 @@ The most common public channels are:
 * bioconda 
 
 
-<!-- ASK FILIPE - specifically whether this 
-below is why it's easier to handle spatial packages with 
-conda vs pip which always seems to yield conflicts :)
--->
 ```{tip}
 While **conda** was originally created to support Python packages, it 
 is now used across all languages. This cross-language support 
