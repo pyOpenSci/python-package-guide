@@ -1,6 +1,6 @@
 # <img src="images/logo/logo.png" width=40 /> pyOpenSci Scientific Python Open Source Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -106,6 +106,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://code.scienxlab.org"><img src="https://avatars.githubusercontent.com/u/1692372?v=4?s=100" width="100px;" alt="Matt Hall"/><br /><sub><b>Matt Hall</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=kwinkunks" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Akwinkunks" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jezdez"><img src="https://avatars.githubusercontent.com/u/1610?v=4?s=100" width="100px;" alt="Jannis Leidel"/><br /><sub><b>Jannis Leidel</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=jezdez" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ajezdez" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://dhirschfeld.github.io"><img src="https://avatars.githubusercontent.com/u/881019?v=4?s=100" width="100px;" alt="Dave Hirschfeld"/><br /><sub><b>Dave Hirschfeld</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Adhirschfeld" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
