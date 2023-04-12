@@ -29,8 +29,8 @@ bump a package version based on standard rules.
 
 <!-- TODO: Better link to what expressive code is?-->
 
-### SEMVER rules 
-Following SEMVER, your bump your package version to a:
+### SemVer rules 
+Following SemVer, your bump your package version to a:
 
 * patch (0.1.1 --> 0.1.**2**) 
 * minor (0.1.1 --> 0.**2**.1) 
