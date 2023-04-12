@@ -160,7 +160,7 @@ Generally those steps are:
 
 1. Fork the staged recipes conda-forge GitHub repository
 1. Create a new recipe using the `grayskull` tool 
-1. Add the recipe file created by `grayskill` in a folder within the recipes/ directory of the [**conda-forge/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository. 
+1. Add the recipe file created by `grayskull` in a folder within the recipes/ directory of the [**conda-forge/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository. 
 1. Open a pull request with your change. Your package will be tested on Windows, Mac and Linux using the repository CI.
 
 Once you have submitted a recipe to conda-forge, a maintainer will work 
