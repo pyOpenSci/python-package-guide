@@ -109,6 +109,13 @@ We assume that you are here because you are:
 
 Well, friend, you've come to the right place!
 
+:::{figure-md} fig-target
+
+<img src="/images/python-flying-xkcd.png" alt="xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?" width="400px">
+
+Many love to use Python because it is a clean language to learn. It also is incredibly flexible allowing it to be used across numerous domains. Source: xkcd comics.
+:::
+
 ## What you will find in this guidebook
 
 This guidebook contains:
@@ -130,11 +137,10 @@ to see here, [we invite you to open an issue on GitHub that details any changes 
 :hidden:
 :caption: Documentation
 
-Intro to Documentation <documentation/index>
-The README File <documentation/create-readme-files.md>
-README Files <documentation/readme-files>
-Package documentation <documentation/package-documentation-sphinx>
-Contributing & license files <documentation/contributing>
+Documentation Overview <documentation/index>
+Write User Documentation <documentation/write-user-documentation/intro>
+Core GitHub Repository Files <documentation/repository-files/intro>
+Documentation Tools & Hosting  <documentation/hosting-tools/intro>
 ```
 
 ```{toctree}
@@ -144,20 +150,15 @@ Contributing & license files <documentation/contributing>
 Manage Package Versions <package-structure-code/python-package-versions>
 Publish Package PyPI Conda <package-structure-code/publish-python-package-pypi-conda>
 Code Style & Format <package-structure-code/code-style-linting-format>
+Intro <python-packaging/intro>
+
 ```
 
 ```{toctree}
 :hidden:
-:caption: Code Style & Structure
+:caption: CI and Testing
 
-code-style-structure/index
-```
-
-```{toctree}
-:hidden:
-:caption: Test your code
-testing-infrastructure/test-code
-testing-infrastructure/continuous-integration
+Intro <ci-and-testing/intro>
 ```
 
 <!--
