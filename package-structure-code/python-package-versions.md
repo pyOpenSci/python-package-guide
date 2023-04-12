@@ -57,8 +57,7 @@ We recommend that you avoid manual updates of your package version
 number to avoid human-error. It is better 
 practice to keep your version number in one location. 
 
-If you 
-can't implement a single location version, then consider 
+If you can't implement a single location version, then consider 
 using a tool like hatch, PDM or bump2version that will update 
 the version values for you - throughout your package. 
 
