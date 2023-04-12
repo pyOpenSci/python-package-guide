@@ -72,7 +72,7 @@ channels. The Conda package manager can install packages from different channels
 There are several core public channels that most people use to install 
 packages using conda including.  
 
-* **defaults:** this is a channel managed by the Anaconda, inc. It is the version of the Python packages that you will install if you install the Anaconda Python distribution. 
+* **defaults:** this is a channel managed by the Anaconda, inc. It is the version of the Python packages that you will install if you install the Anaconda Distribution. 
 * [**conda-forge:**](https://anaconda.org/conda-forge) this is a community driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data 
 * [**bioconda**](https://anaconda.org/bioconda): this channel focuses on biomedical 
 
