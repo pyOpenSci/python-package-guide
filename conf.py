@@ -51,7 +51,7 @@ html_baseurl = "https://www.pyopensci.org/software-peer-review/"
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
-    "announcement": "🚧 This guide is currently under heavy construction 🚧 ",
+    "announcement": "<p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 ",
     "external_links": [
         {
             "url": "https://www.pyopensci.org",
@@ -75,8 +75,9 @@ html_theme_options = {
     ],
     "logo": {
         "text": "Python Package Guide",
-        "image_dark": "logo.png",
-        "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo",
+        "image_dark": "logo-dark-mode.png",
+        "image_light": "logo-light-mode.png",
+        "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
     "header_links_before_dropdown": 4,
     "use_edit_page_button": True,
@@ -128,6 +129,5 @@ html_baseurl = "https://www.pyopensci.org/package-review-guide/"
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
-html_title = "pyOpenSci Python Packaging Guide"
+html_title = "Python Packaging Guide"
 html_js_files = ["matomo.js"]
-html_logo = "images/logo/logo.png"
