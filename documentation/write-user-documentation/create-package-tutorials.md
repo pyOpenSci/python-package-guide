@@ -35,10 +35,10 @@ may enjoy using Sphinx gallery. Sphinx gallery uses **.py** files with
 text and code sections that mimic the Jupyter Notebook format. When you build
 your documentation, the gallery extension:
 
-1. Runs the code in each tutorial. Running your tutorial this acts as a check to ensure your package functions and classes (ie the API) are working as they should.
+1. Runs the code in each tutorial. Running your tutorial like this acts as a check to ensure your package's functions, classes, methods, and attributes (ie the API) are working as they should.
 1. Creates a downloadable Jupyter Notebook **.ipynb** file and a  **.py** script for your tutorial that a user can quickly download and run.
 1. Creates a rendered  **.html** page with the code elements and code outputs in a user-friendly tutorial gallery.
-1. Creates a gallery landing page with visual thumbnails for each tutorial that you create
+1. Creates a gallery landing page with visual thumbnails for each tutorial that you create.
 
 
 ```{figure} /images/sphinx-gallery-overview.png
@@ -64,10 +64,10 @@ python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at the bot
 ```
 
 ### Sphinx Gallery benefits
-* easy-to-download notebook and .py outputs for each tutorials
+* easy-to-download notebook and .py outputs for each tutorials.
 * .py files are easy to work with in the GitHub pull request environment.
-* Nice gridded gallery output
-* Build execution time data per tutorial [Example](https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html)
+* Nice gridded gallery output.
+* Build execution time data per tutorial. [Example](https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html)
 
 #### Sphinx gallery challenges
 
@@ -75,7 +75,7 @@ The downsides of using Sphinx gallery include:
 
 * the **.py** files can be finicky to configure, particularly if you have matplotlib plot outputs.
 
-For example: To make allow for plots to render, you need to name each file with `plot_`
+For example: To allow for plots to render, you need to name each file with `plot_`
 at the beginning.
 
 * Many users these days are used to working in Jupyter Notebooks. .py may be slightly less user friendly to work with
@@ -83,7 +83,7 @@ at the beginning.
 These nuances can make it challenging for potential contributors to add
 tutorials to your package. This can also present maintenance challenge.
 
-Add about the gallery setup -
+Add about the gallery setup:
 
 ```bash
 $ docs % make html
@@ -129,7 +129,7 @@ width: 80%
 alt: Image showing the gallery output provided by nbsphinx using the sphinx-gallery front end interface.
 ---
 `nbsphinx` can be combined with Sphinx gallery to create a gallery of tutorials.
-However, rather render the gallery as a grid, it lists all of the gallery
+However, rather than rendering the gallery as a grid, it lists all of the gallery
 elements in a single column.
 ```
 

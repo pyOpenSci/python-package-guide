@@ -37,7 +37,7 @@ However, you will need to do a bit more work to build and deploy your
 documentation if you use GitHub pages.
 
 Read the Docs can be setup in your Read the Docs user account. The service
-and automates the entire process of building and deploying your documentation.
+automates the entire process of building and deploying your documentation.
 
 If you don't want to maintain a documentation website for your Python package,
 we suggest using the Read the Docs website.

@@ -116,7 +116,7 @@ file.
 Include instructions for installing your package. If you have published
 the package on both PyPI and Anaconda Cloud be sure to include instructions for both.
 
-### ✔️ Document any addition setup required
+### ✔️ Document any additional setup required
 
 Add any additional setup required such as authentication tokens, to
 get started using your package. If setup is complex, consider linking to an
