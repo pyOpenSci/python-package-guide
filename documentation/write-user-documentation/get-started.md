@@ -14,19 +14,19 @@ Your package:
 ## Core components of user-facing Python package documentation
 Below we break documentation into two broad types.
 
-**User-facing documentation **refers to documentation that describes the way the
-tools within a package is broadly used in workflows. **API documentation, documentation of your functions, classes and methods in your code,** is written
-at a more granular level. It is documentation for each specific function, class,
-method or attribute that a user can use in the package. this is the documentation
-that a user sees when they type `help(function-name)`.
+**User-facing documentation** refers to documentation that describes the way the
+tools within a package are broadly used in workflows. **API documentation** refers
+to documentation of functions, classes, methods, and attributes in your code and
+is written at a more granular level. This documentation is what a user sees when
+they type `help(function-name)`.
 
 Your user-facing documentation for your Python package should include several
 core components.
 
 * **Documentation Website:** This refers to easy-to-read documentation that helps someone use your package. This documentation should help users both install and use your package.
-* **Short Tutorials:** Your user-facing documentation should also include [**short tutorials** that show case core features of your package](create-package-tutorials).
-* **Package Code / API documentation:** You package's functions, methods, attributes and classes (the API) should also be documented. API documentation can be generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your
-code. Ideally, you have docstrings for all user-facing functions, methods and classes in
+* **Short Tutorials:** Your user-facing documentation should also include [**short tutorials** that showcase core features of your package](create-package-tutorials).
+* **Package Code / API documentation:** You package's functions, classes, methods, and attributes (the API) should also be documented. API documentation can be generated from [docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html) found in your
+code. Ideally, you have docstrings for all user-facing functions, classes, and methods in
 your Python package. [We discuss code documentation and docstrings in greater detail here.](document-your-code-api-docstrings)
 
 ### Write usable documentation
@@ -46,13 +46,13 @@ to a broader audience:
 ## Four elements of a good open source documentation landing page
 
 To make it easy for users to find what they need quickly,
-consider adding quick links on your packages landing
+consider adding quick links on your package's landing
 page to the following elements:
 
 * **Getting started:** This section should provide the user with a quick start for installing your package. A small example of how to use the package is good to have here as well. Or you can link to useful tutorials in the get started section.
 * **About:** Describe your project,  stating its goals and its functionality.
 * **Community:** Instructions for how to help and/or get involved. This might include links to your issues (if that is where you let users ask questions) or the discussion part of your GitHub repo. This section might include a development guide for those who might contribute to your package.
-* **API Documentation:** This is the detailed project documentation. Here you store documentation for your package's api including all user-facing functions, methods classes. And any additional high level discussion that will help people use your package.
+* **API Documentation:** This is the detailed project documentation. Here you store documentation for your package's API including all user-facing functions, classes, methods, and attributes as well as any additional high level discussion that will help people use your package.
 
 
 ```{figure} /images/geopandas-documentation-landing-page.png

@@ -4,7 +4,7 @@
 
 API stands for **A**pplied **P**rogramming **I**nterface. When
 discussed in the context of a (Python) package, the API refers to
-the functions, methods and classes that a package maintainer creates for users.
+the functions, classes, methods, and attributes that a package maintainer creates for users.
 
 A simple example of a package API element:
 For instance, a package might have a function called `add_numbers()`
@@ -12,7 +12,7 @@ that adds up a bunch of numbers. To add up numbers, you as the user
 simply call `add_numbers(1,2,3)` and the package function calculates the value and returns `6`. By calling the `add_numbers` function, you are
 using the package's API.
 
-Package APIs consist of functions and/or classes, methods and attributes that create a user interface (known as the API).
+Package APIs consist of functions, classes, methods and attributes that create a user interface.
 
 ## What is a docstring and how does it relate to documentation?
 
@@ -21,11 +21,11 @@ that describes what the function does and its inputs and outputs. Python program
 
 The docstring is thus important for:
 
-- When you call `help()` in Python, for example, `help(add_numbers)`, the text of the function's docstring is printed. The docstring thus helps a user better understand how to applying the function more effectively to their workflow.
-- When you build your package's documentation, the docstrings can be also used to automagically create full API documentation that provides a clean view of all its functions, methods, attributes, and classes.
+- When you call `help()` in Python, for example, `help(add_numbers)` will show the text of the function's docstring. The docstring thus helps a user better understand how to applying the function more effectively to their workflow.
+- When you build your package's documentation, the docstrings can also be used to automagically create full API documentation that provides a clean view of all its functions, classes, methods, and attributes.
 
 ```{tip}
-Example API Documentation for all functions, methods, attributes and classes in a package.
+Example API Documentation for all functions, classes, methods, and attributes in a package.
 * [View example high level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does](https://www.fatiando.org/verde/latest/api/index.html)
 * [You can further dig down to see what a specific function does within the package by clicking on an API element](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)
 ```
@@ -166,7 +166,7 @@ doctest adding another quality check to your package.
 <!-- This link isn't working no matter how i create the target. not sure
 why -->
 
-Above, we provided some examples of good, better, best docstring formats. If you are using Sphinx to create your docs, you can add the [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx build. Doctest provides an additional; check for docstrings with example code in them.
+Above, we provided some examples of good, better, best docstring formats. If you are using Sphinx to create your docs, you can add the [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx build. Doctest provides an additional check for docstrings with example code in them.
 Doctest runs the example code in your docstring `Examples` checking
 that the expected output is correct. Similar to running
 tutorials in your documentation, `doctest` can be a useful step that
@@ -186,29 +186,30 @@ doctest will run the example below and test that if you provide
 `add_me` with the values 1 and 3 it will return 4.
 
 ```python
-def add_me(aNum, aNum2):
-    """A function that prints a number that it is provided.
+def add_me(num1, num2):
+    """A function that sums two numbers.
 
     Parameters
     ----------
-    aNum : int
-        An integer value to be printed
+    num1 : int
+        An integer value to be added
+    num2 : int
+        An integer value to be added
 
     Returns
     -------
-        Prints the integer that you provide the function.
+       The integer sum of the provided numbers.
 
     Examples
     --------
-    Below you can see how the `print_me` function will print a number that
-    you provide it.
+    Below you can see how the `add_me` function will return a number.
 
-    >>> add_me(1+3)
+    >>> add_me(1, 3)
     4
 
     """
 
-    return aNum + aNum2
+    return num1 + num2
 
 
 ```
@@ -219,13 +220,15 @@ In the example above, you saw the use of numpy-style docstrings to describe data
 that are passed into functions as parameters or
 into classes as attributes. In a numpy-style docstring you add those
 types in the Parameters section of the docstring. Below you can see that
-the parameter `aNum` should be a Python `int` (integer) value.
+the parameter `num1` and `num2` should both be a Python `int` (integer) value.
 
 ```python
     Parameters
     ----------
-    aNum : int
-        An integer value to be printed
+    num1 : int
+        An integer value to be added
+    num2 : int
+        An integer value to be added
 ```
 
 Describing the expected data type that a function or method requires
@@ -238,16 +241,16 @@ to get to know your code base quickly.
 Type hints are added to the definition of your function. In the example below, the parameters aNum and aNum2 are defined as being type = int (integer).
 
 ```python
-def add_me(aNum: int, aNum2: int):
-    """A function that prints a number that it is provided.
+def add_me(num1: int, num2: int):
+    """A function that sums two numbers.
 ```
 
 You can further describe the expected function output using `->`. Below
 the output of the function is also an int.
 
 ```python
-def add_me(aNum: int, aNum2: int) -> int:
-    """A function that prints a number that it is provided.
+def add_me(num1: int, num2: int) -> int:
+    """A function that sums two numbers.
 ```
 
 ### Why use type hints
