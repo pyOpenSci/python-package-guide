@@ -58,8 +58,7 @@ simple. However, some scientific packages have complex requirements as they may
 need to support extensions or tools written in other languages such as C or C++.
 
 To support the many different uses of Python, there are many ways to create a
-Python package. In this guide, we suggest approaches for packaging approaches
-and tools based on:
+Python package. In this guide, we suggest packaging approaches and tools based on:
 
 1. What we think will be best and easiest to adopt for those who are newer to
    packaging.
