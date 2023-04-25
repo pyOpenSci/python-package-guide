@@ -24,7 +24,7 @@ Also note that we are not discussing conda build workflows in this section.
 package. These are the "raw / as-is" files that you store on GitHub or whatever
 platform you use to manage your code.
 
-**S**ource **D**istributions are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
+**S**ource **Dist**ributions are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
 built or compiled in any way. Thus, when a user installs your source
 distribution using pip, pip needs to run a build step first. For this reason, you could define a source distribution as a compressed archive that contains everything required to build a wheel (except for project dependencies) without network access.
 
@@ -103,7 +103,7 @@ distribution.
 The wheel (.whl) is your built binary distribution. **Binary files** are the built / compiled source files. These files are ready to be installed. A wheel (**.whl**) is a **zip** file containing all of the files needed to directly install your package. All of the files in a wheel are binaries - this means that code is already compiled / built. Wheels are thus faster to install - particularly if you have a package that requires build steps.
 
 The wheel does not contain any of your
-packages configuration files such as **setup.cfg** or **pyproject.toml**. This
+package's configuration files such as **setup.cfg** or **pyproject.toml**. This
 distribution is already built so it's ready to install.
 
 Because it is built, the wheel file will be faster to install for pure Python

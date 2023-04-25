@@ -77,14 +77,14 @@ In this example package setup you use:
 - **setuptools_scm** to manage package version updates using version control tags
 
 In the example below `[build-system]` is the first table
-of values. It has two keys that specify the build frontend and backend for a package:
+of values. It has two keys that specify the build backend API and containing package:
 
 1. `requires =`
 1. `build-back-end =`
 
 ```
 [build-system]
-requires = ["setuptools>=45"]
+requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
