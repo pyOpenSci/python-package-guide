@@ -68,7 +68,7 @@ to a package build that does not have extensions that are written in another
 programming language (such as `C` or `C++`).
 
 Other packages that have C and C++ extensions (or that wrap other languages such as fortran) require additional code compilation steps when built.
-Back-ends such as and **setuptools.build**, **meson.build**
+Back-ends such as **setuptools.build**, **meson.build**
 and **scikit-build** support complex builds with custom steps. If your
 build is particularly complex (i.e. you have more than a few `C`/`C++`
 extensions), then we suggest you use **meson.build** or **scikit-build**.
@@ -78,7 +78,7 @@ extensions), then we suggest you use **meson.build** or **scikit-build**.
 A packaging front-end tool refers to a tool that makes it easier for you to
 perform common packaging tasks using similar commands. These tasks include:
 
-- [Build your packages (create the sdist and wheel distributions](python-package-distribution-files-sdist-wheel)
+- [Build your packages (create the sdist and wheel distributions)](python-package-distribution-files-sdist-wheel)
 - Installing your package in a development mode (so it updates when you update your code)
 - Publishing to PyPI
 - Running tests
@@ -260,6 +260,14 @@ Build your sdist and wheel distributions|✅| Similar to all of the other tools 
 ✨Optional use of PEP 582 / local environment directory✨|✅| PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a `__pypackages__` directory in your working directory).
 ```
 
+```{admonition} PEP 582 was rejected
+:class: important
+
+While [PEP 582](https://peps.python.org/pep-0582), use of local packages directory `__pypackages__`,
+sought to implement a more lightweight form of Python environment management it currently stands
+as a rejected standard in the broader Python community.
+```
+
 ```{admonition} PDM vs. Poetry
 The functionality of PDM is similar to Poetry. However, PDM also offers
 additional, documented support for C extensions and version control based
@@ -349,7 +357,7 @@ Publish to PyPI and test PyPI|✅|Hatch supports publishing to both test PyPI an
 Version Control based versioning|✅ | Hatch offers `hatch_vcs` which is a plugin that uses setuptools_scm to support versioning using git tags. The workflow with `hatch_vcs` is the same as that with `setuptools_scm`.
 Version bumping| ✅ | Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
 Follows current packaging standards|✅|Hatch supports current packaging standards for adding metadata to the **pyproject.toml** file.
-Install your package in editable mode|✖✅| You can install your package in editable mode using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
+Install your package in editable mode|✔️| You can install your package in editable mode using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
 Build your sdist and wheel distributions|✅| Hatch will build the sdist and wheel distributions
 ✨Matrix environment creation to support testing across Python versions✨|✅| The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
 ✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨| ✅| This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.
@@ -395,7 +403,7 @@ Lock files| ✅ | Poetry creates a **poetry.lock** file that you can use if you 
 Publish to PyPI and test PyPI|✅|Poetry supports publishing to both test PyPI and PyPI
 Version Control based versioning|✅ | The plugin [Poetry dynamic versioning](https://github.com/mtkennerly/poetry-dynamic-versioning) supports versioning using git tags with Poetry.
 Version bumping| ✅ | Poetry supports you bumping the version of your package using standard semantic version terms patch; minor; major
-Follows current packaging standards|✖✅|Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
+Follows current packaging standards|✔️|Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
 Install your package in editable mode|✅|Poetry supports installing your package in editable mode using `--editable`
 Build your sdist and wheel distributions|✅|Poetry will build your sdist and wheel distributions using `poetry build`
 ```
@@ -477,6 +485,6 @@ when using setuptools. For instance:
 
 - setuptools will build a project without a name or version if you are not using a **pyproject.toml** file
   to store metadata.
-  \*Setuptools also will include all of the files in your package
+- setuptools also will include all of the files in your package
   repository if you do not explicitly tell it to exclude files using a
   **MANIFEST.in** file
