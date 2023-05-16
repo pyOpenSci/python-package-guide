@@ -579,10 +579,10 @@ may enjoy using Sphinx gallery. Sphinx gallery uses <strong>.py</strong> files w
 text and code sections that mimic the Jupyter Notebook format. When you build
 your documentation, the gallery extension:</p>
 <ol class="arabic simple">
-<li><p>Runs the code in each tutorial. Running your tutorial this acts as a check to ensure your package functions and classes (ie the API) are working as they should.</p></li>
+<li><p>Runs the code in each tutorial. Running your tutorial like this acts as a check to ensure your package’s functions, classes, methods, and attributes (ie the API) are working as they should.</p></li>
 <li><p>Creates a downloadable Jupyter Notebook <strong>.ipynb</strong> file and a  <strong>.py</strong> script for your tutorial that a user can quickly download and run.</p></li>
 <li><p>Creates a rendered  <strong>.html</strong> page with the code elements and code outputs in a user-friendly tutorial gallery.</p></li>
-<li><p>Creates a gallery landing page with visual thumbnails for each tutorial that you create</p></li>
+<li><p>Creates a gallery landing page with visual thumbnails for each tutorial that you create.</p></li>
 </ol>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/sphinx-gallery-overview.png"><img alt="Image showing the gallery output provided by sphinx-gallery where each tutorial is in a grid and the tutorial thumbnails are created from a graphic in the tutorial." src="../../_images/sphinx-gallery-overview.png" style="width: 80%;" /></a>
@@ -603,10 +603,10 @@ python script (<strong>.py</strong> file) and a Jupyter notebook (<strong>.ipynb
 <section id="sphinx-gallery-benefits">
 <h3>Sphinx Gallery benefits<a class="headerlink" href="#sphinx-gallery-benefits" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>easy-to-download notebook and .py outputs for each tutorials</p></li>
+<li><p>easy-to-download notebook and .py outputs for each tutorials.</p></li>
 <li><p>.py files are easy to work with in the GitHub pull request environment.</p></li>
-<li><p>Nice gridded gallery output</p></li>
-<li><p>Build execution time data per tutorial <a class="reference external" href="https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html">Example</a></p></li>
+<li><p>Nice gridded gallery output.</p></li>
+<li><p>Build execution time data per tutorial. <a class="reference external" href="https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html">Example</a></p></li>
 </ul>
 <section id="sphinx-gallery-challenges">
 <h4>Sphinx gallery challenges<a class="headerlink" href="#sphinx-gallery-challenges" title="Permalink to this heading">#</a></h4>
@@ -614,14 +614,14 @@ python script (<strong>.py</strong> file) and a Jupyter notebook (<strong>.ipynb
 <ul class="simple">
 <li><p>the <strong>.py</strong> files can be finicky to configure, particularly if you have matplotlib plot outputs.</p></li>
 </ul>
-<p>For example: To make allow for plots to render, you need to name each file with <code class="docutils literal notranslate"><span class="pre">plot_</span></code>
+<p>For example: To allow for plots to render, you need to name each file with <code class="docutils literal notranslate"><span class="pre">plot_</span></code>
 at the beginning.</p>
 <ul class="simple">
 <li><p>Many users these days are used to working in Jupyter Notebooks. .py may be slightly less user friendly to work with</p></li>
 </ul>
 <p>These nuances can make it challenging for potential contributors to add
 tutorials to your package. This can also present maintenance challenge.</p>
-<p>Add about the gallery setup -</p>
+<p>Add about the gallery setup:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docs<span class="w"> </span>%<span class="w"> </span>make<span class="w"> </span>html
 
 Sphinx-Gallery<span class="w"> </span>successfully<span class="w"> </span>executed<span class="w"> </span><span class="m">2</span><span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span><span class="m">2</span><span class="w"> </span>files
@@ -660,7 +660,7 @@ some additional conf.py settings (see: epilog settings)</a></p></li>
 <a class="reference internal image-reference" href="../../_images/python-package-documentation-nb_sphinx-gallery-output.png"><img alt="Image showing the gallery output provided by nbsphinx using the sphinx-gallery front end interface." src="../../_images/python-package-documentation-nb_sphinx-gallery-output.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> can be combined with Sphinx gallery to create a gallery of tutorials.
-However, rather render the gallery as a grid, it lists all of the gallery
+However, rather than rendering the gallery as a grid, it lists all of the gallery
 elements in a single column.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>

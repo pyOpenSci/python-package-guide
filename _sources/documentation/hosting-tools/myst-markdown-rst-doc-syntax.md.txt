@@ -2,7 +2,7 @@
 
 There are three commonly used syntaxes for creating Python documentation:
 1. [markdown](https://www.markdownguide.org/): Markdown is an easy-to-learn text
-syntax. It is the default syntax use in Jupyter Notebooks. There are tools that you can add to a Sphinx website that allow it to render markdown as html. However, using markdown to write documentation has limitations. For instance if you want to add references,
+syntax. It is the default syntax used in Jupyter Notebooks. There are tools that you can add to a Sphinx website that allow it to render markdown as html. However, using markdown to write documentation has limitations. For instance if you want to add references,
 colored call out blocks and other custom elements to your documentation, you will
 need to use either **myST** or **rST**.
 1. [rST (ReStructured Text):](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html). **rST** is the native syntax that sphinx supports. rST was the default syntax used for documentation for many years. However, in recent years myST has risen to the top as a favorite for documentation given the flexibility that it allows.
@@ -14,7 +14,7 @@ While you can chose to use any of the syntaxes listed above, we suggest using
 
 * It is a simpler syntax and thus easier to learn;
 * The above simplicity will make it easier for more people to contribute to your documentation.
-* Most of your corePythonpackage text files, such as your README.md file, are already in `.md` format
+* Most of your core Python package text files, such as your README.md file, are already in `.md` format
 * `GitHub` and `Jupyter Notebooks` support markdown thus it's more widely used in the scientific ecosystem.
 
 
