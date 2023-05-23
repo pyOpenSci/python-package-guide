@@ -257,15 +257,6 @@ Version bumping| ✅ | PDM supports you bumping the version of your package usin
 Follows current packaging standards|✅|PDM supports current packaging standards for adding metadata to the **pyproject.toml** file.
 Install your package in editable mode|✅|PDM supports installing your package in editable mode.
 Build your sdist and wheel distributions|✅| Similar to all of the other tools PDM builds your packages sdist and wheel files for you.
-✨Optional use of PEP 582 / local environment directory✨|✅| PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a `__pypackages__` directory in your working directory).
-```
-
-```{admonition} PEP 582 was rejected
-:class: important
-
-While [PEP 582](https://peps.python.org/pep-0582), use of local packages directory `__pypackages__`,
-sought to implement a more lightweight form of Python environment management it currently stands
-as a rejected standard in the broader Python community.
 ```
 
 ```{admonition} PDM vs. Poetry
