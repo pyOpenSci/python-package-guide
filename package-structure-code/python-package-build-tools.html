@@ -591,7 +591,7 @@ support pure-Python package builds. A pure-Python build refers
 to a package build that does not have extensions that are written in another
 programming language (such as <code class="docutils literal notranslate"><span class="pre">C</span></code> or <code class="docutils literal notranslate"><span class="pre">C++</span></code>).</p>
 <p>Other packages that have C and C++ extensions (or that wrap other languages such as fortran) require additional code compilation steps when built.
-Back-ends such as and <strong>setuptools.build</strong>, <strong>meson.build</strong>
+Back-ends such as <strong>setuptools.build</strong>, <strong>meson.build</strong>
 and <strong>scikit-build</strong> support complex builds with custom steps. If your
 build is particularly complex (i.e. you have more than a few <code class="docutils literal notranslate"><span class="pre">C</span></code>/<code class="docutils literal notranslate"><span class="pre">C++</span></code>
 extensions), then we suggest you use <strong>meson.build</strong> or <strong>scikit-build</strong>.</p>
@@ -601,7 +601,7 @@ extensions), then we suggest you use <strong>meson.build</strong> or <strong>sci
 <p>A packaging front-end tool refers to a tool that makes it easier for you to
 perform common packaging tasks using similar commands. These tasks include:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Build your packages (create the sdist and wheel distributions</span></a></p></li>
+<li><p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Build your packages (create the sdist and wheel distributions)</span></a></p></li>
 <li><p>Installing your package in a development mode (so it updates when you update your code)</p></li>
 <li><p>Publishing to PyPI</p></li>
 <li><p>Running tests</p></li>
@@ -865,10 +865,6 @@ packages them with the pure Python files.</p>
 <tr class="row-even"><td><p>Build your sdist and wheel distributions</p></td>
 <td><p>✅</p></td>
 <td><p>Similar to all of the other tools PDM builds your packages sdist and wheel files for you.</p></td>
-</tr>
-<tr class="row-odd"><td><p>✨Optional use of PEP 582 / local environment directory✨</p></td>
-<td><p>✅</p></td>
-<td><p>PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a <code class="docutils literal notranslate"><span class="pre">__pypackages__</span></code> directory in your working directory).</p></td>
 </tr>
 </tbody>
 </table>
@@ -1188,8 +1184,8 @@ standards.</p></li>
 when using setuptools. For instance:</p>
 <ul class="simple">
 <li><p>setuptools will build a project without a name or version if you are not using a <strong>pyproject.toml</strong> file
-to store metadata.
-*Setuptools also will include all of the files in your package
+to store metadata.</p></li>
+<li><p>setuptools also will include all of the files in your package
 repository if you do not explicitly tell it to exclude files using a
 <strong>MANIFEST.in</strong> file</p></li>
 </ul>
