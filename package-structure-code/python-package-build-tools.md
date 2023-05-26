@@ -394,7 +394,7 @@ Lock files| ✅ | Poetry creates a **poetry.lock** file that you can use if you 
 Publish to PyPI and test PyPI|✅|Poetry supports publishing to both test PyPI and PyPI
 Version Control based versioning|✅ | The plugin [Poetry dynamic versioning](https://github.com/mtkennerly/poetry-dynamic-versioning) supports versioning using git tags with Poetry.
 Version bumping| ✅ | Poetry supports you bumping the version of your package using standard semantic version terms patch; minor; major
-Follows current packaging standards|✔️|Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
+Follows current packaging standards|✖✅|Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
 Install your package in editable mode|✅|Poetry supports installing your package in editable mode using `--editable`
 Build your sdist and wheel distributions|✅|Poetry will build your sdist and wheel distributions using `poetry build`
 ```
