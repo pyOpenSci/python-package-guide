@@ -418,7 +418,7 @@ discusses the slight differences in how poetry adds deps....-->
 :class: important
 
 By default, Poetry pins dependencies using `^` by default. This `^` symbol means that there is
-an "upper bound" to the dependency. Thus poetry will bump a dependency
+an "upper bound" to the dependency. Thus poetry won't bump a dependency
 version to a new major version. Thus, if your package uses a dependency that
 is at version 1.2.3, Poetry will never bump the dependency to 2.0 even if
 there is a new major version of the package. Poetry will instead bump up to 1.9.x.
