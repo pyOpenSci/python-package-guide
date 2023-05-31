@@ -406,7 +406,7 @@ Build your sdist and wheel distributions|✅|Poetry will build your sdist and wh
 Some challenges of Poetry include:
 
 - Poetry, by default, pins dependencies using an "upper bound" limit specified with the `^` symbol by default. However, this behavior can be over-written by specifying the dependency when you use `Poetry add` as follows: `poetry add "requests>=2.1"` See breakout below for more discussion on issues surrounding upper-bounds pinning.
-- _Minor Challenge:_ The way Poetry currently adds metadata to your pyproject.toml file does not does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.
+- _Minor Challenge:_ The way Poetry currently adds metadata to your pyproject.toml file does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.
 
 Poetry is an excellent tool. Use caution when using it to pin dependencies as
 Poetry's approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.
