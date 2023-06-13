@@ -1122,7 +1122,7 @@ is currently undocumented. Thus, we don’t recommend using Poetry for more comp
 <p>Some challenges of Poetry include:</p>
 <ul class="simple">
 <li><p>Poetry, by default, pins dependencies using an “upper bound” limit specified with the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol by default. However, this behavior can be over-written by specifying the dependency when you use <code class="docutils literal notranslate"><span class="pre">Poetry</span> <span class="pre">add</span></code> as follows: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> See breakout below for more discussion on issues surrounding upper-bounds pinning.</p></li>
-<li><p><em>Minor Challenge:</em> The way Poetry currently adds metadata to your pyproject.toml file does not does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.</p></li>
+<li><p><em>Minor Challenge:</em> The way Poetry currently adds metadata to your pyproject.toml file does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.</p></li>
 </ul>
 <p>Poetry is an excellent tool. Use caution when using it to pin dependencies as
 Poetry’s approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.</p>
@@ -1131,7 +1131,7 @@ discusses the slight differences in how poetry adds deps....-->
 <div class="important admonition">
 <p class="admonition-title">Challenges with Poetry dependency pinning</p>
 <p>By default, Poetry pins dependencies using <code class="docutils literal notranslate"><span class="pre">^</span></code> by default. This <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol means that there is
-an “upper bound” to the dependency. Thus poetry will bump a dependency
+an “upper bound” to the dependency. Thus poetry won’t bump a dependency
 version to a new major version. Thus, if your package uses a dependency that
 is at version 1.2.3, Poetry will never bump the dependency to 2.0 even if
 there is a new major version of the package. Poetry will instead bump up to 1.9.x.</p>
