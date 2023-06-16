@@ -58,8 +58,8 @@ html_theme_options = {
             "name": "pyOpenSci Website",
         },
         {
-            "url": "https://www.pyopensci.org/python-package-guide",
-            "name": "Python Packaging Guide",
+            "url": "https://www.pyopensci.org/software-peer-review",
+            "name": "Peer Review Guide",
         },
         {
             "url": "https://pyopensci.org/governance",
