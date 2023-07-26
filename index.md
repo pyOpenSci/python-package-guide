@@ -29,8 +29,28 @@ https://github.com/pyOpenSci/python-package-guide/community -->
 ## Welcome, Python open source enthusiast!
 
 Here you will find guidelines for what we look for in your scientific
-Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and documentation. Our goal is to help the
+Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and package documentation.
+
+### pyOpenSci's packaging goals
+
+Our goal is to help the
 community make decisions around how to create scientific Python packages. We are working towards a shared vision of packaging that helps users better understand where to start.
+
+### How this guide is created
+
+This guide is created by pyOpenSci through an extensive review process. Each page in the guide has been reviewed by experts in the broader Python packaging landscape including people from :
+
+- conda & conda-forge
+- the python packaging authority
+- core Python developers
+- core scientific Python developers
+- and others with expertise in packaging, package documentation, usability and other related knowledge areas
+
+[View all of the people who have contributed to this guide here.
+](https://github.com/pyOpenSci/python-package-guide#contributors-)
+
+We use this guide as a foundation for our open peer review process of
+scientific software.
 
 ::::{grid} 2
 :reverse:
