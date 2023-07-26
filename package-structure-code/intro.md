@@ -98,8 +98,6 @@ Complex Builds <complex-python-package-builds>
 :hidden:
 :caption: Publishing a package
 
-Intro <self>
-
 Package versions <python-package-versions>
 Code style <code-style-linting-format>
 Publish <publish-python-package-pypi-conda.md>

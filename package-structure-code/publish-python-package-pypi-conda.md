@@ -157,8 +157,7 @@ by the conda-forge maintainer team.](https://conda-forge.org/docs/maintainer/add
 Generally those steps are:
 
 1. Fork the staged recipes conda-forge GitHub repository
-   <<<<<<< HEAD
-1. Create a new recipe using the `grayskull` tool
+1. Create a new recipe using the `grayskull` tool. You can [learn more about grayskull here](https://conda.github.io/grayskull/).
 1. Add the recipe file created by `grayskull` in a folder within the recipes/ directory of the [**conda-forge/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository.
 1. Create a new recipe using the `grayskull` tool
 1. Add the recipe file created by `grayskull` in a folder within the recipes/ directory of the [**conda-forge/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository.
