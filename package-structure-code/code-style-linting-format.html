@@ -1,0 +1,1156 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-141260825-1');
+            
+        </script>
+    <meta property="og:title" content="Python Package Code Style, Format and Linters" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="package-structure-code/code-style-linting-format.html" />
+<meta property="og:site_name" content="python-package-guide" />
+<meta property="og:description" content="Consistent code format and style is useful to both your package and across the scientific Python ecosystem because using similar formats makes code easier to read. For instance, if you saw a senten..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_code-style-linting-format_a195a5b9.png" />
+<meta property="og:image:alt" content="Consistent code format and style is useful to both your package and across the scientific Python ecosystem because using similar formats makes code easier to..." />
+<meta name="description" content="Consistent code format and style is useful to both your package and across the scientific Python ecosystem because using similar formats makes code easier to read. For instance, if you saw a senten..." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Python Package Code Style, Format and Linters &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/code-style-linting-format';</script>
+    <script src="../_static/matomo.js"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/code-style-linting-format.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud" href="publish-python-package-pypi-conda.html" />
+    <link rel="prev" title="Creating New Versions of Your Python Package" href="python-package-versions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 </div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+    <p class="title logo__title">Python Package Guide</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="#">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="#">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Python Package Code Style, Format and Linters</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="python-package-code-style-format-and-linters">
+<h1>Python Package Code Style, Format and Linters<a class="headerlink" href="#python-package-code-style-format-and-linters" title="Permalink to this heading">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="rubric">Take Aways</p>
+<ul class="simple">
+<li><p>pyOpenSci requires authors to follow PEP 8 code format guidelines</p></li>
+<li><p>Setting up a code formatters like Black and isort will help you enforce PEP 8 style guidelines and also consistent, readable code format</p></li>
+<li><p>Some commonly used tools are: Black/Blue, Isort, flake8</p></li>
+<li><p>You can also setup pre-commit hooks which will run code formatters locally
+each time you make a commit.</p></li>
+<li><p><a class="reference external" href="https://pre-commit.ci/">precommit.ci</a> is a bot that you can add to your GitHub repository. It will automagically apply code format to every PR using the tools specified in your pre-commit-config.yaml file. It can save significant time and make contributions easier for new contributors.</p></li>
+</ul>
+</div>
+<p>Consistent code format and style is useful to both your package
+and across the scientific Python ecosystem because using similar
+formats makes code easier to read.</p>
+<p>For instance, if you saw a sentence like this one without any
+spaces, or punctuation, it would take your brain longer to process it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forinstanceifyousawasentencelikethisonewithoutany</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>pyOpenSci peer review process requires that you to follow standard
+<a class="reference external" href="https://peps.python.org/pep-0008/">Python PEP 8 format rules</a> as closely as
+you can.</p>
+<p>pyOpenSci doesn’t require you to use a specific code format tool. However,
+we do look for consistency and readability in code style. Below you will find
+a discussion of:</p>
+<ol class="arabic simple">
+<li><p>The benefits of using linters and code format tools in your workflow</p></li>
+<li><p>Some commonly used tools in the scientific Python space</p></li>
+<li><p>Setting up pre-commit hooks and the pre-commit.ci bot to make using code
+format tools in daily workflows and in pull requests on GitHub easier.</p></li>
+</ol>
+<section id="use-a-code-format-tool-or-tools-to-make-your-life-easier">
+<h2>Use a code format tool (or tools) to make your life easier<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Permalink to this heading">#</a></h2>
+<p>We suggest that you use a code format tool, or a set of format tools, because
+manually applying all of the PEP 8 format specifications is time consuming
+for both maintainers and can be a road block for potential new contributors.
+Code formatters will automagically reformat your code for you, adhering to
+PEP 8 standards and applying consistent style decisions throughout.</p>
+<p>Setting up a code format suite of tools will:</p>
+<ul class="simple">
+<li><p>Save you and your maintainer team time in fixing PEP 8 inconsistencies.</p></li>
+<li><p>Ensure that format and style is consistent across your entire code-base.</p></li>
+<li><p>Avoid lengthy discussions with contributors and other
+maintainers about personalized code format preferences during reviews.</p></li>
+</ul>
+<p>Many packages use a suite of tools to apply code format rules, taking
+the work out of manually implementing code format requirements.</p>
+<p>Consistent code format across packages within the (scientific) Python ecosystem,
+will also broadly make code easier to scan, understand and contribute to.</p>
+</section>
+<section id="linting-vs-format-and-style">
+<h2>Linting vs format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Permalink to this heading">#</a></h2>
+<p>Before we dive in let’s get a few definitions out of the way.</p>
+<section id="code-linting">
+<h3>Code Linting<a class="headerlink" href="#code-linting" title="Permalink to this heading">#</a></h3>
+<p>A code linter is a tool that will review your code and
+identify errors or issues. A linter typically does not modify your code. It
+will tell you what the error is and on what line it was discovered. Flake8,
+discussed below, is an example of a commonly-used code linter.</p>
+</section>
+<section id="code-formatters-and-stylers">
+<h3>Code Formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Permalink to this heading">#</a></h3>
+<p>Python focused code formatters often follow PEP 8 standards. However, they also
+make stylistic decisions about code consistency. Code formatters will
+reformat your code for you.</p>
+<p>Black is an example of a commonly-used code formatter. Black both applies PEP 8
+standards while also making decisions about things like consistent use of double
+quotes for strings, and spacing of items in lists.</p>
+<p>You will learn more about Black below.</p>
+</section>
+</section>
+<section id="code-format-and-style">
+<h2>Code format and style<a class="headerlink" href="#code-format-and-style" title="Permalink to this heading">#</a></h2>
+<section id="black-and-blue">
+<h3>Black and Blue<a class="headerlink" href="#black-and-blue" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> and <a class="reference external" href="https://blue.readthedocs.io/en/latest/">Blue</a> (which wraps around Black) are code
+formatters. Both Black and Blue will automagically (and <em>unapologetically</em>)
+fix spacing issues and ensure code format is consistent throughout your
+package. Black and Blue also generally adhere to PEP 8 style guidelines with
+some exceptions. A few examples of those exceptions are below:</p>
+<ul class="simple">
+<li><p>Black defaults to a line length of 88 (79 + 10%) rather than the 79 character <code class="docutils literal notranslate"><span class="pre">PEP</span> <span class="pre">8</span></code> specification. However, line length is a setting can be manually overwritten in your Black configuration.</p></li>
+<li><p>Black and Blue will not adjust line length in your comments or docstrings.</p></li>
+<li><p>Neither tool will review and fix import order (you need <em>isort</em> to do that - see below).</p></li>
+</ul>
+<p>Blue addresses a few format decisions in Black that some maintainers do not like.
+<a class="reference external" href="https://blue.readthedocs.io/en/latest/#so-what-s-different">You can compare the differences here</a> and decide which tool you prefer!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are interested in seeing how Black will format your code, you can
+use the <a class="reference external" href="https://black.vercel.app/">Black playground</a></p>
+</div>
+<p>Using a code formatter like Black or Blue will leave you more time to work on
+code function rather than worry about format.</p>
+</section>
+<section id="flake8-for-linting-code-in-python-packages">
+<h3>flake8 for linting code in Python packages<a class="headerlink" href="#flake8-for-linting-code-in-python-packages" title="Permalink to this heading">#</a></h3>
+<p>To adhere to Python <code class="docutils literal notranslate"><span class="pre">pep8</span></code> format standards, you might want to add
+<a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> to your code format
+toolbox.</p>
+<p>flake8 will:</p>
+<ul class="simple">
+<li><p>Flag every line in your code that extends beyond 79 characters (including those in docstrings and comments)</p></li>
+<li><p>Flag spacing issues that conflict with PEP 8 guidelines such as missing spaces after commas</p></li>
+</ul>
+<p>Flake8 also flags unused imports and unused declared variables in your
+modules.</p>
+<p>Below you can see the output of running
+<code class="docutils literal notranslate"><span class="pre">flake8</span> <span class="pre">filename.py</span></code> at the command line for a Python file within a package
+called <code class="docutils literal notranslate"><span class="pre">stravalib</span></code>.</p>
+<p>The line length standard for PEP 8 is 79 characters.</p>
+<p>Notice that
+flake8 returns a list of issues that it found in the model.py module in the
+command line. The Python file itself is not modified. Using on this output,
+you can fix each issue line by line manually.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>stravalib-dev<span class="o">)</span><span class="w"> </span>username@computer<span class="w"> </span>stravalib<span class="w"> </span>%<span class="w"> </span>flake8<span class="w"> </span>stravalib/model.py
+stravalib/model.py:8:1:<span class="w"> </span>F401<span class="w"> </span><span class="s1">&#39;os&#39;</span><span class="w"> </span>imported<span class="w"> </span>but<span class="w"> </span>unused
+stravalib/model.py:29:80:<span class="w"> </span>E501<span class="w"> </span>line<span class="w"> </span>too<span class="w"> </span>long<span class="w"> </span><span class="o">(</span><span class="m">90</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">79</span><span class="w"> </span>characters<span class="o">)</span>
+stravalib/model.py:34:80:<span class="w"> </span>E501<span class="w"> </span>line<span class="w"> </span>too<span class="w"> </span>long<span class="w"> </span><span class="o">(</span><span class="m">95</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">79</span><span class="w"> </span>characters<span class="o">)</span>
+stravalib/model.py:442:80:<span class="w"> </span>E501<span class="w"> </span>line<span class="w"> </span>too<span class="w"> </span>long<span class="w"> </span><span class="o">(</span><span class="m">82</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">79</span><span class="w"> </span>characters<span class="o">)</span>
+stravalib/model.py:443:39:<span class="w"> </span>E231<span class="w"> </span>missing<span class="w"> </span>whitespace<span class="w"> </span>after<span class="w"> </span><span class="s1">&#39;,&#39;</span>
+stravalib/model.py:493:20:<span class="w"> </span>E225<span class="w"> </span>missing<span class="w"> </span>whitespace<span class="w"> </span>around<span class="w"> </span>operator
+stravalib/model.py:496:80:<span class="w"> </span>E501<span class="w"> </span>line<span class="w"> </span>too<span class="w"> </span>long<span class="w"> </span><span class="o">(</span><span class="m">82</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">79</span><span class="w"> </span>characters<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="isort">
+<h3>Isort<a class="headerlink" href="#isort" title="Permalink to this heading">#</a></h3>
+<p>Python imports refer to the Python packages that a module in your package
+requires. Imports should always be located at the top of each Python module in
+your package.</p>
+<p><a class="reference external" href="https://peps.python.org/pep-0008/#imports">PEP 8 has specific standards for the order of these imports</a>. These standards are listed below:</p>
+<blockquote>
+<div><p>Imports should be grouped in the following order:</p>
+<ul class="simple">
+<li><p>Standard library imports.</p></li>
+<li><p>Related third party imports.</p></li>
+<li><p>Local application/library specific imports.</p></li>
+</ul>
+</div></blockquote>
+<p>While <strong>flake8</strong> will identify unused imports in your code, it won’t
+fix or identify issues with the order of package imports.</p>
+<p><code class="docutils literal notranslate"><span class="pre">isort</span></code> will identify where imports in your code are out of
+order. It will then modify your code, automatically reordering
+all imports. This leaves you with one less thing to think about when cleaning
+up your code.</p>
+</section>
+<section id="example-application-of-isort">
+<h3>Example application of isort<a class="headerlink" href="#example-application-of-isort" title="Permalink to this heading">#</a></h3>
+<p>Code imports before <code class="docutils literal notranslate"><span class="pre">isort</span></code> is run:</p>
+<p>Below, the exc module is a part of starvalib which is a
+third party package. <code class="docutils literal notranslate"><span class="pre">abc</span></code> and <code class="docutils literal notranslate"><span class="pre">logging</span></code> are core <code class="docutils literal notranslate"><span class="pre">Python</span></code> packages
+distributed with <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Also notice that there are extra
+spaces in the imports listed below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">exc</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Sequence</span>
+
+
+<span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">unithelper</span> <span class="k">as</span> <span class="n">uh</span>
+</pre></div>
+</div>
+<p>Run:
+<code class="docutils literal notranslate"><span class="pre">isort</span> <span class="pre">stravalib/model.py</span></code></p>
+<p>Python file model.py imports after <code class="docutils literal notranslate"><span class="pre">isort</span></code> has been run</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">abc</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Sequence</span>
+
+<span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">exc</span>
+<span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">unithelper</span> <span class="k">as</span> <span class="n">uh</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-to-use-code-formatter-in-your-local-workflow">
+<h2>How to use code formatter in your local workflow<a class="headerlink" href="#how-to-use-code-formatter-in-your-local-workflow" title="Permalink to this heading">#</a></h2>
+<section id="linters-code-formatters-and-your-favorite-coding-tools">
+<h3>Linters, code formatters and your favorite coding tools<a class="headerlink" href="#linters-code-formatters-and-your-favorite-coding-tools" title="Permalink to this heading">#</a></h3>
+<p>Linters can be run as a command-line tool as shown above. They also can
+be run within your favorite coding tool (e.g. VScode, pycharm, etc).
+For example, you might prefer to have tools like Black and isort
+run when you save a file. In some editors you can also setup shortcuts that run
+your favorite code format tools on demand.</p>
+</section>
+</section>
+<section id="use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits">
+<h2>Use pre-commit hooks to run code formatters and linters on commits<a class="headerlink" href="#use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits" title="Permalink to this heading">#</a></h2>
+<p>You can also setup a <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">hook</span></code> in your Python package repository.</p>
+<p>A pre-commit hook is a tool that allows an action (or actions)
+to be triggered when you apply a commit to your git repository.</p>
+<section id="pre-commit-hook-example-workflow">
+<h3>Pre-commit hook example workflow<a class="headerlink" href="#pre-commit-hook-example-workflow" title="Permalink to this heading">#</a></h3>
+<p>The precommit workflow looks like this:
+You type and run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;message</span> <span class="pre">here&quot;</span></code> at the command line</p>
+<ul class="simple">
+<li><p>Once you hit return, pre-commit will run any tools that you have configured in a <strong>.pre-commit-config.yaml</strong> file.</p></li>
+<li><p>If the tools configured in the pre-commit hook run successfully without
+making changes or finding errors in your code, the commit will be applied
+to the repository.</p></li>
+<li><p>If the tools configured in the hook find errors in your files, the commit
+will NOT be applied to the repository. Remember from the discussion above that
+a code formatter like Black will run and reformat
+your code. A linter like <em>flake8</em> will provide you with some output that details
+where there are syntax issues in your code. You will then need to fix those
+issues, manually.</p></li>
+<li><p>Once all of the fixes are applied you can re-add (stage) the files to be
+commit. And re-run your commit.</p></li>
+</ul>
+<figure class="align-default" id="fig-target">
+<a class="reference internal image-reference" href="../_images/precommit-hook-python-code.png"><img alt="Diagram showing the steps of a pre-commit workflow from left to right." src="../_images/precommit-hook-python-code.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">The pre-commit workflow begins with you adding files that have changes to be
+staged in git. Next, you’d run git commit. when you run git commit, the pre-commit
+hooks will then run. In this example, Black, the code formatter and flake8, a linter both run. If all of the files pass Black and flake8 checks, then your commit will be recorded. If they don’t, the commit is canceled. You will have to fix any flake8 issues,
+and then re-add / stage the files to be committed. <a class="reference external" href="https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/*"><em>Image Source</em></a></span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<!-- For instance, if you setup the Black code formatter as a pre-commit hook,
+when you go to commit changes to a code file and hit enter, Black will run
+on your the code files in your commit. It will update any files to match
+black format standards. You can then retype the commit and push files to
+GitHub that have been formatted by black. -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If have a Python code-base and multiple maintainers actively working
+on the code, and you intend to run a tool like Black, be sure to coordinate across your team. An initial commit that
+applies Black to your entire package will likely change a significant amount of
+your code. This could lead to merge conflicts on open and new PR’s before the
+new changes are merged.</p>
+</div>
+</section>
+</section>
+<section id="general-pre-commit-checks">
+<h2>General pre commit checks<a class="headerlink" href="#general-pre-commit-checks" title="Permalink to this heading">#</a></h2>
+<p>In addition to calling tools, Pre-commit also has a suite of <a class="reference external" href="https://github.com/pre-commit/pre-commit-hooks#hooks-available">built in format
+hooks</a> that
+you can call. Some, such as trailing-whitespace can be also useful to add
+to your pre-commit workflow to ensure clean, streamlined code files.</p>
+<p>An example pre-commit-config.yaml file is below with examples of how this is
+all setup.</p>
+</section>
+<section id="pre-commit-ci">
+<h2>Pre-commit.ci<a class="headerlink" href="#pre-commit-ci" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://pre-commit.ci">Pre-commit.ci</a> is a bot that may become your new
+best friend. This bot, when setup on a repo can be configured to do the following:</p>
+<ul class="simple">
+<li><p>It will check every pull request using all of the pre-commit hook setting</p></li>
+<li><p>If you wish, it will also submit a pull request to your repo with pre-commit
+fixes, saving you, and new contributors the time of reformatting a pr that has
+format issues.</p></li>
+<li><p>You can also call the bot on any pull request to run / and fix the code.</p></li>
+</ul>
+<p>The pre-commit.ci bot uses the same pre-commit-config.yaml file that you
+use to setup pre-commit locally.</p>
+<p>Setting up a bot like this can be valuable because:</p>
+<ul class="simple">
+<li><p>It can make is easier for maintainers as they no longer have to worry at allows
+about fixing code format. The bot will do the work for them.</p></li>
+<li><p>It can make it easier for new comers as they never have to setup pre-commit locally or worry about linting their code. They can even make small fixes to the code directly on GitHub without worry.</p></li>
+</ul>
+</section>
+<section id="setting-up-a-git-pre-commit-hook">
+<h2>Setting up a git pre-commit hook<a class="headerlink" href="#setting-up-a-git-pre-commit-hook" title="Permalink to this heading">#</a></h2>
+<p>To setup pre-commit locally, you need to do 3 things:</p>
+<ol class="arabic simple">
+<li><p>Install pre-commit (and include it as a development requirement in your repository)</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+
+<span class="c1"># or</span>
+
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pre-commit
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create a .pre-commit-config.yaml file in the root of your package directory.</p></li>
+</ol>
+<p>Below is an example <strong>.pre-commit-cofig.yaml</strong> file that can be used to setup
+the pre-commit hook and the pre-commit.ci bot if you chose to implement that
+too.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># file: .pre-commit-config.yaml</span>
+
+<span class="nt">repos</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/isort</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.11.4</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span>
+<span class="w">        </span><span class="nt">files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">\.py$</span>
+
+<span class="w">  </span><span class="c1"># Misc commit checks using built in pre-commit checks</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pre-commit/pre-commit-hooks</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v4.4.0</span>
+<span class="w">    </span><span class="c1"># ref: https://github.com/pre-commit/pre-commit-hooks#hooks-available</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># Autoformat: Makes sure files end in a newline and only a newline.</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end-of-file-fixer</span>
+
+<span class="w">      </span><span class="c1"># Lint: Check for files with names that would conflict on a</span>
+<span class="w">      </span><span class="c1"># case-insensitive filesystem like MacOS HFS+ or Windows FAT.</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check-case-conflict</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trailing-whitespace</span>
+
+<span class="w">  </span><span class="c1"># Linting: Python code (see the file .flake8)</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/flake8</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;6.0.0&quot;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
+
+<span class="c1"># Black for auto code formatting</span>
+<span class="nt">repos</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/psf/black</span>
+<span class="w">  </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22.12.0</span>
+<span class="w">  </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">    </span><span class="nt">language_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3.8</span>
+
+<span class="c1"># Tell precommit.ci bot to update codoe format tools listed in the file</span>
+<span class="c1"># versions every quarter</span>
+<span class="c1"># The default it so update weekly which is too many new pr&#39;s for many</span>
+<span class="c1"># maintainers (remove these lines if you aren&#39;t using the bot!)</span>
+<span class="nt">ci</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">autoupdate_schedule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">quarterly</span>
+</pre></div>
+</div>
+<p>This file specifies a hook that will be triggered automatically before each <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>,
+in this case, it specifies a <code class="docutils literal notranslate"><span class="pre">flake8</span></code> using version <code class="docutils literal notranslate"><span class="pre">6.0.0</span></code>.</p>
+<ol class="arabic simple" start="3">
+<li><p>Install your pre-commit hook(s) using <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">install</span></code>. This will install all of the hooks specified in the pre-commit yaml file into your environment.</p></li>
+</ol>
+<p>Once you have done the above, you are ready to start working on your code.
+Pre-commit will run every time you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>pyOpenSci suggests setting up a linter and a code styler for
+your package, regardless of whether you use pre-commit hooks, CI
+or other infrastructure to manage code format. Setting up these
+tools will give you automatic feedback about your code’s
+structure as you (or a contributor) write it. And using tools
+like black or blue that format code for you, reduce effort that
+you need to make surrounding decisions around code format and
+style.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="python-package-versions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating New Versions of Your Python Package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="publish-python-package-pypi-conda.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier">Use a code format tool (or tools) to make your life easier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-vs-format-and-style">Linting vs format and style</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linting">Code Linting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatters-and-stylers">Code Formatters (and stylers)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-format-and-style">Code format and style</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-and-blue">Black and Blue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8-for-linting-code-in-python-packages">flake8 for linting code in Python packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">Isort</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application-of-isort">Example application of isort</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-code-formatter-in-your-local-workflow">How to use code formatter in your local workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linters-code-formatters-and-your-favorite-coding-tools">Linters, code formatters and your favorite coding tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits">Use pre-commit hooks to run code formatters and linters on commits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-hook-example-workflow">Pre-commit hook example workflow</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-pre-commit-checks">General pre commit checks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-ci">Pre-commit.ci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-git-pre-commit-hook">Setting up a git pre-commit hook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/code-style-linting-format.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/package-structure-code/code-style-linting-format.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

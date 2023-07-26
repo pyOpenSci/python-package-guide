@@ -18,19 +18,19 @@
             gtag('config', 'UA-141260825-1');
             
         </script>
-    <meta property="og:title" content="Python Package Structure for Scientific Python Projects" />
+    <meta property="og:title" content="Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="package-structure-code/python-package-structure.html" />
+<meta property="og:url" content="package-structure-code/publish-python-package-pypi-conda.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
+<meta property="og:description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge in the Anaconda clo..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-structure_8a84082a.png" />
-<meta property="og:image:alt" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for diff..." />
-<meta name="description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_publish-python-package-pypi-conda_b5c69e7a.png" />
+<meta property="og:image:alt" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bio..." />
+<meta name="description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge in the Anaconda clo..." />
 <meta name="twitter:card" content="summary_large_image" />
 
-    <title>Python Package Structure for Scientific Python Projects &#8212; Python Packaging Guide</title>
+    <title>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud &#8212; Python Packaging Guide</title>
   
   
   
@@ -76,13 +76,13 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-structure';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/publish-python-package-pypi-conda';</script>
     <script src="../_static/matomo.js"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-structure.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/publish-python-package-pypi-conda.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Use a pyproject.toml file for your package configuration &amp; metadata" href="pyproject-toml-python-package-metadata.html" />
-    <link rel="prev" title="Python package structure information" href="intro.html" />
+    <link rel="next" title="CI and Testing - Coming Soon!" href="../ci-and-testing/intro.html" />
+    <link rel="prev" title="Python Package Code Style, Format and Linters" href="code-style-linting-format.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -240,7 +240,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                      <a class="nav-link nav-internal" href="#">
                         Publish Package PyPI Conda
                       </a>
                     </li>
@@ -469,7 +469,7 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                      <a class="nav-link nav-internal" href="#">
                         Publish Package PyPI Conda
                       </a>
                     </li>
@@ -588,19 +588,19 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish</a></li>
 </ul>
 </div>
 </nav></div>
@@ -641,7 +641,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Python Package Structure for Scientific Python Projects</li>
+    <li class="breadcrumb-item active" aria-current="page">Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud</li>
   </ul>
 </nav>
 </div>
@@ -658,229 +658,171 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="python-package-structure-for-scientific-python-projects">
-<h1>Python Package Structure for Scientific Python Projects<a class="headerlink" href="#python-package-structure-for-scientific-python-projects" title="Permalink to this heading">#</a></h1>
-<p>There are two different layouts that you will commonly see
-within the Python packaging ecosystem:
-<a class="reference external" href="https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/">src and flat layouts.</a>
-Both layouts have advantages for different groups of maintainers.</p>
-<p>We strongly suggest, but do not require, that you use the <strong>src/</strong> layout (discussed below)
-for creating your Python package. This layout is also recommended in the
-<a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">PyPA packaging guide</a>.</p>
-<div class="important admonition">
-<p class="admonition-title">pyOpenSci will never require a specific package structure for peer review</p>
-<p>We understand that it would be tremendous effort for existing
-maintainers to move to a new layout.</p>
-<p>The overview on this page presents recommendations that we think are best for
-someone getting started with Python packaging or someone who’s package
-has a simple build and might be open to moving to a more fail-proof approach.</p>
-</div>
-<p>An example of the <strong>src/package</strong> layout structure can be seen below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>myPackageRepoName
-├── CHANGELOG.md               ┐
-├── CODE_OF_CONDUCT.md         │
-├── CONTRIBUTING.md            │
-├── docs                       │ Package documentation
-│   └── index.md
-│   └── ...                    │
-├── LICENSE                    │
-├── README.md                  ┘
-├── pyproject.toml             ] Package metadata and build configuration
-├── src                        ┐
-│   └── myPackage              │
-│       ├── __init__.py        │ Package source code
-│       ├── moduleA.py         │
-│       └── moduleB.py         ┘
-└── tests                      ┐
-   └── ...                     ┘ Package tests
-</pre></div>
-</div>
-<p>Note the location of the following directories in the example above:</p>
-<ul class="simple">
-<li><p><strong>docs/:</strong> discussed in our docs chapter, this directory contains your user-facing documentation website. In a <strong>src/</strong> layout docs/ are normally included at the same directory level of the <strong>src/</strong> folder.</p></li>
-<li><p><strong>tests/</strong> this directory contains the tests for your project code. In a <strong>src/</strong> layout tests are normally included at the same directory level of the <strong>src/</strong> folder.</p></li>
-<li><p><strong>src/package/</strong>: this is the directory that contains the code for your Python project. “Package” is normally your project’s name.</p></li>
-</ul>
-<p>Also in the above example, notice that all of the core documentation files that
-pyOpenSci requires live in the root of your project directory. These files
-include:</p>
-<ul class="simple">
-<li><p>CHANGELOG.md</p></li>
-<li><p>CODE_OF_CONDUCT.md</p></li>
-<li><p>CONTRIBUTING.md</p></li>
-<li><p>LICENSE.txt</p></li>
-<li><p>README.md</p></li>
-</ul>
-<!-- TODO: CHANGELOG is not mentioned in either documentation nor peer review -->
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill reference external" href="https://www.pyopensci.org/python-package-guide/documentation"><span>Click here to read about our packaging documentation requirements.</span></a></p>
-<p>While we recommend the <strong>src/</strong> layout we also review the <strong>flat</strong> layout here. Both are used in the Python ecosystem.</p>
-<div class="admonition-example-scientific-packages-that-use-src-package-layout admonition">
-<p class="admonition-title">Example scientific packages that use <strong>src/package</strong> layout</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/sourmash-bio/sourmash">Sourmash</a></p></li>
-<li><p><a class="reference external" href="https://github.com/bokeh/bokeh">bokeh</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openscm/openscm-runner">openscm</a></p></li>
-<li><p><a class="reference external" href="https://github.com/scikit-hep/awkward">awkward</a></p></li>
-<li><p><a class="reference external" href="https://github.com/poliastro/poliastro/">poliastro</a></p></li>
-</ul>
-</div>
-<section id="the-src-layout-and-testing">
-<h2>The src/ layout and testing<a class="headerlink" href="#the-src-layout-and-testing" title="Permalink to this heading">#</a></h2>
-<p>The benefit of using the <strong>src/package</strong> layout, particularly if you
-are creating a new package, is that it ensures tests are run against the
-installed version of your package rather than the files in your package
-working directory. If you run your tests on your files rather than the
-installed version, you may be missing issues that users encounter when
-your package is installed.</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">tests/</span></code> are outside of the <strong>src/package</strong> directory, they aren’t included in the package wheel. This makes your package size slightly smaller which then places places a smaller storage burden on PyPI which has over 400,000 packages to support.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://hynek.me/articles/testing-packaging/">Read more about reasons to use the <strong>src/package</strong> layout</a></p></li>
-</ul>
-<div class="admonition-how-python-discovers-and-prioritizes-importing-modules admonition">
-<p class="admonition-title">How Python discovers and prioritizes importing modules</p>
-<p>By default, Python adds a module in your current working directory to the front of the Python module search path.</p>
-<p>This means that if you run your tests in your packages working directory, using a flat layout, <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code>, Python will discover <code class="docutils literal notranslate"><span class="pre">package-name/module.py</span></code> file before it discovers the installed package.</p>
-<p>However, if your package lives in a src/ directory structure <strong>src/package</strong> then it won’t be, by default, added to the Python path. This means that when you import your package, Python will be forced to  search the active environment (which has your package installed).</p>
-<p>Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g. <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code>).</p>
-</div>
-<section id="sometimes-tests-are-needed-in-a-distribution">
-<h3>Sometimes tests are needed in a distribution<a class="headerlink" href="#sometimes-tests-are-needed-in-a-distribution" title="Permalink to this heading">#</a></h3>
-<p>We do not recommend including tests as part of your package wheel by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package is functioning correctly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory into the <strong>src/package</strong> directory (see example below).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>src/
-<span class="w">  </span>package-name/
-<span class="w">    </span>tests/
-docs/
-</pre></div>
-</div>
-<p>Including the <strong>tests/</strong> directory in your <strong>src/package</strong> directory ensures that tests will be included in your package’s wheel.</p>
-<p>Be sure to read the <a class="reference external" href="https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules">pytest documentation for more about including tests in your package distribution</a>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Challenges with including tests and data in a package wheel</p>
-<p>Tests, especially when accompanied by test data can create a few small challenges including:</p>
-<ul class="simple">
-<li><p>Take up space in your distribution which will build up over time as storage space on PyPI</p></li>
-<li><p>Large file sizes can also slow down package install.</p></li>
-</ul>
-<p>However, in some cases, particularly in the scientific Python ecosystems you may need to include tests.</p>
-</div>
-</section>
-</section>
-<section id="don-t-include-test-suite-datasets-in-your-package">
-<h2><strong>Don’t include test suite datasets in your package</strong><a class="headerlink" href="#don-t-include-test-suite-datasets-in-your-package" title="Permalink to this heading">#</a></h2>
-<p>If you do include your tests in your package distribution, we strongly
-discourage you from including data in your test suite directory. Rather,
-host your test data in a repository such as Figshare or Zenodo. Use a
-tool such as <a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a> to access
-the data when you (or a user) runs tests.</p>
-<p>Check out the testing section of our guide for more information about tests.</p>
-<ul class="simple">
-<li><p>The <strong>src/package</strong> layout is semantically more clear. Code is always found in the
-<strong>src/package</strong> directory, <code class="docutils literal notranslate"><span class="pre">tests/</span></code> and <code class="docutils literal notranslate"><span class="pre">docs/</span></code>are in the root directory.</p></li>
-</ul>
+  <section id="publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud">
+<h1>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud<a class="headerlink" href="#publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud" title="Permalink to this heading">#</a></h1>
+<!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
+<p>pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as <code class="docutils literal notranslate"><span class="pre">bioconda</span></code> or <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> in the Anaconda cloud.</p>
+<p>Below you will learn more about the various publishing options for your Python
+package.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If your package tests require data, we suggest that you do NOT include that
-data within your package structure. We will discuss this in more detail in a
-tutorial. Include data in your package structure increases the size of your
-distribution files. This places a maintenance toll on repositories like PyPI and
-anaconda cloud that have to deal with thousands of package uploads.</p>
+<p class="rubric">Take Aways</p>
+<ul class="simple">
+<li><p>Installing packages in the same environment using both pip and conda can
+lead to package conflicts.</p></li>
+<li><p>To minimize conflicts for users who may be using conda (or pip) to manage local environments, consider publishing your package to both PyPI and the conda-forge channel of the Anaconda Cloud.</p></li>
+</ul>
+<p>Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.</p>
+</div>
+<section id="what-is-pypi">
+<h2>What is PyPI<a class="headerlink" href="#what-is-pypi" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://pypi.org/">PyPI</a> is an online Python package repository that
+you can use to both find and install and publish your Python package. There is
+also a test PyPI repository where you can test publishing your package
+prior to the final publication on PyPI.</p>
+<p>Many if not most Python packages can be found on PyPI and are thus installable using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>The biggest different between using pip and conda to install
+a package is that conda can install any package regardless
+of the language(s) that it is written in. Whereas <code class="docutils literal notranslate"><span class="pre">pip</span></code> can
+only install Python packages.</p>
+<!-- TODO add link to build page below when this page is published -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>On the package build page, we discussed the <span class="xref myst">two package distribution
+types that you will create when making a Python package</span>: SDist (packaged as a .tar.gz or .zip) and
+Wheel (.whl) which is really a zip file. Both of those file “bundles” will
+be published on PyPI when you use <span class="xref myst">a standard build tool</span> to build
+your package.</p>
 </div>
 </section>
-<section id="about-the-flat-python-package-layout">
-<h2>About the flat Python package layout<a class="headerlink" href="#about-the-flat-python-package-layout" title="Permalink to this heading">#</a></h2>
-<p>Currently most scientific packages use the <strong>flat-layout</strong> given:</p>
+<section id="what-is-anaconda-cloud-and-conda">
+<h2>What is Anaconda Cloud and Conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Conda</span></code> is an open source package and environment management tool.
+<code class="docutils literal notranslate"><span class="pre">Conda</span></code> can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda Cloud
+repository</a>.</p>
+<p>Anaconda cloud (anaconda.org) contains public and private repositories for
+packages. These repositories are known as channels (discussed below).</p>
+<p>The most common public channels are:</p>
 <ul class="simple">
-<li><p>It’s the most commonly found layout with the scientific Python ecosystem and
-people tend to look to other packages / maintainers that they respect for examples
-of how to build Python packages.</p></li>
-<li><p>Many Python tools depend upon tools in other language and / or complex builds
-with compilation steps. Many developers thus appreciate / are used to features
-of the flat layout.</p></li>
+<li><p>defaults</p></li>
+<li><p>conda-forge and</p></li>
+<li><p>bioconda</p></li>
 </ul>
-<p>While we present this layout here in our guide, we suggest that those just
-getting started with python packaging start with the src/package layout
-discussed above. Numerous packages in the ecosystem <a class="reference external" href="https://github.com/scikit-build/cmake-python-distributions/pull/145">have had to move to a
-src/ layout</a></p>
-<div class="tip admonition">
-<p class="admonition-title">Why most scientific Python packages do not use source</p>
-<p>In most cases the advantages of using the <strong>src/package</strong> layout for
-larger scientific packages that already use flat approach are not worth it.
-Moving from a flat layout to a <strong>src/package</strong> layout would come at a significant cost to
-maintainers.</p>
-<p>However, the advantages of using the  <strong>src/package</strong> layout for a beginner are significant.
-As such, we recommend that if you are getting started with creating a package,
-that you consider using a  <strong>src/package</strong> layout.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While <strong>conda</strong> was originally created to support Python packages, it
+is now used across all languages. This cross-language support
+makes it easier for some packages to include and have access to
+tools written in other languages such as c/c++ (gdal), Julia, or R.
+Creating environment that mixes all those packages are usually easier and more consistent with full fledged package managers like conda.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While <strong>conda</strong> was originally created to support Python packages, it
+is now used across all languages. This cross-language support
+makes it easier for some packages to include and have access to
+tools written in other languages (such as gdal, BLAS/LAPACK and other tools).</p>
 </div>
 </section>
-<section id="what-does-the-flat-layout-structure-look-like">
-<h2>What does the flat layout structure look like?<a class="headerlink" href="#what-does-the-flat-layout-structure-look-like" title="Permalink to this heading">#</a></h2>
-<p>The flat layout’s primary characteristics are:</p>
+<section id="conda-channels">
+<h2>Conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this heading">#</a></h2>
+<p>Conda built packages are housed within repositories that are called
+channels. The Conda package manager can install packages from different channels.</p>
+<p>There are several core public channels that most people use to install
+packages using conda including.</p>
 <ul class="simple">
-<li><p>The source code for your package lives in a directory with your package’s
-name in the root of your directory</p></li>
-<li><p>Often the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory also lives within that same <code class="docutils literal notranslate"><span class="pre">package-name</span></code> directory.</p></li>
+<li><p><strong>defaults:</strong> this is a channel managed by the Anaconda, inc. It is the version of the Python packages that you will install if you install the Anaconda Distribution.</p></li>
+<li><p><a class="reference external" href="https://anaconda.org/conda-forge"><strong>conda-forge:</strong></a> this is a community driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data</p></li>
+<li><p><a class="reference external" href="https://anaconda.org/bioconda"><strong>bioconda</strong></a>: this channel focuses on biomedical</p></li>
 </ul>
-<p>Below you can see the recommended structure of a scientific Python package
-using the flat layout.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>myPackage/
-├──<span class="w"> </span>CHANGELOG.md<span class="w">             </span>┐
-├──<span class="w"> </span>CODE_OF_CONDUCT.md<span class="w">       </span>│
-├──<span class="w"> </span>CONTRIBUTING.md<span class="w">          </span>│
-├──<span class="w"> </span>docs/<span class="w">                    </span>│<span class="w"> </span>Package<span class="w"> </span>documentation
-│<span class="w">   </span>└──<span class="w"> </span>...<span class="w">                  </span>│
-├──<span class="w"> </span>LICENSE<span class="w">                  </span>│
-├──<span class="w"> </span>README.md<span class="w">                </span>┘
-├──<span class="w"> </span>pyproject.toml<span class="w">           </span><span class="o">]</span><span class="w"> </span>Package<span class="w"> </span>metadata<span class="w"> </span>and<span class="w"> </span>build<span class="w"> </span>configuration
-<span class="p">|</span><span class="w">   </span>myPackage/<span class="w">               </span>┐
-│<span class="w">     </span>├──<span class="w"> </span>__init__.py<span class="w">        </span>│<span class="w"> </span>Package<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code
-│<span class="w">     </span>├──<span class="w"> </span>moduleA.py<span class="w">         </span>│
-│<span class="w">     </span>└──<span class="w"> </span>moduleB.py<span class="w">         </span>┘
-<span class="w">      </span>tests/<span class="w">                 </span>┐
-<span class="w">        </span>└──<span class="w"> </span>test-file1.py<span class="w">    </span><span class="p">|</span><span class="w"> </span>Package<span class="w"> </span>tests
-<span class="w">        </span>└──<span class="w"> </span>....<span class="w">             </span>┘
-</pre></div>
+<p><strong>conda-forge</strong> emerged as many of the scientific packages did not
+exist in the default Anaconda cloud channel.</p>
+<figure class="align-default" id="fig-target">
+<a class="reference internal image-reference" href="../_images/conda-channels-geohackweek.jpeg"><img alt="ADD." src="../_images/conda-channels-geohackweek.jpeg" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">ADD source: GeoHackWeek</span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="conda-channels-pypi-conda-pip-where-to-publish-your-package">
+<h2>Conda channels, PyPI, conda, pip - Where to publish your package<a class="headerlink" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package" title="Permalink to this heading">#</a></h2>
+<p>You might be wondering why there are different package repositories
+that can be used to install Python packages.</p>
+<p>And more importantly you are likely wondering how to pick the right
+repository to publish your Python package.</p>
+<p>The answer to both questions relates dependency conflicts.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/python-dependency-conflicts-xkcd.png"><img alt="Image showing an XKCD comic that shows a web of Python environments and tools and installations. At the bottom is says -  My python environment has become so degraded that my laptop has been declared a superfund site." src="../_images/python-dependency-conflicts-xkcd.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Installing Python and Python packages from different repositories can lead
+to environment conflicts where a version of on package doesn’t work with
+a version of another package. To keep your environments clean and working, it’s
+best to install packages from the same repository. So use pip to install
+everything. Or use conda. If you can, try to avoid installing package from
+both pip and conda into the same environment.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="managing-python-package-dependency-conflicts">
+<h3>Managing Python package dependency conflicts<a class="headerlink" href="#managing-python-package-dependency-conflicts" title="Permalink to this heading">#</a></h3>
+<p>Python environments can encounter conflicts because Python tools can be installed from different repositories.
+Broadly speaking, Python environments have a smaller chance of
+dependency conflicts when the tools are installed from the same
+package repository. Thus environments that contain packages
+installed from both pip and conda are more likely to yield
+dependency conflicts.</p>
+<p>Similarly installing packages from the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.</p>
+<p>Many install packages directly from conda <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel. However, because
+this channel is managed by Anaconda, the packages available on it are
+limited to those that Anaconda decides should be core to a stable installation. The conda-forge channel was created to complement the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel. It allows anyone to submit a package to be published in the channel . Thus, <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel ensures that a broad suite of user-developed community packages can be installed from conda.</p>
+</section>
+<section id="take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">
+<h3>Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package<a class="headerlink" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package" title="Permalink to this heading">#</a></h3>
+<p>The take-away here for maintainers is that if you anticipate users wanting
+to use conda to manage their local environments (which many do), you should
+consider publishing to both PyPI and the conda-forge channel (<em>more
+on that below</em>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#why-conda-forge">learn more about why conda-forge was created, here</a></p></li>
+<li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/glossary.html">To learn more about conda terminology, check out their glossary.</a></p></li>
+</ul>
 </div>
-<section id="benefits-of-using-the-flat-layout-in-your-python-package">
-<h3>Benefits of using the flat layout in your Python package<a class="headerlink" href="#benefits-of-using-the-flat-layout-in-your-python-package" title="Permalink to this heading">#</a></h3>
-<p>There are some benefits to the scientific community in using the flat layout.</p>
-<ul class="simple">
-<li><p>This structure has historically been used across the ecosystem and packages
-using it are unlikely to change.</p></li>
-<li><p>You can import the package directly from the root directory. For some this
-is engrained in their respective workflows. However, for a beginner the
-danger of doing this is that you are not developing and testing against the
-installed version of your package. Rather, you are working directly with the
-flat files.</p></li>
-</ul>
-<div class="tip admonition">
-<p class="admonition-title">Core scientific Python packages that use the flat layout</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/numpy/numpy">numpy</a></p></li>
-<li><p><a class="reference external" href="https://github.com/scipy/scipy">scipy</a></p></li>
-<li><p><a class="reference external" href="https://github.com/pandas-dev/pandas">pandas</a></p></li>
-<li><p><a class="reference external" href="https://github.com/pydata/xarray">xarray</a></p></li>
-<li><p><a class="reference external" href="https://github.com/jupyter/jupyter_core">Jupyter-core</a></p></li>
-<li><p><a class="reference external" href="https://github.com/jupyter/notebook">Jupyter notebook</a></p></li>
-<li><p><a class="reference external" href="https://github.com/scikit-learn/scikit-learn">scikit-learn</a></p></li>
-</ul>
-<p>It would be a significant maintenance cost and burden to move all of these
-packages to a different layout. The potential benefits of the source layout
-for these tools is not worth the maintenance investment.</p>
+<!-- One of our packages on conda-forge https://anaconda.org/conda-forge/pandera -->
+</section>
+</section>
+<section id="how-to-submit-to-conda-forge">
+<h2>How to submit to conda-forge<a class="headerlink" href="#how-to-submit-to-conda-forge" title="Permalink to this heading">#</a></h2>
+<p>While pyOpenSci doesn’t require you to add your package to conda-forge,
+we encourage you to consider doing so!</p>
+<p>Once your package is on PyPI, the process to add your package to conda-forge
+is straight forward to do. <a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs.html#generating-the-recipe">You can follow the detailed steps provided
+by the conda-forge maintainer team.</a>.</p>
+<p>Generally those steps are:</p>
+<ol class="arabic simple">
+<li><p>Fork the staged recipes conda-forge GitHub repository</p></li>
+<li><p>Create a new recipe using the <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> tool. You can <a class="reference external" href="https://conda.github.io/grayskull/">learn more about grayskull here</a>.</p></li>
+<li><p>Add the recipe file created by <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> in a folder within the recipes/ directory of the <a class="reference external" href="https://github.com/conda-forge/staged-recipes"><strong>conda-forge/staged-recipes</strong></a> repository.</p></li>
+<li><p>Create a new recipe using the <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> tool</p></li>
+<li><p>Add the recipe file created by <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> in a folder within the recipes/ directory of the <a class="reference external" href="https://github.com/conda-forge/staged-recipes"><strong>conda-forge/staged-recipes</strong></a> repository.</p></li>
+<li><p>Open a pull request with your change. Your package will be tested on Windows, Mac and Linux using the repository CI.</p></li>
+</ol>
+<p>Once you have submitted a recipe to conda-forge, a maintainer will work
+with you to iron out any bugs in your recipe. They will then add your package
+to the conda-forge channel.</p>
+<p>Once your package is added, you will have a feedstock repository on GitHub with your packages name</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference external" href="https://github.com/conda-forge/movingpandas-feedstock">Here is an example conda-forge feedstock for the pyOpenSci approved package - movingpandas</a></p>
 </div>
-<!--
-Not sure where to put this now ... most new users won't have multiple packages. maybe this goes into the complex packing page as we build that out?
-
-```{admonition} Multiple packages in a src/ folder
-:class: tip
-
-In some more advanced cases you may have more than one package in your src/ directory. See [black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However, for most beginners you will likely only have one sub-directory in your **src/** folder.
-``` -->
-<!--
-```{admonition} A few notes about the src/ layout
-:class: tip
-
-It is important to note here that sometimes when using the src/package structure the directory name (e.g. package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a sub directory within **src/**.
-``` -->
+<section id="maintaining-your-conda-forge-package-repository">
+<h3>Maintaining your conda-forge package repository<a class="headerlink" href="#maintaining-your-conda-forge-package-repository" title="Permalink to this heading">#</a></h3>
+<p>Once your package is on the conda-forge channel, maintaining it is simple.
+Every time that you push a new version of your package to PyPI, it will
+kick off a continuous integration build that updates your package in the
+conda-forge repository. Once that build is complete, you will get a
+notification to review the update. You can merge the pull request for
+that update once you are happy with it.</p>
 </section>
 </section>
 </section>
@@ -897,20 +839,20 @@ It is important to note here that sometimes when using the src/package structure
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="code-style-linting-format.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python package structure information</p>
+        <p class="prev-next-title">Python Package Code Style, Format and Linters</p>
       </div>
     </a>
     <a class="right-next"
-       href="pyproject-toml-python-package-metadata.html"
+       href="../ci-and-testing/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Use a pyproject.toml file for your package configuration &amp; metadata</p>
+        <p class="prev-next-title">CI and Testing - Coming Soon!</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -932,14 +874,16 @@ It is important to note here that sometimes when using the src/package structure
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-src-layout-and-testing">The src/ layout and testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sometimes-tests-are-needed-in-a-distribution">Sometimes tests are needed in a distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pypi">What is PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-anaconda-cloud-and-conda">What is Anaconda Cloud and Conda?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">Conda channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package">Conda channels, PyPI, conda, pip - Where to publish your package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-python-package-dependency-conflicts">Managing Python package dependency conflicts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-include-test-suite-datasets-in-your-package"><strong>Don’t include test suite datasets in your package</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-flat-python-package-layout">About the flat Python package layout</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-flat-layout-structure-look-like">What does the flat layout structure look like?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-the-flat-layout-in-your-python-package">Benefits of using the flat layout in your Python package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit-to-conda-forge">How to submit to conda-forge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maintaining-your-conda-forge-package-repository">Maintaining your conda-forge package repository</a></li>
 </ul>
 </li>
 </ul>
@@ -948,7 +892,7 @@ It is important to note here that sometimes when using the src/package structure
   <div class="sidebar-secondary-item">
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/python-package-structure.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/publish-python-package-pypi-conda.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -962,7 +906,7 @@ It is important to note here that sometimes when using the src/package structure
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../_sources/package-structure-code/python-package-structure.md.txt">
+    <a href="../_sources/package-structure-code/publish-python-package-pypi-conda.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

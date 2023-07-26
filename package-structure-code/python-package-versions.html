@@ -1,0 +1,1111 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-141260825-1');
+            
+        </script>
+    <meta property="og:title" content="Creating New Versions of Your Python Package" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="package-structure-code/python-package-versions.html" />
+<meta property="og:site_name" content="python-package-guide" />
+<meta property="og:description" content="pyOpenSci recommends that you follow the Python PEP 440 which recommends using semantic versioning guidelines when assigning release values to new versions of your Python package. Semantic versioni..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-versions_3b291cf3.png" />
+<meta property="og:image:alt" content="pyOpenSci recommends that you follow the Python PEP 440 which recommends using semantic versioning guidelines when assigning release values to new versions o..." />
+<meta name="description" content="pyOpenSci recommends that you follow the Python PEP 440 which recommends using semantic versioning guidelines when assigning release values to new versions of your Python package. Semantic versioni..." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Creating New Versions of Your Python Package &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-versions';</script>
+    <script src="../_static/matomo.js"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-versions.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Package Code Style, Format and Linters" href="code-style-linting-format.html" />
+    <link rel="prev" title="Complex Python package builds" href="complex-python-package-builds.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 </div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+    <p class="title logo__title">Python Package Guide</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="#">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="#">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Creating New Versions of Your Python Package</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="creating-new-versions-of-your-python-package">
+<h1>Creating New Versions of Your Python Package<a class="headerlink" href="#creating-new-versions-of-your-python-package" title="Permalink to this heading">#</a></h1>
+<!-- * mention release should be incremental
+* rep changes in the code that are either patches, minor fixes, major updates -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="rubric">Key Takeways</p>
+<ul class="simple">
+<li><p>Follow <a class="reference external" href="https://semver.org/">semantic versioning guidelines (SemVer) rules</a> when bumping (increasing) your Python’s package version; for example a major version bump (version 1.0 –&gt; 2.0) equates to breaking changes in your package’s code for a user.</p></li>
+<li><p>You may want to consider using a plugin like hatch_vsc for managing versions of your package - if you want to have a GitHub only release workflow.</p></li>
+<li><p>Otherwise most major package build tools such as Hatch, Flit and PDM have a version feature that will help you update your package’s version</p></li>
+<li><p>Avoid updating your packages version number manually by hand in your code!</p></li>
+</ul>
+</div>
+<p>pyOpenSci recommends that you follow the <a class="reference external" href="https://peps.python.org/pep-0440">Python PEP 440</a> which recommends using
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0440/#semantic-versioning">semantic versioning guidelines</a>
+when assigning release values to new versions of your Python package.</p>
+<p><a class="reference external" href="https://semver.org/">Semantic versioning</a> is an approach
+to updating package versions that considers the type and extent of a
+change that you are making to the package code. Being consistent
+with how and when you update your package versions is important as:</p>
+<ol class="arabic simple">
+<li><p>It helps your users (which might include other developers that depend on your package) understand the extent of changes to a package.</p></li>
+<li><p>It helps your development team make decisions about when to
+bump a package version based on standard rules.</p></li>
+<li><p>Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. thus your package version numbers become “expressive” in the same way that naming code variables well can <a class="reference external" href="https://medium.com/&#64;daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa">make code expressive</a>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A note about versioning</p>
+<p>In some cases even small version changes can turn a package update
+into a breaking change for some users. What is also important is that
+you document how you version your code and if you can, also
+document your deprecation policy for code.</p>
+</div>
+<!-- TODO: Better link to what expressive code is?-->
+<section id="semver-rules">
+<h2>SemVer rules<a class="headerlink" href="#semver-rules" title="Permalink to this heading">#</a></h2>
+<p>Following SemVer, your bump your package version to a:</p>
+<ul class="simple">
+<li><p>patch (1.1.1 –&gt; 1.1.<strong>2</strong>)</p></li>
+<li><p>minor (1.1.1 –&gt; 1.<strong>2</strong>.1)</p></li>
+<li><p>major (1.1.1 –&gt; <strong>2</strong>.1.1)</p></li>
+</ul>
+<p>version number change based on the following rules:</p>
+<blockquote>
+<div><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
+<ul class="simple">
+<li><p><strong>MAJOR version</strong> when you make incompatible API changes</p></li>
+<li><p><strong>MINOR version</strong> when you add functionality in a backwards compatible manner</p></li>
+<li><p><strong>PATCH version</strong> when you make backwards compatible bug fixes
+Additional labels for pre-release and build metadata are
+available as extensions to the MAJOR.MINOR.PATCH format.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some people prefer to use <a class="reference external" href="https://calver.org/index.html">calver</a> for versioning. It may be a simpler-to-use system given it relies upon date values associated with released versions. However, calver does not provide a user with a sense of when a new version
+might break an existing build. As such we still suggest semver.</p>
+<p>pyOpenSci will never require semver in a peer review as long as a
+package has a reasonable approach to versioning!</p>
+</div>
+</section>
+<section id="avoid-manually-updating-python-package-version-numbers-if-you-can">
+<h2>Avoid manually updating Python package version numbers if you can<a class="headerlink" href="#avoid-manually-updating-python-package-version-numbers-if-you-can" title="Permalink to this heading">#</a></h2>
+<p>Often times you may want to have your package version value in
+multiple locations. One example of this is that it might be both
+an attribute in your package <strong>version</strong> and also called
+in your documentation.</p>
+<p>We recommend that you avoid manual updates of your package version
+number to avoid human-error. It is better
+practice to keep your version number in one location.</p>
+<p>If you can’t implement a single location version, then consider
+using a tool like hatch, PDM or bump2version that will update
+the version values for you - throughout your package.</p>
+<p>Below we discuss some tools that you can use to manage updating
+Python package versions.</p>
+<!-- bump2version isn't really maintained anymore - are there alternatives? -->
+</section>
+<section id="tools-to-manage-versions-for-your-python-package">
+<h2>Tools to manage versions for your Python package<a class="headerlink" href="#tools-to-manage-versions-for-your-python-package" title="Permalink to this heading">#</a></h2>
+<p>There are a handful of tools that are widely used in the scientific ecosystem that you can use to manage your package
+versions. Some of these tools are built into or work with your
+<span class="xref myst">packaging build tools that we discuss</span></p>
+<!-- TODO: ADD LINK when other pr merged -->
+<p>Below, we provide an overview of these tools.</p>
+<!--
+If you are on the fence about what tool to use, we suggest
+that you use `setuptools-scm`. thinking now PDM or hatch + hatch_vcs  -->
+<p>There are three general groups of tools that you can use to manage
+package versions:</p>
+<ol class="arabic simple">
+<li><p><strong>semantic release tools:</strong> These tools will automagically determine what type of version bump to use using the text in your commit messages. Below we discuss <a class="reference external" href="https://python-semantic-release.readthedocs.io/en/latest/">Python Semantic Release</a> as a Python tool
+that implements a semantic versioning approach.</p></li>
+<li><p><strong>Manual incremental bump tools:</strong> Tools like <a class="reference external" href="https://hatch.pypa.io/latest/version/">Hatch</a> offer version bumping within your package. Normally this is implemented at the command link for instance <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">version</span> <span class="pre">major</span></code> would bump your project from 0.x to 1.0.</p></li>
+<li><p><strong>Version Control System tools:</strong> Finally there are tools that rely on your version control system to track versions. These tools often are plugins to your package build tool (ex: setuptools build or hatchling). We discuss this option below assuming that you are using <strong>.git tags</strong> and <strong>GitHub</strong> to manage your package repository.</p></li>
+</ol>
+<section id="semantic-release-vs-version-control-based-vs-manual-version-bumping">
+<h3>Semantic release, vs version control based vs manual version bumping<a class="headerlink" href="#semantic-release-vs-version-control-based-vs-manual-version-bumping" title="Permalink to this heading">#</a></h3>
+<p>Generally semantic release and version control system tools
+can be setup to run automatically on GitHub using GitHub actions.
+This means that you can create a workflow where a GitHub release
+and associated new version tag is used to trigger an automated
+build that:</p>
+<ol class="arabic simple">
+<li><p>Builds your package and updates the version following the new tag</p></li>
+<li><p>Tests the build and publishes to test PyPI</p></li>
+<li><p>Publishes the package to PyPI</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bumping a package version refers to the step of increasing the package
+version after a set number of changes have been made to it. For example,
+you might bump from version 0.8 to 0.9 of a package. or from 0.9 to 1.0.</p>
+<p>Using semantic versioning, there are three main “levels”
+of versions that you might consider:</p>
+<p>Major, minor and patch. These are described in more detail below.</p>
+</div>
+</section>
+</section>
+<section id="tools-for-bumping-python-package-versions">
+<h2>Tools for bumping Python package versions<a class="headerlink" href="#tools-for-bumping-python-package-versions" title="Permalink to this heading">#</a></h2>
+<p>In this section we discuss the following tools for managing
+your Python package’s version:</p>
+<ul class="simple">
+<li><p>hatch &amp;</p></li>
+<li><p>hatch_vcs plugin for hatchling</p></li>
+<li><p>setuptools-scm</p></li>
+<li><p>python-semantic-version</p></li>
+</ul>
+<section id="tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning">
+<h3>Tool 1: Hatch and other build tools that offer incremental versioning<a class="headerlink" href="#tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning" title="Permalink to this heading">#</a></h3>
+<p>Many of the modern build tool front end tools offer version support
+that follow semantic versioning rules. These tools are different
+from Python Semantic Version in that they do not require specific
+commit messages to implement version. Rather, they allow you
+to update the version at the command line using commands such as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tool-name</span> <span class="pre">version</span> <span class="pre">update</span> <span class="pre">major</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tool-name</span> <span class="pre">version</span> <span class="pre">update</span> <span class="pre">minor</span></code></p></li>
+</ul>
+<p><a class="reference external" href="https://hatch.pypa.io/latest/version/">Hatch</a>, for instance offers <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">version</span> <span class="pre">minor</span></code> which will modify
+the version of your package incrementally. With <strong>Hatch</strong> the version value will be found in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. <!-- TODO double check this --></p>
+<section id="hatch-or-other-tools-like-pdm-pros">
+<h4>Hatch (or other tools like PDM) Pros<a class="headerlink" href="#hatch-or-other-tools-like-pdm-pros" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Easy to use version updates locally using a single tool!</p></li>
+</ul>
+</section>
+<section id="hatch-or-other-tools-like-pdm-cons">
+<h4>Hatch (or other tools like PDM) Cons<a class="headerlink" href="#hatch-or-other-tools-like-pdm-cons" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>There will be some setup involved to ensure package version is updated throughout your package</p></li>
+</ul>
+</section>
+</section>
+<section id="tool-2-hatch-vcs-hatchling-build-back-end">
+<h3>Tool 2: Hatch_vcs &amp; hatchling build back-end<a class="headerlink" href="#tool-2-hatch-vcs-hatchling-build-back-end" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/ofek/hatch-vcs">hatch_vcs</a> is a versioning tool
+that allows you to manage package versions using <strong>git tags</strong>.
+Hatch_vcs creates a <strong>_version.py</strong> file in your package ecosystem that
+keeps track of the package’s current version.</p>
+<p>Hatch keeps track of your package’s version in a <code class="docutils literal notranslate"><span class="pre">_version.py</span></code> file. Storing the
+version in a single file managed by Hatch provides
+your package with a “single source of truth” value for the version
+number. This in turn eliminates potential error associated with
+manually updating your package’s version.</p>
+<p>When you (or your CI system) build your package, hatch checks the current tag number for your package. if it has increased, it will update
+the <strong>_version.py</strong> file with the new value.</p>
+<p>Thus, when you create a new tag or a new release with a tag and build your package, Hatch will access the new tag value and use it to update
+your package version.</p>
+<p>To use <strong>hatch_vcs</strong> you will need to use the <strong>hatchling</strong> build back end.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Hatchling can also be used any of the modern build tools
+including <strong>Flit</strong> and <strong>PDM</strong> if you prefer those for your day to
+day workflow.</p>
+</div>
+<section id="hatch-example-setup-in-your-pyproject-toml">
+<h4>Hatch example setup in your pyproject.toml<a class="headerlink" href="#hatch-example-setup-in-your-pyproject-toml" title="Permalink to this heading">#</a></h4>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyproject.toml example build setup to use hatchling and hatch_vcs</span>
+<span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;hatchling&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hatch-vcs&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hatchling.build&quot;</span>
+</pre></div>
+</div>
+<p><strong>Hatch_vcs</strong> supports a fully automated package release and build, and
+push to PyPI workflow on GitHub.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example hatch vcs setup in the pyproject.toml file</span>
+<span class="k">[tool.hatch.build.hooks.vcs]</span>
+<span class="n">version-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_version.py&quot;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you use <strong>setuptools_scm</strong>, then you might find <strong>hatch_vcs</strong> and <strong>hatchling</strong> to be the modern equivalent to your current setuptools / build workflow.</p>
+</div>
+</section>
+<section id="hatch-vcs-pros">
+<h4>hatch_vcs Pros<a class="headerlink" href="#hatch-vcs-pros" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Hatch supports modern Python packaging standards</p></li>
+<li><p>It creates a single-source file that contains your package version.</p></li>
+<li><p>You never manually update the package version</p></li>
+<li><p>You can automate writing the version anywhere in your package including your documentation!</p></li>
+<li><p>It supports a purely GitHub based release workflow. This simplifies maintenance workflows.</p></li>
+<li><p>Version number is updated in your package via a hidden <code class="docutils literal notranslate"><span class="pre">_version.py</span></code> file. There is no manual configuration updates required.</p></li>
+<li><p>While we like detailed commit messages (See Python Semantic Version below), we know that sometimes when maintaining a package specific guidelines around commit messages can be hard to apply and manage.</p></li>
+</ul>
+</section>
+<section id="hatch-vcs-cons">
+<h4>hatch_vcs Cons<a class="headerlink" href="#hatch-vcs-cons" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub. But you could locally develop a build to “bump” tag
+versions</p></li>
+</ul>
+</section>
+</section>
+<section id="tool-3-setuptools-scm-versioning-using-git-tags">
+<h3>Tool 3: setuptools-scm versioning using git tags<a class="headerlink" href="#tool-3-setuptools-scm-versioning-using-git-tags" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/pypa/setuptools_scm/"><code class="docutils literal notranslate"><span class="pre">Setuptools_scm</span></code></a> is an
+extension that you can use with setuptools to manage package
+versions. <strong>Setuptools_scm</strong> operates the same way that
+<strong>hatch_vcs</strong> (discussed above) does. It stores a version in a <strong>_version.py</strong> file and relies on (<strong>git</strong>) tags to
+determine the package’s current version.</p>
+<p>If you are using <strong>setuptools</strong> as your primary build tool, then <code class="docutils literal notranslate"><span class="pre">*setuptools-scm</span></code> is a good choice as:</p>
+<!-- Are the pros and cons useful? -->
+<p>setuptools_scm Pros</p>
+<ul class="simple">
+<li><p>It creates a single-source file that contains your package version.</p></li>
+<li><p>You never manually update the package version</p></li>
+<li><p>You can automate writing the version anywhere in your package including your documentation!</p></li>
+<li><p>It supports a purely GitHub based release workflow. This simplifies maintenance workflows.</p></li>
+<li><p>Version number is updated in your package via a hidden <code class="docutils literal notranslate"><span class="pre">_version.py</span></code> file. There is no manual configuration updates required.</p></li>
+<li><p>While we like detailed commit messages (See Python Semantic Version below), we know that sometimes when maintaining a package specific guidelines around commit messages can be hard to apply and manage.</p></li>
+<li><p><strong>setuptools</strong> is still the most commonly used Python packaging build tool</p></li>
+</ul>
+<section id="setuptools-scm-cons">
+<h4>setuptools_scm Cons<a class="headerlink" href="#setuptools-scm-cons" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub.</p></li>
+<li><p>Not well documented</p></li>
+<li><p>Because setuptools will always have to support backwards compatibility it will always be slower in adopting modern Python packaging conventions.</p></li>
+</ul>
+<p>As such you might consider using a more modern tool such as
+<strong>hatch_vcs</strong> and <strong>hatchling</strong> to build your package and manage
+package versions.</p>
+<!--
+```{important}
+pyOpenSci will be creating tutorials on working with `setuptools-scm` and GitHub releases to
+update versions of your package and push to PyPI. These should be published sometime
+during the spring/summer 2023. In the meantime [here is a high quality blog post
+that will help you get started with using setuptools-scm](https://www.moritzkoerber.com/posts/versioning-with-setuptools_scm/)
+``` -->
+</section>
+</section>
+<section id="tool-4-python-semantic-release">
+<h3>Tool 4: <a class="reference external" href="https://python-semantic-release.readthedocs.io/en/latest/">Python semantic release</a><a class="headerlink" href="#tool-4-python-semantic-release" title="Permalink to this heading">#</a></h3>
+<p>Python semantic release uses a commit message workflow that updates
+the version of your package based on keywords found in your commit
+messages. As the name implies, Python Semantic Release follows
+semver release rules.</p>
+<p>With Python Semantic Release, versions are triggered using
+specific language found in a git commit message.</p>
+<p>For example, the words <code class="docutils literal notranslate"><span class="pre">fix(attribute_warning):</span></code> trigger Python
+Semantic Release to implement a <strong>patch</strong> version bump.
+For instance if your package was at version 1.1.0 and you
+made the commit below with the words fix(text-here), Python Semantic
+Release would bump your package to version 1.1.1.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;fix(mod_plotting): fix warnings returned athlete attributes&quot;</span>
+</pre></div>
+</div>
+<p>Similarly a feature (<code class="docutils literal notranslate"><span class="pre">feat()</span></code>) triggers a minor version bump.
+For example from version 1.1 to version 1.2</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feature(add_conversions): add value conversions to activity date&quot;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can find a thoughtful discussion of python semantic version <a class="reference external" href="https://py-pkgs.org/07-releasing-versioning#automatic-version-bumping">in this Python package guide</a>. Note that the guide hasn’t been updated since 2020 and will potentially be updated in the future! But for now, some of the commands are dated but the content is still excellent.</p>
+</div>
+<section id="python-semantic-release-pros">
+<h4>Python Semantic Release Pros<a class="headerlink" href="#python-semantic-release-pros" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Follows semver versioning closely</p></li>
+<li><p>Enforces maintainers using descriptive commit messages which can simplify troubleshooting and ensure a cleaner and more self-describing git history.</p></li>
+</ul>
+</section>
+<section id="python-semantic-release-cons">
+<h4>Python Semantic Release Cons<a class="headerlink" href="#python-semantic-release-cons" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Requires very specific commit language to work. In practice some maintainers and contributors may not be able to maintain that level of specificity in commit messages (NOTE: there are bots that will check git commit messages in a repo)</p></li>
+<li><p>Release happens at the command line. This makes is harder to implement a GitHub based release workflow as the wrong commit message could trigger a release.</p></li>
+<li><p>The version number is manually updated in a configuration file such as <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> vs. in a package <strong>_version.py</strong> file.</p></li>
+</ul>
+<!-- However, this tool differs
+from **setuptools-scm**. With **setuptools-scm**, a version
+control tag, is used to trigger a version update.  -->
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="complex-python-package-builds.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Complex Python package builds</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="code-style-linting-format.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Package Code Style, Format and Linters</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semver-rules">SemVer rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-manually-updating-python-package-version-numbers-if-you-can">Avoid manually updating Python package version numbers if you can</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-manage-versions-for-your-python-package">Tools to manage versions for your Python package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-release-vs-version-control-based-vs-manual-version-bumping">Semantic release, vs version control based vs manual version bumping</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-bumping-python-package-versions">Tools for bumping Python package versions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning">Tool 1: Hatch and other build tools that offer incremental versioning</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-pros">Hatch (or other tools like PDM) Pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-cons">Hatch (or other tools like PDM) Cons</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-2-hatch-vcs-hatchling-build-back-end">Tool 2: Hatch_vcs &amp; hatchling build back-end</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-example-setup-in-your-pyproject-toml">Hatch example setup in your pyproject.toml</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-pros">hatch_vcs Pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-cons">hatch_vcs Cons</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-3-setuptools-scm-versioning-using-git-tags">Tool 3: setuptools-scm versioning using git tags</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-scm-cons">setuptools_scm Cons</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-4-python-semantic-release">Tool 4: Python semantic release</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-pros">Python Semantic Release Pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-cons">Python Semantic Release Cons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/python-package-versions.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/package-structure-code/python-package-versions.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
