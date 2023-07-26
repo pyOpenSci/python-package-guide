@@ -93,3 +93,15 @@ What are SDist & Wheel Files? <python-package-distribution-files-sdist-wheel>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>
 ```
+
+```{toctree}
+:hidden:
+:caption: Publishing a package
+
+Intro <self>
+
+Package versions <python-package-versions>
+Code style <code-style-linting-format>
+Publish <publish-python-package-pypi-conda.md>
+
+```
