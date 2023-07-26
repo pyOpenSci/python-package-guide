@@ -1,6 +1,7 @@
 # Python Package Code Style, Format and Linters
 
 ```{important}
+
 ## Take Aways
 
 * pyOpenSci requires authors to follow PEP 8 code format guidelines
@@ -27,7 +28,7 @@ pyOpenSci peer review process requires that you to follow standard
 you can.
 
 pyOpenSci doesn't require you to use a specific code format tool. However,
-we do look for consistency and readbility in code style. Below you will find
+we do look for consistency and readability in code style. Below you will find
 a discussion of:
 
 1. The benefits of using linters and code format tools in your workflow
@@ -73,7 +74,7 @@ Python focused code formatters often follow PEP 8 standards. However, they also
 make stylistic decisions about code consistency. Code formatters will
 reformat your code for you.
 
-Black is anexample of a commonly-used code formatter. Black both applies PEP 8
+Black is an example of a commonly-used code formatter. Black both applies PEP 8
 standards while also making decisions about things like consistent use of double
 quotes for strings, and spacing of items in lists.
 
