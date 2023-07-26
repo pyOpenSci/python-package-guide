@@ -26,15 +26,24 @@ with how and when you update your package versions is important as:
    bump a package version based on standard rules.
 3. Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. thus your package version numbers become "expressive" in the same way that naming code variables well can [make code expressive](https://medium.com/@daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa).
 
+```{note}
+A note about versioning
+
+In some cases even small version changes can turn a package update
+into a breaking change for some users. What is also important is that
+you document how you version your code and if you can, also
+document your deprecation policy for code.
+```
+
 <!-- TODO: Better link to what expressive code is?-->
 
 ### SemVer rules
 
 Following SemVer, your bump your package version to a:
 
-- patch (0.1.1 --> 0.1.**2**)
-- minor (0.1.1 --> 0.**2**.1)
-- major (0.1.1 --> **1**.1.1)
+- patch (1.1.1 --> 1.1.**2**)
+- minor (1.1.1 --> 1.**2**.1)
+- major (1.1.1 --> **2**.1.1)
 
 version number change based on the following rules:
 
