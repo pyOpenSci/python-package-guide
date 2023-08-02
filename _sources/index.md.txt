@@ -153,34 +153,6 @@ Good meets the requirements. Going beyond the minimum can make package maintenan
 This guide is now a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
 
-```{toctree}
-:hidden:
-:caption: Documentation
-
-Documentation Overview <documentation/index>
-Write User Documentation <documentation/write-user-documentation/intro>
-Core GitHub Repository Files <documentation/repository-files/intro>
-Documentation Tools & Hosting  <documentation/hosting-tools/intro>
-```
-
-```{toctree}
-:hidden:
-:caption: Package structure & code style
-
-Manage Package Versions <package-structure-code/python-package-versions>
-Publish Package PyPI Conda <package-structure-code/publish-python-package-pypi-conda>
-Code Style & Format <package-structure-code/code-style-linting-format>
-Intro <python-packaging/intro>
-
-```
-
-```{toctree}
-:hidden:
-:caption: CI and Testing
-
-Intro <ci-and-testing/intro>
-```
-
 <!--
 COMMENTED OUT TEXT TO BE MOVED
 

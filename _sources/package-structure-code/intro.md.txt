@@ -9,6 +9,52 @@ there are some great modern packaging tools that ensure that you're following
 best practices. Here, we review tool features and suggest tools that might be
 best fitted for your workflow.
 
+::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
+
+:::{grid-item-card}
+:link: python-package-build-tools
+:link-type: doc
+
+✨ Finding the right packaging tool(s) ✨
+^^^
+
+Learn more about the suite of packaging tools out there.
+And learn which tool might be best for you.
+:::
+
+:::{grid-item-card}
+:link: python-package-structure
+:link-type: doc
+
+✨ Package file structure ✨
+^^^
+src layout, flat layout and where should tests folders live? No matter what your level of packaging knowledge is, this page will help you decide upon a package structure that follows modern python best practices.
+:::
+
+:::{grid-item-card}
+:link: python-package-build-tools
+:link-type: doc
+
+✨ Publish to PyPI and Conda ✨
+^^^
+If you have a pure python package, it's a straight forward
+process to publish to both PyPI and then a Conda channel such as
+conda-forge. Learn more here.
+:::
+
+:::{grid-item-card}
+:link: code-style-linting-format
+:link-type: doc
+
+✨ Code style & linters ✨
+^^^
+Black, blue, flake8, Ruff - which tools can help you ensure your
+package follows best practices for code format? Learn more about the options and why this is important here.
+:::
+::::
+
 :::{figure-md} fig-target
 
 <img src="../images/python-package-tools-decision-tree.png" alt="Figure showing a decision tree with the various packaging tool front-end and back-end options." width="700px">
@@ -98,8 +144,8 @@ Complex Builds <complex-python-package-builds>
 :hidden:
 :caption: Publishing a package
 
+Publish with Conda / PyPI <publish-python-package-pypi-conda>
 Package versions <python-package-versions>
 Code style <code-style-linting-format>
-Publish <publish-python-package-pypi-conda.md>
 
 ```
