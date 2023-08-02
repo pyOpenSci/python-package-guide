@@ -6,10 +6,11 @@
 
 * pyOpenSci requires authors to follow PEP 8 code format guidelines
 * Setting up a code formatters like Black and isort will help you enforce PEP 8 style guidelines and also consistent, readable code format
-* Some commonly used tools are: Black/Blue, Isort, flake8
+* Some commonly used tools are: Black/Blue, Isort, flake8, ruff
 * You can also setup pre-commit hooks which will run code formatters locally
 each time you make a commit.
 * [precommit.ci](https://pre-commit.ci/) is a bot that you can add to your GitHub repository. It will automagically apply code format to every PR using the tools specified in your pre-commit-config.yaml file. It can save significant time and make contributions easier for new contributors.
+* Automation is good! By making code quality tools care of your code, you can focus on structural and high values tasks.
 ```
 
 Consistent code format and style is useful to both your package
@@ -50,6 +51,7 @@ Setting up a code format suite of tools will:
 - Ensure that format and style is consistent across your entire code-base.
 - Avoid lengthy discussions with contributors and other
   maintainers about personalized code format preferences during reviews.
+- Avoid pure visual edits in the code base so that code reviews focus on added value
 
 Many packages use a suite of tools to apply code format rules, taking
 the work out of manually implementing code format requirements.
@@ -92,7 +94,7 @@ some exceptions. A few examples of those exceptions are below:
 
 - Black defaults to a line length of 88 (79 + 10%) rather than the 79 character `PEP 8` specification. However, line length is a setting can be manually overwritten in your Black configuration.
 - Black and Blue will not adjust line length in your comments or docstrings.
-- Neither tool will review and fix import order (you need _isort_ to do that - see below).
+- Neither tool will review and fix import order (you need _isort_ or _ruff_ to do that - see below).
 
 Blue addresses a few format decisions in Black that some maintainers do not like.
 [You can compare the differences here](https://blue.readthedocs.io/en/latest/#so-what-s-different) and decide which tool you prefer!
@@ -163,7 +165,7 @@ order. It will then modify your code, automatically reordering
 all imports. This leaves you with one less thing to think about when cleaning
 up your code.
 
-### Example application of isort
+#### Example application of isort
 
 Code imports before `isort` is run:
 
@@ -196,6 +198,46 @@ from collections.abc import Sequence
 from stravalib import exc
 from stravalib import unithelper as uh
 ```
+
+### ruff
+
+[ruff](https://beta.ruff.rs) is a new addition to the code quality ecosystem,
+gaining some traction since its release.
+`ruff` is a linter for Python, aiming to replace several tools behind a single interface.  
+As such, `ruff` can be used instead of `flake8` and `isort`.
+
+`ruff` has some interesting features that distinguish it from other linters:
+- Linter configuration in `pyproject.toml`
+- Several hundred rules included, many of which are automatically fixable
+- Rules explanation, see [F403](https://beta.ruff.rs/docs/rules/undefined-local-with-import-star/) for an example
+- Fast execution time, makes a quick feedback loop possible even on large projects.
+
+Here is a simple configuration to get started with `ruff`:
+
+```toml
+# pyproject.toml
+
+[tool.ruff]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes. "E" + "W" + "F" + "C90" (mccabe complexity) is equivalent to flake8
+    "I", # isort
+]
+ignore = [
+    "E501", # line >79, handled by black/blue
+]
+```
+
+Depending on your project, you might want to add the following to sort imports correctly:
+
+```toml
+# pyproject.toml
+
+[tool.ruff.isort]
+known-first-party = ["<package_folder>"]
+```
+
 
 ## How to use code formatter in your local workflow
 
