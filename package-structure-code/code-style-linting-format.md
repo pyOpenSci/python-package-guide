@@ -96,8 +96,6 @@ some exceptions. A few examples of those exceptions are below:
 - Black will not adjust line length in your comments or docstrings.
 - This tool will not review and fix import order (you need _isort_ or _Ruff_ to do that - see below).
 
-Blue addresses a few format decisions in Black that some maintainers do not like.
-[You can compare the differences here](https://blue.readthedocs.io/en/latest/#so-what-s-different) and decide which tool you prefer!
 
 ```{tip}
 If you are interested in seeing how Black will format your code, you can
