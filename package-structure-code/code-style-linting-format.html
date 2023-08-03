@@ -540,10 +540,11 @@ document.write(`
 <ul class="simple">
 <li><p>pyOpenSci requires authors to follow PEP 8 code format guidelines</p></li>
 <li><p>Setting up a code formatters like Black and isort will help you enforce PEP 8 style guidelines and also consistent, readable code format</p></li>
-<li><p>Some commonly used tools are: Black/Blue, Isort, flake8</p></li>
+<li><p>Some commonly used tools are: Black, Isort, flake8, Ruff</p></li>
 <li><p>You can also setup pre-commit hooks which will run code formatters locally
 each time you make a commit.</p></li>
 <li><p><a class="reference external" href="https://pre-commit.ci/">precommit.ci</a> is a bot that you can add to your GitHub repository. It will automagically apply code format to every PR using the tools specified in your pre-commit-config.yaml file. It can save significant time and make contributions easier for new contributors.</p></li>
+<li><p>Automation is good! By making code quality tools care of your code, you can focus on structural and high values tasks.</p></li>
 </ul>
 </div>
 <p>Consistent code format and style is useful to both your package
@@ -579,6 +580,7 @@ PEP 8 standards and applying consistent style decisions throughout.</p>
 <li><p>Ensure that format and style is consistent across your entire code-base.</p></li>
 <li><p>Avoid lengthy discussions with contributors and other
 maintainers about personalized code format preferences during reviews.</p></li>
+<li><p>Avoid pure visual edits in the code base so that code reviews focus on added value</p></li>
 </ul>
 <p>Many packages use a suite of tools to apply code format rules, taking
 the work out of manually implementing code format requirements.</p>
@@ -608,26 +610,24 @@ quotes for strings, and spacing of items in lists.</p>
 </section>
 <section id="code-format-and-style">
 <h2>Code format and style<a class="headerlink" href="#code-format-and-style" title="Permalink to this heading">#</a></h2>
-<section id="black-and-blue">
-<h3>Black and Blue<a class="headerlink" href="#black-and-blue" title="Permalink to this heading">#</a></h3>
-<p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> and <a class="reference external" href="https://blue.readthedocs.io/en/latest/">Blue</a> (which wraps around Black) are code
-formatters. Both Black and Blue will automagically (and <em>unapologetically</em>)
+<section id="black">
+<h3>Black<a class="headerlink" href="#black" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> is a code
+formatter. Black will automagically (and <em>unapologetically</em>)
 fix spacing issues and ensure code format is consistent throughout your
-package. Black and Blue also generally adhere to PEP 8 style guidelines with
+package. Black also generally adhere to PEP 8 style guidelines with
 some exceptions. A few examples of those exceptions are below:</p>
 <ul class="simple">
 <li><p>Black defaults to a line length of 88 (79 + 10%) rather than the 79 character <code class="docutils literal notranslate"><span class="pre">PEP</span> <span class="pre">8</span></code> specification. However, line length is a setting can be manually overwritten in your Black configuration.</p></li>
-<li><p>Black and Blue will not adjust line length in your comments or docstrings.</p></li>
-<li><p>Neither tool will review and fix import order (you need <em>isort</em> to do that - see below).</p></li>
+<li><p>Black will not adjust line length in your comments or docstrings.</p></li>
+<li><p>This tool will not review and fix import order (you need <em>isort</em> or <em>Ruff</em> to do that - see below).</p></li>
 </ul>
-<p>Blue addresses a few format decisions in Black that some maintainers do not like.
-<a class="reference external" href="https://blue.readthedocs.io/en/latest/#so-what-s-different">You can compare the differences here</a> and decide which tool you prefer!</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you are interested in seeing how Black will format your code, you can
 use the <a class="reference external" href="https://black.vercel.app/">Black playground</a></p>
 </div>
-<p>Using a code formatter like Black or Blue will leave you more time to work on
+<p>Using a code formatter like Black will leave you more time to work on
 code function rather than worry about format.</p>
 </section>
 <section id="flake8-for-linting-code-in-python-packages">
@@ -681,9 +681,8 @@ fix or identify issues with the order of package imports.</p>
 order. It will then modify your code, automatically reordering
 all imports. This leaves you with one less thing to think about when cleaning
 up your code.</p>
-</section>
 <section id="example-application-of-isort">
-<h3>Example application of isort<a class="headerlink" href="#example-application-of-isort" title="Permalink to this heading">#</a></h3>
+<h4>Example application of isort<a class="headerlink" href="#example-application-of-isort" title="Permalink to this heading">#</a></h4>
 <p>Code imports before <code class="docutils literal notranslate"><span class="pre">isort</span></code> is run:</p>
 <p>Below, the exc module is a part of starvalib which is a
 third party package. <code class="docutils literal notranslate"><span class="pre">abc</span></code> and <code class="docutils literal notranslate"><span class="pre">logging</span></code> are core <code class="docutils literal notranslate"><span class="pre">Python</span></code> packages
@@ -708,6 +707,43 @@ spaces in the imports listed below.</p>
 
 <span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">exc</span>
 <span class="kn">from</span> <span class="nn">stravalib</span> <span class="kn">import</span> <span class="n">unithelper</span> <span class="k">as</span> <span class="n">uh</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ruff">
+<h3>Ruff<a class="headerlink" href="#ruff" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://beta.ruff.rs">Ruff</a> is a new addition to the code quality ecosystem,
+gaining some traction since its release.
+<code class="docutils literal notranslate"><span class="pre">ruff</span></code> is a linter for Python, aiming to replace several tools behind a single interface.<br />
+As such, <code class="docutils literal notranslate"><span class="pre">ruff</span></code> can be used instead of <code class="docutils literal notranslate"><span class="pre">flake8</span></code> and <code class="docutils literal notranslate"><span class="pre">isort</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ruff</span></code> has some interesting features that distinguish it from other linters:</p>
+<ul class="simple">
+<li><p>Linter configuration in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Several hundred rules included, many of which are automatically fixable</p></li>
+<li><p>Rules explanation, see <a class="reference external" href="https://beta.ruff.rs/docs/rules/undefined-local-with-import-star/">F403</a> for an example</p></li>
+<li><p>Fast execution time, makes a quick feedback loop possible even on large projects.</p></li>
+</ul>
+<p>Here is a simple configuration to get started with <code class="docutils literal notranslate"><span class="pre">ruff</span></code>:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyproject.toml</span>
+
+<span class="k">[tool.ruff]</span>
+<span class="n">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle errors</span>
+<span class="w">    </span><span class="s">&quot;W&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle warnings</span>
+<span class="w">    </span><span class="s">&quot;F&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pyflakes. &quot;E&quot; + &quot;W&quot; + &quot;F&quot; + &quot;C90&quot; (mccabe complexity) is equivalent to flake8</span>
+<span class="w">    </span><span class="s">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># isort</span>
+<span class="p">]</span>
+<span class="n">ignore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;E501&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># line &gt;79, handled by black</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Depending on your project, you might want to add the following to sort imports correctly:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyproject.toml</span>
+
+<span class="k">[tool.ruff.isort]</span>
+<span class="n">known-first-party</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;&lt;package_folder&gt;&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -877,8 +913,8 @@ Pre-commit will run every time you run <code class="docutils literal notranslate
 your package, regardless of whether you use pre-commit hooks, CI
 or other infrastructure to manage code format. Setting up these
 tools will give you automatic feedback about your code’s
-structure as you (or a contributor) write it. And using tools
-like black or blue that format code for you, reduce effort that
+structure as you (or a contributor) write it. And using a tool
+like black that format code for you, reduce effort that
 you need to make surrounding decisions around code format and
 style.</p>
 </section>
@@ -938,10 +974,13 @@ style.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-format-and-style">Code format and style</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-and-blue">Black and Blue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8-for-linting-code-in-python-packages">flake8 for linting code in Python packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">Isort</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application-of-isort">Example application of isort</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">Isort</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application-of-isort">Example application of isort</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ruff">Ruff</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-code-formatter-in-your-local-workflow">How to use code formatter in your local workflow</a><ul class="nav section-nav flex-column">
