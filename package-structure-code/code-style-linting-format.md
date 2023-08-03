@@ -94,7 +94,7 @@ some exceptions. A few examples of those exceptions are below:
 
 - Black defaults to a line length of 88 (79 + 10%) rather than the 79 character `PEP 8` specification. However, line length is a setting can be manually overwritten in your Black configuration.
 - Black and Blue will not adjust line length in your comments or docstrings.
-- Neither tool will review and fix import order (you need _isort_ or _ruff_ to do that - see below).
+- Neither tool will review and fix import order (you need _isort_ or _Ruff_ to do that - see below).
 
 Blue addresses a few format decisions in Black that some maintainers do not like.
 [You can compare the differences here](https://blue.readthedocs.io/en/latest/#so-what-s-different) and decide which tool you prefer!
@@ -199,9 +199,9 @@ from stravalib import exc
 from stravalib import unithelper as uh
 ```
 
-### ruff
+### Ruff
 
-[ruff](https://beta.ruff.rs) is a new addition to the code quality ecosystem,
+[Ruff](https://beta.ruff.rs) is a new addition to the code quality ecosystem,
 gaining some traction since its release.
 `ruff` is a linter for Python, aiming to replace several tools behind a single interface.  
 As such, `ruff` can be used instead of `flake8` and `isort`.
