@@ -84,7 +84,7 @@ You will learn more about Black below.
 
 ## Code format and style
 
-### Black and Blue
+### Black
 
 [Black](https://black.readthedocs.io/en/stable/) is a code
 formatter. Black will automagically (and _unapologetically_)
