@@ -6,7 +6,7 @@
 
 * pyOpenSci requires authors to follow PEP 8 code format guidelines
 * Setting up a code formatters like Black and isort will help you enforce PEP 8 style guidelines and also consistent, readable code format
-* Some commonly used tools are: Black/Blue, Isort, flake8, ruff
+* Some commonly used tools are: Black, Isort, flake8, Ruff
 * You can also setup pre-commit hooks which will run code formatters locally
 each time you make a commit.
 * [precommit.ci](https://pre-commit.ci/) is a bot that you can add to your GitHub repository. It will automagically apply code format to every PR using the tools specified in your pre-commit-config.yaml file. It can save significant time and make contributions easier for new contributors.
@@ -86,15 +86,15 @@ You will learn more about Black below.
 
 ### Black and Blue
 
-[Black](https://black.readthedocs.io/en/stable/) and [Blue](https://blue.readthedocs.io/en/latest/) (which wraps around Black) are code
-formatters. Both Black and Blue will automagically (and _unapologetically_)
+[Black](https://black.readthedocs.io/en/stable/) is a code
+formatter. Black will automagically (and _unapologetically_)
 fix spacing issues and ensure code format is consistent throughout your
-package. Black and Blue also generally adhere to PEP 8 style guidelines with
+package. Black also generally adhere to PEP 8 style guidelines with
 some exceptions. A few examples of those exceptions are below:
 
 - Black defaults to a line length of 88 (79 + 10%) rather than the 79 character `PEP 8` specification. However, line length is a setting can be manually overwritten in your Black configuration.
-- Black and Blue will not adjust line length in your comments or docstrings.
-- Neither tool will review and fix import order (you need _isort_ or _Ruff_ to do that - see below).
+- Black will not adjust line length in your comments or docstrings.
+- This tool will not review and fix import order (you need _isort_ or _Ruff_ to do that - see below).
 
 Blue addresses a few format decisions in Black that some maintainers do not like.
 [You can compare the differences here](https://blue.readthedocs.io/en/latest/#so-what-s-different) and decide which tool you prefer!
@@ -104,7 +104,7 @@ If you are interested in seeing how Black will format your code, you can
 use the [Black playground](https://black.vercel.app/)
 ```
 
-Using a code formatter like Black or Blue will leave you more time to work on
+Using a code formatter like Black will leave you more time to work on
 code function rather than worry about format.
 
 ### flake8 for linting code in Python packages
@@ -225,7 +225,7 @@ select = [
     "I", # isort
 ]
 ignore = [
-    "E501", # line >79, handled by black/blue
+    "E501", # line >79, handled by black
 ]
 ```
 
@@ -411,7 +411,7 @@ pyOpenSci suggests setting up a linter and a code styler for
 your package, regardless of whether you use pre-commit hooks, CI
 or other infrastructure to manage code format. Setting up these
 tools will give you automatic feedback about your code's
-structure as you (or a contributor) write it. And using tools
-like black or blue that format code for you, reduce effort that
+structure as you (or a contributor) write it. And using a tool
+like black that format code for you, reduce effort that
 you need to make surrounding decisions around code format and
 style.
