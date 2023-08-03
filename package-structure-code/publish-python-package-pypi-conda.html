@@ -570,9 +570,9 @@ your package.</p>
 </div>
 </section>
 <section id="what-is-anaconda-cloud-and-conda">
-<h2>What is Anaconda Cloud and Conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Conda</span></code> is an open source package and environment management tool.
-<code class="docutils literal notranslate"><span class="pre">Conda</span></code> can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda Cloud
+<h2>What is Anaconda Cloud and conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Permalink to this heading">#</a></h2>
+<p>conda is an open source package and environment management tool.
+conda can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda Cloud
 repository</a>.</p>
 <p>Anaconda cloud (anaconda.org) contains public and private repositories for
 packages. These repositories are known as channels (discussed below).</p>
@@ -584,24 +584,17 @@ packages. These repositories are known as channels (discussed below).</p>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>While <strong>conda</strong> was originally created to support Python packages, it
+<p>While conda was originally created to support Python packages, it
 is now used across all languages. This cross-language support
 makes it easier for some packages to include and have access to
 tools written in other languages such as c/c++ (gdal), Julia, or R.
 Creating environment that mixes all those packages are usually easier and more consistent with full fledged package managers like conda.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>While <strong>conda</strong> was originally created to support Python packages, it
-is now used across all languages. This cross-language support
-makes it easier for some packages to include and have access to
-tools written in other languages (such as gdal, BLAS/LAPACK and other tools).</p>
-</div>
 </section>
 <section id="conda-channels">
-<h2>Conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this heading">#</a></h2>
-<p>Conda built packages are housed within repositories that are called
-channels. The Conda package manager can install packages from different channels.</p>
+<h2>conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this heading">#</a></h2>
+<p>conda built packages are housed within repositories that are called
+channels. The conda package manager can install packages from different channels.</p>
 <p>There are several core public channels that most people use to install
 packages using conda including.</p>
 <ul class="simple">
@@ -619,7 +612,7 @@ exist in the default Anaconda cloud channel.</p>
 </figure>
 </section>
 <section id="conda-channels-pypi-conda-pip-where-to-publish-your-package">
-<h2>Conda channels, PyPI, conda, pip - Where to publish your package<a class="headerlink" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package" title="Permalink to this heading">#</a></h2>
+<h2>conda channels, PyPI, conda, pip - Where to publish your package<a class="headerlink" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package" title="Permalink to this heading">#</a></h2>
 <p>You might be wondering why there are different package repositories
 that can be used to install Python packages.</p>
 <p>And more importantly you are likely wondering how to pick the right
@@ -676,8 +669,6 @@ by the conda-forge maintainer team.</a>.</p>
 <ol class="arabic simple">
 <li><p>Fork the staged recipes conda-forge GitHub repository</p></li>
 <li><p>Create a new recipe using the <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> tool. You can <a class="reference external" href="https://conda.github.io/grayskull/">learn more about grayskull here</a>.</p></li>
-<li><p>Add the recipe file created by <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> in a folder within the recipes/ directory of the <a class="reference external" href="https://github.com/conda-forge/staged-recipes"><strong>conda-forge/staged-recipes</strong></a> repository.</p></li>
-<li><p>Create a new recipe using the <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> tool</p></li>
 <li><p>Add the recipe file created by <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> in a folder within the recipes/ directory of the <a class="reference external" href="https://github.com/conda-forge/staged-recipes"><strong>conda-forge/staged-recipes</strong></a> repository.</p></li>
 <li><p>Open a pull request with your change. Your package will be tested on Windows, Mac and Linux using the repository CI.</p></li>
 </ol>
@@ -749,9 +740,9 @@ that update once you are happy with it.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pypi">What is PyPI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-anaconda-cloud-and-conda">What is Anaconda Cloud and Conda?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">Conda channels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package">Conda channels, PyPI, conda, pip - Where to publish your package</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-anaconda-cloud-and-conda">What is Anaconda Cloud and conda?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">conda channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package">conda channels, PyPI, conda, pip - Where to publish your package</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-python-package-dependency-conflicts">Managing Python package dependency conflicts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package</a></li>
 </ul>

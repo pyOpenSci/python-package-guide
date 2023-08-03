@@ -41,10 +41,10 @@ be published on PyPI when you use [a standard build tool](link-to-build-page) to
 your package.
 ```
 
-### What is Anaconda Cloud and Conda?
+### What is Anaconda Cloud and conda?
 
-`Conda` is an open source package and environment management tool.
-`Conda` can be used to install tools from the [Anaconda Cloud
+conda is an open source package and environment management tool.
+conda can be used to install tools from the [Anaconda Cloud
 repository](https://repo.anaconda.com/).
 
 Anaconda cloud (anaconda.org) contains public and private repositories for
@@ -57,24 +57,17 @@ The most common public channels are:
 - bioconda
 
 ```{tip}
-While **conda** was originally created to support Python packages, it
+While conda was originally created to support Python packages, it
 is now used across all languages. This cross-language support
 makes it easier for some packages to include and have access to
 tools written in other languages such as c/c++ (gdal), Julia, or R.
 Creating environment that mixes all those packages are usually easier and more consistent with full fledged package managers like conda.
 ```
 
-```{tip}
-While **conda** was originally created to support Python packages, it
-is now used across all languages. This cross-language support
-makes it easier for some packages to include and have access to
-tools written in other languages (such as gdal, BLAS/LAPACK and other tools).
-```
+### conda channels
 
-### Conda channels
-
-Conda built packages are housed within repositories that are called
-channels. The Conda package manager can install packages from different channels.
+conda built packages are housed within repositories that are called
+channels. The conda package manager can install packages from different channels.
 
 There are several core public channels that most people use to install
 packages using conda including.
@@ -93,7 +86,7 @@ exist in the default Anaconda cloud channel.
 ADD source: GeoHackWeek
 :::
 
-## Conda channels, PyPI, conda, pip - Where to publish your package
+## conda channels, PyPI, conda, pip - Where to publish your package
 
 You might be wondering why there are different package repositories
 that can be used to install Python packages.
@@ -158,8 +151,6 @@ Generally those steps are:
 
 1. Fork the staged recipes conda-forge GitHub repository
 1. Create a new recipe using the `grayskull` tool. You can [learn more about grayskull here](https://conda.github.io/grayskull/).
-1. Add the recipe file created by `grayskull` in a folder within the recipes/ directory of the [**conda-forge/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository.
-1. Create a new recipe using the `grayskull` tool
 1. Add the recipe file created by `grayskull` in a folder within the recipes/ directory of the [**conda-forge/staged-recipes**](https://github.com/conda-forge/staged-recipes) repository.
 1. Open a pull request with your change. Your package will be tested on Windows, Mac and Linux using the repository CI.
 
