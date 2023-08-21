@@ -1,6 +1,6 @@
 # <img src="images/logo/logo.png" width=40 /> pyOpenSci Scientific Python Open Source Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -111,6 +111,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/abravalheri"><img src="https://avatars.githubusercontent.com/u/320755?v=4?s=100" width="100px;" alt="Anderson Bravalheri"/><br /><sub><b>Anderson Bravalheri</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=abravalheri" title="Code">💻</a> <a href="#design-abravalheri" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://possenrie.de"><img src="https://avatars.githubusercontent.com/u/1423562?v=4?s=100" width="100px;" alt="Daniel Possenriede"/><br /><sub><b>Daniel Possenriede</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=dpprdan" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Adpprdan" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/yang-ruoxi"><img src="https://avatars.githubusercontent.com/u/13646711?v=4?s=100" width="100px;" alt="ruoxi"/><br /><sub><b>ruoxi</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=yang-ruoxi" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ayang-ruoxi" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/isabelizimm"><img src="https://avatars.githubusercontent.com/u/54685329?v=4?s=100" width="100px;" alt="Isabel Zimmerman"/><br /><sub><b>Isabel Zimmerman</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=isabelizimm" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Aisabelizimm" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
