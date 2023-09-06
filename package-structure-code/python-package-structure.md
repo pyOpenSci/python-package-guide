@@ -96,7 +96,7 @@ If `tests/` are outside of the **src/package** directory, they aren't included i
 
 By default, Python adds a module in your current working directory to the front of the Python module search path.
 
-This means that if you run your tests in your packages working directory, using a flat layout, `/package/module.py`, Python will discover `package-name/module.py` file before it discovers the installed package.
+This means that if you run your tests in your package's working directory, using a flat layout, `/package/module.py`, Python will discover `package/module.py` file before it discovers the installed package.
 
 However, if your package lives in a src/ directory structure **src/package** then it won't be, by default, added to the Python path. This means that when you import your package, Python will be forced to  search the active environment (which has your package installed).
 
@@ -109,7 +109,7 @@ We do not recommend including tests as part of your package wheel by default. Ho
 
 ```bash
 src/
-  package-name/
+  package/
     tests/
 docs/
 ```
@@ -185,7 +185,7 @@ The flat layout's primary characteristics are:
 
 - The source code for your package lives in a directory with your package's
   name in the root of your directory
-- Often the `tests/` directory also lives within that same `package-name` directory.
+- Often the `tests/` directory also lives within that same `package` directory.
 
 Below you can see the recommended structure of a scientific Python package
 using the flat layout.
