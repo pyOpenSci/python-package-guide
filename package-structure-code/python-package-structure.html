@@ -613,7 +613,7 @@ your package is installed.</p>
 <div class="admonition-how-python-discovers-and-prioritizes-importing-modules admonition">
 <p class="admonition-title">How Python discovers and prioritizes importing modules</p>
 <p>By default, Python adds a module in your current working directory to the front of the Python module search path.</p>
-<p>This means that if you run your tests in your packages working directory, using a flat layout, <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code>, Python will discover <code class="docutils literal notranslate"><span class="pre">package-name/module.py</span></code> file before it discovers the installed package.</p>
+<p>This means that if you run your tests in your package’s working directory, using a flat layout, <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code>, Python will discover <code class="docutils literal notranslate"><span class="pre">package/module.py</span></code> file before it discovers the installed package.</p>
 <p>However, if your package lives in a src/ directory structure <strong>src/package</strong> then it won’t be, by default, added to the Python path. This means that when you import your package, Python will be forced to  search the active environment (which has your package installed).</p>
 <p>Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g. <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code>).</p>
 </div>
@@ -621,7 +621,7 @@ your package is installed.</p>
 <h3>Sometimes tests are needed in a distribution<a class="headerlink" href="#sometimes-tests-are-needed-in-a-distribution" title="Permalink to this heading">#</a></h3>
 <p>We do not recommend including tests as part of your package wheel by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package is functioning correctly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory into the <strong>src/package</strong> directory (see example below).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>src/
-<span class="w">  </span>package-name/
+<span class="w">  </span>package/
 <span class="w">    </span>tests/
 docs/
 </pre></div>
@@ -692,7 +692,7 @@ that you consider using a  <strong>src/package</strong> layout.</p>
 <ul class="simple">
 <li><p>The source code for your package lives in a directory with your package’s
 name in the root of your directory</p></li>
-<li><p>Often the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory also lives within that same <code class="docutils literal notranslate"><span class="pre">package-name</span></code> directory.</p></li>
+<li><p>Often the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory also lives within that same <code class="docutils literal notranslate"><span class="pre">package</span></code> directory.</p></li>
 </ul>
 <p>Below you can see the recommended structure of a scientific Python package
 using the flat layout.</p>

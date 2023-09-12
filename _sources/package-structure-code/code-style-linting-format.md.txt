@@ -201,7 +201,7 @@ from stravalib import unithelper as uh
 
 [Ruff](https://beta.ruff.rs) is a new addition to the code quality ecosystem,
 gaining some traction since its release.
-`ruff` is a linter for Python, aiming to replace several tools behind a single interface.  
+`ruff` is a linter for Python, aiming to replace several tools behind a single interface.
 As such, `ruff` can be used instead of `flake8` and `isort`.
 
 `ruff` has some interesting features that distinguish it from other linters:
