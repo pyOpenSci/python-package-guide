@@ -1,24 +1,29 @@
-# The Python Package Source and Wheel Distributions
+# Learn about Building a Python Package
 
-```{figure} ../images/python-package-development-process.png
-:align: center
-:alt: Image showing the left side bar of PiPy for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options." width="300px">
+:::{figure-md} build-workflow
+<img src="/images/python-package-development-process.png" alt="Alt tag to be added when image is final" width="700px">
 
-Notice the metadata printed on the PyPI page for xclim. When you add the classifier section to your pyproject.toml
-and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
-represent on your pypi landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.
-```
+You need to build your Python package in order to publish it to PyPI or Conda. For PyPI, the build process essentially organizes your code and metadata into a distribution format that PyPI can read and provide to potential users.
+:::
 
 ## What is building a Python package?
 
-In Python, if you want to publish your code in a way that can be
-installed by both yourself and others, your code, tests and associated
-metadata need to be organized in a specific way. This specific
-organization and structure is important because it's the structure
-that both `PyPI` and any installer that you use like `pip` can
-understand and parse. This process of organizing and formatting your
+To [publish your Python package](build-workflow) and make it easy for anyone to install, you first need to build it.
+
+But, what does it mean to build a Python package?
+
+[As shown in the figure above](build-workflow), when you build your Python package, you convert the source files into something called a distribution package. A distribution package contains your source code and metadata about the package, in the format required by the Python Package Index, so that it can be installed by tools like pip.
+
+:::{note}
+The term package used to mean many different things in Python and other languages. On this page, we adapt the convention of the [Python Packaging Authority](https://www.pypa.io/en/latest/) and refer to the product of the
+build step as a **distribution package**.
+:::
+
+This process of organizing and formatting your
 code, documentation, tests and metadata into a format that both pip
 and PyPI can use, is called a build step.
+
+### Project metadata and PyPI
 
 For instance, when you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at [xclim](https://pypi.org/project/xclim/), one of our [pyOpenSci packages](https://www.pyopensci.org/python-packages.html). Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim's maintainers, [pyproject.toml file](https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml). This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.
 
