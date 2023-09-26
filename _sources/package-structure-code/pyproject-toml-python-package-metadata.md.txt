@@ -9,7 +9,7 @@ The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language
 Below that table identifier are key/value pairs that
 support configuration for that particular table.
 
-### Benefits of using a pyproject.toml file
+## Benefits of using a pyproject.toml file
 
 Including your package's metadata in a separate human-readable **pyproject.toml**
 format also allows someone to view the project's metadata in a GitHub repository.
@@ -29,7 +29,7 @@ resources working with complex builds in the future.
 
 ```
 
-### Example pyproject.toml for building using PDM
+## Example pyproject.toml for building using PDM
 
 Below is an example build configuration for a Python project. This example
 package setup uses:
@@ -65,7 +65,7 @@ dependencies = [
 
 Notice that dependencies are specified in this file.
 
-### Example pyproject.toml for building using setuptools
+## Example pyproject.toml for building using setuptools
 
 The package metadata including authors, keywords, etc is also easy to read.
 Below you can see the same TOML file that uses a different build system (setuptools).

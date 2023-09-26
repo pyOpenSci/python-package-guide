@@ -40,12 +40,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -57,8 +57,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,6 +94,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -139,7 +149,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -163,7 +174,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -198,34 +208,34 @@
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
                     
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
                     Governance
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -237,23 +247,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -269,8 +281,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -281,8 +293,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
         <li class="nav-item">
           
@@ -293,8 +305,8 @@ document.write(`
           
           
           
-          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
-            <label class="sr-only">Mastodon</label></a>
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
         </li>
 </ul></div>
       
@@ -304,18 +316,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -364,34 +378,34 @@ document.write(`
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
                     
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
                     Governance
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -405,10 +419,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -424,8 +438,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -436,8 +450,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
         <li class="nav-item">
           
@@ -448,8 +462,8 @@ document.write(`
           
           
           
-          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
-            <label class="sr-only">Mastodon</label></a>
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
         </li>
 </ul></div>
         
@@ -504,8 +518,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../index.html" class="nav-link" aria-label="Home">
@@ -515,7 +529,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud</li>
+    <li class="breadcrumb-item active" aria-current="page">Publishing...</li>
   </ul>
 </nav>
 </div>
@@ -535,12 +549,13 @@ document.write(`
   <section id="publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud">
 <h1>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud<a class="headerlink" href="#publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud" title="Permalink to this heading">#</a></h1>
 <!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
-<p>pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as <code class="docutils literal notranslate"><span class="pre">bioconda</span></code> or <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> in the Anaconda cloud.</p>
+<p>pyOpenSci requires that your package has an distribution that can be installed
+from a public community repository such as PyPI or a conda channel such as
+<code class="docutils literal notranslate"><span class="pre">bioconda</span></code> or <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> in the Anaconda cloud.</p>
 <p>Below you will learn more about the various publishing options for your Python
 package.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p class="rubric">Take Aways</p>
+<div class="admonition-take-aways admonition">
+<p class="admonition-title">Take Aways</p>
 <ul class="simple">
 <li><p>Installing packages in the same environment using both pip and conda can
 lead to package conflicts.</p></li>
@@ -559,13 +574,12 @@ prior to the final publication on PyPI.</p>
 a package is that conda can install any package regardless
 of the language(s) that it is written in. Whereas <code class="docutils literal notranslate"><span class="pre">pip</span></code> can
 only install Python packages.</p>
-<!-- TODO add link to build page below when this page is published -->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>On the package build page, we discussed the <span class="xref myst">two package distribution
-types that you will create when making a Python package</span>: SDist (packaged as a .tar.gz or .zip) and
+<p>On the package build page, we discussed the <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">two package distribution
+types that you will create when making a Python package</span></a>: SDist (packaged as a .tar.gz or .zip) and
 Wheel (.whl) which is really a zip file. Both of those file “bundles” will
-be published on PyPI when you use <span class="xref myst">a standard build tool</span> to build
+be published on PyPI when you use <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">a standard build tool</span></a> to build
 your package.</p>
 </div>
 </section>
@@ -588,11 +602,11 @@ packages. These repositories are known as channels (discussed below).</p>
 is now used across all languages. This cross-language support
 makes it easier for some packages to include and have access to
 tools written in other languages such as c/c++ (gdal), Julia, or R.
-Creating environment that mixes all those packages are usually easier and more consistent with full fledged package managers like conda.</p>
+Creating environment that mixes all those packages are usually easier and more
+consistent with full fledged package managers like conda.</p>
 </div>
-</section>
 <section id="conda-channels">
-<h2>conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this heading">#</a></h2>
+<h3>conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this heading">#</a></h3>
 <p>conda built packages are housed within repositories that are called
 channels. The conda package manager can install packages from different channels.</p>
 <p>There are several core public channels that most people use to install
@@ -604,12 +618,13 @@ packages using conda including.</p>
 </ul>
 <p><strong>conda-forge</strong> emerged as many of the scientific packages did not
 exist in the default Anaconda cloud channel.</p>
-<figure class="align-default" id="fig-target">
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/conda-channels-geohackweek.jpeg"><img alt="ADD." src="../_images/conda-channels-geohackweek.jpeg" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">ADD source: GeoHackWeek</span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">ADD source: GeoHackWeek</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 </section>
 <section id="conda-channels-pypi-conda-pip-where-to-publish-your-package">
 <h2>conda channels, PyPI, conda, pip - Where to publish your package<a class="headerlink" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package" title="Permalink to this heading">#</a></h2>
@@ -618,7 +633,7 @@ that can be used to install Python packages.</p>
 <p>And more importantly you are likely wondering how to pick the right
 repository to publish your Python package.</p>
 <p>The answer to both questions relates dependency conflicts.</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="xkcd-dep-conflict">
 <a class="reference internal image-reference" href="../_images/python-dependency-conflicts-xkcd.png"><img alt="Image showing an XKCD comic that shows a web of Python environments and tools and installations. At the bottom is says -  My python environment has become so degraded that my laptop has been declared a superfund site." src="../_images/python-dependency-conflicts-xkcd.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">Installing Python and Python packages from different repositories can lead
@@ -626,7 +641,7 @@ to environment conflicts where a version of on package doesn’t work with
 a version of another package. To keep your environments clean and working, it’s
 best to install packages from the same repository. So use pip to install
 everything. Or use conda. If you can, try to avoid installing package from
-both pip and conda into the same environment.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+both pip and conda into the same environment.</span><a class="headerlink" href="#xkcd-dep-conflict" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="managing-python-package-dependency-conflicts">
@@ -648,8 +663,8 @@ limited to those that Anaconda decides should be core to a stable installation. 
 to use conda to manage their local environments (which many do), you should
 consider publishing to both PyPI and the conda-forge channel (<em>more
 on that below</em>).</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition-additional-resources admonition">
+<p class="admonition-title">Additional resources</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#why-conda-forge">learn more about why conda-forge was created, here</a></p></li>
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/glossary.html">To learn more about conda terminology, check out their glossary.</a></p></li>
@@ -697,11 +712,10 @@ that update once you are happy with it.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="complex-python-package-builds.html"
@@ -721,10 +735,7 @@ that update once you are happy with it.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -740,8 +751,10 @@ that update once you are happy with it.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pypi">What is PyPI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-anaconda-cloud-and-conda">What is Anaconda Cloud and conda?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">conda channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-anaconda-cloud-and-conda">What is Anaconda Cloud and conda?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">conda channels</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package">conda channels, PyPI, conda, pip - Where to publish your package</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-python-package-dependency-conflicts">Managing Python package dependency conflicts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package</a></li>
@@ -790,8 +803,8 @@ that update once you are happy with it.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -810,10 +823,11 @@ that update once you are happy with it.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
 </p></div>
       
     </div>
