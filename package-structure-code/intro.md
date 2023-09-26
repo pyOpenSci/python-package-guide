@@ -55,7 +55,7 @@ package follows best practices for code format? Learn more about the options and
 :::
 ::::
 
-:::{figure-md} fig-target
+:::{figure-md} packaging-tools-decision-tree
 
 <img src="../images/python-package-tools-decision-tree.png" alt="Figure showing a decision tree with the various packaging tool front-end and back-end options." width="700px">
 

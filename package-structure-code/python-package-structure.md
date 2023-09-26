@@ -79,7 +79,7 @@ While we recommend the **src/** layout we also review the **flat** layout here. 
 
 ```
 
-### The src/ layout and testing
+## The src/ layout and testing
 
 The benefit of using the **src/package** layout, particularly if you
 are creating a new package, is that it ensures tests are run against the
@@ -103,7 +103,7 @@ However, if your package lives in a src/ directory structure **src/package** the
 Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g. `PYTHONSAFEPATH`).
 ```
 
-#### Sometimes tests are needed in a distribution
+### Sometimes tests are needed in a distribution
 
 We do not recommend including tests as part of your package wheel by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package is functioning correctly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the `tests/` directory into the **src/package** directory (see example below).
 
