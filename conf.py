@@ -54,7 +54,7 @@ extensions = [
     "sphinx_sitemap",
     "sphinxext.opengraph",
     "sphinx_favicon",
-    "sphinxcontrib.bibtex"
+    "sphinxcontrib.bibtex",
 ]
 
 # colon fence for card support in md
@@ -164,6 +164,6 @@ ogp_social_cards = {
 }
 
 # Bibliographies
-bibtex_bibfiles = ['bibliography.bib']
+bibtex_bibfiles = ["bibliography.bib"]
 # myst complains about bibtex footnotes because of render order
 suppress_warnings = ["myst.footnote"]
