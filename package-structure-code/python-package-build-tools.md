@@ -8,7 +8,7 @@ We focus on pure-python packages in this guide. However, we also
 highlight tools that currently support packages with C/C++ and other language
 extensions.
 
-:::{figure-md} fig-target
+:::{figure-md} package-decision-tree
 
 <img src="../images/python-package-tools-decision-tree.png" alt="Decision tree diagram showing the various front and back end packaging tools. You can decide what packaging tool to use by thinking about what features you need. PDM is currently the most flexible tool that also supports both non pure Python projects and also using different build back-ends. As such currently PDM is the tool we think beginners might appreciate most with Poetry being a close second. Poetry is ideal for pure python projects." width="700px">
 
@@ -19,7 +19,7 @@ NOTE: this is still a DRAFT so i'm not going to spend time truly cleaning it up 
 If you want to know more about Python packages that have extensions written in
 other languages, [check out the page on complex package builds.](complex-python-package-builds)
 
-### Tools that we review here
+## Tools that we review here
 
 In this section we have selected tools that were returned
 as the most popular packaging tools in the PyPA survey.
@@ -31,7 +31,7 @@ You will learn more about the following tools on this page:
 - [PDM](https://pdm.fming.dev/latest/)
 - [Poetry](https://python-poetry.org/docs/)
 
-### Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)
+## Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)
 
 If you are looking for a quick summary, read below.
 

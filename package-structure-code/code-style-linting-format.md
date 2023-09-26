@@ -1,8 +1,6 @@
 # Python Package Code Style, Format and Linters
 
-```{important}
-
-## Take Aways
+```{admonition} Take Aways
 
 * pyOpenSci requires authors to follow PEP 8 code format guidelines
 * Setting up a code formatters like Black and isort will help you enforce PEP 8 style guidelines and also consistent, readable code format
@@ -95,7 +93,6 @@ some exceptions. A few examples of those exceptions are below:
 - Black defaults to a line length of 88 (79 + 10%) rather than the 79 character `PEP 8` specification. However, line length is a setting can be manually overwritten in your Black configuration.
 - Black will not adjust line length in your comments or docstrings.
 - This tool will not review and fix import order (you need _isort_ or _Ruff_ to do that - see below).
-
 
 ```{tip}
 If you are interested in seeing how Black will format your code, you can
@@ -205,6 +202,7 @@ gaining some traction since its release.
 As such, `ruff` can be used instead of `flake8` and `isort`.
 
 `ruff` has some interesting features that distinguish it from other linters:
+
 - Linter configuration in `pyproject.toml`
 - Several hundred rules included, many of which are automatically fixable
 - Rules explanation, see [F403](https://beta.ruff.rs/docs/rules/undefined-local-with-import-star/) for an example
@@ -235,7 +233,6 @@ Depending on your project, you might want to add the following to sort imports c
 [tool.ruff.isort]
 known-first-party = ["<package_folder>"]
 ```
-
 
 ## How to use code formatter in your local workflow
 
@@ -277,7 +274,7 @@ You type and run:
 - Once all of the fixes are applied you can re-add (stage) the files to be
   commit. And re-run your commit.
 
-:::{figure-md} fig-target
+:::{figure-md} precommit-hook
 <img src="../images/precommit-hook-python-code.png" alt="Diagram showing the steps of a pre-commit workflow from left to right." width="700px">
 
 The pre-commit workflow begins with you adding files that have changes to be

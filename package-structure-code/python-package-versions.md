@@ -3,8 +3,7 @@
 <!-- * mention release should be incremental
 * rep changes in the code that are either patches, minor fixes, major updates -->
 
-```{important}
-## Key Takeways
+```{admonition} Key Takeways
 
 * Follow [semantic versioning guidelines (SemVer) rules](https://semver.org/) when bumping (increasing) your Python's package version; for example a major version bump (version 1.0 --> 2.0) equates to breaking changes in your package's code for a user.
 * You may want to consider using a plugin like hatch_vsc for managing versions of your package - if you want to have a GitHub only release workflow.
@@ -26,9 +25,7 @@ with how and when you update your package versions is important as:
    bump a package version based on standard rules.
 3. Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. thus your package version numbers become "expressive" in the same way that naming code variables well can [make code expressive](https://medium.com/@daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa).
 
-```{note}
-A note about versioning
-
+```{admonition} A note about versioning
 In some cases even small version changes can turn a package update
 into a breaking change for some users. What is also important is that
 you document how you version your code and if you can, also
@@ -37,7 +34,7 @@ document your deprecation policy for code.
 
 <!-- TODO: Better link to what expressive code is?-->
 
-### SemVer rules
+## SemVer rules
 
 Following SemVer, your bump your package version to a:
 
@@ -63,7 +60,7 @@ pyOpenSci will never require semver in a peer review as long as a
 package has a reasonable approach to versioning!
 ```
 
-### Avoid manually updating Python package version numbers if you can
+## Avoid manually updating Python package version numbers if you can
 
 Often times you may want to have your package version value in
 multiple locations. One example of this is that it might be both
@@ -86,8 +83,8 @@ Python package versions.
 ## Tools to manage versions for your Python package
 
 There are a handful of tools that are widely used in the scientific ecosystem that you can use to manage your package
-versions. Some of these tools are built into or work with your
-[packaging build tools that we discuss]()
+versions. Some of these tools are built into or work with your chosen
+[packaging build tools that discussed in this chapter.](python-package-build-tools)
 
 <!-- TODO: ADD LINK when other pr merged -->
 

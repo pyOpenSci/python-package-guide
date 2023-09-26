@@ -2,13 +2,14 @@
 
 <!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
 
-pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as `bioconda` or `conda-forge` in the Anaconda cloud.
+pyOpenSci requires that your package has an distribution that can be installed
+from a public community repository such as PyPI or a conda channel such as
+`bioconda` or `conda-forge` in the Anaconda cloud.
 
 Below you will learn more about the various publishing options for your Python
 package.
 
-```{important}
-## Take Aways
+```{admonition} Take Aways
 
 * Installing packages in the same environment using both pip and conda can
 lead to package conflicts.
@@ -17,7 +18,7 @@ lead to package conflicts.
 Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.
 ```
 
-### What is PyPI
+## What is PyPI
 
 [PyPI](https://pypi.org/) is an online Python package repository that
 you can use to both find and install and publish your Python package. There is
@@ -31,17 +32,15 @@ a package is that conda can install any package regardless
 of the language(s) that it is written in. Whereas `pip` can
 only install Python packages.
 
-<!-- TODO add link to build page below when this page is published -->
-
 ```{tip}
 On the package build page, we discussed the [two package distribution
-types that you will create when making a Python package](link-to-page-on-sdist): SDist (packaged as a .tar.gz or .zip) and
+types that you will create when making a Python package](python-package-distribution-files-sdist-wheel): SDist (packaged as a .tar.gz or .zip) and
 Wheel (.whl) which is really a zip file. Both of those file "bundles" will
-be published on PyPI when you use [a standard build tool](link-to-build-page) to build
+be published on PyPI when you use [a standard build tool](python-package-build-tools) to build
 your package.
 ```
 
-### What is Anaconda Cloud and conda?
+## What is Anaconda Cloud and conda?
 
 conda is an open source package and environment management tool.
 conda can be used to install tools from the [Anaconda Cloud
@@ -61,7 +60,8 @@ While conda was originally created to support Python packages, it
 is now used across all languages. This cross-language support
 makes it easier for some packages to include and have access to
 tools written in other languages such as c/c++ (gdal), Julia, or R.
-Creating environment that mixes all those packages are usually easier and more consistent with full fledged package managers like conda.
+Creating environment that mixes all those packages are usually easier and more
+consistent with full fledged package managers like conda.
 ```
 
 ### conda channels
@@ -79,7 +79,7 @@ packages using conda including.
 **conda-forge** emerged as many of the scientific packages did not
 exist in the default Anaconda cloud channel.
 
-:::{figure-md} fig-target
+:::{figure-md} conda-channels
 
 <img src="../images/conda-channels-geohackweek.jpeg" alt="ADD." width="700px">
 
@@ -96,7 +96,7 @@ repository to publish your Python package.
 
 The answer to both questions relates dependency conflicts.
 
-:::{figure-md} fig-target
+:::{figure-md} xkcd-dep-conflict
 
 <img src="../images/python-dependency-conflicts-xkcd.png" alt="Image showing an XKCD comic that shows a web of Python environments and tools and installations. At the bottom is says -  My python environment has become so degraded that my laptop has been declared a superfund site." width="700px">
 
@@ -130,7 +130,7 @@ to use conda to manage their local environments (which many do), you should
 consider publishing to both PyPI and the conda-forge channel (_more
 on that below_).
 
-```{tip}
+```{admonition} Additional resources
 * [learn more about why conda-forge was created, here](https://conda-forge.org/docs/user/introduction.html#why-conda-forge)
 
 * [To learn more about conda terminology, check out their glossary.](https://docs.conda.io/projects/conda/en/latest/glossary.html )
