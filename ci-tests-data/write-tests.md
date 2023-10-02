@@ -1,21 +1,28 @@
-# Writing tests for your code
+# Write tests for your Python package
 
-Writing sets of test functions and methods, also known as test suites, for your
-package is important for both you as a maintainer, your users, and any potential
-new contributors. Test suites consist of sets of functions, methods, and classes
+Writing code that tests your package code, also known as test suites, is important for you as a maintainer, your users, and package contributors. Test suites consist of sets of functions, methods, and classes
 that are written with the intention of making sure a specific part of your code
 works as you expected it to.
 
-## Why create tests for your package
+## Why write tests for your package?
 
 Tests act as a safety net for code changes. They help you spot and rectify bugs
 before they affect users. Tests also instill confidence that code alterations from
 contributors won't breaking existing functionality.
 
-Also, a comprehensive
-test suite empowers you to "fearlessly" refactor code as running tests after a bit refactor will likely identify any potential issues with the new code.
+Writing tests for your Python package is important because:
 
-Tests also enable you to address various edge cases that could impair
+- **Catch Mistakes:** Tests are a safety net. When you make changes or add new features to your package, tests can quickly tell you if you accidentally broke something that was working fine before.
+- **Save Time:** Imagine you have a magic button that can automatically check if your package is still working properly. Tests are like that magic button! They can run all those checks for you saving you time.
+- **Easier Collaboration:** If you're working with others, or have outside contributors, tests help everyone stay on the same page. Your tests explain how your package is supposed to work, making it easier for others to understand and contribute to your project.
+- **Fearless Refactoring:** Refactoring means making improvements to your code structure without changing its behavior. Tests empower you to make these changes as if you break something, test failures will let you know.
+- **Documentation:** Tests serve as technical examples of how to use your package. This can be helpful for a new technical contributor that wants to contribute code to your package. They can look at your tests to understand how parts of your code functionality fits together.
+- **Long-Term ease of maintenance:** As your package evolves, tests ensure that your code continues to behave as expected, even as you make changes over time. Thus you are helping your future self when writing tests.
+- **Easier pull request reviews:** By running your tests in a CI framework such as GitHub actions, each time you or a contributor makes a change to your code-base, you can catch issues and things that may have changed in your code base. This ensures that your software behaves the way you expect it to.
+
+### Tests for user edge cases
+
+Edge cases refer to unexpected or "outlier" ways that some users may use your package. Tests enable you to address various edge cases that could impair
 your package's functionality. For example, what occurs if a function expects a
 pandas `dataframe` but a user supplies a numpy `array`? Does your code gracefully
 handle this situation, providing clear feedback, or does it leave users
@@ -34,18 +41,6 @@ Imagine you're working on a puzzle where each puzzle piece represents a function
 
 ```
 
-### Why write tests?
-
-Writing tests for your Python package is important because:
-
-- **Catch Mistakes:** Tests are a safety net. When you make changes or add new features to your package, tests can quickly tell you if you accidentally broke something that was working fine before.
-- **Save Time:** Imagine you have a magic button that can automatically check if your package is still working properly. Tests are like that magic button! They can run all those checks for you saving you time.
-- **Easier Collaboration:** If you're working with others, or have outside contributors, tests help everyone stay on the same page. Your tests explain how your package is supposed to work, making it easier for others to understand and contribute to your project.
-- **Fearless Refactoring:** Refactoring means making improvements to your code structure without changing its behavior. Tests empower you to make these changes as if you break something, test failures will let you know.
-- **Documentation:** Tests serve as technical examples of how to use your package. This can be helpful for a new technical contributor that wants to contribute code to your package. They can look at your tests to understand how parts of your code functionality fits together.
-- **Long-Term ease of maintenance:** As your package evolves, tests ensure that your code continues to behave as expected, even as you make changes over time. Thus you are helping your future self when writing tests.
-- **Easier pull request reviews** By running your tests in a CI framework such as GitHub actions, each time you or a contributor makes a change to your code-base, you can catch issues and things that may have changed in your code base. This ensures that your software behaves the way you expect it to.
-
 ````{admonition} Test examples
 :class: note
 
@@ -53,7 +48,6 @@ Let’s say you have a Python function that adds two numbers a and b together.
 
 ```python
 def add_numbers(a, b):
-
     return a + b
 ```
 
@@ -61,18 +55,14 @@ A test to ensure that function runs as you might expect when provided with diffe
 
 ```python
 def test_add_numbers():
-
     result = add_numbers(2, 3)
-
     assert result == 5, f"Expected 5, but got {result}"
 
-    result = add_numbers(-1, 4)
+    result2 = add_numbers(-1, 4)
+    assert result2 == 3, f"Expected 3, but got {result2}"
 
-    assert result == 3, f"Expected 3, but got {result}"
-
-    result = add_numbers(0, 0)
-
-    assert result == 0, f"Expected 0, but got {result}"
+    result3 = add_numbers(0, 0)
+    assert result3 == 0, f"Expected 0, but got {result3}"
 
 test_add_numbers()
 
@@ -84,7 +74,7 @@ test_add_numbers()
 ### How do I know what type of tests to write?
 
 :::{note}
-This section has been adapted from a presentation by Nick Murphy - https://zenodo.org/record/8185113
+This section has been adapted from [a presentation by Nick Murphy](https://zenodo.org/record/8185113).
 :::
 
 At this point, you may be wondering - what should you be testing in your package? Below are a few examples:

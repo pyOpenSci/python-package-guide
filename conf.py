@@ -96,6 +96,7 @@ html_theme_options = {
 
 html_theme_options["analytics"] = {
     "google_analytics_id": "UA-141260825-1",
+    "show_nav_level": 3,
 }
 
 html_context = {

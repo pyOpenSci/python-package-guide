@@ -56,23 +56,20 @@ This section is current in progress... link coming soon
 
 ✨ Continuous Integration ✨
 ^^^
-More on this coming soon... What is Continuous Integration? How do I set
-it up for my project?
+Learn what Continuous Integration is and how you can set it up to run tests, build documentation and publish your package to PyPI.
 :::
 ::::
 
 ```{toctree}
 :hidden:
 :maxdepth: 2
-:caption: Tests and data
+:caption: Create & Run Tests
 
 Intro <self>
-Writing tests <write-tests>
+Write tests <write-tests>
 Test types <test-types>
 Run tests <run-tests>
-Run tests in CI <tests-ci>
 Code coverage <code-cov>
-Package data <data>
 
 ```
 
@@ -82,5 +79,15 @@ Package data <data>
 :caption: Continuous Integration
 
 Intro to CI <ci>
+Run tests in CI <tests-ci>
+
+```
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+:caption: Package data
+
+Package data <data>
 
 ```
