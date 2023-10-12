@@ -28,9 +28,8 @@ src layout, flat layout and where should tests folders live? No matter what your
 
 ✨ 2. Learn about building your package ✨
 ^^^
-Building a Python package refers to the process of placing your package code
-metadata (and tests) into a specific format that PyPI can read and that
-your users can install. Learn more about building a Python package here.
+Building a Python package is a great way to share your code with scientists to support open science workflow. The act of "building" refers to the process of placing your package code and
+metadata into a format that can be published on PyPI. Once published on PyPI, your users can easily install it locally using pip. Learn more about building a Python package here.
 :::
 
 :::{grid-item-card}
@@ -155,7 +154,7 @@ if you are looking for pyOpenSci's Python package review requirements!
 Intro <self>
 
 Python package structure <python-package-structure>
-pyproject.toml Package Metadata <pyproject-toml-python-package-metada>
+pyproject.toml Package Metadata <pyproject-toml-python-package-metadata>
 Build Your Package <python-package-distribution-files-sdist-wheel>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>

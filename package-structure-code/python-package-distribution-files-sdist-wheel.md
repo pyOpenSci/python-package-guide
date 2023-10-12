@@ -1,9 +1,9 @@
 # Learn about Building a Python Package
 
 :::{figure-md} build-workflow
-<img src="/images/python-package-development-process.png" alt="Alt tag to be added when image is final" width="700px">
+<img src="../images/python-package-development-process.png" alt="Alt tag to be added when image is final" width="700px">
 
-You need to build your Python package in order to publish it to PyPI or Conda. For PyPI, the build process essentially organizes your code and metadata into a distribution format that PyPI can read and provide to potential users.
+You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.
 :::
 
 ## What is building a Python package?
@@ -56,7 +56,7 @@ You could in theory create your own scripts to organize your code the way PyPI w
 There are a suite of packaging tools that can either help you with
 the entire packaging process or just one step of the process. For instance
 setuptools is a commonly used build back end that can be used to create your
-SDist and wheel. Whereas tools like Hatch, PDM, Poetry and flit help with other
+sdist and wheel. Whereas tools like Hatch, PDM, Poetry and flit help with other
 parts of the packaging process.
 
 While this can cause some confusion and
@@ -65,20 +65,20 @@ the same distribution output (with minor differences that most users may not
 care about). Learn more about those tools on this page.
 ```
 
-Below, you will learn about the two distribution files that PyPI expects you to publish: SDist and Wheel. You will learn about
+Below, you will learn about the two distribution files that PyPI expects you to publish: sdist and wheel. You will learn about
 their structure and what files belong in each.
 
 There are two core distribution files
 that you need to create to publish your Python package to
 PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source
-code for your package. The Wheel (.whl) contains the built / compiled files
+code for your package. The wheel (.whl) contains the built / compiled files
 that can be directly installed onto anyones' computer.
 
 Learn more about both distributions below.
 
 ```{note}
 If your package is a pure python package with no additional
-build / compilation steps then the sdist and Wheel distributions will have
+build / compilation steps then the sdist and wheel distributions will have
 similar content. However if your package has extensions in other languages
 or is more complex in its build, the two distributions will be very different.
 
@@ -150,13 +150,13 @@ stravalib-1.1.0.post2-SDist.tar.gz file contents
 
 ```
 
-```{admonition} GitHub archive vs SDist
+```{admonition} GitHub archive vs sdist
 :class: tip
 When you make a release on GitHub, it creates a `git archive` that contains all
 of the files in your GitHub repository. While these files are similar to an
-SDist, these two archives are not the same. The SDist contains a few other
+sdist, these two archives are not the same. The sdist contains a few other
 items including a metadata directory and if you use `setuptools_scm` or `hatch_vcs`
-the SDist may also contain a file that stores the version.
+the sdist may also contain a file that stores the version.
 ```
 
 ### Wheel (.whl files):
