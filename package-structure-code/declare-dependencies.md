@@ -1,13 +1,18 @@
 # Declaring Development Dependencies - Python Packaging
 
-## How to declare documentation, test and other deps
+## How to declare documentation, test, and other dependencies
 
-In the [pyproject.toml overview page](pyproject-toml-python-package-metadata) we discussed how to setup a pyproject.toml file with basic metadata information.
-On this page, you will learn about storing and accessing dependency information within the pyproject.toml file.
+In the [pyproject.toml overview page](pyproject-toml-python-package-metadata),
+we discussed how to set up a **pyproject.toml** file with basic metadata
+information. On this page, you will learn about storing and accessing dependency
+information within the pyproject.toml file.
 
-It is recommended that you store all dependency information in a **pyproject.toml** file (with a few caveats).
+It is recommended that you store all dependency information in a pyproject.toml file
+(with a few caveats).
 
-This ensures that all of the metadata associated with your package is declared in a single place, making it simpler for users and contributors to understand your package infrastructure.
+This ensures that all of the metadata associated with your package is declared
+in a single place, making it simpler for users and contributors to understand
+your package infrastructure.
 
 ## Direct project dependencies
 
