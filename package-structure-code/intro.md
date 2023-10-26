@@ -28,7 +28,7 @@ src layout, flat layout and where should tests folders live? No matter what your
 
 ✨ 2. Learn about building your package ✨
 ^^^
-Building a Python package is a great way to share your code with scientists to support open science workflow. The act of "building" refers to the process of placing your package code and
+Publishing a Python package is a great way to share your code with scientists to support open science workflow. In order to publish a package, you will need to first build it. The act of "building" refers to the process of placing your package code and
 metadata into a format that can be published on PyPI. Once published on PyPI, your users can easily install it locally using pip. Learn more about building a Python package here.
 :::
 

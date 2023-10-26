@@ -25,12 +25,58 @@ and PyPI can use, is called a build step.
 
 ### Project metadata and PyPI
 
-For instance, when you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at [xclim](https://pypi.org/project/xclim/), one of our [pyOpenSci packages](https://www.pyopensci.org/python-packages.html). Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim's maintainers, [pyproject.toml file](https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml). This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.
+The metadata that both build tools and PyPI uses to describe and understand your package is generally stored in a [pyproject.toml file](pyproject-toml-python-package-metadata). This metadata is used for several purposes:
+
+1. It helps whatever tool you use to build your package (pip, pypa's Build or an end-to-end tool such as poetry, PDM or Hatch) understand how to build your package. Information it provides to your build tool includes:
+
+- The [build-system] table in your pyproject.toml file tells pip what [build backend tool](python-package-build-tools.html#build-back-ends) you wish to use for creating your sdist and wheel distributions.
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling"
+```
+
+- And the dependencies section of your project table tells the build tool and PyPI what dependencies your project requires.
+
+```
+dependencies = [
+    "numpy",
+    "geopandas",
+]
+```
+
+2. When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:
+
+- The `classifiers = ` section of your `[project]` table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that contain specific licenses or that support specific versions of python.
+
+```toml
+classifiers = [
+    # How mature is this project? Common values are
+    "Development Status :: 4 - Beta",
+
+    # Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+```
+
+```{admonition}
+project metadata used to be stored in either a setup.py file or a setup.cfg file. The current recommended practice for storing package metadata is to use a pyproject.toml file. [Learn more about the pyproject.toml file here.](pyproject-toml-python-package-metadata)
+```
+
+### An example - xclim
+
+When you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at [xclim](https://pypi.org/project/xclim/), one of our [pyOpenSci packages](https://www.pyopensci.org/python-packages.html). Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim's maintainers, [pyproject.toml file](https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml). This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.
 
 ```{figure} ../images/python-build-package/pypi-metadata-classifiers.png
 :scale: 50 %
 :align: center
-:alt: Image showing the left side bar of PiPy for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options." width="300px">
+:alt: Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options." width="300px">
 
 When you add the classifier section to your pyproject.toml
 and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
