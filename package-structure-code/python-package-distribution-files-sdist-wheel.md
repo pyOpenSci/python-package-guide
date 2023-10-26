@@ -34,7 +34,7 @@ The metadata that both build tools and PyPI uses to describe and understand your
 ```toml
 [build-system]
 requires = ["hatchling"]
-build-backend = "hatchling"
+build-backend = "hatchling.build"
 ```
 
 - And the dependencies section of your project table tells the build tool and PyPI what dependencies your project requires.
