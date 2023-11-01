@@ -135,14 +135,14 @@ tests = ["pytest", "pytest-cov"]
 
 If you have the above setup, then you can use `session.install(".[tests]")` to install your test dependencies.
 Notice that below one single nox session allows you to run
-your tests on 3 different Python environments (Python 3.9, 3.10 and 3.11).
+your tests on 3 different Python environments (Python 3.9, 3.10, 3.11, and 3.12).
 
 ```python
 import nox
 
 # For this to run you will need to have python3.9, python3.10 and python3.11 installed on your computer. Otherwise nox will skip running tests for whatever versions are missing
 
-@nox.session(python=["3.9", "3.10", "3.11"])
+@nox.session(python=["3.9", "3.10", "3.11", "3.12"])
 def test(session):
 
 # install
@@ -185,10 +185,10 @@ import nox
 
 # The syntax below allows you to use mamba / conda as your environment manager, if you use this approach you don’t have to worry about installing different versions of Python
 
-@nox.session(venv_backend='mamba', python=["3.9", "3.10", "3.11"])
+@nox.session(venv_backend='mamba', python=["3.9", "3.10", "3.11", "3.12"])
 def test_mamba(session):
     """Nox function that installs dev requirements and runs
-    tests on Python 3.9 through 3.11
+    tests on Python 3.9 through 3.12
     """
 
     # Install dev requirements
