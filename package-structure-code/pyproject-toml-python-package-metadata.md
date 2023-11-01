@@ -9,7 +9,7 @@ The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language
 Below that table identifier are key/value pairs that
 support configuration for that particular table.
 
-### Benefits of using a pyproject.toml file
+## Benefits of using a pyproject.toml file
 
 Including your package's metadata in a separate human-readable **pyproject.toml**
 format also allows someone to view the project's metadata in a GitHub repository.

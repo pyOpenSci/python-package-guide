@@ -27,7 +27,7 @@ and PyPI can use, is called a build step.
 
 The metadata that both build tools and PyPI uses to describe and understand your package is generally stored in a [pyproject.toml file](pyproject-toml-python-package-metadata). This metadata is used for several purposes:
 
-1. It helps whatever tool you use to build your package (pip, pypa's Build or an end-to-end tool such as poetry, PDM or Hatch) understand how to build your package. Information it provides to your build tool includes:
+1. It helps whatever tool you use to build your package (pip, [pypa's Build](https://pypi.org/project/build/) or an end-to-end tool such as poetry, PDM or Hatch) understand how to build your package. Information it provides to your build tool includes:
 
 - The [build-system] table in your pyproject.toml file tells pip what [build backend tool](python-package-build-tools.html#build-back-ends) you wish to use for creating your sdist and wheel distributions.
 
