@@ -18,19 +18,14 @@
             gtag('config', 'UA-141260825-1');
             
         </script>
-    <meta property="og:title" content="Python Package Build Tools" />
+    <meta property="og:title" content="Python Packaging Tools" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="package-structure-code/python-package-build-tools.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, benefits and limitations of the most common..." />
-<meta property="og:image:width" content="1146" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-build-tools_e4008c3a.png" />
-<meta property="og:image:alt" content="There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, ben..." />
-<meta name="description" content="There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, benefits and limitations of the most common..." />
-<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:description" content="Tools for building your package: There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, benefits a..." />
+<meta name="description" content="Tools for building your package: There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, benefits a..." />
 
-    <title>Python Package Build Tools &#8212; Python Packaging Guide</title>
+    <title>Python Packaging Tools &#8212; Python Packaging Guide</title>
   
   
   
@@ -40,12 +35,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -57,9 +52,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -83,7 +78,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Complex Python package builds" href="complex-python-package-builds.html" />
-    <link rel="prev" title="The Python Package Source and Wheel Distributions" href="python-package-distribution-files-sdist-wheel.html" />
+    <link rel="prev" title="Learn about Building a Python Package" href="python-package-distribution-files-sdist-wheel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,6 +155,7 @@
   
   
   
+  
     
     
       
@@ -209,10 +205,10 @@
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -379,10 +375,10 @@ document.write(`
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -480,7 +476,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
@@ -546,9 +542,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="python-package-build-tools">
-<h1>Python Package Build Tools<a class="headerlink" href="#python-package-build-tools" title="Permalink to this heading">#</a></h1>
+  <section id="python-packaging-tools">
+<h1>Python Packaging Tools<a class="headerlink" href="#python-packaging-tools" title="Permalink to this heading">#</a></h1>
 <!-- TODO: add a small discussion on what pinning is?-->
+<section id="tools-for-building-your-package">
+<h2>Tools for building your package<a class="headerlink" href="#tools-for-building-your-package" title="Permalink to this heading">#</a></h2>
 <p>There are a several different build tools that you can use to <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">create your Python package’s <em>sdist</em> and <em>wheel</em> distributions</span></a>. Below, we discuss the features,
 benefits and limitations of the most commonly used Python packaging tools.
 We focus on pure-python packages in this guide. However, we also
@@ -563,6 +561,7 @@ NOTE: this is still a DRAFT so i’m not going to spend time truly cleaning it u
 </figure>
 <p>If you want to know more about Python packages that have extensions written in
 other languages, <a class="reference internal" href="complex-python-package-builds.html"><span class="doc std std-doc">check out the page on complex package builds.</span></a></p>
+</section>
 <section id="tools-that-we-review-here">
 <h2>Tools that we review here<a class="headerlink" href="#tools-that-we-review-here" title="Permalink to this heading">#</a></h2>
 <p>In this section we have selected tools that were returned
@@ -1229,7 +1228,7 @@ repository if you do not explicitly tell it to exclude files using a
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Python Package Source and Wheel Distributions</p>
+        <p class="prev-next-title">Learn about Building a Python Package</p>
       </div>
     </a>
     <a class="right-next"
@@ -1256,6 +1255,7 @@ repository if you do not explicitly tell it to exclude files using a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-building-your-package">Tools for building your package</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-that-we-review-here">Tools that we review here</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools">Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-front-end-vs-build-back-end-tools">Build front-end vs. build back-end tools</a><ul class="nav section-nav flex-column">
@@ -1338,8 +1338,8 @@ repository if you do not explicitly tell it to exclude files using a
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1362,7 +1362,7 @@ repository if you do not explicitly tell it to exclude files using a
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

@@ -23,12 +23,7 @@
 <meta property="og:url" content="package-structure-code/python-package-structure.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
-<meta property="og:image:width" content="1146" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-structure_8a84082a.png" />
-<meta property="og:image:alt" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for diff..." />
 <meta name="description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
-<meta name="twitter:card" content="summary_large_image" />
 
     <title>Python Package Structure for Scientific Python Projects &#8212; Python Packaging Guide</title>
   
@@ -40,12 +35,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -57,9 +52,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -160,6 +155,7 @@
   
   
   
+  
     
     
       
@@ -209,10 +205,10 @@
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -379,10 +375,10 @@ document.write(`
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -480,7 +476,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
@@ -865,8 +861,8 @@ It is important to note here that sometimes when using the src/package structure
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -889,7 +885,7 @@ It is important to note here that sometimes when using the src/package structure
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

@@ -23,12 +23,7 @@
 <meta property="og:url" content="package-structure-code/complex-python-package-builds.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. In the future, we want to provide resources for packaging wo..." />
-<meta property="og:image:width" content="1146" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_complex-python-package-builds_d5505a31.png" />
-<meta property="og:image:alt" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. In the future, we wa..." />
 <meta name="description" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. In the future, we want to provide resources for packaging wo..." />
-<meta name="twitter:card" content="summary_large_image" />
 
     <title>Complex Python package builds &#8212; Python Packaging Guide</title>
   
@@ -40,12 +35,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -57,9 +52,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -83,7 +78,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud" href="publish-python-package-pypi-conda.html" />
-    <link rel="prev" title="Python Package Build Tools" href="python-package-build-tools.html" />
+    <link rel="prev" title="Python Packaging Tools" href="python-package-build-tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,6 +155,7 @@
   
   
   
+  
     
     
       
@@ -209,10 +205,10 @@
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -379,10 +375,10 @@ document.write(`
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -480,7 +476,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Complex Builds</a></li>
 </ul>
@@ -581,7 +577,7 @@ or <a class="reference external" href="https://mesonbuild.com/Python-module.html
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Package Build Tools</p>
+        <p class="prev-next-title">Python Packaging Tools</p>
       </div>
     </a>
     <a class="right-next"
@@ -648,8 +644,8 @@ or <a class="reference external" href="https://mesonbuild.com/Python-module.html
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -672,7 +668,7 @@ or <a class="reference external" href="https://mesonbuild.com/Python-module.html
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

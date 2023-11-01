@@ -18,19 +18,14 @@
             gtag('config', 'UA-141260825-1');
             
         </script>
-    <meta property="og:title" content="The Python Package Source and Wheel Distributions" />
+    <meta property="og:title" content="Learn about Building a Python Package" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="package-structure-code/python-package-distribution-files-sdist-wheel.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="There are two core distribution files that you need to create to publish your Python package to PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source code fo..." />
-<meta property="og:image:width" content="1146" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-distribution-files-sdist-wheel_714f58ff.png" />
-<meta property="og:image:alt" content="There are two core distribution files that you need to create to publish your Python package to PyPI source distribution (often called an sdist) and wheel. T..." />
-<meta name="description" content="There are two core distribution files that you need to create to publish your Python package to PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source code fo..." />
-<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:description" content="Alt tag to be added when image is final You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution forma..." />
+<meta name="description" content="Alt tag to be added when image is final You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution forma..." />
 
-    <title>The Python Package Source and Wheel Distributions &#8212; Python Packaging Guide</title>
+    <title>Learn about Building a Python Package &#8212; Python Packaging Guide</title>
   
   
   
@@ -40,12 +35,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -57,9 +52,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -82,7 +77,7 @@
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-distribution-files-sdist-wheel.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python Package Build Tools" href="python-package-build-tools.html" />
+    <link rel="next" title="Python Packaging Tools" href="python-package-build-tools.html" />
     <link rel="prev" title="Use a pyproject.toml file for your package configuration &amp; metadata" href="pyproject-toml-python-package-metadata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,6 +155,7 @@
   
   
   
+  
     
     
       
@@ -209,10 +205,10 @@
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -379,10 +375,10 @@ document.write(`
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
@@ -480,7 +476,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
@@ -529,7 +525,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">The Python...</li>
+    <li class="breadcrumb-item active" aria-current="page">Learn about...</li>
   </ul>
 </nav>
 </div>
@@ -546,23 +542,117 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="the-python-package-source-and-wheel-distributions">
-<h1>The Python Package Source and Wheel Distributions<a class="headerlink" href="#the-python-package-source-and-wheel-distributions" title="Permalink to this heading">#</a></h1>
+  <section id="learn-about-building-a-python-package">
+<h1>Learn about Building a Python Package<a class="headerlink" href="#learn-about-building-a-python-package" title="Permalink to this heading">#</a></h1>
+<figure class="align-default" id="build-workflow">
+<a class="reference internal image-reference" href="../_images/python-package-development-process.png"><img alt="Alt tag to be added when image is final" src="../_images/python-package-development-process.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.</span><a class="headerlink" href="#build-workflow" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="what-is-building-a-python-package">
+<h2>What is building a Python package?<a class="headerlink" href="#what-is-building-a-python-package" title="Permalink to this heading">#</a></h2>
+<p>To <a class="reference internal" href="#build-workflow"><span class="std std-ref">publish your Python package</span></a> and make it easy for anyone to install, you first need to build it.</p>
+<p>But, what does it mean to build a Python package?</p>
+<p><a class="reference internal" href="#build-workflow"><span class="std std-ref">As shown in the figure above</span></a>, when you build your Python package, you convert the source files into something called a distribution package. A distribution package contains your source code and metadata about the package, in the format required by the Python Package Index, so that it can be installed by tools like pip.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The term package used to mean many different things in Python and other languages. On this page, we adapt the convention of the <a class="reference external" href="https://www.pypa.io/en/latest/">Python Packaging Authority</a> and refer to the product of the
+build step as a <strong>distribution package</strong>.</p>
+</div>
+<p>This process of organizing and formatting your
+code, documentation, tests and metadata into a format that both pip
+and PyPI can use, is called a build step.</p>
+<section id="project-metadata-and-pypi">
+<h3>Project metadata and PyPI<a class="headerlink" href="#project-metadata-and-pypi" title="Permalink to this heading">#</a></h3>
+<p>The metadata that both build tools and PyPI uses to describe and understand your package is generally stored in a <a class="reference internal" href="pyproject-toml-python-package-metadata.html"><span class="doc std std-doc">pyproject.toml file</span></a>. This metadata is used for several purposes:</p>
+<ol class="arabic simple">
+<li><p>It helps whatever tool you use to build your package (pip, <a class="reference external" href="https://pypi.org/project/build/">pypa’s Build</a> or an end-to-end tool such as poetry, PDM or Hatch) understand how to build your package. Information it provides to your build tool includes:</p></li>
+</ol>
+<ul class="simple">
+<li><p>The [build-system] table in your pyproject.toml file tells pip what <span class="xref myst">build backend tool</span> you wish to use for creating your sdist and wheel distributions.</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hatchling.build&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>And the dependencies section of your project table tells the build tool and PyPI what dependencies your project requires.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;numpy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;geopandas&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:</p></li>
+</ol>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">classifiers</span> <span class="pre">=</span> </code> section of your <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that contain specific licenses or that support specific versions of python.</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="c1"># How mature is this project? Common values are</span>
+<span class="w">    </span><span class="s">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1"># Indicate who your project is intended for</span>
+<span class="w">    </span><span class="s">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="an-example-xclim">
+<h3>An example - xclim<a class="headerlink" href="#an-example-xclim" title="Permalink to this heading">#</a></h3>
+<p>When you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a>, one of our <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a>. Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim’s maintainers, <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a>. This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">When you add the classifier section to your pyproject.toml
+and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
+represent on your pypi landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="how-to-create-the-distribution-format-that-pypi-and-pip-expects">
+<h2>How to create the distribution format that PyPI and Pip expects?<a class="headerlink" href="#how-to-create-the-distribution-format-that-pypi-and-pip-expects" title="Permalink to this heading">#</a></h2>
+<p>You could in theory create your own scripts to organize your code the way PyPI wants it to be. However, just like there are packages that handle known structures such as Pandas for data frames and Numpy for arrays, there are packages and tools that help you create package build distribution files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are a suite of packaging tools that can either help you with
+the entire packaging process or just one step of the process. For instance
+setuptools is a commonly used build back end that can be used to create your
+sdist and wheel. Whereas tools like Hatch, PDM, Poetry and flit help with other
+parts of the packaging process.</p>
+<p>While this can cause some confusion and
+complexity in the packaging ecosystem - for the most part, each tool provides
+the same distribution output (with minor differences that most users may not
+care about). Learn more about those tools on this page.</p>
+</div>
+<p>Below, you will learn about the two distribution files that PyPI expects you to publish: sdist and wheel. You will learn about
+their structure and what files belong in each.</p>
 <p>There are two core distribution files
 that you need to create to publish your Python package to
 PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source
-code for your package. The Wheel (.whl) contains the built / compiled files
+code for your package. The wheel (.whl) contains the built / compiled files
 that can be directly installed onto anyones’ computer.</p>
 <p>Learn more about both distributions below.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If your package is a pure python package with no additional
-build / compilation steps then the sdist and Wheel distributions will have
+build / compilation steps then the sdist and wheel distributions will have
 similar content. However if your package has extensions in other languages
 or is more complex in its build, the two distributions will be very different.</p>
 <p>Also note that we are not discussing conda build workflows in this section.
 <a class="reference external" href="https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html">You can learn more about conda builds here.</a></p>
 </div>
+</section>
 <section id="source-distribution-sdist">
 <h2>Source Distribution (sdist)<a class="headerlink" href="#source-distribution-sdist" title="Permalink to this heading">#</a></h2>
 <p><strong>Source files</strong> are the unbuilt files needed to build your
@@ -622,12 +712,12 @@ consistency -->
 </pre></div>
 </div>
 <div class="tip admonition">
-<p class="admonition-title">GitHub archive vs SDist</p>
+<p class="admonition-title">GitHub archive vs sdist</p>
 <p>When you make a release on GitHub, it creates a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">archive</span></code> that contains all
 of the files in your GitHub repository. While these files are similar to an
-SDist, these two archives are not the same. The SDist contains a few other
+sdist, these two archives are not the same. The sdist contains a few other
 items including a metadata directory and if you use <code class="docutils literal notranslate"><span class="pre">setuptools_scm</span></code> or <code class="docutils literal notranslate"><span class="pre">hatch_vcs</span></code>
-the SDist may also contain a file that stores the version.</p>
+the sdist may also contain a file that stores the version.</p>
 </div>
 </section>
 <section id="wheel-whl-files">
@@ -727,7 +817,7 @@ worry about malicious code injections when it is installed.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Package Build Tools</p>
+        <p class="prev-next-title">Python Packaging Tools</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -746,6 +836,12 @@ worry about malicious code injections when it is installed.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-building-a-python-package">What is building a Python package?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-metadata-and-pypi">Project metadata and PyPI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-xclim">An example - xclim</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-the-distribution-format-that-pypi-and-pip-expects">How to create the distribution format that PyPI and Pip expects?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-distribution-sdist">Source Distribution (sdist)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wheel-whl-files">Wheel (.whl files):</a></li>
 </ul>
@@ -787,8 +883,8 @@ worry about malicious code injections when it is installed.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -811,7 +907,7 @@ worry about malicious code injections when it is installed.</p>
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>
