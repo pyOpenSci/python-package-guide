@@ -1,6 +1,8 @@
-# Python Package Build Tools
+# Python Packaging Tools
 
 <!-- TODO: add a small discussion on what pinning is?-->
+
+## Tools for building your package
 
 There are a several different build tools that you can use to [create your Python package's _sdist_ and _wheel_ distributions](python-package-distribution-files-sdist-wheel). Below, we discuss the features,
 benefits and limitations of the most commonly used Python packaging tools.

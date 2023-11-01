@@ -1,16 +1,130 @@
-# The Python Package Source and Wheel Distributions
+# Learn about Building a Python Package
+
+:::{figure-md} build-workflow
+<img src="../images/python-package-development-process.png" alt="Alt tag to be added when image is final" width="700px">
+
+You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.
+:::
+
+## What is building a Python package?
+
+To [publish your Python package](build-workflow) and make it easy for anyone to install, you first need to build it.
+
+But, what does it mean to build a Python package?
+
+[As shown in the figure above](build-workflow), when you build your Python package, you convert the source files into something called a distribution package. A distribution package contains your source code and metadata about the package, in the format required by the Python Package Index, so that it can be installed by tools like pip.
+
+:::{note}
+The term package used to mean many different things in Python and other languages. On this page, we adapt the convention of the [Python Packaging Authority](https://www.pypa.io/en/latest/) and refer to the product of the
+build step as a **distribution package**.
+:::
+
+This process of organizing and formatting your
+code, documentation, tests and metadata into a format that both pip
+and PyPI can use, is called a build step.
+
+### Project metadata and PyPI
+
+The metadata that both build tools and PyPI uses to describe and understand your package is generally stored in a [pyproject.toml file](pyproject-toml-python-package-metadata). This metadata is used for several purposes:
+
+1. It helps whatever tool you use to build your package (pip, [pypa's Build](https://pypi.org/project/build/) or an end-to-end tool such as poetry, PDM or Hatch) understand how to build your package. Information it provides to your build tool includes:
+
+- The [build-system] table in your pyproject.toml file tells pip what [build backend tool](python-package-build-tools.html#build-back-ends) you wish to use for creating your sdist and wheel distributions.
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+```
+
+- And the dependencies section of your project table tells the build tool and PyPI what dependencies your project requires.
+
+```
+dependencies = [
+    "numpy",
+    "geopandas",
+]
+```
+
+2. When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:
+
+- The `classifiers = ` section of your `[project]` table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that contain specific licenses or that support specific versions of python.
+
+```toml
+classifiers = [
+    # How mature is this project? Common values are
+    "Development Status :: 4 - Beta",
+
+    # Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+```
+
+```{admonition}
+project metadata used to be stored in either a setup.py file or a setup.cfg file. The current recommended practice for storing package metadata is to use a pyproject.toml file. [Learn more about the pyproject.toml file here.](pyproject-toml-python-package-metadata)
+```
+
+### An example - xclim
+
+When you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at [xclim](https://pypi.org/project/xclim/), one of our [pyOpenSci packages](https://www.pyopensci.org/python-packages.html). Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim's maintainers, [pyproject.toml file](https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml). This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.
+
+```{figure} ../images/python-build-package/pypi-metadata-classifiers.png
+:scale: 50 %
+:align: center
+:alt: Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options." width="300px">
+
+When you add the classifier section to your pyproject.toml
+and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
+represent on your pypi landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.
+```
+
+:::{figure-md} fig-target
+<img src="../images/python-build-package/pypi-metadata-keywords-license.png" alt="t." width="700px">
+
+:::
+
+:::{figure-md} fig-target
+<img src="../images/python-build-package/pypi-metadata-maintainers.png" alt="t." width="700px">
+
+:::
+
+## How to create the distribution format that PyPI and Pip expects?
+
+You could in theory create your own scripts to organize your code the way PyPI wants it to be. However, just like there are packages that handle known structures such as Pandas for data frames and Numpy for arrays, there are packages and tools that help you create package build distribution files.
+
+```{note}
+
+There are a suite of packaging tools that can either help you with
+the entire packaging process or just one step of the process. For instance
+setuptools is a commonly used build back end that can be used to create your
+sdist and wheel. Whereas tools like Hatch, PDM, Poetry and flit help with other
+parts of the packaging process.
+
+While this can cause some confusion and
+complexity in the packaging ecosystem - for the most part, each tool provides
+the same distribution output (with minor differences that most users may not
+care about). Learn more about those tools on this page.
+```
+
+Below, you will learn about the two distribution files that PyPI expects you to publish: sdist and wheel. You will learn about
+their structure and what files belong in each.
 
 There are two core distribution files
 that you need to create to publish your Python package to
 PyPI source distribution (often called an sdist) and wheel. The sdist contains the raw source
-code for your package. The Wheel (.whl) contains the built / compiled files
+code for your package. The wheel (.whl) contains the built / compiled files
 that can be directly installed onto anyones' computer.
 
 Learn more about both distributions below.
 
 ```{note}
 If your package is a pure python package with no additional
-build / compilation steps then the sdist and Wheel distributions will have
+build / compilation steps then the sdist and wheel distributions will have
 similar content. However if your package has extensions in other languages
 or is more complex in its build, the two distributions will be very different.
 
@@ -82,13 +196,13 @@ stravalib-1.1.0.post2-SDist.tar.gz file contents
 
 ```
 
-```{admonition} GitHub archive vs SDist
+```{admonition} GitHub archive vs sdist
 :class: tip
 When you make a release on GitHub, it creates a `git archive` that contains all
 of the files in your GitHub repository. While these files are similar to an
-SDist, these two archives are not the same. The SDist contains a few other
+sdist, these two archives are not the same. The sdist contains a few other
 items including a metadata directory and if you use `setuptools_scm` or `hatch_vcs`
-the SDist may also contain a file that stores the version.
+the sdist may also contain a file that stores the version.
 ```
 
 ## Wheel (.whl files):

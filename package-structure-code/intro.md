@@ -14,10 +14,29 @@ best fitted for your workflow.
 :gutter: 3
 
 :::{grid-item-card}
+:link: python-package-structure
+:link-type: doc
+
+✨ 1. Package file structure ✨
+^^^
+src layout, flat layout and where should tests folders live? No matter what your level of packaging knowledge is, this page will help you decide upon a package structure that follows modern python best practices.
+:::
+
+:::{grid-item-card}
+:link: python-package-structure
+:link-type: doc
+
+✨ 2. Learn about building your package ✨
+^^^
+Publishing a Python package is a great way to share your code with scientists to support open science workflow. In order to publish a package, you will need to first build it. The act of "building" refers to the process of placing your package code and
+metadata into a format that can be published on PyPI. Once published on PyPI, your users can easily install it locally using pip. Learn more about building a Python package here.
+:::
+
+:::{grid-item-card}
 :link: python-package-build-tools
 :link-type: doc
 
-✨ Finding the right packaging tool(s) ✨
+✨ 3. What Python package tool should you use? ✨
 ^^^
 
 Learn more about the suite of packaging tools out there.
@@ -25,19 +44,10 @@ And learn which tool might be best for you.
 :::
 
 :::{grid-item-card}
-:link: python-package-structure
-:link-type: doc
-
-✨ Package file structure ✨
-^^^
-src layout, flat layout and where should tests folders live? No matter what your level of packaging knowledge is, this page will help you decide upon a package structure that follows modern python best practices.
-:::
-
-:::{grid-item-card}
 :link: python-package-build-tools
 :link-type: doc
 
-✨ Publish to PyPI and Conda ✨
+✨ 4. Publish your package to PyPI and Conda ✨
 ^^^
 If you have a pure python package, it's a straight forward
 process to publish to both PyPI and then a Conda channel such as
@@ -45,10 +55,20 @@ conda-forge. Learn more here.
 :::
 
 :::{grid-item-card}
+:link: python-package-versions
+:link-type: doc
+
+✨ 5. Setup package versioning ✨
+^^^
+Semver (numeric versioning) and Calver (versioning using the date) are 2
+common ways to version a package. Which one should you pick? Learn more here.
+:::
+
+:::{grid-item-card}
 :link: code-style-linting-format
 :link-type: doc
 
-✨ Code style & linters ✨
+✨ 6. Code style & linters ✨
 ^^^
 Black, blue, flake8, Ruff - which tools can help you ensure your
 package follows best practices for code format? Learn more about the options and why this is important here.
@@ -135,7 +155,7 @@ Intro <self>
 
 Python package structure <python-package-structure>
 pyproject.toml Package Metadata <pyproject-toml-python-package-metadata>
-What are SDist & Wheel Files? <python-package-distribution-files-sdist-wheel>
+Build Your Package <python-package-distribution-files-sdist-wheel>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>
 ```
