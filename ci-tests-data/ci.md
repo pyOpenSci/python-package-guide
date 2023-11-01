@@ -8,17 +8,17 @@ These workflows include:
 - Building your documentation
 - Deploying your documentation to GitHub pages
 
-CI also allows you to automate running workflows across a suite of environments including:
+CI allows you to automate running workflows across a suite of environments including:
 
 - environments containing different Python versions and
-- different operating systems (Mac, Linux, Unix).
+- different operating systems (Mac, Linux, Windows).
 
 ### What is Continuous Deployment (CD)?
 
 Continuous deployment (CD) extends the CI process by automating the deployment of code changes to production or staging environments. In the case of your open source tool, CD can be used to:
 
 - Automate publishing to PyPI
-- Automate publishing your documentation to github pages or Read the Docs.
+- Automate publishing your documentation to GitHub Pages or Read the Docs.
 
 It is also used once your conda-forge recipe is set up to keep your package up to date on conda-forge.
 
@@ -54,9 +54,9 @@ templates that you can easily use and adapt to your own needs.
 :::{admonition} Other platforms that you may run into
 :class: info
 
-- [Appveyor:](https://www.appveyor.com/) used to be a goto for running tests on Windows operating systems until GitHub actions evolved to support Windows. AppVeyor has evolved to support other operating systems since Microsoft acquired GitHub.
-- [Travis CI:](https://www.travis-ci.com/) Used to be the most common CI platform used in our ecosystem until they dropped free support for open source.
-- [CircleCI:](https://circleci.com/) You will still see some people using CircleCI for specific tasks. CircleCi can be useful for automated builds of websites and documentation allowing you to preview the changes to that website in your browser.
+- [Appveyor:](https://www.appveyor.com/) used to be a `GOTO` for running tests on Windows operating systems until GitHub actions evolved to support Windows. AppVeyor has evolved to support other operating systems since Microsoft acquired GitHub.
+- [Travis CI:](https://www.travis-ci.com/) Had been the most common CI platform used in our ecosystem until they dropped free support for open source.
+- [CircleCI:](https://circleci.com/) You will still see some people using CircleCI for specific tasks. CircleCI can be useful for automated builds of websites and documentation allowing you to preview the changes to that website in your browser.
   :::
 
 ## Embrace automation
