@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
-    <script src="_static/matomo.js"></script>
+    <script src="_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/index.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -490,7 +492,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="pyopensci-python-open-source-package-development-guide">
-<h1>pyOpenSci Python Open Source Package Development Guide<a class="headerlink" href="#pyopensci-python-open-source-package-development-guide" title="Permalink to this heading">#</a></h1>
+<h1>pyOpenSci Python Open Source Package Development Guide<a class="headerlink" href="#pyopensci-python-open-source-package-development-guide" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -500,16 +502,16 @@ document.write(`
 <!-- Github community standards
 https://github.com/pyOpenSci/python-package-guide/community -->
 <section id="welcome-python-open-source-enthusiast">
-<h2>Welcome, Python open source enthusiast!<a class="headerlink" href="#welcome-python-open-source-enthusiast" title="Permalink to this heading">#</a></h2>
+<h2>Welcome, Python open source enthusiast!<a class="headerlink" href="#welcome-python-open-source-enthusiast" title="Link to this heading">#</a></h2>
 <p>Here you will find guidelines for what we look for in your scientific
 Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and package documentation.</p>
 <section id="pyopensci-s-packaging-goals">
-<h3>pyOpenSci’s packaging goals<a class="headerlink" href="#pyopensci-s-packaging-goals" title="Permalink to this heading">#</a></h3>
+<h3>pyOpenSci’s packaging goals<a class="headerlink" href="#pyopensci-s-packaging-goals" title="Link to this heading">#</a></h3>
 <p>Our goal is to help the
 community make decisions around how to create scientific Python packages. We are working towards a shared vision of packaging that helps users better understand where to start.</p>
 </section>
 <section id="how-this-guide-is-created">
-<h3>How this guide is created<a class="headerlink" href="#how-this-guide-is-created" title="Permalink to this heading">#</a></h3>
+<h3>How this guide is created<a class="headerlink" href="#how-this-guide-is-created" title="Link to this heading">#</a></h3>
 <p>This guide is created by pyOpenSci through an extensive review process. Each page in the guide has been reviewed by experts in the broader Python packaging landscape including people from :</p>
 <ul class="simple">
 <li><p>conda &amp; conda-forge</p></li>
@@ -576,7 +578,7 @@ contribute.</p>
 </section>
 </section>
 <section id="who-this-guidebook-is-for">
-<h2>Who this guidebook is for<a class="headerlink" href="#who-this-guidebook-is-for" title="Permalink to this heading">#</a></h2>
+<h2>Who this guidebook is for<a class="headerlink" href="#who-this-guidebook-is-for" title="Link to this heading">#</a></h2>
 <p>We assume that you are here because you are:</p>
 <ol class="arabic simple">
 <li><p>Looking for guidance on creating a Python package.</p></li>
@@ -587,12 +589,12 @@ contribute.</p>
 <figure class="align-default" id="fig-target">
 <a class="reference internal image-reference" href="_images/python-flying-xkcd.png"><img alt="xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?" src="_images/python-flying-xkcd.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-text">Many love to use Python because it is a clean language to learn. It also is incredibly flexible allowing it to be used across numerous domains. Source: xkcd comics.</span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Many love to use Python because it is a clean language to learn. It also is incredibly flexible allowing it to be used across numerous domains. Source: xkcd comics.</span><a class="headerlink" href="#fig-target" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="what-you-will-find-in-this-guidebook">
-<h2>What you will find in this guidebook<a class="headerlink" href="#what-you-will-find-in-this-guidebook" title="Permalink to this heading">#</a></h2>
+<h2>What you will find in this guidebook<a class="headerlink" href="#what-you-will-find-in-this-guidebook" title="Link to this heading">#</a></h2>
 <p>This guidebook contains:</p>
 <ul class="simple">
 <li><p>Explanation for “Good enough” minimum requirements associated with being reviewed by pyOpenSci</p></li>
@@ -601,7 +603,7 @@ contribute.</p>
 </ul>
 </section>
 <section id="where-this-guide-is-headed">
-<h2>Where this guide is headed<a class="headerlink" href="#where-this-guide-is-headed" title="Permalink to this heading">#</a></h2>
+<h2>Where this guide is headed<a class="headerlink" href="#where-this-guide-is-headed" title="Link to this heading">#</a></h2>
 <p>Most of the sections in this guide will ultimately include Good/Better/Best recommendations for Python open source software packaging.</p>
 <p>Good meets the requirements. Going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.</p>
 <p>This guide is now a work in progress. If you have ideas of things you’d like

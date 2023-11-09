@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/code-style-linting-format';</script>
-    <script src="../_static/matomo.js"></script>
+    <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/code-style-linting-format.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -543,7 +545,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="python-package-code-style-format-and-linters">
-<h1>Python Package Code Style, Format and Linters<a class="headerlink" href="#python-package-code-style-format-and-linters" title="Permalink to this heading">#</a></h1>
+<h1>Python Package Code Style, Format and Linters<a class="headerlink" href="#python-package-code-style-format-and-linters" title="Link to this heading">#</a></h1>
 <div class="admonition-take-aways admonition">
 <p class="admonition-title">Take Aways</p>
 <ul class="simple">
@@ -577,7 +579,7 @@ a discussion of:</p>
 format tools in daily workflows and in pull requests on GitHub easier.</p></li>
 </ol>
 <section id="use-a-code-format-tool-or-tools-to-make-your-life-easier">
-<h2>Use a code format tool (or tools) to make your life easier<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Permalink to this heading">#</a></h2>
+<h2>Use a code format tool (or tools) to make your life easier<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Link to this heading">#</a></h2>
 <p>We suggest that you use a code format tool, or a set of format tools, because
 manually applying all of the PEP 8 format specifications is time consuming
 for both maintainers and can be a road block for potential new contributors.
@@ -597,17 +599,17 @@ the work out of manually implementing code format requirements.</p>
 will also broadly make code easier to scan, understand and contribute to.</p>
 </section>
 <section id="linting-vs-format-and-style">
-<h2>Linting vs format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Permalink to this heading">#</a></h2>
+<h2>Linting vs format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Link to this heading">#</a></h2>
 <p>Before we dive in let’s get a few definitions out of the way.</p>
 <section id="code-linting">
-<h3>Code Linting<a class="headerlink" href="#code-linting" title="Permalink to this heading">#</a></h3>
+<h3>Code Linting<a class="headerlink" href="#code-linting" title="Link to this heading">#</a></h3>
 <p>A code linter is a tool that will review your code and
 identify errors or issues. A linter typically does not modify your code. It
 will tell you what the error is and on what line it was discovered. Flake8,
 discussed below, is an example of a commonly-used code linter.</p>
 </section>
 <section id="code-formatters-and-stylers">
-<h3>Code Formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Permalink to this heading">#</a></h3>
+<h3>Code Formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Link to this heading">#</a></h3>
 <p>Python focused code formatters often follow PEP 8 standards. However, they also
 make stylistic decisions about code consistency. Code formatters will
 reformat your code for you.</p>
@@ -618,9 +620,9 @@ quotes for strings, and spacing of items in lists.</p>
 </section>
 </section>
 <section id="code-format-and-style">
-<h2>Code format and style<a class="headerlink" href="#code-format-and-style" title="Permalink to this heading">#</a></h2>
+<h2>Code format and style<a class="headerlink" href="#code-format-and-style" title="Link to this heading">#</a></h2>
 <section id="black">
-<h3>Black<a class="headerlink" href="#black" title="Permalink to this heading">#</a></h3>
+<h3>Black<a class="headerlink" href="#black" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> is a code
 formatter. Black will automagically (and <em>unapologetically</em>)
 fix spacing issues and ensure code format is consistent throughout your
@@ -640,7 +642,7 @@ use the <a class="reference external" href="https://black.vercel.app/">Black pla
 code function rather than worry about format.</p>
 </section>
 <section id="flake8-for-linting-code-in-python-packages">
-<h3>flake8 for linting code in Python packages<a class="headerlink" href="#flake8-for-linting-code-in-python-packages" title="Permalink to this heading">#</a></h3>
+<h3>flake8 for linting code in Python packages<a class="headerlink" href="#flake8-for-linting-code-in-python-packages" title="Link to this heading">#</a></h3>
 <p>To adhere to Python <code class="docutils literal notranslate"><span class="pre">pep8</span></code> format standards, you might want to add
 <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> to your code format
 toolbox.</p>
@@ -671,7 +673,7 @@ stravalib/model.py:496:80:<span class="w"> </span>E501<span class="w"> </span>li
 </div>
 </section>
 <section id="isort">
-<h3>Isort<a class="headerlink" href="#isort" title="Permalink to this heading">#</a></h3>
+<h3>Isort<a class="headerlink" href="#isort" title="Link to this heading">#</a></h3>
 <p>Python imports refer to the Python packages that a module in your package
 requires. Imports should always be located at the top of each Python module in
 your package.</p>
@@ -691,7 +693,7 @@ order. It will then modify your code, automatically reordering
 all imports. This leaves you with one less thing to think about when cleaning
 up your code.</p>
 <section id="example-application-of-isort">
-<h4>Example application of isort<a class="headerlink" href="#example-application-of-isort" title="Permalink to this heading">#</a></h4>
+<h4>Example application of isort<a class="headerlink" href="#example-application-of-isort" title="Link to this heading">#</a></h4>
 <p>Code imports before <code class="docutils literal notranslate"><span class="pre">isort</span></code> is run:</p>
 <p>Below, the exc module is a part of starvalib which is a
 third party package. <code class="docutils literal notranslate"><span class="pre">abc</span></code> and <code class="docutils literal notranslate"><span class="pre">logging</span></code> are core <code class="docutils literal notranslate"><span class="pre">Python</span></code> packages
@@ -721,7 +723,7 @@ spaces in the imports listed below.</p>
 </section>
 </section>
 <section id="ruff">
-<h3>Ruff<a class="headerlink" href="#ruff" title="Permalink to this heading">#</a></h3>
+<h3>Ruff<a class="headerlink" href="#ruff" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://beta.ruff.rs">Ruff</a> is a new addition to the code quality ecosystem,
 gaining some traction since its release.
 <code class="docutils literal notranslate"><span class="pre">ruff</span></code> is a linter for Python, aiming to replace several tools behind a single interface.
@@ -758,9 +760,9 @@ As such, <code class="docutils literal notranslate"><span class="pre">ruff</span
 </section>
 </section>
 <section id="how-to-use-code-formatter-in-your-local-workflow">
-<h2>How to use code formatter in your local workflow<a class="headerlink" href="#how-to-use-code-formatter-in-your-local-workflow" title="Permalink to this heading">#</a></h2>
+<h2>How to use code formatter in your local workflow<a class="headerlink" href="#how-to-use-code-formatter-in-your-local-workflow" title="Link to this heading">#</a></h2>
 <section id="linters-code-formatters-and-your-favorite-coding-tools">
-<h3>Linters, code formatters and your favorite coding tools<a class="headerlink" href="#linters-code-formatters-and-your-favorite-coding-tools" title="Permalink to this heading">#</a></h3>
+<h3>Linters, code formatters and your favorite coding tools<a class="headerlink" href="#linters-code-formatters-and-your-favorite-coding-tools" title="Link to this heading">#</a></h3>
 <p>Linters can be run as a command-line tool as shown above. They also can
 be run within your favorite coding tool (e.g. VScode, pycharm, etc).
 For example, you might prefer to have tools like Black and isort
@@ -769,12 +771,12 @@ your favorite code format tools on demand.</p>
 </section>
 </section>
 <section id="use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits">
-<h2>Use pre-commit hooks to run code formatters and linters on commits<a class="headerlink" href="#use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits" title="Permalink to this heading">#</a></h2>
+<h2>Use pre-commit hooks to run code formatters and linters on commits<a class="headerlink" href="#use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits" title="Link to this heading">#</a></h2>
 <p>You can also setup a <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">hook</span></code> in your Python package repository.</p>
 <p>A pre-commit hook is a tool that allows an action (or actions)
 to be triggered when you apply a commit to your git repository.</p>
 <section id="pre-commit-hook-example-workflow">
-<h3>Pre-commit hook example workflow<a class="headerlink" href="#pre-commit-hook-example-workflow" title="Permalink to this heading">#</a></h3>
+<h3>Pre-commit hook example workflow<a class="headerlink" href="#pre-commit-hook-example-workflow" title="Link to this heading">#</a></h3>
 <p>The precommit workflow looks like this:
 You type and run:</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;message</span> <span class="pre">here&quot;</span></code> at the command line</p>
@@ -798,7 +800,7 @@ commit. And re-run your commit.</p></li>
 <p><span class="caption-text">The pre-commit workflow begins with you adding files that have changes to be
 staged in git. Next, you’d run git commit. when you run git commit, the pre-commit
 hooks will then run. In this example, Black, the code formatter and flake8, a linter both run. If all of the files pass Black and flake8 checks, then your commit will be recorded. If they don’t, the commit is canceled. You will have to fix any flake8 issues,
-and then re-add / stage the files to be committed. <a class="reference external" href="https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/*"><em>Image Source</em></a></span><a class="headerlink" href="#precommit-hook" title="Permalink to this image">#</a></p>
+and then re-add / stage the files to be committed. <a class="reference external" href="https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/*"><em>Image Source</em></a></span><a class="headerlink" href="#precommit-hook" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <!-- For instance, if you setup the Black code formatter as a pre-commit hook,
@@ -817,7 +819,7 @@ new changes are merged.</p>
 </section>
 </section>
 <section id="general-pre-commit-checks">
-<h2>General pre commit checks<a class="headerlink" href="#general-pre-commit-checks" title="Permalink to this heading">#</a></h2>
+<h2>General pre commit checks<a class="headerlink" href="#general-pre-commit-checks" title="Link to this heading">#</a></h2>
 <p>In addition to calling tools, Pre-commit also has a suite of <a class="reference external" href="https://github.com/pre-commit/pre-commit-hooks#hooks-available">built in format
 hooks</a> that
 you can call. Some, such as trailing-whitespace can be also useful to add
@@ -826,7 +828,7 @@ to your pre-commit workflow to ensure clean, streamlined code files.</p>
 all setup.</p>
 </section>
 <section id="pre-commit-ci">
-<h2>Pre-commit.ci<a class="headerlink" href="#pre-commit-ci" title="Permalink to this heading">#</a></h2>
+<h2>Pre-commit.ci<a class="headerlink" href="#pre-commit-ci" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pre-commit.ci">Pre-commit.ci</a> is a bot that may become your new
 best friend. This bot, when setup on a repo can be configured to do the following:</p>
 <ul class="simple">
@@ -846,7 +848,7 @@ about fixing code format. The bot will do the work for them.</p></li>
 </ul>
 </section>
 <section id="setting-up-a-git-pre-commit-hook">
-<h2>Setting up a git pre-commit hook<a class="headerlink" href="#setting-up-a-git-pre-commit-hook" title="Permalink to this heading">#</a></h2>
+<h2>Setting up a git pre-commit hook<a class="headerlink" href="#setting-up-a-git-pre-commit-hook" title="Link to this heading">#</a></h2>
 <p>To setup pre-commit locally, you need to do 3 things:</p>
 <ol class="arabic simple">
 <li><p>Install pre-commit (and include it as a development requirement in your repository)</p></li>
@@ -917,7 +919,7 @@ in this case, it specifies a <code class="docutils literal notranslate"><span cl
 Pre-commit will run every time you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>pyOpenSci suggests setting up a linter and a code styler for
 your package, regardless of whether you use pre-commit hooks, CI
 or other infrastructure to manage code format. Setting up these

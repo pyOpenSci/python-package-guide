@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/write-user-documentation/get-started';</script>
-    <script src="../../_static/matomo.js"></script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/documentation/write-user-documentation/get-started.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -556,7 +558,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="create-user-facing-documentation-for-your-python-package">
-<h1>Create User Facing Documentation for your Python Package<a class="headerlink" href="#create-user-facing-documentation-for-your-python-package" title="Permalink to this heading">#</a></h1>
+<h1>Create User Facing Documentation for your Python Package<a class="headerlink" href="#create-user-facing-documentation-for-your-python-package" title="Link to this heading">#</a></h1>
 <!-- ```{important}
 ## Quick takeaways: best practices
 
@@ -568,7 +570,7 @@ Your package:
 * Documentation should include short quick-start tutorials
 ``` -->
 <section id="core-components-of-user-facing-python-package-documentation">
-<h2>Core components of user-facing Python package documentation<a class="headerlink" href="#core-components-of-user-facing-python-package-documentation" title="Permalink to this heading">#</a></h2>
+<h2>Core components of user-facing Python package documentation<a class="headerlink" href="#core-components-of-user-facing-python-package-documentation" title="Link to this heading">#</a></h2>
 <p>Below we break documentation into two broad types.</p>
 <p><strong>User-facing documentation</strong> refers to documentation that describes the way the
 tools within a package are broadly used in workflows. <strong>API documentation</strong> refers
@@ -585,7 +587,7 @@ code. Ideally, you have docstrings for all user-facing functions, classes, and m
 your Python package. <a class="reference internal" href="document-your-code-api-docstrings.html"><span class="doc std std-doc">We discuss code documentation and docstrings in greater detail here.</span></a></p></li>
 </ul>
 <section id="write-usable-documentation">
-<h3>Write usable documentation<a class="headerlink" href="#write-usable-documentation" title="Permalink to this heading">#</a></h3>
+<h3>Write usable documentation<a class="headerlink" href="#write-usable-documentation" title="Link to this heading">#</a></h3>
 <p>User-facing documentation should be published on a
 easy-to-navigate website. The documentation should be written keeping in mind that users may not be developers or expert-level programmers. Rather, the language
 that you use in your documentation should not be
@@ -600,7 +602,7 @@ to a broader audience:</p>
 </section>
 </section>
 <section id="four-elements-of-a-good-open-source-documentation-landing-page">
-<h2>Four elements of a good open source documentation landing page<a class="headerlink" href="#four-elements-of-a-good-open-source-documentation-landing-page" title="Permalink to this heading">#</a></h2>
+<h2>Four elements of a good open source documentation landing page<a class="headerlink" href="#four-elements-of-a-good-open-source-documentation-landing-page" title="Link to this heading">#</a></h2>
 <p>To make it easy for users to find what they need quickly,
 consider adding quick links on your package’s landing
 page to the following elements:</p>
@@ -613,7 +615,7 @@ page to the following elements:</p>
 <figure class="align-default" id="geopandas-landing">
 <a class="reference internal image-reference" href="../../_images/geopandas-documentation-landing-page.png"><img alt="Image showing the landing page for GeoPandas documentation which has 4 sections including Getting started, Documentation, About GeoPandas, Community." src="../../_images/geopandas-documentation-landing-page.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-text">The documentation landing page of GeoPandas, a spatial Python library, has the 4 element specified above. Notice that the landing page is simple and directs users to each element using a Sphinx card.</span><a class="headerlink" href="#geopandas-landing" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The documentation landing page of GeoPandas, a spatial Python library, has the 4 element specified above. Notice that the landing page is simple and directs users to each element using a Sphinx card.</span><a class="headerlink" href="#geopandas-landing" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>NOTE: in many cases you can include your <strong>README</strong> file and your <strong>CONTRIBUTING</strong> files

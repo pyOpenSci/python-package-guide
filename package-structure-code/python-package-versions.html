@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-versions';</script>
-    <script src="../_static/matomo.js"></script>
+    <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-versions.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -543,7 +545,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="creating-new-versions-of-your-python-package">
-<h1>Creating New Versions of Your Python Package<a class="headerlink" href="#creating-new-versions-of-your-python-package" title="Permalink to this heading">#</a></h1>
+<h1>Creating New Versions of Your Python Package<a class="headerlink" href="#creating-new-versions-of-your-python-package" title="Link to this heading">#</a></h1>
 <!-- * mention release should be incremental
 * rep changes in the code that are either patches, minor fixes, major updates -->
 <div class="admonition-key-takeways admonition">
@@ -577,7 +579,7 @@ document your deprecation policy for code.</p>
 </div>
 <!-- TODO: Better link to what expressive code is?-->
 <section id="semver-rules">
-<h2>SemVer rules<a class="headerlink" href="#semver-rules" title="Permalink to this heading">#</a></h2>
+<h2>SemVer rules<a class="headerlink" href="#semver-rules" title="Link to this heading">#</a></h2>
 <p>Following SemVer, your bump your package version to a:</p>
 <ul class="simple">
 <li><p>patch (1.1.1 –&gt; 1.1.<strong>2</strong>)</p></li>
@@ -604,7 +606,7 @@ package has a reasonable approach to versioning!</p>
 </div>
 </section>
 <section id="avoid-manually-updating-python-package-version-numbers-if-you-can">
-<h2>Avoid manually updating Python package version numbers if you can<a class="headerlink" href="#avoid-manually-updating-python-package-version-numbers-if-you-can" title="Permalink to this heading">#</a></h2>
+<h2>Avoid manually updating Python package version numbers if you can<a class="headerlink" href="#avoid-manually-updating-python-package-version-numbers-if-you-can" title="Link to this heading">#</a></h2>
 <p>Often times you may want to have your package version value in
 multiple locations. One example of this is that it might be both
 an attribute in your package <strong>version</strong> and also called
@@ -620,7 +622,7 @@ Python package versions.</p>
 <!-- bump2version isn't really maintained anymore - are there alternatives? -->
 </section>
 <section id="tools-to-manage-versions-for-your-python-package">
-<h2>Tools to manage versions for your Python package<a class="headerlink" href="#tools-to-manage-versions-for-your-python-package" title="Permalink to this heading">#</a></h2>
+<h2>Tools to manage versions for your Python package<a class="headerlink" href="#tools-to-manage-versions-for-your-python-package" title="Link to this heading">#</a></h2>
 <p>There are a handful of tools that are widely used in the scientific ecosystem that you can use to manage your package
 versions. Some of these tools are built into or work with your chosen
 <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">packaging build tools that discussed in this chapter.</span></a></p>
@@ -638,7 +640,7 @@ that implements a semantic versioning approach.</p></li>
 <li><p><strong>Version Control System tools:</strong> Finally there are tools that rely on your version control system to track versions. These tools often are plugins to your package build tool (ex: setuptools build or hatchling). We discuss this option below assuming that you are using <strong>.git tags</strong> and <strong>GitHub</strong> to manage your package repository.</p></li>
 </ol>
 <section id="semantic-release-vs-version-control-based-vs-manual-version-bumping">
-<h3>Semantic release, vs version control based vs manual version bumping<a class="headerlink" href="#semantic-release-vs-version-control-based-vs-manual-version-bumping" title="Permalink to this heading">#</a></h3>
+<h3>Semantic release, vs version control based vs manual version bumping<a class="headerlink" href="#semantic-release-vs-version-control-based-vs-manual-version-bumping" title="Link to this heading">#</a></h3>
 <p>Generally semantic release and version control system tools
 can be setup to run automatically on GitHub using GitHub actions.
 This means that you can create a workflow where a GitHub release
@@ -661,7 +663,7 @@ of versions that you might consider:</p>
 </section>
 </section>
 <section id="tools-for-bumping-python-package-versions">
-<h2>Tools for bumping Python package versions<a class="headerlink" href="#tools-for-bumping-python-package-versions" title="Permalink to this heading">#</a></h2>
+<h2>Tools for bumping Python package versions<a class="headerlink" href="#tools-for-bumping-python-package-versions" title="Link to this heading">#</a></h2>
 <p>In this section we discuss the following tools for managing
 your Python package’s version:</p>
 <ul class="simple">
@@ -671,7 +673,7 @@ your Python package’s version:</p>
 <li><p>python-semantic-version</p></li>
 </ul>
 <section id="tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning">
-<h3>Tool 1: Hatch and other build tools that offer incremental versioning<a class="headerlink" href="#tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning" title="Permalink to this heading">#</a></h3>
+<h3>Tool 1: Hatch and other build tools that offer incremental versioning<a class="headerlink" href="#tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning" title="Link to this heading">#</a></h3>
 <p>Many of the modern build tool front end tools offer version support
 that follow semantic versioning rules. These tools are different
 from Python Semantic Version in that they do not require specific
@@ -684,20 +686,20 @@ to update the version at the command line using commands such as:</p>
 <p><a class="reference external" href="https://hatch.pypa.io/latest/version/">Hatch</a>, for instance offers <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">version</span> <span class="pre">minor</span></code> which will modify
 the version of your package incrementally. With <strong>Hatch</strong> the version value will be found in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. <!-- TODO double check this --></p>
 <section id="hatch-or-other-tools-like-pdm-pros">
-<h4>Hatch (or other tools like PDM) Pros<a class="headerlink" href="#hatch-or-other-tools-like-pdm-pros" title="Permalink to this heading">#</a></h4>
+<h4>Hatch (or other tools like PDM) Pros<a class="headerlink" href="#hatch-or-other-tools-like-pdm-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Easy to use version updates locally using a single tool!</p></li>
 </ul>
 </section>
 <section id="hatch-or-other-tools-like-pdm-cons">
-<h4>Hatch (or other tools like PDM) Cons<a class="headerlink" href="#hatch-or-other-tools-like-pdm-cons" title="Permalink to this heading">#</a></h4>
+<h4>Hatch (or other tools like PDM) Cons<a class="headerlink" href="#hatch-or-other-tools-like-pdm-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>There will be some setup involved to ensure package version is updated throughout your package</p></li>
 </ul>
 </section>
 </section>
 <section id="tool-2-hatch-vcs-hatchling-build-back-end">
-<h3>Tool 2: Hatch_vcs &amp; hatchling build back-end<a class="headerlink" href="#tool-2-hatch-vcs-hatchling-build-back-end" title="Permalink to this heading">#</a></h3>
+<h3>Tool 2: Hatch_vcs &amp; hatchling build back-end<a class="headerlink" href="#tool-2-hatch-vcs-hatchling-build-back-end" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://github.com/ofek/hatch-vcs">hatch_vcs</a> is a versioning tool
 that allows you to manage package versions using <strong>git tags</strong>.
 Hatch_vcs creates a <strong>_version.py</strong> file in your package ecosystem that
@@ -719,7 +721,7 @@ including <strong>Flit</strong> and <strong>PDM</strong> if you prefer those for
 day workflow.</p>
 </div>
 <section id="hatch-example-setup-in-your-pyproject-toml">
-<h4>Hatch example setup in your pyproject.toml<a class="headerlink" href="#hatch-example-setup-in-your-pyproject-toml" title="Permalink to this heading">#</a></h4>
+<h4>Hatch example setup in your pyproject.toml<a class="headerlink" href="#hatch-example-setup-in-your-pyproject-toml" title="Link to this heading">#</a></h4>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyproject.toml example build setup to use hatchling and hatch_vcs</span>
 <span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;hatchling&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hatch-vcs&quot;</span><span class="p">]</span>
@@ -739,7 +741,7 @@ push to PyPI workflow on GitHub.</p>
 </div>
 </section>
 <section id="hatch-vcs-pros">
-<h4>hatch_vcs Pros<a class="headerlink" href="#hatch-vcs-pros" title="Permalink to this heading">#</a></h4>
+<h4>hatch_vcs Pros<a class="headerlink" href="#hatch-vcs-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Hatch supports modern Python packaging standards</p></li>
 <li><p>It creates a single-source file that contains your package version.</p></li>
@@ -751,7 +753,7 @@ push to PyPI workflow on GitHub.</p>
 </ul>
 </section>
 <section id="hatch-vcs-cons">
-<h4>hatch_vcs Cons<a class="headerlink" href="#hatch-vcs-cons" title="Permalink to this heading">#</a></h4>
+<h4>hatch_vcs Cons<a class="headerlink" href="#hatch-vcs-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub. But you could locally develop a build to “bump” tag
 versions</p></li>
@@ -759,7 +761,7 @@ versions</p></li>
 </section>
 </section>
 <section id="tool-3-setuptools-scm-versioning-using-git-tags">
-<h3>Tool 3: setuptools-scm versioning using git tags<a class="headerlink" href="#tool-3-setuptools-scm-versioning-using-git-tags" title="Permalink to this heading">#</a></h3>
+<h3>Tool 3: setuptools-scm versioning using git tags<a class="headerlink" href="#tool-3-setuptools-scm-versioning-using-git-tags" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://github.com/pypa/setuptools_scm/"><code class="docutils literal notranslate"><span class="pre">Setuptools_scm</span></code></a> is an
 extension that you can use with setuptools to manage package
 versions. <strong>Setuptools_scm</strong> operates the same way that
@@ -778,7 +780,7 @@ determine the package’s current version.</p>
 <li><p><strong>setuptools</strong> is still the most commonly used Python packaging build tool</p></li>
 </ul>
 <section id="setuptools-scm-cons">
-<h4>setuptools_scm Cons<a class="headerlink" href="#setuptools-scm-cons" title="Permalink to this heading">#</a></h4>
+<h4>setuptools_scm Cons<a class="headerlink" href="#setuptools-scm-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub.</p></li>
 <li><p>Not well documented</p></li>
@@ -797,7 +799,7 @@ that will help you get started with using setuptools-scm](https://www.moritzkoer
 </section>
 </section>
 <section id="tool-4-python-semantic-release">
-<h3>Tool 4: <a class="reference external" href="https://python-semantic-release.readthedocs.io/en/latest/">Python semantic release</a><a class="headerlink" href="#tool-4-python-semantic-release" title="Permalink to this heading">#</a></h3>
+<h3>Tool 4: <a class="reference external" href="https://python-semantic-release.readthedocs.io/en/latest/">Python semantic release</a><a class="headerlink" href="#tool-4-python-semantic-release" title="Link to this heading">#</a></h3>
 <p>Python semantic release uses a commit message workflow that updates
 the version of your package based on keywords found in your commit
 messages. As the name implies, Python Semantic Release follows
@@ -822,14 +824,14 @@ For example from version 1.1 to version 1.2</p>
 <p>You can find a thoughtful discussion of python semantic version <a class="reference external" href="https://py-pkgs.org/07-releasing-versioning#automatic-version-bumping">in this Python package guide</a>. Note that the guide hasn’t been updated since 2020 and will potentially be updated in the future! But for now, some of the commands are dated but the content is still excellent.</p>
 </div>
 <section id="python-semantic-release-pros">
-<h4>Python Semantic Release Pros<a class="headerlink" href="#python-semantic-release-pros" title="Permalink to this heading">#</a></h4>
+<h4>Python Semantic Release Pros<a class="headerlink" href="#python-semantic-release-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Follows semver versioning closely</p></li>
 <li><p>Enforces maintainers using descriptive commit messages which can simplify troubleshooting and ensure a cleaner and more self-describing git history.</p></li>
 </ul>
 </section>
 <section id="python-semantic-release-cons">
-<h4>Python Semantic Release Cons<a class="headerlink" href="#python-semantic-release-cons" title="Permalink to this heading">#</a></h4>
+<h4>Python Semantic Release Cons<a class="headerlink" href="#python-semantic-release-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Requires very specific commit language to work. In practice some maintainers and contributors may not be able to maintain that level of specificity in commit messages (NOTE: there are bots that will check git commit messages in a repo)</p></li>
 <li><p>Release happens at the command line. This makes is harder to implement a GitHub based release workflow as the wrong commit message could trigger a release.</p></li>

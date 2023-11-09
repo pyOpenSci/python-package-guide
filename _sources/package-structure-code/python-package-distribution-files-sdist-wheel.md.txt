@@ -1,18 +1,18 @@
 # Learn about Building a Python Package
 
-:::{figure-md} build-workflow
-<img src="../images/python-package-development-process.png" alt="Alt tag to be added when image is final" width="700px">
+:::{figure-md} build_workflow
+<img src="../images/python-package-development-process.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda forge for an automated build that sends distributions from pypi to conda-forge. " width="700px">
 
-You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.
+You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
 :::
 
 ## What is building a Python package?
 
-To [publish your Python package](build-workflow) and make it easy for anyone to install, you first need to build it.
+To [publish your Python package](build_workflow) and make it easy for anyone to install, you first need to build it.
 
 But, what does it mean to build a Python package?
 
-[As shown in the figure above](build-workflow), when you build your Python package, you convert the source files into something called a distribution package. A distribution package contains your source code and metadata about the package, in the format required by the Python Package Index, so that it can be installed by tools like pip.
+[As shown in the figure above](build_workflow), when you build your Python package, you convert the source files into something called a distribution package. A distribution package contains your source code and metadata about the package, in the format required by the Python Package Index, so that it can be installed by tools like pip.
 
 :::{note}
 The term package used to mean many different things in Python and other languages. On this page, we adapt the convention of the [Python Packaging Authority](https://www.pypa.io/en/latest/) and refer to the product of the
@@ -29,7 +29,7 @@ The metadata that both build tools and PyPI uses to describe and understand your
 
 1. It helps whatever tool you use to build your package (pip, [pypa's Build](https://pypi.org/project/build/) or an end-to-end tool such as poetry, PDM or Hatch) understand how to build your package. Information it provides to your build tool includes:
 
-- The [build-system] table in your pyproject.toml file tells pip what [build backend tool](python-package-build-tools.html#build-back-ends) you wish to use for creating your sdist and wheel distributions.
+- The `[build-system]` table in your pyproject.toml file tells pip what [build backend tool](build_backends) you wish to use for creating your sdist and wheel distributions.
 
 ```toml
 [build-system]
@@ -65,8 +65,10 @@ classifiers = [
 ]
 ```
 
-```{admonition}
-project metadata used to be stored in either a setup.py file or a setup.cfg file. The current recommended practice for storing package metadata is to use a pyproject.toml file. [Learn more about the pyproject.toml file here.](pyproject-toml-python-package-metadata)
+```{admonition} What happened to setup.py and setup.cfg for metadata?
+:class: note
+
+Project metadata used to be stored in either a setup.py file or a setup.cfg file. The current recommended practice for storing package metadata is to use a pyproject.toml file. [Learn more about the pyproject.toml file here.](pyproject-toml-python-package-metadata)
 ```
 
 ### An example - xclim
@@ -80,17 +82,29 @@ When you publish to PyPI, you will notice that each package has metadata listed.
 
 When you add the classifier section to your pyproject.toml
 and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
-represent on your pypi landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.
+represent on your PyPI landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.
 ```
 
-:::{figure-md} fig-target
-<img src="../images/python-build-package/pypi-metadata-keywords-license.png" alt="t." width="700px">
+:::{figure-md} build-workflow
+<img src="../images/python-package-development-process.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda forge for an automated build that sends distributions from pypi to conda-forge. " width="700px">
 
+You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
 :::
 
-:::{figure-md} fig-target
-<img src="../images/python-build-package/pypi-metadata-maintainers.png" alt="t." width="700px">
+:::{figure-md}
 
+<img src="../images/python-build-package/pypi-metadata-keywords-license.png" alt="This screenshot shows the metadata on pypi for the xclim package. on it you can see the name of the license, the author and maintainer names keywords associated with the package and the base python version it requires which is 3.8." width="400px">
+
+PyPI screenshot showing metadata for the xclim package.
+:::
+
+---
+
+:::{figure-md} pypi-metadata-maintainers
+
+<img src="../images/python-build-package/pypi-metadata-maintainers.png" alt="Here you see the maintinaer metadata as it is displayed on PyPI. for xclim there are three maintainers listed with their profile pictures and github user names to the right. " width="300px">
+
+Maintainer names and GitHub usernames for the xclim package as they are displayed on PyPI. This information is recorded in your pyproject.toml and then processed by your build tool and stored in your packages sdist and wheel distributions.
 :::
 
 ## How to create the distribution format that PyPI and Pip expects?

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/write-user-documentation/document-your-code-api-docstrings';</script>
-    <script src="../../_static/matomo.js"></script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -556,9 +558,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="document-the-code-in-your-package-s-api-using-docstrings">
-<h1>Document the code in your package’s API using docstrings<a class="headerlink" href="#document-the-code-in-your-package-s-api-using-docstrings" title="Permalink to this heading">#</a></h1>
+<h1>Document the code in your package’s API using docstrings<a class="headerlink" href="#document-the-code-in-your-package-s-api-using-docstrings" title="Link to this heading">#</a></h1>
 <section id="what-is-an-api">
-<h2>What is an API?<a class="headerlink" href="#what-is-an-api" title="Permalink to this heading">#</a></h2>
+<h2>What is an API?<a class="headerlink" href="#what-is-an-api" title="Link to this heading">#</a></h2>
 <p>API stands for <strong>A</strong>pplied <strong>P</strong>rogramming <strong>I</strong>nterface. When
 discussed in the context of a (Python) package, the API refers to
 the functions, classes, methods, and attributes that a package maintainer creates for users.</p>
@@ -570,7 +572,7 @@ using the package’s API.</p>
 <p>Package APIs consist of functions, classes, methods and attributes that create a user interface.</p>
 </section>
 <section id="what-is-a-docstring-and-how-does-it-relate-to-documentation">
-<h2>What is a docstring and how does it relate to documentation?<a class="headerlink" href="#what-is-a-docstring-and-how-does-it-relate-to-documentation" title="Permalink to this heading">#</a></h2>
+<h2>What is a docstring and how does it relate to documentation?<a class="headerlink" href="#what-is-a-docstring-and-how-does-it-relate-to-documentation" title="Link to this heading">#</a></h2>
 <p>In Python a docstring refers to text in a function, method or class
 that describes what the function does and its inputs and outputs. Python programmers usually refer to the inputs to functions as <a class="reference external" href="https://docs.python.org/3/glossary.html#term-parameter">“parameters”</a> or <a class="reference external" href="https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter">“arguments”</a>, and the outputs are often called “return values”</p>
 <p>The docstring is thus important for:</p>
@@ -588,7 +590,7 @@ that describes what the function does and its inputs and outputs. Python program
 </div>
 </section>
 <section id="python-package-api-documentation">
-<h2>Python package API documentation<a class="headerlink" href="#python-package-api-documentation" title="Permalink to this heading">#</a></h2>
+<h2>Python package API documentation<a class="headerlink" href="#python-package-api-documentation" title="Link to this heading">#</a></h2>
 <p>If you have a descriptive docstring for every user-facing
 class, method, attribute and/or function in your package (<em>within reason</em>), then your package’s API is considered well-documented.</p>
 <p>In Python, this means that you need to add a docstring for
@@ -600,7 +602,7 @@ class, method, attribute and/or function in your package (<em>within reason</em>
 <li><p>Explains the expected output <code class="docutils literal notranslate"><span class="pre">return</span></code> of the object, method or function.</p></li>
 </ul>
 <section id="three-python-docstring-formats-and-why-we-like-numpy-style">
-<h3>Three Python docstring formats and why we like NumPy style<a class="headerlink" href="#three-python-docstring-formats-and-why-we-like-numpy-style" title="Permalink to this heading">#</a></h3>
+<h3>Three Python docstring formats and why we like NumPy style<a class="headerlink" href="#three-python-docstring-formats-and-why-we-like-numpy-style" title="Link to this heading">#</a></h3>
 <p>There are several Python docstring formats that you can chose to use when documenting
 your package including:</p>
 <ul class="simple">
@@ -623,7 +625,7 @@ to properly read and format NumPy format docstrings.</p>
 </div>
 </section>
 <section id="docstring-examples-better-and-best">
-<h3>Docstring examples Better and Best<a class="headerlink" href="#docstring-examples-better-and-best" title="Permalink to this heading">#</a></h3>
+<h3>Docstring examples Better and Best<a class="headerlink" href="#docstring-examples-better-and-best" title="Link to this heading">#</a></h3>
 <p>Below is a good example of a well documented function. Notice that this
 function’s docstring describes the function’s inputs and the function’s output
 (or return value). The initial description of the function is short (one line).
@@ -655,7 +657,7 @@ specified.</p>
 <!-- I can't seem to get doc targets across pages to work-->
 </section>
 <section id="best-a-docstring-with-example-use-of-the-function">
-<span id="docstring-best-practice"></span><h3>Best: a docstring with example use of the function<a class="headerlink" href="#best-a-docstring-with-example-use-of-the-function" title="Permalink to this heading">#</a></h3>
+<span id="docstring-best-practice"></span><h3>Best: a docstring with example use of the function<a class="headerlink" href="#best-a-docstring-with-example-use-of-the-function" title="Link to this heading">#</a></h3>
 <p>This example contains an example of using the function that is also tested in
 sphinx using <a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctest</a>.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
@@ -705,13 +707,13 @@ sphinx using <a class="reference external" href="https://docs.python.org/3/libra
 <p><span class="caption-text">Using the above NumPy format docstring in sphinx, the autodoc extension will
 create the about documentation section for the <code class="docutils literal notranslate"><span class="pre">extent_to_json</span></code> function. The
 output of the <code class="docutils literal notranslate"><span class="pre">es.extent_to_json(rmnp)</span></code> command can even be tested using
-doctest adding another quality check to your package.</span><a class="headerlink" href="#earthpy-json-example" title="Permalink to this image">#</a></p>
+doctest adding another quality check to your package.</span><a class="headerlink" href="#earthpy-json-example" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions">
-<h2>Using doctest to run docstring examples in your package’s methods and functions<a class="headerlink" href="#using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions" title="Permalink to this heading">#</a></h2>
+<h2>Using doctest to run docstring examples in your package’s methods and functions<a class="headerlink" href="#using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions" title="Link to this heading">#</a></h2>
 <!-- This link isn't working no matter how i create the target. not sure
 why -->
 <p>Above, we provided some examples of good, better, best docstring formats. If you are using Sphinx to create your docs, you can add the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest</a> extension to your Sphinx build. Doctest provides an additional check for docstrings with example code in them.
@@ -761,7 +763,7 @@ doctest will run the example below and test that if you provide
 </div>
 </section>
 <section id="adding-type-hints-to-your-docstrings">
-<h2>Adding type hints to your docstrings<a class="headerlink" href="#adding-type-hints-to-your-docstrings" title="Permalink to this heading">#</a></h2>
+<h2>Adding type hints to your docstrings<a class="headerlink" href="#adding-type-hints-to-your-docstrings" title="Link to this heading">#</a></h2>
 <p>In the example above, you saw the use of numpy-style docstrings to describe data types
 that are passed into functions as parameters or
 into classes as attributes. In a numpy-style docstring you add those
@@ -792,7 +794,7 @@ the output of the function is also an int.</p>
 </pre></div>
 </div>
 <section id="why-use-type-hints">
-<h3>Why use type hints<a class="headerlink" href="#why-use-type-hints" title="Permalink to this heading">#</a></h3>
+<h3>Why use type hints<a class="headerlink" href="#why-use-type-hints" title="Link to this heading">#</a></h3>
 <p>Type hints:</p>
 <ul class="simple">
 <li><p>Make development and debugging faster,</p></li>
@@ -815,7 +817,7 @@ the output of the function is also an int.</p>
 </div>
 </section>
 <section id="gradually-adding-type-hints">
-<h3>Gradually adding type hints<a class="headerlink" href="#gradually-adding-type-hints" title="Permalink to this heading">#</a></h3>
+<h3>Gradually adding type hints<a class="headerlink" href="#gradually-adding-type-hints" title="Link to this heading">#</a></h3>
 <p>Adding type hints can take a lot of time. However, you can add
 type hints incrementally as you work on your code.</p>
 <div class="admonition tip">

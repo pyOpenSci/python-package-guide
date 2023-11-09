@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-structure';</script>
-    <script src="../_static/matomo.js"></script>
+    <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-structure.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -543,7 +545,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="python-package-structure-for-scientific-python-projects">
-<h1>Python Package Structure for Scientific Python Projects<a class="headerlink" href="#python-package-structure-for-scientific-python-projects" title="Permalink to this heading">#</a></h1>
+<h1>Python Package Structure for Scientific Python Projects<a class="headerlink" href="#python-package-structure-for-scientific-python-projects" title="Link to this heading">#</a></h1>
 <p>There are two different layouts that you will commonly see
 within the Python packaging ecosystem:
 <a class="reference external" href="https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/">src and flat layouts.</a>
@@ -609,7 +611,7 @@ include:</p>
 </ul>
 </div>
 <section id="the-src-layout-and-testing">
-<h2>The src/ layout and testing<a class="headerlink" href="#the-src-layout-and-testing" title="Permalink to this heading">#</a></h2>
+<h2>The src/ layout and testing<a class="headerlink" href="#the-src-layout-and-testing" title="Link to this heading">#</a></h2>
 <p>The benefit of using the <strong>src/package</strong> layout, particularly if you
 are creating a new package, is that it ensures tests are run against the
 installed version of your package rather than the files in your package
@@ -628,7 +630,7 @@ your package is installed.</p>
 <p>Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g. <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code>).</p>
 </div>
 <section id="sometimes-tests-are-needed-in-a-distribution">
-<h3>Sometimes tests are needed in a distribution<a class="headerlink" href="#sometimes-tests-are-needed-in-a-distribution" title="Permalink to this heading">#</a></h3>
+<h3>Sometimes tests are needed in a distribution<a class="headerlink" href="#sometimes-tests-are-needed-in-a-distribution" title="Link to this heading">#</a></h3>
 <p>We do not recommend including tests as part of your package wheel by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package is functioning correctly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory into the <strong>src/package</strong> directory (see example below).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>src/
 <span class="w">  </span>package/
@@ -649,7 +651,7 @@ docs/
 </div>
 </section>
 <section id="don-t-include-test-suite-datasets-in-your-package">
-<h3><strong>Don’t include test suite datasets in your package</strong><a class="headerlink" href="#don-t-include-test-suite-datasets-in-your-package" title="Permalink to this heading">#</a></h3>
+<h3><strong>Don’t include test suite datasets in your package</strong><a class="headerlink" href="#don-t-include-test-suite-datasets-in-your-package" title="Link to this heading">#</a></h3>
 <p>If you do include your tests in your package distribution, we strongly
 discourage you from including data in your test suite directory. Rather,
 host your test data in a repository such as Figshare or Zenodo. Use a
@@ -671,7 +673,7 @@ anaconda cloud that have to deal with thousands of package uploads.</p>
 </section>
 </section>
 <section id="about-the-flat-python-package-layout">
-<h2>About the flat Python package layout<a class="headerlink" href="#about-the-flat-python-package-layout" title="Permalink to this heading">#</a></h2>
+<h2>About the flat Python package layout<a class="headerlink" href="#about-the-flat-python-package-layout" title="Link to this heading">#</a></h2>
 <p>Currently most scientific packages use the <strong>flat-layout</strong> given:</p>
 <ul class="simple">
 <li><p>It’s the most commonly found layout with the scientific Python ecosystem and
@@ -697,7 +699,7 @@ that you consider using a  <strong>src/package</strong> layout.</p>
 </div>
 </section>
 <section id="what-does-the-flat-layout-structure-look-like">
-<h2>What does the flat layout structure look like?<a class="headerlink" href="#what-does-the-flat-layout-structure-look-like" title="Permalink to this heading">#</a></h2>
+<h2>What does the flat layout structure look like?<a class="headerlink" href="#what-does-the-flat-layout-structure-look-like" title="Link to this heading">#</a></h2>
 <p>The flat layout’s primary characteristics are:</p>
 <ul class="simple">
 <li><p>The source code for your package lives in a directory with your package’s
@@ -725,7 +727,7 @@ using the flat layout.</p>
 </pre></div>
 </div>
 <section id="benefits-of-using-the-flat-layout-in-your-python-package">
-<h3>Benefits of using the flat layout in your Python package<a class="headerlink" href="#benefits-of-using-the-flat-layout-in-your-python-package" title="Permalink to this heading">#</a></h3>
+<h3>Benefits of using the flat layout in your Python package<a class="headerlink" href="#benefits-of-using-the-flat-layout-in-your-python-package" title="Link to this heading">#</a></h3>
 <p>There are some benefits to the scientific community in using the flat layout.</p>
 <ul class="simple">
 <li><p>This structure has historically been used across the ecosystem and packages

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/publish-python-package-pypi-conda';</script>
-    <script src="../_static/matomo.js"></script>
+    <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/publish-python-package-pypi-conda.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -543,7 +545,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud">
-<h1>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud<a class="headerlink" href="#publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud" title="Permalink to this heading">#</a></h1>
+<h1>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud<a class="headerlink" href="#publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud" title="Link to this heading">#</a></h1>
 <!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
 <p>pyOpenSci requires that your package has an distribution that can be installed
 from a public community repository such as PyPI or a conda channel such as
@@ -560,7 +562,7 @@ lead to package conflicts.</p></li>
 <p>Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.</p>
 </div>
 <section id="what-is-pypi">
-<h2>What is PyPI<a class="headerlink" href="#what-is-pypi" title="Permalink to this heading">#</a></h2>
+<h2>What is PyPI<a class="headerlink" href="#what-is-pypi" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pypi.org/">PyPI</a> is an online Python package repository that
 you can use to both find and install and publish your Python package. There is
 also a test PyPI repository where you can test publishing your package
@@ -580,7 +582,7 @@ your package.</p>
 </div>
 </section>
 <section id="what-is-anaconda-cloud-and-conda">
-<h2>What is Anaconda Cloud and conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Permalink to this heading">#</a></h2>
+<h2>What is Anaconda Cloud and conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Link to this heading">#</a></h2>
 <p>conda is an open source package and environment management tool.
 conda can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda Cloud
 repository</a>.</p>
@@ -602,7 +604,7 @@ Creating environment that mixes all those packages are usually easier and more
 consistent with full fledged package managers like conda.</p>
 </div>
 <section id="conda-channels">
-<h3>conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this heading">#</a></h3>
+<h3>conda channels<a class="headerlink" href="#conda-channels" title="Link to this heading">#</a></h3>
 <p>conda built packages are housed within repositories that are called
 channels. The conda package manager can install packages from different channels.</p>
 <p>There are several core public channels that most people use to install
@@ -617,13 +619,13 @@ exist in the default Anaconda cloud channel.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/conda-channels-geohackweek.jpeg"><img alt="ADD." src="../_images/conda-channels-geohackweek.jpeg" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">ADD source: GeoHackWeek</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">ADD source: GeoHackWeek</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="conda-channels-pypi-conda-pip-where-to-publish-your-package">
-<h2>conda channels, PyPI, conda, pip - Where to publish your package<a class="headerlink" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package" title="Permalink to this heading">#</a></h2>
+<h2>conda channels, PyPI, conda, pip - Where to publish your package<a class="headerlink" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package" title="Link to this heading">#</a></h2>
 <p>You might be wondering why there are different package repositories
 that can be used to install Python packages.</p>
 <p>And more importantly you are likely wondering how to pick the right
@@ -637,11 +639,11 @@ to environment conflicts where a version of on package doesn’t work with
 a version of another package. To keep your environments clean and working, it’s
 best to install packages from the same repository. So use pip to install
 everything. Or use conda. If you can, try to avoid installing package from
-both pip and conda into the same environment.</span><a class="headerlink" href="#xkcd-dep-conflict" title="Permalink to this image">#</a></p>
+both pip and conda into the same environment.</span><a class="headerlink" href="#xkcd-dep-conflict" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="managing-python-package-dependency-conflicts">
-<h3>Managing Python package dependency conflicts<a class="headerlink" href="#managing-python-package-dependency-conflicts" title="Permalink to this heading">#</a></h3>
+<h3>Managing Python package dependency conflicts<a class="headerlink" href="#managing-python-package-dependency-conflicts" title="Link to this heading">#</a></h3>
 <p>Python environments can encounter conflicts because Python tools can be installed from different repositories.
 Broadly speaking, Python environments have a smaller chance of
 dependency conflicts when the tools are installed from the same
@@ -654,7 +656,7 @@ this channel is managed by Anaconda, the packages available on it are
 limited to those that Anaconda decides should be core to a stable installation. The conda-forge channel was created to complement the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel. It allows anyone to submit a package to be published in the channel . Thus, <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel ensures that a broad suite of user-developed community packages can be installed from conda.</p>
 </section>
 <section id="take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">
-<h3>Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package<a class="headerlink" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package" title="Permalink to this heading">#</a></h3>
+<h3>Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package<a class="headerlink" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package" title="Link to this heading">#</a></h3>
 <p>The take-away here for maintainers is that if you anticipate users wanting
 to use conda to manage their local environments (which many do), you should
 consider publishing to both PyPI and the conda-forge channel (<em>more
@@ -670,7 +672,7 @@ on that below</em>).</p>
 </section>
 </section>
 <section id="how-to-submit-to-conda-forge">
-<h2>How to submit to conda-forge<a class="headerlink" href="#how-to-submit-to-conda-forge" title="Permalink to this heading">#</a></h2>
+<h2>How to submit to conda-forge<a class="headerlink" href="#how-to-submit-to-conda-forge" title="Link to this heading">#</a></h2>
 <p>While pyOpenSci doesn’t require you to add your package to conda-forge,
 we encourage you to consider doing so!</p>
 <p>Once your package is on PyPI, the process to add your package to conda-forge
@@ -692,7 +694,7 @@ to the conda-forge channel.</p>
 <p><a class="reference external" href="https://github.com/conda-forge/movingpandas-feedstock">Here is an example conda-forge feedstock for the pyOpenSci approved package - movingpandas</a></p>
 </div>
 <section id="maintaining-your-conda-forge-package-repository">
-<h3>Maintaining your conda-forge package repository<a class="headerlink" href="#maintaining-your-conda-forge-package-repository" title="Permalink to this heading">#</a></h3>
+<h3>Maintaining your conda-forge package repository<a class="headerlink" href="#maintaining-your-conda-forge-package-repository" title="Link to this heading">#</a></h3>
 <p>Once your package is on the conda-forge channel, maintaining it is simple.
 Every time that you push a new version of your package to PyPI, it will
 kick off a continuous integration build that updates your package in the

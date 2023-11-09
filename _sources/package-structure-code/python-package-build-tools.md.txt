@@ -60,6 +60,8 @@ Hatch:
 To better understand your options, when it comes to building a Python package, it's important to first understand the difference between a
 build tool front-end and build back-end.
 
+(build_backends)=
+
 ### Build back-ends
 
 Most packaging tools have a back-end

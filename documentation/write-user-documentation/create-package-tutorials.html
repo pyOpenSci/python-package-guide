@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/write-user-documentation/create-package-tutorials';</script>
-    <script src="../../_static/matomo.js"></script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/documentation/write-user-documentation/create-package-tutorials.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -556,7 +558,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="create-tutorials-in-your-python-package-documentation">
-<h1>Create tutorials in your Python package documentation<a class="headerlink" href="#create-tutorials-in-your-python-package-documentation" title="Permalink to this heading">#</a></h1>
+<h1>Create tutorials in your Python package documentation<a class="headerlink" href="#create-tutorials-in-your-python-package-documentation" title="Link to this heading">#</a></h1>
 <!-- TODO: modify the nbsphinx example to use nbgallery
 as a front end vs Sphinx gallery - will look better that way
 -->
@@ -568,7 +570,7 @@ checks (on top of your test suite) to your package’s code base.</p>
 that  allow you to create reproducible tutorials that are run
 when your Sphinx documentation builds.</p>
 <section id="create-python-package-tutorials-that-run-when-you-build-your-docs">
-<h2>Create Python package tutorials that run when you build your docs<a class="headerlink" href="#create-python-package-tutorials-that-run-when-you-build-your-docs" title="Permalink to this heading">#</a></h2>
+<h2>Create Python package tutorials that run when you build your docs<a class="headerlink" href="#create-python-package-tutorials-that-run-when-you-build-your-docs" title="Link to this heading">#</a></h2>
 <p>Adding well constructed tutorials to your package will make it easier for someone
 new to begin using your package.</p>
 <p>There are two Sphinx tools that make it easy to add tutorials to your package:</p>
@@ -583,7 +585,7 @@ new to begin using your package.</p>
 <li><p>Render your tutorials with Python code and plot outputs</p></li>
 </ul>
 <section id="sphinx-gallery">
-<h3><a class="reference external" href="https://sphinx-gallery.github.io/stable/index.html">sphinx gallery:</a><a class="headerlink" href="#sphinx-gallery" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference external" href="https://sphinx-gallery.github.io/stable/index.html">sphinx gallery:</a><a class="headerlink" href="#sphinx-gallery" title="Link to this heading">#</a></h3>
 <p>If you prefer to write your tutorials using Python <strong>.py</strong> scripts, you
 may enjoy using Sphinx gallery. Sphinx gallery uses <strong>.py</strong> files with
 text and code sections that mimic the Jupyter Notebook format. When you build
@@ -598,7 +600,7 @@ your documentation, the gallery extension:</p>
 <a class="reference internal image-reference" href="../../_images/sphinx-gallery-overview.png"><img alt="Image showing the gallery output provided by sphinx-gallery where each tutorial is in a grid and the tutorial thumbnails are created from a graphic in the tutorial." src="../../_images/sphinx-gallery-overview.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sphinx-gallery</span></code> makes it easy to create a user-friendly tutorial gallery.
-Each tutorial has a download link where the user can download a <strong>.py</strong> file or a Jupyter Notebook. And it renders the tutorials in a user-friendly grid.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+Each tutorial has a download link where the user can download a <strong>.py</strong> file or a Jupyter Notebook. And it renders the tutorials in a user-friendly grid.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Below you can see what a tutorial looks like created with sphinx-gallery.</p>
@@ -606,12 +608,12 @@ Each tutorial has a download link where the user can download a <strong>.py</str
 <a class="reference internal image-reference" href="../../_images/sphinx-gallery-tutorial.png"><img alt="Image showing ta single tutorial from Sphinx gallery. The tutorial shows a simple matplotlib created plot and associated code." src="../../_images/sphinx-gallery-tutorial.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sphinx-gallery</span></code> tutorials by default include download links for both the
-python script (<strong>.py</strong> file) and a Jupyter notebook (<strong>.ipynb</strong> file) at the bottom.</span><a class="headerlink" href="#spinx-gallery-tutorial" title="Permalink to this image">#</a></p>
+python script (<strong>.py</strong> file) and a Jupyter notebook (<strong>.ipynb</strong> file) at the bottom.</span><a class="headerlink" href="#spinx-gallery-tutorial" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="sphinx-gallery-benefits">
-<h3>Sphinx Gallery benefits<a class="headerlink" href="#sphinx-gallery-benefits" title="Permalink to this heading">#</a></h3>
+<h3>Sphinx Gallery benefits<a class="headerlink" href="#sphinx-gallery-benefits" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>easy-to-download notebook and .py outputs for each tutorials.</p></li>
 <li><p>.py files are easy to work with in the GitHub pull request environment.</p></li>
@@ -619,7 +621,7 @@ python script (<strong>.py</strong> file) and a Jupyter notebook (<strong>.ipynb
 <li><p>Build execution time data per tutorial. <a class="reference external" href="https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html">Example</a></p></li>
 </ul>
 <section id="sphinx-gallery-challenges">
-<h4>Sphinx gallery challenges<a class="headerlink" href="#sphinx-gallery-challenges" title="Permalink to this heading">#</a></h4>
+<h4>Sphinx gallery challenges<a class="headerlink" href="#sphinx-gallery-challenges" title="Link to this heading">#</a></h4>
 <p>The downsides of using Sphinx gallery include:</p>
 <ul class="simple">
 <li><p>the <strong>.py</strong> files can be finicky to configure, particularly if you have matplotlib plot outputs.</p></li>
@@ -658,7 +660,7 @@ _build/
 </section>
 </section>
 <section id="nbsphinx-tutorials-using-jupyter-notebooks">
-<h3><a class="reference external" href="https://nbsphinx.readthedocs.io/en/latest/">nbsphinx - tutorials using Jupyter Notebooks</a><a class="headerlink" href="#nbsphinx-tutorials-using-jupyter-notebooks" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference external" href="https://nbsphinx.readthedocs.io/en/latest/">nbsphinx - tutorials using Jupyter Notebooks</a><a class="headerlink" href="#nbsphinx-tutorials-using-jupyter-notebooks" title="Link to this heading">#</a></h3>
 <p>If you prefer to use Jupyter Notebooks to create tutorials you can use nbsphinx.
 nbsphinx operates similarly to Sphinx gallery in that:</p>
 <ul class="simple">
@@ -671,7 +673,7 @@ some additional conf.py settings (see: epilog settings)</a></p></li>
 <figcaption>
 <p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> can be combined with Sphinx gallery to create a gallery of tutorials.
 However, rather than rendering the gallery as a grid, it lists all of the gallery
-elements in a single column.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
+elements in a single column.</span><a class="headerlink" href="#directive-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tutorials/

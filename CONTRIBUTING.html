@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'CONTRIBUTING';</script>
-    <script src="_static/matomo.js"></script>
+    <script src="_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/CONTRIBUTING.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -515,7 +517,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="contributing-guide-for-the-python-open-source-software-packaging-book">
-<h1>Contributing Guide for the Python open source software packaging book<a class="headerlink" href="#contributing-guide-for-the-python-open-source-software-packaging-book" title="Permalink to this heading">#</a></h1>
+<h1>Contributing Guide for the Python open source software packaging book<a class="headerlink" href="#contributing-guide-for-the-python-open-source-software-packaging-book" title="Link to this heading">#</a></h1>
 <p>This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide.</p>
 <ul class="simple">
 <li><p>If you have an idea for something that should be included in the guide, <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">please open an issue here</a>.</p></li>
@@ -523,7 +525,7 @@ document.write(`
 <li><p>If you want to see a larger change to the content of the guide book, please submit an issue first!</p></li>
 </ul>
 <section id="how-this-guide-structured">
-<h2>How this guide structured<a class="headerlink" href="#how-this-guide-structured" title="Permalink to this heading">#</a></h2>
+<h2>How this guide structured<a class="headerlink" href="#how-this-guide-structured" title="Link to this heading">#</a></h2>
 <p>Most of this repository is structured for <strong>Sphinx</strong>, a documentation engine built in <code class="docutils literal notranslate"><span class="pre">Python</span></code>. We are using the Sphinx Book Theme and the <code class="docutils literal notranslate"><span class="pre">myST</span></code> syntax to create each page in this book.</p>
 <p>If you wish to contribute by working on the guide book locally, you
 will first need to</p>
@@ -534,7 +536,7 @@ will first need to</p>
 </ol>
 </section>
 <section id="instructions-for-building-the-documentation-locally-on-your-computer">
-<h2>Instructions for building the documentation locally on your computer<a class="headerlink" href="#instructions-for-building-the-documentation-locally-on-your-computer" title="Permalink to this heading">#</a></h2>
+<h2>Instructions for building the documentation locally on your computer<a class="headerlink" href="#instructions-for-building-the-documentation-locally-on-your-computer" title="Link to this heading">#</a></h2>
 <p>The easiest way to build the documentation in this repository is to use <code class="docutils literal notranslate"><span class="pre">nox</span></code>,
 a tool for quickly building environments and running commands within them.
 Nox ensures that your environment has all the dependencies needed to build the documentation.</p>

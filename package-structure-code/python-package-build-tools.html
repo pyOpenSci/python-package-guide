@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -45,26 +44,23 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -72,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-build-tools';</script>
-    <script src="../_static/matomo.js"></script>
+    <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/python-package-build-tools.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -543,10 +545,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="python-packaging-tools">
-<h1>Python Packaging Tools<a class="headerlink" href="#python-packaging-tools" title="Permalink to this heading">#</a></h1>
+<h1>Python Packaging Tools<a class="headerlink" href="#python-packaging-tools" title="Link to this heading">#</a></h1>
 <!-- TODO: add a small discussion on what pinning is?-->
 <section id="tools-for-building-your-package">
-<h2>Tools for building your package<a class="headerlink" href="#tools-for-building-your-package" title="Permalink to this heading">#</a></h2>
+<h2>Tools for building your package<a class="headerlink" href="#tools-for-building-your-package" title="Link to this heading">#</a></h2>
 <p>There are a several different build tools that you can use to <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">create your Python package’s <em>sdist</em> and <em>wheel</em> distributions</span></a>. Below, we discuss the features,
 benefits and limitations of the most commonly used Python packaging tools.
 We focus on pure-python packages in this guide. However, we also
@@ -556,14 +558,14 @@ extensions.</p>
 <a class="reference internal image-reference" href="../_images/python-package-tools-decision-tree.png"><img alt="Decision tree diagram showing the various front and back end packaging tools. You can decide what packaging tool to use by thinking about what features you need. PDM is currently the most flexible tool that also supports both non pure Python projects and also using different build back-ends. As such currently PDM is the tool we think beginners might appreciate most with Poetry being a close second. Poetry is ideal for pure python projects." src="../_images/python-package-tools-decision-tree.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">Diagram showing the various from end build tools that you can select from. Each tool has different features as highlighted below.
-NOTE: this is still a DRAFT so i’m not going to spend time truly cleaning it up until i get lots of feedback on the general approach!!</span><a class="headerlink" href="#package-decision-tree" title="Permalink to this image">#</a></p>
+NOTE: this is still a DRAFT so i’m not going to spend time truly cleaning it up until i get lots of feedback on the general approach!!</span><a class="headerlink" href="#package-decision-tree" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If you want to know more about Python packages that have extensions written in
 other languages, <a class="reference internal" href="complex-python-package-builds.html"><span class="doc std std-doc">check out the page on complex package builds.</span></a></p>
 </section>
 <section id="tools-that-we-review-here">
-<h2>Tools that we review here<a class="headerlink" href="#tools-that-we-review-here" title="Permalink to this heading">#</a></h2>
+<h2>Tools that we review here<a class="headerlink" href="#tools-that-we-review-here" title="Link to this heading">#</a></h2>
 <p>In this section we have selected tools that were returned
 as the most popular packaging tools in the PyPA survey.
 You will learn more about the following tools on this page:</p>
@@ -576,7 +578,7 @@ You will learn more about the following tools on this page:</p>
 </ul>
 </section>
 <section id="summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools">
-<h2>Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)<a class="headerlink" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools" title="Permalink to this heading">#</a></h2>
+<h2>Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)<a class="headerlink" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools" title="Link to this heading">#</a></h2>
 <p>If you are looking for a quick summary, read below.</p>
 <ul class="simple">
 <li><p>In general, any modern tool that you select from this page will be great to build your package. Selecting a tool comes down to the features that you are looking for in your workflow.</p></li>
@@ -598,11 +600,11 @@ build workflow. If you are looking to reduce the number of tools in your workflo
 </ul>
 </section>
 <section id="build-front-end-vs-build-back-end-tools">
-<h2>Build front-end vs. build back-end tools<a class="headerlink" href="#build-front-end-vs-build-back-end-tools" title="Permalink to this heading">#</a></h2>
+<h2>Build front-end vs. build back-end tools<a class="headerlink" href="#build-front-end-vs-build-back-end-tools" title="Link to this heading">#</a></h2>
 <p>To better understand your options, when it comes to building a Python package, it’s important to first understand the difference between a
 build tool front-end and build back-end.</p>
 <section id="build-back-ends">
-<h3>Build back-ends<a class="headerlink" href="#build-back-ends" title="Permalink to this heading">#</a></h3>
+<span id="build-backends"></span><h3>Build back-ends<a class="headerlink" href="#build-back-ends" title="Link to this heading">#</a></h3>
 <p>Most packaging tools have a back-end
 build tool that builds you package and creates associated
 <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">(sdist and wheel) distribution files</span></a>. Some tools, such as <strong>Flit</strong>, only
@@ -616,7 +618,7 @@ build is particularly complex (i.e. you have more than a few <code class="docuti
 extensions), then we suggest you use <strong>meson.build</strong> or <strong>scikit-build</strong>.</p>
 </section>
 <section id="python-package-build-front-ends">
-<h3>Python package build front-ends<a class="headerlink" href="#python-package-build-front-ends" title="Permalink to this heading">#</a></h3>
+<h3>Python package build front-ends<a class="headerlink" href="#python-package-build-front-ends" title="Link to this heading">#</a></h3>
 <p>A packaging front-end tool refers to a tool that makes it easier for you to
 perform common packaging tasks using similar commands. These tasks include:</p>
 <ul class="simple">
@@ -641,7 +643,7 @@ If you only need to build your package’s sdist and wheel distribution files, t
 </div>
 </section>
 <section id="example-build-steps-that-can-be-simplified-using-a-front-end-tool">
-<h3>Example build steps that can be simplified using a front-end tool<a class="headerlink" href="#example-build-steps-that-can-be-simplified-using-a-front-end-tool" title="Permalink to this heading">#</a></h3>
+<h3>Example build steps that can be simplified using a front-end tool<a class="headerlink" href="#example-build-steps-that-can-be-simplified-using-a-front-end-tool" title="Link to this heading">#</a></h3>
 <p>Below, you can see how a build tool streamlines your packaging experience. Example to build your package with <strong>Hatch</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build your sDist and .whl files</span>
 hatch<span class="w"> </span>build
@@ -661,7 +663,7 @@ twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </
 </section>
 </section>
 <section id="choosing-a-build-back-end">
-<h2>Choosing a build back-end<a class="headerlink" href="#choosing-a-build-back-end" title="Permalink to this heading">#</a></h2>
+<h2>Choosing a build back-end<a class="headerlink" href="#choosing-a-build-back-end" title="Link to this heading">#</a></h2>
 <p>Most front-end packaging tools have their own back-end build tool. The build
 tool creates your package’s (sdist and wheel) distribution files. For pure
 Python packages, the main difference between the different build back-ends
@@ -671,7 +673,7 @@ discussed below is:</p>
 <li><p>How much you need to configure them to ensure the correct files are included in your sdist and wheel distributions.</p></li>
 </ul>
 <section id="build-back-end-support-for-non-pure-python-packages">
-<h3>Build back-end support for non pure-python packages<a class="headerlink" href="#build-back-end-support-for-non-pure-python-packages" title="Permalink to this heading">#</a></h3>
+<h3>Build back-end support for non pure-python packages<a class="headerlink" href="#build-back-end-support-for-non-pure-python-packages" title="Link to this heading">#</a></h3>
 <p>It is important to note that some build back-ends, such as <strong>Flit-core</strong>, only support
 pure Python builds. Other back-ends support C and C++ extensions as follows:</p>
 <ul class="simple">
@@ -685,7 +687,7 @@ have documented support for C / C++ extensions.</p>
 </section>
 </section>
 <section id="an-ecosystem-of-python-build-tools">
-<h2>An ecosystem of Python build tools<a class="headerlink" href="#an-ecosystem-of-python-build-tools" title="Permalink to this heading">#</a></h2>
+<h2>An ecosystem of Python build tools<a class="headerlink" href="#an-ecosystem-of-python-build-tools" title="Link to this heading">#</a></h2>
 <p>Below we introduce several of the most commonly used Python packaging build
 front-end tools. We highlight the features that each tool offers as a way to
 help you decide what tool might be best for your workflow.</p>
@@ -703,12 +705,12 @@ features and excellent documentation).</p>
 <figure class="align-default" id="pypa-survey-plot">
 <a class="reference internal image-reference" href="../_images/python-package-tools-2022-survey-pypa.png"><img alt="Graph showing the results of the 2022 PyPA survey of Python packaging tools. On the x axis is percent response and on the y axis are the tools." src="../_images/python-package-tools-2022-survey-pypa.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">The Python developers survey results (n=&gt;8,000 PyPI users) show setuptools and poetry as the most commonly used Python packaging tools. The core tools that we’ve seen being used in the scientific community are included here. <a class="reference external" href="https://drive.google.com/file/d/1U5d5SiXLVkzDpS0i1dJIA4Hu5Qg704T9/view">You can view the full survey results by clicking here.</a> NOTE: this data represent maintainers across domains and is likely heavily represented by those in web development. So this represents a snapshot across the broader Python ecosystem.</span><a class="headerlink" href="#pypa-survey-plot" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The Python developers survey results (n=&gt;8,000 PyPI users) show setuptools and poetry as the most commonly used Python packaging tools. The core tools that we’ve seen being used in the scientific community are included here. <a class="reference external" href="https://drive.google.com/file/d/1U5d5SiXLVkzDpS0i1dJIA4Hu5Qg704T9/view">You can view the full survey results by clicking here.</a> NOTE: this data represent maintainers across domains and is likely heavily represented by those in web development. So this represents a snapshot across the broader Python ecosystem.</span><a class="headerlink" href="#pypa-survey-plot" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="chose-a-build-workflow-tool">
-<h2>Chose a build workflow tool<a class="headerlink" href="#chose-a-build-workflow-tool" title="Permalink to this heading">#</a></h2>
+<h2>Chose a build workflow tool<a class="headerlink" href="#chose-a-build-workflow-tool" title="Link to this heading">#</a></h2>
 <p>The tools that we review below include:</p>
 <ul class="simple">
 <li><p>Twine, Build + setuptools</p></li>
@@ -733,13 +735,13 @@ workflow to support such extensions and support for other back-ends in the case 
 <p>NOTE: You can also use Hatch for non pure python builds. Hatch, similar to PDM, allows you to write your own build hooks or plugins to support custom build steps. But currently, hatch does not support other build back ends. Many of the core scientific packages are moving to meson-python to build their packages. Thus, we appreciate that PDM can work with meson-python specifically.</p>
 </section>
 <section id="python-packaging-tools-summary">
-<h2>Python packaging tools summary<a class="headerlink" href="#python-packaging-tools-summary" title="Permalink to this heading">#</a></h2>
+<h2>Python packaging tools summary<a class="headerlink" href="#python-packaging-tools-summary" title="Link to this heading">#</a></h2>
 <p>Below, we summarize features offered by the most popular build front end tools. It is important to keep in mind that these
 front-end tools remove the need to use other core tools in your workflow. For example if you use setuptools, you will need to also use Build and Twine to build your package and publish to PyPI. But if you use Poetry, Hatch or PDM you can do all of those things using the same tool (e.g. <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>, <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code> or <code class="docutils literal notranslate"><span class="pre">pdm</span> <span class="pre">build</span></code>, <code class="docutils literal notranslate"><span class="pre">pdm</span> <span class="pre">publish</span></code>).</p>
 <p>Note that because setuptools does not offer a front-end interface, it is not
 included in the table.</p>
 <section id="package-tool-features-table">
-<h3>Package tool features table<a class="headerlink" href="#package-tool-features-table" title="Permalink to this heading">#</a></h3>
+<h3>Package tool features table<a class="headerlink" href="#package-tool-features-table" title="Link to this heading">#</a></h3>
 <table class="table">
 <colgroup>
 <col style="width: 47.4%" />
@@ -815,7 +817,7 @@ included in the table.</p>
 </section>
 </section>
 <section id="pdm">
-<h2>PDM<a class="headerlink" href="#pdm" title="Permalink to this heading">#</a></h2>
+<h2>PDM<a class="headerlink" href="#pdm" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pdm.fming.dev/latest/">PDM is a Python packaging and dependency management tool</a>.
 PDM supports builds for pure Python projects. It also provides multiple layers of
 support for projects that have C and C++ extensions.</p>
@@ -827,7 +829,7 @@ PDM’s build back-end receives the compiled extension files (.so, .pyd) and
 packages them with the pure Python files.</p>
 </div>
 <section id="pdm-features">
-<h3>PDM Features<a class="headerlink" href="#pdm-features" title="Permalink to this heading">#</a></h3>
+<h3>PDM Features<a class="headerlink" href="#pdm-features" title="Link to this heading">#</a></h3>
 <table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -901,7 +903,7 @@ versioning. As such, PDM is preferred for those working on non pure-Python packa
 </div>
 </section>
 <section id="challenges-with-pdm">
-<h3>Challenges with PDM<a class="headerlink" href="#challenges-with-pdm" title="Permalink to this heading">#</a></h3>
+<h3>Challenges with PDM<a class="headerlink" href="#challenges-with-pdm" title="Link to this heading">#</a></h3>
 <p>PDM is a full-featured packaging tool. However it is not without challenges:</p>
 <ul class="simple">
 <li><p>Its documentation can be confusing, especially if you are new to
@@ -916,12 +918,12 @@ an overview of what the PDM command line interface looks like when you use it.</
 </section>
 </section>
 <section id="flit">
-<h2>Flit<a class="headerlink" href="#flit" title="Permalink to this heading">#</a></h2>
+<h2>Flit<a class="headerlink" href="#flit" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://flit.pypa.io/en/stable/">Flit is a no-frills, streamlined packaging tool</a> that supports modern Python packaging standards.
 Flit is a great choice if you are
 building a basic package to use in a local workflow that doesn’t require any advanced features. And if your package structure is already created. More on that below.</p>
 <section id="flit-features">
-<h3>Flit Features<a class="headerlink" href="#flit-features" title="Permalink to this heading">#</a></h3>
+<h3>Flit Features<a class="headerlink" href="#flit-features" title="Link to this heading">#</a></h3>
 <table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -966,7 +968,7 @@ building a basic package to use in a local workflow that doesn’t require any a
 </div>
 </section>
 <section id="why-you-might-not-want-to-use-flit">
-<h3>Why you might not want to use Flit<a class="headerlink" href="#why-you-might-not-want-to-use-flit" title="Permalink to this heading">#</a></h3>
+<h3>Why you might not want to use Flit<a class="headerlink" href="#why-you-might-not-want-to-use-flit" title="Link to this heading">#</a></h3>
 <p>Because Flit is no frills, it is best for basic, quick builds. If you are a
 beginner you may want to select Hatch or PDM which will offer you more support
 in common operations.</p>
@@ -980,7 +982,7 @@ in common operations.</p>
 </section>
 </section>
 <section id="hatch">
-<h2>Hatch<a class="headerlink" href="#hatch" title="Permalink to this heading">#</a></h2>
+<h2>Hatch<a class="headerlink" href="#hatch" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://hatch.pypa.io/latest/"><strong>Hatch</strong></a>, similar to Poetry and PDM, provides a
 unified command line interface. To separate Hatch from Poetry and PDM, it also
 provides an environment manager for testing that will make it easier for
@@ -988,7 +990,7 @@ you to run tests locally across different versions of Python. It also offers a
 nox / makefile like feature that allows you to create custom build workflows such
 as building your documentation locally. This means that you could potentially drop a tool like <strong>Make</strong> or <strong>Nox</strong> from your workflow and use Hatch instead.</p>
 <section id="hatch-features">
-<h3>Hatch features<a class="headerlink" href="#hatch-features" title="Permalink to this heading">#</a></h3>
+<h3>Hatch features<a class="headerlink" href="#hatch-features" title="Link to this heading">#</a></h3>
 <table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -1055,7 +1057,7 @@ as building your documentation locally. This means that you could potentially dr
 <p><em>** There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility. The Hatch build hook approach is also comparable with the features offered by PDM.</em></p>
 </section>
 <section id="why-you-might-not-want-to-use-hatch">
-<h3>Why you might not want to use Hatch<a class="headerlink" href="#why-you-might-not-want-to-use-hatch" title="Permalink to this heading">#</a></h3>
+<h3>Why you might not want to use Hatch<a class="headerlink" href="#why-you-might-not-want-to-use-hatch" title="Link to this heading">#</a></h3>
 <p>There are a few features that hatch is missing that may be important for some.
 These include:</p>
 <ul class="simple">
@@ -1068,7 +1070,7 @@ These include:</p>
 </section>
 </section>
 <section id="poetry">
-<h2>Poetry<a class="headerlink" href="#poetry" title="Permalink to this heading">#</a></h2>
+<h2>Poetry<a class="headerlink" href="#poetry" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://python-poetry.org/">Poetry is a full-featured build tool.</a> It is also
 the second most popular front-end packaging tool (based upon the PyPA survey).
 Poetry is user-friendly and has clean and easy-to-read documentation.</p>
@@ -1078,7 +1080,7 @@ Poetry is user-friendly and has clean and easy-to-read documentation.</p>
 is currently undocumented. Thus, we don’t recommend using Poetry for more complex builds.</p>
 </div>
 <section id="poetry-features">
-<h3>Poetry features<a class="headerlink" href="#poetry-features" title="Permalink to this heading">#</a></h3>
+<h3>Poetry features<a class="headerlink" href="#poetry-features" title="Link to this heading">#</a></h3>
 <table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -1137,7 +1139,7 @@ is currently undocumented. Thus, we don’t recommend using Poetry for more comp
 <!-- TODO: responses here on poetry's future dev work: https://github.com/python-poetry/poetry/discussions/7525 -->
 </section>
 <section id="challenges-with-poetry">
-<h3>Challenges with Poetry<a class="headerlink" href="#challenges-with-poetry" title="Permalink to this heading">#</a></h3>
+<h3>Challenges with Poetry<a class="headerlink" href="#challenges-with-poetry" title="Link to this heading">#</a></h3>
 <p>Some challenges of Poetry include:</p>
 <ul class="simple">
 <li><p>Poetry, by default, pins dependencies using an “upper bound” limit specified with the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol by default. However, this behavior can be over-written by specifying the dependency when you use <code class="docutils literal notranslate"><span class="pre">Poetry</span> <span class="pre">add</span></code> as follows: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> See breakout below for more discussion on issues surrounding upper-bounds pinning.</p></li>
@@ -1164,7 +1166,7 @@ some tools use <a class="reference external" href="https://calver.org/">calver</
 </section>
 </section>
 <section id="using-setuptools-back-end-for-python-packaging-with-build-front-end">
-<h2>Using Setuptools Back-end for Python Packaging with Build Front-end<a class="headerlink" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end" title="Permalink to this heading">#</a></h2>
+<h2>Using Setuptools Back-end for Python Packaging with Build Front-end<a class="headerlink" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">Setuptools</a> is the most
 mature Python packaging build tool with <a class="reference external" href="https://setuptools.pypa.io/en/latest/history.html#">development dating back to 2009 and earlier</a>.
 Setuptools also has the largest number of community users (according to the PyPA
@@ -1177,7 +1179,7 @@ to consider using a more modern tool for packaging such as Poetry, Hatch or PDM.
 <p>We discuss setuptools here because it’s commonly found in the ecosystem and
 contributors may benefit from understanding it.</p>
 <section id="setuptools-features">
-<h3>Setuptools Features<a class="headerlink" href="#setuptools-features" title="Permalink to this heading">#</a></h3>
+<h3>Setuptools Features<a class="headerlink" href="#setuptools-features" title="Link to this heading">#</a></h3>
 <p>Some of features of setuptools include:</p>
 <ul class="simple">
 <li><p>Fully customizable build workflow</p></li>
@@ -1188,7 +1190,7 @@ contributors may benefit from understanding it.</p>
 </ul>
 </section>
 <section id="challenges-using-setuptools">
-<h3>Challenges using setuptools<a class="headerlink" href="#challenges-using-setuptools" title="Permalink to this heading">#</a></h3>
+<h3>Challenges using setuptools<a class="headerlink" href="#challenges-using-setuptools" title="Link to this heading">#</a></h3>
 <!--https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#editable-install-modules-not-found  -->
 <p>Setuptools has a few challenges:</p>
 <ul class="simple">
