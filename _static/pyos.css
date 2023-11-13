@@ -54,6 +54,19 @@ html, body {
     font-size: 1.02rem;
 }
 
+/* Allow the center content to expand to wide on wide screens */
+@media (min-width: 960px){
+.bd-page-width {
+    max-width: min(100%, 1600px)!important;
+    }
+}
+
+/* Make sure the header nav is centered  - not sure why it's not overriding*/
+.navbar-header-items .me-auto, .me-auto .navbar-header-items__center {
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
 body p {
 }
 
