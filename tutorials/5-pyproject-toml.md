@@ -1,19 +1,24 @@
 # Make your Python package PyPI ready - pyproject.toml
 
-:::{admonition} TODOS
+<!-- :::{admonition} TODOS
 :class: important
-- add a note for hatch - if you want to use dynamic versioning you'll need to add `tool.hatch.version` to the pyproject.toml file. 
-- flesh out the readme and license section after those pages exist
-- The bottom paragraphs at the very end are still out of place and likely could be combined...
+- add a note for hatch - if you want to use dynamic versioning you'll need to add `tool.hatch.version` to the pyproject.toml file.
+- TODO: decide how we want to list readme and license? it might make sense to just follow the simplest option and do spdx?
 - TODO: make sure they add the dev requirements here... including build.
-:::
+license = { text = "MIT" } that format is a toml inline table https://toml.io/en/v1.0.0#inline-table and it becomes a subtable of the project table
+::: -->
 
 <!--
 TODO: make sure that the link to our guide is on this page.  [Learn more about this file in our packaging guide.](https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html) -->
 
-In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it pip installable.
+In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it `pip` installable. You then learned:
 
-To both publish your package to PyPI and also help users find your package, you will want to add additional metadata to your `pyproject.toml` file that describes the use and contents of your package. You will
+* How to add a user-friendly `README.md` file to your package and
+* How to add a `LICENSE` and `CODE_OF_CONDUCT` file
+
+To both publish your package to PyPI and also help users find your package,
+you will want to add additional metadata to your `pyproject.toml` file that
+describes the use and contents of your package. You will
 learn how to do that in this lesson.
 
 <!--
@@ -32,12 +37,31 @@ In this lesson you will learn:
 If you wish to learn more about the `pyproject.toml` format, [check out this page. ](../package-structure-code/pyproject-toml-python-package-metadata.md)
 :::
 
+<!-- TODO: it might be nice to make this admonition look different if we stick with a TLDR section -->
+
+:::{admonition} Lesson highlights TL&DR
+
+When creating your pyproject.toml file, consider the following:
+
+1. As highlighted above, there are only two required metadata that you need to install and publish your package:
+* **[build-system]** and
+* **[project]**.
+2. The **[project]** table stores your package's metadata. There are only two _required_ fields in the **[project]** table:
+* **name=** and
+* **version=**
+3. You should add more metadata to the `[project]` table as it will make it easier for users to find your project on PyPI.
+3. When you are adding classifiers to the [project] table, only use valid values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build your package or publish to PyPI.
+4. There is no specific order for tables in the `pyproject.toml` file. However fields need to be placed within the correct table sections. For example `requires =` always need to be in the **[build-system]** table.
+5. We suggest (but do not require!) that you include your **[build-system]** table at the top of your `pyproject.toml` file.
+6. Always check the documentation for the package management tool that you are using given some of them read metadata differently. In our pyOpenSci tutorials we are using hatchling. If you decide to use a different build tool you may have to format some of your tables slightly differently.
+:::
+
 ## What is a pyproject.toml file?
 
 The `pyproject.toml` file is a human and machine-readable TOML file. The `pyproject.toml` file tells your build tool:
 
-- What build backend to use to build your package (e.g. `setuptools`, `hatchling`, `pdm.build`, etc)
-- How and where to retrieve your package's version (dynamically vs statically)
+- What build backend to use to build your package (e.g. `setuptools`, `hatchling`, `pdm.build`, etc.)
+- How and where to retrieve your package's version (dynamically vs. statically)
 - What dependencies you are using
 - What versions of Python your package supports
 
@@ -50,14 +74,13 @@ The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language
 Below that table identifier are key/value pairs that
 support configuration for that particular table.
 
-- Below `[build-system]` is considered a table in the toml language.
-- Within the build-system table below requires = is a key.
-- The associated value for requires is an array containing the value "hatchling".
+- Below `[build-system]` is a table in the toml language.
+- Within the build-system table below `requires =` is a key.
+- The associated value for `requires =` is an array containing the value "hatchling".
 
 ```toml
 [build-system] # <- this is a table
 requires = ["hatchling"] #  requires =  is a key and "hatchling" is a value contained within an array specified by square brackets [].
-
 ```
 
 :::{tip}
@@ -91,7 +114,7 @@ repository to quickly understand:
 - What it does, who maintains it
 - And more
 
-The file is also often used to configure tools such as static type checkers (e.g. mypy), linters (eg black, ruff), and other tools.
+The file is also often used to configure tools such as static type checkers (e.g. mypy), linters (e.g. black, ruff), and other tools.
 
 ## Time to update your pyproject.toml file
 
@@ -100,9 +123,9 @@ file that contained the core elements needed to build your
 package:
 
 1. A `[build]` table where ou defined your project's backend build tool (`hatchling`)
-2. a `[project]` table where you defined your project's version and name.
+2. A `[project]` table where you defined your project's version and name.
 
-The pyproject.toml file that you created, looked like this:
+The `pyproject.toml` file that you created, looked like this:
 
 ```toml
 [build-system]
@@ -114,12 +137,11 @@ name = "pyospackage"
 version = "1.1"
 ```
 
-Here, you will add a suite of recommended metadata fields. Once you add these, you don't have to do it again. These metadata fields will only be updated periodically when you do something such as:
+Your next step is to add additional recommended metadata fields that will both
+help users find your package on PyPI and also better describe the scope of your package. Once you add this metadata, you don't have to do it again. These metadata fields will only be updated periodically when you do something such as:
 
-- drop a dependency
-- modify what versions of Python your package supports.
-
-As such much of the work you do here will be a one-time thing.
+- drop a package dependency
+- modify what Python versions your package supports.
 
 :::{admonition} Python package build backends
 
@@ -129,6 +151,9 @@ your package.
 
 [Learn more about packaging tools and build back-ends here](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html#build-back-ends)
 
+Important: In some instances, specific build back-ends will need metadata provided in a slightly different way in your `pyproject.toml` file. Be sure to read documentation for the build tool that you are using if you don't use Hatchling which is used in this tutorial.
+
+The documentation for the hatchling back-end is [here](https://hatch.pypa.io/latest/config/metadata/)
 :::
 
 ## Add metadata to your pyproject.toml `[project]` table
@@ -148,18 +173,23 @@ Let's add the following to your table:
 - package **authors**
 - package **maintainers**
 
-:::{admonition} Authors vs maintainers
+:::{admonition} Authors vs. maintainers
 :class: tip
-
-_TODO from karen: It might be worth pointing out that there is no formal definitions for these terms, and projects can define maintainers and authors in a way that best represents their developer community?_
 
 When adding maintainers and authors, you may want to think about the difference between the two.
 
-Authors are generally people who originally created / designed developed the package. And people who add new functionality to the package. Whereas maintainers are the people that are currently, actively working on the project.
+Authors generally include people who:
+* originally created / designed developed the package and
+* people who add new functionality to the package.
 
-It is often the case that there is overlap in authors and maintainers. As such these lists may be similar or the same.
+Whereas maintainers are the people that are currently, actively working on the project. It is often the case that there is overlap in authors and maintainers. As such these lists may be similar or the same.
 
 A good example of when the lists might diverge is sometimes you have a package where an initial author developed it and then stepped down as a maintainer to move on to other things. This person may continue to be considered an author but no longer actively maintains the package.
+
+It is important to note there that there are many ways define author vs maintainer and we don't prescribe a single approach in this tutorial.
+
+However, we encourage you to consider carefully, for PyPI publication, who
+you want to have listed as authors and maintainers on your PyPI landing page.
 :::
 
 When you add authors and maintainers you need to use a format that will look like a Python list with a dictionary within it type of format:
@@ -208,7 +238,7 @@ Review that list and add items below to your `pyproject.toml` file:
 
 The classifier key should look something like the example below. A few notes:
 
-- that your classifiers might be different depending upon the license you have selected for your package, and the Python versions you support
+- Your classifier values might be different depending upon the license you have selected for your package, your intended audience, development status of your package and the Python versions that you support
 - You can add as many classifiers as you wish as long as you use the [designated PyPI classifier values](https://PyPI.org/classifiers/).
 
 ```toml
@@ -227,8 +257,8 @@ Note that while classifiers are not required in your `pyproject.toml` file, they
 ### Add package dependencies
 
 Next add your dependencies table to the project table.
-Dependencies represent the Python packages that your package requires to run. Dependencies
-get added in a list like structure.
+Dependencies represent the Python packages that your package requires to run. Similar to the build-system above, dependencies
+get added in an array (similar to a Python list) structure.
 
 ```toml
 dependencies = ["numpy", "requests", "pandas", "pydantic"]
@@ -243,18 +273,18 @@ Pinnning dependencies references to specifying a specific version of a dependenc
 Note that unless you are building an application, you want to be cautious about pinning dependencies. This is because
 users will be installing your package into various environments. A pinned dependency can make resolving an environment more challenging. As such only pin dependencies to a specific version if you absolutely need to do so.
 
-_TODO: Add a link to where we talk about pinning in the guide??_
+One build tool that you should be aware of that pins dependencies by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
 :::
 
 ### Requires-python
 
-Lastly, be sure to add the `requires-python` field to your pyproject.toml. This field, helps pip when installing your package understand the lowest version of Python that you package supports.
+Finally, add the `requires-python` field to your `pyproject.toml` `[project]` table. The `requires-python` field, helps pip understand the lowest version of Python that you package supports when it's installed. It is thus a single value.
 
 `requires-python = ">=3.10"`
 
 ### Your current pyproject.toml file
 
-Once you have dependencies declared in the `pyproject.toml `file, your build
+Once you have dependencies declared in the `pyproject.toml` file, your build
 tool will know to install them when your package is installed using pip.
 
 The project table of your `pyproject.toml` file should now look something like the example below.
@@ -284,23 +314,17 @@ dependencies = ["ruamel-yaml>=0.17.21", "requests", "python-dotenv", "pydantic"]
 
 ```
 
-### Add a license..
+### Add a license
 
-:::{admonition} THIS SECTION NEEDS WORK
-:class: todo
+In the previous lessons, you added both a [README.md](4-add-license-file) file and a [LICENSE](4-add-license-file) to your package repository.
+Once you have those files, you can add them to your pyproject.toml file as
+links following the example below.
 
-:::
-
-Finally add
-
-- requires-python -
-- readme and (they don't have a readme file yet... )
-- license.
 
 ```
 requires-python = ">=3.10"
 readme = "README.md"
-license = { text = "MIT" } # be sure to direct them to license values and how to chose a license.
+license = {file = 'LICENSE'}
 ```
 
 and a `requires-Python = ">=3.10"` that is important to have for pip.
@@ -323,10 +347,53 @@ pyproject.toml file.
 "Source" = "https://github.com/pyopensci/pyosmeta/"
 ```
 
-## Putting it all together - a commented example pyproject.toml file
+## Putting it all together - your completed pyproject.toml file
 
 Below is an example of a complete `pyproject.toml` file that
 is commented with all of the sections we discussed above.
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyosmeta"
+dynamic = ["version"]
+description = "Tools that update the pyOpenSci contributor and review metadata that is posted on our website"
+authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]
+
+maintainers = [
+    { name = "firstname lastname", email = "admin@pyopensci.org" },
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only", # BE sure to specify that you use python 3.x
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = ["ruamel-yaml>=0.17.21", "requests", "python-dotenv", "pydantic"]
+
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+[project.urls] # Optional
+"Homepage" = "https://www.pyopensci.org"
+"Bug Reports" = "https://github.com/pyopensci/pyosmeta/issues"
+#"Funding" = ""
+"Source" = "https://github.com/pyopensci/pyosmeta/issues"
+```
+
+
+## Appendix - A fully commented pyproject.toml file
+
+Below is a fully commented pyproject.toml file if you want to use it for reference.
 
 ```toml
 # You can delete all of the comments once you have created your own pyproject.toml file.
@@ -380,7 +447,7 @@ dependencies = ["ruamel-yaml>=0.17.21", "requests", "python-dotenv", "pydantic"]
 # This is the metadata that pip reads to understand what versions your package supports
 requires-python = ">=3.10"
 readme = "README.md"
-license = { text = "MIT" }
+license = { FILE = LICENSE }
 
 # Examples listed include a pattern for specifying where the package tracks
 # issues, where the source is hosted, where to say thanks to the package
@@ -400,84 +467,30 @@ license = { text = "MIT" }
 #package-dir = "src"
 
 
-# TODO: update this to work with hatchling
-# # Note that you need to create the tag after all commits are created - otherwise
+# Note that you need to create the tag after all commits are created for vcs based versioning to work
 [tool.hatch]
 version.source = "vcs"
 build.hooks.vcs.version-file = "src/<package>/version.py"
 ```
 
-:::{admonition} About the toml format
-:class: tip
 
-Note that when using the toml format, each section is defined with a `[section-here]` and that section is commonly referred to as a "table".
+## Example `pyproject.toml` files
 
-:::
-
-### Things to consider in your pyproject.toml file
-
-When creating your pyproject.toml file, consider the following:
-
-1. As highlighted above, there are only two tables or tables that you need to install and publish your package: the **[build-system]** table and the **[project]** section.
-2. The **[project]** table stores your package's metadata. There are only two _required_ fields in the **[project]** table: **name=** and **version=**. However, you should add more metadata here as it will make it easier for users to find your project on PyPI.
-3. When you are adding classifiers to the [project] table, only use valid values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build your package or publish to PyPI.
-4. There is no specific order for tables in the pyproject.toml file. However fields need to be placed within the correct table sections. For example `requires =` always need to be associated with the **[build-system]** table.
-5. Related to the above while this is not required, we suggest that you include your **[build-system]** table at the top of your `pyproject.toml` file.
-
-## Example file highlights
-
-Notice a few things about the pyproject.toml file:
-
-1. At the top, we specify the [build backend](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html#build-back-ends)- being used. This is valuable as a user and potential new contributor can quickly understand what tools you're using to build your package. While you don’t need to list this at the top we suggest that you do. That way it’s easy for a contributor to quickly understand what tools you are using to create your package.
-2. Below there is a `[project]` section. This is where you store your project's metadata. For the most part, this metadata is what PyPI will use to populate your landing page for your project.
-3. There is:
-   - a metadata section specifying Python versions that your package supports (which is what PyPI uses to index your package)
-   -
-
-![](https://hackmd.io/_uploads/HJ-p2J223.png)
-
-## Example pyproject.toml file without comments
-
-```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project]
-name = "pyosmeta"
-dynamic = ["version"]
-description = "Tools that update the pyOpenSci contributor and review metadata that is posted on our website"
-authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]
-
-maintainers = [
-    { name = "firstname lastname", email = "admin@pyopensci.org" },
-]
-
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3 :: Only", # BE sure to specify that you use python 3.x
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-]
-
-dependencies = ["ruamel-yaml>=0.17.21", "requests", "python-dotenv", "pydantic"]
-
-requires-python = ">=3.10"
-readme = "README.md"
-license = { text = "MIT" }
-
-[project.urls] # Optional
-"Homepage" = "https://www.pyopensci.org"
-"Bug Reports" = "https://github.com/pyopensci/pyosmeta/issues"
-#"Funding" = ""
-"Source" = "https://github.com/pyopensci/pyosmeta/issues"
+Below are some examples of `pyproject.toml` files from various packages in the scientific and pyOpenSci ecosystem.
+* [PyPAs fully documented pyProject.toml file](https://github.com/pypa/sampleproject/blob/main/pyproject.toml)
+* [taxpasta has a nicely organized pyProject.toml file and is a pyOpenSci approved package](https://github.com/taxprofiler/taxpasta/blob/f9f6eea2ae7dd08bb60a53dd49ad77e4cf143573/pyproject.toml)
 
 
-```
+## What's next??
 
-### A few other notes
+You are now ready to publish your Python package to PyPI and conda-forge.
 
-- The order of the sections of your pyproject.toml file doesn’t matter. What is important is that you have the correct subsections in each section. For example the build-system section should include your build requirements, but not your package classifiers which go in the project section of the pyproject toml.
+* In the next lesson, you will learn [how to publish to PyPI](6-publish-pypi).
+* Following that you'll learn how to create the recipe needed for conda-forge to build your package from PyPI and [publish it on conda-forge](7-publish-conda-forge).
+
+<!--
+TODO: add link to hatch documentation for metadata (which is what we want to follow using hatchling)
+TODO: make sure we have this listing for license
+* SPDX for licenses https://spdx.dev/use/overview/
+is 2 above enough for examples? should we show a few others?
+-->
