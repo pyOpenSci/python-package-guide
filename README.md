@@ -1,4 +1,4 @@
-# <img src="images/logo/logo.png" width=40 /> pyOpenSci Scientific Python Open Source Packaging Guide
+# <img src="images/logo/logo.png" width=40 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
