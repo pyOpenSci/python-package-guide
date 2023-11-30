@@ -51,6 +51,13 @@ html_baseurl = "https://www.pyopensci.org/software-peer-review/"
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
+       "favicons": [
+      {
+         "rel": "icon",
+         "sizes": "16x16",
+         "href": "https://www.pyopensci.org/images/favicon.ico",
+      },
+    ],
     "announcement": "<p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 ",
     #"navbar_center": ["nav"], this can be a way to override the default navigation structure
     "external_links": [
