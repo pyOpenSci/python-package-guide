@@ -10,6 +10,13 @@ TODO: Go back to pyproj toml lesson and add a dev dependencies section with buil
 `pip install build`
 -->
 
+<!--
+### Lesson TODOs ###
+
+TODO: don't forget to have them add /dist to their .gitignore ...
+
+https://hatch.pypa.io/latest/intro/#existing-project <- hatch will migrate from setup.py for you >
+-->
 
 In the previous lessons, you've learned:
 
