@@ -5,7 +5,7 @@ have is to make that code pip installable. You will learn how to make
 your code pip installable in this lesson.
 
 <!--
-TODO: is it clear where to add commands!! bash vs. python console
+TODO: is it clear where to add commands? bash vs. python console
 
 Bash vs zsh is different
 does this work on windows and mac? i know it works on mac/linux
