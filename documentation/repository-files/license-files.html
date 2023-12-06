@@ -17,14 +17,14 @@
             gtag('config', 'UA-141260825-1');
             
         </script>
-    <meta property="og:title" content="Your repository should have a LICENSE.md file" />
+    <meta property="og:title" content="License files for scientific Python open source software" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="documentation/repository-files/license-files.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="The root of your GitHub repository should also have a LICENSE.txt file. To be reviewed by pyOpenSci your project should use an open source software license that is approved by the Open Software Ini..." />
-<meta name="description" content="The root of your GitHub repository should also have a LICENSE.txt file. To be reviewed by pyOpenSci your project should use an open source software license that is approved by the Open Software Ini..." />
+<meta property="og:description" content="Want to learn how to add a license file to your GitHub repository? Check out this lesson. What is a Open Source License file?: When we talk about LICENSE files, we are referring to a file in your G..." />
+<meta name="description" content="Want to learn how to add a license file to your GitHub repository? Check out this lesson. What is a Open Source License file?: When we talk about LICENSE files, we are referring to a file in your G..." />
 
-    <title>Your repository should have a LICENSE.md file &#8212; Python Packaging Guide</title>
+    <title>License files for scientific Python open source software &#8212; Python Packaging Guide</title>
   
   
   
@@ -525,7 +525,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation for your Open Source Python Package</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Your...</li>
+    <li class="breadcrumb-item active" aria-current="page">License...</li>
   </ul>
 </nav>
 </div>
@@ -542,15 +542,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="your-repository-should-have-a-license-md-file">
-<h1>Your repository should have a LICENSE.md file<a class="headerlink" href="#your-repository-should-have-a-license-md-file" title="Link to this heading">#</a></h1>
-<p>The root of your GitHub repository should also have a LICENSE.txt file.</p>
-<p>To be reviewed by pyOpenSci your project should use an open source
-software license that is approved
-by the Open Software Initiative (OSI). OSI’s website has a
-<a class="reference external" href="https://opensource.org/licenses">list of popular licenses</a>. GitHub also has a
-<a class="reference external" href="https://choosealicense.com/">handy tool</a> for choosing a license.</p>
-<p>If you choose your license through GitHub, you can also automatically get a copy of the license file to add to your repository.</p>
+  <section id="license-files-for-scientific-python-open-source-software">
+<h1>License files for scientific Python open source software<a class="headerlink" href="#license-files-for-scientific-python-open-source-software" title="Link to this heading">#</a></h1>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill float-left reference external" href="https://www.pyopensci.org/about-peer-review/"><span>Want to learn how to add a license file to your GitHub repository? Check out this lesson.</span></a></p>
+<section id="what-is-a-open-source-license-file">
+<h2>What is a Open Source License file?<a class="headerlink" href="#what-is-a-open-source-license-file" title="Link to this heading">#</a></h2>
+<p>When we talk about LICENSE files, we are referring to a file in your
+GitHub or GitLab repository that contains legally binding language
+that describes to your users how they can legally use  (and not use) your package.</p>
+</section>
+<section id="why-licenses-are-important">
+<h2>Why licenses are important<a class="headerlink" href="#why-licenses-are-important" title="Link to this heading">#</a></h2>
+<p>A license file is important for all open source projects because it protects both you as a maintainer and your users. The license file helps your users and the community understand:</p>
+<ol class="arabic simple">
+<li><p>How they can use your software</p></li>
+<li><p>Whether the software can be reused or adapted for other purposes</p></li>
+<li><p>How people can contribute to your project</p></li>
+</ol>
+<p>and more.</p>
+<p><a class="reference external" href="https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project">Read more about why license files are critical in protecting both you as a maintainer and your users of your scientific Python open source package.</a></p>
+</section>
+<section id="where-to-store-your-license">
+<h2>Where to store your license<a class="headerlink" href="#where-to-store-your-license" title="Link to this heading">#</a></h2>
+<p>Your <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file should be stored at root of your GitHub / GitLab repository.</p>
+<p>Some maintainers customize the language in their license files for specific reasons. However, if you are just getting started, we suggest that you select a
+permissive license and then use the legal language templates provided both by GitHub and/or the <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a> website.</p>
+<p>Licenses are legally binding, as such you should avoid trying to create your own license unless you have the guidance of legal council.</p>
+<section id="use-open-permissive-licenses-when-possible">
+<h3>Use open permissive licenses when possible<a class="headerlink" href="#use-open-permissive-licenses-when-possible" title="Link to this heading">#</a></h3>
+<p>We generally suggest that you use a permissive, license that is <a class="reference external" href="https://opensource.org/licenses">Open Software Initiative (OSI) approved</a>. If you are
+<a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">submitting your package to pyOpenSci for peer review</a>, then we require an OSI approved
+license.</p>
+</section>
+<section id="how-to-choose-a-license">
+<h3>How to choose a license<a class="headerlink" href="#how-to-choose-a-license" title="Link to this heading">#</a></h3>
+<p>To select your license, we suggest that you use GitHub’s
+<a class="reference external" href="https://choosealicense.com/">Choose a License tool </a>.</p>
+<p>If you choose your license when creating a new GitHub repository, you can also
+automatically get a text copy of the license file to add to your repo. However
+in some cases the license that you want is not available through that online
+process.</p>
+<div class="admonition-license-recommendations-from-the-scipy-package admonition">
+<p class="admonition-title">License recommendations from the SciPy package</p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing">The SciPy documentation has an excellent overview of licenses.</a>. Once of the key elements
+that these docs recommend is ensuring that the license that you select is
+complementary to license used in the core scientific Python ecosystem.
+Below is a highlight of this text which outlines license that are compatible
+with the modified BSD license that SciPy uses.</p>
+<blockquote>
+<div><p>Other licenses that are compatible with the modified BSD license that SciPy uses are 2-clause BSD, MIT and PSF. Incompatible licenses are GPL, Apache and custom licenses that require attribution/citation or prohibit use for commercial purposes.</p>
+</div></blockquote>
+<p>To coordinate with other packages in our scientific ecosystem, we also recommend
+that you consider using either BSD or MIT as your
+license. If you are unsure, the MIT license tends to be a simpler easier-to-understand option.</p>
+</div>
+</section>
+</section>
 <section id="important-make-sure-that-you-closely-follow-the-guidelines-outlines-by-the-license-that-you-chose">
 <h2>Important: make sure that you closely follow the guidelines outlines by the License that you chose<a class="headerlink" href="#important-make-sure-that-you-closely-follow-the-guidelines-outlines-by-the-license-that-you-chose" title="Link to this heading">#</a></h2>
 <p>Every license has different guidelines in terms of what code
@@ -558,17 +605,21 @@ you can use in your package and also how others can (or can not) use the code in
 <p>If you borrow code from other tools or online sources, make
 sure that the license for the code that you are using also complies
 with the license that you selected for your package.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>An example of code that would not comply with a BSD or MIT license would be any code copied from StackOverflow website.
-<a class="reference external" href="https://stackoverflow.com/help/licensing">Stack overflow users a Creative Commons Share Alike license.</a> The sharealike license requires you to use the same sharealike license when you reuse any code from stackoverflow. Thus, if you use code from stack overflow in your package and have a MIT license applied to your package, you are violating stack overflow’s license requirements! Proceed with caution here!</p>
+<div class="note admonition">
+<p class="admonition-title">An example of how a license determine how code can be reused</p>
+<p>Let’s use stackOverflow as an example that highlights how a license determines how code can or can not be used.</p>
+<p><a class="reference external" href="https://stackoverflow.com/help/licensing">Stack overflow uses a Creative Commons Share Alike license.</a>. The sharealike license requires you to use the same sharealike license when you reuse any code from stackoverflow.</p>
+<p>This means that technically, if you copy code from the Stack Overflow website, and use it in your package. And your packages uses a different license such as a MIT license, you are violating Stack Overflow’s license requirements!</p>
+<p>🚨 Proceed with caution! 🚨</p>
 </div>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing">The SciPy documentation has an excellent license discussion that is worth reading and considering for your project’s development guide.</a></p>
-<!-- TODO: Add discussion of GitHub citation.cff files ??
-i think we need to better understand how this works before adding it...
-
+</section>
+<section id="what-about-software-citation">
+<h2>What about software citation?<a class="headerlink" href="#what-about-software-citation" title="Link to this heading">#</a></h2>
+<p>While many permissive licenses do not require citation we STRONG encourage that you cite all software that you use in papers, blogs and other publications. You tell your users how to cite your package by using a <a class="reference external" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files">citation.cff file</a>. We will cover this topic when we talk about creating DOI’s for your package using zenodo.</p>
+<!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with zenodo (do they work??) will the citation info update with a new zenodo link
 
 These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. if it's not dynamic it could be problematic
+
 
 -->
 </section>
@@ -618,7 +669,15 @@ These files - we need to understand if that date releases auto populates or forc
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-open-source-license-file">What is a Open Source License file?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-licenses-are-important">Why licenses are important</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-store-your-license">Where to store your license</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-open-permissive-licenses-when-possible">Use open permissive licenses when possible</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-a-license">How to choose a license</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-make-sure-that-you-closely-follow-the-guidelines-outlines-by-the-license-that-you-chose">Important: make sure that you closely follow the guidelines outlines by the License that you chose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-software-citation">What about software citation?</a></li>
 </ul>
   </nav></div>
 
