@@ -19,6 +19,8 @@ what's missing
 5. There is no specific order for tables in the `pyproject.toml` file. However fields need to be placed within the correct table sections. For example `requires =` always need to be associated with the **[build-system]** table.
 6. **python-requires**: is important to have in your `pyproject.toml` file as it helps pip install your package.
 
+<!-- Commenting this out given the lessons aren't online yet
+we can add this back once tutorials are published
 :::
 
 ::::{grid} 2
@@ -49,7 +51,7 @@ Click here if need help migrating from setup.py/setup.cfg to pyproject.toml
 ```
 
 :::
-::::
+:::: -->
 
 ## About the pyproject.toml file
 
@@ -65,7 +67,9 @@ Prior to August 2017, Python package metadata was stored either in the `setup.py
 - allows you to use a suite of different [build backends](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html#build-back-ends) such as (flit-core, hatchling, pdm-build), and
 - aligns with modern best practices.
 
-If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](../tutorials/extras/6-setuppy-to-pyproject-toml.md)
+<!--Commented until tutorials go live
+
+ If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](../tutorials/extras/6-setuppy-to-pyproject-toml.md) -->
 :::
 
 The standard file that Python packages use to [specify build requirements and
