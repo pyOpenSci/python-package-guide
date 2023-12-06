@@ -1,3 +1,16 @@
+/* PyOS-specific vars :) */
+:root {
+    --pyos-color-primary: #703c87;
+    --pyos-color-secondary: #8045e5;
+    --pyos-color-secondary-highlight: #591bc2;
+    --pyos-color-tertiary: #A66C98;
+    --pyos-color-dark: #542568;
+    --pyos-color-light: #DAABCF;
+
+    /* Darkmode Adjustments*/
+    --pyos-dm-color-primary: #C483E0;
+}
+
 html, body {
     font-size: 1.0rem;
 }
@@ -37,8 +50,8 @@ h2, h3, h4 {
 h1 {
     margin-top: 10px;
     margin-bottom: 40px;
-    font-family: 'Itim'!important;
-    color: #542568;
+    font-family: 'Itim' !important;
+    color: var(--pyos-h1-color);
 }
 h2 {
     margin-top: 80px;
@@ -66,6 +79,16 @@ figcaption {
     font-size: .9em;
 }
 
+/* Navbar */
+/*
+Don't fill all vertical space beneath TOC, which causes
+readthedocs version selector to fall off the page and the
+ugly scrollbar to show all the time
+*/
+.bd-sidebar-primary .sidebar-primary-items__end {
+  margin-bottom: unset;
+  margin-top: unset;
+}
 
 /* Tutorial block page */
 .left-div {
@@ -139,7 +162,7 @@ figcaption {
 
 
 html[data-theme=light] {
-    --pst-color-primary: #703c87;
+    --pst-color-primary: var(--pyos-color-primary);
     --pst-color-primary-text: #fff;
     --pst-color-primary-highlight: #053f49;
     --sd-color-primary: var(--pst-color-primary);
@@ -147,9 +170,9 @@ html[data-theme=light] {
     --sd-color-primary-highlight: var(--pst-color-primary-highlight);
     --sd-color-primary-bg: #d0ecf1;
     --sd-color-primary-bg-text: #14181e;
-    --pst-color-secondary: #8045e5;
+    --pst-color-secondary: var(--pyos-color-secondary);
     --pst-color-secondary-text: #fff;
-    --pst-color-secondary-highlight: #591bc2;
+    --pst-color-secondary-highlight: var(--pyos-color-secondary-highlight);
     --sd-color-secondary: var(--pst-color-secondary);
     --sd-color-secondary-text: var(--pst-color-secondary-text);
     --sd-color-secondary-highlight: var(--pst-color-secondary-highlight);
@@ -165,5 +188,13 @@ html[data-theme=light] {
     --sd-color-success-bg-text: #14181e;
     --pst-color-info: #A66C98; /* general admonition */
     --pst-color-info-bg: #eac8e2;
-    --pst-heading-color: #542568;
+    --pst-heading-color: var(--pyos-color-dark);
+    --pyos-h1-color: var(--pyos-color-dark);
+}
+
+html[data-theme=dark] {
+    --pst-color-primary: var(--pyos-dm-color-primary);
+    --pst-color-link: var(--pyos-color-light);
+    --pst-color-link-hover: var(--pyos-dm-color-primary);
+    --pyos-h1-color: var(--pyos-color-light);
 }
