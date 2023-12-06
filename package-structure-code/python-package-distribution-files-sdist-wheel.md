@@ -145,7 +145,7 @@ or is more complex in its build, the two distributions will be very different.
 Also note that we are not discussing conda build workflows in this section.
 [You can learn more about conda builds here.](https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
 ```
-
+(python-source-distribution)=
 ## Source Distribution (sdist)
 
 **Source files** are the unbuilt files needed to build your
@@ -219,6 +219,7 @@ items including a metadata directory and if you use `setuptools_scm` or `hatch_v
 the sdist may also contain a file that stores the version.
 ```
 
+(python-wheel)=
 ## Wheel (.whl files):
 
 A wheel file is a ZIP-format archive whose filename follows a specific format
