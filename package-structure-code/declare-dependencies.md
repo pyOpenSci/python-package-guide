@@ -21,7 +21,7 @@ a user requires to install your package, can be stored in a
 dependencies array located within the `[project]` table of your
 pyproject.toml file. This looks something like this:
 
-````toml
+```toml
 [project]
 name = "examplePy"
 authors = [
@@ -36,7 +36,7 @@ dependencies = [
 
 ## Development dependencies
 
-Dependencies for building your documentation, running your tests and building your package's distribution files are often referred to as development dependencies. These are the dependnecies that a user needs to run core development elements of your package such as:
+Dependencies for building your documentation, running your tests and building your package's distribution files are often referred to as development dependencies. These are the dependencies that a user needs to run core development elements of your package such as:
 
 * running your test suite
 * building your documentation
@@ -45,11 +45,11 @@ Dependencies for building your documentation, running your tests and building yo
 These dependencies can be stored in an
 `[optional.dependencies]` table within the **pyproject.toml** file.
 
-```{admonition} What happened to the requirements.txt file for dependencies?
+:::{admonition} What happened to the requirements.txt file for dependencies?
 :class: note
 
 The requirements.txt file used to be the default way to store dependencies. However in recent years, the ecosystem has moved to storing all of this information in a single **pyproject.toml** file. You may find that some projects do still maintain a requirements.txt file either for specific local development needs OR to support users who may want to create a pip-based virtual environment.
-````
+:::
 
 ## How to declare development dependencies
 
@@ -60,10 +60,11 @@ To declare dependencies in your **pyproject.toml** file:
 
 `group-name = ["dep1", "dep2"]`
 
-```{tip}
+```{admonition} Installing packages from GitHub / Gitlab
+:class: tip
 
 If you have dependencies that need to be installed
-directly from github using a  `git+https` installation
+directly from github using a `git+https` installation
 approach then you may still need to use a requirements.txt or a conda environment file for your dependency installs.
 
 ```
@@ -88,21 +89,33 @@ lint = [
 
 ## How to install dependencies from your pyproject.toml
 
+:::{admonition} Using `python -m pip`
+
+In all of the examples in this guide, you will notice we are calling
+`pip` using the syntax:
+
+`python -m pip`
+
+Calling pip using `python -m` ensures that the pip that you are using to install your package comes from your current active Python
+environment. We strongly suggest that you use this approach whenever
+you call `pip` to avoid installation conflicts.
+:::
+
 You can install development dependencies using the
 groups that you defined above using the syntax:
 
-`pip install .[docs]`
+`python -m pip install .[docs]`
 
 Above you install the dependencies needed for your documentation and also your package using pip. Below you
 install just the dependencies needed to run your tests:
 
-`pip install .[tests]`
+`python -m pip install .[tests]`
 
 You can install all dependencies in the `[optional.dependencies]` table using:
 
-`pip install .[docs, tests, lint]`
+`python -m pip install .[docs, tests, lint]`
 
-Each time you call `pip install .[groups-here]`, you are also installing your package locally and also any dependencies
+Each time you call `python -m pip install .[groups-here]`, you are also installing your package locally and also any dependencies
 that your package needs / has declared in your pyproject.toml file.
 
 ```{admonition} For zsh shell users
@@ -111,7 +124,7 @@ that your package needs / has declared in your pyproject.toml file.
 Some versions of shell don't support the square bracket syntax. In those cases you will need to add
 quotes to your install call like this:
 
-`pip install 'yourPackage.[tests]'`
+`python -m pip install 'yourPackage.[tests]'`
 
 ```
 
@@ -133,12 +146,12 @@ dev = [
 The above allows you to install both the tests and docs dependency lists
 using the command:
 
-`pip install .[dev]`
+`python -m pip install .[dev]`
 
 ```{tip}
 When you install dependencies using the above syntax:
 
-`pip install .[tests, docs]`
+`python -m pip install .[tests, docs]`
 
 pip will also install both your package and its core dependencies.
 ```
