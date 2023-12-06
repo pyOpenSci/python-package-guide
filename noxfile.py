@@ -38,7 +38,7 @@ def docs_live(session):
     cmd = ["sphinx-autobuild"]
     for folder in AUTOBUILD_IGNORE:
         cmd.extend(["--ignore", f"*/{folder}/*"])
-    
+
     cmd.extend(build_command)
 
     # use positional arguments if we have them
