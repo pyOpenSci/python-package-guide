@@ -35,7 +35,6 @@ extensions = [
     "sphinx_copybutton",
     "sphinx.ext.intersphinx",
     "sphinx_sitemap",
-    "sphinxcontrib.gtagjs",
     "sphinxext.opengraph",
 ]
 
@@ -98,20 +97,11 @@ html_theme_options = {
     "footer_items": ["copyright"],
 }
 
-html_theme_options["analytics"] = {
-    "google_analytics_id": "UA-141260825-1",
-}
-
 html_context = {
     "github_user": "pyopensci",
     "github_repo": "python-package-guide",
     "github_version": "main",
 }
-
-# Add analytics to furo theme
-gtagjs_ids = [
-    "UA-141260825-1",
-]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
