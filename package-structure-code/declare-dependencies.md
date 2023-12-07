@@ -1,5 +1,4 @@
-# Declaring Development Dependencies - Python Packaging
-
+# Python Package Dependencies
 
 :::{admonition} What happened to the requirements.txt file for dependencies?
 :class: note
@@ -8,7 +7,7 @@ The `requirements.txt` file used to be the default way to store dependencies. Ho
 :::
 
 
-## How to declare documentation, test, and other dependencies
+## Declaring different types of dependencies
 
 In the [pyproject.toml overview page](pyproject-toml-python-package-metadata),
 we discussed how to set up a **pyproject.toml** file with basic metadata
@@ -27,11 +26,11 @@ If a project contains extensions written in other languages, you may need a `set
 :::
 
 
-## Direct project dependencies
+### Required dependencies
 
 Your core project dependencies represent the packages that
 a user needs to install and use your package. Dependencies can be stored in a
-dependencies array located within the `[project]` table of your
+`dependencies` array located within the `[project]` table of your
 **pyproject.toml** file. This looks something like this:
 
 ```toml
@@ -52,7 +51,7 @@ necessary to install and use your package in the `[dependencies]` section. This 
 
 Remember that fewer dependencies to install reduces the likelihood of version mismatches in user environments.
 
-## Optional dependencies
+### Optional dependencies
 
 Dependencies for building your documentation, running your tests and building your package's distribution files are often referred to as development dependencies. These are the dependencies that a user needs to run core development elements of your package such as:
 
@@ -60,12 +59,14 @@ Dependencies for building your documentation, running your tests and building yo
 * building your documentation
 * linting and other code cleanup tools
 
-These dependencies can be stored in an
+These dependencies are considered optional, because they are not required to install and use your package.
+
+Optional dependencies can be stored in an
 `[optional.dependencies]` table in your **pyproject.toml** file.
 
 It's important to note that within the `optional.dependencies` table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies section discussed above which contains a single array with a single list of required packages.
 
-## How to declare development dependencies
+## Create optional dependency groups
 
 To declare dependencies in your **pyproject.toml** file:
 
@@ -74,14 +75,23 @@ To declare dependencies in your **pyproject.toml** file:
 
 `group-name = ["dep1", "dep2"]`
 
-```{admonition} Installing packages from GitHub / Gitlab
+:::{admonition} Installing packages from GitHub / Gitlab
 :class: tip
 
-If you have dependencies that need to be installed
-directly from github using a `git+https` installation
-approach then you may still need to use a requirements.txt or a conda environment file for your dependency installs.
+If you have dependencies that need to be installed directly from GitHub using
+a `git+https` installation approach, you can do so using the pyproject.toml
+file like so:
 
+```toml
+dependencies = [
+"my_dependency >= 1.0.1 @ git+https://git.server.example.com/mydependency.git"
+]
 ```
+
+IMPORTANT: For security reasons, if your library depends on a GitHub-hosted
+project, you will need to point to a specific commit/tag of that repository in
+order to upload your project to PyPI
+:::
 
 Below we've created 3 sets of optional dependencies named: tests, docs and lint:
 
@@ -106,7 +116,7 @@ lint = [
 
 :::
 
-## How to install dependencies from your pyproject.toml
+### Install dependency groups
 
 :::{admonition} Using `python -m pip`
 
@@ -118,6 +128,9 @@ In all of the examples in this guide, you will notice we are calling
 Calling pip using `python -m` ensures that the pip that you are using to install your package comes from your current active Python
 environment. We strongly suggest that you use this approach whenever
 you call `pip` to avoid installation conflicts.
+
+To ensure this works as you want it to, activate your package's development
+environment prior to installing anything using `pip`.
 :::
 
 You can install development dependencies using the
@@ -198,7 +211,7 @@ This works great if your package is pure-python (no other languages used).
 Some packages, particularly in the scientific Python ecosystem, require dependencies that are not written in Python. Conda was created to support distribution of tools that have code written in both Python and languages other than Python.
 :::
 
-## Support your conda users with environment.yml files
+## Support conda users with environment.yml files
 
 The above workflow assumes that you want to publish your package on PyPI. And then you plan to publish to conda-forge (optionally), [by submitting a recipe using grayskull](https://www.pyopensci.org/python-package-guide/package-structure-code/publish-python-package-pypi-conda.html).
 
@@ -215,7 +228,7 @@ Thus, if you are running a conda environment, installing your package in editabl
 Alternatively, you can install your package using `pip install -e . --no-deps` to only install the package. And install the rest of your dependencies using a conda environment file.
 ```
 
-## Read the Docs & project dependencies
+## Dependencies in Read the Docs
 
 Now that you have your dependencies specified in your project, you can use them to support other workflows such as publishing to Read the Docs.
 
