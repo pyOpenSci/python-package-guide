@@ -1,3 +1,8 @@
+```{eval-rst}
+:og:title: My title
+:og:description: whatever other meta tags you want
+```
+
 # Python Package Dependencies
 
 ## What is a package dependency?
@@ -24,9 +29,6 @@ for your package. On this page, you will learn how to specify different types of
 dependencies in your `pyproject.toml`.
 
 :::{todo}
-
-LEAH: just doubek check the conda info and think about add jonny's note on conda ON the conda page.
-
 
 Following this comment:
 https://github.com/pyOpenSci/python-package-guide/pull/106#pullrequestreview-1766663571
@@ -190,22 +192,27 @@ You can install multiple dependency groups in the `[optional.dependencies]` tabl
 ```{admonition} For zsh shell users
 :class: tip
 
-Some versions of shell including all of the modern Macs that now use zsh shell, support the square bracket syntax. In those cases you will need to add
-quotes to your install call like this:
+There are different shell applications that you and your package contributors might use.
+* zsh is the shell that comes with most Mac OS computer
+* Windows users may use a tool such as git bash
+
+Many shells don't support the bracket `[tests]` syntax which is why we add
+quotes to the command in this guide like this:
 
 `python -m pip install ".[tests]"`
 
-In some cases you may see syntax like this:
+In some cases you may see syntax without the quotes in guidebooks or contributing
+guides like the example below:
 
 `python -m pip install yourPackage[tests]`
 
-in documentation. This will work on some versions of shell but not all.
+Calling yourPackage[tests] without the double quotes will work on some shells but not all.
 
 ```
 
 ### Combining sets of dependencies
 
-Above we reviewed how to install dependencies from your pyproject toml. In some cases you may want to group sets of dependencies like so:
+Above we reviewed how to install dependencies from your `pyproject.toml`. In some cases you may want to group sets of dependencies like so:
 
 ```toml
 [project.optional-dependencies]
@@ -236,9 +243,9 @@ When you install dependencies using the above syntax:
 :class: note
 
 The `pyproject.toml` file allows you to list any
-Python package published on PyPI (or on GitHub/ GitLab) as a dependency. Once create this file, declare dependencies, [build your package](python-package-distribution-files-sdist-wheel.md) and [publish your package to PyPI](publish-python-package-pypi-conda.md), people can install both your package and all of it's dependencies with one command.
+Python package published on PyPI (or on GitHub/ GitLab) as a dependency. Once you create this file, declare dependencies, [build your package](python-package-distribution-files-sdist-wheel.md) and [publish your package to PyPI](publish-python-package-pypi-conda.md), people can install both your package and all of it's dependencies with one command.
 
-`pip install yourPackage`
+`python -m pip install yourPackage`
 
 This works great if your package is pure-python (no other languages used).
 
