@@ -202,7 +202,7 @@ When you install dependencies using the above syntax:
 :class: note
 
 The `pyproject.toml` file allows you to list any
-Python package published on PyPI (or on GitHub/ GitLab) as a dependency. Once create this file, declare dependencies, [build your package](python-package-distribution-files-sdist-wheel.md) and [publish your package to PyPI](publish-python-package-pypi-conda.), people can install both your package and all of it's dependencies with one command.
+Python package published on PyPI (or on GitHub/ GitLab) as a dependency. Once create this file, declare dependencies, [build your package](python-package-distribution-files-sdist-wheel.md) and [publish your package to PyPI](publish-python-package-pypi-conda.md), people can install both your package and all of it's dependencies with one command.
 
 `pip install yourPackage`
 
