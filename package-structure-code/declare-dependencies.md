@@ -1,6 +1,6 @@
 ```{eval-rst}
-:og:title: My title
-:og:description: whatever other meta tags you want
+:og:title: Add required and optional dependencies to your Python package
+:og:description: A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package.
 ```
 
 # Python Package Dependencies
@@ -9,19 +9,29 @@
 
 A Python package dependency refers to an external package or
 software that your Python project requires to function properly.
-A dependency is not part of your project's codebase, but is called
+A dependency is not part of your project's codebase. It is a package or software that is called
 within the code of your project.
 
+
+### Optional vs. required dependencies
 There are different types of dependencies to consider when creating
 a Python package:
 
 1. **Core dependencies:** These dependencies are called directly within your package's code. As such they are required in order to run your package.
 2. **Development dependencies**: These are dependencies that are required to support development of your package. THey include tools to run tests such as pytest, linters and code formatters such as black and flake8 and even automation tools such as nox that run tasks.
 
+
+:::{figure-md} python-package-dependencies
+
+<img src="../images/python-package-dependencies.png" alt="">
+
+Caption here
+:::
+
 When a Python project is installed, the Python package manager (either `pip`
 or `conda`) installs your package's dependencies automatically. This ensures
-that when you call functionality from a dependency, it is available in your
-users environment.
+that when you call a function in a specific dependency, it is available in your
+user's environment.
 
 In the [pyproject.toml overview page](pyproject-toml-python-package-metadata),
 you learned how to set up a **pyproject.toml** file with basic metadata
@@ -29,6 +39,8 @@ for your package. On this page, you will learn how to specify different types of
 dependencies in your `pyproject.toml`.
 
 :::{todo}
+
+keep this comment - https://github.com/pyOpenSci/python-package-guide/pull/106#issuecomment-1844278487 in this file for now - jeremiah did a nice inventory of common shells and whether they need quotes or not. it's really comprehensive. but do we want it in the guide?? it's really useful for more advanced users i think.
 
 Following this comment:
 https://github.com/pyOpenSci/python-package-guide/pull/106#pullrequestreview-1766663571
@@ -86,6 +98,23 @@ Ideally, you should only list the packages that are
 necessary to install and use your package in the `[dependencies]` section. This minimized the number of additional packages that both your users and packages that depend upon your package have to install.
 
 Remember that fewer dependencies to install reduces the likelihood of version mismatches in user environments.
+
+
+:::{admonition} A dependency example
+
+Let's pretend you have a package called `plotMe` that creates beautiful plots of data stored in `numpy` arrays. To create your plots in the `plotMe` package, you use the `seaborn` package to stylize our plots and also `numpy` to process array formatted data.
+
+In the example above, the plotMe package, depends upon two packages:
+
+* seaborn
+* numpy
+
+This means that in order for plotMe to work in a users `environment` when installed, you also need to ensure that they have both of those required `dependencies` installed in their environment too.
+
+Declaring a dependency in your `pyproject.toml` file will ensure that it is listed as a required dependency when published to PyPI and that it is automatically installed by pip or conda into a users environment when they run:
+
+`python -m pip install plotMe`
+:::
 
 ### Optional dependencies
 
@@ -289,13 +318,19 @@ python:
 ```
 
 :::{tip}
-[Learn more about creating a `readthedocs.yaml` file here. ](https://docs.readthedocs.io/en/stable/config-file/index.html)
+
 :::
 
 
-:::{admonition} Dependencies using other front-end build tool like PDM, Hatch or Poetry
+:::{admonition} Read the Docs and Python packages
 :class: note
 
-If you are using another front-end build tool such as PDM, Hatch or Poetry to manage dependencies, then your approach to installing dependencies in your ReadtheDocs.yml file may be different. You can learn more about [configuring RTD for tools such as Poetry and PDM here.](https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry)
+* [Learn more about creating a `readthedocs.yaml` file here. ](https://docs.readthedocs.io/en/stable/config-file/index.html)
+* If you want to install dependencies using
+Poetry in Read the Docs, [you can learn more here.](https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry)
 
+:::
+
+:::{todo}
+This is hidden. TO
 :::
