@@ -6,7 +6,8 @@ import nox
 nox.options.reuse_existing_virtualenvs = True
 
 OUTPUT_DIR = "_build"
-build_command = ["-b", "html", ".", "/".join([OUTPUT_DIR, "/html"])]
+docs_dir = os.path.join("_build", "html")
+build_command = ["-b", "html", ".", docs_dir]
 
 @nox.session
 def docs(session):
@@ -25,12 +26,14 @@ def docs_live(session):
         "build_assets",
         "tmp",
     ]
+
     # Explicitly include custom CSS in each build since
     # sphinx doesn't think _static files should change since,
     # well, they're static.
     # Include these as the final `filenames` argument
+
     AUTOBUILD_INCLUDE = [
-        "_static/pyos.css"
+        os.path.join("_static", "pyos.css")
     ]
 
     # ----------------
@@ -39,19 +42,19 @@ def docs_live(session):
     for folder in AUTOBUILD_IGNORE:
         cmd.extend(["--ignore", f"*/{folder}/*"])
 
-    cmd.extend(build_command)
+    #cmd.extend(build_command)
+    cmd.extend(build_command + session.posargs)
 
-    # use positional arguments if we have them
-    if len(session.posargs) > 0:
-        cmd.extend(session.posargs)
-    # otherwise use default output and include directory
-    else:
-        cmd.extend(AUTOBUILD_INCLUDE)
+    # Use positional arguments if we have them
+    # if len(session.posargs) > 0:
+    #     cmd.extend(session.posargs)
+    # # Otherwise use default output and include directory
+    # else:
+    #     cmd.extend(AUTOBUILD_INCLUDE)
 
-    # ----------------
     session.run(*cmd)
 
-docs_dir = os.path.join("_build", "html")
+
 
 @nox.session(name="docs-clean")
 def clean_dir(dir_path=docs_dir):

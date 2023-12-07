@@ -1,22 +1,51 @@
 # Python Package Dependencies
 
-:::{admonition} What happened to the requirements.txt file for dependencies?
-:class: note
+## What is a package dependency?
 
-The `requirements.txt` file used to be the default way to store dependencies. However in recent years, the ecosystem has moved to storing all of this information in a single **pyproject.toml** file. Some projects still maintain a `requirements.txt` file either for specific local development needs.
-:::
+A Python package dependency refers to an external package or
+software that your Python project requires to function properly.
+A dependency is not part of your project's codebase, but is called
+within the code of your project.
 
+There are different types of dependencies to consider when creating
+a Python package:
 
-## Declaring different types of dependencies
+1. **Core dependencies:** These dependencies are called directly within your package's code. As such they are required in order to run your package.
+2. **Development dependencies**: These are dependencies that are required to support development of your package. THey include tools to run tests such as pytest, linters and code formatters such as black and flake8 and even automation tools such as nox that run tasks.
+
+When a Python project is installed, the Python package manager (either `pip`
+or `conda`) installs your package's dependencies automatically. This ensures
+that when you call functionality from a dependency, it is available in your
+users environment.
 
 In the [pyproject.toml overview page](pyproject-toml-python-package-metadata),
-we discussed how to set up a **pyproject.toml** file with basic metadata
-information. On this page, you will learn about storing and accessing dependency
-information within the pyproject.toml file.
+you learned how to set up a **pyproject.toml** file with basic metadata
+for your package. On this page, you will learn how to specify different types of
+dependencies in your `pyproject.toml`.
 
-It is recommended that you store all dependency information in a **pyproject.toml** file. This ensures that all of the metadata associated with your package is declared
+:::{todo}
+Following this comment:
+https://github.com/pyOpenSci/python-package-guide/pull/106#pullrequestreview-1766663571
+
+Jonny will add a section that talks about:
+
+Why you specify dependencies
+How to specify dependencies
+When you use different specifiers
+:::
+
+## How do you declare dependencies?
+
+We suggest that you declare your dependencies using your `pyproject.toml` file.
+This ensures that all of the metadata associated with your package is declared
 in a single place, making it simpler for users and contributors to understand
 your package infrastructure.
+
+Previously, it was common to use a `requirements.txt` file declare dependencies.
+However in recent years, the ecosystem has moved to storing this
+information in your **pyproject.toml** file. You may notice however that some
+projects still maintain a `requirements.txt` file for specific local development
+needs.
 
 :::{admonition} Other ways you may see packages storing dependencies
 :class: tip
