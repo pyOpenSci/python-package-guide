@@ -24,6 +24,10 @@ for your package. On this page, you will learn how to specify different types of
 dependencies in your `pyproject.toml`.
 
 :::{todo}
+
+LEAH: just doubek check the conda info and think about add jonny's note on conda ON the conda page.
+
+
 Following this comment:
 https://github.com/pyOpenSci/python-package-guide/pull/106#pullrequestreview-1766663571
 
@@ -58,7 +62,8 @@ If a project contains extensions written in other languages, you may need a `set
 ### Required dependencies
 
 Your core project dependencies represent the packages that
-a user needs to install and use your package. Dependencies can be stored in a
+a package manager (`pip` or `conda`) needs to install in order for your package
+to work properly in a user's environment. Dependencies can be stored in a
 `dependencies` array located within the `[project]` table of your
 **pyproject.toml** file. This looks something like this:
 
