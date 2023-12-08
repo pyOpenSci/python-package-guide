@@ -235,7 +235,7 @@ guides like the example below:
 
 `python -m pip install yourPackage[tests]`
 
-Calling yourPackage[tests] without the double quotes will work on some shells but not all.
+Calling yourPackage[tests] without the double quotes will work on some shells *but not all*.
 
 ```
 
