@@ -154,7 +154,7 @@ dependencies = [
 ```
 
 IMPORTANT: For security reasons, if your library depends on a GitHub-hosted
-project, you will need to point to a specific commit/tag of that repository in
+project, you will need to point to a specific commit/tag/hash of that repository in
 order to upload your project to PyPI
 :::
 
