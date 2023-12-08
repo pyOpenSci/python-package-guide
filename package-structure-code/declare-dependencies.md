@@ -3,40 +3,7 @@
 :og:description: A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package.
 ```
 
-# Python Package Dependencies
 
-## What is a package dependency?
-
-A Python package dependency refers to an external package or
-software that your Python project requires to function properly.
-A dependency is not part of your project's codebase. It is a package or software that is called
-within the code of your project.
-
-
-### Optional vs. required dependencies
-There are different types of dependencies to consider when creating
-a Python package:
-
-1. **Core dependencies:** These dependencies are called directly within your package's code. As such they are required in order to run your package.
-2. **Development dependencies**: These are dependencies that are required to support development of your package. They include tools to run tests such as `pytest`, linters (like `flake8` and `ruff`) and code formatters such as `black` and even automation tools such as `nox` or `tox` that run tasks.
-
-
-:::{figure-md} python-package-dependencies
-
-<img src="../images/python-package-dependencies.png" alt="">
-
-Caption here
-:::
-
-When a Python project is installed, the Python package manager (either `pip`
-or `conda`) installs your package's dependencies automatically. This ensures
-that when you call a function in a specific dependency, it is available in your
-user's environment.
-
-In the [pyproject.toml overview page](pyproject-toml-python-package-metadata),
-you learned how to set up a **pyproject.toml** file with basic metadata
-for your package. On this page, you will learn how to specify different types of
-dependencies in your `pyproject.toml`.
 
 :::{todo}
 
@@ -52,9 +19,66 @@ How to specify dependencies
 When you use different specifiers
 :::
 
+# Python Package Dependencies
+
+## What is a package dependency?
+
+A Python package dependency refers to an external package or
+software that your Python project:
+
+1. needs to function properly.
+2. requires if someone wants to develop / work on improving your package locally or
+3. requires if a user wants to add additional functionality (that is not core) to your package
+
+A dependency is not part of your project's codebase. It is a package or software that is called
+within the code of your project or during development of your package.
+
+
+### Understanding optional vs. required dependencies
+You can think about dependencies as being either optional or required. If they are required, they will be listed in the `[dependency] =` table of your `pyproject.toml` file. If they are optional, they will be listed in the `[optional.dependencies]` table of your `pyproject.toml`.
+
+You will learn about both below.
+
+:::{figure-md} python-package-dependency-types
+
+<img src="../images/python-package-dependency-types.png" alt="">
+
+There are two broad groups of Python package dependencies: those that are optional and those that are required. Required packages are those that a user needs to use your package. Optional dependencies are packages a user can chose to install to add functionality to your package.
+Within those 2 groups, there are three use cases that you can think about. 1. Core dependencies are **required** for a user to use your package. 2. Development dependencies are optional and only needed if someone wants to work on your package locally. 3. Finally feature dependencies are optional and add additional functionality to your package. Not all packages will have feature dependencies.
+:::
+
+
+### Required (or core) dependencies
+
+Required dependencies are called directly within your package's code. On this page we refer to these dependencies
+as **core dependencies** as they are needed in order to run your package. You should place your core or required dependencies in the `[dependency]=` table of your `pyproject.toml` file.
+
+### Optional dependencies
+
+Optional dependencies dependencies can be optionally installed by users
+depending upon their needs. There are two broad groups of optional dependencies:
+
+1. **Development dependencies**: These are dependencies that are required to support development of your package. They include tools to run tests such as `pytest`, linters (like `flake8` and `ruff`) and code formatters such as `black` and even automation tools such as `nox` or `tox` that run tasks.
+
+2. **Feature dependencies:** These are dependencies that a user can chose to install to add functionality to your package.
+
+When a Python project is installed, the Python package manager (either `pip`
+or `conda`) installs your package's dependencies automatically. This ensures
+that when you call a function in a specific dependency, it is available in your
+user's environment.
+
+:::{admonition} Dependencies can be added to your pyproject.toml file
+
+In the [pyproject.toml overview page](pyproject-toml-python-package-metadata),
+you learned how to set up a **pyproject.toml** file with basic metadata
+for your package. On this page, you will learn how to specify different types of
+dependencies in your `pyproject.toml`.
+
+:::
+
 ## How do you declare dependencies?
 
-We suggest that you declare your dependencies using your `pyproject.toml` file.
+We recommend that you declare your dependencies using your `pyproject.toml` file.
 This ensures that all of the metadata associated with your package is declared
 in a single place, making it simpler for users and contributors to understand
 your package infrastructure.
@@ -73,11 +97,11 @@ If a project contains extensions written in other languages, you may need a `set
 :::
 
 
-### Required dependencies
+### Add required dependencies to your pyproject.toml file
 
-Your core project dependencies represent the packages that
-a package manager (`pip` or `conda`) needs to install in order for your package
-to work properly in a user's environment. Dependencies can be stored in a
+Your core project dependencies need to be installed by a
+package manager such as `pip` or `conda` when a user installs your package. You can add those dependencies to
+the
 `dependencies` array located within the `[project]` table of your
 **pyproject.toml** file. This looks something like this:
 
@@ -95,10 +119,14 @@ dependencies = [
 ```
 
 Ideally, you should only list the packages that are
-necessary to install and use your package in the `[dependencies]` section. This minimizes the number of additional packages that your users must install as well as the number of packages that depend upon your package must also install.
+necessary to install and use your package in the
+`[dependencies]` section. This minimizes the number of
+additional packages that your users must install as well
+as the number of packages that depend upon your package
+must also install.
 
-Remember that fewer dependencies to install reduces the likelihood of version mismatches in user environments.
-
+Remember that fewer dependencies to install reduces the
+likelihood of version mismatches in user environments.
 
 :::{admonition} A dependency example
 
@@ -118,22 +146,23 @@ Declaring a dependency in your `pyproject.toml` file will ensure that it is list
 
 ### Optional dependencies
 
-Dependencies for building your documentation, running your tests and building your package's distribution files are often referred to as development dependencies. These are the dependencies that a user needs to run core development elements of your package such as:
+Optional dependencies for building your documentation, running your tests and building your package's distribution files are often referred to as development dependencies. These are the dependencies that a user needs to work on your package locally and perform tasks such as:
 
 * running your test suite
 * building your documentation
 * linting and other code cleanup tools
 
-These dependencies are considered optional, because they are not required to install and use your package.
+These dependencies are considered optional, because they are not required to install and use your package. Feature
+dependencies are considered optional and should also be placed in the `[optional.dependencies]` table.
 
 Optional dependencies can be stored in an
 `[optional.dependencies]` table in your **pyproject.toml** file.
 
-It's important to note that within the `optional.dependencies` table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies section discussed above which contains a single array with a single list of required packages.
+It's important to note that within the `[optional.dependencies]` table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the `[project]` table discussed above which contains a single array with a single list of required packages.
 
 ## Create optional dependency groups
 
-To declare dependencies in your **pyproject.toml** file:
+To declare optional dependencies in your **pyproject.toml** file:
 
 1. Add a `[optional.dependencies]` table to your **pyproject.toml** file.
 2. Create named groups of dependencies using the syntax:
@@ -158,7 +187,7 @@ project, you will need to point to a specific commit/tag/hash of that repository
 order to upload your project to PyPI
 :::
 
-Below we've created three sets of optional dependencies named: tests, docs and lint:
+Below we've created three sets of optional development dependencies named: tests, docs and lint. We've also added a set of feature dependencies.
 
 ```toml
 [project.optional-dependencies]
@@ -166,13 +195,21 @@ tests = [
   "pytest",
   "pytest-cov"
 ]
-docs = ["sphinx", "pydata_sphinx_theme"]
+docs = [
+  "sphinx",
+  "pydata_sphinx_theme"
+]
 lint = [
   "black",
   "flake8"
 ]
+feature = [
+  "pandas",
+]
 
 ```
+
+
 :::{admonition} Additional dependency resources
 
 * [Learn more: View PyPA's overview of declaring optional dependencies](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#dependencies-optional-dependencies)
@@ -183,7 +220,15 @@ lint = [
 
 ### Install dependency groups
 
-:::{admonition} Using `python -m pip`
+
+:::{figure-md} python-package-dependencies
+
+<img src="../images/python-package-dependencies.png" alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says yourPackage and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. the first shows the command python - m pip install yourPackage. it them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - yourPackage, seanorn and numpy and also the tests dependencies including pytest and pytest-cov ">
+
+When a user installs your package locally using python -m pip install yourPackage only your package and it's core dependencies get installed. When they install your package`[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[optional.dependencies]` table.
+:::
+
+:::{admonition} Using `python -m pip install` vs. `pip install`
 
 In all of the examples in this guide, you will notice we are calling
 `pip` using the syntax:
@@ -316,10 +361,6 @@ python:
       extra_requirements:
         - docs # you can add any of the subgroups of dependencies from your pyproject.toml file to this list.
 ```
-
-:::{tip}
-
-:::
 
 
 :::{admonition} Read the Docs and Python packages
