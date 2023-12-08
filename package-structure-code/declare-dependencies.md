@@ -109,7 +109,7 @@ In the example above, the plotMe package, depends upon two packages:
 * seaborn
 * numpy
 
-This means that in order for plotMe to work in a users `environment` when installed, you also need to ensure that they have both of those required `dependencies` installed in their environment too.
+This means that in order for plotMe to work in a user's `environment` when installed, you also need to ensure that they have both of those required `dependencies` installed in their environment too.
 
 Declaring a dependency in your `pyproject.toml` file will ensure that it is listed as a required dependency when published to PyPI and that it is automatically installed by pip or conda into a users environment when they run:
 
