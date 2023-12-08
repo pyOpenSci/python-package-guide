@@ -204,7 +204,7 @@ groups that you defined above using the syntax:
 `python -m pip install ".[docs]"`
 
 Above you install:
-* dependencies needed for your documentation,
+* dependencies needed for your documentation (`docs`),
 * required package dependencies in the `dependency` array and
 * your package
 
