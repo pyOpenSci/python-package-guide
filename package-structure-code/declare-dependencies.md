@@ -158,7 +158,7 @@ project, you will need to point to a specific commit/tag/hash of that repository
 order to upload your project to PyPI
 :::
 
-Below we've created 3 sets of optional dependencies named: tests, docs and lint:
+Below we've created three sets of optional dependencies named: tests, docs and lint:
 
 ```toml
 [project.optional-dependencies]
