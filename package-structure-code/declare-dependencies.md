@@ -111,7 +111,7 @@ In the example above, the plotMe package, depends upon two packages:
 
 This means that in order for plotMe to work in a user's `environment` when installed, you also need to ensure that they have both of those required `dependencies` installed in their environment too.
 
-Declaring a dependency in your `pyproject.toml` file will ensure that it is listed as a required dependency when published to PyPI and that it is automatically installed by pip or conda into a users environment when they run:
+Declaring a dependency in your `pyproject.toml` file will ensure that it is listed as a required dependency when your package is published to PyPI and that a package manager (`pip` or `conda`) will automatically install it into a user's environment alongside your package:
 
 `python -m pip install plotMe`
 :::
