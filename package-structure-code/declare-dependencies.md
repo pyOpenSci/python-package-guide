@@ -59,7 +59,7 @@ This ensures that all of the metadata associated with your package is declared
 in a single place, making it simpler for users and contributors to understand
 your package infrastructure.
 
-Previously, it was common to use a `requirements.txt` file declare dependencies.
+Previously, it was common to use a `requirements.txt` file to declare package dependencies.
 However in recent years, the ecosystem has moved to storing this
 information in your **pyproject.toml** file. You may notice however that some
 projects still maintain a `requirements.txt` file for specific local development
