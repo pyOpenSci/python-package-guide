@@ -95,7 +95,7 @@ dependencies = [
 ```
 
 Ideally, you should only list the packages that are
-necessary to install and use your package in the `[dependencies]` section. This minimized the number of additional packages that both your users and packages that depend upon your package have to install.
+necessary to install and use your package in the `[dependencies]` section. This minimizes the number of additional packages that your users must install as well as the number of packages that depend upon your package must also install.
 
 Remember that fewer dependencies to install reduces the likelihood of version mismatches in user environments.
 
