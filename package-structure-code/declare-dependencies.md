@@ -190,7 +190,7 @@ In all of the examples in this guide, you will notice we are calling
 
 `python -m pip`
 
-Calling pip using `python -m` ensures that the pip that you are using to install your package comes from your current active Python
+Calling pip using `python -m` ensures that the `pip` that you are using to install your package comes from your current active Python
 environment. We strongly suggest that you use this approach whenever
 you call `pip` to avoid installation conflicts.
 
