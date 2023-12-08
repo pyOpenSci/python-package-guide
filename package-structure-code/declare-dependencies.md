@@ -222,7 +222,7 @@ You can install multiple dependency groups in the `[optional.dependencies]` tabl
 :class: tip
 
 There are different shell applications that you and your package contributors might use.
-* zsh is the shell that comes with most Mac OS computer
+* zsh is the shell that comes by default on newer Mac OS computers
 * Windows users may use a tool such as git bash
 
 Some shells don't support unquoted brackets (`[tests]`) which is why we add
