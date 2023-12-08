@@ -302,7 +302,7 @@ Alternatively, you can install your package using `pip install -e . --no-deps` t
 
 Now that you have your dependencies specified in your project, you can use them to support other workflows such as publishing to Read the Docs.
 
-Read the Docs is a documentation platform with a continuous integration / continuous deployment service that automatically builds and publishes your documentation.
+[Read the Docs](https://readthedocs.org) is a documentation platform with a continuous integration / continuous deployment service that automatically builds and publishes your documentation.
 
 If you are using Read the Docs to build your documentation, then you may need to install your dependencies using a **readthedocs.yaml** file.
 
