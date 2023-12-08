@@ -18,7 +18,7 @@ There are different types of dependencies to consider when creating
 a Python package:
 
 1. **Core dependencies:** These dependencies are called directly within your package's code. As such they are required in order to run your package.
-2. **Development dependencies**: These are dependencies that are required to support development of your package. THey include tools to run tests such as pytest, linters and code formatters such as black and flake8 and even automation tools such as nox that run tasks.
+2. **Development dependencies**: These are dependencies that are required to support development of your package. They include tools to run tests such as `pytest`, linters (like `flake8` and `ruff`) and code formatters such as `black` and even automation tools such as `nox` or `tox` that run tasks.
 
 
 :::{figure-md} python-package-dependencies
