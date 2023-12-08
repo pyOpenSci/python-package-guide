@@ -230,7 +230,7 @@ quotes to the command in this guide like this:
 
 `python -m pip install ".[tests]"`
 
-In some cases you may see syntax without the quotes in guidebooks or contributing
+In some cases you may see commands without the quotes in guidebooks or contributing
 guides like the example below:
 
 `python -m pip install yourPackage[tests]`
