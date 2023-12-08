@@ -1,6 +1,8 @@
-# Python Package Build Tools
+# Python Packaging Tools
 
 <!-- TODO: add a small discussion on what pinning is?-->
+
+## Tools for building your package
 
 There are a several different build tools that you can use to [create your Python package's _sdist_ and _wheel_ distributions](python-package-distribution-files-sdist-wheel). Below, we discuss the features,
 benefits and limitations of the most commonly used Python packaging tools.
@@ -8,7 +10,7 @@ We focus on pure-python packages in this guide. However, we also
 highlight tools that currently support packages with C/C++ and other language
 extensions.
 
-:::{figure-md} fig-target
+:::{figure-md} package-decision-tree
 
 <img src="../images/python-package-tools-decision-tree.png" alt="Decision tree diagram showing the various front and back end packaging tools. You can decide what packaging tool to use by thinking about what features you need. PDM is currently the most flexible tool that also supports both non pure Python projects and also using different build back-ends. As such currently PDM is the tool we think beginners might appreciate most with Poetry being a close second. Poetry is ideal for pure python projects." width="700px">
 
@@ -19,7 +21,7 @@ NOTE: this is still a DRAFT so i'm not going to spend time truly cleaning it up 
 If you want to know more about Python packages that have extensions written in
 other languages, [check out the page on complex package builds.](complex-python-package-builds)
 
-### Tools that we review here
+## Tools that we review here
 
 In this section we have selected tools that were returned
 as the most popular packaging tools in the PyPA survey.
@@ -31,7 +33,7 @@ You will learn more about the following tools on this page:
 - [PDM](https://pdm.fming.dev/latest/)
 - [Poetry](https://python-poetry.org/docs/)
 
-### Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)
+## Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)
 
 If you are looking for a quick summary, read below.
 
@@ -58,6 +60,8 @@ Hatch:
 To better understand your options, when it comes to building a Python package, it's important to first understand the difference between a
 build tool front-end and build back-end.
 
+(build_backends)=
+
 ### Build back-ends
 
 Most packaging tools have a back-end
@@ -68,7 +72,7 @@ to a package build that does not have extensions that are written in another
 programming language (such as `C` or `C++`).
 
 Other packages that have C and C++ extensions (or that wrap other languages such as fortran) require additional code compilation steps when built.
-Back-ends such as and **setuptools.build**, **meson.build**
+Back-ends such as **setuptools.build**, **meson.build**
 and **scikit-build** support complex builds with custom steps. If your
 build is particularly complex (i.e. you have more than a few `C`/`C++`
 extensions), then we suggest you use **meson.build** or **scikit-build**.
@@ -78,7 +82,7 @@ extensions), then we suggest you use **meson.build** or **scikit-build**.
 A packaging front-end tool refers to a tool that makes it easier for you to
 perform common packaging tasks using similar commands. These tasks include:
 
-- [Build your packages (create the sdist and wheel distributions](python-package-distribution-files-sdist-wheel)
+- [Build your packages (create the sdist and wheel distributions)](python-package-distribution-files-sdist-wheel)
 - Installing your package in a development mode (so it updates when you update your code)
 - Publishing to PyPI
 - Running tests
@@ -257,7 +261,6 @@ Version bumping| ✅ | PDM supports you bumping the version of your package usin
 Follows current packaging standards|✅|PDM supports current packaging standards for adding metadata to the **pyproject.toml** file.
 Install your package in editable mode|✅|PDM supports installing your package in editable mode.
 Build your sdist and wheel distributions|✅| Similar to all of the other tools PDM builds your packages sdist and wheel files for you.
-✨Optional use of PEP 582 / local environment directory✨|✅| PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a `__pypackages__` directory in your working directory).
 ```
 
 ```{admonition} PDM vs. Poetry
@@ -407,7 +410,7 @@ Build your sdist and wheel distributions|✅|Poetry will build your sdist and wh
 Some challenges of Poetry include:
 
 - Poetry, by default, pins dependencies using an "upper bound" limit specified with the `^` symbol by default. However, this behavior can be over-written by specifying the dependency when you use `Poetry add` as follows: `poetry add "requests>=2.1"` See breakout below for more discussion on issues surrounding upper-bounds pinning.
-- _Minor Challenge:_ The way Poetry currently adds metadata to your pyproject.toml file does not does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.
+- _Minor Challenge:_ The way Poetry currently adds metadata to your pyproject.toml file does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.
 
 Poetry is an excellent tool. Use caution when using it to pin dependencies as
 Poetry's approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.
@@ -419,7 +422,7 @@ discusses the slight differences in how poetry adds deps....-->
 :class: important
 
 By default, Poetry pins dependencies using `^` by default. This `^` symbol means that there is
-an "upper bound" to the dependency. Thus poetry will bump a dependency
+an "upper bound" to the dependency. Thus poetry won't bump a dependency
 version to a new major version. Thus, if your package uses a dependency that
 is at version 1.2.3, Poetry will never bump the dependency to 2.0 even if
 there is a new major version of the package. Poetry will instead bump up to 1.9.x.
@@ -477,6 +480,6 @@ when using setuptools. For instance:
 
 - setuptools will build a project without a name or version if you are not using a **pyproject.toml** file
   to store metadata.
-  \*Setuptools also will include all of the files in your package
+- setuptools also will include all of the files in your package
   repository if you do not explicitly tell it to exclude files using a
   **MANIFEST.in** file

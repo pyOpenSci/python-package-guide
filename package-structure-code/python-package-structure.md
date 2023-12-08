@@ -16,7 +16,7 @@ We understand that it would be tremendous effort for existing
 maintainers to move to a new layout.
 
 The overview on this page presents recommendations that we think are best for
-something getting started with Python packaging or someone who's package is
+someone getting started with Python packaging or someone who's package
 has a simple build and might be open to moving to a more fail-proof approach.
 ```
 
@@ -32,10 +32,10 @@ myPackageRepoName
 │   └── ...                    │
 ├── LICENSE                    │
 ├── README.md                  ┘
-├── pyproject.toml             ┐
-├── src                        │
-│   └── myPackage              │ Package source code, metadata,
-│       ├── __init__.py        │ and build instructions
+├── pyproject.toml             ] Package metadata and build configuration
+├── src                        ┐
+│   └── myPackage              │
+│       ├── __init__.py        │ Package source code
 │       ├── moduleA.py         │
 │       └── moduleB.py         ┘
 └── tests                      ┐
@@ -58,6 +58,8 @@ include:
 - LICENSE.txt
 - README.md
 
+<!-- TODO: CHANGELOG is not mentioned in either documentation nor peer review -->
+
 ```{button-link} https://www.pyopensci.org/python-package-guide/documentation
 :color: primary
 :class: sd-rounded-pill
@@ -77,7 +79,7 @@ While we recommend the **src/** layout we also review the **flat** layout here. 
 
 ```
 
-### The src/ layout and testing
+## The src/ layout and testing
 
 The benefit of using the **src/package** layout, particularly if you
 are creating a new package, is that it ensures tests are run against the
@@ -94,20 +96,20 @@ If `tests/` are outside of the **src/package** directory, they aren't included i
 
 By default, Python adds a module in your current working directory to the front of the Python module search path.
 
-This means that if you run your tests in your packages working directory, using a flat layout, `/package/module.py`, Python will discover `package-name/module.py` file before it discovers the installed package.
+This means that if you run your tests in your package's working directory, using a flat layout, `/package/module.py`, Python will discover `package/module.py` file before it discovers the installed package.
 
 However, if your package lives in a src/ directory structure **src/package** then it won't be, by default, added to the Python path. This means that when you import your package, Python will be forced to  search the active environment (which has your package installed).
 
 Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g. `PYTHONSAFEPATH`).
 ```
 
-#### Sometimes tests are needed in a distribution
+### Sometimes tests are needed in a distribution
 
 We do not recommend including tests as part of your package wheel by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package is functioning correctly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the `tests/` directory into the **src/package** directory (see example below).
 
 ```bash
 src/
-  package-name/
+  package/
     tests/
 docs/
 ```
@@ -183,7 +185,7 @@ The flat layout's primary characteristics are:
 
 - The source code for your package lives in a directory with your package's
   name in the root of your directory
-- Often the `tests/` directory also lives within that same `package-name` directory.
+- Often the `tests/` directory also lives within that same `package` directory.
 
 Below you can see the recommended structure of a scientific Python package
 using the flat layout.
@@ -213,9 +215,9 @@ There are some benefits to the scientific community in using the flat layout.
 
 - This structure has historically been used across the ecosystem and packages
   using it are unlikely to change.
-- You can directly import the package directly from the root directory. For
-  some this is engrained in their respective workflows. However, for a beginner
-  the danger of doing this is that you are not developing and testing against the
+- You can import the package directly from the root directory. For some this
+  is engrained in their respective workflows. However, for a beginner the
+  danger of doing this is that you are not developing and testing against the
   installed version of your package. Rather, you are working directly with the
   flat files.
 

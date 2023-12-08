@@ -35,7 +35,6 @@ extensions = [
     "sphinx_copybutton",
     "sphinx.ext.intersphinx",
     "sphinx_sitemap",
-    "sphinxcontrib.gtagjs",
     "sphinxext.opengraph",
 ]
 
@@ -51,15 +50,23 @@ html_baseurl = "https://www.pyopensci.org/software-peer-review/"
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
+       "favicons": [
+      {
+         "rel": "icon",
+         "sizes": "16x16",
+         "href": "https://www.pyopensci.org/images/favicon.ico",
+      },
+    ],
     "announcement": "<p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 ",
+    #"navbar_center": ["nav"], this can be a way to override the default navigation structure
     "external_links": [
         {
             "url": "https://www.pyopensci.org",
             "name": "pyOpenSci Website",
         },
         {
-            "url": "https://www.pyopensci.org/python-package-guide",
-            "name": "Python Packaging Guide",
+            "url": "https://www.pyopensci.org/software-peer-review",
+            "name": "Peer Review Guide",
         },
         {
             "url": "https://pyopensci.org/governance",
@@ -74,22 +81,20 @@ html_theme_options = {
         },
     ],
     "logo": {
-        "text": "Python Package Guide",
+        "text": "Python Packaging",
         "image_dark": "logo-dark-mode.png",
         "image_light": "logo-light-mode.png",
         "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
     "header_links_before_dropdown": 4,
     "use_edit_page_button": True,
+    "show_nav_level": 2,
+    "navigation_depth": 3,
     "show_toc_level": 1,
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
-    "twitter_url": "https://twitter.com/pyopensci",
-    "footer_items": ["copyright"],
-}
 
-html_theme_options["analytics"] = {
-    "google_analytics_id": "UA-141260825-1",
+    "footer_items": ["copyright"],
 }
 
 html_context = {
@@ -97,11 +102,6 @@ html_context = {
     "github_repo": "python-package-guide",
     "github_version": "main",
 }
-
-# Add analytics to furo theme
-gtagjs_ids = [
-    "UA-141260825-1",
-]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
