@@ -225,7 +225,7 @@ There are different shell applications that you and your package contributors mi
 * zsh is the shell that comes with most Mac OS computer
 * Windows users may use a tool such as git bash
 
-Many shells don't support the bracket `[tests]` syntax which is why we add
+Some shells don't support unquoted brackets (`[tests]`) which is why we add
 quotes to the command in this guide like this:
 
 `python -m pip install ".[tests]"`
