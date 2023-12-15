@@ -223,9 +223,9 @@ feature = [
 
 :::{figure-md} python-package-dependencies
 
-<img src="../images/python-package-dependencies.png" alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says yourPackage and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. the first shows the command python - m pip install yourPackage. it them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - yourPackage, seaborn and numpy and also the tests dependencies including pytest and pytest-cov ">
+<img src="../images/python-package-dependencies.png" alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. it them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov ">
 
-When a user installs your package locally using python -m pip install yourPackage only your package and it's core dependencies get installed. When they install your package`[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[optional.dependencies]` table.
+When a user installs your package locally using python -m pip install your-package only your package and it's core dependencies get installed. When they install your package `[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[optional.dependencies]` table.
 :::
 
 :::{admonition} Using `python -m pip install` vs. `pip install`
@@ -278,9 +278,9 @@ quotes to the command in this guide like this:
 In some cases you may see commands without the quotes in guidebooks or contributing
 guides like the example below:
 
-`python -m pip install yourPackage[tests]`
+`python -m pip install your-package[tests]`
 
-Calling yourPackage[tests] without the double quotes will work on some shells *but not all*.
+Calling your-package[tests] without the double quotes will work on some shells *but not all*.
 
 ```
 
@@ -319,7 +319,7 @@ When you install dependencies using the above syntax:
 The `pyproject.toml` file allows you to list any
 Python package published on PyPI (or on GitHub/ GitLab) as a dependency. Once you create this file, declare dependencies, [build your package](python-package-distribution-files-sdist-wheel.md) and [publish your package to PyPI](publish-python-package-pypi-conda.md), people can install both your package and all of it's dependencies with one command.
 
-`python -m pip install yourPackage`
+`python -m pip install your-package`
 
 This works great if your package is pure-python (no other languages used).
 
