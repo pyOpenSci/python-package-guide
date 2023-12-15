@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Add required and optional dependencies to your Python package" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="package-structure-code/declare-dependencies.html" />
+<meta property="og:site_name" content="python-package-guide" />
+<meta property="og:description" content="A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package." />
+<meta name="description" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: needs to function properly., requires if someone wants to develop / wo..." />
+
+    <title>Python Package Dependencies &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="icon" sizes="16x16" type="image/ico" href="https://www.pyopensci.org/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=39024afd" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/declare-dependencies';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/declare-dependencies.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Packaging Tools" href="python-package-build-tools.html" />
+    <link rel="prev" title="Learn about Building a Python Package" href="python-package-distribution-files-sdist-wheel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 </div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+    <p class="title logo__title">Python Packaging</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        CI & Tests
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Declare dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish with Conda / PyPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Python...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="python-package-dependencies">
+<h1>Python Package Dependencies<a class="headerlink" href="#python-package-dependencies" title="Link to this heading">#</a></h1>
+<section id="what-is-a-package-dependency">
+<h2>What is a package dependency?<a class="headerlink" href="#what-is-a-package-dependency" title="Link to this heading">#</a></h2>
+<p>A Python package dependency refers to an external package or
+software that your Python project:</p>
+<ol class="arabic simple">
+<li><p>needs to function properly.</p></li>
+<li><p>requires if someone wants to develop / work on improving your package locally or</p></li>
+<li><p>requires if a user wants to add additional functionality (that is not core) to your package</p></li>
+</ol>
+<p>A dependency is not part of your project’s codebase. It is a package or software that is called
+within the code of your project or during development of your package.</p>
+<section id="understanding-optional-vs-required-dependencies">
+<h3>Understanding optional vs. required dependencies<a class="headerlink" href="#understanding-optional-vs-required-dependencies" title="Link to this heading">#</a></h3>
+<p>You can think about dependencies as being either optional or required. If they are required, they will be listed in the <code class="docutils literal notranslate"><span class="pre">[dependency]</span> <span class="pre">=</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. If they are optional, they will be listed in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<p>You will learn about both below.</p>
+<figure class="align-default" id="python-package-dependency-types">
+<img alt="" src="../_images/python-package-dependency-types.png" />
+<figcaption>
+<p><span class="caption-text">There are two broad groups of Python package dependencies: those that are optional and those that are required. Required packages are those that a user needs to use your package. Optional dependencies are packages a user can chose to install to add functionality to your package.
+Within those 2 groups, there are three use cases that you can think about. 1. Core dependencies are <strong>required</strong> for a user to use your package. 2. Development dependencies are optional and only needed if someone wants to work on your package locally. 3. Finally feature dependencies are optional and add additional functionality to your package. Not all packages will have feature dependencies.</span><a class="headerlink" href="#python-package-dependency-types" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="required-or-core-dependencies">
+<h3>Required (or core) dependencies<a class="headerlink" href="#required-or-core-dependencies" title="Link to this heading">#</a></h3>
+<p>Required dependencies are called directly within your package’s code. On this page we refer to these dependencies
+as <strong>core dependencies</strong> as they are needed in order to run your package. You should place your core or required dependencies in the <code class="docutils literal notranslate"><span class="pre">[dependency]=</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
+</section>
+<section id="optional-dependencies">
+<h3>Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Link to this heading">#</a></h3>
+<p>Optional dependencies dependencies can be optionally installed by users
+depending upon their needs. There are two broad groups of optional dependencies:</p>
+<ol class="arabic simple">
+<li><p><strong>Development dependencies</strong>: These are dependencies that are required to support development of your package. They include tools to run tests such as <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, linters (like <code class="docutils literal notranslate"><span class="pre">flake8</span></code> and <code class="docutils literal notranslate"><span class="pre">ruff</span></code>) and code formatters such as <code class="docutils literal notranslate"><span class="pre">black</span></code> and even automation tools such as <code class="docutils literal notranslate"><span class="pre">nox</span></code> or <code class="docutils literal notranslate"><span class="pre">tox</span></code> that run tasks.</p></li>
+<li><p><strong>Feature dependencies:</strong> These are dependencies that a user can chose to install to add functionality to your package.</p></li>
+</ol>
+<p>When a Python project is installed, the Python package manager (either <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+or <code class="docutils literal notranslate"><span class="pre">conda</span></code>) installs your package’s dependencies automatically. This ensures
+that when you call a function in a specific dependency, it is available in your
+user’s environment.</p>
+<div class="admonition-dependencies-can-be-added-to-your-pyproject-toml-file admonition">
+<p class="admonition-title">Dependencies can be added to your pyproject.toml file</p>
+<p>In the <a class="reference internal" href="pyproject-toml-python-package-metadata.html"><span class="doc std std-doc">pyproject.toml overview page</span></a>,
+you learned how to set up a <strong>pyproject.toml</strong> file with basic metadata
+for your package. On this page, you will learn how to specify different types of
+dependencies in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="how-do-you-declare-dependencies">
+<h2>How do you declare dependencies?<a class="headerlink" href="#how-do-you-declare-dependencies" title="Link to this heading">#</a></h2>
+<p>We recommend that you declare your dependencies using your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.
+This ensures that all of the metadata associated with your package is declared
+in a single place, making it simpler for users and contributors to understand
+your package infrastructure.</p>
+<p>Previously, it was common to use a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file to declare package dependencies.
+However in recent years, the ecosystem has moved to storing this
+information in your <strong>pyproject.toml</strong> file. You may notice however that some
+projects still maintain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file for specific local development
+needs.</p>
+<div class="tip admonition">
+<p class="admonition-title">Other ways you may see packages storing dependencies</p>
+<p>If a project contains extensions written in other languages, you may need a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file. Or you may contribute to a package that us using <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> for dependency declaration.
+<a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#declaring-required-dependency">Learn more about this in the setuptools documentation</a></p>
+</div>
+<section id="add-required-dependencies-to-your-pyproject-toml-file">
+<h3>Add required dependencies to your pyproject.toml file<a class="headerlink" href="#add-required-dependencies-to-your-pyproject-toml-file" title="Link to this heading">#</a></h3>
+<p>Your core project dependencies need to be installed by a
+package manager such as <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> when a user installs your package. You can add those dependencies to
+the
+<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> array located within the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table of your
+<strong>pyproject.toml</strong> file. This looks something like this:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;examplePy&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;rioxarray&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;geopandas&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Ideally, you should only list the packages that are
+necessary to install and use your package in the
+<code class="docutils literal notranslate"><span class="pre">[dependencies]</span></code> section. This minimizes the number of
+additional packages that your users must install as well
+as the number of packages that depend upon your package
+must also install.</p>
+<p>Remember that fewer dependencies to install reduces the
+likelihood of version mismatches in user environments.</p>
+<div class="admonition-a-dependency-example admonition">
+<p class="admonition-title">A dependency example</p>
+<p>Let’s pretend you have a package called <code class="docutils literal notranslate"><span class="pre">plotMe</span></code> that creates beautiful plots of data stored in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays. To create your plots in the <code class="docutils literal notranslate"><span class="pre">plotMe</span></code> package, you use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package to stylize our plots and also <code class="docutils literal notranslate"><span class="pre">numpy</span></code> to process array formatted data.</p>
+<p>In the example above, the plotMe package, depends upon two packages:</p>
+<ul class="simple">
+<li><p>seaborn</p></li>
+<li><p>numpy</p></li>
+</ul>
+<p>This means that in order for plotMe to work in a user’s <code class="docutils literal notranslate"><span class="pre">environment</span></code> when installed, you also need to ensure that they have both of those required <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> installed in their environment too.</p>
+<p>Declaring a dependency in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file will ensure that it is listed as a required dependency when your package is published to PyPI and that a package manager (<code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>) will automatically install it into a user’s environment alongside your package:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">plotMe</span></code></p>
+</div>
+</section>
+<section id="id2">
+<h3>Optional dependencies<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Optional dependencies for building your documentation, running your tests and building your package’s distribution files are often referred to as development dependencies. These are the dependencies that a user needs to work on your package locally and perform tasks such as:</p>
+<ul class="simple">
+<li><p>running your test suite</p></li>
+<li><p>building your documentation</p></li>
+<li><p>linting and other code cleanup tools</p></li>
+</ul>
+<p>These dependencies are considered optional, because they are not required to install and use your package. Feature
+dependencies are considered optional and should also be placed in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table.</p>
+<p>Optional dependencies can be stored in an
+<code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table in your <strong>pyproject.toml</strong> file.</p>
+<p>It’s important to note that within the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table discussed above which contains a single array with a single list of required packages.</p>
+</section>
+</section>
+<section id="create-optional-dependency-groups">
+<h2>Create optional dependency groups<a class="headerlink" href="#create-optional-dependency-groups" title="Link to this heading">#</a></h2>
+<p>To declare optional dependencies in your <strong>pyproject.toml</strong> file:</p>
+<ol class="arabic simple">
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table to your <strong>pyproject.toml</strong> file.</p></li>
+<li><p>Create named groups of dependencies using the syntax:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">group-name</span> <span class="pre">=</span> <span class="pre">[&quot;dep1&quot;,</span> <span class="pre">&quot;dep2&quot;]</span></code></p>
+<div class="tip admonition">
+<p class="admonition-title">Installing packages from GitHub / Gitlab</p>
+<p>If you have dependencies that need to be installed directly from GitHub using
+a <code class="docutils literal notranslate"><span class="pre">git+https</span></code> installation approach, you can do so using the pyproject.toml
+file like so:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="s2">&quot;my_dependency &gt;= 1.0.1 @ git+https://git.server.example.com/mydependency.git&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>IMPORTANT: For security reasons, if your library depends on a GitHub-hosted
+project, you will need to point to a specific commit/tag/hash of that repository in
+order to upload your project to PyPI</p>
+</div>
+<p>Below we’ve created three sets of optional development dependencies named: tests, docs and lint. We’ve also added a set of feature dependencies.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pytest-cov&quot;</span>
+<span class="p">]</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pydata_sphinx_theme&quot;</span>
+<span class="p">]</span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;flake8&quot;</span>
+<span class="p">]</span>
+<span class="n">feature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition-additional-dependency-resources admonition">
+<p class="admonition-title">Additional dependency resources</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#dependencies-optional-dependencies">Learn more: View PyPA’s overview of declaring optional dependencies</a></p></li>
+<li><p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/dependency-specifiers/">Dependency specifiers</a></p></li>
+</ul>
+</div>
+<section id="install-dependency-groups">
+<h3>Install dependency groups<a class="headerlink" href="#install-dependency-groups" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id3">
+<img alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. it them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
+<figcaption>
+<p><span class="caption-text">When a user installs your package locally using python -m pip install your-package only your package and it’s core dependencies get installed. When they install your package <code class="docutils literal notranslate"><span class="pre">[tests]</span></code> pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-using-python-m-pip-install-vs-pip-install admonition">
+<p class="admonition-title">Using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span></code> vs. <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></p>
+<p>In all of the examples in this guide, you will notice we are calling
+<code class="docutils literal notranslate"><span class="pre">pip</span></code> using the syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code></p>
+<p>Calling pip using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> ensures that the <code class="docutils literal notranslate"><span class="pre">pip</span></code> that you are using to install your package comes from your current active Python
+environment. We strongly suggest that you use this approach whenever
+you call <code class="docutils literal notranslate"><span class="pre">pip</span></code> to avoid installation conflicts.</p>
+<p>To ensure this works as you want it to, activate your package’s development
+environment prior to installing anything using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+</div>
+<p>You can install development dependencies using the
+groups that you defined above using the syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[docs]&quot;</span></code></p>
+<p>Above you install:</p>
+<ul class="simple">
+<li><p>dependencies needed for your documentation (<code class="docutils literal notranslate"><span class="pre">docs</span></code>),</p></li>
+<li><p>required package dependencies in the <code class="docutils literal notranslate"><span class="pre">dependency</span></code> array and</p></li>
+<li><p>your package</p></li>
+</ul>
+<p>using pip. Below you
+install your package, required dependencies and optional test dependencies.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests]&quot;</span></code></p>
+<p>You can install multiple dependency groups in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table using:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[docs,</span> <span class="pre">tests,</span> <span class="pre">lint]&quot;</span></code></p>
+<div class="tip admonition">
+<p class="admonition-title">For zsh shell users</p>
+<p>There are different shell applications that you and your package contributors might use.</p>
+<ul class="simple">
+<li><p>zsh is the shell that comes by default on newer Mac OS computers</p></li>
+<li><p>Windows users may use a tool such as git bash</p></li>
+</ul>
+<p>Some shells don’t support unquoted brackets (<code class="docutils literal notranslate"><span class="pre">[tests]</span></code>) which is why we add
+quotes to the command in this guide like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests]&quot;</span></code></p>
+<p>In some cases you may see commands without the quotes in guidebooks or contributing
+guides like the example below:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package[tests]</span></code></p>
+<p>Calling your-package[tests] without the double quotes will work on some shells <em>but not all</em>.</p>
+</div>
+</section>
+<section id="combining-sets-of-dependencies">
+<h3>Combining sets of dependencies<a class="headerlink" href="#combining-sets-of-dependencies" title="Link to this heading">#</a></h3>
+<p>Above we reviewed how to install dependencies from your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. In some cases you may want to group sets of dependencies like so:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest-cov&quot;</span><span class="p">]</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydata_sphinx_theme&quot;</span><span class="p">]</span>
+<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;packageName[tests, docs]&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;build&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;twine&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>The above allows you to install both the tests and docs dependency lists
+using the command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[dev]&quot;</span></code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you install dependencies using the above syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests,</span> <span class="pre">docs]&quot;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> will also install your package and its core dependencies.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Where does conda fit in?</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file allows you to list any
+Python package published on PyPI (or on GitHub/ GitLab) as a dependency. Once you create this file, declare dependencies, <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="std std-doc">build your package</span></a> and <a class="reference internal" href="publish-python-package-pypi-conda.html"><span class="std std-doc">publish your package to PyPI</span></a>, people can install both your package and all of it’s dependencies with one command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package</span></code></p>
+<p>This works great if your package is pure-python (no other languages used).</p>
+<p>Some packages, particularly in the scientific Python ecosystem, require dependencies that are not written in Python. Conda was created to support distribution of tools that have code written in both Python and languages other than Python.</p>
+</div>
+</section>
+</section>
+<section id="support-conda-users-with-environment-yml-files">
+<h2>Support conda users with environment.yml files<a class="headerlink" href="#support-conda-users-with-environment-yml-files" title="Link to this heading">#</a></h2>
+<p>The above workflow assumes that you want to publish your package on PyPI. And then you plan to publish to conda-forge (optionally), <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/publish-python-package-pypi-conda.html">by submitting a recipe using grayskull</a>.</p>
+<p>If you want to support conda users, you may want to also maintain a conda environment that they can use to install your package. Maintaining a conda environment will also help you test that your package installs as you expect into a conda environment.</p>
+<div class="tip admonition">
+<p class="admonition-title">A note for conda users</p>
+<p>If you use a conda environment for developing your tool, keep in mind that when you install your package using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> (or using pip in general), dependencies will be installed from PyPI rather than conda.</p>
+<p>Thus, if you are running a conda environment, installing your package in “editable” mode risks dependency conflicts. This is particularly important if you have a spatial package that requires geospatial system libraries like GDAL or another system-level dependency.</p>
+<p>Alternatively, you can install your package using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span> <span class="pre">--no-deps</span></code> to only install the package. And install the rest of your dependencies using a conda environment file.</p>
+</div>
+</section>
+<section id="dependencies-in-read-the-docs">
+<h2>Dependencies in Read the Docs<a class="headerlink" href="#dependencies-in-read-the-docs" title="Link to this heading">#</a></h2>
+<p>Now that you have your dependencies specified in your project, you can use them to support other workflows such as publishing to Read the Docs.</p>
+<p><a class="reference external" href="https://readthedocs.org">Read the Docs</a> is a documentation platform with a continuous integration / continuous deployment service that automatically builds and publishes your documentation.</p>
+<p>If you are using Read the Docs to build your documentation, then you may need to install your dependencies using a <strong>readthedocs.yaml</strong> file.</p>
+<p>Below is an example of installing the <strong>docs</strong> section of your dependency table in the pyproject.toml file within a readthedocs.yaml file.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">python</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">install</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+<span class="w">      </span><span class="nt">extra_requirements</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docs</span><span class="w"> </span><span class="c1"># you can add any of the subgroups of dependencies from your pyproject.toml file to this list.</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Read the Docs and Python packages</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.readthedocs.io/en/stable/config-file/index.html">Learn more about creating a <code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code> file here. </a></p></li>
+<li><p>If you want to install dependencies using
+Poetry in Read the Docs, <a class="reference external" href="https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry">you can learn more here.</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="python-package-distribution-files-sdist-wheel.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Learn about Building a Python Package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-package-build-tools.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Packaging Tools</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-package-dependency">What is a package dependency?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-optional-vs-required-dependencies">Understanding optional vs. required dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-or-core-dependencies">Required (or core) dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-dependencies">Optional dependencies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-declare-dependencies">How do you declare dependencies?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-required-dependencies-to-your-pyproject-toml-file">Add required dependencies to your pyproject.toml file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Optional dependencies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-optional-dependency-groups">Create optional dependency groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependency-groups">Install dependency groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-sets-of-dependencies">Combining sets of dependencies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-conda-users-with-environment-yml-files">Support conda users with environment.yml files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-read-the-docs">Dependencies in Read the Docs</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/declare-dependencies.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/package-structure-code/declare-dependencies.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
