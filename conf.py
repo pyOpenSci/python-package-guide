@@ -34,6 +34,7 @@ extensions = [
     "sphinx_design",
     "sphinx_copybutton",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.todo",
     "sphinx_sitemap",
     "sphinxext.opengraph",
 ]

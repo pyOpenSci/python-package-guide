@@ -156,6 +156,7 @@ Intro <self>
 Python package structure <python-package-structure>
 pyproject.toml Package Metadata <pyproject-toml-python-package-metadata>
 Build Your Package <python-package-distribution-files-sdist-wheel>
+Declare dependencies <declare-dependencies>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>
 ```
