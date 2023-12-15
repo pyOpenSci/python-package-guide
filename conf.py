@@ -34,9 +34,8 @@ extensions = [
     "sphinx_design",
     "sphinx_copybutton",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.doctest",
+    "sphinx.ext.todo",
     "sphinx_sitemap",
-    "sphinxcontrib.gtagjs",
     "sphinxext.opengraph",
     "sphinx_favicon",
 ]
@@ -85,8 +84,10 @@ html_theme_options = {
         "image_light": "logo-light-mode.png",
         "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
-    "header_links_before_dropdown": 3,
+    "header_links_before_dropdown": 4,
     "use_edit_page_button": True,
+    "show_nav_level": 2,
+    "navigation_depth": 3,
     "show_toc_level": 1,
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
@@ -94,9 +95,7 @@ html_theme_options = {
     "footer_end": [],
 }
 
-html_theme_options["analytics"] = {
-    "google_analytics_id": "UA-141260825-1",
-    "show_nav_level": 3,
+    "footer_items": ["copyright"],
 }
 
 html_context = {
@@ -104,11 +103,6 @@ html_context = {
     "github_repo": "python-package-guide",
     "github_version": "main",
 }
-
-# Add analytics to furo theme
-gtagjs_ids = [
-    "UA-141260825-1",
-]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
