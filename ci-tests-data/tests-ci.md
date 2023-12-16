@@ -49,7 +49,7 @@ jobs:
         python-version: ["3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           # fetch more than the last single commit to help scm generate proper version
           fetch-depth: 20

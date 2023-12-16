@@ -1,7 +1,7 @@
 # Tests and data for your Python package
 
 In this section you will learn more about the importance of writing
-tests for you Python package.
+tests for your Python package.
 
 ::::{grid} 1 1 2 2
 :class-container: text-center

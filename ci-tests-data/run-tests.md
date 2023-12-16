@@ -48,7 +48,7 @@ calling:
 
 `pytest`
 
-Or if you want to run a specific test file - let's call such file - filename.py - you can run:
+Or if you want to run a specific test file - let's call this file "filename.py" - you can run:
 
 `pytest filename.py`
 
@@ -67,17 +67,17 @@ in various Python environments.
 
 ### Tools to automate running your tests
 
-To run tests on various Python versions or in various specific environments with a single command, you can use an automation tool such as nox or tox.
-Both nox and tox can create an isolated virtual environment that you define. This allows you to easily run your tests in multiple environments and across Python versions.
+To run tests on various Python versions or in various specific environments with a single command, you can use an automation tool such as `nox` or `tox`.
+Both `nox` and `tox` can create an isolated virtual environment that you define. This allows you to easily run your tests in multiple environments and across Python versions.
 
-We will focus on [Nox](https://nox.thea.codes/) in this guide. nox is a Python-based automation tool that builds upon the features of both Make and Tox. Nox is designed to simplify and streamline testing and development workflows. Everything that you do with nox can be implemented using a Python-based interface.
+We will focus on [Nox](https://nox.thea.codes/) in this guide. `nox` is a Python-based automation tool that builds upon the features of both `make` and `tox`. `nox` is designed to simplify and streamline testing and development workflows. Everything that you do with `nox` can be implemented using a Python-based interface.
 
 ```{admonition} Other automation tools you'll see in the wild
 :class: note
 
 - **[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an automation tool that supports common steps such as building documentation, running tests across various versions of Python, and more. You can find [a nice overview of tox in the plasmaPy documentation](https://docs.plasmapy.org/en/stable/contributing/testing_guide.html#using-tox).
 
-- **[Hatch](https://github.com/ofek/hatch)** is a modern end-to-end packaging tool that works with the popular build backend called hatchling. Hatch offers a tox-like setup where you can run tests locally using different Python versions. If you are using hatch to support your packaging workflow, you may want to also use its testing capabilities rather than using nox.
+- **[Hatch](https://github.com/ofek/hatch)** is a modern end-to-end packaging tool that works with the popular build backend called hatchling. `hatch` offers a `tox`-like setup where you can run tests locally using different Python versions. If you are using `hatch` to support your packaging workflow, you may want to also use its testing capabilities rather than using `nox`.
 
 * [**make:**](https://www.gnu.org/software/make/manual/make.html) Some developers use Make, which is a build automation tool, for running tests
 due to its versatility; it's not tied to a specific language and can be used
@@ -93,17 +93,17 @@ with it. Make also won't manage environments for you like **nox** will do.
 - Python-based making it accessible if you already know Python and
 - It will create isolated environments to run workflows.
 
-Nox simplifies creating and managing testing environments. With Nox, you can
+`nox` simplifies creating and managing testing environments. With `nox`, you can
 set up virtual environments, and run tests across Python versions using the environment manager of your choice with a
 single command.
 
 Nox can also be used for other development tasks such as building
 documentation, creating your package distribution, and testing across various
-environment managers such as conda and pip.
+environment managers such as `conda` and `pip`.
 
 ## Test Environments
 
-By default, Nox uses the Python built in `venv` environment manager. A virtual environment (`venv`) is a self-contained Python environment that allows you to isolate and manage dependencies for different Python projects. It helps ensure that project-specific libraries and packages do not interfere with each other, promoting a clean and organized development environment.
+By default, `nox` uses the Python built in `venv` environment manager. A virtual environment (`venv`) is a self-contained Python environment that allows you to isolate and manage dependencies for different Python projects. It helps ensure that project-specific libraries and packages do not interfere with each other, promoting a clean and organized development environment.
 
 An example of using nox to run tests in `venv` environments for Python versions 3.9, 3.10 and 3.11 is below.
 
@@ -173,7 +173,7 @@ Note that unlike venv, conda can automatically install
 the various versions of Python that you need. You won't need to install all three Python versions if you use conda/mamba, like you do with `venv`.
 
 ```{note}
-For conda to work with nox, you will need to
+For `conda` to work with `nox`, you will need to
 install a conda-friendly version of Python. We suggest
 the mamba-forge installation.
 
