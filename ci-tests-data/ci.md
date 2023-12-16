@@ -47,7 +47,7 @@ If you are using GitLab CI/CD many of the principles described here will apply, 
 ### If you aren't sure, use GitHub Actions
 
 While you are welcome to use the continuous integration platform of your choice,
-we recommend Github actions because it is free-to-use and integrated tightly
+we recommend GitHub Actions because it is free-to-use and integrated tightly
 into the GitHub user interface. There is also an entire store of GitHub action
 templates that you can easily use and adapt to your own needs.
 
