@@ -49,7 +49,7 @@ jobs:
         python-version: ["3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           # fetch more than the last single commit to help scm generate proper version
           fetch-depth: 20
@@ -57,6 +57,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+          cache: pip # By adding cache here, you are telling actions to reuse installed dependencies rather than re-downloading and installing them each time. This speeds up your workflow
 
       # This step and the step below are an optional steps to cache variables to make your build faster / more efficient
       - name: Set Variables
@@ -73,7 +74,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install nox
+          python -m pip install nox
       - name: List installed packages
         run: pip list
       - name: Run tests with pytest & nox
