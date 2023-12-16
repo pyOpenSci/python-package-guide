@@ -119,8 +119,8 @@ TODO: add some tests above and show what the output would look like in the examp
 
 Below is an example of setting up nox to run tests using `venv` which is the built in environment manager that comes with base Python.
 
-Note that the example below assumes that you have setup your pyproject.toml to declare test dependencies in a way that pip
-can understand. And example of that setup is below.
+Note that the example below assumes that you have [setup your `pyproject.toml` to declare test dependencies in a way that pip
+can understand](../package-structure-code/declare-dependencies.md). And example of that setup is below.
 
 ```toml
 [project]
@@ -202,19 +202,3 @@ To run the above session you'd use:
 ```bash
 nox -s test_mamba
 ```
-
-## IGNORE ME - testing doctest (not working now)
-
-```{testcode}
-a = 1+2
-print(a)
-```
-
-```{testoutput}
-
-```
-
-TODO: might be able to use doctest to run examples However so far it's not working as intended and may be extra work.
-https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html
-
----

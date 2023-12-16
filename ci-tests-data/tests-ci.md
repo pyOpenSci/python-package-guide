@@ -57,7 +57,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
+          cache: pip # By adding cache here, you are telling actions to reuse installed dependencies rather than re-downloading and installing them each time. This speeds up your workflow
 
       # This step and the step below are an optional steps to cache variables to make your build faster / more efficient
       - name: Set Variables
