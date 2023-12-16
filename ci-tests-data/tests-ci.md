@@ -57,6 +57,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+          cache: pip
 
       # This step and the step below are an optional steps to cache variables to make your build faster / more efficient
       - name: Set Variables
