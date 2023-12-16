@@ -3,6 +3,16 @@
 In this section you will learn more about the importance of writing
 tests for your Python package.
 
+
+:::{figure-md} fig-target
+
+<img src="../images/packaging-lifecycle.png" alt="" width="800px">
+
+Fix-- highlight the tests part of the circle and make everything else grey / not colored??
+:::
+
+
+
 ::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 3
