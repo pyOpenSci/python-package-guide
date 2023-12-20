@@ -1,16 +1,12 @@
 # Tests and data for your Python package
 
+Tests are an important part of your Python package because they
+provide a set of checks that ensure that your package is
+functioning how you expect it to.
+
 In this section you will learn more about the importance of writing
-tests for your Python package.
-
-
-:::{figure-md} fig-target
-
-<img src="../images/packaging-lifecycle.png" alt="" width="800px">
-
-Graphic showing the elements of the packaging process.
-:::
-
+tests for your Python package and how you can setup infrastructure
+to run your tests both locally and on GitHub.
 
 
 ::::{grid} 1 1 3 3
@@ -51,6 +47,14 @@ tests on different Python versions and different operating systems both on
 your computer and using continuous integration on GitHub (or in any other CI).
 :::
 ::::
+
+
+:::{figure-md} fig-target
+
+<img src="../images/packaging-lifecycle.png" alt="" width="800px">
+
+Graphic showing the elements of the packaging process.
+:::
 
 ```{toctree}
 :hidden:
