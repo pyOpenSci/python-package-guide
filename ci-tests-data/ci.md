@@ -54,9 +54,9 @@ templates that you can easily use and adapt to your own needs.
 :::{admonition} Other platforms that you may run into
 :class: info
 
-- [Appveyor:](https://www.appveyor.com/) used to be a `GOTO` for running tests on Windows operating systems until GitHub actions evolved to support Windows. AppVeyor has evolved to support other operating systems since Microsoft acquired GitHub.
-- [Travis CI:](https://www.travis-ci.com/) Had been the most common CI platform used in our ecosystem until they dropped free support for open source.
-- [CircleCI:](https://circleci.com/) You will still see some people using CircleCI for specific tasks. CircleCI can be useful for automated builds of websites and documentation allowing you to preview the changes to that website in your browser.
+- [Appveyor:](https://www.appveyor.com/): Supports running tests on Windows operating systems and predated the release of GitHub Actions. Today, AppVeyor supports operating systems beyond Windows.
+- [Travis CI:](https://www.travis-ci.com/) had been a common CI platform choice in our ecosystem. Usage dropped after Travis CI ended free support for open-source projects.
+- [CircleCI:](https://circleci.com/) CircleCI can be useful for automated builds of websites and documentation since it offers a preview of the PR changes.
   :::
 
 ## Embrace automation
