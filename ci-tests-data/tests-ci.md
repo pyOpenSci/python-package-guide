@@ -74,7 +74,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install nox
+          python -m pip install nox
       - name: List installed packages
         run: pip list
       - name: Run tests with pytest & nox
