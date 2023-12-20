@@ -1,6 +1,6 @@
 # Test Types for Python packages
 
-_Unit, Integration & Functional Tests_
+## Three types of tests: Unit, Integration & Functional Tests
 
 There are different types of tests that you want to consider when creating your
 test suite:
@@ -11,10 +11,9 @@ test suite:
 
 Each type of test has a different purpose. Here, you will learn about all three types of tests.
 
-```{admonition}
+```{todo}
 I think this page would be stronger if we did have some
 examples from our package here: https://github.com/pyOpenSci/pyosPackage
-
 
 ```
 
@@ -70,7 +69,7 @@ def test_celsius_to_fahrenheit():
 Your unit tests should ensure each part of your code works as expected on its own.
 ```
 
-### Integration tests
+## Integration tests
 
 Integration tests involve testing how parts of your package work together or integrate. Integration tests can be compared to connecting a bunch of puzzle pieces together to form a whole picture. Integration tests focus on how different pieces of your code fit and work together.
 
@@ -122,7 +121,7 @@ together, do so as expected.
 
 ```
 
-### End-to-end (functional) tests
+## End-to-end (functional) tests
 
 End-to-end tests (also referred to as functional tests) in Python are like comprehensive checklists for your software. They simulate real user end-to-end workflows to make sure the code base supports real life applications and use-cases from start to finish. These tests help catch issues that might not show up in smaller tests and ensure your entire application or program behaves correctly. Think of them as a way to give your software a final check before it's put into action, making sure it's ready to deliver a smooth experience to its users.
 
@@ -141,7 +140,7 @@ End-to-end test also test how a program runs from start to finish. A tutorial th
 For scientific packages, creating short tutorials that highlight core workflows that your package supports, that are run when your documentation is built could also serve as end-to-end tests.
 ```
 
-### Comparing unit, integration and end-to-end tests
+## Comparing unit, integration and end-to-end tests
 
 Unit tests, integration tests, and end-to-end tests have complementary advantages and disadvantages. The fine-grained nature of unit tests make them well-suited for isolating where errors are occurring. However, unit tests are not useful for verifying that different sections of code work together.
 
