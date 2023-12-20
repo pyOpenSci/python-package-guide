@@ -20,7 +20,8 @@ Packaging <package-structure-code/intro>
 :hidden:
 :caption: CI and Testing
 
-CI & Tests  <ci-and-testing/intro>
+CI & Tests  <ci-tests-data/index>
+
 ```
 
 <!-- Github community standards
