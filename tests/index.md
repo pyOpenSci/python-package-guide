@@ -34,18 +34,6 @@ potential contributors to your project.
 There are three general types of tests that you can write for your Python
 package: unit tests, integration tests and end-to-end (or functional) tests. Learn about all three.
 :::
-
-:::{grid-item-card}
-:link: run-tests
-:link-type: doc
-
-✨ How to Run Your Tests ✨
-^^^
-
-Learn more about what tools you can use to run tests. And how to run your
-tests on different Python versions and different operating systems both on
-your computer and using continuous integration on GitHub (or in any other CI).
-:::
 ::::
 
 
@@ -64,26 +52,4 @@ Graphic showing the elements of the packaging process.
 Intro <self>
 Write tests <write-tests>
 Test types <test-types>
-Run tests <run-tests>
-Code coverage <code-cov>
-
-```
-
-```{toctree}
-:hidden:
-:maxdepth: 2
-:caption: Continuous Integration
-
-Intro to CI <ci>
-Run tests in CI <tests-ci>
-
-```
-
-```{toctree}
-:hidden:
-:maxdepth: 2
-:caption: Package data
-
-Package data <data>
-
 ```
