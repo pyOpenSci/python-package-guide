@@ -1,6 +1,6 @@
 # <img src="images/logo/logo.png" width=40 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -125,6 +125,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://orcid.org/0000-0002-8999-9003"><img src="https://avatars.githubusercontent.com/u/6338509?v=4?s=100" width="100px;" alt="William F. Broderick"/><br /><sub><b>William F. Broderick</b></sub></a><br /><a href="#tutorial-billbrod" title="Tutorials">✅</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/kierisi"><img src="https://avatars.githubusercontent.com/u/23085445?v=4?s=100" width="100px;" alt="Jesse Mostipak"/><br /><sub><b>Jesse Mostipak</b></sub></a><br /><a href="#tutorial-kierisi" title="Tutorials">✅</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mknorps"><img src="https://avatars.githubusercontent.com/u/27200848?v=4?s=100" width="100px;" alt="Maria Knorps"/><br /><sub><b>Maria Knorps</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=mknorps" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Amknorps" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://phil.red"><img src="https://avatars.githubusercontent.com/u/291575?v=4?s=100" width="100px;" alt="Philipp A."/><br /><sub><b>Philipp A.</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=flying-sheep" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Aflying-sheep" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
