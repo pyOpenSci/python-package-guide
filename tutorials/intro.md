@@ -19,12 +19,11 @@ that you have not created a Python package before. However, the
 content will still be valuable if you are interested in better
 understanding the steps involved in creating a Python package.
 
+* In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
 
-In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
+* In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
-In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
-
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Python Packaging 101
 
@@ -35,10 +34,7 @@ Add LICENSE & CODE of CONDUCT <4-add-license-file>
 Add pyproject.toml <5-pyproject-toml>
 Publish to PyPI <6-publish-pypi>
 Publish to conda-forge <7-publish-conda-forge>
-
-```
-
-
+:::
 
 :::{admonition} Learning Objectives
 
@@ -51,21 +47,22 @@ After reading this lesson you will:
 
 :::
 
-Breakout?? - You might also hear people use the term "library" the same way.
+:::{todo}
+You might also hear people use the term "library" the same way.
+:::
 
 ## What is a Python package?
 
-At a high level, you can think about a Python package as a toolbox.
 
-In Python, the term package has a specific meaning: it is a directory with a certain structure. The directory contains modules which are  files that end in `.py`. Each module contains functions and classes, that you can think about as tools in your toolbox.
+At a high level, you can think about a Python package as a toolbox
+that you can use to perform various tasks.
 
-The modules within a package allow you to group and structure your
-Python code. A package is installable, which means that you can add the functionality within
-the package code to any Python environment and import that functionality like
-you would import NumPy or matplotlib. This also makes it easier
-to manage and reuse code across different projects.
-
-Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you've created and let others build with it.
+Structurally, in Python, a package is a directory with a specific
+file structure. Within the package directory structure, there are
+modules which are files that end in `.py` (the same extension you'd
+see in a Python script). These modules allow you to group and
+structure yourPython code. Each module contains functions and classes,
+that you can think about as the tools in your toolbox.
 
 :::{figure-md} python-toolbox
 
@@ -76,6 +73,19 @@ A tool may be a function or a class. Each tool does a specific thing
 well.
 :::
 
+### Python packages are installable
+A package is installable, which means that you can add the
+functionality within the package's code to any Python environment and
+import that functionality like you would import core Python packages such
+as NumPy or matplotlib.
+
+```python
+import numpy
+```
+
+Installing a package into an environment makes it easier
+to manage and reuse your code across different projects.
+Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you've created and let others build with it.
 
 ## The elements of a Python package
 
@@ -83,19 +93,21 @@ well.
 
 <img src="../images/tutorials/package-components.png" alt="Diagram showing .. more here if this stays." width="500px">
 
-The elements of a Python package include code, documentation, tests, an OSI-approved license and a specific directory structure. Maintainers are at the core making sure everything works and is up to date while fixing bugs and addressing user concerns.
+The elements of a Python package include code, documentation, tests,
+an OSI-approved license and a specific directory structure.
+Maintainers are at the core making sure everything works and is up to
+date while fixing bugs and addressing user concerns.
 :::
 
 The core elements of Python package include:
 
 - **Code:** Functions and classes that provide functionality for a user of your package
-- **Documentation:** Installation instructions, tutorials, and examples that help users get started using your package
-  - Documentation also helps people to contribute to your package.
+- **Documentation:** Installation instructions, tutorials, and examples that both help users get started using your package and contributors and maintainers fix bugs and maintain the package.
+  - Contributor Documentation in the form of a **CONTRIBUTING.md** file is useful to help people to contribute to your package.
+  - Development documentation helps both maintainers and contributors understand how to maintain a package's infrastructure.
 - **Tests:** that makes sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future
-- **License:** An open source license …. - link to choose a license…
-- **Infrastructure** that automates updates, publication workflows and runs test suites
-
-If you intend for others to use and contribute to your code, consider who will maintain it over time. You will want a **contributing / development** guide to help new potential contributors get started with contributing to your package, as well as a **code of conduct** to ensure community interactions remain healthy both for you and your contributors / maintainer team
+- **License:** An open source license, or license that is [OSI approved](https://opensource.org/licenses/) refers to an licence that allows others to both use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
+- **Infrastructure** that automates updates, publication workflows and runs test suites. Infrastructure includes a suite of things such as platforms like GitHub and GitLab, tools to run tests and tools locally such as nox and tox and continuous integration that automates package maintenance steps.
 
 :::{admonition} What pyOpenSci looks for in a package
 :class: tip
@@ -104,12 +116,14 @@ pyOpenSci performs an [initial set of editor checks](https://www.pyopensci.org/s
 to us for peer review.
 You may find these checks useful as you create your package as a baseline for
 things that you package should have.
-
 :::
 
-## Packages are more than just code
+## Packages are more than just code - Infrastructure
 
-A package in any language is more than just code. If your package is public facing, meaning people besides yourself will use it, you should consider the various elements of a package that make it a useful community resource.
+A package in any language is more than just code. If you expect other
+people to use your package, besides yourself, you should consider not
+only writing high quality code, but also the various elements of a
+package that make it a useful community resource.
 
 ### Version control and storing your package on GitHub or GitLab
 
@@ -118,7 +132,7 @@ or GitLab. GitHub and GitLab are both
 run [git](https://git-scm.com/) for version control. Having your software
 under version control is important because it allows you to both track changes over time while also going back in history and undoing changes in the case that a change to the code base unexpectedly breaks something.
 
-By publishing your package on GitHub or GitLab, you are making your code public facing. This means that others can both see your code and also make contributions using a pull request (merge request in GitLab) - code review workflow.
+By publishing your package on GitHub or GitLab, you are making your code public facing. This means that others can both see your code and also make contributions using a pull request (GitHub) / merge request (GitLab) /  code review workflow.
 
 :::{admonition} GitHub & GitLab vs. Git
 :class: tip
@@ -128,9 +142,18 @@ software) on the backend. Running git locally on your computer allows you to
 upload (`git push`) and download (`git pull`) files to GitHub and GitLab.
 :::
 
-### Continuous integration and continuous deployment help you maintain your package
+### Issues or Ticket Trackers
 
-Platforms such as GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs.
+GitHub and GitLab also both offer community features such as issues that allow:
+
+* you to communicate with your maintainers and contributor community
+* users to report bugs, ask questions and request new features
+* you to publicly keep track of enhancements and features you want to work on for your package.
+
+
+### Continuous integration and continuous deployment
+
+GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs.
 
 **An example of Continuous integration:**
 * When someone submits a change to your code, your tests will run across different operating systems and the code will be checked for format issues.
@@ -138,7 +161,7 @@ Platforms such as GitHub and GitLab also provide continuous integration and cont
 **An example of Continuous deployment:**
 * When you are ready to release your package to PyPI, a continuous deployment operation might be triggered on release to publish your package to PyPI.
 
-Integrated CI/CD will help you maintain  your software ensuing that changes to the code don't break things unexpectedly and also maintain a style and format consistency.
+Integrated CI/CD will help you maintain your software ensuing that changes to the code don't break things unexpectedly and also maintain a style and format consistency.
 
 :::{figure-md} packaging-workflow
 
@@ -146,15 +169,6 @@ Integrated CI/CD will help you maintain  your software ensuing that changes to t
 
 The lifecycle of a scientific Python package.
 :::
-
-```{toctree}
-:hidden:
-:caption: Pre game
-:glob:
-extras/*
-
-```
-
 
 ## What should code in a Python package look like?
 
@@ -251,6 +265,15 @@ To support your community, you'll want to add things like:
 * contributing guide
 
 
+
+
+:::{admonition} Support for contributors and maintainers
+
+If you intend for others to use and contribute to your code, consider who will maintain it over time. You will want a **contributing and development** guide to help new potential contributors get started with contributing to your package, as well as a **code of conduct** to ensure community interactions remain healthy both for you and your contributors and maintainer team.
+
+The elements above are also important for future maintenance of your package. In the case that you are no long able to maintain it or simply want extra help, development and contributing documentation will help you onboard new maintainers.
+:::
+
 <!--
 Are the sections below useful??
 
@@ -273,20 +296,7 @@ Before you begin, think about your goals including:
 - Whether you have time to add things such as documentation and tests
 - How long you might be able to maintain it -->
 
-
 *****
-
-
-<!--
-### Development guidelines
-
-This feels really out of place here...
-
-_TODO: I suspect nick murphy has something in this space that we can rif off of. Essentially I'm thinking here we have a SHORT section on development best practices and then link to another resource (be it on the pyos website or elsewhere). This would include things like:_
-
-- _Defining the scope of your package and scope creep_
-- _Keeping functions focused on doing a single thing well._
-- _Broad generalizable get started guidelines and then we can link to more in depth resources in this space._ -->
 
 ## What's next?
 
