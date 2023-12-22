@@ -42,7 +42,7 @@ Learn about our open peer review process
 :link: tutorials/intro
 :link-type: doc
 
-✨ Just getting started? ✨
+✨ Getting Started ✨
 ^^^
 
 If you are new to packaging or just want an opinionated, end-to-end
