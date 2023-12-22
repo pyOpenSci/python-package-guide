@@ -53,11 +53,12 @@ way to create a package, check out our tutorials
 :link: package-structure-code/intro
 :link-type: doc
 
-✨ Want to better understand the ecosystem? ✨
+✨ Understand the Python Packaging Ecosystem ✨
 ^^^
 If you are looking to better understand the tools and options in the
 diverse Python packaging ecosystem, then this section is for you. Here
-you will learn about the most commonly used tools in the ecosystem and
+you will learn about the most commonly used tools in the ecosystem as
+well as the tools and processes that our community recommends.
 also tools and processes that our community recommends.
 :::
 
@@ -74,12 +75,12 @@ contribute.
 
 ## About
 
-This guide is designed to guide you through your Python packaging experience.
+This guide is designed to walk you through a typical Python packaging experience.
 
 It does several things:
 
-1. it provides an overview of the various elements of a python package
-2. it provides and overview of tools to create python packages and recommends best practices
+1. it provides an overview of the various elements of a Python package
+2. it provides and overview of tools to create Python packages and recommends best practices
 3. it provides end-to-end tutorials to get you on your way creating a package
 
 ```{toctree}
