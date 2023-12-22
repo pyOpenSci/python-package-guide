@@ -231,5 +231,5 @@ Most of the sections in this guide will ultimately include Good/Better/Best reco
 
 Good meets the requirements. Going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.
 
-This guide is now a work in progress. If you have ideas of things you'd like
+This guide is a work in progress. If you have ideas of things you'd like
 to see here, [we invite you to open an issue on GitHub that details any changes or additions that you'd like to see.](https://github.com/pyOpenSci/python-package-guide/issues).
