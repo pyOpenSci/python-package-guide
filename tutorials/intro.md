@@ -161,7 +161,10 @@ GitHub and GitLab also provide continuous integration and continuous deployment 
 **An example of Continuous deployment:**
 * When you are ready to release your package to PyPI, a continuous deployment operation might be triggered on release to publish your package to PyPI.
 
-Integrated CI/CD will help you maintain your software ensuing that changes to the code don't break things unexpectedly and also maintain a style and format consistency.
+Integrated CI/CD will help you maintain your software, ensuring that
+changes to the code don't break things unexpectedly. They can also
+help you maintain code style and format consistency for every new
+change to your code.
 
 :::{figure-md} packaging-workflow
 
@@ -170,22 +173,67 @@ Integrated CI/CD will help you maintain your software ensuing that changes to th
 The lifecycle of a scientific Python package.
 :::
 
-## What should code in a Python package look like?
+## When should you turn your code into a Python package?
 
-Ideally the code in your Python package is general. This means it
-can be used on different data or for different scientific applications. An example
-of a package that is written in a generalized way is matplotlib.
+You may be wondering, what types of code should become a Python package that is both on GitHub and published to PyPI and/or conda-forge.
 
-matplotlib does
-one (big important) thing really well:
+There are a few use cases to consider:
+
+1. **Creating a basic package for yourself:** Sometimes you want create a package for your own personal use. This might mean making your code locally pip installable and you may also want to publish it to GitHub. In that case you don't expect others to use your code, and as such you may only have documentation for you and your future self if you need to update the package.
+
+> An example of this type of package might be a set of functions that you write that are useful across several of your projects. It could be useful to have those functions available to all of your projects.
+
+:::{todo}
+LINK to pip installable lesson when it's published - it's in review now
+:::
+
+2. In other cases, you may create some code that you soon realize might also be useful to not just you, but to other people as well.
+In that case, you might consider both creating the package, publishing it on GitHub, and because other users may be using it, you may make user of GitHub's infrastructure including CI/CD pipelines, issue trackers. Because you want other people to use your package, you will want to also include LICENSE information, documentation for users and contributors and tests. This type of package is most often published to PyPI.
+
+For example, all of the [pyOpenSci packages](https://www.pyopensci.org/python-packages.html) are public facing with an intended audience beyond just the maintainers.
+
+###  Packages that you expect others to use should be well-scoped
+
+Ideally the code in your Python package is focused on a specific theme or use case. This theme is important as it's a way to scope the content of your package.
+
+It can be tricky to decide when your code becomes something that might be more broadly useful to others. But one question you can ask yourself is - is your code written specifically for a single research project? Or could it have a broader application across multiple projects in your domain?
+
+
+:::{admonition} How does this relate to code for a research project?
+:class: note
+
+A [Research Compendium](https://the-turing-way.netlify.app/reproducible-research/compendia.html#basic-compendium) is an organized set of code, data and documentation that
+supports a specific research project. It aims to enhance the reproducibility and
+transparency of research by providing a comprehensive record of the methods,
+data, and analyses used in a study.
+
+A Python package however is a collection of modules that are focused on a
+specific set of tasks that can be applied across numerous research projects.
+As such a Python package is more generalizable than a Research Compendium
+which supports a specific project.
+
+* [Read about `Good enough practices in scientific computing`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
+* [Learn more about research compendia (also called repo-packs) in this blog post.](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/)
+:::
+
+
+Below are a few examples well scoped pyOpenSci packages:
+
+* [Crowsetta](https://crowsetta.readthedocs.io/en/latest/): is a package designed to work with annotating animal vocalizations and bioacoustics data. This package helps scientists process different types of bioacoustic data rather than focusing on a specific individual research application associated with a user-specific research workflow.
+* [pandera](https://www.union.ai/pandera) is another more broadly used Python package. Pandera supports data testing and thus also has a broader research application.
+
+:::{admonition} Matplotlib as an example
+
+At the larger end of the user spectrum, Matplotlib is a great example.
+Matplotlib does one (big important) thing really well:
 
 *It creates visual plots of data.*
 
 Matplotlib is used by thousands of users for different plotting applications
 using different types of data. While few scientific packages will have the same
-broad application as tools like matplotlib or NumPy, the
-idea of code being used for something more than a single workflow still applies
-to package development if you want other people to use your package.
+broad application and large user base as tools like Matplotlib, the
+idea of scoping out what your package does is still important.
+:::
 
 ### Code should also be clean & readable & documented
 
@@ -200,23 +248,8 @@ You can use linters and code formatters such as black and flake8 to ensure
 this consistency throughout your entire package. [Learn more about code formatters here.](../package-structure-code/code-style-linting-format.html)
 
 **Documented code:** documented code is written using docstrings that help a
-user understand both what the functions and methods in your code does and also
+user understand both what the functions and methods in your code do and also
 what the input and output elements of each function is. [You can learn more about docstrings in our guide, here.](../documentation/write-user-documentation/document-your-code-api-docstrings)
-
-:::{admonition} Where do research compendia fit in?
-:class: note
-
-A Research Compendium is an organized set of code, data and documentation that
-supports a specific research project. It aims to enhance the reproducibility and
-transparency of research by providing a comprehensive record of the methods,
-data, and analyses used in a study.
-
-A Python package however is a collection of modules that are focused on a
-specific set of tasks that can be applied across numerous research projects.
-As such a Python package is more generalizable than a Research Compendium
-which supports a specific project.
-
-:::
 
 ## Making your package installable - publishing to PyPI & conda-forge
 
