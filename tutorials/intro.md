@@ -1,60 +1,15 @@
 # Python packaging 101
 *A start to finish beginner-friendly tutorial*
 
-<!-- This is the start at making the graphic below using css
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 left-div">
-            Python Packaging 101
-        </div>
-        <div class="col-md-6 right-div">
-            <div class="lesson-div">
-                <a href="#">What is a python package? </a>
-            </div>
-            <div class="lesson-div">
-                <a href="1-installable-code.html">Make your code installable</a>
-            </div>
-            <div class="lesson-div">
-                <a href="2-add-readme.html">Add a README file</a>
-            </div>
-            <div class="lesson-div">
-                <a href="#link4">Add a LICENSE and Code of Conduct file</a>
-            </div>
-            <div class="lesson-div">
-                <a href="#link5">Add metadata (pyproject.toml)</a>
-            </div>
-
-            <div class="lesson-div">
-                <a href="#link6">Publish to PyPI</a>
-            </div>
-
-            <div class="lesson-div">
-                <a href="#link7">Publish to conda-forge</a>
-            </div>
-        </div>
-    </div>
-</div>
--->
-
-
-<!--
-
-TODO: whatever graphic we use we can then add it to the top of each page to show the user where they are in the progression
-* Work on the create a license lesson next?? that is the most incomplete
-* then start the conda one and place the pyos package on conda-forge??
-* Below i have an image overview of the lessons and a list of links. i'm thinking a visual html / css block that is clickable would be a more powerful "graphic". it could still have colors.
--->
-
-
-Welcome to the pyOpenSci Python packaging tutorial series. The lessons on the upcoming pages walk you through the core steps needed to
+Welcome to the pyOpenSci Python packaging tutorial series. The lessons
+on the upcoming pages walk you through the core steps needed to
 create a Python package.
-
 
 :::{figure-md} packaging-outline
 
-<img src="../images/tutorials/packaging-101-outline.png" alt="Diagram showing .. more here if this stays." width="800px">
+<img src="../images/tutorials/packaging-101-outline.png" alt="Diagram showing the lessons in our packaging tutorial." width="800px">
 
-TODO: This will be replaced with a interactive CSS element that walks users through lessons
+Packaging tutorial overview graphic
 :::
 
 ## Who are these tutorials for?
@@ -64,9 +19,6 @@ that you have not created a Python package before. However, the
 content will still be valuable if you are interested in better
 understanding the steps involved in creating a Python package.
 
-<!-- it might be interesting to make the above graphic a css
-set of blocks that are colored. then you could hover over each on to get to the lesson of choice. this would make it easier to also
-customize each page with that block at the top -->
 
 In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
 
@@ -106,7 +58,7 @@ to manage and reuse code across different projects.
 
 A package is installable, which means that you can add the functionality within
 the package code to any Python environment and import that functionality like
-you would import numpy or matplotlib.
+you would import NumPy or matplotlib.
 
 At a high level, you can think about each package as a toolbox filled with
 different tools that perform specific actions in your code when imported and
@@ -114,24 +66,12 @@ called.
 
 :::{figure-md} python-toolbox
 
-<img src="../images/tutorials/toolbox.png" alt="Diagram showing ADD ALT." width="300px">
+<img src="../images/tutorials/toolbox.png" alt="Diagram showing a sketch of a toolbox filled with different tools including a hammer and a saw." width="400px">
 
-You can think about a package as a toolbox filled with coding tools. A tool may be a function or a
-class. Each tool does a specific thing well.
+You can think about a package as a toolbox filled with coding tools.
+A tool may be a function or a class. Each tool does a specific thing
+well.
 :::
-
-
-<!--
-:::{admonition} TODOS
-:class: todo
-TODOs:
-* Create a nice graphic for this landing page that introduces the pieces of a python package and also how these tutorials are organized ... maybe even that step box diagram?
-
-- sometimes people might start by creating a new repo and cloning it.
-* It would be good to have them add development requirements up front in their pyproject.toml file
-* Other times they might start by working locally and then pushing the repo content to github / gitlab. in any case the readme and license lessons may or may not be relevant. so we should have a pregame for setting up a fresh repo, creating an initial .gitignore, readme and license. and then link to the chose a license lesson.
-
-::: -->
 
 
 ## The elements of a Python package
@@ -204,12 +144,6 @@ Integrated CI/CD will help you maintain  your software ensuing that changes to t
 The lifecycle of a scientific Python package.
 :::
 
-<!-- >then in the publish section below we can add the arrow with that structure being
->built into distributions that get published on PyPI and conda...
-
->then in the community part we add another section that is the github repo with users contributing... very simple diagrams... -->
-
-
 ```{toctree}
 :hidden:
 :caption: Pre game
@@ -223,16 +157,16 @@ extras/*
 
 Ideally the code in your Python package is general. This means it
 can be used on different data or for different scientific applications. An example
-of a package that is written in a generalized way is `matplotlib`.
+of a package that is written in a generalized way is matplotlib.
 
-`matplotlib` does
+matplotlib does
 one (big important) thing really well:
 
 *It creates visual plots of data.*
 
-`Matplotlib` is used by thousands of users for different plotting applications
+Matplotlib is used by thousands of users for different plotting applications
 using different types of data. While few scientific packages will have the same
-broad application as tools like `matplotlib` or `numpy`, the
+broad application as tools like matplotlib or NumPy, the
 idea of code being used for something more than a single workflow still applies
 to package development if you want other people to use your package.
 
@@ -272,12 +206,12 @@ which supports a specific project.
 ### Python packages and environments
 
 A Python package can be installed into a Python environment in the same way
-you might install `numpy` or `pandas`. Installing your package into an environment
+you might install NumPy or pandas. Installing your package into an environment
 allows you to access it from any code run with that specific Python environment activated.
 
 :::{figure-md} packages-environment
 
-<img src="../images/tutorials/environment-package-install.png" alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a python environment that already has some packages installed such as pandas and numpy. Your package will also get installed into that same environment when you pip install it." width="700px">
+<img src="../images/tutorials/environment-package-install.png" alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." width="700px">
 
 You don't have to publish to PyPI in order to make your code installable.
 WIth the correct file structure and project metadata you can make your code
