@@ -120,10 +120,10 @@ community make decisions around how to create scientific Python packages. We are
 
 ### How this guide is created
 
-This guide is created by pyOpenSci through an extensive review process. Each page in the guide has been reviewed by experts in the broader Python packaging landscape including people from:
+This guide is created by pyOpenSci through an extensive review process. Each page in the guide has been reviewed by experts in the broader Python packaging landscape, including people from:
 
-- conda & conda-forge
-- the python packaging authority
+- [conda](https://docs.conda.io/en/latest/)& [conda-forge](https://conda-forge.org/)
+- the [Python Packaging Authority](https://www.pypa.io/en/latest/)
 - core Python developers
 - core scientific Python developers
 - and others with expertise in packaging, package documentation, usability and other related knowledge areas
