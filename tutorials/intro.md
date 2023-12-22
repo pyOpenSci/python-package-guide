@@ -38,7 +38,7 @@ Publish to conda-forge <7-publish-conda-forge>
 
 ```
 
-## What is a Python package?
+
 
 :::{admonition} Learning Objectives
 
@@ -51,18 +51,21 @@ After reading this lesson you will:
 
 :::
 
-A Python package is a collection of related modules / code containing
-functions, classes and methods that are organized together in a directory.
-Packages allow you to group and structure your Python code, making it easier
+Breakout?? - You might also hear people use the term "library" the same way.
+
+## What is a Python package?
+
+At a high level, you can think about a Python package as a toolbox.
+
+In Python, the term package has a specific meaning: it is a directory with a certain structure. The directory contains modules which are  files that end in `.py`. Each module contains functions and classes, that you can think about as tools in your toolbox.
+
+The modules within a package allow you to group and structure your
+Python code. A package is installable, which means that you can add the functionality within
+the package code to any Python environment and import that functionality like
+you would import NumPy or matplotlib. This also makes it easier
 to manage and reuse code across different projects.
 
-A package is installable, which means that you can add the functionality within
-the package code to any Python environment and import that functionality like
-you would import NumPy or matplotlib.
-
-At a high level, you can think about each package as a toolbox filled with
-different tools that perform specific actions in your code when imported and
-called.
+Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you've created and let others build with it.
 
 :::{figure-md} python-toolbox
 
