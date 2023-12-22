@@ -92,7 +92,7 @@ The core elements of Python package include:
 - **License:** An open source license …. - link to choose a license…
 - **Infrastructure** that automates updates, publication workflows and runs test suites
 
-If you intend for others to use and contribute to your code, consider who will maintain it over time. You will want a **contributing / development** guide to help new potential contributors get started with contributing to your package. And a **code of conduct** to ensure community interactions remain healthy both for you and your contributors / maintainer team
+If you intend for others to use and contribute to your code, consider who will maintain it over time. You will want a **contributing / development** guide to help new potential contributors get started with contributing to your package, as well as a **code of conduct** to ensure community interactions remain healthy both for you and your contributors / maintainer team
 
 :::{admonition} What pyOpenSci looks for in a package
 :class: tip
@@ -120,7 +120,7 @@ By publishing your package on GitHub or GitLab, you are now making your code pub
 :::{admonition} GitHub & GitLab vs. Git
 :class: tip
 
-GitHub and GitLab are online (cloud) platforms that run git (version control
+GitHub and GitLab are online (cloud) platforms that run `git` (version control
 software) on the backend. Running git locally on your computer allows you to
 upload (`git push`) and download (`git pull`) files to GitHub and GitLab.
 :::
@@ -196,7 +196,7 @@ data, and analyses used in a study.
 
 A Python package however is a collection of modules that are focused on a
 specific set of tasks that can be applied across numerous research projects.
-As such a Python package is more generalizable than a research Compendium
+As such a Python package is more generalizable than a Research Compendium
 which supports a specific project.
 
 :::
@@ -217,7 +217,7 @@ You don't have to publish to PyPI in order to make your code installable.
 WIth the correct file structure and project metadata you can make your code
 installable locally on your computer and use it for projects that you are working
 on without having to ever publish to PyPI. Publishing to PyPI is useful when you
-want to make your code public facing and share it with others.
+want to make your code public-facing and share it with others.
 :::
 
 ### Publishing a package
@@ -228,7 +228,7 @@ pure python package, then publishing to both PyPI and conda-forge only takes jus
 
 In these tutorials, you will learn [how to publish to PyPI using twine.](6-publish-pypi.md)
 
-Then you can create a conda-forge recipe using the grayskull tool. This recipe can then be submitted to conda-forge. [You will learn more about the conda-forge publication process here.](7-publish-conda-forge.md)
+Then you can create a conda-forge recipe using the [grayskull](https://github.com/conda/grayskull) tool. This recipe can then be submitted to conda-forge. [You will learn more about the conda-forge publication process here.](7-publish-conda-forge.md)
 
 
 :::{figure-md} build-workflow-tutorial
