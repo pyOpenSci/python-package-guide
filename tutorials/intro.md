@@ -104,7 +104,7 @@ functions, classes and methods that are organized together in a directory.
 Packages allow you to group and structure your Python code, making it easier
 to manage and reuse code across different projects.
 
-A package is installable which means that you can add the functionality within
+A package is installable, which means that you can add the functionality within
 the package code to any Python environment and import that functionality like
 you would import numpy or matplotlib.
 
