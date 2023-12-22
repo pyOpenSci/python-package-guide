@@ -62,13 +62,13 @@ TODO: This will be replaced with a interactive CSS element that walks users thro
 The content in this tutorial series is beginner friendly and assumes
 that you have not created a Python package before. However, the
 content will still be valuable if you are interested in better
-understand the steps for creating a Python package.
+understanding the steps involved in creating a Python package.
 
 <!-- it might be interesting to make the above graphic a css
 set of blocks that are colored. then you could hover over each on to get to the lesson of choice. this would make it easier to also
 customize each page with that block at the top -->
 
-In this series you will learn about the core elements that you need to publish your package to PyPI.
+In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
 
 In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
@@ -104,7 +104,7 @@ functions, classes and methods that are organized together in a directory.
 Packages allow you to group and structure your Python code, making it easier
 to manage and reuse code across different projects.
 
-A package is installable which means that you can add the functionality within
+A package is installable, which means that you can add the functionality within
 the package code to any Python environment and import that functionality like
 you would import numpy or matplotlib.
 
