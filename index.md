@@ -32,7 +32,6 @@ Learn about our open peer review process
 :::
 ::::
 
-<!-- I think this is the end of the header - below begins the next grid-->
 
 ::::{grid} 1 1 2 2
 :class-container: text-center
@@ -161,8 +160,6 @@ Learn about our open peer review process
 
 :::
 ::::
-
-<!-- I think this is the end of the header - below begins the next grid-->
 
 ::::{grid} 1 1 2 2
 :class-container: text-center

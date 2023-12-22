@@ -83,7 +83,7 @@ well.
 
 <img src="../images/tutorials/package-components.png" alt="Diagram showing .. more here if this stays." width="500px">
 
-The elements of a Python package include code, documentation, tests a OSI-approved license and a specific directory structure. Maintainers are at the core making sure everything works and is up to date while fixing bugs and addressing user concerns.
+The elements of a Python package include code, documentation, tests, an OSI-approved license and a specific directory structure. Maintainers are at the core making sure everything works and is up to date while fixing bugs and addressing user concerns.
 :::
 
 The core elements of Python package include:
@@ -114,11 +114,11 @@ A package in any language is more than just code. If your package is public faci
 ### Version control and storing your package on GitHub or GitLab
 
 Most Python packages live in an online version control platform such as GitHub
-or GitLab. GitHub and GitLab are both online platforms that
-run [git](https://git-scm.com/) for version control. Have your software
+or GitLab. GitHub and GitLab are both
+run [git](https://git-scm.com/) for version control. Having your software
 under version control is important because it allows you to both track changes over time while also going back in history and undoing changes in the case that a change to the code base unexpectedly breaks something.
 
-By publishing your package on GitHub or GitLab, you are now making your code public facing. this means that others can both see your code and also make contributions using a pull request - review workflow.
+By publishing your package on GitHub or GitLab, you are making your code public facing. This means that others can both see your code and also make contributions using a pull request (merge request in GitLab) - code review workflow.
 
 :::{admonition} GitHub & GitLab vs. Git
 :class: tip
