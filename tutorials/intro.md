@@ -85,8 +85,8 @@ The elements of a Python package include code, documentation, tests a OSI-approv
 
 The core elements of Python package include:
 
-- **Code:** Generalized code that performs operations that you may need to complete multiple times
-- **Documentation:** documentation with tutorials / examples that help users get started using your tool
+- **Code:** Functions and classes that provide functionality for a user of your package
+- **Documentation:** Installation instructions, tutorials, and examples that help users get started using your package
   - Documentation also helps people to contribute to your package.
 - **Tests:** that makes sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future
 - **License:** An open source license …. - link to choose a license…
