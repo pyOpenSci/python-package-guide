@@ -58,7 +58,7 @@ html_theme_options = {
          "href": "https://www.pyopensci.org/images/favicon.ico",
       },
     ],
-    "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>🚧 This guide is currently being developed! 🚧 ",
+    "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
     #"navbar_center": ["nav"], this can be a way to override the default navigation structure
     "external_links": [
         {
