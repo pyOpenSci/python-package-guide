@@ -57,9 +57,10 @@ Community docs
 Publish your docs
 ```
 
-## Packaging Ecosystem overview & best practices
+## Python packaging ecosystem overview & best practices
 
-This section of our guide will provide you with an overview of packaging best practices and also the vibrant ecosystem of packaging tools that are available to help you with your Python packaging needs.
+Learn about Python packaging best practices. You will also get to know the
+the vibrant ecosystem of packaging tools that are available to help you with your Python packaging needs.
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
@@ -109,7 +110,7 @@ Learn about best practices for:
 
 * [Code style](package-structure-code/code-style-linting-format.md)
 
-*we are actively working on this section now*
+*We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)*
 :::
 ::::
 
@@ -127,8 +128,13 @@ contribute.
 :::::
 
 
+:::{figure} https://www.pyopensci.org/images/people-building-blocks.jpg
+:align: right
+:width: 300
+:alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?
+:::
 
-### How we created a community-driven packaging guide
+### A community-created guidebook
 
 Every page in this guidebook goes through an extensive community review
 process. To ensure our guidebook is both accessible to beginners and accurate in it's representation of the packaging ecosystem, our community reviewers are diverse have a mixture of packaging expertise from expert to beginner.
@@ -136,7 +142,7 @@ process. To ensure our guidebook is both accessible to beginners and accurate in
 ```{button-link} https://github.com/pyOpenSci/python-package-guide#contributors-
 :color: primary
 :class: sd-rounded-pill float-left
-View all of the people who have contributed to this guide here
+View guidebook contributors
 
 ```
 
@@ -148,12 +154,7 @@ This guidebook is for anyone interested in learning more about Python packaging.
 1. Resources to help you navigate the Python packaging ecosystem of tools and approaches to packaging.
 1. A curated list of resources to help you get your package into documented, usable and maintainable shape.
 
-:::{figure-md} fig-target
 
-<img src="/images/python-flying-xkcd.png" alt="xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?" width="400px">
-
-Many love to use Python because it is a clean language to learn. It also is incredibly flexible allowing it to be used across numerous domains. Source: xkcd comics.
-:::
 
 
 ## Where this guide is headed
