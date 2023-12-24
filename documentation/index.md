@@ -20,21 +20,30 @@ Create Package Tutorials <write-user-documentation/create-package-tutorials.md>
 
 ```{toctree}
 :hidden:
-:caption: Core Repository Files
+:caption: Docs for Contributors & Maintainers
 :maxdepth: 2
 
 Intro <repository-files/intro.md>
-README file <repository-files/readme-file-best-practices.md>
+
 Contributing File <repository-files/contributing-file.md>
-Code of Conduct File <repository-files/code-of-conduct-file.md>
+
 Development Guide <repository-files/development-guide.md>
+```
+
+```{toctree}
+:hidden:
+:caption: Community Docs
+:maxdepth: 2
+
+README file <repository-files/readme-file-best-practices.md>
+Code of Conduct File <repository-files/code-of-conduct-file.md>
 LICENSE files <repository-files/license-files.md>
 ```
 
 ```{toctree}
 :maxdepth: 2
 :hidden:
-:caption: Documentation & Hosting Tools
+:caption: Publication tools for your docs
 
 Intro <hosting-tools/intro>
 Sphinx for Docs <hosting-tools/sphinx-python-package-documentation-tools>
