@@ -23,7 +23,7 @@ A basic installable package needs a few things: code, a specific package structu
 
 In this lesson you will learn:
 
-- How to make your code installable into a Python environment
+- How to make your code pip-installable into a Python environment
 - How to create a basic `pyproject.toml` file to declare dependencies and metadata
 - How to declare a build backend which will be used to build and install your package (learn more about what build back ends are here - link to guide)
 - How to install your package in editable mode for interactive development
