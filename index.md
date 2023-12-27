@@ -137,7 +137,7 @@ contribute.
 ### A community-created guidebook
 
 Every page in this guidebook goes through an extensive community review
-process. To ensure our guidebook is both accessible to beginners and accurate in it's representation of the packaging ecosystem, our community reviewers are diverse have a mixture of packaging expertise from expert to beginner.
+process. To ensure our guidebook is both beginner-friendly and accurate, we encourage reviews from a diverse set of pythonistas and scientists with a wide range of skills and expertise.
 
 ```{button-link} https://github.com/pyOpenSci/python-package-guide#contributors-
 :color: primary
