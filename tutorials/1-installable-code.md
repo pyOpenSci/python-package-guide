@@ -23,7 +23,7 @@ A basic installable package needs a few things: code, a specific package structu
 
 In this lesson you will learn:
 
-- How to make your code installable into a Python environment
+- How to make your code pip-installable into a Python environment
 - How to create a basic `pyproject.toml` file to declare dependencies and metadata
 - How to declare a build backend which will be used to build and install your package (learn more about what build back ends are here - link to guide)
 - How to install your package in editable mode for interactive development
@@ -43,7 +43,7 @@ you are a scientist, we suggest that you use `conda`.
 
 <img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your python environment. It them lists your-package along with a few other core packages such as matplotlib, numpy, pandas, xarray and geopandas." width="700px">
 
-Making your code pip installable is the first step towards creating a Python package. Once it is pip installable, you can add it to any Python environment on your computer and import that package in the same way that you might import a package such as `Pandas` or `Geopandas`.
+Making your source code pip-installable is the first step towards creating a Python package. Once your code is pip-installable, it is a Python package and can be added to any Python environment on your computer and imported in the same way that you might import a package such as `Pandas` or `Geopandas`.
 :::
 
 ## Make a basic Python package
