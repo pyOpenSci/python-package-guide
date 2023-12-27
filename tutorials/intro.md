@@ -56,7 +56,7 @@ You might also hear people use the term "library" the same way.
 At a high level, you can think about a Python package as a toolbox
 that you can use to perform various tasks.
 
-Structurally, in Python, a package is a directory with a specific
+A Python package is basically a directory with a specific
 file structure. Within the package directory structure, there are
 modules which are files that end in `.py` (the same extension you'd
 see in a Python script). These modules allow you to group and
@@ -91,9 +91,9 @@ Structuring your code as a package is the first step you need to take so you can
 
 You might create a Python package because you want to:
 
-- **Use your code across different projects:** At its most basic level, creating a package allows you to install your code into a Python environment. This allows you to then import functions and classes into any workflows both locally and in the cloud..
+- **Use your code across different projects:** At its most basic level, creating a package allows you to install your code into a Python environment. This allows you to then import functions and classes into any workflows both locally and in the cloud.
 - **Share your code:** If you publish a package on a public repository such as PyPI or conda, your package can be installed on any machine using pip or conda with a single command.
-- **Build community around your code:** Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version platform such as git (the version control system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base..
+- **Build community around your code:** Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version platform such as git (the version control system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base.
 - **Organize your code:** Packages can be used to organize large code projects, dividing them into smaller, more manageable components. This structure can help with both maintaining the codebase and with making it easier to understand.
 
 ### What to consider before you create a package
@@ -125,9 +125,9 @@ The core elements of Python package include:
 - **Code:** Functions and classes that provide functionality for a user of your package
 - **Documentation:** Installation instructions, tutorials, and examples that both help users get started using your package and contributors and maintainers fix bugs and maintain the package.
   - Contributor Documentation in the form of a **CONTRIBUTING.md** file is useful to help people to contribute to your package.
-  - Development documentation helps both maintainers and contributors understand how to maintain a package's infrastructure.
-- **Tests:** that makes sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future
-- **License:** An open source license, or license that is [OSI approved](https://opensource.org/licenses/) refers to an license that allows others to both use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
+  - Development Documentation helps both maintainers and contributors understand how to maintain a package's infrastructure.
+- **Tests:** that make sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future
+- **License:** An open source license, or license that is [OSI approved](https://opensource.org/licenses/) refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
 - **Infrastructure** that automates updates, publication workflows and runs test suites. Infrastructure includes a suite of things such as platforms like GitHub and GitLab, tools to run tests and tools locally such as nox and tox and continuous integration that automates package maintenance steps.
 
 :::{admonition} What pyOpenSci looks for in a package
@@ -149,7 +149,7 @@ package that make it a useful community resource.
 ### Version control and storing your package on GitHub or GitLab
 
 Most Python packages live in an online version control platform such as GitHub
-or GitLab. GitHub and GitLab are both
+or GitLab. GitHub and GitLab both
 run [git](https://git-scm.com/) for version control. Having your software
 under version control is important because it allows you to both track changes over time while also going back in history and undoing changes in the case that a change to the code base unexpectedly breaks something.
 
@@ -208,8 +208,8 @@ There are a few use cases to consider:
 LINK to pip installable lesson when it's published - it's in review now
 :::
 
-2. In other cases, you may create some code that you soon realize might also be useful to not just you, but to other people as well.
-In that case, you might consider both creating the package, publishing it on GitHub, and because other users may be using it, you may make user of GitHub's infrastructure including CI/CD pipelines, issue trackers. Because you want other people to use your package, you will want to also include LICENSE information, documentation for users and contributors and tests. This type of package is most often published to PyPI.
+2. **Creating a package for the community:** In other cases, you may create some code that you soon realize might also be useful to not just you, but to other people as well.
+In that case, you might consider both creating the package, publishing it on GitHub, and because other users may be using it, you may make use of GitHub's infrastructure including CI/CD pipelines and issue trackers. Because you want other people to use your package, you will want to also include LICENSE information, documentation for users and contributors and tests. This type of package is most often published to PyPI.
 
 For example, all of the [pyOpenSci packages](https://www.pyopensci.org/python-packages.html) are public facing with an intended audience beyond just the maintainers.
 
@@ -270,7 +270,7 @@ this consistency throughout your entire package. [Learn more about code formatte
 
 **Documented code:** documented code is written using docstrings that help a
 user understand both what the functions and methods in your code do and also
-what the input and output elements of each function is. [You can learn more about docstrings in our guide, here.](../documentation/write-user-documentation/document-your-code-api-docstrings)
+what the input and output elements of each function are. [You can learn more about docstrings in our guide, here.](../documentation/write-user-documentation/document-your-code-api-docstrings)
 
 ## Making your package installable - publishing to PyPI & conda-forge
 
@@ -338,6 +338,6 @@ The elements above are also important for future maintenance of your package. In
 
 ## What's next?
 
-In future lessons you will learn talk more about the infrastructure around a published Python package that makes it both easier to maintain, easier for others to contribute to and easier for other scientists to use. However, first we want to get you to your initial goal of publishing a Python package.
+In future lessons you will learn more about the infrastructure around a published Python package that makes it both easier to maintain, easier for others to contribute to and easier for other scientists to use. However, first we want to get you to your initial goal of publishing a Python package.
 
 In this next lesson you will learn how to create a basic installable Python package.
