@@ -43,7 +43,7 @@ you are a scientist, we suggest that you use `conda`.
 
 <img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your python environment. It them lists your-package along with a few other core packages such as matplotlib, numpy, pandas, xarray and geopandas." width="700px">
 
-Making your code pip installable is the first step towards creating a Python package. Once it is pip installable, you can add it to any Python environment on your computer and import that package in the same way that you might import a package such as `Pandas` or `Geopandas`.
+Making your source code pip-installable is the first step towards creating a Python package. Once your code is pip-installable, it is a Python package and can be added to any Python environment on your computer and imported in the same way that you might import a package such as `Pandas` or `Geopandas`.
 :::
 
 ## Make a basic Python package
