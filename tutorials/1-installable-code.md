@@ -15,7 +15,7 @@ does this work on windows and mac? i know it works on mac/linux
 
 <img src="../images/tutorials/code-to-script-diagram.png" alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." width="700px">
 
-A basic installable package needs a few things. Code, a specific package structure and a `pyproject.toml` containing your package's name and version. Once you have these items in the correct directory structure, you can pip install your package into any environment on your computer.
+A basic installable package needs a few things: code, a specific package structure and a `pyproject.toml` containing your package's name and version. Once you have these items in the correct directory structure, you can pip install your package into any environment on your computer.
 :::
 
 :::{admonition} Learning Objectives
@@ -29,7 +29,7 @@ In this lesson you will learn:
 - How to install your package in editable mode for interactive development
 
 To complete this lesson you will need a local Python (development)
-environment. You are welcome to use any environment manager that you chose.
+environment. You are welcome to use any environment manager that you choose.
 
 * [If you need guidance creating a Python environment, review this lesson](extras/1-create-environment.md) which walks you through creating an environment using both `venv` and `conda`.
 * If you aren't sure which environment manager to use and
