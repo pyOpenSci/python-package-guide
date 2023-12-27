@@ -213,6 +213,12 @@ Tutorials  <tutorials/intro>
 
 ```{toctree}
 :hidden:
+:caption: Tutorials
+Tutorials  <tutorials/intro>
+```
+
+```{toctree}
+:hidden:
 :caption: Documentation
 
 Documentation <documentation/index>

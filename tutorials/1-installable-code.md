@@ -1,21 +1,28 @@
-# Make your Python code pip installable
+# Make your Python code installable
 
-The first step in creating a Python package based on code that you
-have is to make that code pip installable. You will learn how to make
-your code pip installable in this lesson.
+:::{admonition} What we previously covered
+[In the previous lesson](tutorials/intro.html), you learned about what a Python package is. You also learned about the [benefits of creating a Python
+package](tutorials/intro.html#why-create-a-python-package).
+:::
 
-<!--
-TODO: is it clear where to add commands? bash vs. python console
+Your next step in our packaging tutorial series is
+creating a Python package that is installable both
+locally and remotely from a website such as from GitHub
+(or GitLab). The package that you create in this lesson
+will have the bare minimum elements needed to be installable into a Python environment.
 
+:::{todo}
+1. Is it clear where to add commands? bash vs. Python console
 Bash vs zsh is different
-does this work on windows and mac? i know it works on mac/linux
--->
+2. Does this lesson run as expected on windows and mac?
+:::
 
-:::{figure-md} code-to-script
+:::{figure-md} code-to-python-package
 
-<img src="../images/tutorials/code-to-script-diagram.png" alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." width="700px">
+<img src="../images/tutorials/code-to-python-package.png" alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." width="700px">
 
-A basic installable package needs a few things: code, a specific package structure and a `pyproject.toml` containing your package's name and version. Once you have these items in the correct directory structure, you can pip install your package into any environment on your computer.
+A basic installable package needs a few things: code, a [specific package file structure](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html) and a `pyproject.toml` containing your package's name and version. Once you have these items in the correct directory structure, you can pip install your package into any environment on your computer. You will learn how to create a basic installable package in this lesson.
+
 :::
 
 :::{admonition} Learning Objectives
@@ -23,9 +30,9 @@ A basic installable package needs a few things: code, a specific package structu
 
 In this lesson you will learn:
 
-- How to make your code pip-installable into a Python environment
+- How to make your code installable into any Python environment both locally and from GitHub
 - How to create a basic `pyproject.toml` file to declare dependencies and metadata
-- How to declare a build backend which will be used to build and install your package (learn more about what build back ends are here - link to guide)
+- How to declare a [build backend](build_backends) which will be used to [build](build-package) and install your package
 - How to install your package in editable mode for interactive development
 
 To complete this lesson you will need a local Python (development)
@@ -33,86 +40,99 @@ environment. You are welcome to use any environment manager that you choose.
 
 * [If you need guidance creating a Python environment, review this lesson](extras/1-create-environment.md) which walks you through creating an environment using both `venv` and `conda`.
 * If you aren't sure which environment manager to use and
-you are a scientist, we suggest that you use `conda`.
-:::
+you are a scientist, we suggest that you use `conda`, particularly if you are working with any sort of spatial data.
 
-## Make your package installable
+In the upcoming lessons you will learn how to
+
+* Add a README file to your package to support community use
+* Add project metadata to your package to support PyPI publication
+* Publish your package to PyPI
+:::
 
 
 :::{figure-md} packages-environment
 
 <img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your python environment. It them lists your-package along with a few other core packages such as matplotlib, numpy, pandas, xarray and geopandas." width="700px">
 
-Making your source code pip-installable is the first step towards creating a Python package. Once your code is pip-installable, it is a Python package and can be added to any Python environment on your computer and imported in the same way that you might import a package such as `Pandas` or `Geopandas`.
+Making your code installable is the first step towards
+creating a publishable Python package. Once your code is
+installable, it is a Python package and can be added to
+any Python environment on your computer and imported in
+the same way that you might import a package such as
+Pandas or GeoPandas. If your code is on GitHub or GitLab
+you can also install it directly from there.
 :::
 
-## Make a basic Python package
 
-It’s time to create the most basic version of a Python package.
-While this code can't be yet published to PyPI or conda and
-is not documented, it will be installable on your computer or
-anyone elses.
+## About the Python package directory structure
 
-### What does a basic package directory structure look like?
-To make your code installable you need:
+To make your Python code installable you need to create a specific directory structure with the following elements:
 
-- A `pyproject.toml` file
-- An (optional but recommended) `__init__.py` file in your code directory
-- A specific directory structure
+- A `pyproject.toml` file.
+- A specific directory structure.
 - Some code.
+- An `__init__.py` file in your code directory.
 
-The directory structure you’ll create in this first section looks like this:
+The directory structure you’ll create below looks like this:
 
 ```bash
-pyospackage/
+pyospackage/  # Your project directory
      └─ pyproject.toml
-     └─ src/  # The src directory ensures your tests always run on the installed
-             └── pyospackage/ # Package directory where code lives, use the package name
+     └─ src/  # The source (src) directory ensures your tests always run on the installed version of your code
+             └── pyospackage/  # Package directory where code lives
               	      ├── __init__.py
                       ├── add_numbers.py
                       └── # Add any other .py modules that you want here
 ```
 
-Below, you will learn about each element of the above package structure.
-
 ### About the basic package directory structure
 
 Notice a few things about the above layout:
 
-1. Your package code lives within a `src/packagename` directory. We suggest that you use `src/` directory as it ensure you are running tests on the installed version of your code. However, you are welcome to instead use a [flat layout](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#about-the-flat-python-package-layout) which does not have a src/ directory at the root. [Learn more here.](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#the-src-layout-and-testing)
-2. Within the `src/` directory you have a package directory called `pyospackage/`. Use the name of your package for that directory name.
-3. In your package directory, you have an `__init__.py` file and all of your Python modules.
-4. The `pyproject.toml` file lives at the root directory of your package.
+1. Your package code lives within a `src/packagename` directory. We suggest that you use `src` directory as it ensures that you are running tests on the installed version of your code. However, you are welcome to instead use a [flat layout](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#about-the-flat-python-package-layout) which does not have a src/ directory at the root. [Learn more here.](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#the-src-layout-and-testing)
+1. Within the `src` directory you have a package directory called `pyospackage`. Use the name of your package for that directory name.
+1. In your package directory, you have an `__init__.py` file and all of your Python modules. You will learn more about the __init__.py file below.
+1. The `pyproject.toml` file lives at the root directory of your package.
+1. The name of the root directory for the package is **pyospackage** which is the name of the package. This is not a requirement but you will often see that the GitHub / GitLab repo and the root directory name are the same as the package name.
 
-## Init.py and pyproject.toml files
+### What is an __init__.py file?
 
-The `__init__.py` and `pyproject.toml` files in the above layout
-are important to understand. More on that below.
+When a directory contains an `__init__.py` file, it can be imported directly into Python.
 
-### What is an init.py file?
+For example, following the file structure example above which has an `__init__.py` file within it, you can run:
 
-The `__init__.py` file tells Python that the directory it’s in should be treated as a Python package.
-The `__init__.py` file also:
+```python
+import pyospackage
+```
 
-- Allows you to organize multiple modules within the package.
-- Allows you to create shortcuts for importing specific functions, and classes into your code (more on that later!)
-- Allows you to create a version object for people to call **version**
+The `__init__.py` file  tells Python that a directory should be treated
+as a Python package.
 
-:::{admonition} The **init**.py file
+
+:::{admonition} The **__init__**.py file
 :class: tip
 
-Since Python 3.3 came out, you can install a package without an `__init__.py` file. However, we suggest that you include it in your package structure as it allows you to customize your package’s user experience.
+The __init__.py file does not need to contain any code, it can be
+empty. Since Python 3.3 came out, you can install a package without an
+`__init__.py` file. However, we suggest that you include empty __init__.py files in your
+package structure as it allows you to customize your package’s user
+experience.
 :::
+
 
 ### What is a pyproject.toml file?
 
 The **pyproject.toml** file is:
 
-- Where you store your project’s metadata (including its name, authors, license, etc)
-- Where you store dependencies (the packages that it depends on)
-- Used to specify and configure what build back end you want to use to build your package distributions that are used for PyPI publication.
+- Where you define your project’s metadata (including its name, authors, license, etc)
+- Where you define dependencies (the packages that it depends on)
+- Used to specify and configure what build back end you want to use to [build your package](../package-structure-code/python-package-distribution-files-sdist-wheel).
 
-After the `__init__.py` and `pyproject.toml` files have been added, your package can be built and distributed as an installable Python package using tools such as pip. Note that the `pyproject.toml` file needs to have the a few basic items defined for it to be installable including:
+After the `__init__.py` and `pyproject.toml` files have been added,
+your package can be built and distributed as an installable Python
+package using tools such as pip. Note that the `pyproject.toml` file
+needs to have a few basic items defined for the package to be
+installable including:
 
 - The `build-backend` that you want to use,
 - The project `name` and `version`.
@@ -132,38 +152,59 @@ Neither 'setup.py' nor 'pyproject.toml' found.
 
 :::
 
-## Try it yourself - Create your package!
+## Time to create your Python package!
 
-Now that you understand the basics, it's time to create a Python package! Below you will create a directory structure similar to the structure described above.
+Now that you understand the basics of the Python package directory structure, it's time to create a Python package! Below you will create a directory structure similar to the structure described above.
 
-If you don’t wish to create each of the files and directories below, you can always [fork and clone and customize the pyOpenSci example package, here.](https://github.com/pyOpenSci/pyosPackage)
+If you don’t wish to create each of the files and directories below, you can always [fork and clone and customize the pyOpenSci example package.](https://github.com/pyOpenSci/pyosPackage)
 
-### Step 1: Set Up the Package Directory Structure
+## Step 1: Set Up the Package Directory Structure
 
-Create a new directory for your package. Choose a name for your package, preferably in lowercase and without spaces (e.g., "pyospackage_yourname").
+Below you create the basic directory structure required
+for your Python package. Note that there are instructions for creating the files and directories using shell. However you can also create files and directories in your preferred file directory tool (e.g. Finder on MAC or File Explorer on Windows) if you wish.
 
-Inside the package directory,
+Create a new project directory for your package. Choose a
+name for your package, preferably in lowercase and
+without spaces (e.g., "pyospackage").
 
-- Create a `src/` directory
-- Within the `src/` directory, create a directory that is named after your package. This subdirectory will contain your package’s code.
-- It is ok if the main directory of your package and the directory in `src/` have the same name
+Inside the project directory:
+
+- Create a directory called `src`
+- Within the `src` directory, create a directory that is named after your package. This subdirectory will contain your package’s code.
+- It is ok if the project directory for your package and the directory in `src` have the same name
+
+```bash
+# Create a project directory in shell and a src directory within
+mkdir -R pyospackage/src/pyospackage
+# Change directory into pyospackage project dir
+cd pyospackage
+# View the current file structure
+ls
+```
 
 Next create two files:
 
 - Inside the package directory, create a new file named `__init__.py` . This file ensures Python sees this directory as a package. You will use this file to customize how parts of your package are imported and to declare your package’s version in a future lesson.
-- At the root of your directory, create a file called `pyproject.toml`
+- At the root of your project, create a file called `pyproject.toml`
 
-Your final package directory structure should look like this:
-
+```bash
+# Create a pyproject.toml file in your project directory
+touch pyproject.toml
+# Create an empty init file within your src/pyospackage directory
+touch src/pyospackage/__init__.py
 ```
-pyospackage/
+
+Your final project directory structure should look like this:
+
+```bash
+pyospackage/  # This is your project directory
      └─ pyproject.toml
-     └─ src/
-             └── pyospackage_yourname/
+     └─ src/ # This is your package directory where your code lives
+             └── pyospackage/
               	     ├── __init__.py
 ```
 
-### Step 2: Add code to your package
+## Step 2: Add code to your package
 
 Within the `pyospackage` subdirectory, add 1 or more Python modules
 (.py files) containing the code that you want your package to access and run.
@@ -177,11 +218,11 @@ package, then create an empty `add_numbers.py` file.
 When you see the word module, we are referring to a `.py` file containing Python
 code.
 
-The _init_.py  allows Python to recognize that a directory contains at least one
+The `__init__.py`  allows Python to recognize that a directory contains at least one
 module that may be imported and used in your code. A package can have multiple
 modules.
 
-[Learn more about Python packages and modules in the python documentation.](https://docs.python.org/3/tutorial/modules.html#packages )
+[Learn more about Python packages and modules in the Python documentation.](https://docs.python.org/3/tutorial/modules.html#packages )
 
 :::
 
@@ -195,7 +236,7 @@ pyospackage/
 
 ```
 
-### Step 3. Add code to your `add_numbers` module
+## Step 3. Add code to your `add_numbers` module
 
 If you are following along and making a Python package from scratch then you can add the code below to your `add_numbers.py` module. The function below adds two integers together and returns the result. Notice that the code below has a few features that we will review in future tutorials:
 
@@ -233,10 +274,10 @@ def add_num(a: int, b: int) -> int:
     return a + b
 ```
 
-### Step 4. Add metadata to your `pyproject.toml` file
+## Step 4. Add metadata to your `pyproject.toml` file
 
 Next, you will add some metadata (information) to your `pyproject.toml` file. You are
-are welcome to copy the file we have in our example repo here.
+are welcome to copy the file we have in our [example pyospackage GitHub repository](https://github.com/pyOpenSci/pyosPackage).
 
 :::{admonition} Brief overview of the TOML file
 :class: tip
@@ -276,8 +317,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pyospackage_gh_user_name" # rename this if you plan to publish to test PyPI
-# Here you add the package version manually. You will learn how to setup # dynamic versioning in a followup tutorial.
+name = "pyospackage_gh_user_name"  # rename this if you plan to publish to test PyPI
+# Here you add the package version manually.
+# You will learn how to setup dynamic versioning in a followup tutorial.
 version="1.1"
 
 ```
@@ -295,7 +337,7 @@ Once you have your project metadata in the pyproject.toml file, you will
 rarely update it. In the next lesson you’ll add more metadata and structure to this file.
 :::
 
-### Step 5. Install your package locally
+## Step 5. Install your package locally
 
 At this point you should have:
 
@@ -354,7 +396,7 @@ current active environment. `python -m` is important to ensure that you are
 calling the version of pip installed in your current environment.
 :::
 
-#### Look for pyospackage in your environment
+### Look for pyospackage in your environment
 
 Once you have installed your package, you can view it in your current
 environment. If you are using `venv` or `conda`, `pip` list will allow you
@@ -389,7 +431,7 @@ pyosPackage                   0.1.0          /Users/yourusername/path/here/pyosP
 ...
 ```
 
-### 6. Test out your new package
+## 6. Test out your new package
 
 After installing your package, type “python” at the command prompt to start
 a Python session in your active Python environment.
@@ -405,58 +447,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 3
 ```
 
-<!-- As you review - please tell me what you think about the section below.
-There were some various opinions on whether to surface specific functionality
-in a package. i've found it useful in my work when done thoughtfully.
+## Congratulations! You created your first Python package
 
-But for beginners it could create more confusion if we don't provide
-specific use-cases for doing this. Thoughts? -->
-
-
-## OPTIONAL: Customize access to Python functions using the `__init__.py` file
-
-Let's make one more tweak to the code.
-
-If `add_num` is a function that you think users will use often, you may want to add it to your `__init__.py` file to allow them to import the function directly from the package rather than from the module.
-
-### Add functions to your `__init__.py` file
-
-To make a function or class available at the package level to a user, you can add it to the `__init__.py` file.
-
-- Open the `__init__.py` file .
-- At the top of the file add the import below.
-
-```python
-from pyospackage.add_numbers import add_num
-```
-
-Save the file.
-
-Now, open up a NEW Python terminal or restart your Python kernel.
-
-:::{admonition} Don't forget to restart your Python kernel!
-:class: important
-
-It's important that you restart your Python kernel if you wish to access the changes to your code that you just made.
-:::
-
-```python
-> python
-Python 3.10.12 | packaged by conda-forge | (main, Jun 23 2023, 22:41:52) [Clang 15.0.7 ] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> from pyospackage import add_num
->>> add_num(1,2)
-3
-```
-
-The decision to add specific functions, methods or classes to your
-`__init__.py` file is up to you. However be sure that you do this thoughtfully
-considering what functionality in your package you want to "elevate" to the top
-level vs. what makes the most sense to keep in individual modules.
-
-### Congratulations! You created (the beginning of) your first Python package
-
-You did it! You have now created a Python package that you can install into any Python environment. While there is still more to do, you have completed the first major step.
+You did it! You have now created a Python package that you can install into any Python environment. While there is still more to do if you want to publish your package, you have completed the first major step.
 
 In the upcoming lessons you will:
 
@@ -467,3 +460,14 @@ In the upcoming lessons you will:
 
 If you have a package that is ready for the mainstream user then
 you can also publish your package on PyPI.
+
+
+:::{admonition} Installing packages from GitHub
+
+If you wish to share your code without publishing to PyPI you can
+always install packages directly from GitHub using the syntax:
+
+```bash
+pip install git+https://github.com/user/repo.git@branch_or_tag
+```
+:::

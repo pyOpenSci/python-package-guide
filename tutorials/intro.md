@@ -23,6 +23,7 @@ understanding the steps involved in creating a Python package.
 
 * In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
+
 :::{toctree}
 :hidden:
 :caption: Python Packaging 101
@@ -336,3 +337,5 @@ The elements above are also important for future maintenance of your package. In
 In future lessons you will learn more about the infrastructure around a published Python package that makes it both easier to maintain, easier for others to contribute to and easier for other scientists to use. However, first we want to get you to your initial goal of publishing a Python package.
 
 In this next lesson you will learn how to create a basic installable Python package.
+Make your code pip installable <1-installable-code>
+:::
