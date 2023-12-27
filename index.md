@@ -164,7 +164,7 @@ to see here clarified in this guide, [we invite you to open an issue on GitHub.]
 
 If you have questions about our peer review process or packaging in general, you are welcome to use our [pyOpenSci Discourse forum](https://pyopensci.discourse.group/).
 
-This is a living guide that will be updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
+This is a living guide that is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
 
 
 ```{toctree}
