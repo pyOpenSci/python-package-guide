@@ -29,7 +29,7 @@ In this lesson you will learn:
 - How to install your package in editable mode for interactive development
 
 To complete this lesson you will need a local Python (development)
-environment. You are welcome to use any environment manager that you chose.
+environment. You are welcome to use any environment manager that you choose.
 
 * [If you need guidance creating a Python environment, review this lesson](extras/1-create-environment.md) which walks you through creating an environment using both `venv` and `conda`.
 * If you aren't sure which environment manager to use and
