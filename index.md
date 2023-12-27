@@ -79,7 +79,7 @@ This guide is designed to walk you through a typical Python packaging experience
 It does several things:
 
 1. it provides an overview of the various elements of a Python package
-2. it provides and overview of tools to create Python packages and recommends best practices
+2. it provides an overview of tools to create Python packages and recommends best practices
 3. it provides end-to-end tutorials to get you on your way creating a package
 
 ```{toctree}
