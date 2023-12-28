@@ -292,7 +292,7 @@ instance, a `build-system` table most often holds 2 variables:
 
 1. `requires = `, which tells a build tool what tools it needs to install prior to building your package. In this case
    [hatchling](https://pypi.org/project/hatchling/)
-2. `build-backend` is used to define specific build-backend name, (in this example we are using `hatchling.build`).
+2. `build-backend = `, which is used to define the specific build-backend name, (in this example we are using `hatchling.build`).
 
 TOML organizes data structures, defining relationships within a configuration
 file. You will learn more about the `pyproject.toml` format in the
