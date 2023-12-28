@@ -290,7 +290,7 @@ Tables can contain variables within them defined by an variable name and
 an `=` sign. For
 instance, a `build-system` table most often holds 2 variables:
 
-1. `requires = `, which tells a build tool what tools it needs to install prior to building your package. in this case is
+1. `requires = `, which tells a build tool what tools it needs to install prior to building your package. In this case
    [hatchling](https://pypi.org/project/hatchling/)
 2. `build-backend` is used to define specific build-backend name, (in this example we are using `hatchling.build`).
 
