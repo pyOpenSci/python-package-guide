@@ -403,7 +403,6 @@ environment. If you are using `venv` or `conda`, `pip` list will allow you
 to see your current package installations.
 
 Note that because pyospackage is installed in editable mode (`-e`) pip will show you the directory path to your project's code
-is.
 
 ```bash
 $ pip list
