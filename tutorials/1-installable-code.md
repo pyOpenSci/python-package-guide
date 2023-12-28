@@ -402,7 +402,7 @@ Once you have installed your package, you can view it in your current
 environment. If you are using `venv` or `conda`, `pip` list will allow you
 to see your current package installations.
 
-Note that because pyospackage is installed in editable mode (`-e`) pip will show you the past to where you package installation's code
+Note that because pyospackage is installed in editable mode (`-e`) pip will show you the directory path to your project's code
 is.
 
 ```bash
