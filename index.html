@@ -7,14 +7,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="pyOpenSci Python Open Source Package Development Guide" />
+<meta property="og:title" content="pyOpenSci Python Package Guide" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="index.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="Welcome, Python open source enthusiast!: Here you will find guidelines for what we look for in your scientific Python package when reviewing. You will also find best practice recommendations and cu..." />
-<meta name="description" content="Welcome, Python open source enthusiast!: Here you will find guidelines for what we look for in your scientific Python package when reviewing. You will also find best practice recommendations and cu..." />
+<meta property="og:description" content="We support the Python tools that scientists need to create open science workflows. GitHub release (latest by date) DOI Python packaging ecosystem overview & best practices: Learn about Python packa..." />
+<meta name="description" content="We support the Python tools that scientists need to create open science workflows. GitHub release (latest by date) DOI Python packaging ecosystem overview & best practices: Learn about Python packa..." />
 
-    <title>pyOpenSci Python Open Source Package Development Guide &#8212; Python Packaging Guide</title>
+    <title>pyOpenSci Python Package Guide &#8212; Python Packaging Guide</title>
   
   
   
@@ -39,7 +39,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="icon" sizes="16x16" type="image/ico" href="https://www.pyopensci.org/images/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=39024afd" />
+    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=c988afff" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
@@ -113,7 +113,7 @@
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 </div>
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
   </div>
 
   
@@ -144,8 +144,6 @@
     <img src="_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
     <script>document.write(`<img src="_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
   
-  
-    <p class="title logo__title">Python Packaging</p>
   
 </a></div>
     
@@ -185,19 +183,19 @@
                       </a>
                     </li>
                 
-
-                <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
-                    pyOpenSci Website
-                  </a>
-                </li>
-                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
@@ -347,19 +345,19 @@ document.write(`
                       </a>
                     </li>
                 
-
-                <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
-                    pyOpenSci Website
-                  </a>
-                </li>
-                
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
@@ -452,83 +450,98 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="pyopensci-python-open-source-package-development-guide">
-<h1>pyOpenSci Python Open Source Package Development Guide<a class="headerlink" href="#pyopensci-python-open-source-package-development-guide" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<!-- Github community standards
-https://github.com/pyOpenSci/python-package-guide/community -->
-<section id="welcome-python-open-source-enthusiast">
-<h2>Welcome, Python open source enthusiast!<a class="headerlink" href="#welcome-python-open-source-enthusiast" title="Link to this heading">#</a></h2>
-<p>Here you will find guidelines for what we look for in your scientific
-Python package when reviewing. You will also find best practice recommendations and curated lists of community resources surrounding packaging and package documentation.</p>
-<section id="pyopensci-s-packaging-goals">
-<h3>pyOpenSci’s packaging goals<a class="headerlink" href="#pyopensci-s-packaging-goals" title="Link to this heading">#</a></h3>
-<p>Our goal is to help the
-community make decisions around how to create scientific Python packages. We are working towards a shared vision of packaging that helps users better understand where to start.</p>
-</section>
-<section id="how-this-guide-is-created">
-<h3>How this guide is created<a class="headerlink" href="#how-this-guide-is-created" title="Link to this heading">#</a></h3>
-<p>This guide is created by pyOpenSci through an extensive review process. Each page in the guide has been reviewed by experts in the broader Python packaging landscape including people from :</p>
-<ul class="simple">
-<li><p>conda &amp; conda-forge</p></li>
-<li><p>the python packaging authority</p></li>
-<li><p>core Python developers</p></li>
-<li><p>core scientific Python developers</p></li>
-<li><p>and others with expertise in packaging, package documentation, usability and other related knowledge areas</p></li>
-</ul>
-<p><a class="reference external" href="https://github.com/pyOpenSci/python-package-guide#contributors-">View all of the people who have contributed to this guide here.
-</a></p>
-<p>We use this guide as a foundation for our open peer review process of
-scientific software.</p>
+  <section id="pyopensci-python-package-guide">
+<h1>pyOpenSci Python Package Guide<a class="headerlink" href="#pyopensci-python-package-guide" title="Link to this heading">#</a></h1>
+<p>We support the Python tools that scientists need to create open science workflows.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-flex-row-reverse docutils">
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 sd-m-auto docutils">
 </div>
 <div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 sd-fs-3 docutils">
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill float-left reference external" href="https://www.pyopensci.org/about-peer-review/"><span>Learn about our open peer review process</span></a></p>
 <p><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&amp;display_name=tag&amp;style=plastic" />
 <a class="reference external" href="https://github.com/pyopensci/contributing-guide"><img alt="" src="https://img.shields.io/github/stars/pyopensci/python-package-guide?style=social" /></a>
 <a class="reference external" href="https://zenodo.org/badge/latestdoi/556814582"><img alt="DOI" src="https://zenodo.org/badge/556814582.svg" /></a></p>
 </div>
 </div>
 </div>
-<!-- I think this is the end of the header - below begins the next grid-->
+<div class="admonition-about-this-guide admonition">
+<p class="admonition-title">About this guide</p>
+<a class="reference internal image-reference" href="_images/packaging-elements.png"><img alt="Image with the pyOpenSci flower logo in the upper right hand corner. The image shows the packaging lifecycle. The graphic shows a high level overview of the elements of a Python package. the inside circle has 5 items - user documentation, code/api, test suite, contributor documentation, project metadata / license / readme. In the middle of the circle is says maintainers and has a small icon with people. on the outside circle there is an arrow and it says infrastructure." class="align-right" src="_images/packaging-elements.png" style="width: 500px;" /></a>
+<p>This guide will help you:</p>
+<ol class="arabic simple">
+<li><p>Learn how to create a Python package from start to finish</p></li>
+<li><p>Understand the broader Python packaging tool ecosystem</p></li>
+<li><p>Navigate and make decisions around tool options</p></li>
+<li><p>Understand all of the pieces of creating and maintaining a Python package</p></li>
+</ol>
+<p>You will also find best practice recommendations and curated lists of community resources surrounding packaging and package documentation.</p>
+</div>
+<section id="python-packaging-ecosystem-overview-best-practices">
+<h2>Python packaging ecosystem overview &amp; best practices<a class="headerlink" href="#python-packaging-ecosystem-overview-best-practices" title="Link to this heading">#</a></h2>
+<p>Learn about Python packaging best practices. You will also get to know the
+the vibrant ecosystem of packaging tools that are available to help you with your Python packaging needs.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ Documentation Criteria &amp; Recommendations ✨</p>
-</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm left-aligned docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Learn more about the best practices for Python package
-documentation and also some of the tools for creating
-documentation that are
-commonly used in the scientific Python community.</p>
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ Create your package ✨</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/python-package-structure.html"><span class="doc std std-doc">Package file structure</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/pyproject-toml-python-package-metadata.html"><span class="std std-doc">Package metadata / pyproject.toml</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="std std-doc">Build your package (sdist / wheel)</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/declare-dependencies.html"><span class="std std-doc">Declare dependencies</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/python-package-build-tools.html"><span class="std std-doc">Navigate the packaging tool ecosystem</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/complex-python-package-builds.html"><span class="std std-doc">Non pure Python builds</span></a></p></li>
+</ul>
 </div>
-<a class="sd-stretched-link reference internal" href="documentation/index.html"><span class="doc"></span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ Python packaging tools &amp; structure ✨</p>
 </div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm left-aligned docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">All of the modern tools discussed in this guide will help you build an efficient packaging workflow. This section helps you select the tool that will work best for you.</p>
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ Publish your package ✨</div>
+<p class="sd-card-text">Gain a better understanding of the Python packaging ecosystem
+Learn about best practices for:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/python-package-versions.html"><span class="std std-doc">Package versioning &amp; release</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/publish-python-package-pypi-conda.html"><span class="std std-doc">Publish to PyPI &amp; Conda-forge</span></a></p></li>
+</ul>
 </div>
-<a class="sd-stretched-link reference internal" href="package-structure-code/intro.html"><span class="doc"></span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ Want to contribute? ✨</p>
 </div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm left-aligned docutils">
 <div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ Write &amp; Publish Docs ✨</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="documentation/write-user-documentation/intro.html"><span class="doc std std-doc">Create documentation for your users</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="documentation/repository-files/intro.html"><span class="doc std std-doc">Core files to include in your package repository</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="documentation/hosting-tools/intro.html"><span class="doc std std-doc">How to publish your docs</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm left-aligned docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ Tests, checks &amp; clean code ✨</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="package-structure-code/code-style-linting-format.html"><span class="std std-doc">Code style</span></a></p></li>
+</ul>
+<p class="sd-card-text"><em>We are actively working on this section. <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide">Follow development here.</a></em></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover left-aligned docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ Want to contribute? ✨</div>
 <p class="sd-card-text">We welcome contributions to this guide. Learn more about how you can
 contribute.</p>
 </div>
@@ -536,70 +549,37 @@ contribute.</p>
 </div>
 </div>
 </div>
+<figure class="align-right">
+<a class="reference internal image-reference" href="https://www.pyopensci.org/images/people-building-blocks.jpg"><img alt="xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?" src="https://www.pyopensci.org/images/people-building-blocks.jpg" style="width: 350px;" /></a>
+</figure>
+<section id="a-community-created-guidebook">
+<h3>A community-created guidebook<a class="headerlink" href="#a-community-created-guidebook" title="Link to this heading">#</a></h3>
+<p>Every page in this guidebook goes through an extensive community review
+process. To ensure our guidebook is both beginner-friendly and accurate, we encourage reviews from a diverse set of pythonistas and scientists with a wide range of skills and expertise.</p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill float-left reference external" href="https://github.com/pyOpenSci/python-package-guide#contributors-"><span>View guidebook contributors</span></a></p>
 </section>
 </section>
 <section id="who-this-guidebook-is-for">
 <h2>Who this guidebook is for<a class="headerlink" href="#who-this-guidebook-is-for" title="Link to this heading">#</a></h2>
-<p>We assume that you are here because you are:</p>
+<p>This guidebook is for anyone interested in learning more about Python packaging. It is beginner-friendly and will provide:</p>
 <ol class="arabic simple">
-<li><p>Looking for guidance on creating a Python package.</p></li>
-<li><p>Looking for resources associated with Python packaging.</p></li>
-<li><p>Considering submitting a package to pyOpenSci and want to understand what we are looking for when we review your package</p></li>
+<li><p>Beginning-to-end guidance on creating a Python package.</p></li>
+<li><p>Resources to help you navigate the Python packaging ecosystem of tools and approaches to packaging.</p></li>
+<li><p>A curated list of resources to help you get your package into documented, usable and maintainable shape.</p></li>
 </ol>
-<p>Well, friend, you’ve come to the right place!</p>
-<figure class="align-default" id="fig-target">
-<a class="reference internal image-reference" href="_images/python-flying-xkcd.png"><img alt="xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?" src="_images/python-flying-xkcd.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-text">Many love to use Python because it is a clean language to learn. It also is incredibly flexible allowing it to be used across numerous domains. Source: xkcd comics.</span><a class="headerlink" href="#fig-target" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="what-you-will-find-in-this-guidebook">
-<h2>What you will find in this guidebook<a class="headerlink" href="#what-you-will-find-in-this-guidebook" title="Link to this heading">#</a></h2>
-<p>This guidebook contains:</p>
-<ul class="simple">
-<li><p>Explanation for “Good enough” minimum requirements associated with being reviewed by pyOpenSci</p></li>
-<li><p>Explanation of better and best practices in case you want to set the bar higher for your package (which we hope you will)!</p></li>
-<li><p>A curated list of resources to help you get your package into documented, usable and tested shape.</p></li>
-</ul>
 </section>
 <section id="where-this-guide-is-headed">
 <h2>Where this guide is headed<a class="headerlink" href="#where-this-guide-is-headed" title="Link to this heading">#</a></h2>
-<p>Most of the sections in this guide will ultimately include Good/Better/Best recommendations for Python open source software packaging.</p>
-<p>Good meets the requirements. Going beyond the minimum can make package maintenance easier-to-use for new users, easier-to contribute for new contributors and easier-to-maintain for you.</p>
-<p>This guide is now a work in progress. If you have ideas of things you’d like
-to see here, <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">we invite you to open an issue on GitHub that details any changes or additions that you’d like to see.</a>.</p>
-<!--
-COMMENTED OUT TEXT TO BE MOVED
-
-
-# TODO LINK TO CI BUILDS FOR Documentation>
-Maybe we can curate a list of CI builds that people can use??? or is that moving too close to a cookie cutter situation
-
-The text below is being moved to the packaging infrastructure section which
-doesn't exist YET... but will soon .
-pyOpenSci packages must:
-
-- Contain full documentation for any user-facing functions.
-- Have a test suite that covers the major functionality of the package.
-- Use continuous integration.
-- Use an OSI approved software license.
-
-
-## Other recommendations
-### Python version support
-You should always be explicit about which versions of Python your package supports.
-Keeping compatibility with old Python versions can be difficult as functionality changes.
-A good rule of thumb is that the package should support, at least,
-the latest three Python versions (e.g., 3.8, 3.7, 3.6).
-
-### Code Style
-pyOpenSci encourages authors to consult [PEP 8](https://www.python.org/dev/peps/pep-0008/) for information on how to style your code.
-
-### Linting
-An automatic linter (e.g. flake8) can help ensure your code is clean and free of syntax errors. These can be integrated with your CI.
-
--->
+<p>If you have ideas of things you’d like
+to see here clarified in this guide, <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">we invite you to open an issue on GitHub.</a>.</p>
+<p>If you have questions about our peer review process or packaging in general, you are welcome to use our <a class="reference external" href="https://pyopensci.discourse.group/">pyOpenSci Discourse forum</a>.</p>
+<p>This is a living guide that is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 
@@ -638,14 +618,14 @@ An automatic linter (e.g. flake8) can help ensure your code is clean and free of
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#welcome-python-open-source-enthusiast">Welcome, Python open source enthusiast!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyopensci-s-packaging-goals">pyOpenSci’s packaging goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-guide-is-created">How this guide is created</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packaging-ecosystem-overview-best-practices">Python packaging ecosystem overview &amp; best practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-community-created-guidebook">A community-created guidebook</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-this-guidebook-is-for">Who this guidebook is for</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-find-in-this-guidebook">What you will find in this guidebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-this-guide-is-headed">Where this guide is headed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-this-guide-is-headed">Where this guide is headed</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
   </nav></div>
 
