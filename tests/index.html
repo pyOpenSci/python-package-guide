@@ -2,19 +2,19 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="The CODE_OF_CONDUCT file - Python Packaging" />
+<meta property="og:title" content="Tests and data for your Python package" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="documentation/repository-files/code-of-conduct-file.html" />
+<meta property="og:url" content="tests/index.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package itself as having a community around it. ..." />
-<meta name="description" content="Your package should have a CODE_OF_CONDUCT.md file located the root of the repository. Once you have people using your package, you can consider the package itself as having a community around it. ..." />
+<meta property="og:description" content="Tests are an important part of your Python package because they provide a set of checks that ensure that your package is functioning how you expect it to. In this section you will learn more about ..." />
+<meta name="description" content="Tests are an important part of your Python package because they provide a set of checks that ensure that your package is functioning how you expect it to. In this section you will learn more about ..." />
 
-    <title>The CODE_OF_CONDUCT file - Python Packaging &#8212; Python Packaging Guide</title>
+    <title>Tests and data for your Python package &#8212; Python Packaging Guide</title>
   
   
   
@@ -24,41 +24,41 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="icon" sizes="16x16" type="image/ico" href="https://www.pyopensci.org/images/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=c988afff" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c988afff" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/repository-files/code-of-conduct-file';</script>
-    <script src="../../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/documentation/repository-files/code-of-conduct-file.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="License files for scientific Python open source software" href="license-files.html" />
-    <link rel="prev" title="README File Guidelines and Resources" href="readme-file-best-practices.html" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tests/index';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/tests/index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Write tests for your Python package" href="write-tests.html" />
+    <link rel="prev" title="Python Package Code Style, Format and Linters" href="../package-structure-code/code-style-linting-format.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -95,7 +95,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -131,7 +131,7 @@
 
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -142,8 +142,8 @@
       
     
     
-    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
-    <script>document.write(`<img src="../../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
   
   
 </a></div>
@@ -164,22 +164,22 @@
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
                         Packaging
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tests/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Tests
                       </a>
                     </li>
@@ -326,22 +326,22 @@ document.write(`
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
                         Documentation
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
                         Packaging
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tests/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Tests
                       </a>
                     </li>
@@ -433,36 +433,11 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Overview</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Write User Documentation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/get-started.html">Create Your Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/document-your-code-api-docstrings.html">Document Your Code (API)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/create-package-tutorials.html">Create Package Tutorials</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Docs for Contributors &amp; Maintainers</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing-file.html">Contributing File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="development-guide.html">Development Guide</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community Docs</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Run Tests</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="readme-file-best-practices.html">README file</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code of Conduct File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license-files.html">LICENSE files</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publication tools for your docs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx for Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/publish-documentation-online.html">Publish Your Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/website-hosting-optimizing-your-docs.html">Website Hosting and Optimization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write-tests.html">Write tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-types.html">Test types</a></li>
 </ul>
 </div>
 </nav></div>
@@ -496,14 +471,11 @@ document.write(`
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation for your Open Source Python Package</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">The...</li>
+    <li class="breadcrumb-item active" aria-current="page">Tests and...</li>
   </ul>
 </nav>
 </div>
@@ -520,39 +492,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="the-code-of-conduct-file-python-packaging">
-<h1>The CODE_OF_CONDUCT file - Python Packaging<a class="headerlink" href="#the-code-of-conduct-file-python-packaging" title="Link to this heading">#</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Example CODE_OF_CONDUCT files</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html">SciPy Code of Conduct file - notice they included theirs in their documentation</a></p></li>
-<li><p><a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">fatiando CODE_OF_CONDUCT.md file</a></p></li>
-</ul>
+  <section id="tests-and-data-for-your-python-package">
+<h1>Tests and data for your Python package<a class="headerlink" href="#tests-and-data-for-your-python-package" title="Link to this heading">#</a></h1>
+<p>Tests are an important part of your Python package because they
+provide a set of checks that ensure that your package is
+functioning how you expect it to.</p>
+<p>In this section you will learn more about the importance of writing
+tests for your Python package and how you can setup infrastructure
+to run your tests both locally and on GitHub.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">✨ Why write tests ✨</p>
 </div>
-<p>Your package should have a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file located
-the root of the repository. Once you have people using your
-package, you can consider the package itself as having a community
-around it. Some of this community uses your tool. These users
-may have questions or encounter challenges using your package.</p>
-<p>Others in the community might want to contribute to your tool.
-They might fix bugs, update documentation and engage with the
-maintainer team.</p>
-<section id="why-you-need-a-code-of-conduct">
-<h2>Why you need a CODE_OF_CONDUCT<a class="headerlink" href="#why-you-need-a-code-of-conduct" title="Link to this heading">#</a></h2>
-<p>In order to keep this community healthy and to protect yourself,
-your maintainer team and your users from unhealthy behavior,
-it is important to have a <a class="reference external" href="https://opensource.guide/code-of-conduct/"><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code></a>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> is important
-as it establishes what you expect in terms of how users and
-contributors interact with maintainers and each other. It also
-establishes rules and expectations which can then be enforced
-if need be to protect others from harmful and/or negative behaviors.</p>
-<p>If you are not comfortable
-with creating your own <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> text, we encourage you to adopt the
-<code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> language used in the <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/">Contributor Covenant</a>.
-<a class="reference external" href="https://www.contributor-covenant.org/adopters/">Many other communities</a> have adopted this <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> as
-their own. See the <a class="reference external" href="https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md">Fatiando a Terra Geoscience Python community’s example here.</a></p>
-</section>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Learn more about the art of writing tests for your Python package.
+Learn about why you should write tests and how they can help you and
+potential contributors to your project.</p>
+</div>
+<a class="sd-stretched-link reference internal" href="write-tests.html"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">✨ Types of tests ✨</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">There are three general types of tests that you can write for your Python
+package: unit tests, integration tests and end-to-end (or functional) tests. Learn about all three.</p>
+</div>
+<a class="sd-stretched-link reference internal" href="test-types.html"><span class="doc"></span></a></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="fig-target">
+<a class="reference internal image-reference" href="../_images/packaging-lifecycle.png"><img alt="" src="../_images/packaging-lifecycle.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">Graphic showing the elements of the packaging process.</span><a class="headerlink" href="#fig-target" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
 
@@ -566,20 +548,20 @@ their own. See the <a class="reference external" href="https://github.com/fatian
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="readme-file-best-practices.html"
+       href="../package-structure-code/code-style-linting-format.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">README File Guidelines and Resources</p>
+        <p class="prev-next-title">Python Package Code Style, Format and Linters</p>
       </div>
     </a>
     <a class="right-next"
-       href="license-files.html"
+       href="write-tests.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">License files for scientific Python open source software</p>
+        <p class="prev-next-title">Write tests for your Python package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -594,20 +576,9 @@ their own. See the <a class="reference external" href="https://github.com/fatian
 
   <div class="sidebar-secondary-item">
 
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-need-a-code-of-conduct">Why you need a CODE_OF_CONDUCT</a></li>
-</ul>
-  </nav></div>
-
-  <div class="sidebar-secondary-item">
-
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/repository-files/code-of-conduct-file.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tests/index.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -622,7 +593,7 @@ their own. See the <a class="reference external" href="https://github.com/fatian
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../../_sources/documentation/repository-files/code-of-conduct-file.md.txt">
+    <a href="../_sources/tests/index.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
@@ -641,8 +612,8 @@ their own. See the <a class="reference external" href="https://github.com/fatian
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

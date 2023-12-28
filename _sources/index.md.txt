@@ -185,7 +185,8 @@ Packaging <package-structure-code/intro>
 
 ```{toctree}
 :hidden:
-:caption: CI and Testing
+:caption: Testing
 
-CI & Tests  <ci-and-testing/intro>
+Tests  <tests/index>
+
 ```

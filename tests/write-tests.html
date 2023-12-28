@@ -7,14 +7,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud" />
+<meta property="og:title" content="Write tests for your Python package" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="package-structure-code/publish-python-package-pypi-conda.html" />
+<meta property="og:url" content="tests/write-tests.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge in the Anaconda clo..." />
-<meta name="description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge in the Anaconda clo..." />
+<meta property="og:description" content="Writing code that tests your package code, also known as test suites, is important for you as a maintainer, your users, and package contributors. Test suites consist of sets of functions, methods, ..." />
+<meta name="description" content="Writing code that tests your package code, also known as test suites, is important for you as a maintainer, your users, and package contributors. Test suites consist of sets of functions, methods, ..." />
 
-    <title>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud &#8212; Python Packaging Guide</title>
+    <title>Write tests for your Python package &#8212; Python Packaging Guide</title>
   
   
   
@@ -52,13 +52,13 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/publish-python-package-pypi-conda';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tests/write-tests';</script>
     <script src="../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/publish-python-package-pypi-conda.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/tests/write-tests.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating New Versions of Your Python Package" href="python-package-versions.html" />
-    <link rel="prev" title="Complex Python package builds" href="complex-python-package-builds.html" />
+    <link rel="next" title="Test Types for Python packages" href="test-types.html" />
+    <link rel="prev" title="Tests and data for your Python package" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,15 +171,15 @@
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="intro.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
                         Packaging
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../tests/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Tests
                       </a>
                     </li>
@@ -333,15 +333,15 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="intro.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
                         Packaging
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../tests/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Tests
                       </a>
                     </li>
@@ -433,21 +433,11 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Run Tests</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish with Conda / PyPI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Intro</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Write tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-types.html">Test types</a></li>
 </ul>
 </div>
 </nav></div>
@@ -486,9 +476,9 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tests and data for your Python package</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Publishing...</li>
+    <li class="breadcrumb-item active" aria-current="page">Write tests...</li>
   </ul>
 </nav>
 </div>
@@ -505,163 +495,83 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud">
-<h1>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud<a class="headerlink" href="#publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud" title="Link to this heading">#</a></h1>
-<!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
-<p>pyOpenSci requires that your package has an distribution that can be installed
-from a public community repository such as PyPI or a conda channel such as
-<code class="docutils literal notranslate"><span class="pre">bioconda</span></code> or <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> in the Anaconda cloud.</p>
-<p>Below you will learn more about the various publishing options for your Python
-package.</p>
-<div class="admonition-take-aways admonition">
-<p class="admonition-title">Take Aways</p>
+  <section id="write-tests-for-your-python-package">
+<h1>Write tests for your Python package<a class="headerlink" href="#write-tests-for-your-python-package" title="Link to this heading">#</a></h1>
+<p>Writing code that tests your package code, also known as test suites, is important for you as a maintainer, your users, and package contributors. Test suites consist of sets of functions, methods, and classes
+that are written with the intention of making sure a specific part of your code
+works as you expected it to.</p>
+<section id="why-write-tests-for-your-package">
+<h2>Why write tests for your package?<a class="headerlink" href="#why-write-tests-for-your-package" title="Link to this heading">#</a></h2>
+<p>Tests act as a safety net for code changes. They help you spot and rectify bugs
+before they affect users. Tests also instill confidence that code alterations from
+contributors won’t breaking existing functionality.</p>
+<p>Writing tests for your Python package is important because:</p>
 <ul class="simple">
-<li><p>Installing packages in the same environment using both pip and conda can
-lead to package conflicts.</p></li>
-<li><p>To minimize conflicts for users who may be using conda (or pip) to manage local environments, consider publishing your package to both PyPI and the conda-forge channel of the Anaconda Cloud.</p></li>
+<li><p><strong>Catch Mistakes:</strong> Tests are a safety net. When you make changes or add new features to your package, tests can quickly tell you if you accidentally broke something that was working fine before.</p></li>
+<li><p><strong>Save Time:</strong> Imagine you have a magic button that can automatically check if your package is still working properly. Tests are like that magic button! They can run all those checks for you saving you time.</p></li>
+<li><p><strong>Easier Collaboration:</strong> If you’re working with others, or have outside contributors, tests help everyone stay on the same page. Your tests explain how your package is supposed to work, making it easier for others to understand and contribute to your project.</p></li>
+<li><p><strong>Fearless Refactoring:</strong> Refactoring means making improvements to your code structure without changing its behavior. Tests empower you to make these changes as if you break something, test failures will let you know.</p></li>
+<li><p><strong>Documentation:</strong> Tests serve as technical examples of how to use your package. This can be helpful for a new technical contributor that wants to contribute code to your package. They can look at your tests to understand how parts of your code functionality fits together.</p></li>
+<li><p><strong>Long-Term ease of maintenance:</strong> As your package evolves, tests ensure that your code continues to behave as expected, even as you make changes over time. Thus you are helping your future self when writing tests.</p></li>
+<li><p><strong>Easier pull request reviews:</strong> By running your tests in a CI framework such as GitHub actions, each time you or a contributor makes a change to your code-base, you can catch issues and things that may have changed in your code base. This ensures that your software behaves the way you expect it to.</p></li>
 </ul>
-<p>Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.</p>
+<section id="tests-for-user-edge-cases">
+<h3>Tests for user edge cases<a class="headerlink" href="#tests-for-user-edge-cases" title="Link to this heading">#</a></h3>
+<p>Edge cases refer to unexpected or “outlier” ways that some users may use your package. Tests enable you to address various edge cases that could impair
+your package’s functionality. For example, what occurs if a function expects a
+pandas <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> but a user supplies a numpy <code class="docutils literal notranslate"><span class="pre">array</span></code>? Does your code gracefully
+handle this situation, providing clear feedback, or does it leave users
+frustrated by an unexplained failure?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a good introduction to testing, see <a class="reference external" href="https://swcarpentry.github.io/python-novice-inflammation/10-defensive.html">this Software Carpentry lesson</a></p>
 </div>
-<section id="what-is-pypi">
-<h2>What is PyPI<a class="headerlink" href="#what-is-pypi" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://pypi.org/">PyPI</a> is an online Python package repository that
-you can use to both find and install and publish your Python package. There is
-also a test PyPI repository where you can test publishing your package
-prior to the final publication on PyPI.</p>
-<p>Many if not most Python packages can be found on PyPI and are thus installable using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
-<p>The biggest different between using pip and conda to install
-a package is that conda can install any package regardless
-of the language(s) that it is written in. Whereas <code class="docutils literal notranslate"><span class="pre">pip</span></code> can
-only install Python packages.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>On the package build page, we discussed the <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">two package distribution
-types that you will create when making a Python package</span></a>: SDist (packaged as a .tar.gz or .zip) and
-Wheel (.whl) which is really a zip file. Both of those file “bundles” will
-be published on PyPI when you use <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">a standard build tool</span></a> to build
-your package.</p>
-</div>
-</section>
-<section id="what-is-anaconda-cloud-and-conda">
-<h2>What is Anaconda Cloud and conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Link to this heading">#</a></h2>
-<p>conda is an open source package and environment management tool.
-conda can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda Cloud
-repository</a>.</p>
-<p>Anaconda cloud (anaconda.org) contains public and private repositories for
-packages. These repositories are known as channels (discussed below).</p>
-<p>The most common public channels are:</p>
-<ul class="simple">
-<li><p>defaults</p></li>
-<li><p>conda-forge and</p></li>
-<li><p>bioconda</p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>While conda was originally created to support Python packages, it
-is now used across all languages. This cross-language support
-makes it easier for some packages to include and have access to
-tools written in other languages such as c/c++ (gdal), Julia, or R.
-Creating environment that mixes all those packages are usually easier and more
-consistent with full fledged package managers like conda.</p>
-</div>
-<section id="conda-channels">
-<h3>conda channels<a class="headerlink" href="#conda-channels" title="Link to this heading">#</a></h3>
-<p>conda built packages are housed within repositories that are called
-channels. The conda package manager can install packages from different channels.</p>
-<p>There are several core public channels that most people use to install
-packages using conda including.</p>
-<ul class="simple">
-<li><p><strong>defaults:</strong> this is a channel managed by the Anaconda, inc. It is the version of the Python packages that you will install if you install the Anaconda Distribution.</p></li>
-<li><p><a class="reference external" href="https://anaconda.org/conda-forge"><strong>conda-forge:</strong></a> this is a community driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data</p></li>
-<li><p><a class="reference external" href="https://anaconda.org/bioconda"><strong>bioconda</strong></a>: this channel focuses on biomedical</p></li>
-</ul>
-<p><strong>conda-forge</strong> emerged as many of the scientific packages did not
-exist in the default Anaconda cloud channel.</p>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/conda-channels-geohackweek.jpeg"><img alt="ADD." src="../_images/conda-channels-geohackweek.jpeg" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-tests-puzzle.png"><img alt="../_images/python-tests-puzzle.png" src="../_images/python-tests-puzzle.png" style="height: 350px;" /></a>
 <figcaption>
-<p><span class="caption-text">ADD source: GeoHackWeek</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-text">Imagine you’re working on a puzzle where each puzzle piece represents a function, method, class or attribute in your Python package that you want other people to be able to use. Would you want to give someone a puzzle that has missing pieces or pieces that don’t fit together? Providing people with the right puzzle pieces that work together can be compared to writing tests for your Python package.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<div class="note admonition">
+<p class="admonition-title">Test examples</p>
+<p>Let’s say you have a Python function that adds two numbers a and b together.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>A test to ensure that function runs as you might expect when provided with different numbers might look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_add_numbers</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">5</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected 5, but got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">result2</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">result2</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected 3, but got </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">result3</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">result3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected 0, but got </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">test_add_numbers</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+<p>🧩🐍</p>
 </section>
-</section>
-<section id="conda-channels-pypi-conda-pip-where-to-publish-your-package">
-<h2>conda channels, PyPI, conda, pip - Where to publish your package<a class="headerlink" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package" title="Link to this heading">#</a></h2>
-<p>You might be wondering why there are different package repositories
-that can be used to install Python packages.</p>
-<p>And more importantly you are likely wondering how to pick the right
-repository to publish your Python package.</p>
-<p>The answer to both questions relates dependency conflicts.</p>
-<figure class="align-default" id="xkcd-dep-conflict">
-<a class="reference internal image-reference" href="../_images/python-dependency-conflicts-xkcd.png"><img alt="Image showing an XKCD comic that shows a web of Python environments and tools and installations. At the bottom is says -  My python environment has become so degraded that my laptop has been declared a superfund site." src="../_images/python-dependency-conflicts-xkcd.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-text">Installing Python and Python packages from different repositories can lead
-to environment conflicts where a version of on package doesn’t work with
-a version of another package. To keep your environments clean and working, it’s
-best to install packages from the same repository. So use pip to install
-everything. Or use conda. If you can, try to avoid installing package from
-both pip and conda into the same environment.</span><a class="headerlink" href="#xkcd-dep-conflict" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<section id="managing-python-package-dependency-conflicts">
-<h3>Managing Python package dependency conflicts<a class="headerlink" href="#managing-python-package-dependency-conflicts" title="Link to this heading">#</a></h3>
-<p>Python environments can encounter conflicts because Python tools can be installed from different repositories.
-Broadly speaking, Python environments have a smaller chance of
-dependency conflicts when the tools are installed from the same
-package repository. Thus environments that contain packages
-installed from both pip and conda are more likely to yield
-dependency conflicts.</p>
-<p>Similarly installing packages from the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.</p>
-<p>Many install packages directly from conda <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel. However, because
-this channel is managed by Anaconda, the packages available on it are
-limited to those that Anaconda decides should be core to a stable installation. The conda-forge channel was created to complement the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel. It allows anyone to submit a package to be published in the channel . Thus, <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel ensures that a broad suite of user-developed community packages can be installed from conda.</p>
-</section>
-<section id="take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">
-<h3>Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package<a class="headerlink" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package" title="Link to this heading">#</a></h3>
-<p>The take-away here for maintainers is that if you anticipate users wanting
-to use conda to manage their local environments (which many do), you should
-consider publishing to both PyPI and the conda-forge channel (<em>more
-on that below</em>).</p>
-<div class="admonition-additional-resources admonition">
-<p class="admonition-title">Additional resources</p>
+<section id="how-do-i-know-what-type-of-tests-to-write">
+<h3>How do I know what type of tests to write?<a class="headerlink" href="#how-do-i-know-what-type-of-tests-to-write" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section has been adapted from <a class="reference external" href="https://zenodo.org/record/8185113">a presentation by Nick Murphy</a>.</p>
+</div>
+<p>At this point, you may be wondering - what should you be testing in your package? Below are a few examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#why-conda-forge">learn more about why conda-forge was created, here</a></p></li>
-<li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/glossary.html">To learn more about conda terminology, check out their glossary.</a></p></li>
+<li><p><strong>Test some typical cases:</strong> Test that the package functions as you expect it to when users use it. For instance, if your package is supposed to add two numbers, test that the outcome value of adding those two numbers is correct.</p></li>
+<li><p><strong>Test special cases:</strong> Sometimes there are special or outlier cases. For instance, if a function performs a specific calculation that may become problematic closer to the value = 0, test it with the input of both 0 and</p></li>
 </ul>
-</div>
-<!-- One of our packages on conda-forge https://anaconda.org/conda-forge/pandera -->
-</section>
-</section>
-<section id="how-to-submit-to-conda-forge">
-<h2>How to submit to conda-forge<a class="headerlink" href="#how-to-submit-to-conda-forge" title="Link to this heading">#</a></h2>
-<p>While pyOpenSci doesn’t require you to add your package to conda-forge,
-we encourage you to consider doing so!</p>
-<p>Once your package is on PyPI, the process to add your package to conda-forge
-is straight forward to do. <a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs.html#generating-the-recipe">You can follow the detailed steps provided
-by the conda-forge maintainer team.</a>.</p>
-<p>Generally those steps are:</p>
-<ol class="arabic simple">
-<li><p>Fork the staged recipes conda-forge GitHub repository</p></li>
-<li><p>Create a new recipe using the <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> tool. You can <a class="reference external" href="https://conda.github.io/grayskull/">learn more about grayskull here</a>.</p></li>
-<li><p>Add the recipe file created by <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> in a folder within the recipes/ directory of the <a class="reference external" href="https://github.com/conda-forge/staged-recipes"><strong>conda-forge/staged-recipes</strong></a> repository.</p></li>
-<li><p>Open a pull request with your change. Your package will be tested on Windows, Mac and Linux using the repository CI.</p></li>
-</ol>
-<p>Once you have submitted a recipe to conda-forge, a maintainer will work
-with you to iron out any bugs in your recipe. They will then add your package
-to the conda-forge channel.</p>
-<p>Once your package is added, you will have a feedstock repository on GitHub with your packages name</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><a class="reference external" href="https://github.com/conda-forge/movingpandas-feedstock">Here is an example conda-forge feedstock for the pyOpenSci approved package - movingpandas</a></p>
-</div>
-<section id="maintaining-your-conda-forge-package-repository">
-<h3>Maintaining your conda-forge package repository<a class="headerlink" href="#maintaining-your-conda-forge-package-repository" title="Link to this heading">#</a></h3>
-<p>Once your package is on the conda-forge channel, maintaining it is simple.
-Every time that you push a new version of your package to PyPI, it will
-kick off a continuous integration build that updates your package in the
-conda-forge repository. Once that build is complete, you will get a
-notification to review the update. You can merge the pull request for
-that update once you are happy with it.</p>
+<ul class="simple">
+<li><p><strong>Test at and near the expected boundaries:</strong> If a function requires a value that is greater than or equal to 1, make sure that the function still works with both the values 1 and less than one and 1.001 as well (something close to the constraint value)..</p></li>
+<li><p><strong>Test that code fails correctly:</strong> If a function requires a value greater than or equal to 1, then test at 0.999. Make sure that the function fails gracefully when given unexpected values and help and that the user can easily understand why if failed (provides a useful error message).</p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -677,20 +587,20 @@ that update once you are happy with it.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="complex-python-package-builds.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Complex Python package builds</p>
+        <p class="prev-next-title">Tests and data for your Python package</p>
       </div>
     </a>
     <a class="right-next"
-       href="python-package-versions.html"
+       href="test-types.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating New Versions of Your Python Package</p>
+        <p class="prev-next-title">Test Types for Python packages</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -710,18 +620,9 @@ that update once you are happy with it.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pypi">What is PyPI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-anaconda-cloud-and-conda">What is Anaconda Cloud and conda?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">conda channels</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels-pypi-conda-pip-where-to-publish-your-package">conda channels, PyPI, conda, pip - Where to publish your package</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-python-package-dependency-conflicts">Managing Python package dependency conflicts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">Take-aways: If you can, publish on both PyPI and conda-forge to accommodate more users of your package</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-submit-to-conda-forge">How to submit to conda-forge</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maintaining-your-conda-forge-package-repository">Maintaining your conda-forge package repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-write-tests-for-your-package">Why write tests for your package?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tests-for-user-edge-cases">Tests for user edge cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-what-type-of-tests-to-write">How do I know what type of tests to write?</a></li>
 </ul>
 </li>
 </ul>
@@ -731,7 +632,7 @@ that update once you are happy with it.</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/publish-python-package-pypi-conda.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tests/write-tests.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -746,7 +647,7 @@ that update once you are happy with it.</p>
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/package-structure-code/publish-python-package-pypi-conda.md.txt">
+    <a href="../_sources/tests/write-tests.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
