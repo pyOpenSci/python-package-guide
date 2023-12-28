@@ -331,7 +331,7 @@ version using git tags in the version and release your package lesson. <ADD LINK
 :::{admonition} The bare minimum needed in a pyproject.toml file
 :class: tip
 
-The core basic information that you need in a `pyproject.toml` file in order to publish on PyPI is your **package's name**  and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
+The core information that you need in a `pyproject.toml` file in order to publish on PyPI is your **package's name**  and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
 
 Once you have your project metadata in the pyproject.toml file, you will
 rarely update it. In the next lesson you’ll add more metadata and structure to this file.
