@@ -320,7 +320,7 @@ build-backend = "hatchling.build"
 name = "pyospackage_gh_user_name"  # rename this if you plan to publish to test PyPI
 # Here you add the package version manually.
 # You will learn how to setup dynamic versioning in a followup tutorial.
-version="1.1"
+version = "1.1"
 
 ```
 
