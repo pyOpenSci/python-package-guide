@@ -17,6 +17,13 @@
 
 }
 
+
+/* anything related to the dark theme */
+html[data-theme="dark"] {
+    --pst-color-info-bg: #400f59!important;
+}
+
+
 html, body {
     font-size: 1.0rem;
 }
@@ -247,4 +254,48 @@ html[data-theme=dark] {
   font-style: normal;
   font-weight: 400;
   src: url('./fonts/itim-v14-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* poppins-500 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/poppins-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/poppins-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+/* Cards */
+
+/* todo light and dark adaptations needed */
+
+.sd-card-title {
+    margin-bottom: 0.5rem;
+    background-color: var(--pst-color-info-bg)!important;
+    padding: .5rem;
+    border-bottom: 2px solid #999;
+    font-size: 1.2rem;
+    font-weight: 600!important;
+}
+
+.sd-card-header {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.sd-card-body {
+    padding: 0 0!important;
+
+
+    .left-aligned
+        & ul li {
+        text-align: left;
+    }
 }
