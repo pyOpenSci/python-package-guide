@@ -13,9 +13,9 @@ will have the bare minimum elements needed to be installable into a Python envir
 
 :::{todo}
 1. Is it clear where to add commands? bash vs. Python console
-Bash vs zsh is different
+Bash vs. Zsh is different
 2. Does this lesson run as expected on windows and mac?
-3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. this may not be a pervasive misconception in python, but a quick break-out with an explanation of what a package can consist of would be helpful.
+3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. this may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
 :::
 
 :::{figure-md} code-to-python-package
@@ -60,7 +60,7 @@ In the upcoming lessons you will learn how to:
 
 :::{figure-md} packages-environment
 
-<img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your python environment. It them lists your-package along with a few other core packages such as matplotlib, numpy, pandas, xarray and geopandas." width="700px">
+<img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." width="700px">
 
 Making your code installable is the first step towards
 creating a publishable Python package. Once your code is
@@ -162,7 +162,7 @@ can always [fork and clone and customize the pyOpenSci example package.](https:/
 ## Step 1: Set Up the Package Directory Structure
 
 Below you create the basic directory structure required
-for your Python package. Note that there are instructions for creating the files and directories using shell. However you can also create files and directories in your preferred file directory tool (e.g. Finder on MAC or File Explorer on Windows or even a tool such as VSCode or Spyder) if you wish.
+for your Python package. Note that there are instructions for creating the files and directories using shell. However you can also create files and directories in your preferred file directory tool (e.g. Finder on MAC or File Explorer on Windows or even a tool such as VS Code or Spyder) if you wish.
 
 ### Create your package's project directory structure
 * Create a new project directory for your package. Choose a name for your package, preferably in lowercase and without spaces. For this tutorial we'll use `pyospackage`.
