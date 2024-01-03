@@ -71,7 +71,10 @@ by the community now! Join our community review process or watch development of 
 :::{card} ✿ Tutorials ✿
 :class-card: left-aligned
 
-[What is a Python package?](/tutorials/intro)
+* [What is a Python package?](/tutorials/intro)
+* How to make your code installable (coming next!)
+
+_The second lesson is currently under review in our [GitHub Repo here](https://github.com/pyOpenSci/python-package-guide/pulls). It will be live by the end of January 2024_
 
 :::
 ::::
