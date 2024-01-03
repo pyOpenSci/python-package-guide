@@ -47,10 +47,6 @@ After reading this lesson you will:
 
 :::
 
-:::{todo}
-You might also hear people use the term "library" the same way.
-:::
-
 ## What is a Python package?
 
 At a high level, you can think about a Python package as a toolbox
@@ -115,7 +111,7 @@ Before creating a user-facing package, it's important to consider all of the abo
 <img src="../images/tutorials/package-components.png" alt="Diagram showing .. more here if this stays." width="500px">
 
 The elements of a Python package include code, documentation, tests,
-an OSI-approved license and a specific directory structure.
+an OSI-approved license and infrastructure.
 Maintainers are at the core making sure everything works and is up to
 date while fixing bugs and addressing user concerns.
 :::
@@ -174,7 +170,7 @@ GitHub and GitLab also both offer community features such as issues that allow:
 
 ### Continuous integration and continuous deployment
 
-GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs, whereas continuous deployment (CD) is an extension of CI that refers to not only running or building but also to publishing the final outputs somewhere. 
+GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs, whereas continuous deployment (CD) is an extension of CI that refers to not only running or building but also to publishing the final outputs somewhere.
 
 **An example of Continuous integration:**
 * When someone submits a change to your code, your tests will run across different operating systems and the code will be checked for format issues.
