@@ -9,32 +9,34 @@ tests for your Python package and how you can setup infrastructure
 to run your tests both locally and on GitHub.
 
 
-::::{grid} 1 1 3 3
+:::::{grid} 1 1 3 3
 :class-container: text-center
 :gutter: 3
 
-:::{grid-item-card}
+::::{grid-item}
+:::{card} ✨ Why write tests ✨
 :link: write-tests
 :link-type: doc
-
-✨ Why write tests ✨
-^^^
+:class-card: left-aligned
 
 Learn more about the art of writing tests for your Python package.
 Learn about why you should write tests and how they can help you and
 potential contributors to your project.
 :::
+::::
 
-:::{grid-item-card}
+::::{grid-item}
+:::{card} ✨ Types of tests ✨
 :link: test-types
 :link-type: doc
+:class-card: left-aligned
 
-✨ Types of tests ✨
-^^^
 There are three general types of tests that you can write for your Python
 package: unit tests, integration tests and end-to-end (or functional) tests. Learn about all three.
 :::
 ::::
+
+:::::
 
 
 :::{figure-md} fig-target
