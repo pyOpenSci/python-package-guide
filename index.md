@@ -71,7 +71,8 @@ by the community now! Join our community review process or watch development of 
 :::{card} ✿ Tutorials ✿
 :class-card: left-aligned
 
-[What is a Python package?](/tutorials/intro)
+* [What is a Python package?](/tutorials/intro)
+* [Make your code installable](/tutorials/1-installable-code)
 
 :::
 ::::
@@ -188,19 +189,13 @@ If you have questions about our peer review process or packaging in general, you
 
 This is a living guide that is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
 
-```{toctree}
-:hidden:
-:caption: Testing
-
-Tutorials  <tutorials/intro>
-
-```
 
 ```{toctree}
 :hidden:
 :caption: Tutorials
 Tutorials  <tutorials/intro>
 ```
+
 
 ```{toctree}
 :hidden:
