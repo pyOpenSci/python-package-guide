@@ -213,7 +213,7 @@ It can be tricky to decide when your code becomes something that might be more b
 :::{admonition} How does this relate to code for a research project?
 :class: note
 
-A [Research Compendium](https://the-turing-way.netlify.app/reproducible-research/compendia.html#basic-compendium) is an organized set of code, data and documentation that
+A [Research Compendium](https://the-turing-way.netlify.app/reproducible-research/compendia.html) is an organized set of code, data and documentation that
 supports a specific research project. It aims to enhance the reproducibility and
 transparency of research by providing a comprehensive record of the methods,
 data, and analyses used in a study.
@@ -298,8 +298,12 @@ Learn [how to publish your package to PyPI in this tutorial.](6-publish-pypi.md)
 This lesson is also not published - yet but will be reviewed soon.
 :::
 
-Then you can create a conda-forge recipe using the [Grayskull](https://github.com/conda/grayskull) tool. You can then submit this recipe to conda-forge. [You will learn more about the conda-forge publication process here.](7-publish-conda-forge.md)
+Then you can create a conda-forge recipe using the [Grayskull](https://github.com/conda/grayskull) tool. You can then submit this recipe to conda-forge.
 
+:::{todo}
+remove this todo when this page is published
+[You will learn more about the conda-forge publication process here.](7-publish-conda-forge.md)
+:::
 
 :::{figure-md} build-workflow-tutorial
 <img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testPyPI or the real PyPI. From PyPI you can then connect to conda forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
