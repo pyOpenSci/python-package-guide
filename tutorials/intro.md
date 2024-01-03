@@ -28,12 +28,6 @@ understanding the steps involved in creating a Python package.
 :caption: Python Packaging 101
 
 What is a Python package? <self>
-Make your code pip installable <1-installable-code>
-Add README file <2-add-readme>
-Add LICENSE & CODE of CONDUCT <4-add-license-file>
-Add pyproject.toml <5-pyproject-toml>
-Publish to PyPI <6-publish-pypi>
-Publish to conda-forge <7-publish-conda-forge>
 :::
 
 :::{admonition} Learning Objectives
@@ -262,7 +256,7 @@ for clean code in future pyOpenSci tutorials.
 
 **Readable code:** readable code is code written with a consistent style.
 You can use linters and code formatters such as black and flake8 to ensure
-this consistency throughout your entire package. [Learn more about code formatters here.](../package-structure-code/code-style-linting-format.html)
+this consistency throughout your entire package. [Learn more about code formatters here.](../package-structure-code/code-style-linting-format)
 
 **Documented code:** documented code is written using docstrings that help a
 user understand both what the functions and methods in your code do and also
@@ -295,9 +289,10 @@ publish it in a repository such as **PyPI** or **conda-forge**.
 
 :::{todo}
 The links below won't work until those lessons (which are written) are published.
-:::
 
 Learn [how to publish your package to PyPI in this tutorial.](6-publish-pypi.md)
+:::
+
 
 :::{todo}
 This lesson is also not published - yet but will be reviewed soon.
