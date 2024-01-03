@@ -1,0 +1,948 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Python packaging 101" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="tutorials/intro.html" />
+<meta property="og:site_name" content="python-package-guide" />
+<meta property="og:description" content="A start to finish beginner-friendly tutorial Welcome to the pyOpenSci Python packaging tutorial series. The lessons on the upcoming pages walk you through the core steps needed to create a Python p..." />
+<meta name="description" content="A start to finish beginner-friendly tutorial Welcome to the pyOpenSci Python packaging tutorial series. The lessons on the upcoming pages walk you through the core steps needed to create a Python p..." />
+
+    <title>Python packaging 101 &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="icon" sizes="16x16" type="image/ico" href="https://www.pyopensci.org/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c988afff" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/intro';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/tutorials/intro.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation for your Open Source Python Package" href="../documentation/index.html" />
+    <link rel="prev" title="pyOpenSci Python Package Guide" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging 101</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">What is a Python package?</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Python packaging 101</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="python-packaging-101">
+<h1>Python packaging 101<a class="headerlink" href="#python-packaging-101" title="Link to this heading">#</a></h1>
+<p><em>A start to finish beginner-friendly tutorial</em></p>
+<p>Welcome to the pyOpenSci Python packaging tutorial series. The lessons
+on the upcoming pages walk you through the core steps needed to
+create a Python package.</p>
+<figure class="align-default" id="packaging-outline">
+<a class="reference internal image-reference" href="../_images/packaging-101-outline.png"><img alt="Diagram showing the lessons in our packaging tutorial. There are 6 total - what is a python package, make code pip installable, publish your package to PyPI, add a readme and license file, add metadata for pypi and finally publish to conda forge." src="../_images/packaging-101-outline.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">This lesson is the first in a series of lessons to help you get started with Python packaging.</span><a class="headerlink" href="#packaging-outline" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="who-are-these-tutorials-for">
+<h2>Who are these tutorials for?<a class="headerlink" href="#who-are-these-tutorials-for" title="Link to this heading">#</a></h2>
+<p>The content in this tutorial series is beginner friendly and assumes
+that you have not created a Python package before. However, the
+content will still be valuable if you are interested in better
+understanding the steps involved in creating a Python package.</p>
+<ul class="simple">
+<li><p>In this series you will learn about the core elements that you need to publish your package to the <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a>.</p></li>
+<li><p>In the second series, you will learn about infrastructure and documentation needed to support package maintenance.</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>This lesson introduces you to the basic components of a Python package.
+After reading this lesson you will:</p>
+<ul class="simple">
+<li><p>Understand what a Python package is</p></li>
+<li><p>Be able to list the 5 core components of a Python package</p></li>
+<li><p>Be able to explain the difference between generalizable code and code that supports a specific scientific application</p></li>
+</ul>
+</div>
+</section>
+<section id="what-is-a-python-package">
+<h2>What is a Python package?<a class="headerlink" href="#what-is-a-python-package" title="Link to this heading">#</a></h2>
+<p>At a high level, you can think about a Python package as a toolbox
+that you can use to perform various tasks.</p>
+<p>A Python package is basically a directory with a specific
+file structure. Within the package directory structure, there are
+modules which are files that end in <code class="docutils literal notranslate"><span class="pre">.py</span></code> (the same extension you’d
+see in a Python script). These modules allow you to group and
+structure your Python code. Each module contains functions and classes,
+that you can think about as the tools in your toolbox.</p>
+<figure class="align-default" id="python-toolbox">
+<a class="reference internal image-reference" href="../_images/toolbox.png"><img alt="Diagram showing a sketch of a toolbox filled with different tools including a hammer and a saw." src="../_images/toolbox.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">You can think about a package as a toolbox filled with coding tools.
+A tool may be a function or a class. Each tool does a specific thing
+well.</span><a class="headerlink" href="#python-toolbox" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="python-packages-are-installable">
+<h3>Python packages are installable<a class="headerlink" href="#python-packages-are-installable" title="Link to this heading">#</a></h3>
+<p>A package is installable, which means that you can add the
+functionality within the package’s code to any Python environment and
+import that functionality like you would import core scientific Python packages such
+as NumPy or Matplotlib.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p>Installing a package into an environment makes it easier
+to manage and reuse your code across different projects.
+Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you’ve created and let others build with it.</p>
+</section>
+</section>
+<section id="why-create-a-python-package">
+<h2>Why create a Python package?<a class="headerlink" href="#why-create-a-python-package" title="Link to this heading">#</a></h2>
+<p>You might create a Python package because you want to:</p>
+<ul class="simple">
+<li><p><strong>Use your code across different projects:</strong> At its most basic level, creating a package allows you to install your code into a Python environment. This allows you to then import functions and classes into any workflows both locally and in the cloud.</p></li>
+<li><p><strong>Share your code:</strong> If you publish a package on a public repository such as PyPI or conda, your package can be installed on any machine using pip or conda with a single command.</p></li>
+<li><p><strong>Build community around your code:</strong> Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version control system such as git (the system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base.</p></li>
+<li><p><strong>Organize your code:</strong> Packages can be used to organize large code projects, dividing them into smaller, more manageable components. This structure can help with both maintaining the codebase and with making it easier to understand.</p></li>
+</ul>
+<section id="what-to-consider-before-you-create-a-package">
+<h3>What to consider before you create a package<a class="headerlink" href="#what-to-consider-before-you-create-a-package" title="Link to this heading">#</a></h3>
+<p>Creating a Python package that others use takes considerable
+time and effort. Before you begin, think about your goals including:</p>
+<ul class="simple">
+<li><p>Who you think will use your package</p></li>
+<li><p>How people might use your package and on what data (if data are relevant)</p></li>
+<li><p>Whether you have time to add things such as documentation and tests</p></li>
+<li><p>How long you might be able to maintain it: remember that once people begin using your package they will depend on your maintainer team to update it, fix bugs and answer questions.</p></li>
+</ul>
+<p>Before creating a user-facing package, it’s important to consider all of the above.</p>
+</section>
+</section>
+<section id="the-elements-of-a-python-package">
+<h2>The elements of a Python package<a class="headerlink" href="#the-elements-of-a-python-package" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="package-components">
+<a class="reference internal image-reference" href="../_images/package-components.png"><img alt="Diagram showing .. more here if this stays." src="../_images/package-components.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">The elements of a Python package include code, documentation, tests,
+an OSI-approved license and infrastructure.
+Maintainers are at the core making sure everything works and is up to
+date while fixing bugs and addressing user concerns.</span><a class="headerlink" href="#package-components" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The core elements of Python package include:</p>
+<ul class="simple">
+<li><p><strong>Code:</strong> Functions and classes that provide functionality for a user of your package</p></li>
+<li><p><strong>Documentation:</strong> Installation instructions, tutorials, and examples that both help users get started using your package and contributors and maintainers fix bugs and maintain the package.</p>
+<ul>
+<li><p>Contributor Documentation in the form of a <strong>CONTRIBUTING.md</strong> file is useful to help people to contribute to your package.</p></li>
+<li><p>Development Documentation helps both maintainers and contributors understand how to maintain a package’s infrastructure.</p></li>
+</ul>
+</li>
+<li><p><strong>Tests:</strong> that make sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future</p></li>
+<li><p><strong>License:</strong> An open source license, or license that is <a class="reference external" href="https://opensource.org/licenses/">OSI approved</a>, refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can’t be reused.</p></li>
+<li><p><strong>Infrastructure</strong> that automates updates, publication workflows and runs test suites. Infrastructure includes a suite of things such as platforms like GitHub and GitLab, tools to run tests and tools locally such as nox and tox and continuous integration that automates package maintenance steps.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">What pyOpenSci looks for in a package</p>
+<p>pyOpenSci performs an <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template">initial set of editor checks</a> for any package submitted
+to us for peer review.
+You may find these checks useful as you create your package as a baseline for
+things that you package should have.</p>
+</div>
+</section>
+<section id="packages-are-more-than-just-code-infrastructure">
+<h2>Packages are more than just code - Infrastructure<a class="headerlink" href="#packages-are-more-than-just-code-infrastructure" title="Link to this heading">#</a></h2>
+<p>A package in any language is more than just code. If you expect other
+people to use your package, besides yourself, you should consider not
+only writing high quality code, but also the various elements of a
+package that make it a useful community resource.</p>
+<section id="version-control-and-storing-your-package-on-github-or-gitlab">
+<h3>Version control and storing your package on GitHub or GitLab<a class="headerlink" href="#version-control-and-storing-your-package-on-github-or-gitlab" title="Link to this heading">#</a></h3>
+<p>Most Python packages live in an online version control platform such as GitHub
+or GitLab. GitHub and GitLab both
+run <a class="reference external" href="https://git-scm.com/">git</a> for version control. Having your software
+under version control is important because it allows you to both track changes over time while also going back in history and undoing changes in the case that a change to the code base unexpectedly breaks something.</p>
+<p>By publishing your package on GitHub or GitLab, you are making your code public facing. This means that others can both see your code and also make contributions using a pull request (GitHub) / merge request (GitLab) /  code review workflow.</p>
+<div class="tip admonition">
+<p class="admonition-title">GitHub &amp; GitLab vs. Git</p>
+<p>GitHub and GitLab are online (cloud) platforms that run <code class="docutils literal notranslate"><span class="pre">git</span></code> (version control
+software) on the backend. Running git locally on your computer allows you to
+upload (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>) and download (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>) files to GitHub and GitLab.</p>
+</div>
+</section>
+<section id="issues-or-ticket-trackers">
+<h3>Issues or Ticket Trackers<a class="headerlink" href="#issues-or-ticket-trackers" title="Link to this heading">#</a></h3>
+<p>GitHub and GitLab also both offer community features such as issues that allow:</p>
+<ul class="simple">
+<li><p>you to communicate with your maintainers and contributor community</p></li>
+<li><p>users to report bugs, ask questions and request new features</p></li>
+<li><p>you to publicly keep track of enhancements and features you want to work on for your package.</p></li>
+</ul>
+</section>
+<section id="continuous-integration-and-continuous-deployment">
+<h3>Continuous integration and continuous deployment<a class="headerlink" href="#continuous-integration-and-continuous-deployment" title="Link to this heading">#</a></h3>
+<p>GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs, whereas continuous deployment (CD) is an extension of CI that refers to not only running or building but also to publishing the final outputs somewhere.</p>
+<p><strong>An example of Continuous integration:</strong></p>
+<ul class="simple">
+<li><p>When someone submits a change to your code, your tests will run across different operating systems and the code will be checked for format issues.</p></li>
+</ul>
+<p><strong>An example of Continuous deployment:</strong></p>
+<ul class="simple">
+<li><p>When you are ready to release your package to PyPI, a continuous deployment operation might be triggered on release to publish your package to PyPI.</p></li>
+</ul>
+<p>Integrated CI/CD will help you maintain your software, ensuring that
+changes to the code don’t break things unexpectedly. They can also
+help you maintain code style and format consistency for every new
+change to your code.</p>
+<figure class="align-default" id="packaging-workflow">
+<a class="reference internal image-reference" href="../_images/packaging-lifecycle1.png"><img alt="Diagram showing .. more here if this stays." src="../_images/packaging-lifecycle1.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">The lifecycle of a scientific Python package.</span><a class="headerlink" href="#packaging-workflow" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="when-should-you-turn-your-code-into-a-python-package">
+<h2>When should you turn your code into a Python package?<a class="headerlink" href="#when-should-you-turn-your-code-into-a-python-package" title="Link to this heading">#</a></h2>
+<p>You may be wondering, what types of code should become a Python package that is both on GitHub and published to PyPI and/or conda-forge.</p>
+<p>There are a few use cases to consider:</p>
+<ol class="arabic simple">
+<li><p><strong>Creating a basic package for yourself:</strong> Sometimes you want create a package for your own personal use. This might mean making your code locally pip installable and you may also want to publish it to GitHub. In that case you don’t expect others to use your code, and as such you may only have documentation for you and your future self if you need to update the package.</p></li>
+</ol>
+<blockquote>
+<div><p>An example of this type of package might be a set of functions that you write that are useful across several of your projects. It could be useful to have those functions available to all of your projects.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>Creating a package for the community:</strong> In other cases, you may create some code that you soon realize might also be useful to not just you, but to other people as well.
+In that case, you might consider both creating the package, publishing it on GitHub, and because other users may be using it, you may make use of GitHub’s infrastructure including CI/CD pipelines and issue trackers. Because you want other people to use your package, you will want to also include LICENSE information, documentation for users and contributors and tests. This type of package is most often published to PyPI.</p></li>
+</ol>
+<p>For example, all of the <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a> are public facing with an intended audience beyond just the maintainers.</p>
+<section id="packages-that-you-expect-others-to-use-should-be-well-scoped">
+<h3>Packages that you expect others to use should be well-scoped<a class="headerlink" href="#packages-that-you-expect-others-to-use-should-be-well-scoped" title="Link to this heading">#</a></h3>
+<p>Ideally the code in your Python package is focused on a specific theme or use case. This theme is important as it’s a way to scope the content of your package.</p>
+<p>It can be tricky to decide when your code becomes something that might be more broadly useful to others. But one question you can ask yourself is - is your code written specifically for a single research project? Or could it have a broader application across multiple projects in your domain?</p>
+<div class="note admonition">
+<p class="admonition-title">How does this relate to code for a research project?</p>
+<p>A <a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/compendia.html">Research Compendium</a> is an organized set of code, data and documentation that
+supports a specific research project. It aims to enhance the reproducibility and
+transparency of research by providing a comprehensive record of the methods,
+data, and analyses used in a study.</p>
+<p>A Python package is a collection of modules that can be used to perform a
+specific set of tasks. These tasks should be applicable to numerous workflows.
+As such a Python package is more generalizable than a Research Compendium
+which supports a specific project.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510">Read about <code class="docutils literal notranslate"><span class="pre">Good</span> <span class="pre">enough</span> <span class="pre">practices</span> <span class="pre">in</span> <span class="pre">scientific</span> <span class="pre">computing</span></code></a></p></li>
+<li><p><a class="reference external" href="https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/">Learn more about research compendia (also called repo-packs) in this blog post.</a></p></li>
+</ul>
+</div>
+<p>Below are a few examples well scoped pyOpenSci packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://crowsetta.readthedocs.io/en/latest/">Crowsetta</a>: is a package designed to work with annotating animal vocalizations and bioacoustics data. This package helps scientists process different types of bioacoustic data rather than focusing on a specific individual research application associated with a user-specific research workflow.</p></li>
+<li><p><a class="reference external" href="https://www.union.ai/pandera">Pandera</a> is another more broadly used Python package. Pandera supports data testing and thus also has a broader research application.</p></li>
+</ul>
+<div class="admonition-matplotlib-as-an-example admonition">
+<p class="admonition-title">Matplotlib as an example</p>
+<p>At the larger end of the user spectrum, Matplotlib is a great example.
+Matplotlib does one thing really well:</p>
+<p><em>It creates visual plots of data.</em></p>
+<p>Thousands of people use Matplotlib for different plotting applications
+using different types of data. While few scientific packages will have the same
+broad application and large user base that Matplotlib has, the
+idea of scoping out what your package does is still important.</p>
+</div>
+</section>
+<section id="code-should-also-be-clean-readable-documented">
+<h3>Code should also be clean &amp; readable &amp; documented<a class="headerlink" href="#code-should-also-be-clean-readable-documented" title="Link to this heading">#</a></h3>
+<p>The code in your package should also be clean, readable, and well documented.</p>
+<p><strong>Clean code:</strong> Clean code refers to code that uses expressive variable names,
+is concise and doesn’t repeat itself. You can learn about best practices
+for clean code in future pyOpenSci tutorials.</p>
+<p><strong>Readable code:</strong> readable code is code written with a consistent style.
+You can use linters and code formatters such as black and flake8 to ensure
+this consistency throughout your entire package. <a class="reference internal" href="../package-structure-code/code-style-linting-format.html"><span class="doc std std-doc">Learn more about code formatters here.</span></a></p>
+<p><strong>Documented code:</strong> documented code is written using docstrings that help a
+user understand both what the functions and methods in your code do and also
+what the input and output elements of each function are. <a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html"><span class="doc std std-doc">You can learn more about docstrings in our guide, here.</span></a></p>
+</section>
+</section>
+<section id="making-your-package-installable-publishing-to-pypi-conda-forge">
+<h2>Making your package installable - publishing to PyPI &amp; conda-forge<a class="headerlink" href="#making-your-package-installable-publishing-to-pypi-conda-forge" title="Link to this heading">#</a></h2>
+<section id="python-packages-and-environments">
+<h3>Python packages and environments<a class="headerlink" href="#python-packages-and-environments" title="Link to this heading">#</a></h3>
+<p>You can install a Python package into a Python environment in the same way
+you might install NumPy or pandas. Installing your package into an environment
+allows you to access it from any code run with that specific Python environment activated.</p>
+<figure class="align-default" id="packages-environment">
+<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">You don’t have to publish to PyPI to make your code installable.
+With the correct file structure and project metadata you can make your code
+installable locally on your computer and use it for projects that you are working
+on without having to ever publish to PyPI. Publishing to PyPI is useful when you
+want to make your code public-facing and share it with others.</span><a class="headerlink" href="#packages-environment" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="publishing-a-package-to-pypi-conda-forge">
+<h3>Publishing a package to PyPI / Conda-Forge<a class="headerlink" href="#publishing-a-package-to-pypi-conda-forge" title="Link to this heading">#</a></h3>
+<p>If you want to make your package directly installable without having
+to download the code to your computer locally then you need to
+publish it in a repository such as <strong>PyPI</strong> or <strong>conda-forge</strong>.</p>
+<p>Then you can create a conda-forge recipe using the <a class="reference external" href="https://github.com/conda/grayskull">Grayskull</a> tool. You can then submit this recipe to conda-forge.</p>
+<figure class="align-default" id="build-workflow-tutorial">
+<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testPyPI or the real PyPI. From PyPI you can then connect to conda forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">In the image above, you can see the steps associated with publishing
+your package on PyPI and conda forge. Note that the distribution files that PyPI requires are the <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">sdist</span></a> and <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a> files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repo. You will learn more about this process in the <a class="reference internal" href="#"><span class="xref myst">conda-forge lesson</span></a>.</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="yay-your-package-has-users-now-what">
+<h2>Yay, your package has users! Now what?<a class="headerlink" href="#yay-your-package-has-users-now-what" title="Link to this heading">#</a></h2>
+<p>As the community using your package grows, you may also find yourself managing users, contributors, and others who want to interact with your package. It’s important to consider all this before you dive into development. Once you have a user base in the community, people will depend upon your code to work and will need direction regarding how to use it.</p>
+<p>To support your community, you’ll want to add things like:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../documentation/repository-files/development-guide.html"><span class="std std-doc">a development guide that documents your maintainer workflow process </span></a></p></li>
+<li><p><a class="reference internal" href="../documentation/repository-files/code-of-conduct-file.html"><span class="std std-doc">a code of conduct to defines community interaction standards and expectations</span></a></p></li>
+<li><p><a class="reference internal" href="../documentation/repository-files/contributing-file.html"><span class="std std-doc">a contributing guide that helps users understand expectations associated with making contributions to your project</span></a></p></li>
+</ul>
+<div class="admonition-support-for-contributors-and-maintainers admonition">
+<p class="admonition-title">Support for contributors and maintainers</p>
+<p>If you intend for others to use and contribute to your code, consider who will maintain it over time. You will want a <strong>contributing and development</strong> guide to help new potential contributors get started with contributing to your package, as well as a <strong>code of conduct</strong> to ensure community interactions remain healthy both for you and your contributors and maintainer team.</p>
+<p>The elements above are also important for future maintenance of your package. In the case that you are no long able to maintain it or simply want extra help, development, and contributing documentation will help you onboard new maintainers.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Link to this heading">#</a></h2>
+<p>In future lessons you will learn more about the infrastructure around a published Python package that makes it both easier to maintain, easier for others to contribute to and easier for other scientists to use. However, first we want to get you to your initial goal of publishing a Python package.</p>
+<p>In this next lesson you will learn how to create a basic installable Python package.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyOpenSci Python Package Guide</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documentation/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation for your Open Source Python Package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-are-these-tutorials-for">Who are these tutorials for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-python-package">What is a Python package?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages-are-installable">Python packages are installable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-create-a-python-package">Why create a Python package?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-consider-before-you-create-a-package">What to consider before you create a package</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-elements-of-a-python-package">The elements of a Python package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-are-more-than-just-code-infrastructure">Packages are more than just code - Infrastructure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-and-storing-your-package-on-github-or-gitlab">Version control and storing your package on GitHub or GitLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-or-ticket-trackers">Issues or Ticket Trackers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-and-continuous-deployment">Continuous integration and continuous deployment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-should-you-turn-your-code-into-a-python-package">When should you turn your code into a Python package?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-that-you-expect-others-to-use-should-be-well-scoped">Packages that you expect others to use should be well-scoped</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-should-also-be-clean-readable-documented">Code should also be clean &amp; readable &amp; documented</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-package-installable-publishing-to-pypi-conda-forge">Making your package installable - publishing to PyPI &amp; conda-forge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages-and-environments">Python packages and environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-a-package-to-pypi-conda-forge">Publishing a package to PyPI / Conda-Forge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yay-your-package-has-users-now-what">Yay, your package has users! Now what?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s next?</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/intro.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/tutorials/intro.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
