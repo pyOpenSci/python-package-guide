@@ -174,7 +174,7 @@ GitHub and GitLab also both offer community features such as issues that allow:
 
 ### Continuous integration and continuous deployment
 
-GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs, whereas continuous deployment (CD) is a form of CI that runs before publication.
+GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs, whereas continuous deployment (CD) is an extension of CI that refers to not only running or building but also to publishing the final outputs somewhere. 
 
 **An example of Continuous integration:**
 * When someone submits a change to your code, your tests will run across different operating systems and the code will be checked for format issues.
