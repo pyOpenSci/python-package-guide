@@ -175,7 +175,7 @@ Inside the project directory:
 
 ```bash
 # Create a project directory in shell and a src directory within
-mkdir -R pyospackage/src/pyospackage
+mkdir -p pyospackage/src/pyospackage
 
 # Change directory into pyospackage project dir
 cd pyospackage
