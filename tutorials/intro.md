@@ -76,7 +76,7 @@ well.
 
 A package is installable, which means that you can add the
 functionality within the package's code to any Python environment and
-import that functionality like you would import core Python packages such
+import that functionality like you would import core scientific Python packages such
 as NumPy or Matplotlib.
 
 ```python
@@ -93,7 +93,7 @@ You might create a Python package because you want to:
 
 - **Use your code across different projects:** At its most basic level, creating a package allows you to install your code into a Python environment. This allows you to then import functions and classes into any workflows both locally and in the cloud.
 - **Share your code:** If you publish a package on a public repository such as PyPI or conda, your package can be installed on any machine using pip or conda with a single command.
-- **Build community around your code:** Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version platform such as git (the version control system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base.
+- **Build community around your code:** Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version control system such as git (the system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base.
 - **Organize your code:** Packages can be used to organize large code projects, dividing them into smaller, more manageable components. This structure can help with both maintaining the codebase and with making it easier to understand.
 
 ### What to consider before you create a package
@@ -127,7 +127,7 @@ The core elements of Python package include:
   - Contributor Documentation in the form of a **CONTRIBUTING.md** file is useful to help people to contribute to your package.
   - Development Documentation helps both maintainers and contributors understand how to maintain a package's infrastructure.
 - **Tests:** that make sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future
-- **License:** An open source license, or license that is [OSI approved](https://opensource.org/licenses/) refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
+- **License:** An open source license, or license that is [OSI approved](https://opensource.org/licenses/), refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
 - **Infrastructure** that automates updates, publication workflows and runs test suites. Infrastructure includes a suite of things such as platforms like GitHub and GitLab, tools to run tests and tools locally such as nox and tox and continuous integration that automates package maintenance steps.
 
 :::{admonition} What pyOpenSci looks for in a package
@@ -174,7 +174,7 @@ GitHub and GitLab also both offer community features such as issues that allow:
 
 ### Continuous integration and continuous deployment
 
-GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs.
+GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs, whereas continuous deployment (CD) is a form of CI that runs before publication.
 
 **An example of Continuous integration:**
 * When someone submits a change to your code, your tests will run across different operating systems and the code will be checked for format issues.
