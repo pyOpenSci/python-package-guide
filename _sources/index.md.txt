@@ -176,9 +176,6 @@ This guidebook is for anyone interested in learning more about Python packaging.
 1. Resources to help you navigate the Python packaging ecosystem of tools and approaches to packaging.
 1. A curated list of resources to help you get your package into documented, usable and maintainable shape.
 
-
-
-
 ## Where this guide is headed
 
 If you have ideas of things you'd like
@@ -190,7 +187,7 @@ This is a living guide that is updated as tools and best practices evolve in the
 
 ```{toctree}
 :hidden:
-:caption: Testing
+:caption: Tutorials
 
 Tutorials  <tutorials/intro>
 
@@ -217,5 +214,7 @@ Packaging <package-structure-code/intro>
 :caption: Testing
 
 Tests  <tests/index>
+Write tests <tests/write-tests>
+Types of tests <tests/test-types>
 
 ```
