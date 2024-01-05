@@ -130,7 +130,19 @@ Learn about best practices for:
 ::::
 
 ::::{grid-item}
-:::{card} ✨ Tests, checks & clean code ✨
+:::{card} ✨ Tests ✨
+:class-card: left-aligned
+
+* [Intro to testing](tests/index.md)
+* [Write tests](tests/write-tests.md)
+* [Types of tests](tests/test-types.md)
+
+*We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)*
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Code checks & clean code ✨
 :class-card: left-aligned
 
 * [Code style](package-structure-code/code-style-linting-format.md)
