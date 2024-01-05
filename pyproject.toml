@@ -1,3 +1,25 @@
+[project]
+name = "python-package-guide"
+
+[project.optional.dependencies]
+dev = [
+    "pydata-sphinx-theme==0.15.1",
+    "myst-nb",
+    "sphinx",
+    "sphinx-autobuild",
+    "sphinx-copybutton",
+    "sphinx-design",
+    "sphinx-favicon",
+    # XML feed for analytics
+    "sphinx-sitemap",
+    # Support for social / adds meta tags
+    "sphinxext-opengraph",
+    "sphinx-inline-tabs",
+    # for project cards
+    "matplotlib"
+    ]
+
+
 # https://github.com/codespell-project/codespell#usage
 [tool.codespell]
 ignore-words = "codespell-ignore.txt"

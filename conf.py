@@ -37,6 +37,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_sitemap",
     "sphinxext.opengraph",
+    "sphinx_favicon",
 ]
 
 # colon fence for card support in md
@@ -46,16 +47,14 @@ myst_enable_extensions = [
 ]
 myst_heading_anchors = 3
 
+# Sphinx_favicon is used now in favor of built in support
+# https://pypi.org/project/sphinx-favicon/
+favicons = [
+    {"href": "https://www.pyopensci.org/images/favicon.ico"},
+]
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
-       "favicons": [
-      {
-         "rel": "icon",
-         "sizes": "16x16",
-         "href": "https://www.pyopensci.org/images/favicon.ico",
-      },
-    ],
     "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
     #"navbar_center": ["nav"], this can be a way to override the default navigation structure
     "external_links": [
@@ -93,7 +92,8 @@ html_theme_options = {
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
 
-    "footer_items": ["copyright"],
+    "footer_start": ["copyright"],
+    "footer_end": [],
 }
 
 html_context = {
