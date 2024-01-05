@@ -119,6 +119,7 @@ exclude_patterns = [
 
 # For sitemap generation
 html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+sitemap_url_scheme = "{link}"
 
 # -- Options for HTML output -------------------------------------------------
 
