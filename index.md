@@ -167,6 +167,7 @@ process. To ensure our guidebook is both beginner-friendly and accurate, we enco
 ```{button-link} https://github.com/pyOpenSci/python-package-guide#contributors-
 :color: primary
 :class: sd-rounded-pill float-left
+
 View guidebook contributors
 
 ```
@@ -217,7 +218,5 @@ Packaging <package-structure-code/intro>
 :caption: Testing
 
 Tests  <tests/index>
-Write tests <tests/write-tests>
-Types of tests <tests/test-types>
 
 ```
