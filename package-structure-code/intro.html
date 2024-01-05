@@ -12,8 +12,13 @@
 <meta property="og:url" content="package-structure-code/intro.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_intro_3894ec6c.png" />
+<meta property="og:image:alt" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to su..." />
 <meta name="description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
-
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Python package structure information &#8212; Python Packaging Guide</title>
   
   
@@ -24,27 +29,26 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="icon" sizes="16x16" type="image/ico" href="https://www.pyopensci.org/images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=443c1bc7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
@@ -68,7 +72,7 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -112,15 +116,13 @@
 </form></div>
   </div>
 
-  <header>
-
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
     <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
   </div>
 
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
@@ -158,6 +160,12 @@
       
         <div class="navbar-item">
 <nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -193,20 +201,6 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/write-tests.html">
-                        Write tests
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/test-types.html">
-                        Types of tests
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
@@ -319,18 +313,12 @@ document.write(`
   
 </div>
 
-    </div>
+    </nav>
   
-  </header>
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      
-      
-        
-      
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -341,6 +329,12 @@ document.write(`
         
           <div class="navbar-item">
 <nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -376,20 +370,6 @@ document.write(`
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/write-tests.html">
-                        Write tests
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/test-types.html">
-                        Types of tests
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
@@ -466,6 +446,31 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish with Conda / PyPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -513,7 +518,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section id="python-package-structure-information">
 <h1>Python package structure information<a class="headerlink" href="#python-package-structure-information" title="Link to this heading">#</a></h1>
@@ -526,69 +531,77 @@ best practices. Here, we review tool features and suggest tools that might be
 best fitted for your workflow.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ 1. Package file structure ✨</p>
-</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 1. Package file structure ✨</div>
 <p class="sd-card-text">src layout, flat layout and where should tests folders live? No matter what your level of packaging knowledge is, this page will help you decide upon a package structure that follows modern python best practices.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="python-package-structure.html"><span class="doc"></span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ 2. Learn about building your package ✨</p>
-</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Publishing a Python package is a great way to share your code with scientists to support open science workflow. In order to publish a package, you will need to first build it. The act of “building” refers to the process of placing your package code and
-metadata into a format that can be published on PyPI. Once published on PyPI, your users can easily install it locally using pip. Learn more about building a Python package here.</p>
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 2. Learn about building your package ✨</div>
+<p class="sd-card-text">To publish your Python package on PyPI, you will need to first build it. The act
+of “building” refers to the process of placing your package code and
+metadata into a format that can be published on PyPI. Learn more about building
+your Python package.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="python-package-structure.html"><span class="doc"></span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ 3. What Python package tool should you use? ✨</p>
-</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 4. Add metadata ✨</div>
+<p class="sd-card-text">Learn how to add project metadata to your Python package to support both
+filtering on PyPI and also the metadata that a package installer needs to
+build and install your package.</p>
+</div>
+<a class="sd-stretched-link reference internal" href="pyproject-toml-python-package-metadata.html"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 3. What Python package tool should you use? ✨</div>
 <p class="sd-card-text">Learn more about the suite of packaging tools out there.
 And learn which tool might be best for you.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="python-package-build-tools.html"><span class="doc"></span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ 4. Publish your package to PyPI and Conda ✨</p>
-</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">If you have a pure python package, it’s a straight forward
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 4. Publish to PyPI and Conda ✨</div>
+<p class="sd-card-text">If you have a pure Python package, it’s a straight forward
 process to publish to both PyPI and then a Conda channel such as
 conda-forge. Learn more here.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="python-package-build-tools.html"><span class="doc"></span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ 5. Setup package versioning ✨</p>
-</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 5. Setup package versioning ✨</div>
 <p class="sd-card-text">Semver (numeric versioning) and Calver (versioning using the date) are 2
 common ways to version a package. Which one should you pick? Learn more here.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="python-package-versions.html"><span class="doc"></span></a></div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">✨ 6. Code style &amp; linters ✨</p>
-</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 6. Code style &amp; linters ✨</div>
 <p class="sd-card-text">Black, blue, flake8, Ruff - which tools can help you ensure your
-package follows best practices for code format? Learn more about the options and why this is important here.</p>
+package follows best practices for code format? Learn more about the options
+and why this is important here.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="code-style-linting-format.html"><span class="doc"></span></a></div>
 </div>
@@ -630,7 +643,6 @@ Scientific Python packages such as Numpy, SciPy and others.</p></li>
 </section>
 <section id="guidelines-for-pyopensci-s-packaging-recommendations">
 <h2>Guidelines for pyOpenSci’s packaging recommendations<a class="headerlink" href="#guidelines-for-pyopensci-s-packaging-recommendations" title="Link to this heading">#</a></h2>
-<!-- Might belong on the LANDING page for this entire guide?-->
 <p>The flexibility of the Python programming language lends itself to a diverse
 range of tool options for creating a Python package. Python is so flexible that
 it is one of the few languages that can be used to wrap around other languages.
@@ -703,14 +715,12 @@ if you are looking for pyOpenSci’s Python package review requirements!</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
   <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
+
+  <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+  <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn-here">What you will learn here</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-pyopensci-s-packaging-recommendations">Guidelines for pyOpenSci’s packaging recommendations</a><ul class="nav section-nav flex-column">
@@ -757,8 +767,8 @@ if you are looking for pyOpenSci’s Python package review requirements!</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -778,15 +788,6 @@ if you are looking for pyOpenSci’s Python package review requirements!</p>
     </div>
   
   
-  
-    <div class="footer-items__end">
-      
-        <div class="footer-item">
-<p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.1.
-</p></div>
-      
-    </div>
   
 </div>
 

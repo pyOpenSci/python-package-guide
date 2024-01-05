@@ -9,71 +9,86 @@ there are some great modern packaging tools that ensure that you're following
 best practices. Here, we review tool features and suggest tools that might be
 best fitted for your workflow.
 
-::::{grid} 1 1 2 2
+:::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 3
 
-:::{grid-item-card}
+::::{grid-item}
+:::{card} ✨ 1. Package file structure ✨
 :link: python-package-structure
 :link-type: doc
 
-✨ 1. Package file structure ✨
-^^^
 src layout, flat layout and where should tests folders live? No matter what your level of packaging knowledge is, this page will help you decide upon a package structure that follows modern python best practices.
 :::
+::::
 
-:::{grid-item-card}
+::::{grid-item}
+:::{card} ✨ 2. Learn about building your package ✨
 :link: python-package-structure
 :link-type: doc
 
-✨ 2. Learn about building your package ✨
-^^^
-Publishing a Python package is a great way to share your code with scientists to support open science workflow. In order to publish a package, you will need to first build it. The act of "building" refers to the process of placing your package code and
-metadata into a format that can be published on PyPI. Once published on PyPI, your users can easily install it locally using pip. Learn more about building a Python package here.
+To publish your Python package on PyPI, you will need to first build it. The act
+of "building" refers to the process of placing your package code and
+metadata into a format that can be published on PyPI. Learn more about building
+your Python package.
 :::
+::::
 
-:::{grid-item-card}
-:link: python-package-build-tools
+
+::::{grid-item}
+:::{card} ✨ 4. Add metadata ✨
+:link: pyproject-toml-python-package-metadata
 :link-type: doc
 
-✨ 3. What Python package tool should you use? ✨
-^^^
+Learn how to add project metadata to your Python package to support both
+filtering on PyPI and also the metadata that a package installer needs to
+build and install your package.
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ 3. What Python package tool should you use? ✨
+:link: python-package-build-tools
+:link-type: doc
 
 Learn more about the suite of packaging tools out there.
 And learn which tool might be best for you.
 :::
+::::
 
-:::{grid-item-card}
+::::{grid-item}
+:::{card} ✨ 4. Publish to PyPI and Conda ✨
 :link: python-package-build-tools
 :link-type: doc
 
-✨ 4. Publish your package to PyPI and Conda ✨
-^^^
-If you have a pure python package, it's a straight forward
+If you have a pure Python package, it's a straight forward
 process to publish to both PyPI and then a Conda channel such as
 conda-forge. Learn more here.
 :::
+::::
 
-:::{grid-item-card}
+::::{grid-item}
+:::{card} ✨ 5. Setup package versioning ✨
 :link: python-package-versions
 :link-type: doc
 
-✨ 5. Setup package versioning ✨
-^^^
 Semver (numeric versioning) and Calver (versioning using the date) are 2
 common ways to version a package. Which one should you pick? Learn more here.
 :::
+::::
 
-:::{grid-item-card}
+::::{grid-item}
+:::{card} ✨ 6. Code style & linters ✨
 :link: code-style-linting-format
 :link-type: doc
 
-✨ 6. Code style & linters ✨
-^^^
 Black, blue, flake8, Ruff - which tools can help you ensure your
-package follows best practices for code format? Learn more about the options and why this is important here.
+package follows best practices for code format? Learn more about the options
+and why this is important here.
 :::
 ::::
+
+:::::
 
 :::{figure-md} packaging-tools-decision-tree
 
@@ -83,13 +98,13 @@ Diagram showing the various front-end build tools that you can select from.
 See the packaging tools page to learn more about each tool.
 :::
 
-```{note}
+:::{note}
 If you are considering submitting a package for peer review, have a look
 at the bare-minimum [editor checks](https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template)
 that pyOpenSci performs before a review begins. These checks are useful
 to explore for both authors planning to submit a package to us for review
 and for anyone who is just getting started with creating a Python package.
-```
+:::
 
 ## What you will learn here
 
@@ -110,8 +125,6 @@ In this section of our Python packaging guide, we:
   Scientific Python packages such as Numpy, SciPy and others.
 
 ## Guidelines for pyOpenSci's packaging recommendations
-
-<!-- Might belong on the LANDING page for this entire guide?-->
 
 The flexibility of the Python programming language lends itself to a diverse
 range of tool options for creating a Python package. Python is so flexible that
@@ -135,7 +148,7 @@ Python package. In this guide, we suggest packaging approaches and tools based o
 Here, we also try to align our suggestions with the most current, accepted
 [Python community](https://packaging.python.org/en/latest/) and [scientific community](https://scientific-python.org/specs/).
 
-```{admonition} Suggestions in this guide are not pyOpenSci review requirements
+:::{admonition} Suggestions in this guide are not pyOpenSci review requirements
 :class: important
 
 The suggestions for package layout in this section are made with the
@@ -145,9 +158,9 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.
 Please check out our [package scope page](https://www.pyopensci.org/software-peer-review/about/package-scope.html)
 and [review requirements in our author guide](https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#)
 if you are looking for pyOpenSci's Python package review requirements!
-```
+:::
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Package structure & code style
 
@@ -159,9 +172,9 @@ Build Your Package <python-package-distribution-files-sdist-wheel>
 Declare dependencies <declare-dependencies>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>
-```
+:::
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Publishing a package
 
@@ -169,4 +182,4 @@ Publish with Conda / PyPI <publish-python-package-pypi-conda>
 Package versions <python-package-versions>
 Code style <code-style-linting-format>
 
-```
+:::

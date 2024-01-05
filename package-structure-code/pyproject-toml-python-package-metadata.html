@@ -11,9 +11,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="package-structure-code/pyproject-toml-python-package-metadata.html" />
 <meta property="og:site_name" content="python-package-guide" />
-<meta property="og:description" content="Need help creating your pyproject.toml file? This tutorial will walk you through the process. Click here if need help migrating from setup.py/setup.cfg to pyproject.toml About the pyproject.toml fi..." />
-<meta name="description" content="Need help creating your pyproject.toml file? This tutorial will walk you through the process. Click here if need help migrating from setup.py/setup.cfg to pyproject.toml About the pyproject.toml fi..." />
-
+<meta property="og:description" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. If your project is pure Python and you’re using a setup.py or setup.cfg file to describe its metadat..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_a32b70db.png" />
+<meta property="og:image:alt" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. If your project is pure Python and you’re using a setup.py o..." />
+<meta name="description" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. If your project is pure Python and you’re using a setup.py or setup.cfg file to describe its metadat..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Use a pyproject.toml file for your package configuration &amp; metadata &#8212; Python Packaging Guide</title>
   
   
@@ -24,27 +29,26 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="icon" sizes="16x16" type="image/ico" href="https://www.pyopensci.org/images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=443c1bc7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
@@ -68,7 +72,7 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -112,15 +116,13 @@
 </form></div>
   </div>
 
-  <header>
-
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
     <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
   </div>
 
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
@@ -158,6 +160,12 @@
       
         <div class="navbar-item">
 <nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -193,20 +201,6 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/write-tests.html">
-                        Write tests
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/test-types.html">
-                        Types of tests
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
@@ -319,18 +313,12 @@ document.write(`
   
 </div>
 
-    </div>
+    </nav>
   
-  </header>
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      
-      
-        
-      
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -341,6 +329,12 @@ document.write(`
         
           <div class="navbar-item">
 <nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -376,20 +370,6 @@ document.write(`
                 </button>
                 <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/write-tests.html">
-                        Write tests
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link dropdown-item nav-internal" href="../tests/test-types.html">
-                        Types of tests
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
@@ -466,6 +446,31 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish with Conda / PyPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -516,7 +521,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section id="use-a-pyproject-toml-file-for-your-package-configuration-metadata">
 <h1>Use a pyproject.toml file for your package configuration &amp; metadata<a class="headerlink" href="#use-a-pyproject-toml-file-for-your-package-configuration-metadata" title="Link to this heading">#</a></h1>
@@ -538,21 +543,9 @@ what's missing
 <li><p>There is no specific order for tables in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. However fields need to be placed within the correct table sections. For example <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> always need to be associated with the <strong>[build-system]</strong> table.</p></li>
 <li><p><strong>python-requires</strong>: is important to have in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file as it helps pip install your package.</p></li>
 </ol>
-<!-- Commenting this out given the lessons aren't online yet
-we can add this back once tutorials are published
 </div>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-fs-3 docutils">
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success reference external" href="../tutorials/3-pyproject-toml.html"><span>Need help creating your pyproject.toml file?
-
-This tutorial will walk you through the process.</span></a></p>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-fs-3 docutils">
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success reference external" href="../tutorials/extras/6-setuppy-to-pyproject-toml.html"><span>Click here if need help migrating from setup.py/setup.cfg to pyproject.toml</span></a></p>
-</div>
-<div class="--&gt; docutils">
-<h2 class="rubric" id="about-the-pyproject-toml-file">About the pyproject.toml file</h2>
+<section id="about-the-pyproject-toml-file">
+<h2>About the pyproject.toml file<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
 <p>Every modern Python package should include a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. If your project is pure Python and you’re using a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to describe its metadata, you should consider migrating your metadata and build information to a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
 <p>If your project isn’t pure-python, you might still require a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to build the non Python extensions. However, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file should still be used to store your project’s metadata.</p>
 <div class="note admonition">
@@ -571,7 +564,8 @@ This tutorial will walk you through the process.</span></a></p>
 metadata is called a <strong>pyproject.toml</strong></a>. Adding metadata, build requirements
 and package dependencies to a <strong>pyproject.toml</strong> file replaces storing that
 information in a setup.py or setup.cfg file.</p>
-<h3 class="rubric" id="about-the-toml-format">About the .toml format</h3>
+<section id="about-the-toml-format">
+<h3>About the .toml format<a class="headerlink" href="#about-the-toml-format" title="Link to this heading">#</a></h3>
 <p>The <strong>pyproject.toml</strong> file is written in <a class="reference external" href="https://toml.io/en/">TOML (Tom’s Obvious, Minimal Language) format</a>. TOML is an easy-to-read structure that is founded on key/value pairs. Each section in the <strong>pyproject.toml</strong> file contains a <code class="docutils literal notranslate"><span class="pre">[table</span> <span class="pre">identifier]</span></code>.
 Below that table identifier are key/value pairs that
 support configuration for that particular table.</p>
@@ -584,18 +578,23 @@ support configuration for that particular table.</p>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">#  requires =  is a key and &quot;hatchling&quot; is a value contained within an array specified by square brackets [].</span>
 </pre></div>
 </div>
-<h3 class="rubric" id="how-the-pyproject-toml-is-used-when-you-build-a-package">How the pyproject.toml is used when you build a package</h3>
+</section>
+<section id="how-the-pyproject-toml-is-used-when-you-build-a-package">
+<h3>How the pyproject.toml is used when you build a package<a class="headerlink" href="#how-the-pyproject-toml-is-used-when-you-build-a-package" title="Link to this heading">#</a></h3>
 <!-- TODO: this text below is now on the build sdist / wheel page. that entire section likely belongs here.  -->
 <p>When you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a>, one of our <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a>. Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim’s maintainers, <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a>. This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.</p>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" /></a>
 <figcaption>
 <p><span class="caption-text">When you add the classifier section to your pyproject.toml
 and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
-represent on your PyPI landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+represent on your PyPI landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<h2 class="rubric" id="benefits-of-using-a-pyproject-toml-file">Benefits of using a pyproject.toml file</h2>
+</section>
+</section>
+<section id="benefits-of-using-a-pyproject-toml-file">
+<h2>Benefits of using a pyproject.toml file<a class="headerlink" href="#benefits-of-using-a-pyproject-toml-file" title="Link to this heading">#</a></h2>
 <p>Including your package’s metadata in a separate human-readable <strong>pyproject.toml</strong>
 format also allows someone to view the project’s metadata in a GitHub repository.</p>
 <!-- setup.cfg for project metadata is being deprecated - set setuptools guide and
@@ -609,16 +608,21 @@ In some cases where a Python package build is complex, a <strong>setup.py</stron
 be required. While this guide will not cover complex builds, we will provide
 resources working with complex builds in the future.</p>
 </div>
-<h2 class="rubric" id="optional-vs-required-pyproject-toml-file-fields">Optional vs. Required pyproject.toml file fields</h2>
+</section>
+<section id="optional-vs-required-pyproject-toml-file-fields">
+<h2>Optional vs. Required pyproject.toml file fields<a class="headerlink" href="#optional-vs-required-pyproject-toml-file-fields" title="Link to this heading">#</a></h2>
 <p>When you create your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, there are numerous metadata fields that you can use. Below we suggest specific fields to get you started that support publication on PyPI and users finding your package.</p>
 <p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use">An overview of all of the project metadata elements can be found here.</a></p>
-<h3 class="rubric" id="required-fields-for-the-project-table">Required fields for the [project] table</h3>
+<section id="required-fields-for-the-project-table">
+<h3>Required fields for the [project] table<a class="headerlink" href="#required-fields-for-the-project-table" title="Link to this heading">#</a></h3>
 <p>As mentioned above, your pyproject.toml file needs to have a <strong>name</strong> and <strong>version</strong> field in order to properly build your package:</p>
 <ul class="simple">
 <li><p>Name: This is the name of your project provided as a string</p></li>
 <li><p>Version: This is the version of your project. If you are using a scm tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).</p></li>
 </ul>
-<h3 class="rubric" id="optional-fields-to-include-in-the-project-table">Optional fields to include in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</h3>
+</section>
+<section id="optional-fields-to-include-in-the-project-table">
+<h3>Optional fields to include in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table<a class="headerlink" href="#optional-fields-to-include-in-the-project-table" title="Link to this heading">#</a></h3>
 <p>We strongly suggest that you also add the metadata keys below as they will
 help users finding your package on PyPI. These fields will make it
 clear how your package is structured, what platforms you support and
@@ -650,7 +654,9 @@ what dependencies your package requires.</p>
 </ul>
 </li>
 </ul>
-<h3 class="rubric" id="advanced-options-in-the-pyproject-toml-file">Advanced options in the pyproject.toml file</h3>
+</section>
+<section id="advanced-options-in-the-pyproject-toml-file">
+<h3>Advanced options in the pyproject.toml file<a class="headerlink" href="#advanced-options-in-the-pyproject-toml-file" title="Link to this heading">#</a></h3>
 <p>The examples at the bottom of this page contain …</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.scripts]</span></code> (Entry points):</strong> Entry points are optional. If you have a command line tool that runs a specific script hosted in your package, you may include an entry point to call that script directly at the command line (rather than at the Python shell).</p>
@@ -660,7 +666,10 @@ what dependencies your package requires.</p>
 </li>
 <li><p><strong>Dynamic Fields:</strong> if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>, then you might use the dynamic field. such as version (using scm) <strong>dynamic = [“version”]</strong></p></li>
 </ul>
-<h2 class="rubric" id="add-dependencies-to-your-pyproject-toml-file">Add dependencies to your pyproject.toml file</h2>
+</section>
+</section>
+<section id="add-dependencies-to-your-pyproject-toml-file">
+<h2>Add dependencies to your pyproject.toml file<a class="headerlink" href="#add-dependencies-to-your-pyproject-toml-file" title="Link to this heading">#</a></h2>
 <p>The pyproject.toml file can also be used as a replacement for the requirements.txt file which has been traditionally used to store development dependencies such as pytest, code formatters such as Black and documentation tools such as sphinx.</p>
 <p>To add dependencies to your build, add a <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table to your pyproject.toml file.</p>
 <p>Then specify dependency groups as follows:</p>
@@ -690,7 +699,9 @@ what dependencies your package requires.</p>
 <p class="admonition-title">Recursive dependencies</p>
 <p>You can also setup sets of recursive dependencies. <a class="reference external" href="https://hynek.me/articles/python-recursive-optional-dependencies/">See this blog post for more.</a></p>
 </div>
-<h2 class="rubric" id="example-pyproject-toml-for-building-using-hatchling">Example pyproject.toml for building using hatchling</h2>
+</section>
+<section id="example-pyproject-toml-for-building-using-hatchling">
+<h2>Example pyproject.toml for building using hatchling<a class="headerlink" href="#example-pyproject-toml-for-building-using-hatchling" title="Link to this heading">#</a></h2>
 <p>Below is an example build configuration for a Python project. This example
 package setup uses <strong>hatchling</strong> to build the <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">package’s sdist and wheels</span></a>.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
@@ -720,7 +731,9 @@ package setup uses <strong>hatchling</strong> to build the <a class="reference i
 </pre></div>
 </div>
 <p>Notice that dependencies are specified in this file.</p>
-<h2 class="rubric" id="example-pyproject-toml-for-building-using-setuptools">Example pyproject.toml for building using setuptools</h2>
+</section>
+<section id="example-pyproject-toml-for-building-using-setuptools">
+<h2>Example pyproject.toml for building using setuptools<a class="headerlink" href="#example-pyproject-toml-for-building-using-setuptools" title="Link to this heading">#</a></h2>
 <p>The package metadata including authors, keywords, etc is also easy to read.
 Below you can see the same TOML file that uses a different build system (setuptools).
 Notice how simple it is to swap out the tools needed to build this package!</p>
@@ -765,9 +778,7 @@ of values. It has two keys that specify the build backend API and containing pac
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">Click here to read about our packaging build tools including PDM, setuptools, Poetry and Hatch.</span></a></p>
 </div>
-</div>
-</div>
-</div>
+</section>
 </section>
 
 
@@ -807,6 +818,30 @@ of values. It has two keys that specify the build backend API and containing pac
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-pyproject-toml-file">About the pyproject.toml file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-toml-format">About the .toml format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-pyproject-toml-is-used-when-you-build-a-package">How the pyproject.toml is used when you build a package</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-a-pyproject-toml-file">Benefits of using a pyproject.toml file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">Optional vs. Required pyproject.toml file fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table">Required fields for the [project] table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fields-to-include-in-the-project-table">Optional fields to include in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options-in-the-pyproject-toml-file">Advanced options in the pyproject.toml file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-dependencies-to-your-pyproject-toml-file">Add dependencies to your pyproject.toml file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pyproject-toml-for-building-using-hatchling">Example pyproject.toml for building using hatchling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pyproject-toml-for-building-using-setuptools">Example pyproject.toml for building using setuptools</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
@@ -846,8 +881,8 @@ of values. It has two keys that specify the build backend API and containing pac
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -867,15 +902,6 @@ of values. It has two keys that specify the build backend API and containing pac
     </div>
   
   
-  
-    <div class="footer-items__end">
-      
-        <div class="footer-item">
-<p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.1.
-</p></div>
-      
-    </div>
   
 </div>
 

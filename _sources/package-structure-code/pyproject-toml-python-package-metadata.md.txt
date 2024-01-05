@@ -19,9 +19,12 @@ what's missing
 5. There is no specific order for tables in the `pyproject.toml` file. However fields need to be placed within the correct table sections. For example `requires =` always need to be associated with the **[build-system]** table.
 6. **python-requires**: is important to have in your `pyproject.toml` file as it helps pip install your package.
 
-<!-- Commenting this out given the lessons aren't online yet
-we can add this back once tutorials are published
 :::
+
+
+:::::{todo}
+
+when these are published, remove this todo
 
 ::::{grid} 2
 
@@ -51,7 +54,8 @@ Click here if need help migrating from setup.py/setup.cfg to pyproject.toml
 ```
 
 :::
-:::: -->
+::::
+:::::
 
 ## About the pyproject.toml file
 
