@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = "python-package-guide"
-copyright = "2023, pyOpenSci"
+copyright = "2024, pyOpenSci"
 author = "pyOpenSci Community"
 
 # The full version, including alpha/beta/rc tags
