@@ -46,8 +46,6 @@ myst_enable_extensions = [
 ]
 myst_heading_anchors = 3
 
-# For generating sitemap
-html_baseurl = "https://www.pyopensci.org/software-peer-review/"
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
@@ -119,8 +117,8 @@ exclude_patterns = [
     "README.md",
 ]
 
-# For sitemap
-html_baseurl = "https://www.pyopensci.org/package-review-guide/"
+# For sitemap generation
+html_baseurl = "https://www.pyopensci.org/python-package-guide/"
 
 # -- Options for HTML output -------------------------------------------------
 
