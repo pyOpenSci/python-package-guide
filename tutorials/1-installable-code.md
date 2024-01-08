@@ -45,7 +45,7 @@ To complete this lesson you will need a local Python
 environment and shell on your computer.
 
 You are welcome to use any Python environment manager that you choose.
-If you are using Windows or are not familiar with Shell, you may want to [consult the Carpentries shell lesson.](https://swcarpentry.github.io/shell-novice/). Windows users will likely need to configure a tool for any Shell and git related steps.
+If you are using Windows or are not familiar with Shell, you may want to check out the Carpentries shell lesson[^shell-lesson]. Windows users will likely need to configure a tool for any Shell and git related steps.
 
 * [If you need guidance creating a Python environment, review this lesson](extras/1-create-environment.md) which walks you through creating an environment using both `venv` and `conda`.
 * If you aren't sure which environment manager to use and
@@ -213,9 +213,7 @@ When you see the word module, we are referring to a `.py` file containing Python
 code.
 
 The `__init__.py`  allows Python to recognize that a directory contains at least one (1) module that may be imported and used in your code.
-A package can have multiple modules.
-
-[Learn more about Python packages and modules in the Python documentation.](https://docs.python.org/3/tutorial/modules.html#packages )
+A package can have multiple modules[^python-modules].
 
 :::
 
@@ -236,7 +234,9 @@ If you are following along and making a Python package from scratch then you can
 1. It has a [numpy-style docstring](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#three-python-docstring-formats-and-why-we-like-numpy-style)
 2. It uses [typing](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#adding-type-hints-to-your-docstrings)
 
-Python can support many different docstrings formats depending on the documentation build system you wish to use. The most popular supported formats for documenting Python objects are [NumPy Style Docstring](https://numpydoc.readthedocs.io/en/latest/format.html), [Google Style Docstring](https://google.github.io/styleguide/pyguide.html), [ReStructuredText Style Docstring](https://peps.python.org/pep-0287/), and the [Epytext Style Docstrings](https://epydoc.sourceforge.net/epytext.html). **pyOpensci recommends using the NumPy Docstring convention.**
+Python can support many different docstrings formats depending on the documentation build system you wish to use. The most popular supported formats for documenting Python objects are NumPy Style Docstring[^numpydoc], Google Style Docstring[^googledoc], and the Epytext Style Docstrings[^epytextdoc].
+
+**pyOpensci recommends using the NumPy Docstring convention.**
 
 If you aren’t familiar with docstrings or typing yet, that is ok. We will get to it later in our tutorial series. Or, you can review the pyOpenSci [packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview.
 
@@ -475,3 +475,13 @@ In the upcoming lessons you will:
 * [Add more metadata to your `pyproject.toml`](5-pyproject-toml.md) file to support PyPI publication.
 * [Learn how to build your package distribution](6-publish-pypi.md) files (**sdist** and **wheel**) and publish to **test PyPI**.
 * Finally you will learn how to publish to **conda-forge** from **PyPI**.
+
+
+## Footnotes
+
+[^shell-lesson]: [Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)
+
+[^python-modules]: [Python module docs](https://docs.python.org/3/tutorial/modules.html#packages)
+[^googledoc]:[Google docstring style](https://google.github.io/styleguide/pyguide.html)
+[^numpydoc]: [Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)
+[^epytextdoc]: [epydoc](https://epydoc.sourceforge.net/epytext.html)
