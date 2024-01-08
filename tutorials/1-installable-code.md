@@ -94,7 +94,7 @@ Notice a few things about the above layout:
 
 1. Your package code lives within a `src/packagename` directory. We suggest that you use `src` (short for **source code**) directory as it [ensures that you are running tests on the installed version of your code](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#the-src-layout-and-testing).
 1. Within the `src` directory you have a package directory called `pyospackage`. Use the name of your package for that directory name. This will be the name for importing your package in Python code once installed.
-1. In your package directory, you have an `__init__.py` file and all of your Python modules. You will learn more about the __init__.py file below.
+1. In your package directory, you have an `__init__.py` file and all of your Python modules. You will learn more about the `__init__.py` file below.
 1. The `pyproject.toml` file lives at the root directory of your package.
 1. The name of the root directory for the package is **pyospackage** which is the name of the package. This is not a requirement but you will often see that the GitHub / GitLab repo and the root directory name are the same as the package name.
 
@@ -102,8 +102,7 @@ Notice a few things about the above layout:
 
 The `__init__.py` file tells Python that a directory
 should be treated as a Python package. As such, a directory with an `__init__.py` file can be imported
-directly into Python. The __init__.py file does not need
-to contain any code in order for Python to recognize it; it can be empty.
+directly into Python. The `__init__.py` file does not need to contain any code in order for Python to recognize it; it can be empty.
 
 For example, following the file structure example above which has an `__init__.py` file within it, you can run:
 
@@ -146,18 +145,16 @@ Neither 'setup.py' nor 'pyproject.toml' found.
 
 ## Time to create your Python package!
 
-Now that you understand the basics of the Python package directory
-structure, and associated key files (`__init__.py` and `pyproject.toml`),
-it's time to create your Python package! Below you will create a directory
-structure similar to the structure described above.
+Now that you understand the basics of the Python package directory structure, and associated key files (`__init__.py` and `pyproject.toml`), it's time to create your Python package!
+Below you will create a directory structure similar to the structure described above.
 
 If you don’t wish to create each of the files and directories below, you
 can always [fork and clone and customize the pyOpenSci example package.](https://github.com/pyOpenSci/pyosPackage)
 
 ## Step 1: Set Up the Package Directory Structure
 
-Below you create the basic directory structure required
-for your Python package. Note that there are instructions for creating the files and directories using shell. However you can also create files and directories in your preferred file directory tool (e.g. Finder on MAC or File Explorer on Windows or even a tool such as VS Code or Spyder) if you wish.
+Below you create the basic directory structure required for your Python package.
+Note that there are instructions for creating the files and directories using shell. However you can also create files and directories in your preferred file directory tool (e.g. Finder on macOS or File Explorer on Windows or even a tool such as VS Code or Spyder) if you wish.
 
 ### Create your package's project directory structure
 * Create a new project directory for your package. Choose a name for your package, preferably in lowercase and without spaces. For this tutorial we'll use `pyospackage`.
@@ -203,11 +200,8 @@ pyospackage/  # This is your project directory
 
 ## Step 2: Add code to your package
 
-Within the `pyospackage` subdirectory, add 1 or more Python modules
-(.py files) containing the code that you want your package to access and run.
-If you don't have code already and are just learning how to
-create a Python
-package, then create an empty `add_numbers.py` file.
+Within the `pyospackage` subdirectory, add one (1) or more Python modules (.py files) containing the code that you want your package to access and run. 
+If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file.
 
 :::{admonition} Python modules and the `__init__.py` file
 :class: tip
@@ -215,9 +209,8 @@ package, then create an empty `add_numbers.py` file.
 When you see the word module, we are referring to a `.py` file containing Python
 code.
 
-The `__init__.py`  allows Python to recognize that a directory contains at least one
-module that may be imported and used in your code. A package can have multiple
-modules.
+The `__init__.py`  allows Python to recognize that a directory contains at least one (1) module that may be imported and used in your code.
+A package can have multiple modules.
 
 [Learn more about Python packages and modules in the Python documentation.](https://docs.python.org/3/tutorial/modules.html#packages )
 
@@ -238,12 +231,12 @@ pyospackage/
 
 If you are following along and making a Python package from scratch then you can add the code below to your `add_numbers.py` module. The function below adds two integers together and returns the result. Notice that the code below has a few features that we will review in future tutorials:
 
-1. It has a [numpy-style docstring ](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#three-python-docstring-formats-and-why-we-like-numpy-style)
+1. It has a [numpy-style docstring](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#three-python-docstring-formats-and-why-we-like-numpy-style)
 2. It uses [typing](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#adding-type-hints-to-your-docstrings)
 
-If you aren’t familiar with docstrings or typing yet, that is ok. We will get
-to it later in our tutorial series. Or, you can review the pyOpenSci [packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html)
-for an overview.
+Python can support many different docstrings formats depending on the documentation build system you wish to use. The most popular supported formats for documenting Python objects are [NumPy Style Docstring](https://numpydoc.readthedocs.io/en/latest/format.html), [Google Style Docstring](https://google.github.io/styleguide/pyguide.html), [ReStructuredText Style Docstring](https://peps.python.org/pep-0287/), and the [Epytext Style Docstrings](https://epydoc.sourceforge.net/epytext.html). **pyOpensci recommends using the NumPy Docstring convention.**
+
+If you aren’t familiar with docstrings or typing yet, that is ok. We will get to it later in our tutorial series. Or, you can review the pyOpenSci [packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview.
 
 ```python
 def add_num(a: int, b: int) -> int:
@@ -284,9 +277,8 @@ are welcome to copy the file we have in our [example pyospackage GitHub reposito
 
 `[this-is-a-table]`.
 
-Tables can contain variables within them defined by an variable name and
-an `=` sign. For
-instance, a `build-system` table most often holds 2 variables:
+Tables can contain variables within them defined by an variable name and an `=` sign.
+For instance, a `build-system` table most often holds two (2) variables:
 
 1. `requires = `, which tells a build tool what tools it needs to install prior to building your package. In this case
    [hatchling](https://pypi.org/project/hatchling/)
