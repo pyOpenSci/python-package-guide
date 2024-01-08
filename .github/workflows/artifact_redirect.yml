@@ -1,11 +1,19 @@
-name: Book Preview
-
+name: CircleCI artifacts redirector
 on: [status]
+
+# Restrict the permissions granted to the use of secrets.GITHUB_TOKEN in this
+# github actions workflow:
+# https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+permissions:
+  statuses: write
 
 jobs:
   circleci_artifacts_redirector_job:
     runs-on: ubuntu-latest
-    if: "${{ github.event.context == 'ci/circleci: build_book' }}"
+    # For testing this action on a fork, remove the "github.repository =="" condition.
+    if: "github.repository == 'pyOpenSci/python-package-guide' && github.event.context == 'ci/circleci: build'"
+    permissions:
+      statuses: write
     name: Run CircleCI artifacts redirector
     steps:
       - name: GitHub Action step
@@ -13,6 +21,7 @@ jobs:
         uses: larsoner/circleci-artifacts-redirector-action@master
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          artifact-path: 0/html/index.html
-          circleci-jobs: build_book
-          job-title: Click to preview rendered book
+          api-token: ${{ secrets.CIRCLECI_TOKEN }}
+          artifact-path: 0/_site/index.html
+          circleci-jobs: build
+          job-title: Check the rendered website build here!
