@@ -433,10 +433,10 @@ You can now import your package and access the `add_num` function.
 
 ```bash
 ➜ python
-Python 3.11.4 | packaged by conda-forge | (main, Jun 10 2023, 18:08:41) [Clang 15.0.7 ] on darwin
+Python 3.11.4 | packaged by conda-forge
 Type "help", "copyright", "credits" or "license" for more information.
->>> import pyospackage
->>> pyospackage.add_num(1, 2)
+>>> from pyospackage.add_numbers import add_num
+>>> add_num(1, 2)
 3
 ```
 
@@ -450,11 +450,17 @@ always install packages directly from GitHub using the syntax:
 pip install git+https://github.com/user/repo.git@branch_or_tag
 ```
 
-To make your package github installable, you can simply:
+To make your package GitHub installable, you can:
 
-1. Create a new GitHub repo
+1. Create a new GitHub repository
 2. Push the contents of the project directory that you created above, to GitHub
-3. Finally install the package from GitHub using the command above.
+3. Finally install the package from GitHub using the command above. When you use the command above, don't forget to substitute the user, repo, and branch_or_tag with your specific values.
+
+For instance below you install the pyospackage from the main branch of the
+pyOpenSci repository.
+
+`pip install git+https://github.com/user/repo.git@branch_or_tag`
+
 :::
 
 ## Congratulations! You created your first Python package
