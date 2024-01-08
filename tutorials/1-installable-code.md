@@ -12,7 +12,7 @@ locally and remotely from a website such as from GitHub
 will have the bare minimum elements needed to be installable into a Python environment.
 
 :::{todo}
-1. Is it clear where to add commands? bash vs. Python console
+1. Is it clear where to add commands? Bash vs. Python console
 Bash vs. Zsh is different
 2. Does this lesson run as expected on windows and mac?
 3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. this may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
@@ -62,13 +62,8 @@ In the upcoming lessons you will learn how to:
 
 <img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." width="700px">
 
-Making your code installable is the first step towards
-creating a publishable Python package. Once your code is
-installable, it is a Python package and can be added to
-any Python environment on your computer and imported in
-the same way that you might import a package such as
-Pandas or GeoPandas. If your code is on GitHub or GitLab
-you can also install it directly from there.
+Making your code installable is the first step towards creating a publishable Python package. Once your code is installable, it is a Python package and can be added to any Python environment on your computer and imported in the same way that you might import a package such as Pandas or GeoPandas.
+If your code is on GitHub or GitLab you can also install it directly from there.
 :::
 
 
