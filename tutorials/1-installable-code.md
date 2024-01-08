@@ -5,11 +5,14 @@
 package](package-benefits).
 :::
 
-Your next step in our packaging tutorial series is
-creating a Python package that is installable both
-locally and remotely from a website such as from GitHub
-(or GitLab). The package that you create in this lesson
-will have the bare minimum elements needed to be installable into a Python environment.
+Your next step in our packaging tutorial series is to create a Python package
+that is installable both locally and remotely from a website such as
+GitHub (or GitLab). The package that you create in this lesson will have the
+bare minimum elements needed to be installable into a Python environment.
+
+Making your code installable is an important steps towards creating a full
+Python package that is directly installable from PyPI.
+
 
 :::{todo}
 1. Is it clear where to add commands? Bash vs. Python console
