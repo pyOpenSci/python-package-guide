@@ -83,12 +83,12 @@ The directory structure you’ll create in this lesson will look like this:
 
 ```bash
 pyospackage/  # Your project directory
-     └─ pyproject.toml
-     └─ src/  # The source (src) directory ensures your tests always run on the installed version of your code
-             └── pyospackage/  # Package directory where code lives
-              	      ├── __init__.py
-                      ├── add_numbers.py
-                      └── # Add any other .py modules that you want here
+ └─ pyproject.toml
+ └─ src/  # The source (src) directory ensures your tests always run on the installed version of your code
+    └── pyospackage/  # Package directory where code lives
+        ├── __init__.py
+        ├── add_numbers.py
+        └── # Add any other .py modules that you want here
 ```
 
 ### About the basic package directory structure
@@ -195,15 +195,15 @@ Your final project directory structure should look like this:
 
 ```bash
 pyospackage/  # This is your project directory
-     └─ pyproject.toml
-     └─ src/ # This is your package directory where your code lives
-             └── pyospackage/
-              	     ├── __init__.py
+ └─ pyproject.toml
+ └─ src/ # This is your package directory where your code lives
+    └── pyospackage/
+     	├── __init__.py
 ```
 
 ## Step 2: Add code to your package
 
-Within the `pyospackage` subdirectory, add one (1) or more Python modules (.py files) containing the code that you want your package to access and run. 
+Within the `pyospackage` subdirectory, add one (1) or more Python modules (.py files) containing the code that you want your package to access and run.
 If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file.
 
 :::{admonition} Python modules and the `__init__.py` file
@@ -222,12 +222,11 @@ A package can have multiple modules.
 Your project directory should now look like this:
 ```
 pyospackage/
-     └─ pyproject.toml
-     └─ src/
-             └── pyospackage/
-              	    ├── __init__.py
-                    ├── add_numbers.py
-
+└─ pyproject.toml
+└─ src/
+   └── pyospackage/
+       ├── __init__.py
+       ├── add_numbers.py
 ```
 
 ## Step 3. Add code to your `add_numbers.py` module
