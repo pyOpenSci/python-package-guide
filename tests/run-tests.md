@@ -13,12 +13,12 @@ Python versions.
 
 There are three types of tools that will make is easier to setup and run your tests in various environments:
 
-1. A **test framework**, is a package that provides a particular syntax and set of tools for _both writing and running your tests_. Some test frameworks also have plugins that add additional features such as evaluating how much of your code the tests cover. Below you will learn about the **pytest** framework which is one of the most commonly used Python testing frameworks in the scientific ecosystem. Testing frameworks are essential but they only serve to run your tests. They won't allow you to run tests across Python versions without additional automation tools (see automation tools below).
+1. A **test framework**, is a package that provides a particular syntax and set of tools for _both writing and running your tests_. Some test frameworks also have plugins that add additional features such as evaluating how much of your code the tests cover. Below you will learn about the **pytest** framework which is one of the most commonly used Python testing frameworks in the scientific ecosystem. Testing frameworks are essential but they only serve to run your tests. They don't provide a way to easily run tests across Python versions without additional automation tools (see automation tools below).
 2. **Automation tools** allow you to automate running workflows such as tests in specific ways using user-defined commands. For instance it's useful to be able to run tests across different Python versions with a single command. Tools such as [**nox**](https://nox.thea.codes/en/stable/index.html) and [**tox**](https://tox.wiki/en/latest/index.html) also allow you to run tests across Python versions. However, it will be difficult to test your build on different operating systems using only nox and tox - this is where continuous integration (CI) comes into play.
 3. **Continuous Integration (CI):** is the last tool that you'll need to run your tests. CI will not only allow you to replicate any automated builds you create using nox or tox to run your package in different Python environments. It will also allow you to run your tests on different operating systems (Windows, Mac and Linux). [We discuss using CI to run tests here](tests-ci).
 
 :::{figure-md}
-![Figure showing three boxes - the first hasTest Frameworks in it, the second Test Runner and the third Continuous Integration....](../images/test-tools.png)
+![Figure showing three boxes - the first has Test Frameworks in it, the second Test Runner and the third Continuous Integration....](../images/test-tools.png)
 
 There are three types of tools that will help you develop and run your tests. Test frameworks like pytest
 provide syntax and a **framework** for you to write and
@@ -48,9 +48,9 @@ calling:
 
 `pytest`
 
-Or if you want to run a specific test file - let's call this file "filename.py" - you can run:
+Or if you want to run a specific test file - let's call this file "test_module.py" - you can run:
 
-`pytest filename.py`
+`pytest test_module.py`
 
 Learn more from the [get started docs here](https://docs.pytest.org/en/7.1.x/getting-started.html).
 
@@ -88,10 +88,10 @@ with it. Make also won't manage environments for you like **nox** will do.
 
 ## Run tests across Python versions with nox
 
-**Nox** is a great automation tool to learn give it is:
+**Nox** is a great automation tool to learn because it:
 
-- Python-based making it accessible if you already know Python and
-- It will create isolated environments to run workflows.
+- Is Python-based making it accessible if you already know Python and
+- Will create isolated environments to run workflows.
 
 `nox` simplifies creating and managing testing environments. With `nox`, you can
 set up virtual environments, and run tests across Python versions using the environment manager of your choice with a
@@ -105,10 +105,10 @@ environment managers such as `conda` and `pip`.
 
 By default, `nox` uses the Python built in `venv` environment manager. A virtual environment (`venv`) is a self-contained Python environment that allows you to isolate and manage dependencies for different Python projects. It helps ensure that project-specific libraries and packages do not interfere with each other, promoting a clean and organized development environment.
 
-An example of using nox to run tests in `venv` environments for Python versions 3.9, 3.10 and 3.11 is below.
+An example of using nox to run tests in `venv` environments for Python versions 3.9, 3.10, 3.11 and 3.12 is below.
 
 ```{warning}
-Note that for the code below to work, you need to have all 3 versions of Python installed on your computer for `venv` to find.
+Note that for the code below to work, you need to have all 4 versions of Python installed on your computer for `nox` to find.
 ```
 
 ### Nox with venv environments
@@ -120,7 +120,7 @@ TODO: add some tests above and show what the output would look like in the examp
 Below is an example of setting up nox to run tests using `venv` which is the built in environment manager that comes with base Python.
 
 Note that the example below assumes that you have [setup your `pyproject.toml` to declare test dependencies in a way that pip
-can understand](../package-structure-code/declare-dependencies.md). And example of that setup is below.
+can understand](../package-structure-code/declare-dependencies.md). An example of that setup is below.
 
 ```toml
 [project]
@@ -135,7 +135,7 @@ tests = ["pytest", "pytest-cov"]
 
 If you have the above setup, then you can use `session.install(".[tests]")` to install your test dependencies.
 Notice that below one single nox session allows you to run
-your tests on 3 different Python environments (Python 3.9, 3.10, 3.11, and 3.12).
+your tests on 4 different Python environments (Python 3.9, 3.10, 3.11, and 3.12).
 
 ```python
 import nox
@@ -158,7 +158,7 @@ with a `@nox.session` decorator. Notice that within the decorator you declare th
 wish to run.
 
 To run the above you'd use the command where `-s` stands for
-session. Your function above is called test there for
+session. Your function above is called test, therefore
 the session name is test.
 
 ```
