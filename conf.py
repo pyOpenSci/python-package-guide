@@ -95,9 +95,6 @@ html_theme_options = {
     "footer_end": [],
 }
 
-    "footer_items": ["copyright"],
-}
-
 html_context = {
     "github_user": "pyopensci",
     "github_repo": "python-package-guide",
