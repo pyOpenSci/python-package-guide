@@ -92,13 +92,13 @@ pyospackage/  # Your project directory
 
 Notice a few things about the above layout:
 
-1. Your package code lives within a `src/packagename` directory. We suggest that you use `src` (short for **source code**) directory as it [ensures that you are running tests on the installed version of your code](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#the-src-layout-and-testing). However, you are welcome to instead use a [flat layout](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#about-the-flat-python-package-layout) which does not have a `src` directory at the root.
-1. Within the `src` directory you have a package directory called `pyospackage`. Use the name of your package for that directory name.
+1. Your package code lives within a `src/packagename` directory. We suggest that you use `src` (short for **source code**) directory as it [ensures that you are running tests on the installed version of your code](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#the-src-layout-and-testing).
+1. Within the `src` directory you have a package directory called `pyospackage`. Use the name of your package for that directory name. This will be the name for importing your package in Python code once installed.
 1. In your package directory, you have an `__init__.py` file and all of your Python modules. You will learn more about the __init__.py file below.
 1. The `pyproject.toml` file lives at the root directory of your package.
 1. The name of the root directory for the package is **pyospackage** which is the name of the package. This is not a requirement but you will often see that the GitHub / GitLab repo and the root directory name are the same as the package name.
 
-### What is an __init__.py file?
+### What is an `__init__.py` file?
 
 The `__init__.py` file tells Python that a directory
 should be treated as a Python package. As such, a directory with an `__init__.py` file can be imported
@@ -117,7 +117,7 @@ The **pyproject.toml** file is:
 
 - Where you define your project’s metadata (including its name, authors, license, etc)
 - Where you define dependencies (the packages that it depends on)
-- Used to specify and configure what build back end you want to use to [build your package](../package-structure-code/python-package-distribution-files-sdist-wheel).
+- Used to specify and configure what build backend you want to use to [build your package](../package-structure-code/python-package-distribution-files-sdist-wheel).
 
 After the `__init__.py` and `pyproject.toml` files have been added,
 your package can be built and distributed as an installable Python
@@ -318,7 +318,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"  # rename this if you plan to publish to test PyPI
 # Here you add the package version manually.
 # You will learn how to setup dynamic versioning in a followup tutorial.
-version = "1.1"
+version = "1.1.0"
 
 ```
 
