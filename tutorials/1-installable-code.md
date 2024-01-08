@@ -342,8 +342,13 @@ You are now ready to install (and build) your Python package!
 Let’s try it out.
 
 - First open your preferred shell (Windows users may be using something like gitbash) and `cd` into your project directory
-- Activate the Python environment that you wish to use. If you need help with working with virtual environments [check out this lesson](extras/1-create-environment.md).
+- Activate the Python environment that you wish to use.
 - Finally run `python -m pip install -e .`
+
+:::{todo}
+Add this back in when the lesson is published
+- Activate the Python environment that you wish to use. If you need help with working with virtual environments [check out this lesson](extras/1-create-environment.md).
+:::
 
 ```bash
 # Activate your environment using conda or venv
@@ -471,11 +476,18 @@ to publish your package, you have completed the first major step.
 
 In the upcoming lessons you will:
 
+* Add a README file and LICENSE to your package
+* Add more metadata to your `pyproject.toml` file to support PyPI publication.
+* Learn how to build your package distribution files (**sdist** and **wheel**) and publish to **test PyPI**.
+* Finally you will learn how to publish to **conda-forge** from **PyPI**.
+
+:::{todo}
+This is the content with links once the links are live we can uncomment this and remove the unlinked content above!
 * Add a [README file](2-add-readme.md) and [LICENSE](4-add-license-file.md) to your package
 * [Add more metadata to your `pyproject.toml`](5-pyproject-toml.md) file to support PyPI publication.
 * [Learn how to build your package distribution](6-publish-pypi.md) files (**sdist** and **wheel**) and publish to **test PyPI**.
 * Finally you will learn how to publish to **conda-forge** from **PyPI**.
-
+:::
 
 ## Footnotes
 
