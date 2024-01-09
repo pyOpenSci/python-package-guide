@@ -1,5 +1,8 @@
 name: CircleCI artifacts redirector
-on: [status]
+
+concurrency:
+  group: docs-preview-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   circleci_artifacts_redirector_job:
