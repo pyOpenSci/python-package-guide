@@ -1,11 +1,15 @@
 name: CircleCI artifacts redirector
 on: [status]
 
+concurrency:
+  group: docs-preview-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   circleci_artifacts_redirector_job:
     runs-on: ubuntu-latest
     # For testing this action on a fork, remove the "github.repository =="" condition.
-    if: "github.repository == 'pyOpenSci/python-package-guide' && github.event.context == 'ci/circleci: build_book'"
+    if: github.event.context == 'ci/circleci: build-book'"
     permissions:
       statuses: write
     name: Run CircleCI artifacts redirector
@@ -17,5 +21,5 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           api-token: ${{ secrets.CIRCLECI_TOKEN }}
           artifact-path: 0/html/index.html
-          circleci-jobs: build
+          circleci-jobs: build-book
           job-title: View rendered book here!
