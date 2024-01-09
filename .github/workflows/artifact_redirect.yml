@@ -9,7 +9,7 @@ jobs:
   circleci_artifacts_redirector_job:
     runs-on: ubuntu-latest
     # For testing this action on a fork, remove the "github.repository =="" condition.
-    if: github.event.context == 'ci/circleci: build-book'"
+    if: "github.event.context == 'ci/circleci: build-book'"
     permissions:
       statuses: write
     name: Run CircleCI artifacts redirector
