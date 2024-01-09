@@ -1,4 +1,5 @@
 name: CircleCI artifacts redirector
+on: [status]
 
 concurrency:
   group: docs-preview-${{ github.ref }}
