@@ -130,3 +130,8 @@ html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
 html_title = "Python Packaging Guide"
 html_js_files = ["matomo.js"]
+
+
+# Social cards
+ogp_site_url = "http://www.pyopensci.org/python-package-guide"
+ogp_image = "https://www.pyopensci.org/python-package-guide/_static/logo-light-mode.png"
