@@ -308,3 +308,26 @@ html[data-theme=dark] {
     padding-right: 1.5em;
     padding-left: 1.5em;
 }
+
+#footnotes {
+    font-size: .8em;
+    line-height: 1.1;
+    &span.label {
+        font-weight:400
+    }
+}
+
+aside.footnote {
+    margin-bottom: 0.5rem;
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+    span.label,
+    span.backrefs {
+      font-weight: 400!important;
+    }
+
+    &:target {
+      background-color: var(--pst-color-target);
+    }
+  }
