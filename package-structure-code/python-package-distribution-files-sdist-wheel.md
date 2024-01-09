@@ -6,6 +6,7 @@
 You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
 :::
 
+(build-package)=
 ## What is building a Python package?
 
 To [publish your Python package](build_workflow) and make it easy for anyone to install, you first need to build it.

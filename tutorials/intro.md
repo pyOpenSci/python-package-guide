@@ -23,11 +23,13 @@ understanding the steps involved in creating a Python package.
 
 * In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
+
 :::{toctree}
 :hidden:
 :caption: Python Packaging 101
 
 What is a Python package? <self>
+Make your code installable. <1-installable-code>
 :::
 
 :::{admonition} Learning Objectives
@@ -77,6 +79,7 @@ Installing a package into an environment makes it easier
 to manage and reuse your code across different projects.
 Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you've created and let others build with it.
 
+(package-benefits)=
 ## Why create a Python package?
 
 You might create a Python package because you want to:
@@ -336,3 +339,5 @@ The elements above are also important for future maintenance of your package. In
 In future lessons you will learn more about the infrastructure around a published Python package that makes it both easier to maintain, easier for others to contribute to and easier for other scientists to use. However, first we want to get you to your initial goal of publishing a Python package.
 
 In this next lesson you will learn how to create a basic installable Python package.
+Make your code pip installable <1-installable-code>
+:::
