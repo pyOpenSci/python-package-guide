@@ -9,6 +9,8 @@ is working as expected. However, it's also important to think about your code ru
 On this page, you will learn about the tools that you can use to both run tests in isolated environments and across
 Python versions.
 
+
+
 ### Tools to run your tests
 
 There are three types of tools that will make is easier to setup and run your tests in various environments:
@@ -18,7 +20,7 @@ There are three types of tools that will make is easier to setup and run your te
 3. **Continuous Integration (CI):** is the last tool that you'll need to run your tests. CI will not only allow you to replicate any automated builds you create using nox or tox to run your package in different Python environments. It will also allow you to run your tests on different operating systems (Windows, Mac and Linux). [We discuss using CI to run tests here](tests-ci).
 
 :::{figure-md}
-![Figure showing three boxes - the first has Test Frameworks in it, the second Test Runner and the third Continuous Integration....](../images/test-tools.png)
+![Figure showing three boxes - the first has Test Frameworks in it, the second Test Runner and the third Continuous Integration....](../images/python-package-test-tools.png)
 
 There are three types of tools that will help you develop and run your tests. Test frameworks like pytest
 provide syntax and a **framework** for you to write and
@@ -97,9 +99,14 @@ with it. Make also won't manage environments for you like **nox** will do.
 set up virtual environments, and run tests across Python versions using the environment manager of your choice with a
 single command.
 
+:::{note} Nox Installations
+
+When you use nox to run tests across different Python versions, nox will create and manage individual `venv` environments for each Python version that you specify in the nox function. It will setup everything that you need to run tests in each environment for you.
+:::
+
 Nox can also be used for other development tasks such as building
-documentation, creating your package distribution, and testing across various
-environment managers such as `conda` and `pip`.
+documentation, creating your package distribution, and testing installations
+across both PyPI related environments (e.g. venv, virtualenv) and `conda` (e.g. `conda-forge`).
 
 ## Test Environments
 
@@ -113,17 +120,24 @@ Note that for the code below to work, you need to have all 4 versions of Python 
 
 ### Nox with venv environments
 
-```{admonition} TODO:
+```{todo}
 TODO: add some tests above and show what the output would look like in the examples below...
 ```
 
 Below is an example of setting up nox to run tests using `venv` which is the built in environment manager that comes with base Python.
 
 Note that the example below assumes that you have [setup your `pyproject.toml` to declare test dependencies in a way that pip
-can understand](../package-structure-code/declare-dependencies.md). An example of that setup is below.
+can understand](../package-structure-code/declare-dependencies.md). An example
+of that setup is below.
 
 ```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
+name = "pyosPackage"
+version = "0.1.0"
 dependencies = [
   "geopandas",
   "xarray",
@@ -157,9 +171,9 @@ Above you create a nox session in the form of a function
 with a `@nox.session` decorator. Notice that within the decorator you declare the versions of python that you
 wish to run.
 
-To run the above you'd use the command where `-s` stands for
-session. Your function above is called test, therefore
-the session name is test.
+To run the above you'd use the command where `--session`. You may also see
+people using the shortcut for session `-s`. Your function above
+is called test, therefore the session name is test.
 
 ```
 nox -s test
