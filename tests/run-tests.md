@@ -19,14 +19,50 @@ There are three types of tools that will make is easier to setup and run your te
 2. **Automation tools** allow you to automate running workflows such as tests in specific ways using user-defined commands. For instance it's useful to be able to run tests across different Python versions with a single command. Tools such as [**nox**](https://nox.thea.codes/en/stable/index.html) and [**tox**](https://tox.wiki/en/latest/index.html) also allow you to run tests across Python versions. However, it will be difficult to test your build on different operating systems using only nox and tox - this is where continuous integration (CI) comes into play.
 3. **Continuous Integration (CI):** is the last tool that you'll need to run your tests. CI will not only allow you to replicate any automated builds you create using nox or tox to run your package in different Python environments. It will also allow you to run your tests on different operating systems (Windows, Mac and Linux). [We discuss using CI to run tests here](tests-ci).
 
-:::{figure-md}
-![Figure showing three boxes - the first has Test Frameworks in it, the second Test Runner and the third Continuous Integration....](../images/python-package-test-tools.png)
+:::{list-table} Table: Testing & Automation Tool
+:widths: 40 15 15 15 15
+:header-rows: 1
+:align: center
+:stub-columns: 1
+:class: pyos-table
 
-There are three types of tools that will help you develop and run your tests. Test frameworks like pytest
-provide syntax and a **framework** for you to write and
-run tests. Test runners automate processes such as creating isolated environments to run your tests in, and running tests across Python versions with a single command. Finally Continuous integrate (CI) is a generic platform where you can run your tests across operating systems. CI allows you to run your tests on every PR and commit to ensure iterative checks as contributors suggest changes to your code.
-
+*   - Features
+    - Testing Framework (pytest)
+    - Test Runner (Tox)
+    - Automation Tools (Nox)
+    - Continuous Integration (GitHub Actions)
+*   - Run Tests Locally
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+*   - Run Tests Online
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+*   - Run Tests Across Python Versions
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+*   - Run Tests In Isolated Environments
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+*   - Run Tests Across Operating Systems (Windows, MacOS, Linux)
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+*   - Use for other automation tasks (e.g. building docs)
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
+    - <i class="fa-solid fa-circle-check fa-xl"></i>
 :::
+
 
 ## What testing framework / package should I use to run tests?
 
