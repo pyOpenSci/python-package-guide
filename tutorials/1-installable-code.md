@@ -1,3 +1,8 @@
+---
+:og:description: Learn how to make your Python code installable so you can use it across projects.
+:og:title: Make your Python code installable so it can be used across projects
+---
+
 # Make your Python code installable
 
 :::{admonition} What we previously covered
