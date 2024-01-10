@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta property="og:title" content="Contributing Guide for the Python open source software packaging book" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://www.pyopensci.org/CONTRIBUTING.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/CONTRIBUTING.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide. If you have an idea for something that should be included in the guide, please open ..." />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_static/logo-light-mode.png" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_static/pyopensci-python-package-guide.png" />
 <meta property="og:image:alt" content="python-package-guide" />
 <meta name="description" content="This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide. If you have an idea for something that should be included in the guide, please open ..." />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
@@ -522,14 +522,14 @@ Nox ensures that your environment has all the dependencies needed to build the d
 </div>
 </li>
 <li><p>Build the documentation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nox</span> <span class="o">-</span><span class="n">s</span> <span class="n">docs_build</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nox</span> <span class="o">-</span><span class="n">s</span> <span class="n">docs</span>
 </pre></div>
 </div>
 </li>
 </ol>
 <p>This should create a local environment in a <code class="docutils literal notranslate"><span class="pre">.nox</span></code> folder, build the documentation (as specified in the <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> configuration), and the output will be in <code class="docutils literal notranslate"><span class="pre">_build/html</span></code>.</p>
 <p>To build live documentation that updates when you update local files, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nox</span> <span class="o">-</span><span class="n">s</span> <span class="n">docs_live</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nox</span> <span class="o">-</span><span class="n">s</span> <span class="n">docs</span><span class="o">-</span><span class="n">live</span>
 </pre></div>
 </div>
 </section>
