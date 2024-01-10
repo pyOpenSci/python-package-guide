@@ -1,6 +1,5 @@
 ---
 :og:description: Learn how to setup and run tests for your Python package locally on your computer using automation tools such as Nox. Also learn about other tools that scientific Python community members use to run tests.
-:og:image: https://www.pyopensci.org/python-package-guide/_images/packaging-lifecycle.png
 :og:image:alt: An image showing the Python packaging lifecycle
 :og:title: Sdf
 ---

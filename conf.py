@@ -134,4 +134,7 @@ html_js_files = ["matomo.js"]
 
 # Social cards
 ogp_site_url = "http://www.pyopensci.org/python-package-guide"
-ogp_image = "https://www.pyopensci.org/python-package-guide/_static/logo-light-mode.png"
+ogp_social_cards = {
+    "line_color": "#6D597A",
+    "image": "_static/pyopensci-logo-package-guide.png",
+}
