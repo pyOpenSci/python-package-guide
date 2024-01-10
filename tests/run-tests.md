@@ -1,3 +1,10 @@
+---
+:og:description: Learn how to setup and run tests for your Python package locally on your computer using automation tools such as Nox. Also learn about other tools that scientific Python community members use to run tests.
+:og:image: https://www.pyopensci.org/python-package-guide/_images/packaging-lifecycle.png
+:og:image:alt: An image showing the Python packaging lifecycle
+:og:title: How to run your Python package tests locally on your computer across multiple Python versions
+---
+
 # Run your tests
 
 Running your tests is important to ensure that your package
@@ -73,7 +80,9 @@ extensions that can be used to add functionality such as:
 
 - [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/) allows you to analyze the code coverage of your package during your tests, and generates a report that you can [upload to codecov](https://codecov.io/).
 
+:::{todo}
 [Learn more about code coverage here.](code-cov)
+:::
 
 ```{note}
 TODO: add note about running tests in vscode, breakpoints and –no-cov flag. Then link to tutorial that explains how to deal with this.
