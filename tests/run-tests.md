@@ -1,7 +1,7 @@
----
+```{eval-rst}
 :og:description: Learn how to setup and run tests for your Python package locally on your computer using automation tools such as Nox. Also learn about other tools that scientific Python community members use to run tests.
-:og:title: A random title
----
+:og:title: Run tests for your Python package across Python versions
+```
 
 # Run your tests
 
