@@ -13,16 +13,29 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+from datetime import datetime
+import subprocess
+
+current_year = datetime.now().year
+organization_name = "pyOpenSci"
+
 
 
 # -- Project information -----------------------------------------------------
 
-project = "python-package-guide"
-copyright = "2024, pyOpenSci"
+project = "pyOpenSci Python Package Guide"
+copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
 
-# The full version, including alpha/beta/rc tags
-release = "0.1"
+# Get the latest Git tag - there might be a prettier way to do this but...
+try:
+    release_value = subprocess.check_output(["git", "describe", "--tags"]).decode("utf-8").strip()
+    release_value = release_value[:4]
+except subprocess.CalledProcessError:
+    release_value = "0.1"  # Default value in case there's no tag
+
+# Update the release value
+release = release_value
 
 # -- General configuration ---------------------------------------------------
 
