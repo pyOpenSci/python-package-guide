@@ -52,7 +52,11 @@ environment and shell on your computer.
 You are welcome to use any Python environment manager that you choose.
 If you are using Windows or are not familiar with Shell, you may want to check out the Carpentries shell lesson[^shell-lesson]. Windows users will likely need to configure a tool for any Shell and git related steps.
 
+:::{todo}
+When this lesson is published, unlink
 * [If you need guidance creating a Python environment, review this lesson](extras/1-create-environment.md) which walks you through creating an environment using both `venv` and `conda`.
+:::
+
 * If you aren't sure which environment manager to use and
 you are a scientist, we suggest that you use `conda`, particularly if you are working with spatial data.
 
@@ -292,8 +296,12 @@ For instance, a `build-system` table most often holds two (2) variables:
 2. `build-backend = `, which is used to define the specific build-backend name, (in this example we are using `hatchling.build`).
 
 TOML organizes data structures, defining relationships within a configuration
-file. You will learn more about the `pyproject.toml` format in the
+file.
+
+:::{todo}
+You will learn more about the `pyproject.toml` format in the
 [next lesson when you add additional metadata / information to this file.](5-pyproject-toml.md)
+:::
 
 ```toml
 # An example of the build-system table which contains two variables - requires and build-backend
