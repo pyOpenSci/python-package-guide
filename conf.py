@@ -13,12 +13,17 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+from datetime import datetime
+
+current_year = datetime.now().year
+organization_name = "pyOpenSci"
+
 
 
 # -- Project information -----------------------------------------------------
 
-project = "python-package-guide"
-copyright = "2024, pyOpenSci"
+project = "pyOpenSci Python Package Guide"
+copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
 
 # The full version, including alpha/beta/rc tags
