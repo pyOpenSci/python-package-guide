@@ -10,10 +10,10 @@
 <meta property="og:title" content="Make your Python code installable" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/1-installable-code.html" />
-<meta property="og:site_name" content="python-package-guide" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="Your next step in our packaging tutorial series is to create a Python package that is installable both locally and remotely from a website such as GitHub (or GitLab). The package that you create in..." />
 <meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_static/pyopensci-python-package-guide.png" />
-<meta property="og:image:alt" content="python-package-guide" />
+<meta property="og:image:alt" content="pyOpenSci Python Package Guide" />
 <meta name="description" content="Your next step in our packaging tutorial series is to create a Python package that is installable both locally and remotely from a website such as GitHub (or GitLab). The package that you create in..." />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Make your Python code installable &#8212; Python Packaging Guide</title>
@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=dd833339" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=d6812f4d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
@@ -542,8 +542,8 @@ Python package that is directly installable from PyPI.</p>
 environment and shell on your computer.</p>
 <p>You are welcome to use any Python environment manager that you choose.
 If you are using Windows or are not familiar with Shell, you may want to check out the Carpentries shell lesson<a class="footnote-reference brackets" href="#shell-lesson" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Windows users will likely need to configure a tool for any Shell and git related steps.</p>
+</div>
 <ul class="simple">
-<li><p><a class="reference internal" href="#extras/1-create-environment.md"><span class="xref myst">If you need guidance creating a Python environment, review this lesson</span></a> which walks you through creating an environment using both <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p></li>
 <li><p>If you aren’t sure which environment manager to use and
 you are a scientist, we suggest that you use <code class="docutils literal notranslate"><span class="pre">conda</span></code>, particularly if you are working with spatial data.</p></li>
 </ul>
@@ -554,7 +554,7 @@ you are a scientist, we suggest that you use <code class="docutils literal notra
 <li><p>Add additional project metadata to your package to support PyPI publication</p></li>
 <li><p>Publish your package to PyPI</p></li>
 </ul>
-</div>
+<div class="docutils">
 <figure class="align-default" id="packages-environment">
 <a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
 <figcaption>
@@ -562,6 +562,7 @@ you are a scientist, we suggest that you use <code class="docutils literal notra
 If your code is on GitHub or GitLab you can also install it directly from there.</span><a class="headerlink" href="#packages-environment" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</div>
 <section id="about-the-python-package-directory-structure">
 <h2>About the Python package directory structure<a class="headerlink" href="#about-the-python-package-directory-structure" title="Link to this heading">#</a></h2>
 <p>To make your Python code installable you need to create a specific directory structure with the following elements:</p>
@@ -698,7 +699,7 @@ If you don’t have code already and are just learning how to create a Python pa
 <p>When you see the word module, we are referring to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file containing Python
 code.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>  allows Python to recognize that a directory contains at least one (1) module that may be imported and used in your code.
-A package can have multiple modules<a class="footnote-reference brackets" href="#python-modules" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+A package can have multiple modules<a class="footnote-reference brackets" href="#python-modules" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
 </div>
 <p>Your project directory should now look like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pyospackage/
@@ -717,7 +718,7 @@ A package can have multiple modules<a class="footnote-reference brackets" href="
 <li><p>It has a <a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#three-python-docstring-formats-and-why-we-like-numpy-style">numpy-style docstring</a></p></li>
 <li><p>It uses <a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#adding-type-hints-to-your-docstrings">typing</a></p></li>
 </ol>
-<p>Python can support many different docstrings formats depending on the documentation build system you wish to use. The most popular supported formats for documenting Python objects are NumPy Style Docstring<a class="footnote-reference brackets" href="#numpydoc" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, Google Style Docstring<a class="footnote-reference brackets" href="#googledoc" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>, and the Epytext Style Docstrings<a class="footnote-reference brackets" href="#epytextdoc" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+<p>Python can support many different docstrings formats depending on the documentation build system you wish to use. The most popular supported formats for documenting Python objects are NumPy Style Docstring<a class="footnote-reference brackets" href="#numpydoc" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, Google Style Docstring<a class="footnote-reference brackets" href="#googledoc" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>, and the Epytext Style Docstrings<a class="footnote-reference brackets" href="#epytextdoc" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
 <p><strong>pyOpensci recommends using the NumPy Docstring convention.</strong></p>
 <p>If you aren’t familiar with docstrings or typing yet, that is ok. We will get to it later in our tutorial series. Or, you can review the pyOpenSci <a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html">packaging guide</a> for an overview.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_num</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -763,8 +764,8 @@ For instance, a <code class="docutils literal notranslate"><span class="pre">bui
 <li><p><code class="docutils literal notranslate"><span class="pre">build-backend</span> <span class="pre">=</span> </code>, which is used to define the specific build-backend name, (in this example we are using <code class="docutils literal notranslate"><span class="pre">hatchling.build</span></code>).</p></li>
 </ol>
 <p>TOML organizes data structures, defining relationships within a configuration
-file. You will learn more about the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> format in the
-<a class="reference internal" href="#5-pyproject-toml.md"><span class="xref myst">next lesson when you add additional metadata / information to this file.</span></a></p>
+file.</p>
+</div>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># An example of the build-system table which contains two variables - requires and build-backend</span>
 <span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
@@ -772,7 +773,7 @@ file. You will learn more about the <code class="docutils literal notranslate"><
 </pre></div>
 </div>
 <p><a class="reference internal" href="../package-structure-code/pyproject-toml-python-package-metadata.html"><span class="doc std std-doc">Learn more about the pyproject.toml format here.</span></a></p>
-</div>
+<div class="docutils">
 <ul class="simple">
 <li><p>Open up your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file in your favorite text editor.</p></li>
 <li><p>Add the metadata below to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
@@ -796,6 +797,7 @@ version using git tags in the version and release your package lesson. <ADD LINK
 <p>The core information that you need in a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file in order to publish on PyPI is your <strong>package’s name</strong>  and the <strong>version</strong>. However, we suggest that you flesh out your metadata early on in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
 <p>Once you have your project metadata in the pyproject.toml file, you will
 rarely update it. In the next lesson you’ll add more metadata and structure to this file.</p>
+</div>
 </div>
 </section>
 <section id="step-5-install-your-package-locally">
@@ -938,19 +940,19 @@ to publish your package, you have completed the first major step.</p>
 <p><a class="reference external" href="https://swcarpentry.github.io/shell-novice/">Carpentries shell lesson</a></p>
 </aside>
 <aside class="footnote brackets" id="python-modules" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#packages">Python module docs</a></p>
 </aside>
 <aside class="footnote brackets" id="numpydoc" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">Numpy style docs</a></p>
 </aside>
 <aside class="footnote brackets" id="googledoc" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google docstring style</a></p>
 </aside>
 <aside class="footnote brackets" id="epytextdoc" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://epydoc.sourceforge.net/epytext.html">epydoc</a></p>
 </aside>
 </aside>
