@@ -1,6 +1,6 @@
 # Run tests with Continuous Integration
 
-Running your [test suite locally](run-tests) is useful as you develop code and also test new features or changes to the code base. However, you also will want to setup Continuous Integration (CI) to run your tests online. CI allows you to run all of your tests in the cloud. While you may only be able to run tests locally on a specific operating system that you run, in CI you can specify tests to run both on various versions of Python and across different operating systems.
+Running your [test suite locally](run-tests) is useful as you develop code and also test new features or changes to the code base. However, you also will want to setup Continuous Integration (CI) to run your tests online. CI allows you to run all of your tests in the cloud. While you may only be able to run tests locally on a specific operating system, using CI you can specify tests to run both on various versions of Python and across different operating systems.
 
 CI can also be triggered for pull requests and pushes to your repository. This means that every pull request that you, your maintainer team or a contributor submit, can be tested. In the end CI testing ensures your code continues to run as expected even as changes are made to the code base.
 
@@ -21,8 +21,7 @@ locally.
 
 Below is an example GitHub action that runs tests using nox
 across both Windows, Mac and Linux and on Python versions
-3.9-3.11. It also includes two steps that make your build more
-efficient so your dependencies aren't downloaded multiple times.
+3.9-3.11.
 
 To work properly, this file should be located in a root directory of your
 GitHub repository:
