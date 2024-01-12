@@ -6,10 +6,10 @@
 # Run your tests
 
 Running your tests is important to ensure that your package
-is working as expected. However, it's also important to think about your code running, not only on your computer, but also on the computers of your users who may be running various Python versions and using various operating systems. Thus, you will want to consider the following when running your tests:
+is working as expected. It's good practice to consider that tests will run on your computer and your users' computers that may be running a different Python version and operating systems. Think about the following when running your tests:
 
-1. Run your test suite in a series of environments that represent the Python versions and operating systems your users are likely to have.
-2. Running your tests in an isolated environment ensures that they do not pass randomly due to your computer's specific setup. For instance, you might have locally installed dependencies that are not declared in your package's dependency list. This oversight could lead to issues when others try to install or run your package on their computers.
+1. Run your test suite in a matrix of environments that represent the Python versions and operating systems your users are likely to have.
+2. Running your tests in an isolated environment provides confidence in the tests and their reproducibility. This ensures that tests do not pass randomly due to your computer's specific setup. For instance, you might have unexpectedly installed dependencies on your local system that are not declared in your package's dependency list. This oversight could lead to issues when others try to install or run your package on their computers.
 
 On this page, you will learn about the tools that you can use to both run tests in isolated environments and across
 Python versions.
@@ -20,7 +20,7 @@ Python versions.
 
 There are three types of tools that will make is easier to setup and run your tests in various environments:
 
-1. A **test framework**, is a package that provides a particular syntax and set of tools for _both writing and running your tests_. Some test frameworks also have plugins that add additional features such as evaluating how much of your code the tests cover. Below you will learn about the **pytest** framework which is one of the most commonly used Python testing frameworks in the scientific ecosystem. Testing frameworks are essential but they only serve to run your tests. They don't provide a way to easily run tests across Python versions without additional automation tools (see automation tools below).
+1. A **test framework**, is a package that provides a particular syntax and set of tools for _both writing and running your tests_. Some test frameworks also have plugins that add additional features such as evaluating how much of your code the tests cover. Below you will learn about the **pytest** framework which is one of the most commonly used Python testing frameworks in the scientific ecosystem. Testing frameworks are essential but they only serve to run your tests. These frameworks don't provide a way to easily run tests across Python versions without the aid of additional automation tools.
 2. **Automation tools** allow you to automate running workflows such as tests in specific ways using user-defined commands. For instance it's useful to be able to run tests across different Python versions with a single command. Tools such as [**nox**](https://nox.thea.codes/en/stable/index.html) and [**tox**](https://tox.wiki/en/latest/index.html) also allow you to run tests across Python versions. However, it will be difficult to test your build on different operating systems using only nox and tox - this is where continuous integration (CI) comes into play.
 3. **Continuous Integration (CI):** is the last tool that you'll need to run your tests. CI will not only allow you to replicate any automated builds you create using nox or tox to run your package in different Python environments. It will also allow you to run your tests on different operating systems (Windows, Mac and Linux). [We discuss using CI to run tests here](tests-ci).
 
@@ -83,7 +83,7 @@ extensions that can be used to add functionality such as:
 :::
 
 ```{note}
-TODO: add note about running tests in vscode, breakpoints and –no-cov flag. Then link to tutorial that explains how to deal with this.
+Your editor or IDE may add additional convenience for running tests, setting breakpoints, and toggling the `–no-cov` flag. Check your editor's documentation for more information.
 ```
 
 ## Run tests using pytest
@@ -93,11 +93,11 @@ calling:
 
 `pytest`
 
-Or if you want to run a specific test file - let's call this file "test_module.py" - you can run:
+Or if you want to run a specific test file - let's call this file "`test_module.py`" - you can run:
 
 `pytest test_module.py`
 
-Learn more from the [get started docs here](https://docs.pytest.org/en/7.1.x/getting-started.html).
+Learn more from the [get started docs](https://docs.pytest.org/en/7.1.x/getting-started.html).
 
 Running pytest on your computer is going to run your tests in whatever
 Python environment you currently have activated. This means that tests will be
@@ -113,7 +113,7 @@ in various Python environments.
 ### Tools to automate running your tests
 
 To run tests on various Python versions or in various specific environments with a single command, you can use an automation tool such as `nox` or `tox`.
-Both `nox` and `tox` can create an isolated virtual environment that you define. This allows you to easily run your tests in multiple environments and across Python versions.
+Both `nox` and `tox` can create an isolated virtual environments. This allows you to easily run your tests in multiple environments and across Python versions.
 
 We will focus on [Nox](https://nox.thea.codes/) in this guide. `nox` is a Python-based automation tool that builds upon the features of both `make` and `tox`. `nox` is designed to simplify and streamline testing and development workflows. Everything that you do with `nox` can be implemented using a Python-based interface.
 
