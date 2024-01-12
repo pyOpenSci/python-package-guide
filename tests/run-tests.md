@@ -214,12 +214,12 @@ Above you create a nox session in the form of a function
 with a `@nox.session` decorator. Notice that within the decorator you declare the versions of python that you
 wish to run.
 
-To run the above you'd use the command where `--session`. You may also see
-people using the shortcut for session `-s`. Your function above
+To run the above you'd execute the following command, specifying which session
+with `--session` (sometimes shortened to `-s`). Your function above
 is called test, therefore the session name is test.
 
 ```
-nox -s test
+nox --session test
 ```
 
 ### Nox with conda / mamba
@@ -227,7 +227,7 @@ nox -s test
 Below is an example for setting up nox to use mamba (or conda) for your
 environment manager.
 Note that unlike venv, conda can automatically install
-the various versions of Python that you need. You won't need to install all three Python versions if you use conda/mamba, like you do with `venv`.
+the various versions of Python that you need. You won't need to install all four Python versions if you use conda/mamba, like you do with `venv`.
 
 ```{note}
 For `conda` to work with `nox`, you will need to
@@ -257,5 +257,5 @@ def test_mamba(session):
 To run the above session you'd use:
 
 ```bash
-nox -s test_mamba
+nox --session test_mamba
 ```
