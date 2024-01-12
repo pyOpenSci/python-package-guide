@@ -18,7 +18,8 @@ Python versions.
 
 ### Tools to run your tests
 
-There are three types of tools that will make is easier to setup and run your tests in various environments:
+There are three categories of tools that will make is easier to setup
+and run your tests in various environments:
 
 1. A **test framework**, is a package that provides a particular syntax and set of tools for _both writing and running your tests_. Some test frameworks also have plugins that add additional features such as evaluating how much of your code the tests cover. Below you will learn about the **pytest** framework which is one of the most commonly used Python testing frameworks in the scientific ecosystem. Testing frameworks are essential but they only serve to run your tests. These frameworks don't provide a way to easily run tests across Python versions without the aid of additional automation tools.
 2. **Automation tools** allow you to automate running workflows such as tests in specific ways using user-defined commands. For instance it's useful to be able to run tests across different Python versions with a single command. Tools such as [**nox**](https://nox.thea.codes/en/stable/index.html) and [**tox**](https://tox.wiki/en/latest/index.html) also allow you to run tests across Python versions. However, it will be difficult to test your build on different operating systems using only nox and tox - this is where continuous integration (CI) comes into play.
@@ -104,11 +105,12 @@ Python environment you currently have activated. This means that tests will be
 run on a single version of Python and only on the operating system that you
 are running locally.
 
-This is a great start to making your Python package more robust! However, your users may be using your package on different
-versions of Python. Or they also may use other operating systems.
-
 An automation tool can simplify the process of running tests
 in various Python environments.
+
+:::{admonition} Tests across operating systems
+If you want to run your tests across different operating systems you can [continuous integration. Learn more here](tests-ci).
+:::
 
 ### Tools to automate running your tests
 
@@ -144,7 +146,9 @@ single command.
 
 :::{note} Nox Installations
 
-When you use nox to run tests across different Python versions, nox will create and manage individual `venv` environments for each Python version that you specify in the nox function. It will setup everything that you need to run tests in each environment for you.
+When you install and use nox to run tests across different Python versions, nox will create and manage individual `venv` environments for each Python version that you specify in the nox function.
+
+Nox will manage each environment on it's own.
 :::
 
 Nox can also be used for other development tasks such as building
@@ -249,7 +253,7 @@ def test_mamba(session):
     """
 
     # Install dev requirements
-    session.install(".[tests]")
+    session.conda_install(".[tests]")
     # Run tests using any parameters that you need
     session.run("pytest")
 ```
