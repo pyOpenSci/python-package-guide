@@ -3,7 +3,7 @@
 :og:title: Run tests for your Python package across Python versions
 ```
 
-# Run your tests
+# Run Python package tests
 
 Running your tests is important to ensure that your package
 is working as expected. It's good practice to consider that tests will run on your computer and your users' computers that may be running a different Python version and operating systems. Think about the following when running your tests:
@@ -155,6 +155,10 @@ Nox can also be used for other development tasks such as building
 documentation, creating your package distribution, and testing installations
 across both PyPI related environments (e.g. venv, virtualenv) and `conda` (e.g. `conda-forge`).
 
+To get started with nox, you create a `noxfile.py` file at the root of your
+project directory. You then define commands using Python functions.
+Some examples of that are below.
+
 ## Test Environments
 
 By default, `nox` uses the Python built in `venv` environment manager. A virtual environment (`venv`) is a self-contained Python environment that allows you to isolate and manage dependencies for different Python projects. It helps ensure that project-specific libraries and packages do not interfere with each other, promoting a clean and organized development environment.
@@ -199,6 +203,7 @@ Notice that below one single nox session allows you to run
 your tests on 4 different Python environments (Python 3.9, 3.10, 3.11, and 3.12).
 
 ```python
+# This code would live in a noxfile.py file located at the root of your project directory
 import nox
 
 # For this to run you will need to have python3.9, python3.10 and python3.11 installed on your computer. Otherwise nox will skip running tests for whatever versions are missing
@@ -235,13 +240,11 @@ the various versions of Python that you need. You won't need to install all four
 
 ```{note}
 For `conda` to work with `nox`, you will need to
-install a conda-friendly version of Python. We suggest
-the mamba-forge installation.
-
-More on that here...<link to tutorial??>
+ensure that either `conda` or `mamba` is installed on your computer.
 ```
 
 ```python
+# This code should live in your noxfile.py file
 import nox
 
 # The syntax below allows you to use mamba / conda as your environment manager, if you use this approach you don’t have to worry about installing different versions of Python
