@@ -104,7 +104,6 @@ html_theme_options = {
     "show_toc_level": 1,
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
-
     "footer_start": ["copyright"],
     "footer_end": [],
 }
@@ -148,4 +147,7 @@ html_js_files = ["matomo.js"]
 
 # Social cards
 ogp_site_url = "https://www.pyopensci.org/python-package-guide/"
-ogp_image = "_static/pyopensci-python-package-guide.png"
+ogp_social_cards = {
+    "line_color": "#6D597A",
+    "image": "_static/pyopensci-logo-package-guide.png",
+}
