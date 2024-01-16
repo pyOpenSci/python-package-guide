@@ -38,7 +38,7 @@ package: unit tests, integration tests and end-to-end (or functional) tests. Lea
 
 ::::{grid-item}
 :::{card} ✨ Run tests locally ✨
-:link: test-types
+:link: run-tests
 :link-type: doc
 :class-card: left-aligned
 
@@ -49,7 +49,7 @@ of Python, then using an automation tool such as nox to run your tests is useful
 
 ::::{grid-item}
 :::{card} ✨ Run tests online (using CI) ✨
-:link: test-types
+:link: tests-ci
 :link-type: doc
 :class-card: left-aligned
 
