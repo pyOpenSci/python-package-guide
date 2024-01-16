@@ -214,26 +214,35 @@ Tutorials  <tutorials/intro>
 ```
 
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Documentation
 
 Documentation <documentation/index>
 
-```
+:::
 
-```{toctree}
+:::{toctree}
 :hidden:
-:caption: Packaging
+:caption: Build & Publish
 
 Packaging <package-structure-code/intro>
 
-```
+:::
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Testing
 
 Tests  <tests/index>
 
-```
+:::
+
+
+:::{toctree}
+:hidden:
+:caption: CI & Data
+
+CI & Data  <ci-data/index>
+
+:::

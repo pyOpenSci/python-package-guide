@@ -97,7 +97,7 @@ html_theme_options = {
         "image_light": "logo-light-mode.png",
         "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
-    "header_links_before_dropdown": 4,
+    "header_links_before_dropdown": 5,
     "use_edit_page_button": True,
     "show_nav_level": 2,
     "navigation_depth": 3,

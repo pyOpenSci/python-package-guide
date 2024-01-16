@@ -1,4 +1,4 @@
-# Code coverage
+# Code coverage for your Python package test suite
 
 Code coverage is the amount of your package's codebase that is run as a part of running your project's tests. A good rule of thumb is to ensure that every line of your code is run at least once during testing. However, note that good code coverage does not guarantee that your package is well-tested. For example, you may run all of your lines of code, but not account for many edge-cases that users may have. Ultimately, you should think carefully about the way your package will be used, and decide whether your tests adequately cover all of that usage.
 
