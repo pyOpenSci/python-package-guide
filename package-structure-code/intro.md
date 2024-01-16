@@ -178,7 +178,7 @@ if you are looking for pyOpenSci's Python package review requirements!
 
 :::{toctree}
 :hidden:
-:caption: Package structure & code style
+:caption: Create & Build Your Package
 
 Intro <self>
 
@@ -192,7 +192,7 @@ Complex Builds <complex-python-package-builds>
 
 :::{toctree}
 :hidden:
-:caption: Publishing a package
+:caption: Publish your package
 
 Publish with Conda / PyPI <publish-python-package-pypi-conda>
 Package versions <python-package-versions>
