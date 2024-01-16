@@ -148,7 +148,7 @@ single command.
 
 When you install and use nox to run tests across different Python versions, nox will create and manage individual `venv` environments for each Python version that you specify in the nox function.
 
-Nox will manage each environment on it's own.
+Nox will manage each environment on its own.
 :::
 
 Nox can also be used for other development tasks such as building
