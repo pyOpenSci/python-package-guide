@@ -36,6 +36,29 @@ package: unit tests, integration tests and end-to-end (or functional) tests. Lea
 :::
 ::::
 
+::::{grid-item}
+:::{card} ✨ Run tests locally ✨
+:link: test-types
+:link-type: doc
+:class-card: left-aligned
+
+If you expect your users to use your package across different versions
+of Python, then using an automation tool such as nox to run your tests is useful. Learn about the various tools that you can use to run your tests across python versions here.
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Run tests online (using CI) ✨
+:link: test-types
+:link-type: doc
+:class-card: left-aligned
+
+Continuous integration platforms such as GitHub actions can be
+useful for running your tests across both different Python versions
+and different operating systems. Learn about setting up tests to run in Continuous Integration here.
+:::
+::::
+
 :::::
 
 
@@ -54,4 +77,6 @@ Graphic showing the elements of the packaging process.
 Intro <self>
 Write tests <write-tests>
 Test types <test-types>
+Run tests locally <run-tests>
+Run tests online (using CI) <tests-ci>
 ```

@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Run tests for your Python package across Python versions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tests/run-tests.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="Learn how to setup and run tests for your Python package locally on your computer using automation tools such as Nox. Also learn about other tools that scientific Python community members use to run tests." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_run-tests_9a15e2f6.png" />
+<meta property="og:image:alt" content="Running your tests is important to ensure that your package is working as expected. It’s good practice to consider that tests will run on your computer and y..." />
+<meta name="description" content="Running your tests is important to ensure that your package is working as expected. It’s good practice to consider that tests will run on your computer and your users’ computers that may be running..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Run Python package tests &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=d6812f4d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tests/run-tests';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tests/run-tests.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Run tests with Continuous Integration" href="tests-ci.html" />
+    <link rel="prev" title="Test Types for Python packages" href="test-types.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials/intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tutorials/intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Run Tests</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write-tests.html">Write tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-types.html">Test types</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Run tests locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-ci.html">Run tests online (using CI)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tests and data for your Python package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Run Python...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="run-python-package-tests">
+<h1>Run Python package tests<a class="headerlink" href="#run-python-package-tests" title="Link to this heading">#</a></h1>
+<p>Running your tests is important to ensure that your package
+is working as expected. It’s good practice to consider that tests will run on your computer and your users’ computers that may be running a different Python version and operating systems. Think about the following when running your tests:</p>
+<ol class="arabic simple">
+<li><p>Run your test suite in a matrix of environments that represent the Python versions and operating systems your users are likely to have.</p></li>
+<li><p>Running your tests in an isolated environment provides confidence in the tests and their reproducibility. This ensures that tests do not pass randomly due to your computer’s specific setup. For instance, you might have unexpectedly installed dependencies on your local system that are not declared in your package’s dependency list. This oversight could lead to issues when others try to install or run your package on their computers.</p></li>
+</ol>
+<p>On this page, you will learn about the tools that you can use to both run tests in isolated environments and across
+Python versions.</p>
+<section id="tools-to-run-your-tests">
+<h2>Tools to run your tests<a class="headerlink" href="#tools-to-run-your-tests" title="Link to this heading">#</a></h2>
+<p>There are three categories of tools that will make is easier to setup
+and run your tests in various environments:</p>
+<ol class="arabic simple">
+<li><p>A <strong>test framework</strong>, is a package that provides a particular syntax and set of tools for <em>both writing and running your tests</em>. Some test frameworks also have plugins that add additional features such as evaluating how much of your code the tests cover. Below you will learn about the <strong>pytest</strong> framework which is one of the most commonly used Python testing frameworks in the scientific ecosystem. Testing frameworks are essential but they only serve to run your tests. These frameworks don’t provide a way to easily run tests across Python versions without the aid of additional automation tools.</p></li>
+<li><p><strong>Automation tools</strong> allow you to automate running workflows such as tests in specific ways using user-defined commands. For instance it’s useful to be able to run tests across different Python versions with a single command. Tools such as <a class="reference external" href="https://nox.thea.codes/en/stable/index.html"><strong>nox</strong></a> and <a class="reference external" href="https://tox.wiki/en/latest/index.html"><strong>tox</strong></a> also allow you to run tests across Python versions. However, it will be difficult to test your build on different operating systems using only nox and tox - this is where continuous integration (CI) comes into play.</p></li>
+<li><p><strong>Continuous Integration (CI):</strong> is the last tool that you’ll need to run your tests. CI will not only allow you to replicate any automated builds you create using nox or tox to run your package in different Python environments. It will also allow you to run your tests on different operating systems (Windows, Mac and Linux). <a class="reference internal" href="tests-ci.html"><span class="doc std std-doc">We discuss using CI to run tests here</span></a>.</p></li>
+</ol>
+<table class="pyos-table table table-center" id="id3">
+<caption><span class="caption-text">Table: Testing &amp; Automation Tool</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Features</p></th>
+<th class="head"><p>Testing Framework (pytest)</p></th>
+<th class="head"><p>Test Runner (Tox)</p></th>
+<th class="head"><p>Automation Tools (Nox)</p></th>
+<th class="head"><p>Continuous Integration (GitHub Actions)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>Run Tests Locally</p></th>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Run Tests Online</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Run Tests Across Python Versions</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Run Tests In Isolated Environments</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Run Tests Across Operating Systems (Windows, MacOS, Linux)</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Use for other automation tasks (e.g. building docs)</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-testing-framework-package-should-i-use-to-run-tests">
+<h2>What testing framework / package should I use to run tests?<a class="headerlink" href="#what-testing-framework-package-should-i-use-to-run-tests" title="Link to this heading">#</a></h2>
+<p>We recommend using <code class="docutils literal notranslate"><span class="pre">Pytest</span></code> to build and run your package tests. Pytest is the most common testing tool used in the Python ecosystem.</p>
+<p><a class="reference external" href="https://docs.pytest.org/en/latest/">The Pytest package</a> also has a number of
+extensions that can be used to add functionality such as:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pytest-cov.readthedocs.io/en/latest/">pytest-cov</a> allows you to analyze the code coverage of your package during your tests, and generates a report that you can <a class="reference external" href="https://codecov.io/">upload to codecov</a>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your editor or IDE may add additional convenience for running tests, setting breakpoints, and toggling the <code class="docutils literal notranslate"><span class="pre">–no-cov</span></code> flag. Check your editor’s documentation for more information.</p>
+</div>
+</section>
+<section id="run-tests-using-pytest">
+<h2>Run tests using pytest<a class="headerlink" href="#run-tests-using-pytest" title="Link to this heading">#</a></h2>
+<p>If you are using <strong>pytest</strong>, you can run your tests locally by
+calling:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code></p>
+<p>Or if you want to run a specific test file - let’s call this file “<code class="docutils literal notranslate"><span class="pre">test_module.py</span></code>” - you can run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">test_module.py</span></code></p>
+<p>Learn more from the <a class="reference external" href="https://docs.pytest.org/en/7.1.x/getting-started.html">get started docs</a>.</p>
+<p>Running pytest on your computer is going to run your tests in whatever
+Python environment you currently have activated. This means that tests will be
+run on a single version of Python and only on the operating system that you
+are running locally.</p>
+<p>An automation tool can simplify the process of running tests
+in various Python environments.</p>
+<div class="admonition-tests-across-operating-systems admonition">
+<p class="admonition-title">Tests across operating systems</p>
+<p>If you want to run your tests across different operating systems you can <a class="reference internal" href="tests-ci.html"><span class="doc std std-doc">continuous integration. Learn more here</span></a>.</p>
+</div>
+<section id="tools-to-automate-running-your-tests">
+<h3>Tools to automate running your tests<a class="headerlink" href="#tools-to-automate-running-your-tests" title="Link to this heading">#</a></h3>
+<p>To run tests on various Python versions or in various specific environments with a single command, you can use an automation tool such as <code class="docutils literal notranslate"><span class="pre">nox</span></code> or <code class="docutils literal notranslate"><span class="pre">tox</span></code>.
+Both <code class="docutils literal notranslate"><span class="pre">nox</span></code> and <code class="docutils literal notranslate"><span class="pre">tox</span></code> can create an isolated virtual environments. This allows you to easily run your tests in multiple environments and across Python versions.</p>
+<p>We will focus on <a class="reference external" href="https://nox.thea.codes/">Nox</a> in this guide. <code class="docutils literal notranslate"><span class="pre">nox</span></code> is a Python-based automation tool that builds upon the features of both <code class="docutils literal notranslate"><span class="pre">make</span></code> and <code class="docutils literal notranslate"><span class="pre">tox</span></code>. <code class="docutils literal notranslate"><span class="pre">nox</span></code> is designed to simplify and streamline testing and development workflows. Everything that you do with <code class="docutils literal notranslate"><span class="pre">nox</span></code> can be implemented using a Python-based interface.</p>
+<div class="note admonition">
+<p class="admonition-title">Other automation tools you’ll see in the wild</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://tox.wiki/en/latest/index.html#useful-links">Tox</a></strong> is an automation tool that supports common steps such as building documentation, running tests across various versions of Python, and more. You can find <a class="reference external" href="https://docs.plasmapy.org/en/stable/contributing/testing_guide.html#using-tox">a nice overview of tox in the plasmaPy documentation</a>.</p></li>
+<li><p><strong><a class="reference external" href="https://github.com/ofek/hatch">Hatch</a></strong> is a modern end-to-end packaging tool that works with the popular build backend called hatchling. <code class="docutils literal notranslate"><span class="pre">hatch</span></code> offers a <code class="docutils literal notranslate"><span class="pre">tox</span></code>-like setup where you can run tests locally using different Python versions. If you are using <code class="docutils literal notranslate"><span class="pre">hatch</span></code> to support your packaging workflow, you may want to also use its testing capabilities rather than using <code class="docutils literal notranslate"><span class="pre">nox</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gnu.org/software/make/manual/make.html"><strong>make:</strong></a> Some developers use Make, which is a build automation tool, for running tests
+due to its versatility; it’s not tied to a specific language and can be used
+to run various build processes. However, Make’s unique syntax and approach can
+make it more challenging to learn, particularly if you’re not already familiar
+with it. Make also won’t manage environments for you like <strong>nox</strong> will do.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="run-tests-across-python-versions-with-nox">
+<h2>Run tests across Python versions with nox<a class="headerlink" href="#run-tests-across-python-versions-with-nox" title="Link to this heading">#</a></h2>
+<p><strong>Nox</strong> is a great automation tool to learn because it:</p>
+<ul class="simple">
+<li><p>Is Python-based making it accessible if you already know Python and</p></li>
+<li><p>Will create isolated environments to run workflows.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">nox</span></code> simplifies creating and managing testing environments. With <code class="docutils literal notranslate"><span class="pre">nox</span></code>, you can
+set up virtual environments, and run tests across Python versions using the environment manager of your choice with a
+single command.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nox Installations</p>
+<p>When you install and use nox to run tests across different Python versions, nox will create and manage individual <code class="docutils literal notranslate"><span class="pre">venv</span></code> environments for each Python version that you specify in the nox function.</p>
+<p>Nox will manage each environment on its own.</p>
+</div>
+<p>Nox can also be used for other development tasks such as building
+documentation, creating your package distribution, and testing installations
+across both PyPI related environments (e.g. venv, virtualenv) and <code class="docutils literal notranslate"><span class="pre">conda</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>).</p>
+<p>To get started with nox, you create a <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> file at the root of your
+project directory. You then define commands using Python functions.
+Some examples of that are below.</p>
+</section>
+<section id="test-environments">
+<h2>Test Environments<a class="headerlink" href="#test-environments" title="Link to this heading">#</a></h2>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">nox</span></code> uses the Python built in <code class="docutils literal notranslate"><span class="pre">venv</span></code> environment manager. A virtual environment (<code class="docutils literal notranslate"><span class="pre">venv</span></code>) is a self-contained Python environment that allows you to isolate and manage dependencies for different Python projects. It helps ensure that project-specific libraries and packages do not interfere with each other, promoting a clean and organized development environment.</p>
+<p>An example of using nox to run tests in <code class="docutils literal notranslate"><span class="pre">venv</span></code> environments for Python versions 3.9, 3.10, 3.11 and 3.12 is below.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that for the code below to work, you need to have all 4 versions of Python installed on your computer for <code class="docutils literal notranslate"><span class="pre">nox</span></code> to find.</p>
+</div>
+<section id="nox-with-venv-environments">
+<h3>Nox with venv environments<a class="headerlink" href="#nox-with-venv-environments" title="Link to this heading">#</a></h3>
+<p>Below is an example of setting up nox to run tests using <code class="docutils literal notranslate"><span class="pre">venv</span></code> which is the built in environment manager that comes with base Python.</p>
+<p>Note that the example below assumes that you have <a class="reference internal" href="../package-structure-code/declare-dependencies.html"><span class="std std-doc">setup your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> to declare test dependencies in a way that pip
+can understand</span></a>. An example
+of that setup is below.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyosPackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;geopandas&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;xarray&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest-cov&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If you have the above setup, then you can use <code class="docutils literal notranslate"><span class="pre">session.install(&quot;.[tests]&quot;)</span></code> to install your test dependencies.
+Notice that below one single nox session allows you to run
+your tests on 4 different Python environments (Python 3.9, 3.10, 3.11, and 3.12).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code would live in a noxfile.py file located at the root of your project directory</span>
+<span class="kn">import</span> <span class="nn">nox</span>
+
+<span class="c1"># For this to run you will need to have python3.9, python3.10 and python3.11 installed on your computer. Otherwise nox will skip running tests for whatever versions are missing</span>
+
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="n">python</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3.9&quot;</span><span class="p">,</span> <span class="s2">&quot;3.10&quot;</span><span class="p">,</span> <span class="s2">&quot;3.11&quot;</span><span class="p">,</span> <span class="s2">&quot;3.12&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+
+    <span class="c1"># install</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s2">&quot;.[tests]&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Run tests</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;pytest&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Above you create a nox session in the form of a function
+with a <code class="docutils literal notranslate"><span class="pre">&#64;nox.session</span></code> decorator. Notice that within the decorator you declare the versions of python that you
+wish to run.</p>
+<p>To run the above you’d execute the following command, specifying which session
+with <code class="docutils literal notranslate"><span class="pre">--session</span></code> (sometimes shortened to <code class="docutils literal notranslate"><span class="pre">-s</span></code>). Your function above
+is called test, therefore the session name is test.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nox</span> <span class="o">--</span><span class="n">session</span> <span class="n">test</span>
+</pre></div>
+</div>
+</section>
+<section id="nox-with-conda-mamba">
+<h3>Nox with conda / mamba<a class="headerlink" href="#nox-with-conda-mamba" title="Link to this heading">#</a></h3>
+<p>Below is an example for setting up nox to use mamba (or conda) for your
+environment manager.
+Note that unlike venv, conda can automatically install
+the various versions of Python that you need. You won’t need to install all four Python versions if you use conda/mamba, like you do with <code class="docutils literal notranslate"><span class="pre">venv</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">conda</span></code> to work with <code class="docutils literal notranslate"><span class="pre">nox</span></code>, you will need to
+ensure that either <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> is installed on your computer.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code should live in your noxfile.py file</span>
+<span class="kn">import</span> <span class="nn">nox</span>
+
+<span class="c1"># The syntax below allows you to use mamba / conda as your environment manager, if you use this approach you don’t have to worry about installing different versions of Python</span>
+
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="n">venv_backend</span><span class="o">=</span><span class="s1">&#39;mamba&#39;</span><span class="p">,</span> <span class="n">python</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3.9&quot;</span><span class="p">,</span> <span class="s2">&quot;3.10&quot;</span><span class="p">,</span> <span class="s2">&quot;3.11&quot;</span><span class="p">,</span> <span class="s2">&quot;3.12&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">test_mamba</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Nox function that installs dev requirements and runs</span>
+<span class="sd">    tests on Python 3.9 through 3.12</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Install dev requirements</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">conda_install</span><span class="p">(</span><span class="s2">&quot;.[tests]&quot;</span><span class="p">)</span>
+    <span class="c1"># Run tests using any parameters that you need</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;pytest&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To run the above session you’d use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>--session<span class="w"> </span>test_mamba
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="test-types.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Test Types for Python packages</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tests-ci.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Run tests with Continuous Integration</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-run-your-tests">Tools to run your tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-testing-framework-package-should-i-use-to-run-tests">What testing framework / package should I use to run tests?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests-using-pytest">Run tests using pytest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-automate-running-your-tests">Tools to automate running your tests</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests-across-python-versions-with-nox">Run tests across Python versions with nox</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-environments">Test Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nox-with-venv-environments">Nox with venv environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nox-with-conda-mamba">Nox with conda / mamba</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tests/run-tests.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/tests/run-tests.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
