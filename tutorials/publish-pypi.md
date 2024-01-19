@@ -2,7 +2,7 @@
 
 :::{todo}
 * emphasize that we recommended the trusted publisher GitHub action for most maintainers
-* Make sure they add /dist to their .gitignore file. We have not discussed github workflows anywhere yet. Where does that fit?
+* Make sure they add /dist to their .gitignore file. We have not discussed GitHub workflows anywhere yet. Where does that fit?
 * https://hatch.pypa.io/latest/intro/#existing-project <- hatch will migrate from setup.py for you - if we go with hatch then we may want to add this to the installable code lesson
 * Should we install hatch with pipx?
 
@@ -32,8 +32,8 @@ In this lesson you will learn how to:
 
 You will do all of your development work in this lesson using [Hatch](https://hatch.pypa.io/latest/).
 
-Once your package is on PyPI you can publish it to the conda-forge channel of conda
-using [grayskull](https://conda.github.io/grayskull/).
+Once your package is on PyPI you can publish it to conda-forge (which is a channel on conda)
+using [Grayskull](https://conda.github.io/grayskull/).
 
 You will learn how to publish to conda-forge in a future lesson.
 
@@ -64,25 +64,19 @@ The steps for publishing on test PyPI vs. real PyPI are the same with the
 exception of a different url. Thus, in this lesson you will use test PyPI
 to practice and learn.
 
-:::{todo}
-When this lesson is published -
-in xx lesson, you will learn how to setup an automated release workflow on GitHub
-using GitHub actions that will automate the PyPI publication process whenever
-you create a new software release.
-:::
-
-
 ## 4 Steps for publishing a Python package on PyPI
 
-There are 4 things that you need to do to publish your Python package
+In this lesson you will learn how to publish your package to PyPI
+using [Hatch](https://hatch.pypa.io/latest/). There are 4 things that
+you need to do to publish your Python package:
 to PyPI. You need to:
 
-1. **Create a package development environment.** You will do this using Hatch.
-1. [**Build your package**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into 2 types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will `pip install` your package.
+1. **Create a package development environment**
+1. [**Build your package using `hatch build`**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into two types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will `pip install` your package.
 1. **Create an account on (test) PyPI**: You will need to create a PyPI account and associated token which provides permissions for you to upload your package.
-1. **Publish to PyPI using `hatch publish`**: Once you have completed the above two steps, you are ready to use `hatch` to publish your package!
+1. **Publish to PyPI using `hatch publish`**
 
-In this lesson you will learn how to publish your package to PyPI using [Hatch](https://hatch.pypa.io/latest/).
+
 In a future lesson, you will learn how to create an automated
 GitHub action workflow that publishes an updated
 version of your package to PyPI every time you create a GitHub release.
@@ -129,7 +123,7 @@ Hatch environment, it will automatically install your package into the environme
 source "/Path/to/env/here/hatch/env/virtual/pyosPackage/Mk7F5Y0T/sphinx-2i2c-theme/bin/activate"
 ```
 
-View what's in the environment:
+View what's in the environment using `pip list`:
 
 ```bash
 ➜ pip list
@@ -148,28 +142,40 @@ tzdata          2023.4
 
 At any time you can exit the environment using `exit`.
 
+```bash
+➜ hatch shell
+source "/Users/leahawasser/Library/Application Support/hatch/env/virtual/pyospackage/twO2iQR3/pyospackage/bin/activate"
+
+# Notice here you're in the (pyospackage) environment which is the default
+pyosPackage (☊ main) [✎ ×1 ] is 📦 v0.1.4 via 🐍 pyenv (pyospackage)
+➜ exit
+
+pyosPackage (☊ main) [✎ ×1 ] is 📦 v0.1.4 via 🐍 pyenv took 43s
+➜
+```
+
 
 ### Hatch and environments
 
 Behind the scenes when hatch creates a new virtual environment,
-by default it uses venv[^venv].
+by default it uses venv[^venv] which is the default environment management tool that comes with Python installations.
 
-hatch will:
-1. Create a new virtualenv (venv) that is located on your computer. You can customize the location of this environment if you wish  ....<where??>
+Hatch will:
+1. Create a new virtualenv (venv) that is located on your computer.
 2. Install your package into the environment in editable mode (similar to `pip install -e`). This means it installs both your project and your project's dependencies as declared in your pyproject.toml file.
 
 ## Step 2: Build your package's sdist and wheel distributions
 
-Once you have your development environment setup, you are ready to build your package using Hatch. Remember that building is the process of turning your Python package files into two distribution files:
+Once you have your development environment setup, you are ready to build your package using Hatch. Remember that building is the process of turning your Python package file structure into two distribution files:
 
 1. The [wheel distribution](#python-wheel) is a pre-built version of your package. It useful for users as it can be directly installed using a tool such as `pip`. This file has the extension `.whl`.
-2. The [source distribution](#python-source-distribution) is the files that make up your package in an unbuilt format. This file will have the extension `.tar.gz`.
+2. The [source distribution](#python-source-distribution) contains the files that make up your package in an unbuilt format. This file will have the extension `.tar.gz`.
 
 You will use Hatch as a **Front end** tool that builds
 your package's sdist and wheel using the [hatchling](https://hatch.pypa.io/latest/) build back-end.
 The hatchling build back-end is used because you declared it in your pyproject.toml file in the [previous lesson](1-installable-code).
 
-To build your package run:
+To build your package run `hatch build`:
 
 ```bash
 ➜ hatch build
@@ -202,23 +208,23 @@ dist/pyospackage-0.1.0-py3-none-any.whl
 ### <i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you've created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i>
 
 You've now built your Python package and created your package distribution files. The next step is to setup
-your account on PyPI so you can publish your package.
+your account on testPyPI so you can publish your package.
 
 ## Step 3. Setup your test PyPI account
 
-Next, you'll setup an account on test PyPI. Remember that you
-are using test PyPI here instead of the real PyPI as a way to
+Next, you'll setup an account on Test PyPI. Remember that you
+are using test PyPI here instead of the PyPI as a way to
 safely learn how to publish a package without stressing the
 real PyPI's servers.
 
-:::{admonition} Test vs. real PyPI
-If you have a package that you are confident belongs on the real PyPI, all of the steps below will also work for you if you replace test.pypi.org with pypi.org wherever it appears.
+:::{admonition} Test PyPI vs. PyPI
+If you have a package that you are confident belongs on PyPI, all of the steps below will also work for you. When you publish using Hatch, you will call `hatch publish` to publish directly to PyPI instead of `hatch publish -r test` which publishes to Test PyPI.
 :::
 
 1. [Open up a web browser and go to the test PyPI website](https://test.pypi.org/).
 2. [Create an account](https://test.pypi.org/account/register/) if you don't already have one. Be sure to store your password in a safe place!
 3. Once you have an account setup, login to it.
-4. Search on [https://test.pypi.org/](https://test.pypi.org/) (or pypi.org) to ensure that the package name that you have selected doesn't already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it's unique.
+4. Search on [https://test.pypi.org/](https://test.pypi.org/) to ensure that the package name that you have selected doesn't already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it's unique.
 
 Example: `pyosPackage_yourNameHere`.
 
@@ -244,8 +250,8 @@ use a backup device that only you can access to validate that the person logging
 
 This matters on PyPI because someone could login to your account and upload a version of your package that has security issues. These issues will then impact all of your users when they download and install that version of the package.
 
-While you don't have to setup 2-factor authentication, we strongly
-suggest that you do so.
+2-factor authentication is required for PyPI authentication
+as of 1 January 2024.
 :::
 
 ## Step 4. Create a package upload token
@@ -269,24 +275,23 @@ It's ideal to create a package-specific token. When you create an account wide t
 * When you create your token, be sure to copy the token value and store it in a secure place before closing that browser.
 
 
-
-
-### Upload to PyPI using Hatch
-
-Once you have the token in a safe place, you are ready to publish to
-PyPI.
-
-
 Your token should look something like this:
 
 `pypi-abunchofrandomcharactershere...`
 
-1. Finally run `hatch publish -r test`
+It should start with `pypi` followed by a dash and a bunch of characters.
 
--r stands for repository. In this case because you are publishing to test-PyPI you will use `-r test`. Hatch will then ask for a username and credentials.
+### Upload to PyPI using Hatch
 
-* Add the word `__token__` for your username.
-* Paste your PyPI token value in for the credential values.
+Once you have your token, you are ready to publish to
+PyPI.
+
+* Run `hatch publish -r test`
+
+`-r` stands for repository. In this case because you are publishing to test-PyPI you will use `-r test`. Hatch will then ask for a username and credentials.
+
+* Add the word `__token__` for your username. This tells Test PyPI that you are using a token value rather than a username.
+* Paste your PyPI token value in at the `Enter your credentials` prompt:
 
 ```bash
 ❯ hatch publish -r test
@@ -297,9 +302,12 @@ dist/pyospackage-0.1.0.tar.gz ... already exists
 
 ```
 
-If your credentials are valid, Hatch will publish your package to test PyPI.
+If your credentials are valid, and you have already run `hatch build`
+and thus have your 2 distribution files in a `dist/` directory then
+Hatch will publish your package to test PyPI.
 
-Hatch also has a caching system so once you enter your credentials it will remember them.
+Hatch also has a caching system so once you enter your credentials it
+will remember them.
 
 ## Install your package from test PyPI
 
@@ -308,13 +316,15 @@ test PYPI. You can find the installation instructions on the test PyPI
 landing page for your newly uploaded package.
 
 :::{figure-md} testpypi-landing-page
-<img src="../images/tutorials/test-pypi-package.png" alt="A screenshot of the test PyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's readme file. " width="700px">
+<img src="../images/tutorials/test-pypi-package.png" alt="A screenshot of the test PyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's README file. " width="700px">
 
 This is an example landing page for the pyosPackage that was just uploaded. Notice at the top of the page there is instruction for how to install the package from test PyPI. You can simply copy that code and use it to install your package from testPyPi locally.
 :::
 
 
-As an example, [check out our pyOpenSci pyosPackage landing page on test PyPI](https://test.pypi.org/project/pyosPackage/). Notice the page has information about the current package version and also installation instructions as follows:
+As an example, [check out our pyOpenSci pyosPackage landing page on test PyPI](https://test.pypi.org/project/pyosPackage/). Notice that
+the page has information about the current package version and also
+installation instructions as follows:
 
 `pip install -i https://test.pypi.org/simple/ pyosPackage`
 
@@ -379,8 +389,7 @@ To do this:
 2. Click on the manage button for the project that you wish to add a token for
 3. Go to settings
 4. Click on "Create a token for your-package-name-here"
-5. Create the token and follow the steps above to open up the `.pypirc` file
-6. Replace the old account wide token with your new package token.
+5. Create the token and follow the steps above publish your package using the repository specific token.
 
 And you're all done!
 
