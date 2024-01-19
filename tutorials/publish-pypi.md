@@ -146,13 +146,8 @@ tzdata          2023.4
 ```
 
 
-At any time you can exit the environment using `exit`
-or <kbd>ctrl+d</kbd> on your keyboard.
+At any time you can exit the environment using `exit`.
 
-```
-# Can someone please check this for Windows OS?
-> exit
-```
 
 ### Hatch and environments
 
