@@ -27,10 +27,10 @@ In the previous Python packaging lessons, you've learned:
 In this lesson you will learn how to:
 
 - Build your package's source (sdist) and wheel distributions
-- Setup an account on testPyPI (the process is similar for the real PyPI)
-- Publish your package to testPyPI
+- Setup an account on test PyPI (the process is similar for the real PyPI)
+- Publish your package to test PyPI
 
-You will do all of your development work in this lesson using Hatch.
+You will do all of your development work in this lesson using [Hatch](https://hatch.pypa.io/latest/).
 
 Once your package is on PyPI you can publish it to the conda-forge channel of conda
 using [grayskull](https://conda.github.io/grayskull/).
@@ -46,13 +46,13 @@ You will learn how to publish to conda-forge in the [next lesson](7-publish-cond
 :::
 
 :::{figure-md} build-workflow-tutorial
-<img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testPyPI or the real pypi. from PyPI you can then connect to conda forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
+<img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. An arrow to the right takes you to a build distribution files box. Another arrow to the right takes you to a publish to PyPI box which has an arrow containing sdist and wheel that notes those files go to PyPI for hosting. From PyPI is an arrow containing sdist since you can then connect to conda forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
 
 You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.
 :::
 
 
-## Test PyPI.org vs PyPI
+## Test PyPI vs PyPI
 
 There are two "warehouses" that you can use to publish
 your Python package.
@@ -61,7 +61,7 @@ your Python package.
 2. **[Real PyPI](https://pypi.org):** This is the PyPI "warehouse" where you can officially publish your Python package. IMPORTANT: only publish your package to PyPI when you are ready for it to be used by others and/or confident that it will become a package that you maintain. PyPI is not a place to practice learning how to publish a Python package.
 
 The steps for publishing on test PyPI vs. real PyPI are the same with the
-exception of a different url. Thus, in this lesson you will use testPyPI
+exception of a different url. Thus, in this lesson you will use test PyPI
 to practice and learn.
 
 :::{todo}
@@ -78,11 +78,11 @@ There are 4 things that you need to do to publish your Python package
 to PyPI. You need to:
 
 1. **Create a package development environment.** You will do this using Hatch.
-1. [**Build your package**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into 2 distribution files: an sdist and a wheel. The wheel distribution file is particularly important for users who will `pip install` your package.
+1. [**Build your package**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into 2 types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will `pip install` your package.
 1. **Create an account on (test) PyPI**: You will need to create a PyPI account and associated token which provides permissions for you to upload your package.
 1. **Publish to PyPI using `hatch publish`**: Once you have completed the above two steps, you are ready to use `hatch` to publish your package!
 
-In this lesson you will learn how to publish your package to PyPI you will using [Hatch](https://twine.readthedocs.io/en/stable/).
+In this lesson you will learn how to publish your package to PyPI using [Hatch](https://hatch.pypa.io/latest/).
 In a future lesson, you will learn how to create an automated
 GitHub action workflow that publishes an updated
 version of your package to PyPI every time you create a GitHub release.
@@ -104,7 +104,7 @@ Use Hatch to create your environment.
 ```bash
 # This will create a default envt with your package installed in editable mode
 > hatch env create
-# If you have already created an environment this command will  return Environment `default` already exists
+# If you have already created an environment this command will return Environment `default` already exists
 ```
 
 Then view all of the current environments that hatch has access to:
@@ -122,7 +122,7 @@ Then view all of the current environments that hatch has access to:
 Then activate the environment. Note that when you call a shell from a
 Hatch environment, it will automatically install your package into the environment in development or editable mode.
 
-```
+```bash
 # Hatch shell can be used to activate your environment
 > hatch shell
 ... Installing project in development mode
