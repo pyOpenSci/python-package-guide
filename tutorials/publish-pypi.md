@@ -180,7 +180,7 @@ dist/pyospackage-0.1.0-py3-none-any.whl
 
 ```
 
-:::{admonition} Learn more about the building a Python package
+:::{admonition} Learn more about building a Python package
 :class: tip
 You can learn more about
 building in the [build page of our packaging guide](../package-structure-code/python-package-distribution-files-sdist-wheel).
@@ -337,18 +337,9 @@ you wish to install your newly published package in.
 
 :::{tab-item} venv mac / Linux
 ```bash
-> source pyospackage-dev /bin/activate
+> hatch shell
 > pip install -i https://test.pypi.org/simple/ youPackageNameHere
 > pip list
-```
-:::
-
-:::{tab-item} venv windows
-```bash
-> source pyospackage-dev /bin/activate
-> pip install -i https://test.pypi.org/simple/ youPackageNameHere
-> pip list
-```
 :::
 ::::
 
@@ -383,9 +374,9 @@ If you plan to use your token regularly to publish to PyPI, we strongly recommen
 a token specific to your new package.
 
 To do this:
-1. Go to testPyPI
+1. Go to test PyPI
 1. Navigate to the "Your Projects" section of your account
-2. Click on the manage button for the project that ou wish to add a token for
+2. Click on the manage button for the project that you wish to add a token for
 3. Go to settings
 4. Click on "Create a token for your-package-name-here"
 5. Create the token and follow the steps above to open up the `.pypirc` file
@@ -395,7 +386,7 @@ And you're all done!
 
 ## You have published your package to (test) PyPI!
 
-Congratulations. You have now successfully published your package to testPyPI. If you have a package that is ready for real-world use on the real pyPi, then you can follow the same steps to publish it on PyPI.org .
+Congratulations. You have now successfully published your package to test PyPI. If you have a package that is ready for real-world use on the real PyPI, then you can follow the same steps to publish it on PyPI.org.
 
 Once you publish on PyPI.org, you can then easily add your package to the conda-forge ecosystem using the [grayskull](https://conda-forge.org/blog/posts/2020-03-05-grayskull/) tool.
 
