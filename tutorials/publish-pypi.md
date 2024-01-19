@@ -155,8 +155,8 @@ Behind the scenes when hatch creates a new virtual environment,
 by default it uses venv[^venv].
 
 hatch will:
-1. Creates a new virtualenv (venv). That is located on your computer. You can customize the location of this environment if you wish  ....<where??>
-2. Installs your package into the environment in editable mode (similar to `pip install -e`). This means it installs both your project and your project's dependencies as declared in your pyproject.toml file.
+1. Create a new virtualenv (venv) that is located on your computer. You can customize the location of this environment if you wish  ....<where??>
+2. Install your package into the environment in editable mode (similar to `pip install -e`). This means it installs both your project and your project's dependencies as declared in your pyproject.toml file.
 
 ## Step 2: Build your package's sdist and wheel distributions
 
@@ -204,15 +204,15 @@ dist/pyospackage-0.1.0-py3-none-any.whl
 You've now built your Python package and created your package distribution files. The next step is to setup
 your account on PyPI so you can publish your package.
 
-## Step 3. Setup your testPyPI account
+## Step 3. Setup your test PyPI account
 
-Next, you'll setup an account on `testPyPI`. Remember that you
-are using testPyPI here instead of the real PyPI as a way to
+Next, you'll setup an account on test PyPI. Remember that you
+are using test PyPI here instead of the real PyPI as a way to
 safely learn how to publish a package without stressing the
 real PyPI's servers.
 
 :::{admonition} Test vs. real PyPI
-If you have a package that you are confident belongs on the real PyPI. All of the steps below will also work for you with slight modifications which will be noted below.
+If you have a package that you are confident belongs on the real PyPI, all of the steps below will also work for you if you replace test.pypi.org with pypi.org wherever it appears.
 :::
 
 1. [Open up a web browser and go to the test PyPI website](https://test.pypi.org/).
@@ -230,10 +230,10 @@ Show them how to do this
 :::
 
 :::{figure-md} build-workflow-tutorial
-<img src="../images/tutorials/testpypi-search.png" alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says  there were no results for pyosPackage Did you mean probpackage" width="700px">
+<img src="../images/tutorials/testpypi-search.png" alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" width="700px">
 
-Before you try to upload to (test) PyPI, check to see if the name of your package is already taken. You can do that using
-the search box at the top of the (test) PyPI website.
+Before you try to upload to test PyPI, check to see if the name of your package is already taken. You can do that using
+the search box at the top of the test PyPI website.
 :::
 
 
@@ -262,7 +262,7 @@ It's ideal to create a package-specific token. When you create an account wide t
 
 ### Follow the steps below to create your token.
 
-* Login to testPyPI and go to your account settings
+* Login to test PyPI and go to your account settings
 * Scroll down to the **API tokens** section
 * Click on the **Add API Token** button
      * If you are new to using PyPI and don't have any packages there yet, OR if you have other packages on PyPI but are uploading a new package, you will need to create an account-wide token.
@@ -276,8 +276,6 @@ It's ideal to create a package-specific token. When you create an account wide t
 Once you have the token in a safe place, you are ready to publish to
 PyPI.
 
-1. Set your username to `__token__`
-1. Set your password to the token value, including the `pypi-` prefix
 
 Your token should look something like this:
 
@@ -299,24 +297,24 @@ dist/pyospackage-0.1.0.tar.gz ... already exists
 
 ```
 
-If your credentials are value, Hatch will publish your package to test-PyPI.
+If your credentials are valid, Hatch will publish your package to test PyPI.
 
 Hatch also has a caching system so once you enter your credentials it will remember them.
 
-## Install your package from TestPyPI
+## Install your package from test PyPI
 
 Once your package upload is complete, you can install it from
-testPYPI. You can find the installation instructions on the testPyPI
+test PYPI. You can find the installation instructions on the test PyPI
 landing page for your newly uploaded package.
 
 :::{figure-md} testpypi-landing-page
-<img src="../images/tutorials/test-pypi-package.png" alt="A screenshot of the testPyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's readme file. " width="700px">
+<img src="../images/tutorials/test-pypi-package.png" alt="A screenshot of the test PyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's readme file. " width="700px">
 
-This is an example landing page for the pyosPackage that was just uploaded. Notice at the top of the page there is instructions for how to install the package from test PyPI. You can simply copy that code and use it to install your package from testPyPi locally.
+This is an example landing page for the pyosPackage that was just uploaded. Notice at the top of the page there is instruction for how to install the package from test PyPI. You can simply copy that code and use it to install your package from testPyPi locally.
 :::
 
 
-As an example, [check out our pyOpenSci pyosPackage landing page on testPyPI](https://test.pypi.org/project/pyosPackage/). Notice the page has information about the current package version and also installation instructions as follows:
+As an example, [check out our pyOpenSci pyosPackage landing page on test PyPI](https://test.pypi.org/project/pyosPackage/). Notice the page has information about the current package version and also installation instructions as follows:
 
 `pip install -i https://test.pypi.org/simple/ pyosPackage`
 
