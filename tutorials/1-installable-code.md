@@ -3,6 +3,9 @@
 :og:title: Make your Python code installable so it can be used across projects
 ---
 
+How you call the glossary:
+{term}`sdist`
+
 # Make your Python code installable
 
 :::{admonition} What we previously covered
@@ -501,6 +504,8 @@ This is the content with links once the links are live we can uncomment this and
 * [Learn how to build your package distribution](6-publish-pypi.md) files (**sdist** and **wheel**) and publish to **test PyPI**.
 * Finally you will learn how to publish to **conda-forge** from **PyPI**.
 :::
+
+
 
 ## Footnotes
 
