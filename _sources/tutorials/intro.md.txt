@@ -29,7 +29,8 @@ understanding the steps involved in creating a Python package.
 :caption: Python Packaging 101
 
 What is a Python package? <self>
-Make your code installable. <1-installable-code>
+Make your code installable <1-installable-code>
+Publish to PyPI <publish-pypi>
 :::
 
 :::{admonition} Learning Objectives

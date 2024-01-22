@@ -1,0 +1,997 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Publish your Python package to PyPI" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packaging workflow. On the left you see a grap..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-pypi_a4a4bd2f.png" />
+<meta property="og:image:alt" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packag..." />
+<meta name="description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packaging workflow. On the left you see a grap..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Publish your Python package to PyPI &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=d6812f4d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/publish-pypi';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation for your Open Source Python Package" href="../documentation/index.html" />
+    <link rel="prev" title="Make your Python code installable" href="1-installable-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging 101</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish to PyPI</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python packaging 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Publish...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="publish-your-python-package-to-pypi">
+<h1>Publish your Python package to PyPI<a class="headerlink" href="#publish-your-python-package-to-pypi" title="Link to this heading">#</a></h1>
+<p>In the previous Python packaging lessons, you’ve learned:</p>
+<ol class="arabic simple">
+<li><p>What a Python package is</p></li>
+<li><p>How to make your code installable.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>In this lesson you will learn how to:</p>
+<ul class="simple">
+<li><p>Build your package’s source (sdist) and wheel distributions</p></li>
+<li><p>Setup an account on test PyPI (the process is similar for the real PyPI)</p></li>
+<li><p>Publish your package to test PyPI</p></li>
+</ul>
+<p>You will do all of your development work in this lesson using <a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a>.</p>
+<p>Once your package is on PyPI you can publish it to conda-forge (which is a channel on conda)
+using <a class="reference external" href="https://conda.github.io/grayskull/">Grayskull</a>.</p>
+<p>You will learn how to publish to conda-forge in a future lesson.</p>
+</div>
+<div class="docutils">
+<figure class="align-default" id="build-workflow-tutorial">
+<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. An arrow to the right takes you to a build distribution files box. Another arrow to the right takes you to a publish to PyPI box which has an arrow containing sdist and wheel that notes those files go to PyPI for hosting. From PyPI is an arrow containing sdist since you can then connect to conda forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<section id="test-pypi-vs-pypi">
+<h2>Test PyPI vs PyPI<a class="headerlink" href="#test-pypi-vs-pypi" title="Link to this heading">#</a></h2>
+<p>There are two “warehouses” that you can use to publish
+your Python package.</p>
+<ol class="arabic simple">
+<li><p><strong><a class="reference external" href="https://test.pypi.org">Test PyPI</a>:</strong> Test PyPI is a version of the PyPI repository that can be used for testing. This is a great place to practice and learn how to publish a package without taking up space on the real PyPI servers.</p></li>
+<li><p><strong><a class="reference external" href="https://pypi.org">Real PyPI</a>:</strong> This is the PyPI “warehouse” where you can officially publish your Python package. IMPORTANT: only publish your package to PyPI when you are ready for it to be used by others and/or confident that it will become a package that you maintain. PyPI is not a place to practice learning how to publish a Python package.</p></li>
+</ol>
+<p>The steps for publishing on test PyPI vs. real PyPI are the same with the
+exception of a different url. Thus, in this lesson you will use test PyPI
+to practice and learn.</p>
+</section>
+<section id="steps-for-publishing-a-python-package-on-pypi">
+<h2>4 Steps for publishing a Python package on PyPI<a class="headerlink" href="#steps-for-publishing-a-python-package-on-pypi" title="Link to this heading">#</a></h2>
+<p>In this lesson you will learn how to publish your package to PyPI
+using <a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a>. There are 4 things that
+you need to do to publish your Python package:
+to PyPI. You need to:</p>
+<ol class="arabic simple">
+<li><p><strong>Create a package development environment</strong></p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc"><strong>Build your package using <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code></strong></span></a>. Building a package is the process of turning your code into two types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> your package.</p></li>
+<li><p><strong>Create an account on (test) PyPI</strong>: You will need to create a PyPI account and associated token which provides permissions for you to upload your package.</p></li>
+<li><p><strong>Publish to PyPI using <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code></strong></p></li>
+</ol>
+<p>In a future lesson, you will learn how to create an automated
+GitHub action workflow that publishes an updated
+version of your package to PyPI every time you create a GitHub release.</p>
+<div class="tip admonition">
+<p class="admonition-title">Learn more about building Python packages in our guide</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Learn more about what building a Python package is</span></a></p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">Learn more about package distribution file that PyPI needs called the wheel</span></a></p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">Learn more about the package distribution file that conda-forge will need on PyPI called the sdist (source distribution)</span></a></p></li>
+</ul>
+</div>
+</section>
+<section id="step-1-create-a-python-package-development-environment">
+<h2>Step 1: Create a Python package development environment<a class="headerlink" href="#step-1-create-a-python-package-development-environment" title="Link to this heading">#</a></h2>
+<p>The first step in building your package is to create a development environment. The Python environment will contain all of the dependencies needed to both install and work on your package.</p>
+<p>Use Hatch to create your environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will create a default envt with your package installed in editable mode</span>
+&gt;<span class="w"> </span>hatch<span class="w"> </span>env<span class="w"> </span>create
+<span class="c1"># If you have already created an environment this command will return Environment `default` already exists</span>
+</pre></div>
+</div>
+<p>Then view all of the current environments that hatch has access to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>hatch<span class="w"> </span>env<span class="w"> </span>show
+<span class="w">     </span>Standalone
+┏━━━━━━━━━┳━━━━━━━━━┓
+┃<span class="w"> </span>Name<span class="w">    </span>┃<span class="w"> </span>Type<span class="w">    </span>┃
+┡━━━━━━━━━╇━━━━━━━━━┩
+│<span class="w"> </span>default<span class="w"> </span>│<span class="w"> </span>virtual<span class="w"> </span>│
+└─────────┴─────────┘
+</pre></div>
+</div>
+<p>Then activate the environment. Note that when you call a shell from a
+Hatch environment, it will automatically install your package into the environment in development or editable mode.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hatch shell can be used to activate your environment</span>
+&gt;<span class="w"> </span>hatch<span class="w"> </span>shell
+...<span class="w"> </span>Installing<span class="w"> </span>project<span class="w"> </span><span class="k">in</span><span class="w"> </span>development<span class="w"> </span>mode
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;/Path/to/env/here/hatch/env/virtual/pyosPackage/Mk7F5Y0T/sphinx-2i2c-theme/bin/activate&quot;</span>
+</pre></div>
+</div>
+<p>View what’s in the environment using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">list</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>pip<span class="w"> </span>list
+Package<span class="w">         </span>Version<span class="w">      </span>Editable<span class="w"> </span>project<span class="w"> </span>location
+---------------<span class="w"> </span>------------<span class="w"> </span>----------------------------------------------------
+numpy<span class="w">           </span><span class="m">1</span>.26.3
+pandas<span class="w">          </span><span class="m">2</span>.1.4
+pip<span class="w">             </span><span class="m">23</span>.3.1
+pyosPackage<span class="w">     </span><span class="m">0</span>.1.0<span class="w">        </span>/path/to/your/project/here/pyosPackage
+python-dateutil<span class="w"> </span><span class="m">2</span>.8.2
+pytz<span class="w">            </span><span class="m">2023</span>.3.post1
+six<span class="w">             </span><span class="m">1</span>.16.0
+tzdata<span class="w">          </span><span class="m">2023</span>.4
+</pre></div>
+</div>
+<p>At any time you can exit the environment using <code class="docutils literal notranslate"><span class="pre">exit</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>hatch<span class="w"> </span>shell
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;/Users/leahawasser/Library/Application Support/hatch/env/virtual/pyospackage/twO2iQR3/pyospackage/bin/activate&quot;</span>
+
+<span class="c1"># Notice here you&#39;re in the (pyospackage) environment which is the default</span>
+pyosPackage<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>main<span class="o">)</span><span class="w"> </span><span class="o">[</span>✎<span class="w"> </span>×1<span class="w"> </span><span class="o">]</span><span class="w"> </span>is<span class="w"> </span>📦<span class="w"> </span>v0.1.4<span class="w"> </span>via<span class="w"> </span>🐍<span class="w"> </span>pyenv<span class="w"> </span><span class="o">(</span>pyospackage<span class="o">)</span>
+➜<span class="w"> </span><span class="nb">exit</span>
+
+pyosPackage<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>main<span class="o">)</span><span class="w"> </span><span class="o">[</span>✎<span class="w"> </span>×1<span class="w"> </span><span class="o">]</span><span class="w"> </span>is<span class="w"> </span>📦<span class="w"> </span>v0.1.4<span class="w"> </span>via<span class="w"> </span>🐍<span class="w"> </span>pyenv<span class="w"> </span>took<span class="w"> </span>43s
+➜
+</pre></div>
+</div>
+<section id="hatch-and-environments">
+<h3>Hatch and environments<a class="headerlink" href="#hatch-and-environments" title="Link to this heading">#</a></h3>
+<p>Behind the scenes when hatch creates a new virtual environment,
+by default it uses venv<a class="footnote-reference brackets" href="#venv" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> which is the default environment management tool that comes with Python installations.</p>
+<p>Hatch will:</p>
+<ol class="arabic simple">
+<li><p>Create a new virtualenv (venv) that is located on your computer.</p></li>
+<li><p>Install your package into the environment in editable mode (similar to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span></code>). This means it installs both your project and your project’s dependencies as declared in your pyproject.toml file.</p></li>
+</ol>
+</section>
+</section>
+<section id="step-2-build-your-package-s-sdist-and-wheel-distributions">
+<h2>Step 2: Build your package’s sdist and wheel distributions<a class="headerlink" href="#step-2-build-your-package-s-sdist-and-wheel-distributions" title="Link to this heading">#</a></h2>
+<p>Once you have your development environment setup, you are ready to build your package using Hatch. Remember that building is the process of turning your Python package file structure into two distribution files:</p>
+<ol class="arabic simple">
+<li><p>The <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel distribution</span></a> is a pre-built version of your package. It useful for users as it can be directly installed using a tool such as <code class="docutils literal notranslate"><span class="pre">pip</span></code>. This file has the extension <code class="docutils literal notranslate"><span class="pre">.whl</span></code>.</p></li>
+<li><p>The <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">source distribution</span></a> contains the files that make up your package in an unbuilt format. This file will have the extension <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code>.</p></li>
+</ol>
+<p>You will use Hatch as a <strong>Front end</strong> tool that builds
+your package’s sdist and wheel using the <a class="reference external" href="https://hatch.pypa.io/latest/">hatchling</a> build back-end.
+The hatchling build back-end is used because you declared it in your pyproject.toml file in the <a class="reference internal" href="1-installable-code.html"><span class="doc std std-doc">previous lesson</span></a>.</p>
+<p>To build your package run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>hatch<span class="w"> </span>build
+────────────────<span class="w"> </span>sdist<span class="w"> </span>─────────────────
+dist/pyospackage-0.1.0.tar.gz
+────────────────<span class="w"> </span>wheel<span class="w"> </span>─────────────────
+dist/pyospackage-0.1.0-py3-none-any.whl
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Learn more about building a Python package</p>
+<p>You can learn more about
+building in the <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">build page of our packaging guide</span></a>.</p>
+</div>
+<section id="congratulations-you-ve-created-your-python-package-distribution-files">
+<h3><i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you’ve created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i><a class="headerlink" href="#congratulations-you-ve-created-your-python-package-distribution-files" title="Link to this heading">#</a></h3>
+<p>You’ve now built your Python package and created your package distribution files. The next step is to setup
+your account on testPyPI so you can publish your package.</p>
+</section>
+</section>
+<section id="step-3-setup-your-test-pypi-account">
+<h2>Step 3. Setup your test PyPI account<a class="headerlink" href="#step-3-setup-your-test-pypi-account" title="Link to this heading">#</a></h2>
+<p>Next, you’ll setup an account on Test PyPI. Remember that you
+are using test PyPI here instead of the PyPI as a way to
+safely learn how to publish a package without stressing the
+real PyPI’s servers.</p>
+<div class="admonition-test-pypi-vs-pypi admonition">
+<p class="admonition-title">Test PyPI vs. PyPI</p>
+<p>If you have a package that you are confident belongs on PyPI, all of the steps below will also work for you. When you publish using Hatch, you will call <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code> to publish directly to PyPI instead of <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span> <span class="pre">-r</span> <span class="pre">test</span></code> which publishes to Test PyPI.</p>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://test.pypi.org/">Open up a web browser and go to the test PyPI website</a>.</p></li>
+<li><p><a class="reference external" href="https://test.pypi.org/account/register/">Create an account</a> if you don’t already have one. Be sure to store your password in a safe place!</p></li>
+<li><p>Once you have an account setup, login to it.</p></li>
+<li><p>Search on <a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> to ensure that the package name that you have selected doesn’t already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it’s unique.</p></li>
+</ol>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" src="../_images/testpypi-search.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Before you try to upload to test PyPI, check to see if the name of your package is already taken. You can do that using
+the search box at the top of the test PyPI website.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-setup-2-factor-2fa-authentication admonition">
+<p class="admonition-title">Setup 2-factor (2FA) authentication</p>
+<p>2-factor authentication is a secure login process that allows you to
+use a backup device that only you can access to validate that the person logging in is really you. It addresses the issue of password phishing where someone else gains access to a password and can login to your account.</p>
+<p>This matters on PyPI because someone could login to your account and upload a version of your package that has security issues. These issues will then impact all of your users when they download and install that version of the package.</p>
+<p>2-factor authentication is required for PyPI authentication
+as of 1 January 2024.</p>
+</div>
+</section>
+<section id="step-4-create-a-package-upload-token">
+<h2>Step 4. Create a package upload token<a class="headerlink" href="#step-4-create-a-package-upload-token" title="Link to this heading">#</a></h2>
+<p>To upload your package to PyPI, you will need to create a token. Ideally
+this token is specific to the package that you are publishing.</p>
+<p>However, if your package isn’t already on PyPI, then you will need to create a token for your account first and then create a package-specific token.</p>
+<div class="admonition-why-create-package-specific-tokens admonition">
+<p class="admonition-title">Why create package-specific tokens?</p>
+<p>It’s ideal to create a package-specific token. When you create an account wide token this allows anyone with access to then access all of your PyPI projects. By creating a package specific token, you are limiting the scope of the token to only your specific package. This is just a safe way to set things up for you particularly if you are collaborating with others on package development.</p>
+</div>
+<section id="follow-the-steps-below-to-create-your-token">
+<h3>Follow the steps below to create your token.<a class="headerlink" href="#follow-the-steps-below-to-create-your-token" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Login to test PyPI and go to your account settings</p></li>
+<li><p>Scroll down to the <strong>API tokens</strong> section</p></li>
+<li><p>Click on the <strong>Add API Token</strong> button</p>
+<ul>
+<li><p>If you are new to using PyPI and don’t have any packages there yet, OR if you have other packages on PyPI but are uploading a new package, you will need to create an account-wide token.</p></li>
+</ul>
+</li>
+<li><p>When you create your token, be sure to copy the token value and store it in a secure place before closing that browser.</p></li>
+</ul>
+<p>Your token should look something like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pypi-abunchofrandomcharactershere...</span></code></p>
+<p>It should start with <code class="docutils literal notranslate"><span class="pre">pypi</span></code> followed by a dash and a bunch of characters.</p>
+</section>
+<section id="upload-to-pypi-using-hatch">
+<h3>Upload to PyPI using Hatch<a class="headerlink" href="#upload-to-pypi-using-hatch" title="Link to this heading">#</a></h3>
+<p>Once you have your token, you are ready to publish to
+PyPI.</p>
+<ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span> <span class="pre">-r</span> <span class="pre">test</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">-r</span></code> stands for repository. In this case because you are publishing to test-PyPI you will use <code class="docutils literal notranslate"><span class="pre">-r</span> <span class="pre">test</span></code>. Hatch will then ask for a username and credentials.</p>
+<ul class="simple">
+<li><p>Add the word <code class="docutils literal notranslate"><span class="pre">__token__</span></code> for your username. This tells Test PyPI that you are using a token value rather than a username.</p></li>
+<li><p>Paste your PyPI token value in at the <code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">credentials</span></code> prompt:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>❯<span class="w"> </span>hatch<span class="w"> </span>publish<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
+Enter<span class="w"> </span>your<span class="w"> </span>username:<span class="w"> </span>__token__
+Enter<span class="w"> </span>your<span class="w"> </span>credentials:<span class="w"> </span>&lt;past-your-token-value-here&gt;
+dist/pyospackage-0.1.0-py3-none-any.whl<span class="w"> </span>...<span class="w"> </span>already<span class="w"> </span>exists
+dist/pyospackage-0.1.0.tar.gz<span class="w"> </span>...<span class="w"> </span>already<span class="w"> </span>exists
+</pre></div>
+</div>
+<p>If your credentials are valid, and you have already run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>
+and thus have your 2 distribution files in a <code class="docutils literal notranslate"><span class="pre">dist/</span></code> directory then
+Hatch will publish your package to test PyPI.</p>
+<p>Hatch also has a caching system so once you enter your credentials it
+will remember them.</p>
+</section>
+</section>
+<section id="install-your-package-from-test-pypi">
+<h2>Install your package from test PyPI<a class="headerlink" href="#install-your-package-from-test-pypi" title="Link to this heading">#</a></h2>
+<p>Once your package upload is complete, you can install it from
+test PYPI. You can find the installation instructions on the test PyPI
+landing page for your newly uploaded package.</p>
+<figure class="align-default" id="testpypi-landing-page">
+<a class="reference internal image-reference" href="../_images/test-pypi-package.png"><img alt="A screenshot of the test PyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's README file." src="../_images/test-pypi-package.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">This is an example landing page for the pyosPackage that was just uploaded. Notice at the top of the page there is instruction for how to install the package from test PyPI. You can simply copy that code and use it to install your package from testPyPi locally.</span><a class="headerlink" href="#testpypi-landing-page" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As an example, <a class="reference external" href="https://test.pypi.org/project/pyosPackage/">check out our pyOpenSci pyosPackage landing page on test PyPI</a>. Notice that
+the page has information about the current package version and also
+installation instructions as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-i</span> <span class="pre">https://test.pypi.org/simple/</span> <span class="pre">pyosPackage</span></code></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Publishing to test.PyPI.org vs PyPI.org
+While you can install from test PyPI it’s not recommended that you publish to
+testPyPI as a permanent way to install your package. Test PyPi is a perfect place to learn how to publish your package. But your end goal should be to publish to PyPI.org once you have figured out your workflow.</p>
+</div>
+<section id="time-to-install-your-package">
+<h3>Time to install your package<a class="headerlink" href="#time-to-install-your-package" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>On your computer, activate the development environment that
+you wish to install your newly published package in.</p></li>
+<li><p>Run the installation instructions for your package from test PyPI.</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Conda</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyospkg-dev
+&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>youPackageNameHere
+&gt;<span class="w"> </span>conda<span class="w"> </span>list
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+venv mac / Linux</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>hatch<span class="w"> </span>shell
+&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>youPackageNameHere
+&gt;<span class="w"> </span>pip<span class="w"> </span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-the-value-of-end-to-end-tools-like-hatch-flit-and-poetry admonition">
+<p class="admonition-title">The value of end-to-end tools like hatch, flit and poetry</p>
+<p>In this lesson you are using Hatch and hatchling to create, build and publish your Python Package. <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="std std-doc">Click here to learn about other packaging tools in the ecosystem.</span></a></p>
+</div>
+<!-- TODO: venv will always be different for windows - do we need a third tab?? Also is conda different on windows? i forget -->
+<!--TODO: teach them to setup trusted publisher for actions... in the actions lesson
+https://pypi.org/help/#twofa
+
+from PyPI: https://pypi.org/help/#apitoken - You can create a token for an entire PyPI account, in which case, the token will work for all projects associated with that account. Alternatively, you can limit a token's scope to a specific project.
+ -->
+</section>
+</section>
+<section id="package-specific-token-vs-trusted-publisher">
+<h2>Package-specific token vs trusted publisher<a class="headerlink" href="#package-specific-token-vs-trusted-publisher" title="Link to this heading">#</a></h2>
+<p>For long run maintenance of your package, you have two options
+related to PyPI publication.</p>
+<ol class="arabic simple">
+<li><p>You can create a package-specific token which you will use to publish your package (manually) to PyPI. This is a great option if you don’t wish to automate your PyPI publication workflow.</p></li>
+<li><p>You can also create an automated publication workflow on GitHub using GitHub actions. This is a great way to make the publication process easier and it also supports a growing maintainer team. In this case we suggest you don’t worry about the token and instead setup a specific GitHub action that publishes your package when you make a release. You can then create a “trusted publisher” workflow on PyPI.</p></li>
+</ol>
+<p>You will learn how to create the automated trusted publisher workflow in a followup lesson.</p>
+<section id="optional-if-you-want-to-use-a-manual-token-based-publication-workflow">
+<h3>OPTIONAL: If you want to use a manual token-based publication workflow<a class="headerlink" href="#optional-if-you-want-to-use-a-manual-token-based-publication-workflow" title="Link to this heading">#</a></h3>
+<p>If you plan to use your token regularly to publish to PyPI, we strongly recommend going through the above steps again to create
+a token specific to your new package.</p>
+<p>To do this:</p>
+<ol class="arabic simple">
+<li><p>Go to test PyPI</p></li>
+<li><p>Navigate to the “Your Projects” section of your account</p></li>
+<li><p>Click on the manage button for the project that you wish to add a token for</p></li>
+<li><p>Go to settings</p></li>
+<li><p>Click on “Create a token for your-package-name-here”</p></li>
+<li><p>Create the token and follow the steps above publish your package using the repository specific token.</p></li>
+</ol>
+<p>And you’re all done!</p>
+</section>
+</section>
+<section id="you-have-published-your-package-to-test-pypi">
+<h2>You have published your package to (test) PyPI!<a class="headerlink" href="#you-have-published-your-package-to-test-pypi" title="Link to this heading">#</a></h2>
+<p>Congratulations. You have now successfully published your package to test PyPI. If you have a package that is ready for real-world use on the real PyPI, then you can follow the same steps to publish it on PyPI.org.</p>
+<p>Once you publish on PyPI.org, you can then easily add your package to the conda-forge ecosystem using the <a class="reference external" href="https://conda-forge.org/blog/posts/2020-03-05-grayskull/">grayskull</a> tool.</p>
+<p>You will learn how to do that in the next lesson.</p>
+</section>
+<section id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="venv" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>https://docs.python.org/3/library/venv.html</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-installable-code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Make your Python code installable</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../documentation/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation for your Open Source Python Package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-pypi-vs-pypi">Test PyPI vs PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-for-publishing-a-python-package-on-pypi">4 Steps for publishing a Python package on PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-a-python-package-development-environment">Step 1: Create a Python package development environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-and-environments">Hatch and environments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-build-your-package-s-sdist-and-wheel-distributions">Step 2: Build your package’s sdist and wheel distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#congratulations-you-ve-created-your-python-package-distribution-files"><i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you’ve created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-setup-your-test-pypi-account">Step 3. Setup your test PyPI account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-a-package-upload-token">Step 4. Create a package upload token</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#follow-the-steps-below-to-create-your-token">Follow the steps below to create your token.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-pypi-using-hatch">Upload to PyPI using Hatch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-your-package-from-test-pypi">Install your package from test PyPI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-install-your-package">Time to install your package</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-specific-token-vs-trusted-publisher">Package-specific token vs trusted publisher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-if-you-want-to-use-a-manual-token-based-publication-workflow">OPTIONAL: If you want to use a manual token-based publication workflow</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-have-published-your-package-to-test-pypi">You have published your package to (test) PyPI!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/publish-pypi.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/tutorials/publish-pypi.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
