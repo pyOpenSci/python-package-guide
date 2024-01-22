@@ -328,6 +328,11 @@ installation instructions as follows:
 
 `pip install -i https://test.pypi.org/simple/ pyosPackage`
 
+:::{important} Publishing to test.PyPI.org vs PyPI.org
+While you can install from test PyPI it's not recommended that you publish to
+testPyPI as a permanent way to install your package. Test PyPi is a perfect place to learn how to publish your package. But your end goal should be to publish to PyPI.org once you have figured out your workflow.
+:::
+
 ### Time to install your package
 
 * On your computer, activate the development environment that
