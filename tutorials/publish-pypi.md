@@ -164,9 +164,10 @@ Hatch will:
 1. Create a new virtualenv (venv) that is located on your computer.
 2. Install your package into the environment in editable mode (similar to `pip install -e`). This means it installs both your project and your project's dependencies as declared in your pyproject.toml file.
 
+(build-package)=
 ## Step 2: Build your package's sdist and wheel distributions
 
-Once you have your development environment setup, you are ready to build your package using Hatch. Remember that building is the process of turning your Python package file structure into two distribution files:
+Once you have your development environment setup, you are ready to build your package using Hatch. Building is the process of turning your Python package file structure into the two distribution files that PyPI requires:
 
 1. The [wheel distribution](#python-wheel) is a pre-built version of your package. It useful for users as it can be directly installed using a tool such as `pip`. This file has the extension `.whl`.
 2. The [source distribution](#python-source-distribution) contains the files that make up your package in an unbuilt format. This file will have the extension `.tar.gz`.
