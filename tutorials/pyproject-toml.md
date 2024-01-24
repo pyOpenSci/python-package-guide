@@ -3,23 +3,26 @@
 :::{todo}
 - add a note for hatch - if you want to use dynamic versioning you'll need to add `tool.hatch.version` to the pyproject.toml file.
 - TODO: decide how we want to list readme and license? it might make sense to just follow the simplest option and do spdx?
-- TODO: make sure they add the dev requirements here... including build.
+- make sure they add the dev requirements here... including build.
 license = { text = "MIT" } that format is a toml inline table https://toml.io/en/v1.0.0#inline-table and it becomes a subtable of the project table
 
-TODO: make sure that the link to our guide is on this page.  [Learn more about this file in our packaging guide.](https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html)
+* make sure we have this listing for license
+* SPDX for licenses https://spdx.dev/use/overview/
+is 2 above enough for examples? should we show a few others?
 
-myst-nb or nbsphinx to run code
 :::
 
 
 In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it `pip` installable. You then learned how to [publish that bare minimum version of your package to PyPI](publish-pypi.md).
 
-To help users find your package on PyPI, and to add more information about the Python versions your support, development status of your project and about who maintainers your project,
-you will want to add additional metadata to your `pyproject.toml` file that
-describes the use and contents of your package. You will
-learn how to do that in this lesson.
+To enhance the visibility of your package on PyPI and provide more information
+about its compatibility with Python versions, project development status, and
+project maintainers, you should add additional metadata to your `pyproject.toml`
+file. This
+lesson will guide you through the process.
 
-In subsequent lessons you will add a license and README file to your package which will further flesh out both your PyPI landing page and the landing page
+
+In future lessons you will add a license and README file to your package which will further flesh out both your PyPI landing page and the landing page
 of your GitHub or GitLab repository.
 
 :::{admonition} Learning Objectives
@@ -27,15 +30,18 @@ of your GitHub or GitLab repository.
 
 In this lesson you will learn:
 
-1. More about what a `pyproject.toml` file is
-1. How to declare important information (metadata) about your project to prepare for publication to PyPI
+1. What a `pyproject.toml` file is
+1. How to declare information (metadata) about your project to help users find and understand it on PyPI.
 
 If you wish to learn more about the `pyproject.toml` format, [check out this page. ](../package-structure-code/pyproject-toml-python-package-metadata.md)
 :::
 
-<!-- TODO: it might be nice to make this admonition look different if we stick with a TLDR section -->
+<!-- TODO:Friends - As you are reviewing ...as a beginner is this TLDR too technical when you have no idea what the elements in it are? or is it a nice summary? -->
 
-:::{admonition} Lesson highlights TL&DR
+
+:::{dropdown} Click for Lesson highlights TL&DR
+:color: secondary
+:icon: unlock
 
 When creating your pyproject.toml file, consider the following:
 
@@ -49,24 +55,19 @@ When creating your pyproject.toml file, consider the following:
 3. When you are adding classifiers to the **[project]** table, only use valid values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build and publish your package on PyPI.
 4. There is no specific order for tables in the `pyproject.toml` file. However, fields need to be placed within the correct tables. For example `requires =` always need to be in the **[build-system]** table.
 5. We suggest that you include your **[build-system]** table at the top of your `pyproject.toml` file.
-
 :::
+
 
 ## What is a pyproject.toml file?
 
 The `pyproject.toml` file is a human and machine-readable file that serves as the primary configuration file for your pure Python package.
 
-The TOML format can be compared to a format such as .json which is another structured format - however the TOML format is a simpler and easier-to-read format.
+The TOML format can be compared to structured formats such as`.json`. However, the TOML format is an easier-to-read format - especially for us humans.
 
-The `pyproject.toml` file is critical for building your package. Remember, [building your package](build-package) is the step that is required in order to publish to PyPI. The pyproject.toml file tells your build tool:
+:::{tip}
+[Building your package](build-package) is the step that created the distribution files that are required for you to publish to PyPI.
+:::
 
-- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to chose from](build-backend-options)).
-- How and where to retrieve your package's version- either statically where you declare the version version = "1.1" or dynamically where the tool looks to the most recent tag in your history to determine the current version.
-- What dependencies your package needs
-- What versions of Python your package supports (important for your users).
-
-The `pyproject.toml` file can also be used to configure other
-tools such as Black.
 
 ### About the .toml format
 
@@ -75,12 +76,34 @@ The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language
 Below you can see the build-system table. Within
 that table there is one key/value pair.
 
-`requires =`  is the kay and the value is `["hatchling"]`.
+`requires =`  is the key and the value is `["hatchling"]`.
 
 ```toml
 [build-system] # <- this is a table
 requires = ["hatchling"] #  requires =  is a key and "hatchling" is a value contained within an array specified by square brackets [].
 ```
+
+
+### What is the pyproject.toml used for?
+
+The pyproject.toml file tells your build tool:
+
+- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to chose from](build-backend-options)).
+- How and where to retrieve your package's version:
+    - **statically** where you declare the version `version = "1.1"` or
+    - **dynamically** where the tool looks to the most recent tag in your history to determine the current version.
+- What dependencies your package needs
+- What versions of Python your package supports (important for your users).
+
+The `pyproject.toml` file also makes it easy for anyone browsing your GitHub
+repository to quickly understand your package's structure such as:
+
+- How your package is built,
+- What Python versions and operating systems it supports
+- What it does,
+- Who maintains it
+
+Finally, it is also often used to configure tools such as static type checkers (e.g. mypy), linters (e.g. black, ruff), and other tools.
 
 :::{tip}
 Check out the [PyPA documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-pyproject-toml) if you are interested in setting build configurations for other tools.
@@ -91,8 +114,8 @@ Note that some build tools may deviate in how they store project metadata. As su
 
 ### What is the metadata for?
 
-As discussed in our [pyproject.toml file overview page in the packaging guide](../package-structure-code/pyproject-toml-python-package-metadata/), the pyproject.toml file is the file that your build tool uses to populate
-a `METADATA` that is included in your final Python package.
+The pyproject.toml file is the file that your build tool uses to populate
+a `METADATA` that is included in your Python distribution files that get published to PyPI.
 
 This `METADATA` file is then used by PyPI to populate your package's PyPI landing page and help users filter through the tens of thousands of packages published there.
 
@@ -106,17 +129,11 @@ and your package is built, the build tool organizes the metadata into a format t
 represent on your PyPI landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.
 ```
 
-### pyproject.toml files make it easier for potential contributors to understand your package's structure
+:::{tip} A more indepth overview of pyproject.toml files
 
-The `pyproject.toml` file also makes it easy for anyone browsing your GitHub
-repository to quickly understand:
+[Our guidebook page has a more in depth overview of this file](../package-structure-code/pyproject-toml-python-package-metadata/)
+:::
 
-- How your package is built,
-- What Python versions and operating systems it supports
-- What it does, who maintains it
-- And more
-
-The file is also often used to configure tools such as static type checkers (e.g. mypy), linters (e.g. black, ruff), and other tools.
 
 ## Time to update your pyproject.toml file
 
@@ -168,25 +185,6 @@ Let's add the following to your table:
 - package **authors**
 - package **maintainers**
 
-:::{admonition} Authors vs. maintainers
-:class: tip
-
-When adding maintainers and authors, you may want to think about the difference between the two.
-
-Authors generally include people who:
-* originally created / designed developed the package and
-* people who add new functionality to the package.
-
-Whereas maintainers are the people that are currently, actively working on the project. It is often the case that there is overlap in authors and maintainers. As such these lists may be similar or the same.
-
-A good example of when the lists might diverge is sometimes you have a package where an initial author developed it and then stepped down as a maintainer to move on to other things. This person may continue to be considered an author but no longer actively maintains the package.
-
-It is important to note there that there are many ways define author vs maintainer and we don't prescribe a single approach in this tutorial.
-
-However, we encourage you to consider carefully, for PyPI publication, who
-you want to have listed as authors and maintainers on your PyPI landing page.
-:::
-
 When you add authors and maintainers you need to use a format that will look like a Python list with a dictionary within it type of format:
 
 `authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]`
@@ -212,6 +210,26 @@ description = "Tools that update the pyOpenSci contributor and review metadata t
 authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]
 maintainers = [{ name = "Firstname lastname", email = "email@pyopensci.org" }, { name = "Firstname lastname", email = "email@pyopensci.org" }]
 ```
+
+:::{dropdown} Learn More: What's the difference between author and maintainer in open source?
+:color: secondary
+
+When adding maintainers and authors, you may want to think about the difference between the two.
+
+Authors generally include people who:
+* originally created / designed developed the package and
+* people who add new functionality to the package.
+
+Whereas maintainers are the people that are currently, actively working on the project. It is often the case that there is overlap in authors and maintainers. As such these lists may be similar or the same.
+
+A good example of when the lists might diverge is sometimes you have a package where an initial author developed it and then stepped down as a maintainer to move on to other things. This person may continue to be considered an author but no longer actively maintains the package.
+
+It is important to note there that there are many ways define author vs maintainer and we don't prescribe a single approach in this tutorial.
+
+However, we encourage you to consider carefully, for PyPI publication, who
+you want to have listed as authors and maintainers on your PyPI landing page.
+:::
+
 
 ### Add classifiers to your metadata
 
@@ -478,14 +496,7 @@ Below are some examples of `pyproject.toml` files from various packages in the s
 
 ## What's next??
 
-You are now ready to publish your Python package to PyPI and conda-forge.
+Here, you learned how to [how to publish to (test) PyPI](6-publish-pypi). You are now ready to publish a new version of your Python package to (test) PyPI.
 
-* In the next lesson, you will learn [how to publish to PyPI](6-publish-pypi).
-* Following that you'll learn how to create the recipe needed for conda-forge to build your package from PyPI and [publish it on conda-forge](7-publish-conda-forge).
 
-<!--
-TODO: add link to hatch documentation for metadata (which is what we want to follow using hatchling)
-TODO: make sure we have this listing for license
-* SPDX for licenses https://spdx.dev/use/overview/
-is 2 above enough for examples? should we show a few others?
--->
+Following that you'll learn how to create the recipe needed for conda-forge to build your package from PyPI and [publish it on conda-forge](7-publish-conda-forge).

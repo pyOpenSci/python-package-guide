@@ -6,6 +6,7 @@
     --pyos-color-tertiary: #A66C98;
     --pyos-color-dark: #542568;
     --pyos-color-light: #DAABCF;
+    --pst-sd-dropdown-bg-color: #A66C98;
 
     /* Darkmode Adjustments*/
     --pyos-dm-color-primary: #C483E0;
@@ -27,6 +28,7 @@ html[data-theme="dark"] {
 /* anything related to the light theme */
 html[data-theme="light"] {
     --pst-color-tbl-row: #f5f1ff!important;
+    --pst-color-tertiary: var(--pst-color-info-bg);
 }
 }
 
@@ -381,3 +383,8 @@ td, th {
     border: 1px solid #ccc; /* Light gray border */
     padding: 8px; /* Add some padding for better readability */
   }
+
+
+.tldr {
+    background-color: var(--pst-color-info-bg);
+}
