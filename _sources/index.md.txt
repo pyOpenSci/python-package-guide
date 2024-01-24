@@ -73,6 +73,7 @@ by the community now! Join our community review process or watch development of 
 
 * [What is a Python package?](/tutorials/intro)
 * [Make your code installable](/tutorials/1-installable-code)
+* [Publish your package to (test) PyPi](/tutorials/publish-pypi)
 * *How to add a README and LICENSE to support publication (coming next!)*
 * *How to add metadata to a pyproject.toml file for publication to PyPI.*
 
