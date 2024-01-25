@@ -26,11 +26,21 @@ understanding the steps involved in creating a Python package.
 
 :::{toctree}
 :hidden:
-:caption: Python Packaging 101
+:caption: Create a Python package
 
 What is a Python package? <self>
 Make your code installable <1-installable-code>
 Publish to PyPI <publish-pypi>
+:::
+
+
+:::{toctree}
+:hidden:
+:caption: Project Metadata
+
+Add README file <add-readme>
+Add license & Code of Conduct <add-license-coc>
+Add metadata - pyproject.toml <pyproject-toml>
 :::
 
 :::{admonition} Learning Objectives
@@ -294,7 +304,7 @@ publish it in a repository such as **PyPI** or **conda-forge**.
 :::{todo}
 The links below won't work until those lessons (which are written) are published.
 
-Learn [how to publish your package to PyPI in this tutorial.](6-publish-pypi.md)
+Learn [how to publish your package to PyPI in this tutorial.](publish-pypi)
 :::
 
 

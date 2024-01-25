@@ -35,6 +35,7 @@ permissive license and then use the legal language templates provided both by Gi
 
 Licenses are legally binding, as such you should avoid trying to create your own license unless you have the guidance of legal council.
 
+(permissive-license)=
 ### Use open permissive licenses when possible
 
 We generally suggest that you use a permissive, license that is [Open Software Initiative (OSI) approved](https://opensource.org/licenses/). If you are
@@ -52,7 +53,7 @@ in some cases the license that you want is not available through that online
 process.
 
 :::{admonition} License recommendations from the SciPy package
-[The SciPy documentation has an excellent overview of licenses.](https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing). Once of the key elements
+[The SciPy documentation has an excellent overview of licenses.](https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing) Once of the key elements
 that these docs recommend is ensuring that the license that you select is
 complementary to license used in the core scientific Python ecosystem.
 Below is a highlight of this text which outlines license that are compatible

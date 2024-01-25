@@ -70,7 +70,7 @@ In the upcoming lessons you will learn how to:
 :::
 
 
-:::{figure-md} packages-environment
+:::{figure-md} packages-environment2
 
 <img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." width="700px">
 
@@ -325,7 +325,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"  # rename this if you plan to publish to test PyPI
 # Here you add the package version manually.
 # You will learn how to setup dynamic versioning in a followup tutorial.
-version = "1.1.0"
+version = "0.1.0"
 
 ```
 
