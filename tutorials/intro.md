@@ -306,12 +306,8 @@ If you want to make your package directly installable without having
 to download the code to your computer locally then you need to
 publish it in a repository such as **PyPI** or **conda-forge**.
 
-:::{todo}
-The links below won't work until those lessons (which are written) are published.
 
-Learn [how to publish your package to PyPI in this tutorial.](publish-pypi)
-:::
-
+You will learn [how to publish your package to PyPI in this tutorial.](publish-pypi)
 
 :::{todo}
 This lesson is also not published - yet but will be reviewed soon.
