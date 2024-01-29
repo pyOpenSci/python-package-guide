@@ -26,6 +26,13 @@ understanding the steps involved in creating a Python package.
 
 :::{toctree}
 :hidden:
+:caption: Python Packaging Tutorial Setup
+
+Get to know Hatch <get-to-know-hatch>
+:::
+
+:::{toctree}
+:hidden:
 :caption: Python Packaging 101
 
 What is a Python package? <self>
