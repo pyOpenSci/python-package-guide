@@ -13,7 +13,7 @@ If you are comfortable using [pipx](https://pipx.pypa.io/stable/) to install hat
 However if you are not sure about pipx, you can install hatch using pip or conda.
 :::
 
-### Configure hatch
+## Configure hatch
 
 Once you have installed hatch, you will want to customize the configuration.
 
@@ -44,7 +44,10 @@ email = "your-email@your-domain.org"
 
 Next, set tests to false in the `[template.plugins.default]` table.
 
-While tests are important, setting tests to true will create a more complex pyproject.toml file. That we won't need to use in this beginner friendly tutorial series.
+While tests are important, setting the tests configuration in Hatch
+to `true` will create a more complex pyproject.toml file. You won't
+need to use this feature in this beginner friendly tutorial series
+but we will introduce it in later tutorials.
 
 Your config.toml file should look something like the one below. It's ok if you have
 
@@ -114,7 +117,7 @@ and maintaining your Python package easier.
 
 A few features that hatch offers
 
-1. it will convert metadata stored in a setup.py or setup.cfg  file to a pyproject.toml file for you. While we haove not extensively tested this feature yet, please let us know if you try it!
+1. it will convert metadata stored in a setup.py or setup.cfg  file to a pyproject.toml file for you. While we have not extensively tested this feature yet, please let us know if you try it!
 2. It will help you by storing configuration information for publishing to PyPI after you've entered it once.
 
 Use `hatch -h` to see all of the available commands.

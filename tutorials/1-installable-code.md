@@ -156,8 +156,10 @@ Below you will create a directory structure similar to the structure described a
 ## Step 1: Set Up the Package Directory Structure
 
 * Open your shell or preferred terminal.
-* cd to the location where you'd like your package directory to live. Hatch will create the package directory for you
-* Choose a name for your package, preferably in lowercase and without spaces. For this tutorial we'll use `pyospackage`.
+* Use the shell `cd` command to navigate in your shell to the location where you'd like your package directory to live. Hatch will create the package directory for you
+* Choose a name for your package. The name should:
+    * Have no spaces (*Required*)
+    * Use all lowercase characters (*Recommended*). For this tutorial we will use `pyospackage`.
 
 Next run:
 
@@ -293,7 +295,7 @@ You will learn more about the `pyproject.toml` format in the
 [next lesson when you add additional metadata / information to this file.](5-pyproject-toml.md)
 :::
 
-- Open up the `pyproject.toml` file that Hatch created in your favorite text editor. Is should look something like the example below.
+- Open up the `pyproject.toml` file that Hatch created in your favorite text editor. It should look something like the example below.
 
 
 ```toml
