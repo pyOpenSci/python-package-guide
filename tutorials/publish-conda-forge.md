@@ -76,32 +76,22 @@ Conda-forge will build your package from the source distribution which you [publ
 
 ### Conda-forge publication steps
 
-The steps to publish to conda-forge are:
-
-1. Publish your Python package distribution files (sdist & wheel) to PyPI
-2. Create a conda-forge recipe, which is a yaml file with instructions on how to build your package on conda-forge, using the grayskull[^grayskull] package.
-3. Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request for review. [Click here for an example submission from pyOpenSci.](https://github.com/conda-forge/staged-recipes/pull/25173)
-
 :::{figure-md} publish-pypi-conda-forge
 <img src="../images/pyopensci-python-package-pypi-to-conda-forge.png" alt="." width="700px">
 
 Caption
 :::
 
-:::{}
+The steps to publish to conda-forge are:
 
-
-
-:::
-
-
-:::{todo}
-Here is an example of what a pull request for a conda-forge recipe looks like.
-
-Create screen shot of a staged recipe
-:::
+1. Publish your Python package distribution files (sdist & wheel) to PyPI
+2. Create a conda-forge recipe, which is a yaml file with instructions on how to build your package on conda-forge, using the grayskull[^grayskull] package.
+3. Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request for review. [Click here for an example submission from pyOpenSci.](https://github.com/conda-forge/staged-recipes/pull/25173)
 
 4. Once someone from the conda-forge team reviews your pull request, you may need to make some changes. Eventually the pull request will be approved and merged.
+
+
+
 
 Now your package is on conda-forge.
 
