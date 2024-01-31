@@ -61,7 +61,7 @@ Conda channels represent various repositories that you can install packages from
 
 ## Why publish to conda forge
 
-There are many users, especially in the scientific ecosystem that use conda as their primary package manager / environment tool. Thus, having packages available to these users on the conda-forge channel is useful. In some cases packages on conda-forge can minimize dependency conflicts that can occur when mixing installations using pip and conda. This is particularly important for the spatial ecosystem.
+There are many users, especially in the scientific Python ecosystem that use conda as their primary package manager / environment tool. Thus, having packages available to these users on the conda-forge channel is useful. In some cases packages on conda-forge can minimize dependency conflicts that can occur when mixing installations using pip and conda. This is particularly important for the spatial ecosystem.
 
 ## How publishing to conda-forge works
 
@@ -76,11 +76,24 @@ Conda-forge will build your package from the source distribution which you [publ
 
 ### Conda-forge publication steps
 
-The high steps to publish to conda-forge are you will walk through below are:
+The steps to publish to conda-forge are:
 
 1. Publish your Python package distribution files (sdist & wheel) to PyPI
 2. Create a conda-forge recipe, which is a yaml file with instructions on how to build your package on conda-forge, using the grayskull[^grayskull] package.
-3. Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request for review.
+3. Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request for review. [Click here for an example submission from pyOpenSci.](https://github.com/conda-forge/staged-recipes/pull/25173)
+
+:::{figure-md} publish-pypi-conda-forge
+<img src="../images/pyopensci-python-package-pypi-to-conda-forge.png" alt="." width="700px">
+
+Caption
+:::
+
+:::{}
+
+
+
+:::
+
 
 :::{todo}
 Here is an example of what a pull request for a conda-forge recipe looks like.
@@ -154,7 +167,7 @@ Executing injected distutils...
 Checking >> -- 100% |#                          |[Elapsed Time: 0:00:00]
 Matching license file with database from Grayskull...
 Match percentage of the license is 97%. Low match percentage could mean that the license was modified.
-License type: BSD-3-Clause
+License type: MIT
 License file: ['LICENSE']
 Build requirements:
   <none>
@@ -187,7 +200,7 @@ This will create a meta.yaml file that looks like the example below:
 
 ```yaml
 {% set name = "pyospackage" %}
-{% set version = "0.0.1" %}
+{% set version = "0.1.8" %}
 
 package:
   name: {{ name|lower }}
@@ -219,7 +232,7 @@ test:
     - pip
 
 about:
-  license: BSD-3-Clause
+  license: MIT
   license_file: LICENSE
 
 extra:
@@ -243,39 +256,164 @@ test:
   requires:
     - pip
 ```
+
 ### Step 4: Submit a pull request to the staged-recipes repository
 
 Finally, create a pull request in the staged-recipes GitHub repository.
-
-When you do this, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.
-
-You can follow the [instructions here](https://conda-forge.org/docs/maintainer/adding_pkgs.html) to submit your package
 
 To create your pull request:
 
 1. Fork and clone this repo: https://github.com/conda-forge/staged-recipes
 1. Create a branch in your fork rather than submitting from the main branch of your fork.
-1. Within your fork's branch, create a new directory with the name of your package, and add your meta.yaml file to it.
+1. Within your fork's branch, create a new directory with the name of your package,
+1. Add the meta.yaml file  that you generated using grayskull to that directory.
 
-`staged-recipes/recipes/<name-of-package>/meta.yaml`
+`staged-recipes/recipes/pyospackage/meta.yaml`
 
-1. Submit the pull request
+1. Submit a pull request from your fork/branch of the staged-recipes repository.
 1. Remember that the conda-forge maintainers are volunteers. Be patient for someone to respond and supportive in your communication with them.
 
+When you do this, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.
+
+You can follow the [instructions here](https://conda-forge.org/docs/maintainer/adding_pkgs.html) to submit your package
+
+
+## Conda-forge pull request checklist
+
+When you submit your package to conda forge, the pull request template includes a list of checks that you want to ensure you have covered.
+
+Below we break down each element of that list.
+
+
+## Conda-forge Staged-recipes Pull Request Checklist
+
+When you submit a pull request for your package's recipe to conda-forge you will notice a checklist of items that you need to ensure you have covered.
+
+A brief explanation of each is below.
+
+::::{admonition} Pull request template checklist tips
+:class: note
+
+> -[x] Title of this PR is meaningful: e.g. "Adding my_nifty_package", not "updated meta.yaml".
+
+**Translation:** Make sure that your pull request title is specific. We suggest something like:
+`Add: conda-forge recipe for <your package name>`
+
+> -[x] License file is packaged (see [here](https://github.com/conda-forge/staged-recipes/blob/5eddbd7fc9d1502169089da06c3688d9759be978/recipes/example/meta.yaml#L64-L73) for an example).
+
+**Translation:** You should have a LICENSE file included in your package's source distribution. If you have followed the pyOpenSci tutorials then you already have a LICENSE file and are likely using the MIT license. When you run `hatch build`, it will bundle that file into the output [source distribution file (which is the tar.gz file)](python-source-distribution) that conda-forge will use to build your package.
+
+> - [x] Source is from official source.
+
+**Translation:** If your package is on PyPI as you learned in the [previous lesson on publishing your Python package](publish-pypi) then you are in good shape. conda-forge prefers that your distribution is published to a known repository.
+
+> -[x] Package does not vendor other packages. (If a package uses the source of another package, they should be separate packages or the licenses of all packages need to be packaged).
+
+**Translation:**  If the code base in your package is your own and it all shares the same LICENSE then you are in good shape. If you have code taken from other packages then you may need to declare that and include licenses for that code if it is different. If you followed these tutorials then you do not have any vendored code.
+
+
+> -[x] If static libraries are linked in, the license of the static library is packaged.
+>
+> -[x] Package does not ship static libraries. If static libraries are needed, [follow CFEP-18](https://github.com/conda-forge/cfep/blob/main/cfep-18.md).
+
+
+
+:::{todo}
+From leah - Can someone validate that this description is accurate or suggest alternative language please? i don't fully understand static library links
+:::
+
+ **Translation:**  The pyOpenSci tutorials did not include any static libraries in a linked or shipped format. If your package is pure Python you likely don't need to worry about this. However, some packages with more complex builds may include links to extensions written in other languages such as C++. If your package does have such extensions you will need to include the LICENSE(s) for those extensions.
+
+> -[ ] Build number is 0.
+
+ **Translation:** The build number in your recipe is right below the source location of your package's source distribution. `number: 0` is what you should see in that section of your recipe.
+
+ ```bash
+ source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ version }}.tar.gz
+  sha256: 01e31f5521973710d0d91b15a94491d4f8f8f54566322110098c0f2381dd09ab
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+  ```
+
+> - [x] A tarball (`url`) rather than a repo (e.g. `git_url`) is used in your recipe (see [here](https://conda-forge.org/docs/maintainer/adding_pkgs.html#build-from-tarballs-not-repos) for more details).
+
+**Translation:** Here conda wants you to provide a link to the source distribution on PyPI rather than a link to your GitHub repository distribution. Notice above in the Source section of your recipe there is a `url:` section that provides a PyPI url that ends in tar.gz. That is a link to your source distribution that conda-forge will use.
 
 ```yaml
-test:
-  imports:
-    - pyospackage
-  commands:
-    - pip check
-  requires:
-    - pip
+url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ version }}.tar.gz
 ```
+> - [x] GitHub users listed in the maintainer section have posted a comment confirming they are willing to be listed there.
 
-## Maintaining
+**Translation** Once you have submitted your recipe, be sure that all maintainers listed in your recipe respond acknowledging that they are ok with being listed as a maintainer for the conda-forge version of your package.
+
+> - [x] When in trouble, please check our [knowledge base documentation](https://conda-forge.org/docs/maintainer/knowledge_base.html) before pinging a team.
+
+**Translation** The conda team are volunteers who spend their time supporting our community. Please try to troubleshoot on your own first before tagging one of them for help.
+
+This is also why we don't suggest you publish to conda-forge as a practice run.
+::::
+
+Once you have submitted your recipe, you can wait for the CI build to pass. If it's not passing, and you aren't sure why, a conda-forge maintainer can likely help you figure things out.
+
+Once your recipe is built and merged, the conda team will create a new package repository for you similar to [this one for the GemGIS package](https://github.com/conda-forge/gemgis-feedstock).
+
+### <i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you have added your package to conda-forge.<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+The last part of this process is maintaining the repository.
+We cover that next.
+
+## Maintaining your conda-forge feedstock
+
+Every time you create a new release on PyPI, the conda-forge bots will recognize the release and will rebuild the newly released version of your package. This process may take a day or two to complete so be patient.
+
+Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
+
+Review the pull request. If all tests are passing, you can merge it. within the next day the conda-forge release will be available for users to install:
+
+`conda install -c conda-forge yourpackage`
+
+:::{todo}
+pr for our tutorial package is up as a draft. right now i'm the only maintainer.
 
 <Create a pr on conda-forge - tag filipe (as it is a test package) and add screenshots here so people understand what maintaining a conda recipe entails >
+
+
+Questions:
+
+Pandas has this for their recipe  -
+about:
+  home: http://pandas.pydata.org
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: >-
+    Powerful data structures for data analysis, time series, and statistics
+  doc_url: https://pandas.pydata.org/docs/
+  dev_url: https://github.com/pandas-dev/pandas
+
+their pyprojec.toml is like This:
+[project.urls]
+homepage = 'https://pandas.pydata.org'
+documentation = 'https://pandas.pydata.org/docs/'
+repository = 'https://github.com/pandas-dev/pandas'
+
+Should we have users add a homepage or can they add a homepage at a later time??
+:::
+
+## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
+
+If you have walked through this entire tutorial series you have now:
+
+1. Understand [what a Python package is ](intro.md)
+2. Know how to [make your code installable](1-installable-code.md) into Python environments
+3. Know how to create a pyproject.toml file, a README file, and a License and code of conduct.
+4. Know how to [publish your package to PyPI](publish-pypi.md) and
+5. Know how to publish your package to conda-forge
+
+The above are the basic steps that you need to take to create and publish a Python package. In a future tutorial series we will cover that basics of maintaining your package.
 
 ## Footnotes
 
