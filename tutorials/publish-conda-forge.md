@@ -30,7 +30,7 @@ for conda, conda-forge will build from your PyPI source distribution file (sdist
 
 
 
-:::{figure-md} pypi-conda-channels
+:::{figure-md} pypi-conda-publication
 
 <img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 
