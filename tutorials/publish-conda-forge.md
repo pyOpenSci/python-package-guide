@@ -57,8 +57,6 @@ Make a graphic to replace that geohackweek graphic that is also more specific.
 Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PiPY is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::
 
-
-
 ## Why publish to conda forge
 
 There are many users, especially in the scientific Python ecosystem that use conda as their primary package manager / environment tool. Thus, having packages available to these users on the conda-forge channel is useful. In some cases packages on conda-forge can minimize dependency conflicts that can occur when mixing installations using pip and conda. This is particularly important for the spatial ecosystem.
@@ -77,9 +75,9 @@ Conda-forge will build your package from the source distribution which you [publ
 ### Conda-forge publication steps
 
 :::{figure-md} publish-pypi-conda-forge
-<img src="../images/pyopensci-python-package-pypi-to-conda-forge.png" alt="." width="700px">
+<img src="../images/pyopensci-python-package-pypi-to-conda-forge.png" alt="Image showing the steps associated with publishing to conda-forge. Check out the caption below for a detailed description." width="700px">
 
-Caption
+The steps for publishing to conda-forge begin with publishing your Python package to PyPI. Once you have published to PyPI you can then create a yaml file recipe that can be submitted to the conda-forge staged recipes repository for review. Once that recipe is accepted, your package will get it's on repository (known as a feedstock) on conda-forge.
 :::
 
 The steps to publish to conda-forge are:
@@ -91,56 +89,99 @@ The steps to publish to conda-forge are:
 4. Once someone from the conda-forge team reviews your pull request, you may need to make some changes. Eventually the pull request will be approved and merged.
 
 
+Once your recipe is accepted and merged on conda-forge, users can install your package using:
 
+`conda install -c conda-forge your-package`
 
-Now your package is on conda-forge.
-
-You only create the recipe once. Then you just maintain the repository.
-
+You only create the recipe once. Once the recipe is accepted and merged, you only need to maintain the repository.
 
 ## Maintaining a conda-forge package
 
-Once your package is on conda-forge, the repository will track activity on your PyPI repository for that package. Any time you make a new release to PyPI with a new source distribution, conda-forge will build and update your conda-forge repository.
+Once your package is on conda-forge, the repository will track release activity on the package's PyPI repository. Any time you make a new PyPI release with a new source distribution, conda-forge will build and update your conda-forge repository (also known as a feedstock).
 
-When that happens, conda-forge will create a new pull request with an updated distribution recipe.
+When the update is processed, the friendly conda-forge bot will create a new pull request with an updated distribution recipe in your feedstock.
 
-You can review that pull request and then merge it once all of the tests pass.
+You can review that pull request and then merge it once all of the continuous integration tests pass.
 
-## Publish your package to conda-forge
+## <i class="fa-regular fa-pen-to-square"></i> How to Publish your package on conda-forge
 
 It's time to add your package to the conda-forge channel.
 Remember that your package needs to be on PyPI before the steps below will work. And also remember that the team managing conda-forge are all volunteers.
 
-* Please only submit your package to conda-forge if you intend to maintain it over time.
-* Be sure that your package is on PyPI.org (not test.pypi.org) before you attempt to publish to PyPI.
+* Be sure that your package is on PyPI.org (not test.pypi.org) before you attempt to publish to conda-forge.
 
-### Step 1 - Install grayskull
+:::{important}
+Only submit your package to conda-forge if you intend to maintain it over time.
+:::
 
-To begin this process you need to [install grayskull](https://conda.github.io/grayskull/user_guide.html). You can install it using either pip
+Note - this is a tutorial aimed to help you get your package onto conda-forge. The official conda documentation for this processed [is here](https://conda-forge.org/docs/maintainer/adding_pkgs.html).
 
-```
-pip install grayskull
+### Step 1: Install grayskull
+
+First, [install grayskull](https://conda.github.io/grayskull/user_guide.html). You can install it using either pip:
+
+```bash
+> pip install grayskull
 ```
 
 or conda
 
-```
-conda install -c conda-forge grayskull
+```bash
+> conda install -c conda-forge grayskull
 ```
 
-Use the shell / terminal that you have been using to run hatch
+To run this command, use the same shell / terminal
+that you have been using to run hatch
 commands in the previous tutorials.
 
-### Step 2: Create your recipe from PyPI
+:::{note}
+You can also install grayskull using pipx[^pipx]. pipx is a tool that allows you to install commonly used tools that you might want to have available across multiple Python environments rather than installing the package into every Python environment that ou create.
+:::
 
-Next, you can run grayskull on your package.
+### Step 2: Fork and clone the conda-forge staged-recipes repository
 
-Grayskull will pull information from PyPI
-You don't need to work about what directory you are in when you run grayskull. Grayskull will look for your package on PyPI and will generate your recipe from the PyPI distribution.
+* Next, open your shell and `cd` to a location where you want to clone the **conda-forge/staged-recipes** repository.
+* fork and clone the [conda-forge/staged-recipes GitHub repository](https://github.com/conda-forge/staged-recipes).
+* Create a new branch in your fork rather than submitting from the main branch of your fork. We suggest naming the branch your package's name.
 
-Because it is pull from pypi.org, an internet connection is needed for this step.
+`git checkout -b your-package-name `
 
-Run the command below in your favorite shell.
+* In bash, `cd` into the `staged-recipes/recipes` folder
+
+```bash
+staged-recipes/recipes (☊ pyospackage)
+# Clone the repository
+➜ git clone git@github.com:conda-forge/staged-recipes.git
+```
+
+Next, create a new branch in your `conda-forge/staged-recipes` cloned repository. You might want to make that branch the same name as your package.
+
+```bash
+# Create a new branch called pyospackage
+➜ git checkout -b pyospackage
+➜ cd staged-recipes/recipes
+➜ git branch
+  main
+* pyospackage
+```
+
+### Step 3: Create your conda-forge recipe
+
+* Next, navigate to the recipes directory
+
+If you run `ls` here, you will notice there is an example directory with an example recipe for you to look at.
+
+```bash
+staged-recipes (☊ pyospackage) via 🐍 pyenv
+➜ cd recipes
+
+staged-recipes/recipes (☊ pyospackage)
+➜ ls
+example
+
+```
+
+* Next, run `grayskull pypi your-package-name` to generate a recipe.
 
 ```bash
 ➜ grayskull pypi pyospackage
@@ -175,18 +216,30 @@ Maintainers:
    - lwasser
 
 #### Recipe generated on /your/file/package/here/pyosPackage for pyospackage ####
+
+# You should see a new directory created by grayskull after this run is completed.
+staged-recipes/recipes (☊ pyospackage)
+➜ ls
+example         pyospackage
 ```
+
+
+:::{tip}
+* Grayskull will pull metadata about your package from PyPI. It does not use your local installation of the package.
+* An internet connection is needed to run the `grayskull pypi your-package-name` step.
+:::
+
 
 When you run grayskull, it will grab the latest distribution of your package from PyPI and will use that to create a new recipe.
 
 The recipe will be saved in a directory named after your package's name, wherever you run the command.
 
-`packagename/meta.yaml`
+`recipes/packagename/meta.yaml`
 
 At the very bottom of the grayskull output, it will also tell you
 where it saved the recipe file.
 
-This will create a meta.yaml file that looks like the example below:
+Open the meta.yaml file. The finished `meta.yaml` file that grayskull creates should look like the example below:
 
 ```yaml
 {% set name = "pyospackage" %}
@@ -222,7 +275,9 @@ test:
     - pip
 
 about:
-  license: MIT
+  summary: A package that adds numbers together
+  dev_url: https://github.com/pyopensci/pyospackage
+  license: BSD-3-Clause
   license_file: LICENSE
 
 extra:
@@ -231,9 +286,51 @@ extra:
 
 ```
 
-### Step 3: tests for conda-forge
+### Step 3b: Bug fix - add a home url to the about: section
 
-Next, have a look at the tests section in your meta.yaml file. At a minimum you should import your package and run `pip check`.
+There is currently a small bug in Grayskull where it doesn't populate the home: element of the recipe. if you don't include this, [you will receive an error message](https://github.com/conda-forge/staged-recipes/pull/25173#issuecomment-1917916528) from the friendly conda-forge linter bot.
+
+
+
+```
+Hi! This is the friendly automated conda-forge-linting service.
+
+I wanted to let you know that I linted all conda-recipes in your PR (recipes/pyospackage) and found some lint.
+
+Here's what I've got...
+
+For recipes/pyospackage:
+
+The home item is expected in the about section.
+```
+
+* to fix this, open your meta.yaml file in your favorite text editor.
+* and add a home: element to the about section
+
+The about section will look like this after you create your recipe.
+
+```yaml
+about:
+  summary: A package that adds numbers together
+  dev_url: https://github.com/pyopensci/pyospackage
+  license: BSD-3-Clause
+  license_file: LICENSE
+```
+
+Below you add a home: element. If you have a project home page / website you can use that url. Otherwise, you can also use your PyPI landing page.
+
+```yaml
+about:
+  home: https://pypi.org/project/pyospackage/
+  summary: A package that adds numbers together
+  dev_url: https://github.com/pyopensci/pyospackage
+  license: BSD-3-Clause
+  license_file: LICENSE
+```
+
+### Step 4: tests for conda-forge
+
+Next, have a look at the tests section in your **meta.yaml** file. At a minimum you should import your package and run `pip check`.
 
 `pip check` will ensure that your package installs properly with all of the proper dependencies.
 
@@ -247,39 +344,26 @@ test:
     - pip
 ```
 
+If you have more advanced tests that you wish to run, you can add them here. However, you can also simple leave the tests section as it is.
+
 ### Step 4: Submit a pull request to the staged-recipes repository
 
-Finally, create a pull request in the staged-recipes GitHub repository.
-
-To create your pull request:
-
-1. Fork and clone this repo: https://github.com/conda-forge/staged-recipes
-1. Create a branch in your fork rather than submitting from the main branch of your fork.
-1. Within your fork's branch, create a new directory with the name of your package,
-1. Add the meta.yaml file  that you generated using grayskull to that directory.
-
-`staged-recipes/recipes/pyospackage/meta.yaml`
+Once you have completed all of the above, you are ready to open up a pull request in the `conda-forge/staged-recipes repository`.
 
 1. Submit a pull request from your fork/branch of the staged-recipes repository.
 1. Remember that the conda-forge maintainers are volunteers. Be patient for someone to respond and supportive in your communication with them.
 
-When you do this, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.
-
-You can follow the [instructions here](https://conda-forge.org/docs/maintainer/adding_pkgs.html) to submit your package
 
 
-## Conda-forge pull request checklist
+:::::{dropdown} Conda-forge checklist help
+:icon: unlock
+:color: secondary
+
+### Conda-forge Staged-recipes Pull Request Checklist
 
 When you submit your package to conda forge, the pull request template includes a list of checks that you want to ensure you have covered.
 
 Below we break down each element of that list.
-
-
-## Conda-forge Staged-recipes Pull Request Checklist
-
-When you submit a pull request for your package's recipe to conda-forge you will notice a checklist of items that you need to ensure you have covered.
-
-A brief explanation of each is below.
 
 ::::{admonition} Pull request template checklist tips
 :class: note
@@ -346,6 +430,26 @@ url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ ver
 
 This is also why we don't suggest you publish to conda-forge as a practice run.
 ::::
+:::::
+
+Once you create your pull request, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.
+
+
+
+
+:::{figure-md} pypi-conda-channels
+
+<img src="../images/conda-forge-staged-recipes-ci.png" alt="Image showing the 5 CI tasks that will run against your package in the GitHub interface after you'ce created a pull request. " width="700px">
+
+Wait until you have green checks on all of the CI steps in your pull request. At that point your pull request is ready for review.
+:::
+
+In some cases getting things to run properly on CI might take a bit of work. If you are struggling you can ping the conda-forge maintainer team for help.
+
+Please be patient and wait for them to respond.
+
+
+
 
 Once you have submitted your recipe, you can wait for the CI build to pass. If it's not passing, and you aren't sure why, a conda-forge maintainer can likely help you figure things out.
 
@@ -362,36 +466,9 @@ Every time you create a new release on PyPI, the conda-forge bots will recognize
 
 Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
 
-Review the pull request. If all tests are passing, you can merge it. within the next day the conda-forge release will be available for users to install:
+Review the pull request. If all tests are passing, you can merge it. Shortly after merging your pull request, the conda-forge release will be available for users to install:
 
 `conda install -c conda-forge yourpackage`
-
-:::{todo}
-pr for our tutorial package is up as a draft. right now i'm the only maintainer.
-
-<Create a pr on conda-forge - tag filipe (as it is a test package) and add screenshots here so people understand what maintaining a conda recipe entails >
-
-
-Questions:
-
-Pandas has this for their recipe  -
-about:
-  home: http://pandas.pydata.org
-  license: BSD-3-Clause
-  license_file: LICENSE
-  summary: >-
-    Powerful data structures for data analysis, time series, and statistics
-  doc_url: https://pandas.pydata.org/docs/
-  dev_url: https://github.com/pandas-dev/pandas
-
-their pyprojec.toml is like This:
-[project.urls]
-homepage = 'https://pandas.pydata.org'
-documentation = 'https://pandas.pydata.org/docs/'
-repository = 'https://github.com/pandas-dev/pandas'
-
-Should we have users add a homepage or can they add a homepage at a later time??
-:::
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 
@@ -408,3 +485,6 @@ The above are the basic steps that you need to take to create and publish a Pyth
 ## Footnotes
 
 [^grayskull]: [Grayskull blogpost](https://conda-forge.org/blog/2020/03/05/grayskull/)
+
+
+[^pipx]: [Pipx documentation](https://pipx.pypa.io/stable/)
