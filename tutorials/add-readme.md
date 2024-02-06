@@ -3,7 +3,7 @@
 In the previous lessons you learned:
 
 1. What a Python package is
-2. How to make your code installable and
+2. How to make your code installable
 3. How to publish your package to (test) PyPI
 
 :::{admonition} Learning objectives
@@ -56,13 +56,13 @@ At the top of the `README.md` file, add the name of your package.
 
 It's common for maintainers to add badges to the top of their README files. Badges allow you and your package users to track things like
 
-* Broken documentation and test builds
+* Broken documentation and test builds.
 * Versions of your package that are on PyPI and Conda.
 * Whether your package has been reviewed and vetted by an organization such as pyOpenSci and/or JOSS.
 
 If you have already published your package to pypi.org you can use [shields.io to create a package version badge](https://shields.io/badges/py-pi-version). This badge will dynamically update as you release new versions of your package to PyPI.
 
-If not you can leave the top empty for now and add badges to your README at a later point as they make sense for your package.
+If not, you can leave the top empty for now and add badges to your README at a later point as they make sense for your package.
 
 ### Step 3 - Add a description of what your package does
 
@@ -102,8 +102,8 @@ Here, briefly document (or link to documentation for) any
 additional setup that is required to use your package.
 This might include:
 
-* authentication information if it is applicable to your package.
-* additional tool installations such as GDAL.
+* authentication information, if it is applicable to your package.
+* additional tool installations, such as GDAL.
 
 :::{note}
 Many packages won't need this section in their README. In that case you can always skip this section!
@@ -124,7 +124,7 @@ For the pyosPackage, a short get started demo might look like this:
 3
 ``````
 
-Or it could simply be a link to a get started tutorial that you have created. If
+Or it could simply be a link to a getting started tutorial that you have created. If
 you don't have this yet, you can leave it empty for the time being.
 
 This would
@@ -134,7 +134,7 @@ help users understand how to use your package for common workflows.
 
 ### Step 7 - Community section
 
-The community section of your README file is a place to include information for users who may want to engage with your project. This engagement will likely happen either on a platform like GitHub or GitLab.
+The community section of your README file is a place to include information for users who may want to engage with your project. This engagement will likely happen on a platform like GitHub or GitLab.
 
 In the community section, you will add links to your contributing guide
 and `CODE_OF_CONDUCT.md`. You will add a [`CODE_OF_CONDUCT.md` file in the next lesson](add-license-coc).
@@ -145,7 +145,7 @@ As your package grows you may also have a link to a development guide that contr
 
 ### Step 8 - Citation & License information
 
-Finally it is important to let users know
+Finally it is important to let users know:
 
 1. how to cite your package and
 2. what the license is.
