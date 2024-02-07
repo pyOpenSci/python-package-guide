@@ -122,7 +122,6 @@ For the pyosPackage, a short get started demo might look like this:
 >>> from pyospackage.add_numbers import add_num
 >>> add_num(1, 2)
 3
-``````
 
 Or it could simply be a link to a getting started tutorial that you have created. If
 you don't have this yet, you can leave it empty for the time being.
