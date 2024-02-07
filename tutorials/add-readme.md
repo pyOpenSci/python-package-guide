@@ -2,16 +2,17 @@
 
 In the previous lessons you learned:
 
-1. What a Python package is
-2. How to make your code installable and
-3. How to publish your package to (test) PyPI
+1. [What a Python package is](intro)
+2. [How to make your code installable](1-installable-code) and
+3. [How to publish your package to (test) PyPI](publish-pypi)
 
 :::{admonition} Learning objectives
 
 In this lesson you will learn:
 
+1. What a README is and its important to open source software.
 1. How to add a **README.md** file to your package.
-2. What the core elements of a **README.md** file are.
+1. What the core elements of a **README.md** file are.
 :::
 
 ## What is a README file?
@@ -25,7 +26,27 @@ a user understand:
 - How to contribute to your package
 - How to cite your package
 
-Your **README.md** file is important as it is often the first thing that someone sees before they install your package. The README file also will be used to populate your PyPI landing page.
+:::{admonition} What are README badges?
+
+Readme badges provide visual indicators of the current "Status" of a package.
+There are a suite of different types of badges that you might add to your
+package's readme including:
+
+
+* The current version of your package on PyPI  [![pypi](https://img.shields.io/pypi/v/movingpandas.svg)](https://pypi.python.org/pypi/movingpandas/) and Conda [![Conda Version](https://img.shields.io/conda/vn/conda-forge/movingpandas.svg)](https://anaconda.org/conda-forge/movingpandas)
+* [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/movingpandas.svg)](https://anaconda.org/conda-forge/movingpandas) Downloads from PyPI and conda - this can be helpful for users to understand how many other people are already using the package.
+* [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) Is the package actively maintained?
+* [![Tests](https://github.com/movingpandas/movingpandas/actions/workflows/tests.yaml/badge.svg)](https://github.com/movingpandas/movingpandas/actions/workflows/tests.yaml) Are the tests passing (or not?)
+* [![docs status](https://readthedocs.org/projects/movingpandas/badge/?version=main)](https://movingpandas.readthedocs.io/en/main/) Is the documentation building and up to date (or not)
+* [![codecov](https://codecov.io/gh/movingpandas/movingpandas/branch/main/graph/badge.svg)](https://codecov.io/gh/movingpandas/movingpandas) What is the current test coverage for the project? We will discuss this more in later lessons, however if the tests for a project cover more of the code then it will be easier for contributors to submit fixes and changes and also for maintainers to know that updates don't break things in the code base.
+* [![DOI](https://zenodo.org/badge/161995245.svg)](https://zenodo.org/badge/latestdoi/161995245) How to cite the package
+* [![pyOpenSci](https://tinyurl.com/y22nb8up)](https://github.com/pyOpenSci/software-review/issues/18) Has the package been community vetted.
+* [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) What code style / formatter does the package use
+
+There are numerous badge options available to you. The [shields.io website](https://shields.io/badges) is also a great place to create / build badges specific for your package.
+:::
+
+Your **README.md** file is important as it is often the first thing that someone sees before they install your package. The README file also will be used to populate your PyPI landing page. This is true for both test.pypi.org and pypi.org.
 
 Note that there is no required format for README files. This page simply outlines sections that we suggest you have in your README file.
 

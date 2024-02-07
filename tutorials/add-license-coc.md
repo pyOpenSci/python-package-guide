@@ -2,9 +2,9 @@
 
 In the [previous lesson](add-readme) you:
 
-<i class="fa-solid fa-circle-check" style="color: #703c87;"></i> created a basic `README.md` file for your scientific Python package's repository
+<i class="fa-solid fa-circle-check" style="color: #703c87;"></i> Created a basic `README.md` file for your scientific Python package
 
-<i class="fa-solid fa-circle-check" style="color: #703c87;"></i> learned about the core components that are useful to have in a README file.
+<i class="fa-solid fa-circle-check" style="color: #703c87;"></i> Learned about the core components that are useful to have in a README file.
 
 :::{admonition} Learning objectives
 :class: tip
@@ -16,7 +16,7 @@ In this lesson you will learn:
 3. How you can use the Contributors Covenant website to add generic language as a starting place for your `CODE_OF_CONDUCT`.
 :::
 
-## Add a LICENSE file to your repository
+## Add a LICENSE file to your project directory
 
 A license contains legal language about how users can use and reuse your software. You should include a LICENSE file in your project directory that specifies the license that you choose for your package.
 
@@ -26,7 +26,7 @@ We suggest that you use a permissive license that accommodates the other most co
 [We discuss licenses for the scientific Python ecosystem in more detail here in our guidebook.](permissive-license)
 :::
 
-### Where should the license file live & how do you add it?
+### Where should the LICENSE file live & how do you add it?
 
 Your `LICENSE` file should be placed at the root of your package's repository.
 
@@ -35,6 +35,17 @@ There are several ways to add a license file:
 1. When you create a new repository on GitHub, it will ask you if you wish to add a `LICENSE` file at that time. It will also create the file for you.
 2. You can add a license through the GitHub gui following the [<i class="fa-brands fa-github"></i> instructions here](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
 3. You can add the file manually like we are doing in this lesson.
+
+:::{tip}
+If you completed the past lessons including
+
+1. [Making your code installable](1-installable-code.md) and
+2. [publishing your package to PyPI](publish-pypi.md)
+
+then you already have a **LICENSE** file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorials which walks you through adding a CODE_OF_CONDUCT.
+
+If you don't yet have a **LICENSE** file in your directory, then continue reading.
+:::
 
 ### How to add a LICENSE to your existing GitHub repository
 
@@ -60,7 +71,8 @@ If you want a broad overview of why licenses are important for protecting open s
 :::
 
 
-::::::{dropdown} Instructions for license files within the GitHub interface
+::::::{dropdown} Instructions for adding a license files within the GitHub interface
+:color: primary
 
 :::::{tab-set}
 
@@ -98,12 +110,13 @@ You can also view an overview of the license on GitHub if you view it in the Git
 (add-coc)=
 ## Add a CODE_OF_CONDUCT file to your repo
 
-Now that you have added a LICENSE to your project, you are ready to add a `CODE_OF_CONDUCT`. A `CODE_OF_CONDUCT` file is critical to supporting your community as it
+Now that you have added a LICENSE to your project, you are ready to add a file called `CODE_OF_CONDUCT.md` to your package directory. A `CODE_OF_CONDUCT` file is critical to supporting your community as it
 grows. The `CODE_OF_CONDUCT`:
+
 1. Establishes guidelines for how users and contributors interact with each other and you in your software repository.
 2. Identifies negative behaviors that you don't want in your interactions.
 
-You can use your code of conduct tool that can be referenced when moderating challenging conversations.
+You can use your code of conduct as a tool that can be referenced when moderating challenging conversations.
 
 If you are unsure of what language to add to your `CODE_OF_CONDUCT`
 file, we suggest that you adopt the [contributor covenant language](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) as a starting place.
@@ -128,11 +141,11 @@ already exist.
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 
-In this lesson and the [last lesson](add-readme), you have added:
+In this lesson and the [last lesson](add-readme), you have added a:
 
-* `README` file
-* `LICENSE` file
-* `CODE_OF_CONDUCT` file
+* `README` file;
+* `LICENSE` file and a
+* `CODE_OF_CONDUCT` file.
 
 These are core files needed for every scientific Python package. In the upcoming
 lessons, you will:
