@@ -33,7 +33,7 @@ Get to know Hatch <get-to-know-hatch>
 
 :::{toctree}
 :hidden:
-:caption: Create a Python package
+:caption: Create a Python Package
 
 What is a Python package? <self>
 Make your code installable <1-installable-code>
@@ -43,9 +43,11 @@ Publish to conda-forge <publish-conda-forge>
 
 :::{toctree}
 :hidden:
-:caption: Project Metadata
+:caption: Citation, License & Project metadata
 
 Add README file <add-readme>
+Add a license & COC <add-license-coc>
+Update metadata <pyproject-toml>
 :::
 
 :::{admonition} Learning Objectives
