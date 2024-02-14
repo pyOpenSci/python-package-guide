@@ -48,9 +48,13 @@ Then you may already have a README.MD file in your project directory.
 <!-- If they use hatch init in the very first lesson -
 the readme will already be there-->
 
-### Step 1. Add package badges
+### Step 1. Add the name of your package as the README title
 
 At the top of the `README.md` file, add the name of your package.
+
+if you are using markdown it should be an header 1 tag which is denoted with a single `#` sign.
+
+`# Package-title-here`
 
 ### Step 2 - add badges to the top of your README file
 
@@ -113,8 +117,18 @@ Many packages won't need this section in their README. In that case you can alwa
 ### Step 6 - Add a get started section
 
 Next add a getting started section that shows how to use your package. This
-section should include a small code chunk that demonstrates importing and using
+section should include a small code snippet that demonstrates importing and using
 some of the functionality in your package.
+
+:::{admonition} Provide a fully functional code snippet if possible
+:class: important
+
+It is important to try to make the code examples that you provide your users as useful as possible.
+
+Be sure to provide a copy/paste code example that will work as-is when pasted into a Jupyter Notebook or .py file if that is possible.
+
+If there are tokens and other steps needed to run your package, be sure to be clear about what those steps entail.
+:::
 
 For the pyosPackage, a short get started demo might look like this:
 
@@ -122,6 +136,7 @@ For the pyosPackage, a short get started demo might look like this:
 >>> from pyospackage.add_numbers import add_num
 >>> add_num(1, 2)
 3
+```
 
 Or it could simply be a link to a getting started tutorial that you have created. If
 you don't have this yet, you can leave it empty for the time being.
@@ -176,10 +191,10 @@ To install this package run:
 
 Here add a quick code demo showing a user how to use the package after it is installed.
 
-```
-from packagename.module import xmethod
-
-a = xmethod.dosomething(var1, var2)
+```python
+>>> from pyospackage.add_numbers import add_num
+>>> add_num(1, 2)
+3
 
 ```
 
