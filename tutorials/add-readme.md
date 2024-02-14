@@ -161,12 +161,12 @@ Your finished `README.md` file should look something like this:
 
 ## What packagename does
 
-Short description here using non technical language that describes what your package does.
+Short description here using non-technical language that describes what your package does.
 
 ## How to install
 
 <todo - when i add more to the pyos package this can use that readme>
-To install this package... use:
+To install this package run:
 
 `pip install packagename`
 
@@ -183,11 +183,11 @@ a = xmethod.dosomething(var1, var2)
 
 ```
 
-You can also add any links to this section to tutorials in your documentation.
+You can also add any to tutorials in your documentation here.
 
 ## Community
 
-Add information here about contributing to your package. Be sure to add links to your `CODE_OF_CONDUCT` file and your development guide. For now this section might be empty. You can go back and fill it in later.
+Add information here about contributing to your package. Be sure to add links to your `CODE_OF_CONDUCT.md` file and your development guide. For now this section might be empty. You can go back and fill it in later.
 
 ## How to cite packagename
 
@@ -204,7 +204,7 @@ package and as a community begins to use your package.
 
 In the [next lesson](add-license-coc), you will add a LICENSE file to
 your Python package. A license file is critical as it tells users
-how they legally can (and can't use your package). It also:
+how they legally can (and can't) use your package. It also:
 
 * Builds trust with your users
 * Discourages misuse of your package and associated code
