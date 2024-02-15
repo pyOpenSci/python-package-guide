@@ -61,7 +61,7 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/intro.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Make your Python code installable" href="1-installable-code.html" />
+    <link rel="next" title="Get to know hatch" href="get-to-know-hatch.html" />
     <link rel="prev" title="pyOpenSci Python Package Guide" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -451,7 +451,11 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging 101</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging Tutorial Setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging 101</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">What is a Python package?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
@@ -517,7 +521,7 @@ document.write(`
 on the upcoming pages walk you through the core steps needed to
 create a Python package.</p>
 <figure class="align-default" id="packaging-outline">
-<a class="reference internal image-reference" href="../_images/packaging-101-outline.png"><img alt="Diagram showing the lessons in our packaging tutorial. There are 6 total - what is a python package, make code pip installable, publish your package to PyPI, add a readme and license file, add metadata for pypi and finally publish to conda forge." src="../_images/packaging-101-outline.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/packaging-101-outline.png"><img alt="Diagram showing the lessons in our packaging tutorial. There are 6 total - what is a Python package, make code pip installable, publish your package to PyPI, add a README and LICENSE file, add metadata for PyPI and finally publish to conda forge." src="../_images/packaging-101-outline.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">This lesson is the first in a series of lessons to help you get started with Python packaging.</span><a class="headerlink" href="#packaging-outline" title="Link to this image">#</a></p>
 </figcaption>
@@ -532,6 +536,8 @@ understanding the steps involved in creating a Python package.</p>
 <li><p>In this series you will learn about the core elements that you need to publish your package to the <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a>.</p></li>
 <li><p>In the second series, you will learn about infrastructure and documentation needed to support package maintenance.</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="admonition-learning-objectives admonition">
@@ -752,10 +758,10 @@ what the input and output elements of each function are. <a class="reference int
 <section id="python-packages-and-environments">
 <h3>Python packages and environments<a class="headerlink" href="#python-packages-and-environments" title="Link to this heading">#</a></h3>
 <p>You can install a Python package into a Python environment in the same way
-you might install NumPy or pandas. Installing your package into an environment
+you might install NumPy or Pandas. Installing your package into an environment
 allows you to access it from any code run with that specific Python environment activated.</p>
 <figure class="align-default" id="packages-environment">
-<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a Python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">You don’t have to publish to PyPI to make your code installable.
 With the correct file structure and project metadata you can make your code
@@ -826,11 +832,11 @@ Make your code pip installable &lt;1-installable-code&gt;</p>
       </div>
     </a>
     <a class="right-next"
-       href="1-installable-code.html"
+       href="get-to-know-hatch.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Make your Python code installable</p>
+        <p class="prev-next-title">Get to know hatch</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -850,7 +856,9 @@ Make your code pip installable &lt;1-installable-code&gt;</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-are-these-tutorials-for">Who are these tutorials for?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-are-these-tutorials-for">Who are these tutorials for?</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-python-package">What is a Python package?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages-are-installable">Python packages are installable</a></li>
 </ul>

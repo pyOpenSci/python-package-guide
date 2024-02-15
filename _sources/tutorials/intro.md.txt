@@ -7,7 +7,7 @@ create a Python package.
 
 :::{figure-md} packaging-outline
 
-<img src="../images/tutorials/packaging-101-outline.png" alt="Diagram showing the lessons in our packaging tutorial. There are 6 total - what is a python package, make code pip installable, publish your package to PyPI, add a readme and license file, add metadata for pypi and finally publish to conda forge." width="800px">
+<img src="../images/tutorials/packaging-101-outline.png" alt="Diagram showing the lessons in our packaging tutorial. There are 6 total - what is a Python package, make code pip installable, publish your package to PyPI, add a README and LICENSE file, add metadata for PyPI and finally publish to conda forge." width="800px">
 
 This lesson is the first in a series of lessons to help you get started with Python packaging.
 :::
@@ -23,6 +23,13 @@ understanding the steps involved in creating a Python package.
 
 * In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
+
+:::{toctree}
+:hidden:
+:caption: Python Packaging Tutorial Setup
+
+Get to know Hatch <get-to-know-hatch>
+:::
 
 :::{toctree}
 :hidden:
@@ -271,12 +278,12 @@ what the input and output elements of each function are. [You can learn more abo
 ### Python packages and environments
 
 You can install a Python package into a Python environment in the same way
-you might install NumPy or pandas. Installing your package into an environment
+you might install NumPy or Pandas. Installing your package into an environment
 allows you to access it from any code run with that specific Python environment activated.
 
 :::{figure-md} packages-environment
 
-<img src="../images/tutorials/environment-package-install.png" alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." width="700px">
+<img src="../images/tutorials/environment-package-install.png" alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a Python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." width="700px">
 
 You don't have to publish to PyPI to make your code installable.
 With the correct file structure and project metadata you can make your code

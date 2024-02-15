@@ -1,7 +1,5 @@
 # Python Packaging Tools
 
-<!-- TODO: add a small discussion on what pinning is?-->
-
 ## Tools for building your package
 
 There are a several different build tools that you can use to [create your Python package's _sdist_ and _wheel_ distributions](python-package-distribution-files-sdist-wheel). Below, we discuss the features,
@@ -361,7 +359,7 @@ Build your sdist and wheel distributions|✅| Hatch will build the sdist and whe
 
 ```
 
-_\*\* There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility. The Hatch build hook approach is also comparable with the features offered by PDM._
+_There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility. The Hatch build hook approach is also comparable with the features offered by PDM._
 
 ### Why you might not want to use Hatch
 

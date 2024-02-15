@@ -47,26 +47,18 @@ In this lesson you will learn:
 **What you need to complete this lesson**
 
 To complete this lesson you will need a local Python
-environment and shell on your computer.
+environment and shell on your computer. You will also need to have [Hatch installed](get-to-know-hatch).
 
-You are welcome to use any Python environment manager that you choose.
 If you are using Windows or are not familiar with Shell, you may want to check out the Carpentries shell lesson[^shell-lesson]. Windows users will likely need to configure a tool for any Shell and git related steps.
-
-:::{todo}
-When this lesson is published, unlink
-* [If you need guidance creating a Python environment, review this lesson](extras/1-create-environment.md) which walks you through creating an environment using both `venv` and `conda`.
-:::
-
-* If you aren't sure which environment manager to use and
-you are a scientist, we suggest that you use `conda`, particularly if you are working with spatial data.
 
 **What comes next**
 
 In the upcoming lessons you will learn how to:
 
+* [Publish your package to PyPI](publish-pypi)
 * Add a README file to your package to support community use
 * Add additional project metadata to your package to support PyPI publication
-* Publish your package to PyPI
+
 :::
 
 
@@ -108,7 +100,7 @@ Notice a few things about the above layout:
 1. Within the `src` directory you have a package directory called `pyospackage`. Use the name of your package for that directory name. This will be the name for importing your package in Python code once installed.
 1. In your package directory, you have an `__init__.py` file and all of your Python modules. You will learn more about the `__init__.py` file below.
 1. The `pyproject.toml` file lives at the root directory of your package.
-1. The name of the root directory for the package is **pyospackage** which is the name of the package. This is not a requirement but you will often see that the GitHub / GitLab repo and the root directory name are the same as the package name.
+1. The name of the root directory for the package is **pyospackage** which is the name of the package. This is not a requirement but you will often see that the GitHub / GitLab repository and the root directory name are the same as the package name.
 
 ### What is an `__init__.py` file?
 
@@ -158,62 +150,92 @@ Neither 'setup.py' nor 'pyproject.toml' found.
 ## Time to create your Python package!
 
 Now that you understand the basics of the Python package directory structure, and associated key files (`__init__.py` and `pyproject.toml`), it's time to create your Python package!
-Below you will create a directory structure similar to the structure described above.
+Below you will create a directory structure similar to the structure described above using Hatch.
 
-If you don’t wish to create each of the files and directories below, you
-can always [fork and clone and customize the pyOpenSci example package.](https://github.com/pyOpenSci/pyosPackage)
 
 ## Step 1: Set Up the Package Directory Structure
 
-Below you create the basic directory structure required for your Python package.
-Note that there are instructions for creating the files and directories using shell. However you can also create files and directories in your preferred file directory tool (e.g. Finder on macOS or File Explorer on Windows or even a tool such as VS Code or Spyder) if you wish.
+* Open your shell or preferred terminal.
+* Use the shell `cd` command to navigate in your shell to the location where you'd like your package directory to live. Hatch will create the package directory for you
+* Choose a name for your package. The name should:
+    * Have no spaces (*Required*)
+    * Use all lowercase characters (*Recommended*). For this tutorial we will use `pyospackage`.
+    * Only use letter and the characters _ or - in the name. This means that the name `pyos*package` is not an acceptable name. However, the names `pyos_package` or `pyos-package` both are ok
 
-### Create your package's project directory structure
-* Create a new project directory for your package. Choose a name for your package, preferably in lowercase and without spaces. For this tutorial we'll use `pyospackage`.
+:::{admonition} Hatch and project names
+Hatch makes some decisions for your project's name when you run `hatch new`
 
-Inside the project directory:
-
-- Create a directory called `src`
-- Within the `src` directory, create a directory that is named after your package. This subdirectory will contain your package’s code.
-- It is ok if the project directory for your package and the directory in `src` have the same name
-
-```bash
-# Create a project directory in shell and a src directory within
-mkdir -p pyospackage/src/pyospackage
-
-# Change directory into pyospackage project dir
-cd pyospackage
-
-# View the current file structure
-ls
-```
-### Add your `__init__.py` and `pyproject.toml` files
-Next create two files:
-
-- Inside the package directory, create a new file named `__init__.py` . This file ensures Python sees this directory as a package. You will use this file to customize how parts of your package are imported and to declare your package’s version in a future lesson.
-- At the root of your project, create a file called `pyproject.toml`
+These include using:
+* dashes for the top level directory
+* dashes for the project name in the pyproject.toml
+* underscores for the package directory name
 
 ```bash
-# Create a pyproject.toml file in your project directory
-touch pyproject.toml
-# Create an empty init file within your src/pyospackage directory
-touch src/pyospackage/__init__.py
+❯ hatch new pyos-package
+pyos-package
+├── src
+│   └── pyos_package
+│       ├── __about__.py
+│       └── __init__.py
+├── LICENSE.txt
+├── README.md
+└── pyproject.toml
+
 ```
+If you use a name with underscores, Hatch will return the same thing:
+
+```bash
+➜ hatch new pyos_package
+pyos-package
+├── src
+│   └── pyos_package
+│       ├── __about__.py
+│       └── __init__.py
+├── LICENSE.txt
+├── README.md
+└── pyproject.toml
+```
+In both of the examples above the project name in the pyproject.toml file that hatch creates is `pyos-package`.
+:::
+
+
+Next run:
+
+```console
+➜ hatch new pyospackage
+pyospackage
+├── src
+│   └── pyospackage
+│       ├── __about__.py
+│       └── __init__.py
+├── LICENSE.txt
+├── README.md
+└── pyproject.toml
+```
+
 
 Your final project directory structure should look like this:
 
 ```bash
-pyospackage/  # This is your project directory
- └─ pyproject.toml
- └─ src/ # This is your package directory where your code lives
-    └── pyospackage/
-     	├── __init__.py
+
+pyospackage # This is your project directory
+├── src
+│   └── pyospackage # This is your package directory where your code lives
+│       ├── __about__.py
+│       └── __init__.py
+├── LICENSE.txt
+├── README.md
+└── pyproject.toml # this file contains package metadata
+
 ```
 
 ## Step 2: Add code to your package
 
-Within the `pyospackage` subdirectory, add one (1) or more Python modules (.py files) containing the code that you want your package to access and run.
-If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file.
+Within the `pyospackage` subdirectory, add one or more Python modules.
+A Python module refers to a `.py` file containing the code that you want your package to access and run.
+
+If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file. You will
+populate the `add_numbers.py` file with code provided below.
 
 :::{admonition} Python modules and the `__init__.py` file
 :class: tip
@@ -221,7 +243,7 @@ If you don't have code already and are just learning how to create a Python pack
 When you see the word module, we are referring to a `.py` file containing Python
 code.
 
-The `__init__.py`  allows Python to recognize that a directory contains at least one (1) module that may be imported and used in your code.
+The `__init__.py`  allows Python to recognize that a directory contains at least one module that may be imported and used in your code.
 A package can have multiple modules[^python-modules].
 
 :::
@@ -240,14 +262,14 @@ pyospackage/
 
 If you are following along and making a Python package from scratch then you can add the code below to your `add_numbers.py` module. The function below adds two integers together and returns the result. Notice that the code below has a few features that we will review in future tutorials:
 
-1. It has a [numpy-style docstring](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#three-python-docstring-formats-and-why-we-like-numpy-style)
-2. It uses [typing](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#adding-type-hints-to-your-docstrings)
+1. It has a [numpy-style docstring](numpy-docstring)
+2. It uses [typing](type-hints)
 
 Python can support many different docstrings formats depending on the documentation build system you wish to use. The most popular supported formats for documenting Python objects are NumPy Style Docstring[^numpydoc], Google Style Docstring[^googledoc], and the Epytext Style Docstrings[^epytextdoc].
 
-**pyOpensci recommends using the NumPy Docstring convention.**
+**pyOpenSci recommends using the NumPy Docstring convention.**
 
-If you aren’t familiar with docstrings or typing yet, that is ok. We will get to it later in our tutorial series. Or, you can review the pyOpenSci [packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview.
+If you aren’t familiar with docstrings or typing yet, that is ok. You can review [this page in the pyOpenSci packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview of both topics.
 
 ```python
 def add_num(a: int, b: int) -> int:
@@ -276,9 +298,10 @@ def add_num(a: int, b: int) -> int:
     return a + b
 ```
 
-## Step 4. Add metadata to your `pyproject.toml` file
+## Step 4. Modify metadata in your `pyproject.toml` file
 
-Next, you will add some metadata (information) to your `pyproject.toml` file. You are
+Next, you will modify some of the metadata (information) that
+Hatch adds to your `pyproject.toml` file. You are
 are welcome to copy the file we have in our [example pyospackage GitHub repository](https://github.com/pyOpenSci/pyosPackage).
 
 :::{admonition} Brief overview of the TOML file
@@ -295,14 +318,6 @@ For instance, a `build-system` table most often holds two (2) variables:
    [hatchling](https://pypi.org/project/hatchling/)
 2. `build-backend = `, which is used to define the specific build-backend name, (in this example we are using `hatchling.build`).
 
-TOML organizes data structures, defining relationships within a configuration
-file.
-
-:::{todo}
-You will learn more about the `pyproject.toml` format in the
-[next lesson when you add additional metadata / information to this file.](5-pyproject-toml.md)
-:::
-
 ```toml
 # An example of the build-system table which contains two variables - requires and build-backend
 [build-system]
@@ -310,11 +325,19 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
+TOML organizes data structures, defining relationships within a configuration
+file.
+
 [Learn more about the pyproject.toml format here.](../package-structure-code/pyproject-toml-python-package-metadata)
 :::
 
-- Open up your `pyproject.toml` file in your favorite text editor.
-- Add the metadata below to your `pyproject.toml`
+:::{todo}
+You will learn more about the `pyproject.toml` format in the
+[next lesson when you add additional metadata / information to this file.](5-pyproject-toml.md)
+:::
+
+- Open up the `pyproject.toml` file that Hatch created in your favorite text editor. It should look something like the example below.
+
 
 ```toml
 [build-system]
@@ -322,17 +345,115 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pyospackage"  # rename this if you plan to publish to test PyPI
-# Here you add the package version manually.
-# You will learn how to setup dynamic versioning in a followup tutorial.
-version = "1.1.0"
+name = "pyospackage"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Leah Wasser", email = "leah@pyopensci.org" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/unknown/pyospackage#readme"
+Issues = "https://github.com/unknown/pyospackage/issues"
+Source = "https://github.com/unknown/pyospackage"
+
+[tool.hatch.version]
+path = "src/pyospackage/__about__.py"
 
 ```
 
-Note that above you manually add your package's version number to the
-`pyproject.toml` file. You will learn how to automate defining a package
-version using git tags in the version and release your package lesson. <ADD LINK>
+Edit the file as follows:
 
+1. Delete `dynamic = ["version"]`: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.
+2. Add `version = 0.1.0` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
+3. Fill in the description if it doesn't already exist.
+
+```toml
+[project]
+name = "pyospackage"
+# dynamic = ["version"] <- replace this...
+version = 0.1 # with this
+description = 'A simple Python package that adds numbers together' # Add a description of your package if that is not already populated
+```
+
+3. Remove the `[tool.hatch.version]` table from the bottom of the file.
+
+```toml
+[tool.hatch.version]
+path = "src/pyospackage/__about__.py"
+```
+
+:::{todo}
+When this lesson exists, uncomment this admonition
+You will learn how to automate defining a package
+version using git tags in the version and release your package lesson.
+:::
+
+### Step 3: Adjust your project classifiers
+
+Hatch by default provides a list of classifiers that define what
+Python versions your package supports. While this won't impact your package build, let's remove some of them that you likely don't need.
+
+* Remove support for python 3.8
+
+Also because we are assuming you're creating a pure Python package, you can remove the following classifiers:
+
+```toml
+"Programming Language :: Python :: Implementation :: CPython",
+"Programming Language :: Python :: Implementation :: PyPy",
+```
+
+Your new pyproject.toml file should now look something like this:
+
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyospackage"
+version = "0.1.0"
+description = 'A python package that adds numbers together.'
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "FirstName LastName", email = "youremail@youremail.org" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/unknown/pyospackage#readme"
+Issues = "https://github.com/unknown/pyospackage/issues"
+Source = "https://github.com/unknown/pyospackage"
+
+```
 :::{admonition} The bare minimum needed in a pyproject.toml file
 :class: tip
 
@@ -352,11 +473,11 @@ At this point you should have:
 
 You are now ready to install (and build) your Python package!
 
-Let’s try it out.
+While you can do this using hatch, we are going to use pip for this lesson, so you can see how to install your tool into your preferred environment.
 
-- First open your preferred shell (Windows users may be using something like gitbash) and `cd` into your project directory
+- First open your preferred shell (Windows users may be using something like gitbash) and `cd` into your project directory if you are not already there.
 - Activate the Python environment that you wish to use.
-- Finally run `python -m pip install -e .`
+- Run `python -m pip install -e .`
 
 :::{todo}
 Add this back in when the lesson is published
@@ -484,15 +605,14 @@ pyOpenSci repository.
 ## Congratulations! You created your first Python package
 
 You did it! You have now created a Python package that you can install
-into any Python environment. While there is still more to do if you want
-to publish your package, you have completed the first major step.
+into any Python environment.
 
 In the upcoming lessons you will:
 
+* Learn how to [build and publish your Python package to (test) PyPI](publish-pypi)
 * Add a README file and LICENSE to your package
 * Add more metadata to your `pyproject.toml` file to support PyPI publication.
-* Learn how to build your package distribution files (**sdist** and **wheel**) and publish to **test PyPI**.
-* Finally you will learn how to publish to **conda-forge** from **PyPI**.
+* learn how to publish to **conda-forge** from **PyPI**.
 
 :::{todo}
 This is the content with links once the links are live we can uncomment this and remove the unlinked content above!
