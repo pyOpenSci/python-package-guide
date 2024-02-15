@@ -157,14 +157,20 @@ As your package grows you may also have a link to a development guide that contr
 
 
 
-### Step 8 - Citation & License information
+### Step 8 - Citation information
 
-Finally it is important to let users know:
+Finally it is important to let users know how to cite your package.
+You can communication citation information in a few different ways.
 
-1. how to cite your package and
-2. what the license is.
+You can use a tool such as zenodo to create a DOI and associated citation
+information for your package if it is hosted on a platform such as
+GitHub. [Check out this short tutorial that covers setting that up.](https://coderefinery.github.io/github-without-command-line/doi/)
 
-You will create a license file for your package in this lesson.
+Alternatively if you send your package through a peer review process such
+as the [one lead by pyOpenSci](https://www.pyopensci.org/about-peer-review/index.html), then you can all get a cross-ref DOI through our partnership
+with the Journal of Open Source Software.
+
+## The finished README file
 
 Your finished `README.md` file should look something like this:
 
