@@ -1,6 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-41-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-42-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -126,6 +126,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://phil.red"><img src="https://avatars.githubusercontent.com/u/291575?v=4?s=100" width="100px;" alt="Philipp A."/><br /><sub><b>Philipp A.</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=flying-sheep" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Aflying-sheep" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Midnighter"><img src="https://avatars.githubusercontent.com/u/135653?v=4?s=100" width="100px;" alt="Moritz E. Beber"/><br /><sub><b>Moritz E. Beber</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=Midnighter" title="Code">💻</a> <a href="#tutorial-Midnighter" title="Tutorials">✅</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://jacksonwarnerburns.com"><img src="https://avatars.githubusercontent.com/u/33505528?v=4?s=100" width="100px;" alt="Jackson Burns"/><br /><sub><b>Jackson Burns</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=JacksonBurns" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3AJacksonBurns" title="Reviewed Pull Requests">👀</a> <a href="#tutorial-JacksonBurns" title="Tutorials">✅</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jaimergp"><img src="https://avatars.githubusercontent.com/u/2559438?v=4?s=100" width="100px;" alt="jaimergp"/><br /><sub><b>jaimergp</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=jaimergp" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ajaimergp" title="Reviewed Pull Requests">👀</a> <a href="#tutorial-jaimergp" title="Tutorials">✅</a></td>
     </tr>
   </tbody>
 </table>
