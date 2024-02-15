@@ -196,5 +196,9 @@ Once your package is on the conda-forge channel, maintaining it is simple.
 Every time that you push a new version of your package to PyPI, it will
 kick off a continuous integration build that updates your package in the
 conda-forge repository. Once that build is complete, you will get a
-notification to review the update. You can merge the pull request for
-that update once you are happy with it.
+notification to review the update.
+
+You can merge the pull request for that update once you are happy with it.
+A ready-to-merge PR usually means ensuring that your project's dependencies
+(known as runtime requirements) listed in the updated YAML file found in the
+pull request match the PyPI metadata of the new release.
