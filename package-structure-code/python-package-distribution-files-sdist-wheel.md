@@ -8,7 +8,7 @@
 Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. conda-forge requires an source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
 :::
 
-You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
+You need to build your Python package in order to publish it to PyPI (or a conda channel). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
 :::
 
 (build-package)=

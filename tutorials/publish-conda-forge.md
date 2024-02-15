@@ -371,7 +371,7 @@ Below we break down each element of that list.
 > -[x] Title of this PR is meaningful: e.g. "Adding my_nifty_package", not "updated meta.yaml".
 
 **Translation:** Make sure that your pull request title is specific. We suggest something like:
-`Add: conda-forge recipe for <your package name>`
+`Add recipe for <your package name>`
 
 > -[x] License file is packaged (see [here](https://github.com/conda-forge/staged-recipes/blob/5eddbd7fc9d1502169089da06c3688d9759be978/recipes/example/meta.yaml#L64-L73) for an example).
 
