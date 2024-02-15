@@ -49,7 +49,7 @@ to `true` will create a more complex pyproject.toml file. You won't
 need to use this feature in this beginner friendly tutorial series
 but we will introduce it in later tutorials.
 
-Your config.toml file should look something like the one below. It's ok if you have
+Your `config.toml` file should look something like the one below.
 
 ```toml
 mode = "local"
@@ -87,7 +87,10 @@ src-layout = true
 [terminal.styles]
 ```
 
-Also notice that the default license option is MIT. While we will discuss license in more detail in a later lesson... the MIT license is the recommended permissive license from choosealicense.com and as such we will use it for this tutorial series.
+Also notice that the default license option is MIT. While we will discuss
+license in more detail in a later lesson, the MIT license is the
+recommended permissive license from [choosealicense.com](https://www.choosealicense.com) and as such we will
+use it for this tutorial series.
 
 You are of course welcome to select another license
 

@@ -160,10 +160,48 @@ Below you will create a directory structure similar to the structure described a
 * Choose a name for your package. The name should:
     * Have no spaces (*Required*)
     * Use all lowercase characters (*Recommended*). For this tutorial we will use `pyospackage`.
+    * Only use letter and the characters _ or - in the name. This means that the name `pyos*package` is not an acceptable name. However, the names `pyos_package` or `pyos-package` both are ok
+
+:::{admonition} Hatch and project names
+Hatch makes some decisions for your project's name when you run `hatch new`
+
+These include using:
+* dashes for the top level directory
+* dashes for the project name in the pyproject.toml
+* underscores for the package directory name
+
+```bash
+❯ hatch new pyos-package
+pyos-package
+├── src
+│   └── pyos_package
+│       ├── __about__.py
+│       └── __init__.py
+├── LICENSE.txt
+├── README.md
+└── pyproject.toml
+
+```
+If you use a name with underscores, Hatch will return the same thing:
+
+```bash
+➜ hatch new pyos_package
+pyos-package
+├── src
+│   └── pyos_package
+│       ├── __about__.py
+│       └── __init__.py
+├── LICENSE.txt
+├── README.md
+└── pyproject.toml
+```
+In both of the examples above the project name in the pyproject.toml file that hatch creates is `pyos-package`.
+:::
+
 
 Next run:
 
-```bash
+```console
 ➜ hatch new pyospackage
 pyospackage
 ├── src
@@ -193,8 +231,11 @@ pyospackage # This is your project directory
 
 ## Step 2: Add code to your package
 
-Within the `pyospackage` subdirectory, add one (1) or more Python modules (.py files) containing the code that you want your package to access and run.
-If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file.
+Within the `pyospackage` subdirectory, add one or more Python modules.
+A python module refers to a .py file containing the code that you want your package to access and run.
+
+If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file. You will
+populate the `add_numbers.py` file with code provided below.
 
 :::{admonition} Python modules and the `__init__.py` file
 :class: tip
@@ -202,7 +243,7 @@ If you don't have code already and are just learning how to create a Python pack
 When you see the word module, we are referring to a `.py` file containing Python
 code.
 
-The `__init__.py`  allows Python to recognize that a directory contains at least one (1) module that may be imported and used in your code.
+The `__init__.py`  allows Python to recognize that a directory contains at least one module that may be imported and used in your code.
 A package can have multiple modules[^python-modules].
 
 :::
@@ -228,7 +269,7 @@ Python can support many different docstrings formats depending on the documentat
 
 **pyOpensci recommends using the NumPy Docstring convention.**
 
-If you aren’t familiar with docstrings or typing yet, that is ok. We will get to it later in our tutorial series. Or, you can review the pyOpenSci [packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview.
+If you aren’t familiar with docstrings or typing yet, that is ok. You can review [this page in the pyOpenSci packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview of both topics.
 
 ```python
 def add_num(a: int, b: int) -> int:
@@ -358,7 +399,8 @@ description = 'A simple Python package that adds numbers together' # Add a descr
 path = "src/pyospackage/__about__.py"
 ```
 
-:::{note}
+:::{todo}
+When this lesson exists, uncomment this admonition
 You will learn how to automate defining a package
 version using git tags in the version and release your package lesson.
 :::
