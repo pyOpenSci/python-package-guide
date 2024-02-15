@@ -1,7 +1,5 @@
 # Python Packaging Tools
 
-<!-- TODO: add a small discussion on what pinning is?-->
-
 ## Tools for building your package
 
 There are a several different build tools that you can use to [create your Python package's _sdist_ and _wheel_ distributions](python-package-distribution-files-sdist-wheel). Below, we discuss the features,
@@ -12,10 +10,9 @@ extensions.
 
 :::{figure-md} package-decision-tree
 
-<img src="../images/python-package-tools-decision-tree.png" alt="Decision tree diagram showing the various front and back end packaging tools. You can decide what packaging tool to use by thinking about what features you need. PDM is currently the most flexible tool that also supports both non pure Python projects and also using different build back-ends. As such currently PDM is the tool we think beginners might appreciate most with Poetry being a close second. Poetry is ideal for pure python projects." width="700px">
+<img src="../images/python-package-tools-decision-tree.png" alt="Decision tree diagram showing the various front and back end packaging tools. You can decide what packaging tool to use by thinking about what features you need. PDM and Hatch are  currently the most flexible tools as they also using different build back-ends. As such currently PDM and Hatch are the tools we think beginners might appreciate most with Poetry being a close second. Poetry is nice for pure Python projects." width="700px">
 
-Diagram showing the various from end build tools that you can select from. Each tool has different features as highlighted below.
-NOTE: this is still a DRAFT so i'm not going to spend time truly cleaning it up until i get lots of feedback on the general approach!!
+Diagram showing the different front end build tools available to use in the Python package ecosystem that you can select from. We selected tools to include in this diagram based upon the PyPI survey which helped us understand the most populate tools in the ecosystem. Each tool has different features as highlighted below.
 :::
 
 If you want to know more about Python packages that have extensions written in
@@ -207,6 +204,7 @@ front-end tools remove the need to use other core tools in your workflow. For ex
 Note that because setuptools does not offer a front-end interface, it is not
 included in the table.
 
+(package-features)=
 ### Package tool features table
 
 ```{csv-table}
@@ -215,7 +213,7 @@ included in the table.
 :delim: "|"
 
 Default Build Back-end| Flit-core| hatchling| PDM| Poetry-core
-Use Other Build Backends|✖ | ✖|✅  |✖
+Use Other Build Backends|✖ | ✅ |✅  |✖
 Dependency management| ✖|✖|✅|✅
 Publish to PyPI| ✅|✅|✅|✅
 Version Control based versioning (using `git tags`)|✖|✅|✅|✅
@@ -310,7 +308,7 @@ Install your package in editable mode|✅| Flit supports installing your package
 Build your sdist and wheel distributions|✅| Flit can be used to build your packages sdist and wheel distributions.
 ```
 
-\*\* NOTE: _If you are using the most current version of pip, it supports both a symlink approach `flit install -s` and `pip install -e .`_
+NOTE: _If you are using the most current version of pip, it supports both a symlink approach `flit install -s` and `pip install -e .`_
 
 ```{admonition} Learn more about flit
 * [Why use flit?](https://flit.pypa.io/en/stable/rationale.html)
@@ -329,6 +327,7 @@ You may NOT want to use flit if:
 - You have a project that is not pure Python (Use Hatch, PDM or setuptools)
 - You want environment management (use PDM, Hatch or Poetry)
 
+(hatch)=
 ## Hatch
 
 [**Hatch**](https://hatch.pypa.io/latest/), similar to Poetry and PDM, provides a
@@ -345,14 +344,14 @@ as building your documentation locally. This means that you could potentially dr
 :widths: 20,5,50
 :delim: "|"
 
-Use Other Build Backends|✖| Switching out build back-ends is not currently an option with Hatch. However, this feature is planned for a future release.
+Use Other Build Backends|✅ | Switching out build back-ends is not currently an option with Hatch. However, this feature is planned for a future release.
 Dependency management|✖| Currently you have to add dependencies manually with Hatch. However a feature to support dependencies management may be added in a future release.
 Environment Management |✅ | Hatch supports Python virtual environments. If you wish to use other types of environments such as Conda, you will need to [install a plugin such as hatch-conda for conda support](https://github.com/OldGrumpyViking/hatch-conda).
 Publish to PyPI and test PyPI|✅|Hatch supports publishing to both test PyPI and PyPI
 Version Control based versioning|✅ | Hatch offers `hatch_vcs` which is a plugin that uses setuptools_scm to support versioning using git tags. The workflow with `hatch_vcs` is the same as that with `setuptools_scm`.
 Version bumping| ✅ | Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
 Follows current packaging standards|✅|Hatch supports current packaging standards for adding metadata to the **pyproject.toml** file.
-Install your package in editable mode|✖✅| You can install your package in editable mode using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
+Install your package in editable mode|✅| Hatch will install your package into any of its environments by default in editable mode. You can install your package in editable mode manually using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
 Build your sdist and wheel distributions|✅| Hatch will build the sdist and wheel distributions
 ✨Matrix environment creation to support testing across Python versions✨|✅| The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
 ✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨| ✅| This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.
@@ -360,7 +359,7 @@ Build your sdist and wheel distributions|✅| Hatch will build the sdist and whe
 
 ```
 
-_\*\* There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility. The Hatch build hook approach is also comparable with the features offered by PDM._
+_There is some argument about this approach placing a burden on maintainers to create a custom build system. But others appreciate the flexibility. The Hatch build hook approach is also comparable with the features offered by PDM._
 
 ### Why you might not want to use Hatch
 
@@ -368,7 +367,6 @@ There are a few features that hatch is missing that may be important for some.
 These include:
 
 - Hatch doesn't support adding dependencies. You will have to add them manually.
-- Hatch currently doesn't support use with other build back-ends. Lack of support for other build back-ends makes Hatch less desirable for users with more complex package builds. If your package is pure Python, then this won't be an issue.
 - Hatch won't by default recognize Conda environments without a plugin.
 - Similar to PDM, Hatch's documentation can difficult to work through, particularly if you are just getting started with creating a package.
 - Hatch, similar to PDM and Flit currently only has one maintainer.
