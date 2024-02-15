@@ -34,10 +34,10 @@ for conda, conda-forge will build from your PyPI source distribution file (sdist
 
 <img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 
-Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. Conda forge requires an source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
+Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge.  requires an source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
 :::
 
-## What is conda forge?
+## What is conda-forge?
 conda is an open source package and environment management tool that
 can be used to install tools from the different channels within the Anaconda Cloud repository.
 
@@ -57,7 +57,7 @@ Make a graphic to replace that geohackweek graphic that is also more specific.
 Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PiPY is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::
 
-## Why publish to conda forge
+## Why publish to conda-forge
 
 There are many users, especially in the scientific Python ecosystem that use conda as their primary package manager / environment tool. Thus, having packages available to these users on the conda-forge channel is useful. In some cases packages on conda-forge can minimize dependency conflicts that can occur when mixing installations using pip and conda. This is particularly important for the spatial ecosystem.
 
@@ -361,7 +361,7 @@ Once you have completed all of the above, you are ready to open up a pull reques
 
 ### Conda-forge Staged-recipes Pull Request Checklist
 
-When you submit your package to conda forge, the pull request template includes a list of checks that you want to ensure you have covered.
+When you submit your package to conda-forge, the pull request template includes a list of checks that you want to ensure you have covered.
 
 Below we break down each element of that list.
 
