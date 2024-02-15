@@ -73,7 +73,7 @@ The conda ecosystem evolved years ago to provide support for and
 simplify the process of managing software dependencies in scientific
 Python projects.
 
-Many of the core scientific Python projects depend upon or wrap around tools and extensions that are written in other languages such as C++. In the early stages of the scientific ecosystem's development, these non python extensions and tools were not well supported on PyPI making publication difficult. In recent years there is more support for complex builds that allow developers to bundle non Python code into a python distribution using the [wheel distribution format](python-wheel).
+Many of the core scientific Python projects depend upon or wrap around tools and extensions that are written in other languages, such as C++. In the early stages of the scientific ecosystem's development, these non-Python extensions and tools were not well supported on PyPI, making publication difficult. In recent years there is more support for complex builds that allow developers to bundle non-Python code into a Python distribution using the [wheel distribution format](python-wheel).
 
 Conda provides a mechanism to manage these dependencies and ensure that the required packages are installed correctly.
 :::
@@ -82,9 +82,9 @@ Conda provides a mechanism to manage these dependencies and ensure that the requ
 While conda was originally created to support Python packages, it
 is now used across all languages. This cross-language support
 makes it easier for some packages to include and have access to
-tools written in other languages such as c/c++ (gdal), Julia, or R.
-Creating environment that mixes all those packages are usually easier and more
-consistent with full fledged package managers like conda.
+tools written in other languages, such as C/C++ (gdal), Julia, or R.
+Creating an environment that mixes all of these packages is usually easier and more
+consistent with full-fledged package managers like conda.
 :::
 
 ### conda channels
@@ -93,10 +93,10 @@ conda built packages are housed within repositories that are called
 channels. The conda package manager can install packages from different channels.
 
 There are several core public channels that most people use to install
-packages using conda including.
+packages using conda, including:
 
-- **defaults:** this is a channel managed by the Anaconda, inc. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda decides what packages live on the default channel.
-- [**conda-forge:**](https://anaconda.org/conda-forge) this is a community driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
+- **defaults:** this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda decides what packages live on the default channel.
+- [**conda-forge:**](https://anaconda.org/conda-forge) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
 - [**bioconda**](https://anaconda.org/bioconda): this channel focuses on biomedical tools.
 
 **conda-forge** emerged as many of the scientific packages did not
@@ -106,7 +106,7 @@ exist in the default Anaconda cloud channel.
 
 <img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to pypi. and test pypi. a testbed server for you to practice. " width="700px">
 
-Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PiPY is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
+Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::
 
 
