@@ -232,7 +232,7 @@ pyospackage # This is your project directory
 ## Step 2: Add code to your package
 
 Within the `pyospackage` subdirectory, add one or more Python modules.
-A python module refers to a .py file containing the code that you want your package to access and run.
+A Python module refers to a `.py` file containing the code that you want your package to access and run.
 
 If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file. You will
 populate the `add_numbers.py` file with code provided below.
@@ -267,7 +267,7 @@ If you are following along and making a Python package from scratch then you can
 
 Python can support many different docstrings formats depending on the documentation build system you wish to use. The most popular supported formats for documenting Python objects are NumPy Style Docstring[^numpydoc], Google Style Docstring[^googledoc], and the Epytext Style Docstrings[^epytextdoc].
 
-**pyOpensci recommends using the NumPy Docstring convention.**
+**pyOpenSci recommends using the NumPy Docstring convention.**
 
 If you aren’t familiar with docstrings or typing yet, that is ok. You can review [this page in the pyOpenSci packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview of both topics.
 
