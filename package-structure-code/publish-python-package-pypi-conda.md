@@ -71,6 +71,8 @@ packages. These repositories are known as channels (discussed below).
 
 The conda ecosystem evolved years ago to provide support for and
 simplify the process of managing software dependencies in scientific
+The conda ecosystem evolved years ago to provide support for, and
+simplify the process of, managing software dependencies in scientific 
 Python projects.
 
 Many of the core scientific Python projects depend upon or wrap around tools and extensions that are written in other languages, such as C++. In the early stages of the scientific ecosystem's development, these non-Python extensions and tools were not well supported on PyPI, making publication difficult. In recent years there is more support for complex builds that allow developers to bundle non-Python code into a Python distribution using the [wheel distribution format](python-wheel).
