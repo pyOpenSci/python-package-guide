@@ -52,7 +52,7 @@ the readme will already be there-->
 
 At the top of the `README.md` file, add the name of your package.
 
-if you are using markdown it should be an header 1 tag which is denoted with a single `#` sign.
+If you are using markdown it should be a header 1 tag which is denoted with a single `#` sign.
 
 `# Package-title-here`
 
@@ -160,14 +160,14 @@ As your package grows you may also have a link to a development guide that contr
 ### Step 8 - Citation information
 
 Finally it is important to let users know how to cite your package.
-You can communication citation information in a few different ways.
+You can communicate citation information in a few different ways.
 
 You can use a tool such as zenodo to create a DOI and associated citation
 information for your package if it is hosted on a platform such as
 GitHub. [Check out this short tutorial that covers setting that up.](https://coderefinery.github.io/github-without-command-line/doi/)
 
 Alternatively if you send your package through a peer review process such
-as the [one lead by pyOpenSci](https://www.pyopensci.org/about-peer-review/index.html), then you can all get a cross-ref DOI through our partnership
+as the [one lead by pyOpenSci](https://www.pyopensci.org/about-peer-review/index.html), then you can get a cross-ref DOI through our partnership
 with the Journal of Open Source Software.
 
 ## The finished README file
@@ -204,7 +204,7 @@ Here add a quick code demo showing a user how to use the package after it is ins
 
 ```
 
-You can also add any to tutorials in your documentation here.
+You can also add any links to tutorials in your documentation here.
 
 ## Community
 
