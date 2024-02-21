@@ -34,15 +34,15 @@ for conda, conda-forge will build from your PyPI source distribution file (sdist
 
 <img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 
-Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge.  requires an source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
+Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. Conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
 :::
 
 ## What is conda-forge?
 conda is an open source package and environment management tool that
 can be used to install tools from the different channels within the Anaconda Cloud repository.
 
-You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as `conda install packagename`. In the case of the Anaconda cloud channels, some of these channels such as the default channel, is managed by Anaconda. Only Anaconda can decide what packages are available in the default channel. However, the conda-forge (and bioconda) channel are community-managed channels.
-Anyone can upload a package to these channels.
+You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as `conda install packagename`. In the case of the Anaconda cloud channels, some of these channels such as the default channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the default channel. However, the conda-forge (and bioconda) channel are community-managed channels.
+Anyone can submit a package to these channels however they must pass a technical review in the [staged-recipes GitHub repository](https://github.com/conda-forge/staged-recipes) to be published.
 
 [Learn more about conda channels here.](#about-conda)
 
@@ -52,9 +52,9 @@ Make a graphic to replace that geohackweek graphic that is also more specific.
 
 :::{figure-md} pypi-conda-channels
 
-<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to pypi. and test pypi. a testbed server for you to practice. " width="700px">
+<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the Anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI and test PyPI (a testbed server for you to practice)." width="700px">
 
-Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PiPY is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
+Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::
 
 ## Why publish to conda-forge
@@ -344,7 +344,7 @@ test:
     - pip
 ```
 
-If you have more advanced tests that you wish to run, you can add them here. However, you can also simple leave the tests section as it is.
+If you have more advanced tests that you wish to run, you can add them here. However, you can also simply leave the tests section as it is.
 
 ### Step 4: Submit a pull request to the staged-recipes repository
 
@@ -441,12 +441,22 @@ Once you create your pull request, a suite of CI actions will run that build and
 
 <img src="../images/conda-forge-staged-recipes-ci.png" alt="Image showing the 5 CI tasks that will run against your package in the GitHub interface after you'ce created a pull request. " width="700px">
 
-Wait until you have green checks on all of the CI steps in your pull request. At that point your pull request is ready for review.
+Wait until all of the CI steps in your pull request have run. At that point your pull request is ready for review by a conda-forge maintainer.
 :::
 
-In some cases getting things to run properly on CI might take a bit of work. If you are struggling you can ping the conda-forge maintainer team for help.
+
+In some cases getting all of the checks to run successfully in CI might take a bit of work. If you are struggling to get your recipe to build properly, you can ping the conda-forge maintainer team for help.
 
 Please be patient and wait for them to respond.
+
+:::{admonition} conda-forge staged recipes and CI failures
+:class: tip
+
+If your package is a pure Python package that can be installed on any type of computer (Windows, mac, linux) and has no architecture requirements (known as noarch: Python or no architecture requirements) then the conda-forge team only requires tests for Linux CI to pass.
+
+So if tests for Windows and MAC OS fail, that is to be expected. In this case, don't worry about failing tests, the maintainer team can help you get your package published.
+:::
+
 
 
 

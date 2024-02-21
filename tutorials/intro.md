@@ -17,11 +17,7 @@ create a Python package.
 
 :::{figure-md} packaging-outline
 
-<<<<<<< HEAD
 <img src="../images/tutorials/packaging-101-outline.png" alt="Diagram showing the lessons in our packaging tutorial. There are 6 total - what is a Python package, make code pip installable, publish your package to PyPI, add a README and LICENSE file, add metadata for PyPI and finally publish to conda forge." width="800px">
-=======
-<img src="../images/tutorials/packaging-101-outline.png" alt="Diagram showing the lessons in our packaging tutorial. There are 6 total - what is a python package, make code pip installable, publish your package to PyPI, add a readme and license file, add metadata for pypi and finally publish to ." width="800px">
->>>>>>> ae37574 (Fix: conda-forge fixes throughout)
 
 This lesson is the first in a series of lessons to help you get started with Python packaging.
 :::
