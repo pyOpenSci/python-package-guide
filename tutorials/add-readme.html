@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Get to know hatch" />
+<meta property="og:title" content="Add a README file to your Python package" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/get-to-know-hatch.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/add-readme.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch following th..." />
+<meta property="og:description" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI. What is a README file?: The README.md file is a markdow..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_get-to-know-hatch_ac6f425b.png" />
-<meta property="og:image:alt" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hat..." />
-<meta name="description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch following th..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_add-readme_05ea09e7.png" />
+<meta property="og:image:alt" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI. What is a READM..." />
+<meta name="description" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI. What is a README file?: The README.md file is a markdow..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Get to know hatch &#8212; Python Packaging Guide</title>
+    <title>Add a README file to your Python package &#8212; Python Packaging Guide</title>
   
   
   
@@ -56,13 +56,13 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/get-to-know-hatch';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/add-readme';</script>
     <script src="../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/get-to-know-hatch.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/add-readme.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Make your Python code installable" href="1-installable-code.html" />
-    <link rel="prev" title="Python packaging 101" href="intro.html" />
+    <link rel="next" title="Documentation for your Open Source Python Package" href="../documentation/index.html" />
+    <link rel="prev" title="Publish your Python package to PyPI" href="publish-pypi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -452,8 +452,8 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging Tutorial Setup</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Get to know Hatch</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Create a Python package</span></p>
 <ul class="nav bd-sidenav">
@@ -462,8 +462,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Metadata</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="add-readme.html">Add README file</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add README file</a></li>
 </ul>
 </div>
 </nav></div>
@@ -504,7 +504,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python packaging 101</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Get to know hatch</li>
+    <li class="breadcrumb-item active" aria-current="page">Add a...</li>
   </ul>
 </nav>
 </div>
@@ -521,112 +521,213 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="get-to-know-hatch">
-<h1>Get to know hatch<a class="headerlink" href="#get-to-know-hatch" title="Link to this heading">#</a></h1>
-<p>Our Python packaging tutorials use the tool Hatch.
-In this tutorial, you will install and get to know hatch a bit more before starting to use it.</p>
-<section id="install-hatch">
-<h2>Install Hatch<a class="headerlink" href="#install-hatch" title="Link to this heading">#</a></h2>
-<p>To begin, install Hatch following the
-<a class="reference external" href="https://hatch.pypa.io/latest/install/">instructions here</a>.</p>
+  <section id="add-a-readme-file-to-your-python-package">
+<h1>Add a README file to your Python package<a class="headerlink" href="#add-a-readme-file-to-your-python-package" title="Link to this heading">#</a></h1>
+<p>In the previous lessons you learned:</p>
+<ol class="arabic simple">
+<li><p>What a Python package is</p></li>
+<li><p>How to make your code installable</p></li>
+<li><p>How to publish your package to (test) PyPI</p></li>
+</ol>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">Learning objectives</p>
+<p>In this lesson you will learn:</p>
+<ol class="arabic simple">
+<li><p>How to add a <strong>README.md</strong> file to your package.</p></li>
+<li><p>What the core elements of a <strong>README.md</strong> file are.</p></li>
+</ol>
+</div>
+<section id="what-is-a-readme-file">
+<h2>What is a README file?<a class="headerlink" href="#what-is-a-readme-file" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file is a markdown file located at the root of your project directory that helps
+a user understand:</p>
+<ul class="simple">
+<li><p>You package’s name</p></li>
+<li><p>What the package does. Your README file should clearly state the problem(s) that your software is designed to solve and its target audience.</p></li>
+<li><p>The current development “state” of the package (through badges)</p></li>
+<li><p>How to get started with using your package.</p></li>
+<li><p>How to contribute to your package</p></li>
+<li><p>How to cite your package</p></li>
+</ul>
+<p>Your <strong>README.md</strong> file is important as it is often the first thing that someone sees before they install your package. The README file also will be used to populate your PyPI landing page.</p>
+<p>Note that there is no required format for README files. This page simply outlines sections that we suggest you have in your README file.</p>
+</section>
+<section id="create-a-readme-md-file-for-your-package">
+<h2>Create a README.md file for your package<a class="headerlink" href="#create-a-readme-md-file-for-your-package" title="Link to this heading">#</a></h2>
+<p>It’s time to add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file to your project directory.</p>
+<section id="step-0-create-a-readme-file">
+<h3>Step 0. Create a README file<a class="headerlink" href="#step-0-create-a-readme-file" title="Link to this heading">#</a></h3>
+<p>To get started, if you don’t already have a README.md file in your project directory, create one.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you are comfortable using <a class="reference external" href="https://pipx.pypa.io/stable/">pipx</a> to install hatch, we encourage you to do so. pipx will ensure that your package is available across all of your Python environments on your computer rather than just in the environment that you install it into.</p>
-<p>However if you are not sure about pipx, you can install hatch using pip or conda.</p>
+<p>If you created your project directory from</p>
+<ul class="simple">
+<li><p>a GitHub repository online</p></li>
+<li><p>using <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">init</span></code></p></li>
+</ul>
+<p>Then you may already have a README.MD file in your project directory.</p>
+</div>
+<!-- If they use hatch init in the very first lesson -
+the readme will already be there-->
+</section>
+<section id="step-1-add-the-name-of-your-package-as-the-readme-title">
+<h3>Step 1. Add the name of your package as the README title<a class="headerlink" href="#step-1-add-the-name-of-your-package-as-the-readme-title" title="Link to this heading">#</a></h3>
+<p>At the top of the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, add the name of your package.</p>
+<p>If you are using markdown it should be a header 1 tag which is denoted with a single <code class="docutils literal notranslate"><span class="pre">#</span></code> sign.</p>
+<p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Package-title-here</span></code></p>
+</section>
+<section id="step-2-add-badges-to-the-top-of-your-readme-file">
+<h3>Step 2 - add badges to the top of your README file<a class="headerlink" href="#step-2-add-badges-to-the-top-of-your-readme-file" title="Link to this heading">#</a></h3>
+<p>It’s common for maintainers to add badges to the top of their README files. Badges allow you and your package users to track things like</p>
+<ul class="simple">
+<li><p>Broken documentation and test builds.</p></li>
+<li><p>Versions of your package that are on PyPI and Conda.</p></li>
+<li><p>Whether your package has been reviewed and vetted by an organization such as pyOpenSci and/or JOSS.</p></li>
+</ul>
+<p>If you have already published your package to pypi.org you can use <a class="reference external" href="https://shields.io/badges/py-pi-version">shields.io to create a package version badge</a>. This badge will dynamically update as you release new versions of your package to PyPI.</p>
+<p>If not, you can leave the top empty for now and add badges to your README at a later point as they make sense for your package.</p>
+</section>
+<section id="step-3-add-a-description-of-what-your-package-does">
+<h3>Step 3 - Add a description of what your package does<a class="headerlink" href="#step-3-add-a-description-of-what-your-package-does" title="Link to this heading">#</a></h3>
+<p>Below the badges (if you have them), add a section of text
+that provides an easy-to-understand overview of what your
+package does.</p>
+<ul class="simple">
+<li><p>Keep this section short.</p></li>
+<li><p>Try to avoid jargon.</p></li>
+<li><p>Define technical terms that you use to make the description accessible to more people.</p></li>
+</ul>
+<p>Remember that the more people understand what your package does, the more people will use it.</p>
+</section>
+<section id="step-4-add-package-installation-instructions">
+<h3>Step 4 - Add package installation instructions<a class="headerlink" href="#step-4-add-package-installation-instructions" title="Link to this heading">#</a></h3>
+<p>Next, add instructions that tell users how to install your package.</p>
+<p>For example, can they use pip to install your package?
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code></p>
+<p>or conda?</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">packagename</span></code>.</p>
+<p>If you haven’t yet published your package to pypi.org then
+you can skip this section and come back and add these
+instructions later.</p>
+</section>
+<section id="step-5-any-additional-setup">
+<h3>Step 5 - Any additional setup<a class="headerlink" href="#step-5-any-additional-setup" title="Link to this heading">#</a></h3>
+<p>In some cases, your package users may need to manually
+install other tools in order to use your package. If that
+is the case, be sure to add a section on additional setup
+to your README file.</p>
+<p>Here, briefly document (or link to documentation for) any
+additional setup that is required to use your package.
+This might include:</p>
+<ul class="simple">
+<li><p>authentication information, if it is applicable to your package.</p></li>
+<li><p>additional tool installations, such as GDAL.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Many packages won’t need this section in their README. In that case you can always skip this section!</p>
 </div>
 </section>
-<section id="configure-hatch">
-<h2>Configure hatch<a class="headerlink" href="#configure-hatch" title="Link to this heading">#</a></h2>
-<p>Once you have installed hatch, you will want to customize the configuration.</p>
-<p>Hatch stores your configuration information in a <a class="reference external" href="https://hatch.pypa.io/latest/config/project-templates/">config.toml file</a>.</p>
-<p>While you can update the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file through the command line,
-it might be easier to look at it and update it in a text editor if you are using it for the first time.</p>
-<section id="step-1-open-and-edit-your-config-toml-file">
-<h3>Step 1: Open and edit your config.toml file<a class="headerlink" href="#step-1-open-and-edit-your-config-toml-file" title="Link to this heading">#</a></h3>
-<p>To open the config file in your file browser, run the following command in your shell:</p>
-<p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">explore</span></code></p>
-<p>This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor</p>
-</section>
-<section id="step-2-update-your-email-and-name">
-<h3>Step 2 - update your email and name<a class="headerlink" href="#step-2-update-your-email-and-name" title="Link to this heading">#</a></h3>
-<p>Once the file is open, update the [template] table of the config.toml file with your name and email. This information will be used in any pyproject.toml metadata files that you create using hatch.</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[template]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;firstName LastName&quot;</span>
-<span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-email@your-domain.org&quot;</span>
+<section id="step-6-add-a-get-started-section">
+<h3>Step 6 - Add a get started section<a class="headerlink" href="#step-6-add-a-get-started-section" title="Link to this heading">#</a></h3>
+<p>Next add a getting started section that shows how to use your package. This
+section should include a small code snippet that demonstrates importing and using
+some of the functionality in your package.</p>
+<div class="important admonition">
+<p class="admonition-title">Provide a fully functional code snippet if possible</p>
+<p>It is important to try to make the code examples that you provide your users as useful as possible.</p>
+<p>Be sure to provide a copy/paste code example that will work as-is when pasted into a Jupyter Notebook or .py file if that is possible.</p>
+<p>If there are tokens and other steps needed to run your package, be sure to be clear about what those steps entail.</p>
+</div>
+<p>For the pyosPackage, a short get started demo might look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyospackage.add_numbers</span> <span class="kn">import</span> <span class="n">add_num</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">add_num</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">3</span>
 </pre></div>
 </div>
+<p>Or it could simply be a link to a getting started tutorial that you have created. If
+you don’t have this yet, you can leave it empty for the time being.</p>
+<p>This would
+also be a great place to add links to any tutorials that you have created that
+help users understand how to use your package for common workflows.</p>
 </section>
-<section id="step-3">
-<h3>Step 3<a class="headerlink" href="#step-3" title="Link to this heading">#</a></h3>
-<p>Next, set tests to false in the <code class="docutils literal notranslate"><span class="pre">[template.plugins.default]</span></code> table.</p>
-<p>While tests are important, setting the tests configuration in Hatch
-to <code class="docutils literal notranslate"><span class="pre">true</span></code> will create a more complex pyproject.toml file. You won’t
-need to use this feature in this beginner friendly tutorial series
-but we will introduce it in later tutorials.</p>
-<p>Your <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file should look something like the one below.</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;local&quot;</span>
-<span class="n">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<section id="step-7-community-section">
+<h3>Step 7 - Community section<a class="headerlink" href="#step-7-community-section" title="Link to this heading">#</a></h3>
+<p>The community section of your README file is a place to include information for users who may want to engage with your project. This engagement will likely happen on a platform like GitHub or GitLab.</p>
+<p>In the community section, you will add links to your contributing guide
+and <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code>. You will add a <a class="reference internal" href="#add-license-coc"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file in the next lesson</span></a>.</p>
+<p>As your package grows you may also have a link to a development guide that contributors and your maintainer team will follow.</p>
+</section>
+<section id="step-8-citation-information">
+<h3>Step 8 - Citation information<a class="headerlink" href="#step-8-citation-information" title="Link to this heading">#</a></h3>
+<p>Finally it is important to let users know how to cite your package.
+You can communicate citation information in a few different ways.</p>
+<p>You can use a tool such as zenodo to create a DOI and associated citation
+information for your package if it is hosted on a platform such as
+GitHub. <a class="reference external" href="https://coderefinery.github.io/github-without-command-line/doi/">Check out this short tutorial that covers setting that up.</a></p>
+<p>Alternatively if you send your package through a peer review process such
+as the <a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">one lead by pyOpenSci</a>, then you can get a cross-ref DOI through our partnership
+with the Journal of Open Source Software.</p>
+</section>
+</section>
+<section id="the-finished-readme-file">
+<h2>The finished README file<a class="headerlink" href="#the-finished-readme-file" title="Link to this heading">#</a></h2>
+<p>Your finished <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file should look something like this:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># pyosPackage</span>
 
-<span class="k">[dirs]</span>
-<span class="n">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
-<span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;isolated&quot;</span>
-<span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/Users/your/path/Application Support/hatch&quot;</span>
-<span class="n">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/Users/your/path/Library/Caches/hatch&quot;</span>
+[<span class="nt">![DOI</span>](<span class="na">https://zenodo.org/badge/DOI/10.5281/zenodo.8365068.svg</span>)](https://doi.org/10.5281/zenodo.8365068)
+[<span class="nt">![pyOpenSci</span>](<span class="na">https://tinyurl.com/y22nb8up</span>)](https://github.com/pyOpenSci/software-review/issues/115)
 
-<span class="k">[dirs.env]</span>
+<span class="gu">## What pyosPackage does</span>
 
-<span class="k">[projects]</span>
+Short description here using non-technical language that describes what your package does.
 
-<span class="k">[publish.index]</span>
-<span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;main&quot;</span>
+<span class="gu">## How to install pyosPackage</span>
 
-<span class="k">[template]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Leah Wasser&quot;</span>
-<span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;leah@pyopensci.org&quot;</span>
+&lt;todo - when i add more to the pyos package this can use that readme&gt;
+To install this package run:
 
-<span class="k">[template.licenses]</span>
-<span class="n">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-<span class="n">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
-<span class="p">]</span>
+<span class="sb">`pip install pyosPackage`</span>
 
-<span class="k">[template.plugins.default]</span>
-<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
-<span class="n">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
-<span class="n">src-layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="gu">## OPTIONAL - if you have additional setup instructions add them here. if not, skip this section.</span>
 
-<span class="k">[terminal.styles]</span>
+<span class="gu">## Get started using pyosPackage</span>
+
+Here add a quick code demo showing a user how to use the package after it is installed.
+
+<span class="sb">```python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pyospackage.add_numbers</span> <span class="kn">import</span> <span class="n">add_num</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add_num</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">3</span>
+
+<span class="sb">```</span>
+
+You can also add any links to tutorials in your documentation here.
+
+<span class="gu">## Community</span>
+
+Add information here about contributing to your package. Be sure to add links to your <span class="sb">`CODE_OF_CONDUCT.md`</span> file and your development guide. For now this section might be empty. You can go back and fill it in later.
+
+<span class="gu">## How to cite pyosPackage</span>
+
+citation information here
+
+<span class="gu">## &lt;i class=&quot;fa-solid fa-hands-bubbles&quot;&gt;&lt;/i&gt; Wrap up</span>
+
+It&#39;s important to consider the information that a new user or contributor might
+need when creating your <span class="sb">`README.md`</span> file. While there is no perfect template,
+above is a set of recommendations as you are just getting started. You may find
+the need for other elements to be added to this file as you further develop your
+package and as a community begins to use your package.
+
+In the [<span class="nt">next lesson</span>](<span class="na">add-license-coc</span>), you will add a LICENSE file to
+your Python package. A license file is critical as it tells users
+how they legally can (and can&#39;t) use your package. It also:
+
+<span class="k">*</span><span class="w"> </span>Builds trust with your users
+<span class="k">*</span><span class="w"> </span>Discourages misuse of your package and associated code
 </pre></div>
 </div>
-<p>Also notice that the default license option is MIT. While we will discuss
-license in more detail in a later lesson, the MIT license is the
-recommended permissive license from <a class="reference external" href="https://www.choosealicense.com">choosealicense.com</a> and as such we will
-use it for this tutorial series.</p>
-<p>You are of course welcome to select another license</p>
-</section>
-<section id="step-4-close-the-config-file-and-run-hatch-config-show">
-<h3>Step 4: Close the config file and run hatch config show<a class="headerlink" href="#step-4-close-the-config-file-and-run-hatch-config-show" title="Link to this heading">#</a></h3>
-<p>Once you have completed the steps above run the following command in your shell.</p>
-<p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code></p>
-<p>hatch config show will print out the contents of your config.toml file in your shell. look at the values and ensure that your name, email is set. Also make sure that tests=false.</p>
-</section>
-</section>
-<section id="hatch-features">
-<h2>Hatch features<a class="headerlink" href="#hatch-features" title="Link to this heading">#</a></h2>
-<p>Hatch offers a suite of features that will make creating, publishing
-and maintaining your Python package easier.</p>
-<p><a class="reference internal" href="../package-structure-code/python-package-build-tools.html#hatch"><span class="std std-ref">More on hatch here</span></a></p>
-<p>A few features that hatch offers</p>
-<ol class="arabic simple">
-<li><p>it will convert metadata stored in a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to a pyproject.toml file for you. While we have not extensively tested this feature yet, please let us know if you try it!</p></li>
-<li><p>It will help you by storing configuration information for publishing to PyPI after you’ve entered it once.</p></li>
-</ol>
-<p>Use <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">-h</span></code> to see all of the available commands.</p>
-</section>
-<section id="what-s-next">
-<h2>What’s next<a class="headerlink" href="#what-s-next" title="Link to this heading">#</a></h2>
-<p>In the next lesson you’ll learn how to package and make your code installable using Hatch.</p>
 </section>
 </section>
 
@@ -641,20 +742,20 @@ and maintaining your Python package easier.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="publish-pypi.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python packaging 101</p>
+        <p class="prev-next-title">Publish your Python package to PyPI</p>
       </div>
     </a>
     <a class="right-next"
-       href="1-installable-code.html"
+       href="../documentation/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Make your Python code installable</p>
+        <p class="prev-next-title">Documentation for your Open Source Python Package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -674,16 +775,20 @@ and maintaining your Python package easier.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-hatch">Install Hatch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-hatch">Configure hatch</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-and-edit-your-config-toml-file">Step 1: Open and edit your config.toml file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-update-your-email-and-name">Step 2 - update your email and name</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3">Step 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-close-the-config-file-and-run-hatch-config-show">Step 4: Close the config file and run hatch config show</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-readme-file">What is a README file?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-readme-md-file-for-your-package">Create a README.md file for your package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-create-a-readme-file">Step 0. Create a README file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-add-the-name-of-your-package-as-the-readme-title">Step 1. Add the name of your package as the README title</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-badges-to-the-top-of-your-readme-file">Step 2 - add badges to the top of your README file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-a-description-of-what-your-package-does">Step 3 - Add a description of what your package does</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-package-installation-instructions">Step 4 - Add package installation instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-any-additional-setup">Step 5 - Any additional setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-a-get-started-section">Step 6 - Add a get started section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-community-section">Step 7 - Community section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-citation-information">Step 8 - Citation information</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-features">Hatch features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s next</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-finished-readme-file">The finished README file</a></li>
 </ul>
   </nav></div>
 
@@ -691,7 +796,7 @@ and maintaining your Python package easier.</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/get-to-know-hatch.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/add-readme.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -706,7 +811,7 @@ and maintaining your Python package easier.</p>
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/tutorials/get-to-know-hatch.md.txt">
+    <a href="../_sources/tutorials/add-readme.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

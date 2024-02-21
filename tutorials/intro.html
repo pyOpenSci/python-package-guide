@@ -455,11 +455,15 @@ document.write(`
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging 101</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create a Python package</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">What is a Python package?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Metadata</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">Add README file</a></li>
 </ul>
 </div>
 </nav></div>
@@ -536,6 +540,8 @@ understanding the steps involved in creating a Python package.</p>
 <li><p>In this series you will learn about the core elements that you need to publish your package to the <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a>.</p></li>
 <li><p>In the second series, you will learn about infrastructure and documentation needed to support package maintenance.</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -776,6 +782,7 @@ want to make your code public-facing and share it with others.</span><a class="h
 <p>If you want to make your package directly installable without having
 to download the code to your computer locally then you need to
 publish it in a repository such as <strong>PyPI</strong> or <strong>conda-forge</strong>.</p>
+<p>You will learn <a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">how to publish your package to PyPI in this tutorial.</span></a></p>
 <p>Then you can create a conda-forge recipe using the <a class="reference external" href="https://github.com/conda/grayskull">Grayskull</a> tool. You can then submit this recipe to conda-forge.</p>
 <figure class="align-default" id="build-workflow-tutorial">
 <a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testPyPI or the real PyPI. From PyPI you can then connect to conda forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" /></a>
