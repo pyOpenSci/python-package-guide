@@ -1,11 +1,11 @@
 # Publish your Python package to PyPI
 
 :::{todo}
-
 - emphasize that we recommended the trusted publisher GitHub action for most maintainers
 - Make sure they add /dist to their .gitignore file. We have not discussed GitHub workflows anywhere yet. Where does that fit?
 - https://hatch.pypa.io/latest/intro/#existing-project <- hatch will migrate from setup.py for you - if we go with hatch then we may want to add this to the installable code lesson
-- Should we install hatch with pipx?
+:::
+
 
 ```bash
 pipx install hatch
@@ -38,13 +38,8 @@ using [Grayskull](https://conda.github.io/grayskull/).
 
 You will learn how to publish to conda-forge in a future lesson.
 
-:::{todo}
-Fix this link once the lesson is published.
+You will learn how to publish to conda-forge in the [next lesson](publish-conda-forge).
 
-You will learn how to publish to conda-forge in the [next lesson](7-publish-conda-forge.md).
-:::
-
-:::
 
 :::{figure-md} build-workflow-tutorial
 <img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. An arrow to the right takes you to a build distribution files box. Another arrow to the right takes you to a publish to PyPI box which has an arrow containing sdist and wheel that notes those files go to PyPI for hosting. From PyPI is an arrow containing sdist since you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
@@ -191,10 +186,8 @@ You can learn more about
 building in the [build page of our packaging guide](../package-structure-code/python-package-distribution-files-sdist-wheel).
 :::
 
-:::{todo}
 The sdist is important if you wish to [publish
-your package to conda-forge](7-publish-conda-forge) which you will learn about in a later lesson.
-:::
+your package to conda-forge](publish-conda-forge). You will learn about this in a later lesson.
 
 :::{todo}
 ➜ hatch build
@@ -232,7 +225,7 @@ Show them how to do this
 
 1. update the project-name in the pyproject.toml file
 2. update the module repository directory to be the same
-   :::
+:::
 
 :::{figure-md} build-workflow-tutorial
 <img src="../images/tutorials/testpypi-search.png" alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" width="700px">
@@ -361,14 +354,12 @@ testPyPI as a permanent way to install your package. Test PyPi is a perfect plac
 In this lesson you are using Hatch and hatchling to create, build and publish your Python Package. [Click here to learn about other packaging tools in the ecosystem.](../package-structure-code/python-package-build-tools.md)
 :::
 
-
-<!-- TODO: venv will always be different for windows - do we need a third tab?? Also is conda different on windows? i forget -->
-
-<!--TODO: teach them to setup trusted publisher for actions... in the actions lesson
+:::{todo}
+teach them to setup trusted publisher for actions... in the actions lesson
 https://pypi.org/help/#twofa
 
 from PyPI: https://pypi.org/help/#apitoken - You can create a token for an entire PyPI account, in which case, the token will work for all projects associated with that account. Alternatively, you can limit a token's scope to a specific project.
- -->
+:::
 
 ## Package-specific token vs trusted publisher
 

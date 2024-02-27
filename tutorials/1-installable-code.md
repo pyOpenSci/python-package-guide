@@ -331,10 +331,9 @@ file.
 [Learn more about the pyproject.toml format here.](../package-structure-code/pyproject-toml-python-package-metadata)
 :::
 
-:::{todo}
+
 You will learn more about the `pyproject.toml` format in the
-[next lesson when you add additional metadata / information to this file.](5-pyproject-toml.md)
-:::
+[next lesson when you add additional metadata / information to this file.](pyproject-toml.md)
 
 - Open up the `pyproject.toml` file that Hatch created in your favorite text editor. It should look something like the example below.
 
@@ -614,13 +613,12 @@ In the upcoming lessons you will:
 * Add more metadata to your `pyproject.toml` file to support PyPI publication.
 * learn how to publish to **conda-forge** from **PyPI**.
 
-:::{todo}
-This is the content with links once the links are live we can uncomment this and remove the unlinked content above!
-* Add a [README file](2-add-readme.md) and [LICENSE](4-add-license-file.md) to your package
+
+* Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to your package
 * [Add more metadata to your `pyproject.toml`](5-pyproject-toml.md) file to support PyPI publication.
-* [Learn how to build your package distribution](6-publish-pypi.md) files (**sdist** and **wheel**) and publish to **test PyPI**.
-* Finally you will learn how to publish to **conda-forge** from **PyPI**.
-:::
+* [Learn how to build your package distribution](publish-pypi) files (**sdist** and **wheel**) and publish to **test PyPI**.
+* Finally you will learn how to [publish to **conda-forge**](publish-conda-forge) from **PyPI**.
+
 
 ## Footnotes
 

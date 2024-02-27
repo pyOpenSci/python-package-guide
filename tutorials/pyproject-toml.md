@@ -1,18 +1,5 @@
 # Make your Python package PyPI ready - pyproject.toml
 
-:::{todo}
-- add a note for hatch - if you want to use dynamic versioning you'll need to add `tool.hatch.version` to the pyproject.toml file.
-- TODO: decide how we want to list readme and license? it might make sense to just follow the simplest option and do spdx?
-- make sure they add the dev requirements here... including build.
-license = { text = "MIT" } that format is a toml inline table https://toml.io/en/v1.0.0#inline-table and it becomes a subtable of the project table
-
-* make sure we have this listing for license
-* SPDX for licenses https://spdx.dev/use/overview/
-is 2 above enough for examples? should we show a few others?
-
-:::
-
-
 In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish that bare minimum version of your package to PyPI](publish-pypi.md).
 
 Following that you learned how to add a:
@@ -20,7 +7,7 @@ Following that you learned how to add a:
 * [LICENSE](add-license-coc) and
 * [CODE_OF_CONDUCT](add-coc)
 
-to your package directory.
+to the root of your project directory.
 
 To enhance the visibility of your package on PyPI and provide more information
 about its compatibility with Python versions, project development status, and
@@ -28,8 +15,6 @@ project maintainers, you should add additional metadata to your `pyproject.toml`
 file. This
 lesson will guide you through the process.
 
-
-of your GitHub or GitLab repository.
 
 :::{admonition} Learning Objectives
 :class: tip
