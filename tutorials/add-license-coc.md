@@ -20,7 +20,8 @@ In this lesson you will learn:
 
 A license contains legal language about how users can use and reuse your software. You should include a LICENSE file in your project directory that specifies the license that you choose for your package.
 
-We suggest that you use a permissive license that accommodates the other most commonly used licenses in the scientific Python ecosystem (MIT[^mit] and BSD-3[^bsd3]).
+We suggest that you use a permissive license that accommodates the other most commonly used licenses in the scientific Python ecosystem (MIT[^mit] and BSD-3[^bsd3]). If you are unsure, use MIT given it's the generally recommended
+license on [choosealicense.com](https://choosealicense.com/).
 
 :::{admonition} Licenses for the scientific Python ecosystem
 [We discuss licenses for the scientific Python ecosystem in more detail here in our guidebook.](permissive-license)
@@ -29,6 +30,18 @@ We suggest that you use a permissive license that accommodates the other most co
 ### Where should the LICENSE file live & how do you add it?
 
 Your `LICENSE` file should be placed at the root of your package's repository.
+When you add the LICENSE at the root, GitHub will automagically discover it and
+provide users with a direct link to your license file within your GitHub
+repository.
+
+:::{figure-md} github-coc-readme-license-tabs
+<img src="../images/license-github-root-dir.png" alt="Image showing the GitHub repository for SunPy an accepted pyOpenSci package." width="500px">
+
+Notice at the top of the
+README portion of the GitHub landing page, there are three tabs directly linking to the README file which is visible, the CODE_OF_CONDUCT file and one that specifies
+the license that SunPy uses. These files are discovered by GitHub because they
+are placed in the root of the project directory using standard naming conventions.
+:::
 
 There are several ways to add a license file:
 
@@ -57,6 +70,7 @@ If you don't already have a LICENSE file, and you are not yet using a platform s
 # Create a license file in your shell
 > touch LICENSE
 ```
+
 1. Go to [choosealicense.com](https://choosealicense.com/)
 2. Select permissive license
 3. It will suggest that you use the [MIT license](https://choosealicense.com/licenses/mit/).
@@ -69,7 +83,6 @@ In the pyOpenSci [packaging guidebook](../documentation/repository-files/license
 
 If you want a broad overview of why licenses are important for protecting open source software, [check out this blog post that overviews the legal side of things.](https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project)
 :::
-
 
 ::::::{dropdown} Instructions for adding a license files within the GitHub interface
 :color: primary
@@ -89,13 +102,12 @@ Image showing the GitHub interface that allows you to add a LICENSE and README f
 :::
 ::::
 
-
 ::::{tab-item} Add License: Existing GitHub repository
 
-If you already have a GitHub repo for your package, then you can add a LICENSE using the GitHub interface by adding a new file to the repo.
+If you already have a GitHub repository for your package, then you can add a LICENSE using the GitHub interface by adding a new file to the repo.
 
-* Follow the instructions to select and add a license to your repository on the [GitHub LICENSE page](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) .
-* Once you have added your LICENSE file, be sure to sync your git local repository with the repository on GitHub.com. This means running `git pull` to update your local branch.
+- Follow the instructions to select and add a license to your repository on the [GitHub LICENSE page](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) .
+- Once you have added your LICENSE file, be sure to sync your git local repository with the repository on GitHub.com. This means running `git pull` to update your local branch.
 
 :::{figure-md} view-license
 <img src="../images/tutorials/view-license-github.png" alt="sdfsdfsd nasdfjsdf" width="500px">
@@ -110,7 +122,9 @@ You can also view a summary of the license on its GitHub landing page.```
 (add-coc)=
 ## Add a CODE_OF_CONDUCT file to your repo
 
-Now that you have added a LICENSE to your project, you are ready to add a file called `CODE_OF_CONDUCT.md` to your package directory. A `CODE_OF_CONDUCT` file is critical to supporting your community as it
+Now that you have added a LICENSE to your project, you are ready to add a `CODE_OF_CONDUCT.md` to your package directory. The `CODE_OF_CONDUCT.md` should be placed at the root of your project directory, similar to the LICENSE file,.
+
+A `CODE_OF_CONDUCT` file is critical to supporting your community as it
 grows. The `CODE_OF_CONDUCT`:
 
 1. Establishes guidelines for how users and contributors interact with each other and you in your software repository.
@@ -123,19 +137,17 @@ file, we suggest that you adopt the [contributor covenant language](https://www.
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](#)
 
-
 ### Add your CODE_OF_CONDUCT file
 
-* Add a `CODE_OF_CONDUCT.md` file to your repository if it doesn't
-already exist.
-* Visit the [contributor covenant website](https://www.contributor-covenant.org/) and add [the markdown version of their code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) to your `CODE_OF_CONDUCT.md` file.
-
+- Add a `CODE_OF_CONDUCT.md` file to your repository if it doesn't
+  already exist.
+- Visit the [contributor covenant website](https://www.contributor-covenant.org/) and add [the markdown version of their code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) to your `CODE_OF_CONDUCT.md` file.
 
 :::{admonition} Additional Code of Conduct resources
 :class: note
 
-* [<i class="fa-brands fa-github"></i> Guide: `CODE_OF_CONDUCT.md` files](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)
-* [pyOpenSci package guide `CODE_OF_CONDUCT.md` overview](https://www.pyopensci.org/python-package-guide/documentation/repository-files/code-of-conduct-file.html)
+- [<i class="fa-brands fa-github"></i> Guide: `CODE_OF_CONDUCT.md` files](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)
+- [pyOpenSci package guide `CODE_OF_CONDUCT.md` overview](https://www.pyopensci.org/python-package-guide/documentation/repository-files/code-of-conduct-file.html)
 
 :::
 
@@ -143,20 +155,21 @@ already exist.
 
 In this lesson and the [last lesson](add-readme), you have added a:
 
-* `README` file;
-* `LICENSE` file and a
-* `CODE_OF_CONDUCT` file.
+- `README` file;
+- `LICENSE` file and a
+- `CODE_OF_CONDUCT` file.
 
-These are core files needed for every scientific Python package. In the upcoming
+These are fundamental files needed for every scientific Python package
+repository. These files help users understand how to use your package and
+interact with package maintainers. In the upcoming
 lessons, you will:
 
-* [Flesh out your `pyproject.toml` file](pyproject-toml) to support building
-and publishing your package on PyPI.
-* Publish a new version of your Python package to (Test) PyPI to preview the
-updated metadata landing page.
+- [Flesh out your `pyproject.toml` file](pyproject-toml) to support building
+  and publishing your package on PyPI.
+- Publish a new version of your Python package to (Test) PyPI to preview the
+  updated metadata landing page.
 
-
-****
+---
 
 ## Footnotes
 
