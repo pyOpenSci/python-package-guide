@@ -69,8 +69,6 @@ packages. These repositories are known as channels (discussed below).
 :::{admonition} A brief history of conda's evolution
 :class: note
 
-The conda ecosystem evolved years ago to provide support for and
-simplify the process of managing software dependencies in scientific
 The conda ecosystem evolved years ago to provide support for, and
 simplify the process of, managing software dependencies in scientific
 Python projects.
