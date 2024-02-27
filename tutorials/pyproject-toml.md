@@ -15,7 +15,7 @@ is 2 above enough for examples? should we show a few others?
 
 In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish that bare minimum version of your package to PyPI](publish-pypi.md).
 
-FOllowing that you learned how to add a:
+Following that you learned how to add a:
 * [README.md](add-readme)
 * [LICENSE](add-license-coc) and
 * [CODE_OF_CONDUCT](add-coc)
@@ -29,7 +29,6 @@ file. This
 lesson will guide you through the process.
 
 
-In future lessons you will add a license and README file to your package which will further flesh out both your PyPI landing page and the landing page
 of your GitHub or GitLab repository.
 
 :::{admonition} Learning Objectives
@@ -46,7 +45,7 @@ If you wish to learn more about the `pyproject.toml` format, [check out this pag
 <!-- TODO:Friends - As you are reviewing ...as a beginner is this TLDR too technical when you have no idea what the elements in it are? or is it a nice summary? -->
 
 
-:::{dropdown} Click for Lesson highlights TL&DR
+:::{dropdown} Click for lesson highlights
 :color: secondary
 :icon: unlock
 
@@ -67,9 +66,9 @@ When creating your pyproject.toml file, consider the following:
 
 ## What is a pyproject.toml file?
 
-The `pyproject.toml` file is a human and machine-readable file that serves as the primary configuration file for your pure Python package.
+The `pyproject.toml` file is a human and machine-readable file that serves as the primary configuration file for your Python package.
 
-The TOML format can be compared to structured formats such as`.json`. However, the TOML format is an easier-to-read format - especially for us humans.
+The TOML format can be compared to other structured formats such as`.json`. However, the TOML format was designed to be easier to read for humans.
 
 :::{tip}
 [Building your package](build-package) is the step that created the distribution files that are required for you to publish to PyPI.
@@ -148,7 +147,7 @@ In the last lesson, you created a bare-bones pyproject.toml
 file that contained the core elements needed to build your
 package:
 
-1. A `[build]` table where ou defined your project's backend build tool (`hatchling`)
+1. A `[build-system]` table where you defined your project's backend build tool (`hatchling`)
 2. A `[project]` table where you defined your project's version and name.
 
 The `pyproject.toml` file that you created, looked like this:
@@ -192,7 +191,7 @@ Let's add the following to your table:
 - package **authors**
 - package **maintainers**
 
-When you add authors and maintainers you need to use a format that will look like a Python list with a dictionary within it type of format:
+When you add authors and maintainers you need to use a format that will look like a Python list with a dictionary within it:
 
 `authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]`
 
@@ -231,7 +230,7 @@ Whereas maintainers are the people that are currently, actively working on the p
 
 A good example of when the lists might diverge is sometimes you have a package where an initial author developed it and then stepped down as a maintainer to move on to other things. This person may continue to be considered an author but no longer actively maintains the package.
 
-It is important to note there that there are many ways define author vs maintainer and we don't prescribe a single approach in this tutorial.
+It is important to note that there are many ways to define author vs maintainer and we don't prescribe a single approach in this tutorial.
 
 However, we encourage you to consider carefully, for PyPI publication, who
 you want to have listed as authors and maintainers on your PyPI landing page.
@@ -251,7 +250,7 @@ If you do not [use standard classifier values](https://PyPI.org/classifiers/), w
 Review that list and add items below to your `pyproject.toml` file:
 
 - development status
-- intended audiences,
+- intended audiences
 - topic
 - license and
 - programming language support
@@ -286,7 +285,7 @@ dependencies = ["numpy", "requests", "pandas", "pydantic"]
 ```
 
 :::{admonition} Pin dependencies with caution
-Pinnning dependencies references to specifying a specific version of a dependency like this `numpy == 1.0`. In some specific cases, you may chose to pin or specify a lower or upper bound of a specific package. You can do that using syntax like this:
+Pinnning dependencies refers to specifying a specific version of a dependency like this `numpy == 1.0`. In some specific cases, you may chose to pin or specify a lower or upper bound of a specific package. You can do that using syntax like this:
 
 `ruamel-yaml>=0.17.21`
 
@@ -483,8 +482,8 @@ license = { FILE = LICENSE }
 ## Example `pyproject.toml` files
 
 Below are some examples of `pyproject.toml` files from various packages in the scientific and pyOpenSci ecosystem.
-* [PyPAs fully documented pyProject.toml file](https://github.com/pypa/sampleproject/blob/main/pyproject.toml)
-* [taxpasta has a nicely organized pyProject.toml file and is a pyOpenSci approved package](https://github.com/taxprofiler/taxpasta/blob/f9f6eea2ae7dd08bb60a53dd49ad77e4cf143573/pyproject.toml)
+* [PyPA's fully documented example pyproject.toml file](https://github.com/pypa/sampleproject/blob/main/pyproject.toml)
+* [taxpasta has a nicely organized pyproject.toml file and is a pyOpenSci approved package](https://github.com/taxprofiler/taxpasta/blob/f9f6eea2ae7dd08bb60a53dd49ad77e4cf143573/pyproject.toml)
 
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
@@ -493,8 +492,8 @@ Below are some examples of `pyproject.toml` files from various packages in the s
 At this point you've created:
 
 * A [README.md](add-readme) file for your package
-* A [code of conduct](add-coc) to support your user community
-* And a [LICENSE](add-license-coc) file which provides legal boundaries around how people can and can't use your software.
+* A [CODE_OF_CONDUCT.md](add-coc) file to support your user community
+* And a [LICENSE](add-license-coc) file which provides legal boundaries around how people can and can't use your software
 
 You also learned [how to publish your package to (test)PyPI](publish-pypi).
 
