@@ -44,10 +44,6 @@ Anyone can submit a package to these channels however they must pass a technical
 
 [Learn more about conda channels here.](#about-conda)
 
-:::{todo}
-Make a graphic to replace that geohackweek graphic that is also more specific.
-:::
-
 :::{figure-md} pypi-conda-channels
 
 <img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the Anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI and test PyPI (a testbed server for you to practice)." width="700px">
