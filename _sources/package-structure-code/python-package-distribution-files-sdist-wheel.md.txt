@@ -1,19 +1,24 @@
 # Learn about Building a Python Package
 
-:::{figure-md} build_workflow
-<img src="../images/python-package-development-process.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda forge for an automated build that sends distributions from pypi to conda-forge. " width="700px">
 
-You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
+:::{figure-md} pypi-conda-channels
+
+<img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
+
+Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. conda-forge requires an source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
+:::
+
+You need to build your Python package in order to publish it to PyPI (or a conda channel). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
 :::
 
 (build-package)=
 ## What is building a Python package?
 
-To [publish your Python package](build_workflow) and make it easy for anyone to install, you first need to build it.
+To [publish your Python package](publish-python-package-pypi-conda) and make it easy for anyone to install, you first need to build it.
 
 But, what does it mean to build a Python package?
 
-[As shown in the figure above](build_workflow), when you build your Python package, you convert the source files into something called a distribution package. A distribution package contains your source code and metadata about the package, in the format required by the Python Package Index, so that it can be installed by tools like pip.
+[As shown in the figure above](#pypi-conda-channels), when you build your Python package, you convert the source files into something called a distribution package. A distribution package contains your source code and metadata about the package, in the format required by the Python Package Index, so that it can be installed by tools like pip.
 
 :::{note}
 The term package used to mean many different things in Python and other languages. On this page, we adapt the convention of the [Python Packaging Authority](https://www.pypa.io/en/latest/) and refer to the product of the
@@ -87,7 +92,7 @@ represent on your PyPI landing page. These classifiers also allow users to sort 
 ```
 
 :::{figure-md} build-workflow
-<img src="../images/python-package-development-process.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda forge for an automated build that sends distributions from pypi to conda-forge. " width="700px">
+<img src="../images/python-package-development-process.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda-forge for an automated build that sends distributions from pypi to conda-forge. " width="700px">
 
 You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
 :::

@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Publish your Python package that is on PyPI to conda-forge" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/publish-conda-forge.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="In the previous lessons, you’ve learned: How to create the most basic version of a Python package. This entailed making your code installable., How to publish your Python package to PyPI, How to ad..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-conda-forge_74f736fa.png" />
+<meta property="og:image:alt" content="In the previous lessons, you’ve learned: How to create the most basic version of a Python package. This entailed making your code installable., How to publis..." />
+<meta name="description" content="In the previous lessons, you’ve learned: How to create the most basic version of a Python package. This entailed making your code installable., How to publish your Python package to PyPI, How to ad..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Publish your Python package that is on PyPI to conda-forge &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=d6812f4d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/publish-conda-forge';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/publish-conda-forge.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Get to know hatch" href="get-to-know-hatch.html" />
+    <link rel="prev" title="Publish your Python package to PyPI" href="publish-pypi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging 101</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish to conda-forge</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging Tutorial Setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create a Python package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish to conda-forge</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Metadata</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">Add README file</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python packaging 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Publish...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="publish-your-python-package-that-is-on-pypi-to-conda-forge">
+<h1>Publish your Python package that is on PyPI to conda-forge<a class="headerlink" href="#publish-your-python-package-that-is-on-pypi-to-conda-forge" title="Link to this heading">#</a></h1>
+<p>In the previous lessons, you’ve learned:</p>
+<ol class="arabic simple">
+<li><p>How to <a class="reference internal" href="1-installable-code.html"><span class="std std-doc">create the most basic version of a Python package</span></a>. This entailed making your code installable.</p></li>
+<li><p><a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">How to publish your Python package to PyPI</span></a></p></li>
+<li><p>How to add a <code class="docutils literal notranslate"><span class="pre">README</span></code> and <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file to your package</p></li>
+<li><p>How to setup your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file with all of the metadata that PyPI requires and also metadata that will be helpful for users to find your package.</p></li>
+</ol>
+<p>If you have gone through all of the above lessons, you are now ready to
+publish your package on conda-forge.</p>
+<p><strong>IMPORTANT:</strong> Please do not practice publishing your package to conda-forge. You should only publish to conda-forge when you have a package on pypi.org that you plan to maintain.</p>
+<div class="tip admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>In this lesson you will learn how to:</p>
+<ul class="simple">
+<li><p>How to build your package’s sdist and wheel distributions</p></li>
+<li><p>Setup an account on testPyPI (the process is similar for the real PyPI)</p></li>
+<li><p>Publish your package to PyPI</p></li>
+</ul>
+<p>Once your package is on PyPI you can then easily publish it to conda-forge
+using the <a class="reference external" href="https://conda.github.io/grayskull/">grayskull</a> tool. You do not need to build the package specifically
+for conda, conda-forge will build from your PyPI source distribution file (sdist).</p>
+</div>
+<figure class="align-default" id="pypi-conda-publication">
+<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. Conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#pypi-conda-publication" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="what-is-conda-forge">
+<h2>What is conda-forge?<a class="headerlink" href="#what-is-conda-forge" title="Link to this heading">#</a></h2>
+<p>conda is an open source package and environment management tool that
+can be used to install tools from the different channels within the Anaconda Cloud repository.</p>
+<p>You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. In the case of the Anaconda cloud channels, some of these channels such as the default channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the default channel. However, the conda-forge (and bioconda) channel are community-managed channels.
+Anyone can submit a package to these channels however they must pass a technical review in the <a class="reference external" href="https://github.com/conda-forge/staged-recipes">staged-recipes GitHub repository</a> to be published.</p>
+<p><a class="reference internal" href="../package-structure-code/publish-python-package-pypi-conda.html#about-conda"><span class="std std-ref">Learn more about conda channels here.</span></a></p>
+<figure class="align-default" id="pypi-conda-channels">
+<a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the Anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI and test PyPI (a testbed server for you to practice)." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.</span><a class="headerlink" href="#pypi-conda-channels" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="why-publish-to-conda-forge">
+<h2>Why publish to conda-forge<a class="headerlink" href="#why-publish-to-conda-forge" title="Link to this heading">#</a></h2>
+<p>There are many users, especially in the scientific Python ecosystem that use conda as their primary package manager / environment tool. Thus, having packages available to these users on the conda-forge channel is useful. In some cases packages on conda-forge can minimize dependency conflicts that can occur when mixing installations using pip and conda. This is particularly important for the spatial ecosystem.</p>
+</section>
+<section id="how-publishing-to-conda-forge-works">
+<h2>How publishing to conda-forge works<a class="headerlink" href="#how-publishing-to-conda-forge-works" title="Link to this heading">#</a></h2>
+<p>Once you have built and published your package to PyPI, you have everything that you need to publish to conda-forge. There is no additional build step needed to publish to conda-forge.</p>
+<p>Conda-forge will build your package from the source distribution which you <a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">published to PyPI in the previous lesson</span></a> using the recipe that you will create below.</p>
+<section id="conda-forge-publication-steps">
+<h3>Conda-forge publication steps<a class="headerlink" href="#conda-forge-publication-steps" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="publish-pypi-conda-forge">
+<a class="reference internal image-reference" href="../_images/pyopensci-python-package-pypi-to-conda-forge.png"><img alt="Image showing the steps associated with publishing to conda-forge. Check out the caption below for a detailed description." src="../_images/pyopensci-python-package-pypi-to-conda-forge.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">The steps for publishing to conda-forge begin with publishing your Python package to PyPI. Once you have published to PyPI you can then create a yaml file recipe that can be submitted to the conda-forge staged recipes repository for review. Once that recipe is accepted, your package will get it’s on repository (known as a feedstock) on conda-forge.</span><a class="headerlink" href="#publish-pypi-conda-forge" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The steps to publish to conda-forge are:</p>
+<ol class="arabic simple">
+<li><p>Publish your Python package distribution files (sdist &amp; wheel) to PyPI</p></li>
+<li><p>Create a conda-forge recipe, which is a yaml file with instructions on how to build your package on conda-forge, using the grayskull<a class="footnote-reference brackets" href="#grayskull" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> package.</p></li>
+<li><p>Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request for review. <a class="reference external" href="https://github.com/conda-forge/staged-recipes/pull/25173">Click here for an example submission from pyOpenSci.</a></p></li>
+<li><p>Once someone from the conda-forge team reviews your pull request, you may need to make some changes. Eventually the pull request will be approved and merged.</p></li>
+</ol>
+<p>Once your recipe is accepted and merged on conda-forge, users can install your package using:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">your-package</span></code></p>
+<p>You only create the recipe once. Once the recipe is accepted and merged, you only need to maintain the repository.</p>
+</section>
+</section>
+<section id="maintaining-a-conda-forge-package">
+<h2>Maintaining a conda-forge package<a class="headerlink" href="#maintaining-a-conda-forge-package" title="Link to this heading">#</a></h2>
+<p>Once your package is on conda-forge, the repository will track release activity on the package’s PyPI repository. Any time you make a new PyPI release with a new source distribution, conda-forge will build and update your conda-forge repository (also known as a feedstock).</p>
+<p>When the update is processed, the friendly conda-forge bot will create a new pull request with an updated distribution recipe in your feedstock.</p>
+<p>You can review that pull request and then merge it once all of the continuous integration tests pass.</p>
+</section>
+<section id="how-to-publish-your-package-on-conda-forge">
+<h2><i class="fa-regular fa-pen-to-square"></i> How to Publish your package on conda-forge<a class="headerlink" href="#how-to-publish-your-package-on-conda-forge" title="Link to this heading">#</a></h2>
+<p>It’s time to add your package to the conda-forge channel.
+Remember that your package needs to be on PyPI before the steps below will work. And also remember that the team managing conda-forge are all volunteers.</p>
+<ul class="simple">
+<li><p>Be sure that your package is on PyPI.org (not test.pypi.org) before you attempt to publish to conda-forge.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Only submit your package to conda-forge if you intend to maintain it over time.</p>
+</div>
+<p>Note - this is a tutorial aimed to help you get your package onto conda-forge. The official conda documentation for this processed <a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs.html">is here</a>.</p>
+<section id="step-1-install-grayskull">
+<h3>Step 1: Install grayskull<a class="headerlink" href="#step-1-install-grayskull" title="Link to this heading">#</a></h3>
+<p>First, <a class="reference external" href="https://conda.github.io/grayskull/user_guide.html">install grayskull</a>. You can install it using either pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>grayskull
+</pre></div>
+</div>
+<p>or conda</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>grayskull
+</pre></div>
+</div>
+<p>To run this command, use the same shell / terminal
+that you have been using to run hatch
+commands in the previous tutorials.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also install grayskull using pipx<a class="footnote-reference brackets" href="#pipx" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. pipx is a tool that allows you to install commonly used tools that you might want to have available across multiple Python environments rather than installing the package into every Python environment that ou create.</p>
+</div>
+</section>
+<section id="step-2-fork-and-clone-the-conda-forge-staged-recipes-repository">
+<h3>Step 2: Fork and clone the conda-forge staged-recipes repository<a class="headerlink" href="#step-2-fork-and-clone-the-conda-forge-staged-recipes-repository" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Next, open your shell and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to a location where you want to clone the <strong>conda-forge/staged-recipes</strong> repository.</p></li>
+<li><p>fork and clone the <a class="reference external" href="https://github.com/conda-forge/staged-recipes">conda-forge/staged-recipes GitHub repository</a>.</p></li>
+<li><p>Create a new branch in your fork rather than submitting from the main branch of your fork. We suggest naming the branch your package’s name.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">your-package-name</span> </code></p>
+<ul class="simple">
+<li><p>In bash, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the <code class="docutils literal notranslate"><span class="pre">staged-recipes/recipes</span></code> folder</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>staged-recipes/recipes<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>pyospackage<span class="o">)</span>
+<span class="c1"># Clone the repository</span>
+➜<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:conda-forge/staged-recipes.git
+</pre></div>
+</div>
+<p>Next, create a new branch in your <code class="docutils literal notranslate"><span class="pre">conda-forge/staged-recipes</span></code> cloned repository. You might want to make that branch the same name as your package.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new branch called pyospackage</span>
+➜<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>pyospackage
+➜<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>staged-recipes/recipes
+➜<span class="w"> </span>git<span class="w"> </span>branch
+<span class="w">  </span>main
+*<span class="w"> </span>pyospackage
+</pre></div>
+</div>
+</section>
+<section id="step-3-create-your-conda-forge-recipe">
+<h3>Step 3: Create your conda-forge recipe<a class="headerlink" href="#step-3-create-your-conda-forge-recipe" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Next, navigate to the recipes directory</p></li>
+</ul>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">ls</span></code> here, you will notice there is an example directory with an example recipe for you to look at.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>staged-recipes<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>pyospackage<span class="o">)</span><span class="w"> </span>via<span class="w"> </span>🐍<span class="w"> </span>pyenv
+➜<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>recipes
+
+staged-recipes/recipes<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>pyospackage<span class="o">)</span>
+➜<span class="w"> </span>ls
+example
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Next, run <code class="docutils literal notranslate"><span class="pre">grayskull</span> <span class="pre">pypi</span> <span class="pre">your-package-name</span></code> to generate a recipe.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>grayskull<span class="w"> </span>pypi<span class="w"> </span>pyospackage
+
+<span class="c1">#### Initializing recipe for pyospackage (pypi) ####</span>
+
+Recovering<span class="w"> </span>metadata<span class="w"> </span>from<span class="w"> </span>pypi...
+Starting<span class="w"> </span>the<span class="w"> </span>download<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>sdist<span class="w"> </span>package<span class="w"> </span>pyospackage
+pyospackage<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>Time:<span class="w">  </span><span class="m">0</span>:00:00<span class="w">   </span><span class="m">1</span>.2<span class="w"> </span>MiB/s<span class="p">|</span><span class="c1">###########################|</span>
+Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>pyproject.toml
+pyproject.toml<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>/var/folders/r8/3vljpqb55psbgb1ghc2qsn700000gn/T/grayskull-pyospackage-du0sf_a4/pyospackage-0.0.1/pyproject.toml
+Recovering<span class="w"> </span>information<span class="w"> </span>from<span class="w"> </span>setup.py
+Executing<span class="w"> </span>injected<span class="w"> </span>distutils...
+Checking<span class="w"> </span>&gt;&gt;<span class="w"> </span>--<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="p">|</span><span class="c1">#                          |[Elapsed Time: 0:00:00]</span>
+Matching<span class="w"> </span>license<span class="w"> </span>file<span class="w"> </span>with<span class="w"> </span>database<span class="w"> </span>from<span class="w"> </span>Grayskull...
+Match<span class="w"> </span>percentage<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>license<span class="w"> </span>is<span class="w"> </span><span class="m">97</span>%.<span class="w"> </span>Low<span class="w"> </span>match<span class="w"> </span>percentage<span class="w"> </span>could<span class="w"> </span>mean<span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>license<span class="w"> </span>was<span class="w"> </span>modified.
+License<span class="w"> </span>type:<span class="w"> </span>MIT
+License<span class="w"> </span>file:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;LICENSE&#39;</span><span class="o">]</span>
+Build<span class="w"> </span>requirements:
+<span class="w">  </span>&lt;none&gt;
+Host<span class="w"> </span>requirements:
+<span class="w">  </span>-<span class="w"> </span>python
+<span class="w">  </span>-<span class="w"> </span>hatchling
+<span class="w">  </span>-<span class="w"> </span>pip
+Run<span class="w"> </span>requirements:
+<span class="w">  </span>-<span class="w"> </span>python
+
+RED:<span class="w"> </span>Missing<span class="w"> </span>packages
+GREEN:<span class="w"> </span>Packages<span class="w"> </span>available<span class="w"> </span>on<span class="w"> </span>conda-forge
+
+Maintainers:
+<span class="w">   </span>-<span class="w"> </span>lwasser
+
+<span class="c1">#### Recipe generated on /your/file/package/here/pyosPackage for pyospackage ####</span>
+
+<span class="c1"># You should see a new directory created by grayskull after this run is completed.</span>
+staged-recipes/recipes<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>pyospackage<span class="o">)</span>
+➜<span class="w"> </span>ls
+example<span class="w">         </span>pyospackage
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>Grayskull will pull metadata about your package from PyPI. It does not use your local installation of the package.</p></li>
+<li><p>An internet connection is needed to run the <code class="docutils literal notranslate"><span class="pre">grayskull</span> <span class="pre">pypi</span> <span class="pre">your-package-name</span></code> step.</p></li>
+</ul>
+</div>
+<p>When you run grayskull, it will grab the latest distribution of your package from PyPI and will use that to create a new recipe.</p>
+<p>The recipe will be saved in a directory named after your package’s name, wherever you run the command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">recipes/packagename/meta.yaml</span></code></p>
+<p>At the very bottom of the grayskull output, it will also tell you
+where it saved the recipe file.</p>
+<p>Open the meta.yaml file. The finished <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file that grayskull creates should look like the example below:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="err">%</span><span class="w"> </span><span class="nv">set name = &quot;pyospackage&quot; %</span><span class="p p-Indicator">}</span>
+<span class="p p-Indicator">{</span><span class="err">%</span><span class="w"> </span><span class="nv">set version = &quot;0.1.8&quot; %</span><span class="p p-Indicator">}</span>
+
+<span class="nt">package</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">name|lower</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">version</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+
+<span class="nt">source</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ version }}.tar.gz</span>
+<span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">43ec82da3a10752a5dbf2f0ef742e357803a3ddb400005f87e86534685bfb8a7</span>
+
+<span class="nt">build</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">noarch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">PYTHON</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-m pip install . -vv --no-deps --no-build-isolation</span>
+<span class="w">  </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="nt">requirements</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">host</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hatchling</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+
+<span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">imports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pyospackage</span>
+<span class="w">  </span><span class="nt">commands</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip check</span>
+<span class="w">  </span><span class="nt">requires</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+
+<span class="nt">about</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A package that adds numbers together</span>
+<span class="w">  </span><span class="nt">dev_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pyopensci/pyospackage</span>
+<span class="w">  </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BSD-3-Clause</span>
+<span class="w">  </span><span class="nt">license_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
+
+<span class="nt">extra</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">recipe-maintainers</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lwasser</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3b-bug-fix-add-a-home-url-to-the-about-section">
+<h3>Step 3b: Bug fix - add a home url to the about: section<a class="headerlink" href="#step-3b-bug-fix-add-a-home-url-to-the-about-section" title="Link to this heading">#</a></h3>
+<p>There is currently a small bug in Grayskull where it doesn’t populate the home: element of the recipe. if you don’t include this, <a class="reference external" href="https://github.com/conda-forge/staged-recipes/pull/25173#issuecomment-1917916528">you will receive an error message</a> from the friendly conda-forge linter bot.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi! This is the friendly automated conda-forge-linting service.
+
+I wanted to let you know that I linted all conda-recipes in your PR (recipes/pyospackage) and found some lint.
+
+Here&#39;s what I&#39;ve got...
+
+For recipes/pyospackage:
+
+The home item is expected in the about section.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>to fix this, open your meta.yaml file in your favorite text editor.</p></li>
+<li><p>and add a home: element to the about section</p></li>
+</ul>
+<p>The about section will look like this after you create your recipe.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">about</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A package that adds numbers together</span>
+<span class="w">  </span><span class="nt">dev_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pyopensci/pyospackage</span>
+<span class="w">  </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BSD-3-Clause</span>
+<span class="w">  </span><span class="nt">license_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
+</pre></div>
+</div>
+<p>Below you add a home: element. If you have a project home page / website you can use that url. Otherwise, you can also use your PyPI landing page.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">about</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.org/project/pyospackage/</span>
+<span class="w">  </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A package that adds numbers together</span>
+<span class="w">  </span><span class="nt">dev_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pyopensci/pyospackage</span>
+<span class="w">  </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BSD-3-Clause</span>
+<span class="w">  </span><span class="nt">license_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-tests-for-conda-forge">
+<h3>Step 4: tests for conda-forge<a class="headerlink" href="#step-4-tests-for-conda-forge" title="Link to this heading">#</a></h3>
+<p>Next, have a look at the tests section in your <strong>meta.yaml</strong> file. At a minimum you should import your package or the main modules associated with your package and run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">check</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">check</span></code> will ensure that your package installs properly with all of the proper dependencies.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">imports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pyospackage</span><span class="w"> </span><span class="c1"># Test importing the package into a python environment</span>
+<span class="w">  </span><span class="nt">commands</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip check</span><span class="w"> </span><span class="c1"># check the package</span>
+<span class="w">  </span><span class="nt">requires</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+</pre></div>
+</div>
+<p>If you have more advanced tests that you wish to run, you can add them here. However, you can also simply leave the tests section as it is.</p>
+</section>
+<section id="step-4-submit-a-pull-request-to-the-staged-recipes-repository">
+<h3>Step 4: Submit a pull request to the staged-recipes repository<a class="headerlink" href="#step-4-submit-a-pull-request-to-the-staged-recipes-repository" title="Link to this heading">#</a></h3>
+<p>Once you have completed all of the above, you are ready to open up a pull request in the <code class="docutils literal notranslate"><span class="pre">conda-forge/staged-recipes</span> <span class="pre">repository</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Submit a pull request from your fork/branch of the staged-recipes repository.</p></li>
+<li><p>Remember that the conda-forge maintainers are volunteers. Be patient for someone to respond and supportive in your communication with them.</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M5.5 4a2.5 2.5 0 014.607-1.346.75.75 0 101.264-.808A4 4 0 004 4v2h-.501A1.5 1.5 0 002 7.5v6A1.5 1.5 0 003.5 15h9a1.5 1.5 0 001.5-1.5v-6A1.5 1.5 0 0012.5 6h-7V4zm-.75 3.5H3.5v6h9v-6H4.75z"></path></svg></span>Conda-forge checklist help<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<h3 class="rubric" id="conda-forge-staged-recipes-pull-request-checklist">Conda-forge Staged-recipes Pull Request Checklist</h3>
+<p class="sd-card-text">When you submit your package to conda-forge, the pull request template includes a list of checks that you want to ensure you have covered.</p>
+<p class="sd-card-text">Below we break down each element of that list.</p>
+<div class="note admonition">
+<p class="admonition-title">Pull request template checklist tips</p>
+<blockquote>
+<div><p class="sd-card-text">-[x] Title of this PR is meaningful: e.g. “Adding my_nifty_package”, not “updated meta.yaml”.</p>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation:</strong> Make sure that your pull request title is specific. We suggest something like:
+<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">recipe</span> <span class="pre">for</span> <span class="pre">&lt;your</span> <span class="pre">package</span> <span class="pre">name&gt;</span></code></p>
+<blockquote>
+<div><p class="sd-card-text">-[x] License file is packaged (see <a class="reference external" href="https://github.com/conda-forge/staged-recipes/blob/5eddbd7fc9d1502169089da06c3688d9759be978/recipes/example/meta.yaml#L64-L73">here</a> for an example).</p>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation:</strong> You should have a LICENSE file included in your package’s source distribution. If you have followed the pyOpenSci tutorials then you already have a LICENSE file and are likely using the MIT license. When you run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>, it will bundle that file into the output <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">source distribution file (which is the tar.gz file)</span></a> that conda-forge will use to build your package.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">[x] Source is from official source.</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation:</strong> If your package is on PyPI as you learned in the <a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">previous lesson on publishing your Python package</span></a> then you are in good shape. conda-forge prefers that your distribution is published to a known repository.</p>
+<blockquote>
+<div><p class="sd-card-text">-[x] Package does not vendor other packages. (If a package uses the source of another package, they should be separate packages or the licenses of all packages need to be packaged).</p>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation:</strong> If the code base in your package is your own and it all shares the same LICENSE then you are in good shape. If you have code taken from other packages then you may need to declare that and include licenses for that code if it is different. If you followed these tutorials then you do not have any vendored code.</p>
+<blockquote>
+<div><p class="sd-card-text">-[x] If static libraries are linked in, the license of the static library is packaged.</p>
+<p class="sd-card-text">-[x] Package does not ship static libraries. If static libraries are needed, <a class="reference external" href="https://github.com/conda-forge/cfep/blob/main/cfep-18.md">follow CFEP-18</a>.</p>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation:</strong> A static library refers to a copy of a package built into your package. If your package is a pure Python package, then you can check that your package does not ship static libraries as this does not apply to you.</p>
+<p class="sd-card-text">The pyOpenSci tutorials are all pure Python and as such do not use static libraries in a linked or shipped (included in the package distribution) format.</p>
+<p class="sd-card-text">If your package has a more complex builds that includes
+links to extensions written in other languages such as
+C++, then be sure that include the proper LICENSE(s) for those extensions in your metadata.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">If you want to learn more about static libraries, then <a class="reference external" href="https://pypackaging-native.github.io/background/compilation_concepts/#shared-vs-static-libraries">this overview</a> might help.</p>
+</div>
+<blockquote>
+<div><p class="sd-card-text">-[ ] Build number is 0.</p>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation:</strong> The build number in your recipe is right below the source location of your package’s source distribution. <code class="docutils literal notranslate"><span class="pre">number:</span> <span class="pre">0</span></code> is what you should see in that section of your recipe.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source:
+<span class="w"> </span>url:<span class="w"> </span>https://pypi.io/packages/source/<span class="o">{{</span><span class="w"> </span>name<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">}}</span>/<span class="o">{{</span><span class="w"> </span>name<span class="w"> </span><span class="o">}}</span>/pyospackage-<span class="o">{{</span><span class="w"> </span>version<span class="w"> </span><span class="o">}}</span>.tar.gz
+<span class="w"> </span>sha256:<span class="w"> </span>01e31f5521973710d0d91b15a94491d4f8f8f54566322110098c0f2381dd09ab
+
+build:
+<span class="w"> </span>noarch:<span class="w"> </span>python
+<span class="w"> </span>script:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>PYTHON<span class="w"> </span><span class="o">}}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>-vv<span class="w"> </span>--no-deps<span class="w"> </span>--no-build-isolation
+<span class="w"> </span>number:<span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">[x] A tarball (<code class="docutils literal notranslate"><span class="pre">url</span></code>) rather than a repo (e.g. <code class="docutils literal notranslate"><span class="pre">git_url</span></code>) is used in your recipe (see <a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs.html#build-from-tarballs-not-repos">here</a> for more details).</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation:</strong> Here conda wants you to provide a link to the source distribution on PyPI rather than a link to your GitHub repository distribution. Notice above in the Source section of your recipe there is a <code class="docutils literal notranslate"><span class="pre">url:</span></code> section that provides a PyPI url that ends in tar.gz. That is a link to your source distribution that conda-forge will use.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ version }}.tar.gz</span>
+</pre></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">[x] GitHub users listed in the maintainer section have posted a comment confirming they are willing to be listed there.</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation</strong> Once you have submitted your recipe, be sure that all maintainers listed in your recipe respond acknowledging that they are ok with being listed as a maintainer for the conda-forge version of your package.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">[x] When in trouble, please check our <a class="reference external" href="https://conda-forge.org/docs/maintainer/knowledge_base.html">knowledge base documentation</a> before pinging a team.</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text"><strong>Translation</strong> The conda team are volunteers who spend their time supporting our community. Please try to troubleshoot on your own first before tagging one of them for help.</p>
+<p class="sd-card-text">This is also why we don’t suggest you publish to conda-forge as a practice run.</p>
+</div>
+</div>
+</details><p>Once you create your pull request, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/conda-forge-staged-recipes-ci.png"><img alt="Image showing the 5 CI tasks that will run against your package in the GitHub interface after you'ce created a pull request." src="../_images/conda-forge-staged-recipes-ci.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Wait until all of the CI steps in your pull request have run. At that point your pull request is ready for review by a conda-forge maintainer.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In some cases getting all of the checks to run successfully in CI might take a bit of work. If you are struggling to get your recipe to build properly, you can ping the conda-forge maintainer team for help.</p>
+<p>Please be patient and wait for them to respond.</p>
+<div class="tip admonition">
+<p class="admonition-title">conda-forge staged recipes and CI failures</p>
+<p>If your package is a pure Python package that can be installed on any type of computer (Windows, mac, linux) and has no architecture requirements (known as noarch: Python or no architecture requirements) then the conda-forge team only requires tests for Linux CI to pass.</p>
+<p>So if tests for Windows and MAC OS fail, that is to be expected. In this case, don’t worry about failing tests, the maintainer team can help you get your package published.</p>
+</div>
+<p>Once you have submitted your recipe, you can wait for the CI build to pass. If it’s not passing, and you aren’t sure why, a conda-forge maintainer can likely help you figure things out.</p>
+<p>Once your recipe is built and merged, the conda team will create a new package repository for you similar to <a class="reference external" href="https://github.com/conda-forge/gemgis-feedstock">this one for the GemGIS package</a>.</p>
+</section>
+<section id="congratulations-you-have-added-your-package-to-conda-forge">
+<h3><i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you have added your package to conda-forge.<i class="fa-solid fa-wand-magic-sparkles"></i><a class="headerlink" href="#congratulations-you-have-added-your-package-to-conda-forge" title="Link to this heading">#</a></h3>
+<p>The last part of this process is maintaining the repository.
+We cover that next.</p>
+</section>
+</section>
+<section id="maintaining-your-conda-forge-feedstock">
+<h2>Maintaining your conda-forge feedstock<a class="headerlink" href="#maintaining-your-conda-forge-feedstock" title="Link to this heading">#</a></h2>
+<p>Every time you create a new release on PyPI, the conda-forge bots will recognize the release and will rebuild the newly released version of your package. This process may take a day or two to complete so be patient.</p>
+<p>Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.</p>
+<p>Review the pull request. If all tests are passing, you can merge it. Shortly after merging your pull request, the conda-forge release will be available for users to install:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">yourpackage</span></code></p>
+</section>
+<section id="wrap-up">
+<h2><i class="fa-solid fa-hands-bubbles"></i> Wrap up<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
+<p>If you have walked through this entire tutorial series you have now:</p>
+<ol class="arabic simple">
+<li><p>Understand <a class="reference internal" href="intro.html"><span class="std std-doc">what a Python package is </span></a></p></li>
+<li><p>Know how to <a class="reference internal" href="1-installable-code.html"><span class="std std-doc">make your code installable</span></a> into Python environments</p></li>
+<li><p>Know how to create a pyproject.toml file, a README file, and a License and code of conduct.</p></li>
+<li><p>Know how to <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publish your package to PyPI</span></a> and</p></li>
+<li><p>Know how to publish your package to conda-forge</p></li>
+</ol>
+<p>The above are the basic steps that you need to take to create and publish a Python package. In a future tutorial series we will cover that basics of maintaining your package.</p>
+</section>
+<section id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="grayskull" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://conda-forge.org/blog/2020/03/05/grayskull/">Grayskull blogpost</a></p>
+</aside>
+<aside class="footnote brackets" id="pipx" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pipx.pypa.io/stable/">Pipx documentation</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="publish-pypi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Publish your Python package to PyPI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="get-to-know-hatch.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Get to know hatch</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conda-forge">What is conda-forge?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-publish-to-conda-forge">Why publish to conda-forge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-publishing-to-conda-forge-works">How publishing to conda-forge works</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-forge-publication-steps">Conda-forge publication steps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintaining-a-conda-forge-package">Maintaining a conda-forge package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-publish-your-package-on-conda-forge"><i class="fa-regular fa-pen-to-square"></i> How to Publish your package on conda-forge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-grayskull">Step 1: Install grayskull</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-fork-and-clone-the-conda-forge-staged-recipes-repository">Step 2: Fork and clone the conda-forge staged-recipes repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-your-conda-forge-recipe">Step 3: Create your conda-forge recipe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3b-bug-fix-add-a-home-url-to-the-about-section">Step 3b: Bug fix - add a home url to the about: section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-tests-for-conda-forge">Step 4: tests for conda-forge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-submit-a-pull-request-to-the-staged-recipes-repository">Step 4: Submit a pull request to the staged-recipes repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#congratulations-you-have-added-your-package-to-conda-forge"><i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you have added your package to conda-forge.<i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintaining-your-conda-forge-feedstock">Maintaining your conda-forge feedstock</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up"><i class="fa-solid fa-hands-bubbles"></i> Wrap up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/publish-conda-forge.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/tutorials/publish-conda-forge.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

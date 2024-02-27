@@ -540,6 +540,12 @@ lead to package conflicts.</p></li>
 </ul>
 <p>Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.</p>
 </div>
+<figure class="align-default" id="pypi-conda-channels">
+<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#pypi-conda-channels" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <section id="what-is-pypi">
 <h2>What is PyPI<a class="headerlink" href="#what-is-pypi" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pypi.org/">PyPI</a> is an online Python package repository that
@@ -551,6 +557,7 @@ prior to the final publication on PyPI.</p>
 a package is that conda can install any package regardless
 of the language(s) that it is written in. Whereas <code class="docutils literal notranslate"><span class="pre">pip</span></code> can
 only install Python packages.</p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill float-left reference external" href="../tutorials/publish-pypi.html"><span>Click here for a tutorial on publishing your package to PyPI.</span></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>On the package build page, we discussed the <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">two package distribution
@@ -561,44 +568,48 @@ your package.</p>
 </div>
 </section>
 <section id="what-is-anaconda-cloud-and-conda">
-<h2>What is Anaconda Cloud and conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Link to this heading">#</a></h2>
+<span id="about-conda"></span><h2>What is Anaconda Cloud and conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Link to this heading">#</a></h2>
 <p>conda is an open source package and environment management tool.
 conda can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda Cloud
 repository</a>.</p>
 <p>Anaconda cloud (anaconda.org) contains public and private repositories for
 packages. These repositories are known as channels (discussed below).</p>
-<p>The most common public channels are:</p>
-<ul class="simple">
-<li><p>defaults</p></li>
-<li><p>conda-forge and</p></li>
-<li><p>bioconda</p></li>
-</ul>
+<div class="note admonition">
+<p class="admonition-title">A brief history of conda’s evolution</p>
+<p>The conda ecosystem evolved years ago to provide support for and
+simplify the process of managing software dependencies in scientific
+The conda ecosystem evolved years ago to provide support for, and
+simplify the process of, managing software dependencies in scientific
+Python projects.</p>
+<p>Many of the core scientific Python projects depend upon or wrap around tools and extensions that are written in other languages, such as C++. In the early stages of the scientific ecosystem’s development, these non-Python extensions and tools were not well supported on PyPI, making publication difficult. In recent years there is more support for complex builds that allow developers to bundle non-Python code into a Python distribution using the <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel distribution format</span></a>.</p>
+<p>Conda provides a mechanism to manage these dependencies and ensure that the required packages are installed correctly.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>While conda was originally created to support Python packages, it
 is now used across all languages. This cross-language support
 makes it easier for some packages to include and have access to
-tools written in other languages such as c/c++ (gdal), Julia, or R.
-Creating environment that mixes all those packages are usually easier and more
-consistent with full fledged package managers like conda.</p>
+tools written in other languages, such as C/C++ (gdal), Julia, or R.
+Creating an environment that mixes all of these packages is usually easier and more
+consistent with full-fledged package managers like conda.</p>
 </div>
 <section id="conda-channels">
 <h3>conda channels<a class="headerlink" href="#conda-channels" title="Link to this heading">#</a></h3>
 <p>conda built packages are housed within repositories that are called
 channels. The conda package manager can install packages from different channels.</p>
 <p>There are several core public channels that most people use to install
-packages using conda including.</p>
+packages using conda, including:</p>
 <ul class="simple">
-<li><p><strong>defaults:</strong> this is a channel managed by the Anaconda, inc. It is the version of the Python packages that you will install if you install the Anaconda Distribution.</p></li>
-<li><p><a class="reference external" href="https://anaconda.org/conda-forge"><strong>conda-forge:</strong></a> this is a community driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data</p></li>
-<li><p><a class="reference external" href="https://anaconda.org/bioconda"><strong>bioconda</strong></a>: this channel focuses on biomedical</p></li>
+<li><p><strong>defaults:</strong> this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda decides what packages live on the default channel.</p></li>
+<li><p><a class="reference external" href="https://anaconda.org/conda-forge"><strong>conda-forge:</strong></a> this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.</p></li>
+<li><p><a class="reference external" href="https://anaconda.org/bioconda"><strong>bioconda</strong></a>: this channel focuses on biomedical tools.</p></li>
 </ul>
 <p><strong>conda-forge</strong> emerged as many of the scientific packages did not
 exist in the default Anaconda cloud channel.</p>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/conda-channels-geohackweek.jpeg"><img alt="ADD." src="../_images/conda-channels-geohackweek.jpeg" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to pypi. and test pypi. a testbed server for you to practice." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">ADD source: GeoHackWeek</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-text">Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -657,16 +668,8 @@ we encourage you to consider doing so!</p>
 <p>Once your package is on PyPI, the process to add your package to conda-forge
 is straight forward to do. <a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs.html#generating-the-recipe">You can follow the detailed steps provided
 by the conda-forge maintainer team.</a>.</p>
-<p>Generally those steps are:</p>
-<ol class="arabic simple">
-<li><p>Fork the staged recipes conda-forge GitHub repository</p></li>
-<li><p>Create a new recipe using the <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> tool. You can <a class="reference external" href="https://conda.github.io/grayskull/">learn more about grayskull here</a>.</p></li>
-<li><p>Add the recipe file created by <code class="docutils literal notranslate"><span class="pre">grayskull</span></code> in a folder within the recipes/ directory of the <a class="reference external" href="https://github.com/conda-forge/staged-recipes"><strong>conda-forge/staged-recipes</strong></a> repository.</p></li>
-<li><p>Open a pull request with your change. Your package will be tested on Windows, Mac and Linux using the repository CI.</p></li>
-</ol>
-<p>Once you have submitted a recipe to conda-forge, a maintainer will work
-with you to iron out any bugs in your recipe. They will then add your package
-to the conda-forge channel.</p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill float-left reference external" href="../tutorials/publish-conda-forge.html"><span>Click here for a tutorial on adding your package to conda-forge.</span></a></p>
+<p>If you want a step by step tutorial, click here.</p>
 <p>Once your package is added, you will have a feedstock repository on GitHub with your packages name</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -678,8 +681,11 @@ to the conda-forge channel.</p>
 Every time that you push a new version of your package to PyPI, it will
 kick off a continuous integration build that updates your package in the
 conda-forge repository. Once that build is complete, you will get a
-notification to review the update. You can merge the pull request for
-that update once you are happy with it.</p>
+notification to review the update.</p>
+<p>You can merge the pull request for that update once you are happy with it.
+A ready-to-merge PR usually means ensuring that your project’s dependencies
+(known as runtime requirements) listed in the updated YAML file found in the
+pull request match the PyPI metadata of the new release.</p>
 </section>
 </section>
 </section>
