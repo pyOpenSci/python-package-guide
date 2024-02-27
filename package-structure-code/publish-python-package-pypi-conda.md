@@ -48,13 +48,13 @@ Click here for a tutorial on publishing your package to PyPI.
 :::
 
 
-```{tip}
+:::{tip}
 On the package build page, we discussed the [two package distribution
 types that you will create when making a Python package](python-package-distribution-files-sdist-wheel): SDist (packaged as a .tar.gz or .zip) and
 Wheel (.whl) which is really a zip file. Both of those file "bundles" will
 be published on PyPI when you use [a standard build tool](python-package-build-tools) to build
 your package.
-```
+:::
 
 (about-conda)=
 ## What is Anaconda Cloud and conda?
@@ -154,11 +154,11 @@ to use conda to manage their local environments (which many do), you should
 consider publishing to both PyPI and the conda-forge channel (_more
 on that below_).
 
-```{admonition} Additional resources
-* [learn more about why conda-forge was created, here](https://conda-forge.org/docs/user/introduction.html#why-conda-forge)
+:::{admonition} Additional resources
+* [learn more about why conda-forge was created, here](https://conda-forge.org/docs/user/introduction.html)
 
 * [To learn more about conda terminology, check out their glossary.](https://docs.conda.io/projects/conda/en/latest/glossary.html )
-```
+:::
 
 <!-- One of our packages on conda-forge https://anaconda.org/conda-forge/pandera -->
 
@@ -169,7 +169,7 @@ we encourage you to consider doing so!
 
 Once your package is on PyPI, the process to add your package to conda-forge
 is straight forward to do. [You can follow the detailed steps provided
-by the conda-forge maintainer team.](https://conda-forge.org/docs/maintainer/adding_pkgs.html#generating-the-recipe).
+by the conda-forge maintainer team.](https://conda-forge.org/docs/maintainer/adding_pkgs.html).
 
 
 :::{button-link} ../tutorials/publish-conda-forge.html
@@ -184,9 +184,9 @@ If you want a step by step tutorial, click here.
 
 Once your package is added, you will have a feedstock repository on GitHub with your packages name
 
-```{tip}
+:::{tip}
 [Here is an example conda-forge feedstock for the pyOpenSci approved package - movingpandas](https://github.com/conda-forge/movingpandas-feedstock)
-```
+:::
 
 ### Maintaining your conda-forge package repository
 
