@@ -43,7 +43,7 @@ Get to know Hatch <get-to-know-hatch>
 
 :::{toctree}
 :hidden:
-:caption: Python Packaging 101
+:caption: Create a Python package
 
 What is a Python package? <self>
 Make your code installable <1-installable-code>
@@ -51,6 +51,13 @@ Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
 :::
 
+
+:::{toctree}
+:hidden:
+:caption: Project Metadata
+
+Add README file <add-readme>
+:::
 
 :::{admonition} Learning Objectives
 
@@ -312,6 +319,7 @@ publish it in a repository such as **PyPI** or **conda-forge**.
 
 Learn [how to publish your package to PyPI in this tutorial.](publish-pypi.md)
 
+You will learn [how to publish your package to PyPI in this tutorial.](publish-pypi)
 
 Then you can create a conda-forge recipe using the [Grayskull](https://github.com/conda/grayskull) tool. You can then submit this recipe to conda-forge.
 
