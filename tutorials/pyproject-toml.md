@@ -36,14 +36,11 @@ of your GitHub or GitLab repository.
 
 In this lesson you will learn:
 
-1. What a `pyproject.toml` file is
+1. More about the `pyproject.toml` file and how it's used to store different types of metadata about your package
 1. How to declare information (metadata) about your project to help users find and understand it on PyPI.
 
 If you wish to learn more about the `pyproject.toml` format, [check out this page. ](../package-structure-code/pyproject-toml-python-package-metadata.md)
 :::
-
-<!-- TODO:Friends - As you are reviewing ...as a beginner is this TLDR too technical when you have no idea what the elements in it are? or is it a nice summary? -->
-
 
 :::{dropdown} Click for lesson highlights
 :color: secondary
@@ -79,14 +76,16 @@ The TOML format can be compared to other structured formats such as`.json`. Howe
 
 The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is founded on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`.
 
-Below you can see the build-system table. Within
-that table there is one key/value pair.
+Below you can see the `[build-system]` table. Within
+that table there are two required key/value pairs.
 
-`requires =`  is the key and the value is `["hatchling"]`.
+`requires =`  is the key and the value is `["hatchling"]` within the `[build-system]` array specified by square brackets [].
 
 ```toml
 [build-system] # <- this is a table
-requires = ["hatchling"] #  requires =  is a key and "hatchling" is a value contained within an array specified by square brackets [].
+requires = ["hatchling"]
+# The build backend defines the tool that should be used to build your package distribution files.
+build-backend = "hatchling.build"
 ```
 
 
@@ -285,12 +284,16 @@ dependencies = ["numpy", "requests", "pandas", "pydantic"]
 ```
 
 :::{admonition} Pin dependencies with caution
-Pinnning dependencies refers to specifying a specific version of a dependency like this `numpy == 1.0`. In some specific cases, you may chose to pin or specify a lower or upper bound of a specific package. You can do that using syntax like this:
+Pinning dependencies refers to specifying a specific version of a dependency like this `numpy == 1.0`. In some specific cases, you may chose to pin or specify a lower or upper bound of a specific package.
+
+You can declare a lower bound using syntax like this:
 
 `ruamel-yaml>=0.17.21`
 
+[Learn more about various ways to specify ranges of package versions here.](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
+
 Note that unless you are building an application, you want to be cautious about pinning dependencies. This is because
-users will be installing your package into various environments. A pinned dependency can make resolving an environment more challenging. As such only pin dependencies to a specific version if you absolutely need to do so.
+users will be installing your package into various environments. A pinned dependency can make resolving an environment more challenging to resolve. As such only pin dependencies to a specific version or bound if you absolutely need to do so.
 
 One build tool that you should be aware of that pins dependencies by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
 :::
@@ -320,6 +323,8 @@ description = "Tools that update the pyOpenSci contributor and review metadata t
 authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]
 maintainers = [{ name = "Firstname lastname", email = "email@pyopensci.org" }, { name = "Firstname lastname", email = "email@pyopensci.org" }]
 
+requires-python = ">=3.10"
+
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -340,13 +345,10 @@ Once you have those files, you can add them to your pyproject.toml file as
 links following the example below.
 
 
-```
-requires-python = ">=3.10"
+```toml
 readme = "README.md"
 license = {file = 'LICENSE'}
 ```
-
-and a `requires-Python = ">=3.10"` that is important to have for pip.
 
 ## Add the `[project.urls]` table
 
@@ -366,6 +368,10 @@ pyproject.toml file.
 "Source" = "https://github.com/pyopensci/pyosmeta/"
 ```
 
+:::{tip}
+There are many other urls that you can add here. Check out the [README file here for an overview](https://github.com/patrick91/links-demo).
+:::
+
 ## Putting it all together - your completed pyproject.toml file
 
 Below is an example of a complete `pyproject.toml` file that
@@ -378,7 +384,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyosmeta"
-dynamic = ["version"]
+version = "0.1.0"
 description = "Tools that update the pyOpenSci contributor and review metadata that is posted on our website"
 authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]
 
@@ -529,3 +535,8 @@ You now have all of the skills that you need to publish
 your package to PyPI.
 
 If you also want to publish your package on conda-forge (which is a channel within the conda ecosystem), you will learn how to do that in the next lesson.
+
+
+:::{todo}
+Really good resources frm jeremiah https://daniel.feldroy.com/posts/2023-08-pypi-project-urls-cheatsheet useful (and the linked links-demo even more so)
+:::
