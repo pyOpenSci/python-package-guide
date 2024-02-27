@@ -1,15 +1,6 @@
 # Python packaging 101
-*A start to finish beginner-friendly tutorial*
 
-:::{toctree}
-:hidden:
-:caption: Python Packaging 101
-
-What is a Python package? <self>
-Make your code installable <1-installable-code>
-Publish to PyPI <publish-pypi>
-Publish to conda-forge <publish-conda-forge>
-:::
+_A start to finish beginner-friendly tutorial_
 
 Welcome to the pyOpenSci Python packaging tutorial series. The lessons
 on the upcoming pages walk you through the core steps needed to
@@ -29,10 +20,9 @@ that you have not created a Python package before. However, the
 content will still be valuable if you are interested in better
 understanding the steps involved in creating a Python package.
 
-* In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
+- In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
 
-* In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
-
+- In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
 :::{toctree}
 :hidden:
@@ -50,7 +40,6 @@ Make your code installable <1-installable-code>
 Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
 :::
-
 
 :::{toctree}
 :hidden:
@@ -107,6 +96,7 @@ to manage and reuse your code across different projects.
 Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you've created and let others build with it.
 
 (package-benefits)=
+
 ## Why create a Python package?
 
 You might create a Python package because you want to:
@@ -173,7 +163,7 @@ or GitLab. GitHub and GitLab both
 run [git](https://git-scm.com/) for version control. Having your software
 under version control is important because it allows you to both track changes over time while also going back in history and undoing changes in the case that a change to the code base unexpectedly breaks something.
 
-By publishing your package on GitHub or GitLab, you are making your code public facing. This means that others can both see your code and also make contributions using a pull request (GitHub) / merge request (GitLab) /  code review workflow.
+By publishing your package on GitHub or GitLab, you are making your code public facing. This means that others can both see your code and also make contributions using a pull request (GitHub) / merge request (GitLab) / code review workflow.
 
 :::{admonition} GitHub & GitLab vs. Git
 :class: tip
@@ -187,20 +177,21 @@ upload (`git push`) and download (`git pull`) files to GitHub and GitLab.
 
 GitHub and GitLab also both offer community features such as issues that allow:
 
-* you to communicate with your maintainers and contributor community
-* users to report bugs, ask questions and request new features
-* you to publicly keep track of enhancements and features you want to work on for your package.
-
+- you to communicate with your maintainers and contributor community
+- users to report bugs, ask questions and request new features
+- you to publicly keep track of enhancements and features you want to work on for your package.
 
 ### Continuous integration and continuous deployment
 
 GitHub and GitLab also provide continuous integration and continuous deployment (CI/CD). Continuous integration (CI) refers to a platform that automatically runs a specific job when a certain event occurs, whereas continuous deployment (CD) is an extension of CI that refers to not only running or building but also to publishing the final outputs somewhere.
 
 **An example of Continuous integration:**
-* When someone submits a change to your code, your tests will run across different operating systems and the code will be checked for format issues.
+
+- When someone submits a change to your code, your tests will run across different operating systems and the code will be checked for format issues.
 
 **An example of Continuous deployment:**
-* When you are ready to release your package to PyPI, a continuous deployment operation might be triggered on release to publish your package to PyPI.
+
+- When you are ready to release your package to PyPI, a continuous deployment operation might be triggered on release to publish your package to PyPI.
 
 Integrated CI/CD will help you maintain your software, ensuring that
 changes to the code don't break things unexpectedly. They can also
@@ -229,16 +220,15 @@ LINK to pip installable lesson when it's published - it's in review now
 :::
 
 2. **Creating a package for the community:** In other cases, you may create some code that you soon realize might also be useful to not just you, but to other people as well.
-In that case, you might consider both creating the package, publishing it on GitHub, and because other users may be using it, you may make use of GitHub's infrastructure including CI/CD pipelines and issue trackers. Because you want other people to use your package, you will want to also include LICENSE information, documentation for users and contributors and tests. This type of package is most often published to PyPI.
+   In that case, you might consider both creating the package, publishing it on GitHub, and because other users may be using it, you may make use of GitHub's infrastructure including CI/CD pipelines and issue trackers. Because you want other people to use your package, you will want to also include LICENSE information, documentation for users and contributors and tests. This type of package is most often published to PyPI.
 
 For example, all of the [pyOpenSci packages](https://www.pyopensci.org/python-packages.html) are public facing with an intended audience beyond just the maintainers.
 
-###  Packages that you expect others to use should be well-scoped
+### Packages that you expect others to use should be well-scoped
 
 Ideally the code in your Python package is focused on a specific theme or use case. This theme is important as it's a way to scope the content of your package.
 
 It can be tricky to decide when your code becomes something that might be more broadly useful to others. But one question you can ask yourself is - is your code written specifically for a single research project? Or could it have a broader application across multiple projects in your domain?
-
 
 :::{admonition} How does this relate to code for a research project?
 :class: note
@@ -253,22 +243,21 @@ specific set of tasks. These tasks should be applicable to numerous workflows.
 As such a Python package is more generalizable than a Research Compendium
 which supports a specific project.
 
-* [Read about `Good enough practices in scientific computing`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
-* [Learn more about research compendia (also called repo-packs) in this blog post.](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/)
-:::
-
+- [Read about `Good enough practices in scientific computing`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
+- [Learn more about research compendia (also called repo-packs) in this blog post.](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/)
+  :::
 
 Below are a few examples well scoped pyOpenSci packages:
 
-* [Crowsetta](https://crowsetta.readthedocs.io/en/latest/): is a package designed to work with annotating animal vocalizations and bioacoustics data. This package helps scientists process different types of bioacoustic data rather than focusing on a specific individual research application associated with a user-specific research workflow.
-* [Pandera](https://www.union.ai/pandera) is another more broadly used Python package. Pandera supports data testing and thus also has a broader research application.
+- [Crowsetta](https://crowsetta.readthedocs.io/en/latest/): is a package designed to work with annotating animal vocalizations and bioacoustics data. This package helps scientists process different types of bioacoustic data rather than focusing on a specific individual research application associated with a user-specific research workflow.
+- [Pandera](https://www.union.ai/pandera) is another more broadly used Python package. Pandera supports data testing and thus also has a broader research application.
 
 :::{admonition} Matplotlib as an example
 
 At the larger end of the user spectrum, Matplotlib is a great example.
 Matplotlib does one thing really well:
 
-*It creates visual plots of data.*
+_It creates visual plots of data._
 
 Thousands of people use Matplotlib for different plotting applications
 using different types of data. While few scientific packages will have the same
@@ -325,7 +314,6 @@ Then you can create a conda-forge recipe using the [Grayskull](https://github.co
 
 [You will learn more about the conda-forge publication process here.](publish-conda-forge.md)
 
-
 :::{figure-md} build-workflow-tutorial
 <img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
 
@@ -339,9 +327,9 @@ As the community using your package grows, you may also find yourself managing u
 
 To support your community, you'll want to add things like:
 
-* [a development guide that documents your maintainer workflow process ](/documentation/repository-files/development-guide.md)
-* [a code of conduct to defines community interaction standards and expectations](/documentation/repository-files/code-of-conduct-file.md)
-* [a contributing guide that helps users understand expectations associated with making contributions to your project](/documentation/repository-files/contributing-file.md)
+- [a development guide that documents your maintainer workflow process ](/documentation/repository-files/development-guide.md)
+- [a code of conduct to defines community interaction standards and expectations](/documentation/repository-files/code-of-conduct-file.md)
+- [a contributing guide that helps users understand expectations associated with making contributions to your project](/documentation/repository-files/contributing-file.md)
 
 :::{admonition} Support for contributors and maintainers
 
@@ -350,7 +338,7 @@ If you intend for others to use and contribute to your code, consider who will m
 The elements above are also important for future maintenance of your package. In the case that you are no long able to maintain it or simply want extra help, development, and contributing documentation will help you onboard new maintainers.
 :::
 
-*****
+---
 
 ## What's next?
 
