@@ -56,7 +56,7 @@ Community docs
 
 Publish your docs
 ```
-## _new_ Tutorial Series: How to Create a Python Package
+## _new_ Tutorial Series
 
 The how to create a Python package tutorial series is being developed
 by the community now! Join our community review process or watch development of these tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
@@ -100,7 +100,7 @@ by the community now! Join our community review process or watch development of 
 :::::
 
 
-## Python packaging ecosystem overview & best practices
+## Packaging
 
 Learn about Python packaging best practices. You will also get to know the
 the vibrant ecosystem of packaging tools that are available to help you with your Python packaging needs.
@@ -135,7 +135,13 @@ Learn about best practices for:
 
 :::
 ::::
+:::::
 
+## Documentation
+
+:::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
 
 ::::{grid-item}
 :::{card} ✨ Write & Publish Docs ✨
@@ -160,6 +166,14 @@ Learn about best practices for:
 *We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)*
 :::
 ::::
+:::::
+
+## Contributing
+
+:::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
+
 
 ::::{grid-item}
 :::{card} ✨ Code style & Format ✨
@@ -228,20 +242,19 @@ This is a living guide that is updated as tools and best practices evolve in the
 Tutorials  <tutorials/intro>
 ```
 
+```{toctree}
+:hidden:
+:caption: Packaging
+
+Packaging <package-structure-code/intro>
+
+```
 
 ```{toctree}
 :hidden:
 :caption: Documentation
 
 Documentation <documentation/index>
-
-```
-
-```{toctree}
-:hidden:
-:caption: Packaging
-
-Packaging <package-structure-code/intro>
 
 ```
 
