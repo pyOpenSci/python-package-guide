@@ -32,7 +32,7 @@ Your `LICENSE` file should be placed at the root of your package's repository.
 
 There are several ways to add a license file:
 
-1. When you create a new repository on GitHub, it will ask you if you wish to add a `LICENSE` file at that time. It will also create the file for you.
+1. When you create a new repository on GitHub, it will ask you if you wish to add a `LICENSE` file at that time. If you select yes, it will create the file for you.
 2. You can add a license through the GitHub gui following the [<i class="fa-brands fa-github"></i> instructions here](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
 3. You can add the file manually like we are doing in this lesson.
 
@@ -42,7 +42,7 @@ If you completed the past lessons including
 1. [Making your code installable](1-installable-code.md) and
 2. [publishing your package to PyPI](publish-pypi.md)
 
-then you already have a **LICENSE** file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorials which walks you through adding a CODE_OF_CONDUCT.
+then you already have a **LICENSE** file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorial which walks you through adding a CODE_OF_CONDUCT.
 
 If you don't yet have a **LICENSE** file in your directory, then continue reading.
 :::
@@ -51,7 +51,7 @@ If you don't yet have a **LICENSE** file in your directory, then continue readin
 
 If you don't already have a LICENSE file, and you are not yet using a platform such as GitHub or GitLab, then you can create a license file by
 
-1. Create a new file called LICENSE. If you are using shell you can use:
+1. Create a new file called LICENSE. If you are using a shell you can use:
 
 ```
 # Create a license file in your shell
@@ -100,7 +100,7 @@ If you already have a GitHub repo for your package, then you can add a LICENSE u
 :::{figure-md} view-license
 <img src="../images/tutorials/view-license-github.png" alt="sdfsdfsd nasdfjsdf" width="500px">
 
-You can also view an overview of the license on GitHub if you view it in the GitHub interface.
+You can also view a summary of the license on its GitHub landing page.```
 :::
 ::::
 
