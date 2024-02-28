@@ -1,6 +1,6 @@
 # Make your Python package PyPI ready - pyproject.toml
 
-In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish that bare minimum version of your package to PyPI](publish-pypi.md).
+In [the installable code lesson](1-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish that bare minimum version of your package to PyPI](publish-pypi.md).
 
 Following that you learned how to add a:
 * [README.md](add-readme)
@@ -78,7 +78,7 @@ build-backend = "hatchling.build"
 
 The pyproject.toml file tells your build tool:
 
-- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to chose from](build-backend-options)).
+- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to chose from](/package-structure-code/python-package-build-tools)).
 - How and where to retrieve your package's version:
     - **statically** where you declare the version `version = "0.1.0"` or
     - **dynamically** where the tool looks to the most recent tag in your history to determine the current version.
@@ -280,7 +280,7 @@ You can declare a lower bound using syntax like this:
 Note that unless you are building an application, you want to be cautious about pinning dependencies. This is because
 users will be installing your package into various environments. A pinned dependency can make resolving an environment more challenging to resolve. As such only pin dependencies to a specific version or bound if you absolutely need to do so.
 
-One build tool that you should be aware of that pins dependencies by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
+One build tool that you should be aware of that pins dependencies by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](/package-structure-code/python-package-build-tools.html#challenges-with-poetry)
 :::
 
 ### Requires-python
@@ -318,6 +318,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+]
 
 dependencies = ["ruamel-yaml>=0.17.21", "requests", "python-dotenv", "pydantic"]
 
@@ -457,7 +458,7 @@ dependencies = ["xarray", "requests"]
 # This is the metadata that pip reads to understand what versions your package supports
 requires-python = ">=3.10"
 readme = "README.md"
-license = { FILE = LICENSE }
+license = { FILE = "LICENSE" }
 
 # Add urls for your home page, issue tracker and source code
 [project.urls] # Optional
