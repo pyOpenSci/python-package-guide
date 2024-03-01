@@ -62,7 +62,7 @@ If you are using markdown it should be a header 1 tag which is denoted with a si
 It's common for maintainers to add badges to the top of their README files. Badges allow you and your package users to track things like
 
 * Broken documentation and test builds.
-* Versions of your package that are on PyPI and Conda.
+* Versions of your package that are on PyPI and conda.
 * Whether your package has been reviewed and vetted by an organization such as pyOpenSci and/or JOSS.
 
 If you have already published your package to pypi.org you can use [shields.io to create a package version badge](https://shields.io/badges/py-pi-version). This badge will dynamically update as you release new versions of your package to PyPI.

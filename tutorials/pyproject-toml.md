@@ -1,6 +1,6 @@
 # Make your Python package PyPI ready - pyproject.toml
 
-In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish that bare minimum version of your package to PyPI](publish-pypi.md).
+In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish a bare minimum version of your package to PyPI](publish-pypi.md).
 
 Following that you learned how to add a:
 * [README.md](add-readme)
@@ -27,7 +27,7 @@ In this lesson you will learn:
 If you wish to learn more about the `pyproject.toml` format, [check out this page. ](../package-structure-code/pyproject-toml-python-package-metadata.md)
 :::
 
-:::{dropdown} Click for lesson highlights
+:::{dropdown} Click for lesson takeaways
 :color: secondary
 :icon: unlock
 
@@ -59,7 +59,7 @@ The TOML format can be compared to other structured formats such as`.json`. Howe
 
 ### About the .toml format
 
-The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is founded on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`.
+The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is based on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`.
 
 Below you can see the `[build-system]` table. Within
 that table there are two required key/value pairs.
@@ -119,7 +119,7 @@ and your package is built, the build tool organizes the metadata into a format t
 represent on your PyPI landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.
 ```
 
-:::{tip} A more indepth overview of pyproject.toml files
+:::{tip} A more in-depth overview of pyproject.toml files
 
 [Our guidebook page has a more in depth overview of this file](../package-structure-code/pyproject-toml-python-package-metadata/)
 :::
@@ -186,7 +186,19 @@ If you have two authors you can add them like this:
 :::{admonition} Author names & emails
 :class: note
 
-There is a quirk with PyPI for authors that have names but not emails in the pyproject.toml. If you don't have emails for everyone, we suggest that you only add names.
+There is a quirk with PyPI for authors that have names but not emails in the pyproject.toml. If you are missing the email for one or more authors or maintainers, like this:
+
+```toml
+maintainers = [{ name = "Firstname lastname", email = "email@pyopensci.org" }, { name = "Firstname lastname" }]
+```
+
+Then we suggest that you only provide names in your list of names to ensure that everything renders properly on your PyPI page - like this:
+
+```toml
+maintainers = [{ name = "Firstname lastname"}, { name = "Firstname lastname" }]
+```
+
+don't have emails for everyone, we suggest that you only add names.
 
 :::
 
@@ -252,7 +264,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.11",]
 ```
 
 Note that while classifiers are not required in your `pyproject.toml` file, they will help users find your package. As such we strongly recommend that you add them.
@@ -260,16 +272,22 @@ Note that while classifiers are not required in your `pyproject.toml` file, they
 ### Add package dependencies
 
 Next add your dependencies table to the project table.
-Dependencies represent the Python packages that your package requires to run. Similar to the build-system above, dependencies
-get added in an array (similar to a Python list) structure.
+The `dependencies =` section contains a list (or array in the toml language) of the Python packages that your package requires to run properly in a Python environment. Similar to the requirements listed in the  `[build-system]` table above:
+
+```toml
+[build-system] # <- this is a table
+requires = ["hatchling"] # this is an array (or list) of requirements
+```
+dependencies are added in an array (similar to a Python list) structure.
 
 ```toml
 dependencies = ["numpy", "requests", "pandas", "pydantic"]
-
 ```
 
 :::{admonition} Pin dependencies with caution
-Pinning dependencies refers to specifying a specific version of a dependency like this `numpy == 1.0`. In some specific cases, you may chose to pin or specify a lower or upper bound of a specific package.
+Pinning dependencies refers to specifying a specific version of a dependency like this `numpy == 1.0`. In some specific cases, you may chose to pin a package version for a specific package dependency.
+
+Declaring lower bounds involves ensuring that a user has at least a specific version (or greater) of a package installed. This is important as often your package is not backwards compatible with an older version of a tool - for example a version of Pandas that was released 5 years ago.
 
 You can declare a lower bound using syntax like this:
 
@@ -277,10 +295,18 @@ You can declare a lower bound using syntax like this:
 
 [Learn more about various ways to specify ranges of package versions here.](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
 
-Note that unless you are building an application, you want to be cautious about pinning dependencies. This is because
-users will be installing your package into various environments. A pinned dependency can make resolving an environment more challenging to resolve. As such only pin dependencies to a specific version or bound if you absolutely need to do so.
+Note that unless you are building an application, you want to be cautious about pinning dependencies to precise versions. For example:
 
-One build tool that you should be aware of that pins dependencies by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
+`numpy == 1.0.2`
+
+This is because
+users will be installing your package into various environments.
+A dependency pinned to a single specific version can make
+resolving a Python environment more challenging. As such only
+pin dependencies to a specific version if you absolutely need to
+do so.
+
+One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
 :::
 
 ### Requires-python
@@ -523,5 +549,5 @@ If you also want to publish your package on conda-forge (which is a channel with
 
 
 :::{todo}
-Really good resources frm jeremiah https://daniel.feldroy.com/posts/2023-08-pypi-project-urls-cheatsheet useful (and the linked links-demo even more so)
+Really good resources from jeremiah https://daniel.feldroy.com/posts/2023-08-pypi-project-urls-cheatsheet useful (and the linked links-demo even more so)
 :::

@@ -16,18 +16,25 @@ In this lesson you will learn:
 3. How you can use the Contributors Covenant website to add generic language as a starting place for your `CODE_OF_CONDUCT`.
 :::
 
-## Add a LICENSE file to your project directory
+## What is a license and why is it important?
 
-A license contains legal language about how users can use and reuse your software. You should include a LICENSE file in your project directory that specifies the license that you choose for your package.
+A license contains legal language about how users can use and reuse your software. To set the LICENSE for your project, you:
+
+1. create LICENSE file in your project directory that specifies the license that you choose for your package and
+2. reference that file in your pyproject.toml data where metadata are set.
+
+By adding the LICENSE file to your pyproject.toml file, the LICENSE will be included in your package's metadata which is used to populate your package's PyPI landing page. It is also used in your GitHub repository (see image below).
+
+### What license should you use?
 
 We suggest that you use a permissive license that accommodates the other most commonly used licenses in the scientific Python ecosystem (MIT[^mit] and BSD-3[^bsd3]). If you are unsure, use MIT given it's the generally recommended
 license on [choosealicense.com](https://choosealicense.com/).
 
 :::{admonition} Licenses for the scientific Python ecosystem
-[We discuss licenses for the scientific Python ecosystem in more detail here in our guidebook.](permissive-license)
+[We discuss licenses for the scientific Python ecosystem in more detail here in our guidebook.](../documentation/repository-files/license-files)
 :::
 
-### Where should the LICENSE file live & how do you add it?
+### Where should the LICENSE file live
 
 Your `LICENSE` file should be placed at the root of your package's repository.
 When you add the LICENSE at the root, GitHub will automagically discover it and
@@ -43,11 +50,15 @@ the license that SunPy uses. These files are discovered by GitHub because they
 are placed in the root of the project directory using standard naming conventions.
 :::
 
-There are several ways to add a license file:
+
+## How to add a LICENSE file to your package repository
+
+There are several ways to add a LICENSE file:
 
 1. When you create a new repository on GitHub, it will ask you if you wish to add a `LICENSE` file at that time. If you select yes, it will create the file for you.
 2. You can add a license through the GitHub gui following the [<i class="fa-brands fa-github"></i> instructions here](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
 3. You can add the file manually like we are doing in this lesson.
+4. Or, if you are using a tool such as Hatch, it will add a LICENSE file for you.
 
 :::{tip}
 If you completed the past lessons including
@@ -60,7 +71,7 @@ then you already have a **LICENSE** file containing text for the MIT license in 
 If you don't yet have a **LICENSE** file in your directory, then continue reading.
 :::
 
-### How to add a LICENSE to your existing GitHub repository
+### Add a LICENSE to your existing GitHub repository
 
 If you don't already have a LICENSE file, and you are not yet using a platform such as GitHub or GitLab, then you can create a license file by
 
@@ -96,7 +107,7 @@ through the GitHub interface.
 
 :::{figure-md} github-new-repo
 
-<img src="../images/tutorials/github-new-repo.png" alt="Screenshot of the create new repository interface that GitHub provides. The elements of this are the owner and repository name for the new repo. Below that you can add a description of the repo. Below that you can set it to be public or private. At the bottom of the interface there is an Add a README checkbox where it will add a blank readme file for you. At the very bottom there is a line to add a .gitignore file and another to choose a license." width="500px">
+<img src="../images/tutorials/github-new-repo.png" alt="Screenshot of the create new repository interface that GitHub provides. The elements of this are the owner and repository name for the new repo. Below that you can add a description of the repository. Below that you can set it to be public or private. At the bottom of the interface there is an Add a README checkbox where it will add a blank readme file for you. At the very bottom there is a line to add a .gitignore file and another to choose a license." width="500px">
 
 Image showing the GitHub interface that allows you to add a LICENSE and README file when you create a new repository.
 :::
@@ -104,15 +115,16 @@ Image showing the GitHub interface that allows you to add a LICENSE and README f
 
 ::::{tab-item} Add License: Existing GitHub repository
 
-If you already have a GitHub repository for your package, then you can add a LICENSE using the GitHub interface by adding a new file to the repo.
+If you already have a GitHub repository for your package, then you can add a LICENSE using the GitHub interface by adding a new file to the repository.
 
 - Follow the instructions to select and add a license to your repository on the [GitHub LICENSE page](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) .
 - Once you have added your LICENSE file, be sure to sync your git local repository with the repository on GitHub.com. This means running `git pull` to update your local branch.
 
 :::{figure-md} view-license
-<img src="../images/tutorials/view-license-github.png" alt="sdfsdfsd nasdfjsdf" width="500px">
+<img src="../images/tutorials/view-license-github.png" alt="Image showing what the LICENSE file looks like in the GItHub interface. At the top you can see the actual license which in this image is BSD 3-clause New or revised license. Then there is some text describing both what the license is and the associated permissions for that specific license. At the bottom of the image, the actual text for the license is shown in the LICENSE file." width="500px">
 
-You can also view a summary of the license on its GitHub landing page.```
+You can view a summary of the LICENSE chosen on your project's
+GitHub landing page.
 :::
 ::::
 
@@ -120,7 +132,7 @@ You can also view a summary of the license on its GitHub landing page.```
 ::::::
 
 (add-coc)=
-## Add a CODE_OF_CONDUCT file to your repo
+## Add a CODE_OF_CONDUCT file to your repository
 
 Now that you have added a LICENSE to your project, you are ready to add a `CODE_OF_CONDUCT.md` to your package directory. The `CODE_OF_CONDUCT.md` should be placed at the root of your project directory, similar to the LICENSE file,.
 
