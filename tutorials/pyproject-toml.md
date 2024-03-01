@@ -255,8 +255,11 @@ license = {file = 'LICENSE'}
 ```
 ### Step 3: Add requires-python to your [project] table
 
-Finally, add the `requires-python` field to your `pyproject.toml` `[project]` table. The `requires-python` field, helps pip understand the lowest version of Python that you package supports when it's installed. It is thus a single value.
-
+Add the `requires-python` field to your `pyproject.toml` `[project]` table. 
+The `requires-python` field, helps pip understand which versions of Python that you package supports when it's installed. 
+It is thus a single value. 
+`requires-python` supports the dependency specification syntax discussed in the next section - typically this will be
+a lower bound specifying the oldest version of python that can run your package, but you may also need to specify an upper bound in some more advanced cases.
 
 {emphasize-lines="13"}
 ```toml
@@ -284,8 +287,40 @@ The `dependencies =` section contains a list (or array in the toml language) of 
 [build-system] # <- this is a table
 requires = ["hatchling"] # this is an array (or list) of requirements
 ```
+
 dependencies are added in an array (similar to a Python list) structure.
 
+```toml
+dependencies = ["numpy", "requests", "pandas", "pydantic"]
+```
+
+Dependencies can, and usually should come with a **version specifier.** 
+A plain dependency says that your package can work with any version of that dependent package.
+Code changes over time, bugs are fixed, APIs change, and so it's good to be clear about which version of the dependency you wrote your code to be compatible with - a package you wrote this year probably isn't compatible with numpy v0.0.1!
+
+[Learn more about various ways to specify ranges of package versions here.](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
+
+The most common version specifier is a **lower bound,** allowing any version higher than the specified version. 
+Ideally you should set this to the lowest version that is still compatible with your package, but in practice for new packages this is often set at the version that was current at the time the package was written.
+
+Lower bounds look like this:
+
+```toml
+dependencies = [ "numpy>=1.0" ]
+```
+
+You can combine specifiers with commas, and use different kinds of specifiers for each package in your `dependencies` section:
+
+```toml
+dependencies = [
+  "numpy>=1.0",      # Greater than or equal to 1.0
+  "requests==10.1",  # Exactly 10.1
+  "pandas",          # Any version
+  "pydantic>=1.7,<2" # Greater than or equal to 1.7, but less than 2
+]
+```
+
+Your `pyproject.toml` file will now look like this:
 
 {emphasize-lines="15"}
 ```toml
@@ -303,30 +338,29 @@ readme = "README.md"
 license = {file = 'LICENSE'}
 requires-python = ">=3.10"
 
-dependencies = ["numpy", "requests", "pandas", "pydantic"]
+dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 ```
 
 :::{admonition} Pin dependencies with caution
-Pinning dependencies refers to specifying a specific version of a dependency like this `numpy == 1.0`. In some specific cases, you may chose to pin a package version for a specific package dependency.
+"Pinning" dependencies refers to specifying a specific version of a dependency like this:
 
-Declaring lower bounds involves ensuring that a user has at least a specific version (or greater) of a package installed. This is important as often your package is not backwards compatible with an older version of a tool - for example a version of Pandas that was released 5 years ago.
+`numpy == 1.0`.
 
-You can declare a lower bound using syntax like this:
-
-`ruamel-yaml>=0.17.21`
-
-[Learn more about various ways to specify ranges of package versions here.](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
-
-Note that unless you are building an application, you want to be cautious about pinning dependencies to precise versions. For example:
-
-`numpy == 1.0.2`
-
+Unless you are building an application, you want to be cautious about pinning dependencies to precise versions.
 This is because
 users will be installing your package into various environments.
 A dependency pinned to a single specific version can make
 resolving a Python environment more challenging. As such only
 pin dependencies to a specific version if you absolutely need to
 do so.
+
+Similarly, you should be cautious when specifying an upper bound on a package.
+These two specifications are equivalent:
+
+```
+pydantic>=1.10,<2
+pydantic^1.10
+```
 
 One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
 :::
@@ -370,7 +404,7 @@ readme = "README.md"
 license = {file = 'LICENSE'}
 requires-python = ">=3.10"
 
-dependencies = ["numpy", "requests", "pandas", "pydantic"]
+dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -410,7 +444,7 @@ readme = "README.md"
 license = {file = 'LICENSE'}
 requires-python = ">=3.10"
 
-dependencies = ["ruamel-yaml>=0.17.21", "requests", "python-dotenv", "pydantic"]
+dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -452,7 +486,7 @@ readme = "README.md"
 license = {file = 'LICENSE'}
 requires-python = ">=3.10"
 
-dependencies = ["ruamel-yaml>=0.17.21", "requests", "python-dotenv", "pydantic"]
+dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -525,7 +559,7 @@ classifiers = [
 ]
 
 
-dependencies = ["xarray", "requests"]
+dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 # This is the metadata that pip reads to understand what versions your package supports
 requires-python = ">=3.10"
 readme = "README.md"
