@@ -360,7 +360,7 @@ These two specifications are equivalent:
 ```
 pydantic>=1.10,<2
 pydantic^1.10
-```
+``` 
 
 One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
 :::
