@@ -187,7 +187,6 @@ Short description here using non-technical language that describes what your pac
 
 ## How to install pyosPackage
 
-<todo - when i add more to the pyos package this can use that readme>
 To install this package run:
 
 `pip install pyosPackage`
@@ -223,7 +222,7 @@ above is a set of recommendations as you are just getting started. You may find
 the need for other elements to be added to this file as you further develop your
 package and as a community begins to use your package.
 
-In the [next lesson](add-license-coc), you will add a LICENSE file to
+In the [next lesson](add-license-coc.md), you will add a LICENSE file to
 your Python package. A license file is critical as it tells users
 how they legally can (and can't) use your package. It also:
 
