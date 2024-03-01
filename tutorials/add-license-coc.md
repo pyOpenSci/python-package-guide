@@ -16,14 +16,14 @@ In this lesson you will learn:
 3. How you can use the Contributors Covenant website to add generic language as a starting place for your `CODE_OF_CONDUCT`.
 :::
 
-## What is a license and why is it important?
+## What is a license?
 
 A license contains legal language about how users can use and reuse your software. To set the LICENSE for your project, you:
 
 1. create LICENSE file in your project directory that specifies the license that you choose for your package and
 2. reference that file in your pyproject.toml data where metadata are set.
 
-By adding the LICENSE file to your pyproject.toml file, the LICENSE will be included in your package's metadata which is used to populate your package's PyPI landing page. It is also used in your GitHub repository (see image below).
+By adding the LICENSE file to your pyproject.toml file, the LICENSE will be included in your package's metadata which is used to populate your package's PyPI landing page. The LICENSE is also used in your GitHub repository's landing page interface.
 
 ### What license should you use?
 
@@ -51,14 +51,13 @@ are placed in the root of the project directory using standard naming convention
 :::
 
 
-## How to add a LICENSE file to your package repository
+### How to add a LICENSE file to your package directory
 
 There are several ways to add a LICENSE file:
 
 1. When you create a new repository on GitHub, it will ask you if you wish to add a `LICENSE` file at that time. If you select yes, it will create the file for you.
 2. You can add a license through the GitHub gui following the [<i class="fa-brands fa-github"></i> instructions here](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
 3. You can add the file manually like we are doing in this lesson.
-4. Or, if you are using a tool such as Hatch, it will add a LICENSE file for you.
 
 :::{tip}
 If you completed the past lessons including
@@ -71,11 +70,11 @@ then you already have a **LICENSE** file containing text for the MIT license in 
 If you don't yet have a **LICENSE** file in your directory, then continue reading.
 :::
 
-### Add a LICENSE to your existing GitHub repository
+### How to add a LICENSE to your package - the manual way
 
 If you don't already have a LICENSE file, and you are not yet using a platform such as GitHub or GitLab, then you can create a license file by
 
-1. Create a new file called LICENSE. If you are using a shell you can use:
+1. Create a new file called LICENSE. If you are using shell you can type:
 
 ```
 # Create a license file in your shell
@@ -86,6 +85,7 @@ If you don't already have a LICENSE file, and you are not yet using a platform s
 2. Select permissive license
 3. It will suggest that you use the [MIT license](https://choosealicense.com/licenses/mit/).
 4. Copy the license text that it provides into your LICENSE file that you created above.
+5. Save your file. You're all done!
 
 :::{admonition} An overview of LICENSES in the scientific Python ecosystem
 :class: note
@@ -131,12 +131,16 @@ GitHub landing page.
 :::::
 ::::::
 
+Now you know how to add a LICENSE to your project. Next, you'll learn
+about the `CODE_OF_CONDUCT.md` file and how to add it to your
+package directory.
+
 (add-coc)=
-## Add a CODE_OF_CONDUCT file to your repository
+## What is a code of conduct file?
 
-Now that you have added a LICENSE to your project, you are ready to add a `CODE_OF_CONDUCT.md` to your package directory. The `CODE_OF_CONDUCT.md` should be placed at the root of your project directory, similar to the LICENSE file,.
+A `CODE_OF_CONDUCT` file is used to establish guidelines for how people in your community interact.
 
-A `CODE_OF_CONDUCT` file is critical to supporting your community as it
+This file is critical to supporting your community as it
 grows. The `CODE_OF_CONDUCT`:
 
 1. Establishes guidelines for how users and contributors interact with each other and you in your software repository.
@@ -144,16 +148,26 @@ grows. The `CODE_OF_CONDUCT`:
 
 You can use your code of conduct as a tool that can be referenced when moderating challenging conversations.
 
+### What to put in your code of conduct file
+
 If you are unsure of what language to add to your `CODE_OF_CONDUCT`
 file, we suggest that you adopt the [contributor covenant language](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) as a starting place.
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](#)
 
-### Add your CODE_OF_CONDUCT file
+The `CODE_OF_CONDUCT.md` should be placed at the root of your project directory, similar to the LICENSE file.
 
-- Add a `CODE_OF_CONDUCT.md` file to your repository if it doesn't
-  already exist.
-- Visit the [contributor covenant website](https://www.contributor-covenant.org/) and add [the markdown version of their code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) to your `CODE_OF_CONDUCT.md` file.
+### How to add a CODE_OF_CONDUCT file to your package directory
+
+- Add a `CODE_OF_CONDUCT.md` file to the root of your repository if it doesn't already exist.
+
+```bash
+> touch CODE_OF_CONDUCT.md
+```
+
+- Visit the [contributor covenant website](https://www.contributor-covenant.org/) and add [the markdown version of their code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) to your `CODE_OF_CONDUCT.md` file. Read the text closely to ensure you both understand it and also agree with its contents!
+
+That's it - you've now added a code of conduct to your package directory.
 
 :::{admonition} Additional Code of Conduct resources
 :class: note
@@ -173,11 +187,11 @@ In this lesson and the [last lesson](add-readme), you have added a:
 
 These are fundamental files needed for every scientific Python package
 repository. These files help users understand how to use your package and
-interact with package maintainers. In the upcoming
-lessons, you will:
+interact with package maintainers.
 
-- [Flesh out your `pyproject.toml` file](pyproject-toml) to support building
-  and publishing your package on PyPI.
+In the upcoming lessons, you will:
+
+- [Add more metadata to your `pyproject.toml` file](pyproject-toml) to support building and publishing your package on PyPI.
 - Publish a new version of your Python package to (Test) PyPI to preview the
   updated metadata landing page.
 
