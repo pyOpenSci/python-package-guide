@@ -403,7 +403,7 @@ build:
  number: 0
 ```
 
-> - [x] A tarball (`url`) rather than a repo (e.g. `git_url`) is used in your recipe (see [here](https://conda-forge.org/docs/maintainer/adding_pkgs.html#build-from-tarballs-not-repos) for more details).
+> - [x] A tarball (`url`) rather than a repo (e.g. `git_url`) is used in your recipe (see [here](https://conda-forge.org/docs/maintainer/adding_pkgs.html) for more details).
 
 **Translation:** Here conda wants you to provide a link to the source distribution on PyPI rather than a link to your GitHub repository distribution. Notice above in the Source section of your recipe there is a `url:` section that provides a PyPI url that ends in tar.gz. That is a link to your source distribution that conda-forge will use.
 
