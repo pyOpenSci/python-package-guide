@@ -47,10 +47,10 @@ We generally suggest that you use a permissive, license that is [Open Software I
 license.
 
 :::{admonition} Copyleft licenses
-The other major category of licenses are ["copyleft" licenses](https://en.wikipedia.org/wiki/Copyleft). 
+The other major category of licenses are ["copyleft" licenses](https://en.wikipedia.org/wiki/Copyleft).
 These are licenses that require that anyone that uses your work redistributes it with the same (or greater) rights to modify, copy, share, and redistribute it.
 In other words, copyleft licenses prohibit someone taking your work, making a proprietary version of it, and redistributing it without providing the source code so others can do the same.
-Copyleft licenses are "sticky," in that they are designed to ensure that more free software is created. 
+Copyleft licenses are "sticky," in that they are designed to ensure that more free software is created.
 
 The difference between copyleft vs. permissive licenses is an important cultural divide in free and open source software (eg. see {footcite}`hunterReclaimingComputingCommons2016`, {footcite}`gnuprojectWhatFreeSoftware2019`, {footcite}`gnuprojectWhatCopyleft2022`),
 that you should be aware of when choosing your license - the lineage of copyleft represents the "free" part of "free and open source software."
