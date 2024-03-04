@@ -455,16 +455,18 @@ document.write(`
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create a Python package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">What is a Python package?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Metadata</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project information files &amp; metadata</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="add-readme.html">Add README file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">Add a license &amp; code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">Update metadata in pyproject.toml</a></li>
 </ul>
 </div>
 </nav></div>
@@ -768,7 +770,7 @@ what the input and output elements of each function are. <a class="reference int
 you might install NumPy or Pandas. Installing your package into an environment
 allows you to access it from any code run with that specific Python environment activated.</p>
 <figure class="align-default" id="packages-environment">
-<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a Python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a Python environment that already has some packages installed such as Pandas and NumPy. Your package will also get installed into that same environment when you pip install it." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">You don’t have to publish to PyPI to make your code installable.
 With the correct file structure and project metadata you can make your code
@@ -791,7 +793,7 @@ publish it in a repository such as <strong>PyPI</strong> or <strong>conda-forge<
 <a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">In the image above, you can see the steps associated with publishing
-your package on PyPI and conda-forge. Note that the distribution files that PyPI requires are the <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">sdist</span></a> and <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a> files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda-forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repo. You will learn more about this process in the <a class="reference internal" href="#"><span class="xref myst">conda-forge lesson</span></a>.</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
+your package on PyPI and conda-forge. Note that the distribution files that PyPI requires are the <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">sdist</span></a> and <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a> files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda-forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repository. You will learn more about this process in the <a class="reference internal" href="#"><span class="xref myst">conda-forge lesson</span></a>.</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

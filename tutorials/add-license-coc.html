@@ -1,0 +1,856 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Add a LICENSE & CODE_OF_CONDUCT to your Python package" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/add-license-coc.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="In the previous lesson you: Created a basic README.md file for your scientific Python package Learned about the core components that are useful to have in a README file. What is a license?: A licen..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_add-license-coc_24d43578.png" />
+<meta property="og:image:alt" content="In the previous lesson you: Created a basic README.md file for your scientific Python package Learned about the core components that are useful to have in a..." />
+<meta name="description" content="In the previous lesson you: Created a basic README.md file for your scientific Python package Learned about the core components that are useful to have in a README file. What is a license?: A licen..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Add a LICENSE &amp; CODE_OF_CONDUCT to your Python package &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=d6812f4d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/add-license-coc';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/add-license-coc.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Make your Python package PyPI ready - pyproject.toml" href="pyproject-toml.html" />
+    <link rel="prev" title="Add a README file to your Python package" href="add-readme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
+                    Governance
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging Tutorial Setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project information files &amp; metadata</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">Add README file</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add a license &amp; code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">Update metadata in pyproject.toml</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python packaging 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Add a...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="add-a-license-code-of-conduct-to-your-python-package">
+<h1>Add a LICENSE &amp; CODE_OF_CONDUCT to your Python package<a class="headerlink" href="#add-a-license-code-of-conduct-to-your-python-package" title="Link to this heading">#</a></h1>
+<p>In the <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">previous lesson</span></a> you:</p>
+<p><i class="fa-solid fa-circle-check" style="color: #703c87;"></i> Created a basic <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file for your scientific Python package</p>
+<p><i class="fa-solid fa-circle-check" style="color: #703c87;"></i> Learned about the core components that are useful to have in a README file.</p>
+<div class="tip admonition">
+<p class="admonition-title">Learning objectives</p>
+<p>In this lesson you will learn:</p>
+<ol class="arabic simple">
+<li><p>How to select and add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file to your package repository with a focus on the GitHub interface.</p></li>
+<li><p>How to add a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file to your package repository.</p></li>
+<li><p>How you can use the Contributors Covenant website to add generic language as a starting place for your <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code>.</p></li>
+</ol>
+</div>
+<section id="what-is-a-license">
+<h2>What is a license?<a class="headerlink" href="#what-is-a-license" title="Link to this heading">#</a></h2>
+<p>A license contains legal language about how users can use and reuse your software. To set the LICENSE for your project, you:</p>
+<ol class="arabic simple">
+<li><p>create LICENSE file in your project directory that specifies the license that you choose for your package and</p></li>
+<li><p>reference that file in your pyproject.toml data where metadata are set.</p></li>
+</ol>
+<p>By adding the LICENSE file to your pyproject.toml file, the LICENSE will be included in your package’s metadata which is used to populate your package’s PyPI landing page. The LICENSE is also used in your GitHub repository’s landing page interface.</p>
+<section id="what-license-should-you-use">
+<h3>What license should you use?<a class="headerlink" href="#what-license-should-you-use" title="Link to this heading">#</a></h3>
+<p>We suggest that you use a permissive license that accommodates the other most commonly used licenses in the scientific Python ecosystem (MIT<a class="footnote-reference brackets" href="#mit" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> and BSD-3<a class="footnote-reference brackets" href="#bsd3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>). If you are unsure, use MIT given it’s the generally recommended
+license on <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a>.</p>
+<div class="admonition-licenses-for-the-scientific-python-ecosystem admonition">
+<p class="admonition-title">Licenses for the scientific Python ecosystem</p>
+<p><a class="reference internal" href="../documentation/repository-files/license-files.html"><span class="doc std std-doc">We discuss licenses for the scientific Python ecosystem in more detail here in our guidebook.</span></a></p>
+</div>
+</section>
+<section id="where-should-the-license-file-live">
+<h3>Where should the LICENSE file live<a class="headerlink" href="#where-should-the-license-file-live" title="Link to this heading">#</a></h3>
+<p>Your <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file should be placed at the root of your package’s repository.
+When you add the LICENSE at the root, GitHub will automagically discover it and
+provide users with a direct link to your license file within your GitHub
+repository.</p>
+<figure class="align-default" id="github-coc-readme-license-tabs">
+<a class="reference internal image-reference" href="../_images/license-github-root-dir.png"><img alt="Image showing the GitHub repository for SunPy an accepted pyOpenSci package." src="../_images/license-github-root-dir.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Notice at the top of the
+README portion of the GitHub landing page, there are three tabs directly linking to the README file which is visible, the CODE_OF_CONDUCT file and one that specifies
+the license that SunPy uses. These files are discovered by GitHub because they
+are placed in the root of the project directory using standard naming conventions.</span><a class="headerlink" href="#github-coc-readme-license-tabs" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-to-add-a-license-file-to-your-package-directory">
+<h3>How to add a LICENSE file to your package directory<a class="headerlink" href="#how-to-add-a-license-file-to-your-package-directory" title="Link to this heading">#</a></h3>
+<p>There are several ways to add a LICENSE file:</p>
+<ol class="arabic simple">
+<li><p>When you create a new repository on GitHub, it will ask you if you wish to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file at that time. If you select yes, it will create the file for you.</p></li>
+<li><p>You can add a license through the GitHub gui following the <a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository"><i class="fa-brands fa-github"></i> instructions here</a>.</p></li>
+<li><p>You can add the file manually like we are doing in this lesson.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you completed the past lessons including</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="1-installable-code.html"><span class="std std-doc">Making your code installable</span></a> and</p></li>
+<li><p><a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publishing your package to PyPI</span></a></p></li>
+</ol>
+<p>then you already have a <strong>LICENSE</strong> file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorial which walks you through adding a CODE_OF_CONDUCT.</p>
+<p>If you don’t yet have a <strong>LICENSE</strong> file in your directory, then continue reading.</p>
+</div>
+</section>
+<section id="how-to-add-a-license-to-your-package-the-manual-way">
+<h3>How to add a LICENSE to your package - the manual way<a class="headerlink" href="#how-to-add-a-license-to-your-package-the-manual-way" title="Link to this heading">#</a></h3>
+<p>If you don’t already have a LICENSE file, and you are not yet using a platform such as GitHub or GitLab, then you can create a license file by</p>
+<ol class="arabic simple">
+<li><p>Create a new file called LICENSE. If you are using shell you can type:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a license file in your shell</span>
+<span class="o">&gt;</span> <span class="n">touch</span> <span class="n">LICENSE</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a></p></li>
+<li><p>Select permissive license</p></li>
+<li><p>It will suggest that you use the <a class="reference external" href="https://choosealicense.com/licenses/mit/">MIT license</a>.</p></li>
+<li><p>Copy the license text that it provides into your LICENSE file that you created above.</p></li>
+<li><p>Save your file. You’re all done!</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">An overview of LICENSES in the scientific Python ecosystem</p>
+<p>In the pyOpenSci <a class="reference internal" href="../documentation/repository-files/license-files.html"><span class="doc std std-doc">packaging guidebook</span></a>, we provide an overview of license in the scientific Python ecosystem. We review why license files are important, which ones are most commonly used for scientific software and how to select the correct license.</p>
+<p>If you want a broad overview of why licenses are important for protecting open source software, <a class="reference external" href="https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project">check out this blog post that overviews the legal side of things.</a></p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+Instructions for adding a license files within the GitHub interface<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Add license: new GitHub repository</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">When you create a new GitHub repository you can add a license
+through the GitHub interface.</p>
+<figure class="align-default" id="github-new-repo">
+<a class="reference internal image-reference" href="../_images/github-new-repo.png"><img alt="Screenshot of the create new repository interface that GitHub provides. The elements of this are the owner and repository name for the new repo. Below that you can add a description of the repository. Below that you can set it to be public or private. At the bottom of the interface there is an Add a README checkbox where it will add a blank readme file for you. At the very bottom there is a line to add a .gitignore file and another to choose a license." src="../_images/github-new-repo.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Image showing the GitHub interface that allows you to add a LICENSE and README file when you create a new repository.</span><a class="headerlink" href="#github-new-repo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Add License: Existing GitHub repository</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">If you already have a GitHub repository for your package, then you can add a LICENSE using the GitHub interface by adding a new file to the repository.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Follow the instructions to select and add a license to your repository on the <a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository">GitHub LICENSE page</a> .</p></li>
+<li><p class="sd-card-text">Once you have added your LICENSE file, be sure to sync your git local repository with the repository on GitHub.com. This means running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to update your local branch.</p></li>
+</ul>
+<figure class="align-default" id="view-license">
+<a class="reference internal image-reference" href="../_images/view-license-github.png"><img alt="Image showing what the LICENSE file looks like in the GItHub interface. At the top you can see the actual license which in this image is BSD 3-clause New or revised license. Then there is some text describing both what the license is and the associated permissions for that specific license. At the bottom of the image, the actual text for the license is shown in the LICENSE file." src="../_images/view-license-github.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">You can view a summary of the LICENSE chosen on your project’s
+GitHub landing page.</span><a class="headerlink" href="#view-license" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</details><p>Now you know how to add a LICENSE to your project. Next, you’ll learn
+about the <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file and how to add it to your
+package directory.</p>
+</section>
+</section>
+<section id="what-is-a-code-of-conduct-file">
+<span id="add-coc"></span><h2>What is a code of conduct file?<a class="headerlink" href="#what-is-a-code-of-conduct-file" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file is used to establish guidelines for how people in your community interact.</p>
+<p>This file is critical to supporting your community as it
+grows. The <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Establishes guidelines for how users and contributors interact with each other and you in your software repository.</p></li>
+<li><p>Identifies negative behaviors that you don’t want in your interactions.</p></li>
+</ol>
+<p>You can use your code of conduct as a tool that can be referenced when moderating challenging conversations.</p>
+<section id="what-to-put-in-your-code-of-conduct-file">
+<h3>What to put in your code of conduct file<a class="headerlink" href="#what-to-put-in-your-code-of-conduct-file" title="Link to this heading">#</a></h3>
+<p>If you are unsure of what language to add to your <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code>
+file, we suggest that you adopt the <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/">contributor covenant language</a> as a starting place.</p>
+<p><a class="reference internal" href="#"><span class="xref myst"><img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" /></span></a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> should be placed at the root of your project directory, similar to the LICENSE file.</p>
+</section>
+<section id="how-to-add-a-code-of-conduct-file-to-your-package-directory">
+<h3>How to add a CODE_OF_CONDUCT file to your package directory<a class="headerlink" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file to the root of your repository if it doesn’t already exist.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>touch<span class="w"> </span>CODE_OF_CONDUCT.md
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Visit the <a class="reference external" href="https://www.contributor-covenant.org/">contributor covenant website</a> and add <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md">the markdown version of their code of conduct</a> to your <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file. Read the text closely to ensure you both understand it and also agree with its contents!</p></li>
+</ul>
+<p>That’s it - you’ve now added a code of conduct to your package directory.</p>
+<div class="note admonition">
+<p class="admonition-title">Additional Code of Conduct resources</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project"><i class="fa-brands fa-github"></i> Guide: <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> files</a></p></li>
+<li><p><a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/repository-files/code-of-conduct-file.html">pyOpenSci package guide <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> overview</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="wrap-up">
+<h2><i class="fa-solid fa-hands-bubbles"></i> Wrap up<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
+<p>In this lesson and the <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">last lesson</span></a>, you have added a:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">README</span></code> file;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file and a</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file.</p></li>
+</ul>
+<p>These are fundamental files needed for every scientific Python package
+repository. These files help users understand how to use your package and
+interact with package maintainers.</p>
+<p>In the upcoming lessons, you will:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="pyproject-toml.html"><span class="doc std std-doc">Add more metadata to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file</span></a> to support building and publishing your package on PyPI.</p></li>
+<li><p>Publish a new version of your Python package to (Test) PyPI to preview the
+updated metadata landing page.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="mit" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>https://opensource.org/license/mit/</p>
+</aside>
+<aside class="footnote brackets" id="bsd3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>https://opensource.org/license/bsd-3-clause/</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="add-readme.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Add a README file to your Python package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pyproject-toml.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Make your Python package PyPI ready - pyproject.toml</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-license">What is a license?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-license-should-you-use">What license should you use?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-should-the-license-file-live">Where should the LICENSE file live</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-file-to-your-package-directory">How to add a LICENSE file to your package directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-to-your-package-the-manual-way">How to add a LICENSE to your package - the manual way</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-code-of-conduct-file">What is a code of conduct file?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-put-in-your-code-of-conduct-file">What to put in your code of conduct file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory">How to add a CODE_OF_CONDUCT file to your package directory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up"><i class="fa-solid fa-hands-bubbles"></i> Wrap up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/add-license-coc.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/tutorials/add-license-coc.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

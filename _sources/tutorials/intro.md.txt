@@ -33,7 +33,7 @@ Get to know Hatch <get-to-know-hatch>
 
 :::{toctree}
 :hidden:
-:caption: Create a Python package
+:caption: Create and publish a Python Package
 
 What is a Python package? <self>
 Make your code installable <1-installable-code>
@@ -43,9 +43,11 @@ Publish to conda-forge <publish-conda-forge>
 
 :::{toctree}
 :hidden:
-:caption: Project Metadata
+:caption: Project information files & metadata
 
 Add README file <add-readme>
+Add a license & code of conduct <add-license-coc>
+Update metadata in pyproject.toml <pyproject-toml>
 :::
 
 :::{admonition} Learning Objectives
@@ -96,7 +98,6 @@ to manage and reuse your code across different projects.
 Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you've created and let others build with it.
 
 (package-benefits)=
-
 ## Why create a Python package?
 
 You might create a Python package because you want to:
@@ -291,7 +292,7 @@ allows you to access it from any code run with that specific Python environment 
 
 :::{figure-md} packages-environment
 
-<img src="../images/tutorials/environment-package-install.png" alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a Python environment that already has some packages installed such as pandas and NumPy. Your package will also get installed into that same environment when you pip install it." width="700px">
+<img src="../images/tutorials/environment-package-install.png" alt="Diagram showing the steps associated with creating a package and then installing it. The first arrow says your package and the second says pip install package. The second arrow leads to a box that represents a Python environment that already has some packages installed such as Pandas and NumPy. Your package will also get installed into that same environment when you pip install it." width="700px">
 
 You don't have to publish to PyPI to make your code installable.
 With the correct file structure and project metadata you can make your code
@@ -318,7 +319,7 @@ Then you can create a conda-forge recipe using the [Grayskull](https://github.co
 <img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
 
 In the image above, you can see the steps associated with publishing
-your package on PyPI and conda-forge. Note that the distribution files that PyPI requires are the [sdist](#python-source-distribution) and [wheel](#python-wheel) files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda-forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repo. You will learn more about this process in the [conda-forge lesson](#).
+your package on PyPI and conda-forge. Note that the distribution files that PyPI requires are the [sdist](#python-source-distribution) and [wheel](#python-wheel) files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda-forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repository. You will learn more about this process in the [conda-forge lesson](#).
 :::
 
 ## Yay, your package has users! Now what?

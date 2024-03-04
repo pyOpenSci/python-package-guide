@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/add-readme.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI. What is a README file?: The README.md file is a markdow..." />
+<meta property="og:description" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI, How to publish your package to conda-forge. What is a R..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_add-readme_05ea09e7.png" />
-<meta property="og:image:alt" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI. What is a READM..." />
-<meta name="description" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI. What is a README file?: The README.md file is a markdow..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_add-readme_cb98e8e2.png" />
+<meta property="og:image:alt" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI, How to publish..." />
+<meta name="description" content="In the previous lessons you learned: What a Python package is, How to make your code installable, How to publish your package to (test) PyPI, How to publish your package to conda-forge. What is a R..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Add a README file to your Python package &#8212; Python Packaging Guide</title>
@@ -61,7 +61,7 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/add-readme.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Documentation for your Open Source Python Package" href="../documentation/index.html" />
+    <link rel="next" title="Add a LICENSE &amp; CODE_OF_CONDUCT to your Python package" href="add-license-coc.html" />
     <link rel="prev" title="Publish your Python package that is on PyPI to conda-forge" href="publish-conda-forge.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -455,16 +455,18 @@ document.write(`
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create a Python package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Metadata</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project information files &amp; metadata</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Add README file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">Add a license &amp; code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">Update metadata in pyproject.toml</a></li>
 </ul>
 </div>
 </nav></div>
@@ -526,9 +528,10 @@ document.write(`
 <h1>Add a README file to your Python package<a class="headerlink" href="#add-a-readme-file-to-your-python-package" title="Link to this heading">#</a></h1>
 <p>In the previous lessons you learned:</p>
 <ol class="arabic simple">
-<li><p>What a Python package is</p></li>
-<li><p>How to make your code installable</p></li>
-<li><p>How to publish your package to (test) PyPI</p></li>
+<li><p><a class="reference internal" href="intro.html"><span class="std std-doc">What a Python package is</span></a></p></li>
+<li><p><a class="reference internal" href="1-installable-code.html"><span class="doc std std-doc">How to make your code installable</span></a></p></li>
+<li><p><a class="reference internal" href="publish-pypi.html"><span class="std std-doc">How to publish your package to (test) PyPI</span></a></p></li>
+<li><p><a class="reference internal" href="publish-conda-forge.html"><span class="std std-doc">How to publish your package to conda-forge</span></a></p></li>
 </ol>
 <div class="admonition-learning-objectives admonition">
 <p class="admonition-title">Learning objectives</p>
@@ -550,14 +553,16 @@ a user understand:</p>
 <li><p>How to contribute to your package</p></li>
 <li><p>How to cite your package</p></li>
 </ul>
-<p>Your <strong>README.md</strong> file is important as it is often the first thing that someone sees before they install your package. The README file also will be used to populate your PyPI landing page.</p>
-<p>Note that there is no required format for README files. This page simply outlines sections that we suggest you have in your README file.</p>
+<p>Your <strong>README.md</strong> file is important as it is often the first thing that someone sees before they install your package. The README file is also used to populate your PyPI landing page.</p>
+<p>Note that there is no specific content structure for README files.
+However, this tutorial outlines the sections that we suggest that you
+include in your README file.</p>
 </section>
 <section id="create-a-readme-md-file-for-your-package">
 <h2>Create a README.md file for your package<a class="headerlink" href="#create-a-readme-md-file-for-your-package" title="Link to this heading">#</a></h2>
 <p>It’s time to add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file to your project directory.</p>
 <section id="step-0-create-a-readme-file">
-<h3>Step 0. Create a README file<a class="headerlink" href="#step-0-create-a-readme-file" title="Link to this heading">#</a></h3>
+<h3>Step 0: Create a README file<a class="headerlink" href="#step-0-create-a-readme-file" title="Link to this heading">#</a></h3>
 <p>To get started, if you don’t already have a README.md file in your project directory, create one.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -572,24 +577,24 @@ a user understand:</p>
 the readme will already be there-->
 </section>
 <section id="step-1-add-the-name-of-your-package-as-the-readme-title">
-<h3>Step 1. Add the name of your package as the README title<a class="headerlink" href="#step-1-add-the-name-of-your-package-as-the-readme-title" title="Link to this heading">#</a></h3>
+<h3>Step 1: Add the name of your package as the README title<a class="headerlink" href="#step-1-add-the-name-of-your-package-as-the-readme-title" title="Link to this heading">#</a></h3>
 <p>At the top of the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, add the name of your package.</p>
-<p>If you are using markdown it should be a header 1 tag which is denoted with a single <code class="docutils literal notranslate"><span class="pre">#</span></code> sign.</p>
+<p>If you are using markdown it should be a header 1 (H1) tag which is denoted with a single <code class="docutils literal notranslate"><span class="pre">#</span></code> sign.</p>
 <p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Package-title-here</span></code></p>
 </section>
 <section id="step-2-add-badges-to-the-top-of-your-readme-file">
-<h3>Step 2 - add badges to the top of your README file<a class="headerlink" href="#step-2-add-badges-to-the-top-of-your-readme-file" title="Link to this heading">#</a></h3>
-<p>It’s common for maintainers to add badges to the top of their README files. Badges allow you and your package users to track things like</p>
+<h3>Step 2: add badges to the top of your README file<a class="headerlink" href="#step-2-add-badges-to-the-top-of-your-readme-file" title="Link to this heading">#</a></h3>
+<p>It’s common for maintainers to add badges to the top of their README files. Badges allow you and your package users to track things like:</p>
 <ul class="simple">
 <li><p>Broken documentation and test builds.</p></li>
-<li><p>Versions of your package that are on PyPI and Conda.</p></li>
+<li><p>Versions of your package that are on PyPI and conda.</p></li>
 <li><p>Whether your package has been reviewed and vetted by an organization such as pyOpenSci and/or JOSS.</p></li>
 </ul>
 <p>If you have already published your package to pypi.org you can use <a class="reference external" href="https://shields.io/badges/py-pi-version">shields.io to create a package version badge</a>. This badge will dynamically update as you release new versions of your package to PyPI.</p>
-<p>If not, you can leave the top empty for now and add badges to your README at a later point as they make sense for your package.</p>
+<p>If not, you can leave the top empty for now and add badges to your README at a later point as they make sense.</p>
 </section>
 <section id="step-3-add-a-description-of-what-your-package-does">
-<h3>Step 3 - Add a description of what your package does<a class="headerlink" href="#step-3-add-a-description-of-what-your-package-does" title="Link to this heading">#</a></h3>
+<h3>Step 3: Add a description of what your package does<a class="headerlink" href="#step-3-add-a-description-of-what-your-package-does" title="Link to this heading">#</a></h3>
 <p>Below the badges (if you have them), add a section of text
 that provides an easy-to-understand overview of what your
 package does.</p>
@@ -601,7 +606,7 @@ package does.</p>
 <p>Remember that the more people understand what your package does, the more people will use it.</p>
 </section>
 <section id="step-4-add-package-installation-instructions">
-<h3>Step 4 - Add package installation instructions<a class="headerlink" href="#step-4-add-package-installation-instructions" title="Link to this heading">#</a></h3>
+<h3>Step 4: Add package installation instructions<a class="headerlink" href="#step-4-add-package-installation-instructions" title="Link to this heading">#</a></h3>
 <p>Next, add instructions that tell users how to install your package.</p>
 <p>For example, can they use pip to install your package?
 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code></p>
@@ -612,7 +617,7 @@ you can skip this section and come back and add these
 instructions later.</p>
 </section>
 <section id="step-5-any-additional-setup">
-<h3>Step 5 - Any additional setup<a class="headerlink" href="#step-5-any-additional-setup" title="Link to this heading">#</a></h3>
+<h3>Step 5: Any additional setup<a class="headerlink" href="#step-5-any-additional-setup" title="Link to this heading">#</a></h3>
 <p>In some cases, your package users may need to manually
 install other tools in order to use your package. If that
 is the case, be sure to add a section on additional setup
@@ -626,19 +631,19 @@ This might include:</p>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Many packages won’t need this section in their README. In that case you can always skip this section!</p>
+<p>Many packages won’t need an additional setup section in their README.
+In that case you can always skip this section.</p>
 </div>
 </section>
 <section id="step-6-add-a-get-started-section">
-<h3>Step 6 - Add a get started section<a class="headerlink" href="#step-6-add-a-get-started-section" title="Link to this heading">#</a></h3>
-<p>Next add a getting started section that shows how to use your package. This
-section should include a small code snippet that demonstrates importing and using
+<h3>Step 6: Add a get started section<a class="headerlink" href="#step-6-add-a-get-started-section" title="Link to this heading">#</a></h3>
+<p>Next add a get-started section. Within this section, add a small code example that demonstrates importing and using
 some of the functionality in your package.</p>
 <div class="important admonition">
 <p class="admonition-title">Provide a fully functional code snippet if possible</p>
 <p>It is important to try to make the code examples that you provide your users as useful as possible.</p>
 <p>Be sure to provide a copy/paste code example that will work as-is when pasted into a Jupyter Notebook or .py file if that is possible.</p>
-<p>If there are tokens and other steps needed to run your package, be sure to be clear about what those steps entail.</p>
+<p>If there are tokens and other steps needed to run your package, be sure to be clear about what those steps are.</p>
 </div>
 <p>For the pyosPackage, a short get started demo might look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyospackage.add_numbers</span> <span class="kn">import</span> <span class="n">add_num</span>
@@ -649,26 +654,32 @@ some of the functionality in your package.</p>
 <p>Or it could simply be a link to a getting started tutorial that you have created. If
 you don’t have this yet, you can leave it empty for the time being.</p>
 <p>This would
-also be a great place to add links to any tutorials that you have created that
+also be a great place to add links to tutorials that
 help users understand how to use your package for common workflows.</p>
 </section>
 <section id="step-7-community-section">
-<h3>Step 7 - Community section<a class="headerlink" href="#step-7-community-section" title="Link to this heading">#</a></h3>
+<h3>Step 7: Community section<a class="headerlink" href="#step-7-community-section" title="Link to this heading">#</a></h3>
 <p>The community section of your README file is a place to include information for users who may want to engage with your project. This engagement will likely happen on a platform like GitHub or GitLab.</p>
 <p>In the community section, you will add links to your contributing guide
-and <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code>. You will add a <a class="reference internal" href="#add-license-coc"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file in the next lesson</span></a>.</p>
-<p>As your package grows you may also have a link to a development guide that contributors and your maintainer team will follow.</p>
+and <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code>. You will create a <a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file in the next lesson</span></a>.</p>
+<p>As your package grows you may also have a link to a development guide that contributors and your maintainer team will follow. The development guide
+outlines how to perform maintenance tasks such as:</p>
+<ul class="simple">
+<li><p>running tests</p></li>
+<li><p>making package releases</p></li>
+<li><p>building documentation</p></li>
+<li><p>and more.</p></li>
+</ul>
 </section>
 <section id="step-8-citation-information">
-<h3>Step 8 - Citation information<a class="headerlink" href="#step-8-citation-information" title="Link to this heading">#</a></h3>
+<h3>Step 8: Citation information<a class="headerlink" href="#step-8-citation-information" title="Link to this heading">#</a></h3>
 <p>Finally it is important to let users know how to cite your package.
 You can communicate citation information in a few different ways.</p>
 <p>You can use a tool such as zenodo to create a DOI and associated citation
 information for your package if it is hosted on a platform such as
 GitHub. <a class="reference external" href="https://coderefinery.github.io/github-without-command-line/doi/">Check out this short tutorial that covers setting that up.</a></p>
 <p>Alternatively if you send your package through a peer review process such
-as the <a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">one lead by pyOpenSci</a>, then you can get a cross-ref DOI through our partnership
-with the Journal of Open Source Software.</p>
+as the <a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">one lead by pyOpenSci</a>. After being accepted by pyOpenSci, if your package is in scope, you can be accepted by the Journal of Open Source Software and get a cross-ref DOI through <a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">our partnership with the Journal of Open Source Software.</a></p>
 </section>
 </section>
 <section id="the-finished-readme-file">
@@ -751,11 +762,11 @@ how they legally can (and can&#39;t) use your package. It also:
       </div>
     </a>
     <a class="right-next"
-       href="../documentation/index.html"
+       href="add-license-coc.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Documentation for your Open Source Python Package</p>
+        <p class="prev-next-title">Add a LICENSE &amp; CODE_OF_CONDUCT to your Python package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -777,15 +788,15 @@ how they legally can (and can&#39;t) use your package. It also:
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-readme-file">What is a README file?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-readme-md-file-for-your-package">Create a README.md file for your package</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-create-a-readme-file">Step 0. Create a README file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-add-the-name-of-your-package-as-the-readme-title">Step 1. Add the name of your package as the README title</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-badges-to-the-top-of-your-readme-file">Step 2 - add badges to the top of your README file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-a-description-of-what-your-package-does">Step 3 - Add a description of what your package does</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-package-installation-instructions">Step 4 - Add package installation instructions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-any-additional-setup">Step 5 - Any additional setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-a-get-started-section">Step 6 - Add a get started section</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-community-section">Step 7 - Community section</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-citation-information">Step 8 - Citation information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-create-a-readme-file">Step 0: Create a README file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-add-the-name-of-your-package-as-the-readme-title">Step 1: Add the name of your package as the README title</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-badges-to-the-top-of-your-readme-file">Step 2: add badges to the top of your README file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-a-description-of-what-your-package-does">Step 3: Add a description of what your package does</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-package-installation-instructions">Step 4: Add package installation instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-any-additional-setup">Step 5: Any additional setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-a-get-started-section">Step 6: Add a get started section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-community-section">Step 7: Community section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-citation-information">Step 8: Citation information</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-finished-readme-file">The finished README file</a></li>

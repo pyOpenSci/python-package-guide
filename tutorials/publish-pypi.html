@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packaging workflow. On the left you see a grap..." />
+<meta property="og:description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Test PyPI vs PyPI: There are two “warehouses” that you can use to publish you..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-pypi_a4a4bd2f.png" />
-<meta property="og:image:alt" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packag..." />
-<meta name="description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packaging workflow. On the left you see a grap..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-pypi_177e2026.png" />
+<meta property="og:image:alt" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Test PyPI vs PyPI: There are two “war..." />
+<meta name="description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Test PyPI vs PyPI: There are two “warehouses” that you can use to publish you..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Publish your Python package to PyPI &#8212; Python Packaging Guide</title>
@@ -455,16 +455,18 @@ document.write(`
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create a Python package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish to PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Metadata</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project information files &amp; metadata</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="add-readme.html">Add README file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">Add a license &amp; code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">Update metadata in pyproject.toml</a></li>
 </ul>
 </div>
 </nav></div>
@@ -524,6 +526,14 @@ document.write(`
                   
   <section id="publish-your-python-package-to-pypi">
 <h1>Publish your Python package to PyPI<a class="headerlink" href="#publish-your-python-package-to-pypi" title="Link to this heading">#</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>hatch
+<span class="w">  </span>installed<span class="w"> </span>package<span class="w"> </span>hatch<span class="w"> </span><span class="m">1</span>.9.1,<span class="w"> </span>installed<span class="w"> </span>using<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.12.1
+<span class="w">  </span>These<span class="w"> </span>apps<span class="w"> </span>are<span class="w"> </span>now<span class="w"> </span>globally<span class="w"> </span>available
+<span class="w">    </span>-<span class="w"> </span>hatch
+<span class="k">done</span>!<span class="w"> </span>✨<span class="w"> </span>🌟<span class="w"> </span>✨
+</pre></div>
+</div>
+<div class="docutils">
 <p>In the previous Python packaging lessons, you’ve learned:</p>
 <ol class="arabic simple">
 <li><p>What a Python package is</p></li>
@@ -541,14 +551,14 @@ document.write(`
 <p>Once your package is on PyPI you can publish it to conda-forge (which is a channel on conda)
 using <a class="reference external" href="https://conda.github.io/grayskull/">Grayskull</a>.</p>
 <p>You will learn how to publish to conda-forge in a future lesson.</p>
-</div>
-<div class="docutils">
+<p>You will learn how to publish to conda-forge in the <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">next lesson</span></a>.</p>
 <figure class="align-default" id="build-workflow-tutorial">
 <a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. An arrow to the right takes you to a build distribution files box. Another arrow to the right takes you to a publish to PyPI box which has an arrow containing sdist and wheel that notes those files go to PyPI for hosting. From PyPI is an arrow containing sdist since you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</div>
 </div>
 <section id="test-pypi-vs-pypi">
 <h2>Test PyPI vs PyPI<a class="headerlink" href="#test-pypi-vs-pypi" title="Link to this heading">#</a></h2>
@@ -642,7 +652,7 @@ pyosPackage<span class="w"> </span><span class="o">(</span>☊<span class="w"> <
 <section id="hatch-and-environments">
 <h3>Hatch and environments<a class="headerlink" href="#hatch-and-environments" title="Link to this heading">#</a></h3>
 <p>Behind the scenes when hatch creates a new virtual environment,
-by default it uses venv<a class="footnote-reference brackets" href="#venv" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> which is the default environment management tool that comes with Python installations.</p>
+by default it uses venv<a class="footnote-reference brackets" href="#venv" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> which is the default environment management tool that comes with Python installations.</p>
 <p>Hatch will:</p>
 <ol class="arabic simple">
 <li><p>Create a new virtualenv (venv) that is located on your computer.</p></li>
@@ -673,6 +683,8 @@ dist/pyospackage-0.1.0-py3-none-any.whl
 <p>You can learn more about
 building in the <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">build page of our packaging guide</span></a>.</p>
 </div>
+<p>The sdist is important if you wish to <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">publish
+your package to conda-forge</span></a>. You will learn about this in a later lesson.</p>
 <section id="congratulations-you-ve-created-your-python-package-distribution-files">
 <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you’ve created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i><a class="headerlink" href="#congratulations-you-ve-created-your-python-package-distribution-files" title="Link to this heading">#</a></h3>
 <p>You’ve now built your Python package and created your package distribution files. The next step is to setup
@@ -696,11 +708,11 @@ real PyPI’s servers.</p>
 <li><p>Search on <a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> to ensure that the package name that you have selected doesn’t already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it’s unique.</p></li>
 </ol>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" src="../_images/testpypi-search.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">Before you try to upload to test PyPI, check to see if the name of your package is already taken. You can do that using
-the search box at the top of the test PyPI website.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+the search box at the top of the test PyPI website.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-setup-2-factor-2fa-authentication admonition">
@@ -815,12 +827,6 @@ venv mac / Linux</label><div class="sd-tab-content docutils">
 <p class="admonition-title">The value of end-to-end tools like hatch, flit and poetry</p>
 <p>In this lesson you are using Hatch and hatchling to create, build and publish your Python Package. <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="std std-doc">Click here to learn about other packaging tools in the ecosystem.</span></a></p>
 </div>
-<!-- TODO: venv will always be different for windows - do we need a third tab?? Also is conda different on windows? i forget -->
-<!--TODO: teach them to setup trusted publisher for actions... in the actions lesson
-https://pypi.org/help/#twofa
-
-from PyPI: https://pypi.org/help/#apitoken - You can create a token for an entire PyPI account, in which case, the token will work for all projects associated with that account. Alternatively, you can limit a token's scope to a specific project.
- -->
 </section>
 </section>
 <section id="package-specific-token-vs-trusted-publisher">
@@ -856,10 +862,13 @@ a token specific to your new package.</p>
 </section>
 <section id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="venv" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>https://docs.python.org/3/library/venv.html</p>
 </aside>
 </aside>

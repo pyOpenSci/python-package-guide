@@ -47,7 +47,7 @@ To select your license, we suggest that you use GitHub's
 [Choose a License tool ](https://choosealicense.com/).
 
 If you choose your license when creating a new GitHub repository, you can also
-automatically get a text copy of the license file to add to your repo. However
+automatically get a text copy of the license file to add to your repository. However
 in some cases the license that you want is not available through that online
 process.
 
@@ -78,9 +78,9 @@ with the license that you selected for your package.
 :::{admonition} An example of how a license determine how code can be reused
 :class: note
 
-Let's use stackOverflow as an example that highlights how a license determines how code can or can not be used.
+Let's use StackOverflow as an example that highlights how a license determines how code can or can not be used.
 
-[Stack overflow uses a Creative Commons Share Alike license.](https://stackoverflow.com/help/licensing). The sharealike license requires you to use the same sharealike license when you reuse any code from stackoverflow.
+[Stack overflow uses a Creative Commons Share Alike license.](https://stackoverflow.com/help/licensing). The sharealike license requires you to use the same sharealike license when you reuse any code from StackOverflow.
 
 This means that technically, if you copy code from the Stack Overflow website, and use it in your package. And your packages uses a different license such as a MIT license, you are violating Stack Overflow's license requirements!
 
@@ -92,7 +92,7 @@ This means that technically, if you copy code from the Stack Overflow website, a
 
 While many permissive licenses do not require citation we STRONG encourage that you cite all software that you use in papers, blogs and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files). We will cover this topic when we talk about creating DOI's for your package using zenodo.
 
-<!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with zenodo (do they work??) will the citation info update with a new zenodo link
+<!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with Zenodo (do they work??) will the citation info update with a new Zenodo link
 
 These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. if it's not dynamic it could be problematic
 
