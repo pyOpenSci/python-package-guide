@@ -94,7 +94,7 @@ repository to quickly understand your package's structure such as:
 Finally, the pyproject.toml file is also often used to configure tools such as static type checkers (e.g. mypy) and code formatters/linters (e.g. black, ruff).
 
 :::{tip}
-Check out the [PyPA documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-pyproject-toml) if you are interested in setting build configurations for other tools.
+Check out the [PyPA documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend) if you are interested in setting build configurations for other tools.
 
 Note that some build tools may deviate in how they store project metadata. As such you may want to refer to their documentation if you decide to use a tool other than Hatch and hatchling. We have selected hatchling and hatch as our tool of choice for this tutorial as it adheres to PyPA rules and guidelines.
 
