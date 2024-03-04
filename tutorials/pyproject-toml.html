@@ -672,8 +672,8 @@ help users find your package on PyPI and also better describe the scope of your 
 <p class="admonition-title">More on hatchling</p>
 <p>The documentation for the hatchling back-end is <a class="reference external" href="https://hatch.pypa.io/latest/config/metadata/">here</a></p>
 </div>
-<section id="step-1-populate-the-project-table-with-author-maintainer-and-project-description">
-<h3>Step 1: Populate the [project] table with author, maintainer and project description<a class="headerlink" href="#step-1-populate-the-project-table-with-author-maintainer-and-project-description" title="Link to this heading">#</a></h3>
+<section id="step-1-add-author-maintainer-and-project-description">
+<h3>Step 1: Add Author, maintainer and project description<a class="headerlink" href="#step-1-add-author-maintainer-and-project-description" title="Link to this heading">#</a></h3>
 <p>After completing the <a class="reference internal" href="1-installable-code.html"><span class="doc std std-doc">installable code tutorial</span></a>, you should have a pyproject.toml file with a project name and a version in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
@@ -735,8 +735,8 @@ Learn More: What’s the difference between author and maintainer in open source
 you want to have listed as authors and maintainers on your PyPI landing page.</p>
 </div>
 </details></section>
-<section id="step-2-link-your-readme-and-license-in-your-pyproject-toml-file">
-<h3>Step 2: Link your README and license in your pyproject.toml file<a class="headerlink" href="#step-2-link-your-readme-and-license-in-your-pyproject-toml-file" title="Link to this heading">#</a></h3>
+<section id="step-2-add-readme-and-license">
+<h3>Step 2: Add README and license<a class="headerlink" href="#step-2-add-readme-and-license" title="Link to this heading">#</a></h3>
 <p>In the previous lessons, you added both a <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a> file and a <a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc">LICENSE</span></a> to your package repository.
 Once you have those files, you can add them to your pyproject.toml file as
 links following the example below.</p>
@@ -755,8 +755,8 @@ links following the example below.</p>
 </span></pre></div>
 </div>
 </section>
-<section id="step-3-add-requires-python-to-your-project-table">
-<h3>Step 3: Add requires-python to your [project] table<a class="headerlink" href="#step-3-add-requires-python-to-your-project-table" title="Link to this heading">#</a></h3>
+<section id="step-3-specify-python-version-with-requires-python">
+<h3>Step 3: Specify Python version with <code class="docutils literal notranslate"><span class="pre">requires-python</span></code><a class="headerlink" href="#step-3-specify-python-version-with-requires-python" title="Link to this heading">#</a></h3>
 <p>Finally, add the <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table. The <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field, helps pip understand the lowest version of Python that you package supports when it’s installed. It is thus a single value.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
@@ -774,8 +774,8 @@ links following the example below.</p>
 </span></pre></div>
 </div>
 </section>
-<section id="step-4-add-package-dependencies-to-your-project-table">
-<h3>Step 4: Add package dependencies to your [project] table<a class="headerlink" href="#step-4-add-package-dependencies-to-your-project-table" title="Link to this heading">#</a></h3>
+<section id="step-4-specify-dependencies">
+<h3>Step 4: Specify Dependencies<a class="headerlink" href="#step-4-specify-dependencies" title="Link to this heading">#</a></h3>
 <p>Next add your dependencies table to the project table.
 The <code class="docutils literal notranslate"><span class="pre">dependencies</span> <span class="pre">=</span></code> section contains a list (or array in the toml language) of the Python packages that your package requires to run properly in a Python environment. Similar to the requirements listed in the  <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> table above:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span><span class="w"> </span><span class="c1"># &lt;- this is a table</span>
@@ -818,8 +818,8 @@ do so.</p>
 <p>One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. <a class="reference internal" href="#../package-structure-code/python-package-build-tools.html#challenges-with-poetry"><span class="xref myst">Read more about how to safely add dependencies with Poetry, here.</span></a></p>
 </div>
 </section>
-<section id="step-5-add-pypi-classifiers-to-your-pyproject-toml-file">
-<h3>Step 5: Add PyPI classifiers to your pyproject.toml file<a class="headerlink" href="#step-5-add-pypi-classifiers-to-your-pyproject-toml-file" title="Link to this heading">#</a></h3>
+<section id="step-5-add-pypi-classifiers">
+<h3>Step 5: Add PyPI classifiers<a class="headerlink" href="#step-5-add-pypi-classifiers" title="Link to this heading">#</a></h3>
 <p>Next you will add classifiers to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. The value for each classifier that you add to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file must come from the list of <a class="reference external" href="https://PyPI.org/classifiers/">PyPI accepted classifier values found here</a>. Any deviations in spelling and format will cause issues when you publish to PyPI.</p>
 <div class="tip admonition">
 <p class="admonition-title">What happens when you use incorrect classifiers?</p>
@@ -1117,11 +1117,11 @@ your package to PyPI.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-your-pyproject-toml-file">How to update your pyproject.toml file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-populate-the-project-table-with-author-maintainer-and-project-description">Step 1: Populate the [project] table with author, maintainer and project description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-link-your-readme-and-license-in-your-pyproject-toml-file">Step 2: Link your README and license in your pyproject.toml file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-requires-python-to-your-project-table">Step 3: Add requires-python to your [project] table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-package-dependencies-to-your-project-table">Step 4: Add package dependencies to your [project] table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-pypi-classifiers-to-your-pyproject-toml-file">Step 5: Add PyPI classifiers to your pyproject.toml file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-add-author-maintainer-and-project-description">Step 1: Add Author, maintainer and project description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-readme-and-license">Step 2: Add README and license</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-specify-python-version-with-requires-python">Step 3: Specify Python version with <code class="docutils literal notranslate"><span class="pre">requires-python</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-specify-dependencies">Step 4: Specify Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-pypi-classifiers">Step 5: Add PyPI classifiers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-the-project-urls-table">Step 6: Add the <code class="docutils literal notranslate"><span class="pre">[project.urls]</span></code> table</a></li>
 </ul>
 </li>

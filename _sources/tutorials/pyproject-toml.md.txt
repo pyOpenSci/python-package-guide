@@ -154,7 +154,7 @@ help users find your package on PyPI and also better describe the scope of your 
 The documentation for the hatchling back-end is [here](https://hatch.pypa.io/latest/config/metadata/)
 :::
 
-### Step 1: Populate the [project] table with author, maintainer and project description
+### Step 1: Add Author, maintainer and project description
 
 After completing the [installable code tutorial](1-installable-code), you should have a pyproject.toml file with a project name and a version in the `[project]` table.
 
@@ -232,7 +232,7 @@ However, we encourage you to consider carefully, for PyPI publication, who
 you want to have listed as authors and maintainers on your PyPI landing page.
 :::
 
-### Step 2: Link your README and license in your pyproject.toml file
+### Step 2: Add README and license
 
 In the previous lessons, you added both a [README.md](add-readme) file and a [LICENSE](add-license-coc) to your package repository.
 Once you have those files, you can add them to your pyproject.toml file as
@@ -253,7 +253,7 @@ maintainers = [{ name = "Firstname lastname", email = "email@pyopensci.org" }, {
 readme = "README.md"
 license = {file = 'LICENSE'}
 ```
-### Step 3: Add requires-python to your [project] table
+### Step 3: Specify Python version with `requires-python`
 
 Finally, add the `requires-python` field to your `pyproject.toml` `[project]` table. The `requires-python` field, helps pip understand the lowest version of Python that you package supports when it's installed. It is thus a single value.
 
@@ -275,7 +275,7 @@ license = {file = 'LICENSE'}
 requires-python = ">=3.10"
 ```
 
-### Step 4: Add package dependencies to your [project] table
+### Step 4: Specify Dependencies
 
 Next add your dependencies table to the project table.
 The `dependencies =` section contains a list (or array in the toml language) of the Python packages that your package requires to run properly in a Python environment. Similar to the requirements listed in the  `[build-system]` table above:
@@ -331,7 +331,7 @@ do so.
 One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
 :::
 
-### Step 5: Add PyPI classifiers to your pyproject.toml file
+### Step 5: Add PyPI classifiers
 
 Next you will add classifiers to your `pyproject.toml` file. The value for each classifier that you add to your `pyproject.toml` file must come from the list of [PyPI accepted classifier values found here](https://PyPI.org/classifiers/). Any deviations in spelling and format will cause issues when you publish to PyPI.
 
