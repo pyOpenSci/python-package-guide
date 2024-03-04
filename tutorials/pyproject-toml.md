@@ -255,9 +255,9 @@ license = {file = 'LICENSE'}
 ```
 ### Step 3: Add requires-python to your [project] table
 
-Add the `requires-python` field to your `pyproject.toml` `[project]` table. 
-The `requires-python` field, helps pip understand which versions of Python that you package supports when it's installed. 
-It is thus a single value. 
+Add the `requires-python` field to your `pyproject.toml` `[project]` table.
+The `requires-python` field, helps pip understand which versions of Python that you package supports when it's installed.
+It is thus a single value.
 `requires-python` supports the dependency specification syntax discussed in the next section - typically this will be
 a lower bound specifying the oldest version of python that can run your package, but you may also need to specify an upper bound in some more advanced cases.
 
@@ -294,13 +294,13 @@ dependencies are added in an array (similar to a Python list) structure.
 dependencies = ["numpy", "requests", "pandas", "pydantic"]
 ```
 
-Dependencies can, and usually should come with a **version specifier.** 
+Dependencies can, and usually should come with a **version specifier.**
 A plain dependency says that your package can work with any version of that dependent package.
 Code changes over time, bugs are fixed, APIs change, and so it's good to be clear about which version of the dependency you wrote your code to be compatible with - a package you wrote this year probably isn't compatible with numpy v0.0.1!
 
 [Learn more about various ways to specify ranges of package versions here.](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
 
-The most common version specifier is a **lower bound,** allowing any version higher than the specified version. 
+The most common version specifier is a **lower bound,** allowing any version higher than the specified version.
 Ideally you should set this to the lowest version that is still compatible with your package, but in practice for new packages this is often set at the version that was current at the time the package was written.
 
 Lower bounds look like this:
