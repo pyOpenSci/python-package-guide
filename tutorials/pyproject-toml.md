@@ -616,7 +616,7 @@ dependencies = ["xarray", "requests"]
 # This is the metadata that pip reads to understand what versions your package supports
 requires-python = ">=3.10"
 readme = "README.md"
-license = { FILE = LICENSE }
+license = { file = "LICENSE" }
 
 # Add urls for your home page, issue tracker and source code
 [project.urls] # Optional
