@@ -56,7 +56,7 @@ Community docs
 
 Publish your docs
 ```
-## _new_ Tutorial series - how to create a Python package
+## _new_ Tutorial Series: How to Create a Python Package
 
 The how to create a Python package tutorial series is being developed
 by the community now! Join our community review process or watch development of these tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
@@ -67,18 +67,32 @@ by the community now! Join our community review process or watch development of 
 :gutter: 3
 
 ::::{grid-item}
-
-:::{card} ✿ Tutorials ✿
+:::{card} ✿ Create a Package Tutorials ✿
 :class-card: left-aligned
 
 * [What is a Python package?](/tutorials/intro)
 * [Make your code installable](/tutorials/1-installable-code)
 * [Publish your package to (test) PyPi](/tutorials/publish-pypi)
-* *How to add a README and LICENSE to support publication (coming next!)*
-* *How to add metadata to a pyproject.toml file for publication to PyPI.*
+* [Publish your package to conda-forge](/tutorials/publish-conda-forge)
 
-_The third lesson is currently under review in our [GitHub Repo here](https://github.com/pyOpenSci/python-package-guide/pulls). It will be live by the end of Feb 2024_
+:::
+::::
 
+::::{grid-item}
+:::{card} ✿ Package Metadata Tutorials ✿
+:class-card: left-aligned
+
+* [How to add a README file](/tutorials/add-readme)
+* [How to add metadata to a pyproject.toml file for publication to PyPI.](/tutorials/pyproject-toml.md)
+
+:::
+::::
+
+::::{grid-item}
+:::{card} ✿ Packaging Tool Tutorials ✿
+:class-card: left-aligned
+
+* [Introduction to Hatch](/tutorials/get-to-know-hatch)
 
 :::
 ::::

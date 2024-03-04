@@ -20,7 +20,6 @@ current_year = datetime.now().year
 organization_name = "pyOpenSci"
 
 
-
 # -- Project information -----------------------------------------------------
 
 project = "pyOpenSci Python Package Guide"
@@ -29,7 +28,9 @@ author = "pyOpenSci Community"
 
 # Get the latest Git tag - there might be a prettier way to do this but...
 try:
-    release_value = subprocess.check_output(["git", "describe", "--tags"]).decode("utf-8").strip()
+    release_value = (
+        subprocess.check_output(["git", "describe", "--tags"]).decode("utf-8").strip()
+    )
     release_value = release_value[:4]
 except subprocess.CalledProcessError:
     release_value = "0.1"  # Default value in case there's no tag
@@ -58,6 +59,7 @@ extensions = [
 myst_enable_extensions = [
     "colon_fence",
     "deflist",
+    "attrs_block",
 ]
 myst_heading_anchors = 3
 
@@ -70,7 +72,7 @@ favicons = [
 # Link to our repo for easy PR/ editing
 html_theme_options = {
     "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
-    #"navbar_center": ["nav"], this can be a way to override the default navigation structure
+    # "navbar_center": ["nav"], this can be a way to override the default navigation structure
     "external_links": [
         {
             "url": "https://www.pyopensci.org",
@@ -93,7 +95,7 @@ html_theme_options = {
         },
     ],
     "logo": {
-        #"text": "Python Packaging",
+        # "text": "Python Packaging",
         "image_dark": "logo-dark-mode.png",
         "image_light": "logo-light-mode.png",
         "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",

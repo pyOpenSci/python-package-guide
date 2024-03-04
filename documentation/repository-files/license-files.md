@@ -63,7 +63,7 @@ To select your license, we suggest that you use GitHub's
 [Choose a License tool ](https://choosealicense.com/).
 
 If you choose your license when creating a new GitHub repository, you can also
-automatically get a text copy of the license file to add to your repo. However
+automatically get a text copy of the license file to add to your repository. However
 in some cases the license that you want is not available through that online
 process.
 
@@ -118,7 +118,7 @@ They have fewer **inbound** restrictions - a GPL-3 licensed package can include 
 :::{admonition} An example of how a license determine how code can be reused
 :class: note
 
-Let's use stackOverflow as an example that highlights how a license determines how code can or can not be used.
+Let's use StackOverflow as an example that highlights how a license determines how code can or can not be used.
 
 [Stack Overflow uses a Creative Commons Share Alike license.](https://stackoverflow.com/help/licensing). The sharealike license requires you to use the same sharealike license when you reuse any code from Stack Overflow.
 
@@ -133,7 +133,7 @@ This would not be true with a GPL licensed package - `GPL-3` packages can includ
 
 While many permissive licenses do not require citation we STRONG encourage that you cite all software that you use in papers, blogs and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files). We will cover this topic when we talk about creating DOI's for your package using zenodo.
 
-<!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with zenodo (do they work??) will the citation info update with a new zenodo link
+<!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with Zenodo (do they work??) will the citation info update with a new Zenodo link
 
 These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. if it's not dynamic it could be problematic
 
