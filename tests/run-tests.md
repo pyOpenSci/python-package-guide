@@ -16,7 +16,7 @@ Python versions.
 
 
 
-### Tools to run your tests
+## Tools to run your tests
 
 There are three categories of tools that will make is easier to setup
 and run your tests in various environments:
@@ -80,7 +80,7 @@ extensions that can be used to add functionality such as:
 - [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/) allows you to analyze the code coverage of your package during your tests, and generates a report that you can [upload to codecov](https://codecov.io/).
 
 :::{todo}
-[Learn more about code coverage here.](code-cov)
+Learn more about code coverage here. (add link)
 :::
 
 ```{note}

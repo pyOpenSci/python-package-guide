@@ -328,7 +328,7 @@ resolving a Python environment more challenging. As such only
 pin dependencies to a specific version if you absolutely need to
 do so.
 
-One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
+One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](challenges-with-poetry)
 :::
 
 ### Step 5: Add PyPI classifiers to your pyproject.toml file
