@@ -1,6 +1,6 @@
 # Make your Python package PyPI ready - pyproject.toml
 
-In [the installable code lesson](2-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish a bare minimum version of your package to PyPI](publish-pypi.md).
+In [the installable code lesson](1-installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish a bare minimum version of your package to PyPI](publish-pypi.md).
 
 Following that you learned how to add a:
 * [README.md](add-readme)
@@ -76,7 +76,7 @@ build-backend = "hatchling.build"
 
 The pyproject.toml file tells your build tool:
 
-- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to chose from](build-backend-options)).
+- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to choose from](/package-structure-code/python-package-build-tools)).
 - How and where to retrieve your package's version:
     - **statically** where you declare the version `version = "0.1.0"` or
     - **dynamically** where the tool looks to the most recent tag in your history to determine the current version.
@@ -94,7 +94,7 @@ repository to quickly understand your package's structure such as:
 Finally, the pyproject.toml file is also often used to configure tools such as static type checkers (e.g. mypy) and code formatters/linters (e.g. black, ruff).
 
 :::{tip}
-Check out the [PyPA documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-pyproject-toml) if you are interested in setting build configurations for other tools.
+Check out the [PyPA documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend) if you are interested in setting build configurations for other tools.
 
 Note that some build tools may deviate in how they store project metadata. As such you may want to refer to their documentation if you decide to use a tool other than Hatch and hatchling. We have selected hatchling and hatch as our tool of choice for this tutorial as it adheres to PyPA rules and guidelines.
 
@@ -328,7 +328,7 @@ resolving a Python environment more challenging. As such only
 pin dependencies to a specific version if you absolutely need to
 do so.
 
-One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
+One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](challenges-with-poetry)
 :::
 
 ### Step 5: Add PyPI classifiers

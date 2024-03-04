@@ -227,7 +227,7 @@ Show them how to do this
 2. update the module repository directory to be the same
 :::
 
-:::{figure-md} build-workflow-tutorial
+:::{figure-md} test-pypi-search
 <img src="../images/tutorials/testpypi-search.png" alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" width="700px">
 
 Before you try to upload to test PyPI, check to see if the name of your package is already taken. You can do that using
