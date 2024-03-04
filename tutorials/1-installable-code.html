@@ -874,8 +874,10 @@ Python versions your package supports. While this won’t impact your package bu
 <li><p>Remove support for python 3.8</p></li>
 </ul>
 <p>Also because we are assuming you’re creating a pure Python package, you can remove the following classifiers:</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Programming Language :: Python :: Implementation :: CPython&quot;</span><span class="err">,</span>
-<span class="s2">&quot;Programming Language :: Python :: Implementation :: PyPy&quot;</span><span class="err">,</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="s2">&quot;Programming Language :: Python :: Implementation :: CPython&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Programming Language :: Python :: Implementation :: PyPy&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <p>Your new pyproject.toml file should now look something like this:</p>
@@ -1047,7 +1049,7 @@ into any Python environment.</p>
 <li><p>Add more metadata to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to support PyPI publication.</p></li>
 <li><p>learn how to publish to <strong>conda-forge</strong> from <strong>PyPI</strong>.</p></li>
 <li><p>Add a <a class="reference internal" href="add-readme.html"><span class="std std-doc">README file</span></a> and <a class="reference internal" href="add-license-coc.html"><span class="std std-doc">LICENSE</span></a> to your package</p></li>
-<li><p><a class="reference internal" href="#5-pyproject-toml.md"><span class="xref myst">Add more metadata to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></span></a> file to support PyPI publication.</p></li>
+<li><p><a class="reference internal" href="pyproject-toml.html"><span class="std std-doc">Add more metadata to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></span></a> file to support PyPI publication.</p></li>
 <li><p><a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">Learn how to build your package distribution</span></a> files (<strong>sdist</strong> and <strong>wheel</strong>) and publish to <strong>test PyPI</strong>.</p></li>
 <li><p>Finally you will learn how to <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">publish to <strong>conda-forge</strong></span></a> from <strong>PyPI</strong>.</p></li>
 </ul>

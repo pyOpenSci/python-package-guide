@@ -526,7 +526,7 @@ document.write(`
                   
   <section id="make-your-python-package-pypi-ready-pyproject-toml">
 <h1>Make your Python package PyPI ready - pyproject.toml<a class="headerlink" href="#make-your-python-package-pypi-ready-pyproject-toml" title="Link to this heading">#</a></h1>
-<p>In <a class="reference internal" href="#2-installable-code"><span class="xref myst">the installable code lesson</span></a>, you learned how to add the bare minimum information to a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to make it installable. You then learned how to <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publish a bare minimum version of your package to PyPI</span></a>.</p>
+<p>In <a class="reference internal" href="1-installable-code.html"><span class="doc std std-doc">the installable code lesson</span></a>, you learned how to add the bare minimum information to a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to make it installable. You then learned how to <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publish a bare minimum version of your package to PyPI</span></a>.</p>
 <p>Following that you learned how to add a:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a></p></li>
@@ -599,7 +599,7 @@ that table there are two required key/value pairs.</p>
 <h3>What is the pyproject.toml used for?<a class="headerlink" href="#what-is-the-pyproject-toml-used-for" title="Link to this heading">#</a></h3>
 <p>The pyproject.toml file tells your build tool:</p>
 <ul class="simple">
-<li><p>What build backend to use to build your package (we are using <code class="docutils literal notranslate"><span class="pre">hatchling</span></code> in this tutorial but there are <a class="reference internal" href="#build-backend-options"><span class="xref myst">many others to chose from</span></a>).</p></li>
+<li><p>What build backend to use to build your package (we are using <code class="docutils literal notranslate"><span class="pre">hatchling</span></code> in this tutorial but there are <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="doc std std-doc">many others to choose from</span></a>).</p></li>
 <li><p>How and where to retrieve your package’s version:</p>
 <ul>
 <li><p><strong>statically</strong> where you declare the version <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">&quot;0.1.0&quot;</span></code> or</p></li>
@@ -620,7 +620,7 @@ repository to quickly understand your package’s structure such as:</p>
 <p>Finally, the pyproject.toml file is also often used to configure tools such as static type checkers (e.g. mypy) and code formatters/linters (e.g. black, ruff).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Check out the <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-pyproject-toml">PyPA documentation</a> if you are interested in setting build configurations for other tools.</p>
+<p>Check out the <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend">PyPA documentation</a> if you are interested in setting build configurations for other tools.</p>
 <p>Note that some build tools may deviate in how they store project metadata. As such you may want to refer to their documentation if you decide to use a tool other than Hatch and hatchling. We have selected hatchling and hatch as our tool of choice for this tutorial as it adheres to PyPA rules and guidelines.</p>
 </div>
 </section>
@@ -815,7 +815,7 @@ A dependency pinned to a single specific version can make
 resolving a Python environment more challenging. As such only
 pin dependencies to a specific version if you absolutely need to
 do so.</p>
-<p>One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. <a class="reference internal" href="#../package-structure-code/python-package-build-tools.html#challenges-with-poetry"><span class="xref myst">Read more about how to safely add dependencies with Poetry, here.</span></a></p>
+<p>One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. <a class="reference internal" href="../package-structure-code/python-package-build-tools.html#challenges-with-poetry"><span class="std std-ref">Read more about how to safely add dependencies with Poetry, here.</span></a></p>
 </div>
 </section>
 <section id="step-5-add-pypi-classifiers">

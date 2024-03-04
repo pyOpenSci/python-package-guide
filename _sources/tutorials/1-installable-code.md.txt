@@ -414,8 +414,10 @@ Python versions your package supports. While this won't impact your package buil
 Also because we are assuming you're creating a pure Python package, you can remove the following classifiers:
 
 ```toml
+classifiers = [
 "Programming Language :: Python :: Implementation :: CPython",
 "Programming Language :: Python :: Implementation :: PyPy",
+]
 ```
 
 Your new pyproject.toml file should now look something like this:
@@ -480,7 +482,7 @@ While you can do this using hatch, we are going to use pip for this lesson, so y
 
 :::{todo}
 Add this back in when the lesson is published
-- Activate the Python environment that you wish to use. If you need help with working with virtual environments [check out this lesson](extras/1-create-environment.md).
+- Activate the Python environment that you wish to use. If you need help with working with virtual environments check out this lesson (add link).
 :::
 
 ```bash
@@ -613,12 +615,10 @@ In the upcoming lessons you will:
 * Add more metadata to your `pyproject.toml` file to support PyPI publication.
 * learn how to publish to **conda-forge** from **PyPI**.
 
-
 * Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to your package
-* [Add more metadata to your `pyproject.toml`](5-pyproject-toml.md) file to support PyPI publication.
+* [Add more metadata to your `pyproject.toml`](pyproject-toml.md) file to support PyPI publication.
 * [Learn how to build your package distribution](publish-pypi) files (**sdist** and **wheel**) and publish to **test PyPI**.
 * Finally you will learn how to [publish to **conda-forge**](publish-conda-forge) from **PyPI**.
-
 
 ## Footnotes
 

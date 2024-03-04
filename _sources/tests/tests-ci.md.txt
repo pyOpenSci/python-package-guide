@@ -6,7 +6,7 @@ CI can also be triggered for pull requests and pushes to your repository. This m
 
 ::::{todo}
 ```{note}
-[Learn more about Continuous Integration and how it can be used, here.](ci)
+Learn more about Continuous Integration and how it can be used, here. (add link)
 ```
 ::::
 

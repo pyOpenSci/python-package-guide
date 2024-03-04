@@ -196,6 +196,10 @@ Short description here using non-technical language that describes what your pac
 
 ## How to install pyosPackage
 
+:::{todo}
+- when i add more to the pyos package this can use that readme>
+:::
+
 To install this package run:
 
 `pip install pyosPackage`

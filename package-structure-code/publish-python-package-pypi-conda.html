@@ -540,10 +540,10 @@ lead to package conflicts.</p></li>
 </ul>
 <p>Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.</p>
 </div>
-<figure class="align-default" id="pypi-conda-channels">
+<figure class="align-default" id="upload-conda-forge">
 <a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#pypi-conda-channels" title="Link to this image">#</a></p>
+<p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#upload-conda-forge" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="what-is-pypi">
@@ -604,10 +604,10 @@ packages using conda, including:</p>
 </ul>
 <p><strong>conda-forge</strong> emerged as many of the scientific packages did not
 exist in the default Anaconda cloud channel.</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="pypi-conda-channels">
 <a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to pypi. and test pypi. a testbed server for you to practice." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-text">Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.</span><a class="headerlink" href="#pypi-conda-channels" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
