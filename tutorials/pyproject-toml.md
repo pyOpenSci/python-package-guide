@@ -176,7 +176,7 @@ The `description` is just a string like the other values you've set:
 # you can use """ for multiline strings like in python!
 
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 ```
@@ -202,7 +202,7 @@ There is a quirk with PyPI for authors that have names but not emails in the pyp
 
 ```toml
 maintainers = [
-    { name = "Firstname lastname", email = "email@pyopensci.org" }, 
+    { name = "Firstname lastname", email = "email@pyopensci.org" },
     { name = "Firstname lastname" }
 ]
 ```
@@ -211,7 +211,7 @@ Then we suggest that you only provide names in your list of names to ensure that
 
 ```toml
 maintainers = [
-    { name = "Firstname lastname"}, 
+    { name = "Firstname lastname"},
     { name = "Firstname lastname" }
 ]
 ```
@@ -232,7 +232,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 version = "0.1.0"
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 authors = [
@@ -280,7 +280,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 version = "0.1.0"
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 authors = [
@@ -309,7 +309,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 version = "0.1.0"
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 authors = [
@@ -347,7 +347,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 version = "0.1.0"
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 authors = [
@@ -423,7 +423,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 version = "0.1.0"
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 authors = [
@@ -473,7 +473,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 version = "0.1.0"
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 authors = [
@@ -524,7 +524,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 version = "0.1.0"
 description = """
-Tools that update the pyOpenSci contributor and review metadata 
+Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
 """
 authors = [
