@@ -167,7 +167,7 @@ Once you have your development environment setup, you are ready to build your pa
 
 You will use Hatch as a **Front end** tool that builds
 your package's sdist and wheel using the [hatchling](https://hatch.pypa.io/latest/) build back-end.
-The hatchling build back-end is used because you declared it in your pyproject.toml file in the [previous lesson](1-installable-code).
+The hatchling build back-end is used because you declared it in your pyproject.toml file in the [previous lesson](installable-code).
 
 To build your package run `hatch build`:
 
