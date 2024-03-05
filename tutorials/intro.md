@@ -36,7 +36,7 @@ Get to know Hatch <get-to-know-hatch>
 :caption: Create and publish a Python Package
 
 What is a Python package? <self>
-Make your code installable <1-installable-code>
+Make your code installable <installable-code>
 Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
 :::
@@ -346,5 +346,5 @@ The elements above are also important for future maintenance of your package. In
 In future lessons you will learn more about the infrastructure around a published Python package that makes it both easier to maintain, easier for others to contribute to and easier for other scientists to use. However, first we want to get you to your initial goal of publishing a Python package.
 
 In this next lesson you will learn how to create a basic installable Python package.
-Make your code pip installable <1-installable-code>
+Make your code pip installable <installable-code>
 :::
