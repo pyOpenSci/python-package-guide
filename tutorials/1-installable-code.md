@@ -229,10 +229,9 @@ pyospackage # This is your project directory
 
 ```
 
-## Step 2: Add code to your package
+## Step 2: Add module to your package
 
-Within the `pyospackage` subdirectory, add one or more Python modules.
-A Python module refers to a `.py` file containing the code that you want your package to access and run.
+A Python module refers to a `.py` file containing the code that you want your package to access and run. Within the `pyospackage` subdirectory, add at least one Python modules (.py files).
 
 If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file. You will
 populate the `add_numbers.py` file with code provided below.
@@ -258,7 +257,7 @@ pyospackage/
        ├── add_numbers.py
 ```
 
-## Step 3: Add code to your `add_numbers.py` module
+## Step 3. Add code to your module
 
 If you are following along and making a Python package from scratch then you can add the code below to your `add_numbers.py` module. The function below adds two integers together and returns the result. Notice that the code below has a few features that we will review in future tutorials:
 
@@ -404,14 +403,22 @@ You will learn how to automate defining a package
 version using git tags in the version and release your package lesson.
 :::
 
-### Adjust project classifiers
+### OPTIONAL: Adjust your project classifiers
 
 Hatch by default provides a list of classifiers that define what
-Python versions your package supports. While this won't impact your package build, let's remove some of them that you likely don't need.
+Python versions your package supports. These classifiers do not
+in any way impact your package's build and are primarily
+intended to be used when you publish your package to PyPI.
 
-* Remove support for python 3.8
+If you don't plan on publishing to PyPI, you can skip this section.
+However, if you wish, you can clean it up a bit.
 
-Also because we are assuming you're creating a pure Python package, you can remove the following classifiers:
+To begin:
+
+* Remove support for Python 3.8
+
+Also because you are creating a pure Python package, you can
+in this lesson, you can remove the following classifiers:
 
 ```toml
 classifiers = [
