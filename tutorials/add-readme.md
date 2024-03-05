@@ -221,11 +221,14 @@ You can also add any links to tutorials in your documentation here.
 
 ## Community
 
-Add information here about contributing to your package. Be sure to add links to your `CODE_OF_CONDUCT.md` file and your development guide. For now this section might be empty. You can go back and fill it in later.
+Add information here about contributing to your package. Be sure to add links to your
+`CODE_OF_CONDUCT.md` file and your development guide. For now this section might be
+empty. You can go back and fill it in later.
 
 ## How to cite pyosPackage
 
 citation information here
+````
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 
