@@ -403,7 +403,7 @@ You will learn how to automate defining a package
 version using git tags in the version and release your package lesson.
 :::
 
-### OPTIONAL: Adjust your project classifiers
+### OPTIONAL: Adjust project classifiers
 
 Hatch by default provides a list of classifiers that define what
 Python versions your package supports. These classifiers do not
