@@ -257,7 +257,7 @@ pyospackage/
        ├── add_numbers.py
 ```
 
-## Step 3. Add code to your module
+## Step 3: Add code to your module
 
 If you are following along and making a Python package from scratch then you can add the code below to your `add_numbers.py` module. The function below adds two integers together and returns the result. Notice that the code below has a few features that we will review in future tutorials:
 
