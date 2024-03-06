@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta property="og:title" content="Make your Python code installable" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/1-installable-code.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/installable-code.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="Your next step in our packaging tutorial series is to create a Python package that is installable both locally and remotely from a website such as GitHub (or GitLab). The package that you create in..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_1-installable-code_52362285.png" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_installable-code_52362285.png" />
 <meta property="og:image:alt" content="Your next step in our packaging tutorial series is to create a Python package that is installable both locally and remotely from a website such as GitHub (or..." />
 <meta name="description" content="Your next step in our packaging tutorial series is to create a Python package that is installable both locally and remotely from a website such as GitHub (or GitLab). The package that you create in..." />
 <meta name="twitter:card" content="summary_large_image" />
@@ -56,9 +56,9 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/1-installable-code';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/installable-code';</script>
     <script src="../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/1-installable-code.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/installable-code.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Publish your Python package to PyPI" href="publish-pypi.html" />
@@ -718,10 +718,9 @@ pyos-package
 </pre></div>
 </div>
 </section>
-<section id="step-2-add-code-to-your-package">
-<h2>Step 2: Add code to your package<a class="headerlink" href="#step-2-add-code-to-your-package" title="Link to this heading">#</a></h2>
-<p>Within the <code class="docutils literal notranslate"><span class="pre">pyospackage</span></code> subdirectory, add one or more Python modules.
-A Python module refers to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file containing the code that you want your package to access and run.</p>
+<section id="step-2-add-module-to-your-package">
+<h2>Step 2: Add module to your package<a class="headerlink" href="#step-2-add-module-to-your-package" title="Link to this heading">#</a></h2>
+<p>A Python module refers to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file containing the code that you want your package to access and run. Within the <code class="docutils literal notranslate"><span class="pre">pyospackage</span></code> subdirectory, add at least one Python modules (.py files).</p>
 <p>If you don’t have code already and are just learning how to create a Python package, then create an empty <code class="docutils literal notranslate"><span class="pre">add_numbers.py</span></code> file. You will
 populate the <code class="docutils literal notranslate"><span class="pre">add_numbers.py</span></code> file with code provided below.</p>
 <div class="tip admonition">
@@ -741,8 +740,8 @@ A package can have multiple modules<a class="footnote-reference brackets" href="
 </pre></div>
 </div>
 </section>
-<section id="step-3-add-code-to-your-add-numbers-py-module">
-<h2>Step 3: Add code to your <code class="docutils literal notranslate"><span class="pre">add_numbers.py</span></code> module<a class="headerlink" href="#step-3-add-code-to-your-add-numbers-py-module" title="Link to this heading">#</a></h2>
+<section id="step-3-add-code-to-your-module">
+<h2>Step 3: Add code to your module<a class="headerlink" href="#step-3-add-code-to-your-module" title="Link to this heading">#</a></h2>
 <p>If you are following along and making a Python package from scratch then you can add the code below to your <code class="docutils literal notranslate"><span class="pre">add_numbers.py</span></code> module. The function below adds two integers together and returns the result. Notice that the code below has a few features that we will review in future tutorials:</p>
 <ol class="arabic simple">
 <li><p>It has a <a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#numpy-docstring"><span class="std std-ref">numpy-style docstring</span></a></p></li>
@@ -866,14 +865,20 @@ file.</p>
 <span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;src/pyospackage/__about__.py&quot;</span>
 </pre></div>
 </div>
-<section id="adjust-project-classifiers">
-<h3>Adjust project classifiers<a class="headerlink" href="#adjust-project-classifiers" title="Link to this heading">#</a></h3>
+<section id="optional-adjust-project-classifiers">
+<h3>OPTIONAL: Adjust project classifiers<a class="headerlink" href="#optional-adjust-project-classifiers" title="Link to this heading">#</a></h3>
 <p>Hatch by default provides a list of classifiers that define what
-Python versions your package supports. While this won’t impact your package build, let’s remove some of them that you likely don’t need.</p>
+Python versions your package supports. These classifiers do not
+in any way impact your package’s build and are primarily
+intended to be used when you publish your package to PyPI.</p>
+<p>If you don’t plan on publishing to PyPI, you can skip this section.
+However, if you wish, you can clean it up a bit.</p>
+<p>To begin:</p>
 <ul class="simple">
-<li><p>Remove support for python 3.8</p></li>
+<li><p>Remove support for Python 3.8</p></li>
 </ul>
-<p>Also because we are assuming you’re creating a pure Python package, you can remove the following classifiers:</p>
+<p>Also because you are creating a pure Python package, you can
+in this lesson, you can remove the following classifiers:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="s2">&quot;Programming Language :: Python :: Implementation :: CPython&quot;</span><span class="p">,</span>
 <span class="s2">&quot;Programming Language :: Python :: Implementation :: PyPy&quot;</span><span class="p">,</span>
@@ -1134,10 +1139,10 @@ into any Python environment.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-create-your-python-package">Time to create your Python package!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-set-up-the-package-directory-structure">Step 1: Set Up the Package Directory Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-code-to-your-package">Step 2: Add code to your package</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-code-to-your-add-numbers-py-module">Step 3: Add code to your <code class="docutils literal notranslate"><span class="pre">add_numbers.py</span></code> module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-module-to-your-package">Step 2: Add module to your package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-code-to-your-module">Step 3: Add code to your module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modify-metadata-in-your-pyproject-toml-file">Step 4: Modify metadata in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-project-classifiers">Adjust project classifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-adjust-project-classifiers">OPTIONAL: Adjust project classifiers</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-install-your-package-locally">Step 5: Install your package locally</a><ul class="nav section-nav flex-column">
@@ -1154,7 +1159,7 @@ into any Python environment.</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/1-installable-code.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/installable-code.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -1169,7 +1174,7 @@ into any Python environment.</p>
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/tutorials/1-installable-code.md.txt">
+    <a href="../_sources/tutorials/installable-code.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
