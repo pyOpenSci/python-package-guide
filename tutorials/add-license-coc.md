@@ -62,7 +62,7 @@ There are several ways to add a LICENSE file:
 :::{tip}
 If you completed the past lessons including
 
-1. [Making your code installable](1-installable-code.md) and
+1. [Making your code installable](installable-code.md) and
 2. [publishing your package to PyPI](publish-pypi.md)
 
 then you already have a **LICENSE** file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorial which walks you through adding a CODE_OF_CONDUCT.
@@ -153,7 +153,7 @@ You can use your code of conduct as a tool that can be referenced when moderatin
 If you are unsure of what language to add to your `CODE_OF_CONDUCT`
 file, we suggest that you adopt the [contributor covenant language](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) as a starting place.
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](#)
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)
 
 The `CODE_OF_CONDUCT.md` should be placed at the root of your project directory, similar to the LICENSE file.
 

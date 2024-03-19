@@ -111,7 +111,7 @@ hatch config show will print out the contents of your config.toml file in your s
 Hatch offers a suite of features that will make creating, publishing
 and maintaining your Python package easier.
 
-:::{admonition}
+:::{admonition} Comparison to other tools
 :class: tip
 [We compared hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here](package-features)
 :::

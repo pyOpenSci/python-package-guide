@@ -3,7 +3,7 @@
 In the previous lessons you learned:
 
 1. [What a Python package is](intro.md)
-2. [How to make your code installable](1-installable-code)
+2. [How to make your code installable](installable-code)
 3. [How to publish your package to (test) PyPI](publish-pypi.md)
 4. [How to publish your package to conda-forge](publish-conda-forge.md)
 
@@ -196,6 +196,10 @@ Short description here using non-technical language that describes what your pac
 
 ## How to install pyosPackage
 
+:::{todo}
+- when i add more to the pyos package this can use that readme>
+:::
+
 To install this package run:
 
 `pip install pyosPackage`
@@ -217,11 +221,14 @@ You can also add any links to tutorials in your documentation here.
 
 ## Community
 
-Add information here about contributing to your package. Be sure to add links to your `CODE_OF_CONDUCT.md` file and your development guide. For now this section might be empty. You can go back and fill it in later.
+Add information here about contributing to your package. Be sure to add links to your
+`CODE_OF_CONDUCT.md` file and your development guide. For now this section might be
+empty. You can go back and fill it in later.
 
 ## How to cite pyosPackage
 
 citation information here
+````
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 
