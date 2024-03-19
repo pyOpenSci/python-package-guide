@@ -167,7 +167,7 @@ Learn about best practices for:
 :class-card: left-aligned
 
 * [Writing a README file](/documentation/repository-files/readme-file-best-practices)
-* [Set norms with a Code of Conduct](/documentation/repository-files/code-of-conduct)
+* [Set norms with a Code of Conduct](/documentation/repository-files/code-of-conduct-file)
 * [License your package](/documentation/repository-files/license-files)
 :::
 ::::
