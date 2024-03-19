@@ -167,7 +167,7 @@ Once you have your development environment setup, you are ready to build your pa
 
 You will use Hatch as a **Front end** tool that builds
 your package's sdist and wheel using the [hatchling](https://hatch.pypa.io/latest/) build back-end.
-The hatchling build back-end is used because you declared it in your pyproject.toml file in the [previous lesson](1-installable-code).
+The hatchling build back-end is used because you declared it in your pyproject.toml file in the [previous lesson](installable-code).
 
 To build your package run `hatch build`:
 
@@ -227,7 +227,7 @@ Show them how to do this
 2. update the module repository directory to be the same
 :::
 
-:::{figure-md} build-workflow-tutorial
+:::{figure-md} test-pypi-search
 <img src="../images/tutorials/testpypi-search.png" alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" width="700px">
 
 Before you try to upload to test PyPI, check to see if the name of your package is already taken. You can do that using

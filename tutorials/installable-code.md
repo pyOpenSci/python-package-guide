@@ -229,10 +229,9 @@ pyospackage # This is your project directory
 
 ```
 
-## Step 2: Add code to your package
+## Step 2: Add module to your package
 
-Within the `pyospackage` subdirectory, add one or more Python modules.
-A Python module refers to a `.py` file containing the code that you want your package to access and run.
+A Python module refers to a `.py` file containing the code that you want your package to access and run. Within the `pyospackage` subdirectory, add at least one Python modules (.py files).
 
 If you don't have code already and are just learning how to create a Python package, then create an empty `add_numbers.py` file. You will
 populate the `add_numbers.py` file with code provided below.
@@ -258,7 +257,7 @@ pyospackage/
        ├── add_numbers.py
 ```
 
-## Step 3. Add code to your `add_numbers.py` module
+## Step 3: Add code to your module
 
 If you are following along and making a Python package from scratch then you can add the code below to your `add_numbers.py` module. The function below adds two integers together and returns the result. Notice that the code below has a few features that we will review in future tutorials:
 
@@ -298,7 +297,7 @@ def add_num(a: int, b: int) -> int:
     return a + b
 ```
 
-## Step 4. Modify metadata in your `pyproject.toml` file
+## Step 4: Modify metadata in your `pyproject.toml` file
 
 Next, you will modify some of the metadata (information) that
 Hatch adds to your `pyproject.toml` file. You are
@@ -404,18 +403,28 @@ You will learn how to automate defining a package
 version using git tags in the version and release your package lesson.
 :::
 
-### Step 3: Adjust your project classifiers
+### OPTIONAL: Adjust project classifiers
 
 Hatch by default provides a list of classifiers that define what
-Python versions your package supports. While this won't impact your package build, let's remove some of them that you likely don't need.
+Python versions your package supports. These classifiers do not
+in any way impact your package's build and are primarily
+intended to be used when you publish your package to PyPI.
 
-* Remove support for python 3.8
+If you don't plan on publishing to PyPI, you can skip this section.
+However, if you wish, you can clean it up a bit.
 
-Also because we are assuming you're creating a pure Python package, you can remove the following classifiers:
+To begin:
+
+* Remove support for Python 3.8
+
+Also because you are creating a pure Python package, you can
+in this lesson, you can remove the following classifiers:
 
 ```toml
+classifiers = [
 "Programming Language :: Python :: Implementation :: CPython",
 "Programming Language :: Python :: Implementation :: PyPy",
+]
 ```
 
 Your new pyproject.toml file should now look something like this:
@@ -462,7 +471,7 @@ Once you have your project metadata in the pyproject.toml file, you will
 rarely update it. In the next lesson you’ll add more metadata and structure to this file.
 :::
 
-## Step 5. Install your package locally
+## Step 5: Install your package locally
 
 At this point you should have:
 
@@ -480,7 +489,7 @@ While you can do this using hatch, we are going to use pip for this lesson, so y
 
 :::{todo}
 Add this back in when the lesson is published
-- Activate the Python environment that you wish to use. If you need help with working with virtual environments [check out this lesson](extras/1-create-environment.md).
+- Activate the Python environment that you wish to use. If you need help with working with virtual environments check out this lesson (add link).
 :::
 
 ```bash
@@ -562,7 +571,7 @@ pyosPackage                   0.1.0          /Users/yourusername/path/here/pyosP
 ...
 ```
 
-## 6. Test out your new package
+## Step 6: Test out your new package
 
 After installing your package, type “python” at the command prompt in your chosen terminal to start
 a Python session in your active Python environment.
@@ -613,12 +622,10 @@ In the upcoming lessons you will:
 * Add more metadata to your `pyproject.toml` file to support PyPI publication.
 * learn how to publish to **conda-forge** from **PyPI**.
 
-
 * Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to your package
-* [Add more metadata to your `pyproject.toml`](5-pyproject-toml.md) file to support PyPI publication.
+* [Add more metadata to your `pyproject.toml`](pyproject-toml.md) file to support PyPI publication.
 * [Learn how to build your package distribution](publish-pypi) files (**sdist** and **wheel**) and publish to **test PyPI**.
 * Finally you will learn how to [publish to **conda-forge**](publish-conda-forge) from **PyPI**.
-
 
 ## Footnotes
 

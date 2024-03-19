@@ -403,6 +403,7 @@ Build your sdist and wheel distributions|✅|Poetry will build your sdist and wh
 
 <!-- TODO: responses here on poetry's future dev work: https://github.com/python-poetry/poetry/discussions/7525 -->
 
+(challenges-with-poetry)=
 ### Challenges with Poetry
 
 Some challenges of Poetry include:

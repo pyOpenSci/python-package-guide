@@ -19,7 +19,7 @@ Below you will learn more specifics about the differences between PyPI and conda
 :::
 
 
-:::{figure-md} pypi-conda-channels
+:::{figure-md} upload-conda-forge
 
 <img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 

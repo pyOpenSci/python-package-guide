@@ -2,7 +2,7 @@
 
 In the previous lessons, you've learned:
 
-1. How to [create the most basic version of a Python package](1-installable-code.md). This entailed making your code installable.
+1. How to [create the most basic version of a Python package](installable-code.md). This entailed making your code installable.
 2. [How to publish your Python package to PyPI](publish-pypi)
 3. How to add a `README` and `LICENSE` file to your package
 4. How to setup your `pyproject.toml` file with all of the metadata that PyPI requires and also metadata that will be helpful for users to find your package.
@@ -372,10 +372,6 @@ Below we break down each element of that list.
 >
 > -[x] Package does not ship static libraries. If static libraries are needed, [follow CFEP-18](https://github.com/conda-forge/cfep/blob/main/cfep-18.md).
 
-:::{note}
-
-:::
-
 **Translation:** A static library refers to a copy of a package built into your package. If your package is a pure Python package, then you can check that your package does not ship static libraries as this does not apply to you.
 
 The pyOpenSci tutorials are all pure Python and as such do not use static libraries in a linked or shipped (included in the package distribution) format.
@@ -468,7 +464,7 @@ Review the pull request. If all tests are passing, you can merge it. Shortly aft
 If you have walked through this entire tutorial series you have now:
 
 1. Understand [what a Python package is ](intro.md)
-2. Know how to [make your code installable](1-installable-code.md) into Python environments
+2. Know how to [make your code installable](installable-code.md) into Python environments
 3. Know how to create a pyproject.toml file, a README file, and a License and code of conduct.
 4. Know how to [publish your package to PyPI](publish-pypi.md) and
 5. Know how to publish your package to conda-forge
