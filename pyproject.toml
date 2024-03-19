@@ -1,8 +1,13 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
 [project]
 name = "python-package-guide"
-
-[project.optional.dependencies]
-dev = [
+dynamic = [
+    "version"
+]
+dependencies = [
     "pydata-sphinx-theme==0.15.1",
     "myst-nb",
     "sphinx",
@@ -17,7 +22,13 @@ dev = [
     "sphinx-inline-tabs",
     # for project cards
     "matplotlib"
-    ]
+]
+
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
+
+[tool.hatch]
+version.source = "vcs"
 
 
 # https://github.com/codespell-project/codespell#usage
