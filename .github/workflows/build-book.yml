@@ -42,7 +42,7 @@ jobs:
       run: python3 -m pip install nox
 
     - name: Build book
-      run: nox -s docs
+      run: nox -s docs-test
 
     # Save html as artifact
     - name: Save book html as artifact for viewing

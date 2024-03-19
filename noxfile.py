@@ -16,6 +16,17 @@ def docs(session):
     cmd.extend(build_command + session.posargs)
     session.run(*cmd)
 
+@nox.session(name="docs-test")
+def docs_test(session):
+    """
+    Same as `docs`, but rebuild everything and fail on warnings for testing
+    """
+    session.install("-r", "requirements.txt")
+    cmd = ["sphinx-build"]
+    cmd.extend(['-W', '--keep-going', '-E', '-a'])
+    cmd.extend(build_command + session.posargs)
+    session.run(*cmd)
+
 
 @nox.session(name="docs-live")
 def docs_live(session):
