@@ -71,7 +71,7 @@ by the community now! Join our community review process or watch development of 
 :class-card: left-aligned
 
 * [What is a Python package?](/tutorials/intro)
-* [Make your code installable](/tutorials/1-installable-code)
+* [Make your code installable](/tutorials/installable-code)
 * [Publish your package to (test) PyPi](/tutorials/publish-pypi)
 * [Publish your package to conda-forge](/tutorials/publish-conda-forge)
 
