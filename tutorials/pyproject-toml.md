@@ -351,7 +351,9 @@ Code changes over time, bugs are fixed, APIs change, and so it's good to be clea
 [Learn more about various ways to specify ranges of package versions here.](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
 
 The most common version specifier is a **lower bound,** allowing any version higher than the specified version.
-Ideally you should set this to the lowest version that is still compatible with your package, but in practice for new packages this is often set at the version that was current at the time the package was written.
+Ideally you should set this to the lowest version that is still compatible with your package, but in practice for new packages this is often set at the version that was current at the time the package was written[^lowerbound].
+
+[^lowerbound]: 
 
 Lower bounds look like this:
 
@@ -421,7 +423,7 @@ pydantic>=1.10,<2
 pydantic^1.10
 ```
 
-One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](../package-structure-code/python-package-build-tools.html#challenges-with-poetry)
+One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](challenges-with-poetry)
 :::
 
 ### Step 5: Add PyPI classifiers
