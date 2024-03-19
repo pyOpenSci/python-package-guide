@@ -297,10 +297,10 @@ license = {file = "LICENSE"}
 ### Step 3: Specify Python version with `requires-python`
 
 Add the `requires-python` field to your `pyproject.toml` `[project]` table.
-The `requires-python` field, helps pip understand which versions of Python that you package supports when it's installed.
-It is thus a single value.
-`requires-python` supports the dependency specification syntax discussed in the next section - typically this will be
-a lower bound specifying the oldest version of python that can run your package, but you may also need to specify an upper bound in some more advanced cases.
+The `requires-python` field helps pip identify which Python versions that your package supports.
+It is set to a single value.
+The [packaging specification](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python) defines`requires-python` as a string that uses version specifiers. Most projects will specify the oldest Python version supported by the package. In some advanced cases, an upper bound is set to indicate which future Python versions, if any, will be supported.
+
 
 {emphasize-lines="22"}
 ```toml
@@ -344,8 +344,8 @@ dependencies are added in an array (similar to a Python list) structure.
 dependencies = ["numpy", "requests", "pandas", "pydantic"]
 ```
 
-Dependencies can, and usually should come with a **version specifier.**
-A plain dependency says that your package can work with any version of that dependent package.
+A dependency can be limited to specific versions using a **version specifier.**
+If the dependency has no version specifier after the dependency name, your package can use any version of the dependent package.
 Code changes over time, bugs are fixed, APIs change, and so it's good to be clear about which version of the dependency you wrote your code to be compatible with - a package you wrote this year probably isn't compatible with numpy v0.0.1!
 
 [Learn more about various ways to specify ranges of package versions here.](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
@@ -359,7 +359,7 @@ Lower bounds look like this:
 dependencies = [ "numpy>=1.0" ]
 ```
 
-You can combine specifiers with commas, and use different kinds of specifiers for each package in your `dependencies` section:
+Commas are used to separate individual dependencies, and each package in your `dependencies` section can use different types of version specifiers:
 
 ```toml
 dependencies = [
@@ -401,7 +401,7 @@ dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 ```
 
 :::{admonition} Pin dependencies with caution
-"Pinning" dependencies refers to specifying a specific version of a dependency like this:
+"Pinning" a dependency means setting it to a specific version, like this:
 
 `numpy == 1.0`.
 
