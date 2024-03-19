@@ -353,7 +353,7 @@ Code changes over time, bugs are fixed, APIs change, and so it's good to be clea
 The most common version specifier is a **lower bound,** allowing any version higher than the specified version.
 Ideally you should set this to the lowest version that is still compatible with your package, but in practice for new packages this is often set at the version that was current at the time the package was written[^lowerbound].
 
-[^lowerbound]: 
+[^lowerbound]:
 
 Lower bounds look like this:
 
