@@ -61,6 +61,7 @@ myst_enable_extensions = [
     "attrs_block",
 ]
 myst_heading_anchors = 3
+myst_footnote_transition = False
 
 # Sphinx_favicon is used now in favor of built in support
 # https://pypi.org/project/sphinx-favicon/
