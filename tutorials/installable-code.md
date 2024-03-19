@@ -587,7 +587,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 3
 ```
 
+
 :::{admonition} Installing packages from GitHub
+
 If you wish to share your code without publishing to PyPI you can
 always install packages directly from GitHub using the syntax:
 

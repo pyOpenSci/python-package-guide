@@ -170,11 +170,11 @@ The `CODE_OF_CONDUCT.md` should be placed at the root of your project directory,
 That's it - you've now added a code of conduct to your package directory.
 
 :::{admonition} Additional Code of Conduct resources
+:class: note
 
 - [<i class="fa-brands fa-github"></i> Guide: `CODE_OF_CONDUCT.md` files](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)
 - [pyOpenSci package guide `CODE_OF_CONDUCT.md` overview](https://www.pyopensci.org/python-package-guide/documentation/repository-files/code-of-conduct-file.html)
 :::
-
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 
