@@ -1,6 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-45-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-46-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -132,6 +132,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/h-vetinari"><img src="https://avatars.githubusercontent.com/u/33685575?v=4?s=100" width="100px;" alt="h-vetinari"/><br /><sub><b>h-vetinari</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=h-vetinari" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ah-vetinari" title="Reviewed Pull Requests">👀</a> <a href="#tutorial-h-vetinari" title="Tutorials">✅</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://xmnlab.github.io"><img src="https://avatars.githubusercontent.com/u/5209757?v=4?s=100" width="100px;" alt="Ivan Ogasawara"/><br /><sub><b>Ivan Ogasawara</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=xmnlab" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Axmnlab" title="Reviewed Pull Requests">👀</a> <a href="#tutorial-xmnlab" title="Tutorials">✅</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/tomalrussell"><img src="https://avatars.githubusercontent.com/u/2762769?v=4?s=100" width="100px;" alt="Tom Russell"/><br /><sub><b>Tom Russell</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=tomalrussell" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Atomalrussell" title="Reviewed Pull Requests">👀</a> <a href="#tutorial-tomalrussell" title="Tutorials">✅</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://ivory.idyll.org/blog/"><img src="https://avatars.githubusercontent.com/u/51016?v=4?s=100" width="100px;" alt="C. Titus Brown"/><br /><sub><b>C. Titus Brown</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=ctb" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Actb" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
