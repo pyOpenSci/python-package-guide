@@ -1,3 +1,6 @@
+---
+orphan: true
+---
 # Contributing Guide for the Python open source software packaging book
 
 This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide.
