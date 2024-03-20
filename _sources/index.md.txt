@@ -56,10 +56,9 @@ Community docs
 
 Publish your docs
 ```
-## _new_ Tutorial Series
+## _new_ Tutorial Series: Create a Python Package
 
-The how to create a Python package tutorial series is being developed
-by the community now! Join our community review process or watch development of these tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
+The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
 
 
 :::::{grid} 1 1 2 2
@@ -100,7 +99,7 @@ by the community now! Join our community review process or watch development of 
 :::::
 
 
-## Packaging
+## Python Packaging for Scientists
 
 Learn about Python packaging best practices. You will also get to know the
 the vibrant ecosystem of packaging tools that are available to help you with your Python packaging needs.
