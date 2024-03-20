@@ -561,10 +561,10 @@ can be used to install tools from the different channels within the Anaconda Clo
 <p>You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. In the case of the Anaconda cloud channels, some of these channels such as the default channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the default channel. However, the conda-forge (and bioconda) channel are community-managed channels.
 Anyone can submit a package to these channels however they must pass a technical review in the <a class="reference external" href="https://github.com/conda-forge/staged-recipes">staged-recipes GitHub repository</a> to be published.</p>
 <p><a class="reference internal" href="../package-structure-code/publish-python-package-pypi-conda.html#about-conda"><span class="std std-ref">Learn more about conda channels here.</span></a></p>
-<figure class="align-default" id="pypi-conda-channels">
+<figure class="align-default" id="pypi-conda-channels-2">
 <a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the Anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI and test PyPI (a testbed server for you to practice)." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.</span><a class="headerlink" href="#pypi-conda-channels" title="Link to this image">#</a></p>
+<p><span class="caption-text">Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.</span><a class="headerlink" href="#pypi-conda-channels-2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -727,20 +727,20 @@ example<span class="w">         </span>pyospackage
 <p>At the very bottom of the grayskull output, it will also tell you
 where it saved the recipe file.</p>
 <p>Open the meta.yaml file. The finished <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file that grayskull creates should look like the example below:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span><span class="err">%</span><span class="w"> </span><span class="nv">set name = &quot;pyospackage&quot; %</span><span class="p p-Indicator">}</span>
-<span class="p p-Indicator">{</span><span class="err">%</span><span class="w"> </span><span class="nv">set version = &quot;0.1.8&quot; %</span><span class="p p-Indicator">}</span>
+<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">set</span> <span class="nv">name</span> <span class="o">=</span> <span class="s2">&quot;pyospackage&quot;</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">set</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.8&quot;</span> <span class="cp">%}</span>
 
 <span class="nt">package</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">name|lower</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">version</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="cp">{{</span> <span class="nv">name</span><span class="o">|</span><span class="nf">lower</span> <span class="cp">}}</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span>
 
 <span class="nt">source</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ version }}.tar.gz</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/</span><span class="cp">{{</span> <span class="nv">name</span><span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/pyospackage-</span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">.tar.gz</span>
 <span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">43ec82da3a10752a5dbf2f0ef742e357803a3ddb400005f87e86534685bfb8a7</span>
 
 <span class="nt">build</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">noarch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">PYTHON</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-m pip install . -vv --no-deps --no-build-isolation</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="cp">{{</span> <span class="nv">PYTHON</span> <span class="cp">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-m pip install . -vv --no-deps --no-build-isolation</span>
 <span class="w">  </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 
 <span class="nt">requirements</span><span class="p">:</span>
@@ -912,10 +912,10 @@ build:
 </div>
 </div>
 </details><p>Once you create your pull request, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.</p>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="conda-forge-pr-build">
 <a class="reference internal image-reference" href="../_images/conda-forge-staged-recipes-ci.png"><img alt="Image showing the 5 CI tasks that will run against your package in the GitHub interface after you'ce created a pull request." src="../_images/conda-forge-staged-recipes-ci.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Wait until all of the CI steps in your pull request have run. At that point your pull request is ready for review by a conda-forge maintainer.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text">Wait until all of the CI steps in your pull request have run. At that point your pull request is ready for review by a conda-forge maintainer.</span><a class="headerlink" href="#conda-forge-pr-build" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In some cases getting all of the checks to run successfully in CI might take a bit of work. If you are struggling to get your recipe to build properly, you can ping the conda-forge maintainer team for help.</p>
@@ -955,7 +955,6 @@ We cover that next.</p>
 </section>
 <section id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
-<hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="grayskull" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
