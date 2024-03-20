@@ -11,7 +11,7 @@ build_command = ["-b", "html", ".", docs_dir]
 
 @nox.session
 def docs(session):
-    session.install("-r", "requirements.txt")
+    session.install("-e", ".")
     cmd = ["sphinx-build"]
     cmd.extend(build_command + session.posargs)
     session.run(*cmd)
@@ -30,7 +30,7 @@ def docs_test(session):
 
 @nox.session(name="docs-live")
 def docs_live(session):
-    session.install("-r", "requirements.txt")
+    session.install("-e", ".")
 
     AUTOBUILD_IGNORE = [
         "_build",
