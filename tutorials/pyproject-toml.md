@@ -407,7 +407,7 @@ dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
 `numpy == 1.0`.
 
-Unless you are building an application, you want to be cautious about pinning dependencies to precise versions.
+If you are building a library package that other developers will depend upon, you must be cautious before pinning to a precise dependency version. Applications, such as production websites, will often pin their dependencies since other packages will not depend on their project.
 This is because
 users will be installing your package into various environments.
 A dependency pinned to a single specific version can make
