@@ -52,8 +52,8 @@ These are licenses that require that anyone that uses your work redistributes it
 In other words, copyleft licenses prohibit someone taking your work, making a proprietary version of it, and redistributing it without providing the source code so others can do the same.
 Copyleft licenses are "sticky" in that they are designed to ensure that more free software is created.
 
-The difference between copyleft vs. permissive licenses is an important cultural divide in free and open source software (e.g., see {footcite}`hunterReclaimingComputingCommons2016`, {footcite}`gnuprojectWhatFreeSoftware2019`, {footcite}`gnuprojectWhatCopyleft2022`),
-that you should be aware of when choosing your license - the lineage of copyleft represents the "free" part of "free and open source software".
+The difference between copyleft and permissive licenses is an important cultural divide in free and open source software (e.g., see {footcite}`hunterReclaimingComputingCommons2016`, {footcite}`gnuprojectWhatFreeSoftware2019`, {footcite}`gnuprojectWhatCopyleft2022`).
+It is important to understand this difference when choosing your license. Copyleft licenses represents the "free" part of "free and open source software".
 Free and open source software is intrinsically political, and it is important to be aware of power dynamics in computing as well as the practical problems of license compatibility (discussed below).
 :::
 
@@ -123,7 +123,7 @@ Let's use StackOverflow as an example that highlights how a license determines h
 [Stack Overflow uses a Creative Commons Share Alike license.](https://stackoverflow.com/help/licensing). The sharealike license requires you to use the same sharealike license when you reuse any code from Stack Overflow.
 
 This means that from a legal perspective, if you copy code from the Stack Overflow website and use it in your package that is licensed differently, say with a MIT license, you are violating Stack Overflow's license requirements!
-This would not be true with a GPL licensed package - `GPL-3` packages can include code licensed by `CC-BY-SA` {footcite}`creativecommonsShareAlikeCompatibilityGPLv32015`.
+This would not be true with a GPL licensed package. `GPL-3` packages can include code licensed by `CC-BY-SA` {footcite}`creativecommonsShareAlikeCompatibilityGPLv32015`.
 
 🚨 Proceed with caution! 🚨
 :::
