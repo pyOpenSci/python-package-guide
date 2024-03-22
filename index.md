@@ -56,10 +56,9 @@ Community docs
 
 Publish your docs
 ```
-## _new_ Tutorial Series: How to Create a Python Package
+## _new_ Tutorial Series: Create a Python Package
 
-The how to create a Python package tutorial series is being developed
-by the community now! Join our community review process or watch development of these tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
+The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
 
 
 :::::{grid} 1 1 2 2
@@ -100,7 +99,7 @@ by the community now! Join our community review process or watch development of 
 :::::
 
 
-## Python packaging ecosystem overview & best practices
+## Python Packaging for Scientists
 
 Learn about Python packaging best practices. You will also get to know the
 the vibrant ecosystem of packaging tools that are available to help you with your Python packaging needs.
@@ -135,17 +134,63 @@ Learn about best practices for:
 
 :::
 ::::
+:::::
 
+## Documentation
+
+:::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
 
 ::::{grid-item}
-:::{card} ✨ Write & Publish Docs ✨
+:::{card} ✨ Write The Docs ✨
 :class-card: left-aligned
 
 * [Create documentation for your users](/documentation/write-user-documentation/intro)
 * [Core files to include in your package repository](/documentation/repository-files/intro)
-* [How to publish your docs](/documentation/hosting-tools/intro)
+* [Write tutorials to show how your package is used](/documentation/write-user-documentation/create-package-tutorials)
 :::
 ::::
+
+::::{grid-item}
+:::{card} ✨ Developer Docs ✨
+:class-card: left-aligned
+
+* [Create documentation for collaborating developers](/documentation/repository-files/contributing-file)
+* [Write a development guide](/documentation/repository-files/development-guide)
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Document For A Community ✨
+:class-card: left-aligned
+
+* [Writing a README file](/documentation/repository-files/readme-file-best-practices)
+* [Set norms with a Code of Conduct](/documentation/repository-files/code-of-conduct-file)
+* [License your package](/documentation/repository-files/license-files)
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Publish Your Docs ✨
+:class-card: left-aligned
+
+* [How to publish your docs](/documentation/hosting-tools/intro)
+* [Using Sphinx](/documentation/hosting-tools/intro)
+* [Markdown, MyST, and ReST](/documentation/hosting-tools/myst-markdown-rst-doc-syntax)
+* [Host your docs on Read The Docs or Github Pages](/documentation/hosting-tools/publish-documentation-online)
+:::
+::::
+
+:::::
+
+## Tests
+
+*We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)*
+
+:::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
 
 ::::{grid-item}
 :::{card} ✨ Tests for your Python package ✨
@@ -154,12 +199,25 @@ Learn about best practices for:
 * [Intro to testing](tests/index.md)
 * [Write tests](tests/write-tests)
 * [Types of tests](tests/test-types)
-* [Run tests locally](tests/run-tests)
-* [Run tests in CI](tests/tests-ci)
-
-*We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)*
 :::
 ::::
+
+::::{grid-item}
+:::{card} ✨ Run your tests ✨
+:class-card: left-aligned
+
+* [Run tests locally](tests/run-tests)
+* [Run tests in CI](tests/tests-ci)
+:::
+::::
+:::::
+
+## Contributing
+
+:::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
+
 
 ::::{grid-item}
 :::{card} ✨ Code style & Format ✨
@@ -228,20 +286,19 @@ This is a living guide that is updated as tools and best practices evolve in the
 Tutorials  <tutorials/intro>
 ```
 
+```{toctree}
+:hidden:
+:caption: Packaging
+
+Packaging <package-structure-code/intro>
+
+```
 
 ```{toctree}
 :hidden:
 :caption: Documentation
 
 Documentation <documentation/index>
-
-```
-
-```{toctree}
-:hidden:
-:caption: Packaging
-
-Packaging <package-structure-code/intro>
 
 ```
 

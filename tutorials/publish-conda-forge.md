@@ -44,7 +44,7 @@ Anyone can submit a package to these channels however they must pass a technical
 
 [Learn more about conda channels here.](#about-conda)
 
-:::{figure-md} pypi-conda-channels
+:::{figure-md} pypi-conda-channels-2
 
 <img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the Anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI and test PyPI (a testbed server for you to practice)." width="700px">
 
@@ -228,7 +228,7 @@ where it saved the recipe file.
 
 Open the meta.yaml file. The finished `meta.yaml` file that grayskull creates should look like the example below:
 
-```yaml
+```yaml+jinja
 {% set name = "pyospackage" %}
 {% set version = "0.1.8" %}
 
@@ -421,7 +421,7 @@ This is also why we don't suggest you publish to conda-forge as a practice run.
 
 Once you create your pull request, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.
 
-:::{figure-md} pypi-conda-channels
+:::{figure-md} conda-forge-pr-build
 
 <img src="../images/conda-forge-staged-recipes-ci.png" alt="Image showing the 5 CI tasks that will run against your package in the GitHub interface after you'ce created a pull request. " width="700px">
 
