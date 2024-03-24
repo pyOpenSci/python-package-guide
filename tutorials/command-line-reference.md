@@ -3,7 +3,7 @@
 ```{important}
 **What these tables are:** These tables summarize the command line inputs (e.g., `pipx install hatch`,  `hatch build`) necessary to complete all steps in the package creation process, from installing Hatch to publishing the package on PyPI and conda-forge.
 
-**What these tables are not:** These tables do not cover the manual/non-automated steps (e.g., update `pyproject.toml` file, create PyPI account, create PyPI API token) you have to complete throughout the package creation process.
+**What these tables are not:** These tables do not cover the manual/non-automated steps (create PyPI account, create PyPI API token) you have to complete throughout the package creation process.
 ```
 
 ## Environment Setup
@@ -18,7 +18,7 @@
 | Install Scoop | `Invoke-RestMethod -Uri https://get.scoop.sh \| Invoke-Expression` |
 | Add "main" bucket as download source | `scoop bucket add main` |
 | Add "versions" bucket as download source | `scoop bucket add versions` |
-| Install pipx | `scoop install pipx`or `scoop install main/pipx` |
+| Install pipx | `scoop install pipx` or `scoop install main/pipx` |
 | Install python | `scoop install python` or `scoop install main/python` |
 | Install specific python version | `scoop install versions/python311` |
 | Update PATH variable with pipx directory | `pipx ensurepath` |
