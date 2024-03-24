@@ -50,6 +50,13 @@ Add a license & code of conduct <add-license-coc>
 Update metadata in pyproject.toml <pyproject-toml>
 :::
 
+:::{toctree}
+:hidden:
+:caption: Reference Guides
+
+Command Line Reference Guide <command-line-reference>
+:::
+
 :::{admonition} Learning Objectives
 
 This lesson introduces you to the basic components of a Python package.
