@@ -3,7 +3,7 @@
 ```{important}
 **What these tables are:** These tables summarize the command line inputs (e.g., `pipx install hatch`,  `hatch build`) necessary to complete all steps in the package creation process, from installing Hatch to publishing the package on PyPI and conda-forge.
 
-**What these tables are not:** These tables do not cover the manual/non-automated steps (create PyPI account, create PyPI API token) you have to complete throughout the package creation process.
+**What these tables are not:** These tables do not cover the manual/non-automated steps (e.g., create PyPI account, create PyPI API token) you have to complete throughout the package creation process.
 ```
 
 ## Environment Setup
