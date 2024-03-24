@@ -97,6 +97,15 @@ by the community now! Join our community review process or watch development of 
 :::
 ::::
 
+::::{grid-item}
+:::{card} ✿ Reference Guides ✿
+:class-card: left-aligned
+
+* [Command Line Reference Guide](/tutorials/command-line-reference)
+
+:::
+::::
+
 :::::
 
 
