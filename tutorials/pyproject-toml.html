@@ -618,12 +618,12 @@ repository to quickly understand your package’s structure such as:</p>
 <h3>How is pyproject.toml metadata used?<a class="headerlink" href="#how-is-pyproject-toml-metadata-used" title="Link to this heading">#</a></h3>
 <p>The pyproject.toml file is the file that your build tool uses to populate
 a <code class="docutils literal notranslate"><span class="pre">METADATA</span></code> that is included in your Python distribution files that get published to PyPI. This <code class="docutils literal notranslate"><span class="pre">METADATA</span></code> file is then used by PyPI to populate your package’s PyPI landing page and help users filter through the tens of thousands of packages published there.</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" /></a>
 <figcaption>
 <p><span class="caption-text">When you add the classifier section to your pyproject.toml
 and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
-represent on your PyPI landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+represent on your PyPI landing page. These classifiers also allow users to sort through packages by version of python they support, categories and more.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition tip">
@@ -788,7 +788,10 @@ links following the example below.</p>
 </section>
 <section id="step-3-specify-python-version-with-requires-python">
 <h3>Step 3: Specify Python version with <code class="docutils literal notranslate"><span class="pre">requires-python</span></code><a class="headerlink" href="#step-3-specify-python-version-with-requires-python" title="Link to this heading">#</a></h3>
-<p>Finally, add the <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table. The <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field, helps pip understand the lowest version of Python that you package supports when it’s installed. It is thus a single value.</p>
+<p>Add the <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table.
+The <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field helps pip identify which Python versions that your package supports.
+It is set to a single value.
+The <a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python">packaging specification</a> defines<code class="docutils literal notranslate"><span class="pre">requires-python</span></code> as a string that uses version specifiers. Most projects will specify the oldest Python version supported by the package. In some advanced cases, an upper bound is set to indicate which future Python versions, if any, will be supported.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
 <span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
@@ -823,6 +826,29 @@ The <code class="docutils literal notranslate"><span class="pre">dependencies</s
 </pre></div>
 </div>
 <p>dependencies are added in an array (similar to a Python list) structure.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>A dependency can be limited to specific versions using a <strong>version specifier.</strong>
+If the dependency has no version specifier after the dependency name, your package can use any version of the dependent package.
+Code changes over time, bugs are fixed, APIs change, and so it’s good to be clear about which version of the dependency you wrote your code to be compatible with - a package you wrote this year probably isn’t compatible with numpy v0.0.1!</p>
+<p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/version-specifiers/#id5">Learn more about various ways to specify ranges of package versions here.</a></p>
+<p>The most common version specifier is a <strong>lower bound,</strong> allowing any version higher than the specified version.
+Ideally you should set this to the lowest version that is still compatible with your package, but in practice for new packages this is often set at the version that was current at the time the package was written<a class="footnote-reference brackets" href="#lowerbound" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>Lower bounds look like this:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="w"> </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Commas are used to separate individual dependencies, and each package in your <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section can use different types of version specifiers:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w">      </span><span class="c1"># Greater than or equal to 1.0</span>
+<span class="w">  </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># Exactly 10.1</span>
+<span class="w">  </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># Any version</span>
+<span class="w">  </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="w"> </span><span class="c1"># Greater than or equal to 1.7, but less than 2</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file will now look like this:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
 <span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
@@ -846,24 +872,26 @@ The <code class="docutils literal notranslate"><span class="pre">dependencies</s
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
-<span class="hll"><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&quot;</span><span class="p">]</span>
+<span class="hll"><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
 </span></pre></div>
 </div>
 <div class="admonition-pin-dependencies-with-caution admonition">
 <p class="admonition-title">Pin dependencies with caution</p>
-<p>Pinning dependencies refers to specifying a specific version of a dependency like this <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">==</span> <span class="pre">1.0</span></code>. In some specific cases, you may chose to pin a package version for a specific package dependency.</p>
-<p>Declaring lower bounds involves ensuring that a user has at least a specific version (or greater) of a package installed. This is important as often your package is not backwards compatible with an older version of a tool - for example a version of Pandas that was released 5 years ago.</p>
-<p>You can declare a lower bound using syntax like this:</p>
-<p><code class="docutils literal notranslate"><span class="pre">ruamel-yaml&gt;=0.17.21</span></code></p>
-<p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/version-specifiers/#id5">Learn more about various ways to specify ranges of package versions here.</a></p>
-<p>Note that unless you are building an application, you want to be cautious about pinning dependencies to precise versions. For example:</p>
-<p><code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">==</span> <span class="pre">1.0.2</span></code></p>
-<p>This is because
+<p>“Pinning” a dependency means setting it to a specific version, like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">==</span> <span class="pre">1.0</span></code>.</p>
+<p>If you are building a library package that other developers will depend upon, you must be cautious before pinning to a precise dependency version. Applications, such as production websites, will often pin their dependencies since other packages will not depend on their project.
+This is because
 users will be installing your package into various environments.
 A dependency pinned to a single specific version can make
 resolving a Python environment more challenging. As such only
 pin dependencies to a specific version if you absolutely need to
 do so.</p>
+<p>Similarly, you should be cautious when specifying an upper bound on a package.
+These two specifications are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pydantic</span><span class="o">&gt;=</span><span class="mf">1.10</span><span class="p">,</span><span class="o">&lt;</span><span class="mi">2</span>
+<span class="n">pydantic</span><span class="o">^</span><span class="mf">1.10</span>
+</pre></div>
+</div>
 <p>One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. <a class="reference internal" href="../package-structure-code/python-package-build-tools.html#challenges-with-poetry"><span class="std std-ref">Read more about how to safely add dependencies with Poetry, here.</span></a></p>
 </div>
 </section>
@@ -910,7 +938,7 @@ do so.</p>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&quot;</span><span class="p">]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
 
 <span class="hll"><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 </span><span class="hll"><span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
@@ -957,7 +985,7 @@ do so.</p>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ruamel-yaml&gt;=0.17.21&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;python-dotenv&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&quot;</span><span class="p">]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
 
 <span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
@@ -1008,7 +1036,7 @@ is commented with all of the sections we discussed above.</p>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ruamel-yaml&gt;=0.17.21&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;python-dotenv&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&quot;</span><span class="p">]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
 
 <span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
@@ -1081,7 +1109,7 @@ is commented with all of the sections we discussed above.</p>
 <span class="p">]</span>
 
 
-<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;xarray&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests&quot;</span><span class="p">]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
 <span class="c1"># This is the metadata that pip reads to understand what versions your package supports</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
@@ -1139,6 +1167,12 @@ is commented with all of the sections we discussed above.</p>
 <p>You now have all of the skills that you need to publish
 your package to PyPI.</p>
 <p>If you also want to publish your package on conda-forge (which is a channel within the conda ecosystem), you will learn how to do that in the next lesson.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="lowerbound" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Some packaging tools will do this for you when you add a dependency using their cli interface. For example <a class="reference external" href="https://python-poetry.org/docs/cli/#add"><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span></code></a> will add the most recent version with a <code class="docutils literal notranslate"><span class="pre">^</span></code> specifier, and <a class="reference external" href="https://pdm-project.org/latest/reference/cli/#add"><code class="docutils literal notranslate"><span class="pre">pdm</span> <span class="pre">add</span></code></a> will add the most recent version with <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>
