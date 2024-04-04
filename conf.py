@@ -83,8 +83,8 @@ html_theme_options = {
             "name": "Peer Review Guide",
         },
         {
-            "url": "https://pyopensci.org/governance",
-            "name": "Governance",
+            "url": "https://pyopensci.org/handbook",
+            "name": "Handbook",
         },
     ],
     "icon_links": [
