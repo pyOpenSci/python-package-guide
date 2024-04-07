@@ -17,11 +17,10 @@ publish your package on conda-forge.
 
 In this lesson you will learn how to:
 
-- Pubishing your PyPI published repository to conda-forge
-- Fork and clone the conda-forge staged-recipes repository
-- Create conda-forge recipe for your package
-- Submit a pull request to the staged-recipes repository
-- Maintain your conda-forge feedstock
+- Create a conda-forge yaml recipe for your package using Grayskull
+- Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request
+- Maintain your conda-forge package by creating new releases for your package on PyPI
+
 
 Once your package is on PyPI you can then easily publish it to conda-forge
 using the [grayskull](https://conda.github.io/grayskull/) tool. You do not need to build the package specifically
