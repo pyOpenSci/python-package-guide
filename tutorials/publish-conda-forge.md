@@ -17,9 +17,11 @@ publish your package on conda-forge.
 
 In this lesson you will learn how to:
 
-- How to build your package's sdist and wheel distributions
-- Setup an account on testPyPI (the process is similar for the real PyPI)
-- Publish your package to PyPI
+- Pubishing your PyPI published repository to conda-forge
+- Fork and clone the conda-forge staged-recipes repository
+- Create conda-forge recipe for your package
+- Submit a pull request to the staged-recipes repository
+- Maintain your conda-forge feedstock
 
 Once your package is on PyPI you can then easily publish it to conda-forge
 using the [grayskull](https://conda.github.io/grayskull/) tool. You do not need to build the package specifically
