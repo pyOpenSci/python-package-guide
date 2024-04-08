@@ -454,7 +454,7 @@ We cover that next.
 
 Every time you create a new release on PyPI, the conda-forge bots will recognize the release and will rebuild the newly released version of your package. This process may take a day or two to complete so be patient.
 
-Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
+Once the conda-forge build is complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
 
 Review the pull request. If all tests are passing, you can merge it. Shortly after merging your pull request, the conda-forge release will be available for users to install:
 
