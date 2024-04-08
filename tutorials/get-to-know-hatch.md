@@ -19,7 +19,6 @@ the [hatch website](https://hatch.pypa.io/latest/install/).
 Hatch can also be installed directly using `pip` or `conda`, but we encourage you to use `pipx`.
 This is because `pipx` will ensure that your package is available across all of your Python
 environments on your computer rather than just in the environment that you install it into.
-
 If you install hatch this way you will have to take care that the environment it is installed into
 is activated for the command to work.
 :::
