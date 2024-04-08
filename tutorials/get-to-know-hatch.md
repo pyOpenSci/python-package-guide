@@ -92,7 +92,7 @@ license in more detail in a later lesson, the MIT license is the
 recommended permissive license from [choosealicense.com](https://www.choosealicense.com) and as such we will
 use it for this tutorial series.
 
-You are of course welcome to select another license
+You are of course welcome to select another license.
 
 :::{todo}
 I think we'd need the SPDX license options here if they want to chose bsd-3 for instance
@@ -113,14 +113,11 @@ and maintaining your Python package easier.
 
 :::{admonition} Comparison to other tools
 :class: tip
-[We compared hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here](package-features)
-:::
+[We compared hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here](package-features).:::
 
-[More on hatch here](hatch)
+A few of [Hatch's features](hatch) includes:
 
-A few features that hatch offers
-
-1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you. While we have not extensively tested this feature yet, please let us know if you try it!
+1. It will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you. While we have not extensively tested this feature yet, please let us know if you try it!
 2. It will help you by storing configuration information for publishing to PyPI after you've entered it once.
 
 Use `hatch -h` to see all of the available commands.
