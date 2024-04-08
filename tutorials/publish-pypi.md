@@ -36,8 +36,6 @@ You will do all of your development work in this lesson using [Hatch](https://ha
 Once your package is on PyPI you can publish it to conda-forge (which is a channel on conda)
 using [Grayskull](https://conda.github.io/grayskull/).
 
-You will learn how to publish to conda-forge in a future lesson.
-
 You will learn how to publish to conda-forge in the [next lesson](publish-conda-forge).
 
 
