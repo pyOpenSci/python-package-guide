@@ -417,7 +417,7 @@ To begin:
 
 * Remove support for Python 3.8
 
-Since you are creating a pure Python package in this lesson, 
+Since you are creating a pure Python package in this lesson,
 you can remove the following classifiers:
 
 ```toml
