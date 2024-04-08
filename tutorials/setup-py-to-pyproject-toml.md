@@ -2,11 +2,10 @@
 
 Hatch can be particularly useful to generate your project's `pyproject.toml` if your project already has a `setup.py`.
 
-
 :::{admonition} Note
 :class: tip
 
-This step is not necessary and is only useful if your project already has a `setup.py` file defined. 
+This step is not necessary and is only useful if your project already has a `setup.py` file defined.
 * If your project does not already define a `setup.py` see [Make your Python code installable](installable-code.md)
 :::
 
