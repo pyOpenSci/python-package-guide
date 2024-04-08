@@ -120,7 +120,8 @@ and maintaining your Python package easier.
 
 A few features that hatch offers
 
-1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you. While we have not extensively tested this feature yet, please let us know if you try it!
+1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you (see [Migrating setup.py to pyproject.toml using Hatch](setup-py-to-pyproject-toml.md
+))
 2. It will help you by storing configuration information for publishing to PyPI after you've entered it once.
 
 Use `hatch -h` to see all of the available commands.

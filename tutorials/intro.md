@@ -29,6 +29,7 @@ understanding the steps involved in creating a Python package.
 :caption: Python Packaging Tutorial Setup
 
 Get to know Hatch <get-to-know-hatch>
+Migrate setup.py to a pyproject.toml using Hatch <setup-py-to-pyproject-toml>
 :::
 
 :::{toctree}
