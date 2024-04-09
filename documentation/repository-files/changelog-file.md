@@ -10,10 +10,11 @@ The `changelog.md` document serves as a valuable resource for developers and use
 
 [Keep a Changelog.md](https://keepachangelog.com/en/1.1.0/) is great, simple resource for understanding what a changelog is, how to create a good changelog, and includes some pointers of things to avoid in a changelog.
 
-```{admonition} Semantic Versioning
+```{admonition} Versioning your Python package and semantic versioning
 :class: tip
 
 An important component of a package that serves as the backbone behind the changelog file is a good versioning scheme. Semantic Versioning is widely used across Python packages.
+* [Creating New Versions of Your Python Package](../../package-structure-code/python-package-versions.md)
 * [Semantic Versioning](https://semver.org)
 ```
 
