@@ -856,9 +856,9 @@ The home item is expected in the about section.
 </div></blockquote>
 <p class="sd-card-text"><strong>Translation:</strong> A static library refers to a copy of a package built into your package. If your package is a pure Python package, then you can check that your package does not ship static libraries as this does not apply to you.</p>
 <p class="sd-card-text">The pyOpenSci tutorials are all pure Python and as such do not use static libraries in a linked or shipped (included in the package distribution) format.</p>
-<p class="sd-card-text">If your package has a more complex builds that includes
+<p class="sd-card-text">If your package has a more complex build that includes
 links to extensions written in other languages such as
-C++, then be sure that include the proper LICENSE(s) for those extensions in your metadata.</p>
+C++, then be sure to include the proper licenses for those extensions in your metadata.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p class="sd-card-text">If you want to learn more about static libraries, then <a class="reference external" href="https://pypackaging-native.github.io/background/compilation_concepts/#shared-vs-static-libraries">this overview</a> might help.</p>
@@ -927,17 +927,17 @@ We cover that next.</p>
 <section id="maintaining-your-conda-forge-feedstock">
 <h2>Maintaining your conda-forge feedstock<a class="headerlink" href="#maintaining-your-conda-forge-feedstock" title="Link to this heading">#</a></h2>
 <p>Every time you create a new release on PyPI, the conda-forge bots will recognize the release and will rebuild the newly released version of your package. This process may take a day or two to complete so be patient.</p>
-<p>Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.</p>
+<p>Once the conda-forge build is complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.</p>
 <p>Review the pull request. If all tests are passing, you can merge it. Shortly after merging your pull request, the conda-forge release will be available for users to install:</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">yourpackage</span></code></p>
 </section>
 <section id="wrap-up">
 <h2><i class="fa-solid fa-hands-bubbles"></i> Wrap up<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
-<p>If you have walked through this entire tutorial series you have now:</p>
+<p>If you have walked through this entire tutorial series you will now:</p>
 <ol class="arabic simple">
 <li><p>Understand <a class="reference internal" href="intro.html"><span class="std std-doc">what a Python package is </span></a></p></li>
 <li><p>Know how to <a class="reference internal" href="installable-code.html"><span class="std std-doc">make your code installable</span></a> into Python environments</p></li>
-<li><p>Know how to create a pyproject.toml file, a README file, and a License and code of conduct.</p></li>
+<li><p>Know how to create a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, a <code class="docutils literal notranslate"><span class="pre">README</span></code> file, and a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> and code of conduct.</p></li>
 <li><p>Know how to <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publish your package to PyPI</span></a> and</p></li>
 <li><p>Know how to publish your package to conda-forge</p></li>
 </ol>
