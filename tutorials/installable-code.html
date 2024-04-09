@@ -838,13 +838,13 @@ file.</p>
 <p>Edit the file as follows:</p>
 <ol class="arabic simple">
 <li><p>Delete <code class="docutils literal notranslate"><span class="pre">dynamic</span> <span class="pre">=</span> <span class="pre">[&quot;version&quot;]</span></code>: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">0.1.0</span></code> in the place of  <code class="docutils literal notranslate"><span class="pre">dynamic</span> <span class="pre">=</span> <span class="pre">[&quot;version&quot;]</span></code> which you just deleted. This sets up manual versioning.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">&quot;0.1.0&quot;</span></code> in the place of  <code class="docutils literal notranslate"><span class="pre">dynamic</span> <span class="pre">=</span> <span class="pre">[&quot;version&quot;]</span></code> which you just deleted. This sets up manual versioning.</p></li>
 <li><p>Fill in the description if it doesn’t already exist.</p></li>
 </ol>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="c1"># dynamic = [&quot;version&quot;] &lt;- replace this...</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="c1"># with this</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span><span class="w"> </span><span class="c1"># with this</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A simple Python package that adds numbers together&#39;</span><span class="w"> </span><span class="c1"># Add a description of your package if that is not already populated</span>
 </pre></div>
 </div>
@@ -867,8 +867,8 @@ However, if you wish, you can clean it up a bit.</p>
 <ul class="simple">
 <li><p>Remove support for Python 3.8</p></li>
 </ul>
-<p>Also because you are creating a pure Python package, you can
-in this lesson, you can remove the following classifiers:</p>
+<p>Since you are creating a pure Python package in this lesson,
+you can remove the following classifiers:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="s2">&quot;Programming Language :: Python :: Implementation :: CPython&quot;</span><span class="p">,</span>
 <span class="s2">&quot;Programming Language :: Python :: Implementation :: PyPy&quot;</span><span class="p">,</span>
