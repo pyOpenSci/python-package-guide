@@ -42,56 +42,33 @@ The contents of a changelog.md file typically follow a structured format, detail
 
 ## What does it look like?
 
+This example comes from [Devicely](https://github.com/hpi-dhc/devicely/tree/main), one of the PyOpenSci reviewed and accepted packages.
+
 ```markdown
-# Change Log
+# Changelog
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - yyyy-mm-dd
+## [Unreleased]
 
-Here we write upgrading notes for brands. It's a team effort to make them as
-straightforward as possible.
+## [1.1.0] - 2021-08-24
+- removed acceleration magnitude from devicely.EmpaticaReader and devicely.FarosReader since it was out of the scope of the package
+- added more flexibility to missing files (e.g. ACC.csv, EDA.csv) to devicely.EmpaticaReader
+- changed TagsReader to TimeStampReader to be more consistent with the class naming structure in devicely
+- deprecated methods in devicely.SpacelabsReader: set_window and drop_EB
+- fixed issue with the timestamp index and fixed column names in devicely.SpacelabsReader
 
+## [1.0.0] - 2021-07-19
 ### Added
-- [PROJECTNAME-XXXX](http://tickets.projectname.com/browse/PROJECTNAME-XXXX)
-  MINOR Ticket title goes here.
-- [PROJECTNAME-YYYY](http://tickets.projectname.com/browse/PROJECTNAME-YYYY)
-  PATCH Ticket title goes here.
+- devicely.FarosReader can both read from and write to EDF files and directories
+- devicely.FarosReader has as attributes the individual dataframes (ACC, ECG, ...) and not only the joined dataframe
 
 ### Changed
+- in devicely.SpacelabsReader, use xml.etree from the standard library instead of third-party "xmltodict"
+- switch from setuptools to Poetry
 
-### Fixed
-
-## [1.2.4] - 2017-03-15
-
-Here we would have the update steps for 1.2.4 for people to follow.
-
-### Added
-
-### Changed
-
-- [PROJECTNAME-ZZZZ](http://tickets.projectname.com/browse/PROJECTNAME-ZZZZ)
-  PATCH Drupal.org is now used for composer.
-
-### Fixed
-
-- [PROJECTNAME-TTTT](http://tickets.projectname.com/browse/PROJECTNAME-TTTT)
-  PATCH Add logic to runsheet teaser delete to delete corresponding
-  schedule cards.
-
-## [1.2.3] - 2017-03-14
-
-### Added
-
-### Changed
-
-### Fixed
-
-- [PROJECTNAME-UUUU](http://tickets.projectname.com/browse/PROJECTNAME-UUUU)
-  MINOR Fix module foo tests
-- [PROJECTNAME-RRRR](http://tickets.projectname.com/browse/PROJECTNAME-RRRR)
-  MAJOR Module foo's timeline uses the browser timezone for date resolution
+### Removed
+- removed setup.py because static project files such as pyproject.toml are preferred
 ```
-[Sample changelog source](https://gist.github.com/juampynr/4c18214a8eb554084e21d6e288a18a2c)
