@@ -40,6 +40,36 @@ The contents of a changelog.md file typically follow a structured format, detail
 
 - **Contributor Recognition**: Acknowledgment of contributors who made significant contributions to the release, fostering a sense of community and appreciation for their efforts.
 
+## How do maintainers use it?
+
+Often you will see a change log that documents a few things
+
+Unreleased commits at the top of the changelog, it's common to have an `## Unreleased` section. This is where you can add new fixes, updates and features that have been added to the package since the last release.
+
+This section might look something like this:
+
+```markdown
+## Unreleased
+* Fix: Fixed a bug.... more here. (@github_username, #issuenumber)
+* Add: new feature to ...more here (@github_username, #issuenumber)
+Below the unreleased section, there will be a section for each release. In these sections, you can organize new Fixes, Additions and update together.
+## v1.0
+
+### Updates
+* Fix: Fixed a bug.... more here. (@github_username, #issuenumber)
+
+### Additions
+* Add: new feature to ...more here (@github_username, #issuenumber)
+
+### Deprecations
+
+### Contributors to this release
+```
+
+When you are ready to make a new release, you can re-organize the list of unreleased elements into a section that is specific to that new release number.
+
+The unreleased section then always lives at the top of the file. And as new features are added after release 1.x, they get added to that section.
+
 ## What does it look like?
 
 This example comes from [Devicely](https://github.com/hpi-dhc/devicely/tree/main), one of the PyOpenSci reviewed and accepted packages.
