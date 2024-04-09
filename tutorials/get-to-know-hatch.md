@@ -115,7 +115,7 @@ and maintaining your Python package easier.
 :class: tip
 [We compared hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here](package-features).:::
 
-A few of [Hatch's features](hatch) includes:
+A few of [Hatch's features](hatch) include:
 
 1. It will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you. While we have not extensively tested this feature yet, please let us know if you try it!
 2. It will help you by storing configuration information for publishing to PyPI after you've entered it once.
