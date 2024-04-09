@@ -207,7 +207,7 @@ stravalib-1.1.0.post2-SDist.tar.gz file contents
 ├─ Makefile
 ├─ PKG-INFO
 ├─ README.md
-├─ changelog.md
+├─ CHANGELOG.md
 ├─ environment.yml
 ├─ pyproject.toml
 ├─ requirements-build.txt
