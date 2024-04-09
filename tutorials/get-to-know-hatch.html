@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/get-to-know-hatch.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch following th..." />
+<meta property="og:description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch from the com..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
 <meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_get-to-know-hatch_ac6f425b.png" />
 <meta property="og:image:alt" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hat..." />
-<meta name="description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch following th..." />
+<meta name="description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch from the com..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Get to know hatch &#8212; Python Packaging Guide</title>
@@ -520,13 +520,29 @@ document.write(`
 In this tutorial, you will install and get to know hatch a bit more before starting to use it.</p>
 <section id="install-hatch">
 <h2>Install Hatch<a class="headerlink" href="#install-hatch" title="Link to this heading">#</a></h2>
-<p>To begin, install Hatch following the
-<a class="reference external" href="https://hatch.pypa.io/latest/install/">instructions here</a>.</p>
+<p>To begin, install Hatch from the command line using <a class="reference external" href="https://pipx.pypa.io/stable/">pipx</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>hatch
+</pre></div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you are comfortable using <a class="reference external" href="https://pipx.pypa.io/stable/">pipx</a> to install hatch, we encourage you to do so. pipx will ensure that your package is available across all of your Python environments on your computer rather than just in the environment that you install it into.</p>
-<p>However if you are not sure about pipx, you can install hatch using pip or conda.</p>
+<p>Hatch also provides pre-build binaries available from common OS package managers or directly from
+the <a class="reference external" href="https://hatch.pypa.io/latest/install/">hatch website</a>.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Hatch can also be installed directly using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>, but we encourage you to use <code class="docutils literal notranslate"><span class="pre">pipx</span></code>.
+This is because <code class="docutils literal notranslate"><span class="pre">pipx</span></code> will ensure that your package is available across all of your Python
+environments on your computer rather than just in the environment that you install it into.
+If you install hatch this way you will have to take care that the environment it is installed into
+is activated for the command to work.</p>
+</div>
+<p>You can check that hatch is working properly by issuing a simple command to get the version</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hatch<span class="w"> </span>--version
+<span class="c1"># Hatch, version 1.9.4</span>
+</pre></div>
+</div>
+<p>Note the version numbers will likely be different</p>
 </section>
 <section id="configure-hatch">
 <h2>Configure hatch<a class="headerlink" href="#configure-hatch" title="Link to this heading">#</a></h2>
