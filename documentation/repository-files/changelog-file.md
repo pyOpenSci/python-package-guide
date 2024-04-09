@@ -6,7 +6,7 @@ The `changelog.md` document serves as a valuable resource for developers and use
 
 ## What is changelog.md?
 
-The primary purpose of `CHANGELOG.md` is to provide a record of notable changes made to the project with each new release. This document helps users understand what has been added, fixed, modified, or removed with each version of the software. In addition, it allows the contributors and users to understand the versioning syntax used for the package.
+The primary purpose of `CHANGELOG.md` is to provide a record of notable changes made to the project with each new release. This document helps users understand what has been added, fixed, modified, or removed with each version of the software.
 
 [Keep a Changelog.md](https://keepachangelog.com/en/1.1.0/) is a great, simple resource for understanding what a changelog is and how to create a good changelog. It also includes examples of things to avoid.
 
