@@ -8,7 +8,7 @@ The `changelog.md` document serves as a valuable resource for developers and use
 
 `changelog.md` is a file commonly found in Python packages. Its primary purpose is to provide a chronological record of significant changes made to the project with each new release. This document helps users understand what has been added, fixed, or modified in the latest version of the software. In addition, it allows the contributors and users to understand the versioning syntax used for the package.
 
-[Keep a Changelog.md](https://keepachangelog.com/en/1.1.0/) is great, simple resource for understanding what a changelog is, how to create a good changelog, and includes some pointers of things to avoid in a changelog.
+[Keep a Changelog.md](https://keepachangelog.com/en/1.1.0/) is a great, simple resource for understanding what a changelog is and how to create a good changelog. It also includes examples of things to avoid.
 
 ```{admonition} Versioning your Python package and semantic versioning
 :class: tip
