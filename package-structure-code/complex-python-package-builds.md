@@ -26,7 +26,7 @@ Other back-ends (`hatch`) have a preferred back-end (`hatchling`) but allow the 
 some back-ends (`poetry`) only work with a single back-end (`poetry-core`). Refer to (#python-package-build-tools) for
 more information about front-end and back-end compatibility.
 
-In this packaging guide we recommend using `hatch` along with it's preferred back-end `hatchling`. One reason to use
+In this packaging guide we recommend using `hatch` along with it's preferred back-end `hatchling`. While this will be suitable for most packages, an alternate back-end may be used with Hatch if needed when creating an extension module.
 hatch with an alternate back-end is for creating an extension module. A Python extension module is one that is made up,
 either in part or entirely, of compiled code. In this case the back-end chosen (such as `meson-python`) must know how to
 compile the extension language and bind it to Python since `hatchling` is only capable of building pure Python modules.
