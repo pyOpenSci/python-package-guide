@@ -344,7 +344,7 @@ as building your documentation locally. This means that you could potentially dr
 :widths: 20,5,50
 :delim: "|"
 
-Use Other Build Backends|✅ | Hatch is used with the back-end Hatchling by default, but allows you to use another back-end by switching the declaration in pyproject.toml. 
+Use Other Build Backends|✅ | Hatch is used with the back-end Hatchling by default, but allows you to use another back-end by switching the declaration in pyproject.toml.
 Dependency management|✖| Currently you have to add dependencies manually with Hatch. However a feature to support dependencies management may be added in a future release.
 Environment Management |✅ | Hatch supports Python virtual environments. If you wish to use other types of environments such as Conda, you will need to [install a plugin such as hatch-conda for conda support](https://github.com/OldGrumpyViking/hatch-conda).
 Publish to PyPI and test PyPI|✅|Hatch supports publishing to both test PyPI and PyPI
