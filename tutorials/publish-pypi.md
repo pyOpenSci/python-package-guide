@@ -1,17 +1,7 @@
 # Publish your Python package to PyPI
 
 :::{todo}
-- emphasize that we recommended the trusted publisher GitHub action for most maintainers
 - Make sure they add /dist to their .gitignore file. We have not discussed GitHub workflows anywhere yet. Where does that fit?
-- https://hatch.pypa.io/latest/intro/#existing-project <- hatch will migrate from setup.py for you - if we go with hatch then we may want to add this to the installable code lesson
-
-```bash
-pipx install hatch
-  installed package hatch 1.9.1, installed using Python 3.12.1
-  These apps are now globally available
-    - hatch
-done! ✨ 🌟 ✨
-```
 
 :::
 
