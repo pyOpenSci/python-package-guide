@@ -88,14 +88,13 @@ Below that table identifier are key/value pairs that
 support configuration for that particular table.
 
 - Below `[build-system]` is considered a table in the toml language.
-- Within the build-system table below requires = is a key.
-- The associated value for requires is an array containing the value "hatchling".
+- Within the `build-system` table below `requires =` is a key.
+- The associated value for `requires` is an array containing the value `"hatchling"`.
 
-```toml
-[build-system] # <- this is a table
-requires = ["hatchling"] #  requires =  is a key and "hatchling" is a value contained within an array specified by square brackets [].
-
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:lines: 1-2
+:::
 
 ### How the pyproject.toml is used when you build a package
 
@@ -160,11 +159,10 @@ what dependencies your package requires.
 - **Authors:** these are the original authors of the package. Sometimes the authors are different from the maintainers. Other times they might be the same.
 - **Maintainers:** you can choose to populate this or not. You can populate this using a list with a sub element for each author or maintainer name, email
 
-```toml
-authors = [
-  {name = "A. Random Developer", email = "author@example.com" }
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:lines: 7-9
+:::
 
 - **dependencies:** dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.
 
@@ -194,21 +192,10 @@ To add dependencies to your build, add a `[project.optional-dependencies]` table
 
 Then specify dependency groups as follows:
 
-```
-[project.optional-dependencies]
-tests = [
-  "pytest,
-  "pytest-cov"
-]
-lint = [
-  "black",
-  "flake8"
-]
-docs = [
-    "sphinx",
-    "pydata-sphinx-theme
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:lines: 26-38
+:::
 
 Following the above example, you install dependencies like this:
 
@@ -232,32 +219,10 @@ You can also setup sets of recursive dependencies. [See this blog post for more.
 Below is an example build configuration for a Python project. This example
 package setup uses **hatchling** to build the [package's sdist and wheels](python-package-distribution-files-sdist-wheel).
 
-```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project]
-name = "examplePy"
-authors = [
-    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
-]
-maintainers = [
-    {name = "All the contributors"},
-]
-description = "An example Python package used to support Python packaging tutorials"
-keywords = ["pyOpenSci", "python packaging"]
-readme = "README.md"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
-    "Operating System :: OS Independent",
-]
-dependencies = [
-    "dependency-package-name-1",
-    "dependency-package-name-2",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:lines: 1-24
+:::
 
 Notice that dependencies are specified in this file.
 
@@ -278,32 +243,10 @@ of values. It has two keys that specify the build backend API and containing pac
 1. `requires =`
 1. `build-back-end =`
 
-```
-[build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "examplePy"
-authors = [
-    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
-]
-maintainers = [
-    {name = "All the contributors"},
-]
-description = "An example Python package used to support Python packaging tutorials"
-keywords = ["pyOpenSci", "python packaging"]
-readme = "README.md"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
-    "Operating System :: OS Independent",
-]
-dependencies = [
-    "dependency-package-name-1",
-    "dependency-package-name-2",
-]
-```
+:::{literalinclude} ../examples/pure-setuptools/pyproject.toml
+:language: toml
+:lines: 1-24
+:::
 
 ```{note}
 [Click here to read about our packaging build tools including PDM, setuptools, Poetry and Hatch.](/package-structure-code/python-package-build-tools)
