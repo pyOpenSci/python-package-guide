@@ -26,7 +26,7 @@ In the previous Python packaging lessons, you've learned:
 In this lesson you will learn how to:
 
 - Build your package's source (sdist) and wheel distributions
-- Setup an account on TestPyPI (the process is similar for the real PyPI)
+- Setup an account on TestPyPI (the process is similar for PyPI)
 - Publish your package to TestPyPI and PyPI
 
 You will do all of your development work in this lesson using [Hatch](https://hatch.pypa.io/latest/).
@@ -46,13 +46,13 @@ You need to build your Python package in order to publish it to PyPI (or Conda).
 
 ## TestPyPI vs PyPI
 
-There are two repositories (online warehouses for software) associated with PyPI to which you can upload
+There are two repositories associated with PyPI to which you can upload
 your Python package.
 
-1. **[TestPyPI](https://test.pypi.org):** TestPyPI is a package repository provided by PyPI that you can use for testing that your package can be uploaded correctly, and that you can use to test that your package downloads and installs correctly. This is a great place to practice and learn how to publish a package without exposing your incomplete or not fully tested package on the real PyPI service.
+1. **[TestPyPI](https://test.pypi.org):** TestPyPI is a package repository provided by PyPI that you can use for testing that your package can be uploaded, downloaded, and installed correctly. This is a great place to practice and learn how to publish a package without exposing your incomplete package on the real PyPI service.
 2. **[PyPI](https://pypi.org):** This is the live, production PyPI repository where you can officially publish your Python package, and from which users will get your package. IMPORTANT: Only publish your package to PyPI when you are ready for it to be used by others and/or confident that it will become a package that you will maintain. PyPI is not a place to practice learning how to publish a Python package.
 
-The steps for publishing on TestPyPI vs. real PyPI are the similar with the
+The steps for publishing on TestPyPI vs. PyPI are similar with the
 exception of a different url. We will point out where they differ.
 
 ## 4 Steps for publishing a Python package on TestPyPI (or PyPI)
@@ -196,7 +196,7 @@ dist/pyospackage-0.1.0-py3-none-any.whl
 ### <i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you've created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i>
 
 You've now built your Python package and created your package distribution files. The next step is to setup
-your account on test PyPI so you can publish your package.
+your account on TestPyPI so you can publish your package.
 
 ## Step 3. Setup your TestPyPI account
 
@@ -272,7 +272,7 @@ TestPyPI.
 
 `-r` stands for repository. In this case because you are publishing to TestPyPI you will use `-r test`. Hatch will then ask for a username and credentials.
 
-- Add the word `__token__` for your username. This tells test PyPI that you are using a token value rather than a username.
+- Add the word `__token__` for your username. This tells TestPyPI that you are using a token value rather than a username.
 - Paste your TestPyPI token value in at the `Enter your credentials` prompt:
 
 ```bash
@@ -311,7 +311,7 @@ installation instructions as follows:
 
 :::{important} Publishing to TestPyPI vs PyPI
 While you can install from TestPyPI it's not recommended that you publish to
-TestPyPI as a permanent way to install your package. In fact, you cannot, because TestPyPI deletes accounts after a time. TestPyPI is a perfect place to learn how to publish your package and test the installation process. But your end goal should be to publish to PyPI once you have figured out your workflow and your package is ready to deploy.
+TestPyPI as a permanent way to install your package. In fact, you cannot, because TestPyPI may delete accounts after a time. TestPyPI is a perfect place to learn how to publish your package and test the installation process. But your end goal should be to publish to PyPI once you have figured out your workflow and your package is ready to deploy.
 :::
 
 ### Time to install your package
@@ -370,7 +370,7 @@ If you plan to use your token regularly to publish to PyPI, we strongly recommen
 a token specific to your new package.
 
 To do this:
-1. Go to test PyPI
+1. Go to TestPyPI.
 1. Navigate to the "Your Projects" section of your account
 2. Click on the manage button for the project that you wish to add a token for
 3. Go to settings
