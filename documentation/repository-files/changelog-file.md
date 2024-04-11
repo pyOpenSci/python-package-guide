@@ -72,7 +72,7 @@ The unreleased section then always lives at the top of the file. And as new feat
 
 ## What does it look like?
 
-This example comes from [Devicely](https://github.com/hpi-dhc/devicely/tree/main), one of the PyOpenSci reviewed and accepted packages.
+This example comes from [Devicely](https://github.com/hpi-dhc/devicely/blob/main/CHANGELOG.md), a pyOpenSci accepted package.
 
 ```markdown
 # Changelog
