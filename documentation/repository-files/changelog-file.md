@@ -68,7 +68,7 @@ Below the unreleased section, there will be a section for each release. In these
 
 When you are ready to make a new release, you can re-organize the list of unreleased elements into a section that is specific to that new release number.
 
-The unreleased section then always lives at the top of the file. And as new features are added after release 1.x, they get added to that section.
+The unreleased section then always lives at the top of the file and new features continue to be added there. At the same time, after releasing a version like 1.0 all of its features remain in that specific section.
 
 ## What does it look like?
 
