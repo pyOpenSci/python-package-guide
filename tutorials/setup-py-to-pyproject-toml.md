@@ -26,7 +26,7 @@ See [Get to know Hatch](get-to-know-hatch.md).
 Before we begin, ensure that you have Hatch installed on your system. You can install it via pip:
 
 ```bash
-pip install hatch
+pipx install hatch
 ```
 
 ## Sample Directory Tree
