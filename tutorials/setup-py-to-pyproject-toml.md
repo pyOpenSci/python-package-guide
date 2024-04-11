@@ -95,3 +95,25 @@ Now, let's walk through the steps to use Hatch to create a `pyproject.toml` file
 3. **Review and Customize**: After running the previous command, Hatch will automatically generate a `pyproject.toml` file based on your existing project configuration. Take some time to review the contents of the generated `pyproject.toml` file. You may want to customize certain settings or dependencies based on your project's requirements (see [pyproject.toml tutorial](pyproject-toml.md) for more information about the `pyproject.toml`).
 
 4. **Verify**: Verify that the `pyproject.toml` file accurately reflects your project configuration and dependencies. You can manually edit the file if needed, but be cautious and ensure that the syntax is correct.
+
+### Step 5: Delete setup.py
+
+Since we're migrating to using `pyproject.toml` exclusively, the `setup.py` file becomes unnecessary. You can safely delete it from your project directory.
+
+```bash
+rm setup.py
+```
+
+### Step 6: Test Build
+
+Before proceeding further, it's essential to ensure that your project builds successfully using only the `pyproject.toml` file. Run the following command to build your project:
+
+```bash
+hatch build
+```
+
+This command will build your project based on the specifications in the `pyproject.toml` file. Make sure to check for any errors or warnings during the build process.
+
+### Step 7: Test Existing Functionality
+
+After successfully building your project with `pyproject.toml`, it's crucial to ensure that your project's existing functionality remains intact. Run any pre-existing tests to verify that everything still works as expected.
