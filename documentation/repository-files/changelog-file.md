@@ -44,7 +44,7 @@ The contents of a changelog.md file typically follow a structured format, detail
 
 Often you will see a change log that documents a few things
 
-Unreleased commits at the top of the changelog, it's common to have an `## Unreleased` section. This is where you can add new fixes, updates and features that have been added to the package since the last release.
+Unreleased commits are at the top of the changelog, commonly in an `Unreleased` section. This is where you can add new fixes, updates and features that have been added to the package since the last release.
 
 This section might look something like this:
 
