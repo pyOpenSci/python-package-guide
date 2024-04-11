@@ -19,7 +19,14 @@ In this lesson you will learn:
 
 ## What is Hatch?
 
-See [Get to know Hatch](get-to-know-hatch.md).
+Hatch is a Python package manager designed to streamline the process of creating, managing, and distributing Python packages. It provides a convenient CLI (Command-Line Interface) for tasks such as creating new projects, managing dependencies, building distributions, and publishing packages to repositories like PyPI.
+
+:::{admonition} Get to know Hatch
+:class: tip
+
+See [Get to know Hatch](get-to-know-hatch.md) for more information.
+
+:::
 
 ## Prerequisites
 
