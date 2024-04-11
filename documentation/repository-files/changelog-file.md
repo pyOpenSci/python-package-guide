@@ -42,7 +42,7 @@ The contents of a changelog.md file typically follow a structured format, detail
 
 ## How do maintainers use it?
 
-Often you will see a change log that documents a few things
+Often you will see a change log that documents a few things:
 
 Unreleased commits are at the top of the changelog, commonly in an `Unreleased` section. This is where you can add new fixes, updates and features that have been added to the package since the last release.
 
@@ -51,8 +51,18 @@ This section might look something like this:
 ```markdown
 ## Unreleased
 * Fix: Fixed a bug.... more here. (@github_username, #issuenumber)
-* Add: new feature to ...more here (@github_username, #issuenumber)
-Below the unreleased section, there will be a section for each release. In these sections, you can organize new Fixes, Additions and update together.
+* Add: new feature to... more here. (@github_username, #issuenumber)
+```
+
+When you are ready to make a new release, you can move the elements into a section that is specific to that new release number.
+
+This specific release section will sit below the unreleased section and can include any updates, additions, deprecations and contributors.
+
+The unreleased section then always lives at the top of the file and new features continue to be added there. At the same time, after releasing a version like v1.0 all of its features remain in that specific section.
+
+```markdown
+## Unreleased
+
 ## v1.0
 
 ### Updates
@@ -65,10 +75,6 @@ Below the unreleased section, there will be a section for each release. In these
 
 ### Contributors to this release
 ```
-
-When you are ready to make a new release, you can re-organize the list of unreleased elements into a section that is specific to that new release number.
-
-The unreleased section then always lives at the top of the file and new features continue to be added there. At the same time, after releasing a version like 1.0 all of its features remain in that specific section.
 
 ## What does it look like?
 
