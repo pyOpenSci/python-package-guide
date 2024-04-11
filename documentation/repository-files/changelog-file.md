@@ -42,7 +42,7 @@ The contents of a changelog.md file typically follow a structured format, detail
 
 ## How do maintainers use it?
 
-Often you will see a change log that documents a few things:
+Often you will see a changelog that documents a few things:
 
 ### Unreleased Section
 
