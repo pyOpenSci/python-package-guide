@@ -82,10 +82,6 @@ Now, let's walk through the steps to use Hatch to create a `pyproject.toml` file
 
 1. **Navigate to Your Project Directory**: Open your terminal or command prompt and navigate to the directory where your Python project is located.
 
-   ```bash
-   cd path/to/your/project
-   ```
-
 2. **Initialize Hatch**: Run the following command to initialize Hatch in your project directory:
 
    ```bash
@@ -96,17 +92,9 @@ Now, let's walk through the steps to use Hatch to create a `pyproject.toml` file
 
 4. **Verify**: Verify that the `pyproject.toml` file accurately reflects your project configuration and dependencies. You can manually edit the file if needed, but be cautious and ensure that the syntax is correct.
 
-### Step 5: Delete setup.py
+5. **Delete setup.py**: Since we're migrating to using `pyproject.toml` exclusively, the `setup.py` file becomes unnecessary. You can safely delete it from your project directory.
 
-Since we're migrating to using `pyproject.toml` exclusively, the `setup.py` file becomes unnecessary. You can safely delete it from your project directory.
-
-```bash
-rm setup.py
-```
-
-### Step 6: Test Build
-
-Before proceeding further, it's essential to ensure that your project builds successfully using only the `pyproject.toml` file. Run the following command to build your project:
+6. **Test Build**: Before proceeding further, it's essential to ensure that your project builds successfully using only the `pyproject.toml` file. Run the following command to build your project:
 
 ```bash
 hatch build
@@ -114,6 +102,6 @@ hatch build
 
 This command will build your project based on the specifications in the `pyproject.toml` file. Make sure to check for any errors or warnings during the build process.
 
-### Step 7: Test Existing Functionality
+7. **Test Existing Functionality**:
 
 After successfully building your project with `pyproject.toml`, it's crucial to ensure that your project's existing functionality remains intact. Run any pre-existing tests to verify that everything still works as expected.
