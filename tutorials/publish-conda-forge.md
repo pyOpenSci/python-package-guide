@@ -377,9 +377,9 @@ Below we break down each element of that list.
 
 The pyOpenSci tutorials are all pure Python and as such do not use static libraries in a linked or shipped (included in the package distribution) format.
 
-If your package has a more complex builds that includes
+If your package has a more complex build that includes
 links to extensions written in other languages such as
-C++, then be sure that include the proper LICENSE(s) for those extensions in your metadata.
+C++, then be sure to include the proper licenses for those extensions in your metadata.
 
 :::{note}
 If you want to learn more about static libraries, then [this overview](https://pypackaging-native.github.io/background/compilation_concepts/#shared-vs-static-libraries) might help.
@@ -454,7 +454,7 @@ We cover that next.
 
 Every time you create a new release on PyPI, the conda-forge bots will recognize the release and will rebuild the newly released version of your package. This process may take a day or two to complete so be patient.
 
-Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
+Once the conda-forge build is complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
 
 Review the pull request. If all tests are passing, you can merge it. Shortly after merging your pull request, the conda-forge release will be available for users to install:
 
@@ -462,11 +462,11 @@ Review the pull request. If all tests are passing, you can merge it. Shortly aft
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 
-If you have walked through this entire tutorial series you have now:
+If you have walked through this entire tutorial series you will now:
 
 1. Understand [what a Python package is ](intro.md)
 2. Know how to [make your code installable](installable-code.md) into Python environments
-3. Know how to create a pyproject.toml file, a README file, and a License and code of conduct.
+3. Know how to create a `pyproject.toml` file, a `README` file, and a `LICENSE` and code of conduct.
 4. Know how to [publish your package to PyPI](publish-pypi.md) and
 5. Know how to publish your package to conda-forge
 

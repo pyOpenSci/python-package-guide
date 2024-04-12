@@ -390,14 +390,14 @@ path = "src/pyospackage/__about__.py"
 Edit the file as follows:
 
 1. Delete `dynamic = ["version"]`: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.
-2. Add `version = 0.1.0` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
+2. Add `version = "0.1.0"` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
 3. Fill in the description if it doesn't already exist.
 
 ```toml
 [project]
 name = "pyospackage"
 # dynamic = ["version"] <- replace this...
-version = 0.1 # with this
+version = "0.1" # with this
 description = 'A simple Python package that adds numbers together' # Add a description of your package if that is not already populated
 ```
 
@@ -428,8 +428,8 @@ To begin:
 
 * Remove support for Python 3.8
 
-Also because you are creating a pure Python package, you can
-in this lesson, you can remove the following classifiers:
+Since you are creating a pure Python package in this lesson,
+you can remove the following classifiers:
 
 ```toml
 classifiers = [
