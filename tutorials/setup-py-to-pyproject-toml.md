@@ -102,6 +102,4 @@ hatch build
 
 This command will build your project based on the specifications in the `pyproject.toml` file. Make sure to check for any errors or warnings during the build process.
 
-7. **Test Existing Functionality**:
-
-After successfully building your project with `pyproject.toml`, it's crucial to ensure that your project's existing functionality remains intact. Run any pre-existing tests to verify that everything still works as expected.
+7. **Test Existing Functionality**: After successfully building your project with `pyproject.toml`, it's crucial to ensure that your project's existing functionality remains intact. Run any pre-existing tests to verify that everything still works as expected.
