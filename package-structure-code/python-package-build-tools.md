@@ -224,7 +224,7 @@ More than one maintainer? (bus factor)|✖|✖| ✖| ✅
 
 Notes:
 
-- _Hatch plans to support using other back-ends and dependency management in the future_
+- _Hatch plans to support dependency management in the future_
 - Poetry supports semantic versioning. Thus, it will support version bumping following commit messages if you use a tool such as Python Semantic Release
 
 ## PDM
