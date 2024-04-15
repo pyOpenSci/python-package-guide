@@ -147,6 +147,17 @@ Neither 'setup.py' nor 'pyproject.toml' found.
 
 :::
 
+:::{admonition} Note about `setup.py`
+:class: tip
+
+If your project already defines a `setup.py` file, Hatch can be used to automatically create the `pyproject.toml`.
+* See [Using Hatch to Migrate setup.py to a pyproject.toml
+](setup-py-to-pyproject-toml.md)
+
+:::
+
+
+
 ## Time to create your Python package!
 
 Now that you understand the basics of the Python package directory structure, and associated key files (`__init__.py` and `pyproject.toml`), it's time to create your Python package!

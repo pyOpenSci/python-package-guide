@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Publish your Python package to PyPI" href="publish-pypi.html" />
-    <link rel="prev" title="Get to know hatch" href="get-to-know-hatch.html" />
+    <link rel="prev" title="Using Hatch to Migrate setup.py to a pyproject.toml" href="setup-py-to-pyproject-toml.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -444,6 +444,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging Tutorial Setup</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Migrate setup.py to a pyproject.toml using Hatch</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="current nav bd-sidenav">
@@ -629,6 +630,14 @@ ERROR:<span class="w"> </span>Directory<span class="w"> </span><span class="s1">
 Neither<span class="w"> </span><span class="s1">&#39;setup.py&#39;</span><span class="w"> </span>nor<span class="w"> </span><span class="s1">&#39;pyproject.toml&#39;</span><span class="w"> </span>found.
 </pre></div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Note about <code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p>
+<p>If your project already defines a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file, Hatch can be used to automatically create the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Using Hatch to Migrate setup.py to a pyproject.toml
+</span></a></p></li>
+</ul>
 </div>
 </section>
 </section>
@@ -1087,12 +1096,12 @@ into any Python environment.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="get-to-know-hatch.html"
+       href="setup-py-to-pyproject-toml.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Get to know hatch</p>
+        <p class="prev-next-title">Using Hatch to Migrate setup.py to a pyproject.toml</p>
       </div>
     </a>
     <a class="right-next"
