@@ -4,16 +4,30 @@ Our Python packaging tutorials use the tool Hatch.
 In this tutorial, you will install and get to know Hatch a bit more before starting to use it.
 
 ## Install Hatch
-To begin, install Hatch following the
-[instructions here](https://hatch.pypa.io/latest/install/).
+To begin, install Hatch from the command line using [pipx](https://pipx.pypa.io/stable/)
+
+```bash
+pipx install hatch
+```
 
 :::{tip}
-If you are comfortable using [pipx](https://pipx.pypa.io/stable/) to install Hatch, we encourage you to do so. pipx will ensure that your package is available across all of your Python environments on your computer rather than just in the environment that you install it into.
-
-However if you are not sure about pipx, you can install Hatch using pip or conda.
+Hatch can also be installed directly using `pip` or `conda`, but we encourage you to use `pipx`.
+This is because `pipx` will ensure that your package is available across all of your Python
+environments on your computer rather than just in the environment that you install it into.
+If you install hatch this way you will have to take care that the environment it is installed into
+is activated for the command to work.
 :::
 
-## Configure Hatch
+You can check that hatch is working properly by issuing a simple command to get the version
+
+```bash
+hatch --version
+# Hatch, version 1.9.4
+```
+
+Note the version numbers will likely be different
+
+## Configure hatch
 
 Once you have installed Hatch, you will want to customize the configuration.
 
