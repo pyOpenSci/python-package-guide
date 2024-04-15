@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Test PyPI vs PyPI: There are two “warehouses” that you can use to publish you..." />
+<meta property="og:description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packaging workflow. On the left you see a grap..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-pypi_177e2026.png" />
-<meta property="og:image:alt" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Test PyPI vs PyPI: There are two “war..." />
-<meta name="description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Test PyPI vs PyPI: There are two “warehouses” that you can use to publish you..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-pypi_a4a4bd2f.png" />
+<meta property="og:image:alt" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packag..." />
+<meta name="description" content="In the previous Python packaging lessons, you’ve learned: What a Python package is, How to make your code installable.. Graphic showing the high level packaging workflow. On the left you see a grap..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Publish your Python package to PyPI &#8212; Python Packaging Guide</title>
@@ -516,14 +516,6 @@ document.write(`
                   
   <section id="publish-your-python-package-to-pypi">
 <h1>Publish your Python package to PyPI<a class="headerlink" href="#publish-your-python-package-to-pypi" title="Link to this heading">#</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>hatch
-<span class="w">  </span>installed<span class="w"> </span>package<span class="w"> </span>hatch<span class="w"> </span><span class="m">1</span>.9.1,<span class="w"> </span>installed<span class="w"> </span>using<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.12.1
-<span class="w">  </span>These<span class="w"> </span>apps<span class="w"> </span>are<span class="w"> </span>now<span class="w"> </span>globally<span class="w"> </span>available
-<span class="w">    </span>-<span class="w"> </span>hatch
-<span class="k">done</span>!<span class="w"> </span>✨<span class="w"> </span>🌟<span class="w"> </span>✨
-</pre></div>
-</div>
-<div class="docutils">
 <p>In the previous Python packaging lessons, you’ve learned:</p>
 <ol class="arabic simple">
 <li><p>What a Python package is</p></li>
@@ -534,44 +526,42 @@ document.write(`
 <p>In this lesson you will learn how to:</p>
 <ul class="simple">
 <li><p>Build your package’s source (sdist) and wheel distributions</p></li>
-<li><p>Setup an account on test PyPI (the process is similar for the real PyPI)</p></li>
-<li><p>Publish your package to test PyPI</p></li>
+<li><p>Setup an account on TestPyPI (the process is similar for PyPI)</p></li>
+<li><p>Publish your package to TestPyPI and PyPI</p></li>
 </ul>
 <p>You will do all of your development work in this lesson using <a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a>.</p>
 <p>Once your package is on PyPI you can publish it to conda-forge (which is a channel on conda)
 using <a class="reference external" href="https://conda.github.io/grayskull/">Grayskull</a>.</p>
 <p>You will learn how to publish to conda-forge in the <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">next lesson</span></a>.</p>
+</div>
 <figure class="align-default" id="build-workflow-tutorial">
 <a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. An arrow to the right takes you to a build distribution files box. Another arrow to the right takes you to a publish to PyPI box which has an arrow containing sdist and wheel that notes those files go to PyPI for hosting. From PyPI is an arrow containing sdist since you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-</div>
-</div>
-<section id="test-pypi-vs-pypi">
-<h2>Test PyPI vs PyPI<a class="headerlink" href="#test-pypi-vs-pypi" title="Link to this heading">#</a></h2>
-<p>There are two “warehouses” that you can use to publish
+<section id="testpypi-vs-pypi">
+<h2>TestPyPI vs PyPI<a class="headerlink" href="#testpypi-vs-pypi" title="Link to this heading">#</a></h2>
+<p>There are two repositories associated with PyPI to which you can upload
 your Python package.</p>
 <ol class="arabic simple">
-<li><p><strong><a class="reference external" href="https://test.pypi.org">Test PyPI</a>:</strong> Test PyPI is a version of the PyPI repository that can be used for testing. This is a great place to practice and learn how to publish a package without taking up space on the real PyPI servers.</p></li>
-<li><p><strong><a class="reference external" href="https://pypi.org">Real PyPI</a>:</strong> This is the PyPI “warehouse” where you can officially publish your Python package. IMPORTANT: only publish your package to PyPI when you are ready for it to be used by others and/or confident that it will become a package that you maintain. PyPI is not a place to practice learning how to publish a Python package.</p></li>
+<li><p><strong><a class="reference external" href="https://test.pypi.org">TestPyPI</a>:</strong> TestPyPI is a package repository provided by PyPI that you can use for testing that your package can be uploaded, downloaded, and installed correctly. This is a great place to practice and learn how to publish a package without exposing your incomplete package on the real PyPI service.</p></li>
+<li><p><strong><a class="reference external" href="https://pypi.org">PyPI</a>:</strong> This is the live, production PyPI repository where you can officially publish your Python package, and from which users will get your package. IMPORTANT: Only publish your package to PyPI when you are ready for it to be used by others and/or confident that it will become a package that you will maintain. PyPI is not a place to practice learning how to publish a Python package.</p></li>
 </ol>
-<p>The steps for publishing on test PyPI vs. real PyPI are the same with the
-exception of a different url. Thus, in this lesson you will use test PyPI
-to practice and learn.</p>
+<p>The steps for publishing on TestPyPI vs. PyPI are similar with the
+exception of a different url. We will point out where they differ.</p>
 </section>
-<section id="steps-for-publishing-a-python-package-on-pypi">
-<h2>4 Steps for publishing a Python package on PyPI<a class="headerlink" href="#steps-for-publishing-a-python-package-on-pypi" title="Link to this heading">#</a></h2>
-<p>In this lesson you will learn how to publish your package to PyPI
+<section id="steps-for-publishing-a-python-package-on-testpypi-or-pypi">
+<h2>4 Steps for publishing a Python package on TestPyPI (or PyPI)<a class="headerlink" href="#steps-for-publishing-a-python-package-on-testpypi-or-pypi" title="Link to this heading">#</a></h2>
+<p>In this lesson you will learn how to publish your package to TestPyPI
 using <a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a>. There are 4 things that
 you need to do to publish your Python package:
-to PyPI. You need to:</p>
+to TestPyPI. You need to:</p>
 <ol class="arabic simple">
 <li><p><strong>Create a package development environment</strong></p></li>
 <li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc"><strong>Build your package using <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code></strong></span></a>. Building a package is the process of turning your code into two types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> your package.</p></li>
-<li><p><strong>Create an account on (test) PyPI</strong>: You will need to create a PyPI account and associated token which provides permissions for you to upload your package.</p></li>
-<li><p><strong>Publish to PyPI using <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code></strong></p></li>
+<li><p><strong>Create an account on TestPyPI (or PyPI)</strong>: You will need to create a TestPyPI account and associated token which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.</p></li>
+<li><p><strong>Publish to TestPyPI using <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code></strong></p></li>
 </ol>
 <p>In a future lesson, you will learn how to create an automated
 GitHub action workflow that publishes an updated
@@ -580,7 +570,7 @@ version of your package to PyPI every time you create a GitHub release.</p>
 <p class="admonition-title">Learn more about building Python packages in our guide</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Learn more about what building a Python package is</span></a></p></li>
-<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">Learn more about package distribution file that PyPI needs called the wheel</span></a></p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">Learn more about the package distribution file that PyPI needs called the wheel</span></a></p></li>
 <li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">Learn more about the package distribution file that conda-forge will need on PyPI called the sdist (source distribution)</span></a></p></li>
 </ul>
 </div>
@@ -589,7 +579,7 @@ version of your package to PyPI every time you create a GitHub release.</p>
 <h2>Step 1: Create a Python package development environment<a class="headerlink" href="#step-1-create-a-python-package-development-environment" title="Link to this heading">#</a></h2>
 <p>The first step in building your package is to create a development environment. The Python environment will contain all of the dependencies needed to both install and work on your package.</p>
 <p>Use Hatch to create your environment.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will create a default envt with your package installed in editable mode</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will create a default environment with your package installed in editable mode</span>
 &gt;<span class="w"> </span>hatch<span class="w"> </span>env<span class="w"> </span>create
 <span class="c1"># If you have already created an environment this command will return Environment `default` already exists</span>
 </pre></div>
@@ -677,31 +667,30 @@ your package to conda-forge</span></a>. You will learn about this in a later les
 <section id="congratulations-you-ve-created-your-python-package-distribution-files">
 <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you’ve created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i><a class="headerlink" href="#congratulations-you-ve-created-your-python-package-distribution-files" title="Link to this heading">#</a></h3>
 <p>You’ve now built your Python package and created your package distribution files. The next step is to setup
-your account on testPyPI so you can publish your package.</p>
+your account on TestPyPI so you can publish your package.</p>
 </section>
 </section>
-<section id="step-3-setup-your-test-pypi-account">
-<h2>Step 3. Setup your test PyPI account<a class="headerlink" href="#step-3-setup-your-test-pypi-account" title="Link to this heading">#</a></h2>
-<p>Next, you’ll setup an account on Test PyPI. Remember that you
-are using test PyPI here instead of the PyPI as a way to
-safely learn how to publish a package without stressing the
-real PyPI’s servers.</p>
-<div class="admonition-test-pypi-vs-pypi admonition">
-<p class="admonition-title">Test PyPI vs. PyPI</p>
-<p>If you have a package that you are confident belongs on PyPI, all of the steps below will also work for you. When you publish using Hatch, you will call <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code> to publish directly to PyPI instead of <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span> <span class="pre">-r</span> <span class="pre">test</span></code> which publishes to Test PyPI.</p>
+<section id="step-3-setup-your-testpypi-account">
+<h2>Step 3. Setup your TestPyPI account<a class="headerlink" href="#step-3-setup-your-testpypi-account" title="Link to this heading">#</a></h2>
+<p>Next, you’ll setup an account on TestPyPI. Remember that you
+are using TestPyPI here instead of the real PyPI as a way to
+safely learn how to publish a package without accidentally “releasing” your package before it’s ready.</p>
+<div class="admonition-testpypi-vs-pypi admonition">
+<p class="admonition-title">TestPyPI vs. PyPI</p>
+<p>If you have a package that you are confident belongs on PyPI, all of the steps below will also work for you. When you publish using Hatch, you will call <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code> to publish directly to PyPI instead of <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span> <span class="pre">-r</span> <span class="pre">test</span></code> which publishes to TestPyPI.</p>
 </div>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://test.pypi.org/">Open up a web browser and go to the test PyPI website</a>.</p></li>
+<li><p><a class="reference external" href="https://test.pypi.org/">Open up a web browser and go to the TestPyPI website</a>.</p></li>
 <li><p><a class="reference external" href="https://test.pypi.org/account/register/">Create an account</a> if you don’t already have one. Be sure to store your password in a safe place!</p></li>
 <li><p>Once you have an account setup, login to it.</p></li>
-<li><p>Search on <a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> to ensure that the package name that you have selected doesn’t already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it’s unique.</p></li>
+<li><p>Search on <a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> (and also on <a class="reference external" href="https://pypi.org/">https://pypi.org/</a>) to ensure that the package name that you have selected doesn’t already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it’s unique.</p></li>
 </ol>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
 <figure class="align-default" id="test-pypi-search">
-<a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="This is a screenshot of the test PyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" src="../_images/testpypi-search.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="This is a screenshot of the TestPyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" src="../_images/testpypi-search.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Before you try to upload to test PyPI, check to see if the name of your package is already taken. You can do that using
-the search box at the top of the test PyPI website.</span><a class="headerlink" href="#test-pypi-search" title="Link to this image">#</a></p>
+<p><span class="caption-text">Before you try to upload to TestPyPI, check to see if the name of your package is already taken. You can do that using
+the search box at the top of the TestPyPI website.</span><a class="headerlink" href="#test-pypi-search" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-setup-2-factor-2fa-authentication admonition">
@@ -715,21 +704,19 @@ as of 1 January 2024.</p>
 </section>
 <section id="step-4-create-a-package-upload-token">
 <h2>Step 4. Create a package upload token<a class="headerlink" href="#step-4-create-a-package-upload-token" title="Link to this heading">#</a></h2>
-<p>To upload your package to PyPI, you will need to create a token. Ideally
-this token is specific to the package that you are publishing.</p>
-<p>However, if your package isn’t already on PyPI, then you will need to create a token for your account first and then create a package-specific token.</p>
+<p>To upload your package to TestPyPI (or PyPI), you will need to create a token for your account first, and should then create a package-specific token. (If you completed this step previously, you can reuse the tokens when you upload your package again.)</p>
 <div class="admonition-why-create-package-specific-tokens admonition">
 <p class="admonition-title">Why create package-specific tokens?</p>
-<p>It’s ideal to create a package-specific token. When you create an account wide token this allows anyone with access to then access all of your PyPI projects. By creating a package specific token, you are limiting the scope of the token to only your specific package. This is just a safe way to set things up for you particularly if you are collaborating with others on package development.</p>
+<p>It’s ideal to create a package-specific token. When you create an account-wide token this allows anyone with access to the account to then access all of your TestPyPI (or PyPI) projects. By creating a package-specific token, you are limiting the scope of the token to only your specific package. This is just a safe way to set things up for you particularly if you are collaborating with others on package development.</p>
 </div>
 <section id="follow-the-steps-below-to-create-your-token">
 <h3>Follow the steps below to create your token.<a class="headerlink" href="#follow-the-steps-below-to-create-your-token" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Login to test PyPI and go to your account settings</p></li>
+<li><p>Login to TestPyPI and go to your account settings</p></li>
 <li><p>Scroll down to the <strong>API tokens</strong> section</p></li>
 <li><p>Click on the <strong>Add API Token</strong> button</p>
 <ul>
-<li><p>If you are new to using PyPI and don’t have any packages there yet, OR if you have other packages on PyPI but are uploading a new package, you will need to create an account-wide token.</p></li>
+<li><p>If you are new to using TestPyPI and don’t have any packages there yet, OR if you have other packages on TestPyPI but are uploading a new package, you will need to create an account-wide token.</p></li>
 </ul>
 </li>
 <li><p>When you create your token, be sure to copy the token value and store it in a secure place before closing that browser.</p></li>
@@ -738,59 +725,59 @@ this token is specific to the package that you are publishing.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pypi-abunchofrandomcharactershere...</span></code></p>
 <p>It should start with <code class="docutils literal notranslate"><span class="pre">pypi</span></code> followed by a dash and a bunch of characters.</p>
 </section>
-<section id="upload-to-pypi-using-hatch">
-<h3>Upload to PyPI using Hatch<a class="headerlink" href="#upload-to-pypi-using-hatch" title="Link to this heading">#</a></h3>
+<section id="upload-to-testpypi-using-hatch">
+<h3>Upload to TestPyPI using Hatch<a class="headerlink" href="#upload-to-testpypi-using-hatch" title="Link to this heading">#</a></h3>
 <p>Once you have your token, you are ready to publish to
-PyPI.</p>
+TestPyPI.</p>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span> <span class="pre">-r</span> <span class="pre">test</span></code></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">-r</span></code> stands for repository. In this case because you are publishing to test-PyPI you will use <code class="docutils literal notranslate"><span class="pre">-r</span> <span class="pre">test</span></code>. Hatch will then ask for a username and credentials.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-r</span></code> stands for repository. In this case because you are publishing to TestPyPI you will use <code class="docutils literal notranslate"><span class="pre">-r</span> <span class="pre">test</span></code>. Hatch will then ask for a username and credentials.</p>
 <ul class="simple">
-<li><p>Add the word <code class="docutils literal notranslate"><span class="pre">__token__</span></code> for your username. This tells Test PyPI that you are using a token value rather than a username.</p></li>
-<li><p>Paste your PyPI token value in at the <code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">credentials</span></code> prompt:</p></li>
+<li><p>Add the word <code class="docutils literal notranslate"><span class="pre">__token__</span></code> for your username. This tells TestPyPI that you are using a token value rather than a username.</p></li>
+<li><p>Paste your TestPyPI token value in at the <code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">credentials</span></code> prompt:</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>❯<span class="w"> </span>hatch<span class="w"> </span>publish<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
 Enter<span class="w"> </span>your<span class="w"> </span>username:<span class="w"> </span>__token__
-Enter<span class="w"> </span>your<span class="w"> </span>credentials:<span class="w"> </span>&lt;past-your-token-value-here&gt;
+Enter<span class="w"> </span>your<span class="w"> </span>credentials:<span class="w"> </span>&lt;paste-your-token-value-here&gt;
 dist/pyospackage-0.1.0-py3-none-any.whl<span class="w"> </span>...<span class="w"> </span>already<span class="w"> </span>exists
 dist/pyospackage-0.1.0.tar.gz<span class="w"> </span>...<span class="w"> </span>already<span class="w"> </span>exists
 </pre></div>
 </div>
 <p>If your credentials are valid, and you have already run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>
 and thus have your 2 distribution files in a <code class="docutils literal notranslate"><span class="pre">dist/</span></code> directory then
-Hatch will publish your package to test PyPI.</p>
+Hatch will publish your package to TestPyPI.</p>
 <p>Hatch also has a caching system so once you enter your credentials it
 will remember them.</p>
 </section>
 </section>
-<section id="install-your-package-from-test-pypi">
-<h2>Install your package from test PyPI<a class="headerlink" href="#install-your-package-from-test-pypi" title="Link to this heading">#</a></h2>
+<section id="install-your-package-from-testpypi">
+<h2>Install your package from TestPyPI<a class="headerlink" href="#install-your-package-from-testpypi" title="Link to this heading">#</a></h2>
 <p>Once your package upload is complete, you can install it from
-test PYPI. You can find the installation instructions on the test PyPI
+TestPYPI. You can find the installation instructions on the TestPyPI
 landing page for your newly uploaded package.</p>
 <figure class="align-default" id="testpypi-landing-page">
-<a class="reference internal image-reference" href="../_images/test-pypi-package.png"><img alt="A screenshot of the test PyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's README file." src="../_images/test-pypi-package.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/test-pypi-package.png"><img alt="A screenshot of the TestPyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's README file." src="../_images/test-pypi-package.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">This is an example landing page for the pyosPackage that was just uploaded. Notice at the top of the page there is instruction for how to install the package from test PyPI. You can simply copy that code and use it to install your package from testPyPi locally.</span><a class="headerlink" href="#testpypi-landing-page" title="Link to this image">#</a></p>
+<p><span class="caption-text">This is an example landing page for the pyosPackage that was just uploaded. Notice at the top of the page there are instructions for how to install the package from TestPyPI. You can simply copy that code and use it to install your package from TestPyPI locally.</span><a class="headerlink" href="#testpypi-landing-page" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>As an example, <a class="reference external" href="https://test.pypi.org/project/pyosPackage/">check out our pyOpenSci pyosPackage landing page on test PyPI</a>. Notice that
+<p>As an example, <a class="reference external" href="https://test.pypi.org/project/pyosPackage/">check out our pyOpenSci pyosPackage landing page on TestPyPI</a>. Notice that
 the page has information about the current package version and also
 installation instructions as follows:</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-i</span> <span class="pre">https://test.pypi.org/simple/</span> <span class="pre">pyosPackage</span></code></p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Publishing to test.PyPI.org vs PyPI.org
-While you can install from test PyPI it’s not recommended that you publish to
-testPyPI as a permanent way to install your package. Test PyPi is a perfect place to learn how to publish your package. But your end goal should be to publish to PyPI.org once you have figured out your workflow.</p>
+<p>Publishing to TestPyPI vs PyPI
+While you can install from TestPyPI it’s not recommended that you publish to
+TestPyPI as a permanent way to install your package. In fact, you cannot, because TestPyPI may delete accounts after a time. TestPyPI is a perfect place to learn how to publish your package and test the installation process. But your end goal should be to publish to PyPI once you have figured out your workflow and your package is ready to deploy.</p>
 </div>
 <section id="time-to-install-your-package">
 <h3>Time to install your package<a class="headerlink" href="#time-to-install-your-package" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>On your computer, activate the development environment that
 you wish to install your newly published package in.</p></li>
-<li><p>Run the installation instructions for your package from test PyPI.</p></li>
+<li><p>Run the installation instructions for your package from TestPyPI.</p></li>
 </ul>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
@@ -804,7 +791,7 @@ Conda</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
-venv mac / Linux</label><div class="sd-tab-content docutils">
+venv Mac / Linux</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>hatch<span class="w"> </span>shell
 &gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>youPackageNameHere
 &gt;<span class="w"> </span>pip<span class="w"> </span>list
@@ -814,7 +801,7 @@ venv mac / Linux</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition-the-value-of-end-to-end-tools-like-hatch-flit-and-poetry admonition">
 <p class="admonition-title">The value of end-to-end tools like hatch, flit and poetry</p>
-<p>In this lesson you are using Hatch and hatchling to create, build and publish your Python Package. <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="std std-doc">Click here to learn about other packaging tools in the ecosystem.</span></a></p>
+<p>In this lesson you are using Hatch and hatchling to create, build and publish your Python package. <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="std std-doc">Click here to learn about other packaging tools in the ecosystem.</span></a></p>
 </div>
 </section>
 </section>
@@ -833,7 +820,7 @@ related to PyPI publication.</p>
 a token specific to your new package.</p>
 <p>To do this:</p>
 <ol class="arabic simple">
-<li><p>Go to test PyPI</p></li>
+<li><p>Go to TestPyPI.</p></li>
 <li><p>Navigate to the “Your Projects” section of your account</p></li>
 <li><p>Click on the manage button for the project that you wish to add a token for</p></li>
 <li><p>Go to settings</p></li>
@@ -843,10 +830,10 @@ a token specific to your new package.</p>
 <p>And you’re all done!</p>
 </section>
 </section>
-<section id="you-have-published-your-package-to-test-pypi">
-<h2>You have published your package to (test) PyPI!<a class="headerlink" href="#you-have-published-your-package-to-test-pypi" title="Link to this heading">#</a></h2>
-<p>Congratulations. You have now successfully published your package to test PyPI. If you have a package that is ready for real-world use on the real PyPI, then you can follow the same steps to publish it on PyPI.org.</p>
-<p>Once you publish on PyPI.org, you can then easily add your package to the conda-forge ecosystem using the <a class="reference external" href="https://conda-forge.org/blog/posts/2020-03-05-grayskull/">grayskull</a> tool.</p>
+<section id="you-have-published-your-package-to-testpypi">
+<h2>You have published your package to TestPyPI!<a class="headerlink" href="#you-have-published-your-package-to-testpypi" title="Link to this heading">#</a></h2>
+<p>Congratulations. You have now successfully published your package to TestPyPI. If you have a package that is ready for real-world use on the real PyPI, then you can follow the same steps (with the differences noted above) to publish it on PyPI.</p>
+<p>Once you publish on PyPI, you can then easily add your package to the conda-forge ecosystem using the <a class="reference external" href="https://conda-forge.org/blog/posts/2020-03-05-grayskull/">grayskull</a> tool.</p>
 <p>You will learn how to do that in the next lesson.</p>
 </section>
 <section id="footnotes">
@@ -909,8 +896,8 @@ a token specific to your new package.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-pypi-vs-pypi">Test PyPI vs PyPI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-for-publishing-a-python-package-on-pypi">4 Steps for publishing a Python package on PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testpypi-vs-pypi">TestPyPI vs PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-for-publishing-a-python-package-on-testpypi-or-pypi">4 Steps for publishing a Python package on TestPyPI (or PyPI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-a-python-package-development-environment">Step 1: Create a Python package development environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-and-environments">Hatch and environments</a></li>
 </ul>
@@ -919,13 +906,13 @@ a token specific to your new package.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#congratulations-you-ve-created-your-python-package-distribution-files"><i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you’ve created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-setup-your-test-pypi-account">Step 3. Setup your test PyPI account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-setup-your-testpypi-account">Step 3. Setup your TestPyPI account</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-a-package-upload-token">Step 4. Create a package upload token</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#follow-the-steps-below-to-create-your-token">Follow the steps below to create your token.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-pypi-using-hatch">Upload to PyPI using Hatch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-testpypi-using-hatch">Upload to TestPyPI using Hatch</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-your-package-from-test-pypi">Install your package from test PyPI</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-your-package-from-testpypi">Install your package from TestPyPI</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-install-your-package">Time to install your package</a></li>
 </ul>
 </li>
@@ -933,7 +920,7 @@ a token specific to your new package.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-if-you-want-to-use-a-manual-token-based-publication-workflow">OPTIONAL: If you want to use a manual token-based publication workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-have-published-your-package-to-test-pypi">You have published your package to (test) PyPI!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-have-published-your-package-to-testpypi">You have published your package to TestPyPI!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
 </ul>
   </nav></div>
