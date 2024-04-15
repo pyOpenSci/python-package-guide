@@ -497,7 +497,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python packaging 101</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Add a...</li>
+    <li class="breadcrumb-item active" aria-current="page">Add a <code...</li>
   </ul>
 </nav>
 </div>
@@ -515,27 +515,27 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="add-a-license-code-of-conduct-to-your-python-package">
-<h1>Add a LICENSE &amp; CODE_OF_CONDUCT to your Python package<a class="headerlink" href="#add-a-license-code-of-conduct-to-your-python-package" title="Link to this heading">#</a></h1>
+<h1>Add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> to your Python package<a class="headerlink" href="#add-a-license-code-of-conduct-to-your-python-package" title="Link to this heading">#</a></h1>
 <p>In the <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">previous lesson</span></a> you:</p>
 <p><i class="fa-solid fa-circle-check" style="color: #703c87;"></i> Created a basic <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file for your scientific Python package</p>
-<p><i class="fa-solid fa-circle-check" style="color: #703c87;"></i> Learned about the core components that are useful to have in a README file.</p>
+<p><i class="fa-solid fa-circle-check" style="color: #703c87;"></i> Learned about the core components that are useful to have in a <code class="docutils literal notranslate"><span class="pre">README</span></code> file.</p>
 <div class="tip admonition">
 <p class="admonition-title">Learning objectives</p>
 <p>In this lesson you will learn:</p>
 <ol class="arabic simple">
-<li><p>How to select and add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file to your package repository with a focus on the GitHub interface.</p></li>
+<li><p>How to select a license and add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file to your package repository, with a focus on the GitHub interface.</p></li>
 <li><p>How to add a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file to your package repository.</p></li>
 <li><p>How you can use the Contributors Covenant website to add generic language as a starting place for your <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code>.</p></li>
 </ol>
 </div>
 <section id="what-is-a-license">
 <h2>What is a license?<a class="headerlink" href="#what-is-a-license" title="Link to this heading">#</a></h2>
-<p>A license contains legal language about how users can use and reuse your software. To set the LICENSE for your project, you:</p>
+<p>A license contains legal language about how users can use and reuse your software. To set the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> for your project, you:</p>
 <ol class="arabic simple">
-<li><p>create LICENSE file in your project directory that specifies the license that you choose for your package and</p></li>
-<li><p>reference that file in your pyproject.toml data where metadata are set.</p></li>
+<li><p>create a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file in your project directory that specifies the license that you choose for your package and</p></li>
+<li><p>reference that file in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> data where metadata are set.</p></li>
 </ol>
-<p>By adding the LICENSE file to your pyproject.toml file, the LICENSE will be included in your package’s metadata which is used to populate your package’s PyPI landing page. The LICENSE is also used in your GitHub repository’s landing page interface.</p>
+<p>By adding the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> will be included in your package’s metadata which is used to populate your package’s PyPI landing page. The <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> is also used in your GitHub repository’s landing page interface.</p>
 <section id="what-license-should-you-use">
 <h3>What license should you use?<a class="headerlink" href="#what-license-should-you-use" title="Link to this heading">#</a></h3>
 <p>We suggest that you use a permissive license that accommodates the other most commonly used licenses in the scientific Python ecosystem (MIT<a class="footnote-reference brackets" href="#mit" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> and BSD-3<a class="footnote-reference brackets" href="#bsd3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>). If you are unsure, use MIT given it’s the generally recommended
@@ -546,28 +546,28 @@ license on <a class="reference external" href="https://choosealicense.com/">choo
 </div>
 </section>
 <section id="where-should-the-license-file-live">
-<h3>Where should the LICENSE file live<a class="headerlink" href="#where-should-the-license-file-live" title="Link to this heading">#</a></h3>
+<h3>Where should the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file live<a class="headerlink" href="#where-should-the-license-file-live" title="Link to this heading">#</a></h3>
 <p>Your <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file should be placed at the root of your package’s repository.
-When you add the LICENSE at the root, GitHub will automagically discover it and
-provide users with a direct link to your license file within your GitHub
+When you add the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> at the root, GitHub will automagically discover it and
+provide users with a direct link to your <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file within your GitHub
 repository.</p>
 <figure class="align-default" id="github-coc-readme-license-tabs">
 <a class="reference internal image-reference" href="../_images/license-github-root-dir.png"><img alt="Image showing the GitHub repository for SunPy an accepted pyOpenSci package." src="../_images/license-github-root-dir.png" style="width: 500px;" /></a>
 <figcaption>
 <p><span class="caption-text">Notice at the top of the
-README portion of the GitHub landing page, there are three tabs directly linking to the README file which is visible, the CODE_OF_CONDUCT file and one that specifies
+README portion of the GitHub landing page, there are three tabs directly linking to the <code class="docutils literal notranslate"><span class="pre">README</span></code> file which is visible, the <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file and one that specifies
 the license that SunPy uses. These files are discovered by GitHub because they
 are placed in the root of the project directory using standard naming conventions.</span><a class="headerlink" href="#github-coc-readme-license-tabs" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="how-to-add-a-license-file-to-your-package-directory">
-<h3>How to add a LICENSE file to your package directory<a class="headerlink" href="#how-to-add-a-license-file-to-your-package-directory" title="Link to this heading">#</a></h3>
-<p>There are several ways to add a LICENSE file:</p>
+<h3>How to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file to your package directory<a class="headerlink" href="#how-to-add-a-license-file-to-your-package-directory" title="Link to this heading">#</a></h3>
+<p>There are several ways to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file:</p>
 <ol class="arabic simple">
 <li><p>When you create a new repository on GitHub, it will ask you if you wish to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file at that time. If you select yes, it will create the file for you.</p></li>
-<li><p>You can add a license through the GitHub gui following the <a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository"><i class="fa-brands fa-github"></i> instructions here</a>.</p></li>
-<li><p>You can add the file manually like we are doing in this lesson.</p></li>
+<li><p>You can add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> through the GitHub gui following the <a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository"><i class="fa-brands fa-github"></i> instructions here</a>.</p></li>
+<li><p>You can add the file manually as we are doing in this lesson.</p></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -576,17 +576,17 @@ are placed in the root of the project directory using standard naming convention
 <li><p><a class="reference internal" href="installable-code.html"><span class="std std-doc">Making your code installable</span></a> and</p></li>
 <li><p><a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publishing your package to PyPI</span></a></p></li>
 </ol>
-<p>then you already have a <strong>LICENSE</strong> file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorial which walks you through adding a CODE_OF_CONDUCT.</p>
-<p>If you don’t yet have a <strong>LICENSE</strong> file in your directory, then continue reading.</p>
+<p>then you already have a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorial which walks you through adding a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code>.</p>
+<p>If you don’t yet have a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file in your directory, then continue reading.</p>
 </div>
 </section>
 <section id="how-to-add-a-license-to-your-package-the-manual-way">
-<h3>How to add a LICENSE to your package - the manual way<a class="headerlink" href="#how-to-add-a-license-to-your-package-the-manual-way" title="Link to this heading">#</a></h3>
-<p>If you don’t already have a LICENSE file, and you are not yet using a platform such as GitHub or GitLab, then you can create a license file by</p>
+<h3>How to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> to your package - the manual way<a class="headerlink" href="#how-to-add-a-license-to-your-package-the-manual-way" title="Link to this heading">#</a></h3>
+<p>If you don’t already have a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file, and you are not yet using a platform such as GitHub or GitLab, then you can create a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file by</p>
 <ol class="arabic simple">
-<li><p>Create a new file called LICENSE. If you are using shell you can type:</p></li>
+<li><p>Create a new file called <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>. If you are using shell you can type:</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a license file in your shell</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a `LICENSE` file in your shell</span>
 <span class="o">&gt;</span> <span class="n">touch</span> <span class="n">LICENSE</span>
 </pre></div>
 </div>
@@ -594,17 +594,17 @@ are placed in the root of the project directory using standard naming convention
 <li><p>Go to <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a></p></li>
 <li><p>Select permissive license</p></li>
 <li><p>It will suggest that you use the <a class="reference external" href="https://choosealicense.com/licenses/mit/">MIT license</a>.</p></li>
-<li><p>Copy the license text that it provides into your LICENSE file that you created above.</p></li>
+<li><p>Copy the license text that it provides into your <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file that you created above.</p></li>
 <li><p>Save your file. You’re all done!</p></li>
 </ol>
 <div class="note admonition">
-<p class="admonition-title">An overview of LICENSES in the scientific Python ecosystem</p>
-<p>In the pyOpenSci <a class="reference internal" href="../documentation/repository-files/license-files.html"><span class="doc std std-doc">packaging guidebook</span></a>, we provide an overview of license in the scientific Python ecosystem. We review why license files are important, which ones are most commonly used for scientific software and how to select the correct license.</p>
+<p class="admonition-title">An overview of licenses in the scientific Python ecosystem</p>
+<p>In the pyOpenSci <a class="reference internal" href="../documentation/repository-files/license-files.html"><span class="doc std std-doc">packaging guidebook</span></a>, we provide an overview of licenses in the scientific Python ecosystem. We review why license files are important, which ones are most commonly used for scientific software and how to select the correct license.</p>
 <p>If you want a broad overview of why licenses are important for protecting open source software, <a class="reference external" href="https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project">check out this blog post that overviews the legal side of things.</a></p>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
-Instructions for adding a license files within the GitHub interface<div class="sd-summary-down docutils">
+Instructions for adding a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file within the GitHub interface<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -613,34 +613,34 @@ Instructions for adding a license files within the GitHub interface<div class="s
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Add license: new GitHub repository</label><div class="sd-tab-content docutils">
-<p class="sd-card-text">When you create a new GitHub repository you can add a license
+<p class="sd-card-text">When you create a new GitHub repository you can add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file
 through the GitHub interface.</p>
 <figure class="align-default" id="github-new-repo">
 <a class="reference internal image-reference" href="../_images/github-new-repo.png"><img alt="Screenshot of the create new repository interface that GitHub provides. The elements of this are the owner and repository name for the new repo. Below that you can add a description of the repository. Below that you can set it to be public or private. At the bottom of the interface there is an Add a README checkbox where it will add a blank readme file for you. At the very bottom there is a line to add a .gitignore file and another to choose a license." src="../_images/github-new-repo.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-text">Image showing the GitHub interface that allows you to add a LICENSE and README file when you create a new repository.</span><a class="headerlink" href="#github-new-repo" title="Link to this image">#</a></p>
+<p><span class="caption-text">Image showing the GitHub interface that allows you to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> and <code class="docutils literal notranslate"><span class="pre">README</span></code> file when you create a new repository.</span><a class="headerlink" href="#github-new-repo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
-Add License: Existing GitHub repository</label><div class="sd-tab-content docutils">
-<p class="sd-card-text">If you already have a GitHub repository for your package, then you can add a LICENSE using the GitHub interface by adding a new file to the repository.</p>
+Add <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>: Existing GitHub repository</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">If you already have a GitHub repository for your package, then you can add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> using the GitHub interface by adding a new file to the repository.</p>
 <ul class="simple">
 <li><p class="sd-card-text">Follow the instructions to select and add a license to your repository on the <a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository">GitHub LICENSE page</a> .</p></li>
-<li><p class="sd-card-text">Once you have added your LICENSE file, be sure to sync your git local repository with the repository on GitHub.com. This means running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to update your local branch.</p></li>
+<li><p class="sd-card-text">Once you have added your <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file, be sure to sync your git local repository with the repository on GitHub.com. This means running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to update your local branch.</p></li>
 </ul>
 <figure class="align-default" id="view-license">
 <a class="reference internal image-reference" href="../_images/view-license-github.png"><img alt="Image showing what the LICENSE file looks like in the GItHub interface. At the top you can see the actual license which in this image is BSD 3-clause New or revised license. Then there is some text describing both what the license is and the associated permissions for that specific license. At the bottom of the image, the actual text for the license is shown in the LICENSE file." src="../_images/view-license-github.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-text">You can view a summary of the LICENSE chosen on your project’s
+<p><span class="caption-text">You can view a summary of the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> chosen on your project’s
 GitHub landing page.</span><a class="headerlink" href="#view-license" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-</details><p>Now you know how to add a LICENSE to your project. Next, you’ll learn
+</details><p>Now you know how to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> to your project. Next, you’ll learn
 about the <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file and how to add it to your
 package directory.</p>
 </section>
@@ -656,14 +656,14 @@ grows. The <code class="docutils literal notranslate"><span class="pre">CODE_OF_
 </ol>
 <p>You can use your code of conduct as a tool that can be referenced when moderating challenging conversations.</p>
 <section id="what-to-put-in-your-code-of-conduct-file">
-<h3>What to put in your code of conduct file<a class="headerlink" href="#what-to-put-in-your-code-of-conduct-file" title="Link to this heading">#</a></h3>
+<h3>What to put in your <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file<a class="headerlink" href="#what-to-put-in-your-code-of-conduct-file" title="Link to this heading">#</a></h3>
 <p>If you are unsure of what language to add to your <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code>
 file, we suggest that you adopt the <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/">contributor covenant language</a> as a starting place.</p>
 <p><img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" /></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> should be placed at the root of your project directory, similar to the LICENSE file.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> should be placed at the root of your project directory, similar to the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file.</p>
 </section>
 <section id="how-to-add-a-code-of-conduct-file-to-your-package-directory">
-<h3>How to add a CODE_OF_CONDUCT file to your package directory<a class="headerlink" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory" title="Link to this heading">#</a></h3>
+<h3>How to add a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file to your package directory<a class="headerlink" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Add a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> file to the root of your repository if it doesn’t already exist.</p></li>
 </ul>
@@ -697,7 +697,7 @@ interact with package maintainers.</p>
 <p>In the upcoming lessons, you will:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="pyproject-toml.html"><span class="doc std std-doc">Add more metadata to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file</span></a> to support building and publishing your package on PyPI.</p></li>
-<li><p>Publish a new version of your Python package to (Test) PyPI to preview the
+<li><p>Publish a new version of your Python package to the test PyPI to preview the
 updated metadata landing page.</p></li>
 </ul>
 </section>
@@ -765,14 +765,14 @@ updated metadata landing page.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-license">What is a license?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-license-should-you-use">What license should you use?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-should-the-license-file-live">Where should the LICENSE file live</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-file-to-your-package-directory">How to add a LICENSE file to your package directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-to-your-package-the-manual-way">How to add a LICENSE to your package - the manual way</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-should-the-license-file-live">Where should the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file live</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-file-to-your-package-directory">How to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file to your package directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-to-your-package-the-manual-way">How to add a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> to your package - the manual way</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-code-of-conduct-file">What is a code of conduct file?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-put-in-your-code-of-conduct-file">What to put in your code of conduct file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory">How to add a CODE_OF_CONDUCT file to your package directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-put-in-your-code-of-conduct-file">What to put in your <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory">How to add a <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> file to your package directory</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up"><i class="fa-solid fa-hands-bubbles"></i> Wrap up</a></li>
