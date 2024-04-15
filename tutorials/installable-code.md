@@ -427,6 +427,7 @@ However, if you wish, you can clean it up a bit.
 To begin:
 
 * Remove support for Python 3.8
+* Within the `[project]` table, update `requires-python = ">3.8"` to `requires-python = ">3.9"`
 
 Since you are creating a pure Python package in this lesson,
 you can remove the following classifiers:
