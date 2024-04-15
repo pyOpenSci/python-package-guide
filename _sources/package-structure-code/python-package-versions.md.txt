@@ -179,7 +179,7 @@ your package version.
 To use **hatch_vcs** you will need to use the **hatchling** build back end.
 
 ```{tip}
-Hatchling can also be used any of the modern build tools
+Hatchling can also be used with any of the modern build tools
 including **Flit** and **PDM** if you prefer those for your day to
 day workflow.
 ```
