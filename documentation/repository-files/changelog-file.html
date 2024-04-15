@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="What the development guide for your Python package should contain" />
+<meta property="og:title" content="CHANGELOG.md Guide" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/documentation/repository-files/development-guide.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/documentation/repository-files/changelog-file.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Ideally, your package should also have a development guide. This file may live in your package documentation and should be linked to from your CONTRIBUTING.md file (discussed above). A development ..." />
+<meta property="og:description" content="Introduction: The CHANGELOG.md document serves as a valuable resource for developers and users alike to track the evolution of a project over time. Understanding the structure and purpose of a chan..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_documentation_repository-files_development-guide_47dab8cc.png" />
-<meta property="og:image:alt" content="Ideally, your package should also have a development guide. This file may live in your package documentation and should be linked to from your CONTRIBUTING.m..." />
-<meta name="description" content="Ideally, your package should also have a development guide. This file may live in your package documentation and should be linked to from your CONTRIBUTING.md file (discussed above). A development ..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_documentation_repository-files_changelog-file_dc607b56.png" />
+<meta property="og:image:alt" content="Introduction: The CHANGELOG.md document serves as a valuable resource for developers and users alike to track the evolution of a project over time. Understan..." />
+<meta name="description" content="Introduction: The CHANGELOG.md document serves as a valuable resource for developers and users alike to track the evolution of a project over time. Understanding the structure and purpose of a chan..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>What the development guide for your Python package should contain &#8212; Python Packaging Guide</title>
+    <title>CHANGELOG.md Guide &#8212; Python Packaging Guide</title>
   
   
   
@@ -56,13 +56,13 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/repository-files/development-guide';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/repository-files/changelog-file';</script>
     <script src="../../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/documentation/repository-files/development-guide.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/documentation/repository-files/changelog-file.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="CHANGELOG.md Guide" href="changelog-file.html" />
-    <link rel="prev" title="Contributing File in your Python Open Source Package" href="contributing-file.html" />
+    <link rel="next" title="README File Guidelines and Resources" href="readme-file-best-practices.html" />
+    <link rel="prev" title="What the development guide for your Python package should contain" href="development-guide.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -456,8 +456,8 @@ document.write(`
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing-file.html">Contributing File</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Development Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog-file.html">Changelog File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development-guide.html">Development Guide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Changelog File</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Community Docs</span></p>
 <ul class="nav bd-sidenav">
@@ -512,7 +512,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation for your Open Source Python Package</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">What the...</li>
+    <li class="breadcrumb-item active" aria-current="page">CHANGELOG.md Guide</li>
   </ul>
 </nav>
 </div>
@@ -529,60 +529,108 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="what-the-development-guide-for-your-python-package-should-contain">
-<h1>What the development guide for your Python package should contain<a class="headerlink" href="#what-the-development-guide-for-your-python-package-should-contain" title="Link to this heading">#</a></h1>
-<p>Ideally, your package should also have a development guide. This file may live in your package documentation and should be linked to from your CONTRIBUTING.md file (discussed above).
-A development guide should clearly show
-technically proficient users how to:</p>
+  <section id="changelog-md-guide">
+<h1>CHANGELOG.md Guide<a class="headerlink" href="#changelog-md-guide" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> document serves as a valuable resource for developers and users alike to track the evolution of a project over time. Understanding the structure and purpose of a changelog helps users and contributors stay informed about new features, bug fixes, and other changes introduced in each release.</p>
+</section>
+<section id="what-is-changelog-md">
+<h2>What is CHANGELOG.md?<a class="headerlink" href="#what-is-changelog-md" title="Link to this heading">#</a></h2>
+<p>The primary purpose of <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> is to provide a record of notable changes made to the project with each new release. This document helps users understand what has been added, fixed, modified, or removed with each version of the software.</p>
+<p><a class="reference external" href="https://keepachangelog.com/en/1.1.0/">Keep a CHAGELOG.md</a> is a great, simple resource for understanding what a changelog is and how to create a good changelog. It also includes examples of things to avoid.</p>
+<div class="tip admonition">
+<p class="admonition-title">Versioning your Python package and semantic versioning</p>
+<p>An important component of a package that serves as the backbone behind the changelog file is a good versioning scheme. Semantic Versioning is widely used across Python packages.</p>
 <ul class="simple">
-<li><p>Set up a development environment locally to work on your package</p></li>
-<li><p>Run the test suite</p></li>
-<li><p>Build documentation locally</p></li>
+<li><p><a class="reference internal" href="../../package-structure-code/python-package-versions.html"><span class="std std-doc">Creating New Versions of Your Python Package</span></a></p></li>
+<li><p><a class="reference external" href="https://semver.org">Semantic Versioning</a></p></li>
 </ul>
-<p>The development guide should also have guidelines for:</p>
+</div>
+</section>
+<section id="why-is-it-important">
+<h2>Why is it important?<a class="headerlink" href="#why-is-it-important" title="Link to this heading">#</a></h2>
+<p>A well-maintained changelog is essential for transparent communication with users and developers. It serves as a centralized hub for documenting changes and highlights the progress made in each release. By keeping the changelog up-to-date, project maintainers can build trust with their user base and demonstrate their commitment to improving the software.</p>
+</section>
+<section id="what-does-it-include">
+<h2>What does it include?<a class="headerlink" href="#what-does-it-include" title="Link to this heading">#</a></h2>
+<p>The contents of a changelog.md file typically follow a structured format, detailing the changes introduced in each release. While the exact format may vary depending on the project’s conventions, some common elements found in changelogs for Python packages include:</p>
 <ul class="simple">
-<li><p>code standards including docstring style, code format and any specific code approaches that the package follows.</p></li>
+<li><p><strong>Versioning</strong>: Clear identification of each release version using semantic versioning or another versioning scheme adopted by the project.</p></li>
+<li><p><strong>Release Date</strong>: The date when each version was released to the public, providing context for the timeline of changes.</p></li>
+<li><p><strong>Change Categories</strong>: Organizing changes into categories such as “Added,” “Changed,” “Fixed,” and “Removed” to facilitate navigation and understanding.</p></li>
+<li><p><strong>Description of Changes</strong>: A concise description of the changes made in each category, including new features, enhancements, bug fixes, and deprecated functionality.</p></li>
+<li><p><strong>Links to Issues or Pull Requests</strong>: References to relevant issue tracker items or pull requests associated with each change, enabling users to access more detailed information if needed.</p></li>
+<li><p><strong>Upgrade Instructions</strong>: Guidance for users on how to upgrade to the latest version, including any breaking changes or migration steps they need to be aware of.</p></li>
+<li><p><strong>Contributor Recognition</strong>: Acknowledgment of contributors who made significant contributions to the release, fostering a sense of community and appreciation for their efforts.</p></li>
 </ul>
-<p>It’s also helpful to specify the types of tests you request if a contributor submits a new feature or a change to an existing feature that will not be covered by your existing test suite.</p>
-<p>If you have time to document it, it’s also helpful to document your maintainer workflow and release processes.</p>
-<section id="why-a-development-guide-is-important">
-<h2>Why a development guide is important<a class="headerlink" href="#why-a-development-guide-is-important" title="Link to this heading">#</a></h2>
-<p>It’s valuable to have a development guide, in the
-case that you wish to:</p>
-<ul class="simple">
-<li><p>Onboard new maintainers.</p></li>
-<li><p>Allow technically inclined contributors to make thoughtful and useful code based pull requests to your repository.</p></li>
-</ul>
-<p>It also is important to pyOpenSci that the maintenance workflow is
-documented in the case that we need to help you onboard new
-maintainers in the future.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A well thought out continuous integration setup in your repository
-can allow users to skip building the package locally (especially if they are just updating text).</p>
+</section>
+<section id="how-do-maintainers-use-it">
+<h2>How do maintainers use it?<a class="headerlink" href="#how-do-maintainers-use-it" title="Link to this heading">#</a></h2>
+<p>Often you will see a changelog that documents a few things:</p>
+<section id="unreleased-section">
+<h3>Unreleased Section<a class="headerlink" href="#unreleased-section" title="Link to this heading">#</a></h3>
+<p>Unreleased commits are at the top of the changelog, commonly in an <code class="docutils literal notranslate"><span class="pre">Unreleased</span></code> section. This is where you can add new fixes, updates and features that have been added to the package since the last release.</p>
+<p>This section might look something like this:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Unreleased</span>
+<span class="k">*</span><span class="w"> </span>Fix: Fixed a bug.... more here. (@github_username, <span class="ni">#issuenumber</span>)
+<span class="k">*</span><span class="w"> </span>Add: new feature to... more here. (@github_username, <span class="ni">#issuenumber</span>)
+</pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A development guide, while strongly recommended, is not a file that
-pyOpenSci requires a package to have in order to be eligible for
-review. Some maintainers may also opt to include the development information in their contributing guide.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><a class="reference external" href="https://mozillascience.github.io/working-open-workshop/contributing/">The Mozilla Science Lab website has a nice outline of things to consider when
-creating a contributing guide</a></p>
-</div>
-<!--
-pyOpenSci packages must:
+</section>
+<section id="release-sections">
+<h3>Release Sections<a class="headerlink" href="#release-sections" title="Link to this heading">#</a></h3>
+<p>When you are ready to make a new release, you can move the elements into a section that is specific to that new release number.</p>
+<p>This specific release section will sit below the unreleased section and can include any updates, additions, deprecations and contributors.</p>
+<p>The unreleased section then always lives at the top of the file and new features continue to be added there. At the same time, after releasing a version like v1.0 all of its features remain in that specific section.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Unreleased</span>
 
-- Contain full documentation for any user-facing functions.
-- Have a test suite that covers the major functionality of the package.
-- Use continuous integration.
-- Use an OSI approved software license.
+<span class="gu">## v1.0</span>
 
-**Good/Better/Best:**
-- **Good:** Include a open source software license with your package.
-- **Better/Best:** Choose a license based on your needs and future use of package, plus explain your choice in your submission for review. -->
+<span class="gu">### Updates</span>
+<span class="k">*</span><span class="w"> </span>Fix: Fixed a bug.... more here. (@github_username, <span class="ni">#issuenumber</span>)
+
+<span class="gu">### Additions</span>
+<span class="k">*</span><span class="w"> </span>Add: new feature to ...more here (@github_username, <span class="ni">#issuenumber</span>)
+
+<span class="gu">### Deprecations</span>
+
+<span class="gu">### Contributors to this release</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="what-does-it-look-like">
+<h2>What does it look like?<a class="headerlink" href="#what-does-it-look-like" title="Link to this heading">#</a></h2>
+<p>This example comes from <a class="reference external" href="https://github.com/hpi-dhc/devicely/blob/main/CHANGELOG.md">Devicely</a>, a pyOpenSci accepted package.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Changelog</span>
+All notable changes to this project will be documented in this file.
+
+The format is based on [<span class="nt">Keep a Changelog</span>](<span class="na">https://keepachangelog.com/en/1.0.0/</span>),
+and this project adheres to [<span class="nt">Semantic Versioning</span>](<span class="na">https://semver.org/spec/v2.0.0.html</span>).
+
+<span class="gu">## [Unreleased]</span>
+
+<span class="gu">## [1.1.0] - 2021-08-24</span>
+<span class="k">-</span><span class="w"> </span>removed acceleration magnitude from devicely.EmpaticaReader and devicely.FarosReader since it was out of the scope of the package
+<span class="k">-</span><span class="w"> </span>added more flexibility to missing files (e.g. ACC.csv, EDA.csv) to devicely.EmpaticaReader
+<span class="k">-</span><span class="w"> </span>changed TagsReader to TimeStampReader to be more consistent with the class naming structure in devicely
+<span class="k">-</span><span class="w"> </span>deprecated methods in devicely.SpacelabsReader: set_window and drop_EB
+<span class="k">-</span><span class="w"> </span>fixed issue with the timestamp index and fixed column names in devicely.SpacelabsReader
+
+<span class="gu">## [1.0.0] - 2021-07-19</span>
+<span class="gu">### Added</span>
+<span class="k">-</span><span class="w"> </span>devicely.FarosReader can both read from and write to EDF files and directories
+<span class="k">-</span><span class="w"> </span>devicely.FarosReader has as attributes the individual dataframes (ACC, ECG, ...) and not only the joined dataframe
+
+<span class="gu">### Changed</span>
+<span class="k">-</span><span class="w"> </span>in devicely.SpacelabsReader, use xml.etree from the standard library instead of third-party &quot;xmltodict&quot;
+<span class="k">-</span><span class="w"> </span>switch from setuptools to Poetry
+
+<span class="gu">### Removed</span>
+<span class="k">-</span><span class="w"> </span>removed setup.py because static project files such as pyproject.toml are preferred
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -597,20 +645,20 @@ pyOpenSci packages must:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="contributing-file.html"
+       href="development-guide.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contributing File in your Python Open Source Package</p>
+        <p class="prev-next-title">What the development guide for your Python package should contain</p>
       </div>
     </a>
     <a class="right-next"
-       href="changelog-file.html"
+       href="readme-file-best-practices.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CHANGELOG.md Guide</p>
+        <p class="prev-next-title">README File Guidelines and Resources</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -632,7 +680,16 @@ pyOpenSci packages must:
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-a-development-guide-is-important">Why a development guide is important</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-changelog-md">What is CHANGELOG.md?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important">Why is it important?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-include">What does it include?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-maintainers-use-it">How do maintainers use it?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unreleased-section">Unreleased Section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-sections">Release Sections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-look-like">What does it look like?</a></li>
 </ul>
   </nav></div>
 
@@ -640,7 +697,7 @@ pyOpenSci packages must:
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/repository-files/development-guide.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/repository-files/changelog-file.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -655,7 +712,7 @@ pyOpenSci packages must:
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../../_sources/documentation/repository-files/development-guide.md.txt">
+    <a href="../../_sources/documentation/repository-files/changelog-file.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
