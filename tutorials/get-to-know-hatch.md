@@ -31,7 +31,7 @@ Note the version numbers will likely be different
 
 Once you have installed Hatch, you will want to customize the configuration.
 
-Hatch stores your configuration information in a [`config.toml` file](https://.pypa.io/latest/config/project-templates/).
+Hatch stores your configuration information in a [`config.toml` file](https://hatch.pypa.io/latest/config/project-templates/).
 
 While you can update the `config.toml` file through the command line,
 it might be easier to look at it and update it in a text editor if you are using it for the first time.
