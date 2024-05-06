@@ -1,7 +1,7 @@
-# Get to know hatch
+# Get to know Hatch
 
 Our Python packaging tutorials use the tool Hatch.
-In this tutorial, you will install and get to know hatch a bit more before starting to use it.
+In this tutorial, you will install and get to know Hatch a bit more before starting to use it.
 
 ## Install Hatch
 To begin, install Hatch from the command line using [pipx](https://pipx.pypa.io/stable/)
@@ -9,11 +9,6 @@ To begin, install Hatch from the command line using [pipx](https://pipx.pypa.io/
 ```bash
 pipx install hatch
 ```
-
-:::{tip}
-Hatch also provides pre-build binaries available from common OS package managers or directly from
-the [hatch website](https://hatch.pypa.io/latest/install/).
-:::
 
 :::{tip}
 Hatch can also be installed directly using `pip` or `conda`, but we encourage you to use `pipx`.
@@ -34,24 +29,24 @@ Note the version numbers will likely be different
 
 ## Configure hatch
 
-Once you have installed hatch, you will want to customize the configuration.
+Once you have installed Hatch, you will want to customize the configuration.
 
-Hatch stores your configuration information in a [config.toml file](https://hatch.pypa.io/latest/config/project-templates/).
+Hatch stores your configuration information in a [`config.toml` file](https://.pypa.io/latest/config/project-templates/).
 
 While you can update the `config.toml` file through the command line,
 it might be easier to look at it and update it in a text editor if you are using it for the first time.
 
-### Step 1: Open and edit your config.toml file
+### Step 1: Open and edit your `config.toml` file
 
 To open the config file in your file browser, run the following command in your shell:
 
 `hatch config explore`
 
-This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor
+This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor.
 
 ### Step 2 - update your email and name
 
-Once the file is open, update the [template] table of the config.toml file with your name and email. This information will be used in any pyproject.toml metadata files that you create using hatch.
+Once the file is open, update the [template] table of the `config.toml` file with your name and email. This information will be used in any `pyproject.toml` metadata files that you create using Hatch.
 
 ```toml
 [template]
@@ -64,7 +59,7 @@ email = "your-email@your-domain.org"
 Next, set tests to false in the `[template.plugins.default]` table.
 
 While tests are important, setting the tests configuration in Hatch
-to `true` will create a more complex pyproject.toml file. You won't
+to `true` will create a more complex `pyproject.toml` file. You won't
 need to use this feature in this beginner friendly tutorial series
 but we will introduce it in later tutorials.
 
@@ -111,19 +106,19 @@ license in more detail in a later lesson, the MIT license is the
 recommended permissive license from [choosealicense.com](https://www.choosealicense.com) and as such we will
 use it for this tutorial series.
 
-You are of course welcome to select another license
+You are of course welcome to select another license.
 
 :::{todo}
 I think we'd need the SPDX license options here if they want to chose bsd-3 for instance
 :::
 
-### Step 4: Close the config file and run hatch config show
+### Step 4: Close the config file and run `hatch config show`
 
 Once you have completed the steps above run the following command in your shell.
 
 `hatch config show`
 
-hatch config show will print out the contents of your config.toml file in your shell. look at the values and ensure that your name, email is set. Also make sure that tests=false.
+`hatch config show` will print out the contents of your `config.toml` file in your shell. look at the values and ensure that your name, email is set. Also make sure that `tests=false`.
 
 ## Hatch features
 
@@ -132,12 +127,13 @@ and maintaining your Python package easier.
 
 :::{admonition} Comparison to other tools
 :class: tip
-[We compared hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here](package-features)
+[We compared Hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here](package-features)
 :::
 
-[More on hatch here](hatch)
+[More on Hatch here](hatch)
 
-A few features that hatch offers
+A few features that Hatch offers
+
 
 1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you (see [Migrating setup.py to pyproject.toml using Hatch](setup-py-to-pyproject-toml.md
 ))
