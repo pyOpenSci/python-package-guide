@@ -51,7 +51,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -545,18 +545,18 @@ using the package’s API.</p>
 </section>
 <section id="what-is-a-docstring-and-how-does-it-relate-to-documentation">
 <h2>What is a docstring and how does it relate to documentation?<a class="headerlink" href="#what-is-a-docstring-and-how-does-it-relate-to-documentation" title="Link to this heading">#</a></h2>
-<p>In Python a docstring refers to text in a function, method or class
+<p>In Python, a docstring refers to text in a function, method or class
 that describes what the function does and its inputs and outputs. Python programmers usually refer to the inputs to functions as <a class="reference external" href="https://docs.python.org/3/glossary.html#term-parameter">“parameters”</a> or <a class="reference external" href="https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter">“arguments”</a>, and the outputs are often called “return values”</p>
 <p>The docstring is thus important for:</p>
 <ul class="simple">
-<li><p>When you call <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Python, for example, <code class="docutils literal notranslate"><span class="pre">help(add_numbers)</span></code> will show the text of the function’s docstring. The docstring thus helps a user better understand how to applying the function more effectively to their workflow.</p></li>
-<li><p>When you build your package’s documentation, the docstrings can also be used to automagically create full API documentation that provides a clean view of all its functions, classes, methods, and attributes.</p></li>
+<li><p>When you call <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Python, for example, <code class="docutils literal notranslate"><span class="pre">help(add_numbers)</span></code> will show the text of the function’s docstring. The docstring thus helps a user better understand how to apply the function more effectively to their workflow.</p></li>
+<li><p>When you build your package’s documentation, the docstrings can also be used to automatically create full API documentation that provides a clean view of all its functions, classes, methods, and attributes.</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Example API Documentation for all functions, classes, methods, and attributes in a package.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.fatiando.org/verde/latest/api/index.html">View example high level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does</a></p></li>
+<li><p><a class="reference external" href="https://www.fatiando.org/verde/latest/api/index.html">View example high-level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does</a></p></li>
 <li><p><a class="reference external" href="https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates">You can further dig down to see what a specific function does within the package by clicking on an API element</a></p></li>
 </ul>
 </div>
@@ -569,13 +569,13 @@ class, method, attribute and/or function in your package (<em>within reason</em>
 every user-facing
 class, method, attribute and/or function in your package (<em>within reason</em>) that:</p>
 <ul class="simple">
-<li><p>Explains what the function, method, attribute or class does</p></li>
+<li><p>Explains what the function, method, attribute, or class does</p></li>
 <li><p>Defines the <code class="docutils literal notranslate"><span class="pre">type</span></code> inputs and outputs (ie. <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">np.array</span></code>)</p></li>
 <li><p>Explains the expected output <code class="docutils literal notranslate"><span class="pre">return</span></code> of the object, method or function.</p></li>
 </ul>
 <section id="three-python-docstring-formats-and-why-we-like-numpy-style">
 <span id="numpy-docstring"></span><h3>Three Python docstring formats and why we like NumPy style<a class="headerlink" href="#three-python-docstring-formats-and-why-we-like-numpy-style" title="Link to this heading">#</a></h3>
-<p>There are several Python docstring formats that you can chose to use when documenting
+<p>There are several Python docstring formats that you can choose to use when documenting
 your package including:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">NumPy-style</a></p></li>
@@ -587,7 +587,7 @@ your package including:</p>
 Python documentation because:</p>
 <ul class="simple">
 <li><p>NumPy style docstrings are core to the scientific Python ecosystem and defined in the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">NumPy style guide</a>. Thus you will find them widely used there.</p></li>
-<li><p>The Numpy style docstring is simplified and thus easier-to-read both in the code and when calling <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Python. In contrast, some feel that reST style docstrings is harder to quickly scan, and can take up more lines of code in modules.</p></li>
+<li><p>The Numpy style docstring is simplified and thus easier to read both in the code and when calling <code class="docutils literal notranslate"><span class="pre">help()</span></code> in Python. In contrast, some feel that reST style docstrings are harder to quickly scan, and can take up more lines of code in modules.</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -598,10 +598,10 @@ to properly read and format NumPy format docstrings.</p>
 </section>
 <section id="docstring-examples-better-and-best">
 <h3>Docstring examples Better and Best<a class="headerlink" href="#docstring-examples-better-and-best" title="Link to this heading">#</a></h3>
-<p>Below is a good example of a well documented function. Notice that this
+<p>Below is a good example of a well-documented function. Notice that this
 function’s docstring describes the function’s inputs and the function’s output
 (or return value). The initial description of the function is short (one line).
-Following that single line description there is a slightly longer description of
+Following that single-line description, there is a slightly longer description of
 what the function does (2 to 3 sentences). The return of the function is also
 specified.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
@@ -674,7 +674,8 @@ sphinx using <a class="reference external" href="https://docs.python.org/3/libra
 </pre></div>
 </div>
 <figure class="align-default" id="earthpy-json-example">
-<a class="reference internal image-reference" href="../../_images/sphinx-rendering-extent-to-json-earthpy.png"><img alt="../../_images/sphinx-rendering-extent-to-json-earthpy.png" src="../../_images/sphinx-rendering-extent-to-json-earthpy.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/sphinx-rendering-extent-to-json-earthpy.png"><img alt="../../_images/sphinx-rendering-extent-to-json-earthpy.png" src="../../_images/sphinx-rendering-extent-to-json-earthpy.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Using the above NumPy format docstring in sphinx, the autodoc extension will
 create the about documentation section for the <code class="docutils literal notranslate"><span class="pre">extent_to_json</span></code> function. The
@@ -752,7 +753,7 @@ the parameter <code class="docutils literal notranslate"><span class="pre">num1<
 <p>Describing the expected data type that a function or method requires
 helps users better understand how to call a function or method.</p>
 <p>Type-hints add another layer of type documentation to your code. Type-hints
-make make it easier for new developers, your future self or contributors
+make it easier for new developers, your future self or contributors
 to get to know your code base quickly.</p>
 <p>Type hints are added to the definition of your function. In the example below, the parameters aNum and aNum2 are defined as being type = int (integer).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>

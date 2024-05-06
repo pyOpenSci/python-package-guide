@@ -51,7 +51,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -529,7 +529,8 @@ bare minimum elements needed to be installable into a Python environment.</p>
 <p>Making your code installable is an important steps towards creating a full
 Python package that is directly installable from PyPI.</p>
 <figure class="align-default" id="code-to-python-package">
-<a class="reference internal image-reference" href="../_images/code-to-python-package.png"><img alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." src="../_images/code-to-python-package.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/code-to-python-package.png"><img alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." src="../_images/code-to-python-package.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A basic installable package needs a few things: code, a <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html">specific package file structure</a> and a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> containing your package’s name and version. Once you have these items in the correct directory structure, you can pip install your package into any environment on your computer. You will learn how to create a basic installable package in this lesson.</span><a class="headerlink" href="#code-to-python-package" title="Link to this image">#</a></p>
 </figcaption>
@@ -556,7 +557,8 @@ environment and shell on your computer. You will also need to have <a class="ref
 </ul>
 </div>
 <figure class="align-default" id="packages-environment">
-<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." src="../_images/environment-package-install.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Making your code installable is the first step towards creating a publishable Python package. Once your code is installable, it is a Python package and can be added to any Python environment on your computer and imported in the same way that you might import a package such as Pandas or GeoPandas.
 If your code is on GitHub or GitLab you can also install it directly from there.</span><a class="headerlink" href="#packages-environment" title="Link to this image">#</a></p>
@@ -875,6 +877,7 @@ However, if you wish, you can clean it up a bit.</p>
 <p>To begin:</p>
 <ul class="simple">
 <li><p>Remove support for Python 3.8</p></li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table, update <code class="docutils literal notranslate"><span class="pre">requires-python</span> <span class="pre">=</span> <span class="pre">&quot;&gt;3.8&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">requires-python</span> <span class="pre">=</span> <span class="pre">&quot;&gt;3.9&quot;</span></code></p></li>
 </ul>
 <p>Since you are creating a pure Python package in this lesson,
 you can remove the following classifiers:</p>

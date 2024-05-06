@@ -51,7 +51,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -536,7 +536,8 @@ using <a class="reference external" href="https://conda.github.io/grayskull/">Gr
 <p>You will learn how to publish to conda-forge in the <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">next lesson</span></a>.</p>
 </div>
 <figure class="align-default" id="build-workflow-tutorial">
-<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. An arrow to the right takes you to a build distribution files box. Another arrow to the right takes you to a publish to PyPI box which has an arrow containing sdist and wheel that notes those files go to PyPI for hosting. From PyPI is an arrow containing sdist since you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. An arrow to the right takes you to a build distribution files box. Another arrow to the right takes you to a publish to PyPI box which has an arrow containing sdist and wheel that notes those files go to PyPI for hosting. From PyPI is an arrow containing sdist since you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users.</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
 </figcaption>
@@ -688,7 +689,8 @@ safely learn how to publish a package without accidentally “releasing” your 
 </ol>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
 <figure class="align-default" id="test-pypi-search">
-<a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="This is a screenshot of the TestPyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" src="../_images/testpypi-search.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="This is a screenshot of the TestPyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" src="../_images/testpypi-search.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Before you try to upload to TestPyPI, check to see if the name of your package is already taken. You can do that using
 the search box at the top of the TestPyPI website.</span><a class="headerlink" href="#test-pypi-search" title="Link to this image">#</a></p>
@@ -758,7 +760,8 @@ will remember them.</p>
 TestPYPI. You can find the installation instructions on the TestPyPI
 landing page for your newly uploaded package.</p>
 <figure class="align-default" id="testpypi-landing-page">
-<a class="reference internal image-reference" href="../_images/test-pypi-package.png"><img alt="A screenshot of the TestPyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's README file." src="../_images/test-pypi-package.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/test-pypi-package.png"><img alt="A screenshot of the TestPyPI page for pyosPackage. It says pyosPackage 0.1.0 at the top with the pip install instructions below. The landing page of the package has information from the package's README file." src="../_images/test-pypi-package.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">This is an example landing page for the pyosPackage that was just uploaded. Notice at the top of the page there are instructions for how to install the package from TestPyPI. You can simply copy that code and use it to install your package from TestPyPI locally.</span><a class="headerlink" href="#testpypi-landing-page" title="Link to this image">#</a></p>
 </figcaption>

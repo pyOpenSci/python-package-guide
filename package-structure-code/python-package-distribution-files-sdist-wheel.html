@@ -51,7 +51,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -516,7 +516,8 @@ document.write(`
   <section id="learn-about-building-a-python-package">
 <h1>Learn about Building a Python Package<a class="headerlink" href="#learn-about-building-a-python-package" title="Link to this heading">#</a></h1>
 <figure class="align-default" id="pypi-conda-overview">
-<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. conda-forge requires an source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#pypi-conda-overview" title="Link to this image">#</a></p>
 </figcaption>
@@ -587,7 +588,8 @@ and PyPI can use, is called a build step.</p>
 <h3>An example - xclim<a class="headerlink" href="#an-example-xclim" title="Link to this heading">#</a></h3>
 <p>When you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a>, one of our <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a>. Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim’s maintainers, <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a>. This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">When you add the classifier section to your pyproject.toml
 and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
@@ -595,20 +597,23 @@ represent on your PyPI landing page. These classifiers also allow users to sort 
 </figcaption>
 </figure>
 <figure class="align-default" id="build-workflow">
-<a class="reference internal image-reference" href="../_images/python-package-development-process.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda-forge for an automated build that sends distributions from pypi to conda-forge." src="../_images/python-package-development-process.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-package-development-process.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda-forge for an automated build that sends distributions from pypi to conda-forge." src="../_images/python-package-development-process.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.</span><a class="headerlink" href="#build-workflow" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="../_images/pypi-metadata-keywords-license.png"><img alt="This screenshot shows the metadata on pypi for the xclim package. on it you can see the name of the license, the author and maintainer names keywords associated with the package and the base python version it requires which is 3.8." src="../_images/pypi-metadata-keywords-license.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/pypi-metadata-keywords-license.png"><img alt="This screenshot shows the metadata on pypi for the xclim package. on it you can see the name of the license, the author and maintainer names keywords associated with the package and the base python version it requires which is 3.8." src="../_images/pypi-metadata-keywords-license.png" style="width: 400px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">PyPI screenshot showing metadata for the xclim package.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <hr class="docutils" />
 <figure class="align-default" id="pypi-metadata-maintainers">
-<a class="reference internal image-reference" href="../_images/pypi-metadata-maintainers.png"><img alt="Here you see the maintinaer metadata as it is displayed on PyPI. for xclim there are three maintainers listed with their profile pictures and github user names to the right." src="../_images/pypi-metadata-maintainers.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/pypi-metadata-maintainers.png"><img alt="Here you see the maintinaer metadata as it is displayed on PyPI. for xclim there are three maintainers listed with their profile pictures and github user names to the right." src="../_images/pypi-metadata-maintainers.png" style="width: 300px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Maintainer names and GitHub usernames for the xclim package as they are displayed on PyPI. This information is recorded in your pyproject.toml and then processed by your build tool and stored in your packages sdist and wheel distributions.</span><a class="headerlink" href="#pypi-metadata-maintainers" title="Link to this image">#</a></p>
 </figcaption>

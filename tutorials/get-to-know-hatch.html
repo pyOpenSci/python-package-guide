@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Get to know hatch" />
+<meta property="og:title" content="Get to know Hatch" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/get-to-know-hatch.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch from the com..." />
+<meta property="og:description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know Hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch from the com..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_get-to-know-hatch_ac6f425b.png" />
-<meta property="og:image:alt" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hat..." />
-<meta name="description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch from the com..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_get-to-know-hatch_0662fef1.png" />
+<meta property="og:image:alt" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know Hatch a bit more before starting to use it. Install Hat..." />
+<meta name="description" content="Our Python packaging tutorials use the tool Hatch. In this tutorial, you will install and get to know Hatch a bit more before starting to use it. Install Hatch: To begin, install Hatch from the com..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Get to know hatch &#8212; Python Packaging Guide</title>
+    <title>Get to know Hatch &#8212; Python Packaging Guide</title>
   
   
   
@@ -51,7 +51,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -498,7 +498,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python packaging 101</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Get to know hatch</li>
+    <li class="breadcrumb-item active" aria-current="page">Get to know Hatch</li>
   </ul>
 </nav>
 </div>
@@ -516,19 +516,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="get-to-know-hatch">
-<h1>Get to know hatch<a class="headerlink" href="#get-to-know-hatch" title="Link to this heading">#</a></h1>
+<h1>Get to know Hatch<a class="headerlink" href="#get-to-know-hatch" title="Link to this heading">#</a></h1>
 <p>Our Python packaging tutorials use the tool Hatch.
-In this tutorial, you will install and get to know hatch a bit more before starting to use it.</p>
+In this tutorial, you will install and get to know Hatch a bit more before starting to use it.</p>
 <section id="install-hatch">
 <h2>Install Hatch<a class="headerlink" href="#install-hatch" title="Link to this heading">#</a></h2>
 <p>To begin, install Hatch from the command line using <a class="reference external" href="https://pipx.pypa.io/stable/">pipx</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>hatch
 </pre></div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Hatch also provides pre-build binaries available from common OS package managers or directly from
-the <a class="reference external" href="https://hatch.pypa.io/latest/install/">hatch website</a>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -547,19 +542,19 @@ is activated for the command to work.</p>
 </section>
 <section id="configure-hatch">
 <h2>Configure hatch<a class="headerlink" href="#configure-hatch" title="Link to this heading">#</a></h2>
-<p>Once you have installed hatch, you will want to customize the configuration.</p>
-<p>Hatch stores your configuration information in a <a class="reference external" href="https://hatch.pypa.io/latest/config/project-templates/">config.toml file</a>.</p>
+<p>Once you have installed Hatch, you will want to customize the configuration.</p>
+<p>Hatch stores your configuration information in a <a class="reference external" href="https://hatch.pypa.io/latest/config/project-templates/"><code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file</a>.</p>
 <p>While you can update the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file through the command line,
 it might be easier to look at it and update it in a text editor if you are using it for the first time.</p>
 <section id="step-1-open-and-edit-your-config-toml-file">
-<h3>Step 1: Open and edit your config.toml file<a class="headerlink" href="#step-1-open-and-edit-your-config-toml-file" title="Link to this heading">#</a></h3>
+<h3>Step 1: Open and edit your <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file<a class="headerlink" href="#step-1-open-and-edit-your-config-toml-file" title="Link to this heading">#</a></h3>
 <p>To open the config file in your file browser, run the following command in your shell:</p>
 <p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">explore</span></code></p>
-<p>This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor</p>
+<p>This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor.</p>
 </section>
 <section id="step-2-update-your-email-and-name">
 <h3>Step 2 - update your email and name<a class="headerlink" href="#step-2-update-your-email-and-name" title="Link to this heading">#</a></h3>
-<p>Once the file is open, update the [template] table of the config.toml file with your name and email. This information will be used in any pyproject.toml metadata files that you create using hatch.</p>
+<p>Once the file is open, update the [template] table of the <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file with your name and email. This information will be used in any <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> metadata files that you create using Hatch.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[template]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;firstName LastName&quot;</span>
 <span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-email@your-domain.org&quot;</span>
@@ -570,7 +565,7 @@ it might be easier to look at it and update it in a text editor if you are using
 <h3>Step 3<a class="headerlink" href="#step-3" title="Link to this heading">#</a></h3>
 <p>Next, set tests to false in the <code class="docutils literal notranslate"><span class="pre">[template.plugins.default]</span></code> table.</p>
 <p>While tests are important, setting the tests configuration in Hatch
-to <code class="docutils literal notranslate"><span class="pre">true</span></code> will create a more complex pyproject.toml file. You won’t
+to <code class="docutils literal notranslate"><span class="pre">true</span></code> will create a more complex <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. You won’t
 need to use this feature in this beginner friendly tutorial series
 but we will introduce it in later tutorials.</p>
 <p>Your <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file should look something like the one below.</p>
@@ -613,13 +608,13 @@ but we will introduce it in later tutorials.</p>
 license in more detail in a later lesson, the MIT license is the
 recommended permissive license from <a class="reference external" href="https://www.choosealicense.com">choosealicense.com</a> and as such we will
 use it for this tutorial series.</p>
-<p>You are of course welcome to select another license</p>
+<p>You are of course welcome to select another license.</p>
 </section>
 <section id="step-4-close-the-config-file-and-run-hatch-config-show">
-<h3>Step 4: Close the config file and run hatch config show<a class="headerlink" href="#step-4-close-the-config-file-and-run-hatch-config-show" title="Link to this heading">#</a></h3>
+<h3>Step 4: Close the config file and run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code><a class="headerlink" href="#step-4-close-the-config-file-and-run-hatch-config-show" title="Link to this heading">#</a></h3>
 <p>Once you have completed the steps above run the following command in your shell.</p>
 <p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code></p>
-<p>hatch config show will print out the contents of your config.toml file in your shell. look at the values and ensure that your name, email is set. Also make sure that tests=false.</p>
+<p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code> will print out the contents of your <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file in your shell. look at the values and ensure that your name, email is set. Also make sure that <code class="docutils literal notranslate"><span class="pre">tests=false</span></code>.</p>
 </section>
 </section>
 <section id="hatch-features">
@@ -628,10 +623,10 @@ use it for this tutorial series.</p>
 and maintaining your Python package easier.</p>
 <div class="tip admonition">
 <p class="admonition-title">Comparison to other tools</p>
-<p><a class="reference internal" href="../package-structure-code/python-package-build-tools.html#package-features"><span class="std std-ref">We compared hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here</span></a></p>
+<p><a class="reference internal" href="../package-structure-code/python-package-build-tools.html#package-features"><span class="std std-ref">We compared Hatch to several of the other popular packaging tools in the ecosystem including flit, pdm and poetry. Learn more here</span></a></p>
 </div>
-<p><a class="reference internal" href="../package-structure-code/python-package-build-tools.html#hatch"><span class="std std-ref">More on hatch here</span></a></p>
-<p>A few features that hatch offers</p>
+<p><a class="reference internal" href="../package-structure-code/python-package-build-tools.html#hatch"><span class="std std-ref">More on Hatch here</span></a></p>
+<p>A few features that Hatch offers</p>
 <ol class="arabic simple">
 <li><p>it will convert metadata stored in a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to a pyproject.toml file for you (see <a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Migrating setup.py to pyproject.toml using Hatch</span></a>)</p></li>
 <li><p>It will help you by storing configuration information for publishing to PyPI after you’ve entered it once.</p></li>
@@ -692,10 +687,10 @@ and maintaining your Python package easier.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-hatch">Install Hatch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-hatch">Configure hatch</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-and-edit-your-config-toml-file">Step 1: Open and edit your config.toml file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-and-edit-your-config-toml-file">Step 1: Open and edit your <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-update-your-email-and-name">Step 2 - update your email and name</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3">Step 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-close-the-config-file-and-run-hatch-config-show">Step 4: Close the config file and run hatch config show</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-close-the-config-file-and-run-hatch-config-show">Step 4: Close the config file and run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-features">Hatch features</a></li>
