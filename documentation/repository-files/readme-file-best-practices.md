@@ -164,7 +164,7 @@ Finally be sure to include instructions on how to cite your package.
 Citation should include the DOI that you want used when citing your package,
 and any language that you'd like to see associated with the citation.
 
-```{tip} README Resources
+:::{admonition} README Resources
 :class: tip
 
 Below are some resources on creating great README.md files that you
@@ -173,4 +173,4 @@ might find helpful.
 * [How to Write a Great README - Bane Sullivan](https://github.com/banesullivan/README)
 * [Art of README - Kira (@hackergrrl)](https://github.com/hackergrrl/art-of-readme)
 
-```
+:::
