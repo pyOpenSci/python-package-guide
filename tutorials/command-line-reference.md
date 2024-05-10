@@ -4,6 +4,8 @@
 **What these tables are:** These tables summarize the command line inputs (e.g., `pipx install hatch`,  `hatch build`) necessary to complete all steps in the package creation process, from installing Hatch to publishing the package on PyPI and conda-forge.
 
 **What these tables are not:** These tables do not cover the manual/non-automated steps (e.g., create PyPI account, create PyPI API token) you have to complete throughout the package creation process.
+
+**Operating system note:** The current iteration of this guide has been tested on the Windows OS only. Many commands are Windows-specific. OS-specific commands are indicated with parentheses after the description of the command, e.g., [COMMAND_DESCRIPTION] (Windows). Corresponding commands for macOS and Linux will be added in the future.
 ```
 
 ## Environment Setup
@@ -14,19 +16,19 @@
 
 | Description | Syntax |
 |---|---|
-| Set PowerShell execution policy | `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` |
-| Install Scoop | `Invoke-RestMethod -Uri https://get.scoop.sh \| Invoke-Expression` |
-| Add "main" bucket as download source | `scoop bucket add main` |
-| Add "versions" bucket as download source | `scoop bucket add versions` |
-| Install pipx | `scoop install pipx` or `scoop install main/pipx` |
-| Install python | `scoop install python` or `scoop install main/python` |
-| Install specific python version | `scoop install versions/python311` |
+| Set PowerShell execution policy (Windows) | `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` |
+| Install Scoop (Windows) | `Invoke-RestMethod -Uri https://get.scoop.sh \| Invoke-Expression` |
+| Add "main" bucket as download source (Windows) | `scoop bucket add main` |
+| Add "versions" bucket as download source (Windows) | `scoop bucket add versions` |
+| Install pipx (Windows) | `scoop install pipx` or `scoop install main/pipx` |
+| Install python (Windows) | `scoop install python` or `scoop install main/python` |
+| Install specific python version (Windows) | `scoop install versions/python311` |
 | Update PATH variable with pipx directory | `pipx ensurepath` |
-| Install hatch | `pipx install hatch` |
+| Install hatch | `pipx install hatch` or `pip install hatch` |
 | List hatch commands | `hatch -h` |
 | Open location of hatch config file | `hatch config explore` |
 | Print contents of hatch config file | `hatch config show` |
-| Install grayskull | `pipx install grayskull` |
+| Install grayskull | `pipx install grayskull` or `pip install grayskull` |
 
 :::
 
@@ -40,6 +42,7 @@
 |---|---|
 | Create package structure and baseline contents | `hatch new [PACKAGE_NAME]` |
 | Install package locally in editable mode | `python -m pip install -e .` |
+| Install development dependencies | `python -m pip install ".[DEPENDENCY_GROUP]"` |
 | List packages installed in current environment | `pip list` |
 | Install package from GitHub | `pip install git+https://github.com/user/repo.git@branch_or_tag` |
 | Create development environment | `hatch env create` |
@@ -67,7 +70,7 @@
 
 :::
 
-## Miscellaneous Commands
+## Versions and Environments
 
 :::{table}
 :widths: auto
@@ -75,7 +78,7 @@
 
 | Description | Syntax |
 |---|---|
-| View environments hatch has access to | `hatch env show` |
+| View environments | `hatch env show` |
 | Print path to active hatch environment | `hatch env find` |
 | Bump package version - major | `hatch version major` |
 | Bump package version - minor | `hatch version minor` |
