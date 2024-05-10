@@ -21,8 +21,6 @@
 | Add "main" bucket as download source (Windows) | `scoop bucket add main` |
 | Add "versions" bucket as download source (Windows) | `scoop bucket add versions` |
 | Install pipx (Windows) | `scoop install pipx` or `scoop install main/pipx` |
-| Install python (Windows) | `scoop install python` or `scoop install main/python` |
-| Install specific python version (Windows) | `scoop install versions/python311` |
 | Update PATH variable with pipx directory | `pipx ensurepath` |
 | Install hatch | `pipx install hatch` or `pip install hatch` |
 | List hatch commands | `hatch -h` |
