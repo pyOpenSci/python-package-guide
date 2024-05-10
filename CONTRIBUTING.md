@@ -73,13 +73,13 @@ later can protect your example from future modifications to the code.
 `:end-at:` options. And if the example code is Python, `:pyobject:` can be an even more future-proof way to keep the
 same documentation content even through code refactors.
 
-If you need example code that doesn't yet exist in `examples/` see (#creating-code-for-documentation).
+If you need example code that doesn't yet exist in `examples/` see [](#creating-code-for-documentation).
 
 ### Creating code for documentation
 
 Whenever you come across a place that could benefit from a code block, instead of writing it in-line with a code fence
 (`` ``` `` blocked text) you can write it as a file in its own format. Your example may even already exist; see
-(#referencing-code-in-documentation).
+[](#referencing-code-in-documentation).
 
 If you need a net new example and it doesn't fit into any existing example files, you can create a new file and
 reference it in a `literalinclude`. If it makes sense for that file to live within one of the existing example
@@ -92,7 +92,7 @@ instance, add new functions to the end of the file, new methods after all existi
 Example code is checked for correctness, so adding a new example may require adding additional tests for coverage, and
 will require fixing any failing tests.
 
-***WARNING***: great care should be taken when modifying existing example code, especially any modification beyond
+***⚠️ WARNING***: great care should be taken when modifying existing example code, especially any modification beyond
 appending to the end of the file. All code examples are (potentially) shared examples. This makes for more consistent
 examples in the guide but can mean action-at-a-distance when modifying the examples for one particular use case.
 If you find yourself modifying existing examples try running this command and then checking those pages in a new build.
