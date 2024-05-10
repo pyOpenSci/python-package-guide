@@ -93,7 +93,8 @@ support configuration for that particular table.
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:lines: 1-2
+:start-at: [build-system]
+:end-at: requires = [
 :::
 
 ### How the pyproject.toml is used when you build a package
@@ -161,7 +162,8 @@ what dependencies your package requires.
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:lines: 7-9
+:start-at: authors = [
+:end-at: ]
 :::
 
 - **dependencies:** dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.
@@ -194,7 +196,7 @@ Then specify dependency groups as follows:
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:lines: 26-38
+:start-at: [project.optional-dependencies]
 :::
 
 Following the above example, you install dependencies like this:
@@ -221,7 +223,7 @@ package setup uses **hatchling** to build the [package's sdist and wheels](pytho
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:lines: 1-24
+:end-before: [project.optional-dependencies]
 :::
 
 Notice that dependencies are specified in this file.
@@ -245,7 +247,6 @@ of values. It has two keys that specify the build backend API and containing pac
 
 :::{literalinclude} ../examples/pure-setuptools/pyproject.toml
 :language: toml
-:lines: 1-24
 :::
 
 ```{note}
