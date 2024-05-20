@@ -449,7 +449,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = 'A python package that adds numbers together.'
 readme = "README.md"
 requires-python = ">=3.9"
@@ -577,7 +577,7 @@ nox                           2021.10.1
 numpy                         1.24.2
 packaging                     23.0
 pandas                        1.5.3
-pyosPackage                   0.1.0          /Users/yourusername/path/here/pyosPackage
+pyosPackage                   0.1            /Users/yourusername/path/here/pyosPackage
 ...
 ...
 ...
