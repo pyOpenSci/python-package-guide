@@ -38,9 +38,9 @@ Once you have published both package distributions (the source distribution and 
 ## What is conda-forge?
 
 conda is an open source package and environment management tool that
-can be used to install tools from the different channels within the Anaconda Cloud repository.
+can be used to install tools from the different channels on Anaconda.org.
 
-You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as `conda install packagename`. In the case of the Anaconda cloud channels, some of these channels such as the default channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the default channel. However, the conda-forge (and bioconda) channel are community-managed channels.
+You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as `conda install packagename`. In the case of conda channels, some of these channels such as the `defaults` channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the `defaults` channel. However, the conda-forge (and bioconda) channel are community-managed channels.
 Anyone can submit a package to these channels however they must pass a technical review in the [staged-recipes GitHub repository](https://github.com/conda-forge/staged-recipes) to be published.
 
 [Learn more about conda channels here.](#about-conda)
