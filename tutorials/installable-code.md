@@ -390,7 +390,7 @@ path = "src/pyospackage/__about__.py"
 Edit the file as follows:
 
 1. Delete `dynamic = ["version"]`: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.
-2. Add `version = "0.1.0"` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
+2. Add `version = "0.1"` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
 3. Fill in the description if it doesn't already exist.
 
 ```toml
