@@ -561,11 +561,11 @@ Below that table identifier are key/value pairs that
 support configuration for that particular table.</p>
 <ul class="simple">
 <li><p>Below <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> is considered a table in the toml language.</p></li>
-<li><p>Within the build-system table below requires = is a key.</p></li>
-<li><p>The associated value for requires is an array containing the value “hatchling”.</p></li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">build-system</span></code> table below <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> is a key.</p></li>
+<li><p>The associated value for <code class="docutils literal notranslate"><span class="pre">requires</span></code> is an array containing the value <code class="docutils literal notranslate"><span class="pre">&quot;hatchling&quot;</span></code>.</p></li>
 </ul>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span><span class="w"> </span><span class="c1"># &lt;- this is a table</span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">#  requires =  is a key and &quot;hatchling&quot; is a value contained within an array specified by square brackets [].</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -627,7 +627,7 @@ what dependencies your package requires.</p>
 <li><p><strong>Maintainers:</strong> you can choose to populate this or not. You can populate this using a list with a sub element for each author or maintainer name, email</p></li>
 </ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;A. Random Developer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;author@example.com&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -664,18 +664,18 @@ what dependencies your package requires.</p>
 <p>The pyproject.toml file can also be used as a replacement for the requirements.txt file which has been traditionally used to store development dependencies such as pytest, code formatters such as Black and documentation tools such as sphinx.</p>
 <p>To add dependencies to your build, add a <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table to your pyproject.toml file.</p>
 <p>Then specify dependency groups as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">project</span><span class="o">.</span><span class="n">optional</span><span class="o">-</span><span class="n">dependencies</span><span class="p">]</span>
-<span class="n">tests</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="s2">&quot;pytest,</span>
-  <span class="s2">&quot;pytest-cov&quot;</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pytest-cov&quot;</span>
 <span class="p">]</span>
-<span class="n">lint</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="s2">&quot;black&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;flake8&quot;</span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;flake8&quot;</span>
 <span class="p">]</span>
-<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;pydata-sphinx-theme</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;pydata-sphinx-theme&quot;</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -739,29 +739,29 @@ of values. It has two keys that specify the build backend API and containing pac
 <li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build-back-end</span> <span class="pre">=</span></code></p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
-<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&gt;=61&quot;</span><span class="p">]</span>
-<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&gt;=61&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
 
-<span class="p">[</span><span class="n">project</span><span class="p">]</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
-<span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;examplePy&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
 <span class="p">]</span>
-<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
 <span class="p">]</span>
-<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
-<span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span> <span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
-<span class="n">readme</span> <span class="o">=</span> <span class="s2">&quot;README.md&quot;</span>
-<span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
+<span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
 <span class="p">]</span>
-<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
