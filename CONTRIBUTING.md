@@ -73,17 +73,17 @@ later can protect your example from future modifications to the code.
 `:end-at:` options. And if the example code is Python, `:pyobject:` can be an even more future-proof way to keep the
 same documentation content even through code refactors.
 
-If you need example code that doesn't yet exist in `examples/` see [](#creating-code-for-documentation).
+If you need example code that doesn't yet exist in `examples/` [see creating code for documentation](#creating-code-for-documentation).
 
 ### Creating code for documentation
 
 Whenever you come across a place that could benefit from a code block, instead of writing it in-line with a code fence
-(`` ``` `` blocked text) you can write it as a file in its own format. Your example may even already exist; see
-[](#referencing-code-in-documentation).
+(`` ``` `` blocked text) you can write it as a file in its own format. Your example may even already exist; [see referencing code in documentation
+](#referencing-code-in-documentation).
 
-If you need a net new example and it doesn't fit into any existing example files, you can create a new file and
-reference it in a `literalinclude`. If it makes sense for that file to live within one of the existing example
-projects please add it there; otherwise create a new folder in the examples.
+If you want to add a new example that doesn't fit into any of the existing example files, you can create a new file and
+reference it in a `literalinclude` block. If it makes sense for that file to live within one of the existing example
+projects please add it there; otherwise create a new folder in the `examples` directory.
 
 If an existing example is incomplete or a new example makes sense to be added to an existing file, go ahead and add it,
 but take care to not break the rest of the guide. Whenever possible, extend the example rather that rewrite it. So for
