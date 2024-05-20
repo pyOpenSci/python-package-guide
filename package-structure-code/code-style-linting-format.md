@@ -328,7 +328,7 @@ Below is an example **.pre-commit-cofig.yaml** file that can be used to setup
 the pre-commit hook and the pre-commit.ci bot if you chose to implement that
 too.
 
-:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:::{literalinclude} ../examples/pure-hatch/.pre-commit-config.yaml
 :language: yaml
 :::
 
