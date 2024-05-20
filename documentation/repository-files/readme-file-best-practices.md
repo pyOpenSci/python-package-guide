@@ -6,7 +6,7 @@ sees before they install your package.
 
 The README.md file is the landing page of:
 
-* Your package as it appears on a repository site such as PyPI or Anaconda
+* Your package as it appears on a repository site such as PyPI or Anaconda.org
 * Your package's GitHub repository
 
 Your README.md file is also used as a measure of package and community
@@ -68,7 +68,7 @@ README file for others to quickly browse.
 
 Some badges that you might consider adding to your README file include:
 
-* Current version of the package on PyPI / Anaconda Cloud
+* Current version of the package on PyPI / Anaconda.org
 
 Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)](https://pypi.org/project/pandera/)
 
@@ -114,7 +114,7 @@ file.
 ### ✔️ Installation instructions
 
 Include instructions for installing your package. If you have published
-the package on both PyPI and Anaconda Cloud be sure to include instructions for both.
+the package on both PyPI and Anaconda.org, be sure to include instructions for both.
 
 ### ✔️ Document any additional setup required
 
