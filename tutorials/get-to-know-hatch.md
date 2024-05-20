@@ -4,11 +4,58 @@ Our Python packaging tutorials use the tool Hatch.
 In this tutorial, you will install and get to know Hatch a bit more before starting to use it.
 
 ## Install Hatch
-To begin, install Hatch from the command line using [pipx](https://pipx.pypa.io/stable/)
 
 ```bash
-pipx install hatch
+pip install hatch
 ```
+:::{note}
+You can optionally install Hatch using pipx from the command line using [pipx](https://pipx.pypa.io/stable/). If you're on Windows you may face issues during installation, if so, read further for instructions on a potential solution.
+
+Installation Process for Windows Users:
+* Step 0: Open Powershell
+  
+Press `Windows Key` and then type `Windows PowerShell`
+
+* Step 1: Ensure Python is installed within your Powershell Terminal
+
+Copy and paste the following code, `python --version`
+
+If Python is not installed, dont be alarmed!
+[Download Python Here](https://www.python.org/downloads/)
+
+* Step 2: Using the "curl" command install Pip
+  
+Copy and Paste the follwing code,
+`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+
+Then copy and paste the following code,
+`python get-pip.py`
+
+* Step 3: Download Scoop
+  
+Copy and Paste the following code,
+`iwr -useb get.scoop.sh | iex`
+
+If any errors occur copy and paste the following code,
+`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
+
+Then re-paste the first
+`iwr -useb get.scoop.sh | iex`
+
+* Step 4: Install Pipx
+  
+Copy and Paste the following code in Powershell,
+`scoop install pipx`
+
+Then, Copy and Paste the following code in Powershell,
+`pipx ensurepath`
+
+* Now, after completion of Step 4, you're prepared to continue to the first portion of the tutorial,
+"Get to know hatch", to proceed in installing Hatch successfully!
+
+
+
+:::
 
 :::{tip}
 Hatch can also be installed directly using `pip` or `conda`, but we encourage you to use `pipx`.
