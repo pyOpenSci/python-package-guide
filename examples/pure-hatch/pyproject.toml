@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "examplePy"
+authors = [
+    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
+]
+maintainers = [
+    {name = "All the contributors"},
+]
+description = "An example Python package used to support Python packaging tutorials"
+keywords = ["pyOpenSci", "python packaging"]
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "dependency-package-name-1",
+    "dependency-package-name-2",
+]
+
+[project.optional-dependencies]
+tests = [
+  "pytest",
+  "pytest-cov"
+]
+lint = [
+  "black",
+  "flake8"
+]
+docs = [
+    "sphinx",
+    "pydata-sphinx-theme"
+]
