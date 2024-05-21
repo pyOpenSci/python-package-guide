@@ -205,11 +205,27 @@ If you have a package that you are confident belongs on PyPI, all of the steps b
 
 Example: `pyosPackage_yourNameHere`.
 
-:::{todo}
-Show them how to do this
+:::{dropdown} Renaming your project before publishing
+:color: secondary
 
-1. update the project-name in the pyproject.toml file
-2. update the module repository directory to be the same
+**Required**:
+0. Search your publishing location(s) to make sure your new name isn't taken
+  - [TestPyPI](https://test.pypi.org/)
+  - [PyPI](https://pypi.org/)
+  - [conda-forge](https://conda-forge.org/packages/)
+1. Update the project name in your pyproject.toml file
+  - `name = "pyospackage_yourNameHere"`
+2. Update the module folder name to be the same
+  - `src/pyospackage_yourNameHere`
+3. Rebuild your project
+  - `hatch build`
+4. Publish your package to capture the name (continue this guide!)
+
+**Recommended**:
+- Update the Github repository name to align with the new package name
+- Update the project folder to match the new package name
+  - `pyospackage_yourNameHere/src`
+- Update mentions of your repository name in other files; e.g. `README.md`
 :::
 
 :::{figure-md} test-pypi-search
