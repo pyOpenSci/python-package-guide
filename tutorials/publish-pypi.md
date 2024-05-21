@@ -113,7 +113,7 @@ Package         Version      Editable project location
 numpy           1.26.3
 pandas          2.1.4
 pip             23.3.1
-pyosPackage     0.1.0        /path/to/your/project/here/pyosPackage
+pyosPackage     0.1          /path/to/your/project/here/pyosPackage
 python-dateutil 2.8.2
 pytz            2023.3.post1
 six             1.16.0
