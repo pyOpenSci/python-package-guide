@@ -208,24 +208,19 @@ Example: `pyosPackage_yourNameHere`.
 :::{dropdown} Renaming your project before publishing
 :color: secondary
 
-**Required**:
-0. Search your publishing location(s) to make sure your new name isn't taken
-  - [TestPyPI](https://test.pypi.org/)
-  - [PyPI](https://pypi.org/)
-  - [conda-forge](https://conda-forge.org/packages/)
-1. Update the project name in your pyproject.toml file
-  - `name = "pyospackage_yourNameHere"`
-2. Update the module folder name to be the same
-  - `src/pyospackage_yourNameHere`
-3. Rebuild your project
-  - `hatch build`
-4. Publish your package to capture the name (continue this guide!)
+#### Required
 
-**Recommended**:
+1. Search your publishing location(s) to make sure your new name isn't taken ([TestPyPI](https://test.pypi.org/), [PyPI](https://pypi.org/), [conda-forge](https://conda-forge.org/packages/))
+2. Update the project name in your pyproject.toml file (e.g. `name = "pyospackage_yourNameHere"`)
+3. Update the module folder name to be the same (e.g. `src/pyospackage_yourNameHere`)
+4. Rebuild your project (`hatch build`)
+5. Publish your package to capture the name (continue this tutorial!)
+
+#### Recommended
+
 - Update the Github repository name to align with the new package name
-- Update the project folder to match the new package name
-  - `pyospackage_yourNameHere/src`
-- Update mentions of your repository name in other files; e.g. `README.md`
+- Update your local project folder to match the new package name (e.g. `pyospackage_yourNameHere/src`)
+- Update mentions of your repository name in other files (e.g. `README.md`)
 :::
 
 :::{figure-md} test-pypi-search
