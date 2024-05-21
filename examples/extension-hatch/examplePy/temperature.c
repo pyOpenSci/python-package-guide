@@ -7,7 +7,7 @@ temperature_celsius_to_fahrenheit(PyObject *self, PyObject *args)
     long celsius;
     PyObject *ret;
 
-    if (!PyArg_ParseTuple(args, "l", celsius))
+    if (!PyArg_ParseTuple(args, "l", &celsius))
         return NULL;
 
     celsius = (celsius * 9/5) + 32;
@@ -23,7 +23,7 @@ temperature_fahrenheit_to_celsius(PyObject *self, PyObject *args)
     long fahrenheit;
     PyObject *ret;
 
-    if (!PyArg_ParseTuple(args, "l", fahrenheit))
+    if (!PyArg_ParseTuple(args, "l", &fahrenheit))
         return NULL;
 
     fahrenheit = (fahrenheit - 32) * 9/5;
