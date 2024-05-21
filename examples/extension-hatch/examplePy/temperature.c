@@ -5,14 +5,15 @@ static PyObject *
 temperature_celsius_to_fahrenheit(PyObject *self, PyObject *args)
 {
     long celsius;
+    long fahrenheit;
     PyObject *ret;
 
     if (!PyArg_ParseTuple(args, "l", &celsius))
         return NULL;
 
-    celsius = (celsius * 9/5) + 32;
+    fahrenheit = (celsius * 9/5) + 32;
 
-    ret = PyLong_FromLong(celsius);
+    ret = PyLong_FromLong(fahrenheit);
     Py_INCREF(ret);
     return ret;
 }
@@ -21,14 +22,15 @@ static PyObject *
 temperature_fahrenheit_to_celsius(PyObject *self, PyObject *args)
 {
     long fahrenheit;
+    long celsius;
     PyObject *ret;
 
     if (!PyArg_ParseTuple(args, "l", &fahrenheit))
         return NULL;
 
-    fahrenheit = (fahrenheit - 32) * 9/5;
+    celsius = (fahrenheit - 32) * 9/5;
 
-    ret = PyLong_FromLong(fahrenheit);
+    ret = PyLong_FromLong(celsius);
     Py_INCREF(ret);
     return ret;
 }
