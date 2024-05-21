@@ -697,7 +697,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.1"
+version = "0.2"
 ```
 
 Now use hatch to publish the new version of your package to test.PyPI.org.
