@@ -284,7 +284,7 @@ will remember them.
 ## Install your package from TestPyPI
 
 Once your package upload is complete, you can install it from
-TestPYPI. You can find the installation instructions on the TestPyPI
+TestPyPI. You can find the installation instructions on the TestPyPI
 landing page for your newly uploaded package.
 
 :::{figure-md} testpypi-landing-page
