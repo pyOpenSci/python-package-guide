@@ -1,0 +1,21 @@
+extends: substitution
+message: Consider using '%s' instead of '%s'
+level: warning
+ignorecase: false
+action:
+  name: replace
+# swap maps tokens in form of bad: good
+swap:
+  - (?:\spypi[\.,]?\s): PyPI # lower case defined as regex to prevent false positives in URLs
+  - pyPi: PyPI
+  - pyPI: PyPI
+  - PYPI: PyPI
+  - PyPi: PyPI
+  - Pypi: PyPI
+  - testPyPI: TestPyPI
+  - testpypi: TestPyPI
+  - testPYPI: TestPyPI
+  - test-pypi: TestPyPI
+  - TestPypi: TestPyPI
+  - TestPYPI: TestPyPI
+
