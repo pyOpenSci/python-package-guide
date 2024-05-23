@@ -688,7 +688,7 @@ You are now ready to publish a new version of your Python package to (test) PyPI
 Try to republish now.
 
 First, update the version of your package in your pyproject toml file. Below version is updated from
-`0.1` to `0.2`.
+`0.1` to `0.1.1`.
 
 ```TOML
 [build-system]
@@ -697,7 +697,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.2"
+version = "0.1.1"
 ```
 
 Now use hatch to publish the new version of your package to test.PyPI.org.
