@@ -160,9 +160,9 @@ To build your package run `hatch build`:
 ```bash
 ➜ hatch build
 ──────────────── sdist ─────────────────
-dist/pyospackage-0.1.0.tar.gz
+dist/pyospackage-0.1.tar.gz
 ──────────────── wheel ─────────────────
-dist/pyospackage-0.1.0-py3-none-any.whl
+dist/pyospackage-0.1-py3-none-any.whl
 
 ```
 
@@ -178,9 +178,9 @@ your package to conda-forge](publish-conda-forge). You will learn about this in 
 :::{todo}
 ➜ hatch build
 ────────────────────────────────────── sdist ──────────────────────────────────────
-dist/pyospackage-0.1.0.tar.gz
+dist/pyospackage-0.1.tar.gz
 ────────────────────────────────────── wheel ──────────────────────────────────────
-dist/pyospackage-0.1.0-py3-none-any.whl
+dist/pyospackage-0.1-py3-none-any.whl
 :::
 
 ### <i class="fa-solid fa-wand-magic-sparkles"></i> Congratulations - you've created your Python package distribution files <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -269,8 +269,8 @@ TestPyPI.
 ❯ hatch publish -r test
 Enter your username: __token__
 Enter your credentials: <paste-your-token-value-here>
-dist/pyospackage-0.1.0-py3-none-any.whl ... already exists
-dist/pyospackage-0.1.0.tar.gz ... already exists
+dist/pyospackage-0.1-py3-none-any.whl ... already exists
+dist/pyospackage-0.1.tar.gz ... already exists
 
 ```
 
