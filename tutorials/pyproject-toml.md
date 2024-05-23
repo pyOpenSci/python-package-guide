@@ -78,7 +78,7 @@ The pyproject.toml file tells your build tool:
 
 - What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to choose from](/package-structure-code/python-package-build-tools)).
 - How and where to retrieve your package's version:
-    - **statically** where you declare the version `version = "0.1.0"` or
+    - **statically** where you declare the version `version = "0.1"` or
     - **dynamically** where the tool looks to the most recent tag in your history to determine the current version.
 - What dependencies your package needs
 - What versions of Python your package supports (important for your users).
@@ -139,7 +139,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 ```
 
 Your next step is to add additional recommended metadata fields that will both
@@ -161,7 +161,7 @@ After completing the [installable code tutorial](installable-code), you should h
 ```toml
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 ```
 
 Add the following to your table:
@@ -230,7 +230,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = """
 Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
@@ -278,7 +278,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = """
 Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
@@ -310,7 +310,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = """
 Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
@@ -382,7 +382,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = """
 Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
@@ -457,7 +457,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = """
 Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
@@ -507,7 +507,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = """
 Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
@@ -558,7 +558,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = """
 Tools that update the pyOpenSci contributor and review metadata
 that is posted on our website
@@ -614,7 +614,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pyospackage"
 # dynamic = ["version"] # you will learn how to dynamically set the version in a future lesson
-version = "0.1.0" # manually assign version (not preferred)
+version = "0.1" # manually assign version (not preferred)
 description = "Tools that update the pyOpenSci contributor and review metadata that is posted on our website"
 authors = [{ name = "Firstname lastname", email = "email@pyopensci.org" }]
 
@@ -688,7 +688,7 @@ You are now ready to publish a new version of your Python package to (test) PyPI
 Try to republish now.
 
 First, update the version of your package in your pyproject toml file. Below version is updated from
-`0.1.0` to `0.1.1`.
+`0.1` to `0.1.1`.
 
 ```TOML
 [build-system]
