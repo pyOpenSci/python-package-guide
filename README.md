@@ -1,6 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-53-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-54-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -142,6 +142,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://www.linkedin.com/pub/pat-tressel/2/b6/610"><img src="https://avatars.githubusercontent.com/u/618916?v=4?s=100" width="100px;" alt="Pat Tressel"/><br /><sub><b>Pat Tressel</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=ptressel" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Aptressel" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/kenseehart"><img src="https://avatars.githubusercontent.com/u/612119?v=4?s=100" width="100px;" alt="Ken Seehart"/><br /><sub><b>Ken Seehart</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=kenseehart" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Akenseehart" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ryanskeith"><img src="https://avatars.githubusercontent.com/u/657220?v=4?s=100" width="100px;" alt="Ryan"/><br /><sub><b>Ryan</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=ryanskeith" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Aryanskeith" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/pb-413"><img src="https://avatars.githubusercontent.com/u/36516871?v=4?s=100" width="100px;" alt="Patrick Byers"/><br /><sub><b>Patrick Byers</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=pb-413" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Apb-413" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
