@@ -44,7 +44,7 @@ To open the config file in your file browser, run the following command in your 
 
 This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor.
 
-You can also retrieve the location of the file by running the following command in your shell:
+You can also retrieve the location of the Hatch config file by running the following command in your shell:
 
 ```bash
 hatch config find
