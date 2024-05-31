@@ -4,7 +4,7 @@
 
 pyOpenSci requires that your package has an distribution that can be installed
 from a public community repository such as PyPI or a conda channel such as
-`bioconda` or `conda-forge` in the Anaconda.org.
+`bioconda` or `conda-forge` on Anaconda.org.
 
 Below you will learn more about the various publishing options for your Python
 package.
