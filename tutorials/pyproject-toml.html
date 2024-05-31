@@ -592,7 +592,7 @@ that table there are two required key/value pairs.</p>
 <li><p>What build backend to use to build your package (we are using <code class="docutils literal notranslate"><span class="pre">hatchling</span></code> in this tutorial but there are <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="doc std std-doc">many others to choose from</span></a>).</p></li>
 <li><p>How and where to retrieve your package’s version:</p>
 <ul>
-<li><p><strong>statically</strong> where you declare the version <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">&quot;0.1&quot;</span></code> or</p></li>
+<li><p><strong>statically</strong> where you declare the version <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">&quot;0.1.0&quot;</span></code> or</p></li>
 <li><p><strong>dynamically</strong> where the tool looks to the most recent tag in your history to determine the current version.</p></li>
 </ul>
 </li>
@@ -650,7 +650,7 @@ package:</p>
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 </pre></div>
 </div>
 <p>Your next step is to add additional recommended metadata fields that will both
@@ -668,7 +668,7 @@ help users find your package on PyPI and also better describe the scope of your 
 <p>After completing the <a class="reference internal" href="installable-code.html"><span class="doc std std-doc">installable code tutorial</span></a>, you should have a pyproject.toml file with a project name and a version in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 </pre></div>
 </div>
 <p>Add the following to your table:</p>
@@ -723,7 +723,7 @@ help users find your package on PyPI and also better describe the scope of your 
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="hll"><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 </span><span class="hll"><span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
 </span><span class="hll"><span class="s2">that is posted on our website</span>
@@ -765,7 +765,7 @@ links following the example below.</p>
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
 <span class="s2">that is posted on our website</span>
@@ -795,7 +795,7 @@ The <a class="reference external" href="https://packaging.python.org/en/latest/s
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
 <span class="s2">that is posted on our website</span>
@@ -852,7 +852,7 @@ Ideally you should set this to the lowest version that is still compatible with 
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
 <span class="s2">that is posted on our website</span>
@@ -918,7 +918,7 @@ These two specifications are equivalent:</p>
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
 <span class="s2">that is posted on our website</span>
@@ -965,7 +965,7 @@ These two specifications are equivalent:</p>
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
 <span class="s2">that is posted on our website</span>
@@ -1016,7 +1016,7 @@ is commented with all of the sections we discussed above.</p>
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
 <span class="s2">that is posted on our website</span>
@@ -1068,7 +1068,7 @@ is commented with all of the sections we discussed above.</p>
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="c1"># dynamic = [&quot;version&quot;] # you will learn how to dynamically set the version in a future lesson</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span><span class="w"> </span><span class="c1"># manually assign version (not preferred)</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="w"> </span><span class="c1"># manually assign version (not preferred)</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
 <span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
 
