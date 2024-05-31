@@ -44,6 +44,13 @@ To open the config file in your file browser, run the following command in your 
 
 This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor.
 
+You can also retrieve the location of the Hatch config file by running the following command in your shell:
+
+```bash
+hatch config find
+# hatch config --help will show you all the options for config.
+```
+
 ### Step 2 - update your email and name
 
 Once the file is open, update the [template] table of the `config.toml` file with your name and email. This information will be used in any `pyproject.toml` metadata files that you create using Hatch.
