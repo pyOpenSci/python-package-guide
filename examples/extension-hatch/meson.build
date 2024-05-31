@@ -2,7 +2,7 @@ project(
   'examplePy',
   'c',
   version: '0.1.dev0',
-  license: 'BSD-3',
+  license: 'MIT',
   meson_version: '>= 0.64.0',
   default_options: [
     'buildtype=debugoptimized',
