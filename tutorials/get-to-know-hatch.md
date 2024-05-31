@@ -13,7 +13,7 @@ You can optionally install Hatch using pipx from the command line using [pipx](h
 
 Installation Process for Windows Users:
 * Step 0: Open Powershell
-  
+
 Press `Windows Key` and then type `Windows PowerShell`
 
 * Step 1: Ensure Python is installed within your Powershell Terminal
@@ -24,7 +24,7 @@ If Python is not installed, dont be alarmed!
 [Download Python Here](https://www.python.org/downloads/)
 
 * Step 2: Using the "curl" command install Pip
-  
+
 Copy and Paste the follwing code,
 `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 
@@ -32,7 +32,7 @@ Then copy and paste the following code,
 `python get-pip.py`
 
 * Step 3: Download Scoop
-  
+
 Copy and Paste the following code,
 `iwr -useb get.scoop.sh | iex`
 
@@ -43,7 +43,7 @@ Then re-paste the first
 `iwr -useb get.scoop.sh | iex`
 
 * Step 4: Install Pipx
-  
+
 Copy and Paste the following code in Powershell,
 `scoop install pipx`
 
