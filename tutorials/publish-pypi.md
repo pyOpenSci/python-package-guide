@@ -113,7 +113,7 @@ Package         Version      Editable project location
 numpy           1.26.3
 pandas          2.1.4
 pip             23.3.1
-pyosPackage     0.1          /path/to/your/project/here/pyosPackage
+pyosPackage     0.1.0        /path/to/your/project/here/pyosPackage
 python-dateutil 2.8.2
 pytz            2023.3.post1
 six             1.16.0
@@ -205,11 +205,22 @@ If you have a package that you are confident belongs on PyPI, all of the steps b
 
 Example: `pyosPackage_yourNameHere`.
 
-:::{todo}
-Show them how to do this
+:::{dropdown} Renaming your project before publishing
+:color: secondary
 
-1. update the project-name in the pyproject.toml file
-2. update the module repository directory to be the same
+#### Required
+
+1. Search your publishing location(s) to make sure your new name isn't taken ([TestPyPI](https://test.pypi.org/), [PyPI](https://pypi.org/), [conda-forge](https://conda-forge.org/packages/))
+2. Update the project name in your pyproject.toml file (e.g. `name = "pyospackage_yourNameHere"`)
+3. Update the module folder name to be the same (e.g. `src/pyospackage_yourNameHere`)
+4. Rebuild your project (`hatch build`)
+5. Publish your package to capture the name (continue this tutorial!)
+
+#### Recommended
+
+- Update the Github repository name to align with the new package name
+- Update your local project folder to match the new package name (e.g. `pyospackage_yourNameHere/src`)
+- Update mentions of your repository name in other files (e.g. `README.md`)
 :::
 
 :::{figure-md} test-pypi-search
