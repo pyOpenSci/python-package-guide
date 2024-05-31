@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud" />
+<meta property="og:title" content="Publishing Your Package In A Community Repository: PyPI or Anaconda.org" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/publish-python-package-pypi-conda.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge in the Anaconda clo..." />
+<meta property="og:description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge on Anaconda.org. Be..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_publish-python-package-pypi-conda_e5b74dbf.png" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_publish-python-package-pypi-conda_10dd8cd6.png" />
 <meta property="og:image:alt" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bio..." />
-<meta name="description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge in the Anaconda clo..." />
+<meta name="description" content="pyOpenSci requires that your package has an distribution that can be installed from a public community repository such as PyPI or a conda channel such as bioconda or conda-forge on Anaconda.org. Be..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud &#8212; Python Packaging Guide</title>
+    <title>Publishing Your Package In A Community Repository: PyPI or Anaconda.org &#8212; Python Packaging Guide</title>
   
   
   
@@ -513,12 +513,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud">
-<h1>Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud<a class="headerlink" href="#publishing-your-package-in-a-community-repository-pypi-or-anaconda-cloud" title="Link to this heading">#</a></h1>
+  <section id="publishing-your-package-in-a-community-repository-pypi-or-anaconda-org">
+<h1>Publishing Your Package In A Community Repository: PyPI or Anaconda.org<a class="headerlink" href="#publishing-your-package-in-a-community-repository-pypi-or-anaconda-org" title="Link to this heading">#</a></h1>
 <!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
 <p>pyOpenSci requires that your package has an distribution that can be installed
 from a public community repository such as PyPI or a conda channel such as
-<code class="docutils literal notranslate"><span class="pre">bioconda</span></code> or <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> in the Anaconda cloud.</p>
+<code class="docutils literal notranslate"><span class="pre">bioconda</span></code> or <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> on Anaconda.org.</p>
 <p>Below you will learn more about the various publishing options for your Python
 package.</p>
 <div class="admonition-take-aways admonition">
@@ -526,7 +526,7 @@ package.</p>
 <ul class="simple">
 <li><p>Installing packages in the same environment using both pip and conda can
 lead to package conflicts.</p></li>
-<li><p>To minimize conflicts for users who may be using conda (or pip) to manage local environments, consider publishing your package to both PyPI and the conda-forge channel of the Anaconda Cloud.</p></li>
+<li><p>To minimize conflicts for users who may be using conda (or pip) to manage local environments, consider publishing your package to both PyPI and the conda-forge channel on Anaconda.org.</p></li>
 </ul>
 <p>Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.</p>
 </div>
@@ -558,12 +558,12 @@ be published on PyPI when you use <a class="reference internal" href="python-pac
 your package.</p>
 </div>
 </section>
-<section id="what-is-anaconda-cloud-and-conda">
-<span id="about-conda"></span><h2>What is Anaconda Cloud and conda?<a class="headerlink" href="#what-is-anaconda-cloud-and-conda" title="Link to this heading">#</a></h2>
+<section id="what-is-conda-and-anaconda-org">
+<span id="about-conda"></span><h2>What is conda and Anaconda.org?<a class="headerlink" href="#what-is-conda-and-anaconda-org" title="Link to this heading">#</a></h2>
 <p>conda is an open source package and environment management tool.
-conda can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda Cloud
+conda can be used to install tools from the <a class="reference external" href="https://repo.anaconda.com/">Anaconda
 repository</a>.</p>
-<p>Anaconda cloud (anaconda.org) contains public and private repositories for
+<p>Anaconda.org contains public and private repositories for
 packages. These repositories are known as channels (discussed below).</p>
 <div class="note admonition">
 <p class="admonition-title">A brief history of conda’s evolution</p>
@@ -589,12 +589,12 @@ channels. The conda package manager can install packages from different channels
 <p>There are several core public channels that most people use to install
 packages using conda, including:</p>
 <ul class="simple">
-<li><p><strong>defaults:</strong> this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda decides what packages live on the default channel.</p></li>
+<li><p><strong>defaults:</strong> this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda (the company) decides what packages live on the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel.</p></li>
 <li><p><a class="reference external" href="https://anaconda.org/conda-forge"><strong>conda-forge:</strong></a> this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.</p></li>
 <li><p><a class="reference external" href="https://anaconda.org/bioconda"><strong>bioconda</strong></a>: this channel focuses on biomedical tools.</p></li>
 </ul>
 <p><strong>conda-forge</strong> emerged as many of the scientific packages did not
-exist in the default Anaconda cloud channel.</p>
+exist in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> Anaconda channel.</p>
 <figure class="align-default" id="pypi-conda-channels">
 <a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to pypi. and test pypi. a testbed server for you to practice." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" />
 </a>
@@ -728,7 +728,7 @@ pull request match the PyPI metadata of the new release.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pypi">What is PyPI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-anaconda-cloud-and-conda">What is Anaconda Cloud and conda?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conda-and-anaconda-org">What is conda and Anaconda.org?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">conda channels</a></li>
 </ul>
 </li>
