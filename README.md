@@ -1,6 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-58-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-59-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -149,6 +149,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/chenghlee"><img src="https://avatars.githubusercontent.com/u/3485949?v=4?s=100" width="100px;" alt="Cheng H. Lee"/><br /><sub><b>Cheng H. Lee</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=chenghlee" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Achenghlee" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Vaunty"><img src="https://avatars.githubusercontent.com/u/68826427?v=4?s=100" width="100px;" alt="Vaunty"/><br /><sub><b>Vaunty</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=Vaunty" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3AVaunty" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.owlfolio.org/"><img src="https://avatars.githubusercontent.com/u/325899?v=4?s=100" width="100px;" alt="Zack Weinberg"/><br /><sub><b>Zack Weinberg</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Azackw" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
