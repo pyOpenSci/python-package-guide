@@ -688,7 +688,7 @@ You are now ready to publish a new version of your Python package to (test) PyPI
 Try to republish now.
 
 First, update the version of your package in your pyproject toml file. Below version is updated from
-`0.1.0` to `0.1.1`.
+`0.1` to `0.1.1`.
 
 ```TOML
 [build-system]

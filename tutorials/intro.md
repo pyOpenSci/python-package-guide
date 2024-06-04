@@ -29,7 +29,6 @@ understanding the steps involved in creating a Python package.
 :caption: Python Packaging Tutorial Setup
 
 Get to know Hatch <get-to-know-hatch>
-Migrate setup.py to a pyproject.toml using Hatch <setup-py-to-pyproject-toml>
 :::
 
 :::{toctree}
@@ -49,6 +48,13 @@ Publish to conda-forge <publish-conda-forge>
 Add README file <add-readme>
 Add a license & code of conduct <add-license-coc>
 Update metadata in pyproject.toml <pyproject-toml>
+:::
+
+:::{toctree}
+:hidden:
+:caption: Hatch for Existing Packages
+
+Migrate setup.py to a pyproject.toml using Hatch <setup-py-to-pyproject-toml>
 :::
 
 :::{admonition} Learning Objectives

@@ -390,7 +390,7 @@ path = "src/pyospackage/__about__.py"
 Edit the file as follows:
 
 1. Delete `dynamic = ["version"]`: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.
-2. Add `version = "0.1.0"` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
+2. Add `version = "0.1"` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
 3. Fill in the description if it doesn't already exist.
 
 ```toml
@@ -449,7 +449,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = 'A python package that adds numbers together.'
 readme = "README.md"
 requires-python = ">=3.9"
@@ -577,7 +577,7 @@ nox                           2021.10.1
 numpy                         1.24.2
 packaging                     23.0
 pandas                        1.5.3
-pyosPackage                   0.1.0          /Users/yourusername/path/here/pyosPackage
+pyosPackage                   0.1            /Users/yourusername/path/here/pyosPackage
 ...
 ...
 ...
