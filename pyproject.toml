@@ -21,7 +21,13 @@ dependencies = [
     "sphinxext-opengraph",
     "sphinx-inline-tabs",
     # for project cards
-    "matplotlib"
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    # for checking style rules
+    "vale"
 ]
 
 [tool.hatch.build.targets.wheel]

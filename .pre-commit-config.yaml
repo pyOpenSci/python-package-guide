@@ -31,6 +31,15 @@ repos:
     - id: codespell
       additional_dependencies:
         - tomli
+      exclude: >
+        (?x)^(
+            .*vale-styles.*
+        )$
+
+  - repo: https://github.com/errata-ai/vale
+    rev: v3.4.2
+    hooks:
+    - id: vale
 
 ci:
     autofix_prs: false
