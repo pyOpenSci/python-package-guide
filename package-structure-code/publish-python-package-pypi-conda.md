@@ -104,7 +104,7 @@ exist in the `defaults` Anaconda channel.
 
 :::{figure-md} pypi-conda-channels
 
-<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to pypi. and test pypi. a testbed server for you to practice. " width="700px">
+<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI. and test PyPI. a testbed server for you to practice. " width="700px">
 
 Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::
