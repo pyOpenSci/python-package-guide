@@ -25,7 +25,7 @@ If Python is not installed, dont be alarmed!
 
 * Step 2: Using the "curl" command install Pip
 
-Copy and Paste the follwing code,
+Copy and Paste the following code,
 `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 
 Then copy and paste the following code,
