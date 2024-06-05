@@ -158,7 +158,7 @@ Also note that we are not discussing conda build workflows in this section.
 package. These are the "raw / as-is" files that you store on GitHub or whatever
 platform you use to manage your code.
 
-**S**ource **Dist**ributions are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
+Source Distributions (**S** + **Dist**) are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
 built or compiled in any way. Thus, when a user installs your source
 distribution using pip, pip needs to run a build step first. For this reason, you could define a source distribution as a compressed archive that contains everything required to build a wheel (except for project dependencies) without network access.
 
