@@ -1,0 +1,20 @@
+name: Add help-wanted issues to help wanted board
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  add-help-wanted:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to project
+        id: add-to-project
+        uses: actions/add-to-project@v1.0.1
+        with:
+          project-url: https://github.com/orgs/pyOpenSci/projects/3
+          # This is a organization level token so it can be used across all repos in our org
+          github-token: ${{ secrets.GHPROJECT_HELP_WANTED }}
+          labeled: help wanted, sprintable
+          label-operator: OR
