@@ -43,7 +43,7 @@ To build, follow these steps:
 1. Install `nox`
 
    ```console
-   $ pip install nox
+   $ python -m pip install nox
    ```
 2. Build the documentation:
 

@@ -140,7 +140,7 @@ If you try to pip install a package with no `pyproject.toml` you will get the fo
 
 ```bash
 GitHub/pyospackage/testme
-➜ pip install .
+➜ python -m pip install .
 ERROR: Directory '.' is not installable.
 Neither 'setup.py' nor 'pyproject.toml' found.
 ```
@@ -527,12 +527,12 @@ Obtaining file:///Users/leahawasser/Documents/GitHub/pyos/pyosPackage
 # use pip list instead of conda list here if you are working in an venv environment rather than a conda envt
 ```
 
-:::{admonition}  What does `pip install -e .` do?
+:::{admonition}  What does `python -m pip install -e .` do?
 :class: tip
 
-Let's break down `pip install -e .`
+Let's break down `python -m pip install -e .`
 
-`pip install -e .` installs your package into the current active
+`python -m pip install -e .` installs your package into the current active
 Python environment in **editable mode** (`-e`). Installing your package in
 editable mode, allows you to work on your code and then test the updates
 interactively in your favorite Python interface. One important caveat of editable mode is that every time you update your code, you may need to restart Python.
@@ -606,7 +606,7 @@ If you wish to share your code without publishing to PyPI you can
 always install packages directly from GitHub using the syntax:
 
 ```bash
-pip install git+https://github.com/user/repo.git@branch_or_tag
+python -m pip install git+https://github.com/user/repo.git@branch_or_tag
 ```
 
 To make your package GitHub installable, you can:
@@ -618,7 +618,7 @@ To make your package GitHub installable, you can:
 For instance below you install the pyospackage from the main branch of the
 pyOpenSci repository.
 
-`pip install git+https://github.com/user/repo.git@branch_or_tag`
+`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`
 
 :::
 

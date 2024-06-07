@@ -110,7 +110,7 @@ Note - this is a tutorial aimed to help you get your package onto conda-forge. T
 First, [install grayskull](https://conda.github.io/grayskull/user_guide.html). You can install it using either pip:
 
 ```bash
-> pip install grayskull
+> python -m pip install grayskull
 ```
 
 or conda

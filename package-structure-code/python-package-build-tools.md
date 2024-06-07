@@ -308,7 +308,7 @@ Install your package in editable mode|✅| Flit supports installing your package
 Build your sdist and wheel distributions|✅| Flit can be used to build your packages sdist and wheel distributions.
 ```
 
-NOTE: _If you are using the most current version of pip, it supports both a symlink approach `flit install -s` and `pip install -e .`_
+NOTE: _If you are using the most current version of pip, it supports both a symlink approach `flit install -s` and `python -m pip install -e .`_
 
 ```{admonition} Learn more about flit
 * [Why use flit?](https://flit.pypa.io/en/stable/rationale.html)
@@ -351,7 +351,7 @@ Publish to PyPI and test PyPI|✅|Hatch supports publishing to both test PyPI an
 Version Control based versioning|✅ | Hatch offers `hatch_vcs` which is a plugin that uses setuptools_scm to support versioning using git tags. The workflow with `hatch_vcs` is the same as that with `setuptools_scm`.
 Version bumping| ✅ | Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
 Follows current packaging standards|✅|Hatch supports current packaging standards for adding metadata to the **pyproject.toml** file.
-Install your package in editable mode|✅| Hatch will install your package into any of its environments by default in editable mode. You can install your package in editable mode manually using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
+Install your package in editable mode|✅| Hatch will install your package into any of its environments by default in editable mode. You can install your package in editable mode manually using `python -m pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
 Build your sdist and wheel distributions|✅| Hatch will build the sdist and wheel distributions
 ✨Matrix environment creation to support testing across Python versions✨|✅| The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
 ✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨| ✅| This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.

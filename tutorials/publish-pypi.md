@@ -142,7 +142,7 @@ by default it uses venv[^venv] which is the default environment management tool 
 Hatch will:
 
 1. Create a new virtualenv (venv) that is located on your computer.
-2. Install your package into the environment in editable mode (similar to `pip install -e`). This means it installs both your project and your project's dependencies as declared in your pyproject.toml file.
+2. Install your package into the environment in editable mode (similar to `python -m pip install -e`). This means it installs both your project and your project's dependencies as declared in your pyproject.toml file.
 
 ## Step 2: Build your package's sdist and wheel distributions
 
@@ -308,7 +308,7 @@ As an example, [check out our pyOpenSci pyosPackage landing page on TestPyPI](ht
 the page has information about the current package version and also
 installation instructions as follows:
 
-`pip install -i https://test.pypi.org/simple/ pyosPackage`
+`python -m pip install -i https://test.pypi.org/simple/ pyosPackage`
 
 :::{important} Publishing to TestPyPI vs PyPI
 While you can install from TestPyPI it's not recommended that you publish to
