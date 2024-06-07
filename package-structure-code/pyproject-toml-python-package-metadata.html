@@ -633,7 +633,7 @@ what dependencies your package requires.</p>
 </div>
 <ul class="simple">
 <li><p><strong>dependencies:</strong> dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</strong> the optional or development dependencies will be installed if someone runs <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[dev]</span></code>. This is a nice way to include your development dependencies for users who may wish to contribute to your project.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</strong> the optional or development dependencies will be installed if someone runs <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[dev]</span></code>. This is a nice way to include your development dependencies for users who may wish to contribute to your project.</p></li>
 <li><p><strong>keywords:</strong> These are the keywords that will appear on your PyPI landing page. Think of them as words that people might use to search for your package.</p></li>
 <li><p><strong>classifiers:</strong> The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of <a class="reference external" href="https://PyPI.org/classifiers/">all options for classifiers can be found her</a>e. Some of the classifiers that you should consider including</p>
 <ul>
@@ -692,11 +692,11 @@ what dependencies your package requires.</p>
 </div>
 <p>Following the above example, you install dependencies like this:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests]</span></code></p></li>
 </ul>
 <p>The above will install both your package in editable mode and all of the dependencies declared in the tests section of your <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</p>
 <p>To install all dependencies and also your package, you’d use:</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests,lint,docs]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests,lint,docs]</span></code></p>
 <div class="tip admonition">
 <p class="admonition-title">Recursive dependencies</p>
 <p>You can also setup sets of recursive dependencies. <a class="reference external" href="https://hynek.me/articles/python-recursive-optional-dependencies/">See this blog post for more.</a></p>

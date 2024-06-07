@@ -630,7 +630,7 @@ installable including:</p>
 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file and <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> files.
 If you try to pip install a package with no <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> you will get the following error:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GitHub/pyospackage/testme
-➜<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+➜<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 ERROR:<span class="w"> </span>Directory<span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installable.
 Neither<span class="w"> </span><span class="s1">&#39;setup.py&#39;</span><span class="w"> </span>nor<span class="w"> </span><span class="s1">&#39;pyproject.toml&#39;</span><span class="w"> </span>found.
 </pre></div>
@@ -968,9 +968,9 @@ Obtaining<span class="w"> </span>file:///Users/leahawasser/Documents/GitHub/pyos
 </pre></div>
 </div>
 <div class="tip admonition">
-<p class="admonition-title">What does <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> do?</p>
-<p>Let’s break down <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> installs your package into the current active
+<p class="admonition-title">What does <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> do?</p>
+<p>Let’s break down <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> installs your package into the current active
 Python environment in <strong>editable mode</strong> (<code class="docutils literal notranslate"><span class="pre">-e</span></code>). Installing your package in
 editable mode, allows you to work on your code and then test the updates
 interactively in your favorite Python interface. One important caveat of editable mode is that every time you update your code, you may need to restart Python.</p>
@@ -1034,7 +1034,7 @@ Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class
 <p class="admonition-title">Installing packages from GitHub</p>
 <p>If you wish to share your code without publishing to PyPI you can
 always install packages directly from GitHub using the syntax:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/user/repo.git@branch_or_tag
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/user/repo.git@branch_or_tag
 </pre></div>
 </div>
 <p>To make your package GitHub installable, you can:</p>
@@ -1045,7 +1045,7 @@ always install packages directly from GitHub using the syntax:</p>
 </ol>
 <p>For instance below you install the pyospackage from the main branch of the
 pyOpenSci repository.</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/user/repo.git&#64;branch_or_tag</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/user/repo.git&#64;branch_or_tag</span></code></p>
 </div>
 </section>
 <section id="congratulations-you-created-your-first-python-package">
