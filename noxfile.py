@@ -14,6 +14,7 @@ SOURCE_DIR = pathlib.Path(".")
 
 # Location of the translation templates
 TRANSLATION_TEMPLATE_DIR = pathlib.Path(BUILD_DIR, "gettext")
+TRANSLATION_LOCALES_DIR = pathlib.Path("locales")
 
 # Sphinx build commands
 SPHINX_BUILD = "sphinx-build"
@@ -44,8 +45,8 @@ AUTOBUILD_INCLUDE = [
 # List of languages for which locales will be generated in (/locales/<lang>)
 LANGUAGES = ["es"]
 
-# List of languages that should be built when releasing the guide
-RELEASE_LANGUAGES = ['es']
+# List of languages that should be built when releasing the guide (docs or docs-test sessions)
+RELEASE_LANGUAGES = []
 
 
 @nox.session
@@ -194,8 +195,10 @@ def build_translations(session):
         release_build = True
     # if running from the docs or docs-test sessions, build only release languages
     BUILD_LANGUAGES = RELEASE_LANGUAGES if release_build else LANGUAGES
-    session.log(f"Existing translations: {LANGUAGES}")
-    session.log(f"Release Languages: {RELEASE_LANGUAGES}")
+    # only build languages that have a locale folder
+    BUILD_LANGUAGES = [lang for lang in BUILD_LANGUAGES if (TRANSLATION_LOCALES_DIR / lang).exists()]
+    session.log(f"Declared languages: {LANGUAGES}")
+    session.log(f"Release languages: {RELEASE_LANGUAGES}")
     session.log(f"Building languages{' for release' if release_build else ''}: {BUILD_LANGUAGES}")
     if not BUILD_LANGUAGES:
         session.warn("No translations to build")
