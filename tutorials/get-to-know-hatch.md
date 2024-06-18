@@ -23,13 +23,10 @@ Copy and paste the following code, `python --version`
 If Python is not installed, dont be alarmed!
 [Download Python Here](https://www.python.org/downloads/)
 
-* Step 2: Using the "curl" command install Pip
+* Step 2: Install Pip
 
 Copy and Paste the following code,
-`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-
-Then copy and paste the following code,
-`python get-pip.py`
+`python -m ensurepip`
 
 * Step 3: Download Scoop
 
