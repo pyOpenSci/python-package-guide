@@ -89,7 +89,7 @@ Remember that the more people understand what your package does, the more people
 Next, add instructions that tell users how to install your package.
 
 For example, can they use pip to install your package?
-`pip install packagename`
+`python -m pip install packagename`
 
 or conda?
 
@@ -202,7 +202,7 @@ Short description here using non-technical language that describes what your pac
 
 To install this package run:
 
-`pip install pyosPackage`
+`python -m pip install pyosPackage`
 
 ## OPTIONAL - if you have additional setup instructions add them here. if not, skip this section.
 

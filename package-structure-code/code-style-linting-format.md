@@ -315,7 +315,7 @@ To setup pre-commit locally, you need to do 3 things:
 1. Install pre-commit (and include it as a development requirement in your repository)
 
 ```sh
-pip install pre-commit
+python -m pip install pre-commit
 
 # or
 

@@ -168,7 +168,7 @@ what dependencies your package requires.
 
 - **dependencies:** dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.
 
-- **`[project.optional-dependencies]`:** the optional or development dependencies will be installed if someone runs `pip install projectname[dev]`. This is a nice way to include your development dependencies for users who may wish to contribute to your project.
+- **`[project.optional-dependencies]`:** the optional or development dependencies will be installed if someone runs `python -m pip install projectname[dev]`. This is a nice way to include your development dependencies for users who may wish to contribute to your project.
 
 - **keywords:** These are the keywords that will appear on your PyPI landing page. Think of them as words that people might use to search for your package.
 - **classifiers:** The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of [all options for classifiers can be found her](https://PyPI.org/classifiers/)e. Some of the classifiers that you should consider including
@@ -201,13 +201,13 @@ Then specify dependency groups as follows:
 
 Following the above example, you install dependencies like this:
 
-- `pip install -e .[tests]`
+- `python -m pip install -e .[tests]`
 
 The above will install both your package in editable mode and all of the dependencies declared in the tests section of your `[project.optional-dependencies]` table.
 
 To install all dependencies and also your package, you'd use:
 
-`pip install -e .[tests,lint,docs]`
+`python -m pip install -e .[tests,lint,docs]`
 
 :::{admonition} Recursive dependencies
 :class: tip
