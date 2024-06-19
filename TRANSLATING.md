@@ -153,7 +153,7 @@ msgstr ""
 
 ```
 
-The first line of an entr starts with `#:` and is a reference to the original source file and line number from which the text was extracted. This is information will be useful for finding the context of the text in the guide.
+The first line of an entry starts with `#:` and is a reference to the original source file and line number from which the text was extracted. This information is useful for finding the context of the text in the guide.
 
 The `msgid` field contains the original English text that needs to be translated. The `msgstr` field is where you will enter the translated text. This field might contain text if someone else already translated the entry.
 
