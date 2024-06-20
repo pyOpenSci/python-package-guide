@@ -1,6 +1,7 @@
 ---
 orphan: true
 ---
+
 # Translation Guide for the Python Packaging Guide
 
 This guide will help you get started contributing to the translation of the Python Packaging Guide.
@@ -129,6 +130,7 @@ locales/es/LC_MESSAGES/index.po: 88 translated, 0 fuzzy, 5 untranslated.
 ```
 
 What do these categories mean:
+
 - Translated strings are strings that have been translated into the target language.
 - Fuzzy strings are strings that have been translated but need to be reviewed because the original English string in the guide changed.
 - Untranslated strings are strings that have not been translated yet.
@@ -236,10 +238,9 @@ nox -s docs-live-lang -- es
 
 Note the `--` before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the `--`, nox will look instead for a session named 'es' and complain that it does not exist.
 
-This command will use `sphinx-autobuild` to launch a local web server where you can access the translated version of the guide. You can open the guide in your browser by navigating to [http://localhost:8000](http://localhost:8000).
+This command will use `sphinx-autobuild` to launch a local web server where you can access the translated version of the guide. You can open the guide in your browser by navigating to `http://localhost:8000`.
 
 This is a great way to see how the translated version of the guide looks as you make changes to the translation files.
-
 
 ## Submitting a PR for Your Contribution
 
@@ -288,8 +289,6 @@ When the guide is built for release in CI, Sphinx will also generate the transla
 
 Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available in [https://www.pyopensci.org/python-package-guide/es/](https://www.pyopensci.org/python-package-guide/es/).
 
-
-
 ## Frequently Asked Questions (FAQ)
 
 ### How do I know which strings need to be translated?
@@ -329,11 +328,9 @@ You should not translate images in the guide. Producing translated versions of i
 
 In some special cases, an image might be critical to the understanding of the content. In those cases, the translations will be handled by the maintainers and editors outside this workflow.
 
-
 ### I am interested in translating the guide into a language that is not listed. How can I get started?
 
 If you want to start a new translation of the guide into a language that is not listed, you should [create an issue](https://github.com/pyOpenSci/python-package-guide/issues) in the repository to let the maintainers know that you intend to work on it. This will help avoid duplication of effort and ensure that the maintainers are ready to review your contribution when you are done.
-
 
 ### How do I know when a translation is ready to be released?
 
@@ -346,5 +343,7 @@ TODO: There are many approaches here, some projects release a translation as soo
 If you have any questions or need help with your translation, you can create an issue in the repository if you encounter any problems or need assistance.
 
 TODO: Maybe [Discourse](https://pyopensci.discourse.group/) could be used as a way for contributors to ask for help with translations or the translation workflow?
+
+```
 
 ```
