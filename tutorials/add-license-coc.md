@@ -165,7 +165,7 @@ The `CODE_OF_CONDUCT.md` should be placed at the root of your project directory,
 > touch CODE_OF_CONDUCT.md
 ```
 
-- Visit the [contributor covenant website](https://www.contributor-covenant.org/) and add [the markdown version of their code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) to your `CODE_OF_CONDUCT.md` file. Read the text closely to ensure you both understand it and also agree with its contents!
+- Visit the [contributor covenant website](https://www.contributor-covenant.org/) and add [the markdown version of their code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) to your `CODE_OF_CONDUCT.md` file. Be sure to fill in any placeholder information. Read the text closely to ensure you both understand it and also agree with its contents!
 
 That's it - you've now added a code of conduct to your package directory.
 
