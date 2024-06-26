@@ -1,35 +1,99 @@
 # Get to know Hatch
 
-Our Python packaging tutorials use the tool Hatch.
-In this tutorial, you will install and get to know Hatch a bit more before starting to use it.
+Our Python packaging tutorials use the tool
+[Hatch](https://hatch.pypa.io/latest/). While there are [many great packaging](/package-structure-code/python-package-build-tools)
+tool options out there, we have selected to teach Hatch because
 
-## Install Hatch
-To begin, install Hatch from the command line using [pipx](https://pipx.pypa.io/stable/)
+1. It is an end-to-end tool that supports most of the steps required to create a quality Python package. Beginners will have fewer tools to learn if they use Hatch.
+1. It supports different build back-ends if you ever need to compile code in other languages.
+1. As a community, pyOpenSci has decided that Hatch is a user-friendly tool that supports many different scientific Python use cases.
 
-```bash
-pipx install hatch
-```
+In this tutorial, you will install and get to know Hatch a bit more before
+starting to use it.
 
-:::{tip}
-Hatch can also be installed directly using `pip` or `conda`, but we encourage you to use `pipx`.
-This is because `pipx` will ensure that your package is available across all of your Python
-environments on your computer rather than just in the environment that you install it into.
-If you install hatch this way you will have to take care that the environment it is installed into
-is activated for the command to work.
+You need two things to successfully complete this tutorial:
+
+1. You need Python installed.
+2. You need Hatch installed.
+
+:::{important}
+If you don't already have Python installed, Hatch will do it for you when you
+install Hatch.
+
+Hatch uses [UV](https://astral.sh/blog/uv) to install Python. UV is a super
+fast Python package installer and resolver written in Rust.
 :::
 
-You can check that hatch is working properly by issuing a simple command to get the version
+## Install Hatch
+
+To begin, follow the operating-specific instructions below to install Hatch.
+
+::::{tab-set}
+
+:::{tab-item} MAC
+
+Follow the instructions [here](https://hatch.pypa.io/latest/install/#installers).
+
+* Download the latest GUI installer for MAC [hatch-universal.pkg](https://github.com/pypa/hatch/releases/latest/download/hatch-universal.pkg).
+* Run the installer and follow the setup instructions.
+* If your terminal is open, then restart it.
+
+:::
+
+:::{tab-item} Windows
+
+* In your browser, download the correct `.msi` file for your system:
+[hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch-x64.msi)
+* Run your downloaded installer file and follow the on-screen instructions.
+
+:::
+
+:::{tab-item} Linux
+
+We suggest that you install Hatch using pipx on Linux.
+however, if you prefer another method, check out the [Hatch installation documentation](https://hatch.pypa.io/latest/install/) for other methods.
+
+```bash
+# First install pipx
+> apt install pipx
+# Then install hatch using pipx
+> pipx install hatch
+```
+
+:::
+::::
+
+### Check that hatch installed correctly
+
+Once you have completed the installation instructions above, you can open your terminal, and make sure that Hatch installed correctly using
+the command below:
 
 ```bash
 hatch --version
 # Hatch, version 1.9.4
 ```
 
-Note the version numbers will likely be different
+*Note the version number output of `hatch --version` will likely  be
+different from the output above in this tutorial.*
+
+:::{tip}
+Hatch can also be installed directly using `pip` or `conda`. We
+encourage
+you to follow the instructions above because we have found that the Hatch installers for Windows and Mac are easiest and most efficient.
+
+Our Linux users have found success installing Hatch with `pipx` if they
+already use `apt install`.
+
+Both approaches (using a graphical installer on Windows / MAC and `pipx`) ensure that you have Hatch installed
+globally. A global install means that Hatch is available
+across all of your Python environments on your computer.
+:::
 
 ## Configure hatch
 
-Once you have installed Hatch, you will want to customize the configuration.
+Once you have installed Hatch, you can customize the configuration which
+includes the default name and setup that you want to have for every
+package that you create using Hatch. While this step is not required, we suggest it.
 
 Hatch stores your configuration information in a [`config.toml` file](https://hatch.pypa.io/latest/config/project-templates/).
 
@@ -141,13 +205,11 @@ and maintaining your Python package easier.
 
 A few features that Hatch offers
 
-
 1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you (see [Migrating setup.py to pyproject.toml using Hatch](setup-py-to-pyproject-toml.md
 ))
 2. It will help you by storing configuration information for publishing to PyPI after you've entered it once.
 
 Use `hatch -h` to see all of the available commands.
-
 
 ## What's next
 
