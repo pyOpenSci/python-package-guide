@@ -1,12 +1,17 @@
-# Get to know Hatch
+# Get to Know Hatch
 
 Our Python packaging tutorials use the tool
-[Hatch](https://hatch.pypa.io/latest/). While there are [many great packaging](/package-structure-code/python-package-build-tools)
-tool options out there, we have selected to teach Hatch because
+[Hatch](https://hatch.pypa.io/latest/). While there are [many great packaging
+tools](/package-structure-code/python-package-build-tools) out there, we have
+selected Hatch because:
 
-1. It is an end-to-end tool that supports most of the steps required to create a quality Python package. Beginners will have fewer tools to learn if they use Hatch.
-1. It supports different build back-ends if you ever need to compile code in other languages.
-1. As a community, pyOpenSci has decided that Hatch is a user-friendly tool that supports many different scientific Python use cases.
+1. It is an end-to-end tool that supports most of the steps required to create
+   a quality Python package. Beginners will have fewer tools to learn if they
+   use Hatch.
+2. It supports different build back-ends if you ever need to compile code in
+   other languages.
+3. As a community, pyOpenSci has decided that Hatch is a user-friendly tool that
+   supports many different scientific Python use cases.
 
 In this tutorial, you will install and get to know Hatch a bit more before
 starting to use it.
@@ -17,16 +22,14 @@ You need two things to successfully complete this tutorial:
 2. You need Hatch installed.
 
 :::{important}
-If you don't already have Python installed, Hatch will do it for you when you
-install Hatch.
-
-Hatch uses [UV](https://astral.sh/blog/uv) to install Python. UV is a super
-fast Python package installer and resolver written in Rust.
+If you don't already have Python installed on your computer, Hatch will do it
+for you when you install Hatch.
 :::
 
 ## Install Hatch
 
-To begin, follow the operating-specific instructions below to install Hatch.
+To begin, follow the operating-system-specific instructions below to install
+Hatch.
 
 ::::{tab-set}
 
@@ -65,8 +68,8 @@ however, if you prefer another method, check out the [Hatch installation documen
 
 ### Check that hatch installed correctly
 
-Once you have completed the installation instructions above, you can open your terminal, and make sure that Hatch installed correctly using
-the command below:
+Once you have completed the installation instructions above, you can open your
+terminal, and make sure that Hatch installed correctly using the command below:
 
 ```bash
 hatch --version
@@ -77,38 +80,42 @@ hatch --version
 different from the output above in this tutorial.*
 
 :::{tip}
-Hatch can also be installed directly using `pip` or `conda`. We
-encourage
-you to follow the instructions above because we have found that the Hatch installers for Windows and Mac are easiest and most efficient.
+Hatch can also be installed directly using pip or conda. We encourage you to
+follow the instructions above because we have found that the Hatch installers
+for Windows and Mac are the easiest and most efficient.
 
-Our Linux users have found success installing Hatch with `pipx` if they
-already use `apt install`.
+Our Linux users have found success installing Hatch with pipx if they already
+use apt install.
 
-Both approaches (using a graphical installer on Windows / MAC and `pipx`) ensure that you have Hatch installed
-globally. A global install means that Hatch is available
-across all of your Python environments on your computer.
+Both approaches (using a graphical installer on Windows/Mac and pipx) ensure
+that you have Hatch installed globally. A global install means that Hatch is
+available across all of your Python environments on your computer.
 :::
 
-## Configure hatch
+## Configure Hatch
 
-Once you have installed Hatch, you can customize the configuration which
-includes the default name and setup that you want to have for every
-package that you create using Hatch. While this step is not required, we suggest it.
+Once you have installed Hatch, you can customize its configuration. This
+includes setting the default name and setup for every package you create. While
+this step is not required, we suggest that you do it.
 
-Hatch stores your configuration information in a [`config.toml` file](https://hatch.pypa.io/latest/config/project-templates/).
+Hatch stores your configuration in a [`config.toml` file](https://hatch.pypa.io/latest/config/project-templates/).
 
-While you can update the `config.toml` file through the command line,
-it might be easier to look at it and update it in a text editor if you are using it for the first time.
+While you can update the `config.toml` file through the command line, it might
+be easier to look at and update it in a text editor if you are using it for the
+first time.
 
-### Step 1: Open and edit your `config.toml` file
+### Step 1: Open and Edit Your `config.toml` File
 
-To open the config file in your file browser, run the following command in your shell:
+To open the config file in your file browser, run the following command in your
+shell:
 
 `hatch config explore`
 
-This will open up a directory window that will allow you to double click on the file and open it in your favorite text editor.
+This will open up a directory window that allows you to double-click on the file
+and open it in your favorite text editor.
 
-You can also retrieve the location of the Hatch config file by running the following command in your shell:
+You can also retrieve the location of the Hatch config file by running the
+following command in your shell:
 
 ```bash
 hatch config find
@@ -117,7 +124,9 @@ hatch config find
 
 ### Step 2 - update your email and name
 
-Once the file is open, update the [template] table of the `config.toml` file with your name and email. This information will be used in any `pyproject.toml` metadata files that you create using Hatch.
+Once the file is open, update the [template] table of the `config.toml` file
+with your name and email. This information will be used in any `pyproject.toml`
+metadata files that you create using Hatch.
 
 ```toml
 [template]
@@ -174,7 +183,8 @@ src-layout = true
 
 Also notice that the default license option is MIT. While we will discuss
 license in more detail in a later lesson, the MIT license is the
-recommended permissive license from [choosealicense.com](https://www.choosealicense.com) and as such we will
+recommended permissive license from
+[choosealicense.com](https://www.choosealicense.com) and as such we will
 use it for this tutorial series.
 
 You are of course welcome to select another license.
@@ -189,7 +199,9 @@ Once you have completed the steps above run the following command in your shell.
 
 `hatch config show`
 
-`hatch config show` will print out the contents of your `config.toml` file in your shell. look at the values and ensure that your name, email is set. Also make sure that `tests=false`.
+`hatch config show` will print out the contents of your `config.toml` file in
+your shell. look at the values and ensure that your name, email is set. Also
+make sure that `tests=false`.
 
 ## Hatch features
 
