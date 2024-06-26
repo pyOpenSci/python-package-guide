@@ -48,7 +48,8 @@ Follow the instructions [here](https://hatch.pypa.io/latest/install/#installers)
 * In your browser, download the correct `.msi` file for your system:
 [hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch-x64.msi)
 * Run your downloaded installer file and follow the on-screen instructions.
-
+* If your terminal is open, then restart it.
+* 
 :::
 
 :::{tab-item} Linux
