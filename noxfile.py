@@ -9,12 +9,14 @@ OUTPUT_DIR = "_build"
 docs_dir = os.path.join("_build", "html")
 build_command = ["-b", "html", ".", docs_dir]
 
+
 @nox.session
 def docs(session):
     session.install("-e", ".")
     cmd = ["sphinx-build"]
     cmd.extend(build_command + session.posargs)
     session.run(*cmd)
+
 
 @nox.session(name="docs-test")
 def docs_test(session):
@@ -23,7 +25,7 @@ def docs_test(session):
     """
     session.install("-e", ".")
     cmd = ["sphinx-build"]
-    cmd.extend(['-W', '--keep-going', '-E', '-a'])
+    cmd.extend(["-W", "--keep-going", "-E", "-a"])
     cmd.extend(build_command + session.posargs)
     session.run(*cmd)
 
@@ -43,9 +45,7 @@ def docs_live(session):
     # well, they're static.
     # Include these as the final `filenames` argument
 
-    AUTOBUILD_INCLUDE = [
-        os.path.join("_static", "pyos.css")
-    ]
+    AUTOBUILD_INCLUDE = [os.path.join("_static", "pyos.css")]
 
     # ----------------
     # Assemble command
@@ -53,7 +53,7 @@ def docs_live(session):
     for folder in AUTOBUILD_IGNORE:
         cmd.extend(["--ignore", f"*/{folder}/*"])
 
-    #cmd.extend(build_command)
+    # cmd.extend(build_command)
     cmd.extend(build_command + session.posargs)
 
     # Use positional arguments if we have them
@@ -66,7 +66,6 @@ def docs_live(session):
     session.run(*cmd)
 
 
-
 @nox.session(name="docs-clean")
 def clean_dir(dir_path=docs_dir):
     """
@@ -74,7 +73,7 @@ def clean_dir(dir_path=docs_dir):
     live build.
     """
     dir_path = pathlib.Path(dir_path)
-    dir_contents = dir_path.glob('*')
+    dir_contents = dir_path.glob("*")
 
     for content in dir_contents:
         print(content)
