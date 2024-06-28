@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Translation Guide for the Python Packaging Guide" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/TRANSLATING.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="This guide will help you get started contributing to the translation of the Python Packaging Guide. The process of contributing to the translation of the guide is similar to the process of contribu..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_TRANSLATING_8b2cd783.png" />
+<meta property="og:image:alt" content="This guide will help you get started contributing to the translation of the Python Packaging Guide. The process of contributing to the translation of the gui..." />
+<meta name="description" content="This guide will help you get started contributing to the translation of the Python Packaging Guide. The process of contributing to the translation of the guide is similar to the process of contribu..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Translation Guide for the Python Packaging Guide &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=ba8f538e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'TRANSLATING';</script>
+    <script src="_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/TRANSLATING.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tutorials/intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tutorials/intro.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="package-structure-code/intro.html">
+                        Packaging
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="documentation/index.html">
+                        Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tests/index.html">
+                        Tests
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Translation...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="translation-guide-for-the-python-packaging-guide">
+<h1>Translation Guide for the Python Packaging Guide<a class="headerlink" href="#translation-guide-for-the-python-packaging-guide" title="Link to this heading">#</a></h1>
+<p>This guide will help you get started contributing to the translation of the Python Packaging Guide.</p>
+<p>The process of contributing to the translation of the guide is similar to the process of contributing to the guide itself, except that instead of working on the guide source files directly, you will be working on the translation files.</p>
+<section id="overview-of-the-translation-process">
+<h2>Overview of the Translation Process<a class="headerlink" href="#overview-of-the-translation-process" title="Link to this heading">#</a></h2>
+<p>The process of adapting software to different languages is called internationalization, or i18n for short. Internationalization makes sure that translation can happen without having to modify the source code, or in our case, the original English source files of the guide.</p>
+<p>Sphinx, the documentation engine we use to build the Python Package Guide, has built-in support for internationalization, so the workflow is very straightforward.</p>
+<p>The process of actually translating the guide into different languages is called localization, or l10n for short. This is the step you will be helping with your contribution.</p>
+<p>Here is a quick overview of how the translation process works:</p>
+<ol class="arabic simple">
+<li><p>The guide is originally written in English and stored in a set of MarkDown files.</p></li>
+<li><p>The source files are processed by Sphinx to generate a set of translation files stored in a folder for each target language.</p></li>
+<li><p>Contributors (like you!) translate these files into the different languages.</p></li>
+<li><p>When the guide is built, Sphinx creates a version of the guide in the original language (English) and the translated versions for the languages defined in the configuration.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You don’t need to understand the technical details to contribute, but if you are interested in learning how Sphinx handles internationalization and localization, you can find more information <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/advanced/intl.html">here</a>.</p>
+</div>
+</section>
+<section id="setting-up-your-local-environment">
+<h2>Setting up Your Local Environment<a class="headerlink" href="#setting-up-your-local-environment" title="Link to this heading">#</a></h2>
+<p>Before you start, you will need to set up your local work environment.</p>
+<p>First, fork the guide repository into your personal GitHub account and clone the forked repository to your local computer.</p>
+<p>To create a virtual environment and install the development dependencies for the guide, run the following commands:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./python-package-guide
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
+</pre></div>
+</div>
+<p>TODO: This section needs more work or to be replaced with a reference to the CONTRIBUTING guide.</p>
+</section>
+<section id="starting-a-new-language-translation">
+<h2>Starting a New Language Translation<a class="headerlink" href="#starting-a-new-language-translation" title="Link to this heading">#</a></h2>
+<p>If you plan to work on an existing translation, you can skip this step and go directly to the next section.</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">Important</p>
+<p>If you would like to start the translation of the guide into a new language, start by <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">creating an issue</a> in the repository.</p>
+</div>
+<p>To generate the translation files for a new language, add the language to the <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> list in the <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> configuration file. <a class="reference external" href="https://nox.thea.codes/en/stable/index.html">Nox</a> is the tool we use to manage the building of the guide and its translations.</p>
+<p>Inside <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code>, find the <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> list and add the corresponding two-letter code. For example, if you want to start the translation of the guide into French, you would add <code class="docutils literal notranslate"><span class="pre">'fr'</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Localization options (translations)</span>
+
+<span class="c1"># List of languages for which locales will be generated in (/locales/&lt;lang&gt;)</span>
+<span class="n">LANGUAGES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;fr&quot;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find a list of the two-letter ISO language codes <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">here</a>.</p>
+</div>
+</section>
+<section id="preparing-the-translation-files">
+<h2>Preparing the Translation Files<a class="headerlink" href="#preparing-the-translation-files" title="Link to this heading">#</a></h2>
+<p>The translation files contain the original English text and a space for you to enter the translated text. Before starting to translate, you need to make sure the translation files are up to date with the latest changes to the guide.</p>
+<p>You can do this by running the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nox<span class="w"> </span>-s<span class="w"> </span>update-translations
+</pre></div>
+</div>
+<p>This command will create the translation files if they don’t exist yet, or update them with the latest changes if they already exist.</p>
+<p>The translation files are text files with the <code class="docutils literal notranslate"><span class="pre">.po</span></code> extension stored in the <code class="docutils literal notranslate"><span class="pre">./locales</span></code>, in folders corresponding to each language. For example, the translation files for Spanish are stored in the <code class="docutils literal notranslate"><span class="pre">locale/es/LC_MESSAGES</span></code> directory.</p>
+<p>Because the translation files map the original English text to translated text, they are sometimes referred to as “catalog” files or “portable object” files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You don’t need to know all the details about the PO format in order to translate. If you are interested in learning more, you can find additional details in the <a class="reference external" href="https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html">GNU gettext documentation</a>.</p>
+</div>
+</section>
+<section id="working-on-a-translation">
+<h2>Working on a Translation<a class="headerlink" href="#working-on-a-translation" title="Link to this heading">#</a></h2>
+<p>In order to start translating, go to the folder inside <code class="docutils literal notranslate"><span class="pre">./locales</span></code> corresponding to the target language you want to translate to (for example, <code class="docutils literal notranslate"><span class="pre">./locale/es/LC_MESSAGES/</span></code> for the Spanish translation).</p>
+<p>In this folder you will find a set of <code class="docutils literal notranslate"><span class="pre">.po</span></code> files, corresponding to the different sections of the guide:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./locales/es/LC_MESSAGES/
+$<span class="w"> </span>ls<span class="w"> </span>*.po
+
+./locales/es/LC_MESSAGES/CONTRIBUTING.po
+./locales/es/LC_MESSAGES/index.po
+./locales/es/LC_MESSAGES/tests.po
+./locales/es/LC_MESSAGES/tutorials.po
+./locales/es/LC_MESSAGES/documentation.po
+./locales/es/LC_MESSAGES/package-structure-code.po
+./locales/es/LC_MESSAGES/TRANSLATING.po
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may also see some <code class="docutils literal notranslate"><span class="pre">.mo</span></code> files in the same folder. These are compiled versions of the <code class="docutils literal notranslate"><span class="pre">.po</span></code> files create by Sphinx during the build process, and used to generate the translated version of the guide. They are intermediary files and are not meant to be edited directly or stored in the repository.</p>
+</div>
+<p>If you are working on a new translation, choose one of the <code class="docutils literal notranslate"><span class="pre">.po</span></code> files to start with. If you are working on an existing translation, you can start with the <code class="docutils literal notranslate"><span class="pre">.po</span></code> files that need the most work.</p>
+<p>To see how much of each file has been translated, use the <code class="docutils literal notranslate"><span class="pre">sphinx-intl</span> <span class="pre">stat</span></code>. You will be able to see the number of translated, fuzzy, and untranslated strings in each <code class="docutils literal notranslate"><span class="pre">.po</span></code> file.</p>
+<p>For example, to see the statistics for the Spanish translation, you would run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sphinx-intl<span class="w"> </span>stat<span class="w"> </span>-l<span class="w"> </span>es
+
+locales/es/LC_MESSAGES/tutorials.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">950</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/TRANSLATING.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">44</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/package-structure-code.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">885</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/CONTRIBUTING.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">38</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/documentation.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">430</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/tests.po:<span class="w"> </span><span class="m">155</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">2</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">3</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">5</span><span class="w"> </span>untranslated.
+</pre></div>
+</div>
+<p>What do these categories mean:</p>
+<ul class="simple">
+<li><p>Translated strings are strings that have been translated into the target language.</p></li>
+<li><p>Fuzzy strings are strings that have been translated but need to be reviewed because the original English string in the guide changed.</p></li>
+<li><p>Untranslated strings are strings that have not been translated yet.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Sphinx is building the guide in another language, it will look into the corresponding folder in <code class="docutils literal notranslate"><span class="pre">./locales/</span></code> for translated strings. If the translation is available, Sphinx will replace the English text with the equivalent text in the target language. If the translation is not available, Sphinx will use the original English strings.</p>
+</div>
+</section>
+<section id="editing-the-translation-files">
+<h2>Editing the Translation Files<a class="headerlink" href="#editing-the-translation-files" title="Link to this heading">#</a></h2>
+<p>You can use any text editor to edit the <code class="docutils literal notranslate"><span class="pre">.po</span></code> file. But if you prefer, there are also tools like <a class="reference external" href="https://poedit.net/">Poedit</a> that provide a graphic use interface.</p>
+<p>Depending on your editor of choice, you may be able to install a plugin or extension that can provide syntax highlighting and other features for working with <code class="docutils literal notranslate"><span class="pre">.po</span></code> files. Like for example, the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=mrorz.language-gettext">gettext</a> extension for Visual Studio Code.</p>
+<p>When you open a <code class="docutils literal notranslate"><span class="pre">.po</span></code> file, you will see a series of entries that look like this:</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:1</span>
+<span class="nv">msgid</span> <span class="s">&quot;pyOpenSci Python Package Guide&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>The first line of an entry starts with <code class="docutils literal notranslate"><span class="pre">#:</span></code> and is a reference to the original source file and line number from which the text was extracted. This information is useful for finding the context of the text in the guide.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">msgid</span></code> field contains the original English text that needs to be translated. The <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> field is where you will enter the translated text. This field might contain text if someone else already translated the entry.</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:1</span>
+<span class="nv">msgid</span> <span class="s">&quot;pyOpenSci Python Package Guide&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;La guía de paquetes de Python de pyOpenSci&quot;</span>
+</pre></div>
+</div>
+<p>Sometimes the original English text may be too long for a single line, and it may be split into multiple lines. In this case, you can keep the same structure in the translated text. Notice that both the <code class="docutils literal notranslate"><span class="pre">msgid</span></code> and <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> fields in the example below start with an empty string, indicating that the text continues in the next line.</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:254</span>
+<span class="nv">msgid</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;Every page in this guidebook goes through an extensive community review &quot;</span>
+<span class="s">&quot;process. To ensure our guidebook is both beginner-friendly and accurate, &quot;</span>
+<span class="s">&quot;we encourage reviews from a diverse set of pythonistas and scientists &quot;</span>
+<span class="s">&quot;with a wide range of skills and expertise.&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;Cada página en esta guía es revisada extensamente por la &quot;</span>
+<span class="s">&quot;comunidad. Para asegurar que nuestra guía sea comprensible a los principiantes y &quot;</span>
+<span class="s">&quot;a la vez precisa, un conjunto diverso de desarrolladores y científicos con una amplia &quot;</span>
+<span class="s">&quot;gama de conocimientos y experiencia participa en el proceso.&quot;</span>
+</pre></div>
+</div>
+<p>The English text will sometimes contain Markdown formatting, such as bold or italic text. You should keep the formatting in the translated text, making sure to translate the text inside the formatting tags.</p>
+<p>The English text may also contain links to other sections of the guide or external resources. You should keep the links in the translated text, making sure to update the link text when appropriate.</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:75</span>
+<span class="nv">msgid</span> <span class="s">&quot;[What is a Python package?](/tutorials/intro)&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;[¿Que es un paquete de Python?](/tutorials/intro)&quot;</span>
+</pre></div>
+</div>
+<p>An entry may be marked as <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code>, which means that the original English text has changed since the translation was made, and the translation may need to be revised. When this is the case you will see an additional line in the entry, starting with <code class="docutils literal notranslate"><span class="pre">#,</span></code>:</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../tests/write-tests.md:84</span>
+<span class="kt">#, fuzzy</span>
+<span class="nv">msgid</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;**Test special cases:** Sometimes there are special or outlier cases. For&quot;</span>
+<span class="s">&quot; instance, if a function performs a specific calculation that may become &quot;</span>
+<span class="s">&quot;problematic closer to the value = 0, test it with the input of both 0 and&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;**Prueba casos especiales:** A veces hay casos especiales o atípicos. Por&quot;</span>
+<span class="s">&quot; ejemplo, si una función realiza un cálculo específico que puede tener &quot;</span>
+<span class="s">&quot;problemas cerca del valor = 0, pruébalo con la entrada de 0 y un valor&quot;</span>
+<span class="s">&quot; normal.&quot;</span>
+</pre></div>
+</div>
+<p>You can review the translation and make any necessary changes, removing the <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> tag once you are satisfied with the translation.</p>
+<p>You can also add comments to the translation file, by adding lines that start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> character to the entry. This can be helpful to add context to the translation for other translators or reviewers to see, but this might be only necessary in special circumstances.</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">Important</p>
+<p>When working on a translation, you <strong>should not</strong> modify the original English text in the <code class="docutils literal notranslate"><span class="pre">msgid</span></code> field. If you see a typo or an error in the original text, please consider fixing it in the original source file (use the first line of the entry to locate it) and submit a separate pull request.</p>
+</div>
+</section>
+<section id="building-the-translated-documentation">
+<h2>Building the Translated Documentation<a class="headerlink" href="#building-the-translated-documentation" title="Link to this heading">#</a></h2>
+<p>Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-translations
+</pre></div>
+</div>
+<p>This command will build all the translated versions of the guide defined in the <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> list in <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code>. These translations will be stored in the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code>, in folders named after the language code (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code>, <code class="docutils literal notranslate"><span class="pre">fr</span></code>, etc.).</p>
+<p>To view the translated version of the guide in your browser, open the corresponding <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file. For example, to view the Spanish translation, you would open <code class="docutils literal notranslate"><span class="pre">_build/html/es/index.html</span></code>.</p>
+<p>You can also build a live version of the guide that updates automatically as you make changes to the translation files. To do this, use the <code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">docs-live-lang</span></code> command. Note that in this case you need to specify which language you want to build. For example, if you are working on the Spanish translation, you would run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>docs-live-lang<span class="w"> </span>--<span class="w"> </span>es
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">--</span></code> before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the <code class="docutils literal notranslate"><span class="pre">--</span></code>, nox will look instead for a session named ‘es’ and complain that it does not exist.</p>
+<p>This command will use <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> to launch a local web server where you can access the translated version of the guide. You can open the guide in your browser by navigating to <code class="docutils literal notranslate"><span class="pre">http://localhost:8000</span></code>.</p>
+<p>This is a great way to see how the translated version of the guide looks as you make changes to the translation files.</p>
+</section>
+<section id="submitting-a-pr-for-your-contribution">
+<h2>Submitting a PR for Your Contribution<a class="headerlink" href="#submitting-a-pr-for-your-contribution" title="Link to this heading">#</a></h2>
+<p>Once you are finished translating and before you submit a pull request (PR) for your translation, you need to make sure that the translated version of the guide builds without any errors or warning and looks correctly in the browser.</p>
+<p>You can follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Build the translations of the guide with same parameters that will be used during the release:</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-translations-test
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Make sure there are no warnings or errors in the output. If there are, you will need to fix them before submitting the PR.</p></li>
+<li><p>Make sure the translated version of the guide looks good in the browser by opening the <code class="docutils literal notranslate"><span class="pre">_build/html/&lt;lang&gt;/index.html</span></code> file, where <code class="docutils literal notranslate"><span class="pre">&lt;lang&gt;</span></code> is the language you have been working on.</p></li>
+</ol>
+<p>If everything looks good, you can submit a PR with your changes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you submit a PR for a translation, you should only include changes to one language. If you worked in multiple languages, please submit a separate PR for each language.</p>
+</div>
+<p>Translations PRs will be tagged with a label indicating the language to make them easier to identify and review. For example, contributions to the Spanish translation will be tagged with ‘lang-es’.</p>
+<p>TODO: This tagging could be automated with a GitHub action.</p>
+<p>When you submit the PR, make sure to include a short description of the changes you made and any context that might be helpful for the reviewer (e.g., you translated new strings, you reviewed fuzzy entries, you fixed typos, etc.)</p>
+</section>
+<section id="the-review-process">
+<h2>The Review Process<a class="headerlink" href="#the-review-process" title="Link to this heading">#</a></h2>
+<p>The review process for a translation contribution is similar to the review process for any other contribution to the guide.</p>
+<p>TODO: This section needs more work, depending on the review workflow we decide to adopt. Other projects usually assign a coordinator/editor for each language, who is responsible for reviewing and merging translation contributions.</p>
+<p>Each language has an assigned editor who is responsible for reviewing and merging translation contributions. The editor will review the changes to make sure they are accurate and consistent with the style and tone of the guide.</p>
+<p>Sometimes the editor may ask for clarification or suggest changes to improve the translation. If this happens, you can make the requested changes and push them to the same branch where you submitted the original PR.</p>
+<p>When the editor is satisfied with the translation, they will merge the PR. The translated version of the guide will be available on the pyOpenSci website once the language is released.</p>
+</section>
+<section id="the-release-process">
+<h2>The Release Process<a class="headerlink" href="#the-release-process" title="Link to this heading">#</a></h2>
+<p>If a language is ready to go live, the maintainers will add the language code to the <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> list in the <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> configuration file.</p>
+<p>When the guide is built for release in CI, Sphinx will also generate the translated versions of the guide for the languages in the <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> list.</p>
+<p>Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available in <a class="reference external" href="https://www.pyopensci.org/python-package-guide/es/">https://www.pyopensci.org/python-package-guide/es/</a>.</p>
+</section>
+<section id="frequently-asked-questions-faq">
+<h2>Frequently Asked Questions (FAQ)<a class="headerlink" href="#frequently-asked-questions-faq" title="Link to this heading">#</a></h2>
+<section id="how-do-i-know-which-strings-need-to-be-translated">
+<h3>How do I know which strings need to be translated?<a class="headerlink" href="#how-do-i-know-which-strings-need-to-be-translated" title="Link to this heading">#</a></h3>
+<p>When you run the <code class="docutils literal notranslate"><span class="pre">sphinx-intl</span> <span class="pre">stat</span></code> command, you will see a list of <code class="docutils literal notranslate"><span class="pre">.po</span></code> files with the number of translated, fuzzy, and untranslated strings. You can start by working on the files with the most untranslated strings.</p>
+</section>
+<section id="what-happens-when-a-string-has-changed-in-the-original-english-text">
+<h3>What happens when a string has changed in the original English text?<a class="headerlink" href="#what-happens-when-a-string-has-changed-in-the-original-english-text" title="Link to this heading">#</a></h3>
+<p>If a string has changed in the original English version, it will be marked as <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> in the translation file the next time it is updated (<code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">update-translations</span></code>). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> tag.</p>
+</section>
+<section id="how-do-i-handle-links-in-the-translated-text">
+<h3>How do I handle links in the translated text?<a class="headerlink" href="#how-do-i-handle-links-in-the-translated-text" title="Link to this heading">#</a></h3>
+<p>You should keep the links in the translated text, but make sure to update the link text if necessary. For example, if the original English text contains a link to <code class="docutils literal notranslate"><span class="pre">[What</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">Python</span> <span class="pre">package?](/tutorials/intro)</span></code>, you should keep the link in the translated text but update the link text to <code class="docutils literal notranslate"><span class="pre">[¿Que</span> <span class="pre">es</span> <span class="pre">un</span> <span class="pre">paquete</span> <span class="pre">de</span> <span class="pre">Python?](/tutorials/intro)</span></code>.</p>
+</section>
+<section id="how-do-i-handle-formatting-in-the-translated-text">
+<h3>How do I handle formatting in the translated text?<a class="headerlink" href="#how-do-i-handle-formatting-in-the-translated-text" title="Link to this heading">#</a></h3>
+<p>You should keep the formatting in the translated text, but make sure to translate the text inside the formatting tags as well. For example, if the original English text is <code class="docutils literal notranslate"><span class="pre">**Test</span> <span class="pre">special</span> <span class="pre">cases:**</span></code>, you should keep the bold formatting in the translated text but update the text inside the formatting tags to <code class="docutils literal notranslate"><span class="pre">**Prueba</span> <span class="pre">casos</span> <span class="pre">especiales:**</span></code>.</p>
+</section>
+<section id="how-do-i-handle-strings-that-are-too-long-for-a-single-line">
+<h3>How do I handle strings that are too long for a single line?<a class="headerlink" href="#how-do-i-handle-strings-that-are-too-long-for-a-single-line" title="Link to this heading">#</a></h3>
+<p>If the original English text is too long for a single line, it may be split into multiple lines. Multiline strings in the <code class="docutils literal notranslate"><span class="pre">.po</span></code> file are indicated by an empty string in the <code class="docutils literal notranslate"><span class="pre">msgid</span></code> and <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> fields, followed by the continuation of the text in the next line. For example:</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:254</span>
+<span class="nv">msgid</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;This is a multiple line string. The text continues on the next line.&quot;</span>
+<span class="s">&quot; Notice the space in the beginning of the second line, you need to make sure&quot;</span>
+<span class="s">&quot; to account for the concatenation, there is no space inserted when starting a&quot;</span>
+<span class="s">&quot; a new line in a multiline string.&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="how-do-i-translate-images">
+<h3>How do I translate images?<a class="headerlink" href="#how-do-i-translate-images" title="Link to this heading">#</a></h3>
+<p>You should not translate images in the guide. Producing translated versions of images is a complex process that requires additional tools and resources, and it is not typically done unless the translated images are created alongside the original images. More often, the text around the image is modified to include any necessary translations.</p>
+<p>In some special cases, an image might be critical to the understanding of the content. In those cases, the translations will be handled by the maintainers and editors outside this workflow.</p>
+</section>
+<section id="i-am-interested-in-translating-the-guide-into-a-language-that-is-not-listed-how-can-i-get-started">
+<h3>I am interested in translating the guide into a language that is not listed. How can I get started?<a class="headerlink" href="#i-am-interested-in-translating-the-guide-into-a-language-that-is-not-listed-how-can-i-get-started" title="Link to this heading">#</a></h3>
+<p>If you want to start a new translation of the guide into a language that is not listed, you should <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">create an issue</a> in the repository to let the maintainers know that you intend to work on it. This will help avoid duplication of effort and ensure that the maintainers are ready to review your contribution when you are done.</p>
+</section>
+<section id="how-do-i-know-when-a-translation-is-ready-to-be-released">
+<h3>How do I know when a translation is ready to be released?<a class="headerlink" href="#how-do-i-know-when-a-translation-is-ready-to-be-released" title="Link to this heading">#</a></h3>
+<p>When a translation is ready to be included in the next release of the guide, the maintainers will add the language code to the <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> list in the <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> configuration file. This will trigger the build of the translation during the release process, and the translated version of the guide will be available on the pyOpenSci website.</p>
+<p>TODO: There are many approaches here, some projects release a translation as soon as some strings are translated, others wait until a certain percentage of the content is translated.</p>
+</section>
+<section id="how-can-i-get-help-with-my-translation">
+<h3>How can I get help with my translation?<a class="headerlink" href="#how-can-i-get-help-with-my-translation" title="Link to this heading">#</a></h3>
+<p>If you have any questions or need help with your translation, you can create an issue in the repository if you encounter any problems or need assistance.</p>
+<p>TODO: Maybe <a class="reference external" href="https://pyopensci.discourse.group/">Discourse</a> could be used as a way for contributors to ask for help with translations or the translation workflow?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-the-translation-process">Overview of the Translation Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-local-environment">Setting up Your Local Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-new-language-translation">Starting a New Language Translation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-translation-files">Preparing the Translation Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-a-translation">Working on a Translation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-translation-files">Editing the Translation Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-translated-documentation">Building the Translated Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-a-pr-for-your-contribution">Submitting a PR for Your Contribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-review-process">The Review Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-release-process">The Release Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-which-strings-need-to-be-translated">How do I know which strings need to be translated?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-a-string-has-changed-in-the-original-english-text">What happens when a string has changed in the original English text?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-handle-links-in-the-translated-text">How do I handle links in the translated text?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-handle-formatting-in-the-translated-text">How do I handle formatting in the translated text?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-handle-strings-that-are-too-long-for-a-single-line">How do I handle strings that are too long for a single line?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-translate-images">How do I translate images?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-interested-in-translating-the-guide-into-a-language-that-is-not-listed-how-can-i-get-started">I am interested in translating the guide into a language that is not listed. How can I get started?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-when-a-translation-is-ready-to-be-released">How do I know when a translation is ready to be released?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-get-help-with-my-translation">How can I get help with my translation?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/TRANSLATING.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/TRANSLATING.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
