@@ -90,9 +90,15 @@ Independently of the approach you choose, the first step is to fork the Python P
 
 *__TODO__: This section should describe how review happens in GitHub, how see the comments, and how to submit changes (push a new branch)*
 
-## If you need help
+## Additional help
 
-*__TODO__: This section should describe the options for finding more help in case beginner contributors need more help (e.g., create an issue, post in a forum, etc). It should also include links to beginner documentation, like the GitHub docs.*
+### How to get help
+
+*__TODO__: This section should describe the options for finding more help in case beginner contributors need more help (e.g., create an issue, post in a forum, etc).*
+
+### Additional resources
+
+*__TODO__: It should also include links to beginner documentation, like the GitHub docs.*
 
 ## Annex
 
@@ -101,6 +107,7 @@ Independently of the approach you choose, the first step is to fork the Python P
 This guide uses the [literalinclude Sphinx directive](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude)
 whenever possible to keep code and prose separate. Code for use in the documentation is kept in the `examples/` folder.
 
+(referencing-code-in-documentation)=
 #### Referencing code in documentation
 
 If an example is present elsewhere in the documentation that you want to use, you can copy the `literalinclude`
@@ -115,8 +122,9 @@ later can protect your example from future modifications to the code.
 `:end-at:` options. And if the example code is Python, `:pyobject:` can be an even more future-proof way to keep the
 same documentation content even through code refactors.
 
-If you need example code that doesn't yet exist in `examples/` [see creating code for documentation](#creating-code-for-documentation).
+If you need example code that doesn't yet exist in `examples/` see creating code for documentation](#creating-code-for-documentation).
 
+(creating-code-for-documentation)=
 #### Creating code for documentation
 
 Whenever you come across a place that could benefit from a code block, instead of writing it in-line with a code fence
