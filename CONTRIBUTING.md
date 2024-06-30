@@ -1,65 +1,114 @@
 ---
 orphan: true
 ---
-# Contributing Guide for the Python open source software packaging book
+# Contributing to the Python Packaging Guide
 
-This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide.
+The guide is a community resource.
+
+## TL;DR
+
+We welcome contributions in the form of issues and pull requests:
 
 * If you have an idea for something that should be included in the guide, [please open an issue here](https://github.com/pyOpenSci/python-package-guide/issues).
 * If you find a typo, feel free to [submit a pull request](https://github.com/pyOpenSci/python-package-guide/pulls) to modify the text directly. Or, if you are less comfortable with pull requests, feel free to open an issue.
+* If you are interested in helping translate the guide into other languages, take a look at the [translation guide](./TRANSLATING.md).
 * If you want to see a larger change to the content of the guide book, please submit an issue first!
 
-## How this guide is structured
+If you are unsure about how to contribute or are not familiar with git and github, this guide will help you through the process.
 
-Most of this repository is structured for **Sphinx**, a documentation engine built in `Python`. We are using the Sphinx Book Theme and the `myST` syntax to create each page in this book.
+## How the Python Packaging Guide is structured
 
-If you wish to contribute by working on the guide book locally, you
-will first need to
+The Python Packaging Guide is written in myST (a variant of MarkDown and rST) and we use **Sphinx**, a documentation engine built in `Python` to build the HTML version you see online.
 
-1. Fork this repository
-2. Clone it locally
-3. Build the documentation locally
+We use a tool called Nox to manage the process of building the guide.
 
-## Instructions for building the documentation locally on your computer
+## Two approaches to contributing
 
-The easiest way to build the documentation in this repository is to use `nox`,
-a tool for quickly building environments and running commands within them.
-Nox ensures that your environment has all the dependencies needed to build the documentation.
+You can contribute to the guide using two approaches.
 
-To do so, follow these steps:
+The first approach is using a local copy of the guide in your computer. This option requires a more involved setup, but allows you to build the guide locally to verify your contribution did not introduce any bugs before submitting a pull request. It is the recommended approach for larger contribution, like writing a whole new section.
 
-1. Install `nox`
+The second approach is making your contribution directly in the GitHub website. This option does not require any setup on your computer and while your contribution will still be tested when you submit a PR (continuous integration), it will take longer for you to get any feedback in case of issue. It is the best way to make small contribution, like fixing typos, or if this is your first contribution to open source and the first approach feels too intimidating.
 
-   ```
-   python -m pip install nox
-   ```
-2. Build the documentation:
+## Forking the repository
 
-   ```
-   python -m nox -s docs
-   ```
+Independently of the approach you choose, the first step is to fork the Python Packaging Guide repository into your personal GitHub space.
 
-This should create a local environment in a `.nox` folder, build the documentation (as specified in the `noxfile.py` configuration), and the output will be in `_build/html`.
-The site can then be viewed locally by opening the top level `index.html` in your web browser. The exact location of this file will depend on you system, but the output of the following command could be copied into an address bar
+*__TODO__: This section should show a beginner user how to fork a repository in GitHub.*
 
-```
-echo "file://$(pwd)/_build/html/index.html"
-```
+## Contributing via the GitHub website
 
-To build live documentation that updates when you update local files, run the following command:
+### How to edit a MarkDown file
 
-```
-python -m nox -s docs-live
-```
+*__TODO__: This section should show how to use the GitHub interface to edit and previewing a Markdown file.*
 
-When build like this, the output will tell you a localhost address where the site can be viewed, generally http://127.0.0.1:8000.
+### How to commit your changes
 
-## Code examples
+*__TODO__: This section should show how to commit changes via the GitHub interface.*
+
+## Contributing locally on your computer
+
+### Clone your forked repository
+
+*__TODO__: This section should show how to clone a repository from GitHub into your computer.*
+
+### Create a new branch
+
+*__TODO__: This section should show how to create a new branch.*
+
+### Create a virtual environment
+
+*__TODO__: This section should show how to create a virtual environment using venv.*
+
+### Install the development dependencies
+
+*__TODO__: This section should show how to install the development dependencies defined in pyproject.toml.*
+
+### Commit your changes
+
+*__TODO__: This section should describe how to commit from the command line.*
+
+### How to build the guide locally
+
+*__TODO__: This section should describe the different sessions in nox related to building the docs: docs, docs-test, docs-live. It should also show how to see the guide built locally, by opening the right file in the browser or using the live version from docs-live*
+
+### Before you submit your pull request
+
+*__TODO__: This section should describe what steps a user should follow before submitting the pull request: build the docs, verify your changes look correct, etc.*
+
+## Submitting a pull request with your contribution
+
+### How to make a pull request
+
+*__TODO__: This section should describe how to make a pull request in GitHub.*
+
+### What happens when you submit a pull request (CI/CD)
+
+*__TODO__: This section should describe how to see the results of the CD/CI checks and how to get more information about errors*
+
+### What to expect from the review process
+
+*__TODO__: This section should describe how review happens in GitHub, how see the comments, and how to submit changes (push a new branch)*
+
+## Additional help
+
+### How to get help
+
+*__TODO__: This section should describe the options for finding more help in case beginner contributors need more help (e.g., create an issue, post in a forum, etc).*
+
+### Additional resources
+
+*__TODO__: It should also include links to beginner documentation, like the GitHub docs.*
+
+## Annex
+
+### Code examples
 
 This guide uses the [literalinclude Sphinx directive](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude)
 whenever possible to keep code and prose separate. Code for use in the documentation is kept in the `examples/` folder.
 
-### Referencing code in documentation
+(referencing-code-in-documentation)=
+#### Referencing code in documentation
 
 If an example is present elsewhere in the documentation that you want to use, you can copy the `literalinclude`
 directive verbatim and the examples will stay in sync.
@@ -73,9 +122,10 @@ later can protect your example from future modifications to the code.
 `:end-at:` options. And if the example code is Python, `:pyobject:` can be an even more future-proof way to keep the
 same documentation content even through code refactors.
 
-If you need example code that doesn't yet exist in `examples/` [see creating code for documentation](#creating-code-for-documentation).
+If you need example code that doesn't yet exist in `examples/` see creating code for documentation](#creating-code-for-documentation).
 
-### Creating code for documentation
+(creating-code-for-documentation)=
+#### Creating code for documentation
 
 Whenever you come across a place that could benefit from a code block, instead of writing it in-line with a code fence
 (`` ``` `` blocked text) you can write it as a file in its own format. Your example may even already exist; [see referencing code in documentation
