@@ -174,6 +174,7 @@ Also notice that there are no spaces in the imports listed below.
 :::
 
 From the project root, run:
+
 ```bash
 isort src/examplePy/temporal.py
 ```
