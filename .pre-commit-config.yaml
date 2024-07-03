@@ -33,11 +33,11 @@ repos:
         - tomli
       exclude: >
         (?x)^(
-            .*vale-styles.*
+            (.*vale-styles.*)|(.*\.po)
         )$
 
   - repo: https://github.com/errata-ai/vale
-    rev: v3.4.2
+    rev: v3.6.0
     hooks:
     - id: vale
 
