@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Contributing Guide for the Python open source software packaging book" />
+<meta property="og:title" content="Contributing to the Python Packaging Guide" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/CONTRIBUTING.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide. If you have an idea for something that should be included in the guide, please open ..." />
+<meta property="og:description" content="The guide is a community resource. TL;DR: We welcome contributions in the form of issues and pull requests: If you have an idea for something that should be included in the guide, please open an is..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_CONTRIBUTING_4ac4238b.png" />
-<meta property="og:image:alt" content="This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide. If you have an idea for something that shoul..." />
-<meta name="description" content="This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide. If you have an idea for something that should be included in the guide, please open ..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_CONTRIBUTING_e390a208.png" />
+<meta property="og:image:alt" content="The guide is a community resource. TL;DR: We welcome contributions in the form of issues and pull requests: If you have an idea for something that should be..." />
+<meta name="description" content="The guide is a community resource. TL;DR: We welcome contributions in the form of issues and pull requests: If you have an idea for something that should be included in the guide, please open an is..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Contributing Guide for the Python open source software packaging book &#8212; Python Packaging Guide</title>
+    <title>Contributing to the Python Packaging Guide &#8212; Python Packaging Guide</title>
   
   
   
@@ -485,60 +485,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="contributing-guide-for-the-python-open-source-software-packaging-book">
-<h1>Contributing Guide for the Python open source software packaging book<a class="headerlink" href="#contributing-guide-for-the-python-open-source-software-packaging-book" title="Link to this heading">#</a></h1>
-<p>This is a community resource. We welcome contributions in the form of issues and/or pull requests to this guide.</p>
+  <section id="contributing-to-the-python-packaging-guide">
+<h1>Contributing to the Python Packaging Guide<a class="headerlink" href="#contributing-to-the-python-packaging-guide" title="Link to this heading">#</a></h1>
+<p>The guide is a community resource.</p>
+<section id="tl-dr">
+<h2>TL;DR<a class="headerlink" href="#tl-dr" title="Link to this heading">#</a></h2>
+<p>We welcome contributions in the form of issues and pull requests:</p>
 <ul class="simple">
 <li><p>If you have an idea for something that should be included in the guide, <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">please open an issue here</a>.</p></li>
 <li><p>If you find a typo, feel free to <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/pulls">submit a pull request</a> to modify the text directly. Or, if you are less comfortable with pull requests, feel free to open an issue.</p></li>
+<li><p>If you are interested in helping translate the guide into other languages, take a look at the <a class="reference internal" href="TRANSLATING.html"><span class="std std-doc">translation guide</span></a>.</p></li>
 <li><p>If you want to see a larger change to the content of the guide book, please submit an issue first!</p></li>
 </ul>
-<section id="how-this-guide-is-structured">
-<h2>How this guide is structured<a class="headerlink" href="#how-this-guide-is-structured" title="Link to this heading">#</a></h2>
-<p>Most of this repository is structured for <strong>Sphinx</strong>, a documentation engine built in <code class="docutils literal notranslate"><span class="pre">Python</span></code>. We are using the Sphinx Book Theme and the <code class="docutils literal notranslate"><span class="pre">myST</span></code> syntax to create each page in this book.</p>
-<p>If you wish to contribute by working on the guide book locally, you
-will first need to</p>
-<ol class="arabic simple">
-<li><p>Fork this repository</p></li>
-<li><p>Clone it locally</p></li>
-<li><p>Build the documentation locally</p></li>
-</ol>
+<p>If you are unsure about how to contribute or are not familiar with git and github, this guide will help you through the process.</p>
 </section>
-<section id="instructions-for-building-the-documentation-locally-on-your-computer">
-<h2>Instructions for building the documentation locally on your computer<a class="headerlink" href="#instructions-for-building-the-documentation-locally-on-your-computer" title="Link to this heading">#</a></h2>
-<p>The easiest way to build the documentation in this repository is to use <code class="docutils literal notranslate"><span class="pre">nox</span></code>,
-a tool for quickly building environments and running commands within them.
-Nox ensures that your environment has all the dependencies needed to build the documentation.</p>
-<p>To do so, follow these steps:</p>
-<ol class="arabic">
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">nox</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nox</span>
-</pre></div>
-</div>
-</li>
-<li><p>Build the documentation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">nox</span> <span class="o">-</span><span class="n">s</span> <span class="n">docs</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p>This should create a local environment in a <code class="docutils literal notranslate"><span class="pre">.nox</span></code> folder, build the documentation (as specified in the <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> configuration), and the output will be in <code class="docutils literal notranslate"><span class="pre">_build/html</span></code>.
-The site can then be viewed locally by opening the top level <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your web browser. The exact location of this file will depend on you system, but the output of the following command could be copied into an address bar</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;file://$(pwd)/_build/html/index.html&quot;</span>
-</pre></div>
-</div>
-<p>To build live documentation that updates when you update local files, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">nox</span> <span class="o">-</span><span class="n">s</span> <span class="n">docs</span><span class="o">-</span><span class="n">live</span>
-</pre></div>
-</div>
-<p>When build like this, the output will tell you a localhost address where the site can be viewed, generally http://127.0.0.1:8000.</p>
+<section id="how-the-python-packaging-guide-is-structured">
+<h2>How the Python Packaging Guide is structured<a class="headerlink" href="#how-the-python-packaging-guide-is-structured" title="Link to this heading">#</a></h2>
+<p>The Python Packaging Guide is written in myST (a variant of MarkDown and rST) and we use <strong>Sphinx</strong>, a documentation engine built in <code class="docutils literal notranslate"><span class="pre">Python</span></code> to build the HTML version you see online.</p>
+<p>We use a tool called Nox to manage the process of building the guide.</p>
 </section>
+<section id="two-approaches-to-contributing">
+<h2>Two approaches to contributing<a class="headerlink" href="#two-approaches-to-contributing" title="Link to this heading">#</a></h2>
+<p>You can contribute to the guide using two approaches.</p>
+<p>The first approach is using a local copy of the guide in your computer. This option requires a more involved setup, but allows you to build the guide locally to verify your contribution did not introduce any bugs before submitting a pull request. It is the recommended approach for larger contribution, like writing a whole new section.</p>
+<p>The second approach is making your contribution directly in the GitHub website. This option does not require any setup on your computer and while your contribution will still be tested when you submit a PR (continuous integration), it will take longer for you to get any feedback in case of issue. It is the best way to make small contribution, like fixing typos, or if this is your first contribution to open source and the first approach feels too intimidating.</p>
+</section>
+<section id="forking-the-repository">
+<h2>Forking the repository<a class="headerlink" href="#forking-the-repository" title="Link to this heading">#</a></h2>
+<p>Independently of the approach you choose, the first step is to fork the Python Packaging Guide repository into your personal GitHub space.</p>
+<p><em><strong>TODO</strong>: This section should show a beginner user how to fork a repository in GitHub.</em></p>
+</section>
+<section id="contributing-via-the-github-website">
+<h2>Contributing via the GitHub website<a class="headerlink" href="#contributing-via-the-github-website" title="Link to this heading">#</a></h2>
+<section id="how-to-edit-a-markdown-file">
+<h3>How to edit a MarkDown file<a class="headerlink" href="#how-to-edit-a-markdown-file" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should show how to use the GitHub interface to edit and previewing a Markdown file.</em></p>
+</section>
+<section id="how-to-commit-your-changes">
+<h3>How to commit your changes<a class="headerlink" href="#how-to-commit-your-changes" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should show how to commit changes via the GitHub interface.</em></p>
+</section>
+</section>
+<section id="contributing-locally-on-your-computer">
+<h2>Contributing locally on your computer<a class="headerlink" href="#contributing-locally-on-your-computer" title="Link to this heading">#</a></h2>
+<section id="clone-your-forked-repository">
+<h3>Clone your forked repository<a class="headerlink" href="#clone-your-forked-repository" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should show how to clone a repository from GitHub into your computer.</em></p>
+</section>
+<section id="create-a-new-branch">
+<h3>Create a new branch<a class="headerlink" href="#create-a-new-branch" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should show how to create a new branch.</em></p>
+</section>
+<section id="create-a-virtual-environment">
+<h3>Create a virtual environment<a class="headerlink" href="#create-a-virtual-environment" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should show how to create a virtual environment using venv.</em></p>
+</section>
+<section id="install-the-development-dependencies">
+<h3>Install the development dependencies<a class="headerlink" href="#install-the-development-dependencies" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should show how to install the development dependencies defined in pyproject.toml.</em></p>
+</section>
+<section id="commit-your-changes">
+<h3>Commit your changes<a class="headerlink" href="#commit-your-changes" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should describe how to commit from the command line.</em></p>
+</section>
+<section id="how-to-build-the-guide-locally">
+<h3>How to build the guide locally<a class="headerlink" href="#how-to-build-the-guide-locally" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should describe the different sessions in nox related to building the docs: docs, docs-test, docs-live. It should also show how to see the guide built locally, by opening the right file in the browser or using the live version from docs-live</em></p>
+</section>
+<section id="before-you-submit-your-pull-request">
+<h3>Before you submit your pull request<a class="headerlink" href="#before-you-submit-your-pull-request" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should describe what steps a user should follow before submitting the pull request: build the docs, verify your changes look correct, etc.</em></p>
+</section>
+</section>
+<section id="submitting-a-pull-request-with-your-contribution">
+<h2>Submitting a pull request with your contribution<a class="headerlink" href="#submitting-a-pull-request-with-your-contribution" title="Link to this heading">#</a></h2>
+<section id="how-to-make-a-pull-request">
+<h3>How to make a pull request<a class="headerlink" href="#how-to-make-a-pull-request" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should describe how to make a pull request in GitHub.</em></p>
+</section>
+<section id="what-happens-when-you-submit-a-pull-request-ci-cd">
+<h3>What happens when you submit a pull request (CI/CD)<a class="headerlink" href="#what-happens-when-you-submit-a-pull-request-ci-cd" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should describe how to see the results of the CD/CI checks and how to get more information about errors</em></p>
+</section>
+<section id="what-to-expect-from-the-review-process">
+<h3>What to expect from the review process<a class="headerlink" href="#what-to-expect-from-the-review-process" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should describe how review happens in GitHub, how see the comments, and how to submit changes (push a new branch)</em></p>
+</section>
+</section>
+<section id="additional-help">
+<h2>Additional help<a class="headerlink" href="#additional-help" title="Link to this heading">#</a></h2>
+<section id="how-to-get-help">
+<h3>How to get help<a class="headerlink" href="#how-to-get-help" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: This section should describe the options for finding more help in case beginner contributors need more help (e.g., create an issue, post in a forum, etc).</em></p>
+</section>
+<section id="additional-resources">
+<h3>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: It should also include links to beginner documentation, like the GitHub docs.</em></p>
+</section>
+</section>
+<section id="annex">
+<h2>Annex<a class="headerlink" href="#annex" title="Link to this heading">#</a></h2>
 <section id="code-examples">
-<h2>Code examples<a class="headerlink" href="#code-examples" title="Link to this heading">#</a></h2>
+<h3>Code examples<a class="headerlink" href="#code-examples" title="Link to this heading">#</a></h3>
 <p>This guide uses the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude">literalinclude Sphinx directive</a>
 whenever possible to keep code and prose separate. Code for use in the documentation is kept in the <code class="docutils literal notranslate"><span class="pre">examples/</span></code> folder.</p>
 <section id="referencing-code-in-documentation">
-<h3>Referencing code in documentation<a class="headerlink" href="#referencing-code-in-documentation" title="Link to this heading">#</a></h3>
+<span id="id1"></span><h4>Referencing code in documentation<a class="headerlink" href="#referencing-code-in-documentation" title="Link to this heading">#</a></h4>
 <p>If an example is present elsewhere in the documentation that you want to use, you can copy the <code class="docutils literal notranslate"><span class="pre">literalinclude</span></code>
 directive verbatim and the examples will stay in sync.</p>
 <p>If you already see code in the examples folder that you can use for new documentation, a new <code class="docutils literal notranslate"><span class="pre">literalinclude</span></code> can be
@@ -548,10 +600,10 @@ later can protect your example from future modifications to the code.</p>
 <p><strong>Pro tip</strong>: As an alternative to <code class="docutils literal notranslate"><span class="pre">:lines:</span></code> there are also the <code class="docutils literal notranslate"><span class="pre">:start-after:</span></code>, <code class="docutils literal notranslate"><span class="pre">:start-at:</span></code>, <code class="docutils literal notranslate"><span class="pre">:end-before:</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">:end-at:</span></code> options. And if the example code is Python, <code class="docutils literal notranslate"><span class="pre">:pyobject:</span></code> can be an even more future-proof way to keep the
 same documentation content even through code refactors.</p>
-<p>If you need example code that doesn’t yet exist in <code class="docutils literal notranslate"><span class="pre">examples/</span></code> <a class="reference internal" href="#creating-code-for-documentation">see creating code for documentation</a>.</p>
+<p>If you need example code that doesn’t yet exist in <code class="docutils literal notranslate"><span class="pre">examples/</span></code> see creating code for documentation](#creating-code-for-documentation).</p>
 </section>
 <section id="creating-code-for-documentation">
-<h3>Creating code for documentation<a class="headerlink" href="#creating-code-for-documentation" title="Link to this heading">#</a></h3>
+<span id="id2"></span><h4>Creating code for documentation<a class="headerlink" href="#creating-code-for-documentation" title="Link to this heading">#</a></h4>
 <p>Whenever you come across a place that could benefit from a code block, instead of writing it in-line with a code fence
 (<code class="docutils literal notranslate"><span class="pre">```</span></code> blocked text) you can write it as a file in its own format. Your example may even already exist; <a class="reference internal" href="#referencing-code-in-documentation">see referencing code in documentation
 </a>.</p>
@@ -615,6 +667,7 @@ you need only to find the relevant part.</p>
 </section>
 </section>
 </section>
+</section>
 
 
                 </article>
@@ -644,11 +697,42 @@ you need only to find the relevant part.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-guide-is-structured">How this guide is structured</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-building-the-documentation-locally-on-your-computer">Instructions for building the documentation locally on your computer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-examples">Code examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-code-in-documentation">Referencing code in documentation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-code-for-documentation">Creating code for documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tl-dr">TL;DR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-python-packaging-guide-is-structured">How the Python Packaging Guide is structured</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-approaches-to-contributing">Two approaches to contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forking-the-repository">Forking the repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-via-the-github-website">Contributing via the GitHub website</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-edit-a-markdown-file">How to edit a MarkDown file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-commit-your-changes">How to commit your changes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-locally-on-your-computer">Contributing locally on your computer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-your-forked-repository">Clone your forked repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch">Create a new branch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-virtual-environment">Create a virtual environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-development-dependencies">Install the development dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-your-changes">Commit your changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-build-the-guide-locally">How to build the guide locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-submit-your-pull-request">Before you submit your pull request</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-a-pull-request-with-your-contribution">Submitting a pull request with your contribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-pull-request">How to make a pull request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-you-submit-a-pull-request-ci-cd">What happens when you submit a pull request (CI/CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect-from-the-review-process">What to expect from the review process</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-help">Additional help</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-help">How to get help</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annex">Annex</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-examples">Code examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-code-in-documentation">Referencing code in documentation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-code-for-documentation">Creating code for documentation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
