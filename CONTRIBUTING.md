@@ -37,17 +37,27 @@ You can do this by clicking the "Fork" button in the top right corner of the rep
 
 [Fork and Clone GitHub Repos](https://datascienceskills.org/lessons/git-github/git-intro/3-fork-clone/) is a good resource to learn more about forking.
 
-*__TODO__: This section should show a beginner user how to fork a repository in GitHub.*
-
 ## Contributing via the GitHub website
 
 ### How to edit a MarkDown file
 
-*__TODO__: This section should show how to use the GitHub interface to edit and previewing a Markdown file.*
+The Python Packaging Guide is written in myST, a variant of MarkDown. You can edit the files directly in the GitHub website.
+To do so, navigate to the file you want to edit and click the pencil icon in the top right corner of the file.
+
+![Edit file in GitHub](../images/edit-file.png)
+
+To preview your changes, click the "Preview changes" tab.
+
+![Preview changes in GitHub](../images/preview-changes.png)
 
 ### How to commit your changes
 
-*__TODO__: This section should show how to commit changes via the GitHub interface.*
+When you are done editing the file, scroll down to the bottom of the page. You will see a section called "Commit changes".
+Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made.
+
+![Commit changes in GitHub](../images/commit-changes.png)
+
+click on the "propose changes" button to submit your changes and open a pull request. See (How to make a pull request)[#how-to-make-a-pull-request] for more information.
 
 ## Contributing locally on your computer
 
