@@ -109,8 +109,8 @@ html_theme_options = {
     "show_toc_level": 1,
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
-    "footer_start": ["pyOpensci is dedicated to creating a welcoming, supportive and diverse community around the open source Python tools that drive open science. Our <a href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html" target="_blank">Code of Conduct</a> defines expected behavior and guidelines that help create such a community."],
-    "footer_end": ["copyright"],
+    "footer_start": ["copyright", "pyOpensci is dedicated to creating a welcoming, supportive and diverse community around the open source Python tools that drive open science. Our <a href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html" target="_blank">Code of Conduct</a> defines expected behavior and guidelines that help create such a community."],
+    "footer_end": [],
 }
 
 html_context = {
