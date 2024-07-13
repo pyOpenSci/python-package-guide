@@ -109,7 +109,7 @@ html_theme_options = {
     "show_toc_level": 1,
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
-    "footer_start": ["copyright",],
+    "footer_start": ["copyright",!],
     "footer_end": [],
 }
 
