@@ -44,20 +44,49 @@ You can do this by clicking the "Fork" button in the top right corner of the rep
 The Python Packaging Guide is written in myST, a variant of MarkDown. You can edit the files directly in the GitHub website.
 To do so, navigate to the file you want to edit and click the pencil icon in the top right corner of the file.
 
-![Edit file in GitHub](images/contributing/edit-file.png)
+```{figure} images/contributing/edit-button-pencil.png
+---
+name: edit-button-pencil in GitHub
+width: 80%
+alt: Edit button in GitHub
+---
+An image showing how to edit a file in GitHub. The pencil icon is highlighted with a red circle.
+
+```{figure} images/contributing/edit-file.png
+---
+name: edit-file in GitHub
+width: 80%
+alt: Edit file in GitHub
+---
+An image showing when a file is being edited in GitHub. The file content is displayed in a text editor.
+```
 
 To preview your changes, click the "Preview changes" tab.
 
-![Preview changes in GitHub](images/contributing/preview-changes.png)
+```{figure} images/contributing/preview-changes.png
+---
+name: preview-changes in GitHub
+width: 80%
+alt: Preview changes in GitHub
+---
+An image showing how to preview changes in GitHub. The file content is displayed in a text editor.
+```
 
 ### How to commit your changes
 
 When you are done editing the file, scroll down to the bottom of the page. You will see a section called "Commit changes".
 Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made.
 
-![Commit changes in GitHub](images/contributing/commit-changes.png)
+```{figure} images/contributing/commit-changes.png
+---
+name: commit-changes in GitHub
+width: 80%
+alt: Commit changes in GitHub
+---
+An image showing how to commit changes in GitHub. The commit message is displayed in a text editor.
+```
 
-click on the "propose changes" button to submit your changes and open a pull request. See (How to make a pull request)[#how-to-make-a-pull-request] for more information.
+After writing your commit message, click the "Commit changes" button to save your changes.
 
 ## Contributing locally on your computer
 
@@ -70,7 +99,14 @@ git clone <URL>
 ```
 Replace `<URL>` with the URL of your forked repository. You can find the URL by clicking the green "Code" button on your forked repository page.
 
-![Clone repository](images/contributing/clone-repository.png)
+```{figure} images/contributing/clone-repository.png
+---
+name: clone-repository in GitHub
+width: 80%
+alt: Clone repository in GitHub
+---
+An image showing how to clone a repository in GitHub. The URL of the repository is displayed in a text editor.
+```
 
 ### Create a new branch
 
@@ -170,11 +206,25 @@ Also make sure to check the formatting of your documentation by building the doc
 
 1. To open a pull request on GitHub, navigate to the main page of your forked repository and click on the "Pull requests" tab.
 
-![Pull requests tab in GitHub](images/contributing/pull-requests-tab.png)
+```{figure} images/contributing/pull-requests-tab.png
+---
+name: pull-requests-tab in GitHub
+width: 80%
+alt: Pull requests tab in GitHub
+---
+An image showing how to navigate to the pull requests tab in GitHub.
+```
 
 2. Click on the "New pull request" button.
 
-![New pull request button in GitHub](images/contributing/new-pull-request.png)
+```{figure} images/contributing/new-pull-request.png
+---
+name: new-pull-request in GitHub
+width: 80%
+alt: New pull request button in GitHub
+---
+An image showing how to create a new pull request in GitHub.
+```
 
 3. Write a clear and concise title and description for your pull request. Make sure to describe the changes you made and why they are necessary.
 
@@ -187,11 +237,25 @@ Once you submit a pull request, a series of checks will be run to ensure that yo
 
 You will see the status of these checks in your pull request.
 
-![Pull request checks in GitHub](images/contributing/pull-requests-checks.png)
-
+```{figure} images/contributing/pull-requests-checks.png
+---
+name: pull-requests-checks in GitHub
+width: 80%
+alt: Pull request checks in GitHub
+---
+An image showing the status of the checks in a pull request in GitHub.
+```
 If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged.
 
-![Pull request checks failed in GitHub](images/contributing/pull-requests-checks-fails.png)
+```{figure} images/contributing/pull-requests-checks-fails.png
+---
+name: pull-requests-checks-fails in GitHub
+width: 80%
+alt: Pull request checks failed in GitHub
+---
+An image showing the status of the checks in a pull request in GitHub.
+```
+
 To get more information about the errors, you can click on the "Details" link next to the failed check.
 
 ### What to expect from the review process
