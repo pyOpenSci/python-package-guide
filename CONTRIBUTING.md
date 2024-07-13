@@ -42,6 +42,8 @@ To fork a repo,
 
 3. In the top right-hand corner of the page there is a 'Fork' button. Click that button. You will be brought to a new page where you will 'Create a new fork'. Feel free to keep all the default inputs and click 'Create fork'. This will create a copy of the repo at `https://github.com/<username>/python-package-guide`, where `<username>` is your GitHub username.
 
+<img width="395" alt="fork_repo" src="https://github.com/user-attachments/assets/949223fb-b58b-4b6d-85db-003bd117da46">
+
 ## Contributing via the GitHub website
 
 ### How to edit a MarkDown file
