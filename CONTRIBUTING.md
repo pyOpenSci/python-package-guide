@@ -44,18 +44,18 @@ You can do this by clicking the "Fork" button in the top right corner of the rep
 The Python Packaging Guide is written in myST, a variant of MarkDown. You can edit the files directly in the GitHub website.
 To do so, navigate to the file you want to edit and click the pencil icon in the top right corner of the file.
 
-![Edit file in GitHub](../images/edit-file.png)
+![Edit file in GitHub](images/contributing/edit-file.png)
 
 To preview your changes, click the "Preview changes" tab.
 
-![Preview changes in GitHub](../images/preview-changes.png)
+![Preview changes in GitHub](images/contributing/preview-changes.png)
 
 ### How to commit your changes
 
 When you are done editing the file, scroll down to the bottom of the page. You will see a section called "Commit changes".
 Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made.
 
-![Commit changes in GitHub](../images/commit-changes.png)
+![Commit changes in GitHub](images/contributing/commit-changes.png)
 
 click on the "propose changes" button to submit your changes and open a pull request. See (How to make a pull request)[#how-to-make-a-pull-request] for more information.
 
@@ -63,31 +63,106 @@ click on the "propose changes" button to submit your changes and open a pull req
 
 ### Clone your forked repository
 
-*__TODO__: This section should show how to clone a repository from GitHub into your computer.*
+To clone your forked repository to your computer, you need to copy the URL of your forked repository and run the following command in your terminal:
+
+```bash
+git clone <URL>
+```
+Replace `<URL>` with the URL of your forked repository. You can find the URL by clicking the green "Code" button on your forked repository page.
+
+![Clone repository](images/contributing/clone-repository.png)
 
 ### Create a new branch
 
-*__TODO__: This section should show how to create a new branch.*
+Before making any changes, you should create a new branch to work on. This will help keep your changes separate from the main branch and make it easier to submit a pull request.
+
+To create a new branch, run the following command in your terminal:
+
+```bash
+git checkout -b <branch-name>
+```
 
 ### Create a virtual environment
 
-*__TODO__: This section should show how to create a virtual environment using venv.*
+To build the guide locally, you need to create a virtual environment and install the dependencies. You can do this by running the following commands in your terminal:
+
+- **On Windows**:
+    ```bash
+    python -m venv .venv
+    .venv\Scripts\activate
+    ```
+
+- **On MacOS and Linux**:
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate
+    ```
 
 ### Install the development dependencies
 
-*__TODO__: This section should show how to install the development dependencies defined in pyproject.toml.*
+To install the development dependencies, run the following command in your terminal:
+
+```bash
+python -m pip install -e .[dev]
+```
 
 ### Commit your changes
 
-*__TODO__: This section should describe how to commit from the command line.*
+After making your changes, you need to commit them to your local repository. To do this, run the following commands in your terminal:
+
+- To see the changes you made:
+    ```bash
+    git status
+    ```
+- To add the changes to the staging area:
+    ```bash
+    git add .
+    ```
+- To commit the changes:
+    ```bash
+    git commit -m "Your commit message here"
+    ```
+Replace `"Your commit message here"` with a clear and concise message that describes the changes you made.
 
 ### How to build the guide locally
 
-*__TODO__: This section should describe the different sessions in nox related to building the docs: docs, docs-test, docs-live. It should also show how to see the guide built locally, by opening the right file in the browser or using the live version from docs-live*
+To build the guide locally, you can use the `nox` command. This will run the default `nox` session, which builds the guide and opens it in your browser.
+
+To see the different sessions available, you can run the following command in your terminal:
+
+```bash
+nox --list-sessions
+```
+There are different sessions in nox related to building the docs: `docs`, `docs-test`, `docs-live`. You can run them by specifying the session name after the `nox` command.
+
+- `docs`: this session builds the guide and opens it in your browser.
+    ```bash
+    nox -e docs
+    ```
+    To see the guide built locally, open the file `_build/html/index.html` in your browser.
+
+- `docs-test`: this session runs the tests for the guide.
+    ```bash
+    nox -e docs-test
+    ```
+    If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
+
+- `docs-live`: this session builds the guide and opens it in your browser with live reloading.
+    ```bash
+    nox -e docs-live
+    ```
+    open the local version of the guide in your browser at ``localhost`` shown in the terminal.
 
 ### Before you submit your pull request
 
-*__TODO__: This section should describe what steps a user should follow before submitting the pull request: build the docs, verify your changes look correct, etc.*
+Before submitting your pull request, make sure to run the tests and check the formatting of your code.
+
+```bash
+nox -e docs-test
+```
+If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
+Also make sure to check the formatting of your documentation by building the docs locally and checking that your changes look correct.
+
 
 ## Submitting a pull request with your contribution
 
