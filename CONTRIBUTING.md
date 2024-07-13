@@ -168,13 +168,43 @@ Also make sure to check the formatting of your documentation by building the doc
 
 ### How to make a pull request
 
+1. To open a pull request on GitHub, navigate to the main page of your forked repository and click on the "Pull requests" tab.
+
+![Pull requests tab in GitHub](images/contributing/pull-requests-tab.png)
+
+2. Click on the "New pull request" button.
+
+![New pull request button in GitHub](images/contributing/new-pull-request.png)
+
+3. Write a clear and concise title and description for your pull request. Make sure to describe the changes you made and why they are necessary.
+
 *__TODO__: This section should describe how to make a pull request in GitHub.*
 
 ### What happens when you submit a pull request (CI/CD)
 
+Once you submit a pull request, a series of checks will be run to ensure that your changes do not introduce any bugs or errors. These checks include:
+
+- **Code formatting**: checks that your code is formatted correctly.
+- **Code style**: checks that your code follows the style guidelines.
+- **Tests**: runs the tests to ensure that your changes do not break any existing functionality.
+
+If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged.
+To get more information about the errors, you can click on the "Details" link next to the failed check.
+
+
 *__TODO__: This section should describe how to see the results of the CD/CI checks and how to get more information about errors*
 
 ### What to expect from the review process
+
+Once you submit a pull request, a maintainer of the repository will review your changes and provide feedback. The review process may involve:
+
+- **Comments**: the reviewer may leave comments on your pull request to ask questions or provide feedback.
+- **Suggestions**: the reviewer may suggest changes to your code or documentation.
+- **Approvals**: once the reviewer is satisfied with your changes, they will approve the pull request.
+
+You can make changes to your pull request by pushing new commits to the branch. The pull request will be updated automatically with your new changes.
+
+Once your pull request is approved, it will be merged into the main branch and your changes will be included in the guide.
 
 *__TODO__: This section should describe how review happens in GitHub, how see the comments, and how to submit changes (push a new branch)*
 
