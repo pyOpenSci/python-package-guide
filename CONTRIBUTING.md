@@ -184,11 +184,16 @@ Also make sure to check the formatting of your documentation by building the doc
 
 Once you submit a pull request, a series of checks will be run to ensure that your changes do not introduce any bugs or errors. These checks include:
 
-- **Code formatting**: checks that your code is formatted correctly.
-- **Code style**: checks that your code follows the style guidelines.
-- **Tests**: runs the tests to ensure that your changes do not break any existing functionality.
+- **Code formatting and styles**: checks that your code is formatted correctly, by `pre-commit.ci - pr check`.
+- **docs build**: checks that the documentation builds correctly, using `circleci`.
+
+You will see the status of these checks in your pull request.
+
+![Pull request checks in GitHub](images/contributing/pull-request-checks.png)
 
 If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged.
+
+![Pull request checks failed in GitHub](images/contributing/pull-request-checks-failed.png)
 To get more information about the errors, you can click on the "Details" link next to the failed check.
 
 
