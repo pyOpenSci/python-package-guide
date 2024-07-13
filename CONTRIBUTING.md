@@ -50,7 +50,7 @@ name: edit-button-pencil in GitHub
 width: 80%
 alt: Edit button in GitHub
 ---
-An image showing how to edit a file in GitHub. The pencil icon is highlighted with a red circle.
+An image showing how to edit a file in GitHub. The pencil icon is highlighted with a red rectangle.
 
 ```{figure} images/contributing/edit-file.png
 ---
@@ -69,7 +69,7 @@ name: preview-changes in GitHub
 width: 80%
 alt: Preview changes in GitHub
 ---
-An image showing how to preview changes in GitHub. The file content is displayed in a text editor.
+An image showing how to preview changes in GitHub. The file content is displayed in a text editor. The preview changes tab is highlighted with a red rectangle.
 ```
 
 ### How to commit your changes
@@ -83,7 +83,7 @@ name: commit-changes in GitHub
 width: 80%
 alt: Commit changes in GitHub
 ---
-An image showing how to commit changes in GitHub. The commit message is displayed in a text editor.
+An image showing how to commit changes in GitHub. The commit message is displayed in a text editor. The commit changes section is highlighted with a red rectangle.
 ```
 
 After writing your commit message, click the "Commit changes" button to save your changes.
@@ -105,7 +105,7 @@ name: clone-repository in GitHub
 width: 80%
 alt: Clone repository in GitHub
 ---
-An image showing how to clone a repository in GitHub. The URL of the repository is displayed in a text editor.
+An image showing how to clone a repository in GitHub. The URL of the repository is displayed in a text editor. The code button is highlighted with a red rectangle.
 ```
 
 ### Create a new branch
@@ -212,7 +212,7 @@ name: pull-requests-tab in GitHub
 width: 80%
 alt: Pull requests tab in GitHub
 ---
-An image showing how to navigate to the pull requests tab in GitHub.
+An image showing how to navigate to the pull requests tab in GitHub. The pull requests tab is highlighted with a red rectangle.
 ```
 
 2. Click on the "New pull request" button.
@@ -223,7 +223,7 @@ name: new-pull-request in GitHub
 width: 80%
 alt: New pull request button in GitHub
 ---
-An image showing how to create a new pull request in GitHub.
+An image showing how to create a new pull request in GitHub. The new pull request button is highlighted with a red rectangle.
 ```
 
 3. Write a clear and concise title and description for your pull request. Make sure to describe the changes you made and why they are necessary.
@@ -243,7 +243,7 @@ name: pull-requests-checks in GitHub
 width: 80%
 alt: Pull request checks in GitHub
 ---
-An image showing the status of the checks in a pull request in GitHub.
+An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks are highlighted with a red rectangle.
 ```
 If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged.
 
@@ -253,7 +253,7 @@ name: pull-requests-checks-fails in GitHub
 width: 80%
 alt: Pull request checks failed in GitHub
 ---
-An image showing the status of the checks in a pull request in GitHub.
+An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks that failed and the details link are highlighted with a red rectangle.
 ```
 
 To get more information about the errors, you can click on the "Details" link next to the failed check.
