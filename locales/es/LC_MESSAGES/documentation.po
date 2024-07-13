@@ -8,8 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-28 08:42-0400\n"
+"Report-Msgid-Bugs-To: \n" "POT-Creation-Date: 2024-06-28 08:42-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -22,7 +21,7 @@ msgstr ""
 
 #: ../../documentation/hosting-tools/intro.md:1
 msgid "Tools to Build and Host your Documentation"
-msgstr ""
+msgstr "Herramientas para hacer y servir tu documentación"
 
 #: ../../documentation/hosting-tools/intro.md:3
 msgid ""
@@ -31,6 +30,10 @@ msgid ""
 "[mkdocs](https://www.mkdocs.org/) for documentation. It is up to you to "
 "use the platform that you prefer for your documentation!"
 msgstr ""
+"Sphinx es la herramienta más común para construir documentación en la "
+"ecosistema de Python. Sin embargo, algunos mantendors están usando "
+"herramientascomo [mkdocs](https://www.mkdocs.org/) para documentación. Es tu "
+"decisión usar la herramienta que prefieres para tu documentación." 
 
 #: ../../documentation/hosting-tools/intro.md:8
 msgid ""
@@ -38,20 +41,26 @@ msgid ""
 "documentation. We talk about various syntax options that you can use when"
 " writing Sphinx documentation including mySt and rST."
 msgstr ""
+"En esta seción introducimos Sphinx como herramienta para construir " 
+"documentación. Hablamos sobre varios opciones de sintaxis puedes usar "
+"para escribir documentación de Sphinx incluyendo myST and rST"
 
 #: ../../documentation/hosting-tools/intro.md:12
 msgid ""
 "We also talk about ways to publish your documentation online and Sphinx "
 "tools that might help you optimize your documentation website."
 msgstr ""
+"Hablamos también sobre methodos para publicar tu documentación en línea "
+"y herramientas de Sphinx que puedas ayudarte optimizar tu sitio web para "
+"documentación." 
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:1
 msgid "Documentation syntax: markdown vs. myST vs. rst syntax to create your docs"
-msgstr ""
+msgstr "Sintaxis de documentación: markdown vs. myST vs. rst sintaxis para crear tu docs."
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:3
 msgid "There are three commonly used syntaxes for creating Python documentation:"
-msgstr ""
+msgstr "Hay tres sintaxis comúnes usado para creando documentación en Python:"
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:4
 msgid ""
@@ -63,6 +72,13 @@ msgid ""
 " blocks and other custom elements to your documentation, you will need to"
 " use either **myST** or **rST**."
 msgstr ""
+"[markdown](https://www.markdownguide.org/): Markdown es una sintaxis de text "
+"fácil aprender. Es la sintaxis por defecto para Jupyter Notebooks. Hay "
+"herramientas que puedas añadir a sitio web de Sphinx que lo permite hacer "
+"markdown como html. Sin embargo, usando markdown escribir documentación "
+"tiene limitaciónes. Por ejemplo, si quieres añadir referencias, tarjetas "
+"de colores, o otros elementos personalizados a tu documentación, necesitaras "
+"usar **myST** o **rST**."
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:8
 msgid ""
@@ -73,6 +89,12 @@ msgid ""
 "the top as a favorite for documentation given the flexibility that it "
 "allows."
 msgstr ""
+"[rST (ReStructured Text):](https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/basics.html). **rST** es la sintaxis "
+"nativa que Sphinx apoya. rST fue sintaxis por defecto usado para docuemntación "
+"por muchos años. Sin embargo, recientemente myST ha aumentando en popularidad "
+"para ponerse una herramienta favorita para documentación gracias a su
+flexibilidad."
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:9
 msgid ""
@@ -82,40 +104,55 @@ msgid ""
 "many because it offers both the rich functionality of rST combined with a"
 " simple-to-write markdown syntax."
 msgstr ""
+"[myST:](https://myst-parser.readthedocs.io/en/latest/intro.html) myST es una "
+"cominación de `markdown` y `rST` sintaxis. Es una opción buena si eres comdo "
+"escribiendo markdown. `myst` es preferido por mucho gente porque ofrece la "
+"functionalidad extensiva de rST en combinación con la sintaxis fácil de "
+"markdown."
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:12
 msgid ""
 "While you can chose to use any of the syntaxes listed above, we suggest "
 "using `myST` because:"
 msgstr ""
+"Aunque puedas elegir cualquiera sintaxis listado arriba, sugerimos que "
+"usas `myST` porque:"
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:15
 msgid "It is a simpler syntax and thus easier to learn;"
-msgstr ""
+msgstr "Es una sintaxis más simple y entonces es más facil aprender;"
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:16
 msgid ""
 "The above simplicity will make it easier for more people to contribute to"
 " your documentation."
 msgstr ""
+"Esta simplicidad lo hará más simple para más gente contribuye a tu "
+"documentación."
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:17
 msgid ""
 "Most of your core Python package text files, such as your README.md file,"
 " are already in `.md` format"
 msgstr ""
+"La mayoría de tus archivos de texto de paquetes primarios de Python, "
+"como tu archivo README.md, ya están en formato `.md`."
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:18
 msgid ""
 "`GitHub` and `Jupyter Notebooks` support markdown thus it's more widely "
 "used in the scientific ecosystem."
 msgstr ""
+"`GitHub` y `Jupyter Notebooks` apoyan markdown, entonces son más usados en la
+ecosistema cientifica."
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:22
 msgid ""
 "If you are on the fence about myST vs rst, you might find that **myST** "
 "is easier for more people to contribute to."
 msgstr ""
+"Si no estás seguro sobre si utilizar myST o rst, puede que encuentre que "
+"**myST** es más fácil para contribuciones de más gente."
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:1
 msgid "How to publish your Python package documentation online"
