@@ -4706,11 +4706,11 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-versions.md:1
 msgid "Creating New Versions of Your Python Package"
-msgstr ""
+msgstr "Creación de nuevas versiones de su paquete de Python"
 
 #: ../../package-structure-code/python-package-versions.md:6
 msgid "Key Takeways"
-msgstr ""
+msgstr "Principal conclusiones"
 
 #: ../../package-structure-code/python-package-versions.md:8
 msgid ""
@@ -4719,6 +4719,9 @@ msgid ""
 "package version; for example a major version bump (version 1.0 --> 2.0) "
 "equates to breaking changes in your package's code for a user."
 msgstr ""
+"Siga las reglas de [directrices de versionado semántico (SemVer)](https://semver.org/) "
+"cuando aumente la versión de su paquete de Python; por ejemplo, un aumento de versión "
+"mayor (versión 1.0 --> 2.0) equivale a cambios que rompen el código de su paquete para un usuario."
 
 #: ../../package-structure-code/python-package-versions.md:9
 msgid ""
@@ -4726,16 +4729,22 @@ msgid ""
 "versions of your package - if you want to have a GitHub only release "
 "workflow."
 msgstr ""
+"Es posible que desee considerar el uso de un complemento como hatch_vsc para "
+"gestionar las versiones de su paquete, si desea tener un flujo de trabajo de "
+"versionado solo en GitHub."
 
 #: ../../package-structure-code/python-package-versions.md:10
 msgid ""
 "Otherwise most major package build tools such as Hatch, Flit and PDM have"
 " a version feature that will help you update your package's version"
 msgstr ""
+"De lo contrario, la mayoría de las principales herramientas de construcción de "
+"paquetes, como Hatch, Flit y PDM, tienen una función de versión que le ayudará "
+"a actualizar la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:11
 msgid "Avoid updating your packages version number manually by hand in your code!"
-msgstr ""
+msgstr "Evite actualizar manualmente el número de versión de sus paquetes en su código!"
 
 #: ../../package-structure-code/python-package-versions.md:14
 msgid ""
@@ -4745,6 +4754,9 @@ msgid ""
 "/#semantic-versioning) when assigning release values to new versions of "
 "your Python package."
 msgstr ""
+"pyOpenSci recomienda que siga el [PEP 440 de Python](https://peps.python.org/pep-0440) "
+"que recomienda el uso de [directrices de versionado semántico](https://www.python.org/dev/peps/pep-0440"
+"/#semantic-versioning) al crear nuevas versiones de su paquete de Python."
 
 #: ../../package-structure-code/python-package-versions.md:18
 msgid ""
@@ -4753,18 +4765,26 @@ msgid ""
 "are making to the package code. Being consistent with how and when you "
 "update your package versions is important as:"
 msgstr ""
+"[El versionado semántico](https://semver.org/) es un enfoque para actualizar "
+"las versiones de los paquetes que considera el tipo y la extensión de un cambio "
+"que está realizando en el código del paquete. Ser coherente con cómo y cuándo "
+"actualiza las versiones de su paquete es importante ya que:"
 
 #: ../../package-structure-code/python-package-versions.md:23
 msgid ""
 "It helps your users (which might include other developers that depend on "
 "your package) understand the extent of changes to a package."
 msgstr ""
+"Ayuda a sus usuarios (que pueden incluir a otros desarrolladores que dependen "
+"de su paquete) a comprender la extensión de los cambios en un paquete."
 
 #: ../../package-structure-code/python-package-versions.md:24
 msgid ""
 "It helps your development team make decisions about when to bump a "
 "package version based on standard rules."
 msgstr ""
+"Ayuda a su equipo de desarrollo a tomar decisiones sobre cuándo aumentar una "
+"versión de paquete basándose en reglas estándar."
 
 #: ../../package-structure-code/python-package-versions.md:26
 msgid ""
@@ -4775,10 +4795,17 @@ msgid ""
 "code expressive](https://medium.com/@daniel.oliver.king/writing-"
 "expressive-code-b69ef7a5a2fa)."
 msgstr ""
+"Aumentos de versión consistentes siguiendo las reglas de semver significa que "
+"los valores de la versión de su paquete explican la extensión de los cambios "
+"realizados en el código de una versión a otra. Por lo tanto, los números "
+"de versión de su paquete se vuelven \"expresivos\" de la misma manera que "
+"nombrar bien las variables del código puede [hacer que el código sea expresivo](https://"
+"medium.com/@daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa)."
+
 
 #: ../../package-structure-code/python-package-versions.md:28
 msgid "A note about versioning"
-msgstr ""
+msgstr "Una nota sobre el versionado"
 
 #: ../../package-structure-code/python-package-versions.md:29
 msgid ""
@@ -4787,14 +4814,18 @@ msgid ""
 "document how you version your code and if you can, also document your "
 "deprecation policy for code."
 msgstr ""
+"En algunos casos, incluso pequeños cambios de versión pueden convertir una "
+"actualización de paquete en un cambio que rompe para algunos usuarios. Lo "
+"que también es importante es que documente cómo versiona su código y, si "
+"puede, también documente su política de deprecación para el código."
 
 #: ../../package-structure-code/python-package-versions.md:37
 msgid "SemVer rules"
-msgstr ""
+msgstr "Reglas de SemVer"
 
 #: ../../package-structure-code/python-package-versions.md:39
 msgid "Following SemVer, your bump your package version to a:"
-msgstr ""
+msgstr "Siguiendo SemVer, aumente la versión de su paquete a:"
 
 #: ../../package-structure-code/python-package-versions.md:41
 msgid "patch (1.1.1 --> 1.1.**2**)"
@@ -4810,21 +4841,21 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-versions.md:45
 msgid "version number change based on the following rules:"
-msgstr ""
+msgstr "El cambio de número de versión se basa en las siguientes reglas:"
 
 #: ../../package-structure-code/python-package-versions.md:47
 msgid "Given a version number MAJOR.MINOR.PATCH, increment the:"
-msgstr ""
+msgstr "Dados un número de versión MAJOR.MINOR.PATCH, incremente:"
 
 #: ../../package-structure-code/python-package-versions.md:49
 msgid "**MAJOR version** when you make incompatible API changes"
-msgstr ""
+msgstr "Versión **MAJOR** cuando realice cambios incompatibles en la API"
 
 #: ../../package-structure-code/python-package-versions.md:50
 msgid ""
 "**MINOR version** when you add functionality in a backwards compatible "
 "manner"
-msgstr ""
+msgstr "Versión **MINOR** cuando agregue funcionalidad de manera compatible con versiones anteriores"
 
 #: ../../package-structure-code/python-package-versions.md:51
 msgid ""
@@ -4832,6 +4863,10 @@ msgid ""
 " labels for pre-release and build metadata are available as extensions to"
 " the MAJOR.MINOR.PATCH format."
 msgstr ""
+"Versión **PATCH** cuando realice correcciones de errores compatibles"
+" con versiones anteriores. Se encuentran disponibles etiquetas adicionales "
+"para metadatos de prelanzamiento y compilación como extensiones del "
+"formato MAJOR.MINOR.PATCH."
 
 #: ../../package-structure-code/python-package-versions.md:56
 msgid ""
@@ -4841,16 +4876,23 @@ msgid ""
 "provide a user with a sense of when a new version might break an existing"
 " build. As such we still suggest semver."
 msgstr ""
+"Algunas personas prefieren usar [calver](https://calver.org/index.html) para "
+"el versionado. Puede ser un sistema más fácil de usar dado que se basa en "
+"valores de fecha asociados con las versiones lanzadas. Sin embargo, calver no "
+"proporciona al usuario una idea de cuándo una nueva versión podría romper una "
+"compilación existente. Por lo tanto, seguimos sugiriendo semver."
 
 #: ../../package-structure-code/python-package-versions.md:59
 msgid ""
 "pyOpenSci will never require semver in a peer review as long as a package"
 " has a reasonable approach to versioning!"
 msgstr ""
+"¡pyOpenSci nunca requerirá semver en una revisión por pares siempre que un paquete "
+"tenga un enfoque razonable para el versionado!"
 
 #: ../../package-structure-code/python-package-versions.md:63
 msgid "Avoid manually updating Python package version numbers if you can"
-msgstr ""
+msgstr "Evite actualizar manualmente los números de versión de los paquetes de Python si puede"
 
 #: ../../package-structure-code/python-package-versions.md:65
 msgid ""
@@ -4858,6 +4900,9 @@ msgid ""
 "locations. One example of this is that it might be both an attribute in "
 "your package **version** and also called in your documentation."
 msgstr ""
+"A menudo, es posible que desee tener el valor de la versión de su paquete en "
+"múltiples ubicaciones. Un ejemplo de esto es que podría ser tanto un atributo "
+"en su paquete **version** como también llamado en su documentación."
 
 #: ../../package-structure-code/python-package-versions.md:70
 msgid ""
@@ -4865,6 +4910,9 @@ msgid ""
 " to avoid human-error. It is better practice to keep your version number "
 "in one location."
 msgstr ""
+"Recomendamos que evite las actualizaciones manuales del número de versión de "
+"su paquete para evitar errores humanos. Es mejor mantener su número "
+"de versión en una sola ubicación."
 
 #: ../../package-structure-code/python-package-versions.md:74
 msgid ""
@@ -4872,16 +4920,21 @@ msgid ""
 "tool like hatch, PDM or bump2version that will update the version values "
 "for you - throughout your package."
 msgstr ""
+"Si no puede implementar una versión de una sola ubicación, considere usar una "
+"herramienta como hatch, PDM o bump2version que actualizará los valores de versión "
+"por usted, en todo su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:78
 msgid ""
 "Below we discuss some tools that you can use to manage updating Python "
 "package versions."
 msgstr ""
+"A continuación, discutimos algunas herramientas que puede utilizar para "
+"actualizar las versiones de los paquetes de Python."
 
 #: ../../package-structure-code/python-package-versions.md:83
 msgid "Tools to manage versions for your Python package"
-msgstr ""
+msgstr "Herramientas para gestionar versiones de su paquete de Python"
 
 #: ../../package-structure-code/python-package-versions.md:85
 msgid ""
@@ -4890,16 +4943,22 @@ msgid ""
 " tools are built into or work with your chosen [packaging build tools "
 "that discussed in this chapter.](python-package-build-tools)"
 msgstr ""
+"Hay un puñado de herramientas que se utilizan ampliamente en el ecosistema "
+"científico que puede utilizar para gestionar las versiones de su paquete. "
+"Algunas de estas herramientas están integradas o funcionan con las [herramientas "
+"de construcción de paquetes que elija que se discuten en este capítulo.](python-package-build-tools)"
 
 #: ../../package-structure-code/python-package-versions.md:91
 msgid "Below, we provide an overview of these tools."
-msgstr ""
+msgstr "A continuación, proporcionamos una descripción general de estas herramientas."
 
 #: ../../package-structure-code/python-package-versions.md:97
 msgid ""
 "There are three general groups of tools that you can use to manage "
 "package versions:"
 msgstr ""
+"Hay tres grupos generales de herramientas que puede utilizar para gestionar "
+"las versiones de los paquetes:"
 
 #: ../../package-structure-code/python-package-versions.md:100
 msgid ""
@@ -4909,6 +4968,11 @@ msgid ""
 "release.readthedocs.io/en/latest/) as a Python tool that implements a "
 "semantic versioning approach."
 msgstr ""
+"**herramientas de versionado semántico:** Estas herramientas determinarán "
+"automáticamente qué tipo de aumento de versión usar utilizando el texto en "
+"los mensajes de confirmación o commits. A continuación, discutimos [Python Semantic Release]"
+"(https://python-semantic-release.readthedocs.io/en/latest/) como una herramienta de Python "
+"que implementa un enfoque de versionado semántico."
 
 #: ../../package-structure-code/python-package-versions.md:102
 msgid ""
@@ -4917,6 +4981,10 @@ msgid ""
 "within your package. Normally this is implemented at the command link for"
 " instance `hatch version major` would bump your project from 0.x to 1.0."
 msgstr ""
+"**Herramientas de aumento incremental manual:** Herramientas como "
+"[Hatch](https://hatch.pypa.io/latest/version/) ofrecen el aumento de versión "
+"dentro de su paquete. Normalmente, esto se ejecuta en la línea de comandos, "
+"por ejemplo, `hatch version major` aumentaría su proyecto de 0.x a 1.0."
 
 #: ../../package-structure-code/python-package-versions.md:103
 msgid ""
@@ -4926,10 +4994,17 @@ msgid ""
 "We discuss this option below assuming that you are using **.git tags** "
 "and **GitHub** to manage your package repository."
 msgstr ""
+"**Herramientas del sistema de control de versiones:** Por último, hay "
+"herramientas que dependen de su sistema de control de versiones para "
+"seguir las versiones. Estas herramientas a menudo son complementos de su "
+"herramienta de construcción de paquetes (por ejemplo, construcción de "
+"setuptools o hatchling). Discutimos esta opción a continuación asumiendo "
+"que está utilizando **etiquetas .git** y **GitHub** para gestionar el "
+"repositorio de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:105
 msgid "Semantic release, vs version control based vs manual version bumping"
-msgstr ""
+msgstr "Publicación semántica, vs. basada en control de versiones vs. aumento manual de versiones"
 
 #: ../../package-structure-code/python-package-versions.md:107
 msgid ""
@@ -4938,18 +5013,23 @@ msgid ""
 "can create a workflow where a GitHub release and associated new version "
 "tag is used to trigger an automated build that:"
 msgstr ""
+"Generalmente, las herramientas de publicación semántica y del sistema de control "
+"de versiones se pueden configurar para ejecutarse automáticamente en GitHub "
+"usando acciones de GitHub. Esto significa que puede crear un flujo de trabajo "
+"en el que una versión de GitHub y una nueva etiqueta de versión asociada se "
+"utilizan para desencadenar una compilación automatizada que:"
 
 #: ../../package-structure-code/python-package-versions.md:113
 msgid "Builds your package and updates the version following the new tag"
-msgstr ""
+msgstr "Construye su paquete y actualiza la versión siguiendo la nueva etiqueta"
 
 #: ../../package-structure-code/python-package-versions.md:114
 msgid "Tests the build and publishes to test PyPI"
-msgstr ""
+msgstr "Prueba la compilación y publica en test PyPI"
 
 #: ../../package-structure-code/python-package-versions.md:115
 msgid "Publishes the package to PyPI"
-msgstr ""
+msgstr "Publica el paquete en PyPI"
 
 #: ../../package-structure-code/python-package-versions.md:118
 msgid ""
@@ -4957,26 +5037,35 @@ msgid ""
 "version after a set number of changes have been made to it. For example, "
 "you might bump from version 0.8 to 0.9 of a package. or from 0.9 to 1.0."
 msgstr ""
+"Aumentar la versión de un paquete se refiere al paso de aumentar la versión "
+"del paquete después de que se haya realizado un número determinado de cambios "
+"en él. Por ejemplo, podría aumentar de la versión 0.8 a la 0.9 de un paquete. "
+"O de 0.9 a 1.0."
 
 #: ../../package-structure-code/python-package-versions.md:122
 msgid ""
 "Using semantic versioning, there are three main \"levels\" of versions "
 "that you might consider:"
 msgstr ""
+"Usando el versionado semántico, hay tres \"niveles\" principales de versiones "
+"que podría considerar:"
 
 #: ../../package-structure-code/python-package-versions.md:125
 msgid "Major, minor and patch. These are described in more detail below."
-msgstr ""
+msgstr "Mayor, menor y parche (del inglés major, minor y patch). "
+"Estos se describen con más detalle a continuación."
 
 #: ../../package-structure-code/python-package-versions.md:128
 msgid "Tools for bumping Python package versions"
-msgstr ""
+msgstr "Herramientas para aumentar las versiones de los paquetes de Python"
 
 #: ../../package-structure-code/python-package-versions.md:130
 msgid ""
 "In this section we discuss the following tools for managing your Python "
 "package's version:"
 msgstr ""
+"En esta sección discutimos las siguientes herramientas para gestionar la "
+"versión de su paquete de Python:"
 
 #: ../../package-structure-code/python-package-versions.md:133
 msgid "hatch &"
@@ -4984,7 +5073,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-versions.md:134
 msgid "hatch_vcs plugin for hatchling"
-msgstr ""
+msgstr "plugin hatch_vcs para hatchling"
 
 #: ../../package-structure-code/python-package-versions.md:135
 msgid "setuptools-scm"
@@ -4996,7 +5085,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-versions.md:138
 msgid "Tool 1: Hatch and other build tools that offer incremental versioning"
-msgstr ""
+msgstr "Heramienta 1: Hatch y otras herramientas de construcción que ofrecen versionado incremental"
 
 #: ../../package-structure-code/python-package-versions.md:140
 msgid ""
@@ -5006,6 +5095,11 @@ msgid ""
 "implement version. Rather, they allow you to update the version at the "
 "command line using commands such as:"
 msgstr ""
+"Muchas de las herramientas de construcción modernas ofrecen soporte de versión "
+"que siguen las reglas de versionado semántico. Estas herramientas son diferentes "
+"de Python Semantic Version en que no requieren mensajes de confirmación específicos "
+"para implementar la versión. Más bien, le permiten actualizar la versión en la línea "
+"de comandos usando comandos como:"
 
 #: ../../package-structure-code/python-package-versions.md:146
 msgid "`tool-name version update major`"
@@ -5022,28 +5116,34 @@ msgid ""
 "incrementally. With **Hatch** the version value will be found in your "
 "`pyproject.toml` file. <!-- TODO double check this -->"
 msgstr ""
+"[Hatch](https://hatch.pypa.io/latest/version/), por ejemplo, ofrece "
+"`hatch version minor` que modificará la versión de su paquete de forma "
+"incremental. Con **Hatch**, el valor de la versión se encontrará en su "
+"archivo `pyproject.toml`. <!-- TODO double check this -->"
 
 #: ../../package-structure-code/python-package-versions.md:152
 msgid "Hatch (or other tools like PDM) Pros"
-msgstr ""
+msgstr "Beneficios de Hatch (u otras herramientas como PDM)"
 
 #: ../../package-structure-code/python-package-versions.md:154
 msgid "Easy to use version updates locally using a single tool!"
-msgstr ""
+msgstr "Fácil de usar actualizaciones de versión localmente usando una sola herramienta!"
 
 #: ../../package-structure-code/python-package-versions.md:156
 msgid "Hatch (or other tools like PDM) Cons"
-msgstr ""
+msgstr "Complicaciones con Hatch (u otras herramientas como PDM)"
 
 #: ../../package-structure-code/python-package-versions.md:158
 msgid ""
 "There will be some setup involved to ensure package version is updated "
 "throughout your package"
 msgstr ""
+"Habrá alguna configuración involucrada para asegurarse de que la versión del "
+"paquete se actualice en todo su paquete"
 
 #: ../../package-structure-code/python-package-versions.md:160
 msgid "Tool 2: Hatch_vcs & hatchling build back-end"
-msgstr ""
+msgstr "Heramienta 2: Hatch_vcs & hatchling build backend"
 
 #: ../../package-structure-code/python-package-versions.md:162
 msgid ""
@@ -5052,6 +5152,10 @@ msgid ""
 "creates a **\\_version.py** file in your package ecosystem that keeps "
 "track of the package's current version."
 msgstr ""
+"[hatch_vcs](https://github.com/ofek/hatch-vcs) es una herramienta de versionado "
+"que le permite gestionar las versiones de los paquetes utilizando **etiquetas git**. "
+"Hatch_vcs crea un archivo **\\_version.py** en su ecosistema de paquetes que "
+"realiza un seguimiento de la versión actual del paquete."
 
 #: ../../package-structure-code/python-package-versions.md:167
 msgid ""
@@ -5061,6 +5165,10 @@ msgid ""
 "This in turn eliminates potential error associated with manually updating"
 " your package's version."
 msgstr ""
+"Hatch realiza un seguimiento de la versión de su paquete en un archivo `_version.py`. "
+"Almacenar la versión en un solo archivo gestionado por Hatch proporciona a su "
+"paquete un valor de \"única fuente de verdad\" para el número de versión. Esto, a su vez, "
+"elimina el error potencial asociado con la actualización manual de la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:173
 msgid ""
@@ -5068,6 +5176,9 @@ msgid ""
 " tag number for your package. if it has increased, it will update the "
 "**\\_version.py** file with the new value."
 msgstr ""
+"Cuando usted (o su sistema de CI) construye su paquete, hatch verifica el número "
+"de etiqueta actual de su paquete. Si ha aumentado, actualizará el archivo **\\_version.py** "
+"con el nuevo valor."
 
 #: ../../package-structure-code/python-package-versions.md:176
 msgid ""
@@ -5075,28 +5186,36 @@ msgid ""
 "your package, Hatch will access the new tag value and use it to update "
 "your package version."
 msgstr ""
+"Así, cuando cree una nueva etiqueta o una nueva versión con una etiqueta y "
+"construya su paquete, Hatch accederá al nuevo valor de la etiqueta y lo utilizará "
+"para actualizar la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:179
 msgid ""
 "To use **hatch_vcs** you will need to use the **hatchling** build back "
 "end."
 msgstr ""
+"Para usar **hatch_vcs** necesitará usar el backend de construcción **hatchling**."
 
 #: ../../package-structure-code/python-package-versions.md:182
 msgid ""
 "Hatchling can also be used with any of the modern build tools including "
 "**Flit** and **PDM** if you prefer those for your day to day workflow."
 msgstr ""
+"Hatchling también se puede utilizar con cualquiera de las herramientas de construcción "
+"modernas, incluidas **Flit** y **PDM**, si prefiere esas para su flujo de trabajo diario."
 
 #: ../../package-structure-code/python-package-versions.md:187
 msgid "Hatch example setup in your pyproject.toml"
-msgstr ""
+msgstr "Ejecución de ejemplo de Hatch en su pyproject.toml"
 
 #: ../../package-structure-code/python-package-versions.md:196
 msgid ""
 "**Hatch_vcs** supports a fully automated package release and build, and "
 "push to PyPI workflow on GitHub."
 msgstr ""
+"**Hatch_vcs** admite un flujo de trabajo de publicación y construcción de paquetes "
+"totalmente automatizado, y envío a PyPI en GitHub."
 
 #: ../../package-structure-code/python-package-versions.md:206
 msgid ""
@@ -5104,24 +5223,27 @@ msgid ""
 "**hatchling** to be the modern equivalent to your current setuptools / "
 "build workflow."
 msgstr ""
+"Si utiliza **setuptools_scm**, entonces podría encontrar que **hatch_vcs** y "
+"**hatchling** son el equivalente moderno a su flujo de trabajo actual de setuptools / "
+"buils."
 
 #: ../../package-structure-code/python-package-versions.md:209
 msgid "hatch_vcs Pros"
-msgstr ""
+msgstr "Beneficios de hatch_vcs"
 
 #: ../../package-structure-code/python-package-versions.md:211
 msgid "Hatch supports modern Python packaging standards"
-msgstr ""
+msgstr "Hatch admite estándares modernos de empaquetado de Python"
 
 #: ../../package-structure-code/python-package-versions.md:212
 #: ../../package-structure-code/python-package-versions.md:238
 msgid "It creates a single-source file that contains your package version."
-msgstr ""
+msgstr "Permite crear un archivo de única fuente de verdad que contiene la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:213
 #: ../../package-structure-code/python-package-versions.md:239
 msgid "You never manually update the package version"
-msgstr ""
+msgstr "Nunca actualizará manualmente la versión del paquete"
 
 #: ../../package-structure-code/python-package-versions.md:214
 #: ../../package-structure-code/python-package-versions.md:240
@@ -5129,6 +5251,8 @@ msgid ""
 "You can automate writing the version anywhere in your package including "
 "your documentation!"
 msgstr ""
+"Puede automatizar la escritura de la versión en cualquier lugar de su paquete, "
+"incluida su documentación."
 
 #: ../../package-structure-code/python-package-versions.md:215
 #: ../../package-structure-code/python-package-versions.md:241
@@ -5136,6 +5260,8 @@ msgid ""
 "It supports a purely GitHub based release workflow. This simplifies "
 "maintenance workflows."
 msgstr ""
+"Admite un flujo de trabajo de publicación basado puramente en GitHub. Esto "
+"simplifica los flujos de trabajo de mantenimiento."
 
 #: ../../package-structure-code/python-package-versions.md:216
 #: ../../package-structure-code/python-package-versions.md:242
@@ -5143,6 +5269,8 @@ msgid ""
 "Version number is updated in your package via a hidden `_version.py` "
 "file. There is no manual configuration updates required."
 msgstr ""
+"El número de versión se actualiza en su paquete a través de un archivo oculto `_version.py`. "
+"No se requieren actualizaciones manuales de configuración."
 
 #: ../../package-structure-code/python-package-versions.md:217
 #: ../../package-structure-code/python-package-versions.md:243
@@ -5151,10 +5279,13 @@ msgid ""
 "below), we know that sometimes when maintaining a package specific "
 "guidelines around commit messages can be hard to apply and manage."
 msgstr ""
+"Si bien nos gustan los mensajes de confirmación detallados (consulte Python Semantic Version "
+"a continuación), sabemos que a veces, al mantener un paquete, las pautas específicas "
+"sobre los mensajes de confirmación pueden ser difíciles de aplicar y gestionar."
 
 #: ../../package-structure-code/python-package-versions.md:219
 msgid "hatch_vcs Cons"
-msgstr ""
+msgstr "Complicaciones con hatch_vcs"
 
 #: ../../package-structure-code/python-package-versions.md:221
 msgid ""
@@ -5162,10 +5293,13 @@ msgid ""
 "version number via a tag on GitHub. But you could locally develop a build"
 " to \"bump\" tag versions"
 msgstr ""
+"En un flujo de trabajo de CI, terminará ingresando o creando manualmente el "
+"número de versión a través de una etiqueta en GitHub. Pero podría desarrollar "
+"localmente una compilación para \"aumentar\" las versiones de las etiquetas"
 
 #: ../../package-structure-code/python-package-versions.md:224
 msgid "Tool 3: setuptools-scm versioning using git tags"
-msgstr ""
+msgstr "Herramienta 3: versionado de setuptools-scm usando etiquetas git"
 
 #: ../../package-structure-code/python-package-versions.md:226
 msgid ""
@@ -5175,52 +5309,68 @@ msgid ""
 "above) does. It stores a version in a **\\_version.py** file and relies "
 "on (**git**) tags to determine the package's current version."
 msgstr ""
+"[`Setuptools_scm`](https://github.com/pypa/setuptools_scm/) es una extensión "
+"que puede usar con setuptools para gestionar las versiones de los paquetes. "
+"**Setuptools_scm** opera de la misma manera que **hatch_vcs** (discutido "
+"anteriormente). Almacena una versión en un archivo **\\_version.py** y se basa "
+"en las etiquetas (**git**) para determinar la versión actual del paquete."
 
 #: ../../package-structure-code/python-package-versions.md:232
 msgid ""
 "If you are using **setuptools** as your primary build tool, then "
 "`*setuptools-scm` is a good choice as:"
 msgstr ""
+"Si está utilizando **setuptools** como su herramienta de construcción principal, "
+"entonces `*setuptools-scm` es una buena elección ya que:"
 
 #: ../../package-structure-code/python-package-versions.md:236
 msgid "setuptools_scm Pros"
-msgstr ""
+msgstr "Beneficios de setuptools_scm"
 
 #: ../../package-structure-code/python-package-versions.md:244
 msgid "**setuptools** is still the most commonly used Python packaging build tool"
-msgstr ""
+msgstr "**setuptools** sigue siendo la herramienta de construcción de paquetes de Python más comúnmente utilizada"
 
 #: ../../package-structure-code/python-package-versions.md:246
 msgid "setuptools_scm Cons"
-msgstr ""
+msgstr "Complicaciones con setuptools_scm"
 
 #: ../../package-structure-code/python-package-versions.md:248
 msgid ""
 "In a CI workflow you will end up manually entering or creating the "
 "version number via a tag on GitHub."
 msgstr ""
+"En un flujo de trabajo de CI, terminará ingresando o creando manualmente el "
+"número de versión a través de una etiqueta en GitHub."
 
 #: ../../package-structure-code/python-package-versions.md:249
 msgid "Not well documented"
-msgstr ""
+msgstr "No está bien documentado"
 
 #: ../../package-structure-code/python-package-versions.md:250
 msgid ""
 "Because setuptools will always have to support backwards compatibility it"
 " will always be slower in adopting modern Python packaging conventions."
 msgstr ""
+"Dado que setuptools siempre tendrá que admitir la compatibilidad "
+"con versiones anteriores, siempre será más lento en adoptar las "
+"convenciones modernas de empaquetado de Python."
 
 #: ../../package-structure-code/python-package-versions.md:252
 msgid ""
 "As such you might consider using a more modern tool such as **hatch_vcs**"
 " and **hatchling** to build your package and manage package versions."
 msgstr ""
+"Por lo tanto, podría considerar usar una herramienta más moderna como **hatch_vcs** "
+"y **hatchling** para construir su paquete y gestionar las versiones del paquete."
 
 #: ../../package-structure-code/python-package-versions.md:264
 msgid ""
 "Tool 4: [Python semantic release](https://python-semantic-"
 "release.readthedocs.io/en/latest/)"
 msgstr ""
+"Herramienta 4: [Python semantic release](https://python-semantic-"
+"release.readthedocs.io/en/latest/)"
 
 #: ../../package-structure-code/python-package-versions.md:266
 msgid ""
@@ -5229,12 +5379,18 @@ msgid ""
 "As the name implies, Python Semantic Release follows semver release "
 "rules."
 msgstr ""
+"Python semantic release utiliza un flujo de trabajo de mensajes de confirmación "
+"que actualiza la versión de su paquete basándose en palabras clave encontradas "
+"en sus mensajes de confirmación. Como su nombre lo indica, Python Semantic Release "
+"sigue las reglas de lanzamiento de semver."
 
 #: ../../package-structure-code/python-package-versions.md:271
 msgid ""
 "With Python Semantic Release, versions are triggered using specific "
 "language found in a git commit message."
 msgstr ""
+"Con Python Semantic Release, las versiones se activan utilizando un lenguaje "
+"específico que se encuentra en un mensaje de confirmación de git."
 
 #: ../../package-structure-code/python-package-versions.md:274
 msgid ""
@@ -5244,12 +5400,19 @@ msgid ""
 " fix(text-here), Python Semantic Release would bump your package to "
 "version 1.1.1."
 msgstr ""
+"Por ejemplo, las palabras `fix(attribute_warning):` activan Python Semantic "
+"Release para implementar un aumento de versión de **patch**. Por ejemplo, si "
+"su paquete estaba en la versión 1.1.0 y realizó la confirmación a continuación "
+"con las palabras fix(text-here), Python Semantic Release aumentaría su paquete a "
+"la versión 1.1.1."
 
 #: ../../package-structure-code/python-package-versions.md:284
 msgid ""
 "Similarly a feature (`feat()`) triggers a minor version bump. For example"
 " from version 1.1 to version 1.2"
 msgstr ""
+"De manera similar, una característica (`feat()`) activa un aumento de versión "
+"menor. Por ejemplo, de la versión 1.1 a la versión 1.2"
 
 #: ../../package-structure-code/python-package-versions.md:292
 msgid ""
@@ -5259,14 +5422,19 @@ msgid ""
 "since 2020 and will potentially be updated in the future! But for now, "
 "some of the commands are dated but the content is still excellent."
 msgstr ""
+"Puede encontrar una discusión reflexiva sobre la versión semántica de Python "
+"[en esta guía de paquetes de Python](https://py-pkgs.org/07-releasing-versioning"
+"#automatic-version-bumping). ¡Tenga en cuenta que la guía no ha sido actualizada "
+"desde 2020 y potencialmente se actualizará en el futuro! Por ahora, algunos "
+"de los comandos están desactualizados, pero el contenido sigue siendo excelente."
 
 #: ../../package-structure-code/python-package-versions.md:295
 msgid "Python Semantic Release Pros"
-msgstr ""
+msgstr "Beneficios de Python Semantic Release"
 
 #: ../../package-structure-code/python-package-versions.md:297
 msgid "Follows semver versioning closely"
-msgstr ""
+msgstr "Siguen de cerca el versionado semver"
 
 #: ../../package-structure-code/python-package-versions.md:298
 msgid ""
@@ -5274,10 +5442,13 @@ msgid ""
 " troubleshooting and ensure a cleaner and more self-describing git "
 "history."
 msgstr ""
+"Obliga a los mantenedores a usar mensajes de confirmación descriptivos que "
+"pueden simplificar la solución de problemas y garantizar un historial de git "
+"más limpio y autoexplicativo."
 
 #: ../../package-structure-code/python-package-versions.md:300
 msgid "Python Semantic Release Cons"
-msgstr ""
+msgstr "Complicaciones con Python Semantic Release"
 
 #: ../../package-structure-code/python-package-versions.md:302
 msgid ""
@@ -5286,6 +5457,10 @@ msgid ""
 "specificity in commit messages (NOTE: there are bots that will check git "
 "commit messages in a repo)"
 msgstr ""
+"Requiere un lenguaje de confirmación muy específico para funcionar. En la "
+"práctica, algunos mantenedores y colaboradores pueden no ser capaces de "
+"mantener ese nivel de especificidad en los mensajes de confirmación (NOTA: "
+"hay bots que verificarán los mensajes de confirmación de git en un repositorio)"
 
 #: ../../package-structure-code/python-package-versions.md:303
 msgid ""
@@ -5293,9 +5468,14 @@ msgid ""
 "GitHub based release workflow as the wrong commit message could trigger a"
 " release."
 msgstr ""
+"La publicación se realiza en la línea de comandos. Esto hace que sea más "
+"complicado implementar un flujo de trabajo de publicación basado en GitHub, "
+"ya que un mensaje de confirmación incorrecto podría activar una publicación."
 
 #: ../../package-structure-code/python-package-versions.md:304
 msgid ""
 "The version number is manually updated in a configuration file such as "
 "`pyproject.toml` vs. in a package **\\_version.py** file."
 msgstr ""
+"El número de versión se actualiza manualmente en un archivo de configuración "
+"como `pyproject.toml` en lugar de en un archivo de paquete **\\_version.py**."
