@@ -4925,6 +4925,12 @@ msgid ""
 "features such as tab / auto completion when using an IDE like VSCODE or "
 "pycharm (as long as your version of pip is current!)."
 msgstr ""
+"Setuptools no admite características interactivas como la detección automática "
+"de la API por defecto si está trabajando en un IDE como VSCODE y está utilizando una instalación editable para "
+"desarrollo. [Vea las notas aquí sobre el soporte de pylance](https://github.com/microsoft/pylance-"
+"release/blob/main/TROUBLESHOOTING.md#editable-install-modules-not-found). En comparación, herramientas como flit, "
+"hatch, PDM admiten características interactivas como la detección automática de la API cuando se utiliza un IDE "
+"como VSCODE o pycharm (¡siempre que su versión de pip esté actualizada!)."
 
 #: ../../package-structure-code/python-package-build-tools.md:471
 msgid ""
@@ -4932,30 +4938,41 @@ msgid ""
 "range of packages, it is not as flexible in its adoption of modern Python"
 " packaging standards."
 msgstr ""
+"Debido a que **setuptools** tiene que mantener la compatibilidad con versiones anteriores en una gama de paquetes, "
+"no es tan flexible en su adopción de los estándares de empaquetado de Python modernos."
 
 #: ../../package-structure-code/python-package-build-tools.md:474
 msgid ""
 "The above-mentioned backwards compatibility makes for a more complex "
 "code-base."
 msgstr ""
+"La compatibilidad con versiones anteriores mencionada anteriormente"
+" hace que la base de código sea más compleja."
 
 #: ../../package-structure-code/python-package-build-tools.md:475
 msgid ""
 "Your experience as a user will be less streamlined and simple using "
 "setuptools compared to other tools discussed on this page."
 msgstr ""
+"Su experiencia como usuario será más compleja utilizando "
+"setuptools en comparación con otras herramientas discutidas en esta página."
+
 
 #: ../../package-structure-code/python-package-build-tools.md:477
 msgid ""
 "There are also some problematic default settings that users should be "
 "aware of when using setuptools. For instance:"
 msgstr ""
+"También hay algunas configuraciones predeterminadas problemáticas de las que los usuarios deben ser conscientes "
+"cuando usan setuptools. Por ejemplo:"
 
 #: ../../package-structure-code/python-package-build-tools.md:480
 msgid ""
 "setuptools will build a project without a name or version if you are not "
 "using a **pyproject.toml** file to store metadata."
 msgstr ""
+"setuptools construirá un proyecto sin nombre o versión si no está "
+"utilizando un archivo **pyproject.toml** para almacenar metadatos."
 
 #: ../../package-structure-code/python-package-build-tools.md:482
 msgid ""
@@ -4963,10 +4980,13 @@ msgid ""
 "if you do not explicitly tell it to exclude files using a **MANIFEST.in**"
 " file"
 msgstr ""
+"setuptools también incluirá todos los archivos en el repositorio de su "
+"paquete si no le dice explícitamente que excluya archivos utilizando un "
+"archivo **MANIFEST.in**"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:1
 msgid "Learn about Building a Python Package"
-msgstr ""
+msgstr "Aprenda sobre la construcción de un paquete de Python"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:8
 msgid ""
@@ -4976,6 +4996,9 @@ msgid ""
 "your package on conda-forge. You do not need to rebuild your package to "
 "publish to conda-forge."
 msgstr ""
+"Una vez que haya publicado ambas distribuciones de paquetes (la distribución de origen y la rueda) en PyPI, "
+"entonces puede publicar en conda-forge. conda-forge requiere una distribución de origen en PyPI para construir su "
+"paquete en conda-forge. No necesita reconstruir su paquete para publicar en conda-forge."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:11
 msgid ""
@@ -4986,20 +5009,28 @@ msgid ""
 "PyPI in order for conda-forge to properly build your package "
 "automatically."
 msgstr ""
+"Necesita construir su paquete de Python para publicarlo en PyPI "
+"(o en un canal de conda). El proceso de construcción organiza su código "
+"y metadatos en un formato de distribución que puede ser subido a PyPI y "
+"posteriormente descargado e instalado por los usuarios. NOTA: necesita "
+"publicar un sdist en PyPI para que conda-forge pueda construir su paquete "
+"automáticamente."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:14
 msgid "What is building a Python package?"
-msgstr ""
+msgstr "¿Qué es construir un paquete de Python?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:16
 msgid ""
 "To [publish your Python package](publish-python-package-pypi-conda) and "
 "make it easy for anyone to install, you first need to build it."
 msgstr ""
+"Para [publicar su paquete de Python](publish-python-package-pypi-conda) y "
+"hacer que sea fácil de instalar para cualquiera, primero necesita construirlo."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:18
 msgid "But, what does it mean to build a Python package?"
-msgstr ""
+msgstr "Per, ¿qué significa construir un paquete de Python?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:20
 msgid ""
@@ -5009,6 +5040,11 @@ msgid ""
 "and metadata about the package, in the format required by the Python "
 "Package Index, so that it can be installed by tools like pip."
 msgstr ""
+"[Como se muestra en la figura de arriba](#pypi-conda-channels), cuando construye su paquete de Python, convierte "
+"los archivos de código fuente en algo llamado paquete de distribución."
+" Un paquete de distribución contiene su código fuente "
+"y metadatos sobre el paquete, en el formato requerido por el Índice de Paquetes de Python, para que pueda ser "
+"instalado por herramientas como pip."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:23
 msgid ""
@@ -5017,6 +5053,9 @@ msgid ""
 " Authority](https://www.pypa.io/en/latest/) and refer to the product of "
 "the build step as a **distribution package**."
 msgstr ""
+"El término paquete solía significar muchas cosas diferentes en Python y otros lenguajes. En esta página, "
+"adaptamos la convención de la [Autoridad de Empaquetado de Python](https://www.pypa.io/en/latest/) y nos referimos "
+"al producto del paso de construcción como un **paquete de distribución**."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:27
 msgid ""
@@ -5024,10 +5063,12 @@ msgid ""
 " and metadata into a format that both pip and PyPI can use, is called a "
 "build step."
 msgstr ""
+"Este proceso de organizar y formatear su código, documentación, pruebas y metadatos en un formato que tanto pip "
+"como PyPI pueden usar, se llama paso de construcción."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:31
 msgid "Project metadata and PyPI"
-msgstr ""
+msgstr "Metadatos del proyecto y PyPI"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:33
 msgid ""
@@ -5036,6 +5077,9 @@ msgid ""
 "](pyproject-toml-python-package-metadata). This metadata is used for "
 "several purposes:"
 msgstr ""
+"Los metadatos que tanto las herramientas de construcción como PyPI utilizan para describir y entender su paquete "
+"generalmente se almacenan en un [archivo pyproject.toml](pyproject-toml-python-package-metadata). Estos metadatos "
+"se utilizan para varios propósitos:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:35
 msgid ""
@@ -5044,6 +5088,9 @@ msgid ""
 "poetry, PDM or Hatch) understand how to build your package. Information "
 "it provides to your build tool includes:"
 msgstr ""
+"Ayuda a la herramienta que use para construir su paquete (pip, [Build de pypa](https://pypi.org/project/build/) o "
+"una herramienta de extremo a extremo como poetry, PDM o Hatch) a entender cómo construir su paquete. La información "
+"que proporciona a su herramienta de construcción incluye:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:37
 msgid ""
@@ -5051,12 +5098,16 @@ msgid ""
 "[build backend tool](build_backends) you wish to use for creating your "
 "sdist and wheel distributions."
 msgstr ""
+"La tabla `[build-system]` en su archivo pyproject.toml le dice a pip qué [herramienta de backend de construcción]"
+"(build_backends) desea usar para crear sus distribuciones sdist y wheel."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:45
 msgid ""
 "And the dependencies section of your project table tells the build tool "
 "and PyPI what dependencies your project requires."
 msgstr ""
+"Y la sección de dependencias de su tabla de proyecto le dice a la herramienta de construcción y a PyPI qué "
+"dependencias requiere su proyecto."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:54
 msgid ""
@@ -5064,6 +5115,9 @@ msgid ""
 " you publish on PyPI), it also creates a METADATA file which PyPI can "
 "read and use to help users find your package. For example:"
 msgstr ""
+"Cuando la herramienta de construcción crea el archivo de distribución de su paquete (el archivo que publica en "
+"PyPI), también crea un archivo METADATA que PyPI puede leer y usar para ayudar a los usuarios a encontrar su paquete. "
+"Por ejemplo:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:56
 msgid ""
@@ -5072,10 +5126,13 @@ msgid ""
 "filter for packages that contain specific licenses or that support "
 "specific versions of python."
 msgstr ""
+"La sección `classifiers = ` de su tabla `[project]` en el archivo pyproject.toml proporciona información que los "
+"usuarios en PyPI pueden usar para filtrar paquetes que contienen licencias específicas o que admiten versiones "
+"específicas de Python."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:73
 msgid "What happened to setup.py and setup.cfg for metadata?"
-msgstr ""
+msgstr "¿Qué pasó con setup.py y setup.cfg para almacenar metadatos?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:76
 msgid ""
@@ -5084,10 +5141,13 @@ msgid ""
 "metadata is to use a pyproject.toml file. [Learn more about the "
 "pyproject.toml file here.](pyproject-toml-python-package-metadata)"
 msgstr ""
+"Los metadatos del proyecto solían almacenarse en un archivo setup.py o en un archivo setup.cfg. La práctica "
+"recomendada actual para almacenar metadatos de paquetes es utilizar un archivo pyproject.toml. [Aprenda más sobre el "
+"archivo pyproject.toml aquí.](pyproject-toml-python-package-metadata)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:79
 msgid "An example - xclim"
-msgstr ""
+msgstr "Un ejemplo - xclim"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:94
 msgid ""
@@ -5100,6 +5160,15 @@ msgid ""
 "connect to conda-forge for an automated build that sends distributions "
 "from PyPI to conda-forge."
 msgstr ""
+"Gráfico que muestra el flujo de trabajo de empaquetado de alto nivel."
+" A la izquierda se ve un gráfico con código, metadatos y tests en él. "
+"Esos elementos van todos en su paquete. La documentación y los datos "
+"están debajo de esa recuadro porque normalmente no se publican en su "
+"distribución de rueda de empaquetado. Una flecha a la derecha lo lleva a "
+"un cuadro de archivos de distribución de construcción. Ese cuadro lo lleva "
+"a publicar en TestPyPI o en el verdadero PyPI. Desde PyPI, puede conectarse "
+"a conda-forge para una construcción automatizada que envía distribuciones "
+"de PyPI a conda-forge."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:96
 msgid ""
@@ -5110,6 +5179,11 @@ msgid ""
 "PyPI in order for conda-forge to properly build your package "
 "automatically."
 msgstr ""
+"Necesita construir su paquete de Python para publicarlo en PyPI (o Conda). "
+"El proceso de construcción organiza su código y metadatos en un formato de "
+"distribución que puede ser subido a PyPI y posteriormente descargado e "
+"instalado por los usuarios. NOTA: necesita publicar un sdist en PyPI para "
+"que conda-forge pueda construir su paquete automáticamente."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:101
 msgid ""
@@ -5118,10 +5192,14 @@ msgid ""
 "keywords associated with the package and the base python version it "
 "requires which is 3.8."
 msgstr ""
+"Esta captura de pantalla muestra los metadatos en PyPI para el paquete xclim. "
+"En ella puede ver el nombre de la licencia, los nombres del autor y del "
+"mantenedor, palabras clave asociadas con el paquete y la versión base de "
+"Python que requiere, que es 3.8."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:103
 msgid "PyPI screenshot showing metadata for the xclim package."
-msgstr ""
+msgstr "Captura de pantalla de PyPI que muestra metadatos para el paquete xclim."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:110
 msgid ""
@@ -5129,6 +5207,9 @@ msgid ""
 "xclim there are three maintainers listed with their profile pictures and "
 "github user names to the right."
 msgstr ""
+"Aquí ve los metadatos del mantenedor tal como se muestran en PyPI. Para "
+"xclim hay tres mantenedores listados con sus fotos de perfil y nombres de "
+"usuario de GitHub a la derecha."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:112
 msgid ""
@@ -5137,10 +5218,14 @@ msgid ""
 "and then processed by your build tool and stored in your packages sdist "
 "and wheel distributions."
 msgstr ""
+"Nombres de los mantenedores y nombres de usuario de GitHub para el paquete "
+"xclim tal como se muestran en PyPI. Esta información se registra en su "
+"pyproject.toml y luego es procesada por su herramienta de construcción y "
+"almacenada en las distribuciones sdist y wheel (o rueda) de sus paquetes."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:115
 msgid "How to create the distribution format that PyPI and Pip expects?"
-msgstr ""
+msgstr "¿Cómo crear el formato de distribución que PyPI y Pip esperan?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:117
 msgid ""
@@ -5150,6 +5235,11 @@ msgid ""
 "there are packages and tools that help you create package build "
 "distribution files."
 msgstr ""
+"En teoría, podría crear sus propios scripts para organizar su código "
+"de la manera que PyPI quiere que sea. Sin embargo, al igual que hay "
+"paquetes que manejan estructuras conocidas como Pandas para marcos "
+"de datos y Numpy para matrices, hay paquetes y herramientas que le "
+"ayudan a crear archivos de distribución de construcción de paquetes."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:121
 msgid ""
@@ -5159,6 +5249,11 @@ msgid ""
 "your sdist and wheel. Whereas tools like Hatch, PDM, Poetry and flit help"
 " with other parts of the packaging process."
 msgstr ""
+"Existen una serie de herramientas de empaquetado que pueden ayudarlo con "
+"todo el proceso de empaquetado o solo con un paso del proceso. Por ejemplo, "
+"setuptools es un backend de construcción comúnmente utilizado que se puede "
+"usar para crear su sdist y wheel (o rueda). Mientras que herramientas como "
+"Hatch, PDM, Poetry y flit ayudan con otras partes del proceso de empaquetado."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:127
 msgid ""
@@ -5167,6 +5262,11 @@ msgid ""
 "output (with minor differences that most users may not care about). Learn"
 " more about those tools on this page."
 msgstr ""
+"Si bien esto puede causar cierta confusión y complejidad en el ecosistema "
+"de empaquetado, en su mayor parte, cada herramienta proporciona la misma "
+"salida de distribución (con diferencias menores que a la mayoría de los "
+"usuarios pueden no importarles). Aprenda más sobre esas herramientas en "
+"esta página."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:133
 msgid ""
@@ -5174,6 +5274,9 @@ msgid ""
 "you to publish: sdist and wheel. You will learn about their structure and"
 " what files belong in each."
 msgstr ""
+"A continuación, aprenderá sobre los dos archivos de distribución que PyPI "
+"espera que publique: sdist y wheel (o rueda). Aprenderá sobre su estructura "
+"y qué archivos pertenecen a cada uno."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:136
 msgid ""
@@ -5183,10 +5286,16 @@ msgid ""
 "wheel (.whl) contains the built / compiled files that can be directly "
 "installed onto anyones' computer."
 msgstr ""
+"Hay dos archivos de distribución principales que necesita crear para "
+"publicar su paquete de Python en PyPI: la distribución de origen (a menudo "
+"llamada sdist) y la rueda (o wheel). El sdist contiene el código fuente "
+"sin procesar de su paquete. La rueda (.whl) contiene los archivos "
+"construidos / compilados que se pueden instalar directamente en el "
+"ordenador de cualquier persona."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:142
 msgid "Learn more about both distributions below."
-msgstr ""
+msgstr "Aprenda más sobre ambas distribuciones a continuación."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:145
 msgid ""
@@ -5196,6 +5305,11 @@ msgid ""
 "languages or is more complex in its build, the two distributions will be "
 "very different."
 msgstr ""
+"Si su paquete es un paquete de Python puro sin pasos adicionales de "
+"construcción / compilación, entonces las distribuciones sdist y wheel "
+"tendrán contenido similar. Sin embargo, si su paquete tiene extensiones en "
+"otros lenguajes o es más complejo en su construcción, las dos distribuciones "
+"serán muy diferentes."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:150
 msgid ""
@@ -5204,10 +5318,14 @@ msgid ""
 "here.](https://conda.io/projects/conda-build/en/latest/user-"
 "guide/tutorials/index.html)"
 msgstr ""
+"También tenga en cuenta que no estamos discutiendo flujos de trabajo de "
+"construcción de conda en esta sección. [Puede aprender más sobre las "
+"construcciones de conda aquí.](https://conda.io/projects/conda-build/en/"
+"latest/user-guide/tutorials/index.html)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:155
 msgid "Source Distribution (sdist)"
-msgstr ""
+msgstr "Distribución de origen (sdist)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:157
 msgid ""
@@ -5215,6 +5333,10 @@ msgid ""
 "These are the \"raw / as-is\" files that you store on GitHub or whatever "
 "platform you use to manage your code."
 msgstr ""
+"Los **archivos de origen** son los archivos sin construir necesarios para "
+"construir su paquete. Estos son los archivos \"crudos / tal como están\" "
+"que almacena en GitHub o en cualquier plataforma que utilice para gestionar "
+"su código."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:161
 msgid ""
@@ -5226,6 +5348,12 @@ msgid ""
 "everything required to build a wheel (except for project dependencies) "
 "without network access."
 msgstr ""
+"Las distribuciones de origen (del inglés, _source distribution_) se denominan sdist. Como "
+"su nombre indica, un SDIST contiene el código fuente; no ha sido construido ni"
+" compilado de ninguna manera. Por lo tanto, cuando un usuario instala su distribución de origen "
+"usando pip, pip necesita ejecutar un paso de construcción primero. Por esta razón, "
+"podría definir una distribución de origen como un archivo comprimido que contiene todo lo "
+"necesario para construir una rueda (excepto las dependencias del proyecto) sin acceso a la red."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:165
 msgid ""
@@ -5233,14 +5361,17 @@ msgid ""
 "\"tarball\"). Thus, when a user installs your source distribution using "
 "pip, pip needs to run a build step first."
 msgstr ""
+"Normalmente, sdist se almacena como un archivo `.tar.gz` (a menudo llamado "
+"un \"tarball\"). Por lo tanto, cuando un usuario instala su distribución de origen "
+"usando pip, pip necesita ejecutar un paso de construcción primero."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:167
 msgid "Below is an example sdist for the stravalib Python package:"
-msgstr ""
+msgstr "A continuación se muestra un ejemplo de sdist para el paquete de Python stravalib:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:219
 msgid "GitHub archive vs sdist"
-msgstr ""
+msgstr "El archivo de GitHub vs sdist"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:221
 msgid ""
@@ -5251,10 +5382,16 @@ msgid ""
 "`setuptools_scm` or `hatch_vcs` the sdist may also contain a file that "
 "stores the version."
 msgstr ""
+"Cuando se crea una versión en GitHub, se crea un `git archive` que contiene "
+"todos los archivos de su repositorio de GitHub. Si bien estos archivos son "
+"similares a un sdist, estos dos archivos no son iguales. El sdist contiene "
+"algunos otros elementos, incluido un directorio de metadatos y si utiliza "
+"`setuptools_scm` o `hatch_vcs`, el sdist también puede contener un archivo "
+"que almacena la versión."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:229
 msgid "Wheel (.whl files):"
-msgstr ""
+msgstr "Rueda o _wheel_(.whl files):"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:231
 msgid ""
@@ -5265,6 +5402,13 @@ msgid ""
 "may be included in source distributions are not included in wheels "
 "because it is a built distribution."
 msgstr ""
+"Un archivo de rueda es un archivo en formato ZIP cuyo nombre sigue"
+" un formato específico (a continuación) y tiene la "
+"extensión `.whl`. El archivo `.whl` contiene un conjunto específico de "
+"archivos, incluidos metadatos que se generan a partir del archivo "
+"pyproject.toml de su proyecto. El pyproject.toml y otros archivos que "
+"pueden estar incluidos en las distribuciones de origen no se incluyen en "
+"las ruedas porque es una distribución construida."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:238
 msgid ""
@@ -5276,6 +5420,14 @@ msgid ""
 "thus faster to install - particularly if you have a package that requires"
 " build steps."
 msgstr ""
+"La rueda (.whl) es su distribución binaria construida. Los"
+" **archivos binarios** son los archivos de código fuente "
+"construidos / compilados. Estos archivos están listos para ser instalados."
+" Una rueda (**.whl**) es un archivo **zip** que contiene todos los archivos "
+"necesarios para instalar directamente su paquete. Todos los archivos en una "
+"rueda son binarios, lo que significa que el código ya está compilado / "
+"construido. Por lo tanto, las ruedas son más rápidas de instalar, "
+"particularmente si tiene un paquete que requiere pasos de construcción."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:240
 msgid ""
@@ -5283,12 +5435,17 @@ msgid ""
 " as **setup.cfg** or **pyproject.toml**. This distribution is already "
 "built so it's ready to install."
 msgstr ""
+"La rueda no contiene ninguno de los archivos de configuración de su paquete "
+"como **setup.cfg** o **pyproject.toml**. Esta distribución ya está construida "
+"por lo que está lista para instalar."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:244
 msgid ""
 "Because it is built, the wheel file will be faster to install for pure "
 "Python projects and can lead to consistent installs across machines."
 msgstr ""
+"Debido a que está construido, el archivo .whl será más rápido de instalar "
+"para proyectos de Python puro y llevará a instalaciones consistentes "
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:252
 msgid ""
@@ -5297,52 +5454,59 @@ msgid ""
 "the wheel bundle are pre built, the user installing doesn't have to worry"
 " about malicious code injections when it is installed."
 msgstr ""
+"Las ruedas también son útiles en el caso de que un paquete necesite un "
+"archivo **setup.py** para admitir una construcción más compleja. En este "
+"caso, debido a que los archivos en el paquete de rueda están preconstruidos, "
+"el usuario que lo instala no tiene que preocuparse por inyecciones de código "
+"malicioso cuando se instala."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:259
 msgid "The filename of a wheel contains important metadata about your package."
-msgstr ""
+msgstr "El nombre de archivo de una rueda contiene metadatos importantes sobre su paquete."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:261
 msgid "Example: **stravalib-1.1.0.post2-py3-none.whl**"
-msgstr ""
+msgstr "Por ejemplo: **stravalib-1.1.0.post2-py3-none.whl**"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:263
 msgid "name: stravalib"
-msgstr ""
+msgstr "nombre: stravalib"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:264
 msgid "version: 1.1.0"
-msgstr ""
+msgstr "versión: 1.1.0"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:265
 msgid ""
 "build-number: 2 (post2) [(read more about post "
 "here)](https://peps.python.org/pep-0440/#post-release-separators)"
 msgstr ""
+"número de construcción: 2 (post2) [(lea más sobre post "
+"aquí)](https://peps.python.org/pep-0440/#post-release-separators)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:266
 msgid "py3: supports Python 3.x"
-msgstr ""
+msgstr "py3: admite Python 3.x"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:267
 msgid "none: is not operating system specific (runs on windows, mac, linux)"
-msgstr ""
+msgstr "none: no es específico del sistema operativo (se ejecuta en Windows, Mac, Linux)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:268
 msgid "any: runs on any computer processor / architecture"
-msgstr ""
+msgstr "any: se ejecuta en cualquier procesador / arquitectura de ordenador"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:270
 msgid "What a wheel file looks like when unpacked (unzipped):"
-msgstr ""
+msgstr "¿Cómo se ve un archivo de rueda cuando se desempaqueta (descomprime)?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:304
 msgid "[Read more about the wheel format here](https://pythonwheels.com/)"
-msgstr ""
+msgstr "[Lea más sobre el formato de rueda aquí](https://pythonwheels.com/)"
 
 #: ../../package-structure-code/python-package-structure.md:1
 msgid "Python Package Structure for Scientific Python Projects"
-msgstr ""
+msgstr "Estuctura de paquete de Python para proyectos científicos en Python"
 
 #: ../../package-structure-code/python-package-structure.md:3
 msgid ""
@@ -5352,6 +5516,10 @@ msgid ""
 "vs-flat-layout/) Both layouts have advantages for different groups of "
 "maintainers."
 msgstr ""
+"Existen dos diseños diferentes que comúnmente verá dentro del ecosistema de "
+"empaquetado de Python: [diseños src y flat](https://packaging.python.org/en/"
+"latest/discussions/src-layout-vs-flat-layout/). Ambos diseños tienen ventajas "
+"para diferentes grupos de mantenedores."
 
 #: ../../package-structure-code/python-package-structure.md:8
 msgid ""
@@ -5361,16 +5529,22 @@ msgid ""
 "guide](https://packaging.python.org/en/latest/tutorials/packaging-"
 "projects/)."
 msgstr ""
+"Le sugerimos, pero no requerimos, que use el diseño **src/** (discutido a "
+"continuación) para crear su paquete de Python. Este diseño también se "
+"recomienda en la [guía de empaquetado de PyPA](https://packaging.python.org/"
+"en/latest/tutorials/packaging-projects/)."
 
 #: ../../package-structure-code/python-package-structure.md:12
 msgid "pyOpenSci will never require a specific package structure for peer review"
-msgstr ""
+msgstr "pyOpenSci nunca requerirá una estructura de paquete específica para la revisión por pares"
 
 #: ../../package-structure-code/python-package-structure.md:15
 msgid ""
 "We understand that it would be tremendous effort for existing maintainers"
 " to move to a new layout."
 msgstr ""
+"Entendemos que sería un esfuerzo tremendo para los mantenedores existentes "
+"moverse a un nuevo diseño."
 
 #: ../../package-structure-code/python-package-structure.md:18
 msgid ""
@@ -5379,14 +5553,18 @@ msgid ""
 "package has a simple build and might be open to moving to a more fail-"
 "proof approach."
 msgstr ""
+"La descripción general en esta página presenta recomendaciones que creemos "
+"que son las mejores para alguien que está comenzando con el empaquetado de "
+"Python o para alguien cuyo paquete tiene una construcción simple y podría "
+"estar abierto a moverse a un enfoque a prueba de fallos."
 
 #: ../../package-structure-code/python-package-structure.md:23
 msgid "An example of the **src/package** layout structure can be seen below."
-msgstr ""
+msgstr "Un ejemplo de la estructura de diseño **src/package** se puede ver a continuación."
 
 #: ../../package-structure-code/python-package-structure.md:45
 msgid "Note the location of the following directories in the example above:"
-msgstr ""
+msgstr "Nótese la ubicación de los siguientes directorios en el ejemplo anterior:"
 
 #: ../../package-structure-code/python-package-structure.md:47
 msgid ""
@@ -5394,6 +5572,10 @@ msgid ""
 "user-facing documentation website. In a **src/** layout docs/ are "
 "normally included at the same directory level of the **src/** folder."
 msgstr ""
+"**docs/:** discutido en nuestro capítulo de documentación, este directorio "
+"contiene el sitio web de documentación orientado al usuario. En un diseño "
+"**src/**, los docs/ normalmente se incluyen en el mismo nivel de directorio "
+"que la carpeta **src/**."
 
 #: ../../package-structure-code/python-package-structure.md:48
 msgid ""
@@ -5401,12 +5583,17 @@ msgid ""
 "**src/** layout tests are normally included at the same directory level "
 "of the **src/** folder."
 msgstr ""
+"**tests/** este directorio contiene las pruebas o tests para el código de su proyecto. "
+"En un diseño **src/**, las pruebas o tests normalmente se incluyen en el "
+"mismo nivel de directorio que la carpeta **src/**."
 
 #: ../../package-structure-code/python-package-structure.md:49
 msgid ""
 "**src/package/**: this is the directory that contains the code for your "
 "Python project. \"Package\" is normally your project's name."
 msgstr ""
+"**src/package/**: este es el directorio que contiene el código de su proyecto de Python. "
+"\"Package\" es normalmente el nombre de su proyecto."
 
 #: ../../package-structure-code/python-package-structure.md:51
 msgid ""
@@ -5414,6 +5601,9 @@ msgid ""
 "files that pyOpenSci requires live in the root of your project directory."
 " These files include:"
 msgstr ""
+"También en el ejemplo anterior, observe que todos los archivos de documentación "
+"básicos que pyOpenSci requiere se encuentran en la raíz del directorio de su proyecto. "
+"Estos archivos incluyen:"
 
 #: ../../package-structure-code/python-package-structure.md:55
 msgid "CHANGELOG.md"
@@ -5437,17 +5627,19 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:63
 msgid "Click here to read about our packaging documentation requirements."
-msgstr ""
+msgstr "Haga clic aquí para leer sobre nuestros requisitos de documentación de empaquetado."
 
 #: ../../package-structure-code/python-package-structure.md:70
 msgid ""
 "While we recommend the **src/** layout we also review the **flat** layout"
 " here. Both are used in the Python ecosystem."
 msgstr ""
+"Aunque recomendamos el diseño **src/**, también revisamos el diseño **flat** aquí. "
+"Ambos se utilizan en el ecosistema de Python."
 
 #: ../../package-structure-code/python-package-structure.md:72
 msgid "Example scientific packages that use **src/package** layout"
-msgstr ""
+msgstr "Ejemplos de paquetes científicos que utilizan el diseño **src/package**"
 
 #: ../../package-structure-code/python-package-structure.md:74
 msgid "[Sourmash](https://github.com/sourmash-bio/sourmash)"
@@ -5471,7 +5663,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:82
 msgid "The src/ layout and testing"
-msgstr ""
+msgstr "El diseño src/ y los tests o pruebas"
 
 #: ../../package-structure-code/python-package-structure.md:84
 msgid ""
@@ -5482,6 +5674,12 @@ msgid ""
 "installed version, you may be missing issues that users encounter when "
 "your package is installed."
 msgstr ""
+"El beneficio de usar el diseño **src/package**, particularmente si está "
+"creando un nuevo paquete, es que asegura que las pruebas se ejecuten contra "
+"la versión instalada de su paquete en lugar de los archivos en el directorio "
+"de trabajo de su paquete. Si ejecuta sus pruebas en sus archivos en lugar de "
+"la versión instalada, es posible que se pierda problemas que los usuarios "
+"encuentran cuando su paquete está instalado."
 
 #: ../../package-structure-code/python-package-structure.md:91
 msgid ""
@@ -5490,22 +5688,30 @@ msgid ""
 "smaller which then places places a smaller storage burden on PyPI which "
 "has over 400,000 packages to support."
 msgstr ""
+"Si `tests/` están fuera del directorio **src/package**, no se incluyen en la "
+"rueda del paquete. Esto hace que el tamaño de su paquete sea ligeramente "
+"más pequeño, lo que a su vez genera un almacenamiento más pequeño "
+"en PyPI, que tiene más de 400,000 paquetes."
 
 #: ../../package-structure-code/python-package-structure.md:93
 msgid ""
 "[Read more about reasons to use the **src/package** "
 "layout](https://hynek.me/articles/testing-packaging/)"
 msgstr ""
+"[Lea más sobre las razones para usar el diseño"
+" **src/package**](https://hynek.me/articles/testing-packaging/)"
 
 #: ../../package-structure-code/python-package-structure.md:95
 msgid "How Python discovers and prioritizes importing modules"
-msgstr ""
+msgstr "¿Cómo descubre y prioriza Python la importación de módulos?"
 
 #: ../../package-structure-code/python-package-structure.md:97
 msgid ""
 "By default, Python adds a module in your current working directory to the"
 " front of the Python module search path."
 msgstr ""
+"De forma predeterminada, Python agrega un módulo en su directorio de trabajo "
+"actual al principio de la ruta de búsqueda de módulos de Python."
 
 #: ../../package-structure-code/python-package-structure.md:99
 msgid ""
@@ -5514,6 +5720,9 @@ msgid ""
 "discover `package/module.py` file before it discovers the installed "
 "package."
 msgstr ""
+"Esto significa que si ejecuta sus pruebas en el directorio de trabajo de su "
+"paquete, utilizando un diseño plano, `/package/module.py`, Python descubrirá "
+"el archivo `package/module.py` antes de que descubra el paquete instalado."
 
 #: ../../package-structure-code/python-package-structure.md:101
 msgid ""
@@ -5522,6 +5731,10 @@ msgid ""
 "This means that when you import your package, Python will be forced to  "
 "search the active environment (which has your package installed)."
 msgstr ""
+"Sin embargo, si su paquete se encuentra en una estructura de directorio src/ "
+"**src/package**, entonces no se agregará, por defecto, a la ruta de Python. "
+"Esto significa que cuando importe su paquete, Python se verá obligado a buscar "
+"en el entorno activo (que tiene su paquete instalado)."
 
 #: ../../package-structure-code/python-package-structure.md:103
 msgid ""
@@ -5529,10 +5742,13 @@ msgid ""
 "adjusted to ensure the priority is to use installed packages first (e.g. "
 "`PYTHONSAFEPATH`)."
 msgstr ""
+"Nota: Las versiones de Python 3.11 y superiores tienen un ajuste de ruta que "
+"se puede modificar para garantizar que la prioridad sea utilizar primero los "
+"paquetes instalados (por ejemplo, `PYTHONSAFEPATH`)."
 
 #: ../../package-structure-code/python-package-structure.md:106
 msgid "Sometimes tests are needed in a distribution"
-msgstr ""
+msgstr "A veces se necesitan pruebas en una distribución"
 
 #: ../../package-structure-code/python-package-structure.md:108
 msgid ""
@@ -5545,12 +5761,21 @@ msgid ""
 "`tests/` directory into the **src/package** directory (see example "
 "below)."
 msgstr ""
+"No recomendamos incluir pruebas como parte de su rueda de paquete de forma "
+"predeterminada. Sin embargo, no incluir pruebas en su distribución de paquete "
+"hará que sea más difícil para las personas que no sean usted mismo probar si "
+"su paquete funciona correctamente en su sistema. Si tiene un conjunto de pruebas "
+"pequeño (archivos Python + datos) y cree que sus usuarios pueden querer ejecutar "
+"pruebas localmente en sus sistemas, puede incluir pruebas moviendo el directorio "
+"`tests/` al directorio **src/package** (ver ejemplo a continuación)."
 
 #: ../../package-structure-code/python-package-structure.md:117
 msgid ""
 "Including the **tests/** directory in your **src/package** directory "
 "ensures that tests will be included in your package's wheel."
 msgstr ""
+"Incluir el directorio **tests/** en su directorio **src/package** asegura que "
+"las pruebas se incluirán en la rueda de su paquete."
 
 #: ../../package-structure-code/python-package-structure.md:119
 msgid ""
@@ -5559,36 +5784,43 @@ msgid ""
 "distribution](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a"
 "-test-layout-import-rules)."
 msgstr ""
+"Asegúrese de leer la [documentación de pytest para obtener más información "
+"sobre cómo incluir pruebas en su distribución de paquete](https://docs.pytest.org/en/"
+"7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules)."
 
 #: ../../package-structure-code/python-package-structure.md:121
 msgid "Challenges with including tests and data in a package wheel"
-msgstr ""
+msgstr "Desafíos al incluir pruebas y datos en una rueda de paquete"
 
 #: ../../package-structure-code/python-package-structure.md:124
 msgid ""
 "Tests, especially when accompanied by test data can create a few small "
 "challenges including:"
-msgstr ""
+msgstr "Los tests, especialmente cuando van acompañados de datos de prueba, "
+"pueden crear algunos pequeños desafíos, incluyendo:"
 
 #: ../../package-structure-code/python-package-structure.md:126
 msgid ""
 "Take up space in your distribution which will build up over time as "
 "storage space on PyPI"
 msgstr ""
+"Ocupar espacio en su distribución, lo que se acumulará con el tiempo en PyPI"
 
 #: ../../package-structure-code/python-package-structure.md:127
 msgid "Large file sizes can also slow down package install."
-msgstr ""
+msgstr "Archivos grandes también pueden ralentizar la instalación del paquete."
 
 #: ../../package-structure-code/python-package-structure.md:129
 msgid ""
 "However, in some cases, particularly in the scientific Python ecosystems "
 "you may need to include tests."
 msgstr ""
+"Sin embargo, en algunos casos, particularmente en los ecosistemas científicos "
+"de Python, es posible que necesite incluir pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:132
 msgid "**Don't include test suite datasets in your package**"
-msgstr ""
+msgstr "**No incluya conjuntos de datos de pruebas en su paquete**"
 
 #: ../../package-structure-code/python-package-structure.md:134
 msgid ""
@@ -5598,12 +5830,18 @@ msgid ""
 "tool such as [Pooch](https://www.fatiando.org/pooch/latest/) to access "
 "the data when you (or a user) runs tests."
 msgstr ""
+"Si incluye sus pruebas en su distribución de paquete, le recomendamos "
+"encarecidamente que no incluya datos en su directorio de pruebas. En su lugar, "
+"aloje sus datos de prueba en un repositorio como Figshare o Zenodo. Utilice "
+"una herramienta como [Pooch](https://www.fatiando.org/pooch/latest/) para "
+"acceder a los datos cuando usted (o un usuario) ejecute pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:140
 msgid ""
 "Check out the testing section of our guide for more information about "
 "tests."
 msgstr ""
+"Consulte la sección de pruebas de nuestra guía para obtener más información sobre las pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:142
 msgid ""
@@ -5611,6 +5849,9 @@ msgid ""
 "found in the **src/package** directory, `tests/` and `docs/`are in the "
 "root directory."
 msgstr ""
+"El diseño **src/package** es semánticamente más claro. El código siempre se "
+"encuentra en el directorio **src/package**, `tests/` y `docs/` están en el "
+"directorio raíz."
 
 #: ../../package-structure-code/python-package-structure.md:146
 msgid ""
@@ -5621,14 +5862,20 @@ msgid ""
 "repositories like PyPI and Anaconda.org that have to deal with thousands "
 "of package uploads."
 msgstr ""
+"Si las pruebas de su paquete requieren datos, le sugerimos que NO incluya "
+"esos datos en su estructura de paquete. Discutiremos esto con más detalle en "
+"un tutorial. Incluir datos en su estructura de paquete aumenta el tamaño de "
+"los archivos de su distribución. Esto impone un peaje de mantenimiento en "
+"repositorios como PyPI y Anaconda.org que tienen que lidiar con miles de "
+"paquetes subidos."
 
 #: ../../package-structure-code/python-package-structure.md:153
 msgid "About the flat Python package layout"
-msgstr ""
+msgstr "Sobre el diseño plano de paquetes de Python"
 
 #: ../../package-structure-code/python-package-structure.md:155
 msgid "Currently most scientific packages use the **flat-layout** given:"
-msgstr ""
+msgstr "Actualmente, la mayoría de los paquetes científicos utilizan el **diseño plano** dado:"
 
 #: ../../package-structure-code/python-package-structure.md:157
 msgid ""
@@ -5636,6 +5883,9 @@ msgid ""
 "and people tend to look to other packages / maintainers that they respect"
 " for examples of how to build Python packages."
 msgstr ""
+"Es el diseño más común en el ecosistema científico de Python "
+"y las personas tienden a buscar otros paquetes / mantenedores que respetan "
+"como ejemplos de cómo construir paquetes de Python."
 
 #: ../../package-structure-code/python-package-structure.md:160
 msgid ""
@@ -5643,6 +5893,9 @@ msgid ""
 "builds with compilation steps. Many developers thus appreciate / are used"
 " to features of the flat layout."
 msgstr ""
+"Muchas herramientas de Python dependen de herramientas en otros idiomas y/o "
+"construcciones complejas con pasos de compilación. Por lo tanto, muchos "
+"desarrolladores aprecian/están acostumbrados a las características del diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:164
 msgid ""
@@ -5652,10 +5905,16 @@ msgid ""
 "move to a src/ layout](https://github.com/scikit-build/cmake-python-"
 "distributions/pull/145)"
 msgstr ""
+"Aunque presentamos este diseño aquí en nuestra guía, sugerimos que aquellos "
+"que recién comienzan con el empaquetado de Python comiencen con el diseño "
+"src/package discutido anteriormente. Numerosos paquetes en el ecosistema "
+"[han tenido que moverse a un diseño src/]"
+"(https://github.com/scikit-build/cmake-python-"
+"distributions/pull/145)"
 
 #: ../../package-structure-code/python-package-structure.md:169
 msgid "Why most scientific Python packages do not use source"
-msgstr ""
+msgstr "¿Por qué la mayoría de los paquetes científicos de Python no usan el código fuente?"
 
 #: ../../package-structure-code/python-package-structure.md:172
 msgid ""
@@ -5664,6 +5923,10 @@ msgid ""
 "it. Moving from a flat layout to a **src/package** layout would come at a"
 " significant cost to maintainers."
 msgstr ""
+"En la mayoría de los casos, las ventajas de usar el diseño **src/package** "
+"para paquetes científicos más grandes que ya utilizan un enfoque plano no "
+"merecen la pena. Pasar de un diseño plano a un diseño **src/package** "
+"supondría un costo significativo para los mantenedores."
 
 #: ../../package-structure-code/python-package-structure.md:177
 msgid ""
@@ -5672,48 +5935,60 @@ msgid ""
 "started with creating a package, that you consider using a  "
 "**src/package** layout."
 msgstr ""
+"Sin embargo, las ventajas de usar el diseño **src/package** para un principiante "
+"son significativas. Por lo tanto, recomendamos que si está comenzando a crear un "
+"paquete, considere usar un diseño **src/package**."
 
 #: ../../package-structure-code/python-package-structure.md:182
 msgid "What does the flat layout structure look like?"
-msgstr ""
+msgstr "¿Cómo es la estructura del diseño plano?"
 
 #: ../../package-structure-code/python-package-structure.md:184
 msgid "The flat layout's primary characteristics are:"
-msgstr ""
+msgstr "Las características principales del diseño plano son:"
 
 #: ../../package-structure-code/python-package-structure.md:186
 msgid ""
 "The source code for your package lives in a directory with your package's"
 " name in the root of your directory"
 msgstr ""
+"El código fuente de su paquete se encuentra en un directorio con el nombre de "
+"su paquete en la raíz de su directorio"
 
 #: ../../package-structure-code/python-package-structure.md:188
 msgid ""
 "Often the `tests/` directory also lives within that same `package` "
 "directory."
 msgstr ""
+"A menudo, el directorio `tests/` también se encuentra dentro de ese mismo "
+"directorio `package`."
 
 #: ../../package-structure-code/python-package-structure.md:190
 msgid ""
 "Below you can see the recommended structure of a scientific Python "
 "package using the flat layout."
 msgstr ""
+"A continuación, puede ver la estructura recomendada de un paquete científico "
+"de Python que utiliza el diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:212
 msgid "Benefits of using the flat layout in your Python package"
-msgstr ""
+msgstr "Beneficios de usar el diseño plano en su paquete de Python"
 
 #: ../../package-structure-code/python-package-structure.md:214
 msgid ""
 "There are some benefits to the scientific community in using the flat "
 "layout."
 msgstr ""
+"Existen algunos beneficios para la comunidad científica al utilizar el diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:216
 msgid ""
 "This structure has historically been used across the ecosystem and "
 "packages using it are unlikely to change."
 msgstr ""
+"Esta estructura se ha utilizado históricamente en todo el ecosistema y es poco probable "
+"que los paquetes que la utilizan cambien."
 
 #: ../../package-structure-code/python-package-structure.md:218
 msgid ""
@@ -5723,10 +5998,15 @@ msgid ""
 "against the installed version of your package. Rather, you are working "
 "directly with the flat files."
 msgstr ""
+"Puede importar el paquete directamente desde el directorio raíz. Para algunos, "
+"esto está arraigado en sus respectivos flujos de trabajo. Sin embargo, para un "
+"principiante, el peligro de hacer esto es que no está desarrollando y probando "
+"contra la versión instalada de su paquete. En cambio, está trabajando directamente "
+"con los archivos planos."
 
 #: ../../package-structure-code/python-package-structure.md:224
 msgid "Core scientific Python packages that use the flat layout"
-msgstr ""
+msgstr "Paquetes científicos de Python que utilizan el diseño plano"
 
 #: ../../package-structure-code/python-package-structure.md:227
 msgid "[numpy](https://github.com/numpy/numpy)"
@@ -5762,14 +6042,17 @@ msgid ""
 "these packages to a different layout. The potential benefits of the "
 "source layout for these tools is not worth the maintenance investment."
 msgstr ""
+"Sería un costo y una carga de mantenimiento significativos mover todos estos "
+"paquetes a un diseño diferente. Los posibles beneficios del diseño src para "
+"estas herramientas no valen la inversión en mantenimiento."
 
 #: ../../package-structure-code/python-package-versions.md:1
 msgid "Creating New Versions of Your Python Package"
-msgstr ""
+msgstr "Creación de nuevas versiones de su paquete de Python"
 
 #: ../../package-structure-code/python-package-versions.md:6
 msgid "Key Takeways"
-msgstr ""
+msgstr "Principal conclusiones"
 
 #: ../../package-structure-code/python-package-versions.md:8
 msgid ""
@@ -5778,6 +6061,9 @@ msgid ""
 "package version; for example a major version bump (version 1.0 --> 2.0) "
 "equates to breaking changes in your package's code for a user."
 msgstr ""
+"Siga las reglas de [directrices de versionado semántico (SemVer)](https://semver.org/) "
+"cuando aumente la versión de su paquete de Python; por ejemplo, un aumento de versión "
+"mayor (versión 1.0 --> 2.0) equivale a cambios que rompen el código de su paquete para un usuario."
 
 #: ../../package-structure-code/python-package-versions.md:9
 msgid ""
@@ -5785,16 +6071,22 @@ msgid ""
 "versions of your package - if you want to have a GitHub only release "
 "workflow."
 msgstr ""
+"Es posible que desee considerar el uso de un complemento como hatch_vsc para "
+"gestionar las versiones de su paquete, si desea tener un flujo de trabajo de "
+"versionado solo en GitHub."
 
 #: ../../package-structure-code/python-package-versions.md:10
 msgid ""
 "Otherwise most major package build tools such as Hatch, Flit and PDM have"
 " a version feature that will help you update your package's version"
 msgstr ""
+"De lo contrario, la mayoría de las principales herramientas de construcción de "
+"paquetes, como Hatch, Flit y PDM, tienen una función de versión que le ayudará "
+"a actualizar la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:11
 msgid "Avoid updating your packages version number manually by hand in your code!"
-msgstr ""
+msgstr "Evite actualizar manualmente el número de versión de sus paquetes en su código!"
 
 #: ../../package-structure-code/python-package-versions.md:14
 msgid ""
@@ -5804,6 +6096,9 @@ msgid ""
 "/#semantic-versioning) when assigning release values to new versions of "
 "your Python package."
 msgstr ""
+"pyOpenSci recomienda que siga el [PEP 440 de Python](https://peps.python.org/pep-0440) "
+"que recomienda el uso de [directrices de versionado semántico](https://www.python.org/dev/peps/pep-0440"
+"/#semantic-versioning) al crear nuevas versiones de su paquete de Python."
 
 #: ../../package-structure-code/python-package-versions.md:18
 msgid ""
@@ -5812,18 +6107,26 @@ msgid ""
 "are making to the package code. Being consistent with how and when you "
 "update your package versions is important as:"
 msgstr ""
+"[El versionado semántico](https://semver.org/) es un enfoque para actualizar "
+"las versiones de los paquetes que considera el tipo y la extensión de un cambio "
+"que está realizando en el código del paquete. Ser coherente con cómo y cuándo "
+"actualiza las versiones de su paquete es importante ya que:"
 
 #: ../../package-structure-code/python-package-versions.md:23
 msgid ""
 "It helps your users (which might include other developers that depend on "
 "your package) understand the extent of changes to a package."
 msgstr ""
+"Ayuda a sus usuarios (que pueden incluir a otros desarrolladores que dependen "
+"de su paquete) a comprender la extensión de los cambios en un paquete."
 
 #: ../../package-structure-code/python-package-versions.md:24
 msgid ""
 "It helps your development team make decisions about when to bump a "
 "package version based on standard rules."
 msgstr ""
+"Ayuda a su equipo de desarrollo a tomar decisiones sobre cuándo aumentar una "
+"versión de paquete basándose en reglas estándar."
 
 #: ../../package-structure-code/python-package-versions.md:26
 msgid ""
@@ -5834,10 +6137,17 @@ msgid ""
 "code expressive](https://medium.com/@daniel.oliver.king/writing-"
 "expressive-code-b69ef7a5a2fa)."
 msgstr ""
+"Aumentos de versión consistentes siguiendo las reglas de semver significa que "
+"los valores de la versión de su paquete explican la extensión de los cambios "
+"realizados en el código de una versión a otra. Por lo tanto, los números "
+"de versión de su paquete se vuelven \"expresivos\" de la misma manera que "
+"nombrar bien las variables del código puede [hacer que el código sea expresivo](https://"
+"medium.com/@daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa)."
+
 
 #: ../../package-structure-code/python-package-versions.md:28
 msgid "A note about versioning"
-msgstr ""
+msgstr "Una nota sobre el versionado"
 
 #: ../../package-structure-code/python-package-versions.md:29
 msgid ""
@@ -5846,14 +6156,18 @@ msgid ""
 "document how you version your code and if you can, also document your "
 "deprecation policy for code."
 msgstr ""
+"En algunos casos, incluso pequeños cambios de versión pueden convertir una "
+"actualización de paquete en un cambio que rompe para algunos usuarios. Lo "
+"que también es importante es que documente cómo versiona su código y, si "
+"puede, también documente su política de deprecación para el código."
 
 #: ../../package-structure-code/python-package-versions.md:37
 msgid "SemVer rules"
-msgstr ""
+msgstr "Reglas de SemVer"
 
 #: ../../package-structure-code/python-package-versions.md:39
 msgid "Following SemVer, your bump your package version to a:"
-msgstr ""
+msgstr "Siguiendo SemVer, aumente la versión de su paquete a:"
 
 #: ../../package-structure-code/python-package-versions.md:41
 msgid "patch (1.1.1 --> 1.1.**2**)"
@@ -5869,21 +6183,21 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-versions.md:45
 msgid "version number change based on the following rules:"
-msgstr ""
+msgstr "El cambio de número de versión se basa en las siguientes reglas:"
 
 #: ../../package-structure-code/python-package-versions.md:47
 msgid "Given a version number MAJOR.MINOR.PATCH, increment the:"
-msgstr ""
+msgstr "Dados un número de versión MAJOR.MINOR.PATCH, incremente:"
 
 #: ../../package-structure-code/python-package-versions.md:49
 msgid "**MAJOR version** when you make incompatible API changes"
-msgstr ""
+msgstr "Versión **MAJOR** cuando realice cambios incompatibles en la API"
 
 #: ../../package-structure-code/python-package-versions.md:50
 msgid ""
 "**MINOR version** when you add functionality in a backwards compatible "
 "manner"
-msgstr ""
+msgstr "Versión **MINOR** cuando agregue funcionalidad de manera compatible con versiones anteriores"
 
 #: ../../package-structure-code/python-package-versions.md:51
 msgid ""
@@ -5891,6 +6205,10 @@ msgid ""
 " labels for pre-release and build metadata are available as extensions to"
 " the MAJOR.MINOR.PATCH format."
 msgstr ""
+"Versión **PATCH** cuando realice correcciones de errores compatibles"
+" con versiones anteriores. Se encuentran disponibles etiquetas adicionales "
+"para metadatos de prelanzamiento y compilación como extensiones del "
+"formato MAJOR.MINOR.PATCH."
 
 #: ../../package-structure-code/python-package-versions.md:56
 msgid ""
@@ -5900,16 +6218,23 @@ msgid ""
 "provide a user with a sense of when a new version might break an existing"
 " build. As such we still suggest semver."
 msgstr ""
+"Algunas personas prefieren usar [calver](https://calver.org/index.html) para "
+"el versionado. Puede ser un sistema más fácil de usar dado que se basa en "
+"valores de fecha asociados con las versiones lanzadas. Sin embargo, calver no "
+"proporciona al usuario una idea de cuándo una nueva versión podría romper una "
+"compilación existente. Por lo tanto, seguimos sugiriendo semver."
 
 #: ../../package-structure-code/python-package-versions.md:59
 msgid ""
 "pyOpenSci will never require semver in a peer review as long as a package"
 " has a reasonable approach to versioning!"
 msgstr ""
+"¡pyOpenSci nunca requerirá semver en una revisión por pares siempre que un paquete "
+"tenga un enfoque razonable para el versionado!"
 
 #: ../../package-structure-code/python-package-versions.md:63
 msgid "Avoid manually updating Python package version numbers if you can"
-msgstr ""
+msgstr "Evite actualizar manualmente los números de versión de los paquetes de Python si puede"
 
 #: ../../package-structure-code/python-package-versions.md:65
 msgid ""
@@ -5917,6 +6242,9 @@ msgid ""
 "locations. One example of this is that it might be both an attribute in "
 "your package **version** and also called in your documentation."
 msgstr ""
+"A menudo, es posible que desee tener el valor de la versión de su paquete en "
+"múltiples ubicaciones. Un ejemplo de esto es que podría ser tanto un atributo "
+"en su paquete **version** como también llamado en su documentación."
 
 #: ../../package-structure-code/python-package-versions.md:70
 msgid ""
@@ -5924,6 +6252,9 @@ msgid ""
 " to avoid human-error. It is better practice to keep your version number "
 "in one location."
 msgstr ""
+"Recomendamos que evite las actualizaciones manuales del número de versión de "
+"su paquete para evitar errores humanos. Es mejor mantener su número "
+"de versión en una sola ubicación."
 
 #: ../../package-structure-code/python-package-versions.md:74
 msgid ""
@@ -5931,16 +6262,21 @@ msgid ""
 "tool like hatch, PDM or bump2version that will update the version values "
 "for you - throughout your package."
 msgstr ""
+"Si no puede implementar una versión de una sola ubicación, considere usar una "
+"herramienta como hatch, PDM o bump2version que actualizará los valores de versión "
+"por usted, en todo su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:78
 msgid ""
 "Below we discuss some tools that you can use to manage updating Python "
 "package versions."
 msgstr ""
+"A continuación, discutimos algunas herramientas que puede utilizar para "
+"actualizar las versiones de los paquetes de Python."
 
 #: ../../package-structure-code/python-package-versions.md:83
 msgid "Tools to manage versions for your Python package"
-msgstr ""
+msgstr "Herramientas para gestionar versiones de su paquete de Python"
 
 #: ../../package-structure-code/python-package-versions.md:85
 msgid ""
@@ -5949,16 +6285,22 @@ msgid ""
 " tools are built into or work with your chosen [packaging build tools "
 "that discussed in this chapter.](python-package-build-tools)"
 msgstr ""
+"Hay un puñado de herramientas que se utilizan ampliamente en el ecosistema "
+"científico que puede utilizar para gestionar las versiones de su paquete. "
+"Algunas de estas herramientas están integradas o funcionan con las [herramientas "
+"de construcción de paquetes que elija que se discuten en este capítulo.](python-package-build-tools)"
 
 #: ../../package-structure-code/python-package-versions.md:91
 msgid "Below, we provide an overview of these tools."
-msgstr ""
+msgstr "A continuación, proporcionamos una descripción general de estas herramientas."
 
 #: ../../package-structure-code/python-package-versions.md:97
 msgid ""
 "There are three general groups of tools that you can use to manage "
 "package versions:"
 msgstr ""
+"Hay tres grupos generales de herramientas que puede utilizar para gestionar "
+"las versiones de los paquetes:"
 
 #: ../../package-structure-code/python-package-versions.md:100
 msgid ""
@@ -5968,6 +6310,11 @@ msgid ""
 "release.readthedocs.io/en/latest/) as a Python tool that implements a "
 "semantic versioning approach."
 msgstr ""
+"**herramientas de versionado semántico:** Estas herramientas determinarán "
+"automáticamente qué tipo de aumento de versión usar utilizando el texto en "
+"los mensajes de confirmación o commits. A continuación, discutimos [Python Semantic Release]"
+"(https://python-semantic-release.readthedocs.io/en/latest/) como una herramienta de Python "
+"que implementa un enfoque de versionado semántico."
 
 #: ../../package-structure-code/python-package-versions.md:102
 msgid ""
@@ -5976,6 +6323,10 @@ msgid ""
 "within your package. Normally this is implemented at the command link for"
 " instance `hatch version major` would bump your project from 0.x to 1.0."
 msgstr ""
+"**Herramientas de aumento incremental manual:** Herramientas como "
+"[Hatch](https://hatch.pypa.io/latest/version/) ofrecen el aumento de versión "
+"dentro de su paquete. Normalmente, esto se ejecuta en la línea de comandos, "
+"por ejemplo, `hatch version major` aumentaría su proyecto de 0.x a 1.0."
 
 #: ../../package-structure-code/python-package-versions.md:103
 msgid ""
@@ -5985,10 +6336,17 @@ msgid ""
 "We discuss this option below assuming that you are using **.git tags** "
 "and **GitHub** to manage your package repository."
 msgstr ""
+"**Herramientas del sistema de control de versiones:** Por último, hay "
+"herramientas que dependen de su sistema de control de versiones para "
+"seguir las versiones. Estas herramientas a menudo son complementos de su "
+"herramienta de construcción de paquetes (por ejemplo, construcción de "
+"setuptools o hatchling). Discutimos esta opción a continuación asumiendo "
+"que está utilizando **etiquetas .git** y **GitHub** para gestionar el "
+"repositorio de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:105
 msgid "Semantic release, vs version control based vs manual version bumping"
-msgstr ""
+msgstr "Publicación semántica, vs. basada en control de versiones vs. aumento manual de versiones"
 
 #: ../../package-structure-code/python-package-versions.md:107
 msgid ""
@@ -5997,18 +6355,23 @@ msgid ""
 "can create a workflow where a GitHub release and associated new version "
 "tag is used to trigger an automated build that:"
 msgstr ""
+"Generalmente, las herramientas de publicación semántica y del sistema de control "
+"de versiones se pueden configurar para ejecutarse automáticamente en GitHub "
+"usando acciones de GitHub. Esto significa que puede crear un flujo de trabajo "
+"en el que una versión de GitHub y una nueva etiqueta de versión asociada se "
+"utilizan para desencadenar una compilación automatizada que:"
 
 #: ../../package-structure-code/python-package-versions.md:113
 msgid "Builds your package and updates the version following the new tag"
-msgstr ""
+msgstr "Construye su paquete y actualiza la versión siguiendo la nueva etiqueta"
 
 #: ../../package-structure-code/python-package-versions.md:114
 msgid "Tests the build and publishes to test PyPI"
-msgstr ""
+msgstr "Prueba la compilación y publica en test PyPI"
 
 #: ../../package-structure-code/python-package-versions.md:115
 msgid "Publishes the package to PyPI"
-msgstr ""
+msgstr "Publica el paquete en PyPI"
 
 #: ../../package-structure-code/python-package-versions.md:118
 msgid ""
@@ -6016,26 +6379,35 @@ msgid ""
 "version after a set number of changes have been made to it. For example, "
 "you might bump from version 0.8 to 0.9 of a package. or from 0.9 to 1.0."
 msgstr ""
+"Aumentar la versión de un paquete se refiere al paso de aumentar la versión "
+"del paquete después de que se haya realizado un número determinado de cambios "
+"en él. Por ejemplo, podría aumentar de la versión 0.8 a la 0.9 de un paquete. "
+"O de 0.9 a 1.0."
 
 #: ../../package-structure-code/python-package-versions.md:122
 msgid ""
 "Using semantic versioning, there are three main \"levels\" of versions "
 "that you might consider:"
 msgstr ""
+"Usando el versionado semántico, hay tres \"niveles\" principales de versiones "
+"que podría considerar:"
 
 #: ../../package-structure-code/python-package-versions.md:125
 msgid "Major, minor and patch. These are described in more detail below."
-msgstr ""
+msgstr "Mayor, menor y parche (del inglés major, minor y patch). "
+"Estos se describen con más detalle a continuación."
 
 #: ../../package-structure-code/python-package-versions.md:128
 msgid "Tools for bumping Python package versions"
-msgstr ""
+msgstr "Herramientas para aumentar las versiones de los paquetes de Python"
 
 #: ../../package-structure-code/python-package-versions.md:130
 msgid ""
 "In this section we discuss the following tools for managing your Python "
 "package's version:"
 msgstr ""
+"En esta sección discutimos las siguientes herramientas para gestionar la "
+"versión de su paquete de Python:"
 
 #: ../../package-structure-code/python-package-versions.md:133
 msgid "hatch &"
@@ -6043,7 +6415,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-versions.md:134
 msgid "hatch_vcs plugin for hatchling"
-msgstr ""
+msgstr "plugin hatch_vcs para hatchling"
 
 #: ../../package-structure-code/python-package-versions.md:135
 msgid "setuptools-scm"
@@ -6055,7 +6427,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-versions.md:138
 msgid "Tool 1: Hatch and other build tools that offer incremental versioning"
-msgstr ""
+msgstr "Heramienta 1: Hatch y otras herramientas de construcción que ofrecen versionado incremental"
 
 #: ../../package-structure-code/python-package-versions.md:140
 msgid ""
@@ -6065,6 +6437,11 @@ msgid ""
 "implement version. Rather, they allow you to update the version at the "
 "command line using commands such as:"
 msgstr ""
+"Muchas de las herramientas de construcción modernas ofrecen soporte de versión "
+"que siguen las reglas de versionado semántico. Estas herramientas son diferentes "
+"de Python Semantic Version en que no requieren mensajes de confirmación específicos "
+"para implementar la versión. Más bien, le permiten actualizar la versión en la línea "
+"de comandos usando comandos como:"
 
 #: ../../package-structure-code/python-package-versions.md:146
 msgid "`tool-name version update major`"
@@ -6081,28 +6458,34 @@ msgid ""
 "incrementally. With **Hatch** the version value will be found in your "
 "`pyproject.toml` file. <!-- TODO double check this -->"
 msgstr ""
+"[Hatch](https://hatch.pypa.io/latest/version/), por ejemplo, ofrece "
+"`hatch version minor` que modificará la versión de su paquete de forma "
+"incremental. Con **Hatch**, el valor de la versión se encontrará en su "
+"archivo `pyproject.toml`. <!-- TODO double check this -->"
 
 #: ../../package-structure-code/python-package-versions.md:152
 msgid "Hatch (or other tools like PDM) Pros"
-msgstr ""
+msgstr "Beneficios de Hatch (u otras herramientas como PDM)"
 
 #: ../../package-structure-code/python-package-versions.md:154
 msgid "Easy to use version updates locally using a single tool!"
-msgstr ""
+msgstr "Fácil de usar actualizaciones de versión localmente usando una sola herramienta!"
 
 #: ../../package-structure-code/python-package-versions.md:156
 msgid "Hatch (or other tools like PDM) Cons"
-msgstr ""
+msgstr "Complicaciones con Hatch (u otras herramientas como PDM)"
 
 #: ../../package-structure-code/python-package-versions.md:158
 msgid ""
 "There will be some setup involved to ensure package version is updated "
 "throughout your package"
 msgstr ""
+"Habrá alguna configuración involucrada para asegurarse de que la versión del "
+"paquete se actualice en todo su paquete"
 
 #: ../../package-structure-code/python-package-versions.md:160
 msgid "Tool 2: Hatch_vcs & hatchling build back-end"
-msgstr ""
+msgstr "Heramienta 2: Hatch_vcs & hatchling build backend"
 
 #: ../../package-structure-code/python-package-versions.md:162
 msgid ""
@@ -6111,6 +6494,10 @@ msgid ""
 "creates a **\\_version.py** file in your package ecosystem that keeps "
 "track of the package's current version."
 msgstr ""
+"[hatch_vcs](https://github.com/ofek/hatch-vcs) es una herramienta de versionado "
+"que le permite gestionar las versiones de los paquetes utilizando **etiquetas git**. "
+"Hatch_vcs crea un archivo **\\_version.py** en su ecosistema de paquetes que "
+"realiza un seguimiento de la versión actual del paquete."
 
 #: ../../package-structure-code/python-package-versions.md:167
 msgid ""
@@ -6120,6 +6507,10 @@ msgid ""
 "This in turn eliminates potential error associated with manually updating"
 " your package's version."
 msgstr ""
+"Hatch realiza un seguimiento de la versión de su paquete en un archivo `_version.py`. "
+"Almacenar la versión en un solo archivo gestionado por Hatch proporciona a su "
+"paquete un valor de \"única fuente de verdad\" para el número de versión. Esto, a su vez, "
+"elimina el error potencial asociado con la actualización manual de la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:173
 msgid ""
@@ -6127,6 +6518,9 @@ msgid ""
 " tag number for your package. if it has increased, it will update the "
 "**\\_version.py** file with the new value."
 msgstr ""
+"Cuando usted (o su sistema de CI) construye su paquete, hatch verifica el número "
+"de etiqueta actual de su paquete. Si ha aumentado, actualizará el archivo **\\_version.py** "
+"con el nuevo valor."
 
 #: ../../package-structure-code/python-package-versions.md:176
 msgid ""
@@ -6134,28 +6528,36 @@ msgid ""
 "your package, Hatch will access the new tag value and use it to update "
 "your package version."
 msgstr ""
+"Así, cuando cree una nueva etiqueta o una nueva versión con una etiqueta y "
+"construya su paquete, Hatch accederá al nuevo valor de la etiqueta y lo utilizará "
+"para actualizar la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:179
 msgid ""
 "To use **hatch_vcs** you will need to use the **hatchling** build back "
 "end."
 msgstr ""
+"Para usar **hatch_vcs** necesitará usar el backend de construcción **hatchling**."
 
 #: ../../package-structure-code/python-package-versions.md:182
 msgid ""
 "Hatchling can also be used with any of the modern build tools including "
 "**Flit** and **PDM** if you prefer those for your day to day workflow."
 msgstr ""
+"Hatchling también se puede utilizar con cualquiera de las herramientas de construcción "
+"modernas, incluidas **Flit** y **PDM**, si prefiere esas para su flujo de trabajo diario."
 
 #: ../../package-structure-code/python-package-versions.md:187
 msgid "Hatch example setup in your pyproject.toml"
-msgstr ""
+msgstr "Ejecución de ejemplo de Hatch en su pyproject.toml"
 
 #: ../../package-structure-code/python-package-versions.md:196
 msgid ""
 "**Hatch_vcs** supports a fully automated package release and build, and "
 "push to PyPI workflow on GitHub."
 msgstr ""
+"**Hatch_vcs** admite un flujo de trabajo de publicación y construcción de paquetes "
+"totalmente automatizado, y envío a PyPI en GitHub."
 
 #: ../../package-structure-code/python-package-versions.md:206
 msgid ""
@@ -6163,24 +6565,27 @@ msgid ""
 "**hatchling** to be the modern equivalent to your current setuptools / "
 "build workflow."
 msgstr ""
+"Si utiliza **setuptools_scm**, entonces podría encontrar que **hatch_vcs** y "
+"**hatchling** son el equivalente moderno a su flujo de trabajo actual de setuptools / "
+"buils."
 
 #: ../../package-structure-code/python-package-versions.md:209
 msgid "hatch_vcs Pros"
-msgstr ""
+msgstr "Beneficios de hatch_vcs"
 
 #: ../../package-structure-code/python-package-versions.md:211
 msgid "Hatch supports modern Python packaging standards"
-msgstr ""
+msgstr "Hatch admite estándares modernos de empaquetado de Python"
 
 #: ../../package-structure-code/python-package-versions.md:212
 #: ../../package-structure-code/python-package-versions.md:238
 msgid "It creates a single-source file that contains your package version."
-msgstr ""
+msgstr "Permite crear un archivo de única fuente de verdad que contiene la versión de su paquete."
 
 #: ../../package-structure-code/python-package-versions.md:213
 #: ../../package-structure-code/python-package-versions.md:239
 msgid "You never manually update the package version"
-msgstr ""
+msgstr "Nunca actualizará manualmente la versión del paquete"
 
 #: ../../package-structure-code/python-package-versions.md:214
 #: ../../package-structure-code/python-package-versions.md:240
@@ -6188,6 +6593,8 @@ msgid ""
 "You can automate writing the version anywhere in your package including "
 "your documentation!"
 msgstr ""
+"Puede automatizar la escritura de la versión en cualquier lugar de su paquete, "
+"incluida su documentación."
 
 #: ../../package-structure-code/python-package-versions.md:215
 #: ../../package-structure-code/python-package-versions.md:241
@@ -6195,6 +6602,8 @@ msgid ""
 "It supports a purely GitHub based release workflow. This simplifies "
 "maintenance workflows."
 msgstr ""
+"Admite un flujo de trabajo de publicación basado puramente en GitHub. Esto "
+"simplifica los flujos de trabajo de mantenimiento."
 
 #: ../../package-structure-code/python-package-versions.md:216
 #: ../../package-structure-code/python-package-versions.md:242
@@ -6202,6 +6611,8 @@ msgid ""
 "Version number is updated in your package via a hidden `_version.py` "
 "file. There is no manual configuration updates required."
 msgstr ""
+"El número de versión se actualiza en su paquete a través de un archivo oculto `_version.py`. "
+"No se requieren actualizaciones manuales de configuración."
 
 #: ../../package-structure-code/python-package-versions.md:217
 #: ../../package-structure-code/python-package-versions.md:243
@@ -6210,10 +6621,13 @@ msgid ""
 "below), we know that sometimes when maintaining a package specific "
 "guidelines around commit messages can be hard to apply and manage."
 msgstr ""
+"Si bien nos gustan los mensajes de confirmación detallados (consulte Python Semantic Version "
+"a continuación), sabemos que a veces, al mantener un paquete, las pautas específicas "
+"sobre los mensajes de confirmación pueden ser difíciles de aplicar y gestionar."
 
 #: ../../package-structure-code/python-package-versions.md:219
 msgid "hatch_vcs Cons"
-msgstr ""
+msgstr "Complicaciones con hatch_vcs"
 
 #: ../../package-structure-code/python-package-versions.md:221
 msgid ""
@@ -6221,10 +6635,13 @@ msgid ""
 "version number via a tag on GitHub. But you could locally develop a build"
 " to \"bump\" tag versions"
 msgstr ""
+"En un flujo de trabajo de CI, terminará ingresando o creando manualmente el "
+"número de versión a través de una etiqueta en GitHub. Pero podría desarrollar "
+"localmente una compilación para \"aumentar\" las versiones de las etiquetas"
 
 #: ../../package-structure-code/python-package-versions.md:224
 msgid "Tool 3: setuptools-scm versioning using git tags"
-msgstr ""
+msgstr "Herramienta 3: versionado de setuptools-scm usando etiquetas git"
 
 #: ../../package-structure-code/python-package-versions.md:226
 msgid ""
@@ -6234,52 +6651,68 @@ msgid ""
 "above) does. It stores a version in a **\\_version.py** file and relies "
 "on (**git**) tags to determine the package's current version."
 msgstr ""
+"[`Setuptools_scm`](https://github.com/pypa/setuptools_scm/) es una extensión "
+"que puede usar con setuptools para gestionar las versiones de los paquetes. "
+"**Setuptools_scm** opera de la misma manera que **hatch_vcs** (discutido "
+"anteriormente). Almacena una versión en un archivo **\\_version.py** y se basa "
+"en las etiquetas (**git**) para determinar la versión actual del paquete."
 
 #: ../../package-structure-code/python-package-versions.md:232
 msgid ""
 "If you are using **setuptools** as your primary build tool, then "
 "`*setuptools-scm` is a good choice as:"
 msgstr ""
+"Si está utilizando **setuptools** como su herramienta de construcción principal, "
+"entonces `*setuptools-scm` es una buena elección ya que:"
 
 #: ../../package-structure-code/python-package-versions.md:236
 msgid "setuptools_scm Pros"
-msgstr ""
+msgstr "Beneficios de setuptools_scm"
 
 #: ../../package-structure-code/python-package-versions.md:244
 msgid "**setuptools** is still the most commonly used Python packaging build tool"
-msgstr ""
+msgstr "**setuptools** sigue siendo la herramienta de construcción de paquetes de Python más comúnmente utilizada"
 
 #: ../../package-structure-code/python-package-versions.md:246
 msgid "setuptools_scm Cons"
-msgstr ""
+msgstr "Complicaciones con setuptools_scm"
 
 #: ../../package-structure-code/python-package-versions.md:248
 msgid ""
 "In a CI workflow you will end up manually entering or creating the "
 "version number via a tag on GitHub."
 msgstr ""
+"En un flujo de trabajo de CI, terminará ingresando o creando manualmente el "
+"número de versión a través de una etiqueta en GitHub."
 
 #: ../../package-structure-code/python-package-versions.md:249
 msgid "Not well documented"
-msgstr ""
+msgstr "No está bien documentado"
 
 #: ../../package-structure-code/python-package-versions.md:250
 msgid ""
 "Because setuptools will always have to support backwards compatibility it"
 " will always be slower in adopting modern Python packaging conventions."
 msgstr ""
+"Dado que setuptools siempre tendrá que admitir la compatibilidad "
+"con versiones anteriores, siempre será más lento en adoptar las "
+"convenciones modernas de empaquetado de Python."
 
 #: ../../package-structure-code/python-package-versions.md:252
 msgid ""
 "As such you might consider using a more modern tool such as **hatch_vcs**"
 " and **hatchling** to build your package and manage package versions."
 msgstr ""
+"Por lo tanto, podría considerar usar una herramienta más moderna como **hatch_vcs** "
+"y **hatchling** para construir su paquete y gestionar las versiones del paquete."
 
 #: ../../package-structure-code/python-package-versions.md:264
 msgid ""
 "Tool 4: [Python semantic release](https://python-semantic-"
 "release.readthedocs.io/en/latest/)"
 msgstr ""
+"Herramienta 4: [Python semantic release](https://python-semantic-"
+"release.readthedocs.io/en/latest/)"
 
 #: ../../package-structure-code/python-package-versions.md:266
 msgid ""
@@ -6288,12 +6721,18 @@ msgid ""
 "As the name implies, Python Semantic Release follows semver release "
 "rules."
 msgstr ""
+"Python semantic release utiliza un flujo de trabajo de mensajes de confirmación "
+"que actualiza la versión de su paquete basándose en palabras clave encontradas "
+"en sus mensajes de confirmación. Como su nombre lo indica, Python Semantic Release "
+"sigue las reglas de lanzamiento de semver."
 
 #: ../../package-structure-code/python-package-versions.md:271
 msgid ""
 "With Python Semantic Release, versions are triggered using specific "
 "language found in a git commit message."
 msgstr ""
+"Con Python Semantic Release, las versiones se activan utilizando un lenguaje "
+"específico que se encuentra en un mensaje de confirmación de git."
 
 #: ../../package-structure-code/python-package-versions.md:274
 msgid ""
@@ -6303,12 +6742,19 @@ msgid ""
 " fix(text-here), Python Semantic Release would bump your package to "
 "version 1.1.1."
 msgstr ""
+"Por ejemplo, las palabras `fix(attribute_warning):` activan Python Semantic "
+"Release para implementar un aumento de versión de **patch**. Por ejemplo, si "
+"su paquete estaba en la versión 1.1.0 y realizó la confirmación a continuación "
+"con las palabras fix(text-here), Python Semantic Release aumentaría su paquete a "
+"la versión 1.1.1."
 
 #: ../../package-structure-code/python-package-versions.md:284
 msgid ""
 "Similarly a feature (`feat()`) triggers a minor version bump. For example"
 " from version 1.1 to version 1.2"
 msgstr ""
+"De manera similar, una característica (`feat()`) activa un aumento de versión "
+"menor. Por ejemplo, de la versión 1.1 a la versión 1.2"
 
 #: ../../package-structure-code/python-package-versions.md:292
 msgid ""
@@ -6318,14 +6764,19 @@ msgid ""
 "since 2020 and will potentially be updated in the future! But for now, "
 "some of the commands are dated but the content is still excellent."
 msgstr ""
+"Puede encontrar una discusión reflexiva sobre la versión semántica de Python "
+"[en esta guía de paquetes de Python](https://py-pkgs.org/07-releasing-versioning"
+"#automatic-version-bumping). ¡Tenga en cuenta que la guía no ha sido actualizada "
+"desde 2020 y potencialmente se actualizará en el futuro! Por ahora, algunos "
+"de los comandos están desactualizados, pero el contenido sigue siendo excelente."
 
 #: ../../package-structure-code/python-package-versions.md:295
 msgid "Python Semantic Release Pros"
-msgstr ""
+msgstr "Beneficios de Python Semantic Release"
 
 #: ../../package-structure-code/python-package-versions.md:297
 msgid "Follows semver versioning closely"
-msgstr ""
+msgstr "Siguen de cerca el versionado semver"
 
 #: ../../package-structure-code/python-package-versions.md:298
 msgid ""
@@ -6333,10 +6784,13 @@ msgid ""
 " troubleshooting and ensure a cleaner and more self-describing git "
 "history."
 msgstr ""
+"Obliga a los mantenedores a usar mensajes de confirmación descriptivos que "
+"pueden simplificar la solución de problemas y garantizar un historial de git "
+"más limpio y autoexplicativo."
 
 #: ../../package-structure-code/python-package-versions.md:300
 msgid "Python Semantic Release Cons"
-msgstr ""
+msgstr "Complicaciones con Python Semantic Release"
 
 #: ../../package-structure-code/python-package-versions.md:302
 msgid ""
@@ -6345,6 +6799,10 @@ msgid ""
 "specificity in commit messages (NOTE: there are bots that will check git "
 "commit messages in a repo)"
 msgstr ""
+"Requiere un lenguaje de confirmación muy específico para funcionar. En la "
+"práctica, algunos mantenedores y colaboradores pueden no ser capaces de "
+"mantener ese nivel de especificidad en los mensajes de confirmación (NOTA: "
+"hay bots que verificarán los mensajes de confirmación de git en un repositorio)"
 
 #: ../../package-structure-code/python-package-versions.md:303
 msgid ""
@@ -6352,9 +6810,14 @@ msgid ""
 "GitHub based release workflow as the wrong commit message could trigger a"
 " release."
 msgstr ""
+"La publicación se realiza en la línea de comandos. Esto hace que sea más "
+"complicado implementar un flujo de trabajo de publicación basado en GitHub, "
+"ya que un mensaje de confirmación incorrecto podría activar una publicación."
 
 #: ../../package-structure-code/python-package-versions.md:304
 msgid ""
 "The version number is manually updated in a configuration file such as "
 "`pyproject.toml` vs. in a package **\\_version.py** file."
 msgstr ""
+"El número de versión se actualiza manualmente en un archivo de configuración "
+"como `pyproject.toml` en lugar de en un archivo de paquete **\\_version.py**."
