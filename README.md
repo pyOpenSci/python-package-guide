@@ -1,6 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-67-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-68-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -160,6 +160,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://chrisholdgraf.com"><img src="https://avatars.githubusercontent.com/u/1839645?v=4?s=100" width="100px;" alt="Chris Holdgraf"/><br /><sub><b>Chris Holdgraf</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=choldgraf" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Acholdgraf" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.software.ac.uk"><img src="https://avatars.githubusercontent.com/u/1507151?v=4?s=100" width="100px;" alt="Neil Chue Hong"/><br /><sub><b>Neil Chue Hong</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Anpch" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://robpasmue.github.io"><img src="https://avatars.githubusercontent.com/u/37798125?v=4?s=100" width="100px;" alt="Roberto Pastor Muela"/><br /><sub><b>Roberto Pastor Muela</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=RobPasMue" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3ARobPasMue" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yardasol"><img src="https://avatars.githubusercontent.com/u/45364492?v=4?s=100" width="100px;" alt="Olek"/><br /><sub><b>Olek</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=yardasol" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ayardasol" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
