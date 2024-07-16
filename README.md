@@ -1,6 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-69-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-70-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -162,6 +162,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://robpasmue.github.io"><img src="https://avatars.githubusercontent.com/u/37798125?v=4?s=100" width="100px;" alt="Roberto Pastor Muela"/><br /><sub><b>Roberto Pastor Muela</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=RobPasMue" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3ARobPasMue" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/yardasol"><img src="https://avatars.githubusercontent.com/u/45364492?v=4?s=100" width="100px;" alt="Olek"/><br /><sub><b>Olek</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=yardasol" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ayardasol" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ayhanxian"><img src="https://avatars.githubusercontent.com/u/20816603?v=4?s=100" width="100px;" alt="Han"/><br /><sub><b>Han</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=ayhanxian" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Aayhanxian" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/hpodzorski-USGS"><img src="https://avatars.githubusercontent.com/u/159824971?v=4?s=100" width="100px;" alt="hpodzorski-USGS"/><br /><sub><b>hpodzorski-USGS</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=hpodzorski-USGS" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ahpodzorski-USGS" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
