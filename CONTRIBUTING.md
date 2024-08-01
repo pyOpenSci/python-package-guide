@@ -34,7 +34,7 @@ The second approach is making your contribution directly in the GitHub website. 
 
 Independently of the approach you choose, the first step is to fork the Python Packaging Guide repository into your personal GitHub space. To "fork" a repository in GitHub means to create a copy of the main repository, or repo, that you have complete control over and can modify as you see fit.
 
-To fork a repo, 
+To fork a repo,
 
 1. Make sure you are logged into GitHub.
 
