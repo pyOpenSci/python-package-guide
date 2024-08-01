@@ -26,6 +26,7 @@ Create Package Tutorials <write-user-documentation/create-package-tutorials.md>
 Intro <repository-files/intro.md>
 Contributing File <repository-files/contributing-file.md>
 Development Guide <repository-files/development-guide.md>
+Changelog File <repository-files/changelog-file.md>
 ```
 
 ```{toctree}

@@ -88,14 +88,14 @@ Below that table identifier are key/value pairs that
 support configuration for that particular table.
 
 - Below `[build-system]` is considered a table in the toml language.
-- Within the build-system table below requires = is a key.
-- The associated value for requires is an array containing the value "hatchling".
+- Within the `build-system` table below `requires =` is a key.
+- The associated value for `requires` is an array containing the value `"hatchling"`.
 
-```toml
-[build-system] # <- this is a table
-requires = ["hatchling"] #  requires =  is a key and "hatchling" is a value contained within an array specified by square brackets [].
-
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [build-system]
+:end-at: requires = [
+:::
 
 ### How the pyproject.toml is used when you build a package
 
@@ -160,15 +160,15 @@ what dependencies your package requires.
 - **Authors:** these are the original authors of the package. Sometimes the authors are different from the maintainers. Other times they might be the same.
 - **Maintainers:** you can choose to populate this or not. You can populate this using a list with a sub element for each author or maintainer name, email
 
-```toml
-authors = [
-  {name = "A. Random Developer", email = "author@example.com" }
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: authors = [
+:end-at: ]
+:::
 
 - **dependencies:** dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.
 
-- **`[project.optional-dependencies]`:** the optional or development dependencies will be installed if someone runs `pip install projectname[dev]`. This is a nice way to include your development dependencies for users who may wish to contribute to your project.
+- **`[project.optional-dependencies]`:** the optional or development dependencies will be installed if someone runs `python -m pip install projectname[dev]`. This is a nice way to include your development dependencies for users who may wish to contribute to your project.
 
 - **keywords:** These are the keywords that will appear on your PyPI landing page. Think of them as words that people might use to search for your package.
 - **classifiers:** The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of [all options for classifiers can be found her](https://PyPI.org/classifiers/)e. Some of the classifiers that you should consider including
@@ -194,31 +194,20 @@ To add dependencies to your build, add a `[project.optional-dependencies]` table
 
 Then specify dependency groups as follows:
 
-```
-[project.optional-dependencies]
-tests = [
-  "pytest,
-  "pytest-cov"
-]
-lint = [
-  "black",
-  "flake8"
-]
-docs = [
-    "sphinx",
-    "pydata-sphinx-theme
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [project.optional-dependencies]
+:::
 
 Following the above example, you install dependencies like this:
 
-- `pip install -e .[tests]`
+- `python -m pip install -e .[tests]`
 
 The above will install both your package in editable mode and all of the dependencies declared in the tests section of your `[project.optional-dependencies]` table.
 
 To install all dependencies and also your package, you'd use:
 
-`pip install -e .[tests,lint,docs]`
+`python -m pip install -e .[tests,lint,docs]`
 
 :::{admonition} Recursive dependencies
 :class: tip
@@ -232,32 +221,10 @@ You can also setup sets of recursive dependencies. [See this blog post for more.
 Below is an example build configuration for a Python project. This example
 package setup uses **hatchling** to build the [package's sdist and wheels](python-package-distribution-files-sdist-wheel).
 
-```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project]
-name = "examplePy"
-authors = [
-    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
-]
-maintainers = [
-    {name = "All the contributors"},
-]
-description = "An example Python package used to support Python packaging tutorials"
-keywords = ["pyOpenSci", "python packaging"]
-readme = "README.md"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
-    "Operating System :: OS Independent",
-]
-dependencies = [
-    "dependency-package-name-1",
-    "dependency-package-name-2",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:end-before: [project.optional-dependencies]
+:::
 
 Notice that dependencies are specified in this file.
 
@@ -278,32 +245,9 @@ of values. It has two keys that specify the build backend API and containing pac
 1. `requires =`
 1. `build-back-end =`
 
-```
-[build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "examplePy"
-authors = [
-    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
-]
-maintainers = [
-    {name = "All the contributors"},
-]
-description = "An example Python package used to support Python packaging tutorials"
-keywords = ["pyOpenSci", "python packaging"]
-readme = "README.md"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
-    "Operating System :: OS Independent",
-]
-dependencies = [
-    "dependency-package-name-1",
-    "dependency-package-name-2",
-]
-```
+:::{literalinclude} ../examples/pure-setuptools/pyproject.toml
+:language: toml
+:::
 
 ```{note}
 [Click here to read about our packaging build tools including PDM, setuptools, Poetry and Hatch.](/package-structure-code/python-package-build-tools)

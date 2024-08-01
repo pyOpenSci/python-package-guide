@@ -91,14 +91,14 @@ represent on your PyPI landing page. These classifiers also allow users to sort 
 ```
 
 :::{figure-md} build-workflow
-<img src="../images/python-package-development-process.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to testpypi or the real pypi. from pypi you can then connect to conda-forge for an automated build that sends distributions from pypi to conda-forge. " width="700px">
+<img src="../images/python-package-development-process.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to TestPyPI or the real PyPI. from PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge. " width="700px">
 
 You need to build your Python package in order to publish it to PyPI (or Conda). The build process organizes your code and metadata into a distribution format that can be uploaded to PyPI and subsequently downloaded and installed by users. NOTE: you need to publish a sdist to PyPI in order for conda-forge to properly build your package automatically.
 :::
 
 :::{figure-md}
 
-<img src="../images/python-build-package/pypi-metadata-keywords-license.png" alt="This screenshot shows the metadata on pypi for the xclim package. on it you can see the name of the license, the author and maintainer names keywords associated with the package and the base python version it requires which is 3.8." width="400px">
+<img src="../images/python-build-package/pypi-metadata-keywords-license.png" alt="This screenshot shows the metadata on PyPI for the xclim package. on it you can see the name of the license, the author and maintainer names keywords associated with the package and the base python version it requires which is 3.8." width="400px">
 
 PyPI screenshot showing metadata for the xclim package.
 :::
@@ -158,7 +158,7 @@ Also note that we are not discussing conda build workflows in this section.
 package. These are the "raw / as-is" files that you store on GitHub or whatever
 platform you use to manage your code.
 
-**S**ource **Dist**ributions are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
+Source Distributions (**S** + **Dist**) are referred to as sdist. As the name implies, a SDIST contains the source code; it has not been
 built or compiled in any way. Thus, when a user installs your source
 distribution using pip, pip needs to run a build step first. For this reason, you could define a source distribution as a compressed archive that contains everything required to build a wheel (except for project dependencies) without network access.
 
@@ -207,7 +207,7 @@ stravalib-1.1.0.post2-SDist.tar.gz file contents
 ├─ Makefile
 ├─ PKG-INFO
 ├─ README.md
-├─ changelog.md
+├─ CHANGELOG.md
 ├─ environment.yml
 ├─ pyproject.toml
 ├─ requirements-build.txt

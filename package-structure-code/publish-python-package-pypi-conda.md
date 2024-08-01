@@ -1,10 +1,10 @@
-# Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud
+# Publishing Your Package In A Community Repository: PyPI or Anaconda.org
 
 <!--todo: add as resource https://docs.conda.io/projects/conda/en/latest/glossary.html -->
 
 pyOpenSci requires that your package has an distribution that can be installed
 from a public community repository such as PyPI or a conda channel such as
-`bioconda` or `conda-forge` in the Anaconda cloud.
+`bioconda` or `conda-forge` on Anaconda.org.
 
 Below you will learn more about the various publishing options for your Python
 package.
@@ -13,7 +13,7 @@ package.
 
 * Installing packages in the same environment using both pip and conda can
 lead to package conflicts.
-* To minimize conflicts for users who may be using conda (or pip) to manage local environments, consider publishing your package to both PyPI and the conda-forge channel of the Anaconda Cloud.
+* To minimize conflicts for users who may be using conda (or pip) to manage local environments, consider publishing your package to both PyPI and the conda-forge channel on Anaconda.org.
 
 Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.
 :::
@@ -57,13 +57,13 @@ your package.
 :::
 
 (about-conda)=
-## What is Anaconda Cloud and conda?
+## What is conda and Anaconda.org?
 
 conda is an open source package and environment management tool.
-conda can be used to install tools from the [Anaconda Cloud
+conda can be used to install tools from the [Anaconda
 repository](https://repo.anaconda.com/).
 
-Anaconda cloud (anaconda.org) contains public and private repositories for
+Anaconda.org contains public and private repositories for
 packages. These repositories are known as channels (discussed below).
 
 :::{admonition} A brief history of conda's evolution
@@ -95,16 +95,16 @@ channels. The conda package manager can install packages from different channels
 There are several core public channels that most people use to install
 packages using conda, including:
 
-- **defaults:** this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda decides what packages live on the default channel.
+- **defaults:** this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda (the company) decides what packages live on the `defaults` channel.
 - [**conda-forge:**](https://anaconda.org/conda-forge) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
 - [**bioconda**](https://anaconda.org/bioconda): this channel focuses on biomedical tools.
 
 **conda-forge** emerged as many of the scientific packages did not
-exist in the default Anaconda cloud channel.
+exist in the `defaults` Anaconda channel.
 
 :::{figure-md} pypi-conda-channels
 
-<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to pypi. and test pypi. a testbed server for you to practice. " width="700px">
+<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI. and test PyPI. a testbed server for you to practice. " width="700px">
 
 Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::

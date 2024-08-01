@@ -38,8 +38,8 @@ a discussion of:
 ## Use a code format tool (or tools) to make your life easier
 
 We suggest that you use a code format tool, or a set of format tools, because
-manually applying all of the PEP 8 format specifications is time consuming
-for both maintainers and can be a road block for potential new contributors.
+manually applying all of the PEP 8 format specifications is both time consuming
+for maintainers and can be a road block for potential new contributors.
 Code formatters will automagically reformat your code for you, adhering to
 PEP 8 standards and applying consistent style decisions throughout.
 
@@ -70,9 +70,9 @@ discussed below, is an example of a commonly-used code linter.
 
 ### Code Formatters (and stylers)
 
-Python focused code formatters often follow PEP 8 standards. However, they also
-make stylistic decisions about code consistency. Code formatters will
-reformat your code for you.
+Code formatters will reformat your code for you. Python focused code formatters
+often follow PEP 8 standards. However, they also make stylistic decisions about
+code consistency.
 
 Black is an example of a commonly-used code formatter. Black both applies PEP 8
 standards while also making decisions about things like consistent use of double
@@ -80,19 +80,19 @@ quotes for strings, and spacing of items in lists.
 
 You will learn more about Black below.
 
-## Code format and style
+## Code linting, formatting and styling tools
 
 ### Black
 
 [Black](https://black.readthedocs.io/en/stable/) is a code
 formatter. Black will automagically (and _unapologetically_)
 fix spacing issues and ensure code format is consistent throughout your
-package. Black also generally adhere to PEP 8 style guidelines with
+package. Black also generally adheres to PEP 8 style guidelines with
 some exceptions. A few examples of those exceptions are below:
 
 - Black defaults to a line length of 88 (79 + 10%) rather than the 79 character `PEP 8` specification. However, line length is a setting can be manually overwritten in your Black configuration.
 - Black will not adjust line length in your comments or docstrings.
-- This tool will not review and fix import order (you need _isort_ or _Ruff_ to do that - see below).
+- This tool will not review and fix import order (you need `isort` or `ruff` to do that - see below).
 
 ```{tip}
 If you are interested in seeing how Black will format your code, you can
@@ -102,7 +102,7 @@ use the [Black playground](https://black.vercel.app/)
 Using a code formatter like Black will leave you more time to work on
 code function rather than worry about format.
 
-### flake8 for linting code in Python packages
+### Flake8
 
 To adhere to Python `pep8` format standards, you might want to add
 [flake8](https://flake8.pycqa.org/en/latest/) to your code format
@@ -122,9 +122,8 @@ called `stravalib`.
 
 The line length standard for PEP 8 is 79 characters.
 
-Notice that
-flake8 returns a list of issues that it found in the model.py module in the
-command line. The Python file itself is not modified. Using on this output,
+Notice that flake8 returns a list of issues that it found in the model.py module
+on the command line. The Python file itself is not modified. Using this output,
 you can fix each issue line by line manually.
 
 ```bash
@@ -152,7 +151,7 @@ your package.
 > - Related third party imports.
 > - Local application/library specific imports.
 
-While **flake8** will identify unused imports in your code, it won't
+While `flake8` will identify unused imports in your code, it won't
 fix or identify issues with the order of package imports.
 
 `isort` will identify where imports in your code are out of
@@ -164,75 +163,58 @@ up your code.
 
 Code imports before `isort` is run:
 
-Below, the exc module is a part of starvalib which is a
-third party package. `abc` and `logging` are core `Python` packages
-distributed with `Python`. Also notice that there are extra
-spaces in the imports listed below.
+Below, the `pandas` is a third party package, `typing` is a core `Python`
+package distributed with `Python`, and `examplePy.temperature` is a first-party
+module which means it belongs to the same package as the file doing the import.
+Also notice that there are no spaces in the imports listed below.
 
-```python
-from stravalib import exc
-import abc
-import logging
+:::{literalinclude} ../examples/pure-hatch/src/examplePy/temporal-raw.py
+:language: python
+:end-before: def calc_annual_mean
+:::
 
-from collections.abc import Sequence
+From the project root, run:
 
-
-from stravalib import unithelper as uh
+```bash
+isort src/examplePy/temporal.py
 ```
 
-Run:
-`isort stravalib/model.py`
+Python file `temporal.py` imports after `isort` has been run
 
-Python file model.py imports after `isort` has been run
-
-```python
-import abc
-import logging
-from collections.abc import Sequence
-
-from stravalib import exc
-from stravalib import unithelper as uh
-```
+:::{literalinclude} ../examples/pure-hatch/src/examplePy/temporal.py
+:language: python
+:end-before: def calc_annual_mean
+:::
 
 ### Ruff
 
-[Ruff](https://beta.ruff.rs) is a new addition to the code quality ecosystem,
-gaining some traction since its release.
-`ruff` is a linter for Python, aiming to replace several tools behind a single interface.
-As such, `ruff` can be used instead of `flake8` and `isort`.
+[Ruff](https://docs.astral.sh/ruff/) is a new addition to the code quality
+ecosystem, gaining some traction since its release. `ruff` is both a linter
+and a code formatter for Python, aiming to replace several tools behind a single
+interface. As such, `ruff` can be used at a replacement of all other tools
+mentioned here, or in complement to some of them.
 
 `ruff` has some interesting features that distinguish it from other linters:
 
 - Linter configuration in `pyproject.toml`
 - Several hundred rules included, many of which are automatically fixable
-- Rules explanation, see [F403](https://beta.ruff.rs/docs/rules/undefined-local-with-import-star/) for an example
+- Rules explanation, see [F403](https://docs.astral.sh/ruff/rules/undefined-local-with-import-star/) for an example
 - Fast execution time, makes a quick feedback loop possible even on large projects.
 
-Here is a simple configuration to get started with `ruff`:
+Here is a simple configuration to get started with `ruff`. It would go into your `pyproject.toml`:
 
-```toml
-# pyproject.toml
-
-[tool.ruff]
-select = [
-    "E", # pycodestyle errors
-    "W", # pycodestyle warnings
-    "F", # pyflakes. "E" + "W" + "F" + "C90" (mccabe complexity) is equivalent to flake8
-    "I", # isort
-]
-ignore = [
-    "E501", # line >79, handled by black
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [tool.ruff]
+:end-before: [tool.ruff.isort]
+:::
 
 Depending on your project, you might want to add the following to sort imports correctly:
 
-```toml
-# pyproject.toml
-
-[tool.ruff.isort]
-known-first-party = ["<package_folder>"]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [tool.ruff.isort]
+:::
 
 ## How to use code formatter in your local workflow
 
@@ -334,7 +316,7 @@ To setup pre-commit locally, you need to do 3 things:
 1. Install pre-commit (and include it as a development requirement in your repository)
 
 ```sh
-pip install pre-commit
+python -m pip install pre-commit
 
 # or
 
@@ -347,50 +329,9 @@ Below is an example **.pre-commit-cofig.yaml** file that can be used to setup
 the pre-commit hook and the pre-commit.ci bot if you chose to implement that
 too.
 
-```yaml
-# file: .pre-commit-config.yaml
-
-repos:
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.11.4
-    hooks:
-      - id: isort
-        files: \.py$
-
-  # Misc commit checks using built in pre-commit checks
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
-    # ref: https://github.com/pre-commit/pre-commit-hooks#hooks-available
-    hooks:
-      # Autoformat: Makes sure files end in a newline and only a newline.
-      - id: end-of-file-fixer
-
-      # Lint: Check for files with names that would conflict on a
-      # case-insensitive filesystem like MacOS HFS+ or Windows FAT.
-      - id: check-case-conflict
-      - id: trailing-whitespace
-
-  # Linting: Python code (see the file .flake8)
-  - repo: https://github.com/PyCQA/flake8
-    rev: "6.0.0"
-    hooks:
-      - id: flake8
-
-# Black for auto code formatting
-repos:
-- repo: https://github.com/psf/black
-  rev: 22.12.0
-  hooks:
-  - id: black
-    language_version: python3.8
-
-# Tell precommit.ci bot to update codoe format tools listed in the file
-# versions every quarter
-# The default it so update weekly which is too many new pr's for many
-# maintainers (remove these lines if you aren't using the bot!)
-ci:
-  autoupdate_schedule: quarterly
-```
+:::{literalinclude} ../examples/pure-hatch/.pre-commit-config.yaml
+:language: yaml
+:::
 
 This file specifies a hook that will be triggered automatically before each `git commit`,
 in this case, it specifies a `flake8` using version `6.0.0`.

@@ -16,17 +16,17 @@ Package APIs consist of functions, classes, methods and attributes that create a
 
 ## What is a docstring and how does it relate to documentation?
 
-In Python a docstring refers to text in a function, method or class
+In Python, a docstring refers to text in a function, method or class
 that describes what the function does and its inputs and outputs. Python programmers usually refer to the inputs to functions as ["parameters"](https://docs.python.org/3/glossary.html#term-parameter) or ["arguments"](https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter), and the outputs are often called "return values"
 
 The docstring is thus important for:
 
-- When you call `help()` in Python, for example, `help(add_numbers)` will show the text of the function's docstring. The docstring thus helps a user better understand how to applying the function more effectively to their workflow.
-- When you build your package's documentation, the docstrings can also be used to automagically create full API documentation that provides a clean view of all its functions, classes, methods, and attributes.
+- When you call `help()` in Python, for example, `help(add_numbers)` will show the text of the function's docstring. The docstring thus helps a user better understand how to apply the function more effectively to their workflow.
+- When you build your package's documentation, the docstrings can also be used to automatically create full API documentation that provides a clean view of all its functions, classes, methods, and attributes.
 
 ```{tip}
 Example API Documentation for all functions, classes, methods, and attributes in a package.
-* [View example high level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does](https://www.fatiando.org/verde/latest/api/index.html)
+* [View example high-level API documentation for the Verde package. This page lists every function and class in the package along with a brief explanation of what it does](https://www.fatiando.org/verde/latest/api/index.html)
 * [You can further dig down to see what a specific function does within the package by clicking on an API element](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)
 ```
 
@@ -39,14 +39,14 @@ In Python, this means that you need to add a docstring for
 every user-facing
 class, method, attribute and/or function in your package (_within reason_) that:
 
-- Explains what the function, method, attribute or class does
+- Explains what the function, method, attribute, or class does
 - Defines the `type` inputs and outputs (ie. `string`, `int`, `np.array`)
 - Explains the expected output `return` of the object, method or function.
 
 (numpy-docstring)=
 ### Three Python docstring formats and why we like NumPy style
 
-There are several Python docstring formats that you can chose to use when documenting
+There are several Python docstring formats that you can choose to use when documenting
 your package including:
 
 - [NumPy-style](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
@@ -59,7 +59,7 @@ We suggest using [NumPy-style docstrings](https://numpydoc.readthedocs.io/en/lat
 Python documentation because:
 
 - NumPy style docstrings are core to the scientific Python ecosystem and defined in the [NumPy style guide](https://numpydoc.readthedocs.io/en/latest/format.html). Thus you will find them widely used there.
-- The Numpy style docstring is simplified and thus easier-to-read both in the code and when calling `help()` in Python. In contrast, some feel that reST style docstrings is harder to quickly scan, and can take up more lines of code in modules.
+- The Numpy style docstring is simplified and thus easier to read both in the code and when calling `help()` in Python. In contrast, some feel that reST style docstrings are harder to quickly scan, and can take up more lines of code in modules.
 
 ```{tip}
 If you are using NumPy style docstrings, be sure to include the [sphinx napoleon
@@ -69,10 +69,10 @@ to properly read and format NumPy format docstrings.
 
 ### Docstring examples Better and Best
 
-Below is a good example of a well documented function. Notice that this
+Below is a good example of a well-documented function. Notice that this
 function's docstring describes the function's inputs and the function's output
 (or return value). The initial description of the function is short (one line).
-Following that single line description there is a slightly longer description of
+Following that single-line description, there is a slightly longer description of
 what the function does (2 to 3 sentences). The return of the function is also
 specified.
 
@@ -236,7 +236,7 @@ Describing the expected data type that a function or method requires
 helps users better understand how to call a function or method.
 
 Type-hints add another layer of type documentation to your code. Type-hints
-make make it easier for new developers, your future self or contributors
+make it easier for new developers, your future self or contributors
 to get to know your code base quickly.
 
 Type hints are added to the definition of your function. In the example below, the parameters aNum and aNum2 are defined as being type = int (integer).

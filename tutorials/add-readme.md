@@ -89,7 +89,7 @@ Remember that the more people understand what your package does, the more people
 Next, add instructions that tell users how to install your package.
 
 For example, can they use pip to install your package?
-`pip install packagename`
+`python -m pip install packagename`
 
 or conda?
 
@@ -188,7 +188,7 @@ Your finished `README.md` file should look something like this:
 # pyosPackage
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8365068.svg)](https://doi.org/10.5281/zenodo.8365068)
-[![pyOpenSci](https://tinyurl.com/y22nb8up)](https://github.com/pyOpenSci/software-review/issues/115)
+[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-review/issues/115)
 
 ## What pyosPackage does
 
@@ -202,7 +202,7 @@ Short description here using non-technical language that describes what your pac
 
 To install this package run:
 
-`pip install pyosPackage`
+`python -m pip install pyosPackage`
 
 ## OPTIONAL - if you have additional setup instructions add them here. if not, skip this section.
 

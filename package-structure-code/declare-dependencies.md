@@ -336,11 +336,11 @@ If you want to support conda users, you may want to also maintain a conda enviro
 ```{admonition} A note for conda users
 :class: tip
 
-If you use a conda environment for developing your tool, keep in mind that when you install your package using `pip install -e .` (or using pip in general), dependencies will be installed from PyPI rather than conda.
+If you use a conda environment for developing your tool, keep in mind that when you install your package using `python -m pip install -e .` (or using pip in general), dependencies will be installed from PyPI rather than conda.
 
 Thus, if you are running a conda environment, installing your package in "editable" mode risks dependency conflicts. This is particularly important if you have a spatial package that requires geospatial system libraries like GDAL or another system-level dependency.
 
-Alternatively, you can install your package using `pip install -e . --no-deps` to only install the package. And install the rest of your dependencies using a conda environment file.
+Alternatively, you can install your package using `python -m pip install -e . --no-deps` to only install the package. And install the rest of your dependencies using a conda environment file.
 ```
 
 ## Dependencies in Read the Docs
