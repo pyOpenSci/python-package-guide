@@ -35,7 +35,18 @@ The second approach is making your contribution directly in the GitHub website. 
 Independently of the approach you choose, the first step is to fork the Python Packaging Guide repository into your personal GitHub space.
 You can do this by clicking the "Fork" button in the top right corner of the repository page.
 
-[Fork and Clone GitHub Repos](https://datascienceskills.org/lessons/git-github/git-intro/3-fork-clone/) is a good resource to learn more about forking.
+[Learn more: Fork and Clone GitHub Repos](https://datascienceskills.org/lessons/git-github/git-intro/3-fork-clone/) is a good resource to learn more about forking.
+
+To fork a repo,
+
+1. Make sure you are logged into GitHub.
+
+2. Go to the repo you would like to fork, in this case the [Python Packaging Guide](https://www.github.com/pyopensci/python-package-guide) repo.
+
+3. In the top right-hand corner of the page there is a 'Fork' button. Click that button. You will be brought to a new page where you will 'Create a new fork'. Feel free to keep all the default inputs and click 'Create fork'. This will create a copy of the repo at `https://github.com/<username>/python-package-guide`, where `<username>` is your GitHub username.
+
+<img width="395" alt="fork_repo" src="https://github.com/user-attachments/assets/949223fb-b58b-4b6d-85db-003bd117da46">
+
 
 ## Contributing via the GitHub website
 
