@@ -1,6 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-72-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-73-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -167,6 +167,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/ncclementi/"><img src="https://avatars.githubusercontent.com/u/7526622?v=4?s=100" width="100px;" alt="Naty Clementi"/><br /><sub><b>Naty Clementi</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=ncclementi" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ancclementi" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/John-Drake"><img src="https://avatars.githubusercontent.com/u/22374979?v=4?s=100" width="100px;" alt="John Drake"/><br /><sub><b>John Drake</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=John-Drake" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3AJohn-Drake" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Revathyvenugopal162"><img src="https://avatars.githubusercontent.com/u/104772255?v=4?s=100" width="100px;" alt="Revathy Venugopal"/><br /><sub><b>Revathy Venugopal</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=Revathyvenugopal162" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3ARevathyvenugopal162" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
