@@ -65,7 +65,7 @@ LANGUAGES = ["es", "fr"]
 ```
 
 ```{note}
-You can find a list of the two-letter IETF language tag [here](https://en.m.wikipedia.org/wiki/IETF_language_tag).
+You can find a list of the two-letter IETF language tag [here](https://en.wikipedia.org/wiki/IETF_language_tag).
 ```
 
 ## Preparing the Translation Files
