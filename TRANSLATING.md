@@ -65,7 +65,7 @@ LANGUAGES = ["es", "fr"]
 ```
 
 ```{note}
-You can find a list of the two-letter IETF language tag [here](https://en.wikipedia.org/wiki/IETF_language_tag).
+You can find a list of the two-letter sphinx language option [here](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
 ```
 
 ## Preparing the Translation Files
