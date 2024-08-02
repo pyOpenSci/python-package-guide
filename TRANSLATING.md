@@ -65,7 +65,7 @@ LANGUAGES = ["es", "fr"]
 ```
 
 ```{note}
-You can find a list of the two-letter sphinx language option [here](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
+You can find a list of the two-letter Sphinx language option [here](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
 ```
 
 ## Preparing the Translation Files
