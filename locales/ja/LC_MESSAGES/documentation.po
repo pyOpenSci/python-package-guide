@@ -1,0 +1,2546 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024, pyOpenSci
+# This file is distributed under the same license as the pyOpenSci Python
+# Package Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pyOpenSci Python Package Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-02 18:04+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../documentation/hosting-tools/intro.md:1
+msgid "Tools to Build and Host your Documentation"
+msgstr ""
+
+#: ../../documentation/hosting-tools/intro.md:3
+msgid ""
+"The most common tool for building documentation in the Python ecosystem "
+"currently is Sphinx. However, some maintainers are using tools like "
+"[mkdocs](https://www.mkdocs.org/) for documentation. It is up to you to "
+"use the platform that you prefer for your documentation!"
+msgstr ""
+
+#: ../../documentation/hosting-tools/intro.md:8
+msgid ""
+"In this section, we introduce Sphinx as a common tool to build "
+"documentation. We talk about various syntax options that you can use when"
+" writing Sphinx documentation including mySt and rST."
+msgstr ""
+
+#: ../../documentation/hosting-tools/intro.md:12
+msgid ""
+"We also talk about ways to publish your documentation online and Sphinx "
+"tools that might help you optimize your documentation website."
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:1
+msgid "Documentation syntax: markdown vs. myST vs. rst syntax to create your docs"
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:3
+msgid "There are three commonly used syntaxes for creating Python documentation:"
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:4
+msgid ""
+"[markdown](https://www.markdownguide.org/): Markdown is an easy-to-learn "
+"text syntax. It is the default syntax used in Jupyter Notebooks. There "
+"are tools that you can add to a Sphinx website that allow it to render "
+"markdown as html. However, using markdown to write documentation has "
+"limitations. For instance if you want to add references, colored call out"
+" blocks and other custom elements to your documentation, you will need to"
+" use either **myST** or **rST**."
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:8
+msgid ""
+"[rST (ReStructured Text):](https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/basics.html). **rST** is the "
+"native syntax that sphinx supports. rST was the default syntax used for "
+"documentation for many years. However, in recent years myST has risen to "
+"the top as a favorite for documentation given the flexibility that it "
+"allows."
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:9
+msgid ""
+"[myST:](https://myst-parser.readthedocs.io/en/latest/intro.html) myST is "
+"a combination of vanilla of `markdown` and `rST` syntax. It is a nice "
+"option if you are comfortable writing markdown. `myst` is preferred by "
+"many because it offers both the rich functionality of rST combined with a"
+" simple-to-write markdown syntax."
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:12
+msgid ""
+"While you can chose to use any of the syntaxes listed above, we suggest "
+"using `myST` because:"
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:15
+msgid "It is a simpler syntax and thus easier to learn;"
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:16
+msgid ""
+"The above simplicity will make it easier for more people to contribute to"
+" your documentation."
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:17
+msgid ""
+"Most of your core Python package text files, such as your README.md file,"
+" are already in `.md` format"
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:18
+msgid ""
+"`GitHub` and `Jupyter Notebooks` support markdown thus it's more widely "
+"used in the scientific ecosystem."
+msgstr ""
+
+#: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:22
+msgid ""
+"If you are on the fence about myST vs rst, you might find that **myST** "
+"is easier for more people to contribute to."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:1
+msgid "How to publish your Python package documentation online"
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:3
+msgid ""
+"We suggest that you setup a hosting service for your Python package "
+"documentation. Two free and commonly used ways to quickly create a "
+"documentation website hosting environment are below."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:7
+msgid ""
+"You can host your documentation yourself using [GitHub "
+"Pages](https://pages.github.com/) or another online hosting service."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:8
+msgid ""
+"You can host your documentation using [Read the "
+"Docs](https://readthedocs.org/)."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:10
+msgid "What is Read the Docs ?"
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:11
+msgid ""
+"[Read the Docs](https://readthedocs.org/) is a documentation hosting "
+"service that supports publishing your project's documentation."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:13
+msgid ""
+"Read the Docs is a fully featured, free, documentation hosting service. "
+"Some of its many features include:"
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:16
+msgid ""
+"Is free to host your documentation (but there are also paid tiers if you "
+"wish to customize hosting)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:17
+msgid "Automates building your documentation"
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:18
+msgid ""
+"Allows you to turn on integration with pull requests where you can view "
+"documentation build progress (success vs failure)."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:19
+msgid ""
+"Supports versioning of your documentation which allows users to refer to "
+"older tagged versions of the docs if they are using older versions of "
+"your package."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:20
+msgid "Supports downloading of documentation in PDF and other formats."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:21
+msgid ""
+"You can customize the documentation build using a **.readthedocs.yaml** "
+"file in your GitHub repository."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:24
+msgid "What is GitHub Pages?"
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:25
+msgid ""
+"[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-"
+"github-pages/about-github-pages) is a free web hosting service offered by"
+" GitHub. Using GitHub pages, you can build your documentation locally or "
+"using a Continuous Integration setup, and then push to a branch in your "
+"GitHub repository that is setup to run the GitHub Pages web build."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:33
+msgid "Read the Docs vs GitHub Pages"
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:35
+msgid ""
+"GitHub pages is a great option for your documentation deployment. "
+"However, you will need to do a bit more work to build and deploy your "
+"documentation if you use GitHub pages."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:39
+msgid ""
+"Read the Docs can be setup in your Read the Docs user account. The "
+"service automates the entire process of building and deploying your "
+"documentation."
+msgstr ""
+
+#: ../../documentation/hosting-tools/publish-documentation-online.md:42
+msgid ""
+"If you don't want to maintain a documentation website for your Python "
+"package, we suggest using the Read the Docs website."
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:1
+msgid "Using Sphinx to Build Python Package Documentation"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:17
+msgid ""
+"On this page we discuss using [Sphinx](https://www.sphinx-doc.org/) to "
+"build your user-facing package documentation. While Sphinx is currently "
+"the most commonly-used tool in the scientific Python ecosystem, you are "
+"welcome to explore other tools to build documentation such as "
+"[mkdocs](https://www.mkdocs.org/) which is gaining popularity in the "
+"Python packaging ecosystem."
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:25
+msgid "Examples of documentation websites that we love:"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:27
+msgid "[GeoPandas](https://geopandas.org/en/stable/)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:28
+msgid ""
+"[View rst to create landing "
+"page](https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:29
+msgid "[verde](https://www.fatiando.org/verde/latest/)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:30
+msgid ""
+"[View verde landing page code - rst "
+"file.](https://github.com/fatiando/verde/blob/main/doc/index.rst)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:31
+msgid ""
+"[Here is our documentation if you want to see a myST example of a landing"
+" page.](https://github.com/pyOpenSci/python-package-"
+"guide/blob/main/index.md)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:34
+msgid "Sphinx - a static site generator"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:36
+msgid ""
+"Sphinx is a [static-site "
+"generator](https://www.cloudflare.com/learning/performance/static-site-"
+"generator/). A static site generator is a tool that creates html for a "
+"website based upon a set of templates. The html files are then served "
+"\"Statically\" which means that there is no generation or modification of"
+" the files on the fly."
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:39
+msgid "Sphinx is written using Python."
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:41
+msgid "Sphinx sites can be customized using extensions and themes"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:43
+msgid ""
+"The functionality of Sphinx can be extended using extensions and themes. "
+"A few examples include:"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:46
+msgid ""
+"You can apply documentation themes for quick generation of beautiful "
+"documentation."
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:47
+msgid ""
+"You can [automatically create documentation for your package's functions "
+"and classes (the package's API) from docstrings in your code using the "
+"autodoc extension](https://www.sphinx-"
+"doc.org/en/master/usage/extensions/autodoc.html)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:48
+msgid ""
+"You can [run and test code examples in your docstrings using the doctest "
+"extension](https://www.sphinx-"
+"doc.org/en/master/usage/extensions/doctest.html)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:49
+msgid ""
+"While Sphinx natively supports the `rST` syntax. You can add custom "
+"syntax parsers to support easier-to-write syntax using tools such as [the"
+" MyST parser](https://myst-parser.readthedocs.io/)."
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:51
+msgid "Commonly used Sphinx themes"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:53
+msgid ""
+"You are free to use whatever Sphinx theme that you prefer. However, the "
+"most common Sphinx themes used in the Python scientific community "
+"include:"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:57
+msgid "[pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:58
+msgid "[sphinx-book-theme](https://sphinx-book-theme.readthedocs.io/)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:59
+msgid "[furo](https://pradyunsg.me/furo/quickstart/)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:63
+msgid "This book is created using Sphinx and the `furo` theme."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:1
+msgid "Optimizing your documentation so search engines (and other users) find it"
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:3
+msgid ""
+"If you are interested in more people finding your package, you may want "
+"to add some core Sphinx extensions (and theme settings) that will help "
+"search engines such as Google find your documentation."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:7
+msgid "Google Analytics"
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:11
+msgid ""
+"Google analytics [is not compliant with the European General Data "
+"Protection Regulation (GDPR)](https://matomo.org/blog/2022/05/google-"
+"analytics-4-gdpr/). While there are many components to this regulation, "
+"one of the core elements is that you have to let users know on your site "
+"that you are collecting data and they have to consent. While it is "
+"possible to add infrastructure around Google Analytics to make it close "
+"to following GDPR regulations, the community is slowly shifting away from"
+" Google using open tools such as [Plausible](https://plausible.io/), "
+"[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) and"
+" [Matomo](https://matomo.org) for web analytics."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:13
+msgid ""
+"pyOpenSci is currently looking into free options for open source "
+"developers."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:16
+msgid ""
+"Some of the [sphinx themes such as the `pydata-sphinx-theme` and sphinx-"
+"book-theme have built in support for Google Analytics](https://pydata-"
+"sphinx-theme.readthedocs.io/en/latest/user_guide/analytics.html#google-"
+"analytics). However, if the theme that you chose does not offer Google "
+"Analytics support, you can use the [`sphinxcontrib-gtagjs` "
+"extension](https://github.com/attakei/sphinxcontrib-gtagjs). This "
+"extension will add a Google Analytics site tag to each page of your "
+"documentation."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:22
+msgid ""
+"[sphinx-sitemap](https://sphinx-"
+"sitemap.readthedocs.io/en/latest/index.html) for search engine "
+"optimization"
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:24
+msgid ""
+"While we are trying to move away from Google Analytics do to compliance "
+"and privacy issues, search engine optimization is still important. Google"
+" is the most popular search engine. And if your documentation is search "
+"optimized, users are more likely to find your package!"
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:30
+msgid ""
+"If you are interested in optimizing your documentation for search engines"
+" such as Google, you want a **sitemap.xml** file. You can submit this "
+"sitemap to Google and it will index your entire site. This over time can "
+"make the content on your site more visible to others when they search."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:36
+msgid "This extension is lightweight."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:38
+msgid ""
+"It [requires that you to add it to your Sphinx `conf.py` extension list "
+"and site your documentation base url](https://sphinx-"
+"sitemap.readthedocs.io/en/latest/getting-started.html)."
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:40
+msgid "[sphinxext.opengraph](https://github.com/wpilibsuite/sphinxext-opengraph)"
+msgstr ""
+
+#: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:42
+msgid ""
+"OpenGraph is an extension that allows you to add metadata to your "
+"documentation content pages. [The OpenGraph protocol allows other "
+"websites to provide a useful preview of the content on your page when "
+"shared](https://www.freecodecamp.org/news/what-is-open-graph-and-how-"
+"can-i-use-it-for-my-website/#what-is-open-graph). This is important for "
+"when the pages in your documentation are shared on social media sites "
+"like Twitter and Mastodon and even for shares on tools like Slack and "
+"Discourse."
+msgstr ""
+
+#: ../../documentation/index.md:3
+msgid "Documentation Overview"
+msgstr ""
+
+#: ../../documentation/index.md:3 ../../documentation/index.md:10
+#: ../../documentation/index.md:21 ../../documentation/index.md:42
+msgid "Intro"
+msgstr ""
+
+#: ../../documentation/index.md:10
+msgid "Create Your Docs"
+msgstr ""
+
+#: ../../documentation/index.md:10
+msgid "Document Your Code (API)"
+msgstr ""
+
+#: ../../documentation/index.md:10
+msgid "Create Package Tutorials"
+msgstr ""
+
+#: ../../documentation/index.md:10
+msgid "Write User Documentation"
+msgstr ""
+
+#: ../../documentation/index.md:21
+msgid "Contributing File"
+msgstr ""
+
+#: ../../documentation/index.md:21
+msgid "Development Guide"
+msgstr ""
+
+#: ../../documentation/index.md:21
+msgid "Changelog File"
+msgstr ""
+
+#: ../../documentation/index.md:21
+msgid "Docs for Contributors & Maintainers"
+msgstr ""
+
+#: ../../documentation/index.md:32
+msgid "README file"
+msgstr ""
+
+#: ../../documentation/index.md:32
+msgid "Code of Conduct File"
+msgstr ""
+
+#: ../../documentation/index.md:32
+msgid "LICENSE files"
+msgstr ""
+
+#: ../../documentation/index.md:32
+msgid "Community Docs"
+msgstr ""
+
+#: ../../documentation/index.md:42
+msgid "Sphinx for Docs"
+msgstr ""
+
+#: ../../documentation/index.md:42
+msgid "myST vs Markdown vs rst"
+msgstr ""
+
+#: ../../documentation/index.md:42
+msgid "Publish Your Docs"
+msgstr ""
+
+#: ../../documentation/index.md:42
+msgid "Website Hosting and Optimization"
+msgstr ""
+
+#: ../../documentation/index.md:42
+msgid "Publication tools for your docs"
+msgstr ""
+
+#: ../../documentation/index.md:1
+msgid "Documentation for your Open Source Python Package"
+msgstr ""
+
+#: ../../documentation/index.md:55
+msgid ""
+"Please note that the tools discussed here are those that we see commonly "
+"used in the community. As tools evolve we will update this guide. If you "
+"are submitting a package for pyOpenSci peer review and use other tools "
+"that are not listed in our guide to build your package you can still "
+"submit for review! The tools listed here are suggestions, not "
+"requirements. Our requirements are focused on the documentation content "
+"of your package."
+msgstr ""
+
+#: ../../documentation/index.md:65
+msgid "Documentation is critical for your Python package's success"
+msgstr ""
+
+#: ../../documentation/index.md:67
+msgid ""
+"Documentation is as important to the success of your Python open source "
+"package as the code itself."
+msgstr ""
+
+#: ../../documentation/index.md:70
+msgid ""
+"Quality code is of course valuable as its how your package gets the tasks"
+" done. However, if users don't understand how to use your package in "
+"their workflows, then they won't use it."
+msgstr ""
+
+#: ../../documentation/index.md:73
+msgid ""
+"Further, explicitly documenting how to contribute is important if you "
+"wish to build a base of contributors to your package."
+msgstr ""
+
+#: ../../documentation/index.md:76
+msgid "Two types of Python package users"
+msgstr ""
+
+#: ../../documentation/index.md:78
+msgid ""
+"The documentation that you write for your package should target two types"
+" of users:"
+msgstr ""
+
+#: ../../documentation/index.md:81
+msgid "1. Basic Tool Users"
+msgstr ""
+
+#: ../../documentation/index.md:83
+msgid ""
+"Basic tool users are the people who will use your package code in their "
+"Python workflows. They might be new(er) to Python and/or data science. Or"
+" expert programmers. But they might not have a background in software "
+"development. These users need to know:"
+msgstr ""
+
+#: ../../documentation/index.md:88
+msgid "How to install your package"
+msgstr ""
+
+#: ../../documentation/index.md:89
+msgid "How to install dependencies that your package requires"
+msgstr ""
+
+#: ../../documentation/index.md:90
+msgid "How to get started using the code base"
+msgstr ""
+
+#: ../../documentation/index.md:91
+msgid ""
+"Information on how to cite your code / give you credit if they are using "
+"it in a research application."
+msgstr ""
+
+#: ../../documentation/index.md:93
+msgid ""
+"Information on the license that your code uses so they know how they can "
+"or can't use the code in an operational setting."
+msgstr ""
+
+#: ../../documentation/index.md:96
+msgid "2. Potential tool contributors"
+msgstr ""
+
+#: ../../documentation/index.md:98
+msgid ""
+"The other subset of users are more experienced and/or more engaged with "
+"your package. As such they are potential contributors. These users:"
+msgstr ""
+
+#: ../../documentation/index.md:102
+msgid "might have a software development background,"
+msgstr ""
+
+#: ../../documentation/index.md:103
+msgid ""
+"might also be able to contribute bug fixes to your package or updates to "
+"your documentation"
+msgstr ""
+
+#: ../../documentation/index.md:104
+msgid ""
+"might also just be users who will find spelling errors in your "
+"documentation, or bugs in your tutorials."
+msgstr ""
+
+#: ../../documentation/index.md:106
+msgid ""
+"These users need all of the things that a basic user needs. But, they "
+"also need to understand how you'd like for them to contribute to your "
+"package. These potential contributors need:"
+msgstr ""
+
+#: ../../documentation/index.md:110
+msgid ""
+"A development guide to help them understand the infrastructure used in "
+"your package repository."
+msgstr ""
+
+#: ../../documentation/index.md:111
+msgid ""
+"Contributing guidelines that clarify the types of contributions that you "
+"welcome and how you'd prefer those contributions to be submitted."
+msgstr ""
+
+#: ../../documentation/index.md:114
+msgid ""
+"It's important to remember that the definition of what a contribution is "
+"can be broad. A contribution could be something as simple as a bug "
+"report. Or fixing a spelling issue in your documentation. Or it could be "
+"a code fix that includes a new test that covers an edge-case that they "
+"discovered."
+msgstr ""
+
+#: ../../documentation/index.md:120
+msgid "Documentation elements that pyOpenSci looks for reviewing a Python package"
+msgstr ""
+
+#: ../../documentation/index.md:122
+msgid ""
+"In the pyOpenSci open peer review, we look for a documentation structure "
+"that supports both your tool users and potential contributors. The files "
+"and elements that we look for specifically can be found in our peer "
+"review check list (see link below)."
+msgstr ""
+
+#: ../../documentation/index.md:127
+msgid ""
+"In this guide, we discuss each required element, and also discuss other "
+"elements that you should consider in your package's documentation in more"
+" detail."
+msgstr ""
+
+#: ../../documentation/index.md:131
+msgid "View pyOpenSci peer review check list"
+msgstr ""
+
+#: ../../documentation/index.md:138
+msgid ""
+"Image showing the files in the the MovingPandas GitHub repository. Files "
+"in the image include code of conduct.md contributing.md license.txt and "
+"readme.md."
+msgstr ""
+
+#: ../../documentation/index.md:144
+msgid ""
+"An example from the MovingPandas GitHub repository with all of the major "
+"files in it including CONTRIBUTING.md, README.md, CODE_OF_CONDUCT.md and "
+"a LICENSE.txt file. *(screen shot taken Nov 23 2022)*"
+msgstr ""
+
+#: ../../documentation/index.md:147
+msgid "What's next in this Python package documentation section?"
+msgstr ""
+
+#: ../../documentation/index.md:149
+msgid ""
+"In this section of the pyOpenSci package guide, we will walk you through "
+"best practices for setting up documentation for your Python package. We "
+"will also suggest tools that you can use to build your user-facing "
+"documentation website."
+msgstr ""
+
+#: ../../documentation/index.md:154
+msgid "Todo"
+msgstr ""
+
+#: ../../documentation/index.md:156
+msgid ""
+"Python version support You should always be explicit about which versions"
+" of Python your package supports. Keeping compatibility with old Python "
+"versions can be difficult as functionality changes. A good rule of thumb "
+"is that the package should support, at least, the latest three Python "
+"versions (e.g., 3.8, 3.7, 3.6)."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:1
+msgid "CHANGELOG.md Guide"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:5
+msgid ""
+"The `CHANGELOG.md` document serves as a valuable resource for developers "
+"and users alike to track the evolution of a project over time. "
+"Understanding the structure and purpose of a changelog helps users and "
+"contributors stay informed about new features, bug fixes, and other "
+"changes introduced in each release."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:7
+msgid "What is CHANGELOG.md?"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:9
+msgid ""
+"The primary purpose of `CHANGELOG.md` is to provide a record of notable "
+"changes made to the project with each new release. This document helps "
+"users understand what has been added, fixed, modified, or removed with "
+"each version of the software."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:11
+msgid ""
+"[Keep a CHAGELOG.md](https://keepachangelog.com/en/1.1.0/) is a great, "
+"simple resource for understanding what a changelog is and how to create a"
+" good changelog. It also includes examples of things to avoid."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:13
+msgid "Versioning your Python package and semantic versioning"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:16
+msgid ""
+"An important component of a package that serves as the backbone behind "
+"the changelog file is a good versioning scheme. Semantic Versioning is "
+"widely used across Python packages."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:17
+msgid ""
+"[Creating New Versions of Your Python Package](../../package-structure-"
+"code/python-package-versions.md)"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:18
+msgid "[Semantic Versioning](https://semver.org)"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:21
+msgid "Why is it important?"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:23
+msgid ""
+"A well-maintained changelog is essential for transparent communication "
+"with users and developers. It serves as a centralized hub for documenting"
+" changes and highlights the progress made in each release. By keeping the"
+" changelog up-to-date, project maintainers can build trust with their "
+"user base and demonstrate their commitment to improving the software."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:25
+msgid "What does it include?"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:27
+msgid ""
+"The contents of a changelog.md file typically follow a structured format,"
+" detailing the changes introduced in each release. While the exact format"
+" may vary depending on the project's conventions, some common elements "
+"found in changelogs for Python packages include:"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:29
+msgid ""
+"**Versioning**: Clear identification of each release version using "
+"semantic versioning or another versioning scheme adopted by the project."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:31
+msgid ""
+"**Release Date**: The date when each version was released to the public, "
+"providing context for the timeline of changes."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:33
+msgid ""
+"**Change Categories**: Organizing changes into categories such as "
+"\"Added,\" \"Changed,\" \"Fixed,\" and \"Removed\" to facilitate "
+"navigation and understanding."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:35
+msgid ""
+"**Description of Changes**: A concise description of the changes made in "
+"each category, including new features, enhancements, bug fixes, and "
+"deprecated functionality."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:37
+msgid ""
+"**Links to Issues or Pull Requests**: References to relevant issue "
+"tracker items or pull requests associated with each change, enabling "
+"users to access more detailed information if needed."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:39
+msgid ""
+"**Upgrade Instructions**: Guidance for users on how to upgrade to the "
+"latest version, including any breaking changes or migration steps they "
+"need to be aware of."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:41
+msgid ""
+"**Contributor Recognition**: Acknowledgment of contributors who made "
+"significant contributions to the release, fostering a sense of community "
+"and appreciation for their efforts."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:43
+msgid "How do maintainers use it?"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:45
+msgid "Often you will see a changelog that documents a few things:"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:47
+msgid "Unreleased Section"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:49
+msgid ""
+"Unreleased commits are at the top of the changelog, commonly in an "
+"`Unreleased` section. This is where you can add new fixes, updates and "
+"features that have been added to the package since the last release."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:51
+msgid "This section might look something like this:"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:59
+msgid "Release Sections"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:61
+msgid ""
+"When you are ready to make a new release, you can move the elements into "
+"a section that is specific to that new release number."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:63
+msgid ""
+"This specific release section will sit below the unreleased section and "
+"can include any updates, additions, deprecations and contributors."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:65
+msgid ""
+"The unreleased section then always lives at the top of the file and new "
+"features continue to be added there. At the same time, after releasing a "
+"version like v1.0 all of its features remain in that specific section."
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:83
+msgid "What does it look like?"
+msgstr ""
+
+#: ../../documentation/repository-files/changelog-file.md:85
+msgid ""
+"This example comes from [Devicely](https://github.com/hpi-"
+"dhc/devicely/blob/main/CHANGELOG.md), a pyOpenSci accepted package."
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:1
+msgid "The CODE_OF_CONDUCT file - Python Packaging"
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:3
+msgid "Example CODE_OF_CONDUCT files"
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:6
+msgid ""
+"[SciPy Code of Conduct file - notice they included theirs in their "
+"documentation](https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html)"
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:7
+msgid ""
+"[fatiando CODE_OF_CONDUCT.md "
+"file](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)"
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:10
+msgid ""
+"Your package should have a `CODE_OF_CONDUCT.md` file located the root of "
+"the repository. Once you have people using your package, you can consider"
+" the package itself as having a community around it. Some of this "
+"community uses your tool. These users may have questions or encounter "
+"challenges using your package."
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:16
+msgid ""
+"Others in the community might want to contribute to your tool. They might"
+" fix bugs, update documentation and engage with the maintainer team."
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:20
+msgid "Why you need a CODE_OF_CONDUCT"
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:22
+msgid ""
+"In order to keep this community healthy and to protect yourself, your "
+"maintainer team and your users from unhealthy behavior, it is important "
+"to have a [`CODE_OF_CONDUCT`](https://opensource.guide/code-of-conduct/)."
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:26
+msgid ""
+"The `CODE_OF_CONDUCT` is important as it establishes what you expect in "
+"terms of how users and contributors interact with maintainers and each "
+"other. It also establishes rules and expectations which can then be "
+"enforced if need be to protect others from harmful and/or negative "
+"behaviors."
+msgstr ""
+
+#: ../../documentation/repository-files/code-of-conduct-file.md:32
+msgid ""
+"If you are not comfortable with creating your own `CODE_OF_CONDUCT` text,"
+" we encourage you to adopt the `CODE_OF_CONDUCT` language used in the "
+"[Contributor Covenant](https://www.contributor-"
+"covenant.org/version/2/1/code_of_conduct/). [Many other "
+"communities](https://www.contributor-covenant.org/adopters/) have adopted"
+" this `CODE_OF_CONDUCT` as their own. See the [Fatiando a Terra "
+"Geoscience Python community's example "
+"here.](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:1
+msgid "Contributing File in your Python Open Source Package"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:3
+msgid "What a CONTRIBUTING.md file should contain"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:5
+msgid "Example contributing files"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:8
+msgid ""
+"[pyGMT contributing "
+"file](https://github.com/GenericMappingTools/pygmt/blob/main/CONTRIBUTING.md)"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:9
+msgid ""
+"[fatiando verde's contributing "
+"file](https://github.com/fatiando/verde/blob/main/CONTRIBUTING.md)"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:12
+msgid ""
+"Your Python open source package should include a file called "
+"**CONTRIBUTING.md** located in the root of your repository (with your "
+"**README.md** file)."
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:15
+msgid ""
+"The contributing file should include information about the types of "
+"contributions that you welcome, and how you'd like to see contributions "
+"happen."
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:19
+msgid ""
+"This guide should also include information for someone interested in "
+"asking questions, submitting issues or pull requests. It should have "
+"things like:"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:22
+msgid ""
+"Any guidelines that you have in place for users submitting issues, pull "
+"requests or asking questions."
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:23
+msgid "A link to your code of conduct"
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:24
+msgid "A link to licensing information found in your README file."
+msgstr ""
+
+#: ../../documentation/repository-files/contributing-file.md:25
+msgid "A link to a development guide if you have one"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:1
+msgid "What the development guide for your Python package should contain"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:3
+msgid ""
+"Ideally, your package should also have a development guide. This file may"
+" live in your package documentation and should be linked to from your "
+"CONTRIBUTING.md file (discussed above). A development guide should "
+"clearly show technically proficient users how to:"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:7
+msgid "Set up a development environment locally to work on your package"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:8
+msgid "Run the test suite"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:9
+msgid "Build documentation locally"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:11
+msgid "The development guide should also have guidelines for:"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:12
+msgid ""
+"code standards including docstring style, code format and any specific "
+"code approaches that the package follows."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:14
+msgid ""
+"It's also helpful to specify the types of tests you request if a "
+"contributor submits a new feature or a change to an existing feature that"
+" will not be covered by your existing test suite."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:16
+msgid ""
+"If you have time to document it, it's also helpful to document your "
+"maintainer workflow and release processes."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:18
+msgid "Why a development guide is important"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:20
+msgid "It's valuable to have a development guide, in the case that you wish to:"
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:23
+msgid "Onboard new maintainers."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:24
+msgid ""
+"Allow technically inclined contributors to make thoughtful and useful "
+"code based pull requests to your repository."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:26
+msgid ""
+"It also is important to pyOpenSci that the maintenance workflow is "
+"documented in the case that we need to help you onboard new maintainers "
+"in the future."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:31
+msgid ""
+"A well thought out continuous integration setup in your repository can "
+"allow users to skip building the package locally (especially if they are "
+"just updating text)."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:36
+msgid ""
+"A development guide, while strongly recommended, is not a file that "
+"pyOpenSci requires a package to have in order to be eligible for review. "
+"Some maintainers may also opt to include the development information in "
+"their contributing guide."
+msgstr ""
+
+#: ../../documentation/repository-files/development-guide.md:43
+msgid ""
+"[The Mozilla Science Lab website has a nice outline of things to consider"
+" when creating a contributing guide](https://mozillascience.github.io"
+"/working-open-workshop/contributing/)"
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:1
+msgid "Documentation Files That Should be in your Python Package Repository"
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:3
+msgid ""
+"In this section of the Python packaging guide, we review all of the files"
+" that you should have in your Python package repository. Your Python "
+"package should, at a minimum have the following files:"
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:7
+msgid ""
+"The files mentions above (README, Code of Conduct, license file, etc) are"
+" used as a measure of package community health on many online platforms. "
+"Below, you can see an example how Github evaluates community health. This"
+" community health link is available for all GitHub repositories."
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:13
+msgid ""
+"Image showing that the MovingPandas GitHub repository community health "
+"page with green checks next to each file including a description, README,"
+" code of conduct, contributing, license and issue templates. Note that "
+"Security policy has a yellow circle next to it as that is missing from "
+"the repo."
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:19
+msgid ""
+"GitHub community health looks for a readme file among other elements when"
+" it evaluates the community level health of your repository. This example"
+" is from the [MovingPandas GitHub "
+"repo](https://github.com/anitagraser/movingpandas/community) *(screen "
+"shot taken Nov 23 2022)*"
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:22
+msgid ""
+"[Snyk](https://snyk.io/advisor/python) is another well-known company that"
+" keeps tabs on package health. Below you can see a similar evaluation of "
+"files in the Github repo as a measure of community health."
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:26
+msgid ""
+"Screenshot of the Snyk page for movingpandas. It shows that the "
+"repository has a README file, contributing file, code of conduct. It also"
+" shows that it has 30 contributors and no funding. The package health "
+"score is 78/100."
+msgstr ""
+
+#: ../../documentation/repository-files/intro.md:32
+msgid ""
+"Screenshot showing [SNYK](https://snyk.io/advisor/python/movingpandas) "
+"package health for moving pandas. Notice both platforms look for a README"
+" file. *(screen shot taken Nov 23 2022)*"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:1
+msgid "License files for scientific Python open source software"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:3
+msgid ""
+"Want to learn how to add a license file to your GitHub repository? Check "
+"out this lesson."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:10
+msgid "What is a Open Source License file?"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:12
+msgid ""
+"When we talk about LICENSE files, we are referring to a file in your "
+"GitHub or GitLab repository that contains legally binding language that "
+"describes to your users how they can legally use  (and not use) your "
+"package."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:16
+msgid "Why licenses are important"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:18
+msgid ""
+"A license file is important for all open source projects because it "
+"protects both you as a maintainer and your users. The license file helps "
+"your users and the community understand:"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:20
+msgid "How they can use your software"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:21
+msgid "Whether the software can be reused or adapted for other purposes"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:22
+msgid "How people can contribute to your project"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:24
+msgid "and more."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:26
+msgid ""
+"[Read more about why license files are critical in protecting both you as"
+" a maintainer and your users of your scientific Python open source "
+"package.](https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i"
+"-need-to-protect-my-project)"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:29
+msgid "Where to store your license"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:31
+msgid ""
+"Your `LICENSE` file should be stored at root of your GitHub / GitLab "
+"repository."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:33
+msgid ""
+"Some maintainers customize the language in their license files for "
+"specific reasons. However, if you are just getting started, we suggest "
+"that you select a permissive license and then use the legal language "
+"templates provided both by GitHub and/or the "
+"[choosealicense.com](https://choosealicense.com/) website."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:36
+msgid ""
+"Licenses are legally binding, as such you should avoid trying to create "
+"your own license unless you have the guidance of legal council."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:38
+msgid "Use open permissive licenses when possible"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:40
+msgid ""
+"We generally suggest that you use a permissive, license that is [Open "
+"Software Initiative (OSI) approved](https://opensource.org/licenses/). If"
+" you are [submitting your package to pyOpenSci for peer "
+"review](https://www.pyopensci.org/about-peer-review/index.html), then we "
+"require an OSI approved license."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:44
+msgid "How to choose a license"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:46
+msgid ""
+"To select your license, we suggest that you use GitHub's [Choose a "
+"License tool ](https://choosealicense.com/)."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:49
+msgid ""
+"If you choose your license when creating a new GitHub repository, you can"
+" also automatically get a text copy of the license file to add to your "
+"repository. However in some cases the license that you want is not "
+"available through that online process."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:54
+msgid "License recommendations from the SciPy package"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:55
+msgid ""
+"[The SciPy documentation has an excellent overview of "
+"licenses.](https://docs.scipy.org/doc/scipy/dev/core-"
+"dev/index.html#licensing). Once of the key elements that these docs "
+"recommend is ensuring that the license that you select is complementary "
+"to license used in the core scientific Python ecosystem. Below is a "
+"highlight of this text which outlines license that are compatible with "
+"the modified BSD license that SciPy uses."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:61
+msgid ""
+"Other licenses that are compatible with the modified BSD license that "
+"SciPy uses are 2-clause BSD, MIT and PSF. Incompatible licenses are GPL, "
+"Apache and custom licenses that require attribution/citation or prohibit "
+"use for commercial purposes."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:63
+msgid ""
+"To coordinate with other packages in our scientific ecosystem, we also "
+"recommend that you consider using either BSD or MIT as your license. If "
+"you are unsure, the MIT license tends to be a simpler easier-to-"
+"understand option."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:69
+msgid ""
+"Important: make sure that you closely follow the guidelines outlines by "
+"the License that you chose"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:71
+msgid ""
+"Every license has different guidelines in terms of what code you can use "
+"in your package and also how others can (or can not) use the code in your"
+" package."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:74
+msgid ""
+"If you borrow code from other tools or online sources, make sure that the"
+" license for the code that you are using also complies with the license "
+"that you selected for your package."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:78
+msgid "An example of how a license determine how code can be reused"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:81
+msgid ""
+"Let's use StackOverflow as an example that highlights how a license "
+"determines how code can or can not be used."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:83
+msgid ""
+"[Stack overflow uses a Creative Commons Share Alike "
+"license.](https://stackoverflow.com/help/licensing). The sharealike "
+"license requires you to use the same sharealike license when you reuse "
+"any code from StackOverflow."
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:85
+msgid ""
+"This means that technically, if you copy code from the Stack Overflow "
+"website, and use it in your package. And your packages uses a different "
+"license such as a MIT license, you are violating Stack Overflow's license"
+" requirements!"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:87
+msgid "🚨 Proceed with caution! 🚨"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:91
+msgid "What about software citation?"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:93
+msgid ""
+"While many permissive licenses do not require citation we STRONG "
+"encourage that you cite all software that you use in papers, blogs and "
+"other publications. You tell your users how to cite your package by using"
+" a [citation.cff file](https://docs.github.com/en/repositories/managing-"
+"your-repositorys-settings-and-features/customizing-your-repository/about-"
+"citation-files). We will cover this topic when we talk about creating "
+"DOI's for your package using zenodo."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:1
+msgid "README File Guidelines and Resources"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:3
+msgid ""
+"Your **README.md** file should be located in the root of your GitHub "
+"repository. The **README.md** file is important as it is often the first "
+"thing that someone sees before they install your package."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:7
+msgid "The README.md file is the landing page of:"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:9
+msgid ""
+"Your package as it appears on a repository site such as PyPI or "
+"Anaconda.org"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:10
+msgid "Your package's GitHub repository"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:12
+msgid ""
+"Your README.md file is also used as a measure of package and community "
+"health on sites such as:"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:14
+msgid ""
+"[GitHub community health for MovingPandas (available for all "
+"repositories)](https://github.com/anitagraser/movingpandas/community) and"
+" [Snyk - moving pandas "
+"example](https://snyk.io/advisor/python/movingpandas)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:17
+msgid ""
+"README landing page screenshot for the Pandera package. It has the "
+"Pandera logo at the top - which has two arrows in a chevron pattern "
+"pointing downward within a circle. Subtitle is statistical data testing "
+"toolkit. A data validation library for scientists, engineering, and "
+"analytics seeking correctness. Below that are a series of badges "
+"including CI tests passing, docs passing, version of Pandera on pypi "
+"(0.13.4), MIT license and that it has been pyOpenSci peer reviewed. There"
+" are numerous badges below that. Finally below the badges the text says, "
+"Pandera provides a flexible and expressive API for performing data "
+"validation on dataframe-like objects to make data processing pipelines "
+"more readable and robust."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:23
+msgid ""
+"Your GitHub repository landing page highlights the README.md file. Here "
+"you can see the README.md file for the pyOpenSci package "
+"[Pandera](https://github.com/unionai-oss/pandera). *(screen shot taken "
+"Nov 23 2022)*"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:26
+msgid ""
+"Thus, it is important that you spend some time up front creating a high "
+"quality **README.md** file for your Python package."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:30
+msgid ""
+"An editor or the editor in chief will ask you to revise your README file "
+"before a review begins if it does not meet the criteria specified below."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:33
+msgid "Please go through this list before submitting your package to pyOpenSci"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:50
+msgid "What your README.md file should contain"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:52
+msgid ""
+"Your **README.md** file should contain the following things (listed from "
+"top to bottom):"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:54
+msgid "✔️ Your package's name"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:55
+msgid ""
+"Ideally your GitHub repository's name is also the name of your package. "
+"The more self explanatory that name is, the better."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:58
+msgid ""
+"✔️ Badges for current package version, continuous integration and test "
+"coverage"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:60
+msgid ""
+"Badges are a useful way to draw attention to the quality of your project."
+" Badges assure users that your package is well-designed, tested, and "
+"maintained. They are also a useful maintenance tool to evaluate if things"
+" are building properly. A great example of this is adding a [Read the "
+"Docs status badge](https://docs.readthedocs.io/en/stable/badges.html) to "
+"your README.md file to quickly see when the build on that site fails."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:66
+msgid ""
+"It is common to provide a collection of badges towards the top of your "
+"README file for others to quickly browse."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:69
+msgid "Some badges that you might consider adding to your README file include:"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:71
+msgid "Current version of the package on PyPI / Anaconda.org"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:73
+msgid ""
+"Example: [![PyPI version "
+"shields.io](https://img.shields.io/pypi/v/pandera.svg)](https://pypi.org/project/pandera/)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:73
+msgid "PyPI version shields.io"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:75
+msgid ""
+"Status of tests (pass or fail) - Example: [![CI Build](https://github.com"
+"/pandera-"
+"dev/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com"
+"/pandera-"
+"dev/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:75
+msgid "CI Build"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:77
+msgid ""
+"Documentation build - Example: ![Docs "
+"Building](https://github.com/pyOpenSci/python-package-"
+"guide/actions/workflows/build-book.yml/badge.svg)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:77
+msgid "Docs Building"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:79
+msgid ""
+"DOI (for citation) Example: "
+"[![DOI](https://zenodo.org/badge/556814582.svg)](https://zenodo.org/badge/latestdoi/556814582)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:79
+msgid "DOI"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:82
+msgid ""
+"Once you package is accepted to pyOpenSci, we will provide you with a "
+"badge to add to your repository that shows that it has been reviewed. "
+"[![pyOpenSci](https://pyopensci.org/badges/peer-"
+"reviewed.svg)](https://github.com/pyOpenSci/software-review/issues/12)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:82
+msgid "pyOpenSci"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:90
+msgid ""
+"Beware of the overuse of badges! There is such a thing as too much of a "
+"good thing (which can overload a potential user!)."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:93
+msgid "✔️ A short, easy-to-understand description of what your package does"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:95
+msgid ""
+"At the top of your README file you should have a short, easy-to-"
+"understand, 1-3 sentence description of what your package does. This "
+"section should clearly state your goals for the package. The language in "
+"this description should use less technical terms so that a variety of "
+"users with varying scientific (and development) backgrounds can "
+"understand it."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:101
+msgid ""
+"In this description, it's useful to let users know how your package fits "
+"within the broader scientific Python package ecosystem. If there are "
+"other similar packages or complementary package mentions them here in 1-2"
+" sentences."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:106
+msgid ""
+"Consider writing for a high school level (or equivalent) level. This "
+"level of writing is often considered an appropriate level for scientific "
+"content that serves a variety of users with varying backgrounds."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:110
+msgid ""
+"The goal of this description is to maximize accessibility of your "
+"**README** file."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:114
+msgid "✔️ Installation instructions"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:116
+msgid ""
+"Include instructions for installing your package. If you have published "
+"the package on both PyPI and Anaconda.org, be sure to include "
+"instructions for both."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:119
+msgid "✔️ Document any additional setup required"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:121
+msgid ""
+"Add any additional setup required such as authentication tokens, to get "
+"started using your package. If setup is complex, consider linking to an "
+"installation page in your online documentation here rather than over "
+"complicating your README file."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:126
+msgid "✔️ Brief demonstration of how to use the package"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:128
+msgid ""
+"This description ideally includes a brief, quick start code example that "
+"shows a user how to get started using your package."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:131
+msgid "✔️ Descriptive links to package documentation, short tutorials"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:133
+msgid "Include descriptive links to:"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:135
+msgid "The package's documentation page."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:136
+msgid "Short tutorials that demonstrate application of your package."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:138
+msgid "Too Much Of A Good Thing"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:141
+msgid ""
+"Try to avoid including several tutorials in the README.md file itself. "
+"This too will overwhelm the user with information."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:143
+msgid ""
+"A short quick-start code example that shows someone how to use your "
+"package is plenty of content for the README file. All other tutorials and"
+" documentation should be presented as descriptive links."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:149
+msgid "✔️ A Community Section with Links to Contributing Guide, Code of Conduct"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:151
+msgid "Use your README.md file to direct users to more information on:"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:153
+msgid "Contributing to your package"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:154
+msgid "Development setup for more advanced technical contributors"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:155
+msgid "Your code of conduct"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:156
+msgid "Licensing information"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:158
+msgid ""
+"All of the above files are important for building community around your "
+"project."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:161
+msgid "✔️ Citation information"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:163
+msgid ""
+"Finally be sure to include instructions on how to cite your package. "
+"Citation should include the DOI that you want used when citing your "
+"package, and any language that you'd like to see associated with the "
+"citation."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:167
+msgid "README Resources"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:171
+msgid ""
+"Below are some resources on creating great README.md files that you might"
+" find helpful."
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:174
+msgid ""
+"[How to Write a Great README - Bane "
+"Sullivan](https://github.com/banesullivan/README)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:175
+msgid ""
+"[Art of README - Kira (@hackergrrl)](https://github.com/hackergrrl/art-"
+"of-readme)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:1
+msgid "Create tutorials in your Python package documentation"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:6
+msgid ""
+"Your package should have tutorials that make it easy for a user to get "
+"started using your package. Ideally, those tutorials also can be run from"
+" start to finish providing a second set of checks (on top of your test "
+"suite) to your package's code base."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:11
+msgid ""
+"On this page, we review two Sphinx extensions (`sphinx-gallery` and "
+"`nbsphinx`) that  allow you to create reproducible tutorials that are run"
+" when your Sphinx documentation builds."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:15
+msgid "Create Python package tutorials that run when you build your docs"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:17
+msgid ""
+"Adding well constructed tutorials to your package will make it easier for"
+" someone new to begin using your package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:20
+msgid ""
+"There are two Sphinx tools that make it easy to add tutorials to your "
+"package:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:22
+msgid "[Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) and"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:23
+msgid "[NbSphinx](https://nbsphinx.readthedocs.io/en/latest/)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:25
+msgid "Both of these tools act as Sphinx extensions and:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:27
+msgid ""
+"Support creating a gallery type page in your Sphinx documentation where "
+"users can explore tutorials via thumbnails."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:28
+msgid ""
+"Run the code in your tutorials adding another level of \"testing\" for "
+"your package as used."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:29
+msgid "Render your tutorials with Python code and plot outputs"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:31
+msgid "[sphinx gallery:](https://sphinx-gallery.github.io/stable/index.html)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:33
+msgid ""
+"If you prefer to write your tutorials using Python **.py** scripts, you "
+"may enjoy using Sphinx gallery. Sphinx gallery uses **.py** files with "
+"text and code sections that mimic the Jupyter Notebook format. When you "
+"build your documentation, the gallery extension:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:38
+msgid ""
+"Runs the code in each tutorial. Running your tutorial like this acts as a"
+" check to ensure your package's functions, classes, methods, and "
+"attributes (ie the API) are working as they should."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:39
+msgid ""
+"Creates a downloadable Jupyter Notebook **.ipynb** file and a  **.py** "
+"script for your tutorial that a user can quickly download and run."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:40
+msgid ""
+"Creates a rendered  **.html** page with the code elements and code "
+"outputs in a user-friendly tutorial gallery."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:41
+msgid ""
+"Creates a gallery landing page with visual thumbnails for each tutorial "
+"that you create."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:44
+msgid ""
+"Image showing the gallery output provided by sphinx-gallery where each "
+"tutorial is in a grid and the tutorial thumbnails are created from a "
+"graphic in the tutorial."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:50
+msgid ""
+"`sphinx-gallery` makes it easy to create a user-friendly tutorial "
+"gallery. Each tutorial has a download link where the user can download a "
+"**.py** file or a Jupyter Notebook. And it renders the tutorials in a "
+"user-friendly grid."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:54
+msgid "Below you can see what a tutorial looks like created with sphinx-gallery."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:56
+msgid ""
+"Image showing ta single tutorial from Sphinx gallery. The tutorial shows "
+"a simple matplotlib created plot and associated code."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:62
+msgid ""
+"`sphinx-gallery` tutorials by default include download links for both the"
+" python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at"
+" the bottom."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:66
+msgid "Sphinx Gallery benefits"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:67
+msgid "easy-to-download notebook and .py outputs for each tutorials."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:68
+msgid ".py files are easy to work with in the GitHub pull request environment."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:69
+msgid "Nice gridded gallery output."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:70
+msgid ""
+"Build execution time data per tutorial. [Example](https://sphinx-"
+"gallery.github.io/stable/auto_examples/sg_execution_times.html)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:72
+msgid "Sphinx gallery challenges"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:74
+msgid "The downsides of using Sphinx gallery include:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:76
+msgid ""
+"the **.py** files can be finicky to configure, particularly if you have "
+"matplotlib plot outputs."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:78
+msgid ""
+"For example: To allow for plots to render, you need to name each file "
+"with `plot_` at the beginning."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:81
+msgid ""
+"Many users these days are used to working in Jupyter Notebooks. .py may "
+"be slightly less user friendly to work with"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:83
+msgid ""
+"These nuances can make it challenging for potential contributors to add "
+"tutorials to your package. This can also present maintenance challenge."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:86
+msgid "Add about the gallery setup:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:93
+msgid "File directory structure:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:114
+msgid ""
+"[nbsphinx - tutorials using Jupyter "
+"Notebooks](https://nbsphinx.readthedocs.io/en/latest/)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:116
+msgid ""
+"If you prefer to use Jupyter Notebooks to create tutorials you can use "
+"nbsphinx. nbsphinx operates similarly to Sphinx gallery in that:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:119
+msgid "It runs your notebooks and produces outputs in the rendered tutorials"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:121
+msgid ""
+"Pro/con By default it does not support downloading of **.py** and "
+"**.ipynb** files. However you can add a [link to the notebook at the top "
+"of the page with some additional conf.py settings (see: epilog "
+"settings)](https://nbsphinx.readthedocs.io/en/0.8.10/prolog-and-"
+"epilog.html)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:125
+msgid ""
+"Image showing the gallery output provided by nbsphinx using the sphinx-"
+"gallery front end interface."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/create-package-tutorials.md:131
+msgid ""
+"`nbsphinx` can be combined with Sphinx gallery to create a gallery of "
+"tutorials. However, rather than rendering the gallery as a grid, it lists"
+" all of the gallery elements in a single column."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:1
+msgid "Document the code in your package's API using docstrings"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:3
+msgid "What is an API?"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:5
+msgid ""
+"API stands for **A**pplied **P**rogramming **I**nterface. When discussed "
+"in the context of a (Python) package, the API refers to the functions, "
+"classes, methods, and attributes that a package maintainer creates for "
+"users."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:9
+msgid ""
+"A simple example of a package API element: For instance, a package might "
+"have a function called `add_numbers()` that adds up a bunch of numbers. "
+"To add up numbers, you as the user simply call `add_numbers(1,2,3)` and "
+"the package function calculates the value and returns `6`. By calling the"
+" `add_numbers` function, you are using the package's API."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:15
+msgid ""
+"Package APIs consist of functions, classes, methods and attributes that "
+"create a user interface."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:17
+msgid "What is a docstring and how does it relate to documentation?"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:19
+msgid ""
+"In Python, a docstring refers to text in a function, method or class that"
+" describes what the function does and its inputs and outputs. Python "
+"programmers usually refer to the inputs to functions as "
+"[\"parameters\"](https://docs.python.org/3/glossary.html#term-parameter) "
+"or [\"arguments\"](https://docs.python.org/3/faq/programming.html#faq-"
+"argument-vs-parameter), and the outputs are often called \"return "
+"values\""
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:22
+msgid "The docstring is thus important for:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:24
+msgid ""
+"When you call `help()` in Python, for example, `help(add_numbers)` will "
+"show the text of the function's docstring. The docstring thus helps a "
+"user better understand how to apply the function more effectively to "
+"their workflow."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:25
+msgid ""
+"When you build your package's documentation, the docstrings can also be "
+"used to automatically create full API documentation that provides a clean"
+" view of all its functions, classes, methods, and attributes."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:28
+msgid ""
+"Example API Documentation for all functions, classes, methods, and "
+"attributes in a package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:29
+msgid ""
+"[View example high-level API documentation for the Verde package. This "
+"page lists every function and class in the package along with a brief "
+"explanation of what it "
+"does](https://www.fatiando.org/verde/latest/api/index.html)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:30
+msgid ""
+"[You can further dig down to see what a specific function does within the"
+" package by clicking on an API "
+"element](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:33
+msgid "Python package API documentation"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:35
+msgid ""
+"If you have a descriptive docstring for every user-facing class, method, "
+"attribute and/or function in your package (_within reason_), then your "
+"package's API is considered well-documented."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:38
+msgid ""
+"In Python, this means that you need to add a docstring for every user-"
+"facing class, method, attribute and/or function in your package (_within "
+"reason_) that:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:42
+msgid "Explains what the function, method, attribute, or class does"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:43
+msgid "Defines the `type` inputs and outputs (ie. `string`, `int`, `np.array`)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:44
+msgid "Explains the expected output `return` of the object, method or function."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:47
+msgid "Three Python docstring formats and why we like NumPy style"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:49
+msgid ""
+"There are several Python docstring formats that you can choose to use "
+"when documenting your package including:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:52
+msgid ""
+"[NumPy-style](https://numpydoc.readthedocs.io/en/latest/format.html"
+"#docstring-standard)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:53
+msgid ""
+"[google style](https://sphinxcontrib-"
+"napoleon.readthedocs.io/en/latest/example_google.html)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:54
+msgid ""
+"[reST style](https://sphinx-rtd-"
+"tutorial.readthedocs.io/en/latest/docstrings.html)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:58
+msgid ""
+"We suggest using [NumPy-style "
+"docstrings](https://numpydoc.readthedocs.io/en/latest/format.html"
+"#docstring-standard) for your Python documentation because:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:61
+msgid ""
+"NumPy style docstrings are core to the scientific Python ecosystem and "
+"defined in the [NumPy style "
+"guide](https://numpydoc.readthedocs.io/en/latest/format.html). Thus you "
+"will find them widely used there."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:62
+msgid ""
+"The Numpy style docstring is simplified and thus easier to read both in "
+"the code and when calling `help()` in Python. In contrast, some feel that"
+" reST style docstrings are harder to quickly scan, and can take up more "
+"lines of code in modules."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:65
+msgid ""
+"If you are using NumPy style docstrings, be sure to include the [sphinx "
+"napoleon extension](https://www.sphinx-"
+"doc.org/en/master/usage/extensions/napoleon.html) in your documentation "
+"`conf.py` file. This extension allows Sphinx to properly read and format "
+"NumPy format docstrings."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:70
+msgid "Docstring examples Better and Best"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:72
+msgid ""
+"Below is a good example of a well-documented function. Notice that this "
+"function's docstring describes the function's inputs and the function's "
+"output (or return value). The initial description of the function is "
+"short (one line). Following that single-line description, there is a "
+"slightly longer description of what the function does (2 to 3 sentences)."
+" The return of the function is also specified."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:106
+msgid "Best: a docstring with example use of the function"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:108
+msgid ""
+"This example contains an example of using the function that is also "
+"tested in sphinx using "
+"[doctest](https://docs.python.org/3/library/doctest.html)."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:159
+msgid ""
+"Using the above NumPy format docstring in sphinx, the autodoc extension "
+"will create the about documentation section for the `extent_to_json` "
+"function. The output of the `es.extent_to_json(rmnp)` command can even be"
+" tested using doctest adding another quality check to your package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:165
+msgid ""
+"Using doctest to run docstring examples in your package's methods and "
+"functions"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:170
+msgid ""
+"Above, we provided some examples of good, better, best docstring formats."
+" If you are using Sphinx to create your docs, you can add the "
+"[doctest](https://www.sphinx-"
+"doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx"
+" build. Doctest provides an additional check for docstrings with example "
+"code in them. Doctest runs the example code in your docstring `Examples` "
+"checking that the expected output is correct. Similar to running "
+"tutorials in your documentation, `doctest` can be a useful step that "
+"assures that your package's code (API) runs as you expect it to."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:177
+msgid ""
+"It's important to keep in mind that examples in your docstrings help "
+"users using your package. Running `doctest` on those examples provides a "
+"check of your package's API. doctest ensures that the functions and "
+"methods in your package run as you expect them to. Neither of these items"
+" replace a separate, stand-alone test suite that is designed to test your"
+" package's core functionality across operating systems and Python "
+"versions."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:185
+msgid ""
+"Below is an example of a docstring with an example. doctest will run the "
+"example below and test that if you provide `add_me` with the values 1 and"
+" 3 it will return 4."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:218
+msgid "Adding type hints to your docstrings"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:220
+msgid ""
+"In the example above, you saw the use of numpy-style docstrings to "
+"describe data types that are passed into functions as parameters or into "
+"classes as attributes. In a numpy-style docstring you add those types in "
+"the Parameters section of the docstring. Below you can see that the "
+"parameter `num1` and `num2` should both be a Python `int` (integer) "
+"value."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:235
+msgid ""
+"Describing the expected data type that a function or method requires "
+"helps users better understand how to call a function or method."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:238
+msgid ""
+"Type-hints add another layer of type documentation to your code. Type-"
+"hints make it easier for new developers, your future self or contributors"
+" to get to know your code base quickly."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:242
+msgid ""
+"Type hints are added to the definition of your function. In the example "
+"below, the parameters aNum and aNum2 are defined as being type = int "
+"(integer)."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:249
+msgid ""
+"You can further describe the expected function output using `->`. Below "
+"the output of the function is also an int."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:257
+msgid "Why use type hints"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:259
+msgid "Type hints:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:261
+msgid "Make development and debugging faster,"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:262
+msgid ""
+"Make it easier for a user to see the data format inputs and outputs of "
+"methods and functions,"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:263
+msgid ""
+"Support using static type checking tools such as [`mypy`](https://mypy-"
+"lang.org/) which will check your code to ensure types are correct."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:265
+msgid "You should consider adding type hinting to your code if:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:267
+msgid "Your package performs data processing,"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:268
+msgid "You use functions that require complex inputs"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:269
+msgid ""
+"You want to lower the entrance barrier for new contributors to help you "
+"with your code."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:271
+msgid "Beware of too much type hinting"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:274
+msgid "As you add type hints to your code consider that in some cases:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:276
+msgid ""
+"If you have a complex code base, type hints may make code more difficult "
+"to read. This is especially true when a parameter’s input takes multiple "
+"data types and you list each one."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:277
+msgid ""
+"Writing type hints for simple scripts and functions that perform obvious "
+"operations don't make sense."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:280
+msgid "Gradually adding type hints"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:282
+msgid ""
+"Adding type hints can take a lot of time. However, you can add type hints"
+" incrementally as you work on your code."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:286
+msgid ""
+"Adding type hints is also a great task for new contributors. It will help"
+" them get to know your package's code and structure better before digging"
+" into more complex contributions."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:1
+msgid "Create User Facing Documentation for your Python Package"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:14
+msgid "Core components of user-facing Python package documentation"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:15
+msgid "Below we break documentation into two broad types."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:17
+msgid ""
+"**User-facing documentation** refers to documentation that describes the "
+"way the tools within a package are broadly used in workflows. **API "
+"documentation** refers to documentation of functions, classes, methods, "
+"and attributes in your code and is written at a more granular level. This"
+" documentation is what a user sees when they type `help(function-name)`."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:23
+msgid ""
+"Your user-facing documentation for your Python package should include "
+"several core components."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:26
+msgid ""
+"**Documentation Website:** This refers to easy-to-read documentation that"
+" helps someone use your package. This documentation should help users "
+"both install and use your package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:27
+msgid ""
+"**Short Tutorials:** Your user-facing documentation should also include "
+"[**short tutorials** that showcase core features of your package](create-"
+"package-tutorials)."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:28
+msgid ""
+"**Package Code / API documentation:** You package's functions, classes, "
+"methods, and attributes (the API) should also be documented. API "
+"documentation can be generated from "
+"[docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html)"
+" found in your code. Ideally, you have docstrings for all user-facing "
+"functions, classes, and methods in your Python package. [We discuss code "
+"documentation and docstrings in greater detail here.](document-your-code-"
+"api-docstrings)"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:32
+msgid "Write usable documentation"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:34
+msgid ""
+"User-facing documentation should be published on a easy-to-navigate "
+"website. The documentation should be written keeping in mind that users "
+"may not be developers or expert-level programmers. Rather, the language "
+"that you use in your documentation should not be highly technical."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:39
+msgid ""
+"To make the language of your documentation more accessible to a broader "
+"audience:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:42
+msgid "Whenever possible, define technical terms and jargon."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:43
+msgid "Consider writing instructions for a high-school level reader."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:44
+msgid ""
+"Include step-by-step code examples, tutorials or vignettes that support "
+"getting started using your package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:46
+msgid "Four elements of a good open source documentation landing page"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:48
+msgid ""
+"To make it easy for users to find what they need quickly, consider adding"
+" quick links on your package's landing page to the following elements:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:52
+msgid ""
+"**Getting started:** This section should provide the user with a quick "
+"start for installing your package. A small example of how to use the "
+"package is good to have here as well. Or you can link to useful tutorials"
+" in the get started section."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:53
+msgid ""
+"**About:** Describe your project,  stating its goals and its "
+"functionality."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:54
+msgid ""
+"**Community:** Instructions for how to help and/or get involved. This "
+"might include links to your issues (if that is where you let users ask "
+"questions) or the discussion part of your GitHub repo. This section might"
+" include a development guide for those who might contribute to your "
+"package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:55
+msgid ""
+"**API Documentation:** This is the detailed project documentation. Here "
+"you store documentation for your package's API including all user-facing "
+"functions, classes, methods, and attributes as well as any additional "
+"high level discussion that will help people use your package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:58
+msgid ""
+"Image showing the landing page for GeoPandas documentation which has 4 "
+"sections including Getting started, Documentation, About GeoPandas, "
+"Community."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:64
+msgid ""
+"The documentation landing page of GeoPandas, a spatial Python library, "
+"has the 4 element specified above. Notice that the landing page is simple"
+" and directs users to each element using a Sphinx card."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:67
+msgid ""
+"NOTE: in many cases you can include your **README** file and your "
+"**CONTRIBUTING** files in your documentation given those files may have "
+"some of the components listed above."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/get-started.md:71
+msgid ""
+"You can include files in Sphinx using the include directive. Below is an "
+"example of doing this using `myst` syntax."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/intro.md:1
+msgid "Writing user-facing documentation for your Python package"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/intro.md:3
+msgid ""
+"This section walks you through best practices for with writing "
+"documentation for your Python package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/intro.md:6
+msgid ""
+"We talk about the elements that you should consider adding to your "
+"documentation, the different types of users who might read your "
+"documentation and how to create tutorials for your package."
+msgstr ""
+
+#: ../../documentation/write-user-documentation/intro.md:10
+msgid ""
+"Here we also cover sphinx extensions that you can user to make "
+"documentation easier such as:"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/intro.md:13
+msgid ""
+"autodoc to automagically populate documentation for your code's "
+"functions, classes, methods and attributes (API documentation) and"
+msgstr ""
+
+#: ../../documentation/write-user-documentation/intro.md:15
+msgid "sphinx gallery for tutorials."
+msgstr ""
+
