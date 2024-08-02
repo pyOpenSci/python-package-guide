@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 18:04+0900\n"
+"POT-Creation-Date: 2024-06-28 08:42-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -913,231 +913,116 @@ msgstr ""
 msgid "Discourages misuse of your package and associated code"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:1
-msgid "Get to Know Hatch"
+#: ../../tutorials/get-to-know-hatch.md:1 ../../tutorials/intro.md:27
+#: ../../tutorials/setup-py-to-pyproject-toml.md:24
+msgid "Get to know Hatch"
 msgstr ""
 
 #: ../../tutorials/get-to-know-hatch.md:3
 msgid ""
-"Our Python packaging tutorials use the tool "
-"[Hatch](https://hatch.pypa.io/latest/). While there are [many great "
-"packaging tools](/package-structure-code/python-package-build-tools) out "
-"there, we have selected Hatch because:"
+"Our Python packaging tutorials use the tool Hatch. In this tutorial, you "
+"will install and get to know Hatch a bit more before starting to use it."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:8
-msgid ""
-"It is an end-to-end tool that supports most of the steps required to "
-"create a quality Python package. Beginners will have fewer tools to learn"
-" if they use Hatch."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:11
-msgid ""
-"It supports different build back-ends if you ever need to compile code in"
-" other languages."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:13
-msgid ""
-"As a community, pyOpenSci has decided that Hatch is a user-friendly tool "
-"that supports many different scientific Python use cases."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:16
-msgid ""
-"In this tutorial, you will install and get to know Hatch a bit more "
-"before starting to use it."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:19
-msgid "You need two things to successfully complete this tutorial:"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:21
-msgid "You need Python installed."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:22
-msgid "You need Hatch installed."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:25
-msgid ""
-"If you don't already have Python installed on your computer, Hatch will "
-"do it for you when you install Hatch."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:29
+#: ../../tutorials/get-to-know-hatch.md:6
 msgid "Install Hatch"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:31
+#: ../../tutorials/get-to-know-hatch.md:7
 msgid ""
-"To begin, follow the operating-system-specific instructions below to "
-"install Hatch."
+"To begin, install Hatch from the command line using "
+"[pipx](https://pipx.pypa.io/stable/)"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md
-msgid "MAC"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:38
+#: ../../tutorials/get-to-know-hatch.md:14
 msgid ""
-"Follow the instructions "
-"[here](https://hatch.pypa.io/latest/install/#installers)."
+"Hatch can also be installed directly using `pip` or `conda`, but we "
+"encourage you to use `pipx`. This is because `pipx` will ensure that your"
+" package is available across all of your Python environments on your "
+"computer rather than just in the environment that you install it into. If"
+" you install hatch this way you will have to take care that the "
+"environment it is installed into is activated for the command to work."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:40
+#: ../../tutorials/get-to-know-hatch.md:21
 msgid ""
-"Download the latest GUI installer for MAC [hatch-"
-"universal.pkg](https://github.com/pypa/hatch/releases/latest/download"
-"/hatch-universal.pkg)."
+"You can check that hatch is working properly by issuing a simple command "
+"to get the version"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:41
-msgid "Run the installer and follow the setup instructions."
+#: ../../tutorials/get-to-know-hatch.md:28
+msgid "Note the version numbers will likely be different"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:42
-msgid "If your terminal is open, then restart it."
+#: ../../tutorials/get-to-know-hatch.md:30
+msgid "Configure hatch"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md
-msgid "Windows"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:48
+#: ../../tutorials/get-to-know-hatch.md:32
 msgid ""
-"In your browser, download the correct `.msi` file for your system: "
-"[hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch-x64.msi)"
+"Once you have installed Hatch, you will want to customize the "
+"configuration."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:50
-msgid "Run your downloaded installer file and follow the on-screen instructions."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md
-msgid "Linux"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:56
+#: ../../tutorials/get-to-know-hatch.md:34
 msgid ""
-"We suggest that you install Hatch using pipx on Linux. however, if you "
-"prefer another method, check out the [Hatch installation "
-"documentation](https://hatch.pypa.io/latest/install/) for other methods."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:70
-msgid ""
-"Hatch can also be installed directly using "
-"[pip](https://hatch.pypa.io/latest/install/#pip) or "
-"[conda](https://hatch.pypa.io/latest/install/#conda). We encourage you to"
-" follow the instructions above because we have found that the Hatch "
-"installers for Windows and Mac are the easiest and most efficient."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:74
-msgid ""
-"Our Linux users have found success installing Hatch with pipx if they "
-"already use apt install."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:77
-msgid ""
-"Both approaches (using a graphical installer on Windows/Mac and pipx) "
-"ensure that you have Hatch installed globally. A global install means "
-"that Hatch is available across all of your Python environments on your "
-"computer."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:82
-msgid "Check that hatch installed correctly"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:84
-msgid ""
-"Once you have completed the installation instructions above, you can open"
-" your terminal, and make sure that Hatch installed correctly using the "
-"command below:"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:92
-msgid ""
-"*Note the version number output of `hatch --version` will likely  be "
-"different from the output above in this tutorial.*"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:95
-msgid "Configure Hatch"
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:97
-msgid ""
-"Once you have installed Hatch, you can customize its configuration. This "
-"includes setting the default name and setup for every package you create."
-" While this step is not required, we suggest that you do it."
-msgstr ""
-
-#: ../../tutorials/get-to-know-hatch.md:101
-msgid ""
-"Hatch stores your configuration in a [`config.toml` "
+"Hatch stores your configuration information in a [`config.toml` "
 "file](https://hatch.pypa.io/latest/config/project-templates/)."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:103
+#: ../../tutorials/get-to-know-hatch.md:36
 msgid ""
 "While you can update the `config.toml` file through the command line, it "
-"might be easier to look at and update it in a text editor if you are "
+"might be easier to look at it and update it in a text editor if you are "
 "using it for the first time."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:107
-msgid "Step 1: Open and Edit Your `config.toml` File"
+#: ../../tutorials/get-to-know-hatch.md:39
+msgid "Step 1: Open and edit your `config.toml` file"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:109
+#: ../../tutorials/get-to-know-hatch.md:41
 msgid ""
 "To open the config file in your file browser, run the following command "
 "in your shell:"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:112
+#: ../../tutorials/get-to-know-hatch.md:43
 msgid "`hatch config explore`"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:114
+#: ../../tutorials/get-to-know-hatch.md:45
 msgid ""
-"This will open up a directory window that allows you to double-click on "
-"the file and open it in your favorite text editor."
+"This will open up a directory window that will allow you to double click "
+"on the file and open it in your favorite text editor."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:117
+#: ../../tutorials/get-to-know-hatch.md:47
 msgid ""
 "You can also retrieve the location of the Hatch config file by running "
 "the following command in your shell:"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:125
+#: ../../tutorials/get-to-know-hatch.md:54
 msgid "Step 2 - update your email and name"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:127
+#: ../../tutorials/get-to-know-hatch.md:56
 msgid ""
 "Once the file is open, update the [template] table of the `config.toml` "
 "file with your name and email. This information will be used in any "
 "`pyproject.toml` metadata files that you create using Hatch."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:137
+#: ../../tutorials/get-to-know-hatch.md:64
 msgid "Step 3"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:139
+#: ../../tutorials/get-to-know-hatch.md:66
 msgid "Next, set tests to false in the `[template.plugins.default]` table."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:141
+#: ../../tutorials/get-to-know-hatch.md:68
 msgid ""
 "While tests are important, setting the tests configuration in Hatch to "
 "`true` will create a more complex `pyproject.toml` file. You won't need "
@@ -1145,11 +1030,11 @@ msgid ""
 " introduce it in later tutorials."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:146
+#: ../../tutorials/get-to-know-hatch.md:73
 msgid "Your `config.toml` file should look something like the one below."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:184
+#: ../../tutorials/get-to-know-hatch.md:111
 msgid ""
 "Also notice that the default license option is MIT. While we will discuss"
 " license in more detail in a later lesson, the MIT license is the "
@@ -1158,11 +1043,11 @@ msgid ""
 "use it for this tutorial series."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:190
+#: ../../tutorials/get-to-know-hatch.md:116
 msgid "You are of course welcome to select another license."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:192
+#: ../../tutorials/get-to-know-hatch.md:118
 #: ../../tutorials/installable-code.md:22
 #: ../../tutorials/installable-code.md:411
 #: ../../tutorials/installable-code.md:502 ../../tutorials/intro.md:226
@@ -1171,84 +1056,84 @@ msgstr ""
 msgid "Todo"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:193
+#: ../../tutorials/get-to-know-hatch.md:119
 msgid ""
 "I think we'd need the SPDX license options here if they want to chose "
 "bsd-3 for instance"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:196
+#: ../../tutorials/get-to-know-hatch.md:122
 msgid "Step 4: Close the config file and run `hatch config show`"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:198
+#: ../../tutorials/get-to-know-hatch.md:124
 msgid ""
 "Once you have completed the steps above run the following command in your"
 " shell."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:200
+#: ../../tutorials/get-to-know-hatch.md:126
 msgid "`hatch config show`"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:202
+#: ../../tutorials/get-to-know-hatch.md:128
 msgid ""
 "`hatch config show` will print out the contents of your `config.toml` "
 "file in your shell. look at the values and ensure that your name, email "
 "is set. Also make sure that `tests=false`."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:206
+#: ../../tutorials/get-to-know-hatch.md:130
 msgid "Hatch features"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:208
+#: ../../tutorials/get-to-know-hatch.md:132
 msgid ""
 "Hatch offers a suite of features that will make creating, publishing and "
 "maintaining your Python package easier."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:211
+#: ../../tutorials/get-to-know-hatch.md:135
 msgid "Comparison to other tools"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:213
+#: ../../tutorials/get-to-know-hatch.md:137
 msgid ""
 "[We compared Hatch to several of the other popular packaging tools in the"
 " ecosystem including flit, pdm and poetry. Learn more here](package-"
 "features)"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:216
+#: ../../tutorials/get-to-know-hatch.md:140
 msgid "[More on Hatch here](hatch)"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:218
+#: ../../tutorials/get-to-know-hatch.md:142
 msgid "A few features that Hatch offers"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:220
+#: ../../tutorials/get-to-know-hatch.md:145
 msgid ""
 "it will convert metadata stored in a `setup.py` or `setup.cfg` file to a "
 "pyproject.toml file for you (see [Migrating setup.py to pyproject.toml "
 "using Hatch](setup-py-to-pyproject-toml.md ))"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:222
+#: ../../tutorials/get-to-know-hatch.md:147
 msgid ""
 "It will help you by storing configuration information for publishing to "
 "PyPI after you've entered it once."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:224
+#: ../../tutorials/get-to-know-hatch.md:149
 msgid "Use `hatch -h` to see all of the available commands."
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:226
+#: ../../tutorials/get-to-know-hatch.md:152
 msgid "What's next"
 msgstr ""
 
-#: ../../tutorials/get-to-know-hatch.md:228
+#: ../../tutorials/get-to-know-hatch.md:154
 msgid ""
 "In the next lesson you'll learn how to package and make your code "
 "installable using Hatch."
@@ -2151,10 +2036,6 @@ msgstr ""
 
 #: ../../tutorials/installable-code.md:649
 msgid "[epydoc](https://epydoc.sourceforge.net/epytext.html)"
-msgstr ""
-
-#: ../../tutorials/intro.md:27 ../../tutorials/setup-py-to-pyproject-toml.md:24
-msgid "Get to know Hatch"
 msgstr ""
 
 #: ../../tutorials/intro.md:27
@@ -5534,77 +5415,3 @@ msgid ""
 "existing functionality remains intact. Run any pre-existing tests to "
 "verify that everything still works as expected."
 msgstr ""
-
-#~ msgid ""
-#~ "Our Python packaging tutorials use the"
-#~ " tool Hatch. In this tutorial, you"
-#~ " will install and get to know "
-#~ "Hatch a bit more before starting "
-#~ "to use it."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "To begin, install Hatch from the "
-#~ "command line using "
-#~ "[pipx](https://pipx.pypa.io/stable/)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hatch can also be installed directly "
-#~ "using `pip` or `conda`, but we "
-#~ "encourage you to use `pipx`. This "
-#~ "is because `pipx` will ensure that "
-#~ "your package is available across all "
-#~ "of your Python environments on your "
-#~ "computer rather than just in the "
-#~ "environment that you install it into."
-#~ " If you install hatch this way "
-#~ "you will have to take care that"
-#~ " the environment it is installed into"
-#~ " is activated for the command to "
-#~ "work."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You can check that hatch is "
-#~ "working properly by issuing a simple "
-#~ "command to get the version"
-#~ msgstr ""
-
-#~ msgid "Note the version numbers will likely be different"
-#~ msgstr ""
-
-#~ msgid "Configure hatch"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Once you have installed Hatch, you "
-#~ "will want to customize the "
-#~ "configuration."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Hatch stores your configuration information"
-#~ " in a [`config.toml` "
-#~ "file](https://hatch.pypa.io/latest/config/project-templates/)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "While you can update the `config.toml`"
-#~ " file through the command line, it"
-#~ " might be easier to look at it"
-#~ " and update it in a text editor"
-#~ " if you are using it for the"
-#~ " first time."
-#~ msgstr ""
-
-#~ msgid "Step 1: Open and edit your `config.toml` file"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This will open up a directory "
-#~ "window that will allow you to "
-#~ "double click on the file and open"
-#~ " it in your favorite text editor."
-#~ msgstr ""
-
