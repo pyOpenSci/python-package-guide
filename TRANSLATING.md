@@ -65,7 +65,7 @@ LANGUAGES = ["es", "fr"]
 ```
 
 ```{note}
-You can find a list of the two-letter ISO language codes [here](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+You can find a list of the two-letter IETF language tag [here](https://en.m.wikipedia.org/wiki/IETF_language_tag).
 ```
 
 ## Preparing the Translation Files
