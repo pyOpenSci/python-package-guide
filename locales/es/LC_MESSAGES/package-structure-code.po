@@ -755,7 +755,7 @@ msgstr ""
 #: ../../package-structure-code/declare-dependencies.md:375
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:25
 msgid "Todo"
-msgstr ""
+msgstr "Todo"
 
 #: ../../package-structure-code/declare-dependencies.md:10
 msgid ""
@@ -784,33 +784,35 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:22
 msgid "Python Package Dependencies"
-msgstr ""
+msgstr "Dependencias de paquetes de Python"
 
 #: ../../package-structure-code/declare-dependencies.md:24
 msgid "What is a package dependency?"
-msgstr ""
+msgstr "¿Qué es una dependencia de paquete?"
 
 #: ../../package-structure-code/declare-dependencies.md:26
 msgid ""
 "A Python package dependency refers to an external package or software "
 "that your Python project:"
 msgstr ""
+"Una dependencia de paquete de Python se refiere a un paquete externo o "
+"software que su proyecto de Python:"
 
 #: ../../package-structure-code/declare-dependencies.md:29
 msgid "needs to function properly."
-msgstr ""
+msgstr "neceista para funcionar correctamente."
 
 #: ../../package-structure-code/declare-dependencies.md:30
 msgid ""
 "requires if someone wants to develop / work on improving your package "
 "locally or"
-msgstr ""
+msgstr "requiere si alguien quiere desarrollar / trabajar en mejorar su paquete localmente o"
 
 #: ../../package-structure-code/declare-dependencies.md:31
 msgid ""
 "requires if a user wants to add additional functionality (that is not "
 "core) to your package"
-msgstr ""
+msgstr "requiere si un usuario quiere agregar funcionalidad adicional (que no es esencial) a su paquete"
 
 #: ../../package-structure-code/declare-dependencies.md:33
 msgid ""
@@ -818,10 +820,12 @@ msgid ""
 "software that is called within the code of your project or during "
 "development of your package."
 msgstr ""
+"Una dependencia no es parte del código de su proyecto. Es un paquete o "
+"software que se llama dentro del código de su proyecto o durante el desarrollo de su paquete."
 
 #: ../../package-structure-code/declare-dependencies.md:37
 msgid "Understanding optional vs. required dependencies"
-msgstr ""
+msgstr "Entendiendo las dependencias opcionales vs. requeridas"
 
 #: ../../package-structure-code/declare-dependencies.md:38
 msgid ""
@@ -830,10 +834,13 @@ msgid ""
 "your `pyproject.toml` file. If they are optional, they will be listed in "
 "the `[optional.dependencies]` table of your `pyproject.toml`."
 msgstr ""
+"Puede pensar en las dependencias como opcionales o requeridas. Si son requeridas, "
+"se listarán en la tabla `[dependency] =` de su archivo `pyproject.toml`. Si son "
+"opcionales, se listarán en la tabla `[optional.dependencies]` de su `pyproject.toml`."
 
 #: ../../package-structure-code/declare-dependencies.md:40
 msgid "You will learn about both below."
-msgstr ""
+msgstr "Aprenderá sobre ambos a continuación."
 
 #: ../../package-structure-code/declare-dependencies.md:46
 msgid ""
@@ -848,10 +855,20 @@ msgid ""
 "optional and add additional functionality to your package. Not all "
 "packages will have feature dependencies."
 msgstr ""
+"Hay dos grupos amplios de dependencias de paquetes de Python: las que son "
+"opcionales y las que son requeridas. Los paquetes requeridos son aquellos que "
+"un usuario necesita para usar su paquete. Las dependencias opcionales son "
+"paquetes que un usuario puede elegir instalar para agregar funcionalidad a su "
+"paquete. Dentro de esos 2 grupos, hay tres casos de uso en los que puede pensar. "
+"1. Las dependencias principales son **requeridas** para que un usuario use su paquete. "
+"2. Las dependencias de desarrollo son opcionales y solo son necesarias si alguien "
+"desea trabajar en su paquete localmente. 3. Finalmente, las dependencias de "
+"funcionalidades son opcionales y agregan funcionalidad adicional a su paquete. No "
+"todos los paquetes tendrán dependencias de funcionalidades."
 
 #: ../../package-structure-code/declare-dependencies.md:51
 msgid "Required (or core) dependencies"
-msgstr ""
+msgstr "Dependencias requeridas (o principales)"
 
 #: ../../package-structure-code/declare-dependencies.md:53
 msgid ""
@@ -861,11 +878,16 @@ msgid ""
 "required dependencies in the `[dependency]=` table of your "
 "`pyproject.toml` file."
 msgstr ""
+"Las dependencias requeridas se llaman directamente dentro del código de su "
+"paquete. En esta página nos referimos a estas dependencias como **dependencias "
+"principales** ya que son necesarias para ejecutar su paquete. Debería colocar "
+"las dependencias principales o requeridas en la tabla `[dependency]=` de su "
+"archivo `pyproject.toml`."
 
 #: ../../package-structure-code/declare-dependencies.md:56
 #: ../../package-structure-code/declare-dependencies.md:147
 msgid "Optional dependencies"
-msgstr ""
+msgstr "Dependencias opcionales"
 
 #: ../../package-structure-code/declare-dependencies.md:58
 msgid ""
@@ -873,6 +895,8 @@ msgid ""
 "depending upon their needs. There are two broad groups of optional "
 "dependencies:"
 msgstr ""
+"Las dependencias opcionales pueden ser instaladas opcionalmente por los usuarios "
+"dependiendo de sus necesidades. Hay dos grupos amplios de dependencias opcionales:"
 
 #: ../../package-structure-code/declare-dependencies.md:61
 msgid ""
@@ -882,12 +906,19 @@ msgid ""
 "such as `black` and even automation tools such as `nox` or `tox` that run"
 " tasks."
 msgstr ""
+"**Dependencias de desarrollo**: Estas son dependencias que son necesarias para "
+"apoyar el desarrollo de su paquete. Incluyen herramientas para ejecutar pruebas "
+"como `pytest`, linters (como `flake8` y `ruff`) y formateadores de código como "
+"`black` e incluso herramientas de automatización como `nox` o `tox` que ejecutan "
+"tareas."
 
 #: ../../package-structure-code/declare-dependencies.md:63
 msgid ""
 "**Feature dependencies:** These are dependencies that a user can chose to"
 " install to add functionality to your package."
 msgstr ""
+"**Dependencias de funcionalidades:** Estas son dependencias que un usuario puede "
+"elegir instalar para agregar funcionalidad a su paquete."
 
 #: ../../package-structure-code/declare-dependencies.md:65
 msgid ""
@@ -896,10 +927,14 @@ msgid ""
 "This ensures that when you call a function in a specific dependency, it "
 "is available in your user's environment."
 msgstr ""
+"Cuando se instala un proyecto de Python, el administrador de paquetes de Python "
+"(ya sea `pip` o `conda`) instala automáticamente las dependencias de su paquete. "
+"Esto garantiza que cuando llame a una función en una dependencia específica, esté "
+"disponible en el entorno de su usuario."
 
 #: ../../package-structure-code/declare-dependencies.md:70
 msgid "Dependencies can be added to your pyproject.toml file"
-msgstr ""
+msgstr "Las dependencias se pueden agregar a su archivo pyproject.toml"
 
 #: ../../package-structure-code/declare-dependencies.md:72
 msgid ""
@@ -908,10 +943,14 @@ msgid ""
 " metadata for your package. On this page, you will learn how to specify "
 "different types of dependencies in your `pyproject.toml`."
 msgstr ""
+"En la página de descripción general de [pyproject.toml](pyproject-toml-python-package-"
+"metadata), aprendió cómo configurar un archivo **pyproject.toml** con metadatos "
+"básicos para su paquete. En esta página, aprenderá cómo especificar diferentes "
+"tipos de dependencias en su `pyproject.toml`."
 
 #: ../../package-structure-code/declare-dependencies.md:79
 msgid "How do you declare dependencies?"
-msgstr ""
+msgstr "¿Cómo declarar dependencias?"
 
 #: ../../package-structure-code/declare-dependencies.md:81
 msgid ""
@@ -920,6 +959,10 @@ msgid ""
 "with your package is declared in a single place, making it simpler for "
 "users and contributors to understand your package infrastructure."
 msgstr ""
+"Recomendamos que declare sus dependencias utilizando su archivo `pyproject.toml`. "
+"Esto garantiza que todos los metadatos asociados con su paquete se declaren en un "
+"solo lugar, lo que facilita a los usuarios y colaboradores comprender la infraestructura "
+"de su paquete."
 
 #: ../../package-structure-code/declare-dependencies.md:86
 msgid ""
@@ -929,10 +972,15 @@ msgid ""
 " however that some projects still maintain a `requirements.txt` file for "
 "specific local development needs."
 msgstr ""
+"Anteriormente, era común usar un archivo `requirements.txt` para declarar las "
+"dependencias del paquete. Sin embargo, en los últimos años, el ecosistema ha "
+"pasado a almacenar esta información en su archivo **pyproject.toml**. Sin embargo, "
+"puede notar que algunos proyectos todavía mantienen un archivo `requirements.txt` "
+"para necesidades específicas de desarrollo local."
 
 #: ../../package-structure-code/declare-dependencies.md:92
 msgid "Other ways you may see packages storing dependencies"
-msgstr ""
+msgstr "Otros métodos que puede ver para almacenar dependencias de paquetes"
 
 #: ../../package-structure-code/declare-dependencies.md:95
 msgid ""
@@ -943,10 +991,15 @@ msgid ""
 "documentation](https://setuptools.pypa.io/en/latest/userguide/dependency_management.html"
 "#declaring-required-dependency)"
 msgstr ""
+"Si un proyecto contiene extensiones escritas en otros lenguajes, es posible que "
+"necesite un archivo `setup.py`. O puede contribuir a un paquete que esté utilizando "
+"`setup.cfg` para la declaración de dependencias. [Obtenga más información sobre esto en la "
+"documentación de setuptools](https://setuptools.pypa.io/en/latest/userguide/dependency_management.html"
+"#declaring-required-dependency)"
 
 #: ../../package-structure-code/declare-dependencies.md:100
 msgid "Add required dependencies to your pyproject.toml file"
-msgstr ""
+msgstr "Añaadir dependencias requeridas a su archivo pyproject.toml"
 
 #: ../../package-structure-code/declare-dependencies.md:102
 msgid ""
@@ -956,6 +1009,10 @@ msgid ""
 "`[project]` table of your **pyproject.toml** file. This looks something "
 "like this:"
 msgstr ""
+"Las dependencias principales de su proyecto deben ser instaladas por un administrador "
+"de paquetes como `pip` o `conda` cuando un usuario instala su paquete. Puede agregar "
+"esas dependencias a la matriz `dependencies` ubicada dentro de la tabla `[project]` de su "
+"archivo **pyproject.toml**. Se asemejará a lo siguiente:"
 
 #: ../../package-structure-code/declare-dependencies.md:121
 msgid ""
@@ -964,16 +1021,22 @@ msgid ""
 "number of additional packages that your users must install as well as the"
 " number of packages that depend upon your package must also install."
 msgstr ""
+"Idealmente, solo debería enumerar los paquetes que son necesarios para instalar "
+"y usar su paquete en la sección `[dependencies]`. Esto minimiza la cantidad de "
+"paquetes adicionales que sus usuarios deben instalar, así como la cantidad de "
+"paquetes que dependen de su paquete que también deben instalar."
 
 #: ../../package-structure-code/declare-dependencies.md:128
 msgid ""
 "Remember that fewer dependencies to install reduces the likelihood of "
 "version mismatches in user environments."
 msgstr ""
+"Recuerde que menos dependencias para instalar reduce la probabilidad de "
+"desajustes de versiones en los entornos de los usuarios."
 
 #: ../../package-structure-code/declare-dependencies.md:131
 msgid "A dependency example"
-msgstr ""
+msgstr "Un ejemplo de dependencia"
 
 #: ../../package-structure-code/declare-dependencies.md:133
 msgid ""
@@ -982,18 +1045,22 @@ msgid ""
 "`plotMe` package, you use the `seaborn` package to stylize our plots and "
 "also `numpy` to process array formatted data."
 msgstr ""
+"Digamos que tiene un paquete llamado `plotMe` que crea gráficos hermosos de "
+"datos almacenados en matrices `numpy`. Para crear gráficos con el paquete "
+"`plotMe`, utiliza el paquete `seaborn` para estilizar los gráficos y "
+"también `numpy` para procesar datos formateados en matrices."
 
 #: ../../package-structure-code/declare-dependencies.md:135
 msgid "In the example above, the plotMe package, depends upon two packages:"
-msgstr ""
+msgstr "En el ejemplo anterior, el paquete plotMe depende de dos paquetes:"
 
 #: ../../package-structure-code/declare-dependencies.md:137
 msgid "seaborn"
-msgstr ""
+msgstr "seaborn"
 
 #: ../../package-structure-code/declare-dependencies.md:138
 msgid "numpy"
-msgstr ""
+msgstr "numpy"
 
 #: ../../package-structure-code/declare-dependencies.md:140
 msgid ""
@@ -1001,6 +1068,9 @@ msgid ""
 "when installed, you also need to ensure that they have both of those "
 "required `dependencies` installed in their environment too."
 msgstr ""
+"Esto significa que para que plotMe funcione en un `entorno` de usuario cuando "
+"se instala, también debe asegurarse de que tengan instaladas esas dos `dependencias` "
+"requeridas en su entorno."
 
 #: ../../package-structure-code/declare-dependencies.md:142
 msgid ""
@@ -1009,10 +1079,14 @@ msgid ""
 " and that a package manager (`pip` or `conda`) will automatically install"
 " it into a user's environment alongside your package:"
 msgstr ""
+"Declarar una dependencia en su archivo `pyproject.toml` garantizará que se "
+"liste como una dependencia requerida cuando su paquete se publique en PyPI y "
+"que un administrador de paquetes (`pip` o `conda`) la instalará automáticamente "
+"en el entorno de un usuario junto con su paquete:"
 
 #: ../../package-structure-code/declare-dependencies.md:144
 msgid "`python -m pip install plotMe`"
-msgstr ""
+msgstr "`python -m pip install plotMe`"
 
 #: ../../package-structure-code/declare-dependencies.md:149
 msgid ""
@@ -1021,18 +1095,22 @@ msgid ""
 "development dependencies. These are the dependencies that a user needs to"
 " work on your package locally and perform tasks such as:"
 msgstr ""
+"Las dependencias opcionales para construir su documentación, ejecutar sus tests "
+"y construir los archivos de distribución de su paquete a menudo se denominan dependencias "
+"de desarrollo. Estas son las dependencias que un usuario necesita para trabajar en su "
+"paquete localmente y realizar tareas como:"
 
 #: ../../package-structure-code/declare-dependencies.md:151
 msgid "running your test suite"
-msgstr ""
+msgstr "correr su suite de tests"
 
 #: ../../package-structure-code/declare-dependencies.md:152
 msgid "building your documentation"
-msgstr ""
+msgstr "construir su documentación"
 
 #: ../../package-structure-code/declare-dependencies.md:153
 msgid "linting and other code cleanup tools"
-msgstr ""
+msgstr "linting y otras herramientas de limpieza de código"
 
 #: ../../package-structure-code/declare-dependencies.md:155
 msgid ""
@@ -1041,12 +1119,17 @@ msgid ""
 "optional and should also be placed in the `[optional.dependencies]` "
 "table."
 msgstr ""
+"Estas dependencias se consideran opcionales, porque no son necesarias para "
+"instalar y usar su paquete. Las dependencias de funcionalidades se consideran "
+"opcionales y también deben colocarse en la tabla `[optional.dependencies]`."
 
 #: ../../package-structure-code/declare-dependencies.md:158
 msgid ""
 "Optional dependencies can be stored in an `[optional.dependencies]` table"
 " in your **pyproject.toml** file."
 msgstr ""
+"Las dependencias opcionales se pueden almacenar en una tabla `[optional.dependencies]` "
+"en su archivo **pyproject.toml**."
 
 #: ../../package-structure-code/declare-dependencies.md:161
 msgid ""
@@ -1056,30 +1139,35 @@ msgid ""
 "`[project]` table discussed above which contains a single array with a "
 "single list of required packages."
 msgstr ""
+"Es importante tener en cuenta que dentro de la tabla `[optional.dependencies]`, "
+"puede almacenar dependencias opcionales adicionales dentro de subgrupos con nombre. "
+"Esta es una tabla diferente que la matriz de dependencias ubicada dentro de la tabla "
+"`[project]` discutida anteriormente que contiene una sola matriz con una lista única de "
+"paquetes requeridos."
 
 #: ../../package-structure-code/declare-dependencies.md:163
 msgid "Create optional dependency groups"
-msgstr ""
+msgstr "Crear grupos de dependencias opcionales"
 
 #: ../../package-structure-code/declare-dependencies.md:165
 msgid "To declare optional dependencies in your **pyproject.toml** file:"
-msgstr ""
+msgstr "Para declarar dependencias opcionales en su archivo **pyproject.toml**:"
 
 #: ../../package-structure-code/declare-dependencies.md:167
 msgid "Add a `[optional.dependencies]` table to your **pyproject.toml** file."
-msgstr ""
+msgstr "Añada una tabla `[optional.dependencies]` a su archivo **pyproject.toml**."
 
 #: ../../package-structure-code/declare-dependencies.md:168
 msgid "Create named groups of dependencies using the syntax:"
-msgstr ""
+msgstr "Crear grupos nombrados de dependencias utilizando la sintaxis:"
 
 #: ../../package-structure-code/declare-dependencies.md:170
 msgid "`group-name = [\"dep1\", \"dep2\"]`"
-msgstr ""
+msgstr "`group-name = [\"dep1\", \"dep2\"]`"
 
 #: ../../package-structure-code/declare-dependencies.md:172
 msgid "Installing packages from GitHub / Gitlab"
-msgstr ""
+msgstr "Instalando paquetes desde GitHub / Gitlab"
 
 #: ../../package-structure-code/declare-dependencies.md:175
 msgid ""
@@ -1087,6 +1175,9 @@ msgid ""
 "using a `git+https` installation approach, you can do so using the "
 "pyproject.toml file like so:"
 msgstr ""
+"Si tiene dependencias que deben instalarse directamente desde GitHub utilizando "
+"un enfoque de instalación `git+https`, puede hacerlo utilizando el archivo "
+"pyproject.toml de la siguiente manera:"
 
 #: ../../package-structure-code/declare-dependencies.md:185
 msgid ""
@@ -1094,6 +1185,9 @@ msgid ""
 "hosted project, you will need to point to a specific commit/tag/hash of "
 "that repository in order to upload your project to PyPI"
 msgstr ""
+"IMPORTANTE: Por razones de seguridad, si su biblioteca depende de un proyecto "
+"alojado en GitHub, deberá apuntar a un commit/tag/hash específico de ese repositorio "
+"para cargar su proyecto en PyPI"
 
 #: ../../package-structure-code/declare-dependencies.md:190
 msgid ""
@@ -1101,10 +1195,12 @@ msgid ""
 "named: tests, docs and lint. We've also added a set of feature "
 "dependencies."
 msgstr ""
+"A continuación, hemos creado tres conjuntos de dependencias de desarrollo opcionales "
+"llamadas: tests, docs y lint. También hemos agregado un conjunto de dependencias de funcionalidades."
 
 #: ../../package-structure-code/declare-dependencies.md:213
 msgid "Additional dependency resources"
-msgstr ""
+msgstr "Recursos de dependencias adicionales"
 
 #: ../../package-structure-code/declare-dependencies.md:215
 msgid ""
@@ -1112,6 +1208,9 @@ msgid ""
 "dependencies](https://packaging.python.org/en/latest/specifications"
 "/declaring-project-metadata/#dependencies-optional-dependencies)"
 msgstr ""
+"[Más información: Vea la descripción general de PyPA sobre la declaración de dependencias "
+"opcionales](https://packaging.python.org/en/latest/specifications"
+"/declaring-project-metadata/#dependencies-optional-dependencies)"
 
 #: ../../package-structure-code/declare-dependencies.md:217
 msgid ""
@@ -1119,10 +1218,12 @@ msgid ""
 "specifiers](https://packaging.python.org/en/latest/specifications"
 "/dependency-specifiers/)"
 msgstr ""
+"[Especificadores de dependencias](https://packaging.python.org/en/latest/specifications"
+"/dependency-specifiers/)"
 
 #: ../../package-structure-code/declare-dependencies.md:221
 msgid "Install dependency groups"
-msgstr ""
+msgstr "Instalar grupos de dependencias"
 
 #: ../../package-structure-code/declare-dependencies.md:226
 msgid ""
@@ -1137,6 +1238,14 @@ msgid ""
 "with both the package dependencies - your-package, seaborn and numpy and "
 "also the tests dependencies including pytest and pytest-cov"
 msgstr ""
+"Diagrama que muestra un 'diagrama de ven' con tres secciones que representan los "
+"grupos de dependencias mencionados anteriormente - docs, funcionalidades y tests. En el centro "
+"se lee su-paquete y se enumeran las dependencias principales de ese paquete - seaborn y numpy. A la "
+"derecha hay dos flechas. La primera muestra el comando python - m pip install su-paquete. Luego muestra "
+"cómo instalar su paquete. De esa manera instala solo el paquete y las dos dependencias principales en el "
+"entorno de un usuario. A continuación hay una segunda flecha con python -m pip install suPaquete[tests]. "
+"Esto lleva a un entorno con las dependencias del paquete - su-paquete, seaborn y numpy y también las dependencias "
+"de tests, incluidas pytest y pytest-cov."
 
 #: ../../package-structure-code/declare-dependencies.md:228
 msgid ""
@@ -1146,20 +1255,27 @@ msgid ""
 "package and its core dependencies plus any of the dependencies listed "
 "within the tests array of your `[optional.dependencies]` table."
 msgstr ""
+"Cuando un usuario instala su paquete localmente usando python -m pip install "
+"su-paquete, solo su paquete y sus dependencias principales se instalan. Cuando "
+"instalan su paquete `[tests]`, pip instalará tanto su paquete como sus dependencias "
+"principales, además de cualquiera de las dependencias enumeradas dentro de la matriz de tests "
+"de su tabla `[optional.dependencies]`."
 
 #: ../../package-structure-code/declare-dependencies.md:231
 msgid "Using `python -m pip install` vs. `pip install`"
-msgstr ""
+msgstr "Usando `python -m pip install` vs. `pip install`"
 
 #: ../../package-structure-code/declare-dependencies.md:233
 msgid ""
 "In all of the examples in this guide, you will notice we are calling "
 "`pip` using the syntax:"
 msgstr ""
+"En todos los ejemplos de esta guía, notará que estamos llamando a `pip` utilizando "
+"la sintaxis:"
 
 #: ../../package-structure-code/declare-dependencies.md:236
 msgid "`python -m pip`"
-msgstr ""
+msgstr "`python -m pip`"
 
 #: ../../package-structure-code/declare-dependencies.md:238
 msgid ""
@@ -1168,135 +1284,159 @@ msgid ""
 "environment. We strongly suggest that you use this approach whenever you "
 "call `pip` to avoid installation conflicts."
 msgstr ""
+"Llamar a pip usando `python -m` asegura que la versión de `pip` que está utilizando para "
+"instalar su paquete provenga de su entorno de Python activo actual. Le sugerimos "
+"encarecidamente que utilice este enfoque siempre que llame a `pip` para evitar conflictos de instalación."
+
 
 #: ../../package-structure-code/declare-dependencies.md:242
 msgid ""
 "To ensure this works as you want it to, activate your package's "
 "development environment prior to installing anything using `pip`."
 msgstr ""
+"Para asegurarse de que esto funcione como desea, active el entorno de desarrollo de su "
+"paquete antes de instalar cualquier cosa usando `pip`."
 
 #: ../../package-structure-code/declare-dependencies.md:246
 msgid ""
 "You can install development dependencies using the groups that you "
 "defined above using the syntax:"
 msgstr ""
+"Puede instalar dependencias de desarrollo utilizando los grupos que definió anteriormente "
+"usando la sintaxis:"
 
 #: ../../package-structure-code/declare-dependencies.md:249
 msgid "`python -m pip install \".[docs]\"`"
-msgstr ""
+msgstr "`python -m pip install \".[docs]\"`"
 
 #: ../../package-structure-code/declare-dependencies.md:251
 msgid "Above you install:"
-msgstr ""
+msgstr "Previamente instaló:"
 
 #: ../../package-structure-code/declare-dependencies.md:252
 msgid "dependencies needed for your documentation (`docs`),"
-msgstr ""
+msgstr "dependencias necesarias para su documentación (`docs`),"
 
 #: ../../package-structure-code/declare-dependencies.md:253
 msgid "required package dependencies in the `dependency` array and"
-msgstr ""
+msgstr "dependencias de paquetes requeridas en la matriz `dependency` y"
 
 #: ../../package-structure-code/declare-dependencies.md:254
 msgid "your package"
-msgstr ""
+msgstr "su paquete"
 
 #: ../../package-structure-code/declare-dependencies.md:256
 msgid ""
 "using pip. Below you install your package, required dependencies and "
 "optional test dependencies."
 msgstr ""
+"usando pip. A continuación, instala su paquete, las dependencias "
+"requeridas y las dependencias de tests opcionales."
 
 #: ../../package-structure-code/declare-dependencies.md:259
 #: ../../package-structure-code/declare-dependencies.md:277
 msgid "`python -m pip install \".[tests]\"`"
-msgstr ""
+msgstr "`python -m pip install \".[tests]\"`"
 
 #: ../../package-structure-code/declare-dependencies.md:261
 msgid ""
 "You can install multiple dependency groups in the "
 "`[optional.dependencies]` table using:"
 msgstr ""
+"Puede instalar múltiples grupos de dependencias en la tabla `[optional.dependencies]` "
+"usando:"
 
 #: ../../package-structure-code/declare-dependencies.md:263
 msgid "`python -m pip install \".[docs, tests, lint]\"`"
-msgstr ""
+msgstr "`python -m pip install \".[docs, tests, lint]\"`"
 
 #: ../../package-structure-code/declare-dependencies.md:266
 msgid "For zsh shell users"
-msgstr ""
+msgstr "Para usuarios de shell zsh"
 
 #: ../../package-structure-code/declare-dependencies.md:270
 msgid ""
 "There are different shell applications that you and your package "
 "contributors might use."
 msgstr ""
+"Hay diferentes aplicaciones de shell que usted y los colaboradores de su paquete "
+"podrían usar."
 
 #: ../../package-structure-code/declare-dependencies.md:271
 msgid "zsh is the shell that comes by default on newer Mac OS computers"
-msgstr ""
+msgstr "zsh es la shell que viene por defecto en los ordenadored Mac OS más nuevos"
 
 #: ../../package-structure-code/declare-dependencies.md:272
 msgid "Windows users may use a tool such as git bash"
-msgstr ""
+msgstr "Usuarios de Windows pueden usar una herramienta como git bash"
 
 #: ../../package-structure-code/declare-dependencies.md:274
 msgid ""
 "Some shells don't support unquoted brackets (`[tests]`) which is why we "
 "add quotes to the command in this guide like this:"
 msgstr ""
+"Algunas shells no admiten corchetes sin comillas (`[tests]`), por eso agregamos comillas "
+"al comando en esta guía de la siguiente manera:"
 
 #: ../../package-structure-code/declare-dependencies.md:279
 msgid ""
 "In some cases you may see commands without the quotes in guidebooks or "
 "contributing guides like the example below:"
 msgstr ""
+"En algunos casos, puede ver comandos sin comillas en guías o guías de contribución como "
+"el ejemplo a continuación:"
 
 #: ../../package-structure-code/declare-dependencies.md:282
 msgid "`python -m pip install your-package[tests]`"
-msgstr ""
+msgstr "`python -m pip install your-package[tests]`"
 
 #: ../../package-structure-code/declare-dependencies.md:284
 msgid ""
 "Calling your-package[tests] without the double quotes will work on some "
 "shells *but not all*."
 msgstr ""
+"Llamar a su-paquete[tests] sin las comillas dobles funcionará en algunas"
+" shells *pero no en todas*."
 
 #: ../../package-structure-code/declare-dependencies.md:287
 msgid "Combining sets of dependencies"
-msgstr ""
+msgstr "Combina conjuntos de dependencias"
 
 #: ../../package-structure-code/declare-dependencies.md:289
 msgid ""
 "Above we reviewed how to install dependencies from your `pyproject.toml`."
 " In some cases you may want to group sets of dependencies like so:"
 msgstr ""
+"Anteriormente hemos revisado cómo instalar dependencias desde su `pyproject.toml`. "
+"En algunos casos, es posible que desee agrupar conjuntos de dependencias de la siguiente manera:"
 
 #: ../../package-structure-code/declare-dependencies.md:302
 msgid ""
 "The above allows you to install both the tests and docs dependency lists "
 "using the command:"
 msgstr ""
+"Lo anterior le permite instalar tanto las listas de dependencias de tests como de docs "
+"usando el comando:"
 
 #: ../../package-structure-code/declare-dependencies.md:305
 msgid "`python -m pip install \".[dev]\"`"
-msgstr ""
+msgstr "`python -m pip install \".[dev]\"`"
 
 #: ../../package-structure-code/declare-dependencies.md:308
 msgid "When you install dependencies using the above syntax:"
-msgstr ""
+msgstr "Cuando instala dependencias utilizando la sintaxis anterior:"
 
 #: ../../package-structure-code/declare-dependencies.md:310
 msgid "`python -m pip install \".[tests, docs]\"`"
-msgstr ""
+msgstr "`python -m pip install \".[tests, docs]\"`"
 
 #: ../../package-structure-code/declare-dependencies.md:312
 msgid "`pip` will also install your package and its core dependencies."
-msgstr ""
+msgstr "`pip` también instalará su paquete y sus dependencias principales."
 
 #: ../../package-structure-code/declare-dependencies.md:316
 msgid "Where does conda fit in?"
-msgstr ""
+msgstr "Dónde encaja conda?"
 
 #: ../../package-structure-code/declare-dependencies.md:319
 msgid ""
@@ -1307,14 +1447,20 @@ msgid ""
 "](publish-python-package-pypi-conda.md), people can install both your "
 "package and all of it's dependencies with one command."
 msgstr ""
+"El archivo `pyproject.toml` le permite enumerar cualquier paquete de Python publicado "
+"en PyPI (o en GitHub / GitLab) como una dependencia. Una vez que cree este archivo, "
+"declare dependencias, [construya su paquete](python-package-"
+"distribution-files-sdist-wheel.md) y [publique su paquete en PyPI"
+"](publish-python-package-pypi-conda.md), las personas pueden instalar tanto su "
+"paquete como todas sus dependencias con un solo comando."
 
 #: ../../package-structure-code/declare-dependencies.md:322
 msgid "`python -m pip install your-package`"
-msgstr ""
+msgstr "`python -m pip install your-package`"
 
 #: ../../package-structure-code/declare-dependencies.md:324
 msgid "This works great if your package is pure-python (no other languages used)."
-msgstr ""
+msgstr "Esto funciona muy bien si su paquete es de Python puro (no se utilizan otros lenguajes)."
 
 #: ../../package-structure-code/declare-dependencies.md:326
 msgid ""
@@ -1323,10 +1469,13 @@ msgid ""
 " distribution of tools that have code written in both Python and "
 "languages other than Python."
 msgstr ""
+"Algunos paquetes, especialmente en el ecosistema científico de Python, requieren "
+"dependencias que no están escritas en Python. Conda se creó para admitir la distribución "
+"de herramientas que tienen código escrito tanto en Python como en otros lenguajes que no sean Python."
 
 #: ../../package-structure-code/declare-dependencies.md:329
 msgid "Support conda users with environment.yml files"
-msgstr ""
+msgstr "Apoye a los usuarios de conda con archivos environment.yml"
 
 #: ../../package-structure-code/declare-dependencies.md:331
 msgid ""
@@ -1335,6 +1484,9 @@ msgid ""
 " a recipe using grayskull](https://www.pyopensci.org/python-package-guide"
 "/package-structure-code/publish-python-package-pypi-conda.html)."
 msgstr ""
+"El flujo de trabajo anterior asume que desea publicar su paquete en PyPI. Y luego "
+"planea publicar en conda-forge (opcionalmente), [enviando una receta usando grayskull"
+"](https://www.pyopensci.org/python-package-guide/package-structure-code/publish-python-package-pypi-conda.html)."
 
 #: ../../package-structure-code/declare-dependencies.md:333
 msgid ""
@@ -1343,10 +1495,13 @@ msgid ""
 "conda environment will also help you test that your package installs as "
 "you expect into a conda environment."
 msgstr ""
+"Si desea apoyar a los usuarios de conda, es posible que también desee mantener un entorno "
+"de conda que puedan usar para instalar su paquete. Mantener un entorno de conda también "
+"le ayudará a probar que su paquete se instala como espera en un entorno de conda."
 
 #: ../../package-structure-code/declare-dependencies.md:336
 msgid "A note for conda users"
-msgstr ""
+msgstr "Una nota para los usuarios de conda"
 
 #: ../../package-structure-code/declare-dependencies.md:339
 msgid ""
@@ -1355,6 +1510,9 @@ msgid ""
 " using pip in general), dependencies will be installed from PyPI rather "
 "than conda."
 msgstr ""
+"Si utiliza un entorno de conda para desarrollar su herramienta, tenga en cuenta que "
+"cuando instala su paquete usando `python -m pip install -e .` (o usando pip en general), "
+"las dependencias se instalarán desde PyPI en lugar de conda."
 
 #: ../../package-structure-code/declare-dependencies.md:341
 msgid ""
@@ -1363,6 +1521,9 @@ msgid ""
 "important if you have a spatial package that requires geospatial system "
 "libraries like GDAL or another system-level dependency."
 msgstr ""
+"Por lo tanto, si está ejecutando un entorno de conda, instalar su paquete en modo \"editable\" "
+"puede provocar conflictos de dependencia. Esto es particularmente importante si tiene un paquete "
+"que requiere bibliotecas de sistema geoespaciales como GDAL u otra dependencia de nivel de sistema."
 
 #: ../../package-structure-code/declare-dependencies.md:343
 msgid ""
@@ -1370,16 +1531,21 @@ msgid ""
 "-e . --no-deps` to only install the package. And install the rest of your"
 " dependencies using a conda environment file."
 msgstr ""
+"Alternativamente, puede instalar su paquete usando `python -m pip install -e . --no-deps` "
+"para instalar solo el paquete. Instale el resto de sus dependencias usando un archivo de "
+"entorno de conda."
 
 #: ../../package-structure-code/declare-dependencies.md:346
 msgid "Dependencies in Read the Docs"
-msgstr ""
+msgstr "Dependencias en Read the Docs"
 
 #: ../../package-structure-code/declare-dependencies.md:348
 msgid ""
 "Now that you have your dependencies specified in your project, you can "
 "use them to support other workflows such as publishing to Read the Docs."
 msgstr ""
+"Ahora que ha especificado sus dependencias en su proyecto, puede usarlas para "
+"apoyar otros flujos de trabajo como la publicación en Read the Docs."
 
 #: ../../package-structure-code/declare-dependencies.md:350
 msgid ""
@@ -1387,28 +1553,37 @@ msgid ""
 " a continuous integration / continuous deployment service that "
 "automatically builds and publishes your documentation."
 msgstr ""
+"[Read the Docs](https://readthedocs.org) es una plataforma de documentación con un "
+"servicio de integración continua / implementación continua que construye y publica "
+"automáticamente su documentación."
 
 #: ../../package-structure-code/declare-dependencies.md:352
 msgid ""
 "If you are using Read the Docs to build your documentation, then you may "
 "need to install your dependencies using a **readthedocs.yaml** file."
 msgstr ""
+"Si está utilizando Read the Docs para construir su documentación, entonces es posible "
+"que necesite instalar sus dependencias utilizando un archivo **readthedocs.yaml**."
 
 #: ../../package-structure-code/declare-dependencies.md:354
 msgid ""
 "Below is an example of installing the **docs** section of your dependency"
 " table in the pyproject.toml file within a readthedocs.yaml file."
 msgstr ""
+"A continuación se muestra un ejemplo de cómo instalar la sección **docs** de su tabla de dependencias "
+"en el archivo pyproject.toml dentro de un archivo readthedocs.yaml."
 
 #: ../../package-structure-code/declare-dependencies.md:366
 msgid "Read the Docs and Python packages"
-msgstr ""
+msgstr "Read the Docs y paquetes de Python"
 
 #: ../../package-structure-code/declare-dependencies.md:370
 msgid ""
 "[Learn more about creating a `readthedocs.yaml` file here. "
 "](https://docs.readthedocs.io/en/stable/config-file/index.html)"
 msgstr ""
+"[Aprenda más sobre cómo crear un archivo `readthedocs.yaml` aquí. "
+"](https://docs.readthedocs.io/en/stable/config-file/index.html)"
 
 #: ../../package-structure-code/declare-dependencies.md:371
 msgid ""
@@ -1416,6 +1591,9 @@ msgid ""
 "can learn more here.](https://docs.readthedocs.io/en/stable/build-"
 "customization.html#install-dependencies-with-poetry)"
 msgstr ""
+"Si desea instalar dependencias usando Poetry en Read the Docs, [puede aprender más aquí. "
+"](https://docs.readthedocs.io/en/stable/build-"
+"customization.html#install-dependencies-with-poetry)"
 
 #: ../../package-structure-code/declare-dependencies.md:376
 msgid "This is hidden. TO"
