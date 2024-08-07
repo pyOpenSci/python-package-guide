@@ -1,13 +1,32 @@
-_build
-.vscode
-*/.ipynb_checkpoints/*
+# Vscode
+.vscode/
+
+# Python
 tmp/
 .DS_Store
-.nox
-__pycache__
 *notes-from-review.md
 *.idea*
 # Grammar / syntax checkers
 styles/
 # Exclude translation .mo files
 locales/*/LC_MESSAGES/*.mo
+
+# Exclude Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Exclude Python bytecode
+__pycache__/
+
+# Exclude build directories
+_build/
+
+# Exclude virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+*/venv/
+.nox
+*/.nox/
