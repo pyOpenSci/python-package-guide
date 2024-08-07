@@ -46,7 +46,7 @@ and themes. A few examples include:
 * You can apply documentation themes for quick generation of beautiful documentation.
 * You can [automatically create documentation for your package's functions and classes (the package's API) from docstrings in your code using the autodoc extension](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
 * You can [run and test code examples in your docstrings using the doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html)
-* While Sphinx natively supports the `rST` syntax. You can add custom syntax parsers to support easier-to-write syntax using tools such as [the MyST parser](https://myst-parser.readthedocs.io/).
+* While Sphinx natively supports the `rST` syntax, you can add custom syntax parsers to support easier-to-write syntax using tools such as [the MyST parser](https://myst-parser.readthedocs.io/).
 
 ### Commonly used Sphinx themes
 
