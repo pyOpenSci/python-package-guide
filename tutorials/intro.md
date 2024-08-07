@@ -52,7 +52,6 @@ Update metadata in pyproject.toml <pyproject-toml>
 
 :::{toctree}
 :hidden:
-
 :caption: Reference Guides
 
 Command Line Reference Guide <command-line-reference>
