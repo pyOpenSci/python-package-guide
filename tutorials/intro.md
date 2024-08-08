@@ -52,6 +52,13 @@ Update metadata in pyproject.toml <pyproject-toml>
 
 :::{toctree}
 :hidden:
+:caption: Reference Guides
+
+Command Line Reference Guide <command-line-reference>
+:::
+
+:::{toctree}
+:hidden:
 :caption: Hatch for Existing Packages
 
 Migrate setup.py to a pyproject.toml using Hatch <setup-py-to-pyproject-toml>

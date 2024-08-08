@@ -96,6 +96,15 @@ The first round of our community-developed, how to create a Python package tutor
 :::
 ::::
 
+::::{grid-item}
+:::{card} ✿ Reference Guides ✿
+:class-card: left-aligned
+
+* [Command Line Reference Guide](/tutorials/command-line-reference)
+
+:::
+::::
+
 :::::
 
 
