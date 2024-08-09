@@ -313,7 +313,7 @@ later can protect your example from future modifications to the code.
 `:end-at:` options. And if the example code is Python, `:pyobject:` can be an even more future-proof way to keep the
 same documentation content even through code refactors.
 
-If you need example code that doesn't yet exist in `examples/` see creating code for documentation](#creating-code-for-documentation).
+If you need example code that doesn't yet exist in `examples/` see [creating code for documentation](#creating-code-for-documentation).
 
 (creating-code-for-documentation)=
 #### Creating code for documentation
