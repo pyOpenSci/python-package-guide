@@ -139,7 +139,7 @@ def clean_dir(session):
         if content.is_dir():
             shutil.rmtree(content)
         else:
-            os.remove(content)
+            pathlib.Path(content).unlink()
 
 
 @nox.session(name="update-translations")
