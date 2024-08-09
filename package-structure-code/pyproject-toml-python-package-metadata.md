@@ -175,7 +175,7 @@ what dependencies your package requires.
   - Development Status
   - Intended Audience
   - Topic
-  - LIcense
+  - License
   - Programming language
 
 ### Advanced options in the pyproject.toml file
@@ -183,7 +183,7 @@ what dependencies your package requires.
 The examples at the bottom of this page contain ...
 
 - **`[project.scripts]` (Entry points):** Entry points are optional. If you have a command line tool that runs a specific script hosted in your package, you may include an entry point to call that script directly at the command line (rather than at the Python shell).
-  - Here is an example of[ a package that has entry point script](https://github.com/pyOpenSci/update-web-metadata/blob/main/pyproject.toml#L60)s. Notice that there are several core scripts defined in that package that perform sets of tasks. pyOpenSci is using those scripts to process their metadata.
+  - Here is an example of [a package that has entry point script](https://github.com/pyOpenSci/update-web-metadata/blob/main/pyproject.toml#L60)s. Notice that there are several core scripts defined in that package that perform sets of tasks. pyOpenSci is using those scripts to process their metadata.
 - **Dynamic Fields:** if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like `setuptooms_scm`, then you might use the dynamic field. such as version (using scm) **dynamic = ["version"]**
 
 ## Add dependencies to your pyproject.toml file
