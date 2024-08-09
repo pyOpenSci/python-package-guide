@@ -340,7 +340,7 @@ TODO: There are many approaches here, some projects release a translation as soo
 
 ### How can I get help with my translation?
 
-If you have any questions or need help with your translation, you can create an issue in the repository if you encounter any problems or need assistance.
+If you have any questions or need help with your translation, you can create an issue in the repository.
 
 TODO: Maybe [Discourse](https://pyopensci.discourse.group/) could be used as a way for contributors to ask for help with translations or the translation workflow?
 
