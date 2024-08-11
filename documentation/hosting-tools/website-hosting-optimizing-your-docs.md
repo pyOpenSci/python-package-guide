@@ -13,7 +13,6 @@ Google analytics [is not compliant with the European General Data Protection Reg
 pyOpenSci is currently looking into free options for open source
 developers.
 ```
-
 Some of the [sphinx themes such as the `pydata-sphinx-theme` and
 sphinx-book-theme have built in support for Google Analytics](https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/analytics.html#google-analytics). However, if the theme that you chose does not offer
 Google Analytics support, you can use the [`sphinxcontrib-gtagjs` extension](https://github.com/attakei/sphinxcontrib-gtagjs).

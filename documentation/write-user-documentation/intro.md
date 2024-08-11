@@ -10,6 +10,6 @@ create tutorials for your package.
 Here we also cover sphinx extensions that you can user to make documentation
 easier such as:
 
-- autodoc to automagically populate documentation for your code's functions,
-  classes, methods and attributes (API documentation) and
-- sphinx gallery for tutorials.
+* autodoc to automagically populate documentation for your code's functions,
+classes, methods and attributes (API documentation) and
+* sphinx gallery for tutorials.

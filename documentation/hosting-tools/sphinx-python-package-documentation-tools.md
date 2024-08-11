@@ -43,10 +43,10 @@ Sphinx is written using Python.
 The functionality of Sphinx can be extended using extensions
 and themes. A few examples include:
 
-- You can apply documentation themes for quick generation of beautiful documentation.
-- You can [automatically create documentation for your package's functions and classes (the package's API) from docstrings in your code using the autodoc extension](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
-- You can [run and test code examples in your docstrings using the doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html)
-- While Sphinx natively supports the `rST` syntax, you can add custom syntax parsers to support easier-to-write syntax using tools such as [the MyST parser](https://myst-parser.readthedocs.io/).
+* You can apply documentation themes for quick generation of beautiful documentation.
+* You can [automatically create documentation for your package's functions and classes (the package's API) from docstrings in your code using the autodoc extension](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+* You can [run and test code examples in your docstrings using the doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html)
+* While Sphinx natively supports the `rST` syntax, you can add custom syntax parsers to support easier-to-write syntax using tools such as [the MyST parser](https://myst-parser.readthedocs.io/).
 
 ### Commonly used Sphinx themes
 
@@ -54,12 +54,12 @@ You are free to use whatever Sphinx theme that you prefer.
 However, the most common Sphinx themes used in the Python
 scientific community include:
 
-- [pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/)
-- [sphinx-book-theme](https://sphinx-book-theme.readthedocs.io/)
-- [furo](https://pradyunsg.me/furo/quickstart/)
+* [pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/)
+* [sphinx-book-theme](https://sphinx-book-theme.readthedocs.io/)
+* [furo](https://pradyunsg.me/furo/quickstart/)
+
 
 ```{tip}
 This book is created using Sphinx and the `furo` theme.
 ```
-
 <!-- Should this also be it's own page?-->

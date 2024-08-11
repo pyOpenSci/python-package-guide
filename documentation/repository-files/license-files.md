@@ -11,7 +11,7 @@ Want to learn how to add a license file to your GitHub repository? Check out thi
 
 When we talk about LICENSE files, we are referring to a file in your
 GitHub or GitLab repository that contains legally binding language
-that describes to your users how they can legally use (and not use) your package.
+that describes to your users how they can legally use  (and not use) your package.
 
 ## Why licenses are important
 
@@ -24,6 +24,7 @@ A license file is important for all open source projects because it protects bot
 and more.
 
 [Read more about why license files are critical in protecting both you as a maintainer and your users of your scientific Python open source package.](https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project)
+
 
 ## Where to store your license
 
@@ -64,6 +65,7 @@ that you consider using either BSD or MIT as your
 license. If you are unsure, the MIT license tends to be a simpler easier-to-understand option.
 :::
 
+
 ## Important: make sure that you closely follow the guidelines outlines by the License that you chose
 
 Every license has different guidelines in terms of what code
@@ -85,7 +87,8 @@ This means that technically, if you copy code from the Stack Overflow website, a
 🚨 Proceed with caution! 🚨
 :::
 
-## What about software citation?
+
+##  What about software citation?
 
 While many permissive licenses do not require citation we STRONG encourage that you cite all software that you use in papers, blogs and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files). We will cover this topic when we talk about creating DOI's for your package using zenodo.
 

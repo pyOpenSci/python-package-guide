@@ -3,14 +3,13 @@
 <!-- TODO: modify the nbsphinx example to use nbgallery
 as a front end vs Sphinx gallery - will look better that way
 -->
-
 Your package should have tutorials that make it easy for a user
 to get started using your package. Ideally, those tutorials
 also can be run from start to finish providing a second set of
 checks (on top of your test suite) to your package's code base.
 
 On this page, we review two Sphinx extensions (`sphinx-gallery` and `nbsphinx`)
-that allow you to create reproducible tutorials that are run
+that  allow you to create reproducible tutorials that are run
 when your Sphinx documentation builds.
 
 ## Create Python package tutorials that run when you build your docs
@@ -20,14 +19,14 @@ new to begin using your package.
 
 There are two Sphinx tools that make it easy to add tutorials to your package:
 
-- [Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) and
-- [NbSphinx](https://nbsphinx.readthedocs.io/en/latest/)
+* [Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) and
+* [NbSphinx](https://nbsphinx.readthedocs.io/en/latest/)
 
 Both of these tools act as Sphinx extensions and:
 
-- Support creating a gallery type page in your Sphinx documentation where users can explore tutorials via thumbnails.
-- Run the code in your tutorials adding another level of "testing" for your package as used.
-- Render your tutorials with Python code and plot outputs
+* Support creating a gallery type page in your Sphinx documentation where users can explore tutorials via thumbnails.
+* Run the code in your tutorials adding another level of "testing" for your package as used.
+* Render your tutorials with Python code and plot outputs
 
 ### [sphinx gallery:](https://sphinx-gallery.github.io/stable/index.html)
 
@@ -37,9 +36,10 @@ text and code sections that mimic the Jupyter Notebook format. When you build
 your documentation, the gallery extension:
 
 1. Runs the code in each tutorial. Running your tutorial like this acts as a check to ensure your package's functions, classes, methods, and attributes (ie the API) are working as they should.
-1. Creates a downloadable Jupyter Notebook **.ipynb** file and a **.py** script for your tutorial that a user can quickly download and run.
-1. Creates a rendered **.html** page with the code elements and code outputs in a user-friendly tutorial gallery.
+1. Creates a downloadable Jupyter Notebook **.ipynb** file and a  **.py** script for your tutorial that a user can quickly download and run.
+1. Creates a rendered  **.html** page with the code elements and code outputs in a user-friendly tutorial gallery.
 1. Creates a gallery landing page with visual thumbnails for each tutorial that you create.
+
 
 ```{figure} /images/sphinx-gallery-overview.png
 ---
@@ -64,22 +64,21 @@ python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at the bot
 ```
 
 ### Sphinx Gallery benefits
-
-- easy-to-download notebook and .py outputs for each tutorials.
-- .py files are easy to work with in the GitHub pull request environment.
-- Nice gridded gallery output.
-- Build execution time data per tutorial. [Example](https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html)
+* easy-to-download notebook and .py outputs for each tutorials.
+* .py files are easy to work with in the GitHub pull request environment.
+* Nice gridded gallery output.
+* Build execution time data per tutorial. [Example](https://sphinx-gallery.github.io/stable/auto_examples/sg_execution_times.html)
 
 #### Sphinx gallery challenges
 
 The downsides of using Sphinx gallery include:
 
-- the **.py** files can be finicky to configure, particularly if you have matplotlib plot outputs.
+* the **.py** files can be finicky to configure, particularly if you have matplotlib plot outputs.
 
 For example: To allow for plots to render, you need to name each file with `plot_`
 at the beginning.
 
-- Many users these days are used to working in Jupyter Notebooks. .py may be slightly less user friendly to work with
+* Many users these days are used to working in Jupyter Notebooks. .py may be slightly less user friendly to work with
 
 These nuances can make it challenging for potential contributors to add
 tutorials to your package. This can also present maintenance challenge.
@@ -91,7 +90,6 @@ $ docs % make html
 
 Sphinx-Gallery successfully executed 2 out of 2 files
 ```
-
 File directory structure:
 
 ```bash
@@ -118,10 +116,11 @@ _build/
 If you prefer to use Jupyter Notebooks to create tutorials you can use nbsphinx.
 nbsphinx operates similarly to Sphinx gallery in that:
 
-- It runs your notebooks and produces outputs in the rendered tutorials
+* It runs your notebooks and produces outputs in the rendered tutorials
 
-- Pro/con By default it does not support downloading of **.py** and **.ipynb** files. However you can add a [link to the notebook at the top of the page with
-  some additional conf.py settings (see: epilog settings)](https://nbsphinx.readthedocs.io/en/0.8.10/prolog-and-epilog.html)
+* Pro/con By default it does not support downloading of **.py** and **.ipynb** files. However you can add a [link to the notebook at the top of the page with
+some additional conf.py settings (see: epilog settings)](https://nbsphinx.readthedocs.io/en/0.8.10/prolog-and-epilog.html)
+
 
 ```{figure} /images/python-package-documentation-nb_sphinx-gallery-output.png
 ---
