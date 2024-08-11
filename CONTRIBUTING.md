@@ -169,8 +169,8 @@ After making your changes, you need to commit them to your local repository. To 
   ```
 - To commit the changes:
   `bash
-  git commit -m "Your commit message here"
-  `
+git commit -m "Your commit message here"
+`
   Replace `"Your commit message here"` with a clear and concise message that describes the changes you made.
 
 ### How to build the guide locally
