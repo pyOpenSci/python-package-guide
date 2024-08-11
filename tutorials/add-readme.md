@@ -204,7 +204,7 @@ To install this package run:
 
 `python -m pip install pyosPackage`
 
-## OPTIONAL - if you have additional setup instructions add them here. if not, skip this section.
+## OPTIONAL - if you have additional setup instructions add them here. If not, skip this section.
 
 ## Get started using pyosPackage
 

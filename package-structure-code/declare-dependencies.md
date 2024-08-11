@@ -7,7 +7,7 @@
 
 :::{todo}
 
-keep this comment - https://github.com/pyOpenSci/python-package-guide/pull/106#issuecomment-1844278487 in this file for now - jeremiah did a nice inventory of common shells and whether they need quotes or not. it's really comprehensive. but do we want it in the guide?? it's really useful for more advanced users i think.
+keep this comment - https://github.com/pyOpenSci/python-package-guide/pull/106#issuecomment-1844278487 in this file for now - jeremiah did a nice inventory of common shells and whether they need quotes or not. It's really comprehensive. But do we want it in the guide?? it's really useful for more advanced users i think.
 
 Following this comment:
 https://github.com/pyOpenSci/python-package-guide/pull/106#pullrequestreview-1766663571
@@ -26,9 +26,9 @@ When you use different specifiers
 A Python package dependency refers to an external package or
 software that your Python project:
 
-1. needs to function properly.
-2. requires if someone wants to develop / work on improving your package locally or
-3. requires if a user wants to add additional functionality (that is not core) to your package
+1. Needs to function properly.
+2. Requires if someone wants to develop / work on improving your package locally or
+3. Requires if a user wants to add additional functionality (that is not core) to your package
 
 A dependency is not part of your project's codebase. It is a package or software that is called
 within the code of your project or during development of your package.
@@ -223,7 +223,7 @@ feature = [
 
 :::{figure-md} python-package-dependencies
 
-<img src="../images/python-package-dependencies.png" alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. it them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov ">
+<img src="../images/python-package-dependencies.png" alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov ">
 
 When a user installs your package locally using python -m pip install your-package only your package and it's core dependencies get installed. When they install your package `[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[optional.dependencies]` table.
 :::
