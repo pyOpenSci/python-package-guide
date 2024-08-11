@@ -29,7 +29,7 @@ We support the Python tools that scientists need to create open science workflow
 :::{image} /images/tutorials/packaging-elements.png
 :align: right
 :width: 500
-:alt: Image with the pyOpenSci flower logo in the upper right hand corner. The image shows the packaging lifecycle. The graphic shows a high level overview of the elements of a Python package. the inside circle has 5 items - user documentation, code/api, test suite, contributor documentation, project metadata / license / readme. In the middle of the circle is says maintainers and has a small icon with people. on the outside circle there is an arrow and it says infrastructure.
+:alt: Image with the pyOpenSci flower logo in the upper right hand corner. The image shows the packaging lifecycle. The graphic shows a high level overview of the elements of a Python package. the inside circle has 5 items - user documentation, code/api, test suite, contributor documentation, project metadata / license / readme. In the middle of the circle is says maintainers and has a small icon with people. On the outside circle there is an arrow and it says infrastructure.
 :::
 
 This guide will help you:
