@@ -14,7 +14,7 @@ In this lesson you will learn:
 1. How to select a license and add a `LICENSE` file to your package repository, with a focus on the GitHub interface.
 2. How to add a `CODE_OF_CONDUCT` file to your package repository.
 3. How you can use the Contributors Covenant website to add generic language as a starting place for your `CODE_OF_CONDUCT`.
-   :::
+:::
 
 ## What is a license?
 
@@ -49,6 +49,7 @@ README portion of the GitHub landing page, there are three tabs directly linking
 the license that SunPy uses. These files are discovered by GitHub because they
 are placed in the root of the project directory using standard naming conventions.
 :::
+
 
 ### How to add a `LICENSE` file to your package directory
 
@@ -135,7 +136,6 @@ about the `CODE_OF_CONDUCT.md` file and how to add it to your
 package directory.
 
 (add-coc)=
-
 ## What is a code of conduct file?
 
 A `CODE_OF_CONDUCT` file is used to establish guidelines for how people in your community interact.
@@ -174,7 +174,7 @@ That's it - you've now added a code of conduct to your package directory.
 
 - [<i class="fa-brands fa-github"></i> Guide: `CODE_OF_CONDUCT.md` files](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)
 - [pyOpenSci package guide `CODE_OF_CONDUCT.md` overview](https://www.pyopensci.org/python-package-guide/documentation/repository-files/code-of-conduct-file.html)
-  :::
+:::
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 

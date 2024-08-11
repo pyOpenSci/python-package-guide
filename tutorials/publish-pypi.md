@@ -1,7 +1,6 @@
 # Publish your Python package to PyPI
 
 :::{todo}
-
 - Make sure they add /dist to their .gitignore file. We have not discussed GitHub workflows anywhere yet. Where does that fit?
 
 :::
@@ -222,7 +221,7 @@ Example: `pyosPackage_yourNameHere`.
 - Update the Github repository name to align with the new package name
 - Update your local project folder to match the new package name (e.g. `pyospackage_yourNameHere/src`)
 - Update mentions of your repository name in other files (e.g. `README.md`)
-  :::
+:::
 
 :::{figure-md} test-pypi-search
 <img src="../images/tutorials/testpypi-search.png" alt="This is a screenshot of the TestPyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" width="700px">

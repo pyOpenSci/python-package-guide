@@ -37,17 +37,17 @@ Hatch.
 
 Follow the instructions [here](https://hatch.pypa.io/latest/install/#installers).
 
-- Download the latest GUI installer for MAC [hatch-universal.pkg](https://github.com/pypa/hatch/releases/latest/download/hatch-universal.pkg).
-- Run the installer and follow the setup instructions.
-- If your terminal is open, then restart it.
+* Download the latest GUI installer for MAC [hatch-universal.pkg](https://github.com/pypa/hatch/releases/latest/download/hatch-universal.pkg).
+* Run the installer and follow the setup instructions.
+* If your terminal is open, then restart it.
 
 :::
 
 :::{tab-item} Windows
 
-- In your browser, download the correct `.msi` file for your system:
-  [hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch-x64.msi)
-- Run your downloaded installer file and follow the on-screen instructions.
+* In your browser, download the correct `.msi` file for your system:
+[hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch-x64.msi)
+* Run your downloaded installer file and follow the on-screen instructions.
 
 :::
 
@@ -89,8 +89,8 @@ hatch --version
 # Hatch, version 1.9.4
 ```
 
-_Note the version number output of `hatch --version` will likely be
-different from the output above in this tutorial._
+*Note the version number output of `hatch --version` will likely  be
+different from the output above in this tutorial.*
 
 ## Configure Hatch
 
@@ -217,7 +217,8 @@ and maintaining your Python package easier.
 
 A few features that Hatch offers
 
-1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you (see [Migrating setup.py to pyproject.toml using Hatch](setup-py-to-pyproject-toml.md))
+1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you (see [Migrating setup.py to pyproject.toml using Hatch](setup-py-to-pyproject-toml.md
+))
 2. It will help you by storing configuration information for publishing to PyPI after you've entered it once.
 
 Use `hatch -h` to see all of the available commands.

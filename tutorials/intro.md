@@ -105,7 +105,6 @@ to manage and reuse your code across different projects.
 Structuring your code as a package is the first step you need to take so you can share the tools in the toolbox you've created and let others build with it.
 
 (package-benefits)=
-
 ## Why create a Python package?
 
 You might create a Python package because you want to:
