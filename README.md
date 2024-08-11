@@ -1,9 +1,6 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
-
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
 [![All Contributors](https://img.shields.io/badge/all_contributors-74-orange.svg?style=flat-square)](#contributors-)
-
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
@@ -17,14 +14,15 @@
 pyOpenSci is devoted to building diverse, supportive community around
 the Python open source tools that drive open science. We do this through:
 
-- open peer review
-- mentorship and
-- training.
+* open peer review
+* mentorship and
+* training.
 
 pyOpenSci is an independent organization, fiscally sponsored by Community
 Initiatives.
 
 ## Contributing statement
+
 
 ## How to setup
 
@@ -47,7 +45,6 @@ To build, follow these steps:
    ```console
    $ python -m pip install nox
    ```
-
 2. Build the documentation:
 
    ```console
@@ -61,6 +58,7 @@ To build live documentation that updates when you update local files, run the fo
 ```console
 $ nox -s docs-live
 ```
+
 
 ## Contributing to this guide
 
