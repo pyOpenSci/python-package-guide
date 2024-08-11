@@ -8,6 +8,7 @@ In this section you will learn more about the importance of writing
 tests for your Python package and how you can setup infrastructure
 to run your tests both locally and on GitHub.
 
+
 :::::{grid} 1 1 3 2
 :class-container: text-center
 :gutter: 3
@@ -59,6 +60,7 @@ and different operating systems. Learn about setting up tests to run in Continuo
 ::::
 
 :::::
+
 
 :::{figure-md} fig-target
 
