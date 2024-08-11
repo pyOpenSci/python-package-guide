@@ -4,12 +4,13 @@ Ideally, your package should also have a development guide. This file may live i
 A development guide should clearly show
 technically proficient users how to:
 
-* Set up a development environment locally to work on your package
-* Run the test suite
-* Build documentation locally
+- Set up a development environment locally to work on your package
+- Run the test suite
+- Build documentation locally
 
 The development guide should also have guidelines for:
-* code standards including docstring style, code format and any specific code approaches that the package follows.
+
+- code standards including docstring style, code format and any specific code approaches that the package follows.
 
 It's also helpful to specify the types of tests you request if a contributor submits a new feature or a change to an existing feature that will not be covered by your existing test suite.
 
@@ -20,8 +21,8 @@ If you have time to document it, it's also helpful to document your maintainer w
 It's valuable to have a development guide, in the
 case that you wish to:
 
-* Onboard new maintainers.
-* Allow technically inclined contributors to make thoughtful and useful code based pull requests to your repository.
+- Onboard new maintainers.
+- Allow technically inclined contributors to make thoughtful and useful code based pull requests to your repository.
 
 It also is important to pyOpenSci that the maintenance workflow is
 documented in the case that we need to help you onboard new
@@ -38,13 +39,10 @@ pyOpenSci requires a package to have in order to be eligible for
 review. Some maintainers may also opt to include the development information in their contributing guide.
 ```
 
-
 ```{tip}
 [The Mozilla Science Lab website has a nice outline of things to consider when
 creating a contributing guide](https://mozillascience.github.io/working-open-workshop/contributing/)
 ```
-
-
 
 <!--
 pyOpenSci packages must:

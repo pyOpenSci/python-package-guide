@@ -5,9 +5,11 @@ Running your [test suite locally](run-tests) is useful as you develop code and a
 CI can also be triggered for pull requests and pushes to your repository. This means that every pull request that you, your maintainer team or a contributor submit, can be tested. In the end CI testing ensures your code continues to run as expected even as changes are made to the code base.
 
 ::::{todo}
+
 ```{note}
 Learn more about Continuous Integration and how it can be used, here. (add link)
 ```
+
 ::::
 
 ## CI & pull requests
@@ -34,7 +36,6 @@ pyospackage/
    └── workflows/
        └── run-tests.yml # The name of this file can be whatever you wish
 ```
-
 
 ```yaml
 name: Pytest unit/integration

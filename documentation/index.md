@@ -127,13 +127,11 @@ found in our peer review check list (see link below).
 In this guide, we discuss each required element, and also discuss other elements
 that you should consider in your package's documentation in more detail.
 
-
 ```{button-link} https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template
 :color: primary
 :class: sd-rounded-pill float-left
 View pyOpenSci peer review check list
 ```
-
 
 ```{figure} ../images/moving-pandas-python-package-github-main-repo.png
 ---

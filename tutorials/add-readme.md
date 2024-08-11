@@ -13,7 +13,7 @@ In this lesson you will learn:
 
 1. How to add a **README.md** file to your package.
 2. What the core elements of a **README.md** file are.
-:::
+   :::
 
 ## What is a README file?
 
@@ -38,13 +38,14 @@ include in your README file.
 It's time to add a `README.md` file to your project directory.
 
 ### Step 0: Create a README file
+
 To get started, if you don't already have a README.md file in your project directory, create one.
 
 :::{tip}
 If you created your project directory from
 
-* a GitHub repository online
-* using `hatch init`
+- a GitHub repository online
+- using `hatch init`
 
 Then you may already have a README.MD file in your project directory.
 :::
@@ -64,9 +65,9 @@ If you are using markdown it should be a header 1 (H1) tag which is denoted with
 
 It's common for maintainers to add badges to the top of their README files. Badges allow you and your package users to track things like:
 
-* Broken documentation and test builds.
-* Versions of your package that are on PyPI and conda.
-* Whether your package has been reviewed and vetted by an organization such as pyOpenSci and/or JOSS.
+- Broken documentation and test builds.
+- Versions of your package that are on PyPI and conda.
+- Whether your package has been reviewed and vetted by an organization such as pyOpenSci and/or JOSS.
 
 If you have already published your package to pypi.org you can use [shields.io to create a package version badge](https://shields.io/badges/py-pi-version). This badge will dynamically update as you release new versions of your package to PyPI.
 
@@ -78,9 +79,9 @@ Below the badges (if you have them), add a section of text
 that provides an easy-to-understand overview of what your
 package does.
 
-* Keep this section short.
-* Try to avoid jargon.
-* Define technical terms that you use to make the description accessible to more people.
+- Keep this section short.
+- Try to avoid jargon.
+- Define technical terms that you use to make the description accessible to more people.
 
 Remember that the more people understand what your package does, the more people will use it.
 
@@ -110,14 +111,13 @@ Here, briefly document (or link to documentation for) any
 additional setup that is required to use your package.
 This might include:
 
-* authentication information, if it is applicable to your package.
-* additional tool installations, such as GDAL.
+- authentication information, if it is applicable to your package.
+- additional tool installations, such as GDAL.
 
 :::{note}
 Many packages won't need an additional setup section in their README.
 In that case you can always skip this section.
 :::
-
 
 ### Step 6: Add a get started section
 
@@ -149,7 +149,6 @@ This would
 also be a great place to add links to tutorials that
 help users understand how to use your package for common workflows.
 
-
 ### Step 7: Community section
 
 The community section of your README file is a place to include information for users who may want to engage with your project. This engagement will likely happen on a platform like GitHub or GitLab.
@@ -160,12 +159,10 @@ and `CODE_OF_CONDUCT.md`. You will create a [`CODE_OF_CONDUCT.md` file in the ne
 As your package grows you may also have a link to a development guide that contributors and your maintainer team will follow. The development guide
 outlines how to perform maintenance tasks such as:
 
-* running tests
-* making package releases
-* building documentation
-* and more.
-
-
+- running tests
+- making package releases
+- building documentation
+- and more.
 
 ### Step 8: Citation information
 
@@ -178,7 +175,6 @@ GitHub. [Check out this short tutorial that covers setting that up.](https://cod
 
 Alternatively if you send your package through a peer review process such
 as the [one lead by pyOpenSci](https://www.pyopensci.org/about-peer-review/index.html). After being accepted by pyOpenSci, if your package is in scope, you can be accepted by the Journal of Open Source Software and get a cross-ref DOI through [our partnership with the Journal of Open Source Software.](https://www.pyopensci.org/about-peer-review/index.html)
-
 
 ## The finished README file
 
@@ -197,8 +193,9 @@ Short description here using non-technical language that describes what your pac
 ## How to install pyosPackage
 
 :::{todo}
+
 - when i add more to the pyos package this can use that readme>
-:::
+  :::
 
 To install this package run:
 
@@ -242,5 +239,5 @@ In the [next lesson](add-license-coc.md), you will add a LICENSE file to
 your Python package. A license file is critical as it tells users
 how they legally can (and can't) use your package. It also:
 
-* Builds trust with your users
-* Discourages misuse of your package and associated code
+- Builds trust with your users
+- Discourages misuse of your package and associated code

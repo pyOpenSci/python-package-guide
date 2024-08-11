@@ -3,8 +3,6 @@
 :og:description: A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package.
 ```
 
-
-
 :::{todo}
 
 keep this comment - https://github.com/pyOpenSci/python-package-guide/pull/106#issuecomment-1844278487 in this file for now - jeremiah did a nice inventory of common shells and whether they need quotes or not. it's really comprehensive. but do we want it in the guide?? it's really useful for more advanced users i think.
@@ -33,8 +31,8 @@ software that your Python project:
 A dependency is not part of your project's codebase. It is a package or software that is called
 within the code of your project or during development of your package.
 
-
 ### Understanding optional vs. required dependencies
+
 You can think about dependencies as being either optional or required. If they are required, they will be listed in the `[dependency] =` table of your `pyproject.toml` file. If they are optional, they will be listed in the `[optional.dependencies]` table of your `pyproject.toml`.
 
 You will learn about both below.
@@ -46,7 +44,6 @@ You will learn about both below.
 There are two broad groups of Python package dependencies: those that are optional and those that are required. Required packages are those that a user needs to use your package. Optional dependencies are packages a user can chose to install to add functionality to your package.
 Within those 2 groups, there are three use cases that you can think about. 1. Core dependencies are **required** for a user to use your package. 2. Development dependencies are optional and only needed if someone wants to work on your package locally. 3. Finally feature dependencies are optional and add additional functionality to your package. Not all packages will have feature dependencies.
 :::
-
 
 ### Required (or core) dependencies
 
@@ -96,7 +93,6 @@ If a project contains extensions written in other languages, you may need a `set
 [Learn more about this in the setuptools documentation](https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#declaring-required-dependency)
 :::
 
-
 ### Add required dependencies to your pyproject.toml file
 
 Your core project dependencies need to be installed by a
@@ -134,8 +130,8 @@ Let's pretend you have a package called `plotMe` that creates beautiful plots of
 
 In the example above, the plotMe package, depends upon two packages:
 
-* seaborn
-* numpy
+- seaborn
+- numpy
 
 This means that in order for plotMe to work in a user's `environment` when installed, you also need to ensure that they have both of those required `dependencies` installed in their environment too.
 
@@ -148,9 +144,9 @@ Declaring a dependency in your `pyproject.toml` file will ensure that it is list
 
 Optional dependencies for building your documentation, running your tests and building your package's distribution files are often referred to as development dependencies. These are the dependencies that a user needs to work on your package locally and perform tasks such as:
 
-* running your test suite
-* building your documentation
-* linting and other code cleanup tools
+- running your test suite
+- building your documentation
+- linting and other code cleanup tools
 
 These dependencies are considered optional, because they are not required to install and use your package. Feature
 dependencies are considered optional and should also be placed in the `[optional.dependencies]` table.
@@ -209,17 +205,15 @@ feature = [
 
 ```
 
-
 :::{admonition} Additional dependency resources
 
-* [Learn more: View PyPA's overview of declaring optional dependencies](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#dependencies-optional-dependencies)
+- [Learn more: View PyPA's overview of declaring optional dependencies](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#dependencies-optional-dependencies)
 
-* [Dependency specifiers](https://packaging.python.org/en/latest/specifications/dependency-specifiers/)
+- [Dependency specifiers](https://packaging.python.org/en/latest/specifications/dependency-specifiers/)
 
 :::
 
 ### Install dependency groups
-
 
 :::{figure-md} python-package-dependencies
 
@@ -249,9 +243,10 @@ groups that you defined above using the syntax:
 `python -m pip install ".[docs]"`
 
 Above you install:
-* dependencies needed for your documentation (`docs`),
-* required package dependencies in the `dependency` array and
-* your package
+
+- dependencies needed for your documentation (`docs`),
+- required package dependencies in the `dependency` array and
+- your package
 
 using pip. Below you
 install your package, required dependencies and optional test dependencies.
@@ -261,7 +256,6 @@ install your package, required dependencies and optional test dependencies.
 You can install multiple dependency groups in the `[optional.dependencies]` table using:
 
 `python -m pip install ".[docs, tests, lint]"`
-
 
 ```{admonition} For zsh shell users
 :class: tip
@@ -312,7 +306,6 @@ When you install dependencies using the above syntax:
 `pip` will also install your package and its core dependencies.
 ```
 
-
 :::{admonition} Where does conda fit in?
 :class: note
 
@@ -331,7 +324,6 @@ Some packages, particularly in the scientific Python ecosystem, require dependen
 The above workflow assumes that you want to publish your package on PyPI. And then you plan to publish to conda-forge (optionally), [by submitting a recipe using grayskull](https://www.pyopensci.org/python-package-guide/package-structure-code/publish-python-package-pypi-conda.html).
 
 If you want to support conda users, you may want to also maintain a conda environment that they can use to install your package. Maintaining a conda environment will also help you test that your package installs as you expect into a conda environment.
-
 
 ```{admonition} A note for conda users
 :class: tip
@@ -362,13 +354,12 @@ python:
         - docs # you can add any of the subgroups of dependencies from your pyproject.toml file to this list.
 ```
 
-
 :::{admonition} Read the Docs and Python packages
 :class: note
 
-* [Learn more about creating a `readthedocs.yaml` file here. ](https://docs.readthedocs.io/en/stable/config-file/index.html)
-* If you want to install dependencies using
-Poetry in Read the Docs, [you can learn more here.](https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry)
+- [Learn more about creating a `readthedocs.yaml` file here. ](https://docs.readthedocs.io/en/stable/config-file/index.html)
+- If you want to install dependencies using
+  Poetry in Read the Docs, [you can learn more here.](https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry)
 
 :::
 

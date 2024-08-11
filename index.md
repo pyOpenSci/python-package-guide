@@ -42,7 +42,6 @@ This guide will help you:
 You will also find best practice recommendations and curated lists of community resources surrounding packaging and package documentation.
 ::::
 
-
 ```{todo}
 TODO: change the navigation of docs to have a
 
@@ -56,10 +55,10 @@ Community docs
 
 Publish your docs
 ```
+
 ## _new_ Tutorial Series: Create a Python Package
 
 The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
-
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
@@ -69,10 +68,10 @@ The first round of our community-developed, how to create a Python package tutor
 :::{card} ✿ Create a Package Tutorials ✿
 :class-card: left-aligned
 
-* [What is a Python package?](/tutorials/intro)
-* [Make your code installable](/tutorials/installable-code)
-* [Publish your package to (test) PyPI](/tutorials/publish-pypi)
-* [Publish your package to conda-forge](/tutorials/publish-conda-forge)
+- [What is a Python package?](/tutorials/intro)
+- [Make your code installable](/tutorials/installable-code)
+- [Publish your package to (test) PyPI](/tutorials/publish-pypi)
+- [Publish your package to conda-forge](/tutorials/publish-conda-forge)
 
 :::
 ::::
@@ -81,8 +80,8 @@ The first round of our community-developed, how to create a Python package tutor
 :::{card} ✿ Package Metadata Tutorials ✿
 :class-card: left-aligned
 
-* [How to add a README file](/tutorials/add-readme)
-* [How to add metadata to a pyproject.toml file for publication to PyPI.](/tutorials/pyproject-toml.md)
+- [How to add a README file](/tutorials/add-readme)
+- [How to add metadata to a pyproject.toml file for publication to PyPI.](/tutorials/pyproject-toml.md)
 
 :::
 ::::
@@ -91,13 +90,12 @@ The first round of our community-developed, how to create a Python package tutor
 :::{card} ✿ Packaging Tool Tutorials ✿
 :class-card: left-aligned
 
-* [Introduction to Hatch](/tutorials/get-to-know-hatch)
+- [Introduction to Hatch](/tutorials/get-to-know-hatch)
 
 :::
 ::::
 
 :::::
-
 
 ## Python Packaging for Scientists
 
@@ -112,12 +110,12 @@ the vibrant ecosystem of packaging tools that are available to help you with you
 :::{card} ✨ Create your package ✨
 :class-card: left-aligned
 
-* [Package file structure](/package-structure-code/python-package-structure)
-* [Package metadata / pyproject.toml](package-structure-code/pyproject-toml-python-package-metadata.md)
-* [Build your package (sdist / wheel)](package-structure-code/python-package-distribution-files-sdist-wheel.md)
-* [Declare dependencies](package-structure-code/declare-dependencies.md)
-* [Navigate the packaging tool ecosystem](package-structure-code/python-package-build-tools.md)
-* [Non pure Python builds](package-structure-code/complex-python-package-builds.md)
+- [Package file structure](/package-structure-code/python-package-structure)
+- [Package metadata / pyproject.toml](package-structure-code/pyproject-toml-python-package-metadata.md)
+- [Build your package (sdist / wheel)](package-structure-code/python-package-distribution-files-sdist-wheel.md)
+- [Declare dependencies](package-structure-code/declare-dependencies.md)
+- [Navigate the packaging tool ecosystem](package-structure-code/python-package-build-tools.md)
+- [Non pure Python builds](package-structure-code/complex-python-package-builds.md)
 
 :::
 ::::
@@ -129,8 +127,8 @@ the vibrant ecosystem of packaging tools that are available to help you with you
 Gain a better understanding of the Python packaging ecosystem
 Learn about best practices for:
 
-* [Package versioning & release](/package-structure-code/python-package-versions.md)
-* [Publish to PyPI & Conda-forge](/package-structure-code/publish-python-package-pypi-conda.md)
+- [Package versioning & release](/package-structure-code/python-package-versions.md)
+- [Publish to PyPI & Conda-forge](/package-structure-code/publish-python-package-pypi-conda.md)
 
 :::
 ::::
@@ -146,47 +144,47 @@ Learn about best practices for:
 :::{card} ✨ Write The Docs ✨
 :class-card: left-aligned
 
-* [Create documentation for your users](/documentation/write-user-documentation/intro)
-* [Core files to include in your package repository](/documentation/repository-files/intro)
-* [Write tutorials to show how your package is used](/documentation/write-user-documentation/create-package-tutorials)
-:::
-::::
+- [Create documentation for your users](/documentation/write-user-documentation/intro)
+- [Core files to include in your package repository](/documentation/repository-files/intro)
+- [Write tutorials to show how your package is used](/documentation/write-user-documentation/create-package-tutorials)
+  :::
+  ::::
 
 ::::{grid-item}
 :::{card} ✨ Developer Docs ✨
 :class-card: left-aligned
 
-* [Create documentation for collaborating developers](/documentation/repository-files/contributing-file)
-* [Write a development guide](/documentation/repository-files/development-guide)
-:::
-::::
+- [Create documentation for collaborating developers](/documentation/repository-files/contributing-file)
+- [Write a development guide](/documentation/repository-files/development-guide)
+  :::
+  ::::
 
 ::::{grid-item}
 :::{card} ✨ Document For A Community ✨
 :class-card: left-aligned
 
-* [Writing a README file](/documentation/repository-files/readme-file-best-practices)
-* [Set norms with a Code of Conduct](/documentation/repository-files/code-of-conduct-file)
-* [License your package](/documentation/repository-files/license-files)
-:::
-::::
+- [Writing a README file](/documentation/repository-files/readme-file-best-practices)
+- [Set norms with a Code of Conduct](/documentation/repository-files/code-of-conduct-file)
+- [License your package](/documentation/repository-files/license-files)
+  :::
+  ::::
 
 ::::{grid-item}
 :::{card} ✨ Publish Your Docs ✨
 :class-card: left-aligned
 
-* [How to publish your docs](/documentation/hosting-tools/intro)
-* [Using Sphinx](/documentation/hosting-tools/intro)
-* [Markdown, MyST, and ReST](/documentation/hosting-tools/myst-markdown-rst-doc-syntax)
-* [Host your docs on Read The Docs or Github Pages](/documentation/hosting-tools/publish-documentation-online)
-:::
-::::
+- [How to publish your docs](/documentation/hosting-tools/intro)
+- [Using Sphinx](/documentation/hosting-tools/intro)
+- [Markdown, MyST, and ReST](/documentation/hosting-tools/myst-markdown-rst-doc-syntax)
+- [Host your docs on Read The Docs or Github Pages](/documentation/hosting-tools/publish-documentation-online)
+  :::
+  ::::
 
 :::::
 
 ## Tests
 
-*We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)*
+_We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)_
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
@@ -196,21 +194,21 @@ Learn about best practices for:
 :::{card} ✨ Tests for your Python package ✨
 :class-card: left-aligned
 
-* [Intro to testing](tests/index.md)
-* [Write tests](tests/write-tests)
-* [Types of tests](tests/test-types)
-:::
-::::
+- [Intro to testing](tests/index.md)
+- [Write tests](tests/write-tests)
+- [Types of tests](tests/test-types)
+  :::
+  ::::
 
 ::::{grid-item}
 :::{card} ✨ Run your tests ✨
 :class-card: left-aligned
 
-* [Run tests locally](tests/run-tests)
-* [Run tests in CI](tests/tests-ci)
-:::
-::::
-:::::
+- [Run tests locally](tests/run-tests)
+- [Run tests in CI](tests/tests-ci)
+  :::
+  ::::
+  :::::
 
 ## Contributing
 
@@ -218,16 +216,15 @@ Learn about best practices for:
 :class-container: text-center
 :gutter: 3
 
-
 ::::{grid-item}
 :::{card} ✨ Code style & Format ✨
 :class-card: left-aligned
 :link: CONTRIBUTING
 :link-type: doc
 
-* [Code style](package-structure-code/code-style-linting-format.md)
-:::
-::::
+- [Code style](package-structure-code/code-style-linting-format.md)
+  :::
+  ::::
 
 ::::{grid-item}
 :::{card} ✨ Want to contribute? ✨
@@ -242,11 +239,10 @@ contribute.
 
 :::::
 
-
 :::{figure} https://www.pyopensci.org/images/people-building-blocks.jpg
 :align: right
 :width: 350
-:alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?
+:alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?` The person in the air replies `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?
 :::
 
 ### A community-created guidebook
@@ -278,7 +274,6 @@ to see here clarified in this guide, [we invite you to open an issue on GitHub.]
 If you have questions about our peer review process or packaging in general, you are welcome to use our [pyOpenSci Discourse forum](https://pyopensci.discourse.group/).
 
 This is a living guide that is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
-
 
 ```{toctree}
 :hidden:

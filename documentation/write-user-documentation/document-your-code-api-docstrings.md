@@ -44,6 +44,7 @@ class, method, attribute and/or function in your package (_within reason_) that:
 - Explains the expected output `return` of the object, method or function.
 
 (numpy-docstring)=
+
 ### Three Python docstring formats and why we like NumPy style
 
 There are several Python docstring formats that you can choose to use when documenting
@@ -253,7 +254,9 @@ the output of the function is also an int.
 def add_me(num1: int, num2: int) -> int:
     """A function that sums two numbers.
 ```
+
 (type-hints)=
+
 ### Why use type hints
 
 Type hints:

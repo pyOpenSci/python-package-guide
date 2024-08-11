@@ -14,8 +14,6 @@ is working as expected. It's good practice to consider that tests will run on yo
 On this page, you will learn about the tools that you can use to both run tests in isolated environments and across
 Python versions.
 
-
-
 ## Tools to run your tests
 
 There are three categories of tools that will make is easier to setup
@@ -32,43 +30,38 @@ and run your tests in various environments:
 :stub-columns: 1
 :class: pyos-table
 
-*   - Features
-    - Testing Framework (pytest)
-    - Test Runner (Tox)
-    - Automation Tools (Nox)
-    - Continuous Integration (GitHub Actions)
-*   - Run Tests Locally
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-*   - Run Tests Online
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Run Tests Across Python Versions
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Run Tests In Isolated Environments
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Run Tests Across Operating Systems (Windows, MacOS, Linux)
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Use for other automation tasks (e.g. building docs)
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-:::
-
+- - Features
+  - Testing Framework (pytest)
+  - Test Runner (Tox)
+  - Automation Tools (Nox)
+  - Continuous Integration (GitHub Actions)
+- - Run Tests Locally
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+- - Run Tests Online
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+- - Run Tests Across Python Versions
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+- - Run Tests In Isolated Environments
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+- - Run Tests Across Operating Systems (Windows, MacOS, Linux)
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
+  - <i class="fa-solid fa-circle-check fa-xl"></i>
+- - Use for other automation tasks (e.g. building docs) - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i> - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i> - <i class="fa-solid fa-circle-check fa-xl"></i> - <i class="fa-solid fa-circle-check fa-xl"></i>
+    :::
 
 ## What testing framework / package should I use to run tests?
 

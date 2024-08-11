@@ -18,13 +18,13 @@ bare minimum elements needed to be installable into a Python environment.
 Making your code installable is an important steps towards creating a full
 Python package that is directly installable from PyPI.
 
-
 :::{todo}
+
 1. Is it clear where to add commands? Bash vs. Python console
-Bash vs. Zsh is different
+   Bash vs. Zsh is different
 2. Does this lesson run as expected on windows and mac?
 3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. this may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
-:::
+   :::
 
 :::{figure-md} code-to-python-package
 
@@ -55,12 +55,11 @@ If you are using Windows or are not familiar with Shell, you may want to check o
 
 In the upcoming lessons you will learn how to:
 
-* [Publish your package to PyPI](publish-pypi)
-* Add a README file to your package to support community use
-* Add additional project metadata to your package to support PyPI publication
+- [Publish your package to PyPI](publish-pypi)
+- Add a README file to your package to support community use
+- Add additional project metadata to your package to support PyPI publication
 
 :::
-
 
 :::{figure-md} packages-environment
 
@@ -69,7 +68,6 @@ In the upcoming lessons you will learn how to:
 Making your code installable is the first step towards creating a publishable Python package. Once your code is installable, it is a Python package and can be added to any Python environment on your computer and imported in the same way that you might import a package such as Pandas or GeoPandas.
 If your code is on GitHub or GitLab you can also install it directly from there.
 :::
-
 
 ## About the Python package directory structure
 
@@ -151,35 +149,34 @@ Neither 'setup.py' nor 'pyproject.toml' found.
 :class: tip
 
 If your project already defines a `setup.py` file, Hatch can be used to automatically create the `pyproject.toml`.
-* See [Using Hatch to Migrate setup.py to a pyproject.toml
-](setup-py-to-pyproject-toml.md)
+
+- See [Using Hatch to Migrate setup.py to a pyproject.toml
+  ](setup-py-to-pyproject-toml.md)
 
 :::
-
-
 
 ## Time to create your Python package!
 
 Now that you understand the basics of the Python package directory structure, and associated key files (`__init__.py` and `pyproject.toml`), it's time to create your Python package!
 Below you will create a directory structure similar to the structure described above using Hatch.
 
-
 ## Step 1: Set Up the Package Directory Structure
 
-* Open your shell or preferred terminal.
-* Use the shell `cd` command to navigate in your shell to the location where you'd like your package directory to live. Hatch will create the package directory for you
-* Choose a name for your package. The name should:
-    * Have no spaces (*Required*)
-    * Use all lowercase characters (*Recommended*). For this tutorial we will use `pyospackage`.
-    * Only use letter and the characters _ or - in the name. This means that the name `pyos*package` is not an acceptable name. However, the names `pyos_package` or `pyos-package` both are ok
+- Open your shell or preferred terminal.
+- Use the shell `cd` command to navigate in your shell to the location where you'd like your package directory to live. Hatch will create the package directory for you
+- Choose a name for your package. The name should:
+  - Have no spaces (_Required_)
+  - Use all lowercase characters (_Recommended_). For this tutorial we will use `pyospackage`.
+  - Only use letter and the characters \_ or - in the name. This means that the name `pyos*package` is not an acceptable name. However, the names `pyos_package` or `pyos-package` both are ok
 
 :::{admonition} Hatch and project names
 Hatch makes some decisions for your project's name when you run `hatch new`
 
 These include using:
-* dashes for the top level directory
-* dashes for the project name in the pyproject.toml
-* underscores for the package directory name
+
+- dashes for the top level directory
+- dashes for the project name in the pyproject.toml
+- underscores for the package directory name
 
 ```bash
 ❯ hatch new pyos-package
@@ -193,6 +190,7 @@ pyos-package
 └── pyproject.toml
 
 ```
+
 If you use a name with underscores, Hatch will return the same thing:
 
 ```bash
@@ -206,9 +204,9 @@ pyos-package
 ├── README.md
 └── pyproject.toml
 ```
+
 In both of the examples above the project name in the pyproject.toml file that hatch creates is `pyos-package`.
 :::
-
 
 Next run:
 
@@ -223,7 +221,6 @@ pyospackage
 ├── README.md
 └── pyproject.toml
 ```
-
 
 Your final project directory structure should look like this:
 
@@ -253,12 +250,13 @@ populate the `add_numbers.py` file with code provided below.
 When you see the word module, we are referring to a `.py` file containing Python
 code.
 
-The `__init__.py`  allows Python to recognize that a directory contains at least one module that may be imported and used in your code.
+The `__init__.py` allows Python to recognize that a directory contains at least one module that may be imported and used in your code.
 A package can have multiple modules[^python-modules].
 
 :::
 
 Your project directory should now look like this:
+
 ```
 pyospackage/
 └─ pyproject.toml
@@ -341,12 +339,10 @@ file.
 [Learn more about the pyproject.toml format here.](../package-structure-code/pyproject-toml-python-package-metadata)
 :::
 
-
 You will learn more about the `pyproject.toml` format in the
 [next lesson when you add additional metadata / information to this file.](pyproject-toml.md)
 
 - Open up the `pyproject.toml` file that Hatch created in your favorite text editor. It should look something like the example below.
-
 
 ```toml
 [build-system]
@@ -390,7 +386,7 @@ path = "src/pyospackage/__about__.py"
 Edit the file as follows:
 
 1. Delete `dynamic = ["version"]`: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.
-2. Add `version = "0.1"` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
+2. Add `version = "0.1"` in the place of `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
 3. Fill in the description if it doesn't already exist.
 
 ```toml
@@ -426,8 +422,8 @@ However, if you wish, you can clean it up a bit.
 
 To begin:
 
-* Remove support for Python 3.8
-* Within the `[project]` table, update `requires-python = ">3.8"` to `requires-python = ">3.9"`
+- Remove support for Python 3.8
+- Within the `[project]` table, update `requires-python = ">3.8"` to `requires-python = ">3.9"`
 
 Since you are creating a pure Python package in this lesson,
 you can remove the following classifiers:
@@ -440,7 +436,6 @@ classifiers = [
 ```
 
 Your new pyproject.toml file should now look something like this:
-
 
 ```toml
 [build-system]
@@ -474,10 +469,11 @@ Issues = "https://github.com/unknown/pyospackage/issues"
 Source = "https://github.com/unknown/pyospackage"
 
 ```
+
 :::{admonition} The bare minimum needed in a pyproject.toml file
 :class: tip
 
-The core information that you need in a `pyproject.toml` file in order to publish on PyPI is your **package's name**  and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
+The core information that you need in a `pyproject.toml` file in order to publish on PyPI is your **package's name** and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
 
 Once you have your project metadata in the pyproject.toml file, you will
 rarely update it. In the next lesson you’ll add more metadata and structure to this file.
@@ -501,8 +497,9 @@ While you can do this using hatch, we are going to use pip for this lesson, so y
 
 :::{todo}
 Add this back in when the lesson is published
+
 - Activate the Python environment that you wish to use. If you need help with working with virtual environments check out this lesson (add link).
-:::
+  :::
 
 ```bash
 # Activate your environment using conda or venv
@@ -527,7 +524,7 @@ Obtaining file:///Users/leahawasser/Documents/GitHub/pyos/pyosPackage
 # use pip list instead of conda list here if you are working in an venv environment rather than a conda envt
 ```
 
-:::{admonition}  What does `python -m pip install -e .` do?
+:::{admonition} What does `python -m pip install -e .` do?
 :class: tip
 
 Let's break down `python -m pip install -e .`
@@ -599,7 +596,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 3
 ```
 
-
 :::{admonition} Installing packages from GitHub
 
 If you wish to share your code without publishing to PyPI you can
@@ -629,21 +625,20 @@ into any Python environment.
 
 In the upcoming lessons you will:
 
-* Learn how to [build and publish your Python package to (test) PyPI](publish-pypi)
-* Add a README file and LICENSE to your package
-* Add more metadata to your `pyproject.toml` file to support PyPI publication.
-* learn how to publish to **conda-forge** from **PyPI**.
+- Learn how to [build and publish your Python package to (test) PyPI](publish-pypi)
+- Add a README file and LICENSE to your package
+- Add more metadata to your `pyproject.toml` file to support PyPI publication.
+- learn how to publish to **conda-forge** from **PyPI**.
 
-* Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to your package
-* [Add more metadata to your `pyproject.toml`](pyproject-toml.md) file to support PyPI publication.
-* [Learn how to build your package distribution](publish-pypi) files (**sdist** and **wheel**) and publish to **test PyPI**.
-* Finally you will learn how to [publish to **conda-forge**](publish-conda-forge) from **PyPI**.
+- Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to your package
+- [Add more metadata to your `pyproject.toml`](pyproject-toml.md) file to support PyPI publication.
+- [Learn how to build your package distribution](publish-pypi) files (**sdist** and **wheel**) and publish to **test PyPI**.
+- Finally you will learn how to [publish to **conda-forge**](publish-conda-forge) from **PyPI**.
 
 ## Footnotes
 
 [^shell-lesson]: [Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)
-
 [^python-modules]: [Python module docs](https://docs.python.org/3/tutorial/modules.html#packages)
-[^googledoc]:[Google docstring style](https://google.github.io/styleguide/pyguide.html)
+[^googledoc]: [Google docstring style](https://google.github.io/styleguide/pyguide.html)
 [^numpydoc]: [Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)
 [^epytextdoc]: [epydoc](https://epydoc.sourceforge.net/epytext.html)

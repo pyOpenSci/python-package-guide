@@ -205,6 +205,7 @@ Note that because setuptools does not offer a front-end interface, it is not
 included in the table.
 
 (package-features)=
+
 ### Package tool features table
 
 ```{csv-table}
@@ -328,6 +329,7 @@ You may NOT want to use flit if:
 - You want environment management (use PDM, Hatch or Poetry)
 
 (hatch)=
+
 ## Hatch
 
 [**Hatch**](https://hatch.pypa.io/latest/), similar to Poetry and PDM, provides a
@@ -404,6 +406,7 @@ Build your sdist and wheel distributions|✅|Poetry will build your sdist and wh
 <!-- TODO: responses here on poetry's future dev work: https://github.com/python-poetry/poetry/discussions/7525 -->
 
 (challenges-with-poetry)=
+
 ### Challenges with Poetry
 
 Some challenges of Poetry include:
