@@ -1,7 +1,6 @@
 ---
 orphan: true
 ---
-
 # Contributing to the Python Packaging Guide
 
 The guide is a community resource.
@@ -10,10 +9,10 @@ The guide is a community resource.
 
 We welcome contributions in the form of issues and pull requests:
 
-- If you have an idea for something that should be included in the guide, [please open an issue here](https://github.com/pyOpenSci/python-package-guide/issues).
-- If you find a typo, feel free to [submit a pull request](https://github.com/pyOpenSci/python-package-guide/pulls) to modify the text directly. Or, if you are less comfortable with pull requests, feel free to open an issue.
-- If you are interested in helping translate the guide into other languages, take a look at the [translation guide](./TRANSLATING.md).
-- If you want to see a larger change to the content of the guide book, please submit an issue first!
+* If you have an idea for something that should be included in the guide, [please open an issue here](https://github.com/pyOpenSci/python-package-guide/issues).
+* If you find a typo, feel free to [submit a pull request](https://github.com/pyOpenSci/python-package-guide/pulls) to modify the text directly. Or, if you are less comfortable with pull requests, feel free to open an issue.
+* If you are interested in helping translate the guide into other languages, take a look at the [translation guide](./TRANSLATING.md).
+* If you want to see a larger change to the content of the guide book, please submit an issue first!
 
 If you are unsure about how to contribute or are not familiar with git and github, this guide will help you through the process.
 
@@ -48,6 +47,7 @@ To fork a repo,
 
 <img width="395" alt="fork_repo" src="https://github.com/user-attachments/assets/949223fb-b58b-4b6d-85db-003bd117da46">
 
+
 ## Contributing via the GitHub website
 
 ### How to edit a MarkDown file
@@ -55,7 +55,7 @@ To fork a repo,
 The Python Packaging Guide is written in myST, a variant of MarkDown. You can edit the files directly in the GitHub website.
 To do so, navigate to the file you want to edit and click the pencil icon in the top right corner of the file.
 
-````{figure} images/contributing/edit-button-pencil.png
+```{figure} images/contributing/edit-button-pencil.png
 ---
 name: edit-button-pencil in GitHub
 width: 80%
@@ -70,7 +70,7 @@ width: 80%
 alt: Edit file in GitHub
 ---
 An image showing when a file is being edited in GitHub. The file content is displayed in a text editor.
-````
+```
 
 To preview your changes, click the "Preview changes" tab.
 
@@ -108,7 +108,6 @@ To clone your forked repository to your computer, you need to copy the URL of yo
 ```bash
 git clone <URL>
 ```
-
 Replace `<URL>` with the URL of your forked repository. You can find the URL by clicking the green "Code" button on your forked repository page.
 
 ```{figure} images/contributing/clone-repository.png
@@ -135,17 +134,16 @@ git checkout -b <branch-name>
 To build the guide locally, you need to create a virtual environment and install the dependencies. You can do this by running the following commands in your terminal:
 
 - **On Windows**:
-
-  ```bash
-  python -m venv .venv
-  .venv\Scripts\activate
-  ```
+    ```bash
+    python -m venv .venv
+    .venv\Scripts\activate
+    ```
 
 - **On MacOS and Linux**:
-  ```bash
-  python -m venv .venv
-  source .venv/bin/activate
-  ```
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate
+    ```
 
 ### Install the development dependencies
 
@@ -160,18 +158,18 @@ python -m pip install -e .[dev]
 After making your changes, you need to commit them to your local repository. To do this, run the following commands in your terminal:
 
 - To see the changes you made:
-  ```bash
-  git status
-  ```
+    ```bash
+    git status
+    ```
 - To add the changes to the staging area:
-  ```bash
-  git add .
-  ```
+    ```bash
+    git add .
+    ```
 - To commit the changes:
-  `bash
-git commit -m "Your commit message here"
-`
-  Replace `"Your commit message here"` with a clear and concise message that describes the changes you made.
+    ```bash
+    git commit -m "Your commit message here"
+    ```
+Replace `"Your commit message here"` with a clear and concise message that describes the changes you made.
 
 ### How to build the guide locally
 
@@ -182,30 +180,25 @@ To see the different sessions available, you can run the following command in yo
 ```bash
 nox --list-sessions
 ```
-
 There are different sessions in nox related to building the docs: `docs`, `docs-test`, `docs-live`. You can run them by specifying the session name after the `nox` command.
 
 - `docs`: this session builds the guide and opens it in your browser.
-
-  ```bash
-  nox -e docs
-  ```
-
-  To see the guide built locally, open the file `_build/html/index.html` in your browser.
+    ```bash
+    nox -e docs
+    ```
+    To see the guide built locally, open the file `_build/html/index.html` in your browser.
 
 - `docs-test`: this session runs the tests for the guide.
-
-  ```bash
-  nox -e docs-test
-  ```
-
-  If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
+    ```bash
+    nox -e docs-test
+    ```
+    If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
 
 - `docs-live`: this session builds the guide and opens it in your browser with live reloading.
-  ```bash
-  nox -e docs-live
-  ```
-  open the local version of the guide in your browser at `localhost` shown in the terminal.
+    ```bash
+    nox -e docs-live
+    ```
+    open the local version of the guide in your browser at ``localhost`` shown in the terminal.
 
 ### Before you submit your pull request
 
@@ -214,9 +207,9 @@ Before submitting your pull request, make sure to run the tests and check the fo
 ```bash
 nox -e docs-test
 ```
-
 If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
 Also make sure to check the formatting of your documentation by building the docs locally and checking that your changes look correct.
+
 
 ## Submitting a pull request with your contribution
 
@@ -263,7 +256,6 @@ alt: Pull request checks in GitHub
 ---
 An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks are highlighted with a red rectangle.
 ```
-
 If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged.
 
 ```{figure} images/contributing/pull-requests-checks-fails.png
@@ -293,11 +285,11 @@ Once your pull request is approved, it will be merged into the main branch and y
 
 ### How to get help
 
-_**TODO**: This section should describe the options for finding more help in case beginner contributors need more help (e.g., create an issue, post in a forum, etc)._
+*__TODO__: This section should describe the options for finding more help in case beginner contributors need more help (e.g., create an issue, post in a forum, etc).*
 
 ### Additional resources
 
-_**TODO**: It should also include links to beginner documentation, like the GitHub docs._
+*__TODO__: It should also include links to beginner documentation, like the GitHub docs.*
 
 ## Annex
 
@@ -307,7 +299,6 @@ This guide uses the [literalinclude Sphinx directive](https://www.sphinx-doc.org
 whenever possible to keep code and prose separate. Code for use in the documentation is kept in the `examples/` folder.
 
 (referencing-code-in-documentation)=
-
 #### Referencing code in documentation
 
 If an example is present elsewhere in the documentation that you want to use, you can copy the `literalinclude`
@@ -325,11 +316,10 @@ same documentation content even through code refactors.
 If you need example code that doesn't yet exist in `examples/` see creating code for documentation](#creating-code-for-documentation).
 
 (creating-code-for-documentation)=
-
 #### Creating code for documentation
 
 Whenever you come across a place that could benefit from a code block, instead of writing it in-line with a code fence
-(` ``` ` blocked text) you can write it as a file in its own format. Your example may even already exist; [see referencing code in documentation
+(`` ``` `` blocked text) you can write it as a file in its own format. Your example may even already exist; [see referencing code in documentation
 ](#referencing-code-in-documentation).
 
 If you want to add a new example that doesn't fit into any of the existing example files, you can create a new file and
@@ -343,11 +333,10 @@ instance, add new functions to the end of the file, new methods after all existi
 Example code is checked for correctness, so adding a new example may require adding additional tests for coverage, and
 will require fixing any failing tests.
 
-**_⚠️ WARNING_**: great care should be taken when modifying existing example code, especially any modification beyond
+***⚠️ WARNING***: great care should be taken when modifying existing example code, especially any modification beyond
 appending to the end of the file. All code examples are (potentially) shared examples. This makes for more consistent
 examples in the guide but can mean action-at-a-distance when modifying the examples for one particular use case.
 If you find yourself modifying existing examples try running this command and then checking those pages in a new build.
-
 ```bash
 grep -lr '\.\./examples/path/to/modified\.py' documentation/
 ```
@@ -366,28 +355,25 @@ def is_empty(x):
 ````
 
 The python can be extracted into a `.py` file
-
 ```python
 def is_empty(x):
     return not bool(len(x))
 ```
 
-```md
+````md
 Here is an example Python function:
 
 :::{literalinclude} ../examples/contributing_example.py
 :language: python
 :lines: 1-2
-```
+````
 
 As another example, if you only need to show part of a `pyproject.toml`, we already have complete project definitions,
 you need only to find the relevant part.
 
 Instead of writing this
-
 ````md
 Classifiers are just a list of plain strings
-
 ```toml
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -398,7 +384,6 @@ classifiers = [
 ````
 
 an example could be extracted from an existing toml file
-
 ```md
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
