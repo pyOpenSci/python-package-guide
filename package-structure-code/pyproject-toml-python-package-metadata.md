@@ -21,6 +21,7 @@ what's missing
 
 :::
 
+
 :::::{todo}
 
 when these are published, remove this todo
@@ -73,7 +74,6 @@ Prior to August 2017, Python package metadata was stored either in the `setup.py
 <!--Commented until tutorials go live
 
  If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](../tutorials/extras/6-setuppy-to-pyproject-toml.md) -->
-
 :::
 
 The standard file that Python packages use to [specify build requirements and

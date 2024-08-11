@@ -34,6 +34,7 @@ your Python package.
 :::
 ::::
 
+
 ::::{grid-item}
 :::{card} ✨ 4. Add metadata ✨
 :link: pyproject-toml-python-package-metadata
