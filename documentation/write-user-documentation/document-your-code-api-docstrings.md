@@ -164,7 +164,7 @@ doctest adding another quality check to your package.
 
 ## Using doctest to run docstring examples in your package's methods and functions
 
-<!-- This link isn't working no matter how i create the target. not sure
+<!-- This link isn't working no matter how i create the target. Not sure
 why -->
 
 Above, we provided some examples of good, better, best docstring formats. If you are using Sphinx to create your docs, you can add the [doctest](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx build. Doctest provides an additional check for docstrings with example code in them.
@@ -176,7 +176,7 @@ assures that your package's code (API) runs as you expect it to.
 ```{note}
 It's important to keep in mind that examples in your docstrings
 help users using your package. Running `doctest` on those examples provides a
-check of your package's API. doctest ensures that the functions and methods in your package
+check of your package's API. The doctest ensures that the functions and methods in your package
 run as you expect them to. Neither of these items replace a separate,
 stand-alone test suite that is designed to test your package's core functionality
 across operating systems and Python versions.
