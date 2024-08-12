@@ -66,6 +66,19 @@ however, if you prefer another method, check out the [Hatch installation documen
 :::
 ::::
 
+:::{tip}
+Hatch can also be installed directly using [pip](https://hatch.pypa.io/latest/install/#pip) or [conda](https://hatch.pypa.io/latest/install/#conda). We encourage you to
+follow the instructions above because we have found that the Hatch installers
+for Windows and Mac are the easiest and most efficient.
+
+Our Linux users have found success installing Hatch with pipx if they already
+use apt install.
+
+Both approaches (using a graphical installer on Windows/Mac and pipx) ensure
+that you have Hatch installed globally. A global install means that Hatch is
+available across all of your Python environments on your computer.
+:::
+
 ### Check that hatch installed correctly
 
 Once you have completed the installation instructions above, you can open your
@@ -78,19 +91,6 @@ hatch --version
 
 *Note the version number output of `hatch --version` will likely  be
 different from the output above in this tutorial.*
-
-:::{tip}
-Hatch can also be installed directly using pip or conda. We encourage you to
-follow the instructions above because we have found that the Hatch installers
-for Windows and Mac are the easiest and most efficient.
-
-Our Linux users have found success installing Hatch with pipx if they already
-use apt install.
-
-Both approaches (using a graphical installer on Windows/Mac and pipx) ensure
-that you have Hatch installed globally. A global install means that Hatch is
-available across all of your Python environments on your computer.
-:::
 
 ## Configure Hatch
 
