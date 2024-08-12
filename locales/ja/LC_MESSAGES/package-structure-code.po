@@ -9,12 +9,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-28 08:42-0400\n"
+"POT-Creation-Date: 2024-08-02 18:04+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es\n"
-"Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -361,15 +361,15 @@ msgstr ""
 msgid "From the project root, run:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:181
+#: ../../package-structure-code/code-style-linting-format.md:182
 msgid "Python file `temporal.py` imports after `isort` has been run"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:188
+#: ../../package-structure-code/code-style-linting-format.md:189
 msgid "Ruff"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:190
+#: ../../package-structure-code/code-style-linting-format.md:191
 msgid ""
 "[Ruff](https://docs.astral.sh/ruff/) is a new addition to the code "
 "quality ecosystem, gaining some traction since its release. `ruff` is "
@@ -379,53 +379,53 @@ msgid ""
 "of them."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:196
+#: ../../package-structure-code/code-style-linting-format.md:197
 msgid ""
 "`ruff` has some interesting features that distinguish it from other "
 "linters:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:198
+#: ../../package-structure-code/code-style-linting-format.md:199
 msgid "Linter configuration in `pyproject.toml`"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:199
+#: ../../package-structure-code/code-style-linting-format.md:200
 msgid "Several hundred rules included, many of which are automatically fixable"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:200
+#: ../../package-structure-code/code-style-linting-format.md:201
 msgid ""
 "Rules explanation, see [F403](https://docs.astral.sh/ruff/rules"
 "/undefined-local-with-import-star/) for an example"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:201
+#: ../../package-structure-code/code-style-linting-format.md:202
 msgid ""
 "Fast execution time, makes a quick feedback loop possible even on large "
 "projects."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:203
+#: ../../package-structure-code/code-style-linting-format.md:204
 msgid ""
 "Here is a simple configuration to get started with `ruff`. It would go "
 "into your `pyproject.toml`:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:211
+#: ../../package-structure-code/code-style-linting-format.md:212
 msgid ""
 "Depending on your project, you might want to add the following to sort "
 "imports correctly:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:218
+#: ../../package-structure-code/code-style-linting-format.md:219
 msgid "How to use code formatter in your local workflow"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:220
+#: ../../package-structure-code/code-style-linting-format.md:221
 msgid "Linters, code formatters and your favorite coding tools"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:222
+#: ../../package-structure-code/code-style-linting-format.md:223
 msgid ""
 "Linters can be run as a command-line tool as shown above. They also can "
 "be run within your favorite coding tool (e.g. VScode, pycharm, etc). For "
@@ -434,46 +434,46 @@ msgid ""
 "favorite code format tools on demand."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:228
+#: ../../package-structure-code/code-style-linting-format.md:229
 msgid "Use pre-commit hooks to run code formatters and linters on commits"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:230
+#: ../../package-structure-code/code-style-linting-format.md:231
 msgid "You can also setup a `pre-commit hook` in your Python package repository."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:232
+#: ../../package-structure-code/code-style-linting-format.md:233
 msgid ""
 "A pre-commit hook is a tool that allows an action (or actions) to be "
 "triggered when you apply a commit to your git repository."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:235
+#: ../../package-structure-code/code-style-linting-format.md:236
 msgid "Pre-commit hook example workflow"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:237
+#: ../../package-structure-code/code-style-linting-format.md:238
 msgid "The precommit workflow looks like this: You type and run:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:240
+#: ../../package-structure-code/code-style-linting-format.md:241
 msgid "`git commit -m \"message here\"` at the command line"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:242
+#: ../../package-structure-code/code-style-linting-format.md:243
 msgid ""
 "Once you hit return, pre-commit will run any tools that you have "
 "configured in a **.pre-commit-config.yaml** file."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:244
+#: ../../package-structure-code/code-style-linting-format.md:245
 msgid ""
 "If the tools configured in the pre-commit hook run successfully without "
 "making changes or finding errors in your code, the commit will be applied"
 " to the repository."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:248
+#: ../../package-structure-code/code-style-linting-format.md:249
 msgid ""
 "If the tools configured in the hook find errors in your files, the commit"
 " will NOT be applied to the repository. Remember from the discussion "
@@ -483,17 +483,17 @@ msgid ""
 "those issues, manually."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:255
+#: ../../package-structure-code/code-style-linting-format.md:256
 msgid ""
 "Once all of the fixes are applied you can re-add (stage) the files to be "
 "commit. And re-run your commit."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:259
+#: ../../package-structure-code/code-style-linting-format.md:260
 msgid "Diagram showing the steps of a pre-commit workflow from left to right."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:261
+#: ../../package-structure-code/code-style-linting-format.md:262
 msgid ""
 "The pre-commit workflow begins with you adding files that have changes to"
 " be staged in git. Next, you'd run git commit. when you run git commit, "
@@ -506,7 +506,7 @@ msgid ""
 "using-black-and-flake8/*)"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:274
+#: ../../package-structure-code/code-style-linting-format.md:275
 msgid ""
 "If have a Python code-base and multiple maintainers actively working on "
 "the code, and you intend to run a tool like Black, be sure to coordinate "
@@ -516,11 +516,11 @@ msgid ""
 "merged."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:281
+#: ../../package-structure-code/code-style-linting-format.md:282
 msgid "General pre commit checks"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:283
+#: ../../package-structure-code/code-style-linting-format.md:284
 msgid ""
 "In addition to calling tools, Pre-commit also has a suite of [built in "
 "format hooks](https://github.com/pre-commit/pre-commit-hooks#hooks-"
@@ -529,113 +529,113 @@ msgid ""
 "streamlined code files."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:288
+#: ../../package-structure-code/code-style-linting-format.md:289
 msgid ""
 "An example pre-commit-config.yaml file is below with examples of how this"
 " is all setup."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:291
+#: ../../package-structure-code/code-style-linting-format.md:292
 msgid "Pre-commit.ci"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:293
+#: ../../package-structure-code/code-style-linting-format.md:294
 msgid ""
 "[Pre-commit.ci](https://pre-commit.ci) is a bot that may become your new "
 "best friend. This bot, when setup on a repo can be configured to do the "
 "following:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:296
+#: ../../package-structure-code/code-style-linting-format.md:297
 msgid "It will check every pull request using all of the pre-commit hook setting"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:297
+#: ../../package-structure-code/code-style-linting-format.md:298
 msgid ""
 "If you wish, it will also submit a pull request to your repo with pre-"
 "commit fixes, saving you, and new contributors the time of reformatting a"
 " pr that has format issues."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:300
+#: ../../package-structure-code/code-style-linting-format.md:301
 msgid "You can also call the bot on any pull request to run / and fix the code."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:302
+#: ../../package-structure-code/code-style-linting-format.md:303
 msgid ""
 "The pre-commit.ci bot uses the same pre-commit-config.yaml file that you "
 "use to setup pre-commit locally."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:305
+#: ../../package-structure-code/code-style-linting-format.md:306
 msgid "Setting up a bot like this can be valuable because:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:307
+#: ../../package-structure-code/code-style-linting-format.md:308
 msgid ""
 "It can make is easier for maintainers as they no longer have to worry at "
 "allows about fixing code format. The bot will do the work for them."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:309
+#: ../../package-structure-code/code-style-linting-format.md:310
 msgid ""
 "It can make it easier for new comers as they never have to setup pre-"
 "commit locally or worry about linting their code. They can even make "
 "small fixes to the code directly on GitHub without worry."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:311
+#: ../../package-structure-code/code-style-linting-format.md:312
 msgid "Setting up a git pre-commit hook"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:313
+#: ../../package-structure-code/code-style-linting-format.md:314
 msgid "To setup pre-commit locally, you need to do 3 things:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:315
+#: ../../package-structure-code/code-style-linting-format.md:316
 msgid ""
 "Install pre-commit (and include it as a development requirement in your "
 "repository)"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:325
+#: ../../package-structure-code/code-style-linting-format.md:326
 msgid ""
 "Create a .pre-commit-config.yaml file in the root of your package "
 "directory."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:327
+#: ../../package-structure-code/code-style-linting-format.md:328
 msgid ""
 "Below is an example **.pre-commit-cofig.yaml** file that can be used to "
 "setup the pre-commit hook and the pre-commit.ci bot if you chose to "
 "implement that too."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:335
+#: ../../package-structure-code/code-style-linting-format.md:336
 msgid ""
 "This file specifies a hook that will be triggered automatically before "
 "each `git commit`, in this case, it specifies a `flake8` using version "
 "`6.0.0`."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:338
+#: ../../package-structure-code/code-style-linting-format.md:339
 msgid ""
 "Install your pre-commit hook(s) using `pre-commit install`. This will "
 "install all of the hooks specified in the pre-commit yaml file into your "
 "environment."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:340
+#: ../../package-structure-code/code-style-linting-format.md:341
 msgid ""
 "Once you have done the above, you are ready to start working on your "
 "code. Pre-commit will run every time you run `git commit`."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:343
+#: ../../package-structure-code/code-style-linting-format.md:344
 msgid "Summary"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:345
+#: ../../package-structure-code/code-style-linting-format.md:346
 msgid ""
 "pyOpenSci suggests setting up a linter and a code styler for your "
 "package, regardless of whether you use pre-commit hooks, CI or other "
@@ -1423,55 +1423,55 @@ msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Intro"
-msgstr "Introducción"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Python package structure"
-msgstr "Estructura de paquetes de Python"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "pyproject.toml Package Metadata"
-msgstr "Metadatos del paquete en pyproject.toml"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Build Your Package"
-msgstr "Monta tu paquete"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Declare dependencies"
-msgstr "Declara dependencias"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Package Build Tools"
-msgstr "Herramientas de construcción de paquetes"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Complex Builds"
-msgstr "Construcciones complejas"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Package structure & code style"
-msgstr "Estilo de código y estructura de paquetes"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:177
 msgid "Publish with Conda / PyPI"
-msgstr "Publicar con Conda / PyPI"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:177
 msgid "Package versions"
-msgstr "Versiones de paquetes"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:177
 msgid "Code style"
-msgstr "Estilo de código"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:177
 msgid "Publishing a package"
-msgstr "Publicar un paquete"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:1
 msgid "Python package structure information"
-msgstr "Información sobre la estructura de paquetes de Python"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:3
 msgid ""
@@ -1479,9 +1479,6 @@ msgid ""
 "formats and style. It also reviews the various packaging tools that you "
 "can use to support building and publishing your package."
 msgstr ""
-"Esta sección proporciona orientación sobre la estructura de su paquete de Python, "
-"los formatos de código y estilo. También revisa las diversas herramientas de empaquetado "
-"que puede utilizar para admitir la construcción y publicación de su paquete."
 
 #: ../../package-structure-code/intro.md:7
 msgid ""
@@ -1490,14 +1487,10 @@ msgid ""
 "following best practices. Here, we review tool features and suggest tools"
 " that might be best fitted for your workflow."
 msgstr ""
-"Si está confundido por el empaquetado de Python, ¡no está solo! La buena noticia es "
-"que hay algunas herramientas de empaquetado modernas excelentes que garantizan que "
-"está siguiendo las mejores prácticas. Aquí, revisamos las características de las herramientas "
-"y sugerimos las que podrían ser más adecuadas para su flujo de trabajo."
 
 #: ../../package-structure-code/intro.md:19
 msgid "✨ 1. Package file structure ✨"
-msgstr "✨ 1. Estructura de archivos en el paquete ✨"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:23
 msgid ""
@@ -1505,13 +1498,10 @@ msgid ""
 "what your level of packaging knowledge is, this page will help you decide"
 " upon a package structure that follows modern python best practices."
 msgstr ""
-"¿Distribución del código fuente, distribución plana y dónde deben vivir las carpetas de tests? "
-"Sin importar cuál sea su nivel de conocimiento sobre empaquetado, esta página le ayudará a decidir "
-"sobre una estructura de paquete que siga las mejores prácticas modernas para paquetes de Python."
 
 #: ../../package-structure-code/intro.md:28
 msgid "✨ 2. Learn about building your package ✨"
-msgstr "✨ 2. Aprende a construir tu paquete ✨"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:32
 msgid ""
@@ -1520,13 +1510,10 @@ msgid ""
 "code and metadata into a format that can be published on PyPI. Learn more"
 " about building your Python package."
 msgstr ""
-"Para publicar su paquete de Python en PyPI, primero deberá construirlo. El acto de \"construir\" "
-"se refiere al proceso de colocar su código de paquete y metadatos en un formato que se pueda "
-"publicar en PyPI. Aprenda más sobre cómo construir su paquete de Python."
 
 #: ../../package-structure-code/intro.md:41
 msgid "✨ 4. Add metadata ✨"
-msgstr "✨ 4. Agregar metadatos ✨"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:45
 msgid ""
@@ -1534,25 +1521,20 @@ msgid ""
 "filtering on PyPI and also the metadata that a package installer needs to"
 " build and install your package."
 msgstr ""
-"Aprenda cómo agregar metadatos de proyecto a su paquete de Python para admitir tanto "
-"la filtración en PyPI como los metadatos que un instalador de paquetes necesita para "
-"construir e instalar su paquete."
 
 #: ../../package-structure-code/intro.md:52
 msgid "✨ 3. What Python package tool should you use? ✨"
-msgstr "✨ 3. ¿Qué herramienta de empaquetado de Python debería usar? ✨"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:56
 msgid ""
 "Learn more about the suite of packaging tools out there. And learn which "
 "tool might be best for you."
 msgstr ""
-"Aprenda más sobre la suite de herramientas de empaquetado disponibles. Y aprenda cuál "
-"podría ser la mejor herramienta para usted."
 
 #: ../../package-structure-code/intro.md:62
 msgid "✨ 4. Publish to PyPI and Conda ✨"
-msgstr "✨ 4. Publicar en PyPI y Conda ✨"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:66
 msgid ""
@@ -1560,12 +1542,10 @@ msgid ""
 "publish to both PyPI and then a Conda channel such as conda-forge. Learn "
 "more here."
 msgstr ""
-"Si tiene un paquete de Python puro, es un proceso sencillo publicar en PyPI y luego en "
-"un canal de Conda como conda-forge. Aprenda más aquí."
 
 #: ../../package-structure-code/intro.md:73
 msgid "✨ 5. Setup package versioning ✨"
-msgstr "✨ 5. Configurar el versionado de paquetes ✨"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:77
 msgid ""
@@ -1573,12 +1553,10 @@ msgid ""
 "common ways to version a package. Which one should you pick? Learn more "
 "here."
 msgstr ""
-"Semver (versionado numérico) y Calver (versionado usando la fecha) son 2 formas comunes "
-"de versionar un paquete. ¿Cuál debería elegir? Aprenda más aquí."
 
 #: ../../package-structure-code/intro.md:83
 msgid "✨ 6. Code style & linters ✨"
-msgstr "✨ 6. Estilo de código y linters ✨"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:87
 msgid ""
@@ -1586,24 +1564,18 @@ msgid ""
 "follows best practices for code format? Learn more about the options and "
 "why this is important here."
 msgstr ""
-"Black, blue, flake8, Ruff - ¿qué herramientas pueden ayudarlo a asegurarse de que su paquete "
-"siga las mejores prácticas para el formato de código? Aprenda más sobre las opciones y por qué "
-"esto es importante."
 
 #: ../../package-structure-code/intro.md:95
 msgid ""
 "Figure showing a decision tree with the various packaging tool front-end "
 "and back-end options."
 msgstr ""
-"Figura que muestra un árbol de decisiones con las diversas opciones de herramientas de empaquetado."
 
 #: ../../package-structure-code/intro.md:97
 msgid ""
 "Diagram showing the various front-end build tools that you can select "
 "from. See the packaging tools page to learn more about each tool."
 msgstr ""
-"Diagrama que muestra las diversas herramientas de construcción de front-end que puede seleccionar. "
-"Consulte la página de herramientas de empaquetado para obtener más información sobre cada herramienta."
 
 #: ../../package-structure-code/intro.md:102
 msgid ""
@@ -1615,34 +1587,26 @@ msgid ""
 " and for anyone who is just getting started with creating a Python "
 "package."
 msgstr ""
-"Si está considerando enviar un paquete para revisión por pares, eche un vistazo a las [comprobaciones "
-"mínimos del editor](https://www.pyopensci.org/software-"
-"peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template) que realiza pyOpenSci "
-"antes de que comience una revisión. Estas comprobaciones son útiles para explorar tanto para los autores "
-"que planean enviar un paquete para su revisión como para cualquier persona que esté comenzando "
-"a crear un paquete de Python."
 
 #: ../../package-structure-code/intro.md:109
 msgid "What you will learn here"
-msgstr "¿Qué aprenderás aquí?"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:111
 msgid "In this section of our Python packaging guide, we:"
-msgstr "En esta sección de nuestra guía de empaquetado de Python, nosotros:"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:113
 msgid ""
 "Provide an overview of the options available to you when packaging your "
 "tool."
 msgstr ""
-"Proporcionamos una descripción general de las opciones disponibles para empaquetar su herramienta."
 
 #: ../../package-structure-code/intro.md:115
 msgid ""
 "Suggest tools and approaches that both meet your needs and also support "
 "existing standards."
 msgstr ""
-"Sugerimos herramientas y enfoques que satisfacen sus necesidades y también respaldan los estándares existentes."
 
 #: ../../package-structure-code/intro.md:117
 msgid ""
@@ -1650,9 +1614,6 @@ msgid ""
 "workflow that may begin as a pure Python tool and evolve into a tool that"
 " requires addition layers of complexity in the packaging build."
 msgstr ""
-"Sugerimos herramientas y enfoques que le permitirán ampliar un flujo de trabajo que puede comenzar "
-"como una herramienta de Python puro y evolucionar hacia una herramienta que requiere capas adicionales "
-"de complejidad en la construcción de empaquetado."
 
 #: ../../package-structure-code/intro.md:120
 msgid ""
@@ -1661,9 +1622,6 @@ msgid ""
 "[Scientific Python community SPECs](https://scientific-"
 "python.org/specs/)."
 msgstr ""
-"Alineamos nuestras sugerencias con los [PEPs (Protocolos de Mejora de Python)](https://peps.python.org/pep-0000/) "
-"más actuales y aceptados y las [especificaciones de la comunidad científica de Python (SPECs)](https://scientific-"
-"python.org/specs/)."
 
 #: ../../package-structure-code/intro.md:123
 msgid ""
@@ -1671,13 +1629,10 @@ msgid ""
 "with existing best practices being implemented by developers of core "
 "Scientific Python packages such as Numpy, SciPy and others."
 msgstr ""
-"En un esfuerzo por mantener la consistencia dentro de nuestra comunidad, también nos alineamos con las mejores "
-"prácticas existentes que están siendo implementadas por los desarrolladores de paquetes científicos de Python "
-"como Numpy, SciPy y otros."
 
 #: ../../package-structure-code/intro.md:127
 msgid "Guidelines for pyOpenSci's packaging recommendations"
-msgstr "Directrices para las recomendaciones de empaquetado de pyOpenSci"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:129
 msgid ""
@@ -1688,11 +1643,6 @@ msgid ""
 "one the reasons you will often hear Python described as a [\"glue\" "
 "language](https://numpy.org/doc/stable/user/c-info.python-as-glue.html)\""
 msgstr ""
-"La flexibilidad del lenguaje de programación Python se presta a una amplia gama de opciones de herramientas "
-"para crear un paquete de Python. Python es tan flexible que es uno de los pocos lenguajes que se pueden usar "
-"para envolver otros lenguajes. La capacidad de Python para envolver otros lenguajes es una de las razones por "
-"las que a menudo escuchará que Python se describe como un "
-"[\"lenguaje de pegamento\"](https://numpy.org/doc/stable/user/c-info.python-as-glue.html)\""
 
 #: ../../package-structure-code/intro.md:135
 msgid ""
@@ -1701,9 +1651,6 @@ msgid ""
 " they may need to support extensions or tools written in other languages "
 "such as C or C++."
 msgstr ""
-"Si está construyendo un paquete de Python puro, entonces su configuración de empaquetado puede ser simple. "
-"Sin embargo, algunos paquetes científicos tienen requisitos complejos, ya que pueden necesitar soportar "
-"extensiones o herramientas escritas en otros lenguajes como C o C++."
 
 #: ../../package-structure-code/intro.md:139
 msgid ""
@@ -1711,26 +1658,22 @@ msgid ""
 "create a Python package. In this guide, we suggest packaging approaches "
 "and tools based on:"
 msgstr ""
-"Para apoyar los muchos usos diferentes de Python, hay muchas formas de crear un paquete de Python. "
-"En esta guía, sugerimos enfoques y herramientas de empaquetado basados en:"
 
 #: ../../package-structure-code/intro.md:142
 msgid ""
 "What we think will be best and easiest to adopt for those who are newer "
 "to packaging."
 msgstr ""
-"Lo que creemos que será lo mejor y más fácil de adoptar para aquellos que son nuevos en el empaquetado."
 
 #: ../../package-structure-code/intro.md:144
 msgid "Tools that we think are well maintained and documented."
-msgstr "Heramientas que creemos que están bien mantenidas y documentadas."
+msgstr ""
 
 #: ../../package-structure-code/intro.md:145
 msgid ""
 "A shared goal of standardizing packaging approaches across this "
 "(scientific) Python ecosystem."
 msgstr ""
-"Un objetivo compartido de estandarizar los enfoques de empaquetado en todo este ecosistema de Python (científico)."
 
 #: ../../package-structure-code/intro.md:148
 msgid ""
@@ -1738,13 +1681,10 @@ msgid ""
 "accepted [Python community](https://packaging.python.org/en/latest/) and "
 "[scientific community](https://scientific-python.org/specs/)."
 msgstr ""
-"Aquí, también intentamos alinear nuestras sugerencias con los más actuales "
-"y aceptados [comunidad de Python](https://packaging.python.org/en/latest/) y "
-"[comunidad científica](https://scientific-python.org/specs/)."
 
 #: ../../package-structure-code/intro.md:151
 msgid "Suggestions in this guide are not pyOpenSci review requirements"
-msgstr "Las sugerencias en esta guía no son requisitos de revisión de pyOpenSci"
+msgstr ""
 
 #: ../../package-structure-code/intro.md:154
 msgid ""
@@ -1753,9 +1693,6 @@ msgid ""
 "package to be reviewed and accepted into our pyOpenSci open source "
 "ecosystem."
 msgstr ""
-"Las sugerencias para la distribución de paquetes en esta sección se hacen con la intención de ser útiles; "
-"no son requisitos específicos para que su paquete sea revisado y aceptado en nuestro ecosistema de código "
-"abierto de pyOpenSci."
 
 #: ../../package-structure-code/intro.md:158
 msgid ""
@@ -1765,11 +1702,6 @@ msgid ""
 "to/author-guide.html#) if you are looking for pyOpenSci's Python package "
 "review requirements!"
 msgstr ""
-"¡Consulte nuestra [página de alcance de paquete](https://www.pyopensci.org"
-"/software-peer-review/about/package-scope.html) y [requisitos de revisión "
-"en nuestra guía para autores](https://www.pyopensci.org/software-peer-review/how-"
-"to/author-guide.html#) si está buscando los requisitos de revisión de paquetes "
-"de Python de pyOpenSci!"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:1
 msgid "Publishing Your Package In A Community Repository: PyPI or Anaconda.org"
@@ -4351,7 +4283,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:1
 msgid "Python Package Structure for Scientific Python Projects"
-msgstr "Estuctura de paquete de Python para proyectos científicos en Python"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:3
 msgid ""
@@ -4361,10 +4293,6 @@ msgid ""
 "vs-flat-layout/) Both layouts have advantages for different groups of "
 "maintainers."
 msgstr ""
-"Existen dos diseños diferentes que comúnmente verá dentro del ecosistema de "
-"empaquetado de Python: [diseños src y flat](https://packaging.python.org/en/"
-"latest/discussions/src-layout-vs-flat-layout/). Ambos diseños tienen ventajas "
-"para diferentes grupos de mantenedores."
 
 #: ../../package-structure-code/python-package-structure.md:8
 msgid ""
@@ -4374,22 +4302,16 @@ msgid ""
 "guide](https://packaging.python.org/en/latest/tutorials/packaging-"
 "projects/)."
 msgstr ""
-"Le sugerimos, pero no requerimos, que use el diseño **src/** (discutido a "
-"continuación) para crear su paquete de Python. Este diseño también se "
-"recomienda en la [guía de empaquetado de PyPA](https://packaging.python.org/"
-"en/latest/tutorials/packaging-projects/)."
 
 #: ../../package-structure-code/python-package-structure.md:12
 msgid "pyOpenSci will never require a specific package structure for peer review"
-msgstr "pyOpenSci nunca requerirá una estructura de paquete específica para la revisión por pares"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:15
 msgid ""
 "We understand that it would be tremendous effort for existing maintainers"
 " to move to a new layout."
 msgstr ""
-"Entendemos que sería un esfuerzo tremendo para los mantenedores existentes "
-"moverse a un nuevo diseño."
 
 #: ../../package-structure-code/python-package-structure.md:18
 msgid ""
@@ -4398,18 +4320,14 @@ msgid ""
 "package has a simple build and might be open to moving to a more fail-"
 "proof approach."
 msgstr ""
-"La descripción general en esta página presenta recomendaciones que creemos "
-"que son las mejores para alguien que está comenzando con el empaquetado de "
-"Python o para alguien cuyo paquete tiene una construcción simple y podría "
-"estar abierto a moverse a un enfoque a prueba de fallos."
 
 #: ../../package-structure-code/python-package-structure.md:23
 msgid "An example of the **src/package** layout structure can be seen below."
-msgstr "Un ejemplo de la estructura de diseño **src/package** se puede ver a continuación."
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:45
 msgid "Note the location of the following directories in the example above:"
-msgstr "Nótese la ubicación de los siguientes directorios en el ejemplo anterior:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:47
 msgid ""
@@ -4417,10 +4335,6 @@ msgid ""
 "user-facing documentation website. In a **src/** layout docs/ are "
 "normally included at the same directory level of the **src/** folder."
 msgstr ""
-"**docs/:** discutido en nuestro capítulo de documentación, este directorio "
-"contiene el sitio web de documentación orientado al usuario. En un diseño "
-"**src/**, los docs/ normalmente se incluyen en el mismo nivel de directorio "
-"que la carpeta **src/**."
 
 #: ../../package-structure-code/python-package-structure.md:48
 msgid ""
@@ -4428,17 +4342,12 @@ msgid ""
 "**src/** layout tests are normally included at the same directory level "
 "of the **src/** folder."
 msgstr ""
-"**tests/** este directorio contiene las pruebas o tests para el código de su proyecto. "
-"En un diseño **src/**, las pruebas o tests normalmente se incluyen en el "
-"mismo nivel de directorio que la carpeta **src/**."
 
 #: ../../package-structure-code/python-package-structure.md:49
 msgid ""
 "**src/package/**: this is the directory that contains the code for your "
 "Python project. \"Package\" is normally your project's name."
 msgstr ""
-"**src/package/**: este es el directorio que contiene el código de su proyecto de Python. "
-"\"Package\" es normalmente el nombre de su proyecto."
 
 #: ../../package-structure-code/python-package-structure.md:51
 msgid ""
@@ -4446,9 +4355,6 @@ msgid ""
 "files that pyOpenSci requires live in the root of your project directory."
 " These files include:"
 msgstr ""
-"También en el ejemplo anterior, observe que todos los archivos de documentación "
-"básicos que pyOpenSci requiere se encuentran en la raíz del directorio de su proyecto. "
-"Estos archivos incluyen:"
 
 #: ../../package-structure-code/python-package-structure.md:55
 msgid "CHANGELOG.md"
@@ -4472,19 +4378,17 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:63
 msgid "Click here to read about our packaging documentation requirements."
-msgstr "Haga clic aquí para leer sobre nuestros requisitos de documentación de empaquetado."
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:70
 msgid ""
 "While we recommend the **src/** layout we also review the **flat** layout"
 " here. Both are used in the Python ecosystem."
 msgstr ""
-"Aunque recomendamos el diseño **src/**, también revisamos el diseño **flat** aquí. "
-"Ambos se utilizan en el ecosistema de Python."
 
 #: ../../package-structure-code/python-package-structure.md:72
 msgid "Example scientific packages that use **src/package** layout"
-msgstr "Ejemplos de paquetes científicos que utilizan el diseño **src/package**"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:74
 msgid "[Sourmash](https://github.com/sourmash-bio/sourmash)"
@@ -4508,7 +4412,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:82
 msgid "The src/ layout and testing"
-msgstr "El diseño src/ y los tests o pruebas"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:84
 msgid ""
@@ -4519,12 +4423,6 @@ msgid ""
 "installed version, you may be missing issues that users encounter when "
 "your package is installed."
 msgstr ""
-"El beneficio de usar el diseño **src/package**, particularmente si está "
-"creando un nuevo paquete, es que asegura que las pruebas se ejecuten contra "
-"la versión instalada de su paquete en lugar de los archivos en el directorio "
-"de trabajo de su paquete. Si ejecuta sus pruebas en sus archivos en lugar de "
-"la versión instalada, es posible que se pierda problemas que los usuarios "
-"encuentran cuando su paquete está instalado."
 
 #: ../../package-structure-code/python-package-structure.md:91
 msgid ""
@@ -4533,30 +4431,22 @@ msgid ""
 "smaller which then places places a smaller storage burden on PyPI which "
 "has over 400,000 packages to support."
 msgstr ""
-"Si `tests/` están fuera del directorio **src/package**, no se incluyen en la "
-"rueda del paquete. Esto hace que el tamaño de su paquete sea ligeramente "
-"más pequeño, lo que a su vez genera un almacenamiento más pequeño "
-"en PyPI, que tiene más de 400,000 paquetes."
 
 #: ../../package-structure-code/python-package-structure.md:93
 msgid ""
 "[Read more about reasons to use the **src/package** "
 "layout](https://hynek.me/articles/testing-packaging/)"
 msgstr ""
-"[Lea más sobre las razones para usar el diseño"
-" **src/package**](https://hynek.me/articles/testing-packaging/)"
 
 #: ../../package-structure-code/python-package-structure.md:95
 msgid "How Python discovers and prioritizes importing modules"
-msgstr "¿Cómo descubre y prioriza Python la importación de módulos?"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:97
 msgid ""
 "By default, Python adds a module in your current working directory to the"
 " front of the Python module search path."
 msgstr ""
-"De forma predeterminada, Python agrega un módulo en su directorio de trabajo "
-"actual al principio de la ruta de búsqueda de módulos de Python."
 
 #: ../../package-structure-code/python-package-structure.md:99
 msgid ""
@@ -4565,9 +4455,6 @@ msgid ""
 "discover `package/module.py` file before it discovers the installed "
 "package."
 msgstr ""
-"Esto significa que si ejecuta sus pruebas en el directorio de trabajo de su "
-"paquete, utilizando un diseño plano, `/package/module.py`, Python descubrirá "
-"el archivo `package/module.py` antes de que descubra el paquete instalado."
 
 #: ../../package-structure-code/python-package-structure.md:101
 msgid ""
@@ -4576,10 +4463,6 @@ msgid ""
 "This means that when you import your package, Python will be forced to  "
 "search the active environment (which has your package installed)."
 msgstr ""
-"Sin embargo, si su paquete se encuentra en una estructura de directorio src/ "
-"**src/package**, entonces no se agregará, por defecto, a la ruta de Python. "
-"Esto significa que cuando importe su paquete, Python se verá obligado a buscar "
-"en el entorno activo (que tiene su paquete instalado)."
 
 #: ../../package-structure-code/python-package-structure.md:103
 msgid ""
@@ -4587,13 +4470,10 @@ msgid ""
 "adjusted to ensure the priority is to use installed packages first (e.g. "
 "`PYTHONSAFEPATH`)."
 msgstr ""
-"Nota: Las versiones de Python 3.11 y superiores tienen un ajuste de ruta que "
-"se puede modificar para garantizar que la prioridad sea utilizar primero los "
-"paquetes instalados (por ejemplo, `PYTHONSAFEPATH`)."
 
 #: ../../package-structure-code/python-package-structure.md:106
 msgid "Sometimes tests are needed in a distribution"
-msgstr "A veces se necesitan pruebas en una distribución"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:108
 msgid ""
@@ -4606,21 +4486,12 @@ msgid ""
 "`tests/` directory into the **src/package** directory (see example "
 "below)."
 msgstr ""
-"No recomendamos incluir pruebas como parte de su rueda de paquete de forma "
-"predeterminada. Sin embargo, no incluir pruebas en su distribución de paquete "
-"hará que sea más difícil para las personas que no sean usted mismo probar si "
-"su paquete funciona correctamente en su sistema. Si tiene un conjunto de pruebas "
-"pequeño (archivos Python + datos) y cree que sus usuarios pueden querer ejecutar "
-"pruebas localmente en sus sistemas, puede incluir pruebas moviendo el directorio "
-"`tests/` al directorio **src/package** (ver ejemplo a continuación)."
 
 #: ../../package-structure-code/python-package-structure.md:117
 msgid ""
 "Including the **tests/** directory in your **src/package** directory "
 "ensures that tests will be included in your package's wheel."
 msgstr ""
-"Incluir el directorio **tests/** en su directorio **src/package** asegura que "
-"las pruebas se incluirán en la rueda de su paquete."
 
 #: ../../package-structure-code/python-package-structure.md:119
 msgid ""
@@ -4629,43 +4500,36 @@ msgid ""
 "distribution](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a"
 "-test-layout-import-rules)."
 msgstr ""
-"Asegúrese de leer la [documentación de pytest para obtener más información "
-"sobre cómo incluir pruebas en su distribución de paquete](https://docs.pytest.org/en/"
-"7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules)."
 
 #: ../../package-structure-code/python-package-structure.md:121
 msgid "Challenges with including tests and data in a package wheel"
-msgstr "Desafíos al incluir pruebas y datos en una rueda de paquete"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:124
 msgid ""
 "Tests, especially when accompanied by test data can create a few small "
 "challenges including:"
-msgstr "Los tests, especialmente cuando van acompañados de datos de prueba, "
-"pueden crear algunos pequeños desafíos, incluyendo:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:126
 msgid ""
 "Take up space in your distribution which will build up over time as "
 "storage space on PyPI"
 msgstr ""
-"Ocupar espacio en su distribución, lo que se acumulará con el tiempo en PyPI"
 
 #: ../../package-structure-code/python-package-structure.md:127
 msgid "Large file sizes can also slow down package install."
-msgstr "Archivos grandes también pueden ralentizar la instalación del paquete."
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:129
 msgid ""
 "However, in some cases, particularly in the scientific Python ecosystems "
 "you may need to include tests."
 msgstr ""
-"Sin embargo, en algunos casos, particularmente en los ecosistemas científicos "
-"de Python, es posible que necesite incluir pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:132
 msgid "**Don't include test suite datasets in your package**"
-msgstr "**No incluya conjuntos de datos de pruebas en su paquete**"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:134
 msgid ""
@@ -4675,18 +4539,12 @@ msgid ""
 "tool such as [Pooch](https://www.fatiando.org/pooch/latest/) to access "
 "the data when you (or a user) runs tests."
 msgstr ""
-"Si incluye sus pruebas en su distribución de paquete, le recomendamos "
-"encarecidamente que no incluya datos en su directorio de pruebas. En su lugar, "
-"aloje sus datos de prueba en un repositorio como Figshare o Zenodo. Utilice "
-"una herramienta como [Pooch](https://www.fatiando.org/pooch/latest/) para "
-"acceder a los datos cuando usted (o un usuario) ejecute pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:140
 msgid ""
 "Check out the testing section of our guide for more information about "
 "tests."
 msgstr ""
-"Consulte la sección de pruebas de nuestra guía para obtener más información sobre las pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:142
 msgid ""
@@ -4694,9 +4552,6 @@ msgid ""
 "found in the **src/package** directory, `tests/` and `docs/`are in the "
 "root directory."
 msgstr ""
-"El diseño **src/package** es semánticamente más claro. El código siempre se "
-"encuentra en el directorio **src/package**, `tests/` y `docs/` están en el "
-"directorio raíz."
 
 #: ../../package-structure-code/python-package-structure.md:146
 msgid ""
@@ -4707,20 +4562,14 @@ msgid ""
 "repositories like PyPI and Anaconda.org that have to deal with thousands "
 "of package uploads."
 msgstr ""
-"Si las pruebas de su paquete requieren datos, le sugerimos que NO incluya "
-"esos datos en su estructura de paquete. Discutiremos esto con más detalle en "
-"un tutorial. Incluir datos en su estructura de paquete aumenta el tamaño de "
-"los archivos de su distribución. Esto impone un peaje de mantenimiento en "
-"repositorios como PyPI y Anaconda.org que tienen que lidiar con miles de "
-"paquetes subidos."
 
 #: ../../package-structure-code/python-package-structure.md:153
 msgid "About the flat Python package layout"
-msgstr "Sobre el diseño plano de paquetes de Python"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:155
 msgid "Currently most scientific packages use the **flat-layout** given:"
-msgstr "Actualmente, la mayoría de los paquetes científicos utilizan el **diseño plano** dado:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:157
 msgid ""
@@ -4728,9 +4577,6 @@ msgid ""
 "and people tend to look to other packages / maintainers that they respect"
 " for examples of how to build Python packages."
 msgstr ""
-"Es el diseño más común en el ecosistema científico de Python "
-"y las personas tienden a buscar otros paquetes / mantenedores que respetan "
-"como ejemplos de cómo construir paquetes de Python."
 
 #: ../../package-structure-code/python-package-structure.md:160
 msgid ""
@@ -4738,9 +4584,6 @@ msgid ""
 "builds with compilation steps. Many developers thus appreciate / are used"
 " to features of the flat layout."
 msgstr ""
-"Muchas herramientas de Python dependen de herramientas en otros idiomas y/o "
-"construcciones complejas con pasos de compilación. Por lo tanto, muchos "
-"desarrolladores aprecian/están acostumbrados a las características del diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:164
 msgid ""
@@ -4750,16 +4593,10 @@ msgid ""
 "move to a src/ layout](https://github.com/scikit-build/cmake-python-"
 "distributions/pull/145)"
 msgstr ""
-"Aunque presentamos este diseño aquí en nuestra guía, sugerimos que aquellos "
-"que recién comienzan con el empaquetado de Python comiencen con el diseño "
-"src/package discutido anteriormente. Numerosos paquetes en el ecosistema "
-"[han tenido que moverse a un diseño src/]"
-"(https://github.com/scikit-build/cmake-python-"
-"distributions/pull/145)"
 
 #: ../../package-structure-code/python-package-structure.md:169
 msgid "Why most scientific Python packages do not use source"
-msgstr "¿Por qué la mayoría de los paquetes científicos de Python no usan el código fuente?"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:172
 msgid ""
@@ -4768,10 +4605,6 @@ msgid ""
 "it. Moving from a flat layout to a **src/package** layout would come at a"
 " significant cost to maintainers."
 msgstr ""
-"En la mayoría de los casos, las ventajas de usar el diseño **src/package** "
-"para paquetes científicos más grandes que ya utilizan un enfoque plano no "
-"merecen la pena. Pasar de un diseño plano a un diseño **src/package** "
-"supondría un costo significativo para los mantenedores."
 
 #: ../../package-structure-code/python-package-structure.md:177
 msgid ""
@@ -4780,60 +4613,48 @@ msgid ""
 "started with creating a package, that you consider using a  "
 "**src/package** layout."
 msgstr ""
-"Sin embargo, las ventajas de usar el diseño **src/package** para un principiante "
-"son significativas. Por lo tanto, recomendamos que si está comenzando a crear un "
-"paquete, considere usar un diseño **src/package**."
 
 #: ../../package-structure-code/python-package-structure.md:182
 msgid "What does the flat layout structure look like?"
-msgstr "¿Cómo es la estructura del diseño plano?"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:184
 msgid "The flat layout's primary characteristics are:"
-msgstr "Las características principales del diseño plano son:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:186
 msgid ""
 "The source code for your package lives in a directory with your package's"
 " name in the root of your directory"
 msgstr ""
-"El código fuente de su paquete se encuentra en un directorio con el nombre de "
-"su paquete en la raíz de su directorio"
 
 #: ../../package-structure-code/python-package-structure.md:188
 msgid ""
 "Often the `tests/` directory also lives within that same `package` "
 "directory."
 msgstr ""
-"A menudo, el directorio `tests/` también se encuentra dentro de ese mismo "
-"directorio `package`."
 
 #: ../../package-structure-code/python-package-structure.md:190
 msgid ""
 "Below you can see the recommended structure of a scientific Python "
 "package using the flat layout."
 msgstr ""
-"A continuación, puede ver la estructura recomendada de un paquete científico "
-"de Python que utiliza el diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:212
 msgid "Benefits of using the flat layout in your Python package"
-msgstr "Beneficios de usar el diseño plano en su paquete de Python"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:214
 msgid ""
 "There are some benefits to the scientific community in using the flat "
 "layout."
 msgstr ""
-"Existen algunos beneficios para la comunidad científica al utilizar el diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:216
 msgid ""
 "This structure has historically been used across the ecosystem and "
 "packages using it are unlikely to change."
 msgstr ""
-"Esta estructura se ha utilizado históricamente en todo el ecosistema y es poco probable "
-"que los paquetes que la utilizan cambien."
 
 #: ../../package-structure-code/python-package-structure.md:218
 msgid ""
@@ -4843,15 +4664,10 @@ msgid ""
 "against the installed version of your package. Rather, you are working "
 "directly with the flat files."
 msgstr ""
-"Puede importar el paquete directamente desde el directorio raíz. Para algunos, "
-"esto está arraigado en sus respectivos flujos de trabajo. Sin embargo, para un "
-"principiante, el peligro de hacer esto es que no está desarrollando y probando "
-"contra la versión instalada de su paquete. En cambio, está trabajando directamente "
-"con los archivos planos."
 
 #: ../../package-structure-code/python-package-structure.md:224
 msgid "Core scientific Python packages that use the flat layout"
-msgstr "Paquetes científicos de Python que utilizan el diseño plano"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:227
 msgid "[numpy](https://github.com/numpy/numpy)"
@@ -4887,9 +4703,6 @@ msgid ""
 "these packages to a different layout. The potential benefits of the "
 "source layout for these tools is not worth the maintenance investment."
 msgstr ""
-"Sería un costo y una carga de mantenimiento significativos mover todos estos "
-"paquetes a un diseño diferente. Los posibles beneficios del diseño src para "
-"estas herramientas no valen la inversión en mantenimiento."
 
 #: ../../package-structure-code/python-package-versions.md:1
 msgid "Creating New Versions of Your Python Package"
