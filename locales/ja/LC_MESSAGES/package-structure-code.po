@@ -9,12 +9,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-28 08:42-0400\n"
+"POT-Creation-Date: 2024-08-02 18:04+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es\n"
-"Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -361,15 +361,15 @@ msgstr ""
 msgid "From the project root, run:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:181
+#: ../../package-structure-code/code-style-linting-format.md:182
 msgid "Python file `temporal.py` imports after `isort` has been run"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:188
+#: ../../package-structure-code/code-style-linting-format.md:189
 msgid "Ruff"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:190
+#: ../../package-structure-code/code-style-linting-format.md:191
 msgid ""
 "[Ruff](https://docs.astral.sh/ruff/) is a new addition to the code "
 "quality ecosystem, gaining some traction since its release. `ruff` is "
@@ -379,53 +379,53 @@ msgid ""
 "of them."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:196
+#: ../../package-structure-code/code-style-linting-format.md:197
 msgid ""
 "`ruff` has some interesting features that distinguish it from other "
 "linters:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:198
+#: ../../package-structure-code/code-style-linting-format.md:199
 msgid "Linter configuration in `pyproject.toml`"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:199
+#: ../../package-structure-code/code-style-linting-format.md:200
 msgid "Several hundred rules included, many of which are automatically fixable"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:200
+#: ../../package-structure-code/code-style-linting-format.md:201
 msgid ""
 "Rules explanation, see [F403](https://docs.astral.sh/ruff/rules"
 "/undefined-local-with-import-star/) for an example"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:201
+#: ../../package-structure-code/code-style-linting-format.md:202
 msgid ""
 "Fast execution time, makes a quick feedback loop possible even on large "
 "projects."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:203
+#: ../../package-structure-code/code-style-linting-format.md:204
 msgid ""
 "Here is a simple configuration to get started with `ruff`. It would go "
 "into your `pyproject.toml`:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:211
+#: ../../package-structure-code/code-style-linting-format.md:212
 msgid ""
 "Depending on your project, you might want to add the following to sort "
 "imports correctly:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:218
+#: ../../package-structure-code/code-style-linting-format.md:219
 msgid "How to use code formatter in your local workflow"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:220
+#: ../../package-structure-code/code-style-linting-format.md:221
 msgid "Linters, code formatters and your favorite coding tools"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:222
+#: ../../package-structure-code/code-style-linting-format.md:223
 msgid ""
 "Linters can be run as a command-line tool as shown above. They also can "
 "be run within your favorite coding tool (e.g. VScode, pycharm, etc). For "
@@ -434,46 +434,46 @@ msgid ""
 "favorite code format tools on demand."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:228
+#: ../../package-structure-code/code-style-linting-format.md:229
 msgid "Use pre-commit hooks to run code formatters and linters on commits"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:230
+#: ../../package-structure-code/code-style-linting-format.md:231
 msgid "You can also setup a `pre-commit hook` in your Python package repository."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:232
+#: ../../package-structure-code/code-style-linting-format.md:233
 msgid ""
 "A pre-commit hook is a tool that allows an action (or actions) to be "
 "triggered when you apply a commit to your git repository."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:235
+#: ../../package-structure-code/code-style-linting-format.md:236
 msgid "Pre-commit hook example workflow"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:237
+#: ../../package-structure-code/code-style-linting-format.md:238
 msgid "The precommit workflow looks like this: You type and run:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:240
+#: ../../package-structure-code/code-style-linting-format.md:241
 msgid "`git commit -m \"message here\"` at the command line"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:242
+#: ../../package-structure-code/code-style-linting-format.md:243
 msgid ""
 "Once you hit return, pre-commit will run any tools that you have "
 "configured in a **.pre-commit-config.yaml** file."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:244
+#: ../../package-structure-code/code-style-linting-format.md:245
 msgid ""
 "If the tools configured in the pre-commit hook run successfully without "
 "making changes or finding errors in your code, the commit will be applied"
 " to the repository."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:248
+#: ../../package-structure-code/code-style-linting-format.md:249
 msgid ""
 "If the tools configured in the hook find errors in your files, the commit"
 " will NOT be applied to the repository. Remember from the discussion "
@@ -483,17 +483,17 @@ msgid ""
 "those issues, manually."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:255
+#: ../../package-structure-code/code-style-linting-format.md:256
 msgid ""
 "Once all of the fixes are applied you can re-add (stage) the files to be "
 "commit. And re-run your commit."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:259
+#: ../../package-structure-code/code-style-linting-format.md:260
 msgid "Diagram showing the steps of a pre-commit workflow from left to right."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:261
+#: ../../package-structure-code/code-style-linting-format.md:262
 msgid ""
 "The pre-commit workflow begins with you adding files that have changes to"
 " be staged in git. Next, you'd run git commit. when you run git commit, "
@@ -506,7 +506,7 @@ msgid ""
 "using-black-and-flake8/*)"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:274
+#: ../../package-structure-code/code-style-linting-format.md:275
 msgid ""
 "If have a Python code-base and multiple maintainers actively working on "
 "the code, and you intend to run a tool like Black, be sure to coordinate "
@@ -516,11 +516,11 @@ msgid ""
 "merged."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:281
+#: ../../package-structure-code/code-style-linting-format.md:282
 msgid "General pre commit checks"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:283
+#: ../../package-structure-code/code-style-linting-format.md:284
 msgid ""
 "In addition to calling tools, Pre-commit also has a suite of [built in "
 "format hooks](https://github.com/pre-commit/pre-commit-hooks#hooks-"
@@ -529,113 +529,113 @@ msgid ""
 "streamlined code files."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:288
+#: ../../package-structure-code/code-style-linting-format.md:289
 msgid ""
 "An example pre-commit-config.yaml file is below with examples of how this"
 " is all setup."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:291
+#: ../../package-structure-code/code-style-linting-format.md:292
 msgid "Pre-commit.ci"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:293
+#: ../../package-structure-code/code-style-linting-format.md:294
 msgid ""
 "[Pre-commit.ci](https://pre-commit.ci) is a bot that may become your new "
 "best friend. This bot, when setup on a repo can be configured to do the "
 "following:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:296
+#: ../../package-structure-code/code-style-linting-format.md:297
 msgid "It will check every pull request using all of the pre-commit hook setting"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:297
+#: ../../package-structure-code/code-style-linting-format.md:298
 msgid ""
 "If you wish, it will also submit a pull request to your repo with pre-"
 "commit fixes, saving you, and new contributors the time of reformatting a"
 " pr that has format issues."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:300
+#: ../../package-structure-code/code-style-linting-format.md:301
 msgid "You can also call the bot on any pull request to run / and fix the code."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:302
+#: ../../package-structure-code/code-style-linting-format.md:303
 msgid ""
 "The pre-commit.ci bot uses the same pre-commit-config.yaml file that you "
 "use to setup pre-commit locally."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:305
+#: ../../package-structure-code/code-style-linting-format.md:306
 msgid "Setting up a bot like this can be valuable because:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:307
+#: ../../package-structure-code/code-style-linting-format.md:308
 msgid ""
 "It can make is easier for maintainers as they no longer have to worry at "
 "allows about fixing code format. The bot will do the work for them."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:309
+#: ../../package-structure-code/code-style-linting-format.md:310
 msgid ""
 "It can make it easier for new comers as they never have to setup pre-"
 "commit locally or worry about linting their code. They can even make "
 "small fixes to the code directly on GitHub without worry."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:311
+#: ../../package-structure-code/code-style-linting-format.md:312
 msgid "Setting up a git pre-commit hook"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:313
+#: ../../package-structure-code/code-style-linting-format.md:314
 msgid "To setup pre-commit locally, you need to do 3 things:"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:315
+#: ../../package-structure-code/code-style-linting-format.md:316
 msgid ""
 "Install pre-commit (and include it as a development requirement in your "
 "repository)"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:325
+#: ../../package-structure-code/code-style-linting-format.md:326
 msgid ""
 "Create a .pre-commit-config.yaml file in the root of your package "
 "directory."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:327
+#: ../../package-structure-code/code-style-linting-format.md:328
 msgid ""
 "Below is an example **.pre-commit-cofig.yaml** file that can be used to "
 "setup the pre-commit hook and the pre-commit.ci bot if you chose to "
 "implement that too."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:335
+#: ../../package-structure-code/code-style-linting-format.md:336
 msgid ""
 "This file specifies a hook that will be triggered automatically before "
 "each `git commit`, in this case, it specifies a `flake8` using version "
 "`6.0.0`."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:338
+#: ../../package-structure-code/code-style-linting-format.md:339
 msgid ""
 "Install your pre-commit hook(s) using `pre-commit install`. This will "
 "install all of the hooks specified in the pre-commit yaml file into your "
 "environment."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:340
+#: ../../package-structure-code/code-style-linting-format.md:341
 msgid ""
 "Once you have done the above, you are ready to start working on your "
 "code. Pre-commit will run every time you run `git commit`."
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:343
+#: ../../package-structure-code/code-style-linting-format.md:344
 msgid "Summary"
 msgstr ""
 
-#: ../../package-structure-code/code-style-linting-format.md:345
+#: ../../package-structure-code/code-style-linting-format.md:346
 msgid ""
 "pyOpenSci suggests setting up a linter and a code styler for your "
 "package, regardless of whether you use pre-commit hooks, CI or other "
@@ -2080,11 +2080,11 @@ msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:1
 msgid "Use a pyproject.toml file for your package configuration & metadata"
-msgstr "Use un archivo pyproject.toml para la configuración y metadatos de su paquete"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:12
 msgid "Important pyproject.toml take aways"
-msgstr "Conclusiones importantes de pyproject.toml"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:16
 msgid ""
@@ -2092,24 +2092,18 @@ msgid ""
 "package: **[build-system]** and **[project]**. The **[project]** table "
 "stores your package's metadata."
 msgstr ""
-"Existen solo dos tablas que son necesarias para un paquete de Python "
-"instalable: **[build-system]** y **[project]**. La tabla **[project]** "
-"almacena los metadatos de su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:17
 msgid ""
 "There are only two _required_ fields in the **[project]** table: "
 "**name=** and **version=**."
 msgstr ""
-"Existen solo dos campos _requeridos_ en la tabla **[project]**: **name=** y **version=**."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:18
 msgid ""
 "We suggest you add additional metadata to your `pyproject.toml` file as "
 "it will make it easier for users to find your project on PyPI."
 msgstr ""
-"Le sugerimos que agregue metadatos adicionales a su archivo `pyproject.toml` "
-"ya que facilitará que los usuarios encuentren su proyecto en PyPI."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:19
 msgid ""
@@ -2118,9 +2112,6 @@ msgid ""
 "invalid value here will raise an error when you build your package or "
 "publish to PyPI."
 msgstr ""
-"Cuando esté agregando clasificadores a la tabla [project], solo use valores válidos de "
-"[la página de clasificadores de PyPI](https://PyPI.org/classifiers/). Un valor inválido aquí "
-"generará un error cuando construya su paquete o publique en PyPI."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:20
 msgid ""
@@ -2129,39 +2120,32 @@ msgid ""
 "example `requires =` always need to be associated with the **[build-"
 "system]** table."
 msgstr ""
-"No hay un orden específico para las tablas en el archivo `pyproject.toml`. "
-"Sin embargo, los campos deben colocarse dentro de las secciones de tabla correctas. "
-"Por ejemplo, `requires =` siempre debe estar asociado con la tabla **[build-system]**."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:21
 msgid ""
 "**python-requires**: is important to have in your `pyproject.toml` file "
 "as it helps pip install your package."
 msgstr ""
-"**python-requires**: es importante tenerlo en su archivo `pyproject.toml` ya que "
-"ayuda a pip a instalar su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:27
 msgid "when these are published, remove this todo"
-msgstr "cuando se publiquen, elimine este todo"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:36
 msgid ""
 "Need help creating your pyproject.toml file?  This tutorial will walk you"
 " through the process."
 msgstr ""
-"¿Necesita ayuda para crear su archivo pyproject.toml? Este tutorial lo guiará a través del proceso."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:50
 msgid ""
 "Click here if need help migrating from setup.py/setup.cfg to "
 "pyproject.toml"
 msgstr ""
-"Haga clic aquí si necesita ayuda para migrar de setup.py/setup.cfg a pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:60
 msgid "About the pyproject.toml file"
-msgstr "Aceca del archivo pyproject.toml"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:62
 msgid ""
@@ -2170,9 +2154,6 @@ msgid ""
 "file to describe its metadata, you should consider migrating your "
 "metadata and build information to a `pyproject.toml` file."
 msgstr ""
-"Cada paquete de Python moderno debe incluir un archivo `pyproject.toml`. Si su proyecto es de Python "
-"puro y está utilizando un archivo `setup.py` o `setup.cfg` para describir sus metadatos, debería considerar "
-"migrar sus metadatos e información de construcción a un archivo `pyproject.toml`."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:64
 msgid ""
@@ -2180,13 +2161,10 @@ msgid ""
 "file to build the non Python extensions. However, a `pyproject.toml` file"
 " should still be used to store your project’s metadata."
 msgstr ""
-"Si su proyecto no es de Python puro, es posible que aún necesite un archivo `setup.py` para construir las "
-"extensiones no Python. Sin embargo, aún se debe usar un archivo `pyproject.toml` para almacenar los metadatos "
-"de su proyecto."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:66
 msgid "What happened to setup.py & how do i migrate to pyproject.toml?"
-msgstr "¿Qué pasó con setup.py y cómo migro a pyproject.toml?"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:68
 msgid ""
@@ -2195,14 +2173,10 @@ msgid ""
 "shift to storing Python package metadata in a much more user-readable "
 "`pyproject.toml` format. Having all metadata in a single file:"
 msgstr ""
-"Antes de agosto de 2017, los metadatos de los paquetes de Python se almacenaban en el archivo `setup.py` o "
-"en un archivo `setup.cfg`. En los últimos años, ha habido un cambio a almacenar los metadatos de los paquetes "
-"de Python en un formato `pyproject.toml` mucho más legible para el usuario. Tener todos los metadatos en un solo "
-"archivo:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:70
 msgid "simplifies package management,"
-msgstr "simplifica la gestión de paquetes,"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:71
 msgid ""
@@ -2211,12 +2185,10 @@ msgid ""
 "structure-code/python-package-build-tools.html#build-back-ends) such as "
 "(flit-core, hatchling, pdm-build), and"
 msgstr ""
-"le permite usar una serie de diferentes [backends de construcción](https://www.pyopensci.org/python-package-"
-"guide/package-structure-code/python-package-build-tools.html#build-back-ends) como (flit-core, hatchling, pdm-build), y"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:72
 msgid "aligns with modern best practices."
-msgstr "se alinea con las mejores prácticas modernas."
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:79
 msgid ""
@@ -2227,14 +2199,10 @@ msgid ""
 "package dependencies to a **pyproject.toml** file replaces storing that "
 "information in a setup.py or setup.cfg file."
 msgstr ""
-"El archivo estándar que utilizan los paquetes de Python para [especificar los requisitos de construcción y "
-"los metadatos se llama **pyproject.toml**](https://packaging.python.org/en/latest/specifications"
-"/declaring-project-metadata/). Agregar metadatos, requisitos de construcción y dependencias de paquetes a un "
-"archivo **pyproject.toml** reemplaza el almacenamiento de esa información en un archivo setup.py o setup.cfg."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:84
 msgid "About the .toml format"
-msgstr "Aceca del formato .toml"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:86
 msgid ""
@@ -2245,29 +2213,24 @@ msgid ""
 " identifier are key/value pairs that support configuration for that "
 "particular table."
 msgstr ""
-"El archivo **pyproject.toml** está escrito en [formato TOML (del ingés, Lenguaje Obvio y Mínimo de Tom)](https://toml.io/en/). "
-"TOML es una estructura fácil de leer que se basa en pares clave/valor. Cada sección en el archivo **pyproject.toml** "
-"contiene un `[identificador de tabla]`. Debajo de ese identificador de tabla hay pares clave/valor que admiten la configuración "
-"para esa tabla en particular."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:90
 msgid "Below `[build-system]` is considered a table in the toml language."
-msgstr "Bajo `[build-system]` se espera una tabla en el lenguaje toml."
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:91
 msgid "Within the `build-system` table below `requires =` is a key."
-msgstr "Denro de la tabla `build-system` debajo de `requires =` hay una clave."
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:92
 msgid ""
 "The associated value for `requires` is an array containing the value "
 "`\"hatchling\"`."
 msgstr ""
-"El valor asociado para `requires` es un array que contiene el valor `\"hatchling\"`."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:100
 msgid "How the pyproject.toml is used when you build a package"
-msgstr "¿Cómo se usa el pyproject.toml cuando se construye un paquete?"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:104
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:81
@@ -2284,14 +2247,6 @@ msgid ""
 "distribution file that allows PyPI to read the metadata and print it out "
 "on their website."
 msgstr ""
-"Cuando publique en PyPI, notará que cada paquete tiene metadatos listados. Echemos un vistazo a "
-"[xclim](https://pypi.org/project/xclim/), uno de nuestros [paquetes de pyOpenSci](https://www.pyopensci.org/python-"
-"packages.html). Observe que en la página de inicio de PyPI ve algunos metadatos sobre el paquete, incluido Python, "
-"información del mantenedor y más. PyPI puede poblar estos metadatos porque fueron definidos utilizando la sintaxis "
-"correcta y clasificadores por los mantenedores de Xclim, [archivo pyproject.toml]("
-"https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml). "
-"Estos metadatos cuando se construye el paquete xclim, se traducen en un archivo de distribución que permite a PyPI "
-"leer los metadatos e imprimirlos en su sitio web."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:106
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:83
@@ -2302,10 +2257,6 @@ msgid ""
 "language, operating system, programming language and topic. Below each of"
 " those sections are various classifier options.\" width=\"300px\">"
 msgstr ""
-"Imagen que muestra la barra lateral izquierda de PyPI para el paquete xclim. La sección en la parte superior dice "
-"Clasificador. Debajo hay una lista de elementos que incluyen: estado de desarrollo, audiencia prevista, licencia, "
-"idioma natural, sistema operativo, lenguaje de programación y tema. Debajo de cada una de esas secciones hay varias "
-"opciones de clasificación.\" width=\"300px\">"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:111
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:88
@@ -2316,13 +2267,10 @@ msgid ""
 "classifiers also allow users to sort through packages by version of "
 "python they support, categories and more."
 msgstr ""
-"Cuando agregue la sección de clasificación a su pyproject.toml y se construya su paquete, la herramienta de construcción "
-"organiza los metadatos en un formato que PyPI puede entender y representar en la página de inicio de PyPI. Estos clasificadores "
-"también permiten a los usuarios ordenar los paquetes por la versión de Python que admiten, categorías y más."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:116
 msgid "Benefits of using a pyproject.toml file"
-msgstr "Beneficios de usar un archivo pyproject.toml"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:118
 msgid ""
@@ -2330,12 +2278,10 @@ msgid ""
 "**pyproject.toml** format also allows someone to view the project's "
 "metadata in a GitHub repository."
 msgstr ""
-"Incluir los metadatos de su paquete en un formato **pyproject.toml** separado y legible para humanos también permite "
-"a alguien ver los metadatos del proyecto en un repositorio de GitHub."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:126
 msgid "Setup.py is still useful for complex package builds"
-msgstr "Setup.py sigue siendo útil para construcciones de paquetes complejas"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:130
 msgid ""
@@ -2347,15 +2293,10 @@ msgid ""
 "complex builds, we will provide resources working with complex builds in "
 "the future."
 msgstr ""
-"Usar **setup.py** para gestionar construcciones de paquetes y metadatos [puede causar"
-" problemas con el desarrollo de paquetes](https://blog.ganssle.io/articles/2021/10/setup-py-"
-"deprecated.html). En algunos casos donde la construcción de un paquete de Python es compleja, "
-"puede ser necesario un archivo **setup.py**. Si bien esta guía no cubrirá construcciones complejas, "
-"proporcionaremos recursos para trabajar con construcciones complejas en el futuro."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:136
 msgid "Optional vs. Required pyproject.toml file fields"
-msgstr "Campos opcionales vs. requeridos en el archivo pyproject.toml"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:138
 msgid ""
@@ -2363,9 +2304,6 @@ msgid ""
 "fields that you can use. Below we suggest specific fields to get you "
 "started that support publication on PyPI and users finding your package."
 msgstr ""
-"Cuando cree su archivo `pyproject.toml`, hay numerosos campos de metadatos que puede usar. "
-"A continuación, sugerimos campos específicos para comenzar que admiten la publicación"
-" en PyPI y que los usuarios encuentren su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:140
 msgid ""
@@ -2373,25 +2311,20 @@ msgid ""
 "here.](https://packaging.python.org/en/latest/specifications/core-"
 "metadata/#project-url-multiple-use)"
 msgstr ""
-"[Una descripción general de todos los elementos de metadatos del proyecto se puede encontrar "
-"aquí.](https://packaging.python.org/en/latest/specifications/core-"
-"metadata/#project-url-multiple-use)"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:142
 msgid "Required fields for the [project] table"
-msgstr "Campos requeridos para la tabla [project]"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:144
 msgid ""
 "As mentioned above, your pyproject.toml file needs to have a **name** and"
 " **version** field in order to properly build your package:"
 msgstr ""
-"Como se mencionó anteriormente, su archivo pyproject.toml necesita tener un campo **name** y "
-"**version** para construir correctamente su paquete:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:146
 msgid "Name: This is the name of your project provided as a string"
-msgstr "Nombre: Este es el nombre de su proyecto proporcionado como una cadena"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:147
 msgid ""
@@ -2399,12 +2332,10 @@ msgid ""
 " for versioning (using git tags to determine versions), then the version "
 "may be dynamic (more on that below)."
 msgstr ""
-"Versión: Esta es la versión de su proyecto. Si está utilizando una herramienta de control de versiones "
-"(usando etiquetas de git para determinar versiones), entonces la versión puede ser dinámica (más sobre eso a continuación)."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:149
 msgid "Optional fields to include in the `[project]` table"
-msgstr "Campos opcionales para incluir en la tabla `[project]`"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:151
 msgid ""
@@ -2413,13 +2344,10 @@ msgid ""
 "clear how your package is structured, what platforms you support and what"
 " dependencies your package requires."
 msgstr ""
-"Le sugerimos que también agregue las claves de metadatos a continuación, ya que"
-"ayudarán a los usuarios a encontrar su paquete en PyPI. Estos campos dejarán claro "
-"cómo está estructurado su paquete, qué plataformas admite y qué dependencias requiere su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:156
 msgid "**Description:** this is a short one-line description of your package."
-msgstr "**Description:** esta es una descripción corta de una línea de su paquete."
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:157
 msgid ""
@@ -2427,8 +2355,6 @@ msgid ""
 "description. This information will be published on your packages PyPI "
 "landing page."
 msgstr ""
-"**Readme:** Un enlace a su archivo README.md se utiliza para la descripción larga. "
-"Esta información se publicará en la página de inicio de su paquete en PyPI."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:158
 msgid ""
@@ -2436,13 +2362,10 @@ msgid ""
 "Here you tell the installer whether you are using Python 2.x or 3.x. Most"
 " projects will be using 3.x."
 msgstr ""
-"**Requires-python** (usado por pip): este es un campo que es utilizado por pip. "
-"Aquí le dice al instalador si está utilizando Python 2.x o 3.x. La mayoría de los proyectos "
-"estarán utilizando 3.x."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:159
 msgid "**License:** the license you are using"
-msgstr "**License:** la licencia que está utilizando"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:160
 msgid ""
@@ -2450,9 +2373,6 @@ msgid ""
 " authors are different from the maintainers. Other times they might be "
 "the same."
 msgstr ""
-"**Authors:** estos son los autores originales del paquete. A veces los autores son diferentes "
-"de los mantenedores. Otras veces pueden ser los mismos."
-
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:161
 msgid ""
@@ -2460,9 +2380,6 @@ msgid ""
 " this using a list with a sub element for each author or maintainer name,"
 " email"
 msgstr ""
-"**Maintainers:** puede optar por completar esto o no. Puede completar esto"
-" utilizando una lista con un subelemento para cada nombre de autor o "
-"mantenedor, correo electrónico"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:169
 msgid ""
@@ -2470,9 +2387,6 @@ msgid ""
 "include them in your pyproject.toml. Dependencies will be installed by "
 "pip when your project is installed creating a better user-experience."
 msgstr ""
-"**dependencies:** las dependencias son opcionales, pero le sugerimos que las"
-" incluya en su pyproject.toml. Las dependencias se instalarán con pip cuando"
-" se instale su proyecto, creando una mejor experiencia de usuario."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:171
 msgid ""
@@ -2481,10 +2395,6 @@ msgid ""
 "projectname[dev]`. This is a nice way to include your development "
 "dependencies for users who may wish to contribute to your project."
 msgstr ""
-"**`[project.optional-dependencies]`:** las dependencias opcionales o de desarrollo"
-" se instalarán si alguien ejecuta `python -m pip install projectname[dev]`. Esta es"
-" una buena manera de incluir sus dependencias de desarrollo para los usuarios que"
-" deseen contribuir a su proyecto."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:173
 msgid ""
@@ -2492,9 +2402,6 @@ msgid ""
 "landing page. Think of them as words that people might use to search for "
 "your package."
 msgstr ""
-"**keywords:** Estas son las palabras clave que aparecerán en la página "
-"de inicio de su paquete en PyPI. Piense en ellas como palabras que la gente"
-" podría usar para buscar su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:174
 msgid ""
@@ -2504,39 +2411,34 @@ msgid ""
 "her](https://PyPI.org/classifiers/)e. Some of the classifiers that you "
 "should consider including"
 msgstr ""
-"**classifiers:** La sección de clasificadores de sus metadatos también es "
-"importante para la página de inicio de su paquete en PyPI y para filtrar "
-"paquetes en PyPI. Una lista de [todas las opciones de clasificadores se puede "
-"encontrar aquí](https://PyPI.org/classifiers/). Algunos de los clasificadores "
-"que debería considerar incluir"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:175
 msgid "Development Status"
-msgstr "Development Status"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:176
 msgid "Intended Audience"
-msgstr "Intended Audience"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:177
 msgid "Topic"
-msgstr "Topic"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:178
-msgid "License"
-msgstr "License"
+msgid "LIcense"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:179
 msgid "Programming language"
-msgstr "Programming language"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:181
 msgid "Advanced options in the pyproject.toml file"
-msgstr "Opcciones avanzadas en el archivo pyproject.toml"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:183
 msgid "The examples at the bottom of this page contain ..."
-msgstr "Los ejemplos en la parte inferior de esta página contienen ..."
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:185
 msgid ""
@@ -2545,24 +2447,15 @@ msgid ""
 "package, you may include an entry point to call that script directly at "
 "the command line (rather than at the Python shell)."
 msgstr ""
-"**`[project.scripts]` (Puntos de entrada):** Los puntos de entrada son opcionales. "
-"Si tiene una herramienta de línea de comandos que ejecuta un script específico alojado en su paquete, "
-"puede incluir un punto de entrada para llamar a ese script directamente en la línea de comandos (en lugar de en la "
-"shell de Python)."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:186
 msgid ""
-"Here is an example of [a package that has entry point "
+"Here is an example of[ a package that has entry point "
 "script](https://github.com/pyOpenSci/update-web-"
 "metadata/blob/main/pyproject.toml#L60)s. Notice that there are several "
 "core scripts defined in that package that perform sets of tasks. "
 "pyOpenSci is using those scripts to process their metadata."
 msgstr ""
-"Aquí hay un ejemplo de [un paquete que tiene un script de punto de entrada]("
-"https://github.com/pyOpenSci/update-web-"
-"metadata/blob/main/pyproject.toml#L60). Observe que hay varios scripts principales"
-" definidos en ese paquete que realizan conjuntos de tareas. pyOpenSci está utilizando "
-"esos scripts para procesar sus metadatos."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:187
 msgid ""
@@ -2571,14 +2464,11 @@ msgid ""
 "version with tools like `setuptooms_scm`, then you might use the dynamic "
 "field. such as version (using scm) **dynamic = [\"version\"]**"
 msgstr ""
-"**Dynamic Fields:** si tiene campos que se completan dinámicamente. Un ejemplo"
-" de esto es si está utilizando una versión basada en control de versiones con "
-"herramientas como `setuptooms_scm` - entonces podría usar el campo dinámico. "
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:189
 #: ../../package-structure-code/python-package-build-tools.md:392
 msgid "Add dependencies to your pyproject.toml file"
-msgstr "Añadir dependencias a su archivo pyproject.toml"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:191
 msgid ""
@@ -2587,29 +2477,24 @@ msgid ""
 "development dependencies such as pytest, code formatters such as Black "
 "and documentation tools such as sphinx."
 msgstr ""
-"El archivo pyproject.toml también se puede utilizar como un reemplazo del archivo "
-"requirements.txt que tradicionalmente se ha utilizado para almacenar dependencias de desarrollo "
-"como pytest, formateadores de código como Black y herramientas de documentación como sphinx."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:193
 msgid ""
 "To add dependencies to your build, add a `[project.optional-"
 "dependencies]` table to your pyproject.toml file."
 msgstr ""
-"Para agregar dependencias a su construcción, agregue una tabla `[project.optional-"
-"dependencies]` a su archivo pyproject.toml."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:195
 msgid "Then specify dependency groups as follows:"
-msgstr "Después, especifique grupos de dependencias de la siguiente manera:"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:202
 msgid "Following the above example, you install dependencies like this:"
-msgstr "Siguiendo el ejemplo anterior, instala dependencias de la siguiente manera:"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:204
 msgid "`python -m pip install -e .[tests]`"
-msgstr "`python -m pip install -e .[tests]`"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:206
 msgid ""
@@ -2617,21 +2502,18 @@ msgid ""
 "dependencies declared in the tests section of your `[project.optional-"
 "dependencies]` table."
 msgstr ""
-"Lo anterior instalará tanto su paquete en modo editable como todas las dependencias "
-"declaradas en la sección de pruebas de su tabla `[project.optional-"
-"dependencies]`."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:208
 msgid "To install all dependencies and also your package, you'd use:"
-msgstr "Para instalar todas las dependencias y también su paquete, usaría:"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:210
 msgid "`python -m pip install -e .[tests,lint,docs]`"
-msgstr "`python -m pip install -e .[tests,lint,docs]"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:212
 msgid "Recursive dependencies"
-msgstr "Dependencias recursivas"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:216
 msgid ""
@@ -2639,13 +2521,10 @@ msgid ""
 "for more.](https://hynek.me/articles/python-recursive-optional-"
 "dependencies/)"
 msgstr ""
-"También puede configurar conjuntos de dependencias recursivas. [Vea esta "
-"publicación en el blog para más información.](https://hynek.me/articles/python-recursive-"
-"optional-dependencies/)"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:219
 msgid "Example pyproject.toml for building using hatchling"
-msgstr "Ejemplo de pyproject.toml para construir usando hatchling"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:221
 msgid ""
@@ -2653,18 +2532,14 @@ msgid ""
 "example package setup uses **hatchling** to build the [package's sdist "
 "and wheels](python-package-distribution-files-sdist-wheel)."
 msgstr ""
-"A continuación se muestra un ejemplo de configuración de construcción para un proyecto de Python. "
-"Esta configuración de paquete de ejemplo utiliza **hatchling** para construir los "
-"[archivos sdist y wheels del paquete](python-package-"
-"distribution-files-sdist-wheel)."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:229
 msgid "Notice that dependencies are specified in this file."
-msgstr "Nótese que las dependencias se especifican en este archivo."
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:231
 msgid "Example pyproject.toml for building using setuptools"
-msgstr "Ejemlo de pyproject.toml para construir usando setuptools"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:233
 msgid ""
@@ -2673,45 +2548,36 @@ msgid ""
 "system (setuptools). Notice how simple it is to swap out the tools needed"
 " to build this package!"
 msgstr ""
-"Los metadatos del paquete, incluidos los autores, palabras clave, etc., también son fáciles de leer. "
-"A continuación, puede ver el mismo archivo TOML que utiliza un sistema de construcción diferente (setuptools). "
-"¡Observe lo simple que es cambiar las herramientas necesarias para construir este paquete!"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:237
 msgid "In this example package setup you use:"
-msgstr "En esta configuración de paquete de ejemplo, usas:"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:239
 msgid ""
 "**setuptools** to build the [package's sdist and wheels](python-package-"
 "distribution-files-sdist-wheel)"
 msgstr ""
-"**setuptools** para construir los [archivos sdist y wheels del paquete](python-package-"
-"distribution-files-sdist-wheel)"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:240
 msgid ""
 "**setuptools_scm** to manage package version updates using version "
 "control tags"
 msgstr ""
-"**setuptools_scm** para gestionar las actualizaciones de la versión del "
-"paquete utilizando etiquetas de control de versiones"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:242
 msgid ""
 "In the example below `[build-system]` is the first table of values. It "
 "has two keys that specify the build backend API and containing package:"
 msgstr ""
-"En este ejemplo a continuación `[build-system]` es la primera tabla de valores. "
-"Tiene dos claves que especifican la API del backend de construcción y el paquete que contiene:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:245
 msgid "`requires =`"
-msgstr "`requires =`"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:246
 msgid "`build-back-end =`"
-msgstr "`build-back-end =`"
+msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:253
 msgid ""
@@ -2719,9 +2585,6 @@ msgid ""
 "setuptools, Poetry and Hatch.](/package-structure-code/python-package-"
 "build-tools)"
 msgstr ""
-"[Haga clic aquí para leer sobre nuestras herramientas de construcción de paquetes, incluidas PDM, "
-"setuptools, Poetry y Hatch.](/package-structure-code/python-package-"
-"build-tools)"
 
 #: ../../package-structure-code/python-package-build-tools.md:1
 msgid "Python Packaging Tools"
@@ -4420,7 +4283,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:1
 msgid "Python Package Structure for Scientific Python Projects"
-msgstr "Estuctura de paquete de Python para proyectos científicos en Python"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:3
 msgid ""
@@ -4430,10 +4293,6 @@ msgid ""
 "vs-flat-layout/) Both layouts have advantages for different groups of "
 "maintainers."
 msgstr ""
-"Existen dos diseños diferentes que comúnmente verá dentro del ecosistema de "
-"empaquetado de Python: [diseños src y flat](https://packaging.python.org/en/"
-"latest/discussions/src-layout-vs-flat-layout/). Ambos diseños tienen ventajas "
-"para diferentes grupos de mantenedores."
 
 #: ../../package-structure-code/python-package-structure.md:8
 msgid ""
@@ -4443,22 +4302,16 @@ msgid ""
 "guide](https://packaging.python.org/en/latest/tutorials/packaging-"
 "projects/)."
 msgstr ""
-"Le sugerimos, pero no requerimos, que use el diseño **src/** (discutido a "
-"continuación) para crear su paquete de Python. Este diseño también se "
-"recomienda en la [guía de empaquetado de PyPA](https://packaging.python.org/"
-"en/latest/tutorials/packaging-projects/)."
 
 #: ../../package-structure-code/python-package-structure.md:12
 msgid "pyOpenSci will never require a specific package structure for peer review"
-msgstr "pyOpenSci nunca requerirá una estructura de paquete específica para la revisión por pares"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:15
 msgid ""
 "We understand that it would be tremendous effort for existing maintainers"
 " to move to a new layout."
 msgstr ""
-"Entendemos que sería un esfuerzo tremendo para los mantenedores existentes "
-"moverse a un nuevo diseño."
 
 #: ../../package-structure-code/python-package-structure.md:18
 msgid ""
@@ -4467,18 +4320,14 @@ msgid ""
 "package has a simple build and might be open to moving to a more fail-"
 "proof approach."
 msgstr ""
-"La descripción general en esta página presenta recomendaciones que creemos "
-"que son las mejores para alguien que está comenzando con el empaquetado de "
-"Python o para alguien cuyo paquete tiene una construcción simple y podría "
-"estar abierto a moverse a un enfoque a prueba de fallos."
 
 #: ../../package-structure-code/python-package-structure.md:23
 msgid "An example of the **src/package** layout structure can be seen below."
-msgstr "Un ejemplo de la estructura de diseño **src/package** se puede ver a continuación."
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:45
 msgid "Note the location of the following directories in the example above:"
-msgstr "Nótese la ubicación de los siguientes directorios en el ejemplo anterior:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:47
 msgid ""
@@ -4486,10 +4335,6 @@ msgid ""
 "user-facing documentation website. In a **src/** layout docs/ are "
 "normally included at the same directory level of the **src/** folder."
 msgstr ""
-"**docs/:** discutido en nuestro capítulo de documentación, este directorio "
-"contiene el sitio web de documentación orientado al usuario. En un diseño "
-"**src/**, los docs/ normalmente se incluyen en el mismo nivel de directorio "
-"que la carpeta **src/**."
 
 #: ../../package-structure-code/python-package-structure.md:48
 msgid ""
@@ -4497,17 +4342,12 @@ msgid ""
 "**src/** layout tests are normally included at the same directory level "
 "of the **src/** folder."
 msgstr ""
-"**tests/** este directorio contiene las pruebas o tests para el código de su proyecto. "
-"En un diseño **src/**, las pruebas o tests normalmente se incluyen en el "
-"mismo nivel de directorio que la carpeta **src/**."
 
 #: ../../package-structure-code/python-package-structure.md:49
 msgid ""
 "**src/package/**: this is the directory that contains the code for your "
 "Python project. \"Package\" is normally your project's name."
 msgstr ""
-"**src/package/**: este es el directorio que contiene el código de su proyecto de Python. "
-"\"Package\" es normalmente el nombre de su proyecto."
 
 #: ../../package-structure-code/python-package-structure.md:51
 msgid ""
@@ -4515,9 +4355,6 @@ msgid ""
 "files that pyOpenSci requires live in the root of your project directory."
 " These files include:"
 msgstr ""
-"También en el ejemplo anterior, observe que todos los archivos de documentación "
-"básicos que pyOpenSci requiere se encuentran en la raíz del directorio de su proyecto. "
-"Estos archivos incluyen:"
 
 #: ../../package-structure-code/python-package-structure.md:55
 msgid "CHANGELOG.md"
@@ -4541,19 +4378,17 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:63
 msgid "Click here to read about our packaging documentation requirements."
-msgstr "Haga clic aquí para leer sobre nuestros requisitos de documentación de empaquetado."
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:70
 msgid ""
 "While we recommend the **src/** layout we also review the **flat** layout"
 " here. Both are used in the Python ecosystem."
 msgstr ""
-"Aunque recomendamos el diseño **src/**, también revisamos el diseño **flat** aquí. "
-"Ambos se utilizan en el ecosistema de Python."
 
 #: ../../package-structure-code/python-package-structure.md:72
 msgid "Example scientific packages that use **src/package** layout"
-msgstr "Ejemplos de paquetes científicos que utilizan el diseño **src/package**"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:74
 msgid "[Sourmash](https://github.com/sourmash-bio/sourmash)"
@@ -4577,7 +4412,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:82
 msgid "The src/ layout and testing"
-msgstr "El diseño src/ y los tests o pruebas"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:84
 msgid ""
@@ -4588,12 +4423,6 @@ msgid ""
 "installed version, you may be missing issues that users encounter when "
 "your package is installed."
 msgstr ""
-"El beneficio de usar el diseño **src/package**, particularmente si está "
-"creando un nuevo paquete, es que asegura que las pruebas se ejecuten contra "
-"la versión instalada de su paquete en lugar de los archivos en el directorio "
-"de trabajo de su paquete. Si ejecuta sus pruebas en sus archivos en lugar de "
-"la versión instalada, es posible que se pierda problemas que los usuarios "
-"encuentran cuando su paquete está instalado."
 
 #: ../../package-structure-code/python-package-structure.md:91
 msgid ""
@@ -4602,30 +4431,22 @@ msgid ""
 "smaller which then places places a smaller storage burden on PyPI which "
 "has over 400,000 packages to support."
 msgstr ""
-"Si `tests/` están fuera del directorio **src/package**, no se incluyen en la "
-"rueda del paquete. Esto hace que el tamaño de su paquete sea ligeramente "
-"más pequeño, lo que a su vez genera un almacenamiento más pequeño "
-"en PyPI, que tiene más de 400,000 paquetes."
 
 #: ../../package-structure-code/python-package-structure.md:93
 msgid ""
 "[Read more about reasons to use the **src/package** "
 "layout](https://hynek.me/articles/testing-packaging/)"
 msgstr ""
-"[Lea más sobre las razones para usar el diseño"
-" **src/package**](https://hynek.me/articles/testing-packaging/)"
 
 #: ../../package-structure-code/python-package-structure.md:95
 msgid "How Python discovers and prioritizes importing modules"
-msgstr "¿Cómo descubre y prioriza Python la importación de módulos?"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:97
 msgid ""
 "By default, Python adds a module in your current working directory to the"
 " front of the Python module search path."
 msgstr ""
-"De forma predeterminada, Python agrega un módulo en su directorio de trabajo "
-"actual al principio de la ruta de búsqueda de módulos de Python."
 
 #: ../../package-structure-code/python-package-structure.md:99
 msgid ""
@@ -4634,9 +4455,6 @@ msgid ""
 "discover `package/module.py` file before it discovers the installed "
 "package."
 msgstr ""
-"Esto significa que si ejecuta sus pruebas en el directorio de trabajo de su "
-"paquete, utilizando un diseño plano, `/package/module.py`, Python descubrirá "
-"el archivo `package/module.py` antes de que descubra el paquete instalado."
 
 #: ../../package-structure-code/python-package-structure.md:101
 msgid ""
@@ -4645,10 +4463,6 @@ msgid ""
 "This means that when you import your package, Python will be forced to  "
 "search the active environment (which has your package installed)."
 msgstr ""
-"Sin embargo, si su paquete se encuentra en una estructura de directorio src/ "
-"**src/package**, entonces no se agregará, por defecto, a la ruta de Python. "
-"Esto significa que cuando importe su paquete, Python se verá obligado a buscar "
-"en el entorno activo (que tiene su paquete instalado)."
 
 #: ../../package-structure-code/python-package-structure.md:103
 msgid ""
@@ -4656,13 +4470,10 @@ msgid ""
 "adjusted to ensure the priority is to use installed packages first (e.g. "
 "`PYTHONSAFEPATH`)."
 msgstr ""
-"Nota: Las versiones de Python 3.11 y superiores tienen un ajuste de ruta que "
-"se puede modificar para garantizar que la prioridad sea utilizar primero los "
-"paquetes instalados (por ejemplo, `PYTHONSAFEPATH`)."
 
 #: ../../package-structure-code/python-package-structure.md:106
 msgid "Sometimes tests are needed in a distribution"
-msgstr "A veces se necesitan pruebas en una distribución"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:108
 msgid ""
@@ -4675,21 +4486,12 @@ msgid ""
 "`tests/` directory into the **src/package** directory (see example "
 "below)."
 msgstr ""
-"No recomendamos incluir pruebas como parte de su rueda de paquete de forma "
-"predeterminada. Sin embargo, no incluir pruebas en su distribución de paquete "
-"hará que sea más difícil para las personas que no sean usted mismo probar si "
-"su paquete funciona correctamente en su sistema. Si tiene un conjunto de pruebas "
-"pequeño (archivos Python + datos) y cree que sus usuarios pueden querer ejecutar "
-"pruebas localmente en sus sistemas, puede incluir pruebas moviendo el directorio "
-"`tests/` al directorio **src/package** (ver ejemplo a continuación)."
 
 #: ../../package-structure-code/python-package-structure.md:117
 msgid ""
 "Including the **tests/** directory in your **src/package** directory "
 "ensures that tests will be included in your package's wheel."
 msgstr ""
-"Incluir el directorio **tests/** en su directorio **src/package** asegura que "
-"las pruebas se incluirán en la rueda de su paquete."
 
 #: ../../package-structure-code/python-package-structure.md:119
 msgid ""
@@ -4698,43 +4500,36 @@ msgid ""
 "distribution](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a"
 "-test-layout-import-rules)."
 msgstr ""
-"Asegúrese de leer la [documentación de pytest para obtener más información "
-"sobre cómo incluir pruebas en su distribución de paquete](https://docs.pytest.org/en/"
-"7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules)."
 
 #: ../../package-structure-code/python-package-structure.md:121
 msgid "Challenges with including tests and data in a package wheel"
-msgstr "Desafíos al incluir pruebas y datos en una rueda de paquete"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:124
 msgid ""
 "Tests, especially when accompanied by test data can create a few small "
 "challenges including:"
-msgstr "Los tests, especialmente cuando van acompañados de datos de prueba, "
-"pueden crear algunos pequeños desafíos, incluyendo:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:126
 msgid ""
 "Take up space in your distribution which will build up over time as "
 "storage space on PyPI"
 msgstr ""
-"Ocupar espacio en su distribución, lo que se acumulará con el tiempo en PyPI"
 
 #: ../../package-structure-code/python-package-structure.md:127
 msgid "Large file sizes can also slow down package install."
-msgstr "Archivos grandes también pueden ralentizar la instalación del paquete."
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:129
 msgid ""
 "However, in some cases, particularly in the scientific Python ecosystems "
 "you may need to include tests."
 msgstr ""
-"Sin embargo, en algunos casos, particularmente en los ecosistemas científicos "
-"de Python, es posible que necesite incluir pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:132
 msgid "**Don't include test suite datasets in your package**"
-msgstr "**No incluya conjuntos de datos de pruebas en su paquete**"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:134
 msgid ""
@@ -4744,18 +4539,12 @@ msgid ""
 "tool such as [Pooch](https://www.fatiando.org/pooch/latest/) to access "
 "the data when you (or a user) runs tests."
 msgstr ""
-"Si incluye sus pruebas en su distribución de paquete, le recomendamos "
-"encarecidamente que no incluya datos en su directorio de pruebas. En su lugar, "
-"aloje sus datos de prueba en un repositorio como Figshare o Zenodo. Utilice "
-"una herramienta como [Pooch](https://www.fatiando.org/pooch/latest/) para "
-"acceder a los datos cuando usted (o un usuario) ejecute pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:140
 msgid ""
 "Check out the testing section of our guide for more information about "
 "tests."
 msgstr ""
-"Consulte la sección de pruebas de nuestra guía para obtener más información sobre las pruebas."
 
 #: ../../package-structure-code/python-package-structure.md:142
 msgid ""
@@ -4763,9 +4552,6 @@ msgid ""
 "found in the **src/package** directory, `tests/` and `docs/`are in the "
 "root directory."
 msgstr ""
-"El diseño **src/package** es semánticamente más claro. El código siempre se "
-"encuentra en el directorio **src/package**, `tests/` y `docs/` están en el "
-"directorio raíz."
 
 #: ../../package-structure-code/python-package-structure.md:146
 msgid ""
@@ -4776,20 +4562,14 @@ msgid ""
 "repositories like PyPI and Anaconda.org that have to deal with thousands "
 "of package uploads."
 msgstr ""
-"Si las pruebas de su paquete requieren datos, le sugerimos que NO incluya "
-"esos datos en su estructura de paquete. Discutiremos esto con más detalle en "
-"un tutorial. Incluir datos en su estructura de paquete aumenta el tamaño de "
-"los archivos de su distribución. Esto impone un peaje de mantenimiento en "
-"repositorios como PyPI y Anaconda.org que tienen que lidiar con miles de "
-"paquetes subidos."
 
 #: ../../package-structure-code/python-package-structure.md:153
 msgid "About the flat Python package layout"
-msgstr "Sobre el diseño plano de paquetes de Python"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:155
 msgid "Currently most scientific packages use the **flat-layout** given:"
-msgstr "Actualmente, la mayoría de los paquetes científicos utilizan el **diseño plano** dado:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:157
 msgid ""
@@ -4797,9 +4577,6 @@ msgid ""
 "and people tend to look to other packages / maintainers that they respect"
 " for examples of how to build Python packages."
 msgstr ""
-"Es el diseño más común en el ecosistema científico de Python "
-"y las personas tienden a buscar otros paquetes / mantenedores que respetan "
-"como ejemplos de cómo construir paquetes de Python."
 
 #: ../../package-structure-code/python-package-structure.md:160
 msgid ""
@@ -4807,9 +4584,6 @@ msgid ""
 "builds with compilation steps. Many developers thus appreciate / are used"
 " to features of the flat layout."
 msgstr ""
-"Muchas herramientas de Python dependen de herramientas en otros idiomas y/o "
-"construcciones complejas con pasos de compilación. Por lo tanto, muchos "
-"desarrolladores aprecian/están acostumbrados a las características del diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:164
 msgid ""
@@ -4819,16 +4593,10 @@ msgid ""
 "move to a src/ layout](https://github.com/scikit-build/cmake-python-"
 "distributions/pull/145)"
 msgstr ""
-"Aunque presentamos este diseño aquí en nuestra guía, sugerimos que aquellos "
-"que recién comienzan con el empaquetado de Python comiencen con el diseño "
-"src/package discutido anteriormente. Numerosos paquetes en el ecosistema "
-"[han tenido que moverse a un diseño src/]"
-"(https://github.com/scikit-build/cmake-python-"
-"distributions/pull/145)"
 
 #: ../../package-structure-code/python-package-structure.md:169
 msgid "Why most scientific Python packages do not use source"
-msgstr "¿Por qué la mayoría de los paquetes científicos de Python no usan el código fuente?"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:172
 msgid ""
@@ -4837,10 +4605,6 @@ msgid ""
 "it. Moving from a flat layout to a **src/package** layout would come at a"
 " significant cost to maintainers."
 msgstr ""
-"En la mayoría de los casos, las ventajas de usar el diseño **src/package** "
-"para paquetes científicos más grandes que ya utilizan un enfoque plano no "
-"merecen la pena. Pasar de un diseño plano a un diseño **src/package** "
-"supondría un costo significativo para los mantenedores."
 
 #: ../../package-structure-code/python-package-structure.md:177
 msgid ""
@@ -4849,60 +4613,48 @@ msgid ""
 "started with creating a package, that you consider using a  "
 "**src/package** layout."
 msgstr ""
-"Sin embargo, las ventajas de usar el diseño **src/package** para un principiante "
-"son significativas. Por lo tanto, recomendamos que si está comenzando a crear un "
-"paquete, considere usar un diseño **src/package**."
 
 #: ../../package-structure-code/python-package-structure.md:182
 msgid "What does the flat layout structure look like?"
-msgstr "¿Cómo es la estructura del diseño plano?"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:184
 msgid "The flat layout's primary characteristics are:"
-msgstr "Las características principales del diseño plano son:"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:186
 msgid ""
 "The source code for your package lives in a directory with your package's"
 " name in the root of your directory"
 msgstr ""
-"El código fuente de su paquete se encuentra en un directorio con el nombre de "
-"su paquete en la raíz de su directorio"
 
 #: ../../package-structure-code/python-package-structure.md:188
 msgid ""
 "Often the `tests/` directory also lives within that same `package` "
 "directory."
 msgstr ""
-"A menudo, el directorio `tests/` también se encuentra dentro de ese mismo "
-"directorio `package`."
 
 #: ../../package-structure-code/python-package-structure.md:190
 msgid ""
 "Below you can see the recommended structure of a scientific Python "
 "package using the flat layout."
 msgstr ""
-"A continuación, puede ver la estructura recomendada de un paquete científico "
-"de Python que utiliza el diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:212
 msgid "Benefits of using the flat layout in your Python package"
-msgstr "Beneficios de usar el diseño plano en su paquete de Python"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:214
 msgid ""
 "There are some benefits to the scientific community in using the flat "
 "layout."
 msgstr ""
-"Existen algunos beneficios para la comunidad científica al utilizar el diseño plano."
 
 #: ../../package-structure-code/python-package-structure.md:216
 msgid ""
 "This structure has historically been used across the ecosystem and "
 "packages using it are unlikely to change."
 msgstr ""
-"Esta estructura se ha utilizado históricamente en todo el ecosistema y es poco probable "
-"que los paquetes que la utilizan cambien."
 
 #: ../../package-structure-code/python-package-structure.md:218
 msgid ""
@@ -4912,15 +4664,10 @@ msgid ""
 "against the installed version of your package. Rather, you are working "
 "directly with the flat files."
 msgstr ""
-"Puede importar el paquete directamente desde el directorio raíz. Para algunos, "
-"esto está arraigado en sus respectivos flujos de trabajo. Sin embargo, para un "
-"principiante, el peligro de hacer esto es que no está desarrollando y probando "
-"contra la versión instalada de su paquete. En cambio, está trabajando directamente "
-"con los archivos planos."
 
 #: ../../package-structure-code/python-package-structure.md:224
 msgid "Core scientific Python packages that use the flat layout"
-msgstr "Paquetes científicos de Python que utilizan el diseño plano"
+msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:227
 msgid "[numpy](https://github.com/numpy/numpy)"
@@ -4956,9 +4703,6 @@ msgid ""
 "these packages to a different layout. The potential benefits of the "
 "source layout for these tools is not worth the maintenance investment."
 msgstr ""
-"Sería un costo y una carga de mantenimiento significativos mover todos estos "
-"paquetes a un diseño diferente. Los posibles beneficios del diseño src para "
-"estas herramientas no valen la inversión en mantenimiento."
 
 #: ../../package-structure-code/python-package-versions.md:1
 msgid "Creating New Versions of Your Python Package"
