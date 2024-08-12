@@ -81,7 +81,7 @@ Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)]
 ```{tip}
 Once you package is accepted to pyOpenSci, we will provide you with
 a badge to add to your repository that shows that it has been reviewed.
-[![pyOpenSci](https://tinyurl.com/y22nb8up)](https://github.com/pyOpenSci/software-review/issues/12)
+[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-review/issues/12)
 
 ```
 
