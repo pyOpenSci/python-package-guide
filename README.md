@@ -15,8 +15,8 @@ pyOpenSci is devoted to building diverse, supportive community around
 the Python open source tools that drive open science. We do this through:
 
 * open peer review
-* mentorship and
-* training.
+* mentorshipd
+* training
 
 pyOpenSci is an independent organization, fiscally sponsored by Community
 Initiatives.
