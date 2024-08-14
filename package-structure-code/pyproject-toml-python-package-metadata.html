@@ -571,7 +571,7 @@ support configuration for that particular table.</p>
 </section>
 <section id="how-the-pyproject-toml-is-used-when-you-build-a-package">
 <h3>How the pyproject.toml is used when you build a package<a class="headerlink" href="#how-the-pyproject-toml-is-used-when-you-build-a-package" title="Link to this heading">#</a></h3>
-<!-- TODO: this text below is now on the build sdist / wheel page. that entire section likely belongs here.  -->
+<!-- TODO: this text below is now on the build sdist / wheel page. That entire section likely belongs here.  -->
 <p>When you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a>, one of our <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a>. Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim’s maintainers, <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a>. This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" />
@@ -652,10 +652,10 @@ what dependencies your package requires.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.scripts]</span></code> (Entry points):</strong> Entry points are optional. If you have a command line tool that runs a specific script hosted in your package, you may include an entry point to call that script directly at the command line (rather than at the Python shell).</p>
 <ul>
-<li><p>Here is an example of<a class="reference external" href="https://github.com/pyOpenSci/update-web-metadata/blob/main/pyproject.toml#L60"> a package that has entry point script</a>s. Notice that there are several core scripts defined in that package that perform sets of tasks. pyOpenSci is using those scripts to process their metadata.</p></li>
+<li><p>Here is an example of<a class="reference external" href="https://github.com/pyOpenSci/update-web-metadata/blob/main/pyproject.toml#L60"> a package that has entry point script</a>s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.</p></li>
 </ul>
 </li>
-<li><p><strong>Dynamic Fields:</strong> if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>, then you might use the dynamic field. such as version (using scm) <strong>dynamic = [“version”]</strong></p></li>
+<li><p><strong>Dynamic Fields:</strong> if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>, then you might use the dynamic field, such as version (using scm) <strong>dynamic = [“version”]</strong></p></li>
 </ul>
 </section>
 </section>

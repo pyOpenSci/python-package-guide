@@ -537,7 +537,7 @@ with how and when you update your package versions is important as:</p>
 <li><p>It helps your users (which might include other developers that depend on your package) understand the extent of changes to a package.</p></li>
 <li><p>It helps your development team make decisions about when to
 bump a package version based on standard rules.</p></li>
-<li><p>Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. thus your package version numbers become “expressive” in the same way that naming code variables well can <a class="reference external" href="https://medium.com/&#64;daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa">make code expressive</a>.</p></li>
+<li><p>Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. Thus your package version numbers become “expressive” in the same way that naming code variables well can <a class="reference external" href="https://medium.com/&#64;daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa">make code expressive</a>.</p></li>
 </ol>
 <div class="admonition-a-note-about-versioning admonition">
 <p class="admonition-title">A note about versioning</p>
@@ -599,7 +599,7 @@ versions. Some of these tools are built into or work with your chosen
 <p>Below, we provide an overview of these tools.</p>
 <!--
 If you are on the fence about what tool to use, we suggest
-that you use `setuptools-scm`. thinking now PDM or hatch + hatch_vcs  -->
+that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 <p>There are three general groups of tools that you can use to manage
 package versions:</p>
 <ol class="arabic simple">
@@ -624,7 +624,7 @@ build that:</p>
 <p class="admonition-title">Note</p>
 <p>Bumping a package version refers to the step of increasing the package
 version after a set number of changes have been made to it. For example,
-you might bump from version 0.8 to 0.9 of a package. or from 0.9 to 1.0.</p>
+you might bump from version 0.8 to 0.9 of a package or from 0.9 to 1.0.</p>
 <p>Using semantic versioning, there are three main “levels”
 of versions that you might consider:</p>
 <p>Major, minor and patch. These are described in more detail below.</p>
@@ -678,7 +678,7 @@ version in a single file managed by Hatch provides
 your package with a “single source of truth” value for the version
 number. This in turn eliminates potential error associated with
 manually updating your package’s version.</p>
-<p>When you (or your CI system) build your package, hatch checks the current tag number for your package. if it has increased, it will update
+<p>When you (or your CI system) build your package, hatch checks the current tag number for your package. If it has increased, it will update
 the <strong>_version.py</strong> file with the new value.</p>
 <p>Thus, when you create a new tag or a new release with a tag and build your package, Hatch will access the new tag value and use it to update
 your package version.</p>

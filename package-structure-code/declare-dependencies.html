@@ -14,9 +14,9 @@
 <meta property="og:description" content="A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_09e389b5.png" />
-<meta property="og:image:alt" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: needs to function properly., r..." />
-<meta name="description" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: needs to function properly., requires if someone wants to develop / wo..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_f3c95701.png" />
+<meta property="og:image:alt" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: Needs to function properly., R..." />
+<meta name="description" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: Needs to function properly., Requires if someone wants to develop / wo..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Python Package Dependencies &#8212; Python Packaging Guide</title>
@@ -520,9 +520,9 @@ document.write(`
 <p>A Python package dependency refers to an external package or
 software that your Python project:</p>
 <ol class="arabic simple">
-<li><p>needs to function properly.</p></li>
-<li><p>requires if someone wants to develop / work on improving your package locally or</p></li>
-<li><p>requires if a user wants to add additional functionality (that is not core) to your package</p></li>
+<li><p>Needs to function properly.</p></li>
+<li><p>Requires if someone wants to develop / work on improving your package locally or</p></li>
+<li><p>Requires if a user wants to add additional functionality (that is not core) to your package</p></li>
 </ol>
 <p>A dependency is not part of your project’s codebase. It is a package or software that is called
 within the code of your project or during development of your package.</p>
@@ -686,7 +686,7 @@ order to upload your project to PyPI</p>
 <section id="install-dependency-groups">
 <h3>Install dependency groups<a class="headerlink" href="#install-dependency-groups" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id3">
-<img alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. it them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
+<img alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
 <figcaption>
 <p><span class="caption-text">When a user installs your package locally using python -m pip install your-package only your package and it’s core dependencies get installed. When they install your package <code class="docutils literal notranslate"><span class="pre">[tests]</span></code> pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
