@@ -671,7 +671,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>docs-live-lang<span class="w"> </span>--<span class="w"> </span>es
 </pre></div>
 </div>
-<p>Note the <code class="docutils literal notranslate"><span class="pre">--</span></code> before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the <code class="docutils literal notranslate"><span class="pre">--</span></code>, nox will look instead for a session named ‘es’ and complain that it does not exist.</p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">--</span></code> before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the <code class="docutils literal notranslate"><span class="pre">--</span></code>, nox will look instead for a session named ‘es’ and raise an error that it does not exist.</p>
 <p>This command will use <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> to launch a local web server where you can access the translated version of the guide. You can open the guide in your browser by navigating to <code class="docutils literal notranslate"><span class="pre">http://localhost:8000</span></code>.</p>
 <p>This is a great way to see how the translated version of the guide looks as you make changes to the translation files.</p>
 </section>
