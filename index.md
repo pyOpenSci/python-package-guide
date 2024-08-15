@@ -29,7 +29,7 @@ We support the Python tools that scientists need to create open science workflow
 :::{image} /images/tutorials/packaging-elements.png
 :align: right
 :width: 500
-:alt: Image with the pyOpenSci flower logo in the upper right hand corner. The image shows the packaging lifecycle. The graphic shows a high level overview of the elements of a Python package. the inside circle has 5 items - user documentation, code/api, test suite, contributor documentation, project metadata / license / readme. In the middle of the circle is says maintainers and has a small icon with people. on the outside circle there is an arrow and it says infrastructure.
+:alt: Image with the pyOpenSci flower logo in the upper right hand corner. The image shows the packaging lifecycle. The graphic shows a high level overview of the elements of a Python package. The inside circle has 5 items - user documentation, code/api, test suite, contributor documentation, project metadata / license / readme. In the middle of the circle is says maintainers and has a small icon with people. On the outside circle there is an arrow and it says infrastructure.
 :::
 
 This guide will help you:
@@ -246,7 +246,7 @@ contribute.
 :::{figure} https://www.pyopensci.org/images/people-building-blocks.jpg
 :align: right
 :width: 350
-:alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?
+:alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. Box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. Box 2 - the person on the ground says - come join us programming is fun again. It's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. The person on the ground is saying - that's it?
 :::
 
 ### A community-created guidebook

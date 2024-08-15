@@ -23,7 +23,7 @@ Python package that is directly installable from PyPI.
 1. Is it clear where to add commands? Bash vs. Python console
 Bash vs. Zsh is different
 2. Does this lesson run as expected on windows and mac?
-3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. this may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
+3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. This may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
 :::
 
 :::{figure-md} code-to-python-package
