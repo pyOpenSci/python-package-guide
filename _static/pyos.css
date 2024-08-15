@@ -1,97 +1,96 @@
 /* PyOS-specific vars :) */
 :root {
-    --pyos-color-primary: #703c87;
-    --pyos-color-secondary: #8045e5;
-    --pyos-color-secondary-highlight: #591bc2;
-    --pyos-color-tertiary: #A66C98;
-    --pyos-color-dark: #542568;
-    --pyos-color-light: #DAABCF;
+  --pyos-color-primary: #703c87;
+  --pyos-color-secondary: #8045e5;
+  --pyos-color-secondary-highlight: #591bc2;
+  --pyos-color-tertiary: #a66c98;
+  --pyos-color-dark: #542568;
+  --pyos-color-light: #daabcf;
 
-    /* Darkmode Adjustments*/
-    --pyos-dm-color-primary: #C483E0;
+  /* Darkmode Adjustments*/
+  --pyos-dm-color-primary: #c483e0;
 
-    /* Fonts (overrides base theme) */
-    --pst-font-family-heading: 'Poppins', sans-serif;
-    --pst-font-family-base: 'Poppins', sans-serif;
-    --pyos-font-family-h1: 'Itim', serif;
-
+  /* Fonts (overrides base theme) */
+  --pst-font-family-heading: "Poppins", sans-serif;
+  --pst-font-family-base: "Poppins", sans-serif;
+  --pyos-font-family-h1: "Itim", serif;
 }
-
 
 /* anything related to the dark theme */
 html[data-theme="dark"] {
-    --pst-color-info-bg: #400f59!important;
-    --pst-color-tbl-row: #2E2E2E!important;
+  --pst-color-info-bg: #400f59 !important;
+  --pst-color-tbl-row: #2e2e2e !important;
 }
 
 /* anything related to the light theme */
 html[data-theme="light"] {
-    --pst-color-tbl-row: #f5f1ff!important;
-}
+  --pst-color-tbl-row: #f5f1ff !important;
 }
 
-
-html, body {
-    font-size: 1.0rem;
+html,
+body {
+  font-size: 1rem;
 }
 
 /* Allow the center content to expand to wide on wide screens */
-@media (min-width: 960px){
-.bd-page-width {
-    max-width: min(100%, 1600px)!important;
-    }
+@media (min-width: 960px) {
+  .bd-page-width {
+    max-width: min(100%, 1600px) !important;
+  }
 }
 
 /* Make sure the header nav is centered  - not sure why it's not overriding*/
-.navbar-header-items .me-auto, .me-auto .navbar-header-items__center {
-    margin-left: auto!important;
-    margin-right: auto!important;
+.navbar-header-items .me-auto,
+.me-auto .navbar-header-items__center {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* custom fonts */
 
-html, body {
-    font-size: 1.02rem;
+html,
+body {
+  font-size: 1.02rem;
 }
 
 body p {
 }
 
 .admonition {
-    margin-top: 60px!important;
-    margin-bottom: 70px!important;
+  margin-top: 60px !important;
+  margin-bottom: 70px !important;
 }
 
 h1 {
-    margin-top: 10px;
-    margin-bottom: 40px;
-    font-family: var(--pyos-font-family-h1) !important;
-    color: var(--pyos-h1-color);
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-family: var(--pyos-font-family-h1) !important;
+  color: var(--pyos-h1-color);
 }
 h2 {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 h3 {
-    margin-top: 60px}
+  margin-top: 60px;
+}
 
 figcaption .caption-text {
-    text-align: left!important;
+  text-align: left !important;
 }
 
 figure {
-    margin-top: 60px!important;
-    margin-bottom: 60px!important;
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
 }
 
 figcaption {
-    font-size: .9em;
-    font-weight: bold;
+  font-size: 0.9em;
+  font-weight: bold;
 }
 
-
 .admonition p {
-    font-size: .9em;
+  font-size: 0.9em;
 }
 
 /* Navbar */
@@ -107,113 +106,110 @@ ugly scrollbar to show all the time
 
 /* Tutorial block page */
 .left-div {
-    background-color: #3498db;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    width: 35%;
-    border-radius: 10px;
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 35%;
+  border-radius: 10px;
 }
 
 .right-div {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .lesson-div {
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: #333;
 }
 
 .lesson-div a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    height: 100%;
-    width: 100%;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .lesson-div:hover {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 /* Different colors and their shades */
 .lesson-div:nth-child(1) {
-    background-color: #216A6B;
-    color: #fff;
+  background-color: #216a6b;
+  color: #fff;
 }
 
 .lesson-div:nth-child(2) {
-    background-color: #6D597A;
-    color: #fff;
+  background-color: #6d597a;
+  color: #fff;
 }
 
 .lesson-div:nth-child(3) {
-    background-color: #B56576;
-    color: #fff;
+  background-color: #b56576;
+  color: #fff;
 }
 
 .lesson-div:nth-child(4) {
-    background-color: #3A8C8E; /* Shade of #216A6B */
+  background-color: #3a8c8e; /* Shade of #216A6B */
 }
 
 .lesson-div:nth-child(5) {
-    background-color: #8F7B8D; /* Shade of #6D597A */
+  background-color: #8f7b8d; /* Shade of #6D597A */
 }
 
 .lesson-div:nth-child(6) {
-    background-color: #D78287; /* Shade of #B56576 */
+  background-color: #d78287; /* Shade of #B56576 */
 }
 
 .lesson-div:nth-child(7) {
-    background-color: #185355; /* Darker shade of #216A6B */
-    color: #fff;
+  background-color: #185355; /* Darker shade of #216A6B */
+  color: #fff;
 }
 
-
-
-html[data-theme=light] {
-    --pst-color-primary: var(--pyos-color-primary);
-    --pst-color-primary-text: #fff;
-    --pst-color-primary-highlight: #053f49;
-    --sd-color-primary: var(--pst-color-primary);
-    --sd-color-primary-text: var(--pst-color-primary-text);
-    --sd-color-primary-highlight: var(--pst-color-primary-highlight);
-    --sd-color-primary-bg: #d0ecf1;
-    --sd-color-primary-bg-text: #14181e;
-    --pst-color-secondary: var(--pyos-color-secondary);
-    --pst-color-secondary-text: #fff;
-    --pst-color-secondary-highlight: var(--pyos-color-secondary-highlight);
-    --sd-color-secondary: var(--pst-color-secondary);
-    --sd-color-secondary-text: var(--pst-color-secondary-text);
-    --sd-color-secondary-highlight: var(--pst-color-secondary-highlight);
-    --sd-color-secondary-bg: #e0c7ff;
-    --sd-color-secondary-bg-text: #14181e;
-    --pst-color-success: #00843f;
-    --pst-color-success-text: #fff;
-    --pst-color-success-highlight: #00381a;
-    --sd-color-success: var(--pst-color-success);
-    --sd-color-success-text: var(--pst-color-success-text);
-    --sd-color-success-highlight: var(--pst-color-success-highlight);
-    --sd-color-success-bg: #d6ece1;
-    --sd-color-success-bg-text: #14181e;
-    --pst-color-info: #A66C98; /* general admonition */
-    --pst-color-info-bg: #eac8e2;
-    --pst-heading-color: var(--pyos-color-dark);
-    --pyos-h1-color: var(--pyos-color-dark);
+html[data-theme="light"] {
+  --pst-color-primary: var(--pyos-color-primary);
+  --pst-color-primary-text: #fff;
+  --pst-color-primary-highlight: #053f49;
+  --sd-color-primary: var(--pst-color-primary);
+  --sd-color-primary-text: var(--pst-color-primary-text);
+  --sd-color-primary-highlight: var(--pst-color-primary-highlight);
+  --sd-color-primary-bg: #d0ecf1;
+  --sd-color-primary-bg-text: #14181e;
+  --pst-color-secondary: var(--pyos-color-secondary);
+  --pst-color-secondary-text: #fff;
+  --pst-color-secondary-highlight: var(--pyos-color-secondary-highlight);
+  --sd-color-secondary: var(--pst-color-secondary);
+  --sd-color-secondary-text: var(--pst-color-secondary-text);
+  --sd-color-secondary-highlight: var(--pst-color-secondary-highlight);
+  --sd-color-secondary-bg: #e0c7ff;
+  --sd-color-secondary-bg-text: #14181e;
+  --pst-color-success: #00843f;
+  --pst-color-success-text: #fff;
+  --pst-color-success-highlight: #00381a;
+  --sd-color-success: var(--pst-color-success);
+  --sd-color-success-text: var(--pst-color-success-text);
+  --sd-color-success-highlight: var(--pst-color-success-highlight);
+  --sd-color-success-bg: #d6ece1;
+  --sd-color-success-bg-text: #14181e;
+  --pst-color-info: #a66c98; /* general admonition */
+  --pst-color-info-bg: #eac8e2;
+  --pst-heading-color: var(--pyos-color-dark);
+  --pyos-h1-color: var(--pyos-color-dark);
 }
 
-html[data-theme=dark] {
-    --pst-color-primary: var(--pyos-dm-color-primary);
-    --pst-color-link: var(--pyos-color-light);
-    --pst-color-link-hover: var(--pyos-dm-color-primary);
-    --pyos-h1-color: var(--pyos-color-light);
+html[data-theme="dark"] {
+  --pst-color-primary: var(--pyos-dm-color-primary);
+  --pst-color-link: var(--pyos-color-light);
+  --pst-color-link-hover: var(--pyos-dm-color-primary);
+  --pyos-h1-color: var(--pyos-color-light);
 }
-
 
 /* -------------------------------------- */
 /* Generated by https://gwfh.mranftl.com/ */
@@ -221,163 +217,161 @@ html[data-theme=dark] {
 /* poppins-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./fonts/poppins-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* poppins-italic - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: italic;
   font-weight: 400;
-  src: url('./fonts/poppins-v20-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./fonts/poppins-v20-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* poppins-700 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  src: url('./fonts/poppins-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./fonts/poppins-v20-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* poppins-700italic - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: italic;
   font-weight: 700;
-  src: url('./fonts/poppins-v20-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./fonts/poppins-v20-latin-700italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* itim-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Itim';
+  font-family: "Itim";
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/itim-v14-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./fonts/itim-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* poppins-500 - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    src: url('./fonts/poppins-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* poppins-600 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    src: url('./fonts/poppins-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/poppins-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/poppins-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 /* Cards */
 
 /* todo light and dark adaptations needed */
 
 .sd-card-title {
-    margin-bottom: 0.5rem;
-    background-color: var(--pst-color-info-bg)!important;
-    padding: .5rem;
-    border-bottom: 2px solid #999;
-    font-size: 1.2rem;
-    font-weight: 600!important;
+  margin-bottom: 0.5rem;
+  background-color: var(--pst-color-info-bg) !important;
+  padding: 0.5rem;
+  border-bottom: 2px solid #999;
+  font-size: 1.2rem;
+  font-weight: 600 !important;
 }
 
 .sd-card-header {
-    font-size: 1.2em;
-    font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .sd-card-body {
-    padding: 0 0!important;
+  padding: 0 0 !important;
 
-    .left-aligned
-        & ul li {
-        text-align: left;
-    }
+  .left-aligned & ul li {
+    text-align: left;
+  }
 }
 
 .sd-card {
-    padding-bottom: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 .sd-card-text {
-    text-align: left;
-    padding-right: 1.5em;
-    padding-left: 1.5em;
+  text-align: left;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
 }
 
 #footnotes {
-    font-size: .8em;
-    line-height: 1.1;
-    &span.label {
-        font-weight:400
-    }
+  font-size: 0.8em;
+  line-height: 1.1;
+  &span.label {
+    font-weight: 400;
+  }
 }
 
 aside.footnote {
-    margin-bottom: 0.5rem;
-    &:last-child {
-      margin-bottom: 1rem;
-    }
-    span.label,
-    span.backrefs {
-      font-weight: 400!important;
-    }
-
-    &:target {
-      background-color: var(--pst-color-target);
-    }
+  margin-bottom: 0.5rem;
+  &:last-child {
+    margin-bottom: 1rem;
+  }
+  span.label,
+  span.backrefs {
+    font-weight: 400 !important;
   }
 
+  &:target {
+    background-color: var(--pst-color-target);
+  }
+}
 
 .fa-circle-check {
-    color: #7BCDBA;
+  color: #7bcdba;
 }
 
 /* pyOpenSci table styles */
 
 .pyos-table {
-    & th.head, .pyos-table th.head.stub {
-    background-color: #33205C!important;
+  & th.head,
+  .pyos-table th.head.stub {
+    background-color: #33205c !important;
 
     & p {
-        color: #fff
+      color: #fff;
     }
+  }
+  & th.stub {
+    background-color: var(--pst-color-tbl-row);
+    font-weight: 500;
+  }
+  & td {
+    vertical-align: middle;
+    text-align: center;
+  }
 }
-    & th.stub {
-        background-color: var(--pst-color-tbl-row);
-        font-weight: 500;
-      }
-    & td {
-        vertical-align: middle;
-        text-align: center;
-    }
-}
-
 
 /* Make the first column in a table a "header" like thing */
 
-
 /* Dark mode fix for tables */
 @media (prefers-color-scheme: dark) {
-    td:not(.row-header):nth-child(1) {
-      background-color: var(--pst-color-tbl-row); /* Adjust the dark mode color */
-      color: #ffffff; /* Adjust the text color for better contrast */
-      font-weight: 500;
-    }
+  td:not(.row-header):nth-child(1) {
+    background-color: var(--pst-color-tbl-row); /* Adjust the dark mode color */
+    color: #ffffff; /* Adjust the text color for better contrast */
+    font-weight: 500;
   }
+}
 
-td, th {
-    border: 1px solid #ccc; /* Light gray border */
-    padding: 8px; /* Add some padding for better readability */
-  }
+td,
+th {
+  border: 1px solid #ccc; /* Light gray border */
+  padding: 8px; /* Add some padding for better readability */
+}
