@@ -43,7 +43,7 @@ AUTOBUILD_INCLUDE = [
 ## Localization options (translations)
 
 # List of languages for which locales will be generated in (/locales/<lang>)
-LANGUAGES = ["es"]
+LANGUAGES = ["es", "ja"]
 
 # List of languages that should be built when releasing the guide (docs or docs-test sessions)
 RELEASE_LANGUAGES = []
@@ -139,7 +139,7 @@ def clean_dir(session):
         if content.is_dir():
             shutil.rmtree(content)
         else:
-            os.remove(content)
+            pathlib.Path(content).unlink()
 
 
 @nox.session(name="update-translations")

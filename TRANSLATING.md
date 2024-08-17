@@ -65,7 +65,7 @@ LANGUAGES = ["es", "fr"]
 ```
 
 ```{note}
-You can find a list of the two-letter ISO language codes [here](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+You can find a list of the two-letter Sphinx language option [here](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
 ```
 
 ## Preparing the Translation Files
@@ -236,7 +236,7 @@ You can also build a live version of the guide that updates automatically as you
 nox -s docs-live-lang -- es
 ```
 
-Note the `--` before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the `--`, nox will look instead for a session named 'es' and complain that it does not exist.
+Note the `--` before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the `--`, nox will look instead for a session named 'es' and raise an error that it does not exist.
 
 This command will use `sphinx-autobuild` to launch a local web server where you can access the translated version of the guide. You can open the guide in your browser by navigating to `http://localhost:8000`.
 

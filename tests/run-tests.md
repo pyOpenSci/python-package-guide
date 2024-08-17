@@ -122,7 +122,7 @@ We will focus on [Nox](https://nox.thea.codes/) in this guide. `nox` is a Python
 ```{admonition} Other automation tools you'll see in the wild
 :class: note
 
-- **[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an automation tool that supports common steps such as building documentation, running tests across various versions of Python, and more. You can find [a nice overview of tox in the plasmaPy documentation](https://docs.plasmapy.org/en/stable/contributing/testing_guide.html#using-tox).
+- **[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an automation tool that supports common steps such as building documentation, running tests across various versions of Python, and more.
 
 - **[Hatch](https://github.com/ofek/hatch)** is a modern end-to-end packaging tool that works with the popular build backend called hatchling. `hatch` offers a `tox`-like setup where you can run tests locally using different Python versions. If you are using `hatch` to support your packaging workflow, you may want to also use its testing capabilities rather than using `nox`.
 
