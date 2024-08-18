@@ -265,7 +265,7 @@ When you submit a PR for a translation, you should only include changes to one l
 
 Translations PRs will be tagged with a label indicating the language to make them easier to identify and review. For example, contributions to the Spanish translation will be tagged with 'lang-es'.
 
-TODO: This tagging could be automated with a GitHub action.
+TODO: This tagging could be automated with a GitHub Actions.
 
 When you submit the PR, make sure to include a short description of the changes you made and any context that might be helpful for the reviewer (e.g., you translated new strings, you reviewed fuzzy entries, you fixed typos, etc.)
 
