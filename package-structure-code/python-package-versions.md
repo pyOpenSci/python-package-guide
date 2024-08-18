@@ -23,7 +23,7 @@ with how and when you update your package versions is important as:
 1. It helps your users (which might include other developers that depend on your package) understand the extent of changes to a package.
 2. It helps your development team make decisions about when to
    bump a package version based on standard rules.
-3. Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. thus your package version numbers become "expressive" in the same way that naming code variables well can [make code expressive](https://medium.com/@daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa).
+3. Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. Thus your package version numbers become "expressive" in the same way that naming code variables well can [make code expressive](https://medium.com/@daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa).
 
 ```{admonition} A note about versioning
 In some cases even small version changes can turn a package update
@@ -92,7 +92,7 @@ Below, we provide an overview of these tools.
 
 <!--
 If you are on the fence about what tool to use, we suggest
-that you use `setuptools-scm`. thinking now PDM or hatch + hatch_vcs  -->
+that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 
 There are three general groups of tools that you can use to manage
 package versions:
@@ -117,7 +117,7 @@ build that:
 ```{note}
 Bumping a package version refers to the step of increasing the package
 version after a set number of changes have been made to it. For example,
-you might bump from version 0.8 to 0.9 of a package. or from 0.9 to 1.0.
+you might bump from version 0.8 to 0.9 of a package or from 0.9 to 1.0.
 
 Using semantic versioning, there are three main "levels"
 of versions that you might consider:
@@ -170,7 +170,7 @@ your package with a "single source of truth" value for the version
 number. This in turn eliminates potential error associated with
 manually updating your package's version.
 
-When you (or your CI system) build your package, hatch checks the current tag number for your package. if it has increased, it will update
+When you (or your CI system) build your package, hatch checks the current tag number for your package. If it has increased, it will update
 the **\_version.py** file with the new value.
 
 Thus, when you create a new tag or a new release with a tag and build your package, Hatch will access the new tag value and use it to update
