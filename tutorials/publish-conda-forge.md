@@ -30,7 +30,7 @@ for conda, conda-forge will build from your PyPI source distribution file (sdist
 
 :::{figure-md} pypi-conda-publication
 
-<img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
+<img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. Then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 
 Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. Conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
 :::
@@ -276,7 +276,7 @@ extra:
 
 ### Step 3b: Bug fix - add a home url to the about: section
 
-There is currently a small bug in Grayskull where it doesn't populate the home: element of the recipe. if you don't include this, [you will receive an error message](https://github.com/conda-forge/staged-recipes/pull/25173#issuecomment-1917916528) from the friendly conda-forge linter bot.
+There is currently a small bug in Grayskull where it doesn't populate the home: element of the recipe. If you don't include this, [you will receive an error message](https://github.com/conda-forge/staged-recipes/pull/25173#issuecomment-1917916528) from the friendly conda-forge linter bot.
 
 ```
 Hi! This is the friendly automated conda-forge-linting service.

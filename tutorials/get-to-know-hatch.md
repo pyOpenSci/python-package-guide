@@ -200,7 +200,7 @@ Once you have completed the steps above run the following command in your shell.
 `hatch config show`
 
 `hatch config show` will print out the contents of your `config.toml` file in
-your shell. look at the values and ensure that your name, email is set. Also
+your shell. Look at the values and ensure that your name, email is set. Also
 make sure that `tests=false`.
 
 ## Hatch features
@@ -217,7 +217,7 @@ and maintaining your Python package easier.
 
 A few features that Hatch offers
 
-1. it will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you (see [Migrating setup.py to pyproject.toml using Hatch](setup-py-to-pyproject-toml.md
+1. It will convert metadata stored in a `setup.py` or `setup.cfg` file to a pyproject.toml file for you (see [Migrating setup.py to pyproject.toml using Hatch](setup-py-to-pyproject-toml.md
 ))
 2. It will help you by storing configuration information for publishing to PyPI after you've entered it once.
 
