@@ -107,7 +107,7 @@ PyPI screenshot showing metadata for the xclim package.
 
 :::{figure-md} pypi-metadata-maintainers
 
-<img src="../images/python-build-package/pypi-metadata-maintainers.png" alt="Here you see the maintinaer metadata as it is displayed on PyPI. For xclim there are three maintainers listed with their profile pictures and github user names to the right. " width="300px">
+<img src="../images/python-build-package/pypi-metadata-maintainers.png" alt="Here you see the maintainer metadata as it is displayed on PyPI. For xclim there are three maintainers listed with their profile pictures and github user names to the right. " width="300px">
 
 Maintainer names and GitHub usernames for the xclim package as they are displayed on PyPI. This information is recorded in your pyproject.toml and then processed by your build tool and stored in your packages sdist and wheel distributions.
 :::
