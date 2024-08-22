@@ -18,7 +18,7 @@ Writing tests for your Python package is important because:
 - **Fearless Refactoring:** Refactoring means making improvements to your code structure without changing its behavior. Tests empower you to make these changes as if you break something, test failures will let you know.
 - **Documentation:** Tests serve as technical examples of how to use your package. This can be helpful for a new technical contributor that wants to contribute code to your package. They can look at your tests to understand how parts of your code functionality fits together.
 - **Long-Term ease of maintenance:** As your package evolves, tests ensure that your code continues to behave as expected, even as you make changes over time. Thus you are helping your future self when writing tests.
-- **Easier pull request reviews:** By running your tests in a CI framework such as GitHub actions, each time you or a contributor makes a change to your code-base, you can catch issues and things that may have changed in your code base. This ensures that your software behaves the way you expect it to.
+- **Easier pull request reviews:** By running your tests in a CI framework such as GitHub Actions, each time you or a contributor makes a change to your code-base, you can catch issues and things that may have changed in your code base. This ensures that your software behaves the way you expect it to.
 
 ### Tests for user edge cases
 

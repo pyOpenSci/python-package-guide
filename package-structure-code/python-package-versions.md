@@ -105,7 +105,7 @@ package versions:
 ### Semantic release, vs version control based vs manual version bumping
 
 Generally semantic release and version control system tools
-can be setup to run automatically on GitHub using GitHub actions.
+can be setup to run automatically on GitHub using GitHub Actions.
 This means that you can create a workflow where a GitHub release
 and associated new version tag is used to trigger an automated
 build that:
