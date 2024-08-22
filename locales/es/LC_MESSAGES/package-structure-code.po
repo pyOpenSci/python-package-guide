@@ -3907,7 +3907,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:1
 msgid "Learn about Building a Python Package"
-msgstr ""
+msgstr "Aprenda sobre la construcción de un paquete de Python"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:8
 msgid ""
@@ -3917,6 +3917,9 @@ msgid ""
 "your package on conda-forge. You do not need to rebuild your package to "
 "publish to conda-forge."
 msgstr ""
+"Una vez que haya publicado ambas distribuciones de paquetes (la distribución del código fuente y la distribución construida o wheel) en PyPI, "
+"entonces puede publicar en conda-forge. conda-forge requiere una distribución de origen en PyPI para construir su "
+"paquete en conda-forge. No necesita reconstruir su paquete para publicar en conda-forge."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:11
 msgid ""
@@ -3927,20 +3930,28 @@ msgid ""
 "PyPI in order for conda-forge to properly build your package "
 "automatically."
 msgstr ""
+"Necesita construir su paquete de Python para publicarlo en PyPI "
+"(o en un canal de conda). El proceso de construcción organiza su código "
+"y metadatos en un formato de distribución que puede ser subido a PyPI y "
+"posteriormente descargado e instalado por los usuarios. NOTA: necesita "
+"publicar un sdist (distribución del código fuente) en PyPI para que conda-forge pueda construir su paquete "
+"automáticamente."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:14
 msgid "What is building a Python package?"
-msgstr ""
+msgstr "¿Qué es construir un paquete de Python?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:16
 msgid ""
 "To [publish your Python package](publish-python-package-pypi-conda) and "
 "make it easy for anyone to install, you first need to build it."
 msgstr ""
+"Para [publicar su paquete de Python](publish-python-package-pypi-conda) y "
+"hacer que sea fácil de instalar para cualquiera, primero necesita construirlo."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:18
 msgid "But, what does it mean to build a Python package?"
-msgstr ""
+msgstr "Pero, ¿qué significa construir un paquete de Python?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:20
 msgid ""
@@ -3950,6 +3961,11 @@ msgid ""
 "and metadata about the package, in the format required by the Python "
 "Package Index, so that it can be installed by tools like pip."
 msgstr ""
+"[Como se muestra en la figura de arriba](#pypi-conda-channels), cuando construye su paquete de Python, convierte "
+"los archivos de código fuente en algo llamado paquete de distribución."
+" Un paquete de distribución contiene su código fuente "
+"y metadatos sobre el paquete, en el formato requerido por el Python Package Index (PyPI), para que pueda ser "
+"instalado por herramientas como pip."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:23
 msgid ""
@@ -3958,6 +3974,9 @@ msgid ""
 " Authority](https://www.pypa.io/en/latest/) and refer to the product of "
 "the build step as a **distribution package**."
 msgstr ""
+"El término paquete solía significar muchas cosas diferentes en Python y otros lenguajes. En esta página, "
+"adaptamos la convención de la [Autoridad de Empaquetado de Python](https://www.pypa.io/en/latest/) y nos referimos "
+"al producto del paso de construcción como un **paquete de distribución**."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:27
 msgid ""
@@ -3965,10 +3984,12 @@ msgid ""
 " and metadata into a format that both pip and PyPI can use, is called a "
 "build step."
 msgstr ""
+"Este proceso de organizar y formatear su código, documentación, pruebas y metadatos en un formato que tanto pip "
+"como PyPI pueden usar, se llama paso de construcción."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:31
 msgid "Project metadata and PyPI"
-msgstr ""
+msgstr "Metadatos del proyecto y PyPI"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:33
 msgid ""
@@ -3977,6 +3998,9 @@ msgid ""
 "](pyproject-toml-python-package-metadata). This metadata is used for "
 "several purposes:"
 msgstr ""
+"Los metadatos que tanto las herramientas de construcción como PyPI utilizan para describir y entender su paquete "
+"generalmente se almacenan en un [archivo pyproject.toml](pyproject-toml-python-package-metadata). Estos metadatos "
+"se utilizan para varios propósitos:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:35
 msgid ""
@@ -3985,6 +4009,9 @@ msgid ""
 "poetry, PDM or Hatch) understand how to build your package. Information "
 "it provides to your build tool includes:"
 msgstr ""
+"Ayuda a la herramienta que use para construir su paquete (pip, [Build de pypa](https://pypi.org/project/build/) o "
+"una herramienta de extremo a extremo como poetry, PDM o Hatch) a entender cómo construir su paquete. La información "
+"que proporciona a su herramienta de construcción incluye:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:37
 msgid ""
@@ -3992,12 +4019,16 @@ msgid ""
 "[build backend tool](build_backends) you wish to use for creating your "
 "sdist and wheel distributions."
 msgstr ""
+"La tabla `[build-system]` en su archivo pyproject.toml le dice a pip qué [herramienta de backend de construcción]"
+"(build_backends) desea usar para crear sus distribuciones sdist (distribución del código fuente) y wheel (distribución construida)."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:45
 msgid ""
 "And the dependencies section of your project table tells the build tool "
 "and PyPI what dependencies your project requires."
 msgstr ""
+"Y la sección de dependencias de su tabla de proyecto le dice a la herramienta de construcción y a PyPI qué "
+"dependencias requiere su proyecto."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:54
 msgid ""
@@ -4005,6 +4036,9 @@ msgid ""
 " you publish on PyPI), it also creates a METADATA file which PyPI can "
 "read and use to help users find your package. For example:"
 msgstr ""
+"Cuando la herramienta de construcción crea el archivo de distribución de su paquete (el archivo que publica en "
+"PyPI), también crea un archivo METADATA que PyPI puede leer y usar para ayudar a los usuarios a encontrar su paquete. "
+"Por ejemplo:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:56
 msgid ""
@@ -4013,10 +4047,13 @@ msgid ""
 "filter for packages that contain specific licenses or that support "
 "specific versions of python."
 msgstr ""
+"La sección `classifiers = ` de su tabla `[project]` en el archivo pyproject.toml proporciona información que los "
+"usuarios en PyPI pueden usar para filtrar paquetes que contienen licencias específicas o que admiten versiones "
+"específicas de Python."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:73
 msgid "What happened to setup.py and setup.cfg for metadata?"
-msgstr ""
+msgstr "¿Qué pasó con setup.py y setup.cfg para almacenar metadatos?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:76
 msgid ""
@@ -4025,10 +4062,13 @@ msgid ""
 "metadata is to use a pyproject.toml file. [Learn more about the "
 "pyproject.toml file here.](pyproject-toml-python-package-metadata)"
 msgstr ""
+"Los metadatos del proyecto solían almacenarse en un archivo setup.py o en un archivo setup.cfg. La práctica "
+"recomendada actual para almacenar metadatos de paquetes es utilizar un archivo pyproject.toml. [Aprenda más sobre el "
+"archivo pyproject.toml aquí.](pyproject-toml-python-package-metadata)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:79
 msgid "An example - xclim"
-msgstr ""
+msgstr "Un ejemplo - xclim"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:94
 msgid ""
@@ -4041,6 +4081,15 @@ msgid ""
 "connect to conda-forge for an automated build that sends distributions "
 "from PyPI to conda-forge."
 msgstr ""
+"Gráfico que muestra el flujo de trabajo de empaquetado de alto nivel."
+" A la izquierda se ve un gráfico con código, metadatos y tests en él. "
+"Esos elementos van todos en su paquete. La documentación y los datos "
+"están debajo de ese recuadro porque normalmente no se publican en su "
+"distribución construida (wheel). Una flecha a la derecha lo lleva a "
+"un cuadro de archivos de distribución de construcción. Ese cuadro lo lleva "
+"a publicar en TestPyPI o en el verdadero PyPI. Desde PyPI, puede conectarse "
+"a conda-forge para una construcción automatizada que envía distribuciones "
+"de PyPI a conda-forge."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:96
 msgid ""
@@ -4051,6 +4100,11 @@ msgid ""
 "PyPI in order for conda-forge to properly build your package "
 "automatically."
 msgstr ""
+"Necesita construir su paquete de Python para publicarlo en PyPI (o Conda). "
+"El proceso de construcción organiza su código y metadatos en un formato de "
+"distribución que puede ser subido a PyPI y posteriormente descargado e "
+"instalado por los usuarios. NOTA: necesita publicar distribución del código fuente (sdist) en PyPI para "
+"que conda-forge pueda construir su paquete automáticamente."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:101
 msgid ""
@@ -4059,17 +4113,24 @@ msgid ""
 "keywords associated with the package and the base python version it "
 "requires which is 3.8."
 msgstr ""
+"Esta captura de pantalla muestra los metadatos en PyPI para el paquete xclim. "
+"En ella puede ver el nombre de la licencia, los nombres del autor y del "
+"mantenedor, palabras clave asociadas con el paquete y la versión base de "
+"Python que requiere, que es 3.8."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:103
 msgid "PyPI screenshot showing metadata for the xclim package."
-msgstr ""
+msgstr "Captura de pantalla de PyPI que muestra metadatos para el paquete xclim."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:110
 msgid ""
-"Here you see the maintinaer metadata as it is displayed on PyPI. for "
+"Here you see the maintainer metadata as it is displayed on PyPI. for "
 "xclim there are three maintainers listed with their profile pictures and "
 "github user names to the right."
 msgstr ""
+"Aquí ve los metadatos del mantenedor tal como se muestran en PyPI. Para "
+"xclim hay tres mantenedores listados con sus fotos de perfil y nombres de "
+"usuario de GitHub a la derecha."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:112
 msgid ""
@@ -4078,10 +4139,14 @@ msgid ""
 "and then processed by your build tool and stored in your packages sdist "
 "and wheel distributions."
 msgstr ""
+"Nombres de los mantenedores y nombres de usuario de GitHub para el paquete "
+"xclim tal como se muestran en PyPI. Esta información se registra en su "
+"pyproject.toml y luego es procesada por su herramienta de construcción y "
+"almacenada en las distribuciones sdist y wheel de sus paquetes."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:115
 msgid "How to create the distribution format that PyPI and Pip expects?"
-msgstr ""
+msgstr "¿Cómo crear el formato de distribución que PyPI y Pip esperan?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:117
 msgid ""
@@ -4091,6 +4156,11 @@ msgid ""
 "there are packages and tools that help you create package build "
 "distribution files."
 msgstr ""
+"En teoría, podría crear sus propios scripts para organizar su código "
+"de la manera que PyPI quiere que sea. Sin embargo, al igual que hay "
+"paquetes que manejan estructuras conocidas como dataframes de Pandas "
+"y arrays de Numpy, hay paquetes y herramientas que le "
+"ayudan a crear archivos de distribución de construcción de paquetes."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:121
 msgid ""
@@ -4100,6 +4170,11 @@ msgid ""
 "your sdist and wheel. Whereas tools like Hatch, PDM, Poetry and flit help"
 " with other parts of the packaging process."
 msgstr ""
+"Existen una serie de herramientas de empaquetado que pueden ayudarle con "
+"todo el proceso de empaquetado o solo con un paso del proceso. Por ejemplo, "
+"setuptools es un backend de construcción comúnmente utilizado que se puede "
+"usar para crear su sdist y wheel. Mientras que herramientas como "
+"Hatch, PDM, Poetry y flit ayudan con otras partes del proceso de empaquetado."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:127
 msgid ""
@@ -4108,6 +4183,11 @@ msgid ""
 "output (with minor differences that most users may not care about). Learn"
 " more about those tools on this page."
 msgstr ""
+"Si bien esto puede causar cierta confusión y complejidad en el ecosistema "
+"de empaquetado, en su mayor parte, cada herramienta proporciona la misma "
+"salida de distribución (con diferencias menores que a la mayoría de los "
+"usuarios pueden no importarles). Aprenda más sobre esas herramientas en "
+"esta página."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:133
 msgid ""
@@ -4115,6 +4195,9 @@ msgid ""
 "you to publish: sdist and wheel. You will learn about their structure and"
 " what files belong in each."
 msgstr ""
+"A continuación, aprenderá sobre los dos archivos de distribución que PyPI "
+"espera que publique: sdist y wheel. Aprenderá sobre su estructura "
+"y qué archivos pertenecen a cada uno."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:136
 msgid ""
@@ -4124,10 +4207,16 @@ msgid ""
 "wheel (.whl) contains the built / compiled files that can be directly "
 "installed onto anyones' computer."
 msgstr ""
+"Hay dos archivos de distribución principales que necesita crear para "
+"publicar su paquete de Python en PyPI: la distribución de origen (a menudo "
+"llamada sdist) y la distribución construida (wheel). El sdist contiene el código fuente "
+"sin procesar de su paquete. La wheel (.whl) contiene los archivos "
+"construidos / compilados que se pueden instalar directamente en el "
+"ordenador de cualquier persona."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:142
 msgid "Learn more about both distributions below."
-msgstr ""
+msgstr "Aprenda más sobre ambas distribuciones a continuación."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:145
 msgid ""
@@ -4137,6 +4226,11 @@ msgid ""
 "languages or is more complex in its build, the two distributions will be "
 "very different."
 msgstr ""
+"Si su paquete es un paquete de Python puro sin pasos adicionales de "
+"construcción / compilación, entonces las distribuciones sdist y wheel "
+"tendrán contenido similar. Sin embargo, si su paquete tiene extensiones en "
+"otros lenguajes o es más complejo en su construcción, las dos distribuciones "
+"serán muy diferentes."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:150
 msgid ""
@@ -4145,10 +4239,14 @@ msgid ""
 "here.](https://conda.io/projects/conda-build/en/latest/user-"
 "guide/tutorials/index.html)"
 msgstr ""
+"También tenga en cuenta que no estamos discutiendo flujos de trabajo de "
+"construcción de conda en esta sección. [Puede aprender más sobre las "
+"construcciones de conda aquí.](https://conda.io/projects/conda-build/en/"
+"latest/user-guide/tutorials/index.html)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:155
 msgid "Source Distribution (sdist)"
-msgstr ""
+msgstr "Distribución de código fuente (sdist)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:157
 msgid ""
@@ -4156,6 +4254,10 @@ msgid ""
 "These are the \"raw / as-is\" files that you store on GitHub or whatever "
 "platform you use to manage your code."
 msgstr ""
+"Los **archivos de código fuente** son los archivos sin construir necesarios para "
+"construir su paquete. Estos son los archivos \"originales / sin procesar\" "
+"que almacena en GitHub o en cualquier plataforma que utilice para gestionar "
+"su código."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:161
 msgid ""
@@ -4167,6 +4269,12 @@ msgid ""
 "everything required to build a wheel (except for project dependencies) "
 "without network access."
 msgstr ""
+"Las distribuciones de código fuente (del inglés, _source distribution_) se denominan sdist. Como "
+"su nombre indica, una distribución sdist contiene el código fuente; no ha sido construido ni"
+" compilado de ninguna manera. Por lo tanto, cuando un usuario instala su distribución de código fuente "
+"usando pip, pip necesita ejecutar un paso de construcción primero. Por esta razón, "
+"podría definir una distribución sdist como un archivo comprimido que contiene todo lo "
+"necesario para construir una wheel (excepto las dependencias del proyecto) sin acceso a la red."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:165
 msgid ""
@@ -4174,14 +4282,17 @@ msgid ""
 "\"tarball\"). Thus, when a user installs your source distribution using "
 "pip, pip needs to run a build step first."
 msgstr ""
+"Normalmente, sdist se almacena como un archivo `.tar.gz` (a menudo llamado "
+"un \"tarball\"). Por lo tanto, cuando un usuario instala su distribución de origen "
+"usando pip, pip necesita ejecutar un paso de construcción primero."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:167
 msgid "Below is an example sdist for the stravalib Python package:"
-msgstr ""
+msgstr "A continuación se muestra un ejemplo de sdist para el paquete de Python stravalib:"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:219
 msgid "GitHub archive vs sdist"
-msgstr ""
+msgstr "El archivo de GitHub vs sdist"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:221
 msgid ""
@@ -4192,10 +4303,16 @@ msgid ""
 "`setuptools_scm` or `hatch_vcs` the sdist may also contain a file that "
 "stores the version."
 msgstr ""
+"Cuando se crea una versión en GitHub, se crea un `git archive` que contiene "
+"todos los archivos de su repositorio de GitHub. Si bien estos archivos son "
+"similares a un sdist, estos dos archivos no son iguales. El sdist contiene "
+"algunos otros elementos, incluido un directorio de metadatos y si utiliza "
+"`setuptools_scm` o `hatch_vcs`, el sdist también puede contener un archivo "
+"que almacena la versión."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:229
 msgid "Wheel (.whl files):"
-msgstr ""
+msgstr "Wheel (ficheros .whl):"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:231
 msgid ""
@@ -4206,6 +4323,13 @@ msgid ""
 "may be included in source distributions are not included in wheels "
 "because it is a built distribution."
 msgstr ""
+"Un archivo wheel es un archivo en formato ZIP cuyo nombre sigue"
+" un formato específico (a continuación) y tiene la "
+"extensión `.whl`. El archivo `.whl` contiene un conjunto específico de "
+"archivos, incluidos metadatos que se generan a partir del archivo "
+"pyproject.toml de su proyecto. El pyproject.toml y otros archivos que "
+"pueden estar incluidos en las distribuciones de origen no se incluyen en "
+"las wheels porque es una distribución construida."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:238
 msgid ""
@@ -4217,6 +4341,14 @@ msgid ""
 "thus faster to install - particularly if you have a package that requires"
 " build steps."
 msgstr ""
+"La wheel (.whl) es su distribución binaria construida. Los"
+" **archivos binarios** son los archivos de código fuente "
+"construidos / compilados. Estos archivos están listos para ser instalados."
+" Una wheel (**.whl**) es un archivo **zip** que contiene todos los archivos "
+"necesarios para instalar directamente su paquete. Todos los archivos en una "
+"wheel son binarios, lo que significa que el código ya está compilado / "
+"construido. Por lo tanto, estas son más rápidas de instalar, "
+"particularmente si tiene un paquete que requiere pasos de construcción."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:240
 msgid ""
@@ -4224,12 +4356,17 @@ msgid ""
 " as **setup.cfg** or **pyproject.toml**. This distribution is already "
 "built so it's ready to install."
 msgstr ""
+"La wheel no contiene ninguno de los archivos de configuración de su paquete "
+"como **setup.cfg** o **pyproject.toml**. Esta distribución ya está construida "
+"por lo que está lista para instalar."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:244
 msgid ""
 "Because it is built, the wheel file will be faster to install for pure "
 "Python projects and can lead to consistent installs across machines."
 msgstr ""
+"Debido a que está construido, el archivo .whl será más rápido de instalar "
+"para proyectos de Python puro y llevará a instalaciones consistentes "
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:252
 msgid ""
@@ -4238,48 +4375,55 @@ msgid ""
 "the wheel bundle are pre built, the user installing doesn't have to worry"
 " about malicious code injections when it is installed."
 msgstr ""
+"Las wheels también son útiles en el caso de que un paquete necesite un "
+"archivo **setup.py** para admitir una construcción más compleja. En este "
+"caso, debido a que los archivos en el paquete de wheel están preconstruidos, "
+"el usuario que lo instala no tiene que preocuparse por inyecciones de código "
+"malicioso cuando se instala."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:259
 msgid "The filename of a wheel contains important metadata about your package."
-msgstr ""
+msgstr "El nombre de archivo de una wheel contiene metadatos importantes sobre su paquete."
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:261
 msgid "Example: **stravalib-1.1.0.post2-py3-none.whl**"
-msgstr ""
+msgstr "Por ejemplo: **stravalib-1.1.0.post2-py3-none.whl**"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:263
 msgid "name: stravalib"
-msgstr ""
+msgstr "nombre: stravalib"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:264
 msgid "version: 1.1.0"
-msgstr ""
+msgstr "versión: 1.1.0"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:265
 msgid ""
 "build-number: 2 (post2) [(read more about post "
 "here)](https://peps.python.org/pep-0440/#post-release-separators)"
 msgstr ""
+"número de construcción: 2 (post2) [(lea más sobre post "
+"aquí)](https://peps.python.org/pep-0440/#post-release-separators)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:266
 msgid "py3: supports Python 3.x"
-msgstr ""
+msgstr "py3: admite Python 3.x"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:267
 msgid "none: is not operating system specific (runs on windows, mac, linux)"
-msgstr ""
+msgstr "none: no es específico del sistema operativo (se ejecuta en Windows, Mac, Linux)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:268
 msgid "any: runs on any computer processor / architecture"
-msgstr ""
+msgstr "any: se ejecuta en cualquier procesador / arquitectura de ordenador"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:270
 msgid "What a wheel file looks like when unpacked (unzipped):"
-msgstr ""
+msgstr "¿Cómo se ve un archivo de rueda cuando se desempaqueta (descomprime)?"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:304
 msgid "[Read more about the wheel format here](https://pythonwheels.com/)"
-msgstr ""
+msgstr "[Lea más sobre el formato de rueda aquí](https://pythonwheels.com/)"
 
 #: ../../package-structure-code/python-package-structure.md:1
 msgid "Python Package Structure for Scientific Python Projects"
