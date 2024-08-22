@@ -265,7 +265,7 @@ When you submit a PR for a translation, you should only include changes to one l
 
 Translations PRs will be tagged with a label indicating the language to make them easier to identify and review. For example, contributions to the Spanish translation will be tagged with 'lang-es'.
 
-TODO: This tagging could be automated with a GitHub action.
+TODO: This tagging could be automated with a GitHub Actions.
 
 When you submit the PR, make sure to include a short description of the changes you made and any context that might be helpful for the reviewer (e.g., you translated new strings, you reviewed fuzzy entries, you fixed typos, etc.)
 
@@ -340,7 +340,7 @@ TODO: There are many approaches here, some projects release a translation as soo
 
 ### How can I get help with my translation?
 
-If you have any questions or need help with your translation, you can create an issue in the repository if you encounter any problems or need assistance.
+If you have any questions or need help with your translation, you can create an issue in the repository.
 
 TODO: Maybe [Discourse](https://pyopensci.discourse.group/) could be used as a way for contributors to ask for help with translations or the translation workflow?
 
