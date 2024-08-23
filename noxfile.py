@@ -2,6 +2,12 @@ import os
 import pathlib
 import shutil
 import nox
+import sys
+import subprocess
+
+# for some reason necessary to correctly import conf from cwd
+sys.path.insert(0, str(pathlib.Path(__file__).parent.absolute()))
+import conf
 
 nox.options.reuse_existing_virtualenvs = True
 
@@ -43,7 +49,7 @@ AUTOBUILD_INCLUDE = [
 ## Localization options (translations)
 
 # List of languages for which locales will be generated in (/locales/<lang>)
-LANGUAGES = ["es", "ja"]
+LANGUAGES = conf.languages
 
 # List of languages that should be built when releasing the guide (docs or docs-test sessions)
 RELEASE_LANGUAGES = []
@@ -71,6 +77,12 @@ def docs_test(session):
     # with those same parameters.
     session.notify("build-translations", ['release-build', *TEST_PARAMETERS])
 
+def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
+    cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
+    for folder in AUTOBUILD_IGNORE:
+        cmd.extend(["--ignore", f"*/{folder}/*"])
+    return cmd
+
 
 @nox.session(name="docs-live")
 def docs_live(session):
@@ -88,9 +100,7 @@ def docs_live(session):
     so they don't need to remember the specific sphinx-build parameters to build a different language.
     """
     session.install("-e", ".")
-    cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, SOURCE_DIR, OUTPUT_DIR, *session.posargs]
-    for folder in AUTOBUILD_IGNORE:
-        cmd.extend(["--ignore", f"*/{folder}/*"])
+    cmd = _autobuild_cmd(session.posargs)
     # This part was commented in the previous version of the nox file, keeping the same here
     # for folder in AUTOBUILD_INCLUDE:
     #     cmd.extend(["--watch", folder])
@@ -128,6 +138,36 @@ def docs_live_lang(session):
             f"where LANG is one of: {LANGUAGES}"
         )
 
+@nox.session(name="docs-live-langs")
+def docs_live_langs(session):
+    """
+    Like docs-live but build all languages simultaneously
+
+    Requires concurrently to run (npm install -g concurrently)
+    """
+    try:
+        subprocess.check_call(['concurrently'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except subprocess.CalledProcessError:
+        # handle errors in the called executable
+        # (aka, was found)
+        pass
+    except OSError:
+        session.error('docs-live-langs requires concurrently (npm install -g concurrently)')
+
+    session.install("-e", ".")
+
+    cmds = ['"' + " ".join(_autobuild_cmd(session.posargs) + ['--open-browser']) + '"']
+    for language in LANGUAGES:
+        cmds.append(
+            '"' + " ".join(
+                _autobuild_cmd(
+                    session.posargs + ["-D", f"language={language}"],
+                    output_dir=OUTPUT_DIR / language
+                ) + ["--port=0"]
+            ) + '"'
+        )
+    cmd = ['concurrently', '--kill-others', '-n', ','.join(['en'] + LANGUAGES), '-c', 'auto', *cmds]
+    session.run(*cmd)
 
 @nox.session(name="docs-clean")
 def clean_dir(session):

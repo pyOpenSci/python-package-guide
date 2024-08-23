@@ -26,6 +26,11 @@ project = "pyOpenSci Python Package Guide"
 copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
 
+language = "en"
+languages = ["es", "jp"]
+# languages excluding english
+# (english is built without a subdirectory to not break already-existing inbound links)
+
 # Get the latest Git tag - there might be a prettier way to do this but...
 try:
     release_value = (
@@ -117,6 +122,8 @@ html_context = {
     "github_user": "pyopensci",
     "github_repo": "python-package-guide",
     "github_version": "main",
+    'language': language,
+    'languages': languages
 }
 
 # Add any paths that contain templates here, relative to this directory.
