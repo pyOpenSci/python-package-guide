@@ -52,7 +52,7 @@ AUTOBUILD_INCLUDE = [
 LANGUAGES = conf.languages
 
 # List of languages that should be built when releasing the guide (docs or docs-test sessions)
-RELEASE_LANGUAGES = []
+RELEASE_LANGUAGES = [lang for lang in conf.languages if lang != "en"]
 
 
 @nox.session
@@ -78,7 +78,7 @@ def docs_test(session):
     session.notify("build-translations", ['release-build', *TEST_PARAMETERS])
 
 def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
-    cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
+    cmd = ["SPHINX_DEV=true", SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
     for folder in AUTOBUILD_IGNORE:
         cmd.extend(["--ignore", f"*/{folder}/*"])
     return cmd
@@ -158,8 +158,11 @@ def docs_live_langs(session):
 
     cmds = ['"' + " ".join(_autobuild_cmd(session.posargs) + ['--open-browser']) + '"']
     for language in LANGUAGES:
+        if language == "en":
+            continue
         cmds.append(
             '"' + " ".join(
+                [f"SPHINX_LANG={language}"] +
                 _autobuild_cmd(
                     session.posargs + ["-D", f"language={language}"],
                     output_dir=OUTPUT_DIR / language
@@ -217,7 +220,11 @@ def build_languages(session):
             session.warn(f"Language [{lang}] is not available for translation")
             continue
         session.log(f"Building [{lang}] guide")
-        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", OUTPUT_DIR / lang, *session.posargs)
+        if lang == 'en':
+            out_dir = OUTPUT_DIR
+        else:
+            out_dir = OUTPUT_DIR / lang
+        session.run(f"SPHINX_LANG={lang}", SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs)
 
 
 @nox.session(name="build-translations")

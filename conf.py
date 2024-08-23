@@ -15,6 +15,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 from datetime import datetime
 import subprocess
+import os
 
 current_year = datetime.now().year
 organization_name = "pyOpenSci"
@@ -26,10 +27,10 @@ project = "pyOpenSci Python Package Guide"
 copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
 
-language = "en"
-languages = ["es", "jp"]
-# languages excluding english
-# (english is built without a subdirectory to not break already-existing inbound links)
+# language can later be overridden (eg with the -D flag)
+# but we need it set here so it can make it into the html_context
+language = os.environ.get("SPHINX_LANG", "en")
+languages = ["en", "es", "jp"]
 
 # Get the latest Git tag - there might be a prettier way to do this but...
 try:
@@ -76,7 +77,11 @@ favicons = [
     {"href": "https://www.pyopensci.org/images/favicon.ico"},
 ]
 
-# Link to our repo for easy PR/ editing
+html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+if os.environ.get("SPHINX_DEV", False):
+    # for links in language selector when developing locally
+    html_baseurl = "/"
+
 html_theme_options = {
     "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
     # "navbar_center": ["nav"], this can be a way to override the default navigation structure
@@ -116,14 +121,16 @@ html_theme_options = {
     "github_url": "https://github.com/pyopensci/python-package-guide",
     "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
+    "navbar_persistent": ["language-selector", "search-button"]
 }
 
 html_context = {
     "github_user": "pyopensci",
     "github_repo": "python-package-guide",
     "github_version": "main",
-    'language': language,
-    'languages': languages
+    "language": language,
+    "languages": languages,
+    "base_url": html_baseurl,
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -147,7 +154,7 @@ exclude_patterns = [
 ]
 
 # For sitemap generation
-html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+
 sitemap_url_scheme = "{link}"
 
 # -- Options for HTML output -------------------------------------------------
@@ -159,7 +166,7 @@ html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
 html_title = "Python Packaging Guide"
-html_js_files = ["matomo.js"]
+html_js_files = ["matomo.js", "language_select.js"]
 
 
 # Social cards
