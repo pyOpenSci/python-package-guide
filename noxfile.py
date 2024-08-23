@@ -169,7 +169,7 @@ def docs_live_langs(session):
                 ) + ["--port=0"]
             ) + '"'
         )
-    cmd = ['concurrently', '--kill-others', '-n', ','.join(['en'] + LANGUAGES), '-c', 'auto', *cmds]
+    cmd = ['concurrently', '--kill-others', '-n', ','.join(LANGUAGES), '-c', 'auto', *cmds]
     session.run(*cmd)
 
 @nox.session(name="docs-clean")
@@ -224,7 +224,7 @@ def build_languages(session):
             out_dir = OUTPUT_DIR
         else:
             out_dir = OUTPUT_DIR / lang
-        session.run(f"SPHINX_LANG={lang}", SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs)
+        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs, env={"SPHINX_LANG", lang})
 
 
 @nox.session(name="build-translations")
