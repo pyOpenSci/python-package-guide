@@ -224,7 +224,7 @@ def build_languages(session):
             out_dir = OUTPUT_DIR
         else:
             out_dir = OUTPUT_DIR / lang
-        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs, env={"SPHINX_LANG", lang})
+        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs, env={"SPHINX_LANG": lang})
 
 
 @nox.session(name="build-translations")
