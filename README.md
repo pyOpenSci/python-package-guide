@@ -58,6 +58,28 @@ To build live documentation that updates when you update local files, run the fo
 $ nox -s docs-live
 ```
 
+### Building for release
+
+When building for release, the docs are built multiple times for each translation,
+but translations are only included in the production version of the guide after some completion threshold.
+
+The sphinx build environment is controlled by an environment variable `SPHINX_ENV`
+
+- when `SPHINX_ENV=development` (default), sphinx assumes all languages are built,
+  and includes them in the language selector
+- when `SPHINX_ENV=production`, only those languages in `release_languages` (set in `conf.py`)
+  are built and included in the language selector.
+
+Most of the time you should not need to set `SPHINX_ENV`,
+as it is forced by the primary nox sessions intended to be used for release or development:
+
+`SPHINX_ENV=development`
+- `docs-live` - autobuild english
+- `docs-live-lang` - autobuild a single language
+- `docs-live-langs` - autobuild all languages
+
+`SPHINX_ENV=production`
+- `build-test` - build all languages for production
 
 ## Contributing to this guide
 

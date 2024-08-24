@@ -20,6 +20,10 @@ import os
 current_year = datetime.now().year
 organization_name = "pyOpenSci"
 
+# env vars
+sphinx_env = os.environ.get("SPHINX_ENV", "development")
+language_env = os.environ.get("SPHINX_LANG", "en")
+
 
 # -- Project information -----------------------------------------------------
 
@@ -27,10 +31,23 @@ project = "pyOpenSci Python Package Guide"
 copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
 
+# Language of the current build
 # language can later be overridden (eg with the -D flag)
 # but we need it set here so it can make it into the html_context
-language = os.environ.get("SPHINX_LANG", "en")
-languages = ["en", "es", "jp"]
+language = language_env
+# all languages that have .po files generated for them
+# (excluding english)
+languages = ["es", "ja"]
+# the languages that will be included in a production build
+# (also excluding english)
+release_languages = []
+
+# languages that will be included in the language dropdown
+# (ie. all that are being built in this nox build session)
+if sphinx_env == "production":
+    build_languages = ["en"] + release_languages
+else:
+    build_languages = ["en"] + languages
 
 # Get the latest Git tag - there might be a prettier way to do this but...
 try:
@@ -78,7 +95,7 @@ favicons = [
 ]
 
 html_baseurl = "https://www.pyopensci.org/python-package-guide/"
-if os.environ.get("SPHINX_DEV", False):
+if not sphinx_env == "production":
     # for links in language selector when developing locally
     html_baseurl = "/"
 
@@ -129,8 +146,8 @@ html_context = {
     "github_repo": "python-package-guide",
     "github_version": "main",
     "language": language,
-    "languages": languages,
-    "base_url": html_baseurl,
+    "languages": build_languages,
+    "baseurl": html_baseurl,
 }
 
 # Add any paths that contain templates here, relative to this directory.

@@ -52,16 +52,19 @@ AUTOBUILD_INCLUDE = [
 LANGUAGES = conf.languages
 
 # List of languages that should be built when releasing the guide (docs or docs-test sessions)
-RELEASE_LANGUAGES = [lang for lang in conf.languages if lang != "en"]
+RELEASE_LANGUAGES = conf.release_languages
 
+# allowable values of `SPHINX_ENV`
+SPHINX_ENVS = ('production', 'development')
 
 @nox.session
 def docs(session):
     """Build the packaging guide."""
     session.install("-e", ".")
+    sphinx_env = _sphinx_env(session)
     session.run(SPHINX_BUILD, *BUILD_PARAMETERS, SOURCE_DIR, OUTPUT_DIR, *session.posargs)
     # When building the guide, also build the translations in RELEASE_LANGUAGES
-    session.notify("build-translations", ['release-build'])
+    session.notify("build-translations", [sphinx_env])
 
 
 @nox.session(name="docs-test")
@@ -72,13 +75,14 @@ def docs_test(session):
     Note: this is the session used in CI/CD to release the guide.
     """
     session.install("-e", ".")
-    session.run(SPHINX_BUILD, *BUILD_PARAMETERS, *TEST_PARAMETERS, SOURCE_DIR, OUTPUT_DIR, *session.posargs)
+    session.run(SPHINX_BUILD, *BUILD_PARAMETERS, *TEST_PARAMETERS, SOURCE_DIR, OUTPUT_DIR, *session.posargs,
+                env={'SPHINX_ENV': 'production'})
     # When building the guide with additional parameters, also build the translations in RELEASE_LANGUAGES
     # with those same parameters.
-    session.notify("build-translations", ['release-build', *TEST_PARAMETERS])
+    session.notify("build-translations", ['production', *TEST_PARAMETERS])
 
 def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
-    cmd = ["SPHINX_DEV=true", SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
+    cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
     for folder in AUTOBUILD_IGNORE:
         cmd.extend(["--ignore", f"*/{folder}/*"])
     return cmd
@@ -104,7 +108,7 @@ def docs_live(session):
     # This part was commented in the previous version of the nox file, keeping the same here
     # for folder in AUTOBUILD_INCLUDE:
     #     cmd.extend(["--watch", folder])
-    session.run(*cmd)
+    session.run(*cmd, env={'SPHINX_ENV': "development"})
 
 
 @nox.session(name="docs-live-lang")
@@ -156,20 +160,18 @@ def docs_live_langs(session):
 
     session.install("-e", ".")
 
-    cmds = ['"' + " ".join(_autobuild_cmd(session.posargs) + ['--open-browser']) + '"']
+    cmds = ['"' + " ".join(["SPHINX_ENV=development"] + _autobuild_cmd(session.posargs) + ['--open-browser']) + '"']
     for language in LANGUAGES:
-        if language == "en":
-            continue
         cmds.append(
             '"' + " ".join(
-                [f"SPHINX_LANG={language}"] +
+                [f"SPHINX_LANG={language}", "SPHINX_ENV=development"] +
                 _autobuild_cmd(
                     session.posargs + ["-D", f"language={language}"],
                     output_dir=OUTPUT_DIR / language
                 ) + ["--port=0"]
             ) + '"'
         )
-    cmd = ['concurrently', '--kill-others', '-n', ','.join(LANGUAGES), '-c', 'auto', *cmds]
+    cmd = ['concurrently', '--kill-others', '-n', ','.join(["en"] + LANGUAGES), '-c', 'auto', *cmds]
     session.run(*cmd)
 
 @nox.session(name="docs-clean")
@@ -212,6 +214,9 @@ def build_languages(session):
     """
     if not session.posargs:
         session.error("Please provide the list of languages to build the translation for")
+
+    sphinx_env = _sphinx_env(session)
+
     languages_to_build = session.posargs.pop(0)
 
     session.install("-e", ".")
@@ -224,7 +229,8 @@ def build_languages(session):
             out_dir = OUTPUT_DIR
         else:
             out_dir = OUTPUT_DIR / lang
-        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs, env={"SPHINX_LANG": lang})
+        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs,
+                    env={"SPHINX_LANG": lang, "SPHINX_ENV": sphinx_env})
 
 
 @nox.session(name="build-translations")
@@ -236,21 +242,19 @@ def build_translations(session):
     It is also called by the docs and docs-test sessions with 'release-build' as the first positional
     argument, to build only the translations defined in RELEASE_LANGUAGES.
     """
-    release_build = False
-    if session.posargs and session.posargs[0] == 'release-build':
-        session.posargs.pop(0)
-        release_build = True
+    sphinx_env = _sphinx_env(session)
+
     # if running from the docs or docs-test sessions, build only release languages
-    BUILD_LANGUAGES = RELEASE_LANGUAGES if release_build else LANGUAGES
+    BUILD_LANGUAGES = RELEASE_LANGUAGES if sphinx_env == "production" else LANGUAGES
     # only build languages that have a locale folder
     BUILD_LANGUAGES = [lang for lang in BUILD_LANGUAGES if (TRANSLATION_LOCALES_DIR / lang).exists()]
     session.log(f"Declared languages: {LANGUAGES}")
     session.log(f"Release languages: {RELEASE_LANGUAGES}")
-    session.log(f"Building languages{' for release' if release_build else ''}: {BUILD_LANGUAGES}")
+    session.log(f"Building languages{' for release' if sphinx_env == 'production' else ''}: {BUILD_LANGUAGES}")
     if not BUILD_LANGUAGES:
         session.warn("No translations to build")
     else:
-        session.notify("build-languages", [BUILD_LANGUAGES, *session.posargs])
+        session.notify("build-languages", [sphinx_env, BUILD_LANGUAGES, *session.posargs])
 
 
 @nox.session(name="build-translations-test")
@@ -262,3 +266,14 @@ def build_translations_test(session):
     in the same way docs-test does for the English version.
     """
     session.notify("build-translations", [*TEST_PARAMETERS])
+
+
+def _sphinx_env(session) -> str:
+    """
+    Get the sphinx env, from the first positional argument if present or from the
+    ``SPHINX_ENV`` environment variable, defaulting to "development"
+    """
+    if session.posargs and session.posargs[0] in SPHINX_ENVS:
+        return session.posargs.pop(0)
+    else:
+        return os.environ.get('SPHINX_ENV', 'development')
