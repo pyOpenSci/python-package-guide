@@ -145,18 +145,49 @@ def clean_dir(session):
 @nox.session(name="update-translations")
 def update_translations(session):
     """
-    Update the translation files (./locales/*/.po) for all languages translations.
+    Update the translation files (./locales/*/.po) for languages in RELEASE_LANGUAGES.
 
-    Note: this step is important because it makes sure that the translation files are
-    up to date with the latest changes in the guide.
+    Note: this step is called in the CI to keep release translations up to date with
+    the latest changes in the guide.
     """
-    session.install("-e", ".")
-    session.install("sphinx-intl")
-    session.log("Updating templates (.pot)")
-    session.run(SPHINX_BUILD, *TRANSLATION_TEMPLATE_PARAMETERS, SOURCE_DIR, TRANSLATION_TEMPLATE_DIR, *session.posargs)
-    for lang in LANGUAGES:
-        session.log(f"Updating .po files for [{lang}] translation")
-        session.run("sphinx-intl", "update", "-p", TRANSLATION_TEMPLATE_DIR, "-l", lang)
+    if RELEASE_LANGUAGES:
+        session.install("-e", ".")
+        session.install("sphinx-intl")
+        session.log("Updating templates (.pot)")
+        session.run(SPHINX_BUILD, *TRANSLATION_TEMPLATE_PARAMETERS, SOURCE_DIR, TRANSLATION_TEMPLATE_DIR, *session.posargs)
+        for lang in RELEASE_LANGUAGES:
+            session.log(f"Updating .po files for [{lang}] translation")
+            session.run("sphinx-intl", "update", "-p", TRANSLATION_TEMPLATE_DIR, "-l", lang)
+    else:
+        session.warn("No release languages defined in RELEASE_LANGUAGES")
+
+
+@nox.session(name="update-language")
+def update_language(session):
+    """
+    Update the translation files (./locales/*/.po) for a specific language translation.
+
+    Note: this step is used by language coordinators to keep their translation files up to date
+    with the latest changes in the guide, before the translation is released.
+    """
+    if session.posargs and (lang := session.posargs.pop(0)):
+        if lang in LANGUAGES:
+            session.install("-e", ".")
+            session.install("sphinx-intl")
+            session.log("Updating templates (.pot)")
+            session.run(SPHINX_BUILD, *TRANSLATION_TEMPLATE_PARAMETERS, SOURCE_DIR, TRANSLATION_TEMPLATE_DIR, *session.posargs)
+            session.log(f"Updating .po files for [{lang}] translation")
+            session.run("sphinx-intl", "update", "-p", TRANSLATION_TEMPLATE_DIR, "-l", lang)
+        else:
+            f"[{lang}] locale is not available. Try using:\n\n      "
+            "nox -s docs-live-lang -- LANG\n\n      "
+            f"where LANG is one of: {LANGUAGES}"
+    else:
+        session.error(
+            "Please provide a language using:\n\n      "
+            "nox -s update-language -- LANG\n\n     "
+            f" where LANG is one of: {LANGUAGES}"
+        )
 
 
 @nox.session(name="build-languages")
