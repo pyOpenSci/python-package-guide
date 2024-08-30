@@ -3,6 +3,8 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     insecure-external-code-execution: allow
+    schedule:
+      interval: "monthly"
     open-pull-requests-limit: 100
     labels:
       - "maintenance"
@@ -13,6 +15,8 @@ updates:
           - "*"
   - package-ecosystem: "github-actions"
     directory: "/"
+    schedule:
+      interval: "monthly"
     open-pull-requests-limit: 100
     labels:
       - "maintenance"
