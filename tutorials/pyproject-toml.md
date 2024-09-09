@@ -40,7 +40,7 @@ When creating your pyproject.toml file, consider the following:
     * **name=**
     * **version=**
 3. You should add more metadata to the `[project]` table as it will make it easier for users to find your project on PyPI. And it will also make it easier for installers to understand how to install your package.
-3. When you are adding classifiers to the **[project]** table, only use valid values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build and publish your package on PyPI.
+3. When you are adding classifiers to the **[project]** table, only use valid values from [PyPI's classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build and publish your package on PyPI.
 4. There is no specific order for tables in the `pyproject.toml` file. However, fields need to be placed within the correct tables. For example `requires =` always need to be in the **[build-system]** table.
 5. We suggest that you include your **[build-system]** table at the top of your `pyproject.toml` file.
 :::
