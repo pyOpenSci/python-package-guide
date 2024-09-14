@@ -115,7 +115,7 @@ In this section of our Python packaging guide, we:
 - Suggest tools and approaches that both meet your needs and also support
   existing standards.
 - Suggest tools and approaches that will allow you to expand upon a workflow
-  that may begin as a pure Python tool and evolve into a tool that requires
+  that may begin as a pure Python code and evolve into code that requires
   addition layers of complexity in the packaging build.
 - Align our suggestions with the most current, accepted
   [PEPs (Python Enhancement Protocols)](https://peps.python.org/pep-0000/)
