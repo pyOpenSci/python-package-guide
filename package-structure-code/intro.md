@@ -111,7 +111,7 @@ and for anyone who is just getting started with creating a Python package.
 In this section of our Python packaging guide, we:
 
 - Provide an overview of the options available to you when packaging your
-  tool.
+  code.
 - Suggest tools and approaches that both meet your needs and also support
   existing standards.
 - Suggest tools and approaches that will allow you to expand upon a workflow
