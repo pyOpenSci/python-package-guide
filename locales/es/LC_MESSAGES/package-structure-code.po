@@ -648,13 +648,15 @@ msgstr ""
 
 #: ../../package-structure-code/complex-python-package-builds.md:1
 msgid "Complex Python package builds"
-msgstr ""
+msgstr "Compilaciones complejas de paquetes de Python"
 
 #: ../../package-structure-code/complex-python-package-builds.md:3
 msgid ""
 "This guide is focused on packages that are either pure-python or that "
 "have a few simple extensions in another language such as C or C++."
 msgstr ""
+"Esta guía se centra en paquetes que solamente utilizan Python o que tienen unas "
+"pocas extensiones simples en otro lenguaje como C o C++."
 
 #: ../../package-structure-code/complex-python-package-builds.md:6
 msgid ""
@@ -669,10 +671,21 @@ msgid ""
 "an overview and thorough discussion of these nuances, please see [this "
 "site.](https://pypackaging-native.github.io/)"
 msgstr ""
+"En el futuro, queremos proporcionar recursos para flujos de trabajo de "
+"empaquetado que requieran compilaciones más complejas. Si tiene preguntas "
+"sobre estos tipos de paquetes, por favor [agregue una pregunta a nuestro "
+"foro](https://pyopensci.discourse.group/) o abra una [issue sobre esta guía "
+"específicamente en el repositorio](https://github.com/pyOpenSci/python-package-guide/issues). "
+"Hay muchos matices para construir y distribuir paquetes de Python que tienen "
+"extensiones compiladas que requieren dependencias en otros lenguajes en el momento de "
+"construcción del paquete. Para obtener una descripción general y una discusión exhaustiva "
+"de estos matices, consulte [este sitio.](https://pypackaging-native.github.io/)"
+
+
 
 #: ../../package-structure-code/complex-python-package-builds.md:8
 msgid "Pure Python Packages vs. packages with extensions in other languages"
-msgstr ""
+msgstr "Paquetes de Python puros vs. paquetes con extensiones en otros lenguajes"
 
 #: ../../package-structure-code/complex-python-package-builds.md:10
 msgid ""
@@ -680,6 +693,9 @@ msgid ""
 " These categories can in turn help you select the correct package "
 "frontend and backend tools."
 msgstr ""
+"Se puede clasificar la complejidad de los paquetes de Python en tres categorías. "
+"Estas categorías, a su vez, pueden ayudarlo a seleccionar las mejores herramientas de "
+"frontend y backend."
 
 #: ../../package-structure-code/complex-python-package-builds.md:14
 msgid ""
@@ -688,6 +704,10 @@ msgid ""
 "chose a tool below that has the features that you want and be done with "
 "your decision!"
 msgstr ""
+"**Paquetes de Python puros:** son paquetes que solo dependen de Python para "
+"funcionar. Construir un paquete de Python puro es más simple. Como tal, puede "
+"elegir una herramienta a continuación que tenga las características que desea "
+"sin tener que considerar muchos detalles."
 
 #: ../../package-structure-code/complex-python-package-builds.md:16
 msgid ""
@@ -700,22 +720,38 @@ msgid ""
 "that supports additional build setups. We suggest that you chose build "
 "tool that supports custom build steps like Hatch."
 msgstr ""
+"**Paquetes de Python con extensiones en otros lenguajes:** Estos paquetes tienen "
+"componentes adicionales llamados extensiones escritas en otros lenguajes (como C o C++). "
+"Si tiene un paquete con extensiones no escritas en otros lenguajes, debe seleccionar "
+"una herramienta de backend de compilación que permita pasos de compilación adicionales "
+"necesarios para compilar su código en estos lenguajes. Además, si desea utilizar una herramienta "
+"de frontend para ayudar a su flujo de trabajo, deberá seleccionar una herramienta que admita "
+"configuraciones de compilación adicionales. Sugerimos que elija una herramienta de compilación "
+"que admita pasos de compilación personalizados como por ejemplo Hatch."
 
 #: ../../package-structure-code/complex-python-package-builds.md:18
 msgid ""
 "**Python packages that have extensions written in different languages "
 "(e.g. Fortran and C++) or that have non Python dependencies that are "
-"difficult to install (e.g. GDAL)** These packages often have complex "
+"difficult to install (e.g. GDAL):** These packages often have complex "
 "build steps (more complex than a package with just a few C extensions for"
 " instance). As such, these packages require tools such as [scikit-"
 "build](https://scikit-build.readthedocs.io/en/latest/) or [meson-"
 "python](https://mesonbuild.com/Python-module.html) to build. NOTE: you "
 "can use meson-python with PDM."
 msgstr ""
+"**Paquetes de Python que tienen extensiones escritas en diferentes lenguajes "
+"(por ejemplo, Fortran y C++) o que tienen dependencias no escritas en Python "
+"que son difíciles de instalar (por ejemplo, GDAL):** Estos paquetes a menudo "
+"tienen pasos de compilación complejos (más complejos que un paquete con solo "
+"algunas extensiones en C, por ejemplo). Como tal, estos paquetes requieren "
+"herramientas como [scikit-build](https://scikit-build.readthedocs.io/en/latest/) "
+"o [meson-python](https://mesonbuild.com/Python-module.html) para construir. NOTA: "
+"puede usar meson-python con PDM."
 
 #: ../../package-structure-code/complex-python-package-builds.md:21
 msgid "Mixing frontend and backend projects"
-msgstr ""
+msgstr "Mezclar proyectos de frontend y backend"
 
 #: ../../package-structure-code/complex-python-package-builds.md:23
 msgid ""
@@ -728,6 +764,13 @@ msgid ""
 "package-build-tools) for more information about frontend and backend "
 "compatibility."
 msgstr ""
+"A veces es necesario o deseable usar un frontend de compilación con un backend "
+"de compilación alternativo. Esto se debe a que algunos frontends no tienen un "
+"backend predeterminado (`build`), y esta elección recae en el mantenedor. Otros "
+"backends (`hatch`) tienen un backend preferido (`hatchling`) pero permiten al "
+"mantenedor migrar a otro, mientras que algunos backends (`poetry`) solo funcionan "
+"con un solo backend (`poetry-core`). Consulte (#python-package-build-tools) para "
+"obtener más información sobre la compatibilidad de frontend y backend."
 
 #: ../../package-structure-code/complex-python-package-builds.md:29
 msgid ""
@@ -742,6 +785,14 @@ msgid ""
 "[plugins](https://hatch.pypa.io/1.9/plugins/about/) or be replaced by a "
 "backend that is already capable of building extension modules."
 msgstr ""
+"En esta guía de empaquetado, recomendamos usar `hatch` junto con su backend "
+"preferido `hatchling`. Si bien esto será adecuado para la mayoría de los paquetes, "
+"se puede usar un backend alternativo con Hatch si es necesario al crear un módulo de "
+"extensión. Un módulo de extensión de Python es uno que está compuesto, ya sea en parte "
+"o en su totalidad, de código compilado en otro lenguaje. En este caso, el backend elegido (como `meson-python`) "
+"debe saber cómo compilar el lenguaje de extensión y vincularlo a Python. `hatchling` no sabe "
+"cómo hacer esto por sí solo y debe hacer uso de [plugins](https://hatch.pypa.io/1.9/plugins/about/) "
+"o cambiar un backend que sea capaz de construir módulos de extensión."
 
 #: ../../package-structure-code/complex-python-package-builds.md:37
 msgid ""
@@ -750,6 +801,9 @@ msgid ""
 " command, or from following the packaging tutorial, you may have to make "
 "a change like this"
 msgstr ""
+"Para usar un backend diferente, deberá editar el `pyproject.toml` de su proyecto. "
+"Si tiene un `pyproject.toml` generado por el comando `hatch`, o siguiendo el tutorial "
+"de empaquetado, probablemente tendrá hacer un cambio como este"
 
 #: ../../package-structure-code/declare-dependencies.md:8
 #: ../../package-structure-code/declare-dependencies.md:375
