@@ -23,7 +23,7 @@ Python package that is directly installable from PyPI.
 1. Is it clear where to add commands? Bash vs. Python console
 Bash vs. Zsh is different
 2. Does this lesson run as expected on windows and mac?
-3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. this may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
+3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. This may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
 :::
 
 :::{figure-md} code-to-python-package
@@ -80,7 +80,7 @@ To make your Python code installable you need to create a specific directory str
 - Some code.
 - An `__init__.py` file in your code directory.
 
-The directory structure you’ll create in this lesson will look like this:
+The directory structure you'll create in this lesson will look like this:
 
 ```bash
 pyospackage/  # Your project directory
@@ -118,7 +118,7 @@ import pyospackage
 
 The **pyproject.toml** file is:
 
-- Where you define your project’s metadata (including its name, authors, license, etc)
+- Where you define your project's metadata (including its name, authors, license, etc)
 - Where you define dependencies (the packages that it depends on)
 - Used to specify and configure what build backend you want to use to [build your package](../package-structure-code/python-package-distribution-files-sdist-wheel).
 
@@ -279,7 +279,7 @@ Python can support many different docstrings formats depending on the documentat
 
 **pyOpenSci recommends using the NumPy Docstring convention.**
 
-If you aren’t familiar with docstrings or typing yet, that is ok. You can review [this page in the pyOpenSci packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview of both topics.
+If you aren't familiar with docstrings or typing yet, that is ok. You can review [this page in the pyOpenSci packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview of both topics.
 
 ```python
 def add_num(a: int, b: int) -> int:
@@ -480,7 +480,7 @@ Source = "https://github.com/unknown/pyospackage"
 The core information that you need in a `pyproject.toml` file in order to publish on PyPI is your **package's name**  and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
 
 Once you have your project metadata in the pyproject.toml file, you will
-rarely update it. In the next lesson you’ll add more metadata and structure to this file.
+rarely update it. In the next lesson you'll add more metadata and structure to this file.
 :::
 
 ## Step 5: Install your package locally
