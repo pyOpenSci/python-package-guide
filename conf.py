@@ -136,6 +136,7 @@ exclude_patterns = [
     "styles/*",
     ".pytest_cache/README.md",
     "vale-styles/*",
+    "CODE_OF_CONDUCT.md",
 ]
 
 # For sitemap generation
