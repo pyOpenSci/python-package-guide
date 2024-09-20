@@ -218,7 +218,7 @@ Example: `pyosPackage_yourNameHere`.
 
 #### Recommended
 
-- Update the Github repository name to align with the new package name
+- Update the GitHub repository name to align with the new package name
 - Update your local project folder to match the new package name (e.g. `pyospackage_yourNameHere/src`)
 - Update mentions of your repository name in other files (e.g. `README.md`)
 :::

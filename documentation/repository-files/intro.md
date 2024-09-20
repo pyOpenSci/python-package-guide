@@ -6,7 +6,7 @@ at a minimum have the following files:
 
 The files mentions above (README, Code of Conduct, license
 file, etc) are used as a measure of package community health
-on many online platforms. Below, you can see an example how Github
+on many online platforms. Below, you can see an example how GitHub
 evaluates community health. This community health link is available for
 all GitHub repositories.
 
@@ -21,7 +21,7 @@ GitHub community health looks for a readme file among other elements when it eva
 
 [Snyk](https://snyk.io/advisor/python) is another well-known company that
 keeps tabs on package health. Below you can see a similar evaluation of files
-in the Github repo as a measure of community health.
+in the GitHub repo as a measure of community health.
 
 ```{figure} /images/moving-pandas-python-package-snyk-health.png
 ---
