@@ -58,7 +58,7 @@ Publish your docs
 ```
 ## _new_ Tutorial Series: Create a Python Package
 
-The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
+The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [GitHub repo here](https://github.com/pyOpenSci/python-package-guide).
 
 
 :::::{grid} 1 1 2 2
@@ -187,7 +187,7 @@ Learn about best practices for:
 * [How to publish your docs](/documentation/hosting-tools/intro)
 * [Using Sphinx](/documentation/hosting-tools/intro)
 * [Markdown, MyST, and ReST](/documentation/hosting-tools/myst-markdown-rst-doc-syntax)
-* [Host your docs on Read The Docs or Github Pages](/documentation/hosting-tools/publish-documentation-online)
+* [Host your docs on Read The Docs or GitHub Pages](/documentation/hosting-tools/publish-documentation-online)
 :::
 ::::
 
