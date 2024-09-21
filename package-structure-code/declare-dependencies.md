@@ -164,7 +164,7 @@ It's important to note that within the `[project.optional-dependencies]` table, 
 
 To declare optional dependencies in your **pyproject.toml** file:
 
-1. Add a `[optional.dependencies]` table to your **pyproject.toml** file.
+1. Add a `[project.optional-dependencies]` table to your **pyproject.toml** file.
 2. Create named groups of dependencies using the syntax:
 
 `group-name = ["dep1", "dep2"]`
@@ -250,7 +250,7 @@ groups that you defined above using the syntax:
 
 Above you install:
 * dependencies needed for your documentation (`docs`),
-* required package dependencies in the `dependency` array and
+* required package dependencies in the `dependencies` array and
 * your package
 
 using pip. Below you
@@ -258,7 +258,7 @@ install your package, required dependencies and optional test dependencies.
 
 `python -m pip install ".[tests]"`
 
-You can install multiple dependency groups in the `[optional.dependencies]` table using:
+You can install multiple dependency groups in the `[project.optional-dependencies]` table using:
 
 `python -m pip install ".[docs, tests, lint]"`
 
