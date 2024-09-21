@@ -51,7 +51,7 @@ Within those 2 groups, there are three use cases that you can think about. 1. Co
 ### Required (or core) dependencies
 
 Required dependencies are called directly within your package's code. On this page we refer to these dependencies
-as **core dependencies** as they are needed in order to run your package. You should place your core or required dependencies in the `[dependency]=` table of your `pyproject.toml` file.
+as **core dependencies** as they are needed in order to run your package. You should place your core or required dependencies in the `dependency` key of the `[project]` table of your `pyproject.toml` file.
 
 ### Optional dependencies
 
