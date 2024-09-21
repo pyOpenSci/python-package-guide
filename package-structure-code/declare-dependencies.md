@@ -35,7 +35,7 @@ within the code of your project or during development of your package.
 
 
 ### Understanding optional vs. required dependencies
-You can think about dependencies as being either optional or required. If they are required, they will be listed in the `[dependency] =` table of your `pyproject.toml` file. If they are optional, they will be listed in the `[optional.dependencies]` table of your `pyproject.toml`.
+You can think about dependencies as being either optional or required. If they are required, they will be listed in the `dependency` key in the `project` table of your `pyproject.toml` file. If they are optional, they will be listed in the `[optional.dependencies]` table of your `pyproject.toml`.
 
 You will learn about both below.
 
