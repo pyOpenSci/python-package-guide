@@ -225,7 +225,7 @@ feature = [
 
 <img src="../images/python-package-dependencies.png" alt="Diagram showing a Venn diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov ">
 
-When a user installs your package locally using `python -m pip install your-package` only your package and it's core dependencies get installed. When they install your package `[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[optional.dependencies]` table.
+When a user installs your package locally using `python -m pip install your-package` only your package and it's core dependencies get installed. When they install your package `python -m pip install your-package[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[optional.dependencies]` table.
 :::
 
 :::{admonition} Using `python -m pip install` vs. `pip install`
