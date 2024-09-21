@@ -120,7 +120,7 @@ dependencies = [
 
 Ideally, you should only list the packages that are
 necessary to install and use your package in the
-`[dependencies]` section. This minimizes the number of
+`dependencies` key in the `[project]` table. This minimizes the number of
 additional packages that your users must install as well
 as the number of packages that depend upon your package
 must also install.
