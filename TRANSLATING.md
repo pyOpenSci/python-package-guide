@@ -340,10 +340,4 @@ TODO: There are many approaches here, some projects release a translation as soo
 
 ### How can I get help with my translation?
 
-If you have any questions or need help with your translation, you can create an issue in the repository.
-
-TODO: Maybe [Discourse](https://pyopensci.discourse.group/) could be used as a way for contributors to ask for help with translations or the translation workflow?
-
-```
-
-```
+If you have any questions or need help with your translation, you can create an issue in the repository. You can also join the PyOpenSci Discord and ask questions in the translation channel! TODO: Add more information about how to find PyOpenSci in Discord.
