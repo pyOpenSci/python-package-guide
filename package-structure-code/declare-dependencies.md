@@ -153,12 +153,12 @@ Optional dependencies for building your documentation, running your tests and bu
 * linting and other code cleanup tools
 
 These dependencies are considered optional, because they are not required to install and use your package. Feature
-dependencies are considered optional and should also be placed in the `[optional.dependencies]` table.
+dependencies are considered optional and should also be placed in the `[project.optional-dependencies]` table.
 
 Optional dependencies can be stored in an
-`[optional.dependencies]` table in your **pyproject.toml** file.
+`[project.optional-dependencies]` table in your **pyproject.toml** file.
 
-It's important to note that within the `[optional.dependencies]` table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the `[project]` table discussed above which contains a single array with a single list of required packages.
+It's important to note that within the `[project.optional-dependencies]` table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the `[project]` table discussed above which contains a single array with a single list of required packages.
 
 ## Create optional dependency groups
 
