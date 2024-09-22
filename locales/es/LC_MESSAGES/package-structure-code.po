@@ -648,13 +648,15 @@ msgstr ""
 
 #: ../../package-structure-code/complex-python-package-builds.md:1
 msgid "Complex Python package builds"
-msgstr ""
+msgstr "Compilaciones complejas de paquetes de Python"
 
 #: ../../package-structure-code/complex-python-package-builds.md:3
 msgid ""
 "This guide is focused on packages that are either pure-python or that "
 "have a few simple extensions in another language such as C or C++."
 msgstr ""
+"Esta guía se centra en paquetes que solamente utilizan Python o que tienen unas "
+"pocas extensiones simples en otro lenguaje como C o C++."
 
 #: ../../package-structure-code/complex-python-package-builds.md:6
 msgid ""
@@ -669,10 +671,21 @@ msgid ""
 "an overview and thorough discussion of these nuances, please see [this "
 "site.](https://pypackaging-native.github.io/)"
 msgstr ""
+"En el futuro, queremos proporcionar recursos para flujos de trabajo de "
+"empaquetado que requieran compilaciones más complejas. Si tiene preguntas "
+"sobre estos tipos de paquetes, por favor [agregue una pregunta a nuestro "
+"foro](https://pyopensci.discourse.group/) o abra una [issue sobre esta guía "
+"específicamente en el repositorio](https://github.com/pyOpenSci/python-package-guide/issues). "
+"Hay muchos matices para construir y distribuir paquetes de Python que tienen "
+"extensiones compiladas que requieren dependencias en otros lenguajes en el momento de "
+"construcción del paquete. Para obtener una descripción general y una discusión exhaustiva "
+"de estos matices, consulte [este sitio.](https://pypackaging-native.github.io/)"
+
+
 
 #: ../../package-structure-code/complex-python-package-builds.md:8
 msgid "Pure Python Packages vs. packages with extensions in other languages"
-msgstr ""
+msgstr "Paquetes de Python puros vs. paquetes con extensiones en otros lenguajes"
 
 #: ../../package-structure-code/complex-python-package-builds.md:10
 msgid ""
@@ -680,6 +693,9 @@ msgid ""
 " These categories can in turn help you select the correct package "
 "frontend and backend tools."
 msgstr ""
+"Se puede clasificar la complejidad de los paquetes de Python en tres categorías. "
+"Estas categorías, a su vez, pueden ayudarlo a seleccionar las mejores herramientas de "
+"frontend y backend."
 
 #: ../../package-structure-code/complex-python-package-builds.md:14
 msgid ""
@@ -688,6 +704,10 @@ msgid ""
 "chose a tool below that has the features that you want and be done with "
 "your decision!"
 msgstr ""
+"**Paquetes de Python puros:** son paquetes que solo dependen de Python para "
+"funcionar. Construir un paquete de Python puro es más simple. Como tal, puede "
+"elegir una herramienta a continuación que tenga las características que desea "
+"sin tener que considerar muchos detalles."
 
 #: ../../package-structure-code/complex-python-package-builds.md:16
 msgid ""
@@ -700,22 +720,38 @@ msgid ""
 "that supports additional build setups. We suggest that you chose build "
 "tool that supports custom build steps like Hatch."
 msgstr ""
+"**Paquetes de Python con extensiones en otros lenguajes:** Estos paquetes tienen "
+"componentes adicionales llamados extensiones escritas en otros lenguajes (como C o C++). "
+"Si tiene un paquete con extensiones no escritas en otros lenguajes, debe seleccionar "
+"una herramienta de backend de compilación que permita pasos de compilación adicionales "
+"necesarios para compilar su código en estos lenguajes. Además, si desea utilizar una herramienta "
+"de frontend para ayudar a su flujo de trabajo, deberá seleccionar una herramienta que admita "
+"configuraciones de compilación adicionales. Sugerimos que elija una herramienta de compilación "
+"que admita pasos de compilación personalizados como por ejemplo Hatch."
 
 #: ../../package-structure-code/complex-python-package-builds.md:18
 msgid ""
 "**Python packages that have extensions written in different languages "
 "(e.g. Fortran and C++) or that have non Python dependencies that are "
-"difficult to install (e.g. GDAL)** These packages often have complex "
+"difficult to install (e.g. GDAL):** These packages often have complex "
 "build steps (more complex than a package with just a few C extensions for"
 " instance). As such, these packages require tools such as [scikit-"
 "build](https://scikit-build.readthedocs.io/en/latest/) or [meson-"
 "python](https://mesonbuild.com/Python-module.html) to build. NOTE: you "
 "can use meson-python with PDM."
 msgstr ""
+"**Paquetes de Python que tienen extensiones escritas en diferentes lenguajes "
+"(por ejemplo, Fortran y C++) o que tienen dependencias no escritas en Python "
+"que son difíciles de instalar (por ejemplo, GDAL):** Estos paquetes a menudo "
+"tienen pasos de compilación complejos (más complejos que un paquete con solo "
+"algunas extensiones en C, por ejemplo). Como tal, estos paquetes requieren "
+"herramientas como [scikit-build](https://scikit-build.readthedocs.io/en/latest/) "
+"o [meson-python](https://mesonbuild.com/Python-module.html) para construir. NOTA: "
+"puede usar meson-python con PDM."
 
 #: ../../package-structure-code/complex-python-package-builds.md:21
 msgid "Mixing frontend and backend projects"
-msgstr ""
+msgstr "Mezclar proyectos de frontend y backend"
 
 #: ../../package-structure-code/complex-python-package-builds.md:23
 msgid ""
@@ -728,6 +764,13 @@ msgid ""
 "package-build-tools) for more information about frontend and backend "
 "compatibility."
 msgstr ""
+"A veces es necesario o deseable usar un frontend de compilación con un backend "
+"de compilación alternativo. Esto se debe a que algunos frontends no tienen un "
+"backend predeterminado (`build`), y esta elección recae en el mantenedor. Otros "
+"backends (`hatch`) tienen un backend preferido (`hatchling`) pero permiten al "
+"mantenedor migrar a otro, mientras que algunos backends (`poetry`) solo funcionan "
+"con un solo backend (`poetry-core`). Consulte (#python-package-build-tools) para "
+"obtener más información sobre la compatibilidad de frontend y backend."
 
 #: ../../package-structure-code/complex-python-package-builds.md:29
 msgid ""
@@ -742,6 +785,14 @@ msgid ""
 "[plugins](https://hatch.pypa.io/1.9/plugins/about/) or be replaced by a "
 "backend that is already capable of building extension modules."
 msgstr ""
+"En esta guía de empaquetado, recomendamos usar `hatch` junto con su backend "
+"preferido `hatchling`. Si bien esto será adecuado para la mayoría de los paquetes, "
+"se puede usar un backend alternativo con Hatch si es necesario al crear un módulo de "
+"extensión. Un módulo de extensión de Python es uno que está compuesto, ya sea en parte "
+"o en su totalidad, de código compilado en otro lenguaje. En este caso, el backend elegido (como `meson-python`) "
+"debe saber cómo compilar el lenguaje de extensión y vincularlo a Python. `hatchling` no sabe "
+"cómo hacer esto por sí solo y debe hacer uso de [plugins](https://hatch.pypa.io/1.9/plugins/about/) "
+"o cambiar un backend que sea capaz de construir módulos de extensión."
 
 #: ../../package-structure-code/complex-python-package-builds.md:37
 msgid ""
@@ -750,6 +801,9 @@ msgid ""
 " command, or from following the packaging tutorial, you may have to make "
 "a change like this"
 msgstr ""
+"Para usar un backend diferente, deberá editar el `pyproject.toml` de su proyecto. "
+"Si tiene un `pyproject.toml` generado por el comando `hatch`, o siguiendo el tutorial "
+"de empaquetado, probablemente tendrá hacer un cambio como este"
 
 #: ../../package-structure-code/declare-dependencies.md:8
 #: ../../package-structure-code/declare-dependencies.md:375
@@ -1423,55 +1477,55 @@ msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Intro"
-msgstr ""
+msgstr "Introducción"
 
 #: ../../package-structure-code/intro.md:163
 msgid "Python package structure"
-msgstr ""
+msgstr "Estructura de paquetes de Python"
 
 #: ../../package-structure-code/intro.md:163
 msgid "pyproject.toml Package Metadata"
-msgstr ""
+msgstr "Metadatos del paquete en pyproject.toml"
 
 #: ../../package-structure-code/intro.md:163
 msgid "Build Your Package"
-msgstr ""
+msgstr "Monta tu paquete"
 
 #: ../../package-structure-code/intro.md:163
 msgid "Declare dependencies"
-msgstr ""
+msgstr "Declara dependencias"
 
 #: ../../package-structure-code/intro.md:163
 msgid "Package Build Tools"
-msgstr ""
+msgstr "Herramientas de construcción de paquetes"
 
 #: ../../package-structure-code/intro.md:163
 msgid "Complex Builds"
-msgstr ""
+msgstr "Construcciones complejas"
 
 #: ../../package-structure-code/intro.md:163
 msgid "Package structure & code style"
-msgstr ""
+msgstr "Estilo de código y estructura de paquetes"
 
 #: ../../package-structure-code/intro.md:177
 msgid "Publish with Conda / PyPI"
-msgstr ""
+msgstr "Publicar con Conda / PyPI"
 
 #: ../../package-structure-code/intro.md:177
 msgid "Package versions"
-msgstr ""
+msgstr "Versiones de paquetes"
 
 #: ../../package-structure-code/intro.md:177
 msgid "Code style"
-msgstr ""
+msgstr "Estilo de código"
 
 #: ../../package-structure-code/intro.md:177
 msgid "Publishing a package"
-msgstr ""
+msgstr "Publicar un paquete"
 
 #: ../../package-structure-code/intro.md:1
 msgid "Python package structure information"
-msgstr ""
+msgstr "Información sobre la estructura de paquetes de Python"
 
 #: ../../package-structure-code/intro.md:3
 msgid ""
@@ -1479,6 +1533,9 @@ msgid ""
 "formats and style. It also reviews the various packaging tools that you "
 "can use to support building and publishing your package."
 msgstr ""
+"Esta sección proporciona orientación sobre la estructura de su paquete de Python, "
+"los formatos de código y estilo. También revisa las diversas herramientas de empaquetado "
+"que puede utilizar para admitir la construcción y publicación de su paquete."
 
 #: ../../package-structure-code/intro.md:7
 msgid ""
@@ -1487,10 +1544,14 @@ msgid ""
 "following best practices. Here, we review tool features and suggest tools"
 " that might be best fitted for your workflow."
 msgstr ""
+"Si está confundido por el empaquetado de Python, ¡no está solo! La buena noticia es "
+"que hay algunas herramientas de empaquetado modernas excelentes que garantizan que "
+"está siguiendo las mejores prácticas. Aquí, revisamos las características de las herramientas "
+"y sugerimos las que podrían ser más adecuadas para su flujo de trabajo."
 
 #: ../../package-structure-code/intro.md:19
 msgid "✨ 1. Package file structure ✨"
-msgstr ""
+msgstr "✨ 1. Estructura de archivos en el paquete ✨"
 
 #: ../../package-structure-code/intro.md:23
 msgid ""
@@ -1498,10 +1559,13 @@ msgid ""
 "what your level of packaging knowledge is, this page will help you decide"
 " upon a package structure that follows modern python best practices."
 msgstr ""
+"¿Distribución con estructura 'src', distribución plana y dónde deben vivir las carpetas de tests? "
+"Sin importar cuál sea su nivel de conocimiento sobre empaquetado, esta página le ayudará a decidir "
+"sobre una estructura de paquete que siga las mejores prácticas modernas para paquetes de Python."
 
 #: ../../package-structure-code/intro.md:28
 msgid "✨ 2. Learn about building your package ✨"
-msgstr ""
+msgstr "✨ 2. Aprende a construir tu paquete ✨"
 
 #: ../../package-structure-code/intro.md:32
 msgid ""
@@ -1510,10 +1574,13 @@ msgid ""
 "code and metadata into a format that can be published on PyPI. Learn more"
 " about building your Python package."
 msgstr ""
+"Para publicar su paquete de Python en PyPI, primero deberá construirlo. El acto de \"construir\" "
+"se refiere al proceso de colocar su código de paquete y metadatos en un formato que se pueda "
+"publicar en PyPI. Aprenda más sobre cómo construir su paquete de Python."
 
 #: ../../package-structure-code/intro.md:41
 msgid "✨ 4. Add metadata ✨"
-msgstr ""
+msgstr "✨ 4. Agregar metadatos ✨"
 
 #: ../../package-structure-code/intro.md:45
 msgid ""
@@ -1521,20 +1588,25 @@ msgid ""
 "filtering on PyPI and also the metadata that a package installer needs to"
 " build and install your package."
 msgstr ""
+"Aprenda cómo agregar metadatos de proyecto a su paquete de Python para admitir tanto "
+"los filtros en PyPI como los metadatos que un instalador de paquetes necesita para "
+"construir e instalar su paquete."
 
 #: ../../package-structure-code/intro.md:52
 msgid "✨ 3. What Python package tool should you use? ✨"
-msgstr ""
+msgstr "✨ 3. ¿Qué herramienta de empaquetado de Python debería usar? ✨"
 
 #: ../../package-structure-code/intro.md:56
 msgid ""
 "Learn more about the suite of packaging tools out there. And learn which "
 "tool might be best for you."
 msgstr ""
+"Aprenda más sobre la suite de herramientas de empaquetado disponibles. Y aprenda cuál "
+"podría ser la mejor herramienta para usted."
 
 #: ../../package-structure-code/intro.md:62
 msgid "✨ 4. Publish to PyPI and Conda ✨"
-msgstr ""
+msgstr "✨ 4. Publicar en PyPI y Conda ✨"
 
 #: ../../package-structure-code/intro.md:66
 msgid ""
@@ -1542,10 +1614,12 @@ msgid ""
 "publish to both PyPI and then a Conda channel such as conda-forge. Learn "
 "more here."
 msgstr ""
+"Si tiene un paquete de Python puro, publicar en PyPI y luego en "
+"un canal de Conda como conda-forge es un proceso sencillo. Aprenda más aquí."
 
 #: ../../package-structure-code/intro.md:73
 msgid "✨ 5. Setup package versioning ✨"
-msgstr ""
+msgstr "✨ 5. Configurar el versionado de paquetes ✨"
 
 #: ../../package-structure-code/intro.md:77
 msgid ""
@@ -1553,10 +1627,12 @@ msgid ""
 "common ways to version a package. Which one should you pick? Learn more "
 "here."
 msgstr ""
+"Semver (versionado numérico) y Calver (versionado usando la fecha) son 2 formas comunes "
+"de versionar un paquete. ¿Cuál debería elegir? Aprenda más aquí."
 
 #: ../../package-structure-code/intro.md:83
 msgid "✨ 6. Code style & linters ✨"
-msgstr ""
+msgstr "✨ 6. Estilo de código y linters ✨"
 
 #: ../../package-structure-code/intro.md:87
 msgid ""
@@ -1564,18 +1640,24 @@ msgid ""
 "follows best practices for code format? Learn more about the options and "
 "why this is important here."
 msgstr ""
+"Black, blue, flake8, Ruff - ¿qué herramientas pueden ayudarlo a asegurarse de que su paquete "
+"siga las mejores prácticas para el formato de código? Aprenda más sobre las opciones y por qué "
+"esto es importante."
 
 #: ../../package-structure-code/intro.md:95
 msgid ""
 "Figure showing a decision tree with the various packaging tool front-end "
 "and back-end options."
 msgstr ""
+"Figura que muestra un árbol de decisiones con las diversas opciones de herramientas de empaquetado."
 
 #: ../../package-structure-code/intro.md:97
 msgid ""
 "Diagram showing the various front-end build tools that you can select "
 "from. See the packaging tools page to learn more about each tool."
 msgstr ""
+"Diagrama que muestra las diversas herramientas de construcción de front-end que puede seleccionar. "
+"Consulte la página de herramientas de empaquetado para obtener más información sobre cada herramienta."
 
 #: ../../package-structure-code/intro.md:102
 msgid ""
@@ -1587,26 +1669,34 @@ msgid ""
 " and for anyone who is just getting started with creating a Python "
 "package."
 msgstr ""
+"Si está considerando enviar un paquete para revisión por pares, eche un vistazo a las [comprobaciones "
+"mínimas del editor](https://www.pyopensci.org/software-"
+"peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template) que realiza pyOpenSci "
+"antes de que comience una revisión. Estas comprobaciones son útiles para explorar tanto para los autores "
+"que planean enviar un paquete para su revisión como para cualquier persona que esté comenzando "
+"a crear un paquete de Python."
 
 #: ../../package-structure-code/intro.md:109
 msgid "What you will learn here"
-msgstr ""
+msgstr "¿Qué aprenderás aquí?"
 
 #: ../../package-structure-code/intro.md:111
 msgid "In this section of our Python packaging guide, we:"
-msgstr ""
+msgstr "En esta sección de nuestra guía de empaquetado de Python, nosotros:"
 
 #: ../../package-structure-code/intro.md:113
 msgid ""
 "Provide an overview of the options available to you when packaging your "
 "tool."
 msgstr ""
+"Proporcionamos una descripción general de las opciones disponibles para empaquetar su código."
 
 #: ../../package-structure-code/intro.md:115
 msgid ""
 "Suggest tools and approaches that both meet your needs and also support "
 "existing standards."
 msgstr ""
+"Sugerimos herramientas y enfoques que satisfacen sus necesidades y también respaldan los estándares existentes."
 
 #: ../../package-structure-code/intro.md:117
 msgid ""
@@ -1614,6 +1704,9 @@ msgid ""
 "workflow that may begin as a pure Python tool and evolve into a tool that"
 " requires addition layers of complexity in the packaging build."
 msgstr ""
+"Sugerimos herramientas y enfoques que le permitirán ampliar un flujo de trabajo que puede comenzar "
+"como código en Python puro y evolucionar hacia un código con capas adicionales "
+"de complejidad en la construcción de empaquetado."
 
 #: ../../package-structure-code/intro.md:120
 msgid ""
@@ -1622,6 +1715,9 @@ msgid ""
 "[Scientific Python community SPECs](https://scientific-"
 "python.org/specs/)."
 msgstr ""
+"Alineamos nuestras sugerencias con los [PEPs (Protocolos de Mejora de Python)](https://peps.python.org/pep-0000/) "
+"más actuales y aceptados y las [especificaciones de la comunidad científica de Python (SPECs)](https://scientific-"
+"python.org/specs/)."
 
 #: ../../package-structure-code/intro.md:123
 msgid ""
@@ -1629,10 +1725,13 @@ msgid ""
 "with existing best practices being implemented by developers of core "
 "Scientific Python packages such as Numpy, SciPy and others."
 msgstr ""
+"En un esfuerzo por mantener la consistencia dentro de nuestra comunidad, también nos alineamos con las mejores "
+"prácticas existentes que están siendo implementadas por los desarrolladores de paquetes científicos de Python "
+"como Numpy, SciPy y otros."
 
 #: ../../package-structure-code/intro.md:127
 msgid "Guidelines for pyOpenSci's packaging recommendations"
-msgstr ""
+msgstr "Directrices para las recomendaciones de empaquetado de pyOpenSci"
 
 #: ../../package-structure-code/intro.md:129
 msgid ""
@@ -1643,6 +1742,11 @@ msgid ""
 "one the reasons you will often hear Python described as a [\"glue\" "
 "language](https://numpy.org/doc/stable/user/c-info.python-as-glue.html)\""
 msgstr ""
+"La flexibilidad del lenguaje de programación Python se presta a una amplia gama de opciones de herramientas "
+"para crear un paquete de Python. Python es tan flexible que es uno de los pocos lenguajes que se pueden usar "
+"para envolver otros lenguajes. La capacidad de Python para envolver otros lenguajes es una de las razones por "
+"las que a menudo escuchará que Python se describe como un "
+"[\"lenguaje de pegamento\"](https://numpy.org/doc/stable/user/c-info.python-as-glue.html)\""
 
 #: ../../package-structure-code/intro.md:135
 msgid ""
@@ -1651,6 +1755,9 @@ msgid ""
 " they may need to support extensions or tools written in other languages "
 "such as C or C++."
 msgstr ""
+"Si está construyendo un paquete de Python puro, entonces su configuración de empaquetado puede ser simple. "
+"Sin embargo, algunos paquetes científicos tienen requisitos complejos, ya que pueden necesitar soportar "
+"extensiones o herramientas escritas en otros lenguajes como C o C++."
 
 #: ../../package-structure-code/intro.md:139
 msgid ""
@@ -1658,22 +1765,26 @@ msgid ""
 "create a Python package. In this guide, we suggest packaging approaches "
 "and tools based on:"
 msgstr ""
+"Para satisfacer todos los usos posibles del lenguaje, hay muchas formas de crear un paquete de Python. "
+"En esta guía, sugerimos enfoques y herramientas de empaquetado basados en:"
 
 #: ../../package-structure-code/intro.md:142
 msgid ""
 "What we think will be best and easiest to adopt for those who are newer "
 "to packaging."
 msgstr ""
+"Lo que creemos que será lo mejor y más fácil de adoptar para aquellos que son nuevos en el empaquetado."
 
 #: ../../package-structure-code/intro.md:144
 msgid "Tools that we think are well maintained and documented."
-msgstr ""
+msgstr "Heramientas que creemos que están bien mantenidas y documentadas."
 
 #: ../../package-structure-code/intro.md:145
 msgid ""
 "A shared goal of standardizing packaging approaches across this "
 "(scientific) Python ecosystem."
 msgstr ""
+"Un objetivo compartido de estandarizar los enfoques de empaquetado en todo el ecosistema de Python científico."
 
 #: ../../package-structure-code/intro.md:148
 msgid ""
@@ -1681,10 +1792,13 @@ msgid ""
 "accepted [Python community](https://packaging.python.org/en/latest/) and "
 "[scientific community](https://scientific-python.org/specs/)."
 msgstr ""
+"Aquí, también intentamos alinear nuestras sugerencias con las prácticas más actuales "
+"y aceptadas [comunidad de Python](https://packaging.python.org/en/latest/) y "
+"[comunidad científica](https://scientific-python.org/specs/)."
 
 #: ../../package-structure-code/intro.md:151
 msgid "Suggestions in this guide are not pyOpenSci review requirements"
-msgstr ""
+msgstr "Las sugerencias en esta guía no son requisitos de revisión de pyOpenSci"
 
 #: ../../package-structure-code/intro.md:154
 msgid ""
@@ -1693,6 +1807,9 @@ msgid ""
 "package to be reviewed and accepted into our pyOpenSci open source "
 "ecosystem."
 msgstr ""
+"Las sugerencias para la distribución de paquetes en esta sección se hacen con la intención de ayudarle; "
+"no son requisitos específicos para que su paquete sea revisado y aceptado en nuestro ecosistema de código "
+"abierto de pyOpenSci."
 
 #: ../../package-structure-code/intro.md:158
 msgid ""
@@ -1702,10 +1819,15 @@ msgid ""
 "to/author-guide.html#) if you are looking for pyOpenSci's Python package "
 "review requirements!"
 msgstr ""
+"¡Consulte nuestra [página con el scope que cubre PyOpenSci](https://www.pyopensci.org"
+"/software-peer-review/about/package-scope.html) y [requisitos de revisión "
+"en nuestra guía para autores](https://www.pyopensci.org/software-peer-review/how-"
+"to/author-guide.html#) si está buscando los requisitos de revisión de paquetes "
+"que aplica pyOpenSci!"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:1
 msgid "Publishing Your Package In A Community Repository: PyPI or Anaconda.org"
-msgstr ""
+msgstr "Publicar su paquete en un repositorio comunitario: PyPI o Anaconda.org"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:5
 msgid ""
@@ -1713,18 +1835,24 @@ msgid ""
 "installed from a public community repository such as PyPI or a conda "
 "channel such as `bioconda` or `conda-forge` on Anaconda.org."
 msgstr ""
+"pyOpenSci requiere que su paquete tenga una distribución que se pueda instalar desde un "
+"repositorio comunitario público como PyPI o un canal de conda como "
+"`bioconda` o `conda-forge` en Anaconda.org."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:9
 msgid ""
 "Below you will learn more about the various publishing options for your "
 "Python package."
 msgstr ""
+"A continuación, aprenderá más sobre las diversas opciones de publicación para su paquete de Python."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:14
 msgid ""
 "Installing packages in the same environment using both pip and conda can "
 "lead to package conflicts."
 msgstr ""
+"Instalar paquetes en el mismo entorno usando tanto pip como conda puede "
+"dar lugar a conflictos entre paquetes."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:16
 msgid ""
@@ -1732,12 +1860,17 @@ msgid ""
 " local environments, consider publishing your package to both PyPI and "
 "the conda-forge channel on Anaconda.org."
 msgstr ""
+"Para minimizar conflictos para los usuarios que pueden estar usando conda (o pip) para "
+"administrar entornos locales, considere publicar su paquete tanto en PyPI como en el canal "
+"conda-forge en Anaconda.org."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:18
 msgid ""
 "Below you will learn more specifics about the differences between PyPI "
 "and conda publishing of your Python package."
 msgstr ""
+"A continuación, aprenderá más sobre las diferencias específicas entre "
+"la publicación de su paquete de Python en PyPI y conda."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:24
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:6
@@ -1749,6 +1882,11 @@ msgid ""
 "distributions. From PyPI if you create a conda-forge recipe you can then "
 "publish to conda-forge."
 msgstr ""
+"Imagen representando la progresión de crear un paquete de Python, construirlo"
+" y luego publicarlo en PyPI y conda-forge. Convierte tu código en "
+"archivos de distribución (sdist y wheel) que acepta PyPI. Luego hay una flecha "
+"hacia el repositorio de PyPI donde publicas ambas distribuciones. Desde PyPI, "
+"si creas una receta de conda-forge, puedes publicar en conda-forge."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:26
 msgid ""
@@ -1758,10 +1896,14 @@ msgid ""
 "your package on conda-forge. You do not need to rebuild your package to "
 "publish to conda-forge."
 msgstr ""
+"Una vez que haya publicado ambas distribuciones de paquetes (la distribución de origen "
+"y la wheel) en PyPI, puede publicar en conda-forge. conda-forge requiere una distribución de "
+"origen en PyPI para construir su paquete en conda-forge. No necesita reconstruir su paquete para "
+"publicar en conda-forge."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:29
 msgid "What is PyPI"
-msgstr ""
+msgstr "¿Qué es PyPI?"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:31
 msgid ""
@@ -1770,12 +1912,17 @@ msgid ""
 "is also a test PyPI repository where you can test publishing your package"
 " prior to the final publication on PyPI."
 msgstr ""
+"[PyPI](https://pypi.org/) es un repositorio de paquetes de Python en línea que puede "
+"usar para encontrar, instalar y publicar su paquete de Python. También hay un repositorio "
+"de prueba de PyPI donde puede probar la publicación de su paquete antes de la publicación final en PyPI."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:36
 msgid ""
 "Many if not most Python packages can be found on PyPI and are thus "
 "installable using `pip`."
 msgstr ""
+"Muchos, si no la mayoría, de los paquetes de Python se pueden encontrar en PyPI y, por lo tanto, "
+"se pueden instalar usando `pip`."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:38
 msgid ""
@@ -1783,10 +1930,13 @@ msgid ""
 " that conda can install any package regardless of the language(s) that it"
 " is written in. Whereas `pip` can only install Python packages."
 msgstr ""
+"La mayor diferencia entre usar pip y conda para instalar un paquete es que conda puede instalar "
+"cualquier paquete independientemente del lenguaje en el que esté escrito. Mientras que `pip` "
+"solo puede instalar paquetes de Python."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:43
 msgid "Click here for a tutorial on publishing your package to PyPI."
-msgstr ""
+msgstr "Haga clic aquí para un tutorial sobre cómo publicar su paquete en PyPI."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:52
 msgid ""
@@ -1797,10 +1947,15 @@ msgid ""
 "\"bundles\" will be published on PyPI when you use [a standard build tool"
 "](python-package-build-tools) to build your package."
 msgstr ""
+"En la página de construcción de paquetes, discutimos los [dos tipos de distribución de paquetes "
+"que creará al hacer un paquete de Python](python-package-"
+"distribution-files-sdist-wheel): SDist (empaquetado como .tar.gz o .zip) y Wheel (.whl) que es "
+"realmente un archivo zip. Ambos de esos \"paquetes\" de archivos se publicarán en PyPI cuando use "
+"[una herramienta de construcción estándar](python-package-build-tools) para construir su paquete."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:60
 msgid "What is conda and Anaconda.org?"
-msgstr ""
+msgstr "¿Qué es conda y Anaconda.org?"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:62
 msgid ""
@@ -1808,16 +1963,20 @@ msgid ""
 "can be used to install tools from the [Anaconda "
 "repository](https://repo.anaconda.com/)."
 msgstr ""
+"conda es una herramienta de gestión de paquetes y entornos de código abierto. conda se puede "
+"usar para instalar herramientas desde el [repositorio de Anaconda](https://repo.anaconda.com/)."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:66
 msgid ""
 "Anaconda.org contains public and private repositories for packages. These"
 " repositories are known as channels (discussed below)."
 msgstr ""
+"Anaconda.org contiene repositorios públicos y privados para paquetes. Estos repositorios se conocen "
+"como canales (discutidos a continuación)."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:69
 msgid "A brief history of conda's evolution"
-msgstr ""
+msgstr "Una breve historia de la evolución de conda"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:72
 msgid ""
@@ -1825,6 +1984,8 @@ msgid ""
 "simplify the process of, managing software dependencies in scientific "
 "Python projects."
 msgstr ""
+"El ecosistema de conda evolucionó hace años para proporcionar soporte y simplificar el proceso de "
+"gestión de dependencias de software en proyectos científicos de Python."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:76
 msgid ""
@@ -1836,12 +1997,20 @@ msgid ""
 "builds that allow developers to bundle non-Python code into a Python "
 "distribution using the [wheel distribution format](python-wheel)."
 msgstr ""
+"Muchos de los proyectos científicos de Python dependen de o envuelven herramientas y extensiones "
+"escritas en otros lenguajes, como C++. En las primeras etapas del desarrollo del ecosistema científico, "
+"estas extensiones y herramientas no escritas en Python no eran compatibles en PyPI, lo que hacía "
+"que la publicación fuera difícil. En los últimos años, hay más soporte para construcciones complejas "
+"que permiten a los desarrolladores empaquetar código no escrito en Python en una distribución de Python "
+"usando el [formato de distribución de rueda](python-wheel)."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:78
 msgid ""
 "Conda provides a mechanism to manage these dependencies and ensure that "
 "the required packages are installed correctly."
 msgstr ""
+"Conda proporciona un mecanismo para gestionar estas dependencias y asegurar que los paquetes requeridos "
+"se instalen correctamente."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:82
 msgid ""
@@ -1852,10 +2021,14 @@ msgid ""
 "that mixes all of these packages is usually easier and more consistent "
 "with full-fledged package managers like conda."
 msgstr ""
+"Si bien conda se creó originalmente para admitir paquetes de Python, ahora se usa en todos los lenguajes. "
+"Este soporte entre lenguajes facilita que algunos paquetes incluyan y tengan acceso a herramientas escritas "
+"en otros lenguajes, como C/C++ (gdal), Julia o R. Crear un entorno que mezcle todos estos paquetes suele ser "
+"más fácil y más consistente con herramientas de administración de paquetes como conda."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:90
 msgid "conda channels"
-msgstr ""
+msgstr "Canales de conda"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:92
 msgid ""
@@ -1863,12 +2036,16 @@ msgid ""
 "channels. The conda package manager can install packages from different "
 "channels."
 msgstr ""
+"Los paquetes construidos con conda se alojan en repositorios que se llaman canales. "
+"El administrador de paquetes conda puede instalar paquetes de diferentes canales."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:95
 msgid ""
 "There are several core public channels that most people use to install "
 "packages using conda, including:"
 msgstr ""
+"Existen varios canales públicos principales que la mayoría de las personas utilizan para instalar "
+"paquetes con conda, incluidos:"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:98
 msgid ""
@@ -1877,6 +2054,9 @@ msgid ""
 "Distribution. Anaconda (the company) decides what packages live on the "
 "`defaults` channel."
 msgstr ""
+"**defaults:** este es un canal administrado por Anaconda. Es la versión de los paquetes de Python "
+"que instalará si instala la Distribución de Anaconda. Anaconda (la empresa) decide qué paquetes "
+"viven en el canal `defaults`."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:99
 msgid ""
@@ -1885,18 +2065,24 @@ msgid ""
 " for tools that support geospatial data. Anyone can publish a package to "
 "this channel."
 msgstr ""
+"[**conda-forge:**](https://anaconda.org/conda-forge) este es un canal impulsado por la comunidad "
+"que se enfoca en paquetes científicos. Este canal es ideal para herramientas que admiten datos "
+"geoespaciales. Cualquiera puede publicar un paquete en este canal."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:100
 msgid ""
 "[**bioconda**](https://anaconda.org/bioconda): this channel focuses on "
 "biomedical tools."
 msgstr ""
+"[**bioconda**](https://anaconda.org/bioconda): este canal se enfoca en herramientas biomédicas."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:102
 msgid ""
 "**conda-forge** emerged as many of the scientific packages did not exist "
 "in the `defaults` Anaconda channel."
 msgstr ""
+"**conda-forge** surgió motivado por que muchos de los paquetes científicos "
+"no existían en el canal `defaults` de Anaconda."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:107
 msgid ""
@@ -1909,6 +2095,13 @@ msgid ""
 "says PyPI servers. PyPI - anyone can publish to PyPI. and test PyPI. a "
 "testbed server for you to practice."
 msgstr ""
+"Gráfico con el título Repositorios de paquetes de Python. Debajo dice "
+"Cualquier cosa alojada en PyPI se puede instalar usando pip install. Los paquetes alojados en un "
+"canal de conda se pueden instalar usando conda install. Debajo de eso hay dos filas. La fila superior "
+"dice canales de conda. Al lado hay tres cuadros uno con conda-forge, mantenido por la comunidad; bioconda "
+"y luego defaults - administrado por el equipo de Anaconda. Debajo de eso hay una fila que dice "
+"Servidores de PyPI. PyPI - cualquiera puede publicar en PyPI; y test PyPI - un servidor de pruebas"
+" para que practiques."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:109
 msgid ""
@@ -1918,26 +2111,34 @@ msgid ""
 "Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge "
 "there are no manual checks of packages submitted to PyPI."
 msgstr ""
+"Los canales de conda representan varios repositorios desde los que puede instalar paquetes. "
+"Dado que conda-forge es mantenido por la comunidad, cualquiera puede enviar una receta allí. "
+"PyPI también es un repositorio mantenido por la comunidad. Cualquiera puede enviar un paquete a PyPI "
+"y a test PyPI. A diferencia de conda-forge, no hay comprobaciones manuales de los paquetes enviados a PyPI."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:113
 msgid "conda channels, PyPI, conda, pip - Where to publish your package"
-msgstr ""
+msgstr "Canal de conda, PyPI, conda, pip - Dónde publicar su paquete"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:115
 msgid ""
 "You might be wondering why there are different package repositories that "
 "can be used to install Python packages."
 msgstr ""
+"Es posible que se pregunte por qué hay diferentes repositorios de paquetes que se pueden usar para instalar "
+"paquetes de Python."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:118
 msgid ""
 "And more importantly you are likely wondering how to pick the right "
 "repository to publish your Python package."
 msgstr ""
+"Y, lo que es más importante, es probable que se esté preguntando cómo elegir el repositorio adecuado "
+"para publicar su paquete de Python."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:121
 msgid "The answer to both questions relates dependency conflicts."
-msgstr ""
+msgstr "La respuesta a ambas preguntas se relaciona con conflictos de dependencias."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:125
 msgid ""
@@ -1945,6 +2146,9 @@ msgid ""
 "tools and installations. At the bottom is says -  My python environment "
 "has become so degraded that my laptop has been declared a superfund site."
 msgstr ""
+"Imagen que muestra un cómic de XKCD que muestra una red de entornos y herramientas de Python e instalaciones. "
+"En la parte inferior dice - Mi entorno de Python se ha degradado tanto que mi ordenador portátil ha sido "
+"declarado un sitio de superfinanciación."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:127
 msgid ""
@@ -1955,10 +2159,15 @@ msgid ""
 "pip to install everything. Or use conda. If you can, try to avoid "
 "installing package from both pip and conda into the same environment."
 msgstr ""
+"Instalar Python y paquetes de Python desde diferentes repositorios puede "
+"llevar a conflictos de entorno donde una versión de un paquete no funciona con una versión de otro paquete. "
+"Para mantener sus entornos limpios y funcionando, es mejor instalar paquetes desde el mismo repositorio. "
+"Por lo tanto, use pip para instalar todo. O use conda. Si puede, intente evitar instalar paquetes tanto "
+"de pip como de conda en el mismo entorno."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:135
 msgid "Managing Python package dependency conflicts"
-msgstr ""
+msgstr "Gestión de conflictos de dependencias de paquetes de Python"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:137
 msgid ""
@@ -1969,12 +2178,19 @@ msgid ""
 "contain packages installed from both pip and conda are more likely to "
 "yield dependency conflicts."
 msgstr ""
+"Los entornos de Python pueden encontrar conflictos porque las herramientas de Python se pueden instalar "
+"desde diferentes repositorios. En términos generales, los entornos de Python tienen una menor probabilidad "
+"de conflictos de dependencias cuando las herramientas se instalan desde el mismo repositorio de paquetes. "
+"Por lo tanto, los entornos que contienen paquetes instalados tanto desde pip como desde conda tienen más "
+"probabilidades de generar conflictos de dependencias."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:144
 msgid ""
 "Similarly installing packages from the default anaconda package mixed "
 "with the conda-forge channel can also lead to dependency conflicts."
 msgstr ""
+"De manera similar, instalar paquetes del canal predeterminado (`defaults`) de Anaconda mezclado con el canal conda-forge "
+"también puede llevar a conflictos de dependencias."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:146
 msgid ""
@@ -1986,12 +2202,20 @@ msgid ""
 "in the channel . Thus, `conda-forge` channel ensures that a broad suite "
 "of user-developed community packages can be installed from conda."
 msgstr ""
+"Muchos instalan paquetes directamente desde el canal `defaults` de conda. Sin embargo, debido a que este "
+"canal es administrado por Anaconda, los paquetes disponibles en él están limitados a aquellos que Anaconda "
+"decide que deben ser fundamentales para una instalación estable. El canal conda-forge se creó para complementar "
+"el canal `defaults`. Permite a cualquiera enviar un paquete para ser publicado en el canal. Por lo tanto, el canal "
+"`conda-forge` garantiza que se puedan instalar una amplia gama de paquetes de la comunidad desarrollados por el usuario "
+"desde conda."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:150
 msgid ""
 "Take-aways: If you can, publish on both PyPI and conda-forge to "
 "accommodate more users of your package"
 msgstr ""
+"Conclusión: Si puede, publique tanto en PyPI como en conda-forge "
+"para acomodar a más usuarios de su paquete"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:152
 msgid ""
@@ -2000,32 +2224,41 @@ msgid ""
 "you should consider publishing to both PyPI and the conda-forge channel "
 "(_more on that below_)."
 msgstr ""
+"La conclusión aquí para los mantenedores es que si anticipa que los usuarios querrán usar conda para "
+"administrar sus entornos locales (lo cual muchos hacen), debería considerar publicar tanto en PyPI como en "
+"el canal conda-forge (_más sobre eso a continuación_)."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:157
 msgid "Additional resources"
-msgstr ""
+msgstr "Recursos adicionales"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:158
 msgid ""
 "[learn more about why conda-forge was created, here](https://conda-"
 "forge.org/docs/user/introduction.html)"
 msgstr ""
+"[aprende más sobre por qué se creó conda-forge, aquí](https://conda-"
+"forge.org/docs/user/introduction.html)"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:160
 msgid ""
 "[To learn more about conda terminology, check out their "
 "glossary.](https://docs.conda.io/projects/conda/en/latest/glossary.html )"
 msgstr ""
+"[Para aprender más sobre la terminología de conda, consulte su "
+"glosario.](https://docs.conda.io/projects/conda/en/latest/glossary.html )"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:165
 msgid "How to submit to conda-forge"
-msgstr ""
+msgstr "Como publicar en conda-forge"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:167
 msgid ""
 "While pyOpenSci doesn't require you to add your package to conda-forge, "
 "we encourage you to consider doing so!"
 msgstr ""
+"¡Si bien pyOpenSci no requiere que agregue su paquete a conda-forge, le "
+"sugerimos que lo considere!"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:170
 msgid ""
@@ -2034,20 +2267,25 @@ msgid ""
 "provided by the conda-forge maintainer team.](https://conda-"
 "forge.org/docs/maintainer/adding_pkgs.html)."
 msgstr ""
+"Una vez que su paquete esté en PyPI, el proceso para agregar su paquete a conda-forge es sencillo de hacer. "
+"[Puede seguir los pasos detallados proporcionados por el equipo de mantenimiento de conda-forge.](https://conda-"
+"forge.org/docs/maintainer/adding_pkgs.html)."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:175
 msgid "Click here for a tutorial on adding your package to conda-forge."
-msgstr ""
+msgstr "Haga clic aquí para un tutorial sobre cómo agregar su paquete a conda-forge."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:182
 msgid "If you want a step by step tutorial, click here."
-msgstr ""
+msgstr "Si desea un tutorial paso a paso, haga clic aquí."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:185
 msgid ""
 "Once your package is added, you will have a feedstock repository on "
 "GitHub with your packages name"
 msgstr ""
+"Una vez que se agregue su paquete, tendrá un repositorio de feedstock en "
+"GitHub con el nombre de su paquete"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:188
 msgid ""
@@ -2055,10 +2293,13 @@ msgid ""
 "package - movingpandas](https://github.com/conda-forge/movingpandas-"
 "feedstock)"
 msgstr ""
+"[Aquí hay un ejemplo de feedstock de conda-forge para el paquete aprobado "
+"por pyOpenSci - movingpandas](https://github.com/conda-forge/movingpandas-"
+"feedstock)"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:191
 msgid "Maintaining your conda-forge package repository"
-msgstr ""
+msgstr "Mantenimiento de su repositorio de paquetes conda-forge"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:193
 msgid ""
@@ -2068,6 +2309,11 @@ msgid ""
 " in the conda-forge repository. Once that build is complete, you will get"
 " a notification to review the update."
 msgstr ""
+"Una vez que su paquete esté en el canal conda-forge, mantenerlo es simple. "
+"Cada vez que envíe una nueva versión de su paquete a PyPI, se iniciará una "
+"compilación de integración continua que actualizará su paquete en el repositorio "
+"conda-forge. Una vez que se complete esa compilación, recibirá una notificación "
+"para revisar la actualización."
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:199
 msgid ""
@@ -2077,6 +2323,11 @@ msgid ""
 "file found in the pull request match the PyPI metadata of the new "
 "release."
 msgstr ""
+"Puede hacer merge de la pull request para esa actualización una vez que esté "
+"contento con ella. Una pull request lista para hacer merge generalmente "
+"significa asegurarse de que las dependencias de su proyecto (conocidas como "
+"requisitos en tiempo de ejecución) enumeradas en el archivo YAML actualizado "
+"en la solicitud de cambio coincidan con los metadatos de PyPI de la nueva versión."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:1
 msgid "Use a pyproject.toml file for your package configuration & metadata"
