@@ -528,7 +528,7 @@ software that your Python project:</p>
 within the code of your project or during development of your package.</p>
 <section id="understanding-optional-vs-required-dependencies">
 <h3>Understanding optional vs. required dependencies<a class="headerlink" href="#understanding-optional-vs-required-dependencies" title="Link to this heading">#</a></h3>
-<p>You can think about dependencies as being either optional or required. If they are required, they will be listed in the <code class="docutils literal notranslate"><span class="pre">[dependency]</span> <span class="pre">=</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. If they are optional, they will be listed in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<p>You can think about dependencies as being either optional or required. If they are required, they will be listed in the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> key in the <code class="docutils literal notranslate"><span class="pre">project</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. If they are optional, they will be listed in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
 <p>You will learn about both below.</p>
 <figure class="align-default" id="python-package-dependency-types">
 <img alt="" src="../_images/python-package-dependency-types.png" />
@@ -541,7 +541,7 @@ Within those 2 groups, there are three use cases that you can think about. 1. Co
 <section id="required-or-core-dependencies">
 <h3>Required (or core) dependencies<a class="headerlink" href="#required-or-core-dependencies" title="Link to this heading">#</a></h3>
 <p>Required dependencies are called directly within your package’s code. On this page we refer to these dependencies
-as <strong>core dependencies</strong> as they are needed in order to run your package. You should place your core or required dependencies in the <code class="docutils literal notranslate"><span class="pre">[dependency]=</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
+as <strong>core dependencies</strong> as they are needed in order to run your package. You should place your core or required dependencies in the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> key of the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
 </section>
 <section id="optional-dependencies">
 <h3>Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Link to this heading">#</a></h3>
@@ -601,7 +601,7 @@ the
 </div>
 <p>Ideally, you should only list the packages that are
 necessary to install and use your package in the
-<code class="docutils literal notranslate"><span class="pre">[dependencies]</span></code> section. This minimizes the number of
+<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> key in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table. This minimizes the number of
 additional packages that your users must install as well
 as the number of packages that depend upon your package
 must also install.</p>
@@ -629,17 +629,17 @@ likelihood of version mismatches in user environments.</p>
 <li><p>linting and other code cleanup tools</p></li>
 </ul>
 <p>These dependencies are considered optional, because they are not required to install and use your package. Feature
-dependencies are considered optional and should also be placed in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table.</p>
+dependencies are considered optional and should also be placed in the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</p>
 <p>Optional dependencies can be stored in an
-<code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table in your <strong>pyproject.toml</strong> file.</p>
-<p>It’s important to note that within the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table discussed above which contains a single array with a single list of required packages.</p>
+<code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table in your <strong>pyproject.toml</strong> file.</p>
+<p>It’s important to note that within the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table discussed above which contains a single array with a single list of required packages.</p>
 </section>
 </section>
 <section id="create-optional-dependency-groups">
 <h2>Create optional dependency groups<a class="headerlink" href="#create-optional-dependency-groups" title="Link to this heading">#</a></h2>
 <p>To declare optional dependencies in your <strong>pyproject.toml</strong> file:</p>
 <ol class="arabic simple">
-<li><p>Add a <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table to your <strong>pyproject.toml</strong> file.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table to your <strong>pyproject.toml</strong> file.</p></li>
 <li><p>Create named groups of dependencies using the syntax:</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">group-name</span> <span class="pre">=</span> <span class="pre">[&quot;dep1&quot;,</span> <span class="pre">&quot;dep2&quot;]</span></code></p>
@@ -686,9 +686,9 @@ order to upload your project to PyPI</p>
 <section id="install-dependency-groups">
 <h3>Install dependency groups<a class="headerlink" href="#install-dependency-groups" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id3">
-<img alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
+<img alt="Diagram showing a Venn diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
 <figcaption>
-<p><span class="caption-text">When a user installs your package locally using python -m pip install your-package only your package and it’s core dependencies get installed. When they install your package <code class="docutils literal notranslate"><span class="pre">[tests]</span></code> pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text">When a user installs your package locally using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package</span></code> only your package and it’s core dependencies get installed. When they install your package <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package[tests]</span></code> pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-using-python-m-pip-install-vs-pip-install admonition">
@@ -708,13 +708,13 @@ groups that you defined above using the syntax:</p>
 <p>Above you install:</p>
 <ul class="simple">
 <li><p>dependencies needed for your documentation (<code class="docutils literal notranslate"><span class="pre">docs</span></code>),</p></li>
-<li><p>required package dependencies in the <code class="docutils literal notranslate"><span class="pre">dependency</span></code> array and</p></li>
+<li><p>required package dependencies in the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> array and</p></li>
 <li><p>your package</p></li>
 </ul>
 <p>using pip. Below you
 install your package, required dependencies and optional test dependencies.</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests]&quot;</span></code></p>
-<p>You can install multiple dependency groups in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table using:</p>
+<p>You can install multiple dependency groups in the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table using:</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[docs,</span> <span class="pre">tests,</span> <span class="pre">lint]&quot;</span></code></p>
 <div class="tip admonition">
 <p class="admonition-title">For zsh shell users</p>
