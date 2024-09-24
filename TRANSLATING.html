@@ -543,8 +543,8 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <section id="preparing-the-translation-files">
 <h2>Preparing the Translation Files<a class="headerlink" href="#preparing-the-translation-files" title="Link to this heading">#</a></h2>
 <p>The translation files contain the original English text and a space for you to enter the translated text. Before starting to translate, you need to make sure the translation files are up to date with the latest changes to the guide.</p>
-<p>You can do this by running the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nox<span class="w"> </span>-s<span class="w"> </span>update-translations
+<p>You can do this by running the following command, replacing LANG by the language code you plan to work on (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code> for Spanish):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nox<span class="w"> </span>-s<span class="w"> </span>update-language<span class="w"> </span>--<span class="w"> </span>LANG
 </pre></div>
 </div>
 <p>This command will create the translation files if they don’t exist yet, or update them with the latest changes if they already exist.</p>
@@ -661,8 +661,8 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </section>
 <section id="building-the-translated-documentation">
 <h2>Building the Translated Documentation<a class="headerlink" href="#building-the-translated-documentation" title="Link to this heading">#</a></h2>
-<p>Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-translations
+<p>Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command, replacing LANG by the proper language code (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code> for Spanish)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-language<span class="w"> </span>--<span class="w"> </span>LANG
 </pre></div>
 </div>
 <p>This command will build all the translated versions of the guide defined in the <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> list in <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code>. These translations will be stored in the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code>, in folders named after the language code (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code>, <code class="docutils literal notranslate"><span class="pre">fr</span></code>, etc.).</p>
@@ -682,7 +682,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 <ol class="arabic simple">
 <li><p>Build the translations of the guide with same parameters that will be used during the release:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-translations-test
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-all-languages-test
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -720,7 +720,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </section>
 <section id="what-happens-when-a-string-has-changed-in-the-original-english-text">
 <h3>What happens when a string has changed in the original English text?<a class="headerlink" href="#what-happens-when-a-string-has-changed-in-the-original-english-text" title="Link to this heading">#</a></h3>
-<p>If a string has changed in the original English version, it will be marked as <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> in the translation file the next time it is updated (<code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">update-translations</span></code>). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> tag.</p>
+<p>If a string has changed in the original English version, it will be marked as <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> in the translation file the next time it is updated (<code class="docutils literal notranslate"><span class="pre">update-language</span></code>, <code class="docutils literal notranslate"><span class="pre">update-all-languages</span></code>, or <code class="docutils literal notranslate"><span class="pre">update-all-release-languages</span></code>). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> tag.</p>
 </section>
 <section id="how-do-i-handle-links-in-the-translated-text">
 <h3>How do I handle links in the translated text?<a class="headerlink" href="#how-do-i-handle-links-in-the-translated-text" title="Link to this heading">#</a></h3>
@@ -759,11 +759,8 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </section>
 <section id="how-can-i-get-help-with-my-translation">
 <h3>How can I get help with my translation?<a class="headerlink" href="#how-can-i-get-help-with-my-translation" title="Link to this heading">#</a></h3>
-<p>If you have any questions or need help with your translation, you can create an issue in the repository.</p>
-<p>TODO: Maybe <a class="reference external" href="https://pyopensci.discourse.group/">Discourse</a> could be used as a way for contributors to ask for help with translations or the translation workflow?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p>If you have any questions or need help with your translation, you can create an <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue</a> in the <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide">Packaging Guide repository</a></p>
+<p>You can also ask in the PyOpenSci Discord server (<a class="reference external" href="https://discord.gg/CvSMp4zcqX">click here</a> to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).</p>
 </section>
 </section>
 </section>
