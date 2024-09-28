@@ -33,62 +33,253 @@ The second approach is making your contribution directly in the GitHub website. 
 ## Forking the repository
 
 Independently of the approach you choose, the first step is to fork the Python Packaging Guide repository into your personal GitHub space.
+You can do this by clicking the "Fork" button in the top right corner of the repository page.
 
-*__TODO__: This section should show a beginner user how to fork a repository in GitHub.*
+[Learn more: Fork and Clone GitHub Repos](https://datascienceskills.org/lessons/git-github/git-intro/3-fork-clone/) is a good resource to learn more about forking.
+
+To fork a repo,
+
+1. Make sure you are logged into GitHub.
+
+2. Go to the repo you would like to fork, in this case the [Python Packaging Guide](https://www.github.com/pyopensci/python-package-guide) repo.
+
+3. In the top right-hand corner of the page there is a 'Fork' button. Click that button. You will be brought to a new page where you will 'Create a new fork'. Feel free to keep all the default inputs and click 'Create fork'. This will create a copy of the repo at `https://github.com/<username>/python-package-guide`, where `<username>` is your GitHub username.
+
+<img width="395" alt="fork_repo" src="https://github.com/user-attachments/assets/949223fb-b58b-4b6d-85db-003bd117da46">
+
 
 ## Contributing via the GitHub website
 
 ### How to edit a MarkDown file
 
-*__TODO__: This section should show how to use the GitHub interface to edit and previewing a Markdown file.*
+The Python Packaging Guide is written in myST, a variant of MarkDown. You can edit the files directly in the GitHub website.
+To do so, navigate to the file you want to edit and click the pencil icon in the top right corner of the file.
+
+```{figure} images/contributing/edit-button-pencil.png
+---
+name: edit-button-pencil in GitHub
+width: 80%
+alt: Edit button in GitHub
+---
+An image showing how to edit a file in GitHub. The pencil icon is highlighted with a red rectangle.
+
+```{figure} images/contributing/edit-file.png
+---
+name: edit-file in GitHub
+width: 80%
+alt: Edit file in GitHub
+---
+An image showing when a file is being edited in GitHub. The file content is displayed in a text editor.
+```
+
+To preview your changes, click the "Preview changes" tab.
+
+```{figure} images/contributing/preview-changes.png
+---
+name: preview-changes in GitHub
+width: 80%
+alt: Preview changes in GitHub
+---
+An image showing how to preview changes in GitHub. The file content is displayed in a text editor. The preview changes tab is highlighted with a red rectangle.
+```
 
 ### How to commit your changes
 
-*__TODO__: This section should show how to commit changes via the GitHub interface.*
+When you are done editing the file, scroll down to the bottom of the page. You will see a section called "Commit changes".
+Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made.
+
+```{figure} images/contributing/commit-changes.png
+---
+name: commit-changes in GitHub
+width: 80%
+alt: Commit changes in GitHub
+---
+An image showing how to commit changes in GitHub. The commit message is displayed in a text editor. The commit changes section is highlighted with a red rectangle.
+```
+
+After writing your commit message, click the "Commit changes" button to save your changes.
 
 ## Contributing locally on your computer
 
 ### Clone your forked repository
 
-*__TODO__: This section should show how to clone a repository from GitHub into your computer.*
+To clone your forked repository to your computer, you need to copy the URL of your forked repository and run the following command in your terminal:
+
+```bash
+git clone <URL>
+```
+Replace `<URL>` with the URL of your forked repository. You can find the URL by clicking the green "Code" button on your forked repository page.
+
+```{figure} images/contributing/clone-repository.png
+---
+name: clone-repository in GitHub
+width: 80%
+alt: Clone repository in GitHub
+---
+An image showing how to clone a repository in GitHub. The URL of the repository is displayed in a text editor. The code button is highlighted with a red rectangle.
+```
 
 ### Create a new branch
 
-*__TODO__: This section should show how to create a new branch.*
+Before making any changes, you should create a new branch to work on. This will help keep your changes separate from the main branch and make it easier to submit a pull request.
+
+To create a new branch, run the following command in your terminal:
+
+```bash
+git checkout -b <branch-name>
+```
 
 ### Create a virtual environment
 
-*__TODO__: This section should show how to create a virtual environment using venv.*
+To build the guide locally, you need to create a virtual environment and install the dependencies. You can do this by running the following commands in your terminal:
+
+- **On Windows**:
+    ```bash
+    python -m venv .venv
+    .venv\Scripts\activate
+    ```
+
+- **On MacOS and Linux**:
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate
+    ```
 
 ### Install the development dependencies
 
-*__TODO__: This section should show how to install the development dependencies defined in pyproject.toml.*
+To install the development dependencies, run the following command in your terminal:
+
+```bash
+python -m pip install -e .[dev]
+```
 
 ### Commit your changes
 
-*__TODO__: This section should describe how to commit from the command line.*
+After making your changes, you need to commit them to your local repository. To do this, run the following commands in your terminal:
+
+- To see the changes you made:
+    ```bash
+    git status
+    ```
+- To add the changes to the staging area:
+    ```bash
+    git add .
+    ```
+- To commit the changes:
+    ```bash
+    git commit -m "Your commit message here"
+    ```
+Replace `"Your commit message here"` with a clear and concise message that describes the changes you made.
 
 ### How to build the guide locally
 
-*__TODO__: This section should describe the different sessions in nox related to building the docs: docs, docs-test, docs-live. It should also show how to see the guide built locally, by opening the right file in the browser or using the live version from docs-live*
+To build the guide locally, you can use the `nox` command. This will run the default `nox` session, which builds the guide and opens it in your browser.
+
+To see the different sessions available, you can run the following command in your terminal:
+
+```bash
+nox --list-sessions
+```
+There are different sessions in nox related to building the docs: `docs`, `docs-test`, `docs-live`. You can run them by specifying the session name after the `nox` command.
+
+- `docs`: this session builds the guide and opens it in your browser.
+    ```bash
+    nox -e docs
+    ```
+    To see the guide built locally, open the file `_build/html/index.html` in your browser.
+
+- `docs-test`: this session runs the tests for the guide.
+    ```bash
+    nox -e docs-test
+    ```
+    If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
+
+- `docs-live`: this session builds the guide and opens it in your browser with live reloading.
+    ```bash
+    nox -e docs-live
+    ```
+    open the local version of the guide in your browser at ``localhost`` shown in the terminal.
 
 ### Before you submit your pull request
 
-*__TODO__: This section should describe what steps a user should follow before submitting the pull request: build the docs, verify your changes look correct, etc.*
+Before submitting your pull request, make sure to run the tests and check the formatting of your code.
+
+```bash
+nox -e docs-test
+```
+If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
+Also make sure to check the formatting of your documentation by building the docs locally and checking that your changes look correct.
+
 
 ## Submitting a pull request with your contribution
 
 ### How to make a pull request
 
-*__TODO__: This section should describe how to make a pull request in GitHub.*
+1. To open a pull request on GitHub, navigate to the main page of your forked repository and click on the "Pull requests" tab.
+
+```{figure} images/contributing/pull-requests-tab.png
+---
+name: pull-requests-tab in GitHub
+width: 80%
+alt: Pull requests tab in GitHub
+---
+An image showing how to navigate to the pull requests tab in GitHub. The pull requests tab is highlighted with a red rectangle.
+```
+
+2. Click on the "New pull request" button.
+
+```{figure} images/contributing/new-pull-request.png
+---
+name: new-pull-request in GitHub
+width: 80%
+alt: New pull request button in GitHub
+---
+An image showing how to create a new pull request in GitHub. The new pull request button is highlighted with a red rectangle.
+```
+
+3. Write a clear and concise title and description for your pull request. Make sure to describe the changes you made and why they are necessary.
 
 ### What happens when you submit a pull request (CI/CD)
 
-*__TODO__: This section should describe how to see the results of the CD/CI checks and how to get more information about errors*
+Once you submit a pull request, a series of checks will be run to ensure that your changes do not introduce any bugs or errors. These checks include:
+
+- **Code formatting and styles**: checks that your code is formatted correctly, by `pre-commit.ci - pr check`.
+- **docs build**: checks that the documentation builds correctly, using `circleci`.
+
+You will see the status of these checks in your pull request.
+
+```{figure} images/contributing/pull-requests-checks.png
+---
+name: pull-requests-checks in GitHub
+width: 80%
+alt: Pull request checks in GitHub
+---
+An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks are highlighted with a red rectangle.
+```
+If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged.
+
+```{figure} images/contributing/pull-requests-checks-fails.png
+---
+name: pull-requests-checks-fails in GitHub
+width: 80%
+alt: Pull request checks failed in GitHub
+---
+An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks that failed and the details link are highlighted with a red rectangle.
+```
+
+To get more information about the errors, you can click on the "Details" link next to the failed check.
 
 ### What to expect from the review process
 
-*__TODO__: This section should describe how review happens in GitHub, how see the comments, and how to submit changes (push a new branch)*
+Once you submit a pull request, a maintainer of the repository will review your changes and provide feedback. The review process may involve:
+
+- **Comments**: the reviewer may leave comments on your pull request to ask questions or provide feedback.
+- **Suggestions**: the reviewer may suggest changes to your code or documentation.
+- **Approvals**: once the reviewer is satisfied with your changes, they will approve the pull request.
+
+You can make changes to your pull request by pushing new commits to the branch. The pull request will be updated automatically with your new changes.
+
+Once your pull request is approved, it will be merged into the main branch and your changes will be included in the guide.
 
 ## Additional help
 
@@ -122,7 +313,7 @@ later can protect your example from future modifications to the code.
 `:end-at:` options. And if the example code is Python, `:pyobject:` can be an even more future-proof way to keep the
 same documentation content even through code refactors.
 
-If you need example code that doesn't yet exist in `examples/` see creating code for documentation](#creating-code-for-documentation).
+If you need example code that doesn't yet exist in `examples/` see [creating code for documentation](#creating-code-for-documentation).
 
 (creating-code-for-documentation)=
 #### Creating code for documentation

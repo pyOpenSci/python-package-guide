@@ -94,7 +94,7 @@ While many permissive licenses do not require citation we STRONG encourage that 
 
 <!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with Zenodo (do they work??) will the citation info update with a new Zenodo link
 
-These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. if it's not dynamic it could be problematic
+These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. If it's not dynamic it could be problematic
 
 
 -->

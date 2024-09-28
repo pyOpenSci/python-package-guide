@@ -109,7 +109,7 @@ html_theme_options = {
     "show_toc_level": 1,
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
-    "footer_start": ["copyright"],
+    "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
 }
 
@@ -136,6 +136,7 @@ exclude_patterns = [
     "styles/*",
     ".pytest_cache/README.md",
     "vale-styles/*",
+    "CODE_OF_CONDUCT.md",
 ]
 
 # For sitemap generation
