@@ -854,7 +854,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:29
 msgid "needs to function properly."
-msgstr "neceista para funcionar correctamente."
+msgstr "necesita para funcionar correctamente."
 
 #: ../../package-structure-code/declare-dependencies.md:30
 msgid ""
@@ -889,12 +889,12 @@ msgid ""
 "the `[optional.dependencies]` table of your `pyproject.toml`."
 msgstr ""
 "Puede pensar en las dependencias como opcionales o requeridas. Si son requeridas, "
-"se listarán en la tabla `[dependency] =` de su archivo `pyproject.toml`. Si son "
+"se listarán con la clave `dependency` en la tabla `project` de su archivo `pyproject.toml`. Si son "
 "opcionales, se listarán en la tabla `[optional.dependencies]` de su `pyproject.toml`."
 
 #: ../../package-structure-code/declare-dependencies.md:40
 msgid "You will learn about both below."
-msgstr "Aprenderá sobre ambos a continuación."
+msgstr "Aprenderá sobre ambos tipos a continuación."
 
 #: ../../package-structure-code/declare-dependencies.md:46
 msgid ""
@@ -909,7 +909,7 @@ msgid ""
 "optional and add additional functionality to your package. Not all "
 "packages will have feature dependencies."
 msgstr ""
-"Hay dos grupos amplios de dependencias de paquetes de Python: las que son "
+"Hay dos tipos de dependencias de paquetes de Python: las que son "
 "opcionales y las que son requeridas. Los paquetes requeridos son aquellos que "
 "un usuario necesita para usar su paquete. Las dependencias opcionales son "
 "paquetes que un usuario puede elegir instalar para agregar funcionalidad a su "
@@ -935,7 +935,7 @@ msgstr ""
 "Las dependencias requeridas se llaman directamente dentro del código de su "
 "paquete. En esta página nos referimos a estas dependencias como **dependencias "
 "principales** ya que son necesarias para ejecutar su paquete. Debería colocar "
-"las dependencias principales o requeridas en la tabla `[dependency]=` de su "
+"las dependencias principales o requeridas en la clave `dependency` de la tabla `[project]` de su "
 "archivo `pyproject.toml`."
 
 #: ../../package-structure-code/declare-dependencies.md:56
@@ -1053,7 +1053,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:100
 msgid "Add required dependencies to your pyproject.toml file"
-msgstr "Añaadir dependencias requeridas a su archivo pyproject.toml"
+msgstr "Añadir dependencias requeridas a su archivo pyproject.toml"
 
 #: ../../package-structure-code/declare-dependencies.md:102
 msgid ""
@@ -1065,7 +1065,7 @@ msgid ""
 msgstr ""
 "Las dependencias principales de su proyecto deben ser instaladas por un administrador "
 "de paquetes como `pip` o `conda` cuando un usuario instala su paquete. Puede agregar "
-"esas dependencias a la matriz `dependencies` ubicada dentro de la tabla `[project]` de su "
+"esas dependencias a la clave `dependencies` ubicada dentro de la tabla `[project]` de su "
 "archivo **pyproject.toml**. Se asemejará a lo siguiente:"
 
 #: ../../package-structure-code/declare-dependencies.md:121
@@ -1076,7 +1076,7 @@ msgid ""
 " number of packages that depend upon your package must also install."
 msgstr ""
 "Idealmente, solo debería enumerar los paquetes que son necesarios para instalar "
-"y usar su paquete en la sección `[dependencies]`. Esto minimiza la cantidad de "
+"y usar su paquete en la clave `dependencies` de la tabla `[project]`. Esto minimiza la cantidad de "
 "paquetes adicionales que sus usuarios deben instalar, así como la cantidad de "
 "paquetes que dependen de su paquete que también deben instalar."
 
@@ -1182,7 +1182,7 @@ msgid ""
 "Optional dependencies can be stored in an `[optional.dependencies]` table"
 " in your **pyproject.toml** file."
 msgstr ""
-"Las dependencias opcionales se pueden almacenar en una tabla `[optional.dependencies]` "
+"Las dependencias opcionales se pueden almacenar en una tabla `[project.optional-dependencies]` "
 "en su archivo **pyproject.toml**."
 
 #: ../../package-structure-code/declare-dependencies.md:161
@@ -1193,7 +1193,7 @@ msgid ""
 "`[project]` table discussed above which contains a single array with a "
 "single list of required packages."
 msgstr ""
-"Es importante tener en cuenta que dentro de la tabla `[optional.dependencies]`, "
+"Es importante tener en cuenta que dentro de la tabla `[project.optional-dependencies]`, "
 "puede almacenar dependencias opcionales adicionales dentro de subgrupos con nombre. "
 "Esta es una tabla diferente que la matriz de dependencias ubicada dentro de la tabla "
 "`[project]` discutida anteriormente que contiene una sola matriz con una lista única de "
@@ -1209,7 +1209,7 @@ msgstr "Para declarar dependencias opcionales en su archivo **pyproject.toml**:"
 
 #: ../../package-structure-code/declare-dependencies.md:167
 msgid "Add a `[optional.dependencies]` table to your **pyproject.toml** file."
-msgstr "Añada una tabla `[optional.dependencies]` a su archivo **pyproject.toml**."
+msgstr "Añada una tabla `[project.optional-dependencies]` a su archivo **pyproject.toml**."
 
 #: ../../package-structure-code/declare-dependencies.md:168
 msgid "Create named groups of dependencies using the syntax:"
@@ -1292,7 +1292,7 @@ msgid ""
 "with both the package dependencies - your-package, seaborn and numpy and "
 "also the tests dependencies including pytest and pytest-cov"
 msgstr ""
-"Diagrama que muestra un 'diagrama de ven' con tres secciones que representan los "
+"Diagrama que muestra un 'diagrama de Venn' con tres secciones que representan los "
 "grupos de dependencias mencionados anteriormente - docs, funcionalidades y tests. En el centro "
 "se lee su-paquete y se enumeran las dependencias principales de ese paquete - seaborn y numpy. A la "
 "derecha hay dos flechas. La primera muestra el comando python - m pip install su-paquete. Luego muestra "
@@ -1309,11 +1309,11 @@ msgid ""
 "package and its core dependencies plus any of the dependencies listed "
 "within the tests array of your `[optional.dependencies]` table."
 msgstr ""
-"Cuando un usuario instala su paquete localmente usando python -m pip install "
-"su-paquete, solo su paquete y sus dependencias principales se instalan. Cuando "
-"instalan su paquete `[tests]`, pip instalará tanto su paquete como sus dependencias "
+"Cuando un usuario instala su paquete localmente usando `python -m pip install "
+"su-paquete`, solo su paquete y sus dependencias principales se instalan. Cuando "
+"instalan su paquete `python -m pip install your-package[tests]`, pip instalará tanto su paquete como sus dependencias "
 "principales, además de cualquiera de las dependencias enumeradas dentro de la matriz de tests "
-"de su tabla `[optional.dependencies]`."
+"de su tabla `[project.optional-dependencies]`."
 
 #: ../../package-structure-code/declare-dependencies.md:231
 msgid "Using `python -m pip install` vs. `pip install`"
@@ -1340,7 +1340,7 @@ msgid ""
 msgstr ""
 "Llamar a pip usando `python -m` asegura que la versión de `pip` que está utilizando para "
 "instalar su paquete provenga de su entorno de Python activo actual. Le sugerimos "
-"encarecidamente que utilice este enfoque siempre que llame a `pip` para evitar conflictos de instalación."
+"encarecidamente que utilice este método siempre que llame a `pip` para evitar conflictos de instalación."
 
 
 #: ../../package-structure-code/declare-dependencies.md:242
@@ -1373,7 +1373,7 @@ msgstr "dependencias necesarias para su documentación (`docs`),"
 
 #: ../../package-structure-code/declare-dependencies.md:253
 msgid "required package dependencies in the `dependency` array and"
-msgstr "dependencias de paquetes requeridas en la matriz `dependency` y"
+msgstr "dependencias de paquetes requeridas en la matriz `dependencies` y"
 
 #: ../../package-structure-code/declare-dependencies.md:254
 msgid "your package"
@@ -1397,7 +1397,7 @@ msgid ""
 "You can install multiple dependency groups in the "
 "`[optional.dependencies]` table using:"
 msgstr ""
-"Puede instalar múltiples grupos de dependencias en la tabla `[optional.dependencies]` "
+"Puede instalar múltiples grupos de dependencias en la tabla `[project.optional-dependencies]` "
 "usando:"
 
 #: ../../package-structure-code/declare-dependencies.md:263
@@ -1461,7 +1461,7 @@ msgid ""
 "Above we reviewed how to install dependencies from your `pyproject.toml`."
 " In some cases you may want to group sets of dependencies like so:"
 msgstr ""
-"Anteriormente hemos revisado cómo instalar dependencias desde su `pyproject.toml`. "
+"Anteriormente hemos discutido cómo instalar dependencias desde su `pyproject.toml`. "
 "En algunos casos, es posible que desee agrupar conjuntos de dependencias de la siguiente manera:"
 
 #: ../../package-structure-code/declare-dependencies.md:302
