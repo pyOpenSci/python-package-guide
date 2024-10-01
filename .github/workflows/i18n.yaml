@@ -23,7 +23,7 @@ jobs:
         run: python3 -m pip install nox
 
       - name: Update .po files
-        run: nox -s update-translations
+        run: nox -s update-release-languages
 
       - name: Test for uncommitted changes
         run: |
