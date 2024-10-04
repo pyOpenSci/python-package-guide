@@ -19,9 +19,9 @@ It allows users to contribute code, documentation fixes and more without
 having to create development environments, run tests and build documentation
 locally.
 
-## Example GitHub action that runs tests
+## Example GitHub Actions that runs tests
 
-Below is an example GitHub action that runs tests using nox
+Below is an example GitHub Actions that runs tests using nox
 across both Windows, Mac and Linux and on Python versions
 3.9-3.11.
 
