@@ -283,7 +283,7 @@ new changes are merged.
 
 In addition to calling tools, Pre-commit also has a suite of [built in format
 hooks](https://github.com/pre-commit/pre-commit-hooks#hooks-available) that
-you can call. Some, such as trailing-whitespace can be also useful to add
+you can call. Some, such as `trailing-whitespace` can be also useful to add
 to your pre-commit workflow to ensure clean, streamlined code files.
 
 An example pre-commit-config.yaml file is below with examples of how this is
