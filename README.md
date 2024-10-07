@@ -8,6 +8,8 @@
 
 [![CircleCI](https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg)](https://circleci.com/gh/pyOpenSci/python-package-guide)
 
+[![Mentioned in Awesome Scientific Python](https://awesome.re/mentioned-badge.svg)](https://github.com/rossant/awesome-scientific-python)
+
 ## What is pyOpenSci?
 
 pyOpenSci is devoted to building diverse, supportive community around
