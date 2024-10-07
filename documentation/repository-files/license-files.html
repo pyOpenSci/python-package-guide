@@ -458,7 +458,8 @@ document.write(`
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="readme-file-best-practices.html">README file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-of-conduct-file.html">Code of Conduct File</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">LICENSE files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">License files for scientific Python open source software</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publication tools for your docs</span></p>
 <ul class="nav bd-sidenav">
@@ -555,6 +556,16 @@ permissive license and then use the legal language templates provided both by Gi
 <p>We generally suggest that you use a permissive, license that is <a class="reference external" href="https://opensource.org/licenses/">Open Software Initiative (OSI) approved</a>. If you are
 <a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">submitting your package to pyOpenSci for peer review</a>, then we require an OSI approved
 license.</p>
+<div class="admonition-copyleft-licenses admonition">
+<p class="admonition-title">Copyleft licenses</p>
+<p>The other major category of licenses are <a class="reference external" href="https://en.wikipedia.org/wiki/Copyleft">“copyleft” licenses</a>.
+Copyleft licenses require people that use your work to redistribute it with the same (or greater) rights to modify, copy, share, and redistribute it.
+In other words, copyleft licenses prohibit someone taking your work, making a proprietary version of it, and redistributing it without providing the source code so others can do the same.
+Copyleft licenses are “sticky” in that they are designed to ensure that more free software is created.</p>
+<p>The difference between copyleft and permissive licenses is an important cultural divide in free and open source software (e.g., see <a class="footnote-reference brackets" href="#footcite-hunterreclaimingcomputingcommons2016" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, <a class="footnote-reference brackets" href="#footcite-gnuprojectwhatfreesoftware2019" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, <a class="footnote-reference brackets" href="#footcite-gnuprojectwhatcopyleft2022" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>).
+It is important to understand this difference when choosing your license. Copyleft licenses represents the “free” part of “free and open source software”.
+Free and open source software is intrinsically political, and it is important to be aware of power dynamics in computing as well as the practical problems of license compatibility (discussed below).</p>
+</div>
 </section>
 <section id="how-to-choose-a-license">
 <h3>How to choose a license<a class="headerlink" href="#how-to-choose-a-license" title="Link to this heading">#</a></h3>
@@ -566,15 +577,15 @@ in some cases the license that you want is not available through that online
 process.</p>
 <div class="admonition-license-recommendations-from-the-scipy-package admonition">
 <p class="admonition-title">License recommendations from the SciPy package</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing">The SciPy documentation has an excellent overview of licenses.</a>. Once of the key elements
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing">The SciPy documentation has an excellent overview of licenses.</a>. One of the key elements
 that these docs recommend is ensuring that the license that you select is
-complementary to license used in the core scientific Python ecosystem.
+compatible with licenses used in many parts of the scientific Python ecosystem.
 Below is a highlight of this text which outlines license that are compatible
 with the modified BSD license that SciPy uses.</p>
 <blockquote>
 <div><p>Other licenses that are compatible with the modified BSD license that SciPy uses are 2-clause BSD, MIT and PSF. Incompatible licenses are GPL, Apache and custom licenses that require attribution/citation or prohibit use for commercial purposes.</p>
 </div></blockquote>
-<p>To coordinate with other packages in our scientific ecosystem, we also recommend
+<p>If your primary goal is for your code to be used by other, major packages in the scientific ecosystem, we also recommend
 that you consider using either BSD or MIT as your
 license. If you are unsure, the MIT license tends to be a simpler easier-to-understand option.</p>
 </div>
@@ -587,11 +598,74 @@ you can use in your package and also how others can (or can not) use the code in
 <p>If you borrow code from other tools or online sources, make
 sure that the license for the code that you are using also complies
 with the license that you selected for your package.</p>
+<p>A useful way to think about license compatibility is the distinction between <strong>“inbound”</strong> and <strong>“outbound”</strong> compatibility.
+“Inbound” licenses are those that cover the software you plan to include in your package.
+Your package is protected by an “outbound” license.</p>
+<p><strong>Permissive licenses</strong> like BSD and MIT have few <strong>outbound</strong> restrictions - they can be used in any way by downstream consumers, including making them proprietary.
+This is why they are favored by many businesses and large packages that want to be adopted by businesses.
+Permissive licenses have more <strong>inbound</strong> restrictions - they can’t use software that requires more freedoms to be preserved than they do, like copyleft licenses.
+A package licensed under MIT needs to take special care when including or modifying a package licensed under the GPL-3.</p>
+<p><strong>Copyleft licenses</strong> like GPL-3 have more <strong>outbound</strong> restrictions - they require more of packages that include, use, modify, and reproduce them.
+This is the purpose of copyleft licenses, to ensure that derivative works remain free and open source.
+They have fewer <strong>inbound</strong> restrictions - a GPL-3 licensed package can include any other permissively licensed and most copyleft licensed packages.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Compatible</p></th>
+<th class="head"><p>Dependency <br> (“Inbound”)</p></th>
+<th class="head"><p>Your Package</p></th>
+<th class="head"><p>Downstream Package <br> (“Outbound”)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p>Permissive</p></td>
+<td><p>Permissive</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-x" style="color: Crimson"></i></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Permissive</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p></p></td>
+<td><p>Permissive</p></td>
+<td><p>Permissive</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p></p></td>
+<td><p>Permissive</p></td>
+<td><p>Copyleft</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p>Permissive</p></td>
+<td><p>Copyleft</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Copyleft</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-x" style="color: Crimson"></i></p></td>
+<td><p></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Permissive</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Copyleft</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="note admonition">
 <p class="admonition-title">An example of how a license determine how code can be reused</p>
 <p>Let’s use StackOverflow as an example that highlights how a license determines how code can or can not be used.</p>
-<p><a class="reference external" href="https://stackoverflow.com/help/licensing">Stack overflow uses a Creative Commons Share Alike license.</a>. The sharealike license requires you to use the same sharealike license when you reuse any code from StackOverflow.</p>
-<p>This means that technically, if you copy code from the Stack Overflow website, and use it in your package. And your packages uses a different license such as a MIT license, you are violating Stack Overflow’s license requirements!</p>
+<p><a class="reference external" href="https://stackoverflow.com/help/licensing">Stack Overflow uses a Creative Commons Share Alike license.</a>. The sharealike license requires you to use the same sharealike license when you reuse any code from Stack Overflow.</p>
+<p>This means that from a legal perspective, if you copy code from the Stack Overflow website and use it in your package that is licensed differently, say with a MIT license, you are violating Stack Overflow’s license requirements!
+This would not be true with a GPL licensed package. <code class="docutils literal notranslate"><span class="pre">GPL-3</span></code> packages can include code licensed by <code class="docutils literal notranslate"><span class="pre">CC-BY-SA</span></code> <a class="footnote-reference brackets" href="#footcite-creativecommonssharealikecompatibilitygplv32015" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
 <p>🚨 Proceed with caution! 🚨</p>
 </div>
 </section>
@@ -605,6 +679,29 @@ These files - we need to understand if that date releases auto populates or forc
 
 -->
 </section>
+</section>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<div class="docutils container" id="id5">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-hunterreclaimingcomputingcommons2016" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Rob Hunter. Reclaiming the Computing Commons. <em>Jacobin</em>, May 2016. URL: <a class="reference external" href="https://jacobin.com/2016/02/free-software-movement-richard-stallman-linux-open-source-enclosure/">https://jacobin.com/2016/02/free-software-movement-richard-stallman-linux-open-source-enclosure/</a> (visited on 2023-03-09).</p>
+</aside>
+<aside class="footnote brackets" id="footcite-gnuprojectwhatfreesoftware2019" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>GNU Project. What is Free Software? July 2019. URL: <a class="reference external" href="https://www.gnu.org/philosophy/free-sw.html">https://www.gnu.org/philosophy/free-sw.html</a> (visited on 2024-03-01).</p>
+</aside>
+<aside class="footnote brackets" id="footcite-gnuprojectwhatcopyleft2022" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>GNU Project. What is Copyleft? January 2022. URL: <a class="reference external" href="https://www.gnu.org/copyleft/">https://www.gnu.org/copyleft/</a> (visited on 2024-03-01).</p>
+</aside>
+<aside class="footnote brackets" id="footcite-creativecommonssharealikecompatibilitygplv32015" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Creative Commons. ShareAlike compatibility: GPLv3. September 2015. URL: <a class="reference external" href="https://wiki.creativecommons.org/wiki/ShareAlike\_compatibility:\_GPLv3">https://wiki.creativecommons.org/wiki/ShareAlike\_compatibility:\_GPLv3</a> (visited on 2024-03-02).</p>
+</aside>
+</aside>
+</div>
 </section>
 
 
@@ -653,6 +750,7 @@ These files - we need to understand if that date releases auto populates or forc
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">License files for scientific Python open source software</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-open-source-license-file">What is a Open Source License file?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-licenses-are-important">Why licenses are important</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-store-your-license">Where to store your license</a><ul class="nav section-nav flex-column">
@@ -663,6 +761,10 @@ These files - we need to understand if that date releases auto populates or forc
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-make-sure-that-you-closely-follow-the-guidelines-outlines-by-the-license-that-you-chose">Important: make sure that you closely follow the guidelines outlines by the License that you chose</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-software-citation">What about software citation?</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
   </nav></div>
 
   <div class="sidebar-secondary-item">
