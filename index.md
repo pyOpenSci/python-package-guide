@@ -29,7 +29,7 @@ We support the Python tools that scientists need to create open science workflow
 :::{image} /images/tutorials/packaging-elements.png
 :align: right
 :width: 500
-:alt: Image with the pyOpenSci flower logo in the upper right hand corner. The image shows the packaging lifecycle. The graphic shows a high level overview of the elements of a Python package. the inside circle has 5 items - user documentation, code/api, test suite, contributor documentation, project metadata / license / readme. In the middle of the circle is says maintainers and has a small icon with people. on the outside circle there is an arrow and it says infrastructure.
+:alt: Image with the pyOpenSci flower logo in the upper right hand corner. The image shows the packaging lifecycle. The graphic shows a high level overview of the elements of a Python package. The inside circle has 5 items - user documentation, code/api, test suite, contributor documentation, project metadata / license / readme. In the middle of the circle is says maintainers and has a small icon with people. On the outside circle there is an arrow and it says infrastructure.
 :::
 
 This guide will help you:
@@ -58,7 +58,7 @@ Publish your docs
 ```
 ## _new_ Tutorial Series: Create a Python Package
 
-The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
+The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [GitHub repo here](https://github.com/pyOpenSci/python-package-guide).
 
 
 :::::{grid} 1 1 2 2
@@ -71,7 +71,7 @@ The first round of our community-developed, how to create a Python package tutor
 
 * [What is a Python package?](/tutorials/intro)
 * [Make your code installable](/tutorials/installable-code)
-* [Publish your package to (test) PyPi](/tutorials/publish-pypi)
+* [Publish your package to (test) PyPI](/tutorials/publish-pypi)
 * [Publish your package to conda-forge](/tutorials/publish-conda-forge)
 
 :::
@@ -92,6 +92,15 @@ The first round of our community-developed, how to create a Python package tutor
 :class-card: left-aligned
 
 * [Introduction to Hatch](/tutorials/get-to-know-hatch)
+
+:::
+::::
+
+::::{grid-item}
+:::{card} ✿ Reference Guides ✿
+:class-card: left-aligned
+
+* [Command Line Reference Guide](/tutorials/command-line-reference)
 
 :::
 ::::
@@ -178,7 +187,7 @@ Learn about best practices for:
 * [How to publish your docs](/documentation/hosting-tools/intro)
 * [Using Sphinx](/documentation/hosting-tools/intro)
 * [Markdown, MyST, and ReST](/documentation/hosting-tools/myst-markdown-rst-doc-syntax)
-* [Host your docs on Read The Docs or Github Pages](/documentation/hosting-tools/publish-documentation-online)
+* [Host your docs on Read The Docs or GitHub Pages](/documentation/hosting-tools/publish-documentation-online)
 :::
 ::::
 
@@ -246,7 +255,7 @@ contribute.
 :::{figure} https://www.pyopensci.org/images/people-building-blocks.jpg
 :align: right
 :width: 350
-:alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. box 2 - the person on the ground says - come join us programming is fun again. it's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. the person on the ground is saying - that's it?
+:alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. Box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. Box 2 - the person on the ground says - come join us programming is fun again. It's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. The person on the ground is saying - that's it?
 :::
 
 ### A community-created guidebook

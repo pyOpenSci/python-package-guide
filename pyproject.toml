@@ -8,7 +8,7 @@ dynamic = [
     "version"
 ]
 dependencies = [
-    "pydata-sphinx-theme==0.15.1",
+    "pydata-sphinx-theme==0.15.4",
     "myst-nb",
     "sphinx",
     "sphinx-autobuild",
@@ -22,7 +22,18 @@ dependencies = [
     "sphinx-inline-tabs",
     # for project cards
     "matplotlib",
+    # for license page bibliography
     "sphinxcontrib-bibtex",
+]
+
+[project.optional-dependencies]
+dev = [
+    # for general build workflows
+    "nox",
+    # for prose linting
+    "vale",
+    # for managing translation files
+    "sphinx-intl",
 ]
 
 [tool.hatch.build.targets.wheel]

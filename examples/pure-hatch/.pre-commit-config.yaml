@@ -1,0 +1,34 @@
+repos:
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.11.4
+    hooks:
+      - id: isort
+        files: \.py$
+  # Misc commit checks using built in pre-commit checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    # ref: https://github.com/pre-commit/pre-commit-hooks#hooks-available
+    hooks:
+      # Autoformat: Makes sure files end in a newline and only a newline.
+      - id: end-of-file-fixer
+      # Lint: Check for files with names that would conflict on a
+      # case-insensitive filesystem like MacOS HFS+ or Windows FAT.
+      - id: check-case-conflict
+      - id: trailing-whitespace
+  # Linting: Python code (see the file .flake8)
+  - repo: https://github.com/PyCQA/flake8
+    rev: "6.0.0"
+    hooks:
+      - id: flake8
+  # Black for auto code formatting
+  - repo: https://github.com/psf/black
+    rev: 22.12.0
+    hooks:
+      - id: black
+        language_version: python3.8
+# Tell precommit.ci bot to update codoe format tools listed in the file
+# versions every quarter
+# The default it so update weekly which is too many new pr's for many
+# maintainers (remove these lines if you aren't using the bot!)
+ci:
+  autoupdate_schedule: quarterly

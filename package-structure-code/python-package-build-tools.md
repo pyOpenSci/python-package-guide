@@ -224,7 +224,7 @@ More than one maintainer? (bus factor)|✖|✖| ✖| ✅
 
 Notes:
 
-- _Hatch plans to support using other back-ends and dependency management in the future_
+- _Hatch plans to support dependency management in the future_
 - Poetry supports semantic versioning. Thus, it will support version bumping following commit messages if you use a tool such as Python Semantic Release
 
 ## PDM
@@ -308,7 +308,7 @@ Install your package in editable mode|✅| Flit supports installing your package
 Build your sdist and wheel distributions|✅| Flit can be used to build your packages sdist and wheel distributions.
 ```
 
-NOTE: _If you are using the most current version of pip, it supports both a symlink approach `flit install -s` and `pip install -e .`_
+NOTE: _If you are using the most current version of pip, it supports both a symlink approach `flit install -s` and `python -m pip install -e .`_
 
 ```{admonition} Learn more about flit
 * [Why use flit?](https://flit.pypa.io/en/stable/rationale.html)
@@ -344,18 +344,18 @@ as building your documentation locally. This means that you could potentially dr
 :widths: 20,5,50
 :delim: "|"
 
-Use Other Build Backends|✅ | Switching out build back-ends is not currently an option with Hatch. However, this feature is planned for a future release.
+Use Other Build Backends|✅ | Hatch is used with the backend Hatchling by default, but allows you to use another backend by switching the declaration in pyproject.toml.
 Dependency management|✖| Currently you have to add dependencies manually with Hatch. However a feature to support dependencies management may be added in a future release.
 Environment Management |✅ | Hatch supports Python virtual environments. If you wish to use other types of environments such as Conda, you will need to [install a plugin such as hatch-conda for conda support](https://github.com/OldGrumpyViking/hatch-conda).
 Publish to PyPI and test PyPI|✅|Hatch supports publishing to both test PyPI and PyPI
 Version Control based versioning|✅ | Hatch offers `hatch_vcs` which is a plugin that uses setuptools_scm to support versioning using git tags. The workflow with `hatch_vcs` is the same as that with `setuptools_scm`.
 Version bumping| ✅ | Hatch supports you bumping the version of your package using standard semantic version terms patch; minor; major
 Follows current packaging standards|✅|Hatch supports current packaging standards for adding metadata to the **pyproject.toml** file.
-Install your package in editable mode|✅| Hatch will install your package into any of its environments by default in editable mode. You can install your package in editable mode manually using `pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
+Install your package in editable mode|✅| Hatch will install your package into any of its environments by default in editable mode. You can install your package in editable mode manually using `python -m pip install -e .` Hatch mentions [editable installs](https://hatch.pypa.io/latest/config/build/#dev-mode) but refers to pip in its documentation.
 Build your sdist and wheel distributions|✅| Hatch will build the sdist and wheel distributions
 ✨Matrix environment creation to support testing across Python versions✨|✅| The matrix environment creation is a feature that is unique to Hatch in the packaging ecosystem. This feature is useful if you wish to test your package locally across Python versions (instead of using a tool such as tox).
 ✨[Nox / MAKEFILE like functionality](https://hatch.pypa.io/latest/environment/#selection)✨| ✅| This feature is also unique to Hatch. This functionality allows you to create workflows in the **pyproject.toml** configuration to do things like serve docs locally and clean your package build directory. This means you may have one less tool in your build workflow.
-✨A flexible build back-end: **hatchling**✨| ✅| **The hatchling build back-end offered by the maintainer of Hatch allows developers to easily build plugins to support custom build steps when packaging.
+✨A flexible build backend: **hatchling**✨| ✅| **The hatchling build backend offered by the maintainer of Hatch allows developers to easily build plugins to support custom build steps when packaging.
 
 ```
 

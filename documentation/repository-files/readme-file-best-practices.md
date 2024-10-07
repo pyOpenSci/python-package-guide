@@ -6,7 +6,7 @@ sees before they install your package.
 
 The README.md file is the landing page of:
 
-* Your package as it appears on a repository site such as PyPI or Anaconda
+* Your package as it appears on a repository site such as PyPI or Anaconda.org
 * Your package's GitHub repository
 
 Your README.md file is also used as a measure of package and community
@@ -68,7 +68,7 @@ README file for others to quickly browse.
 
 Some badges that you might consider adding to your README file include:
 
-* Current version of the package on PyPI / Anaconda Cloud
+* Current version of the package on PyPI / Anaconda.org
 
 Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)](https://pypi.org/project/pandera/)
 
@@ -81,7 +81,7 @@ Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)]
 ```{tip}
 Once you package is accepted to pyOpenSci, we will provide you with
 a badge to add to your repository that shows that it has been reviewed.
-[![pyOpenSci](https://tinyurl.com/y22nb8up)](https://github.com/pyOpenSci/software-review/issues/12)
+[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-review/issues/12)
 
 ```
 
@@ -114,7 +114,7 @@ file.
 ### ✔️ Installation instructions
 
 Include instructions for installing your package. If you have published
-the package on both PyPI and Anaconda Cloud be sure to include instructions for both.
+the package on both PyPI and Anaconda.org, be sure to include instructions for both.
 
 ### ✔️ Document any additional setup required
 
@@ -164,7 +164,7 @@ Finally be sure to include instructions on how to cite your package.
 Citation should include the DOI that you want used when citing your package,
 and any language that you'd like to see associated with the citation.
 
-```{tip} README Resources
+:::{admonition} README Resources
 :class: tip
 
 Below are some resources on creating great README.md files that you
@@ -173,4 +173,4 @@ might find helpful.
 * [How to Write a Great README - Bane Sullivan](https://github.com/banesullivan/README)
 * [Art of README - Kira (@hackergrrl)](https://github.com/hackergrrl/art-of-readme)
 
-```
+:::

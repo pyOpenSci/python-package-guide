@@ -147,7 +147,7 @@ If your package tests require data, we suggest that you do NOT include that
 data within your package structure. We will discuss this in more detail in a
 tutorial. Include data in your package structure increases the size of your
 distribution files. This places a maintenance toll on repositories like PyPI and
-anaconda cloud that have to deal with thousands of package uploads.
+Anaconda.org that have to deal with thousands of package uploads.
 ```
 
 ## About the flat Python package layout
@@ -238,7 +238,7 @@ for these tools is not worth the maintenance investment.
 ```
 
 <!--
-Not sure where to put this now ... most new users won't have multiple packages. maybe this goes into the complex packing page as we build that out?
+Not sure where to put this now ... most new users won't have multiple packages. Maybe this goes into the complex packing page as we build that out?
 
 ```{admonition} Multiple packages in a src/ folder
 :class: tip

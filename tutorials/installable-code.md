@@ -23,7 +23,7 @@ Python package that is directly installable from PyPI.
 1. Is it clear where to add commands? Bash vs. Python console
 Bash vs. Zsh is different
 2. Does this lesson run as expected on windows and mac?
-3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. this may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
+3. ADD: note about what makes something "package worthy", with a common misconception being that a package should be production-ready code that's valuable to a broad audience. This may not be a pervasive misconception in Python, but a quick break-out with an explanation of what a package can consist of would be helpful.
 :::
 
 :::{figure-md} code-to-python-package
@@ -80,7 +80,7 @@ To make your Python code installable you need to create a specific directory str
 - Some code.
 - An `__init__.py` file in your code directory.
 
-The directory structure you’ll create in this lesson will look like this:
+The directory structure you'll create in this lesson will look like this:
 
 ```bash
 pyospackage/  # Your project directory
@@ -118,7 +118,7 @@ import pyospackage
 
 The **pyproject.toml** file is:
 
-- Where you define your project’s metadata (including its name, authors, license, etc)
+- Where you define your project's metadata (including its name, authors, license, etc)
 - Where you define dependencies (the packages that it depends on)
 - Used to specify and configure what build backend you want to use to [build your package](../package-structure-code/python-package-distribution-files-sdist-wheel).
 
@@ -140,12 +140,23 @@ If you try to pip install a package with no `pyproject.toml` you will get the fo
 
 ```bash
 GitHub/pyospackage/testme
-➜ pip install .
+➜ python -m pip install .
 ERROR: Directory '.' is not installable.
 Neither 'setup.py' nor 'pyproject.toml' found.
 ```
 
 :::
+
+:::{admonition} Note about `setup.py`
+:class: tip
+
+If your project already defines a `setup.py` file, Hatch can be used to automatically create the `pyproject.toml`.
+* See [Using Hatch to Migrate setup.py to a pyproject.toml
+](setup-py-to-pyproject-toml.md)
+
+:::
+
+
 
 ## Time to create your Python package!
 
@@ -268,7 +279,7 @@ Python can support many different docstrings formats depending on the documentat
 
 **pyOpenSci recommends using the NumPy Docstring convention.**
 
-If you aren’t familiar with docstrings or typing yet, that is ok. You can review [this page in the pyOpenSci packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview of both topics.
+If you aren't familiar with docstrings or typing yet, that is ok. You can review [this page in the pyOpenSci packaging guide](https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html) for an overview of both topics.
 
 ```python
 def add_num(a: int, b: int) -> int:
@@ -379,14 +390,14 @@ path = "src/pyospackage/__about__.py"
 Edit the file as follows:
 
 1. Delete `dynamic = ["version"]`: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.
-2. Add `version = 0.1.0` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
+2. Add `version = "0.1"` in the place of  `dynamic = ["version"]` which you just deleted. This sets up manual versioning.
 3. Fill in the description if it doesn't already exist.
 
 ```toml
 [project]
 name = "pyospackage"
 # dynamic = ["version"] <- replace this...
-version = 0.1 # with this
+version = "0.1" # with this
 description = 'A simple Python package that adds numbers together' # Add a description of your package if that is not already populated
 ```
 
@@ -416,9 +427,10 @@ However, if you wish, you can clean it up a bit.
 To begin:
 
 * Remove support for Python 3.8
+* Within the `[project]` table, update `requires-python = ">3.8"` to `requires-python = ">3.9"`
 
-Also because you are creating a pure Python package, you can
-in this lesson, you can remove the following classifiers:
+Since you are creating a pure Python package in this lesson,
+you can remove the following classifiers:
 
 ```toml
 classifiers = [
@@ -437,7 +449,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyospackage"
-version = "0.1.0"
+version = "0.1"
 description = 'A python package that adds numbers together.'
 readme = "README.md"
 requires-python = ">=3.9"
@@ -468,7 +480,7 @@ Source = "https://github.com/unknown/pyospackage"
 The core information that you need in a `pyproject.toml` file in order to publish on PyPI is your **package's name**  and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
 
 Once you have your project metadata in the pyproject.toml file, you will
-rarely update it. In the next lesson you’ll add more metadata and structure to this file.
+rarely update it. In the next lesson you'll add more metadata and structure to this file.
 :::
 
 ## Step 5: Install your package locally
@@ -515,12 +527,12 @@ Obtaining file:///Users/leahawasser/Documents/GitHub/pyos/pyosPackage
 # use pip list instead of conda list here if you are working in an venv environment rather than a conda envt
 ```
 
-:::{admonition}  What does `pip install -e .` do?
+:::{admonition}  What does `python -m pip install -e .` do?
 :class: tip
 
-Let's break down `pip install -e .`
+Let's break down `python -m pip install -e .`
 
-`pip install -e .` installs your package into the current active
+`python -m pip install -e .` installs your package into the current active
 Python environment in **editable mode** (`-e`). Installing your package in
 editable mode, allows you to work on your code and then test the updates
 interactively in your favorite Python interface. One important caveat of editable mode is that every time you update your code, you may need to restart Python.
@@ -565,7 +577,7 @@ nox                           2021.10.1
 numpy                         1.24.2
 packaging                     23.0
 pandas                        1.5.3
-pyosPackage                   0.1.0          /Users/yourusername/path/here/pyosPackage
+pyosPackage                   0.1            /Users/yourusername/path/here/pyosPackage
 ...
 ...
 ...
@@ -594,7 +606,7 @@ If you wish to share your code without publishing to PyPI you can
 always install packages directly from GitHub using the syntax:
 
 ```bash
-pip install git+https://github.com/user/repo.git@branch_or_tag
+python -m pip install git+https://github.com/user/repo.git@branch_or_tag
 ```
 
 To make your package GitHub installable, you can:
@@ -606,7 +618,7 @@ To make your package GitHub installable, you can:
 For instance below you install the pyospackage from the main branch of the
 pyOpenSci repository.
 
-`pip install git+https://github.com/user/repo.git@branch_or_tag`
+`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`
 
 :::
 

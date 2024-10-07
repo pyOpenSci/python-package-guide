@@ -17,9 +17,10 @@ publish your package on conda-forge.
 
 In this lesson you will learn how to:
 
-- How to build your package's sdist and wheel distributions
-- Setup an account on testPyPI (the process is similar for the real PyPI)
-- Publish your package to PyPI
+- Create a conda-forge yaml recipe for your package using Grayskull
+- Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request
+- Maintain your conda-forge package by creating new releases for your package on PyPI
+
 
 Once your package is on PyPI you can then easily publish it to conda-forge
 using the [grayskull](https://conda.github.io/grayskull/) tool. You do not need to build the package specifically
@@ -29,7 +30,7 @@ for conda, conda-forge will build from your PyPI source distribution file (sdist
 
 :::{figure-md} pypi-conda-publication
 
-<img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
+<img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. Then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 
 Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. Conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
 :::
@@ -37,9 +38,9 @@ Once you have published both package distributions (the source distribution and 
 ## What is conda-forge?
 
 conda is an open source package and environment management tool that
-can be used to install tools from the different channels within the Anaconda Cloud repository.
+can be used to install tools from the different channels on Anaconda.org.
 
-You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as `conda install packagename`. In the case of the Anaconda cloud channels, some of these channels such as the default channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the default channel. However, the conda-forge (and bioconda) channel are community-managed channels.
+You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as `conda install packagename`. In the case of conda channels, some of these channels such as the `defaults` channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the `defaults` channel. However, the conda-forge (and bioconda) channel are community-managed channels.
 Anyone can submit a package to these channels however they must pass a technical review in the [staged-recipes GitHub repository](https://github.com/conda-forge/staged-recipes) to be published.
 
 [Learn more about conda channels here.](#about-conda)
@@ -109,7 +110,7 @@ Note - this is a tutorial aimed to help you get your package onto conda-forge. T
 First, [install grayskull](https://conda.github.io/grayskull/user_guide.html). You can install it using either pip:
 
 ```bash
-> pip install grayskull
+> python -m pip install grayskull
 ```
 
 or conda
@@ -275,7 +276,7 @@ extra:
 
 ### Step 3b: Bug fix - add a home url to the about: section
 
-There is currently a small bug in Grayskull where it doesn't populate the home: element of the recipe. if you don't include this, [you will receive an error message](https://github.com/conda-forge/staged-recipes/pull/25173#issuecomment-1917916528) from the friendly conda-forge linter bot.
+There is currently a small bug in Grayskull where it doesn't populate the home: element of the recipe. If you don't include this, [you will receive an error message](https://github.com/conda-forge/staged-recipes/pull/25173#issuecomment-1917916528) from the friendly conda-forge linter bot.
 
 ```
 Hi! This is the friendly automated conda-forge-linting service.
@@ -376,9 +377,9 @@ Below we break down each element of that list.
 
 The pyOpenSci tutorials are all pure Python and as such do not use static libraries in a linked or shipped (included in the package distribution) format.
 
-If your package has a more complex builds that includes
+If your package has a more complex build that includes
 links to extensions written in other languages such as
-C++, then be sure that include the proper LICENSE(s) for those extensions in your metadata.
+C++, then be sure to include the proper licenses for those extensions in your metadata.
 
 :::{note}
 If you want to learn more about static libraries, then [this overview](https://pypackaging-native.github.io/background/compilation_concepts/#shared-vs-static-libraries) might help.
@@ -453,7 +454,7 @@ We cover that next.
 
 Every time you create a new release on PyPI, the conda-forge bots will recognize the release and will rebuild the newly released version of your package. This process may take a day or two to complete so be patient.
 
-Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
+Once the conda-forge build is complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.
 
 Review the pull request. If all tests are passing, you can merge it. Shortly after merging your pull request, the conda-forge release will be available for users to install:
 
@@ -461,11 +462,11 @@ Review the pull request. If all tests are passing, you can merge it. Shortly aft
 
 ## <i class="fa-solid fa-hands-bubbles"></i> Wrap up
 
-If you have walked through this entire tutorial series you have now:
+If you have walked through this entire tutorial series you will now:
 
 1. Understand [what a Python package is ](intro.md)
 2. Know how to [make your code installable](installable-code.md) into Python environments
-3. Know how to create a pyproject.toml file, a README file, and a License and code of conduct.
+3. Know how to create a `pyproject.toml` file, a `README` file, and a `LICENSE` and code of conduct.
 4. Know how to [publish your package to PyPI](publish-pypi.md) and
 5. Know how to publish your package to conda-forge
 

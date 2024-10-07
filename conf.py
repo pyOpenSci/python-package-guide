@@ -29,7 +29,9 @@ author = "pyOpenSci Community"
 # Get the latest Git tag - there might be a prettier way to do this but...
 try:
     release_value = (
-        subprocess.check_output(["git", "describe", "--tags"]).decode("utf-8").strip()
+        subprocess.check_output(["git", "describe", "--tags"])
+        .decode("utf-8")
+        .strip()
     )
     release_value = release_value[:4]
 except subprocess.CalledProcessError:
@@ -84,8 +86,8 @@ html_theme_options = {
             "name": "Peer Review Guide",
         },
         {
-            "url": "https://pyopensci.org/governance",
-            "name": "Governance",
+            "url": "https://pyopensci.org/handbook",
+            "name": "Handbook",
         },
     ],
     "icon_links": [
@@ -108,7 +110,7 @@ html_theme_options = {
     "show_toc_level": 1,
     # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/python-package-guide",
-    "footer_start": ["copyright"],
+    "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
 }
 
@@ -131,6 +133,11 @@ exclude_patterns = [
     ".github",
     ".nox",
     "README.md",
+    "styles/write-good/README.md",
+    "styles/*",
+    ".pytest_cache/README.md",
+    "vale-styles/*",
+    "CODE_OF_CONDUCT.md",
 ]
 
 # For sitemap generation
