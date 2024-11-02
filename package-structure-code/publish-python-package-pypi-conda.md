@@ -21,9 +21,9 @@ Below you will learn more specifics about the differences between PyPI and conda
 
 :::{figure-md} upload-conda-forge
 
-<img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
+<img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. Then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 
-Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
+Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. The conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
 :::
 
 ## What is PyPI
@@ -96,15 +96,15 @@ There are several core public channels that most people use to install
 packages using conda, including:
 
 - **defaults:** this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda (the company) decides what packages live on the `defaults` channel.
-- [**conda-forge:**](https://anaconda.org/conda-forge) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
-- [**bioconda**](https://anaconda.org/bioconda): this channel focuses on biomedical tools.
+- [**conda-forge:**](https://conda-forge.org/) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
+- [**bioconda**](https://bioconda.github.io/): this channel focuses on biomedical tools.
 
 **conda-forge** emerged as many of the scientific packages did not
 exist in the `defaults` Anaconda channel.
 
 :::{figure-md} pypi-conda-channels
 
-<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. the top row says conda channels. next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI. and test PyPI. a testbed server for you to practice. " width="700px">
+<img src="../images/python-pypi-conda-channels.png" alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI. And test PyPI. A testbed server for you to practice. " width="700px">
 
 Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::
@@ -141,7 +141,7 @@ package repository. Thus environments that contain packages
 installed from both pip and conda are more likely to yield
 dependency conflicts.
 
-Similarly installing packages from the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.
+Similarly installing packages from the default anaconda channel mixed with the conda-forge channel can also lead to dependency conflicts.
 
 Many install packages directly from conda `defaults` channel. However, because
 this channel is managed by Anaconda, the packages available on it are

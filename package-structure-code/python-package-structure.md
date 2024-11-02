@@ -238,7 +238,7 @@ for these tools is not worth the maintenance investment.
 ```
 
 <!--
-Not sure where to put this now ... most new users won't have multiple packages. maybe this goes into the complex packing page as we build that out?
+Not sure where to put this now ... most new users won't have multiple packages. Maybe this goes into the complex packing page as we build that out?
 
 ```{admonition} Multiple packages in a src/ folder
 :class: tip
