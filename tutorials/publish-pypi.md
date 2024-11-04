@@ -58,7 +58,7 @@ to TestPyPI. You need to:
 1. **Publish to TestPyPI using `hatch publish`**
 
 In a future lesson, you will learn how to create an automated
-GitHub action workflow that publishes an updated
+GitHub Actions workflow that publishes an updated
 version of your package to PyPI every time you create a GitHub release.
 
 :::{admonition} Learn more about building Python packages in our guide
@@ -218,7 +218,7 @@ Example: `pyosPackage_yourNameHere`.
 
 #### Recommended
 
-- Update the Github repository name to align with the new package name
+- Update the GitHub repository name to align with the new package name
 - Update your local project folder to match the new package name (e.g. `pyospackage_yourNameHere/src`)
 - Update mentions of your repository name in other files (e.g. `README.md`)
 :::
@@ -360,7 +360,7 @@ For long run maintenance of your package, you have two options
 related to PyPI publication.
 
 1. You can create a package-specific token which you will use to publish your package (manually) to PyPI. This is a great option if you don't wish to automate your PyPI publication workflow.
-2. You can also create an automated publication workflow on GitHub using GitHub actions. This is a great way to make the publication process easier and it also supports a growing maintainer team. In this case we suggest you don't worry about the token and instead setup a specific GitHub action that publishes your package when you make a release. You can then create a "trusted publisher" workflow on PyPI.
+2. You can also create an automated publication workflow on GitHub using GitHub Actions. This is a great way to make the publication process easier and it also supports a growing maintainer team. In this case we suggest you don't worry about the token and instead setup a specific GitHub Actions that publishes your package when you make a release. You can then create a "trusted publisher" workflow on PyPI.
 
 You will learn how to create the automated trusted publisher workflow in a followup lesson.
 
