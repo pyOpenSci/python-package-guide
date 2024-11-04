@@ -72,10 +72,10 @@ You can find a list of the two-letter Sphinx language option [here](https://www.
 
 The translation files contain the original English text and a space for you to enter the translated text. Before starting to translate, you need to make sure the translation files are up to date with the latest changes to the guide.
 
-You can do this by running the following command:
+You can do this by running the following command, replacing LANG by the language code you plan to work on (e.g., `es` for Spanish):
 
 ```shell
-$ nox -s update-translations
+$ nox -s update-language -- LANG
 ```
 
 This command will create the translation files if they don't exist yet, or update them with the latest changes if they already exist.
@@ -220,10 +220,10 @@ When working on a translation, you **should not** modify the original English te
 
 ## Building the Translated Documentation
 
-Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command:
+Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command, replacing LANG by the proper language code (e.g., `es` for Spanish)
 
 ```shell
-nox -s build-translations
+nox -s build-language -- LANG
 ```
 
 This command will build all the translated versions of the guide defined in the `LANGUAGES` list in `noxfile.py`. These translations will be stored in the `_build/html`, in folders named after the language code (e.g., `es`, `fr`, etc.).
@@ -251,7 +251,7 @@ You can follow these steps:
 1. Build the translations of the guide with same parameters that will be used during the release:
 
 ```shell
-nox -s build-translations-test
+nox -s build-all-languages-test
 ```
 
 2. Make sure there are no warnings or errors in the output. If there are, you will need to fix them before submitting the PR.
@@ -265,7 +265,7 @@ When you submit a PR for a translation, you should only include changes to one l
 
 Translations PRs will be tagged with a label indicating the language to make them easier to identify and review. For example, contributions to the Spanish translation will be tagged with 'lang-es'.
 
-TODO: This tagging could be automated with a GitHub action.
+TODO: This tagging could be automated with a GitHub Actions.
 
 When you submit the PR, make sure to include a short description of the changes you made and any context that might be helpful for the reviewer (e.g., you translated new strings, you reviewed fuzzy entries, you fixed typos, etc.)
 
@@ -297,7 +297,7 @@ When you run the `sphinx-intl stat` command, you will see a list of `.po` files 
 
 ### What happens when a string has changed in the original English text?
 
-If a string has changed in the original English version, it will be marked as `fuzzy` in the translation file the next time it is updated (`nox -s update-translations`). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the `fuzzy` tag.
+If a string has changed in the original English version, it will be marked as `fuzzy` in the translation file the next time it is updated (`update-language`, `update-all-languages`, or `update-all-release-languages`). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the `fuzzy` tag.
 
 ### How do I handle links in the translated text?
 
@@ -340,10 +340,6 @@ TODO: There are many approaches here, some projects release a translation as soo
 
 ### How can I get help with my translation?
 
-If you have any questions or need help with your translation, you can create an issue in the repository if you encounter any problems or need assistance.
+If you have any questions or need help with your translation, you can create an [issue](https://github.com/pyOpenSci/python-package-guide/issues) in the [Packaging Guide repository](https://github.com/pyOpenSci/python-package-guide)
 
-TODO: Maybe [Discourse](https://pyopensci.discourse.group/) could be used as a way for contributors to ask for help with translations or the translation workflow?
-
-```
-
-```
+You can also ask in the PyOpenSci Discord server ([click here](https://discord.gg/CvSMp4zcqX) to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).

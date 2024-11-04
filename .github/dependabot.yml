@@ -1,0 +1,31 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    insecure-external-code-execution: allow
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 100
+    labels:
+      - "maintenance"
+      - "dependencies"
+    groups:
+      pip:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 100
+    labels:
+      - "maintenance"
+      - "dependencies"
+    groups:
+      actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore"

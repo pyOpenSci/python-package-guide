@@ -15,7 +15,7 @@ backend tools.
 
 2. **Python packages with non-Python extensions:** These packages have additional components called extensions written in other languages (such as C or C++). If you have a package with non-Python extensions, then you need to select a build backend tool that allows additional build steps needed to compile your extension code. Further, if you wish to use a frontend tool to support your workflow, you will need to select a tool that supports additional build setups. We suggest that you chose build tool that supports custom build steps like Hatch.
 
-3. **Python packages that have extensions written in different languages (e.g. Fortran and C++) or that have non Python dependencies that are difficult to install (e.g. GDAL)** These packages often have complex build steps (more complex than a package with just a few C extensions for instance). As such, these packages require tools such as [scikit-build](https://scikit-build.readthedocs.io/en/latest/)
+3. **Python packages that have extensions written in different languages (e.g. Fortran and C++) or that have non Python dependencies that are difficult to install (e.g. GDAL):** These packages often have complex build steps (more complex than a package with just a few C extensions for instance). As such, these packages require tools such as [scikit-build](https://scikit-build.readthedocs.io/en/latest/)
    or [meson-python](https://mesonbuild.com/Python-module.html) to build. NOTE: you can use meson-python with PDM.
 
 ## Mixing frontend and backend projects

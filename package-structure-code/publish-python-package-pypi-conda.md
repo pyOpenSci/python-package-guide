@@ -96,8 +96,8 @@ There are several core public channels that most people use to install
 packages using conda, including:
 
 - **defaults:** this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda (the company) decides what packages live on the `defaults` channel.
-- [**conda-forge:**](https://anaconda.org/conda-forge) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
-- [**bioconda**](https://anaconda.org/bioconda): this channel focuses on biomedical tools.
+- [**conda-forge:**](https://conda-forge.org/) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
+- [**bioconda**](https://bioconda.github.io/): this channel focuses on biomedical tools.
 
 **conda-forge** emerged as many of the scientific packages did not
 exist in the `defaults` Anaconda channel.
@@ -141,7 +141,7 @@ package repository. Thus environments that contain packages
 installed from both pip and conda are more likely to yield
 dependency conflicts.
 
-Similarly installing packages from the default anaconda package mixed with the conda-forge channel can also lead to dependency conflicts.
+Similarly installing packages from the default anaconda channel mixed with the conda-forge channel can also lead to dependency conflicts.
 
 Many install packages directly from conda `defaults` channel. However, because
 this channel is managed by Anaconda, the packages available on it are
