@@ -6,7 +6,7 @@ syntax. It is the default syntax used in Jupyter Notebooks. There are tools that
 colored call out blocks and other custom elements to your documentation, you will
 need to use either **myST** or **rST**.
 1. [rST (ReStructured Text):](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html). **rST** is the native syntax that sphinx supports. rST was the default syntax used for documentation for many years. However, in recent years myST has risen to the top as a favorite for documentation given the flexibility that it allows.
-1. [myST:](https://myst-parser.readthedocs.io/en/latest/intro.html) myST is a combination of vanilla of `markdown` and `rST` syntax. It is a nice option if you are comfortable writing markdown. `myst` is preferred by many because it offers both the rich functionality
+1. [myST:](https://myst-parser.readthedocs.io/en/latest/intro.html) myST is a combination of `markdown` and `rST` syntax. It is a nice option if you are comfortable writing markdown. `myst` is preferred by many because it offers both the rich functionality
 of rST combined with a simple-to-write markdown syntax.
 
 While you can chose to use any of the syntaxes listed above, we suggest using

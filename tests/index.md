@@ -53,7 +53,7 @@ of Python, then using an automation tool such as nox to run your tests is useful
 :link-type: doc
 :class-card: left-aligned
 
-Continuous integration platforms such as GitHub actions can be
+Continuous integration platforms such as GitHub Actions can be
 useful for running your tests across both different Python versions
 and different operating systems. Learn about setting up tests to run in Continuous Integration here.
 :::
