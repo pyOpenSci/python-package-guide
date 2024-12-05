@@ -12,7 +12,7 @@ best practices. Here, we review tool features and suggest tools you can use
 for your Python packaging workflow.
 
 :::{button-link} /tutorials/intro
-:color: primary
+:color: success
 :class: sd-rounded-pill float-left
 
 Checkout our beginning-to-end create a Python package tutorials
@@ -24,12 +24,6 @@ Checkout our beginning-to-end create a Python package tutorials
 All of the content in this guide has been vetted by community members, including maintainers and developers of the core packaging tools.
 :::
 
-
-
-:::{button}
-:class: bdg-success
-Check out our Python package
-:::
 
 :::::{grid} 1 1 2 2
 :class-container: text-center

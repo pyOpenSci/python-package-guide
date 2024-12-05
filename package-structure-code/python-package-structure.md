@@ -118,7 +118,7 @@ Note: Python versions 3.11 and above have a path setting that can be adjusted to
 
 ### Don't include tests in your package wheel
 
-Writing [tests](/tests/index.html) for your package is important; however, we do not recommend including tests as part of your [package wheel](python-wheel) by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package runs properly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the `tests/` directory into the **src/package** directory (see example below).
+Writing [tests](tests-intro) for your package is important; however, we do not recommend including tests as part of your [package wheel](python-wheel) by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package runs properly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the `tests/` directory into the **src/package** directory (see example below).
 
 ```bash
 src/
@@ -150,7 +150,7 @@ host your test data in a repository such as Figshare or Zenodo. Use a
 tool such as [Pooch](https://www.fatiando.org/pooch/latest/) to access
 the data when you (or a user) runs tests.
 
-For more information about Python package tests, see the [tests section of our guide](/tests/index.html).
+For more information about Python package tests, see the [tests section of our guide](tests-intro).
 
 - The **src/package** layout is semantically more clear. Code is always found in the
   **src/package** directory, `tests/` and `docs/`are in the root directory.
