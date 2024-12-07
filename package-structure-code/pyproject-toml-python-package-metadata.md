@@ -175,7 +175,7 @@ what dependencies your package requires.
   - Development Status
   - Intended Audience
   - Topic
-  - LIcense
+  - License
   - Programming language
 
 ### Advanced options in the pyproject.toml file
