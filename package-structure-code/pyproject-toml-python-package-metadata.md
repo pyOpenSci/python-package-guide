@@ -156,7 +156,7 @@ what dependencies your package requires.
 - **Description:** this is a short one-line description of your package.
 - **Readme:** A link to your README.md file is used for the long long-description. This information will be published on your packages PyPI landing page.
 - **Requires-python** (used by pip): this is a field that is used by pip. Here you tell the installer whether you are using Python 2.x or 3.x. Most projects will be using 3.x.
-- **License:** the license you are using
+- **License:** the License you are using
 - **Authors:** these are the original authors of the package. Sometimes the authors are different from the maintainers. Other times they might be the same.
 - **Maintainers:** you can choose to populate this or not. You can populate this using a list with a sub element for each author or maintainer name, email
 
@@ -175,7 +175,7 @@ what dependencies your package requires.
   - Development Status
   - Intended Audience
   - Topic
-  - LIcense
+  - License
   - Programming language
 
 ### Advanced options in the pyproject.toml file
