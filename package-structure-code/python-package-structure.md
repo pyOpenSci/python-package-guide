@@ -183,7 +183,7 @@ Many scientific packages use the **flat-layout** given:
   of the flat layout for more complex builds.
 
 While we suggest that you use the **src/package** layout discussed above, it's important to also
-understand the flat layout, especially if you plan to contribute to a package that uses this layout
+understand the flat layout, especially if you plan to contribute to a package that uses this layout.
 
 
 ```{admonition} Why most scientific Python packages do not use source
