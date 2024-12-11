@@ -263,7 +263,7 @@ Not sure where to put this now ... most new users won't have multiple packages. 
 ```{admonition} Multiple packages in a src/ folder
 :class: tip
 
-In some more advanced cases, you may have more than one package in your src/ directory. See [black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However, for most beginners you will likely only have one sub-directory in your **src/** folder.
+In some more advanced cases, you may have more than one package in your **src/** directory. See [Black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However, for most beginners you will likely only have one sub-directory in your **src/** folder.
 ``` -->
 
 <!--
