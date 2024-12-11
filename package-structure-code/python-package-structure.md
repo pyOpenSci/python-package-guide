@@ -159,7 +159,7 @@ For more information about Python package tests, see the [tests section of our g
 If your package tests require data, do NOT include that
 data within your package structure. Including data in your package structure increases the size of your
 distribution files. This places a maintenance toll on repositories like PyPI and
-Anaconda.org has to deal with thousands of package uploads.
+Anaconda.org that have to deal with thousands of package uploads.
 ```
 
 
