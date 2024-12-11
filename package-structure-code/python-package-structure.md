@@ -196,7 +196,7 @@ However, the advantages of using the  **src/package** layout for a beginner are 
 As such, we recommend that you use the **src/package** layout if you are creating a new package.
 
 Numerous packages in the ecosystem [have had to move to a
-src/ layout](https://github.com/scikit-build/cmake-python-distributions/pull/145)
+**src/package** layout](https://github.com/scikit-build/cmake-python-distributions/pull/145).
 ```
 
 ## What does the flat layout structure look like?
