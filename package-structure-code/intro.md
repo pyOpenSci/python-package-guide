@@ -1,7 +1,7 @@
 # Python Package Structure
 
-This section provides guidance on your Python package's structure, code format
-, and style. It also reviews the various [packaging tools](python-package-build-tools) you can use to
+This section provides guidance on your Python package's structure, code format,
+and style. It also reviews the various [packaging tools](python-package-build-tools) you can use to
 [build](python-package-distribution-files-sdist-wheel) and [publish](publish-python-package-pypi-conda) your Python package.
 
 If you want end-to-end tutorials, check out our tutorial series here. That starts by introducing [what a Python package is](what-is-a-package).
