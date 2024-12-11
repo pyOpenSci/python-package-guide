@@ -270,5 +270,5 @@ In some more advanced cases, you may have more than one package in your **src/**
 ```{admonition} A few notes about the src/ layout
 :class: tip
 
-It is important to note here that sometimes, when using the src/package structure, the directory name (e.g., package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a subdirectory within **src/**.
+It is important to note here that sometimes, when using the **src/package** structure, the directory name (e.g., package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a subdirectory within **src/**.
 ``` -->
