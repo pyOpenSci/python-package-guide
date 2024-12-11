@@ -182,7 +182,7 @@ Many scientific packages use the **flat-layout** given:
   with compilation steps. Many maintainers prefer features
   of the flat layout for more complex builds.
 
-While we suggest that you use the src/ layout discussed above, it's important to also
+While we suggest that you use the **src/package** layout discussed above, it's important to also
 understand the flat layout, especially if you plan to contribute to a package that uses this layout
 
 
