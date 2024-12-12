@@ -226,7 +226,7 @@ the sdist may also contain a file that stores the version.
 ```
 
 (python-wheel)=
-## What is a Python package wheel (.whl files):
+## What is a Python wheel (whl):
 
 A wheel file is a ZIP-format archive whose filename follows a specific format
 (below) and has the extension `.whl`. The `.whl` archive contains a specific

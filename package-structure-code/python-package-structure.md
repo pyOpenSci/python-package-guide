@@ -60,7 +60,7 @@ myPackageRepoName
 
 Note the location of the following directories in the example above:
 
-- **docs/:** discussed in our docs chapter, this directory contains your user-facing documentation website. In a **src/** layout docs/ are normally included at the same directory level as the **src/** folder.
+- **docs/:** Discussed in our docs chapter, this directory contains your user-facing documentation website. In a **src/** layout docs/ are normally included at the same directory level as the **src/** folder.
 - **tests/** This directory contains the tests for your project code. In a **src/** layout, tests are normally included at the same directory level as the **src/** folder.
 - **src/package/**: this is the directory that contains the code for your Python project. "Package" is normally your project's name.
 
@@ -101,7 +101,7 @@ working directory. If you run your tests on your files rather than the
 installed version of your package, you may be missing issues that users encounter when
 your package is installed.
 
-If `tests/` are outside the **src/package** directory, they aren't included in the package [wheel](python-wheel). This makes your package size slightly smaller, which places a smaller storage burden on PyPI, which has over 400,000 packages to support.
+If `tests/` are outside the **src/package** directory, they aren't included in the package's [wheel](python-wheel). This makes your package size slightly smaller, which places a smaller storage burden on PyPI, and makes them faster to fetch.
 
 - [Read more about reasons to use the **src/package** layout](https://hynek.me/articles/testing-packaging/)
 

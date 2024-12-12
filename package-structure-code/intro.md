@@ -4,7 +4,7 @@ This section provides guidance on your Python package's structure, code format,
 and style. It also reviews the various [packaging tools](python-package-build-tools) you can use to
 [build](python-package-distribution-files-sdist-wheel) and [publish](publish-python-package-pypi-conda) your Python package.
 
-If you want end-to-end tutorials, check out our tutorial series here. That starts by introducing [what a Python package is](what-is-a-package).
+If you want end-to-end tutorials, check out our tutorial series that starts by introducing [what a Python package is](what-is-a-package).
 
 If you are confused by Python packaging, you are not alone! The good news is
 that some great modern packaging tools ensure you follow
