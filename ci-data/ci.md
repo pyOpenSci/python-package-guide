@@ -6,7 +6,6 @@ These workflows include:
 - Running your test suite
 - Running code checkers / linters / spellcheck
 - Building your documentation
-- Deploying your documentation to GitHub pages
 
 CI allows you to automate running workflows across a suite of environments including:
 
