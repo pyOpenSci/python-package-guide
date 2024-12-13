@@ -1,3 +1,4 @@
+(packaging-101)=
 # Python packaging 101
 
 _A start to finish beginner-friendly tutorial_
@@ -75,6 +76,7 @@ After reading this lesson you will:
 
 :::
 
+(what-is-a-package)=
 ## What is a Python package?
 
 At a high level, you can think about a Python package as a toolbox

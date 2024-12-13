@@ -152,7 +152,7 @@ Also note that we are not discussing conda build workflows in this section.
 ```
 
 (python-source-distribution)=
-## Source Distribution (sdist)
+## What is a source distribution (sdist)
 
 **Source files** are the unbuilt files needed to build your
 package. These are the "raw / as-is" files that you store on GitHub or whatever
@@ -226,7 +226,7 @@ the sdist may also contain a file that stores the version.
 ```
 
 (python-wheel)=
-## Wheel (.whl files):
+## What is a Python wheel (whl):
 
 A wheel file is a ZIP-format archive whose filename follows a specific format
 (below) and has the extension `.whl`. The `.whl` archive contains a specific
