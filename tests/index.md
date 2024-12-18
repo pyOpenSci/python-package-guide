@@ -80,4 +80,5 @@ Write tests <write-tests>
 Test types <test-types>
 Run tests locally <run-tests>
 Run tests online (using CI) <tests-ci>
+Code coverage <code-cov>
 ```
