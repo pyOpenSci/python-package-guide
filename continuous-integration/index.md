@@ -3,7 +3,6 @@
 
 
 :::{toctree}
-:hidden:
 :caption: Continuous Integration
 
 
