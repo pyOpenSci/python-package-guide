@@ -177,6 +177,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/yang-ruoxi"><img src="https://avatars.githubusercontent.com/u/13646711?v=4?s=100" width="100px;" alt="ruoxi"/><br /><sub><b>ruoxi</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=yang-ruoxi" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Ayang-ruoxi" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/merwok"><img src="https://avatars.githubusercontent.com/u/635179?v=4?s=100" width="100px;" alt="Éric"/><br /><sub><b>Éric</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/commits?author=merwok" title="Code">💻</a> <a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Amerwok" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://webknjaz.me"><img src="https://avatars.githubusercontent.com/u/578543?v=4?s=100" width="100px;" alt="🇺🇦 Sviatoslav Sydorenko (Святослав Сидоренко)"/><br /><sub><b>🇺🇦 Sviatoslav Sydorenko (Святослав Сидоренко)</b></sub></a><br /><a href="https://github.com/pyOpenSci/python-package-guide/pulls?q=is%3Apr+reviewed-by%3Awebknjaz" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
