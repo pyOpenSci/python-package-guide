@@ -324,8 +324,8 @@ Tests  <tests/index>
 
 :::{toctree}
 :hidden:
-:caption: CI & Data
+:caption: Continuous Integration
 
-CI & Data  <ci-data/index>
+CI/CD  <continuous-integration/index>
 
 :::
