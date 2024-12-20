@@ -582,11 +582,11 @@ resources working with complex builds in the future.</p>
 <p>When you create your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, there are numerous metadata fields that you can use. Below we suggest specific fields to get you started that support publication on PyPI and users finding your package.</p>
 <p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use">An overview of all of the project metadata elements can be found here.</a></p>
 <section id="required-fields-for-the-project-table">
-<h3>Required fields for the [project] table<a class="headerlink" href="#required-fields-for-the-project-table" title="Link to this heading">#</a></h3>
-<p>As mentioned above, your pyproject.toml file needs to have a <strong>name</strong> and <strong>version</strong> field in order to properly build your package:</p>
+<h3>Required fields for the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table<a class="headerlink" href="#required-fields-for-the-project-table" title="Link to this heading">#</a></h3>
+<p>As mentioned above, your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file needs to have a <strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">version</span></code></strong> field in order to properly build your package:</p>
 <ul class="simple">
-<li><p>Name: This is the name of your project provided as a string</p></li>
-<li><p>Version: This is the version of your project. If you are using a scm tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: This is the name of your project provided as a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: This is the version of your project. If you are using a SCM tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).</p></li>
 </ul>
 </section>
 <section id="optional-fields-to-include-in-the-project-table">
@@ -814,7 +814,7 @@ of values. It has two keys that specify the build backend API and containing pac
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-a-pyproject-toml-file">Benefits of using a pyproject.toml file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">Optional vs. Required pyproject.toml file fields</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table">Required fields for the [project] table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table">Required fields for the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fields-to-include-in-the-project-table">Optional fields to include in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options-in-the-pyproject-toml-file">Advanced options in the pyproject.toml file</a></li>
 </ul>
