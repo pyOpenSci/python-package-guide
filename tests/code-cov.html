@@ -2,24 +2,24 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Optimizing your documentation so search engines (and other users) find it" />
+<meta property="og:title" content="Code coverage for your Python package test suite" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/website-hosting-optimizing-your-docs.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tests/code-cov.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="If you are interested in more people finding your package, you may want to add some core Sphinx extensions (and theme settings) that will help search engines such as Google find your documentation...." />
+<meta property="og:description" content="Code coverage measures how much of your package’s code runs during testing. Achieving high coverage can help ensure the reliability of your codebase, but it’s not a guarantee of quality. Below, we ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_documentation_hosting-tools_website-hosting-optimizing-your-docs_6edd7091.png" />
-<meta property="og:image:alt" content="If you are interested in more people finding your package, you may want to add some core Sphinx extensions (and theme settings) that will help search engines..." />
-<meta name="description" content="If you are interested in more people finding your package, you may want to add some core Sphinx extensions (and theme settings) that will help search engines such as Google find your documentation...." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_code-cov_47a98a80.png" />
+<meta property="og:image:alt" content="Code coverage measures how much of your package’s code runs during testing. Achieving high coverage can help ensure the reliability of your codebase, but it’..." />
+<meta name="description" content="Code coverage measures how much of your package’s code runs during testing. Achieving high coverage can help ensure the reliability of your codebase, but it’s not a guarantee of quality. Below, we ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Optimizing your documentation so search engines (and other users) find it &#8212; Python Packaging Guide</title>
+    <title>Code coverage for your Python package test suite &#8212; Python Packaging Guide</title>
   
   
   
@@ -38,34 +38,34 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=3cb6c64c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=3cb6c64c" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/hosting-tools/website-hosting-optimizing-your-docs';</script>
-    <script src="../../_static/matomo.js?v=5a92784f"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/website-hosting-optimizing-your-docs.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tests and data for your Python package" href="../../tests/index.html" />
-    <link rel="prev" title="How to publish your Python package documentation online" href="publish-documentation-online.html" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tests/code-cov';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tests/code-cov.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Continuous Integration (CI) and Continuous Deployment (CD) for your Python package" href="../continuous-integration/index.html" />
+    <link rel="prev" title="Run tests with Continuous Integration" href="tests-ci.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -87,7 +87,7 @@
   <dialog id="pst-search-dialog">
     
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -126,7 +126,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
-    <img src="../../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
   
   
 </a></div>
@@ -154,35 +154,35 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
     Packaging
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
     Documentation
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tests/index.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
     Tests
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
     CI/CD
   </a>
 </li>
@@ -320,35 +320,35 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
     Packaging
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
     Documentation
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tests/index.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
     Tests
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
     CI/CD
   </a>
 </li>
@@ -429,38 +429,14 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Overview</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Write User Documentation</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/get-started.html">Create Your Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/document-your-code-api-docstrings.html">Document Your Code (API)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/create-package-tutorials.html">Create Package Tutorials</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Docs for Contributors &amp; Maintainers</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../repository-files/intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repository-files/contributing-file.html">Contributing File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repository-files/development-guide.html">Development Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repository-files/changelog-file.html">Changelog File</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community Docs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../repository-files/readme-file-best-practices.html">README file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repository-files/code-of-conduct-file.html">Code of Conduct File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repository-files/license-files.html">License files for scientific Python open source software</a></li>
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publication tools for your docs</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Run Tests</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx-python-package-documentation-tools.html">Sphinx for Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
-<li class="toctree-l1"><a class="reference internal" href="publish-documentation-online.html">Publish Your Docs</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Website Hosting and Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write-tests.html">Write tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-types.html">Test types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-tests.html">Run tests locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-ci.html">Run tests online (using CI)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code coverage</a></li>
 </ul>
 </div>
 </nav></div>
@@ -497,14 +473,14 @@
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation for your Open Source Python Package</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tests and data for your Python package</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Optimizing your documentation so search engines (and other users) find it</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Code coverage for your Python package test suite</span></li>
   </ul>
 </nav>
 </div>
@@ -521,48 +497,63 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="optimizing-your-documentation-so-search-engines-and-other-users-find-it">
-<h1>Optimizing your documentation so search engines (and other users) find it<a class="headerlink" href="#optimizing-your-documentation-so-search-engines-and-other-users-find-it" title="Link to this heading">#</a></h1>
-<p>If you are interested in more people finding your package, you may want to
-add some core Sphinx extensions (and theme settings) that will help search
-engines such as Google find your documentation.</p>
-<section id="google-analytics">
-<h2>Google Analytics<a class="headerlink" href="#google-analytics" title="Link to this heading">#</a></h2>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Google analytics <a class="reference external" href="https://matomo.org/blog/2022/05/google-analytics-4-gdpr/">is not compliant with the European General Data Protection Regulation (GDPR)</a>. While there are many components to this regulation, one of the core elements is that you have to let users know on your site that you are collecting data and they have to consent. While it is possible to add infrastructure around Google Analytics to make it close to following GDPR regulations, the community is slowly shifting away from Google using open tools such as <a class="reference external" href="https://plausible.io/">Plausible</a>, <a class="reference external" href="https://www.cloudflare.com/web-analytics/">Cloudflare Web Analytics</a> and <a class="reference external" href="https://matomo.org">Matomo</a> for web analytics.</p>
-<p>pyOpenSci is currently looking into free options for open source
-developers.</p>
+  <section id="code-coverage-for-your-python-package-test-suite">
+<h1>Code coverage for your Python package test suite<a class="headerlink" href="#code-coverage-for-your-python-package-test-suite" title="Link to this heading">#</a></h1>
+<p>Code coverage measures how much of your package’s code runs during testing.
+Achieving high coverage can help ensure the reliability of your codebase, but
+it’s not a guarantee of quality. Below, we outline key considerations for
+using code coverage effectively.</p>
+<section id="why-aim-for-high-code-coverage">
+<h2>Why aim for high code coverage?<a class="headerlink" href="#why-aim-for-high-code-coverage" title="Link to this heading">#</a></h2>
+<p>A good practice is to ensure that every line of your code runs at least once
+during your test suite. This helps you:</p>
+<ul class="simple">
+<li><p>Identify untested parts of your codebase.</p></li>
+<li><p>Catch bugs that might otherwise go unnoticed.</p></li>
+<li><p>Build confidence in your software’s stability.</p></li>
+</ul>
+</section>
+<section id="limitations-of-code-coverage">
+<h2>Limitations of code coverage<a class="headerlink" href="#limitations-of-code-coverage" title="Link to this heading">#</a></h2>
+<p>While high code coverage is valuable, it has its limits:</p>
+<ul class="simple">
+<li><p><strong>Difficult-to-test code:</strong> Some parts of your code might be challenging to
+test, either due to complexity or limited resources.</p></li>
+<li><p><strong>Missed edge cases:</strong> Running all lines of code doesn’t guarantee that edge
+cases are handled correctly.</p></li>
+</ul>
+<p>Ultimately, you should focus on how your package will be used and ensure your
+tests cover those scenarios adequately.</p>
+</section>
+<section id="tools-for-analyzing-python-package-code-coverage">
+<h2>Tools for analyzing Python package code coverage<a class="headerlink" href="#tools-for-analyzing-python-package-code-coverage" title="Link to this heading">#</a></h2>
+<p>Some common services for analyzing code coverage are <a class="reference external" href="https://codecov.io/">codecov.io</a> and <a class="reference external" href="https://coveralls.io/">coveralls.io</a>. These projects are free for open source tools and will provide dashboards that tell you how much of your codebase is covered during your tests. We recommend setting up an account (on either CodeCov or Coveralls) and using it to keep track of your code coverage.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/code-cov-stravalib.png"><img alt="Screenshot of the code cov service - showing test coverage for the stravalib package. This image shows a list of package modules and the associated number of lines and % lines covered by tests. At the top of the image, you can see what branch is being evaluated and the path to the repository." src="../_images/code-cov-stravalib.png" style="height: 450px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The CodeCov platform is a useful tool if you wish to track code coverage visually. Using it, you can not only get the same summary information that you can get with the <strong>pytest-cov</strong> extension. You can also see what lines are covered by your tests and which are not. Code coverage is useful for evaluating unit tests and/or how much of your package code is “covered”. It, however, will not evaluate things like integration tests and end-to-end workflows.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-typing-mypy-coverage admonition">
+<p class="admonition-title">Typing &amp; MyPy coverage</p>
+<p>You can also create and upload typing reports to CodeCov.</p>
 </div>
-<p>Some of the <a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/analytics.html#google-analytics">sphinx themes such as the <code class="docutils literal notranslate"><span class="pre">pydata-sphinx-theme</span></code> and
-sphinx-book-theme have built in support for Google Analytics</a>. However, if the theme that you chose does not offer
-Google Analytics support, you can use the <a class="reference external" href="https://github.com/attakei/sphinxcontrib-gtagjs"><code class="docutils literal notranslate"><span class="pre">sphinxcontrib-gtagjs</span></code> extension</a>.
-This extension will add a Google Analytics site tag to each page of your
-documentation.</p>
-<section id="sphinx-sitemap-for-search-engine-optimization">
-<h3><a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/index.html">sphinx-sitemap</a> for search engine optimization<a class="headerlink" href="#sphinx-sitemap-for-search-engine-optimization" title="Link to this heading">#</a></h3>
-<p>While we are trying to move away from Google Analytics do
-to compliance and privacy issues, search engine optimization
-is still important. Google is the most popular search engine.
-And if your documentation is search optimized, users are more
-likely to find your package!</p>
-<p>If you are interested in optimizing your documentation for
-search engines such as Google, you want a <strong>sitemap.xml</strong> file.
-You can submit this sitemap to Google and it will index your
-entire site. This over time can make the content on your site
-more visible to others when they search.</p>
-<p>This extension is lightweight.</p>
-<p>It <a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/getting-started.html">requires that you to add it to your Sphinx <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> extension list and site your documentation base url</a>.</p>
 </section>
-<section id="sphinxext-opengraph">
-<h3><a class="reference external" href="https://github.com/wpilibsuite/sphinxext-opengraph">sphinxext.opengraph</a><a class="headerlink" href="#sphinxext-opengraph" title="Link to this heading">#</a></h3>
-<p>OpenGraph is an extension that allows you to add metadata to your documentation
-content pages. <a class="reference external" href="https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/#heading-what-is-open-graph">The OpenGraph protocol allows other websites to provide a
-useful preview of the content on your page when shared</a>. This is important
-for when the pages in your documentation are shared on social
-media sites like Twitter and Mastodon and even for shares on
-tools like Slack and Discourse.</p>
-</section>
+<section id="exporting-local-coverage-reports">
+<h2>Exporting Local Coverage Reports<a class="headerlink" href="#exporting-local-coverage-reports" title="Link to this heading">#</a></h2>
+<p>In addition to using services like CodeCov or Coveralls, you can generate local coverage reports directly using the <strong>coverage.py</strong> tool. This can be especially useful if you want to create reports in Markdown or HTML format for offline use or documentation.</p>
+<p>To generate a coverage report in <strong>Markdown</strong> format, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>coverage<span class="w"> </span>report<span class="w"> </span>--format<span class="o">=</span>markdown
+</pre></div>
+</div>
+<p>This command will produce a Markdown-formatted coverage summary that you can easily include in project documentation or share with your team.</p>
+<p>To generate an HTML report that provides a detailed, interactive view of which lines are covered, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>coverage<span class="w"> </span>html
+</pre></div>
+</div>
+<p>The generated HTML report will be saved in a directory named htmlcov by default. Open the index.html file in your browser to explore your coverage results.</p>
+<p>These local reports are an excellent way to quickly review coverage without setting up an external service.</p>
 </section>
 </section>
 
@@ -577,20 +568,20 @@ tools like Slack and Discourse.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="publish-documentation-online.html"
+       href="tests-ci.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">How to publish your Python package documentation online</p>
+        <p class="prev-next-title">Run tests with Continuous Integration</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../tests/index.html"
+       href="../continuous-integration/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tests and data for your Python package</p>
+        <p class="prev-next-title">Continuous Integration (CI) and Continuous Deployment (CD) for your Python package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -613,11 +604,10 @@ tools like Slack and Discourse.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-analytics">Google Analytics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx-sitemap-for-search-engine-optimization">sphinx-sitemap for search engine optimization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinxext-opengraph">sphinxext.opengraph</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-aim-for-high-code-coverage">Why aim for high code coverage?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-code-coverage">Limitations of code coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-analyzing-python-package-code-coverage">Tools for analyzing Python package code coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-local-coverage-reports">Exporting Local Coverage Reports</a></li>
 </ul>
   </nav></div>
 
@@ -625,7 +615,7 @@ tools like Slack and Discourse.</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/hosting-tools/website-hosting-optimizing-your-docs.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tests/code-cov.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -641,7 +631,7 @@ tools like Slack and Discourse.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/documentation/hosting-tools/website-hosting-optimizing-your-docs.md.txt"
+      <li><a href="../_sources/tests/code-cov.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
@@ -659,8 +649,8 @@ tools like Slack and Discourse.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
