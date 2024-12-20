@@ -34,7 +34,7 @@ Some common services for analyzing code coverage are [codecov.io](https://codeco
 :height: 450px
 :alt: Screenshot of the code cov service - showing test coverage for the stravalib package. This image shows a list of package modules and the associated number of lines and % lines covered by tests. At the top of the image, you can see what branch is being evaluated and the path to the repository.
 
-The CodeCov platform is a useful tool if you wish to track code coverage visually. Using it, you can not only get the same summary information that you can get with the **pytest-cov** extension. You can also see what lines are covered by your tests and what lines are not covered. Code coverage is useful for evaluating unit tests and/or how much of your package code is "covered". It, however, will not evaluate things like integration tests and end-to-end workflows.
+The CodeCov platform is a useful tool if you wish to track code coverage visually. Using it, you can not only get the same summary information that you can get with the **pytest-cov** extension. You can also see what lines are covered by your tests and which are not. Code coverage is useful for evaluating unit tests and/or how much of your package code is "covered". It, however, will not evaluate things like integration tests and end-to-end workflows.
 
 :::
 
