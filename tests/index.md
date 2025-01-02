@@ -1,11 +1,12 @@
+(tests-intro)=
 # Tests and data for your Python package
 
 Tests are an important part of your Python package because they
 provide a set of checks that ensure that your package is
 functioning how you expect it to.
 
-In this section you will learn more about the importance of writing
-tests for your Python package and how you can setup infrastructure
+In this section, you will learn more about the importance of writing
+tests for your Python package and how you can set up infrastructure
 to run your tests both locally and on GitHub.
 
 
@@ -79,4 +80,5 @@ Write tests <write-tests>
 Test types <test-types>
 Run tests locally <run-tests>
 Run tests online (using CI) <tests-ci>
+Code coverage <code-cov>
 ```
