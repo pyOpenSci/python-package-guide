@@ -41,7 +41,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -596,7 +596,7 @@ function’s docstring describes the function’s inputs and the function’s ou
 Following that single-line description, there is a slightly longer description of
 what the function does (2 to 3 sentences). The return of the function is also
 specified.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert bounds to a shapely geojson like spatial object.</span>
 
 <span class="sd">    This format is what shapely uses. The output object can be used</span>
@@ -624,7 +624,7 @@ specified.</p>
 <span id="docstring-best-practice"></span><h3>Best: a docstring with example use of the function<a class="headerlink" href="#best-a-docstring-with-example-use-of-the-function" title="Link to this heading">#</a></h3>
 <p>This example contains an example of using the function that is also tested in
 sphinx using <a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctest</a>.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert bounds to a shapely geojson like spatial object.</span>
 
 <span class="sd">    This format is what shapely uses. The output object can be used</span>
@@ -698,7 +698,7 @@ across operating systems and Python versions.</p>
 <p>Below is an example of a docstring with an example.
 doctest will run the example below and test that if you provide
 <code class="docutils literal notranslate"><span class="pre">add_me</span></code> with the values 1 and 3 it will return 4.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A function that sums two numbers.</span>
 
 <span class="sd">    Parameters</span>
@@ -748,13 +748,13 @@ helps users better understand how to call a function or method.</p>
 make it easier for new developers, your future self or contributors
 to get to know your code base quickly.</p>
 <p>Type hints are added to the definition of your function. In the example below, the parameters aNum and aNum2 are defined as being type = int (integer).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="s2">&quot;&quot;&quot;A function that sums two numbers.</span>
 </pre></div>
 </div>
 <p>You can further describe the expected function output using <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>. Below
 the output of the function is also an int.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="s2">&quot;&quot;&quot;A function that sums two numbers.</span>
 </pre></div>
 </div>
@@ -920,7 +920,7 @@ digging into more complex contributions.</p>
 
   <p class="copyright">
     
-      © Copyright 2024, pyOpenSci.
+      © Copyright 2025, pyOpenSci.
       <br/>
     
   </p>

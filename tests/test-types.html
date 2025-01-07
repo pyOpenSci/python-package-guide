@@ -41,7 +41,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -516,7 +516,7 @@ test suite:</p>
 <p>Unit tests can be compared to examining each piece of your puzzle to ensure parts of it are not broken. If all of the pieces of your puzzle don’t fit together, you will never complete it. Similarly, when working with code, tests ensure that each function, attribute, class, method works properly when isolated.</p>
 <p><strong>Unit test example:</strong> Pretend that you have a function that converts a temperature value from Celsius to Fahrenheit. A test for that function might ensure that when provided with a value in Celsius, the function returns the correct value in degrees Fahrenheit. That function is a unit test. It checks a single unit (function) in your code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example package function</span>
-<span class="k">def</span> <span class="nf">celsius_to_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">celsius_to_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert temperature from Celsius to Fahrenheit.</span>
 
@@ -531,10 +531,10 @@ test suite:</p>
 </pre></div>
 </div>
 <p>Example unit test for the above function. You’d run this test using the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command in your <strong>tests/</strong> directory.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">from</span> <span class="nn">temperature_converter</span> <span class="kn">import</span> <span class="n">celsius_to_fahrenheit</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">temperature_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">celsius_to_fahrenheit</span>
 
-<span class="k">def</span> <span class="nf">test_celsius_to_fahrenheit</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_celsius_to_fahrenheit</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Test the celsius_to_fahrenheit function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -562,7 +562,7 @@ test suite:</p>
 <p>Integration tests involve testing how parts of your package work together or integrate. Integration tests can be compared to connecting a bunch of puzzle pieces together to form a whole picture. Integration tests focus on how different pieces of your code fit and work together.</p>
 <p>For example, if you had a series of steps that collected temperature data in a spreadsheet, converted it from degrees celsius to Fahrenheit and then provided an average temperature for a particular time period. An integration test would ensure that all parts of that workflow behaved as expected.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="nf">fahr_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fahr_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert temperature from Fahrenheit to Celsius.</span>
 
@@ -576,7 +576,7 @@ test suite:</p>
     <span class="k">return</span> <span class="n">celsius</span>
 
 <span class="c1"># Function to calculate the mean temperature for each year and the final mean</span>
-<span class="k">def</span> <span class="nf">calc_annual_mean</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_annual_mean</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># TODO: make this a bit more robust so we can write integration test examples??</span>
     <span class="c1"># Calculate the mean temperature for each year</span>
     <span class="n">yearly_means</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -753,7 +753,7 @@ help you think about writing tests and how different types of tests can compleme
 
   <p class="copyright">
     
-      © Copyright 2024, pyOpenSci.
+      © Copyright 2025, pyOpenSci.
       <br/>
     
   </p>
