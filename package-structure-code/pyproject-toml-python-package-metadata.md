@@ -139,12 +139,12 @@ When you create your `pyproject.toml` file, there are numerous metadata fields t
 
 [An overview of all of the project metadata elements can be found here.](https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use)
 
-### Required fields for the [project] table
+### Required fields for the `[project]` table
 
-As mentioned above, your pyproject.toml file needs to have a **name** and **version** field in order to properly build your package:
+As mentioned above, your `pyproject.toml` file needs to have a **`name`** and **`version`** field in order to properly build your package:
 
-- Name: This is the name of your project provided as a string
-- Version: This is the version of your project. If you are using a scm tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).
+- `name`: This is the name of your project provided as a string
+- `version`: This is the version of your project. If you are using a SCM tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).
 
 ### Optional fields to include in the `[project]` table
 
@@ -175,7 +175,7 @@ what dependencies your package requires.
   - Development Status
   - Intended Audience
   - Topic
-  - LIcense
+  - License
   - Programming language
 
 ### Advanced options in the pyproject.toml file

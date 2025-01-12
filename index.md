@@ -286,35 +286,46 @@ to see here clarified in this guide, [we invite you to open an issue on GitHub.]
 
 If you have questions about our peer review process or packaging in general, you are welcome to use our [pyOpenSci Discourse forum](https://pyopensci.discourse.group/).
 
-This is a living guide that is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
+This living Python packaging guide is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
 
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Tutorials
-Tutorials  <tutorials/intro>
-```
 
-```{toctree}
+Tutorials  <tutorials/intro>
+:::
+
+:::{toctree}
 :hidden:
 :caption: Packaging
 
 Packaging <package-structure-code/intro>
 
-```
+:::
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Documentation
 
 Documentation <documentation/index>
 
-```
+:::
 
-```{toctree}
+
+:::{toctree}
 :hidden:
 :caption: Testing
 
 Tests  <tests/index>
 
-```
+:::
+
+
+:::{toctree}
+:hidden:
+:caption: Continuous Integration
+
+CI/CD  <continuous-integration/index>
+
+:::
