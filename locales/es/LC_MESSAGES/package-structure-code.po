@@ -2787,8 +2787,8 @@ msgid ""
 "file to describe its metadata, you should consider migrating your "
 "metadata and build information to a `pyproject.toml` file."
 msgstr ""
-"Cada paquete de Python moderno debe incluir un archivo `pyproject.toml`. Si su proyecto es de Python "
-"puro y está utilizando un archivo `setup.py` o `setup.cfg` para describir sus metadatos, debería considerar "
+"Cada paquete de Python moderno debe incluir un archivo `pyproject.toml`. Si su proyecto solamente utiliza Python "
+"y está utilizando un archivo `setup.py` o `setup.cfg` para describir sus metadatos, debería considerar "
 "migrar sus metadatos e información de construcción a un archivo `pyproject.toml`."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:64
@@ -2797,8 +2797,8 @@ msgid ""
 "file to build the non Python extensions. However, a `pyproject.toml` file"
 " should still be used to store your project’s metadata."
 msgstr ""
-"Si su proyecto no es de Python puro, es posible que aún necesite un archivo `setup.py` para construir las "
-"extensiones no Python. Sin embargo, aún se debe usar un archivo `pyproject.toml` para almacenar los metadatos "
+"Si su proyecto utiliza otros lenguajes ademas de Python, es posible que aún necesite un archivo `setup.py` para construir las "
+"extensiones que no están escritas en Python. Pero aun así, aún se debe usar un archivo `pyproject.toml` para almacenar los metadatos "
 "de su proyecto."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:66
@@ -2813,8 +2813,8 @@ msgid ""
 "`pyproject.toml` format. Having all metadata in a single file:"
 msgstr ""
 "Antes de agosto de 2017, los metadatos de los paquetes de Python se almacenaban en el archivo `setup.py` o "
-"en un archivo `setup.cfg`. En los últimos años, ha habido un cambio a almacenar los metadatos de los paquetes "
-"de Python en un formato `pyproject.toml` mucho más legible para el usuario. Tener todos los metadatos en un solo "
+"en un archivo `setup.cfg`. En los últimos años, se ha pasado a almacenar los metadatos de los paquetes "
+"de Python en el fichero `pyproject.toml`, que es mucho más legible para el usuario. Tener todos los metadatos en un solo "
 "archivo:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:70
@@ -2862,14 +2862,14 @@ msgid ""
 " identifier are key/value pairs that support configuration for that "
 "particular table."
 msgstr ""
-"El archivo **pyproject.toml** está escrito en [formato TOML (del ingés, Lenguaje Obvio y Mínimo de Tom)](https://toml.io/en/). "
+"El archivo **pyproject.toml** está escrito en [formato TOML (del inglés, Tom's Obvious, Minimal Language)](https://toml.io/en/). "
 "TOML es una estructura fácil de leer que se basa en pares clave/valor. Cada sección en el archivo **pyproject.toml** "
 "contiene un `[identificador de tabla]`. Debajo de ese identificador de tabla hay pares clave/valor que admiten la configuración "
 "para esa tabla en particular."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:90
 msgid "Below `[build-system]` is considered a table in the toml language."
-msgstr "Bajo `[build-system]` se espera una tabla en el lenguaje toml."
+msgstr "Bajo `[build-system]` se espera una tabla en el lenguaje TOML."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:91
 msgid "Within the `build-system` table below `requires =` is a key."
@@ -3008,7 +3008,7 @@ msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:146
 msgid "Name: This is the name of your project provided as a string"
-msgstr "Nombre: Este es el nombre de su proyecto proporcionado como una cadena"
+msgstr "Name: Este es el nombre de su proyecto proporcionado como una cadena de texto"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:147
 msgid ""
@@ -3016,8 +3016,8 @@ msgid ""
 " for versioning (using git tags to determine versions), then the version "
 "may be dynamic (more on that below)."
 msgstr ""
-"Versión: Esta es la versión de su proyecto. Si está utilizando una herramienta de control de versiones "
-"(usando etiquetas de git para determinar versiones), entonces la versión puede ser dinámica (más sobre eso a continuación)."
+"Version: Esta es la versión de su proyecto. Si está utilizando una herramienta de control de versiones "
+"(usando etiquetas de git para determinar versiones), la versión puede ser dinámica (más sobre eso a continuación)."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:149
 msgid "Optional fields to include in the `[project]` table"
@@ -3078,7 +3078,7 @@ msgid ""
 " email"
 msgstr ""
 "**Maintainers:** puede optar por completar esto o no. Puede completar esto"
-" utilizando una lista con un subelemento para cada nombre de autor o "
+" utilizando una lista con un subelemento para cada nombre de autor o una cadena de texto con"
 "mantenedor, correo electrónico"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:169
@@ -3087,7 +3087,7 @@ msgid ""
 "include them in your pyproject.toml. Dependencies will be installed by "
 "pip when your project is installed creating a better user-experience."
 msgstr ""
-"**dependencies:** las dependencias son opcionales, pero le sugerimos que las"
+"**Dependencies:** las dependencias son opcionales, pero le sugerimos que las"
 " incluya en su pyproject.toml. Las dependencias se instalarán con pip cuando"
 " se instale su proyecto, creando una mejor experiencia de usuario."
 
@@ -3140,7 +3140,7 @@ msgid "Topic"
 msgstr "Topic"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:178
-msgid "License"
+msgid "LIcense"
 msgstr "License"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:179
@@ -3169,7 +3169,7 @@ msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:186
 msgid ""
-"Here is an example of [a package that has entry point "
+"Here is an example of [ a package that has entry point "
 "script](https://github.com/pyOpenSci/update-web-"
 "metadata/blob/main/pyproject.toml#L60)s. Notice that there are several "
 "core scripts defined in that package that perform sets of tasks. "
