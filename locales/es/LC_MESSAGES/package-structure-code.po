@@ -2697,11 +2697,11 @@ msgstr ""
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:1
 msgid "Use a pyproject.toml file for your package configuration & metadata"
-msgstr ""
+msgstr "Use un archivo pyproject.toml para la configuración y metadatos de su paquete"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:12
 msgid "Important pyproject.toml take aways"
-msgstr ""
+msgstr "Conclusiones importantes de pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:16
 msgid ""
@@ -2709,18 +2709,24 @@ msgid ""
 "package: **[build-system]** and **[project]**. The **[project]** table "
 "stores your package's metadata."
 msgstr ""
+"Existen solo dos tablas que son necesarias para un paquete de Python "
+"instalable: **[build-system]** y **[project]**. La tabla **[project]** "
+"almacena los metadatos de su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:17
 msgid ""
 "There are only two _required_ fields in the **[project]** table: "
 "**name=** and **version=**."
 msgstr ""
+"Existen solo dos campos _requeridos_ en la tabla **[project]**: **name=** y **version=**."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:18
 msgid ""
 "We suggest you add additional metadata to your `pyproject.toml` file as "
 "it will make it easier for users to find your project on PyPI."
 msgstr ""
+"Le sugerimos que agregue metadatos adicionales a su archivo `pyproject.toml` "
+"ya que facilitará que los usuarios encuentren su proyecto en PyPI."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:19
 msgid ""
@@ -2729,6 +2735,9 @@ msgid ""
 "invalid value here will raise an error when you build your package or "
 "publish to PyPI."
 msgstr ""
+"Cuando esté agregando clasificadores a la tabla [project], solo use valores válidos de "
+"[la página de clasificadores de PyPI](https://PyPI.org/classifiers/). Un valor inválido aquí "
+"generará un error cuando construya su paquete o publique en PyPI."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:20
 msgid ""
@@ -2737,32 +2746,39 @@ msgid ""
 "example `requires =` always need to be associated with the **[build-"
 "system]** table."
 msgstr ""
+"No hay un orden específico para las tablas en el archivo `pyproject.toml`. "
+"Sin embargo, los campos deben colocarse dentro de las secciones de tabla correctas. "
+"Por ejemplo, `requires =` siempre debe estar asociado con la tabla **[build-system]**."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:21
 msgid ""
 "**python-requires**: is important to have in your `pyproject.toml` file "
 "as it helps pip install your package."
 msgstr ""
+"**python-requires**: es importante tenerlo en su archivo `pyproject.toml` ya que "
+"ayuda a pip a instalar su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:27
 msgid "when these are published, remove this todo"
-msgstr ""
+msgstr "cuando se publiquen, elimine este todo"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:36
 msgid ""
 "Need help creating your pyproject.toml file?  This tutorial will walk you"
 " through the process."
 msgstr ""
+"¿Necesita ayuda para crear su archivo pyproject.toml? Este tutorial lo guiará a través del proceso."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:50
 msgid ""
 "Click here if need help migrating from setup.py/setup.cfg to "
 "pyproject.toml"
 msgstr ""
+"Haga clic aquí si necesita ayuda para migrar de setup.py/setup.cfg a pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:60
 msgid "About the pyproject.toml file"
-msgstr ""
+msgstr "Aceca del archivo pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:62
 msgid ""
@@ -2771,6 +2787,9 @@ msgid ""
 "file to describe its metadata, you should consider migrating your "
 "metadata and build information to a `pyproject.toml` file."
 msgstr ""
+"Cada paquete de Python moderno debe incluir un archivo `pyproject.toml`. Si su proyecto solamente utiliza Python "
+"y está utilizando un archivo `setup.py` o `setup.cfg` para describir sus metadatos, debería considerar "
+"migrar sus metadatos e información de construcción a un archivo `pyproject.toml`."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:64
 msgid ""
@@ -2778,10 +2797,13 @@ msgid ""
 "file to build the non Python extensions. However, a `pyproject.toml` file"
 " should still be used to store your project’s metadata."
 msgstr ""
+"Si su proyecto utiliza otros lenguajes ademas de Python, es posible que aún necesite un archivo `setup.py` para construir las "
+"extensiones que no están escritas en Python. Pero aun así, aún se debe usar un archivo `pyproject.toml` para almacenar los metadatos "
+"de su proyecto."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:66
 msgid "What happened to setup.py & how do i migrate to pyproject.toml?"
-msgstr ""
+msgstr "¿Qué pasó con setup.py y cómo migro a pyproject.toml?"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:68
 msgid ""
@@ -2790,10 +2812,14 @@ msgid ""
 "shift to storing Python package metadata in a much more user-readable "
 "`pyproject.toml` format. Having all metadata in a single file:"
 msgstr ""
+"Antes de agosto de 2017, los metadatos de los paquetes de Python se almacenaban en el archivo `setup.py` o "
+"en un archivo `setup.cfg`. En los últimos años, se ha pasado a almacenar los metadatos de los paquetes "
+"de Python en el fichero `pyproject.toml`, que es mucho más legible para el usuario. Tener todos los metadatos en un solo "
+"archivo:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:70
 msgid "simplifies package management,"
-msgstr ""
+msgstr "simplifica la gestión de paquetes,"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:71
 msgid ""
@@ -2802,10 +2828,12 @@ msgid ""
 "structure-code/python-package-build-tools.html#build-back-ends) such as "
 "(flit-core, hatchling, pdm-build), and"
 msgstr ""
+"le permite usar una serie de diferentes [backends de construcción](https://www.pyopensci.org/python-package-"
+"guide/package-structure-code/python-package-build-tools.html#build-back-ends) como (flit-core, hatchling, pdm-build), y"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:72
 msgid "aligns with modern best practices."
-msgstr ""
+msgstr "se alinea con las mejores prácticas modernas."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:79
 msgid ""
@@ -2816,10 +2844,14 @@ msgid ""
 "package dependencies to a **pyproject.toml** file replaces storing that "
 "information in a setup.py or setup.cfg file."
 msgstr ""
+"El archivo estándar que utilizan los paquetes de Python para [especificar los requisitos de construcción y "
+"los metadatos se llama **pyproject.toml**](https://packaging.python.org/en/latest/specifications"
+"/declaring-project-metadata/). Agregar metadatos, requisitos de construcción y dependencias de paquetes a un "
+"archivo **pyproject.toml** reemplaza el almacenamiento de esa información en un archivo setup.py o setup.cfg."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:84
 msgid "About the .toml format"
-msgstr ""
+msgstr "Aceca del formato .toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:86
 msgid ""
@@ -2830,24 +2862,29 @@ msgid ""
 " identifier are key/value pairs that support configuration for that "
 "particular table."
 msgstr ""
+"El archivo **pyproject.toml** está escrito en [formato TOML (del inglés, Tom's Obvious, Minimal Language)](https://toml.io/en/). "
+"TOML es una estructura fácil de leer que se basa en pares clave/valor. Cada sección en el archivo **pyproject.toml** "
+"contiene un `[identificador de tabla]`. Debajo de ese identificador de tabla hay pares clave/valor que admiten la configuración "
+"para esa tabla en particular."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:90
 msgid "Below `[build-system]` is considered a table in the toml language."
-msgstr ""
+msgstr "Bajo `[build-system]` se espera una tabla en el lenguaje TOML."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:91
 msgid "Within the `build-system` table below `requires =` is a key."
-msgstr ""
+msgstr "Denro de la tabla `build-system` debajo de `requires =` hay una clave."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:92
 msgid ""
 "The associated value for `requires` is an array containing the value "
 "`\"hatchling\"`."
 msgstr ""
+"El valor asociado para `requires` es un array que contiene el valor `\"hatchling\"`."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:100
 msgid "How the pyproject.toml is used when you build a package"
-msgstr ""
+msgstr "¿Cómo se usa el pyproject.toml cuando se construye un paquete?"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:104
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:81
@@ -2864,6 +2901,14 @@ msgid ""
 "distribution file that allows PyPI to read the metadata and print it out "
 "on their website."
 msgstr ""
+"Cuando publique en PyPI, notará que cada paquete tiene metadatos listados. Echemos un vistazo a "
+"[xclim](https://pypi.org/project/xclim/), uno de nuestros [paquetes de pyOpenSci](https://www.pyopensci.org/python-"
+"packages.html). Observe que en la página de inicio de PyPI ve algunos metadatos sobre el paquete, incluido Python, "
+"información del mantenedor y más. PyPI puede poblar estos metadatos porque fueron definidos utilizando la sintaxis "
+"correcta y clasificadores por los mantenedores de Xclim, [archivo pyproject.toml]("
+"https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml). "
+"Estos metadatos cuando se construye el paquete xclim, se traducen en un archivo de distribución que permite a PyPI "
+"leer los metadatos e imprimirlos en su sitio web."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:106
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:83
@@ -2874,6 +2919,10 @@ msgid ""
 "language, operating system, programming language and topic. Below each of"
 " those sections are various classifier options.\" width=\"300px\">"
 msgstr ""
+"Imagen que muestra la barra lateral izquierda de PyPI para el paquete xclim. La sección en la parte superior dice "
+"Clasificador. Debajo hay una lista de elementos que incluyen: estado de desarrollo, audiencia prevista, licencia, "
+"idioma natural, sistema operativo, lenguaje de programación y tema. Debajo de cada una de esas secciones hay varias "
+"opciones de clasificación.\" width=\"300px\">"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:111
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:88
@@ -2884,10 +2933,13 @@ msgid ""
 "classifiers also allow users to sort through packages by version of "
 "python they support, categories and more."
 msgstr ""
+"Cuando agregue la sección de clasificación a su pyproject.toml y se construya su paquete, la herramienta de construcción "
+"organiza los metadatos en un formato que PyPI puede entender y representar en la página de inicio de PyPI. Estos clasificadores "
+"también permiten a los usuarios ordenar los paquetes por la versión de Python que admiten, categorías y más."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:116
 msgid "Benefits of using a pyproject.toml file"
-msgstr ""
+msgstr "Beneficios de usar un archivo pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:118
 msgid ""
@@ -2895,10 +2947,12 @@ msgid ""
 "**pyproject.toml** format also allows someone to view the project's "
 "metadata in a GitHub repository."
 msgstr ""
+"Incluir los metadatos de su paquete en un formato **pyproject.toml** separado y legible para humanos también permite "
+"a alguien ver los metadatos del proyecto en un repositorio de GitHub."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:126
 msgid "Setup.py is still useful for complex package builds"
-msgstr ""
+msgstr "Setup.py sigue siendo útil para construcciones de paquetes complejas"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:130
 msgid ""
@@ -2910,10 +2964,15 @@ msgid ""
 "complex builds, we will provide resources working with complex builds in "
 "the future."
 msgstr ""
+"Usar **setup.py** para gestionar construcciones de paquetes y metadatos [puede causar"
+" problemas con el desarrollo de paquetes](https://blog.ganssle.io/articles/2021/10/setup-py-"
+"deprecated.html). En algunos casos donde la construcción de un paquete de Python es compleja, "
+"puede ser necesario un archivo **setup.py**. Si bien esta guía no cubrirá construcciones complejas, "
+"proporcionaremos recursos para trabajar con construcciones complejas en el futuro."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:136
 msgid "Optional vs. Required pyproject.toml file fields"
-msgstr ""
+msgstr "Campos opcionales vs. requeridos en el archivo pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:138
 msgid ""
@@ -2921,6 +2980,9 @@ msgid ""
 "fields that you can use. Below we suggest specific fields to get you "
 "started that support publication on PyPI and users finding your package."
 msgstr ""
+"Cuando cree su archivo `pyproject.toml`, hay numerosos campos de metadatos que puede usar. "
+"A continuación, sugerimos campos específicos para comenzar que admiten la publicación"
+" en PyPI y que los usuarios encuentren su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:140
 msgid ""
@@ -2928,20 +2990,25 @@ msgid ""
 "here.](https://packaging.python.org/en/latest/specifications/core-"
 "metadata/#project-url-multiple-use)"
 msgstr ""
+"[Una descripción general de todos los elementos de metadatos del proyecto se puede encontrar "
+"aquí.](https://packaging.python.org/en/latest/specifications/core-"
+"metadata/#project-url-multiple-use)"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:142
 msgid "Required fields for the [project] table"
-msgstr ""
+msgstr "Campos requeridos para la tabla [project]"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:144
 msgid ""
 "As mentioned above, your pyproject.toml file needs to have a **name** and"
 " **version** field in order to properly build your package:"
 msgstr ""
+"Como se mencionó anteriormente, su archivo pyproject.toml necesita tener un campo **name** y "
+"**version** para construir correctamente su paquete:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:146
 msgid "Name: This is the name of your project provided as a string"
-msgstr ""
+msgstr "Name: Este es el nombre de su proyecto proporcionado como una cadena de texto"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:147
 msgid ""
@@ -2949,10 +3016,12 @@ msgid ""
 " for versioning (using git tags to determine versions), then the version "
 "may be dynamic (more on that below)."
 msgstr ""
+"Version: Esta es la versión de su proyecto. Si está utilizando una herramienta de control de versiones "
+"(usando etiquetas de git para determinar versiones), la versión puede ser dinámica (más sobre eso a continuación)."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:149
 msgid "Optional fields to include in the `[project]` table"
-msgstr ""
+msgstr "Campos opcionales para incluir en la tabla `[project]`"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:151
 msgid ""
@@ -2961,10 +3030,13 @@ msgid ""
 "clear how your package is structured, what platforms you support and what"
 " dependencies your package requires."
 msgstr ""
+"Le sugerimos que también agregue las claves de metadatos a continuación, ya que"
+"ayudarán a los usuarios a encontrar su paquete en PyPI. Estos campos dejarán claro "
+"cómo está estructurado su paquete, qué plataformas admite y qué dependencias requiere su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:156
 msgid "**Description:** this is a short one-line description of your package."
-msgstr ""
+msgstr "**Description:** esta es una descripción corta de una línea de su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:157
 msgid ""
@@ -2972,6 +3044,8 @@ msgid ""
 "description. This information will be published on your packages PyPI "
 "landing page."
 msgstr ""
+"**Readme:** Un enlace a su archivo README.md se utiliza para la descripción larga. "
+"Esta información se publicará en la página de inicio de su paquete en PyPI."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:158
 msgid ""
@@ -2979,10 +3053,13 @@ msgid ""
 "Here you tell the installer whether you are using Python 2.x or 3.x. Most"
 " projects will be using 3.x."
 msgstr ""
+"**Requires-python** (usado por pip): este es un campo que es utilizado por pip. "
+"Aquí le dice al instalador si está utilizando Python 2.x o 3.x. La mayoría de los proyectos "
+"estarán utilizando 3.x."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:159
 msgid "**License:** the license you are using"
-msgstr ""
+msgstr "**License:** la licencia que está utilizando"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:160
 msgid ""
@@ -2990,6 +3067,9 @@ msgid ""
 " authors are different from the maintainers. Other times they might be "
 "the same."
 msgstr ""
+"**Authors:** estos son los autores originales del paquete. A veces los autores son diferentes "
+"de los mantenedores. Otras veces pueden ser los mismos."
+
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:161
 msgid ""
@@ -2997,6 +3077,9 @@ msgid ""
 " this using a list with a sub element for each author or maintainer name,"
 " email"
 msgstr ""
+"**Maintainers:** puede optar por completar esto o no. Puede completar esto"
+" utilizando una lista con un subelemento para cada nombre de autor o una cadena de texto con"
+"mantenedor, correo electrónico"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:169
 msgid ""
@@ -3004,6 +3087,9 @@ msgid ""
 "include them in your pyproject.toml. Dependencies will be installed by "
 "pip when your project is installed creating a better user-experience."
 msgstr ""
+"**Dependencies:** las dependencias son opcionales, pero le sugerimos que las"
+" incluya en su pyproject.toml. Las dependencias se instalarán con pip cuando"
+" se instale su proyecto, creando una mejor experiencia de usuario."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:171
 msgid ""
@@ -3012,6 +3098,10 @@ msgid ""
 "projectname[dev]`. This is a nice way to include your development "
 "dependencies for users who may wish to contribute to your project."
 msgstr ""
+"**`[project.optional-dependencies]`:** las dependencias opcionales o de desarrollo"
+" se instalarán si alguien ejecuta `python -m pip install projectname[dev]`. Esta es"
+" una buena manera de incluir sus dependencias de desarrollo para los usuarios que"
+" deseen contribuir a su proyecto."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:173
 msgid ""
@@ -3019,6 +3109,9 @@ msgid ""
 "landing page. Think of them as words that people might use to search for "
 "your package."
 msgstr ""
+"**keywords:** Estas son las palabras clave que aparecerán en la página "
+"de inicio de su paquete en PyPI. Piense en ellas como palabras que la gente"
+" podría usar para buscar su paquete."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:174
 msgid ""
@@ -3028,34 +3121,39 @@ msgid ""
 "her](https://PyPI.org/classifiers/)e. Some of the classifiers that you "
 "should consider including"
 msgstr ""
+"**classifiers:** La sección de clasificadores de sus metadatos también es "
+"importante para la página de inicio de su paquete en PyPI y para filtrar "
+"paquetes en PyPI. Una lista de [todas las opciones de clasificadores se puede "
+"encontrar aquí](https://PyPI.org/classifiers/). Algunos de los clasificadores "
+"que debería considerar incluir"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:175
 msgid "Development Status"
-msgstr ""
+msgstr "Development Status"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:176
 msgid "Intended Audience"
-msgstr ""
+msgstr "Intended Audience"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:177
 msgid "Topic"
-msgstr ""
+msgstr "Topic"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:178
 msgid "LIcense"
-msgstr ""
+msgstr "License"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:179
 msgid "Programming language"
-msgstr ""
+msgstr "Programming language"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:181
 msgid "Advanced options in the pyproject.toml file"
-msgstr ""
+msgstr "Opcciones avanzadas en el archivo pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:183
 msgid "The examples at the bottom of this page contain ..."
-msgstr ""
+msgstr "Los ejemplos en la parte inferior de esta página contienen ..."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:185
 msgid ""
@@ -3064,15 +3162,24 @@ msgid ""
 "package, you may include an entry point to call that script directly at "
 "the command line (rather than at the Python shell)."
 msgstr ""
+"**`[project.scripts]` (Puntos de entrada):** Los puntos de entrada son opcionales. "
+"Si tiene una herramienta de línea de comandos que ejecuta un script específico alojado en su paquete, "
+"puede incluir un punto de entrada para llamar a ese script directamente en la línea de comandos (en lugar de en la "
+"shell de Python)."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:186
 msgid ""
-"Here is an example of[ a package that has entry point "
+"Here is an example of [ a package that has entry point "
 "script](https://github.com/pyOpenSci/update-web-"
 "metadata/blob/main/pyproject.toml#L60)s. Notice that there are several "
 "core scripts defined in that package that perform sets of tasks. "
 "pyOpenSci is using those scripts to process their metadata."
 msgstr ""
+"Aquí hay un ejemplo de [un paquete que tiene un script de punto de entrada]("
+"https://github.com/pyOpenSci/update-web-"
+"metadata/blob/main/pyproject.toml#L60). Observe que hay varios scripts principales"
+" definidos en ese paquete que realizan conjuntos de tareas. pyOpenSci está utilizando "
+"esos scripts para procesar sus metadatos."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:187
 msgid ""
@@ -3081,11 +3188,14 @@ msgid ""
 "version with tools like `setuptooms_scm`, then you might use the dynamic "
 "field. such as version (using scm) **dynamic = [\"version\"]**"
 msgstr ""
+"**Dynamic Fields:** si tiene campos que se completan dinámicamente. Un ejemplo"
+" de esto es si está utilizando una versión basada en control de versiones con "
+"herramientas como `setuptooms_scm` - entonces podría usar el campo dinámico. "
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:189
 #: ../../package-structure-code/python-package-build-tools.md:392
 msgid "Add dependencies to your pyproject.toml file"
-msgstr ""
+msgstr "Añadir dependencias a su archivo pyproject.toml"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:191
 msgid ""
@@ -3094,24 +3204,29 @@ msgid ""
 "development dependencies such as pytest, code formatters such as Black "
 "and documentation tools such as sphinx."
 msgstr ""
+"El archivo pyproject.toml también se puede utilizar como un reemplazo del archivo "
+"requirements.txt que tradicionalmente se ha utilizado para almacenar dependencias de desarrollo "
+"como pytest, formateadores de código como Black y herramientas de documentación como sphinx."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:193
 msgid ""
 "To add dependencies to your build, add a `[project.optional-"
 "dependencies]` table to your pyproject.toml file."
 msgstr ""
+"Para agregar dependencias a su construcción, agregue una tabla `[project.optional-"
+"dependencies]` a su archivo pyproject.toml."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:195
 msgid "Then specify dependency groups as follows:"
-msgstr ""
+msgstr "Después, especifique grupos de dependencias de la siguiente manera:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:202
 msgid "Following the above example, you install dependencies like this:"
-msgstr ""
+msgstr "Siguiendo el ejemplo anterior, instala dependencias de la siguiente manera:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:204
 msgid "`python -m pip install -e .[tests]`"
-msgstr ""
+msgstr "`python -m pip install -e .[tests]`"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:206
 msgid ""
@@ -3119,18 +3234,21 @@ msgid ""
 "dependencies declared in the tests section of your `[project.optional-"
 "dependencies]` table."
 msgstr ""
+"Lo anterior instalará tanto su paquete en modo editable como todas las dependencias "
+"declaradas en la sección de pruebas de su tabla `[project.optional-"
+"dependencies]`."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:208
 msgid "To install all dependencies and also your package, you'd use:"
-msgstr ""
+msgstr "Para instalar todas las dependencias y también su paquete, usaría:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:210
 msgid "`python -m pip install -e .[tests,lint,docs]`"
-msgstr ""
+msgstr "`python -m pip install -e .[tests,lint,docs]"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:212
 msgid "Recursive dependencies"
-msgstr ""
+msgstr "Dependencias recursivas"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:216
 msgid ""
@@ -3138,10 +3256,13 @@ msgid ""
 "for more.](https://hynek.me/articles/python-recursive-optional-"
 "dependencies/)"
 msgstr ""
+"También puede configurar conjuntos de dependencias recursivas. [Vea esta "
+"publicación en el blog para más información.](https://hynek.me/articles/python-recursive-"
+"optional-dependencies/)"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:219
 msgid "Example pyproject.toml for building using hatchling"
-msgstr ""
+msgstr "Ejemplo de pyproject.toml para construir usando hatchling"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:221
 msgid ""
@@ -3149,14 +3270,18 @@ msgid ""
 "example package setup uses **hatchling** to build the [package's sdist "
 "and wheels](python-package-distribution-files-sdist-wheel)."
 msgstr ""
+"A continuación se muestra un ejemplo de configuración de construcción para un proyecto de Python. "
+"Esta configuración de paquete de ejemplo utiliza **hatchling** para construir los "
+"[archivos sdist y wheels del paquete](python-package-"
+"distribution-files-sdist-wheel)."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:229
 msgid "Notice that dependencies are specified in this file."
-msgstr ""
+msgstr "Nótese que las dependencias se especifican en este archivo."
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:231
 msgid "Example pyproject.toml for building using setuptools"
-msgstr ""
+msgstr "Ejemlo de pyproject.toml para construir usando setuptools"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:233
 msgid ""
@@ -3165,36 +3290,45 @@ msgid ""
 "system (setuptools). Notice how simple it is to swap out the tools needed"
 " to build this package!"
 msgstr ""
+"Los metadatos del paquete, incluidos los autores, palabras clave, etc., también son fáciles de leer. "
+"A continuación, puede ver el mismo archivo TOML que utiliza un sistema de construcción diferente (setuptools). "
+"¡Observe lo simple que es cambiar las herramientas necesarias para construir este paquete!"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:237
 msgid "In this example package setup you use:"
-msgstr ""
+msgstr "En esta configuración de paquete de ejemplo, usas:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:239
 msgid ""
 "**setuptools** to build the [package's sdist and wheels](python-package-"
 "distribution-files-sdist-wheel)"
 msgstr ""
+"**setuptools** para construir los [archivos sdist y wheels del paquete](python-package-"
+"distribution-files-sdist-wheel)"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:240
 msgid ""
 "**setuptools_scm** to manage package version updates using version "
 "control tags"
 msgstr ""
+"**setuptools_scm** para gestionar las actualizaciones de la versión del "
+"paquete utilizando etiquetas de control de versiones"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:242
 msgid ""
 "In the example below `[build-system]` is the first table of values. It "
 "has two keys that specify the build backend API and containing package:"
 msgstr ""
+"En este ejemplo a continuación `[build-system]` es la primera tabla de valores. "
+"Tiene dos claves que especifican la API del backend de construcción y el paquete que contiene:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:245
 msgid "`requires =`"
-msgstr ""
+msgstr "`requires =`"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:246
 msgid "`build-back-end =`"
-msgstr ""
+msgstr "`build-back-end =`"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:253
 msgid ""
@@ -3202,6 +3336,9 @@ msgid ""
 "setuptools, Poetry and Hatch.](/package-structure-code/python-package-"
 "build-tools)"
 msgstr ""
+"[Haga clic aquí para leer sobre nuestras herramientas de construcción de paquetes, incluidas PDM, "
+"setuptools, Poetry y Hatch.](/package-structure-code/python-package-"
+"build-tools)"
 
 #: ../../package-structure-code/python-package-build-tools.md:1
 msgid "Python Packaging Tools"
