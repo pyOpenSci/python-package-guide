@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-14 09:22-0400\n"
+"POT-Creation-Date: 2025-01-18 13:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Felipe Moreno <felipe@flpm.dev>\n"
 "Language: es\n"
@@ -18,37 +18,187 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../tests/index.md:72
+#: ../../tests/code-cov.md:1
+#, fuzzy
+msgid "Code coverage for your Python package test suite"
+msgstr "Escribe pruebas para tu paquete de Python"
+
+#: ../../tests/code-cov.md:3
+msgid ""
+"Code coverage measures how much of your package's code runs during "
+"testing. Achieving high coverage can help ensure the reliability of your "
+"codebase, but it’s not a guarantee of quality. Below, we outline key "
+"considerations for using code coverage effectively."
+msgstr ""
+
+#: ../../tests/code-cov.md:8
+msgid "Why aim for high code coverage?"
+msgstr ""
+
+#: ../../tests/code-cov.md:10
+msgid ""
+"A good practice is to ensure that every line of your code runs at least "
+"once during your test suite. This helps you:"
+msgstr ""
+
+#: ../../tests/code-cov.md:13
+msgid "Identify untested parts of your codebase."
+msgstr ""
+
+#: ../../tests/code-cov.md:14
+msgid "Catch bugs that might otherwise go unnoticed."
+msgstr ""
+
+#: ../../tests/code-cov.md:15
+msgid "Build confidence in your software's stability."
+msgstr ""
+
+#: ../../tests/code-cov.md:17
+msgid "Limitations of code coverage"
+msgstr ""
+
+#: ../../tests/code-cov.md:19
+msgid "While high code coverage is valuable, it has its limits:"
+msgstr ""
+
+#: ../../tests/code-cov.md:21
+msgid ""
+"**Difficult-to-test code:** Some parts of your code might be challenging "
+"to test, either due to complexity or limited resources."
+msgstr ""
+
+#: ../../tests/code-cov.md:23
+msgid ""
+"**Missed edge cases:** Running all lines of code doesn’t guarantee that "
+"edge cases are handled correctly."
+msgstr ""
+
+#: ../../tests/code-cov.md:26
+msgid ""
+"Ultimately, you should focus on how your package will be used and ensure "
+"your tests cover those scenarios adequately."
+msgstr ""
+
+#: ../../tests/code-cov.md:29
+msgid "Tools for analyzing Python package code coverage"
+msgstr ""
+
+#: ../../tests/code-cov.md:31
+msgid ""
+"Some common services for analyzing code coverage are "
+"[codecov.io](https://codecov.io/) and "
+"[coveralls.io](https://coveralls.io/). These projects are free for open "
+"source tools and will provide dashboards that tell you how much of your "
+"codebase is covered during your tests. We recommend setting up an account"
+" (on either CodeCov or Coveralls) and using it to keep track of your code"
+" coverage."
+msgstr ""
+
+#: ../../tests/code-cov.md:33
+#, python-format
+msgid ""
+"Screenshot of the code cov service - showing test coverage for the "
+"stravalib package. This image shows a list of package modules and the "
+"associated number of lines and % lines covered by tests. At the top of "
+"the image, you can see what branch is being evaluated and the path to the"
+" repository."
+msgstr ""
+
+#: ../../tests/code-cov.md:38
+msgid ""
+"The CodeCov platform is a useful tool if you wish to track code coverage "
+"visually. Using it, you can not only get the same summary information "
+"that you can get with the **pytest-cov** extension. You can also see what"
+" lines are covered by your tests and which are not. Code coverage is "
+"useful for evaluating unit tests and/or how much of your package code is "
+"\"covered\". It, however, will not evaluate things like integration tests"
+" and end-to-end workflows."
+msgstr ""
+
+#: ../../tests/code-cov.md:43
+msgid "Typing & MyPy coverage"
+msgstr ""
+
+#: ../../tests/code-cov.md:44
+msgid "You can also create and upload typing reports to CodeCov."
+msgstr ""
+
+#: ../../tests/code-cov.md:47
+msgid "Exporting Local Coverage Reports"
+msgstr ""
+
+#: ../../tests/code-cov.md:49
+msgid ""
+"In addition to using services like CodeCov or Coveralls, you can generate"
+" local coverage reports directly using the **coverage.py** tool. This can"
+" be especially useful if you want to create reports in Markdown or HTML "
+"format for offline use or documentation."
+msgstr ""
+
+#: ../../tests/code-cov.md:51
+msgid "To generate a coverage report in **Markdown** format, run:"
+msgstr ""
+
+#: ../../tests/code-cov.md:56
+msgid ""
+"This command will produce a Markdown-formatted coverage summary that you "
+"can easily include in project documentation or share with your team."
+msgstr ""
+
+#: ../../tests/code-cov.md:58
+msgid ""
+"To generate an HTML report that provides a detailed, interactive view of "
+"which lines are covered, use:"
+msgstr ""
+
+#: ../../tests/code-cov.md:64
+msgid ""
+"The generated HTML report will be saved in a directory named htmlcov by "
+"default. Open the index.html file in your browser to explore your "
+"coverage results."
+msgstr ""
+
+#: ../../tests/code-cov.md:66
+msgid ""
+"These local reports are an excellent way to quickly review coverage "
+"without setting up an external service."
+msgstr ""
+
+#: ../../tests/index.md:73
 msgid "Intro"
 msgstr "Introducción"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Write tests"
 msgstr "Crea pruebas"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Test types"
 msgstr "Tipos de pruebas"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Run tests locally"
 msgstr "Ejecuta pruebas localmente"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Run tests online (using CI)"
 msgstr "Ejecuta pruebas en línea (usando CI)"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
+msgid "Code coverage"
+msgstr ""
+
+#: ../../tests/index.md:73
 msgid "Create & Run Tests"
 msgstr "Crea y Ejecuta Pruebas"
 
-#: ../../tests/index.md:1
+#: ../../tests/index.md:2
 msgid "Tests and data for your Python package"
 msgstr "Pruebas y datos para tu paquete de Python"
 
-#: ../../tests/index.md:3
+#: ../../tests/index.md:4
 msgid ""
 "Tests are an important part of your Python package because they provide a"
 " set of checks that ensure that your package is functioning how you "
@@ -58,21 +208,22 @@ msgstr ""
 "proporcionan un conjunto de comprobaciones que aseguran que tu paquete "
 "funciona como se espera."
 
-#: ../../tests/index.md:7
+#: ../../tests/index.md:8
+#, fuzzy
 msgid ""
-"In this section you will learn more about the importance of writing tests"
-" for your Python package and how you can setup infrastructure to run your"
-" tests both locally and on GitHub."
+"In this section, you will learn more about the importance of writing "
+"tests for your Python package and how you can set up infrastructure to "
+"run your tests both locally and on GitHub."
 msgstr ""
 "En esta sección aprenderás más sobre la importancia de escribir pruebas "
 "para tu paquete de Python y cómo puedes configurar la infraestructura "
 "para ejecutar tus pruebas tanto localmente como en GitHub."
 
-#: ../../tests/index.md:19
+#: ../../tests/index.md:20
 msgid "✨ Why write tests ✨"
 msgstr "✨ Por qué escribir pruebas ✨"
 
-#: ../../tests/index.md:24
+#: ../../tests/index.md:25
 msgid ""
 "Learn more about the art of writing tests for your Python package. Learn "
 "about why you should write tests and how they can help you and potential "
@@ -82,11 +233,11 @@ msgstr ""
 "Aprende por qué deberías escribir pruebas y cómo pueden ayudarte a ti y a"
 " los posibles contribuyentes a tu proyecto."
 
-#: ../../tests/index.md:31
+#: ../../tests/index.md:32
 msgid "✨ Types of tests ✨"
 msgstr "✨ Tipos de pruebas ✨"
 
-#: ../../tests/index.md:36
+#: ../../tests/index.md:37
 msgid ""
 "There are three general types of tests that you can write for your Python"
 " package: unit tests, integration tests and end-to-end (or functional) "
@@ -96,11 +247,11 @@ msgstr ""
 "de Python: pruebas unitarias, pruebas de integración y pruebas de extremo"
 " a extremo (o funcionales). Aprende sobre las tres."
 
-#: ../../tests/index.md:42
+#: ../../tests/index.md:43
 msgid "✨ Run tests locally ✨"
 msgstr "✨ Ejecuta pruebas localmente ✨"
 
-#: ../../tests/index.md:47
+#: ../../tests/index.md:48
 msgid ""
 "If you expect your users to use your package across different versions of"
 " Python, then using an automation tool such as nox to run your tests is "
@@ -113,13 +264,14 @@ msgstr ""
 "puedes usar para ejecutar tus pruebas en diferentes versiones de Python "
 "aquí."
 
-#: ../../tests/index.md:53
+#: ../../tests/index.md:54
 msgid "✨ Run tests online (using CI) ✨"
 msgstr "✨ Ejecuta pruebas en línea (usando CI) ✨"
 
-#: ../../tests/index.md:58
+#: ../../tests/index.md:59
+#, fuzzy
 msgid ""
-"Continuous integration platforms such as GitHub actions can be useful for"
+"Continuous integration platforms such as GitHub Actions can be useful for"
 " running your tests across both different Python versions and different "
 "operating systems. Learn about setting up tests to run in Continuous "
 "Integration here."
@@ -129,7 +281,7 @@ msgstr ""
 "en diferentes sistemas operativos. Aprende a configurar pruebas para que "
 "se ejecuten en la Integración Continua aquí."
 
-#: ../../tests/index.md:69
+#: ../../tests/index.md:70
 msgid "Graphic showing the elements of the packaging process."
 msgstr "Ilustración que muestra los elementos del proceso de empaquetado."
 
@@ -486,13 +638,11 @@ msgid "Other automation tools you'll see in the wild"
 msgstr "Otras herramientas de automatización que encontrarás"
 
 #: ../../tests/run-tests.md:125
+#, fuzzy
 msgid ""
 "**[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an "
 "automation tool that supports common steps such as building "
 "documentation, running tests across various versions of Python, and more."
-" You can find [a nice overview of tox in the plasmaPy "
-"documentation](https://docs.plasmapy.org/en/stable/contributing/testing_guide.html"
-"#using-tox)."
 msgstr ""
 "**[Tox](https://tox.wiki/en/latest/index.html#useful-links)** es una "
 "herramienta de automatización que admite pasos comunes como la "
@@ -1098,12 +1248,14 @@ msgstr ""
 "localmente."
 
 #: ../../tests/tests-ci.md:22
-msgid "Example GitHub action that runs tests"
+#, fuzzy
+msgid "Example GitHub Actions that runs tests"
 msgstr "Ejemplo de acción de GitHub que ejecuta pruebas"
 
 #: ../../tests/tests-ci.md:24
+#, fuzzy
 msgid ""
-"Below is an example GitHub action that runs tests using nox across both "
+"Below is an example GitHub Actions that runs tests using nox across both "
 "Windows, Mac and Linux and on Python versions 3.9-3.11."
 msgstr ""
 "Abajo hay un ejemplo de una acción de GitHub que ejecuta pruebas "
@@ -1228,9 +1380,10 @@ msgstr ""
 " mismo."
 
 #: ../../tests/write-tests.md:21
+#, fuzzy
 msgid ""
 "**Easier pull request reviews:** By running your tests in a CI framework "
-"such as GitHub actions, each time you or a contributor makes a change to "
+"such as GitHub Actions, each time you or a contributor makes a change to "
 "your code-base, you can catch issues and things that may have changed in "
 "your code base. This ensures that your software behaves the way you "
 "expect it to."
@@ -1378,3 +1531,4 @@ msgstr ""
 "función falle de forma elegante cuando se le dan valores inesperados y "
 "que el usuario pueda entender fácilmente por qué falló (proporciona un "
 "mensaje de error útil)."
+
