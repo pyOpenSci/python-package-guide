@@ -1,3 +1,5 @@
+(readme-file)=
+
 # README File Guidelines and Resources
 
 Your **README.md** file should be located in the root of your GitHub repository.
@@ -11,8 +13,8 @@ The README.md file is the landing page of:
 
 Your README.md file is also used as a measure of package and community
 health on sites such as:
-* [GitHub community health for MovingPandas (available for all repositories)](https://github.com/anitagraser/movingpandas/community) and [Snyk - moving pandas example](https://snyk.io/advisor/python/movingpandas)
 
+* [GitHub community health for MovingPandas (available for all repositories)](https://github.com/movingpandas/movingpandas/community) and [Snyk - MovingPandas example](https://snyk.io/advisor/python/movingpandas)
 
 ```{figure} /images/pandera-python-package-readme-github.png
 ---
@@ -52,10 +54,11 @@ Your README file should have the following information:
 Your **README.md** file should contain the following things (listed from top to bottom):
 
 ### ✔️ Your package's name
+
 Ideally your GitHub repository's name is also the name of your package. The more
 self explanatory that name is, the better.
 
-###  ✔️ Badges for current package version, continuous integration and test coverage
+### ✔️ Badges for current package version, continuous integration and test coverage
 
 Badges are a useful way to draw attention to the quality of your project. Badges
 assure users that your package is well-designed, tested, and maintained. They
@@ -84,7 +87,6 @@ a badge to add to your repository that shows that it has been reviewed.
 [![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-review/issues/12)
 
 ```
-
 
 ```{caution}
 Beware of the overuse of badges! There is such a thing as too much of a good thing (which can overload a potential user!).
