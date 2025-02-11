@@ -1,5 +1,4 @@
 (contributing-file)=
-
 # Your Python Package CONTRIBUTING File
 
 The **CONTRIBUTING.md** is the landing page guide for your project's contributors. It outlines how contributors can get involved, the contribution types that you welcome, and how contributors should interact or engage with you and your maintainer team. The contributor guide should also link to get-started resources that overview how to set up development environments, what type of workflow you expect on GitHub/GitLab, and anything else that contributors might need to get started.
