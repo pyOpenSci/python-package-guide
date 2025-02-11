@@ -4,7 +4,7 @@
 
 The **CONTRIBUTING.md** is the landing page guide for your project's contributors. It outlines how contributors can get involved, the contribution types that you welcome, and how contributors should interact or engage with you and your maintainer team. The contributor guide should also link to get-started resources that overview how to set up development environments, what type of workflow you expect on GitHub/GitLab, and anything else that contributors might need to get started.
 
-This file benefits maintainers and contributors. For contributors, it provides a roadmap to getting started making their first contribution easier. For maintainers, it answers commonly asked questions and reduces the burden of explaining your process to every person who wants to contribute. This document creates a more collaborative and efficient development process for everyone.
+This file benefits maintainers and contributors. For contributors, it provides a roadmap that helps them get started and makes their first contribution easier. For maintainers, it answers commonly asked questions and reduces the burden of explaining your process to every person who wants to contribute. This document creates a more collaborative and efficient development process for everyone.
 
 ## CONTRIBUTING files lower barriers to entry
 
@@ -46,13 +46,13 @@ The CONTRIBUTING.md file should include information about:
   - Are new issues welcome?
   - Should contributors open a pull request (PR) directly or discuss changes first?
 
-- Include instructions for the fork and pull request workflow, and link to resources or guides explaining these steps (if available).
-- Guidelines that you have in place for users submitting issues, pull requests or asking questions.
+- Include instructions for the fork and pull request workflow and link to resources or guides explaining these steps (if available).
+- Guidelines that you have in place for users submitting issues, pull requests, or asking questions.
 
-If you have a [development guide](development-guide), link to it. This guide should provide clear instructions on how to set up your development environment locally. It also should overview and CI tools that you have that could simplify the contribution process (for example, pre-commit.ci bot), linters, code formatters, and so on.
+If you have a [development guide](development-guide), link to it. This guide should provide clear instructions on how to set up your development environment locally. It also should overview CI tools that you have that could simplify the contribution process (for example, pre-[commit.ci bot](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#pre-commit-ci), and so on), [linters, code formatters](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#code-linting-formatting-and-styling-tools), and so on.
 
 This guide should also include information for someone
-interested in asking questions. Some projects accept questions as GitHub or GitLab issues. Others use GitHub discussions, Discourse or even a Discord server.
+interested in asking questions. Some projects accept questions as GitHub or GitLab issues. Others use GitHub discussions, Discourse, or even a Discord server.
 
 The contributing file should also include:
 
