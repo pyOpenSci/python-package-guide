@@ -1,5 +1,4 @@
-(development-guide)=
-
+(pyos-development-guide)=
 # What the development guide for your Python package should contain
 
 Ideally, your package should also have a development guide. This file may live in your package documentation and should be linked to from your CONTRIBUTING.md file (discussed above).
