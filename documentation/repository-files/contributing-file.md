@@ -39,7 +39,7 @@ The CONTRIBUTING.md file should include information about:
 
 - The types of contributions that you welcome
 
-> Example: We welcome contributions of all kinds. If you want to address an existing issue, check out our issues in this repository and comment on the one that you'd like to open to. Otherwise, you can open a new issue...
+> Example: We welcome contributions of all kinds. If you want to address an existing issue, check out our issues in this repository and comment on the one that you'd like to help with. Otherwise, you can open a new issue...
 
 - How you'd like contributions to happen. Clearly outline your contribution process. For example:
   - Should contributors address open issues
