@@ -19,7 +19,7 @@ Including a well-written CONTRIBUTING.md file in your project is one way of maki
 
 Make the guide welcoming. Use accessible language to encourage participation from contributors of all experience levels. For example:
 
-- Avoid technical jargon or explain terms when necessary (e.g., "fork the repository").
+- Avoid technical jargon or explain terms when necessary (for example, "fork the repository").
 - Include a friendly introduction, such as "Thank you for your interest in contributing! We're excited to collaborate with you."
 - Highlight that all contributions, no matter how small, are valued.
 
@@ -28,8 +28,8 @@ Make the guide welcoming. Use accessible language to encourage participation fro
 :::{admonition} Example contributing files
 :class: tip
 
-- [pyGMT contributing file](https://github.com/GenericMappingTools/pygmt/blob/main/CONTRIBUTING.md)
-- [fatiando verde's contributing file](https://github.com/fatiando/verde/blob/main/CONTRIBUTING.md)
+- [PyGMT contributing file](https://github.com/GenericMappingTools/pygmt/blob/main/CONTRIBUTING.md)
+- [Verde's contributing file](https://github.com/fatiando/verde/blob/main/CONTRIBUTING.md)
 :::
 
 Your Python package should include a file called **CONTRIBUTING.md** located in the
@@ -49,10 +49,10 @@ The CONTRIBUTING.md file should include information about:
 - Include instructions for the fork and pull request workflow, and link to resources or guides explaining these steps (if available).
 - Guidelines that you have in place for users submitting issues, pull requests or asking questions.
 
-If you have a [development guide](development-guide), link to it. This guide should provide clear instructions on how to set up your development environment locally. It also should overview and CI tools that you have that could simplify the contribution process (e.g. pre-commit.ci bot, etc), linters, code formatters, etc.
+If you have a [development guide](development-guide), link to it. This guide should provide clear instructions on how to set up your development environment locally. It also should overview and CI tools that you have that could simplify the contribution process (for example, pre-commit.ci bot), linters, code formatters, and so on.
 
 This guide should also include information for someone
-interested in asking questions. Some projects accept questions as GitHub or GitLab issues. Others use GitHub discussions, Discourse or even a discord server.
+interested in asking questions. Some projects accept questions as GitHub or GitLab issues. Others use GitHub discussions, Discourse or even a Discord server.
 
 The contributing file should also include:
 
