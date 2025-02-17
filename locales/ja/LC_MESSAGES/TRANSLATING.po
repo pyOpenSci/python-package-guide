@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 18:04+0900\n"
+"POT-Creation-Date: 2025-02-17 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../TRANSLATING.md:5
 msgid "Translation Guide for the Python Packaging Guide"
@@ -36,8 +36,7 @@ msgid ""
 " the process of contributing to the guide itself, except that instead of "
 "working on the guide source files directly, you will be working on the "
 "translation files."
-msgstr ""
-"ガイドの翻訳に貢献するプロセスは、ガイドのソースファイルに直接取り組むのではなく、翻訳ファイルに取り組むという点を除けば、ガイドそのものに貢献するプロセスと似ています。"
+msgstr "ガイドの翻訳に貢献するプロセスは、ガイドのソースファイルに直接取り組むのではなく、翻訳ファイルに取り組むという点を除けば、ガイドそのものに貢献するプロセスと似ています。"
 
 #: ../../TRANSLATING.md:11
 msgid "Overview of the Translation Process"
@@ -58,8 +57,7 @@ msgid ""
 "Sphinx, the documentation engine we use to build the Python Package "
 "Guide, has built-in support for internationalization, so the workflow is "
 "very straightforward."
-msgstr ""
-"Pythonパッケージガイドをビルドするために使っているドキュメントエンジンであるSphinxは、国際化をビルトインでサポートしているので、ワークフローはとても簡単です。"
+msgstr "Pythonパッケージガイドをビルドするために使っているドキュメントエンジンであるSphinxは、国際化をビルトインでサポートしているので、ワークフローはとても簡単です。"
 
 #: ../../TRANSLATING.md:17
 msgid ""
@@ -154,9 +152,8 @@ msgid ""
 "language, start by [creating an issue](https://github.com/pyOpenSci"
 "/python-package-guide/issues) in the repository."
 msgstr ""
-"新しい言語へのガイドの翻訳を開始したい場合は、リポジトリに "
-"[issueを作成する](https://github.com/pyOpenSci/python-package-guide/issues) "
-"ことから始めてください。"
+"新しい言語へのガイドの翻訳を開始したい場合は、リポジトリに [issueを作成する](https://github.com/pyOpenSci"
+"/python-package-guide/issues) ことから始めてください。"
 
 #: ../../TRANSLATING.md:55
 msgid ""
@@ -179,9 +176,11 @@ msgstr ""
 "例えば、フランス語への翻訳を開始したい場合は `'fr'` を追加します:"
 
 #: ../../TRANSLATING.md:68
+#, fuzzy
 msgid ""
-"You can find a list of the two-letter ISO language codes "
-"[here](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)."
+"You can find a list of the two-letter Sphinx language option "
+"[here](https://www.sphinx-doc.org/en/master/usage/configuration.html"
+"#confval-language)."
 msgstr ""
 "2文字のISO言語コードのリストは "
 "[こちら](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)。"
@@ -201,8 +200,10 @@ msgstr ""
 "翻訳を始める前に、翻訳ファイルがガイドの最新の変更に対応していることを確認する必要があります。"
 
 #: ../../TRANSLATING.md:75
-msgid "You can do this by running the following command:"
-msgstr "次のコマンドを実行すれば可能です:"
+msgid ""
+"You can do this by running the following command, replacing LANG by the "
+"language code you plan to work on (e.g., `es` for Spanish):"
+msgstr ""
 
 #: ../../TRANSLATING.md:81
 msgid ""
@@ -338,8 +339,8 @@ msgid ""
 "there are also tools like [Poedit](https://poedit.net/) that provide a "
 "graphic use interface."
 msgstr ""
-".po`ファイルの編集にはどんなテキストエディタでも使えます。 しかし、お好みであれば、 [Poedit](https://poedit.net/) "
-"のようなグラフィックなインターフェースを提供するツールもあります。"
+".po`ファイルの編集にはどんなテキストエディタでも使えます。 しかし、お好みであれば、 "
+"[Poedit](https://poedit.net/) のようなグラフィックなインターフェースを提供するツールもあります。"
 
 #: ../../TRANSLATING.md:146
 msgid ""
@@ -351,8 +352,8 @@ msgid ""
 msgstr ""
 "お使いのエディタによっては、`.po`ファイルを扱うためのシンタックスハイライトやその他の機能を提供するプラグインや拡張機能をインストールできるかもしれません。"
 " 例えば、Visual Studio Codeの "
-"[gettext](https://marketplace.visualstudio.com/items?itemName=mrorz.language-"
-"gettext) エクステンションのようなものです。"
+"[gettext](https://marketplace.visualstudio.com/items?itemName=mrorz"
+".language-gettext) エクステンションのようなものです。"
 
 #: ../../TRANSLATING.md:148
 msgid ""
@@ -388,24 +389,22 @@ msgid ""
 "`msgstr` fields in the example below start with an empty string, "
 "indicating that the text continues in the next line."
 msgstr ""
-"英語の原文が1行では長すぎて、複数行に分かれている場合があります。 このような場合、翻訳されたテキストでも同じ構造を保つことができます。 以下の例の "
-"`msgid` フィールドと `msgstr` フィールドの両方が空文字列で始まっていることに注意してください。"
+"英語の原文が1行では長すぎて、複数行に分かれている場合があります。 このような場合、翻訳されたテキストでも同じ構造を保つことができます。 "
+"以下の例の `msgid` フィールドと `msgstr` フィールドの両方が空文字列で始まっていることに注意してください。"
 
 #: ../../TRANSLATING.md:186
 msgid ""
 "The English text will sometimes contain Markdown formatting, such as bold"
 " or italic text. You should keep the formatting in the translated text, "
 "making sure to translate the text inside the formatting tags."
-msgstr ""
-"英語のテキストには、太字や斜体などのMarkdown書式が含まれていることがあります。翻訳されたテキストで書式を維持する必要があります、フォーマットタグの中のテキストを翻訳してください。"
+msgstr "英語のテキストには、太字や斜体などのMarkdown書式が含まれていることがあります。翻訳されたテキストで書式を維持する必要があります、フォーマットタグの中のテキストを翻訳してください。"
 
 #: ../../TRANSLATING.md:188
 msgid ""
 "The English text may also contain links to other sections of the guide or"
 " external resources. You should keep the links in the translated text, "
 "making sure to update the link text when appropriate."
-msgstr ""
-"英文テキストには、ガイドの他のセクションや外部リソースへのリンクが含まれている場合があります。リンクは翻訳されたテキストの中に残し、必要に応じてリンクテキストを更新してください。"
+msgstr "英文テキストには、ガイドの他のセクションや外部リソースへのリンクが含まれている場合があります。リンクは翻訳されたテキストの中に残し、必要に応じてリンクテキストを更新してください。"
 
 #: ../../TRANSLATING.md:196
 msgid ""
@@ -415,8 +414,8 @@ msgid ""
 " in the entry, starting with `#,`:"
 msgstr ""
 "エントリーには `fuzzy` "
-"と表示されることがありますが、これは原文の英文が翻訳後に変更され、翻訳を修正する必要があることを意味します。このような場合、エントリーに `#,` "
-"で始まる行が追加されます:"
+"と表示されることがありますが、これは原文の英文が翻訳後に変更され、翻訳を修正する必要があることを意味します。このような場合、エントリーに `#,`"
+" で始まる行が追加されます:"
 
 #: ../../TRANSLATING.md:213
 msgid ""
@@ -430,8 +429,7 @@ msgid ""
 "start with a `#` character to the entry. This can be helpful to add "
 "context to the translation for other translators or reviewers to see, but"
 " this might be only necessary in special circumstances."
-msgstr ""
-"文字で始まる行をエントリに追加することで、翻訳ファイルにコメントを追加することもできます。これは、他の翻訳者やレビュアーが翻訳を見るために文脈を追加するのに役立ちます、しかし、これは特別な状況でのみ必要かもしれません。"
+msgstr "文字で始まる行をエントリに追加することで、翻訳ファイルにコメントを追加することもできます。これは、他の翻訳者やレビュアーが翻訳を見るために文脈を追加するのに役立ちます、しかし、これは特別な状況でのみ必要かもしれません。"
 
 #: ../../TRANSLATING.md:218
 msgid ""
@@ -449,12 +447,13 @@ msgid "Building the Translated Documentation"
 msgstr "翻訳されたドキュメントのビルド"
 
 #: ../../TRANSLATING.md:223
+#, fuzzy
 msgid ""
 "Once you finished translating or when you want to check the translation "
 "in context, you can build the guide locally on your computer, using the "
-"following command:"
-msgstr ""
-"翻訳が終わったら、あるいは文脈の中で翻訳をチェックしたい場合は、次のコマンドを使用して、ガイドをコンピュータにローカルにビルドすることができます:"
+"following command, replacing LANG by the proper language code (e.g., `es`"
+" for Spanish)"
+msgstr "翻訳が終わったら、あるいは文脈の中で翻訳をチェックしたい場合は、次のコマンドを使用して、ガイドをコンピュータにローカルにビルドすることができます:"
 
 #: ../../TRANSLATING.md:229
 msgid ""
@@ -488,14 +487,15 @@ msgstr ""
 "例えば、スペイン語翻訳に取り組んでいる場合、次のように実行します:"
 
 #: ../../TRANSLATING.md:239
+#, fuzzy
 msgid ""
 "Note the `--` before the language code, it indicates that the following "
 "arguments should be passed into the nox session and not be interpreted "
 "directly by nox. If you forget the `--`, nox will look instead for a "
-"session named 'es' and complain that it does not exist."
+"session named 'es' and raise an error that it does not exist."
 msgstr ""
-"言語コードの前の `--` に注意してください。これは次の引数がnoxセッションに渡され、noxによって直接解釈されないことを示します。 もし `--`"
-" を忘れると、noxは代わりに 'es' という名前のセッションを探し、それが存在しないと文句を言います。"
+"言語コードの前の `--` に注意してください。これは次の引数がnoxセッションに渡され、noxによって直接解釈されないことを示します。 もし "
+"`--` を忘れると、noxは代わりに 'es' という名前のセッションを探し、それが存在しないと文句を言います。"
 
 #: ../../TRANSLATING.md:241
 msgid ""
@@ -503,8 +503,9 @@ msgid ""
 "where you can access the translated version of the guide. You can open "
 "the guide in your browser by navigating to `http://localhost:8000`."
 msgstr ""
-"このコマンドは `sphinx-autobuild` を使って、ローカルのWebサーバーを起動し、そこでガイドの翻訳版にアクセスすることができます。 "
-"ブラウザで `http://localhost:8000` に移動して、ガイドを開くことができます。"
+"このコマンドは `sphinx-autobuild` "
+"を使って、ローカルのWebサーバーを起動し、そこでガイドの翻訳版にアクセスすることができます。 ブラウザで "
+"`http://localhost:8000` に移動して、ガイドを開くことができます。"
 
 #: ../../TRANSLATING.md:243
 msgid ""
@@ -522,8 +523,7 @@ msgid ""
 "(PR) for your translation, you need to make sure that the translated "
 "version of the guide builds without any errors or warning and looks "
 "correctly in the browser."
-msgstr ""
-"翻訳が終わり、翻訳のプルリクエスト（PR）を提出する前に、翻訳されたバージョンのガイドがエラーや警告なしにビルドされ、ブラウザで正しく表示されることを確認する必要があります。"
+msgstr "翻訳が終わり、翻訳のプルリクエスト（PR）を提出する前に、翻訳されたバージョンのガイドがエラーや警告なしにビルドされ、ブラウザで正しく表示されることを確認する必要があります。"
 
 #: ../../TRANSLATING.md:249
 msgid "You can follow these steps:"
@@ -547,8 +547,8 @@ msgid ""
 "by opening the `_build/html/<lang>/index.html` file, where `<lang>` is "
 "the language you have been working on."
 msgstr ""
-"`_build/html/<lang>/index.html` ファイルを開いて、翻訳版のガイドがブラウザでうまく表示されることを確認してください。 "
-"`<lang>` は作業中の言語です。"
+"`_build/html/<lang>/index.html` "
+"ファイルを開いて、翻訳版のガイドがブラウザでうまく表示されることを確認してください。 `<lang>` は作業中の言語です。"
 
 #: ../../TRANSLATING.md:260
 msgid "If everything looks good, you can submit a PR with your changes."
@@ -571,7 +571,8 @@ msgstr ""
 "というタグが付けられます。"
 
 #: ../../TRANSLATING.md:268
-msgid "TODO: This tagging could be automated with a GitHub action."
+#, fuzzy
+msgid "TODO: This tagging could be automated with a GitHub Actions."
 msgstr "TODO: このタグ付けは、GitHubのアクションで自動化できるかもしれません。"
 
 #: ../../TRANSLATING.md:270
@@ -580,8 +581,7 @@ msgid ""
 "changes you made and any context that might be helpful for the reviewer "
 "(e.g., you translated new strings, you reviewed fuzzy entries, you fixed "
 "typos, etc.)"
-msgstr ""
-"PRを提出する際には、あなたが行った変更についての簡単な説明と、レビュアーにとって参考になりそうな文脈（新しい文字列を翻訳した、あいまいなエントリーを見直した、誤字脱字を修正した、など）を必ず含めてください。"
+msgstr "PRを提出する際には、あなたが行った変更についての簡単な説明と、レビュアーにとって参考になりそうな文脈（新しい文字列を翻訳した、あいまいなエントリーを見直した、誤字脱字を修正した、など）を必ず含めてください。"
 
 #: ../../TRANSLATING.md:272
 msgid "The Review Process"
@@ -610,7 +610,8 @@ msgid ""
 " make sure they are accurate and consistent with the style and tone of "
 "the guide."
 msgstr ""
-"各言語には担当エディターがおり、翻訳投稿の確認と統合を担当します。 エディターは、変更が正確で、ガイドのスタイルやトーンと一致していることを確認します。"
+"各言語には担当エディターがおり、翻訳投稿の確認と統合を担当します。 "
+"エディターは、変更が正確で、ガイドのスタイルやトーンと一致していることを確認します。"
 
 #: ../../TRANSLATING.md:280
 msgid ""
@@ -627,8 +628,7 @@ msgid ""
 "When the editor is satisfied with the translation, they will merge the "
 "PR. The translated version of the guide will be available on the "
 "pyOpenSci website once the language is released."
-msgstr ""
-"エディターが翻訳に満足したら、PRをマージします。ガイドの翻訳版は言語がリリースされ次第、pyOpenSciのウェブサイトから入手できます。"
+msgstr "エディターが翻訳に満足したら、PRをマージします。ガイドの翻訳版は言語がリリースされ次第、pyOpenSciのウェブサイトから入手できます。"
 
 #: ../../TRANSLATING.md:284
 msgid "The Release Process"
@@ -648,8 +648,7 @@ msgid ""
 "When the guide is built for release in CI, Sphinx will also generate the "
 "translated versions of the guide for the languages in the "
 "`RELEASE_LANGUAGES` list."
-msgstr ""
-"ガイドがCIでリリース用にビルドされると、Sphinxは `RELEASE_LANGUAGES` リストにある言語の翻訳版のガイドも生成します。"
+msgstr "ガイドがCIでリリース用にビルドされると、Sphinxは `RELEASE_LANGUAGES` リストにある言語の翻訳版のガイドも生成します。"
 
 #: ../../TRANSLATING.md:290
 msgid ""
@@ -685,12 +684,14 @@ msgid "What happens when a string has changed in the original English text?"
 msgstr "英語の原文で文字列が変更された場合はどうなりますか？"
 
 #: ../../TRANSLATING.md:300
+#, fuzzy
 msgid ""
 "If a string has changed in the original English version, it will be "
 "marked as `fuzzy` in the translation file the next time it is updated "
-"(`nox -s update-translations`). Contributors working on the translation "
-"can then review the fuzzy entries and make the necessary changes to "
-"ensure it is accurate, before removing the `fuzzy` tag."
+"(`update-language`, `update-all-languages`, or `update-all-release-"
+"languages`). Contributors working on the translation can then review the "
+"fuzzy entries and make the necessary changes to ensure it is accurate, "
+"before removing the `fuzzy` tag."
 msgstr ""
 "オリジナルの英語版で文字列が変更された場合、次に翻訳ファイルが更新されるとき（ `nox -s update-translations` ）に "
 "`fuzzy` としてマークされます。 翻訳に携わっているコントリビューターは、 `fuzzy` "
@@ -724,9 +725,9 @@ msgid ""
 "the bold formatting in the translated text but update the text inside the"
 " formatting tags to `**Prueba casos especiales:**`."
 msgstr ""
-"翻訳されたテキストの書式はそのままにして、書式タグの中のテキストも翻訳してください。 たとえば、元の英語のテキストが `**Test special "
-"cases:**` の場合、翻訳されたテキストでは太字の書式を維持しますが、書式タグ内のテキストを `**特殊ケーステスト:**` "
-"に更新する必要があります。"
+"翻訳されたテキストの書式はそのままにして、書式タグの中のテキストも翻訳してください。 たとえば、元の英語のテキストが `**Test "
+"special cases:**` の場合、翻訳されたテキストでは太字の書式を維持しますが、書式タグ内のテキストを `**特殊ケーステスト:**`"
+" に更新する必要があります。"
 
 #: ../../TRANSLATING.md:310
 msgid "How do I handle strings that are too long for a single line?"
@@ -739,8 +740,8 @@ msgid ""
 "indicated by an empty string in the `msgid` and `msgstr` fields, followed"
 " by the continuation of the text in the next line. For example:"
 msgstr ""
-"元の英文が長すぎて1行に収まらない場合は、複数行に分けることができます。 `.po` ファイル内の複数行の文字列は `msgid` と `msgstr`"
-" フィールドに空の文字列を入れ、その後に次の行のテキストの続きを入れることで示されます。 例えば:"
+"元の英文が長すぎて1行に収まらない場合は、複数行に分けることができます。 `.po` ファイル内の複数行の文字列は `msgid` と "
+"`msgstr` フィールドに空の文字列を入れ、その後に次の行のテキストの続きを入れることで示されます。 例えば:"
 
 #: ../../TRANSLATING.md:325
 msgid "How do I translate images?"
@@ -763,8 +764,7 @@ msgid ""
 "In some special cases, an image might be critical to the understanding of"
 " the content. In those cases, the translations will be handled by the "
 "maintainers and editors outside this workflow."
-msgstr ""
-"特殊なケースでは、画像がコンテンツの理解に不可欠な場合があります。 そのような場合、翻訳はこのワークフロー外のメンテナやエディタが担当します。"
+msgstr "特殊なケースでは、画像がコンテンツの理解に不可欠な場合があります。 そのような場合、翻訳はこのワークフロー外のメンテナやエディタが担当します。"
 
 #: ../../TRANSLATING.md:331
 msgid ""
@@ -808,8 +808,7 @@ msgid ""
 "TODO: There are many approaches here, some projects release a translation"
 " as soon as some strings are translated, others wait until a certain "
 "percentage of the content is translated."
-msgstr ""
-"TODO：ここにはさまざまなアプローチがあります。あるプロジェクトでは、いくつかの文字列が翻訳されるとすぐに翻訳をリリースしますし、ある一定の割合のコンテンツが翻訳されるまで待つプロジェクトもあります。"
+msgstr "TODO：ここにはさまざまなアプローチがあります。あるプロジェクトでは、いくつかの文字列が翻訳されるとすぐに翻訳をリリースしますし、ある一定の割合のコンテンツが翻訳されるまで待つプロジェクトもあります。"
 
 #: ../../TRANSLATING.md:341
 msgid "How can I get help with my translation?"
@@ -818,15 +817,38 @@ msgstr "翻訳を手伝ってもらうにはどうすればよいですか？"
 #: ../../TRANSLATING.md:343
 msgid ""
 "If you have any questions or need help with your translation, you can "
-"create an issue in the repository if you encounter any problems or need "
-"assistance."
-msgstr "もし翻訳で何か問題が発生したり、サポートが必要な場合は、リポジトリに課題を作成することができます。"
+"create an [issue](https://github.com/pyOpenSci/python-package-"
+"guide/issues) in the [Packaging Guide "
+"repository](https://github.com/pyOpenSci/python-package-guide)"
+msgstr ""
 
 #: ../../TRANSLATING.md:345
 msgid ""
-"TODO: Maybe [Discourse](https://pyopensci.discourse.group/) could be used"
-" as a way for contributors to ask for help with translations or the "
-"translation workflow?"
+"You can also ask in the PyOpenSci Discord server ([click "
+"here](https://discord.gg/CvSMp4zcqX) to join), you will find a general "
+"channel for questions related to our workflow, processes, and tools "
+"(translation-general) and channels for each of the languages we are "
+"working on (spanish-translation, japanese-translation, etc)."
 msgstr ""
-"TODO: [Discourse](https://pyopensci.discourse.group/) "
-"を、投稿者が翻訳や翻訳ワークフローについて助けを求める方法として使うことができるかもしれません。"
+
+#~ msgid "You can do this by running the following command:"
+#~ msgstr "次のコマンドを実行すれば可能です:"
+
+#~ msgid ""
+#~ "If you have any questions or need"
+#~ " help with your translation, you can"
+#~ " create an issue in the repository"
+#~ " if you encounter any problems or "
+#~ "need assistance."
+#~ msgstr "もし翻訳で何か問題が発生したり、サポートが必要な場合は、リポジトリに課題を作成することができます。"
+
+#~ msgid ""
+#~ "TODO: Maybe "
+#~ "[Discourse](https://pyopensci.discourse.group/) could be"
+#~ " used as a way for contributors "
+#~ "to ask for help with translations "
+#~ "or the translation workflow?"
+#~ msgstr ""
+#~ "TODO: [Discourse](https://pyopensci.discourse.group/) "
+#~ "を、投稿者が翻訳や翻訳ワークフローについて助けを求める方法として使うことができるかもしれません。"
+
