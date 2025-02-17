@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 18:04+0900\n"
+"POT-Creation-Date: 2025-02-17 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../CONTRIBUTING.md:4
 msgid "Contributing to the Python Packaging Guide"
@@ -42,9 +42,8 @@ msgid ""
 "[please open an issue here](https://github.com/pyOpenSci/python-package-"
 "guide/issues)."
 msgstr ""
-"ガイドに含めるべきもののアイデアがあれば、 "
-"[ここにissueを開いてください](https://github.com/pyOpenSci/python-package-guide/issues)"
-" 。"
+"ガイドに含めるべきもののアイデアがあれば、 [ここにissueを開いてください](https://github.com/pyOpenSci"
+"/python-package-guide/issues) 。"
 
 #: ../../CONTRIBUTING.md:13
 msgid ""
@@ -53,9 +52,9 @@ msgid ""
 "modify the text directly. Or, if you are less comfortable with pull "
 "requests, feel free to open an issue."
 msgstr ""
-"もしタイプミスを見つけたら、遠慮なく [submit a pull "
-"request](https://github.com/pyOpenSci/python-package-guide/pulls) "
-"して直接テキストを修正してください。 あるいは、プルリクエストに抵抗がある場合は、遠慮なくissueを開いてください。"
+"もしタイプミスを見つけたら、遠慮なく [submit a pull request](https://github.com/pyOpenSci"
+"/python-package-guide/pulls) して直接テキストを修正してください。 "
+"あるいは、プルリクエストに抵抗がある場合は、遠慮なくissueを開いてください。"
 
 #: ../../CONTRIBUTING.md:14
 msgid ""
@@ -122,8 +121,9 @@ msgid ""
 "fixing typos, or if this is your first contribution to open source and "
 "the first approach feels too intimidating."
 msgstr ""
-"二つ目の方法は、GitHub のウェブサイトで直接貢献する方法です。 この方法ではコンピュータのセットアップは不要で、PRを投稿した時点であなたの貢献は"
-" (継続的インテグレーション) テストされますが、問題が発生した場合にフィードバックを得るまでに時間がかかります。 "
+"二つ目の方法は、GitHub のウェブサイトで直接貢献する方法です。 "
+"この方法ではコンピュータのセットアップは不要で、PRを投稿した時点であなたの貢献は (継続的インテグレーション) "
+"テストされますが、問題が発生した場合にフィードバックを得るまでに時間がかかります。 "
 "誤字脱字の修正のような小さな貢献をする場合や、オープンソースへの貢献が初めてで、最初のアプローチが敷居が高いと感じる場合に最適な方法です。"
 
 #: ../../CONTRIBUTING.md:33
@@ -131,35 +131,41 @@ msgid "Forking the repository"
 msgstr "リポジトリをフォークする"
 
 #: ../../CONTRIBUTING.md:35
+#, fuzzy
 msgid ""
 "Independently of the approach you choose, the first step is to fork the "
-"Python Packaging Guide repository into your personal GitHub space. To "
-"\"fork\" a repository in GitHub means to create a copy of the main "
-"repository, or repo, that you have complete control over and can modify "
-"as you see fit."
+"Python Packaging Guide repository into your personal GitHub space. You "
+"can do this by clicking the \"Fork\" button in the top right corner of "
+"the repository page."
 msgstr ""
 "どの方法を選ぶかは別として、最初のステップは Python Packaging Guide のリポジトリを個人の GitHub "
 "スペースにフォークすることです。 GitHubでリポジトリを \"フォーク\" "
 "するということは、あなたが完全にコントロールし、あなたが望むように変更することができるメインリポジトリのコピーを作成することです。"
 
-#: ../../CONTRIBUTING.md:37
+#: ../../CONTRIBUTING.md:38
+msgid ""
+"[Learn more: Fork and Clone GitHub "
+"Repos](https://datascienceskills.org/lessons/git-github/git-intro/3-fork-"
+"clone/) is a good resource to learn more about forking."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:40
 msgid "To fork a repo,"
 msgstr "レポジトリをフォークする、"
 
-#: ../../CONTRIBUTING.md:39
+#: ../../CONTRIBUTING.md:42
 msgid "Make sure you are logged into GitHub."
 msgstr "GitHubにログインしていることを確認してください。"
 
-#: ../../CONTRIBUTING.md:41
+#: ../../CONTRIBUTING.md:44
 msgid ""
 "Go to the repo you would like to fork, in this case the [Python Packaging"
 " Guide](https://www.github.com/pyopensci/python-package-guide) repo."
 msgstr ""
-"フォークしたいリポジトリ、ここでは "
-"[Pythonパッケージングガイド](https://www.github.com/pyopensci/python-package-guide) "
-"リポジトリに移動します。"
+"フォークしたいリポジトリ、ここでは [Pythonパッケージングガイド](https://www.github.com/pyopensci"
+"/python-package-guide) リポジトリに移動します。"
 
-#: ../../CONTRIBUTING.md:43
+#: ../../CONTRIBUTING.md:46
 msgid ""
 "In the top right-hand corner of the page there is a 'Fork' button. Click "
 "that button. You will be brought to a new page where you will 'Create a "
@@ -168,161 +174,428 @@ msgid ""
 "`https://github.com/<username>/python-package-guide`, where `<username>` "
 "is your GitHub username."
 msgstr ""
-"ページの右上に 'Fork' ボタンがあります。そのボタンをクリックしてください。 新しいページが表示され、そこで '新しいフォークを作成' します。 "
-"デフォルトの入力のまま、'Create fork' をクリックします。 これで、 "
+"ページの右上に 'Fork' ボタンがあります。そのボタンをクリックしてください。 新しいページが表示され、そこで '新しいフォークを作成' "
+"します。 デフォルトの入力のまま、'Create fork' をクリックします。 これで、 "
 "`https://github.com/<username>1/python-package-guide` にリポジトリのコピーが作成されます。 "
 "`<username>` はあなたの GitHub ユーザー名です。"
 
-#: ../../CONTRIBUTING.md:47
+#: ../../CONTRIBUTING.md:51
 msgid "Contributing via the GitHub website"
 msgstr "GitHubウェブサイトを通じて貢献する"
 
-#: ../../CONTRIBUTING.md:49
+#: ../../CONTRIBUTING.md:53
 msgid "How to edit a MarkDown file"
 msgstr "MarkDownファイルの編集方法"
 
-#: ../../CONTRIBUTING.md:51
+#: ../../CONTRIBUTING.md:55
 msgid ""
-"*__TODO__: This section should show how to use the GitHub interface to "
-"edit and previewing a Markdown file.*"
+"The Python Packaging Guide is written in myST, a variant of MarkDown. You"
+" can edit the files directly in the GitHub website. To do so, navigate to"
+" the file you want to edit and click the pencil icon in the top right "
+"corner of the file."
 msgstr ""
-"*__TODO__: このセクションでは、GitHub のインターフェイスを使って Markdown "
-"ファイルを編集したりプレビューしたりする方法を説明します。*"
 
-#: ../../CONTRIBUTING.md:53
+#: ../../CONTRIBUTING.md:58
+msgid "Edit button in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:64
+msgid ""
+"An image showing how to edit a file in GitHub. The pencil icon is "
+"highlighted with a red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:66
+msgid "Edit file in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:72
+msgid ""
+"An image showing when a file is being edited in GitHub. The file content "
+"is displayed in a text editor."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:75
+msgid "To preview your changes, click the \"Preview changes\" tab."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:77
+msgid "Preview changes in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:83
+msgid ""
+"An image showing how to preview changes in GitHub. The file content is "
+"displayed in a text editor. The preview changes tab is highlighted with a"
+" red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:86
 msgid "How to commit your changes"
 msgstr "変更をコミットする方法"
 
-#: ../../CONTRIBUTING.md:55
+#: ../../CONTRIBUTING.md:88
 msgid ""
-"*__TODO__: This section should show how to commit changes via the GitHub "
-"interface.*"
-msgstr "*__TODO__: このセクションでは、GitHub インターフェイスを使って変更をコミットする方法を説明します。*"
+"When you are done editing the file, scroll down to the bottom of the "
+"page. You will see a section called \"Commit changes\". Here you can "
+"write a title and a description for your changes. Make sure to write a "
+"clear and concise title that describes the changes you made."
+msgstr ""
 
-#: ../../CONTRIBUTING.md:57
+#: ../../CONTRIBUTING.md:91
+#, fuzzy
+msgid "Commit changes in GitHub"
+msgstr "変更をコミットする"
+
+#: ../../CONTRIBUTING.md:97
+msgid ""
+"An image showing how to commit changes in GitHub. The commit message is "
+"displayed in a text editor. The commit changes section is highlighted "
+"with a red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:100
+msgid ""
+"After writing your commit message, click the \"Commit changes\" button to"
+" save your changes."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:102
 msgid "Contributing locally on your computer"
 msgstr "あなたのコンピュータでローカルに貢献する"
 
-#: ../../CONTRIBUTING.md:59
+#: ../../CONTRIBUTING.md:104
 msgid "Clone your forked repository"
 msgstr "フォークしたリポジトリをクローンする"
 
-#: ../../CONTRIBUTING.md:61
+#: ../../CONTRIBUTING.md:106
 msgid ""
-"*__TODO__: This section should show how to clone a repository from GitHub"
-" into your computer.*"
-msgstr "*__TODO__: このセクションでは、GitHub から自分のコンピューターにリポジトリをクローンする方法を説明します。*"
+"To clone your forked repository to your computer, you need to copy the "
+"URL of your forked repository and run the following command in your "
+"terminal:"
+msgstr ""
 
-#: ../../CONTRIBUTING.md:63
+#: ../../CONTRIBUTING.md:111
+msgid ""
+"Replace `<URL>` with the URL of your forked repository. You can find the "
+"URL by clicking the green \"Code\" button on your forked repository page."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:113
+msgid "Clone repository in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:119
+msgid ""
+"An image showing how to clone a repository in GitHub. The URL of the "
+"repository is displayed in a text editor. The code button is highlighted "
+"with a red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:122
 msgid "Create a new branch"
 msgstr "新しいブランチを作る"
 
-#: ../../CONTRIBUTING.md:65
-msgid "*__TODO__: This section should show how to create a new branch.*"
-msgstr "*__TODO__: このセクションでは、新しいブランチを作成する方法を説明します。*"
+#: ../../CONTRIBUTING.md:124
+msgid ""
+"Before making any changes, you should create a new branch to work on. "
+"This will help keep your changes separate from the main branch and make "
+"it easier to submit a pull request."
+msgstr ""
 
-#: ../../CONTRIBUTING.md:67
+#: ../../CONTRIBUTING.md:126
+msgid "To create a new branch, run the following command in your terminal:"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:132
 msgid "Create a virtual environment"
 msgstr "仮想環境を作る"
 
-#: ../../CONTRIBUTING.md:69
+#: ../../CONTRIBUTING.md:134
 msgid ""
-"*__TODO__: This section should show how to create a virtual environment "
-"using venv.*"
-msgstr "*__TODO__: このセクションでは、venvを使用して仮想環境を作成する方法について説明する。*"
+"To build the guide locally, you need to create a virtual environment and "
+"install the dependencies. You can do this by running the following "
+"commands in your terminal:"
+msgstr ""
 
-#: ../../CONTRIBUTING.md:71
+#: ../../CONTRIBUTING.md:136
+msgid "**On Windows**:"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:142
+msgid "**On MacOS and Linux**:"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:148
 msgid "Install the development dependencies"
 msgstr "開発依存パッケージをインストールする"
 
-#: ../../CONTRIBUTING.md:73
+#: ../../CONTRIBUTING.md:150
+#, fuzzy
 msgid ""
-"*__TODO__: This section should show how to install the development "
-"dependencies defined in pyproject.toml.*"
-msgstr "*__TODO__: このセクションでは、pyproject.tomlで定義されている開発依存関係をインストールする方法を示します。*"
+"To install the development dependencies, run the following command in "
+"your terminal:"
+msgstr "開発依存パッケージをインストールする"
 
-#: ../../CONTRIBUTING.md:75
+#: ../../CONTRIBUTING.md:156
 msgid "Commit your changes"
 msgstr "変更をコミットする"
 
-#: ../../CONTRIBUTING.md:77
+#: ../../CONTRIBUTING.md:158
 msgid ""
-"*__TODO__: This section should describe how to commit from the command "
-"line.*"
-msgstr "*__TODO__: このセクションでは、コマンドラインからコミットする方法を説明します。*"
+"After making your changes, you need to commit them to your local "
+"repository. To do this, run the following commands in your terminal:"
+msgstr ""
 
-#: ../../CONTRIBUTING.md:79
+#: ../../CONTRIBUTING.md:160
+msgid "To see the changes you made:"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:164
+msgid "To add the changes to the staging area:"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:168
+#, fuzzy
+msgid "To commit the changes:"
+msgstr "変更をコミットする方法"
+
+#: ../../CONTRIBUTING.md:172
+msgid ""
+"Replace `\"Your commit message here\"` with a clear and concise message "
+"that describes the changes you made."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:174
 msgid "How to build the guide locally"
 msgstr "ローカルでのガイドのビルド方法"
 
-#: ../../CONTRIBUTING.md:81
+#: ../../CONTRIBUTING.md:176
 msgid ""
-"*__TODO__: This section should describe the different sessions in nox "
-"related to building the docs: docs, docs-test, docs-live. It should also "
-"show how to see the guide built locally, by opening the right file in the"
-" browser or using the live version from docs-live*"
+"To build the guide locally, you can use the `nox` command. This will run "
+"the default `nox` session, which builds the guide and opens it in your "
+"browser."
 msgstr ""
-"*TODO__: docs、docs-test、docs-liveです。また、ブラウザで適切なファイルを開くか、docs-"
-"liveからライブバージョンを使用することで、ローカルで構築されたガイドを見る方法を示す必要があります。*"
 
-#: ../../CONTRIBUTING.md:83
+#: ../../CONTRIBUTING.md:178
+msgid ""
+"To see the different sessions available, you can run the following "
+"command in your terminal:"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:183
+msgid ""
+"There are different sessions in nox related to building the docs: `docs`,"
+" `docs-test`, `docs-live`. You can run them by specifying the session "
+"name after the `nox` command."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:185
+msgid "`docs`: this session builds the guide and opens it in your browser."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:189
+msgid ""
+"To see the guide built locally, open the file `_build/html/index.html` in"
+" your browser."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:191
+msgid "`docs-test`: this session runs the tests for the guide."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:195
+msgid ""
+"If the tests fail, you will see an error message in your terminal. You "
+"need to fix the errors before submitting your pull request."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:197
+msgid ""
+"`docs-live`: this session builds the guide and opens it in your browser "
+"with live reloading."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:201
+msgid ""
+"open the local version of the guide in your browser at ``localhost`` "
+"shown in the terminal."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:203
 msgid "Before you submit your pull request"
 msgstr "プルリクエストを提出する前に"
 
-#: ../../CONTRIBUTING.md:85
+#: ../../CONTRIBUTING.md:205
 msgid ""
-"*__TODO__: This section should describe what steps a user should follow "
-"before submitting the pull request: build the docs, verify your changes "
-"look correct, etc.*"
+"Before submitting your pull request, make sure to run the tests and check"
+" the formatting of your code."
 msgstr ""
-"*__TODO__: "
-"このセクションでは、ユーザーがプルリクエストを提出する前にどのようなステップを踏むべきかを記述する必要があります:ドキュメントをビルドする、変更が正しく見えるか確認する、などです。*"
 
-#: ../../CONTRIBUTING.md:87
+#: ../../CONTRIBUTING.md:210
+msgid ""
+"If the tests fail, you will see an error message in your terminal. You "
+"need to fix the errors before submitting your pull request. Also make "
+"sure to check the formatting of your documentation by building the docs "
+"locally and checking that your changes look correct."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:214
 msgid "Submitting a pull request with your contribution"
 msgstr "あなたの貢献のプルリクエストを投稿する"
 
-#: ../../CONTRIBUTING.md:89
+#: ../../CONTRIBUTING.md:216
 msgid "How to make a pull request"
 msgstr "プルリクエストの作り方"
 
-#: ../../CONTRIBUTING.md:91
+#: ../../CONTRIBUTING.md:218
 msgid ""
-"*__TODO__: This section should describe how to make a pull request in "
-"GitHub.*"
-msgstr "*__TODO__: このセクションでは、GitHub でプルリクエストを行う方法について説明します。*"
+"To open a pull request on GitHub, navigate to the main page of your "
+"forked repository and click on the \"Pull requests\" tab."
+msgstr ""
 
-#: ../../CONTRIBUTING.md:93
+#: ../../CONTRIBUTING.md:220
+msgid "Pull requests tab in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:226
+msgid ""
+"An image showing how to navigate to the pull requests tab in GitHub. The "
+"pull requests tab is highlighted with a red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:229
+msgid "Click on the \"New pull request\" button."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:231
+msgid "New pull request button in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:237
+msgid ""
+"An image showing how to create a new pull request in GitHub. The new pull"
+" request button is highlighted with a red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:240
+msgid ""
+"Write a clear and concise title and description for your pull request. "
+"Make sure to describe the changes you made and why they are necessary."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:242
 msgid "What happens when you submit a pull request (CI/CD)"
 msgstr "プルリクエストを提出するとどうなるか(CI/CD)"
 
-#: ../../CONTRIBUTING.md:95
+#: ../../CONTRIBUTING.md:244
 msgid ""
-"*__TODO__: This section should describe how to see the results of the "
-"CD/CI checks and how to get more information about errors*"
-msgstr "*__TODO__: このセクションでは、CD/CIチェックの結果を確認する方法と、エラーに関する詳細情報を得る方法について説明します。*"
+"Once you submit a pull request, a series of checks will be run to ensure "
+"that your changes do not introduce any bugs or errors. These checks "
+"include:"
+msgstr ""
 
-#: ../../CONTRIBUTING.md:97
+#: ../../CONTRIBUTING.md:246
+msgid ""
+"**Code formatting and styles**: checks that your code is formatted "
+"correctly, by `pre-commit.ci - pr check`."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:247
+msgid ""
+"**docs build**: checks that the documentation builds correctly, using "
+"`circleci`."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:249
+msgid "You will see the status of these checks in your pull request."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:251
+msgid "Pull request checks in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:257
+msgid ""
+"An image showing the status of the checks in a pull request in GitHub. "
+"The checks are displayed in a table with a status icon next to each "
+"check. The checks are highlighted with a red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:259
+msgid ""
+"If any of these checks fail, you will see an error message in your pull "
+"request. You need to fix the errors before your changes can be merged."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:261
+msgid "Pull request checks failed in GitHub"
+msgstr ""
+
+#: ../../CONTRIBUTING.md:267
+msgid ""
+"An image showing the status of the checks in a pull request in GitHub. "
+"The checks are displayed in a table with a status icon next to each "
+"check. The checks that failed and the details link are highlighted with a"
+" red rectangle."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:270
+msgid ""
+"To get more information about the errors, you can click on the "
+"\"Details\" link next to the failed check."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:272
 msgid "What to expect from the review process"
 msgstr "レビュープロセスに期待すること"
 
-#: ../../CONTRIBUTING.md:99
+#: ../../CONTRIBUTING.md:274
 msgid ""
-"*__TODO__: This section should describe how review happens in GitHub, how"
-" see the comments, and how to submit changes (push a new branch)*"
+"Once you submit a pull request, a maintainer of the repository will "
+"review your changes and provide feedback. The review process may involve:"
 msgstr ""
-"*__TODO__: このセクションでは、GitHub でどのようにレビューが行われるのか、どのようにコメントを見るのか、どのように変更を投稿するのか "
-"(新しいブランチをプッシュするのか) について説明します。*"
 
-#: ../../CONTRIBUTING.md:101
+#: ../../CONTRIBUTING.md:276
+msgid ""
+"**Comments**: the reviewer may leave comments on your pull request to ask"
+" questions or provide feedback."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:277
+msgid ""
+"**Suggestions**: the reviewer may suggest changes to your code or "
+"documentation."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:278
+msgid ""
+"**Approvals**: once the reviewer is satisfied with your changes, they "
+"will approve the pull request."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:280
+msgid ""
+"You can make changes to your pull request by pushing new commits to the "
+"branch. The pull request will be updated automatically with your new "
+"changes."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:282
+msgid ""
+"Once your pull request is approved, it will be merged into the main "
+"branch and your changes will be included in the guide."
+msgstr ""
+
+#: ../../CONTRIBUTING.md:284
 msgid "Additional help"
 msgstr "追加ヘルプ"
 
-#: ../../CONTRIBUTING.md:103
+#: ../../CONTRIBUTING.md:286
 msgid "How to get help"
 msgstr "助けを求めるには"
 
-#: ../../CONTRIBUTING.md:105
+#: ../../CONTRIBUTING.md:288
 msgid ""
 "*__TODO__: This section should describe the options for finding more help"
 " in case beginner contributors need more help (e.g., create an issue, "
@@ -331,25 +604,25 @@ msgstr ""
 "*__TODO__: このセクションには、初心者の投稿者がさらに助けを必要とする場合に備えて、より多くの助けを見つけるためのオプション "
 "(イシューの作成、フォーラムへの投稿など) を記述してください。*"
 
-#: ../../CONTRIBUTING.md:107
+#: ../../CONTRIBUTING.md:290
 msgid "Additional resources"
 msgstr "その他のリソース"
 
-#: ../../CONTRIBUTING.md:109
+#: ../../CONTRIBUTING.md:292
 msgid ""
 "*__TODO__: It should also include links to beginner documentation, like "
 "the GitHub docs.*"
 msgstr "*__TODO__: また、GitHubのドキュメントのような初心者向けのドキュメントへのリンクも含める必要があります。*"
 
-#: ../../CONTRIBUTING.md:111
+#: ../../CONTRIBUTING.md:294
 msgid "Annex"
 msgstr "付録"
 
-#: ../../CONTRIBUTING.md:113
+#: ../../CONTRIBUTING.md:296
 msgid "Code examples"
 msgstr "コード例"
 
-#: ../../CONTRIBUTING.md:115
+#: ../../CONTRIBUTING.md:298
 msgid ""
 "This guide uses the [literalinclude Sphinx directive](https://www.sphinx-"
 "doc.org/en/master/usage/restructuredtext/directives.html#directive-"
@@ -358,21 +631,23 @@ msgid ""
 msgstr ""
 "このガイドでは、可能な限り [iteralinclude Sphinx ディレクティブ](https://www.sphinx-"
 "doc.org/en/master/usage/restructuredtext/directives.html#directive-"
-"literalinclude) を使用して、コードと散文を分けています。 ドキュメントで使用するコードは `examples/` フォルダにあります。"
+"literalinclude) を使用して、コードと散文を分けています。 ドキュメントで使用するコードは `examples/` "
+"フォルダにあります。"
 
-#: ../../CONTRIBUTING.md:119
+#: ../../CONTRIBUTING.md:302
 msgid "Referencing code in documentation"
 msgstr "ドキュメントでコードを参照する"
 
-#: ../../CONTRIBUTING.md:121
+#: ../../CONTRIBUTING.md:304
 msgid ""
 "If an example is present elsewhere in the documentation that you want to "
 "use, you can copy the `literalinclude` directive verbatim and the "
 "examples will stay in sync."
 msgstr ""
-"使用したい例がドキュメントの他の場所にある場合、 `literalinclude` ディレクティブをそのままコピーすれば、例は同期されたままになります。"
+"使用したい例がドキュメントの他の場所にある場合、 `literalinclude` "
+"ディレクティブをそのままコピーすれば、例は同期されたままになります。"
 
-#: ../../CONTRIBUTING.md:124
+#: ../../CONTRIBUTING.md:307
 msgid ""
 "If you already see code in the examples folder that you can use for new "
 "documentation, a new `literalinclude` can be made to extract it into the "
@@ -382,11 +657,11 @@ msgid ""
 "the later can protect your example from future modifications to the code."
 msgstr ""
 "すでに example フォルダに新しいドキュメントに使えそうなコードがある場合は、新しい `literalinclude` "
-"を作成して、それをサイトに展開することができます。 動作する `literalinclude` に必要なのはコードへの相対パスだけですが、ほとんどの場合"
-" `:language:` と `:lines:` も指定する必要があります。 "
+"を作成して、それをサイトに展開することができます。 動作する `literalinclude` "
+"に必要なのはコードへの相対パスだけですが、ほとんどの場合 `:language:` と `:lines:` も指定する必要があります。 "
 "前者はコード例をより美しくし、後者は将来的なコードの変更からサンプルを守ることができます。"
 
-#: ../../CONTRIBUTING.md:129
+#: ../../CONTRIBUTING.md:312
 msgid ""
 "**Pro tip**: As an alternative to `:lines:` there are also the `:start-"
 "after:`, `:start-at:`, `:end-before:`, and `:end-at:` options. And if the"
@@ -397,19 +672,20 @@ msgstr ""
 "before:`, `:end-at:` オプションもあります。 また、サンプルコードがPythonの場合、 `:pyobject:` "
 "を使用すると、コードのリファクタリングがあっても同じドキュメント内容を維持することができます。"
 
-#: ../../CONTRIBUTING.md:133
+#: ../../CONTRIBUTING.md:316
+#, fuzzy
 msgid ""
 "If you need example code that doesn't yet exist in `examples/` see "
-"creating code for documentation](#creating-code-for-documentation)."
+"[creating code for documentation](#creating-code-for-documentation)."
 msgstr ""
 "`examples/` にまだ存在しないサンプルコードが必要な場合は、 ドキュメント用のコードを作成する](#creating-code-for-"
 "documentation) を参照してください。"
 
-#: ../../CONTRIBUTING.md:136
+#: ../../CONTRIBUTING.md:319
 msgid "Creating code for documentation"
 msgstr "ドキュメント用コードの作成"
 
-#: ../../CONTRIBUTING.md:138
+#: ../../CONTRIBUTING.md:321
 msgid ""
 "Whenever you come across a place that could benefit from a code block, "
 "instead of writing it in-line with a code fence (`` ``` `` blocked text) "
@@ -418,10 +694,10 @@ msgid ""
 "code-in-documentation)."
 msgstr ""
 "コードブロックが役立つ場所に出くわしたら、コードフェンス (`` ``` `` "
-"ブロックテキスト)と一緒にインラインで書く代わりに、独自の形式でファイルとして書くことができます。 あなたの例はすでに存在しているかもしれません; "
-"[ドキュメントのコードを参照する](#referencing-code-in-documentation) を参照してください。"
+"ブロックテキスト)と一緒にインラインで書く代わりに、独自の形式でファイルとして書くことができます。 あなたの例はすでに存在しているかもしれません;"
+" [ドキュメントのコードを参照する](#referencing-code-in-documentation) を参照してください。"
 
-#: ../../CONTRIBUTING.md:142
+#: ../../CONTRIBUTING.md:325
 msgid ""
 "If you want to add a new example that doesn't fit into any of the "
 "existing example files, you can create a new file and reference it in a "
@@ -431,10 +707,10 @@ msgid ""
 msgstr ""
 "既存のサンプルファイルのどれにも当てはまらない新しいサンプルを追加したい場合は、新しいファイルを作成して `literalinclude` "
 "ブロックで参照することができます。 "
-"もしそのファイルが既存のサンプルプロジェクトの中にあるのが理にかなっているのであれば、そこに追加してください。そうでなければ、 `examples` "
-"ディレクトリに新しいフォルダを作成してください。"
+"もしそのファイルが既存のサンプルプロジェクトの中にあるのが理にかなっているのであれば、そこに追加してください。そうでなければ、 "
+"`examples` ディレクトリに新しいフォルダを作成してください。"
 
-#: ../../CONTRIBUTING.md:146
+#: ../../CONTRIBUTING.md:329
 msgid ""
 "If an existing example is incomplete or a new example makes sense to be "
 "added to an existing file, go ahead and add it, but take care to not "
@@ -446,15 +722,14 @@ msgstr ""
 "可能な限り、例を書き直すのではなく、拡張してください。 "
 "例えば、ファイルの最後に新しい関数を追加したり、クラス内の既存のメソッドの後に新しいメソッドを追加したりします。"
 
-#: ../../CONTRIBUTING.md:150
+#: ../../CONTRIBUTING.md:333
 msgid ""
 "Example code is checked for correctness, so adding a new example may "
 "require adding additional tests for coverage, and will require fixing any"
 " failing tests."
-msgstr ""
-"例題のコードは正しさをチェックされるので、新しい例題を追加するには、カバレッジのためのテストを追加する必要があるかもしれないし、失敗したテストを修正する必要があるかもしれません。"
+msgstr "例題のコードは正しさをチェックされるので、新しい例題を追加するには、カバレッジのためのテストを追加する必要があるかもしれないし、失敗したテストを修正する必要があるかもしれません。"
 
-#: ../../CONTRIBUTING.md:153
+#: ../../CONTRIBUTING.md:336
 msgid ""
 "***⚠️ WARNING***: great care should be taken when modifying existing "
 "example code, especially any modification beyond appending to the end of "
@@ -469,19 +744,19 @@ msgstr ""
 "これにより、ガイド内のサンプルはより一貫したものになりますが、ある特定のユースケースのためにサンプルを修正する場合、アクションが遠のく可能性があります。"
 " もし既存のサンプルを修正することに気づいたら、このコマンドを実行し、新しいビルドでそれらのページをチェックしてみてください。"
 
-#: ../../CONTRIBUTING.md:161
+#: ../../CONTRIBUTING.md:344
 msgid "Example:"
 msgstr "例:"
 
-#: ../../CONTRIBUTING.md:163
+#: ../../CONTRIBUTING.md:346
 msgid "Instead of writing example code in markdown like this"
 msgstr "このようにマークダウンでサンプルコードを書くのではなく"
 
-#: ../../CONTRIBUTING.md:174
+#: ../../CONTRIBUTING.md:357
 msgid "The python can be extracted into a `.py` file"
 msgstr "python は `.py` ファイルに展開することができます。"
 
-#: ../../CONTRIBUTING.md:188
+#: ../../CONTRIBUTING.md:371
 msgid ""
 "As another example, if you only need to show part of a `pyproject.toml`, "
 "we already have complete project definitions, you need only to find the "
@@ -490,10 +765,99 @@ msgstr ""
 "別の例として、 `pyproject.toml` "
 "の一部だけを表示する必要がある場合、我々はすでに完全なプロジェクト定義を持っているので、関連する部分を見つけるだけでよいです。"
 
-#: ../../CONTRIBUTING.md:191
+#: ../../CONTRIBUTING.md:374
 msgid "Instead of writing this"
 msgstr "こう書く代わりに"
 
-#: ../../CONTRIBUTING.md:203
+#: ../../CONTRIBUTING.md:386
 msgid "an example could be extracted from an existing toml file"
 msgstr "例は、既存のtomlファイルから抽出することができます"
+
+#~ msgid ""
+#~ "*__TODO__: This section should show how"
+#~ " to use the GitHub interface to "
+#~ "edit and previewing a Markdown file.*"
+#~ msgstr ""
+#~ "*__TODO__: このセクションでは、GitHub のインターフェイスを使って Markdown"
+#~ " ファイルを編集したりプレビューしたりする方法を説明します。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should show how"
+#~ " to commit changes via the GitHub "
+#~ "interface.*"
+#~ msgstr "*__TODO__: このセクションでは、GitHub インターフェイスを使って変更をコミットする方法を説明します。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should show how"
+#~ " to clone a repository from GitHub"
+#~ " into your computer.*"
+#~ msgstr "*__TODO__: このセクションでは、GitHub から自分のコンピューターにリポジトリをクローンする方法を説明します。*"
+
+#~ msgid "*__TODO__: This section should show how to create a new branch.*"
+#~ msgstr "*__TODO__: このセクションでは、新しいブランチを作成する方法を説明します。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should show how"
+#~ " to create a virtual environment "
+#~ "using venv.*"
+#~ msgstr "*__TODO__: このセクションでは、venvを使用して仮想環境を作成する方法について説明する。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should show how"
+#~ " to install the development dependencies"
+#~ " defined in pyproject.toml.*"
+#~ msgstr "*__TODO__: このセクションでは、pyproject.tomlで定義されている開発依存関係をインストールする方法を示します。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should describe "
+#~ "how to commit from the command "
+#~ "line.*"
+#~ msgstr "*__TODO__: このセクションでは、コマンドラインからコミットする方法を説明します。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should describe "
+#~ "the different sessions in nox related"
+#~ " to building the docs: docs, docs-"
+#~ "test, docs-live. It should also "
+#~ "show how to see the guide built"
+#~ " locally, by opening the right file"
+#~ " in the browser or using the "
+#~ "live version from docs-live*"
+#~ msgstr ""
+#~ "*TODO__: docs、docs-test、docs-"
+#~ "liveです。また、ブラウザで適切なファイルを開くか、docs-"
+#~ "liveからライブバージョンを使用することで、ローカルで構築されたガイドを見る方法を示す必要があります。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should describe "
+#~ "what steps a user should follow "
+#~ "before submitting the pull request: "
+#~ "build the docs, verify your changes "
+#~ "look correct, etc.*"
+#~ msgstr ""
+#~ "*__TODO__: "
+#~ "このセクションでは、ユーザーがプルリクエストを提出する前にどのようなステップを踏むべきかを記述する必要があります:ドキュメントをビルドする、変更が正しく見えるか確認する、などです。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should describe "
+#~ "how to make a pull request in "
+#~ "GitHub.*"
+#~ msgstr "*__TODO__: このセクションでは、GitHub でプルリクエストを行う方法について説明します。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should describe "
+#~ "how to see the results of the "
+#~ "CD/CI checks and how to get more"
+#~ " information about errors*"
+#~ msgstr "*__TODO__: このセクションでは、CD/CIチェックの結果を確認する方法と、エラーに関する詳細情報を得る方法について説明します。*"
+
+#~ msgid ""
+#~ "*__TODO__: This section should describe "
+#~ "how review happens in GitHub, how "
+#~ "see the comments, and how to "
+#~ "submit changes (push a new branch)*"
+#~ msgstr ""
+#~ "*__TODO__: このセクションでは、GitHub "
+#~ "でどのようにレビューが行われるのか、どのようにコメントを見るのか、どのように変更を投稿するのか "
+#~ "(新しいブランチをプッシュするのか) について説明します。*"
+
