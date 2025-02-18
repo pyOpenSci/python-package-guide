@@ -57,7 +57,7 @@ def docs(session):
     session.notify("build-release-languages", session.posargs)
 
 EXCLUDE_LINKS = [
-    "https://github.com"
+    "https://github.com",
     "https://*.github.com"
 ]
 
