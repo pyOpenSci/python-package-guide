@@ -56,6 +56,10 @@ def docs(session):
     # When building the guide, also build the translations in RELEASE_LANGUAGES
     session.notify("build-release-languages", session.posargs)
 
+EXCLUDE_LINKS = [
+    "https://github.com"
+    "https://*.github.com"
+]
 
 @nox.session(name="docs-test")
 def docs_test(session):
@@ -66,6 +70,9 @@ def docs_test(session):
     """
     session.install("-e", ".")
     session.run(SPHINX_BUILD, *BUILD_PARAMETERS, *TEST_PARAMETERS, SOURCE_DIR, OUTPUT_DIR, *session.posargs)
+    # Exclude GitHub links from link checker.
+    for link in EXCLUDE_LINKS:
+        session.run("linkchecker", "--ignore-url", link)
     # When building the guide with additional parameters, also build the translations in RELEASE_LANGUAGES
     # with those same parameters.
     session.notify("build-release-languages", [*TEST_PARAMETERS, *session.posargs])
