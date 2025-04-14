@@ -124,7 +124,7 @@ that you have been using to run hatch
 commands in the previous tutorials.
 
 :::{note}
-You can also install grayskull using pipx[^pipx]. pipx is a tool that allows you to install commonly used tools that you might want to have available across multiple Python environments rather than installing the package into every Python environment that ou create.
+You can also install grayskull using pipx[^pipx]. pipx is a tool that allows you to install commonly used tools that you might want to have available across multiple Python environments rather than installing the package into every Python environment that you create.
 :::
 
 ### Step 2: Fork and clone the conda-forge staged-recipes repository
