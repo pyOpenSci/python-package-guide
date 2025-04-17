@@ -37,7 +37,7 @@ Get to know Hatch <get-to-know-hatch>
 :caption: Create and publish a Python Package
 
 What is a Python package? <self>
-Make your code installable <installable-code>
+Create a Python package <installable-code>
 Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
 :::
