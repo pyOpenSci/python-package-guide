@@ -70,7 +70,7 @@ The first round of our community-developed, how to create a Python package tutor
 :class-card: left-aligned
 
 * [What is a Python package?](/tutorials/intro)
-* [Make your code installable](/tutorials/installable-code)
+* [Create a Python package](/tutorials/installable-code)
 * [Publish your package to (test) PyPI](/tutorials/publish-pypi)
 * [Publish your package to conda-forge](/tutorials/publish-conda-forge)
 
