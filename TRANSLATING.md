@@ -342,4 +342,4 @@ TODO: There are many approaches here, some projects release a translation as soo
 
 If you have any questions or need help with your translation, you can create an [issue](https://github.com/pyOpenSci/python-package-guide/issues) in the [Packaging Guide repository](https://github.com/pyOpenSci/python-package-guide)
 
-You can also ask in the PyOpenSci Discord server ([click here](https://discord.gg/CvSMp4zcqX) to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).
+You can also ask in the PyOpenSci Discord server ([click here](https://discord.gg/NQtTTqtv) to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).
