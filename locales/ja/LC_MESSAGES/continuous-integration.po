@@ -1,39 +1,42 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2025, pyOpenSci
-# This file is distributed under the same license as the pyOpenSci Python Package Guide package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the pyOpenSci Python
+# Package Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 # Translators:
 # Tetsuo Koyama <tkoyama010@gmail.com>, 2025
-#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-14 22:27+0900\n"
+"POT-Creation-Date: 2025-04-20 11:32+0900\n"
 "PO-Revision-Date: 2025-04-14 18:12+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
-"Language-Team: Japanese (https://app.transifex.com/tkoyama010/teams/196662/ja/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
+"Language-Team: Japanese "
+"(https://app.transifex.com/tkoyama010/teams/196662/ja/)\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../continuous-integration/ci.md:2
 msgid ""
-"Continuous Integration and Continuous Deployment (CI/CD) For Python Packages"
+"Continuous Integration and Continuous Deployment (CI/CD) For Python "
+"Packages"
 msgstr "Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)"
 
 #: ../../continuous-integration/ci.md:4
 msgid ""
 "When you develop, work on, and contribute to software, there is more to "
-"consider than just writing code. Having tests and checks ensures that your "
-"code runs reliably and follows a consistent format is also important. You "
-"can use **Continuous Integration (CI)** and **Continuous Deployment (CD)** "
-"to run tests and checks on your code every time someone suggests a change "
-"online in a platform like GitHub or GitLab."
+"consider than just writing code. Having tests and checks ensures that "
+"your code runs reliably and follows a consistent format is also "
+"important. You can use **Continuous Integration (CI)** and **Continuous "
+"Deployment (CD)** to run tests and checks on your code every time someone"
+" suggests a change online in a platform like GitHub or GitLab."
 msgstr ""
 "ソフトウェアの開発、作業、貢献には、コードを書くこと以上に考慮すべきことがあります。 "
 "テストやチェックを行うことで、コードが確実に実行され、一貫した形式に従っていることを保証することも重要です。 **Continuous "
@@ -58,10 +61,10 @@ msgstr ""
 
 #: ../../continuous-integration/ci.md:15
 msgid ""
-"CI and CD streamline software development by automating repetitive tasks and"
-" ensuring code quality and consistency. Having CI setup also makes it easier"
-" for new contributors to contribute to your code base without setting up all"
-" your test suites and other local checks."
+"CI and CD streamline software development by automating repetitive tasks "
+"and ensuring code quality and consistency. Having CI setup also makes it "
+"easier for new contributors to contribute to your code base without "
+"setting up all your test suites and other local checks."
 msgstr ""
 "CIとCDは、繰り返しの作業を自動化し、コードの品質と一貫性を保証することによって、ソフトウェア開発を合理化します。 "
 "また、CIをセットアップすることで、新しいコントリビューターが、テストスイートやその他のローカルチェックをすべてセットアップすることなく、コードベースにコントリビュートすることが容易になります。"
@@ -73,8 +76,8 @@ msgstr "継続的インテグレーションとは何か？"
 #: ../../continuous-integration/ci.md:22
 msgid ""
 "When you’re ready to publish your code online, you can set up Continuous "
-"Integration (CI). CI is a platform that allows you to specify and run jobs "
-"or workflows you define. These workflows include:"
+"Integration (CI). CI is a platform that allows you to specify and run "
+"jobs or workflows you define. These workflows include:"
 msgstr ""
 "コードをオンラインで公開する準備ができたら、継続的インテグレーション(CI) を設定することができます。 "
 "CIは、あなたが定義したジョブやワークフローを指定して実行できるプラットフォームです。 これらのワークフローには以下が含まれます:"
@@ -93,8 +96,8 @@ msgstr "ドキュメントの作成"
 
 #: ../../continuous-integration/ci.md:29
 msgid ""
-"CI allows you to automate running workflows across a suite of environments, "
-"including:"
+"CI allows you to automate running workflows across a suite of "
+"environments, including:"
 msgstr "CIは、以下のような一連の環境におけるワークフローの実行を自動化することができます:"
 
 #: ../../continuous-integration/ci.md:31
@@ -123,14 +126,13 @@ msgid "Automate publishing to PyPI"
 msgstr "PyPIへの公開を自動化する"
 
 #: ../../continuous-integration/ci.md:39
-msgid ""
-"Automate publishing your documentation to GitHub Pages or Read the Docs."
+msgid "Automate publishing your documentation to GitHub Pages or Read the Docs."
 msgstr "GitHub PagesやRead the Docsへのドキュメントの公開を自動化します。"
 
 #: ../../continuous-integration/ci.md:41
 msgid ""
-"It is also used once your conda-forge recipe is set up to keep your package "
-"up to date on conda-forge."
+"It is also used once your conda-forge recipe is set up to keep your "
+"package up to date on conda-forge."
 msgstr "また、conda-forgeレシピが設定されると、conda-forge上でパッケージを最新の状態に保つために使用されます。"
 
 #: ../../continuous-integration/ci.md:43
@@ -139,43 +141,38 @@ msgstr "CIを使う理由"
 
 #: ../../continuous-integration/ci.md:45
 msgid ""
-"CI can be configured to run a workflow on every commit pushed to GitHub and "
-"every pull request opened. This ensures that any changes made to your "
-"package are tested across environments before merging into the main branch "
-"of your code."
-msgstr ""
-"CIは、GitHubにプッシュされたコミットやプルリクエストが開かれるたびにワークフローを実行するように設定できます。これにより、パッケージに加えられた変更が、コードのメインブランチにマージされる前に、環境間でテストされることが保証されます。"
+"CI can be configured to run a workflow on every commit pushed to GitHub "
+"and every pull request opened. This ensures that any changes made to your"
+" package are tested across environments before merging into the main "
+"branch of your code."
+msgstr "CIは、GitHubにプッシュされたコミットやプルリクエストが開かれるたびにワークフローを実行するように設定できます。これにより、パッケージに加えられた変更が、コードのメインブランチにマージされる前に、環境間でテストされることが保証されます。"
 
 #: ../../continuous-integration/ci.md:47
 msgid ""
-"These checks are particularly useful if someone new is contributing to your "
-"code. Every contributor's change will be tested when pushed to your code "
-"repository."
-msgstr ""
-"これらのチェックは、新しい人があなたのコードに貢献する場合に特に役立ちます。すべての貢献者の変更は、あなたのコードリポジトリにプッシュされたときにテストされます。"
+"These checks are particularly useful if someone new is contributing to "
+"your code. Every contributor's change will be tested when pushed to your "
+"code repository."
+msgstr "これらのチェックは、新しい人があなたのコードに貢献する場合に特に役立ちます。すべての貢献者の変更は、あなたのコードリポジトリにプッシュされたときにテストされます。"
 
 #: ../../continuous-integration/ci.md:49
 msgid ""
 "Together, CI and CD streamline the process of building, testing, and "
 "deploying code. They aim to improve software development and publication "
 "efficiency, quality, and reliability."
-msgstr ""
-"CIとCDはともに、コードのビルド、テスト、デプロイのプロセスを合理化します。ソフトウェア開発と出版物の効率、品質、信頼性を向上させることを目的としています。"
+msgstr "CIとCDはともに、コードのビルド、テスト、デプロイのプロセスを合理化します。ソフトウェア開発と出版物の効率、品質、信頼性を向上させることを目的としています。"
 
 #: ../../continuous-integration/ci.md:52
 msgid ""
-"All pyOpenSci packages must use some form of continuous integration. Even if"
-" you are not planning to go through peer review, we strongly recommend that "
-"you use continuous integration, too!"
-msgstr ""
-"すべてのpyOpenSciパッケージは何らかの継続的インテグレーションを使用しなければなりません。査読を受けるつもりがなくても、継続的インテグレーションの使用も強く推奨します！"
+"All pyOpenSci packages must use some form of continuous integration. Even"
+" if you are not planning to go through peer review, we strongly recommend"
+" that you use continuous integration, too!"
+msgstr "すべてのpyOpenSciパッケージは何らかの継続的インテグレーションを使用しなければなりません。査読を受けるつもりがなくても、継続的インテグレーションの使用も強く推奨します！"
 
 #: ../../continuous-integration/ci.md:55
 msgid ""
-"In the case of GitHub actions (which we will focus on here), CI workflows "
-"are running on online servers that support GitHub."
-msgstr ""
-"GitHubアクションの場合 (ここではこれに焦点を当てます) 、CIワークフローはGitHubをサポートするオンラインサーバー上で実行されます。"
+"In the case of GitHub actions (which we will focus on here), CI workflows"
+" are running on online servers that support GitHub."
+msgstr "GitHubアクションの場合 (ここではこれに焦点を当てます) 、CIワークフローはGitHubをサポートするオンラインサーバー上で実行されます。"
 
 #: ../../continuous-integration/ci.md:57
 msgid "CI / CD platforms"
@@ -184,16 +181,17 @@ msgstr "CI / CD プラットフォーム"
 #: ../../continuous-integration/ci.md:59
 msgid ""
 "There are numerous platforms available for CI/CD. Here, we will focus on "
-"GitHub Actions (GHA), built into GitHub. GitHub is the most commonly used "
-"platform to store scientific open-source software."
+"GitHub Actions (GHA), built into GitHub. GitHub is the most commonly used"
+" platform to store scientific open-source software."
 msgstr ""
 "CI/CDのためのプラットフォームは数多くあります。ここでは、GitHubに組み込まれているGitHub Actions "
 "(GHA)を取り上げます。GitHubは、科学的なオープンソースソフトウェアを保存するための最も一般的なプラットフォームです。"
 
 #: ../../continuous-integration/ci.md:62
 msgid ""
-"If you use [GitLab](https://about.gitlab.com/) CI/CD, many of the principles"
-" described here will apply. However, the workflow files may look different."
+"If you use [GitLab](https://about.gitlab.com/) CI/CD, many of the "
+"principles described here will apply. However, the workflow files may "
+"look different."
 msgstr ""
 "[GitLab](https://about.gitlab.com/) "
 "CI/CDを使用する場合、ここで説明した原則の多くが適用されます。しかし、ワークフローファイルは異なって見えるかもしれません。"
@@ -205,9 +203,10 @@ msgstr "よくわからない場合は、GitHub Actionsを使ってください�
 #: ../../continuous-integration/ci.md:67
 msgid ""
 "While you are welcome to use the continuous integration platform of your "
-"choice, we recommend GitHub Actions because it is free-to-use and integrated"
-" tightly into the GitHub user interface. There is also an entire store of "
-"GitHub action templates that you can easily use and adapt to your own needs."
+"choice, we recommend GitHub Actions because it is free-to-use and "
+"integrated tightly into the GitHub user interface. There is also an "
+"entire store of GitHub action templates that you can easily use and adapt"
+" to your own needs."
 msgstr ""
 "お好きな継続的インテグレーションプラットフォームをご利用いただけますが、GitHub "
 "Actionsは無料で利用でき、GitHubのユーザーインターフェイスに緊密に統合されているのでおすすめです。 "
@@ -219,8 +218,8 @@ msgstr "その他のプラットフォーム"
 
 #: ../../continuous-integration/ci.md:75
 msgid ""
-"[Appveyor:](https://www.appveyor.com/): Supports running tests on Windows "
-"operating systems and predated the release of GitHub Actions. Today, "
+"[Appveyor:](https://www.appveyor.com/): Supports running tests on Windows"
+" operating systems and predated the release of GitHub Actions. Today, "
 "AppVeyor supports operating systems beyond Windows."
 msgstr ""
 "[Appveyor:](https://www.appveyor.com/): "
@@ -230,11 +229,12 @@ msgstr ""
 #: ../../continuous-integration/ci.md:76
 msgid ""
 "[Travis CI:](https://www.travis-ci.com/) had been a common CI platform "
-"choice in our ecosystem. Usage dropped after Travis CI ended free support "
-"for open-source projects."
+"choice in our ecosystem. Usage dropped after Travis CI ended free support"
+" for open-source projects."
 msgstr ""
-"[Travis CI:](https://www.travis-ci.com/) 我々のエコシステムでは一般的なCIプラットフォームの選択肢でした。 "
-"Travis CIがオープンソースプロジェクトの無償サポートを終了した後、利用が減少しました。"
+"[Travis CI:](https://www.travis-ci.com/) "
+"我々のエコシステムでは一般的なCIプラットフォームの選択肢でした。 Travis "
+"CIがオープンソースプロジェクトの無償サポートを終了した後、利用が減少しました。"
 
 #: ../../continuous-integration/ci.md:77
 msgid ""
@@ -251,11 +251,11 @@ msgstr "自動化を受け入れる"
 
 #: ../../continuous-integration/ci.md:82
 msgid ""
-"By embracing CI/CD, you can ensure that your code runs as you expect it to "
-"across the diverse landscapes of user environments. Further, you can "
-"automate certain checks (and, in some cases, code fixes), including linting "
-"and code style. You can even automate spell-checking your documentation and "
-"docstrings!"
+"By embracing CI/CD, you can ensure that your code runs as you expect it "
+"to across the diverse landscapes of user environments. Further, you can "
+"automate certain checks (and, in some cases, code fixes), including "
+"linting and code style. You can even automate spell-checking your "
+"documentation and docstrings!"
 msgstr ""
 "CI/CDを採用することで、ユーザー環境の多様なランドスケープにおいて、期待通りにコードが実行されることを保証できます。 "
 "さらに、リンティングやコードスタイルなど、特定のチェック (場合によってはコード修正) を自動化することもできます。 "
@@ -271,6 +271,6 @@ msgstr "継続的インテグレーション"
 
 #: ../../continuous-integration/index.md:2
 msgid ""
-"Continuous Integration (CI) and Continuous Deployment (CD) for your Python "
-"package"
-msgstr "Pythonパッケージの Continuous Integration (CI) と Continuous Deployment (CD)"
+"Continuous Integration (CI) and Continuous Deployment (CD) for your "
+"Python package"
+msgstr "Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)"
