@@ -5,8 +5,6 @@
 
 what's missing
 
-- missing explanation of `requires-python =` in this page -- discussed in slack with pradyun --
-
 ::: -->
 
 :::{admonition} Important pyproject.toml take aways
@@ -20,7 +18,6 @@ what's missing
 6. **python-requires**: is important to have in your `pyproject.toml` file as it helps pip install your package.
 
 :::
-
 
 :::::{todo}
 
@@ -139,12 +136,12 @@ When you create your `pyproject.toml` file, there are numerous metadata fields t
 
 [An overview of all of the project metadata elements can be found here.](https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use)
 
-### Required fields for the [project] table
+### Required fields for the `[project]` table
 
-As mentioned above, your pyproject.toml file needs to have a **name** and **version** field in order to properly build your package:
+As mentioned above, your `pyproject.toml` file needs to have a **`name`** and **`version`** field in order to properly build your package:
 
-- Name: This is the name of your project provided as a string
-- Version: This is the version of your project. If you are using a scm tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).
+- `name`: This is the name of your project provided as a string
+- `version`: This is the version of your project. If you are using a SCM tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).
 
 ### Optional fields to include in the `[project]` table
 
@@ -175,7 +172,7 @@ what dependencies your package requires.
   - Development Status
   - Intended Audience
   - Topic
-  - LIcense
+  - License
   - Programming language
 
 ### Advanced options in the pyproject.toml file
@@ -183,7 +180,8 @@ what dependencies your package requires.
 The examples at the bottom of this page contain ...
 
 - **`[project.scripts]` (Entry points):** Entry points are optional. If you have a command line tool that runs a specific script hosted in your package, you may include an entry point to call that script directly at the command line (rather than at the Python shell).
-  - Here is an example of[ a package that has entry point script](https://github.com/pyOpenSci/update-web-metadata/blob/main/pyproject.toml#L60)s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.
+
+  - Here is an example of[a package that has entry point script](https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60)s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.
 - **Dynamic Fields:** if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like `setuptooms_scm`, then you might use the dynamic field, such as version (using scm) **dynamic = ["version"]**
 
 ## Add dependencies to your pyproject.toml file

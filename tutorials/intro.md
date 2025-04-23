@@ -1,3 +1,4 @@
+(packaging-101)=
 # Python packaging 101
 
 _A start to finish beginner-friendly tutorial_
@@ -52,6 +53,13 @@ Update metadata in pyproject.toml <pyproject-toml>
 
 :::{toctree}
 :hidden:
+:caption: Reference Guides
+
+Command Line Reference Guide <command-line-reference>
+:::
+
+:::{toctree}
+:hidden:
 :caption: Hatch for Existing Packages
 
 Migrate setup.py to a pyproject.toml using Hatch <setup-py-to-pyproject-toml>
@@ -68,6 +76,7 @@ After reading this lesson you will:
 
 :::
 
+(what-is-a-package)=
 ## What is a Python package?
 
 At a high level, you can think about a Python package as a toolbox

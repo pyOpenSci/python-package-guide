@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 18:04+0900\n"
+"POT-Creation-Date: 2025-02-17 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -18,103 +18,269 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../tests/index.md:72
+#: ../../tests/code-cov.md:1
+#, fuzzy
+msgid "Code coverage for your Python package test suite"
+msgstr "Pythonパッケージのテストを書く"
+
+#: ../../tests/code-cov.md:3
+msgid ""
+"Code coverage measures how much of your package's code runs during "
+"testing. Achieving high coverage can help ensure the reliability of your "
+"codebase, but it’s not a guarantee of quality. Below, we outline key "
+"considerations for using code coverage effectively."
+msgstr ""
+
+#: ../../tests/code-cov.md:8
+msgid "Why aim for high code coverage?"
+msgstr ""
+
+#: ../../tests/code-cov.md:10
+msgid ""
+"A good practice is to ensure that every line of your code runs at least "
+"once during your test suite. This helps you:"
+msgstr ""
+
+#: ../../tests/code-cov.md:13
+msgid "Identify untested parts of your codebase."
+msgstr ""
+
+#: ../../tests/code-cov.md:14
+msgid "Catch bugs that might otherwise go unnoticed."
+msgstr ""
+
+#: ../../tests/code-cov.md:15
+msgid "Build confidence in your software's stability."
+msgstr ""
+
+#: ../../tests/code-cov.md:17
+msgid "Limitations of code coverage"
+msgstr ""
+
+#: ../../tests/code-cov.md:19
+msgid "While high code coverage is valuable, it has its limits:"
+msgstr ""
+
+#: ../../tests/code-cov.md:21
+msgid ""
+"**Difficult-to-test code:** Some parts of your code might be challenging "
+"to test, either due to complexity or limited resources."
+msgstr ""
+
+#: ../../tests/code-cov.md:23
+msgid ""
+"**Missed edge cases:** Running all lines of code doesn’t guarantee that "
+"edge cases are handled correctly."
+msgstr ""
+
+#: ../../tests/code-cov.md:26
+msgid ""
+"Ultimately, you should focus on how your package will be used and ensure "
+"your tests cover those scenarios adequately."
+msgstr ""
+
+#: ../../tests/code-cov.md:29
+msgid "Tools for analyzing Python package code coverage"
+msgstr ""
+
+#: ../../tests/code-cov.md:31
+msgid ""
+"Some common services for analyzing code coverage are "
+"[codecov.io](https://codecov.io/) and "
+"[coveralls.io](https://coveralls.io/). These projects are free for open "
+"source tools and will provide dashboards that tell you how much of your "
+"codebase is covered during your tests. We recommend setting up an account"
+" (on either CodeCov or Coveralls) and using it to keep track of your code"
+" coverage."
+msgstr ""
+
+#: ../../tests/code-cov.md:33
+#, python-format
+msgid ""
+"Screenshot of the code cov service - showing test coverage for the "
+"stravalib package. This image shows a list of package modules and the "
+"associated number of lines and % lines covered by tests. At the top of "
+"the image, you can see what branch is being evaluated and the path to the"
+" repository."
+msgstr ""
+
+#: ../../tests/code-cov.md:38
+msgid ""
+"The CodeCov platform is a useful tool if you wish to track code coverage "
+"visually. Using it, you can not only get the same summary information "
+"that you can get with the **pytest-cov** extension. You can also see what"
+" lines are covered by your tests and which are not. Code coverage is "
+"useful for evaluating unit tests and/or how much of your package code is "
+"\"covered\". It, however, will not evaluate things like integration tests"
+" and end-to-end workflows."
+msgstr ""
+
+#: ../../tests/code-cov.md:43
+msgid "Typing & MyPy coverage"
+msgstr ""
+
+#: ../../tests/code-cov.md:44
+msgid "You can also create and upload typing reports to CodeCov."
+msgstr ""
+
+#: ../../tests/code-cov.md:47
+msgid "Exporting Local Coverage Reports"
+msgstr ""
+
+#: ../../tests/code-cov.md:49
+msgid ""
+"In addition to using services like CodeCov or Coveralls, you can generate"
+" local coverage reports directly using the **coverage.py** tool. This can"
+" be especially useful if you want to create reports in Markdown or HTML "
+"format for offline use or documentation."
+msgstr ""
+
+#: ../../tests/code-cov.md:51
+msgid "To generate a coverage report in **Markdown** format, run:"
+msgstr ""
+
+#: ../../tests/code-cov.md:56
+msgid ""
+"This command will produce a Markdown-formatted coverage summary that you "
+"can easily include in project documentation or share with your team."
+msgstr ""
+
+#: ../../tests/code-cov.md:58
+msgid ""
+"To generate an HTML report that provides a detailed, interactive view of "
+"which lines are covered, use:"
+msgstr ""
+
+#: ../../tests/code-cov.md:64
+msgid ""
+"The generated HTML report will be saved in a directory named htmlcov by "
+"default. Open the index.html file in your browser to explore your "
+"coverage results."
+msgstr ""
+
+#: ../../tests/code-cov.md:66
+msgid ""
+"These local reports are an excellent way to quickly review coverage "
+"without setting up an external service."
+msgstr ""
+
+#: ../../tests/index.md:73
 msgid "Intro"
-msgstr ""
+msgstr "イントロ"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Write tests"
-msgstr ""
+msgstr "テストを書く"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Test types"
-msgstr ""
+msgstr "テストの種類"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Run tests locally"
-msgstr ""
+msgstr "ローカルでテストを実行する"
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Run tests online (using CI)"
+msgstr "オンラインでテストを実行する(CIを使用する)"
+
+#: ../../tests/index.md:73
+msgid "Code coverage"
 msgstr ""
 
-#: ../../tests/index.md:72
+#: ../../tests/index.md:73
 msgid "Create & Run Tests"
-msgstr ""
+msgstr "テストの作成と実行"
 
-#: ../../tests/index.md:1
+#: ../../tests/index.md:2
 msgid "Tests and data for your Python package"
-msgstr ""
+msgstr "Pythonパッケージのテストとデータ"
 
-#: ../../tests/index.md:3
+#: ../../tests/index.md:4
 msgid ""
 "Tests are an important part of your Python package because they provide a"
 " set of checks that ensure that your package is functioning how you "
 "expect it to."
 msgstr ""
+"テストは Python "
+"パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。"
 
-#: ../../tests/index.md:7
+#: ../../tests/index.md:8
+#, fuzzy
 msgid ""
-"In this section you will learn more about the importance of writing tests"
-" for your Python package and how you can setup infrastructure to run your"
-" tests both locally and on GitHub."
+"In this section, you will learn more about the importance of writing "
+"tests for your Python package and how you can set up infrastructure to "
+"run your tests both locally and on GitHub."
 msgstr ""
+"このセクションでは、Python パッケージのテストを書くことの重要性と、ローカルと GitHub "
+"の両方でテストを実行するためのインフラストラクチャの設定方法について学びます。"
 
-#: ../../tests/index.md:19
+#: ../../tests/index.md:20
 msgid "✨ Why write tests ✨"
-msgstr ""
+msgstr "✨テストを書く理由✨"
 
-#: ../../tests/index.md:24
+#: ../../tests/index.md:25
 msgid ""
 "Learn more about the art of writing tests for your Python package. Learn "
 "about why you should write tests and how they can help you and potential "
 "contributors to your project."
 msgstr ""
+"Python パッケージのテストを書く技術についてもっと学びましょう。 "
+"なぜテストを書く必要があるのか、そしてテストがどのようにあなたやあなたのプロジェクトへの将来の貢献者の助けになるのかを学びましょう。"
 
-#: ../../tests/index.md:31
+#: ../../tests/index.md:32
 msgid "✨ Types of tests ✨"
-msgstr ""
+msgstr "✨テストの種類✨"
 
-#: ../../tests/index.md:36
+#: ../../tests/index.md:37
 msgid ""
 "There are three general types of tests that you can write for your Python"
 " package: unit tests, integration tests and end-to-end (or functional) "
 "tests. Learn about all three."
 msgstr ""
+"Python パッケージで書くことのできるテストには、ユニットテスト、統合テスト、エンドツーエンドテスト (あるいは機能テスト) の 3 "
+"種類があります。 この 3 つについて学びましょう。"
 
-#: ../../tests/index.md:42
+#: ../../tests/index.md:43
 msgid "✨ Run tests locally ✨"
-msgstr ""
+msgstr "✨ローカルでテストを実行する✨"
 
-#: ../../tests/index.md:47
+#: ../../tests/index.md:48
 msgid ""
 "If you expect your users to use your package across different versions of"
 " Python, then using an automation tool such as nox to run your tests is "
 "useful. Learn about the various tools that you can use to run your tests "
 "across python versions here."
 msgstr ""
+"もしユーザがあなたのパッケージを異なるバージョンの Python で使うことを想定しているなら、テストを実行するために nox "
+"のような自動化ツールを使うと便利です。 Python "
+"のバージョンにまたがってテストを実行するために使える様々なツールについては、こちらを参照してください。"
 
-#: ../../tests/index.md:53
+#: ../../tests/index.md:54
 msgid "✨ Run tests online (using CI) ✨"
-msgstr ""
+msgstr "✨オンラインでテストを実行する(CIを使用する)✨"
 
-#: ../../tests/index.md:58
+#: ../../tests/index.md:59
+#, fuzzy
 msgid ""
-"Continuous integration platforms such as GitHub actions can be useful for"
+"Continuous integration platforms such as GitHub Actions can be useful for"
 " running your tests across both different Python versions and different "
 "operating systems. Learn about setting up tests to run in Continuous "
 "Integration here."
 msgstr ""
+"GitHub アクションのような継続的インテグレーションプラットフォームは、Python "
+"のバージョンやオペレーティングシステムの違いを問わずテストを実行するのに便利です。 "
+"継続的インテグレーションで実行するテストの設定については、こちらを参照してください。"
 
-#: ../../tests/index.md:69
+#: ../../tests/index.md:70
 msgid "Graphic showing the elements of the packaging process."
-msgstr ""
+msgstr "パッケージング工程の要素を示すグラフィック。"
 
 #: ../../tests/run-tests.md:6
 msgid "Run Python package tests"
-msgstr ""
+msgstr "Pythonパッケージテストの実行"
 
 #: ../../tests/run-tests.md:8
 msgid ""
@@ -124,12 +290,15 @@ msgid ""
 " version and operating systems. Think about the following when running "
 "your tests:"
 msgstr ""
+"テストを実行することは、パッケージが期待通りに動作していることを確認するために重要です。 テストは、あなたのコンピュータと、Python "
+"のバージョンやオペレーティングシステムが異なるユーザのコンピュータで実行されることを考慮するのがよい習慣です。 "
+"テストを実行する際には、以下のことを考慮してください:"
 
 #: ../../tests/run-tests.md:11
 msgid ""
 "Run your test suite in a matrix of environments that represent the Python"
 " versions and operating systems your users are likely to have."
-msgstr ""
+msgstr "テストスイートは、Python のバージョンとユーザーが使用する可能性のあるオペレーティングシステムを表す環境のマトリックスで実行します。"
 
 #: ../../tests/run-tests.md:12
 msgid ""
@@ -141,22 +310,27 @@ msgid ""
 " to issues when others try to install or run your package on their "
 "computers."
 msgstr ""
+"隔離された環境でテストを実行することで、テストとその再現性に自信を持つことができます。 "
+"これにより、あなたのコンピュータの設定によってテストがランダムにパスすることがなくなります。 "
+"たとえば、あなたのパッケージの依存関係リストで宣言されていない依存関係を、予期せずローカルシステムにインストールしてしまったかもしれません。 "
+"このような見落としは、他の人があなたのパッケージを自分のコン ピュータにインストールしたり実行しようとしたときに、問題につながる可能性 "
+"があります。"
 
 #: ../../tests/run-tests.md:14
 msgid ""
 "On this page, you will learn about the tools that you can use to both run"
 " tests in isolated environments and across Python versions."
-msgstr ""
+msgstr "このページでは、隔離された環境でテストを実行したり、Python のバージョンを越えてテストを実行したりするために使えるツールについて学びます。"
 
 #: ../../tests/run-tests.md:19
 msgid "Tools to run your tests"
-msgstr ""
+msgstr "テストを実行するためのツール"
 
 #: ../../tests/run-tests.md:21
 msgid ""
 "There are three categories of tools that will make is easier to setup and"
 " run your tests in various environments:"
-msgstr ""
+msgstr "さまざまな環境でのテストのセットアップと実行を容易にするツールには、3つのカテゴリーがあります:"
 
 #: ../../tests/run-tests.md:24
 msgid ""
@@ -170,6 +344,11 @@ msgid ""
 "don't provide a way to easily run tests across Python versions without "
 "the aid of additional automation tools."
 msgstr ""
+"**テストフレームワーク** とは、テストを書いたり実行したりするための特定の構文やツールのセットを提供するパッケージのことです。 "
+"いくつかのテストフレームワークにはプラグインがあり、テストがカバーするコードの範囲を評価するなどの機能を追加することができます。 "
+"以下では、科学的なエコシステムで最もよく使われている Python テストフレームワークの一つである **pytest** "
+"フレームワークについて学びます。 テストフレームワークは必要不可欠ですが、テストを実行するためだけのものです。 "
+"これらのフレームワークは、追加の自動化ツールの助けを借りずに Python のバージョンをまたいだテストを簡単に実行する方法は提供しません。"
 
 #: ../../tests/run-tests.md:25
 msgid ""
@@ -183,6 +362,13 @@ msgid ""
 "build on different operating systems using only nox and tox - this is "
 "where continuous integration (CI) comes into play."
 msgstr ""
+"**自動化ツール** を使うと、ユーザー定義のコマンドを使って、テストのようなワークフローを特定の方法で実行することを自動化できます。 "
+"例えば、1つのコマンドで異なるPythonのバージョンにまたがってテストを実行できると便利です。  "
+"[**nox**](https://nox.thea.codes/en/stable/index.html) や "
+"[**tox**](https://tox.wiki/en/latest/index.html) "
+"のようなツールも、Pythonのバージョンをまたいでテストを実行できます。 "
+"しかし、noxとtoxだけを使って異なるオペレーティングシステムでビルドをテストするのは難しいでしょう - "
+"ここで継続的インテグレーション(CI)の出番です。"
 
 #: ../../tests/run-tests.md:26
 msgid ""
@@ -193,34 +379,38 @@ msgid ""
 "operating systems (Windows, Mac and Linux). [We discuss using CI to run "
 "tests here](tests-ci)."
 msgstr ""
+"**継続的インテグレーション (CI):** は、テストを実行するために必要な最後のツールです。 CI は、nox や tox "
+"を使って作成した自動ビルドを複製して、異なる Python 環境でパッケージを実行できるようにするだけではありません。 "
+"また、異なるオペレーティングシステム（Windows、Mac、Linux）でテストを実行することもできます。 "
+"[テストを実行するためにCIを使うことについては、ここで説明します](tests-ci) 。"
 
 #: ../../tests/run-tests.md:28
 msgid "Table: Testing & Automation Tool"
-msgstr ""
+msgstr "テーブル: テスト＆自動化ツール"
 
 #: ../../tests/run-tests.md:35
 msgid "Features"
-msgstr ""
+msgstr "機能"
 
 #: ../../tests/run-tests.md:36
 msgid "Testing Framework (pytest)"
-msgstr ""
+msgstr "テストフレームワーク (pytest)"
 
 #: ../../tests/run-tests.md:37
 msgid "Test Runner (Tox)"
-msgstr ""
+msgstr "テストランナー (Tox)"
 
 #: ../../tests/run-tests.md:38
 msgid "Automation Tools (Nox)"
-msgstr ""
+msgstr "自動化ツール（Nox）"
 
 #: ../../tests/run-tests.md:39
 msgid "Continuous Integration (GitHub Actions)"
-msgstr ""
+msgstr "継続的インテグレーション（GitHub Actions）"
 
 #: ../../tests/run-tests.md:40
 msgid "Run Tests Locally"
-msgstr ""
+msgstr "ローカルでテストを実行する"
 
 #: ../../tests/run-tests.md:41 ../../tests/run-tests.md:42
 #: ../../tests/run-tests.md:43 ../../tests/run-tests.md:49
@@ -230,7 +420,7 @@ msgstr ""
 #: ../../tests/run-tests.md:64 ../../tests/run-tests.md:68
 #: ../../tests/run-tests.md:69
 msgid "<i class=\"fa-solid fa-circle-check fa-xl\"></i>"
-msgstr ""
+msgstr "<i class=\"fa-solid fa-circle-check fa-xl\"></i>"
 
 #: ../../tests/run-tests.md:44 ../../tests/run-tests.md:46
 #: ../../tests/run-tests.md:47 ../../tests/run-tests.md:48
@@ -239,43 +429,47 @@ msgstr ""
 #: ../../tests/run-tests.md:63 ../../tests/run-tests.md:66
 #: ../../tests/run-tests.md:67
 msgid "<i class=\"fa-solid fa-xmark fa-xl\" style=\"color: #afb3bb;\"></i>"
-msgstr ""
+msgstr "<i class=\"fa-solid fa-xmark fa-xl\" style=\"color: #afb3bb;\"></i>"
 
 #: ../../tests/run-tests.md:45
 msgid "Run Tests Online"
-msgstr ""
+msgstr "オンラインテストを実行する"
 
 #: ../../tests/run-tests.md:50
 msgid "Run Tests Across Python Versions"
-msgstr ""
+msgstr "Pythonのバージョンにまたがってテストを実行する"
 
 #: ../../tests/run-tests.md:55
 msgid "Run Tests In Isolated Environments"
-msgstr ""
+msgstr "隔離された環境でのテストの実行"
 
 #: ../../tests/run-tests.md:60
 msgid "Run Tests Across Operating Systems (Windows, MacOS, Linux)"
-msgstr ""
+msgstr "オペレーティングシステム（Windows、MacOS、Linux）にまたがるテストの実行"
 
 #: ../../tests/run-tests.md:65
 msgid "Use for other automation tasks (e.g. building docs)"
-msgstr ""
+msgstr "その他の自動化タスクに使用する（ドキュメントの作成など）"
 
 #: ../../tests/run-tests.md:73
 msgid "What testing framework / package should I use to run tests?"
-msgstr ""
+msgstr "テストを実行するには、どのテストフレームワーク/パッケージを使用すればよいですか？"
 
 #: ../../tests/run-tests.md:75
 msgid ""
 "We recommend using `Pytest` to build and run your package tests. Pytest "
 "is the most common testing tool used in the Python ecosystem."
 msgstr ""
+"パッケージテストのビルドと実行には `Pytest` を使うことを推奨します。 Pytest は Python "
+"のエコシステムで最もよく使われているテストツールです。"
 
 #: ../../tests/run-tests.md:77
 msgid ""
 "[The Pytest package](https://docs.pytest.org/en/latest/) also has a "
 "number of extensions that can be used to add functionality such as:"
 msgstr ""
+"[Pytestパッケージ](https://docs.pytest.org/en/latest/) "
+"には、以下のような機能を追加するために使用できる多くの拡張機能もあります："
 
 #: ../../tests/run-tests.md:80
 msgid ""
@@ -283,15 +477,18 @@ msgid ""
 "analyze the code coverage of your package during your tests, and "
 "generates a report that you can [upload to codecov](https://codecov.io/)."
 msgstr ""
+"[pytest-cov](https://pytest-cov.readthedocs.io/en/latest/) "
+"を使うと、テスト中にパッケージのコードカバレッジを分析し、 [codecov](https://codecov.io/) "
+"にアップロードできるレポートを生成することができます。"
 
 #: ../../tests/run-tests.md:82 ../../tests/run-tests.md:174
 #: ../../tests/test-types.md:14 ../../tests/tests-ci.md:7
 msgid "Todo"
-msgstr ""
+msgstr "Todo"
 
 #: ../../tests/run-tests.md:83
 msgid "Learn more about code coverage here. (add link)"
-msgstr ""
+msgstr "コードカバレッジについてはこちらをご覧ください。 (リンクを追加)"
 
 #: ../../tests/run-tests.md:87
 msgid ""
@@ -299,34 +496,40 @@ msgid ""
 "setting breakpoints, and toggling the `–no-cov` flag. Check your editor's"
 " documentation for more information."
 msgstr ""
+"お使いのエディタや IDE には、テストを実行したり、ブレークポイントを設定したり、 `-no-cov` "
+"フラグを切り替えたりするための便利な機能が追加されているかもしれません。 詳しくはエディタのドキュメントを参照してください。"
 
 #: ../../tests/run-tests.md:90
 msgid "Run tests using pytest"
-msgstr ""
+msgstr "pytest を使ってテストを実行する"
 
 #: ../../tests/run-tests.md:92
 msgid "If you are using **pytest**, you can run your tests locally by calling:"
-msgstr ""
+msgstr "**pytest** を使用している場合、テストをローカルで実行することができます:"
 
 #: ../../tests/run-tests.md:95
 msgid "`pytest`"
-msgstr ""
+msgstr "`pytest`"
 
 #: ../../tests/run-tests.md:97
 msgid ""
 "Or if you want to run a specific test file - let's call this file "
 "\"`test_module.py`\" - you can run:"
 msgstr ""
+"また、特定のテストファイル - このファイルを \"`test_module.py`\" と呼ぶことにします - "
+"を実行したい場合は、次のようにします:"
 
 #: ../../tests/run-tests.md:99
 msgid "`pytest test_module.py`"
-msgstr ""
+msgstr "`pytest test_module.py`"
 
 #: ../../tests/run-tests.md:101
 msgid ""
 "Learn more from the [get started docs](https://docs.pytest.org/en/7.1.x"
 "/getting-started.html)."
 msgstr ""
+"詳しくは [ドキュメントスタートガイド](https://docs.pytest.org/en/7.1.x/getting-"
+"started.html) をご覧ください。"
 
 #: ../../tests/run-tests.md:103
 msgid ""
@@ -335,26 +538,30 @@ msgid ""
 "will be run on a single version of Python and only on the operating "
 "system that you are running locally."
 msgstr ""
+"あなたのコンピュータで pytest を実行すると、現在有効になっている Python 環境でテストが実行されます。 "
+"つまり、テストは単一のバージョンのPythonで、ローカルで実行しているオペレーティングシステム上でのみ実行されます。"
 
 #: ../../tests/run-tests.md:108
 msgid ""
 "An automation tool can simplify the process of running tests in various "
 "Python environments."
-msgstr ""
+msgstr "自動化ツールは、様々な Python 環境でテストを実行するプロセスを単純化することができます。"
 
 #: ../../tests/run-tests.md:111
 msgid "Tests across operating systems"
-msgstr ""
+msgstr "オペレーティングシステムをまたいだテスト"
 
 #: ../../tests/run-tests.md:112
 msgid ""
 "If you want to run your tests across different operating systems you can "
 "[continuous integration. Learn more here](tests-ci)."
 msgstr ""
+"異なるオペレーティングシステム間でテストを実行したい場合は、 [継続的インテグレーション。 詳細はこちら](tests-ci) "
+"を使用することができます。"
 
 #: ../../tests/run-tests.md:115
 msgid "Tools to automate running your tests"
-msgstr ""
+msgstr "テストの実行を自動化するツール"
 
 #: ../../tests/run-tests.md:117
 msgid ""
@@ -364,6 +571,9 @@ msgid ""
 "environments. This allows you to easily run your tests in multiple "
 "environments and across Python versions."
 msgstr ""
+"一つのコマンドで様々な Python のバージョンや特定の環境でテストを実行するには、 `nox` や `tox` "
+"のような自動化ツールを使うことができます。 `nox` も `tox` も、隔離された仮想環境を作成することができます。 これにより、複数の環境や"
+" Python のバージョンをまたいだテストを簡単に実行することができます。"
 
 #: ../../tests/run-tests.md:120
 msgid ""
@@ -373,20 +583,26 @@ msgid ""
 "and development workflows. Everything that you do with `nox` can be "
 "implemented using a Python-based interface."
 msgstr ""
+"このガイドでは、 [Nox](https://nox.thea.codes/) に焦点を当てます。 `nox` は Python "
+"ベースの自動化ツールで、 `make` と `tox` の機能をベースにしています。 `nox` "
+"はテストと開発のワークフローを簡素化し、効率化するように設計されています。 `nox` "
+"で行うことはすべて、Pythonベースのインターフェースを使って実装することができます。"
 
 #: ../../tests/run-tests.md:122
 msgid "Other automation tools you'll see in the wild"
-msgstr ""
+msgstr "その他の自動化ツール"
 
 #: ../../tests/run-tests.md:125
+#, fuzzy
 msgid ""
 "**[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an "
 "automation tool that supports common steps such as building "
 "documentation, running tests across various versions of Python, and more."
-" You can find [a nice overview of tox in the plasmaPy "
-"documentation](https://docs.plasmapy.org/en/stable/contributing/testing_guide.html"
-"#using-tox)."
 msgstr ""
+"**[Tox](https://tox.wiki/en/latest/index.html#useful-links)** "
+"は自動化ツールで、ドキュメントのビルドや、Pythonの様々なバージョン間でのテストの実行など、一般的なステップをサポートしています。 "
+"[plasmaPyのドキュメントによいtoxの概要があります](https://docs.plasmapy.org/en/stable/contributing/testing_guide.html"
+"#using-tox) 。"
 
 #: ../../tests/run-tests.md:127
 msgid ""
@@ -397,6 +613,11 @@ msgid ""
 "support your packaging workflow, you may want to also use its testing "
 "capabilities rather than using `nox`."
 msgstr ""
+"**[Hatch](https://github.com/ofek/hatch)** "
+"は、hatchlingと呼ばれる人気のあるビルドバックエンドで動作する最新のエンドツーエンドパッケージングツールです。  `hatch` は "
+"`tox` のようなセットアップを提供し、異なる Python バージョンを使ってローカルでテストを実行することができます。 "
+"パッケージングのワークフローをサポートするために `hatch` を使っているのであれば、 `nox` を使うよりも `hatch` "
+"のテスト機能を使った方が良いかもしれない。"
 
 #: ../../tests/run-tests.md:129
 msgid ""
@@ -408,22 +629,26 @@ msgid ""
 "not already familiar with it. Make also won't manage environments for you"
 " like **nox** will do."
 msgstr ""
+"[**make:**](https://www.gnu.org/software/make/manual/make.html) "
+"ビルド自動化ツールであるMakeは汎用性が高いため、テストの実行に使う開発者もいます; "
+"特定の言語に縛られることなく、さまざまなビルドプロセスを実行するために使うことができます。しかし、Makeのユニークな構文とアプローチは、特にあなたがまだMakeに慣れていない場合、習得を難しくする可能性があります。Makeはまた、"
+" **nox** がやってくれるような環境管理もしてくれません。"
 
 #: ../../tests/run-tests.md:136
 msgid "Run tests across Python versions with nox"
-msgstr ""
+msgstr "noxでPythonのバージョンにまたがってテストを実行する"
 
 #: ../../tests/run-tests.md:138
 msgid "**Nox** is a great automation tool to learn because it:"
-msgstr ""
+msgstr "**Nox** は素晴らしい自動化ツールです:"
 
 #: ../../tests/run-tests.md:140
 msgid "Is Python-based making it accessible if you already know Python and"
-msgstr ""
+msgstr "Pythonベースですので、Pythonをすでに知っていれば利用しやすいです。"
 
 #: ../../tests/run-tests.md:141
 msgid "Will create isolated environments to run workflows."
-msgstr ""
+msgstr "ワークフローを実行するための隔離された環境を構築します。"
 
 #: ../../tests/run-tests.md:143
 msgid ""
@@ -431,10 +656,12 @@ msgid ""
 "you can set up virtual environments, and run tests across Python versions"
 " using the environment manager of your choice with a single command."
 msgstr ""
+"`nox` はテスト環境の作成と管理を簡単にします。 `nox` を使うと、仮想環境をセットアップし、好きな環境マネージャを使って Python "
+"のバージョンをまたいだテストをコマンド一つで実行することができます。"
 
 #: ../../tests/run-tests.md:148
 msgid "Nox Installations"
-msgstr ""
+msgstr "Noxのインストール"
 
 #: ../../tests/run-tests.md:150
 msgid ""
@@ -442,10 +669,12 @@ msgid ""
 "versions, nox will create and manage individual `venv` environments for "
 "each Python version that you specify in the nox function."
 msgstr ""
+"異なる Python バージョン間でテストを実行するために nox をインストールして使用する場合、nox は nox 関数で指定した "
+"Python バージョンごとに個別の `venv` 環境を作成して管理します。"
 
 #: ../../tests/run-tests.md:152
 msgid "Nox will manage each environment on its own."
-msgstr ""
+msgstr "Noxはそれぞれの環境を独自に管理します。"
 
 #: ../../tests/run-tests.md:154
 msgid ""
@@ -454,6 +683,8 @@ msgid ""
 "installations across both PyPI related environments (e.g. venv, "
 "virtualenv) and `conda` (e.g. `conda-forge`)."
 msgstr ""
+"nox は、ドキュメントのビルド、パッケージ配布の作成、PyPI 関連の環境 (venv や virtualenv など) と `conda` "
+"(conda-forge` など) の両方にわたるインストールのテストなど、その他の開発作業にも使用できます。"
 
 #: ../../tests/run-tests.md:158
 msgid ""
@@ -461,10 +692,12 @@ msgid ""
 "your project directory. You then define commands using Python functions. "
 "Some examples of that are below."
 msgstr ""
+"noxを使い始めるには、プロジェクトディレクトリのルートに `noxfile.py` ファイルを作成します。 "
+"そして、Pythonの関数を使ってコマンドを定義します。 以下にその例をいくつか挙ます。"
 
 #: ../../tests/run-tests.md:162
 msgid "Test Environments"
-msgstr ""
+msgstr "テスト環境"
 
 #: ../../tests/run-tests.md:164
 msgid ""
@@ -475,34 +708,39 @@ msgid ""
 " not interfere with each other, promoting a clean and organized "
 "development environment."
 msgstr ""
+"デフォルトでは、 `nox` は Python 組み込みの `venv` 環境マネージャを使用します。 仮想環境 (`venv`) は自己完結型の"
+" Python 環境で、異なる Python プロジェクトの依存関係を分離して管理することができます。 "
+"プロジェクト固有のライブラリやパッケージが互いに干渉しないようにし、クリーンで整理された開発環境を促進します。"
 
 #: ../../tests/run-tests.md:166
 msgid ""
 "An example of using nox to run tests in `venv` environments for Python "
 "versions 3.9, 3.10, 3.11 and 3.12 is below."
-msgstr ""
+msgstr "noxを使ってPythonバージョン3.9、3.10、3.11、3.12の `venv` 環境でテストを実行する例を以下に示します。"
 
 #: ../../tests/run-tests.md:169
 msgid ""
 "Note that for the code below to work, you need to have all 4 versions of "
 "Python installed on your computer for `nox` to find."
 msgstr ""
+"以下のコードが動作するためには、 `nox` "
+"が見つけることができる4つのバージョンのPythonがコンピュータにインストールされている必要があることに注意してください。"
 
 #: ../../tests/run-tests.md:172
 msgid "Nox with venv environments"
-msgstr ""
+msgstr "venv環境のnox"
 
 #: ../../tests/run-tests.md:175
 msgid ""
 "TODO: add some tests above and show what the output would look like in "
 "the examples below..."
-msgstr ""
+msgstr "TODO: 上記のテストをいくつか追加し、以下の例で出力がどのようになるかを示す..."
 
 #: ../../tests/run-tests.md:178
 msgid ""
 "Below is an example of setting up nox to run tests using `venv` which is "
 "the built in environment manager that comes with base Python."
-msgstr ""
+msgstr "以下は、Pythonに組み込まれている環境マネージャーである `venv` を使ってテストを実行するようにnoxをセットアップする例です。"
 
 #: ../../tests/run-tests.md:180
 msgid ""
@@ -511,6 +749,9 @@ msgid ""
 "understand](../package-structure-code/declare-dependencies.md). An "
 "example of that setup is below."
 msgstr ""
+"以下の例では、 [pipが理解できる方法でテストの依存関係を宣言するように`pyproject.toml`をセットアップする"
+"](../package-structure-code/declare-dependencies.md) "
+"ことを前提としていることに注意してください。 そのセットアップの例を以下に示します。"
 
 #: ../../tests/run-tests.md:201
 msgid ""
@@ -519,6 +760,9 @@ msgid ""
 " that below one single nox session allows you to run your tests on 4 "
 "different Python environments (Python 3.9, 3.10, 3.11, and 3.12)."
 msgstr ""
+"上記の設定ができていれば、 `session.install(\".[tests]\")` "
+"を使ってテストの依存関係をインストールすることができます。 以下のように、1つのnoxセッションで4つの異なるPython環境（Python "
+"3.9、3.10、3.11、3.12）でテストを実行できることに注意してください。"
 
 #: ../../tests/run-tests.md:222
 msgid ""
@@ -526,6 +770,8 @@ msgid ""
 "`@nox.session` decorator. Notice that within the decorator you declare "
 "the versions of python that you wish to run."
 msgstr ""
+"上の例では、 `@nox.session` デコレーターを使って関数の形で nox セッションを作成しています。 デコレータの中で、実行したい "
+"python のバージョンを宣言していることに注意してください。"
 
 #: ../../tests/run-tests.md:226
 msgid ""
@@ -533,10 +779,12 @@ msgid ""
 "session with `--session` (sometimes shortened to `-s`). Your function "
 "above is called test, therefore the session name is test."
 msgstr ""
+"上記を実行するには、 `--session` （ `-s` "
+"と短縮されることもある）でセッションを指定し、以下のコマンドを実行します。上記の関数はtestという名前なので、セッション名はtestです。"
 
 #: ../../tests/run-tests.md:234
 msgid "Nox with conda / mamba"
-msgstr ""
+msgstr "conda / mamba による nox"
 
 #: ../../tests/run-tests.md:236
 msgid ""
@@ -546,58 +794,64 @@ msgid ""
 "install all four Python versions if you use conda/mamba, like you do with"
 " `venv`."
 msgstr ""
+"以下は、noxが環境マネージャーにmamba（またはconda）を使うように設定する例です。venvと違って、condaは必要なPythonの様々なバージョンを自動的にインストールできることに注意してください。conda/mambaを使う場合は、"
+" `venv` のように4つのPythonバージョンをインストールする必要はありません。"
 
 #: ../../tests/run-tests.md:242
 msgid ""
 "For `conda` to work with `nox`, you will need to ensure that either "
 "`conda` or `mamba` is installed on your computer."
 msgstr ""
+"`nox` で `conda` を動作させるには、コンピュータに `conda` か `mamba` "
+"のどちらかがインストールされていることを確認する必要があります。"
 
 #: ../../tests/run-tests.md:264
 msgid "To run the above session you'd use:"
-msgstr ""
+msgstr "上記のセッションを実行するには、次のようにします:"
 
 #: ../../tests/test-types.md:1
 msgid "Test Types for Python packages"
-msgstr ""
+msgstr "Pythonパッケージのテストタイプ"
 
 #: ../../tests/test-types.md:3
 msgid "Three types of tests: Unit, Integration & Functional Tests"
-msgstr ""
+msgstr "3種類のテスト: 単体テスト、統合テスト、機能テスト"
 
 #: ../../tests/test-types.md:5
 msgid ""
 "There are different types of tests that you want to consider when "
 "creating your test suite:"
-msgstr ""
+msgstr "テストスイートを作成する際に考慮したいテストには、さまざまなタイプがあります:"
 
 #: ../../tests/test-types.md:8
 msgid "Unit tests"
-msgstr ""
+msgstr "単体テスト"
 
 #: ../../tests/test-types.md:9
 msgid "Integration"
-msgstr ""
+msgstr "統合"
 
 #: ../../tests/test-types.md:10
 msgid "End-to-end (also known as Functional) tests"
-msgstr ""
+msgstr "エンドツーエンド(機能テストとも呼ばれる)テスト"
 
 #: ../../tests/test-types.md:12
 msgid ""
 "Each type of test has a different purpose. Here, you will learn about all"
 " three types of tests."
-msgstr ""
+msgstr "それぞれのテストには異なる目的があります。 ここでは、3種類のテストすべてについて学びます。"
 
 #: ../../tests/test-types.md:15
 msgid ""
 "I think this page would be stronger if we did have some examples from our"
 " package here: https://github.com/pyOpenSci/pyosPackage"
 msgstr ""
+"私たちのパッケージからの例があれば、このページはもっと強くなると思います: "
+"https://github.com/pyOpenSci/pyosPackage "
 
 #: ../../tests/test-types.md:20
 msgid "Unit Tests"
-msgstr ""
+msgstr "単体テスト"
 
 #: ../../tests/test-types.md:22
 msgid ""
@@ -605,7 +859,7 @@ msgid ""
 "isolation to ensure that they work correctly. The goal of unit testing is"
 " to verify that each part of the software, typically at the function or "
 "method level, performs its intended task correctly."
-msgstr ""
+msgstr "単体テストは、個々のコンポーネントやコードの単位を分離してテストし、それらが正しく動作することを確認するものです。単体テストの目的は、ソフトウェアの各部分、通常は関数やメソッドのレベルが、意図したタスクを正しく実行することを検証することです。"
 
 #: ../../tests/test-types.md:24
 msgid ""
@@ -614,7 +868,7 @@ msgid ""
 "don’t fit together, you will never complete it. Similarly, when working "
 "with code, tests ensure that each function, attribute, class, method "
 "works properly when isolated."
-msgstr ""
+msgstr "単体テストは、パズルの各パーツが壊れていないかどうかを調べることに例えることができます。パズルのピースがすべて合わなければ、完成することはありません。同様に、コードを扱う場合、テストは各関数、プロパティ、クラス、メソッドが分離されたときに正しく機能することを保証します。"
 
 #: ../../tests/test-types.md:26
 msgid ""
@@ -624,28 +878,30 @@ msgid ""
 "returns the correct value in degrees Fahrenheit. That function is a unit "
 "test. It checks a single unit (function) in your code."
 msgstr ""
+"**ユニットテスト例:** "
+"温度値を摂氏から華氏に変換する関数があるとします。その関数のテストは、摂氏の値が提供されたとき、その関数が正しい華氏の値を返すことを保証するかもしれません。この関数はユニットテストです。これは、コード内の1つのユニット(関数)をチェックします。"
 
 #: ../../tests/test-types.md:44
 msgid ""
 "Example unit test for the above function. You'd run this test using the "
 "`pytest` command in your **tests/** directory."
-msgstr ""
+msgstr "上記の関数のユニットテスト例。このテストは、 **tests/** ディレクトリの `pytest` コマンドを使って実行します。"
 
 #: ../../tests/test-types.md:65 ../../tests/test-types.md:115
 msgid ""
 "image of puzzle pieces that all fit together nicely. The puzzle pieces "
 "are colorful - purple, green and teal."
-msgstr ""
+msgstr "パズルのピースがうまく組み合わさったような画像です。パズルのピースは紫色、緑色、鴨の羽色とカラフルです。"
 
 #: ../../tests/test-types.md:69
 msgid ""
 "Your unit tests should ensure each part of your code works as expected on"
 " its own."
-msgstr ""
+msgstr "ユニットテストでは、コードの各部分がそれ自体で期待通りに動作することを確認する必要があります。"
 
 #: ../../tests/test-types.md:72
 msgid "Integration tests"
-msgstr ""
+msgstr "統合テスト"
 
 #: ../../tests/test-types.md:74
 msgid ""
@@ -653,7 +909,7 @@ msgid ""
 " or integrate. Integration tests can be compared to connecting a bunch of"
 " puzzle pieces together to form a whole picture. Integration tests focus "
 "on how different pieces of your code fit and work together."
-msgstr ""
+msgstr "統合テストでは、パッケージの各パーツがどのように連動するか、あるいは統合されるかをテストします。統合テストは、パズルのピースをつなげて全体像を作るようなものです。統合テストは、コードのさまざまな部分がどのように適合し、連携して動作するかに焦点を当てます。"
 
 #: ../../tests/test-types.md:76
 msgid ""
@@ -662,14 +918,14 @@ msgid ""
 "then provided an average temperature for a particular time period. An "
 "integration test would ensure that all parts of that workflow behaved as "
 "expected."
-msgstr ""
+msgstr "例えば、スプレッドシートに温度データを収集し、摂氏から華氏に変換し、特定の期間の平均温度を提供する一連のステップがあったとします。統合テストは、そのワークフローのすべての部分が期待通りに動作することを保証します。"
 
 #: ../../tests/test-types.md:107
 msgid ""
 "image of two puzzle pieces with some missing parts. The puzzle pieces are"
 " purple teal yellow and blue. The shapes of each piece don’t fit "
 "together."
-msgstr ""
+msgstr "パズルのピースが2つあり、一部欠けている画像です。パズルのピースは紫・鴨の羽色・黄色・青色。 それぞれのピースの形が合いません。"
 
 #: ../../tests/test-types.md:112
 msgid ""
@@ -677,17 +933,17 @@ msgid ""
 "elements in the puzzle. The same is true with individual functions, "
 "methods and classes in your software. The code needs to work both "
 "individually and together to perform certain sets of tasks."
-msgstr ""
+msgstr "パズルのピースの両端が欠けていると、パズルの他の要素と連動することができません。ソフトウェアの個々の関数、メソッド、クラスについても同様です。コードは、ある一連のタスクを実行するために、個々に、そして一緒に働く必要があります。"
 
 #: ../../tests/test-types.md:120
 msgid ""
 "Your integration tests should ensure that parts of your code that are "
 "expected to work together, do so as expected."
-msgstr ""
+msgstr "統合テストは、コードの一部が連携して動作することが期待されており、期待通りに動作することを保証するものでなければなりません。"
 
 #: ../../tests/test-types.md:124
 msgid "End-to-end (functional) tests"
-msgstr ""
+msgstr "エンドツーエンド(機能)テスト"
 
 #: ../../tests/test-types.md:126
 msgid ""
@@ -700,34 +956,36 @@ msgid ""
 "your software a final check before it's put into action, making sure it's"
 " ready to deliver a smooth experience to its users."
 msgstr ""
+"Python "
+"におけるエンドツーエンドのテスト（機能テストとも呼ばれる）は、ソフトウェアの包括的なチェックリストのようなものです。実際のユーザーのエンドツーエンドのワークフローをシミュレートし、コードベースが実際のアプリケーションやユースケースを最初から最後までサポートすることを確認します。これらのテストは、小規模なテストでは表示されないかもしれない問題をキャッチし、アプリケーションやプログラム全体が正しく動作することを確認するのに役立ちます。ソフトウェアを実用化する前に最終チェックを行い、ユーザーにスムーズなエクスペリエンスを提供する準備ができていることを確認する方法だと考えてください。"
 
 #: ../../tests/test-types.md:128
 msgid "Image of a completed puzzle showing a daisy"
-msgstr ""
+msgstr "デイジーを描いたパズルの完成イメージ"
 
 #: ../../tests/test-types.md:133
 msgid ""
 "End-to-end or functional tests represent an entire workflow that you "
 "expect your package to support."
-msgstr ""
+msgstr "エンドツーエンドテストまたは機能テストは、パッケージがサポートすることを期待するワークフロー全体を表します。"
 
 #: ../../tests/test-types.md:137
 msgid ""
 "End-to-end test also test how a program runs from start to finish. A "
 "tutorial that you add to your documentation that runs in CI in an "
 "isolated environment is another example of an end-to-end test."
-msgstr ""
+msgstr "エンドツーエンドのテストも、プログラムが最初から最後までどのように実行されるかをテストします。ドキュメントに追加するチュートリアルは、分離された環境のCIで実行され、エンドツーエンドのテストのもう一つの例です。"
 
 #: ../../tests/test-types.md:140
 msgid ""
 "For scientific packages, creating short tutorials that highlight core "
 "workflows that your package supports, that are run when your "
 "documentation is built could also serve as end-to-end tests."
-msgstr ""
+msgstr "科学的なパッケージの場合、パッケージがサポートする中核的なワークフローを強調する短いチュートリアルを作成し、ドキュメントのビルド時に実行することで、エンドツーエンドのテストを兼ねることができます。"
 
 #: ../../tests/test-types.md:143
 msgid "Comparing unit, integration and end-to-end tests"
-msgstr ""
+msgstr "ユニットテスト、統合テスト、エンドツーエンドテストの比較"
 
 #: ../../tests/test-types.md:145
 msgid ""
@@ -737,6 +995,9 @@ msgid ""
 "tests are not useful for verifying that different sections of code work "
 "together."
 msgstr ""
+"単体テスト、統合テスト、エンドツーエンドテストには、それぞれ相補的な長所と短所があります。 "
+"単体テストは、そのきめ細かな性質から、どこでエラーが発生しているかを切り分けるのに適しています。 "
+"しかし、ユニットテストは、コードの異なるセクションが連携して動作することを検証するのには役に立ちません。"
 
 #: ../../tests/test-types.md:147
 msgid ""
@@ -747,7 +1008,7 @@ msgid ""
 "didn't introduce new behavior to your existing code, then you can rely on"
 " your unit tests to continue to pass, testing the original functionality "
 "of your code."
-msgstr ""
+msgstr "統合テストとエンドツーエンドテストは、プログラムのさまざまな部分が連携して動作することを検証しますが、どこでエラーが発生しているかを切り分けるにはあまり適していません。例えば、コードをリファクタリングすると、エンドツーエンドのテストが壊れる可能性があります。しかし、リファクタリングによって既存のコードに新しい動作が導入されなかったのであれば、コードの元の機能をテストするユニットテストがパスし続けることに頼ることができます。"
 
 #: ../../tests/test-types.md:152
 msgid ""
@@ -758,11 +1019,11 @@ msgid ""
 "different types of tests can provides a framework to help you think about"
 " writing tests and how different types of tests can complement each "
 "other."
-msgstr ""
+msgstr "重要なのは、さまざまな種類のテストにまつわる詳細について心配することにエネルギーを費やす必要はないということです。テストスイートの作成に取りかかるときには、パッケージが何をするのか、そしてパッケージの一部をどのようにテストする必要があるのかを考えてください。さまざまな種類のテストに慣れ親しむことは、テストの書き方や、さまざまな種類のテストが互いにどのように補完し合えるかを考える際のフレームワークとなります。"
 
 #: ../../tests/tests-ci.md:1
 msgid "Run tests with Continuous Integration"
-msgstr ""
+msgstr "継続的インテグレーションによるテストの実行"
 
 #: ../../tests/tests-ci.md:3
 msgid ""
@@ -774,6 +1035,8 @@ msgid ""
 "using CI you can specify tests to run both on various versions of Python "
 "and across different operating systems."
 msgstr ""
+"[テストスイートをローカルで実行する](run-tests) "
+"ことは、コードを開発したり、新しい機能やコード・ベースの変更をテストしたりするときに便利です。しかし、テストをオンラインで実行するために、継続的インテグレーション（CI）もセットアップしたいです。CIを使えば、すべてのテストをクラウド上で実行できます。特定のオペレーティングシステム上でしかローカルにテストを実行できないかもしれませんが、CIを使用すると、Pythonのさまざまなバージョンや異なるオペレーティングシステム間で実行するテストを指定できます。"
 
 #: ../../tests/tests-ci.md:5
 msgid ""
@@ -783,16 +1046,19 @@ msgid ""
 "code continues to run as expected even as changes are made to the code "
 "base."
 msgstr ""
+"CIは、プルリクエストやリポジトリへのプッシュをトリガーすることもできます。 "
+"これは、あなた、あなたのメンテナチーム、またはコントリビューターが提出するすべてのプルリクエストをテストできることを意味します。 "
+"最終的にCIテストは、コードベースに変更が加えられても、あなたのコードが期待通りに実行され続けることを保証します。"
 
 #: ../../tests/tests-ci.md:9
 msgid ""
 "Learn more about Continuous Integration and how it can be used, here. "
 "(add link)"
-msgstr ""
+msgstr "継続的インテグレーションとその使用方法については、こちらをご覧ください。 (リンクを追加)"
 
 #: ../../tests/tests-ci.md:13
 msgid "CI & pull requests"
-msgstr ""
+msgstr "CIとプルリクエスト"
 
 #: ../../tests/tests-ci.md:15
 msgid ""
@@ -803,26 +1069,34 @@ msgid ""
 " more without having to create development environments, run tests and "
 "build documentation locally."
 msgstr ""
+"CIは、外部の人があなたのソフトウェアに貢献している場合、非常に貴重です。 "
+"リポジトリに投稿されたすべてのプルリクエストに対してCIを実行するように設定できます。 "
+"CIは、あなたのリポジトリを新しい将来の貢献者によりフレンドリーなものにします。 "
+"開発環境の構築、テストの実行、ドキュメントのビルドをローカルで行うことなく、コードやドキュメントの修正などに貢献することができます。"
 
 #: ../../tests/tests-ci.md:22
-msgid "Example GitHub action that runs tests"
-msgstr ""
+#, fuzzy
+msgid "Example GitHub Actions that runs tests"
+msgstr "テストを実行する GitHub Actionsの例"
 
 #: ../../tests/tests-ci.md:24
+#, fuzzy
 msgid ""
-"Below is an example GitHub action that runs tests using nox across both "
+"Below is an example GitHub Actions that runs tests using nox across both "
 "Windows, Mac and Linux and on Python versions 3.9-3.11."
 msgstr ""
+"以下は、Windows、Mac、Linuxの両方で、Pythonのバージョン3.9-3.11でnoxを使ってテストを実行するGitHub "
+"Actionsの例です。"
 
 #: ../../tests/tests-ci.md:28
 msgid ""
 "To work properly, this file should be located in a root directory of your"
 " GitHub repository:"
-msgstr ""
+msgstr "正しく動作させるには、このファイルをGitHubリポジトリのルートディレクトリに置く必要があります:"
 
 #: ../../tests/write-tests.md:1
 msgid "Write tests for your Python package"
-msgstr ""
+msgstr "Pythonパッケージのテストを書く"
 
 #: ../../tests/write-tests.md:3
 msgid ""
@@ -832,10 +1106,12 @@ msgid ""
 "written with the intention of making sure a specific part of your code "
 "works as you expected it to."
 msgstr ""
+"パッケージのコードをテストするコードを書くことは、テスト・スイートとしても知られています。 "
+"テスト・スイートは、関数、メソッド、クラスのセットで構成され、コードの特定の部分が期待通りに動作することを確認することを意図して書かれます。"
 
 #: ../../tests/write-tests.md:7
 msgid "Why write tests for your package?"
-msgstr ""
+msgstr "なぜパッケージのテストを書くのか？"
 
 #: ../../tests/write-tests.md:9
 msgid ""
@@ -844,10 +1120,12 @@ msgid ""
 " code alterations from contributors won't breaking existing "
 "functionality."
 msgstr ""
+"テストはコード変更のセーフティネットとして機能します。 バグがユーザーに影響を与える前に発見し、修正するのに役立ちます。 "
+"テストはまた、貢献者によるコード改変が既存の機能を壊さないという確信を与えます。"
 
 #: ../../tests/write-tests.md:13
 msgid "Writing tests for your Python package is important because:"
-msgstr ""
+msgstr "Pythonパッケージのテストを書くことは重要です:"
 
 #: ../../tests/write-tests.md:15
 msgid ""
@@ -855,6 +1133,8 @@ msgid ""
 "new features to your package, tests can quickly tell you if you "
 "accidentally broke something that was working fine before."
 msgstr ""
+"**キャッチミス:** "
+"テストはセーフティネットです。パッケージに変更を加えたり、新機能を追加したりした場合、テストによって、以前は問題なく動作していたものを誤って壊してしまったかどうかをすぐに知ることができます。"
 
 #: ../../tests/write-tests.md:16
 msgid ""
@@ -862,6 +1142,9 @@ msgid ""
 "check if your package is still working properly. Tests are like that "
 "magic button! They can run all those checks for you saving you time."
 msgstr ""
+"**時間を節約する:** "
+"あなたのパッケージがまだ正常に動作しているかどうかを自動的にチェックできる魔法のボタンがあるとしましょう。テストは魔法のボタンのようなものです！ "
+"あなたの時間を節約するために、すべてのチェックを実行してくれます。"
 
 #: ../../tests/write-tests.md:17
 msgid ""
@@ -870,6 +1153,8 @@ msgid ""
 "explain how your package is supposed to work, making it easier for others"
 " to understand and contribute to your project."
 msgstr ""
+"**より容易なコラボレーション:** "
+"他の人と一緒に仕事をしていたり、外部の協力者がいる場合、テストは全員が同じページにとどまるのに役立ちます。テストは、パッケージがどのように動作するかを説明し、他の人が理解しやすくし、プロジェクトに貢献しやすくします。"
 
 #: ../../tests/write-tests.md:18
 msgid ""
@@ -877,6 +1162,8 @@ msgid ""
 "code structure without changing its behavior. Tests empower you to make "
 "these changes as if you break something, test failures will let you know."
 msgstr ""
+"**大胆不敵なリファクタリング:** リファクタリングとは、コードの振る舞いを変えることなく、コード構造を改善することです。 "
+"テストは、あなたが何かを壊した場合、テストの失敗があなたに知らせてくれるので、このような変更を行う力を与えてくれます。"
 
 #: ../../tests/write-tests.md:19
 msgid ""
@@ -885,6 +1172,9 @@ msgid ""
 "to contribute code to your package. They can look at your tests to "
 "understand how parts of your code functionality fits together."
 msgstr ""
+"**文書化:** テストは、あなたのパッケージの使い方の技術的な例となります。 "
+"これは、あなたのパッケージにコードを提供しようとする新しい技術的貢献者にとって役に立ちます。 "
+"彼らはあなたのテストを見て、コードの機能の一部がどのように組み合わされているかを理解することができます。"
 
 #: ../../tests/write-tests.md:20
 msgid ""
@@ -892,19 +1182,25 @@ msgid ""
 "that your code continues to behave as expected, even as you make changes "
 "over time. Thus you are helping your future self when writing tests."
 msgstr ""
+"**長期的なメンテナンスの容易さ:** "
+"パッケージが進化するにつれて、テストは、時間の経過とともに変更を加えても、コードが期待通りに動作し続けることを保証します。こうして、テストを書くときに将来の自分を助けることになります。"
 
 #: ../../tests/write-tests.md:21
+#, fuzzy
 msgid ""
 "**Easier pull request reviews:** By running your tests in a CI framework "
-"such as GitHub actions, each time you or a contributor makes a change to "
+"such as GitHub Actions, each time you or a contributor makes a change to "
 "your code-base, you can catch issues and things that may have changed in "
 "your code base. This ensures that your software behaves the way you "
 "expect it to."
 msgstr ""
+"**より簡単なプルリクエストのレビュー:** GitHub actions のような CI "
+"フレームワークでテストを実行することで、あなたや貢献者がコードベースに変更を加えるたびに、コードベースの問題や変更点をキャッチすることができます。"
+" これにより、あなたのソフトウェアが期待通りに動作することが保証されます。"
 
 #: ../../tests/write-tests.md:23
 msgid "Tests for user edge cases"
-msgstr ""
+msgstr "ユーザーエッジケースのテスト"
 
 #: ../../tests/write-tests.md:25
 msgid ""
@@ -915,6 +1211,10 @@ msgid ""
 "`array`? Does your code gracefully handle this situation, providing clear"
 " feedback, or does it leave users frustrated by an unexplained failure?"
 msgstr ""
+"エッジケースとは、あるユーザがあなたのパッケージを使用する際の、予期せぬ、あるいは \"外れ値\"  の使い方を指します。 "
+"テストによって、パッケージの機能を損なう可能性のある様々なエッジケースに対処することができます。 例えば、ある関数がpandasの "
+"`dataframe` を期待したのに、ユーザがnumpyの `array` を提供した場合、何が起こるでしょうか？ "
+"あなたのコードは、このような状況を丁寧に処理し、明確なフィードバックを提供していますか？それとも、原因不明の失敗でユーザーをイライラさせたままにしていますか？"
 
 #: ../../tests/write-tests.md:33
 msgid ""
@@ -922,6 +1222,8 @@ msgid ""
 "lesson](https://swcarpentry.github.io/python-novice-"
 "inflammation/10-defensive.html)"
 msgstr ""
+"テストの入門書としては、 [このSoftware Carpentryのレッスン](https://swcarpentry.github.io"
+"/python-novice-inflammation/10-defensive.html) を参照してください。"
 
 #: ../../tests/write-tests.md:41
 msgid ""
@@ -932,42 +1234,47 @@ msgid ""
 "people with the right puzzle pieces that work together can be compared to"
 " writing tests for your Python package."
 msgstr ""
+"パズルのピースが、あなたのPythonパッケージの関数、メソッド、クラス、属性を表しているとしましょう。 "
+"そしてあなたは他の人に使ってもらいたいと思っています。 ピースが欠けていたり、ピースが合わなかったりするパズルを誰かに渡したいと思いますか？ "
+"パズルのピースを正しく組み合わせて提供することは、Python パッケージのテストを書くことに例えることができます。"
 
 #: ../../tests/write-tests.md:44
 msgid "Test examples"
-msgstr ""
+msgstr "テスト例"
 
 #: ../../tests/write-tests.md:47
 msgid ""
 "Let’s say you have a Python function that adds two numbers a and b "
 "together."
-msgstr ""
+msgstr "例えば、2つの数値aとbを足し合わせるPython関数があるとしましょう。"
 
 #: ../../tests/write-tests.md:54
 msgid ""
 "A test to ensure that function runs as you might expect when provided "
 "with different numbers might look like this:"
-msgstr ""
+msgstr "異なる数値が与えられたときに、その関数が期待通りに実行されることを確認するテストは次のようになります:"
 
 #: ../../tests/write-tests.md:72
 msgid "🧩🐍"
-msgstr ""
+msgstr "🧩🐍"
 
 #: ../../tests/write-tests.md:74
 msgid "How do I know what type of tests to write?"
-msgstr ""
+msgstr "どのような種類のテストを書けばいいのか、どうすればわかりますか？"
 
 #: ../../tests/write-tests.md:77
 msgid ""
 "This section has been adapted from [a presentation by Nick "
 "Murphy](https://zenodo.org/record/8185113)."
 msgstr ""
+"このセクションは、 [Nick Murphyのプレゼンテーション](https://zenodo.org/record/8185113) "
+"から引用しました。"
 
 #: ../../tests/write-tests.md:80
 msgid ""
 "At this point, you may be wondering - what should you be testing in your "
 "package? Below are a few examples:"
-msgstr ""
+msgstr "この時点で、あなたは疑問に思うかもしれません-あなたのパッケージで何をテストすべきか？ 以下にいくつか例を挙げます:"
 
 #: ../../tests/write-tests.md:82
 msgid ""
@@ -976,6 +1283,8 @@ msgid ""
 " to add two numbers, test that the outcome value of adding those two "
 "numbers is correct."
 msgstr ""
+"**いくつかの典型的なケースをテスト:** "
+"パッケージが、ユーザーが使用したときに期待通りに機能することをテストします。例えば、パッケージが2つの数値を足すことになっている場合、その2つの数値を足した結果が正しいかどうかをテストします。"
 
 #: ../../tests/write-tests.md:84
 msgid ""
@@ -983,6 +1292,8 @@ msgid ""
 " instance, if a function performs a specific calculation that may become "
 "problematic closer to the value = 0, test it with the input of both 0 and"
 msgstr ""
+"**特別なケースをテストする:** "
+"時には特殊なケースや異常なケースもあります。例えば、ある関数が特定の計算を実行し、その計算が値=0に近いほど問題になる可能性がある場合、その関数の入力を0と"
 
 #: ../../tests/write-tests.md:86
 msgid ""
@@ -991,6 +1302,8 @@ msgid ""
 "still works with both the values 1 and less than one and 1.001 as well "
 "(something close to the constraint value).."
 msgstr ""
+"**予想される境界線とその付近でテストする:** 関数が1以上の値を必要とする場合、この関数が、1と1未満と1.001の両方の値 "
+"(制約値に近い値) でも動作することを確認してください。"
 
 #: ../../tests/write-tests.md:88
 msgid ""
@@ -1000,3 +1313,5 @@ msgid ""
 "the user can easily understand why if failed (provides a useful error "
 "message)."
 msgstr ""
+"**コードが正しく失敗するかテストする** 関数が1以上の値を必要とする場合は、0.999でテストします。 "
+"予期しない値やヘルプが与えられたときに、関数が差し障り無く失敗し、ユーザが失敗した理由を簡単に理解できるようにします(有用なエラーメッセージを提供します)。"

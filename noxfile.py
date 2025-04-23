@@ -9,7 +9,6 @@ import subprocess
 sys.path.insert(0, str(pathlib.Path(__file__).parent.absolute()))
 import conf
 
-nox.options.reuse_existing_virtualenvs = True
 
 ## Sphinx related options
 
@@ -64,6 +63,7 @@ def docs(session):
     sphinx_env = _sphinx_env(session)
     session.run(SPHINX_BUILD, *BUILD_PARAMETERS, SOURCE_DIR, OUTPUT_DIR, *session.posargs)
     # When building the guide, also build the translations in RELEASE_LANGUAGES
+    session.notify("build-release-languages", session.posargs)
     session.notify("build-translations", [sphinx_env])
 
 
@@ -79,6 +79,7 @@ def docs_test(session):
                 env={'SPHINX_ENV': 'production'})
     # When building the guide with additional parameters, also build the translations in RELEASE_LANGUAGES
     # with those same parameters.
+    session.notify("build-release-languages", [*TEST_PARAMETERS, *session.posargs])
     session.notify("build-translations", ['production', *TEST_PARAMETERS])
 
 def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
@@ -187,31 +188,52 @@ def clean_dir(session):
             pathlib.Path(content).unlink()
 
 
-@nox.session(name="update-translations")
-def update_translations(session):
+@nox.session(name="update-release-languages")
+def update_release_languages(session):
     """
-    Update the translation files (./locales/*/.po) for all languages translations.
+    Update the translation files (./locales/*/.po) for languages in RELEASE_LANGUAGES.
 
-    Note: this step is important because it makes sure that the translation files are
-    up to date with the latest changes in the guide.
+    Note: this step is called in the CI to keep release translations up to date with
+    the latest changes in the guide.
     """
-    session.install("-e", ".")
-    session.install("sphinx-intl")
-    session.log("Updating templates (.pot)")
-    session.run(SPHINX_BUILD, *TRANSLATION_TEMPLATE_PARAMETERS, SOURCE_DIR, TRANSLATION_TEMPLATE_DIR, *session.posargs)
-    for lang in LANGUAGES:
-        session.log(f"Updating .po files for [{lang}] translation")
-        session.run("sphinx-intl", "update", "-p", TRANSLATION_TEMPLATE_DIR, "-l", lang)
+    if RELEASE_LANGUAGES:
+        session.install("-e", ".")
+        session.install("sphinx-intl")
+        session.log("Updating templates (.pot)")
+        session.run(SPHINX_BUILD, *TRANSLATION_TEMPLATE_PARAMETERS, SOURCE_DIR, TRANSLATION_TEMPLATE_DIR, *session.posargs)
+        for lang in RELEASE_LANGUAGES:
+            session.log(f"Updating .po files for [{lang}] translation")
+            session.run("sphinx-intl", "update", "-p", TRANSLATION_TEMPLATE_DIR, "-l", lang)
+    else:
+        session.warn("No release languages defined in RELEASE_LANGUAGES")
 
 
-@nox.session(name="build-languages")
-def build_languages(session):
+@nox.session(name="update-language")
+def update_language(session):
     """
-    Build the translations of the guide for the specified language.
+    Update the translation files (./locales/*/.po) for a specific language translation.
 
-    Note: This sessions expects a list of languages to build in the first position of the session arguments.
-    It does not need to be called directly, it is started by build_translations session.
+    Note: this step is used by language coordinators to keep their translation files up to date
+    with the latest changes in the guide, before the translation is released.
     """
+    if session.posargs and (lang := session.posargs.pop(0)):
+        if lang in LANGUAGES:
+            session.install("-e", ".")
+            session.install("sphinx-intl")
+            session.log("Updating templates (.pot)")
+            session.run(SPHINX_BUILD, *TRANSLATION_TEMPLATE_PARAMETERS, SOURCE_DIR, TRANSLATION_TEMPLATE_DIR, *session.posargs)
+            session.log(f"Updating .po files for [{lang}] translation")
+            session.run("sphinx-intl", "update", "-p", TRANSLATION_TEMPLATE_DIR, "-l", lang)
+        else:
+            f"[{lang}] locale is not available. Try using:\n\n      "
+            "nox -s docs-live-lang -- LANG\n\n      "
+            f"where LANG is one of: {LANGUAGES}"
+    else:
+        session.error(
+            "Please provide a language using:\n\n      "
+            "nox -s update-language -- LANG\n\n     "
+            f" where LANG is one of: {LANGUAGES}"
+        )
     if not session.posargs:
         session.error("Please provide the list of languages to build the translation for")
 
@@ -219,29 +241,62 @@ def build_languages(session):
 
     languages_to_build = session.posargs.pop(0)
 
+
+@nox.session(name="build-language")
+def build_language(session):
+    """
+    Build the guide for a specific language translation
+
+    For example: nox -s build-language -- es.
+    """
+    if session.posargs and (lang := session.posargs.pop(0)):
+        if lang in LANGUAGES:
+            session.install("-e", ".")
+            session.log(f"Building [{lang}] guide")
+            session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", OUTPUT_DIR / lang, *session.posargs)
+        else:
+            session.error(f"Language {lang} is not in LANGUAGES list.")
+    else:
+        session.error(
+            "Please provide a language using:\n\n      "
+            "nox -s build-language -- LANG\n\n     "
+            f" where LANG is one of: {LANGUAGES}"
+        )
+
+
+@nox.session(name="build-release-languages")
+def build_release_languages(session):
+    """
+    Build the translations of the guide for the languages in RELEASE_LANGUAGES.
+    """
+    if not RELEASE_LANGUAGES:
+        session.warn("No release languages defined in RELEASE_LANGUAGES")
+        return
     session.install("-e", ".")
-    for lang in languages_to_build:
-        if lang not in LANGUAGES:
-            session.warn(f"Language [{lang}] is not available for translation")
-            continue
+    for lang in RELEASE_LANGUAGES:
         session.log(f"Building [{lang}] guide")
+        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", OUTPUT_DIR / lang, *session.posargs)
         if lang == 'en':
             out_dir = OUTPUT_DIR
         else:
             out_dir = OUTPUT_DIR / lang
         session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", out_dir, *session.posargs,
                     env={"SPHINX_LANG": lang, "SPHINX_ENV": sphinx_env})
+    session.log(f"Translations built for {RELEASE_LANGUAGES}")
 
-
-@nox.session(name="build-translations")
-def build_translations(session):
+@nox.session(name="build-all-languages")
+def build_all_languages(session):
     """
-    Build translations of the guide.
-
-    Note: this session can be called directly to build all available translations (defined in LANGUAGES).
-    It is also called by the docs and docs-test sessions with 'release-build' as the first positional
-    argument, to build only the translations defined in RELEASE_LANGUAGES.
+    Build the translations of the guide for the languages in LANGUAGES.
     """
+    if not LANGUAGES:
+        session.warn("No languages defined in LANGUAGES")
+        return
+    session.install("-e", ".")
+    for lang in LANGUAGES:
+        session.log(f"Building [{lang}] guide")
+        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", OUTPUT_DIR / lang, *session.posargs)
+    session.log(f"Translations built for {LANGUAGES}")
     sphinx_env = _sphinx_env(session)
 
     # if running from the docs or docs-test sessions, build only release languages
@@ -257,14 +312,15 @@ def build_translations(session):
         session.notify("build-languages", [sphinx_env, BUILD_LANGUAGES, *session.posargs])
 
 
-@nox.session(name="build-translations-test")
-def build_translations_test(session):
+@nox.session(name="build-all-languages-test")
+def build_all_languages_test(session):
     """
-    Build all translations of the guide with testing parameters.
+    Build all translations of the guide with the testing parameters.
 
     This is a convenience session to test the build of all translations with the testing parameters
     in the same way docs-test does for the English version.
     """
+    session.notify("build-all-languages", [*TEST_PARAMETERS])
     session.notify("build-translations", [*TEST_PARAMETERS])
 
 

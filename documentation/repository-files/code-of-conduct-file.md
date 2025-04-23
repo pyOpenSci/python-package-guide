@@ -1,3 +1,5 @@
+(coc-file)=
+
 # The CODE_OF_CONDUCT file - Python Packaging
 
 ```{admonition} Example CODE_OF_CONDUCT files

@@ -58,7 +58,7 @@ Publish your docs
 ```
 ## _new_ Tutorial Series: Create a Python Package
 
-The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [Github repo here](https://github.com/pyOpenSci/python-package-guide).
+The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [GitHub repo here](https://github.com/pyOpenSci/python-package-guide).
 
 
 :::::{grid} 1 1 2 2
@@ -92,6 +92,15 @@ The first round of our community-developed, how to create a Python package tutor
 :class-card: left-aligned
 
 * [Introduction to Hatch](/tutorials/get-to-know-hatch)
+
+:::
+::::
+
+::::{grid-item}
+:::{card} ✿ Reference Guides ✿
+:class-card: left-aligned
+
+* [Command Line Reference Guide](/tutorials/command-line-reference)
 
 :::
 ::::
@@ -178,7 +187,7 @@ Learn about best practices for:
 * [How to publish your docs](/documentation/hosting-tools/intro)
 * [Using Sphinx](/documentation/hosting-tools/intro)
 * [Markdown, MyST, and ReST](/documentation/hosting-tools/myst-markdown-rst-doc-syntax)
-* [Host your docs on Read The Docs or Github Pages](/documentation/hosting-tools/publish-documentation-online)
+* [Host your docs on Read The Docs or GitHub Pages](/documentation/hosting-tools/publish-documentation-online)
 :::
 ::::
 
@@ -277,35 +286,46 @@ to see here clarified in this guide, [we invite you to open an issue on GitHub.]
 
 If you have questions about our peer review process or packaging in general, you are welcome to use our [pyOpenSci Discourse forum](https://pyopensci.discourse.group/).
 
-This is a living guide that is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
+This living Python packaging guide is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
 
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Tutorials
-Tutorials  <tutorials/intro>
-```
 
-```{toctree}
+Tutorials  <tutorials/intro>
+:::
+
+:::{toctree}
 :hidden:
 :caption: Packaging
 
 Packaging <package-structure-code/intro>
 
-```
+:::
 
-```{toctree}
+:::{toctree}
 :hidden:
 :caption: Documentation
 
 Documentation <documentation/index>
 
-```
+:::
 
-```{toctree}
+
+:::{toctree}
 :hidden:
 :caption: Testing
 
 Tests  <tests/index>
 
-```
+:::
+
+
+:::{toctree}
+:hidden:
+:caption: Continuous Integration
+
+CI/CD  <continuous-integration/index>
+
+:::

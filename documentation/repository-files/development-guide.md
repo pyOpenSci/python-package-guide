@@ -1,3 +1,4 @@
+(pyos-development-guide)=
 # What the development guide for your Python package should contain
 
 Ideally, your package should also have a development guide. This file may live in your package documentation and should be linked to from your CONTRIBUTING.md file (discussed above).
@@ -9,6 +10,7 @@ technically proficient users how to:
 * Build documentation locally
 
 The development guide should also have guidelines for:
+
 * code standards including docstring style, code format and any specific code approaches that the package follows.
 
 It's also helpful to specify the types of tests you request if a contributor submits a new feature or a change to an existing feature that will not be covered by your existing test suite.
@@ -38,13 +40,10 @@ pyOpenSci requires a package to have in order to be eligible for
 review. Some maintainers may also opt to include the development information in their contributing guide.
 ```
 
-
 ```{tip}
 [The Mozilla Science Lab website has a nice outline of things to consider when
 creating a contributing guide](https://mozillascience.github.io/working-open-workshop/contributing/)
 ```
-
-
 
 <!--
 pyOpenSci packages must:

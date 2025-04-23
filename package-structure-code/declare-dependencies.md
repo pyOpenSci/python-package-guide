@@ -35,7 +35,7 @@ within the code of your project or during development of your package.
 
 
 ### Understanding optional vs. required dependencies
-You can think about dependencies as being either optional or required. If they are required, they will be listed in the `[dependency] =` table of your `pyproject.toml` file. If they are optional, they will be listed in the `[optional.dependencies]` table of your `pyproject.toml`.
+You can think about dependencies as being either optional or required. If they are required, they will be listed in the `dependencies` key in the `project` table of your `pyproject.toml` file. If they are optional, they will be listed in the `[optional.dependencies]` table of your `pyproject.toml`.
 
 You will learn about both below.
 
@@ -51,7 +51,7 @@ Within those 2 groups, there are three use cases that you can think about. 1. Co
 ### Required (or core) dependencies
 
 Required dependencies are called directly within your package's code. On this page we refer to these dependencies
-as **core dependencies** as they are needed in order to run your package. You should place your core or required dependencies in the `[dependency]=` table of your `pyproject.toml` file.
+as **core dependencies** as they are needed in order to run your package. You should place your core or required dependencies in the `dependencies` key of the `[project]` table of your `pyproject.toml` file.
 
 ### Optional dependencies
 
@@ -120,7 +120,7 @@ dependencies = [
 
 Ideally, you should only list the packages that are
 necessary to install and use your package in the
-`[dependencies]` section. This minimizes the number of
+`dependencies` key in the `[project]` table. This minimizes the number of
 additional packages that your users must install as well
 as the number of packages that depend upon your package
 must also install.
@@ -153,18 +153,18 @@ Optional dependencies for building your documentation, running your tests and bu
 * linting and other code cleanup tools
 
 These dependencies are considered optional, because they are not required to install and use your package. Feature
-dependencies are considered optional and should also be placed in the `[optional.dependencies]` table.
+dependencies are considered optional and should also be placed in the `[project.optional-dependencies]` table.
 
 Optional dependencies can be stored in an
-`[optional.dependencies]` table in your **pyproject.toml** file.
+`[project.optional-dependencies]` table in your **pyproject.toml** file.
 
-It's important to note that within the `[optional.dependencies]` table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the `[project]` table discussed above which contains a single array with a single list of required packages.
+It's important to note that within the `[project.optional-dependencies]` table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the `[project]` table discussed above which contains a single array with a single list of required packages.
 
 ## Create optional dependency groups
 
 To declare optional dependencies in your **pyproject.toml** file:
 
-1. Add a `[optional.dependencies]` table to your **pyproject.toml** file.
+1. Add a `[project.optional-dependencies]` table to your **pyproject.toml** file.
 2. Create named groups of dependencies using the syntax:
 
 `group-name = ["dep1", "dep2"]`
@@ -223,9 +223,9 @@ feature = [
 
 :::{figure-md} python-package-dependencies
 
-<img src="../images/python-package-dependencies.png" alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov ">
+<img src="../images/python-package-dependencies.png" alt="Diagram showing a Venn diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov ">
 
-When a user installs your package locally using python -m pip install your-package only your package and it's core dependencies get installed. When they install your package `[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[optional.dependencies]` table.
+When a user installs your package locally using `python -m pip install your-package` only your package and it's core dependencies get installed. When they install your package `python -m pip install your-package[tests]` pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your `[project.optional-dependencies]` table.
 :::
 
 :::{admonition} Using `python -m pip install` vs. `pip install`
@@ -250,7 +250,7 @@ groups that you defined above using the syntax:
 
 Above you install:
 * dependencies needed for your documentation (`docs`),
-* required package dependencies in the `dependency` array and
+* required package dependencies in the `dependencies` array and
 * your package
 
 using pip. Below you
@@ -258,7 +258,7 @@ install your package, required dependencies and optional test dependencies.
 
 `python -m pip install ".[tests]"`
 
-You can install multiple dependency groups in the `[optional.dependencies]` table using:
+You can install multiple dependency groups in the `[project.optional-dependencies]` table using:
 
 `python -m pip install ".[docs, tests, lint]"`
 
