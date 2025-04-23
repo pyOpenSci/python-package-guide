@@ -267,6 +267,7 @@ def build_release_languages(session):
     """
     Build the translations of the guide for the languages in RELEASE_LANGUAGES.
     """
+    sphinx_env = _sphinx_env(session)
     if not RELEASE_LANGUAGES:
         session.warn("No release languages defined in RELEASE_LANGUAGES")
         return
