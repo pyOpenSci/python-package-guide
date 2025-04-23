@@ -40,7 +40,7 @@ language = language_env
 languages = ["es", "ja"]
 # the languages that will be included in a production build
 # (also excluding english)
-release_languages = []
+release_languages = ["ja"]
 
 # languages that will be included in the language dropdown
 # (ie. all that are being built in this nox build session)
