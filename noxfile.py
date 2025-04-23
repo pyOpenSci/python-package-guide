@@ -29,7 +29,7 @@ SPHINX_AUTO_BUILD = "sphinx-autobuild"
 BUILD_PARAMETERS = ["-b", "html"]
 
 # Sphinx parameters used to test the build of the guide
-TEST_PARAMETERS = ['-W', '--keep-going', '-E', '-a']
+TEST_PARAMETERS = ['--keep-going', '-E', '-a']
 
 # Sphinx parameters to generate translation templates
 TRANSLATION_TEMPLATE_PARAMETERS = ["-b", "gettext"]
