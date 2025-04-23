@@ -1,0 +1,30 @@
+{%- macro langlink(lang, selected=False) -%} {%- if lang == "en" %}
+<option
+  value="{{ baseurl }}{{ pagename }}{{ file_suffix }}"
+  {%
+  if
+  selected
+  %}selected{%
+  endif
+  %}
+>
+  {{ lang }}
+</option>
+{%- else %}
+<option
+  value="{{ baseurl }}{{ lang }}/{{ pagename }}{{ file_suffix }}"
+  {%
+  if
+  selected
+  %}selected{%
+  endif
+  %}
+>
+  {{ lang }}
+</option>
+{%- endif -%} {%- endmacro -%}
+<select class="dropdown" id="language-selector" aria-label="Choose a language">
+  {{ langlink(language, selected=True) }} {%- for a_language in languages -%}
+  {%- if a_language != language -%} {{ langlink(a_language) }} {%- endif -%} {%-
+  endfor %}
+</select>
