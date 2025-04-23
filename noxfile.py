@@ -64,7 +64,6 @@ def docs(session):
     session.run(SPHINX_BUILD, *BUILD_PARAMETERS, SOURCE_DIR, OUTPUT_DIR, *session.posargs)
     # When building the guide, also build the translations in RELEASE_LANGUAGES
     session.notify("build-release-languages", session.posargs)
-    session.notify("build-translations", [sphinx_env])
 
 
 @nox.session(name="docs-test")
@@ -80,7 +79,6 @@ def docs_test(session):
     # When building the guide with additional parameters, also build the translations in RELEASE_LANGUAGES
     # with those same parameters.
     session.notify("build-release-languages", [*TEST_PARAMETERS, *session.posargs])
-    session.notify("build-translations", ['production', *TEST_PARAMETERS])
 
 def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
     cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
@@ -321,7 +319,6 @@ def build_all_languages_test(session):
     in the same way docs-test does for the English version.
     """
     session.notify("build-all-languages", [*TEST_PARAMETERS])
-    session.notify("build-translations", [*TEST_PARAMETERS])
 
 
 def _sphinx_env(session) -> str:
