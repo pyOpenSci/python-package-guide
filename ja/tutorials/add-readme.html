@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="PythonパッケージにREADMEファイルを追加する" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/add-readme.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="前回のレッスンであなたは以下のことを学びました: Pythonパッケージとは何か?, コードをインストール可能にする,(test) PyPIにパッケージを公開する方法, パッケージをconda-forgeに公開する方法. README ファイルとは何か？: README.md ファイルはプロジェクトディレクトリのルートにあるマークダウンファイルで、ユーザーの理解を助けるものです: パッケージ..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_add-readme_6f4f9478.png" />
+<meta property="og:image:alt" content="前回のレッスンであなたは以下のことを学びました: Pythonパッケージとは何か?, コードをインストール可能にする,(test) PyPIにパッケージを公開する方法, パッケージをconda-forgeに公開する方法. README ファイルとは何か？: README.md ファイルはプロジェクトディレクトリのルートにあるマークダウンファイルで、ユーザーの理解を助けるものです: パッケージ..." />
+<meta name="description" content="前回のレッスンであなたは以下のことを学びました: Pythonパッケージとは何か?, コードをインストール可能にする,(test) PyPIにパッケージを公開する方法, パッケージをconda-forgeに公開する方法. README ファイルとは何か？: README.md ファイルはプロジェクトディレクトリのルートにあるマークダウンファイルで、ユーザーの理解を助けるものです: パッケージ..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>PythonパッケージにREADMEファイルを追加する &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/add-readme';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/tutorials/add-readme.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Pythonパッケージに LICENSE と CODE_OF_CONDUCT を追加します。" href="add-license-coc.html" />
+    <link rel="prev" title="PyPIにあるPythonパッケージをconda-forgeに公開する" href="publish-conda-forge.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/add-readme.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/add-readme.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/add-readme.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/add-readme.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/add-readme.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/add-readme.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージングチュートリアルのセットアップ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Hatchを知る</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Pythonパッケージとは何ですか？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installable-code.html">コードをインストール可能にする</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">PyPIに公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">conda-forgeに公開する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">プロジェクト情報ファイルとメタデータ</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">README ファイルを追加する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Hatchを使ってsetup.pyをpyproject.tomlに移行する</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージング 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">PythonパッケージにREADMEファイルを追加する</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="add-a-readme-file-to-your-python-package">
+<h1>PythonパッケージにREADMEファイルを追加する<a class="headerlink" href="#add-a-readme-file-to-your-python-package" title="Link to this heading">#</a></h1>
+<p>前回のレッスンであなたは以下のことを学びました:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="intro.html"><span class="std std-doc">Pythonパッケージとは何か?</span></a></p></li>
+<li><p><a class="reference internal" href="installable-code.html"><span class="doc std std-doc">コードをインストール可能にする</span></a></p></li>
+<li><p><a class="reference internal" href="publish-pypi.html"><span class="std std-doc">(test) PyPIにパッケージを公開する方法</span></a></p></li>
+<li><p><a class="reference internal" href="publish-conda-forge.html"><span class="std std-doc">パッケージをconda-forgeに公開する方法</span></a></p></li>
+</ol>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">学習目標</p>
+<p>このレッスンで学ぶこと:</p>
+<ol class="arabic simple">
+<li><p>パッケージに <strong>README.md</strong> ファイルを追加する方法。</p></li>
+<li><p><strong>README.md</strong> ファイルの核となる要素は何か。</p></li>
+</ol>
+</div>
+<section id="what-is-a-readme-file">
+<h2>README ファイルとは何か？<a class="headerlink" href="#what-is-a-readme-file" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> ファイルはプロジェクトディレクトリのルートにあるマークダウンファイルで、ユーザーの理解を助けるものです:</p>
+<ul class="simple">
+<li><p>パッケージ名</p></li>
+<li><p>パッケージが何をするのか。 READMEファイルには、あなたのソフトウェアが解決するために設計された(複数の)問題と、その対象読者を明確に記述してください。</p></li>
+<li><p>パッケージの現在の開発 &quot;状態&quot; （バッジを通して）</p></li>
+<li><p>パッケージの使い始め方</p></li>
+<li><p>パッケージに貢献する方法</p></li>
+<li><p>パッケージの引用方法</p></li>
+</ul>
+<p><strong>README.md</strong> ファイルは、誰かがあなたのパッケージをインストールする前に、最初に目にすることが多いので重要です。 READMEファイルはPyPIのランディングページに入力するためにも使われます。</p>
+<p>READMEファイルには特定のコンテンツ構造はないことに注意してください。 しかし、このチュートリアルでは、READMEファイルに含めることを推奨するセクションの概要を説明します。</p>
+</section>
+<section id="create-a-readme-md-file-for-your-package">
+<h2>パッケージの README.md ファイルを作成する<a class="headerlink" href="#create-a-readme-md-file-for-your-package" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> ファイルをプロジェクト・ディレクトリに追加しましょう。</p>
+<section id="step-0-create-a-readme-file">
+<h3>ステップ0: READMEファイルの作成<a class="headerlink" href="#step-0-create-a-readme-file" title="Link to this heading">#</a></h3>
+<p>まず、プロジェクトディレクトリにまだREADME.mdファイルがない場合は、作成してください。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>以下からプロジェクトディレクトリを作成した場合</p>
+<ul class="simple">
+<li><p>オンラインのGitHubリポジトリ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">init</span></code> を使用する。</p></li>
+</ul>
+<p>その場合、プロジェクトディレクトリに README.MD ファイルが既にあるかもしれません。</p>
+</div>
+<!-- If they use hatch init in the very first lesson -
+the readme will already be there-->
+</section>
+<section id="step-1-add-the-name-of-your-package-as-the-readme-title">
+<h3>ステップ1: READMEのタイトルにパッケージ名を追加する<a class="headerlink" href="#step-1-add-the-name-of-your-package-as-the-readme-title" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> ファイルの先頭に、パッケージ名を追加します。</p>
+<p>マークダウンを使用している場合は、 <code class="docutils literal notranslate"><span class="pre">#</span></code> 記号1つで示されるヘッダー1  (H1) タグでなければなりません。</p>
+<p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Package-title-here</span></code></p>
+</section>
+<section id="step-2-add-badges-to-the-top-of-your-readme-file">
+<h3>ステップ2: READMEファイルの先頭にバッジを追加する<a class="headerlink" href="#step-2-add-badges-to-the-top-of-your-readme-file" title="Link to this heading">#</a></h3>
+<p>メンテナが README ファイルの先頭にバッジを追加するのはよくあることです。 バッジをつけることで、あなたとあなたのパッケージのユーザは以下のようなことを追跡できるようになります:</p>
+<ul class="simple">
+<li><p>ドキュメントとテストビルドが壊れています。</p></li>
+<li><p>PyPIとcondaにあるあなたのパッケージのバージョン。</p></li>
+<li><p>あなたのパッケージがpyOpenSciやJOSSのような組織によってレビューされ、審査されたかどうか。</p></li>
+</ul>
+<p>すでにpypi.orgにパッケージを公開している場合は、 <a class="reference external" href="https://shields.io/badges/py-pi-version">shields.ioでパッケージのバージョンバッジを作成</a> することができます。 このバッジは、あなたが新しいバージョンのパッケージをPyPIにリリースすると動的に更新されます。</p>
+<p>そうでない場合は、今のところ上部を空にしておいて、後でREADMEにバッジを追加することができます。</p>
+</section>
+<section id="step-3-add-a-description-of-what-your-package-does">
+<h3>ステップ 3: パッケージの説明を追加する<a class="headerlink" href="#step-3-add-a-description-of-what-your-package-does" title="Link to this heading">#</a></h3>
+<p>バッジの下に（バッジがある場合）、あなたのパッケージが何をするのかをわかりやすく説明するテキストのセクションを追加します。</p>
+<ul class="simple">
+<li><p>このセクションは短めにしてください。</p></li>
+<li><p>専門用語はなるべく避けてください。</p></li>
+<li><p>説明をより多くの人が理解できるように、使用する専門用語を定義します。</p></li>
+</ul>
+<p>あなたのパッケージが何をするものなのか、より多くの人が理解すればするほど、より多くの人がそれを使うようになることを忘れないでください。</p>
+</section>
+<section id="step-4-add-package-installation-instructions">
+<h3>ステップ4: パッケージのインストール方法を追加する<a class="headerlink" href="#step-4-add-package-installation-instructions" title="Link to this heading">#</a></h3>
+<p>次に、ユーザーにパッケージのインストール方法を説明するインストラクションを追加します。</p>
+<p>例えば、彼らはあなたのパッケージをインストールするためにpipを使うことができますか？ <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code></p>
+<p>それともconda？</p>
+<p>conda install -c conda-forge packagename`.</p>
+<p>まだパッケージをpypi.orgに公開していない場合は、このセクションを読み飛ばして、後でこれらの説明を追加してください。</p>
+</section>
+<section id="step-5-any-additional-setup">
+<h3>ステップ5：追加設定<a class="headerlink" href="#step-5-any-additional-setup" title="Link to this heading">#</a></h3>
+<p>場合によっては、あなたのパッケージを使用するために、あなたのパッケージのユーザーが他のツールを手動でインストールする必要があるかもしれません。 その場合は、READMEファイルに追加セットアップのセクションを追加してください。</p>
+<p>ここで、あなたのパッケージを使うために必要な追加設定を簡単に文書化 (または文書へのリンク) をしてください。これには以下が含まれます:</p>
+<ul class="simple">
+<li><p>認証情報、あなたのパッケージに適用される場合。</p></li>
+<li><p>GDALのような追加ツールのインストール。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>多くのパッケージでは、READMEに追加のセットアップセクションは必要ありません。 その場合、このセクションはいつでも読み飛ばすことができます。</p>
+</div>
+</section>
+<section id="step-6-add-a-get-started-section">
+<h3>ステップ6: スタートセクションの追加<a class="headerlink" href="#step-6-add-a-get-started-section" title="Link to this heading">#</a></h3>
+<p>次に、get-started セクションを追加します。 このセクションに、パッケージの機能の一部をインポートして使用することを示す、小さなコード例を追加します。</p>
+<div class="important admonition">
+<p class="admonition-title">可能であれば、完全に機能するコードスニペットを提供してください。</p>
+<p>ユーザーに提供するコード例は、できるだけ役立つものにするよう努めることが重要です。</p>
+<p>可能であれば、Jupyter Notebookや.pyファイルに貼り付けてもそのまま動作するようなコピー＆ペーストのコード例を必ず提示してください。</p>
+<p>あなたのパッケージを実行するために必要なトークンや他のステップがある場合、それらのステップが何であるかを明確にするようにしてください。</p>
+</div>
+<p>pyosPackageの場合、簡単に始めるデモは次のようになります:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyospackage.add_numbers</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_num</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">add_num</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>あるいは、あなたが作成したチュートリアルへのリンクでもかまいません。 まだチュートリアルをお持ちでない場合は、当分の間、空欄のままにしておいてください。</p>
+<p>また、一般的なワークフローでのパッケージの使い方を理解するのに役立つチュートリアルへのリンクを追加するのにも最適な場所です。</p>
+</section>
+<section id="step-7-community-section">
+<h3>ステップ7: コミュニティセクション<a class="headerlink" href="#step-7-community-section" title="Link to this heading">#</a></h3>
+<p>READMEファイルのコミュニティセクションは、あなたのプロジェクトに参加したいユーザーのための情報を含める場所です。 この参加は、おそらく GitHub や GitLab のようなプラットフォームで行われるでしょう。</p>
+<p>コミュニティセクションでは、あなたの貢献ガイドと <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> へのリンクを追加します。 <a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc">次のレッスンでは <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> ファイル</span></a> を作成することになります。</p>
+<p>パッケージが大きくなるにつれて、貢献者やメンテナチームが従う開発ガイドへのリンクを持つこともできます。この開発ガイドには、次のようなメンテナンス作業の方法が概説されています:</p>
+<ul class="simple">
+<li><p>テストの実行</p></li>
+<li><p>パッケージのリリース</p></li>
+<li><p>ドキュメントの作成</p></li>
+<li><p>などなど。</p></li>
+</ul>
+</section>
+<section id="step-8-citation-information">
+<h3>ステップ8: 引用情報<a class="headerlink" href="#step-8-citation-information" title="Link to this heading">#</a></h3>
+<p>最後に、ユーザーにあなたのパッケージの引用方法を知らせることが重要です。 引用情報を伝える方法はいくつかあります。</p>
+<p>GitHubのようなプラットフォームでホストされている場合、zenodoのようなツールを使ってパッケージのDOIと関連する引用情報を作成することができます。 <a class="reference external" href="https://coderefinery.github.io/github-without-command-line/doi/">この短いチュートリアルで、その設定をチェックしてみましょう。</a></p>
+<p>あるいは、 <a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">pyOpenSciが主導するような査読プロセスを通して</a> パッケージを送ることもできます。 pyOpenSciに受理された後、あなたのパッケージがスコープ内であれば、Journal of Open Source Softwareに受理され、  <a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">Journal of Open Source Softwareとの提携により</a> 相互参照DOIを得ることができます。</p>
+</section>
+</section>
+<section id="the-finished-readme-file">
+<h2>完成したREADMEファイル<a class="headerlink" href="#the-finished-readme-file" title="Link to this heading">#</a></h2>
+<p>完成した <code class="docutils literal notranslate"><span class="pre">README.md</span></code> ファイルは次のようになるはずです:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># pyosPackage</span>
+
+[<span class="nt">![DOI</span>](<span class="na">https://zenodo.org/badge/DOI/10.5281/zenodo.8365068.svg</span>)](https://doi.org/10.5281/zenodo.8365068)
+[<span class="nt">![pyOpenSci</span>](<span class="na">https://pyopensci.org/badges/peer-reviewed.svg</span>)](https://github.com/pyOpenSci/software-review/issues/115)
+
+<span class="gu">## What pyosPackage does</span>
+
+Short description here using non-technical language that describes what your package does.
+
+<span class="gu">## How to install pyosPackage</span>
+
+:::{todo}
+<span class="k">-</span><span class="w"> </span>when i add more to the pyos package this can use that readme&gt;
+:::
+
+To install this package run:
+
+<span class="sb">`python -m pip install pyosPackage`</span>
+
+<span class="gu">## OPTIONAL - if you have additional setup instructions add them here. If not, skip this section.</span>
+
+<span class="gu">## Get started using pyosPackage</span>
+
+Here add a quick code demo showing a user how to use the package after it is installed.
+
+<span class="sb">```python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pyospackage.add_numbers</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_num</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add_num</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">3</span>
+
+<span class="sb">```</span>
+
+You can also add any links to tutorials in your documentation here.
+
+<span class="gu">## Community</span>
+
+Add information here about contributing to your package. Be sure to add links to your
+<span class="sb">`CODE_OF_CONDUCT.md`</span> file and your development guide. For now this section might be
+empty. You can go back and fill it in later.
+
+<span class="gu">## How to cite pyosPackage</span>
+
+citation information here
+</pre></div>
+</div>
+</section>
+<section id="wrap-up">
+<h2><i class="fa-solid fa-hands-bubbles"></i> まとめ<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> ファイルを作成する際には、新しいユーザーや貢献者が必要とするかもしれない情報を考慮することが重要です。 完璧なテンプレートは存在しないが、上記はこれから始めようとしているあなたへの推奨事項です。 あなたがパッケージをさらに開発し、コミュニティがあなたのパッケージを使い始めるにつれて、このファイルに他の要素を追加する必要性が出てくるかもしれません。</p>
+<p><a class="reference internal" href="add-license-coc.html"><span class="std std-doc">次のレッスン</span></a> では、 LICENSEファイルをPythonパッケージに追加します。 ライセンスファイルは、ユーザーがあなたのパッケージを合法的にどのように使うことができるのか（そして使うことができないのか）を示す重要なものです。また:</p>
+<ul class="simple">
+<li><p>ユーザーとの信頼関係を築く</p></li>
+<li><p>パッケージと関連コードの悪用を防ぐ</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="publish-conda-forge.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">PyPIにあるPythonパッケージをconda-forgeに公開する</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="add-license-coc.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">Pythonパッケージに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> と <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> を追加します。</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-readme-file">README ファイルとは何か？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-readme-md-file-for-your-package">パッケージの README.md ファイルを作成する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-create-a-readme-file">ステップ0: READMEファイルの作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-add-the-name-of-your-package-as-the-readme-title">ステップ1: READMEのタイトルにパッケージ名を追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-badges-to-the-top-of-your-readme-file">ステップ2: READMEファイルの先頭にバッジを追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-a-description-of-what-your-package-does">ステップ 3: パッケージの説明を追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-package-installation-instructions">ステップ4: パッケージのインストール方法を追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-any-additional-setup">ステップ5：追加設定</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-a-get-started-section">ステップ6: スタートセクションの追加</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-community-section">ステップ7: コミュニティセクション</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-citation-information">ステップ8: 引用情報</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-finished-readme-file">完成したREADMEファイル</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up"><i class="fa-solid fa-hands-bubbles"></i> まとめ</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/add-readme.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tutorials/add-readme.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

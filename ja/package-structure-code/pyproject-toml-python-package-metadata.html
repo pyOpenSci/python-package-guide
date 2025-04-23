@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="pyproject.tomlファイルについて: 最近の Python パッケージには pyproject.toml ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために setup.py や setup.cfg ファイルを使っているなら、メタデータとビルド情報を pyproject.toml ファイルに移行することを検討するべきです..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_77632c26.png" />
+<meta property="og:image:alt" content="pyproject.tomlファイルについて: 最近の Python パッケージには pyproject.toml ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために setup.py や setup.cfg ファイルを使っているなら、メタデータとビルド情報を pyproject.toml ファイルに移行することを検討するべきです..." />
+<meta name="description" content="pyproject.tomlファイルについて: 最近の Python パッケージには pyproject.toml ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために setup.py や setup.cfg ファイルを使っているなら、メタデータとビルド情報を pyproject.toml ファイルに移行することを検討するべきです..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。 &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/pyproject-toml-python-package-metadata';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/package-structure-code/pyproject-toml-python-package-metadata.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Pythonパッケージのビルドについて学ぶ" href="python-package-distribution-files-sdist-wheel.html" />
+    <link rel="prev" title="科学的PythonプロジェクトのためのPythonパッケージ構造" href="python-package-structure.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/package-structure-code/pyproject-toml-python-package-metadata.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/package-structure-code/pyproject-toml-python-package-metadata.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/package-structure-code/pyproject-toml-python-package-metadata.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/package-structure-code/pyproject-toml-python-package-metadata.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/package-structure-code/pyproject-toml-python-package-metadata.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/package-structure-code/pyproject-toml-python-package-metadata.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pyproject.toml パッケージのメタデータ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">コードスタイル</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="use-a-pyproject-toml-file-for-your-package-configuration-metadata">
+<h1>パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。<a class="headerlink" href="#use-a-pyproject-toml-file-for-your-package-configuration-metadata" title="Link to this heading">#</a></h1>
+<!-- :::{admonition} TODOs for this page
+:class: important
+
+what's missing
+
+::: -->
+<div class="todo admonition">
+<p class="admonition-title">pyproject.tomlから得られる重要なこと</p>
+<ol class="arabic simple">
+<li><p>インストール可能なPythonパッケージに必要なテーブルは2つだけです: <strong>[build-system]</strong> と <strong>[project]</strong> です。 <strong>[project]</strong> テーブルにはパッケージのメタデータが格納されます。</p></li>
+<li><p><strong>[project]</strong> テーブルの必須フィールドは2つだけです: **name=**と <strong>version=</strong> です。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルにメタデータを追加することをお勧めします。 そうすることで、ユーザがPyPIであなたのプロジェクトを見つけやすくなります。</p></li>
+<li><p>[project] テーブルに分類を追加するときは、 <a class="reference external" href="https://PyPI.org/classifiers/">PyPIの分類ページ</a> にある有効な値のみを使用してください。 ここで無効な値を指定すると、パッケージをビルドするときやPyPIに公開するときにエラーが発生します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイル内のテーブルには特定の順番はありません。 しかし、フィールドは正しいテーブルセクションに配置する必要があります。 例えば <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> は常に <strong>[build-system]</strong> テーブルと関連付ける必要があります。</p></li>
+<li><p><strong>python-requires</strong>: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>ファイルに記述することが重要です。 これはpipがパッケージをインストールするのに役立つからです。</p></li>
+</ol>
+</div>
+<section id="about-the-pyproject-toml-file">
+<h2>pyproject.tomlファイルについて<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<p>最近の Python パッケージには <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> や <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> ファイルを使っているなら、メタデータとビルド情報を <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに移行することを検討するべきです。</p>
+<p>あなたのプロジェクトが純粋な Python でない場合、Python 以外の拡張機能をビルドするために <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ファイルが必要になるかもしれません。 しかし、プロジェクトのメタデータを保存するために <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを使用する必要があります。</p>
+<div class="note admonition">
+<p class="admonition-title">setup.pyに何が起こったのか、そしてどのようにpyproject.tomlに移行するのか？</p>
+<p>2017年8月以前は、Pythonパッケージのメタデータは <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ファイルか <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> ファイルに保存されていました。 近年、Python パッケージのメタデータは、よりユーザが読みやすい <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> フォーマットで保存されるようになりました。 すべてのメタデータを1つのファイルに持つことです:</p>
+<ul class="simple">
+<li><p>パッケージ管理を簡素化します、</p></li>
+<li><p>(flit-core, hatchling, pdm-build)のような一連の異なる <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html#build-back-ends">ビルドバックエンド</a> を使うことができます。</p></li>
+<li><p>現代のベストプラクティスに合致しています。</p></li>
+</ul>
+<!--Commented until tutorials go live
+
+ If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](../tutorials/extras/6-setuppy-to-pyproject-toml.md) -->
+</div>
+<p>Python パッケージが <a class="reference external" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/">ビルド要件とメタデータを指定するために使う標準のファイルは <strong>pyproject.toml</strong> と呼ばれます</a> 。メタデータ、ビルド要件、パッケージの依存関係を <strong>pyproject.toml</strong> ファイルに追加することは、 setup.py や setup.cfg ファイルに情報を格納することに取って代わります。</p>
+<section id="about-the-toml-format">
+<h3>.toml フォーマットについて<a class="headerlink" href="#about-the-toml-format" title="Link to this heading">#</a></h3>
+<p><strong>pyproject.toml</strong>ファイルは <a class="reference external" href="https://toml.io/en/">TOML(Tom's Obvious, Minimal Language)フォーマット</a> で書かれています。 TOMLは読みやすい構造で、キーと値のペアで成り立っています。 <strong>pyproject.toml</strong> ファイルの各セクションは <code class="docutils literal notranslate"><span class="pre">[テーブル識別子]</span></code> を含んでいます。 そのテーブル識別子の下には、その特定のテーブルの設定をサポートするキーと値のペアがあります。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> 以下はtoml言語ではテーブルとみなされます。</p></li>
+<li><p>以下の <code class="docutils literal notranslate"><span class="pre">build-system</span></code> テーブルの中で <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> がキーです。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requires</span></code> に関連する値は、値 <code class="docutils literal notranslate"><span class="pre">&quot;hatchling&quot;</span></code> を含む配列です。</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="how-the-pyproject-toml-is-used-when-you-build-a-package">
+<h3>パッケージのビルド時にpyproject.tomlがどのように使用されるか<a class="headerlink" href="#how-the-pyproject-toml-is-used-when-you-build-a-package" title="Link to this heading">#</a></h3>
+<!-- TODO: this text below is now on the build sdist / wheel page. That entire section likely belongs here.  -->
+<p>PyPIに公開すると、各パッケージにメタデータがリストされていることに気づくでしょう。<a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSciパッケージ</a> の一つである <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a> を見てみましょう。PyPIのランディングページには、pythonやメンテナ情報など、パッケージに関するメタデータが表示されていることに注目してください。PyPIは、Xclimのメンテナ <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a> によって正しい構文と分類子を用いて定義されたメタデータを入力することができます。xclimパッケージがビルドされるとき、このメタデータは配布ファイルに変換され、PyPIがメタデータを読み込んでウェブサイトに出力できるようになります。</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="xclimパッケージのPyPI左サイドバーの画像です。一番上のセクションにはClassifierとあります。その下に、開発状況、対象読者、ライセンス、自然言語、オペレーティングシステム、プログラミング言語、トピックなどの項目があります。 これらの各セクションの下には、さまざまな分類オプションがあります。 &quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">pyproject.tomlにclassifierセクションを追加してパッケージがビルドされると、ビルドツールはメタデータをPyPIが理解できる形式に整理し、PyPIのランディングページに表示します。 これらの分類子により、ユーザはサポートするpythonのバージョンやカテゴリなどでパッケージをソートすることもできます。</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="benefits-of-using-a-pyproject-toml-file">
+<h2>pyproject.tomlファイルを使用する利点<a class="headerlink" href="#benefits-of-using-a-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<p>パッケージのメタデータを人間が読める <strong>pyproject.toml</strong> 形式で含めると、GitHubのリポジトリでプロジェクトのメタデータを見ることができます。</p>
+<!-- setup.cfg for project metadata is being deprecated - set setuptools guide and
+https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+pypa -
+https://packaging.python.org/en/latest/specifications/declaring-project-metadata/ -->
+<div class="tip admonition">
+<p class="admonition-title">Setup.py は、複雑なパッケージのビルドに便利です。</p>
+<p>パッケージのビルドとメタデータを管理するために <strong>setup.py</strong> を使うことは  <a class="reference external" href="https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html">パッケージ開発に問題を引き起こす可能性があります</a> 。 Python パッケージのビルドが複雑な場合、<strong>setup.py</strong> ファイルが必要になるかもしれません。 このガイドでは複雑なビルドは扱いませんが、将来的には複雑なビルドを扱うリソースを提供する予定です。</p>
+</div>
+</section>
+<section id="optional-vs-required-pyproject-toml-file-fields">
+<h2>pyproject.toml ファイルのフィールドの任意と必須<a class="headerlink" href="#optional-vs-required-pyproject-toml-file-fields" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを作成するとき、使用できるメタデータフィールドがたくさんあります。 以下では、PyPI での公開とユーザがあなたのパッケージを見つけることをサポートする、特定のフィールドを提案します。</p>
+<p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use">プロジェクトの全メタデータ要素の概要は、こちらをご覧ください。</a></p>
+<section id="required-fields-for-the-project-table">
+<h3>Required fields for the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table<a class="headerlink" href="#required-fields-for-the-project-table" title="Link to this heading">#</a></h3>
+<p>As mentioned above, your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file needs to have a <strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">version</span></code></strong> field in order to properly build your package:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: This is the name of your project provided as a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: This is the version of your project. If you are using a SCM tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).</p></li>
+</ul>
+</section>
+<section id="optional-fields-to-include-in-the-project-table">
+<h3><code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルに含めるオプションフィールド<a class="headerlink" href="#optional-fields-to-include-in-the-project-table" title="Link to this heading">#</a></h3>
+<p>以下のメタデータキーも追加することを強くお勧めします。 これらのフィールドを追加することで、あなたのパッケージがどのような構造になっているのか、どのプラットフォームをサポートしているのか、どのような依存関係が必要なのかを明確にすることができます。</p>
+<ul class="simple">
+<li><p><strong>Description:</strong> これはあなたのパッケージの短い一行説明です。</p></li>
+<li><p><strong>Readme:</strong> 長い長い説明には README.md ファイルへのリンクが使われます。 この情報はあなたのパッケージのPyPIランディングページで公開されます。</p></li>
+<li><p><strong>Requires-python</strong> (pipで使用): これはpipが使用するフィールドです。 ここでは、Python 2.xと3.xのどちらを使っているかをインストーラに伝えます。 ほとんどのプロジェクトは3.xを使うでしょう。</p></li>
+<li><p><strong>ライセンス:</strong> 使用しているライセンス</p></li>
+<li><p><strong>Authors:</strong> パッケージの原作者です。 作者がメンテナと異なることもあります。 また、同じ場合もあります。</p></li>
+<li><p><strong>Maintainers:</strong> これを入力するかどうかを選択できます。 各作者やメンテナーの名前、Eメール、メールアドレスなどのサブ要素を持つリストを使って、この情報を入力することができます。</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>dependencies:</strong> 依存関係はオプションですが、pyproject.tomlに含めることを強く推奨します。 依存関係はプロジェクトがインストールされるときにpipによってインストールされ、より良いユーザーエクスペリエンスを提供します。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</strong> 誰かが <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[dev]</span></code> を実行したときに、オプションまたは開発用の依存パッケージがインストールされます。 これは、あなたのプロジェクトに貢献したいユーザのために、開発用の依存関係を含める良い方法です。</p></li>
+<li><p><strong>keywords:</strong> これらはPyPIのランディングページに表示されるキーワードです。 人々があなたのパッケージを検索するときに使う言葉だと考えてください。</p></li>
+<li><p><strong>classifiers:</strong> メタデータのclassifiersセクションは、PyPIでのパッケージのランディングページや、PyPIでのパッケージのフィルタリングにも重要です。 <a class="reference external" href="https://PyPI.org/classifiers/">分類子の全オプションはこちらです</a> 。 以下のようなクラシファイアを検討する必要があります。</p>
+<ul>
+<li><p>開発状況</p></li>
+<li><p>対象読者</p></li>
+<li><p>トピック</p></li>
+<li><p>License</p></li>
+<li><p>プログラミング言語</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="advanced-options-in-the-pyproject-toml-file">
+<h3>pyproject.tomlファイルの高度なオプション<a class="headerlink" href="#advanced-options-in-the-pyproject-toml-file" title="Link to this heading">#</a></h3>
+<p>このページの下にある例には ...</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.scripts]</span></code> (Entry points):</strong> エントリーポイントは任意です。 パッケージでホストされている特定のスクリプトを実行するコマンドラインツールがある場合、そのスクリプトを(Pythonシェルではなく)コマンドラインで直接呼び出すためのエントリポイントを含めることができます 。</p>
+<ul>
+<li><p>Here is an example of<a class="reference external" href="https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60">a package that has entry point script</a>s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.</p></li>
+</ul>
+</li>
+<li><p><strong>Dynamic Fields:</strong> if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>, then you might use the dynamic field, such as version (using scm) <strong>dynamic = [&quot;version&quot;]</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="add-dependencies-to-your-pyproject-toml-file">
+<h2>pyproject.tomlファイルに依存関係を追加<a class="headerlink" href="#add-dependencies-to-your-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<p>pyproject.tomlファイルは、従来pytestのような開発依存ファイル、Blackのようなコードフォーマッタ、sphinxのようなドキュメントツールを保存するために使われてきたrequirements.txtファイルの代わりとして使うこともできます。</p>
+<p>ビルドに依存関係を追加するには、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルをpyproject.tomlファイルに追加します。</p>
+<p>次に、依存グループを以下のように指定する:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pytest-cov&quot;</span>
+<span class="p">]</span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;flake8&quot;</span>
+<span class="p">]</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;pydata-sphinx-theme&quot;</span>
+<span class="p">]</span>
+
+<span class="k">[tool.ruff]</span>
+<span class="n">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle errors</span>
+<span class="w">    </span><span class="s2">&quot;W&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle warnings</span>
+<span class="w">    </span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pyflakes. &quot;E&quot; + &quot;W&quot; + &quot;F&quot; + &quot;C90&quot; (mccabe complexity) is equivalent to flake8</span>
+<span class="w">    </span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># isort</span>
+<span class="p">]</span>
+
+<span class="k">[tool.ruff.isort]</span>
+<span class="n">known-first-party</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;examplePy&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>上記の例に従って、依存関係を次のようにインストールします:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests]</span></code></p></li>
+</ul>
+<p>上記は、編集可能モードのパッケージと、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルのtestsセクションで宣言されたすべての依存関係の両方をインストールします。</p>
+<p>すべての依存関係をインストールし、あなたのパッケージもインストールするには、次のようにします:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests,lint,docs]</span></code></p>
+<div class="tip admonition">
+<p class="admonition-title">再帰的依存関係</p>
+<p>再帰的依存関係のセットをセットアップすることもできます。 <a class="reference external" href="https://hynek.me/articles/python-recursive-optional-dependencies/">詳しくはこのブログ記事を参照。</a></p>
+</div>
+</section>
+<section id="example-pyproject-toml-for-building-using-hatchling">
+<h2>hatchlingを使用してビルドするpyproject.tomlの例<a class="headerlink" href="#example-pyproject-toml-for-building-using-hatchling" title="Link to this heading">#</a></h2>
+<p>以下は Python プロジェクトのビルド設定の例です。 このパッケージの設定例では、 <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">パッケージの sdist と wheel</span></a> をビルドするのに <strong>hatchling</strong> を使っています。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;examplePy&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
+<span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>このファイルには依存関係が指定されています。</p>
+</section>
+<section id="example-pyproject-toml-for-building-using-setuptools">
+<h2>setuptoolsを使ってビルドするpyproject.tomlの例<a class="headerlink" href="#example-pyproject-toml-for-building-using-setuptools" title="Link to this heading">#</a></h2>
+<p>作者やキーワードなどを含むパッケージのメタデータも読みやすいです。 下の図は、異なるビルドシステム(setuptools)を使った同じTOMLファイルです。 このパッケージのビルドに必要なツールを入れ替えるのがいかに簡単かに注目してください！</p>
+<p>このパッケージのセットアップ例では:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">パッケージのsdistとwheel</span></a> をビルドするための <strong>setuptools</strong> 。</p></li>
+<li><p><strong>setuptools_scm</strong> は、バージョン管理タグを使ってパッケージのバージョン更新を管理します。</p></li>
+</ul>
+<p>以下の例では、<code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> が最初の値のテーブルです。 このテーブルには2つのキーがあり、ビルドバックエンドAPIとそれを含むパッケージを指定します:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build-back-end</span> <span class="pre">=</span></code></p></li>
+</ol>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&gt;=61&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;examplePy&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
+<span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">PDM、setuptools、Poetry、Hatch などのパッケージビルドツールについてはこちらをご覧ください。</span></a></p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="python-package-structure.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">科学的PythonプロジェクトのためのPythonパッケージ構造</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-package-distribution-files-sdist-wheel.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">Pythonパッケージのビルドについて学ぶ</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-pyproject-toml-file">pyproject.tomlファイルについて</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-toml-format">.toml フォーマットについて</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-pyproject-toml-is-used-when-you-build-a-package">パッケージのビルド時にpyproject.tomlがどのように使用されるか</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-a-pyproject-toml-file">pyproject.tomlファイルを使用する利点</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">pyproject.toml ファイルのフィールドの任意と必須</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table">Required fields for the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fields-to-include-in-the-project-table"><code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルに含めるオプションフィールド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options-in-the-pyproject-toml-file">pyproject.tomlファイルの高度なオプション</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-dependencies-to-your-pyproject-toml-file">pyproject.tomlファイルに依存関係を追加</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pyproject-toml-for-building-using-hatchling">hatchlingを使用してビルドするpyproject.tomlの例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pyproject-toml-for-building-using-setuptools">setuptoolsを使ってビルドするpyproject.tomlの例</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/pyproject-toml-python-package-metadata.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/package-structure-code/pyproject-toml-python-package-metadata.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

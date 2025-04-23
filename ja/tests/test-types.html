@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Pythonパッケージのテストタイプ" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tests/test-types.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="3種類のテスト: 単体テスト、統合テスト、機能テスト: テストスイートを作成する際に考慮したいテストには、さまざまなタイプがあります: 単体テスト, 統合, エンドツーエンド(機能テストとも呼ばれる)テスト. それぞれのテストには異なる目的があります。 ここでは、3種類のテストすべてについて学びます。 単体テスト: 単体テストは、個々のコンポーネントやコードの単位を分離してテストし、それらが..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_test-types_6c75464e.png" />
+<meta property="og:image:alt" content="3種類のテスト: 単体テスト、統合テスト、機能テスト: テストスイートを作成する際に考慮したいテストには、さまざまなタイプがあります: 単体テスト, 統合, エンドツーエンド(機能テストとも呼ばれる)テスト. それぞれのテストには異なる目的があります。 ここでは、3種類のテストすべてについて学びます。 単体テスト: 単体テストは、個々のコンポーネントやコードの単位を分離してテストし、それらが..." />
+<meta name="description" content="3種類のテスト: 単体テスト、統合テスト、機能テスト: テストスイートを作成する際に考慮したいテストには、さまざまなタイプがあります: 単体テスト, 統合, エンドツーエンド(機能テストとも呼ばれる)テスト. それぞれのテストには異なる目的があります。 ここでは、3種類のテストすべてについて学びます。 単体テスト: 単体テストは、個々のコンポーネントやコードの単位を分離してテストし、それらが..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Pythonパッケージのテストタイプ &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tests/test-types';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/tests/test-types.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Pythonパッケージテストの実行" href="run-tests.html" />
+    <link rel="prev" title="Pythonパッケージのテストを書く" href="write-tests.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tests/test-types.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tests/test-types.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tests/test-types.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tests/test-types.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tests/test-types.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tests/test-types.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">テストの作成と実行</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write-tests.html">テストを書く</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">テストの種類</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-tests.html">ローカルでテストを実行する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-ci.html">オンラインでテストを実行する(CIを使用する)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-cov.html">Code coverage</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Pythonパッケージのテストとデータ</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージのテストタイプ</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="test-types-for-python-packages">
+<h1>Pythonパッケージのテストタイプ<a class="headerlink" href="#test-types-for-python-packages" title="Link to this heading">#</a></h1>
+<section id="three-types-of-tests-unit-integration-functional-tests">
+<h2>3種類のテスト: 単体テスト、統合テスト、機能テスト<a class="headerlink" href="#three-types-of-tests-unit-integration-functional-tests" title="Link to this heading">#</a></h2>
+<p>テストスイートを作成する際に考慮したいテストには、さまざまなタイプがあります:</p>
+<ol class="arabic simple">
+<li><p>単体テスト</p></li>
+<li><p>統合</p></li>
+<li><p>エンドツーエンド(機能テストとも呼ばれる)テスト</p></li>
+</ol>
+<p>それぞれのテストには異なる目的があります。 ここでは、3種類のテストすべてについて学びます。</p>
+</section>
+<section id="unit-tests">
+<h2>単体テスト<a class="headerlink" href="#unit-tests" title="Link to this heading">#</a></h2>
+<p>単体テストは、個々のコンポーネントやコードの単位を分離してテストし、それらが正しく動作することを確認するものです。単体テストの目的は、ソフトウェアの各部分、通常は関数やメソッドのレベルが、意図したタスクを正しく実行することを検証することです。</p>
+<p>単体テストは、パズルの各パーツが壊れていないかどうかを調べることに例えることができます。パズルのピースがすべて合わなければ、完成することはありません。同様に、コードを扱う場合、テストは各関数、プロパティ、クラス、メソッドが分離されたときに正しく機能することを保証します。</p>
+<p><strong>ユニットテスト例:</strong> 温度値を摂氏から華氏に変換する関数があるとします。その関数のテストは、摂氏の値が提供されたとき、その関数が正しい華氏の値を返すことを保証するかもしれません。この関数はユニットテストです。これは、コード内の1つのユニット(関数)をチェックします。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example package function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">celsius_to_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert temperature from Celsius to Fahrenheit.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        celsius (float): Temperature in Celsius.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Temperature in Fahrenheit.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="p">(</span><span class="n">celsius</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">return</span> <span class="n">fahrenheit</span>
+</pre></div>
+</div>
+<p>上記の関数のユニットテスト例。このテストは、 <strong>tests/</strong> ディレクトリの <code class="docutils literal notranslate"><span class="pre">pytest</span></code> コマンドを使って実行します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">temperature_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">celsius_to_fahrenheit</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_celsius_to_fahrenheit</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test the celsius_to_fahrenheit function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Test with freezing point of water</span>
+    <span class="k">assert</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="n">celsius_to_fahrenheit</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">==</span> <span class="mf">32.0</span>
+
+    <span class="c1"># Test with boiling point of water</span>
+    <span class="k">assert</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="n">celsius_to_fahrenheit</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">==</span> <span class="mf">212.0</span>
+
+    <span class="c1"># Test with a negative temperature</span>
+    <span class="k">assert</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="n">celsius_to_fahrenheit</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">),</span> <span class="nb">abs</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mf">40.0</span>
+
+</pre></div>
+</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/pyopensci-puzzle-pieces-tests.png"><img alt="パズルのピースがうまく組み合わさったような画像です。パズルのピースは紫色、緑色、鴨の羽色とカラフルです。" src="../_images/pyopensci-puzzle-pieces-tests.png" style="height: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">ユニットテストでは、コードの各部分がそれ自体で期待通りに動作することを確認する必要があります。</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="integration-tests">
+<h2>統合テスト<a class="headerlink" href="#integration-tests" title="Link to this heading">#</a></h2>
+<p>統合テストでは、パッケージの各パーツがどのように連動するか、あるいは統合されるかをテストします。統合テストは、パズルのピースをつなげて全体像を作るようなものです。統合テストは、コードのさまざまな部分がどのように適合し、連携して動作するかに焦点を当てます。</p>
+<p>例えば、スプレッドシートに温度データを収集し、摂氏から華氏に変換し、特定の期間の平均温度を提供する一連のステップがあったとします。統合テストは、そのワークフローのすべての部分が期待通りに動作することを保証します。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fahr_to_celsius</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert temperature from Fahrenheit to Celsius.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        fahrenheit (float): Temperature in Fahrenheit.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Temperature in Celsius.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+    <span class="k">return</span> <span class="n">celsius</span>
+
+<span class="c1"># Function to calculate the mean temperature for each year and the final mean</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_annual_mean</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># TODO: make this a bit more robust so we can write integration test examples??</span>
+    <span class="c1"># Calculate the mean temperature for each year</span>
+    <span class="n">yearly_means</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># Calculate the final mean temperature across all years</span>
+    <span class="n">final_mean</span> <span class="o">=</span> <span class="n">yearly_means</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># Return a converted value</span>
+    <span class="k">return</span> <span class="n">fahr_to_celsius</span><span class="p">(</span><span class="n">yearly_means</span><span class="p">),</span> <span class="n">fahr_to_celsius</span><span class="p">(</span><span class="n">final_mean</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/python-tests-puzzle.png"><img alt="パズルのピースが2つあり、一部欠けている画像です。パズルのピースは紫・鴨の羽色・黄色・青色。 それぞれのピースの形が合いません。" src="../_images/python-tests-puzzle.png" style="height: 350px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">パズルのピースの両端が欠けていると、パズルの他の要素と連動することができません。ソフトウェアの個々の関数、メソッド、クラスについても同様です。コードは、ある一連のタスクを実行するために、個々に、そして一緒に働く必要があります。</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/python-tests-puzzle-fit.png"><img alt="パズルのピースがうまく組み合わさったような画像です。パズルのピースは紫色、緑色、鴨の羽色とカラフルです。" src="../_images/python-tests-puzzle-fit.png" style="height: 450px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">統合テストは、コードの一部が連携して動作することが期待されており、期待通りに動作することを保証するものでなければなりません。</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="end-to-end-functional-tests">
+<h2>エンドツーエンド(機能)テスト<a class="headerlink" href="#end-to-end-functional-tests" title="Link to this heading">#</a></h2>
+<p>Python におけるエンドツーエンドのテスト（機能テストとも呼ばれる）は、ソフトウェアの包括的なチェックリストのようなものです。実際のユーザーのエンドツーエンドのワークフローをシミュレートし、コードベースが実際のアプリケーションやユースケースを最初から最後までサポートすることを確認します。これらのテストは、小規模なテストでは表示されないかもしれない問題をキャッチし、アプリケーションやプログラム全体が正しく動作することを確認するのに役立ちます。ソフトウェアを実用化する前に最終チェックを行い、ユーザーにスムーズなエクスペリエンスを提供する準備ができていることを確認する方法だと考えてください。</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/flower-puzzle-pyopensci.jpg"><img alt="デイジーを描いたパズルの完成イメージ" src="../_images/flower-puzzle-pyopensci.jpg" style="height: 450px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">エンドツーエンドテストまたは機能テストは、パッケージがサポートすることを期待するワークフロー全体を表します。</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>エンドツーエンドのテストも、プログラムが最初から最後までどのように実行されるかをテストします。ドキュメントに追加するチュートリアルは、分離された環境のCIで実行され、エンドツーエンドのテストのもう一つの例です。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>科学的なパッケージの場合、パッケージがサポートする中核的なワークフローを強調する短いチュートリアルを作成し、ドキュメントのビルド時に実行することで、エンドツーエンドのテストを兼ねることができます。</p>
+</div>
+</section>
+<section id="comparing-unit-integration-and-end-to-end-tests">
+<h2>ユニットテスト、統合テスト、エンドツーエンドテストの比較<a class="headerlink" href="#comparing-unit-integration-and-end-to-end-tests" title="Link to this heading">#</a></h2>
+<p>単体テスト、統合テスト、エンドツーエンドテストには、それぞれ相補的な長所と短所があります。 単体テストは、そのきめ細かな性質から、どこでエラーが発生しているかを切り分けるのに適しています。 しかし、ユニットテストは、コードの異なるセクションが連携して動作することを検証するのには役に立ちません。</p>
+<p>統合テストとエンドツーエンドテストは、プログラムのさまざまな部分が連携して動作することを検証しますが、どこでエラーが発生しているかを切り分けるにはあまり適していません。例えば、コードをリファクタリングすると、エンドツーエンドのテストが壊れる可能性があります。しかし、リファクタリングによって既存のコードに新しい動作が導入されなかったのであれば、コードの元の機能をテストするユニットテストがパスし続けることに頼ることができます。</p>
+<p>重要なのは、さまざまな種類のテストにまつわる詳細について心配することにエネルギーを費やす必要はないということです。テストスイートの作成に取りかかるときには、パッケージが何をするのか、そしてパッケージの一部をどのようにテストする必要があるのかを考えてください。さまざまな種類のテストに慣れ親しむことは、テストの書き方や、さまざまな種類のテストが互いにどのように補完し合えるかを考える際のフレームワークとなります。</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="write-tests.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Pythonパッケージのテストを書く</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="run-tests.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">Pythonパッケージテストの実行</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-types-of-tests-unit-integration-functional-tests">3種類のテスト: 単体テスト、統合テスト、機能テスト</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">単体テスト</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-tests">統合テスト</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-to-end-functional-tests">エンドツーエンド(機能)テスト</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-unit-integration-and-end-to-end-tests">ユニットテスト、統合テスト、エンドツーエンドテストの比較</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tests/test-types.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tests/test-types.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

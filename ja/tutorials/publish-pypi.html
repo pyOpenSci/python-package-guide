@@ -1,0 +1,1038 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="PythonパッケージをPyPIに公開する" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="これまでのPythonパッケージングレッスンで、あなたは次のことを学びました: Pythonパッケージとは, コードをインストール可能にします。. ハイレベルなパッケージングのワークフローを示すグラフィック。左側には、コード、メタデータ、テストが入ったグラフィックがあります。 これらのアイテムはすべてディストリビューションファイルボックスに入ります。 右の矢印は、ビルド配布ファイルのボックス..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-pypi_e4d5e333.png" />
+<meta property="og:image:alt" content="これまでのPythonパッケージングレッスンで、あなたは次のことを学びました: Pythonパッケージとは, コードをインストール可能にします。. ハイレベルなパッケージングのワークフローを示すグラフィック。左側には、コード、メタデータ、テストが入ったグラフィックがあります。 これらのアイテムはすべてディストリビューションファイルボックスに入ります。 右の矢印は、ビルド配布ファイルのボックス..." />
+<meta name="description" content="これまでのPythonパッケージングレッスンで、あなたは次のことを学びました: Pythonパッケージとは, コードをインストール可能にします。. ハイレベルなパッケージングのワークフローを示すグラフィック。左側には、コード、メタデータ、テストが入ったグラフィックがあります。 これらのアイテムはすべてディストリビューションファイルボックスに入ります。 右の矢印は、ビルド配布ファイルのボックス..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>PythonパッケージをPyPIに公開する &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/publish-pypi';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/tutorials/publish-pypi.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="PyPIにあるPythonパッケージをconda-forgeに公開する" href="publish-conda-forge.html" />
+    <link rel="prev" title="Pythonコードをインストール可能にする" href="installable-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/publish-pypi.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/publish-pypi.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/publish-pypi.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/publish-pypi.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/publish-pypi.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/publish-pypi.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージングチュートリアルのセットアップ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Hatchを知る</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Pythonパッケージとは何ですか？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installable-code.html">コードをインストール可能にする</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PyPIに公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">conda-forgeに公開する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">プロジェクト情報ファイルとメタデータ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">README ファイルを追加する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Hatchを使ってsetup.pyをpyproject.tomlに移行する</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージング 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">PythonパッケージをPyPIに公開する</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="publish-your-python-package-to-pypi">
+<h1>PythonパッケージをPyPIに公開する<a class="headerlink" href="#publish-your-python-package-to-pypi" title="Link to this heading">#</a></h1>
+<p>これまでのPythonパッケージングレッスンで、あなたは次のことを学びました:</p>
+<ol class="arabic simple">
+<li><p>Pythonパッケージとは</p></li>
+<li><p>コードをインストール可能にします。</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">学習目標</p>
+<p>このレッスンで学ぶこと:</p>
+<ul class="simple">
+<li><p>パッケージのソース (sdist) とwheelディストリビューションをビルドします。</p></li>
+<li><p>TestPyPIにアカウントを設定する（PyPIでも同様の手順です）</p></li>
+<li><p>パッケージをTestPyPIとPyPIに公開する</p></li>
+</ul>
+<p>このレッスンでは、すべての開発作業を <a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a> を使って行います。</p>
+<p>パッケージがPyPIに載ったら、 <a class="reference external" href="https://conda.github.io/grayskull/">Grayskull</a> を使ってconda-forge (condaのチャンネルです) に公開できます。</p>
+<p>conda-forgeに公開する方法は <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">次のレッスン</span></a> で学びます。</p>
+</div>
+<figure class="align-default" id="build-workflow-tutorial">
+<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="ハイレベルなパッケージングのワークフローを示すグラフィック。左側には、コード、メタデータ、テストが入ったグラフィックがあります。 これらのアイテムはすべてディストリビューションファイルボックスに入ります。 右の矢印は、ビルド配布ファイルのボックスに移動します。右側の矢印をクリックすると、PyPIに公開するボックスが表示され、sdistとwheelを含む矢印が表示されます。PyPIからconda-forgeに接続することで、PyPIからconda-forgeにディストリビューションを送る自動ビルドを行うことができるからです。" src="../_images/publish-package-pypi-conda.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">PythonパッケージをPyPI（またはConda）に公開するには、ビルドする必要があります。ビルドプロセスは、あなたのコードとメタデータをPyPIにアップロードできる配布フォーマットに整理し、その後ユーザーがダウンロードしてインストールできるようにします。</span><a class="headerlink" href="#build-workflow-tutorial" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="testpypi-vs-pypi">
+<h2>TestPyPI vs PyPI<a class="headerlink" href="#testpypi-vs-pypi" title="Link to this heading">#</a></h2>
+<p>PyPIには、Pythonパッケージをアップロードできる2つのリポジトリがあります。</p>
+<ol class="arabic simple">
+<li><p><strong><a class="reference external" href="https://test.pypi.org">TestPyPI</a>:</strong> TestPyPIはPyPIが提供するパッケージリポジトリで、あなたのパッケージが正しくアップロード、ダウンロード、インストールできるかをテストするために使用できます。これは、実際のPyPIサービスに不完全なパッケージを公開することなく、パッケージを公開する方法を学び、練習するのに最適な場所です。</p></li>
+<li><p><strong><a class="reference external" href="https://pypi.org">PyPI</a>:</strong> これは、あなたが公式に Python パッケージを公開でき、ユーザがあなたのパッケージを取得できる、本番用の PyPI リポジトリです。重要: PyPIにパッケージを公開するのは、それが他の人に使われる準備ができたとき、そして/またはそれがあなたが保守するパッケージになると確信したときだけにしてください。 PyPIはPythonパッケージの公開方法を学ぶ練習の場ではありません。</p></li>
+</ol>
+<p>TestPyPIとPyPIで公開する手順は、URLが異なることを除いて似ています。両者の相違点を指摘します。</p>
+</section>
+<section id="steps-for-publishing-a-python-package-on-testpypi-or-pypi">
+<h2>TestPyPI (またはPyPI)でPythonパッケージを公開するための4つのステップ<a class="headerlink" href="#steps-for-publishing-a-python-package-on-testpypi-or-pypi" title="Link to this heading">#</a></h2>
+<p>このレッスンでは、 <a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a> を使ってパッケージをTestPyPIに公開する方法を学びます。 Pythonパッケージを公開するために必要なことは4つあります: TestPyPIでは。必要なのは:</p>
+<ol class="arabic simple">
+<li><p><strong>パッケージ開発環境の構築</strong></p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc"><strong><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code> を使ってパッケージをビルドします</strong></span></a>。 パッケージのビルドは、コードを2種類の配布ファイルに変換するプロセスです: sdistとwheel。wheel配布ファイルは、あなたのパッケージを <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> するユーザーにとって特に重要です。</p></li>
+<li><p><strong>TestPyPI (またはPyPI)でアカウントを作成します</strong>: TestPyPIアカウントと、パッケージをアップロードするためのパーミッションを提供する関連トークンを作成する必要があります。 後でパッケージをPyPIに公開するときは、別のPyPIアカウントとトークンが必要になります。</p></li>
+<li><p>** <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code> を使用してTestPyPIにパブリッシュする**</p></li>
+</ol>
+<p>In a future lesson, you will learn how to create an automated
+GitHub Actions workflow that publishes an updated
+version of your package to PyPI every time you create a GitHub release.</p>
+<div class="tip admonition">
+<p class="admonition-title">Pythonパッケージのビルドについては、ガイドを参照してください。</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Pythonパッケージのビルドについてもっと知る</span></a></p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">PyPIが必要とするwheelと呼ばれるパッケージ配布ファイルについての詳細はこちら</span></a></p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">PyPIでconda-forgeが必要とするsdist (ソースディストリビューション) と呼ばれるパッケージ配布ファイルについてはこちらを参照してください</span></a></p></li>
+</ul>
+</div>
+</section>
+<section id="step-1-create-a-python-package-development-environment">
+<h2>ステップ1: Pythonパッケージ開発環境の構築<a class="headerlink" href="#step-1-create-a-python-package-development-environment" title="Link to this heading">#</a></h2>
+<p>パッケージ構築の最初のステップは、開発環境を作ることだ。Python環境には、あなたのパッケージのインストールと作業の両方に必要な依存関係がすべて含まれています。</p>
+<p>Hatchを使って環境を整えましょう。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will create a default environment with your package installed in editable mode</span>
+&gt;<span class="w"> </span>hatch<span class="w"> </span>env<span class="w"> </span>create
+<span class="c1"># If you have already created an environment this command will return Environment `default` already exists</span>
+</pre></div>
+</div>
+<p>次に、ハッチがアクセスできる現在の環境をすべて表示します:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>hatch<span class="w"> </span>env<span class="w"> </span>show
+<span class="w">     </span>Standalone
+┏━━━━━━━━━┳━━━━━━━━━┓
+┃<span class="w"> </span>Name<span class="w">    </span>┃<span class="w"> </span>Type<span class="w">    </span>┃
+┡━━━━━━━━━╇━━━━━━━━━┩
+│<span class="w"> </span>default<span class="w"> </span>│<span class="w"> </span>virtual<span class="w"> </span>│
+└─────────┴─────────┘
+</pre></div>
+</div>
+<p>そして環境をアクティブにします。 Hatch環境からシェルを呼び出すと、開発モードまたは編集可能モードで、あなたのパッケージが自動的に環境にインストールされることに注意してください。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hatch shell can be used to activate your environment</span>
+&gt;<span class="w"> </span>hatch<span class="w"> </span>shell
+...<span class="w"> </span>Installing<span class="w"> </span>project<span class="w"> </span><span class="k">in</span><span class="w"> </span>development<span class="w"> </span>mode
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;/Path/to/env/here/hatch/env/virtual/pyosPackage/Mk7F5Y0T/sphinx-2i2c-theme/bin/activate&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">list</span></code> を使って環境にあるものを見ます:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>pip<span class="w"> </span>list
+Package<span class="w">         </span>Version<span class="w">      </span>Editable<span class="w"> </span>project<span class="w"> </span>location
+---------------<span class="w"> </span>------------<span class="w"> </span>----------------------------------------------------
+numpy<span class="w">           </span><span class="m">1</span>.26.3
+pandas<span class="w">          </span><span class="m">2</span>.1.4
+pip<span class="w">             </span><span class="m">23</span>.3.1
+pyosPackage<span class="w">     </span><span class="m">0</span>.1.0<span class="w">        </span>/path/to/your/project/here/pyosPackage
+python-dateutil<span class="w"> </span><span class="m">2</span>.8.2
+pytz<span class="w">            </span><span class="m">2023</span>.3.post1
+six<span class="w">             </span><span class="m">1</span>.16.0
+tzdata<span class="w">          </span><span class="m">2023</span>.4
+</pre></div>
+</div>
+<p>いつでも <code class="docutils literal notranslate"><span class="pre">exit</span></code> を使って環境を終了することができます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>hatch<span class="w"> </span>shell
+<span class="nb">source</span><span class="w"> </span><span class="s2">&quot;/Users/leahawasser/Library/Application Support/hatch/env/virtual/pyospackage/twO2iQR3/pyospackage/bin/activate&quot;</span>
+
+<span class="c1"># Notice here you&#39;re in the (pyospackage) environment which is the default</span>
+pyosPackage<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>main<span class="o">)</span><span class="w"> </span><span class="o">[</span>✎<span class="w"> </span>×1<span class="w"> </span><span class="o">]</span><span class="w"> </span>is<span class="w"> </span>📦<span class="w"> </span>v0.1.4<span class="w"> </span>via<span class="w"> </span>🐍<span class="w"> </span>pyenv<span class="w"> </span><span class="o">(</span>pyospackage<span class="o">)</span>
+➜<span class="w"> </span><span class="nb">exit</span>
+
+pyosPackage<span class="w"> </span><span class="o">(</span>☊<span class="w"> </span>main<span class="o">)</span><span class="w"> </span><span class="o">[</span>✎<span class="w"> </span>×1<span class="w"> </span><span class="o">]</span><span class="w"> </span>is<span class="w"> </span>📦<span class="w"> </span>v0.1.4<span class="w"> </span>via<span class="w"> </span>🐍<span class="w"> </span>pyenv<span class="w"> </span>took<span class="w"> </span>43s
+➜
+</pre></div>
+</div>
+<section id="hatch-and-environments">
+<h3>Hatchと環境<a class="headerlink" href="#hatch-and-environments" title="Link to this heading">#</a></h3>
+<p>hatchが新しい仮想環境を作るときの裏側では、デフォルトではPythonのインストールに付属しているデフォルトの環境管理ツールである venv[^venv] を使います。</p>
+<p>Hatch は:</p>
+<ol class="arabic simple">
+<li><p>コンピュータ上に新しい仮想環境 (venv) を作成します。</p></li>
+<li><p>編集可能モードでパッケージを環境にインストールします ( <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span></code> と同様) 。 これは、pyproject.tomlファイルで宣言されているように、あなたのプロジェクトとプロジェクトの依存関係の両方をインストールすることを意味します。</p></li>
+</ol>
+</section>
+</section>
+<section id="step-2-build-your-package-s-sdist-and-wheel-distributions">
+<h2>ステップ 2: パッケージのsdistとwheelディストリビューションをビルドする<a class="headerlink" href="#step-2-build-your-package-s-sdist-and-wheel-distributions" title="Link to this heading">#</a></h2>
+<p>開発環境のセットアップが完了したら、Hatchを使ってパッケージをビルドする準備ができました。 ビルドとは、Pythonパッケージのファイル構造を2つの配布ファイルにするプロセスであることを覚えておいてください:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheelディストリビューション</span></a> は、あなたのパッケージのビルド済みバージョンです。 <code class="docutils literal notranslate"><span class="pre">pip</span></code> などのツールを使って直接インストールできるので、ユーザーにとっては便利です。このファイルの拡張子は <code class="docutils literal notranslate"><span class="pre">.whl</span></code> です。</p></li>
+<li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">ソースディストリビューション</span></a> には、あなたのパッケージを構成するファイルが、ビルドされていない状態で含まれています。 このファイルの拡張子は <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> となります。</p></li>
+</ol>
+<p>Hatchを <strong>フロントエンド</strong> ツールとして使い、hatchlingビルドバックエンドを使ってパッケージのsdistとwheelをビルドします。 <a class="reference external" href="https://hatch.pypa.io/latest/">hatchling</a> ビルドバックエンドを使用するのは、 <a class="reference internal" href="installable-code.html"><span class="doc std std-doc">前のレッスン</span></a>でpyproject.tomlファイルで宣言したからです。</p>
+<p>パッケージをビルドするには <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code> を実行します:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>hatch<span class="w"> </span>build
+────────────────<span class="w"> </span>sdist<span class="w"> </span>─────────────────
+dist/pyospackage-0.1.tar.gz
+────────────────<span class="w"> </span>wheel<span class="w"> </span>─────────────────
+dist/pyospackage-0.1-py3-none-any.whl
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Pythonパッケージのビルドについて</p>
+<p>ビルドについては、 <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">パッケージングガイドのビルドのページ</span></a> で詳しく説明しています。</p>
+</div>
+<p>sdistは、conda-forgeにパッケージを <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">公開する場合に重要です</span></a> 。これについては後のレッスンで学びます。</p>
+<section id="congratulations-you-ve-created-your-python-package-distribution-files">
+<h3><i class="fa-solid fa-wand-magic-sparkles"></i> おめでとう - Pythonパッケージの配布ファイルを作成しました <i class="fa-solid fa-wand-magic-sparkles"></i><a class="headerlink" href="#congratulations-you-ve-created-your-python-package-distribution-files" title="Link to this heading">#</a></h3>
+<p>これで Python パッケージをビルドし、パッケージ配布ファイルを作成しました。次のステップは、TestPyPIのアカウントをセットアップして、パッケージを公開できるようにすることです。</p>
+</section>
+</section>
+<section id="step-3-setup-your-testpypi-account">
+<h2>ステップ 3. TestPyPIアカウントをセットアップする<a class="headerlink" href="#step-3-setup-your-testpypi-account" title="Link to this heading">#</a></h2>
+<p>次に、TestPyPIのアカウントをセットアップします。 TestPyPIは本物のPyPIではなく、パッケージが準備できる前に誤ってパッケージを &quot;リリース&quot; することなく、安全にパッケージを公開する方法を学ぶ方法として使用していることを忘れないでください。</p>
+<div class="admonition-testpypi-vs-pypi admonition">
+<p class="admonition-title">TestPyPI vs. PyPI</p>
+<p>もしあなたがPyPIに属していると確信しているパッケージを持っているなら、以下の手順はすべてあなたにも有効です。 Hatch を使って公開する場合、TestPyPI に公開する <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span> <span class="pre">-r</span> <span class="pre">test</span></code> ではなく、直接 PyPI に公開する <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code> を呼び出します。</p>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://test.pypi.org/">ウェブブラウザを開き、TestPyPIのウェブサイトにアクセスする</a>.</p></li>
+<li><p>まだアカウントをお持ちでない方は、 <a class="reference external" href="https://test.pypi.org/account/register/">アカウントを作成してください。</a> パスワードは必ず安全な場所に保管してください！</p></li>
+<li><p>アカウントを設定したら、ログインしてください。</p></li>
+<li><p><a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> で検索して ( <a class="reference external" href="https://pypi.org/">https://pypi.org/</a> でも検索して) 、選択したパッケージ名がすでに存在しないことを確認してください。 テスト用のpyosPackageを使う場合は、一意であることを保証するために、パッケージ名の最後に自分の名前かGitHubのユーザー名を追加することをお勧めします。</p></li>
+</ol>
+<p>例: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">公開前にプロジェクト名を変更する</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<h4 class="rubric" id="required">要件</h4>
+<ol class="arabic simple">
+<li><p class="sd-card-text">デプロイする (複数) 箇所を検索し、新しい名前が取られていないことを確認します (<a class="reference external" href="https://test.pypi.org/">TestPyPI</a>, <a class="reference external" href="https://pypi.org/">PyPI</a>, <a class="reference external" href="https://conda-forge.org/packages/">conda-forge</a>)</p></li>
+<li><p class="sd-card-text">pyproject.toml ファイルのプロジェクト名を更新します (e.g. <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;pyospackage_yourNameHere&quot;</span></code>)</p></li>
+<li><p class="sd-card-text">モジュールフォルダ名を同じに更新します (例: <code class="docutils literal notranslate"><span class="pre">src/pyospackage_yourNameHere</span></code>)</p></li>
+<li><p class="sd-card-text">プロジェクトの再ビルド (<code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>)</p></li>
+<li><p class="sd-card-text">パッケージを公開して名前を取得する(このチュートリアルを続けましょう!)</p></li>
+</ol>
+<h4 class="rubric" id="recommended">おすすめ</h4>
+<ul class="simple">
+<li><p class="sd-card-text">Update the GitHub repository name to align with the new package name</p></li>
+<li><p class="sd-card-text">ローカルのプロジェクトフォルダを新しいパッケージ名に合わせて更新します (例: <code class="docutils literal notranslate"><span class="pre">pyospackage_yourNameHere/src</span></code> ）。</p></li>
+<li><p class="sd-card-text">他のファイル (例えば <code class="docutils literal notranslate"><span class="pre">README.md</span></code> ) のリポジトリ名の記述を更新します。</p></li>
+</ul>
+</div>
+</details><figure class="align-default" id="test-pypi-search">
+<a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="これはTestPyPIのウェブサイトのスクリーンショットです。 検索バーの一番上にpyosPackageの検索があります。pyosPackage の検索結果はありませんでした。 probpackageのことですか？" src="../_images/testpypi-search.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">TestPyPIにアップロードしようとする前に、あなたのパッケージの名前がすでに使われていないか確認してください。TestPyPIのウェブサイトの上部にある検索ボックスを使って検索することができます。</span><a class="headerlink" href="#test-pypi-search" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-setup-2-factor-2fa-authentication admonition">
+<p class="admonition-title">2ファクタ (2FA) 認証の設定</p>
+<p>2要素認証とは、自分だけがアクセスできるバックアップデバイスを使用して、ログインする人が本当に自分であることを確認できる安全なログインプロセスです。他人がパスワードにアクセスし、あなたのアカウントにログインできるようにするパスワードフィッシングの問題に対処します。</p>
+<p>なぜなら、誰かがあなたのアカウントにログインして、セキュリティ上の問題があるバージョンのパッケージをアップロードする可能性があるからです。 これらの問題は、そのバージョンのパッケージをダウンロードしてインストールする際に、すべてのユーザーに影響を与えます。</p>
+<p>2024年1月1日からPyPI認証に2要素認証が必要になりました。</p>
+</div>
+</section>
+<section id="step-4-create-a-package-upload-token">
+<h2>ステップ4. パッケージアップロードトークンを作成する<a class="headerlink" href="#step-4-create-a-package-upload-token" title="Link to this heading">#</a></h2>
+<p>パッケージをTestPyPI (またはPyPI) にアップロードするには、まず自分のアカウントのトークンを作成する必要があります。 (以前にこのステップを完了した場合は、パッケージを再度アップロードするときにトークンを再利用できます。)</p>
+<div class="admonition-why-create-package-specific-tokens admonition">
+<p class="admonition-title">なぜパッケージ固有のトークンを作るのか？</p>
+<p>パッケージ固有のトークンを作るのが理想的です。 アカウントワイドトークンを作成すると、そのアカウントにアクセスできる人なら誰でも、TestPyPI (またはPyPI) のすべてのプロジェクトにアクセスできるようになります。 パッケージ固有のトークンを作成することで、トークンのスコープを特定のパッケージのみに限定することができます。これは、特にパッケージ開発で他の人と共同作業する場合に、安全な設定方法です。</p>
+</div>
+<section id="follow-the-steps-below-to-create-your-token">
+<h3>以下の手順に従ってトークンを作成してください。<a class="headerlink" href="#follow-the-steps-below-to-create-your-token" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>TestPyPIにログインし、アカウント設定に進みます。</p></li>
+<li><p><strong>APIトークン</strong> のセクションまでスクロールダウンしてください</p></li>
+<li><p><strong>APIトークンの追加</strong> ボタンをクリックしてください</p>
+<ul>
+<li><p>TestPyPIを使うのが初めてで、まだパッケージを持っていない場合、またはTestPyPIに他のパッケージを持っていて、新しいパッケージをアップロードする場合、アカウントワイドトークンを作成する必要があります。</p></li>
+</ul>
+</li>
+<li><p>トークンを作成したら、ブラウザを閉じる前に必ずトークンの値をコピーし、安全な場所に保管してください。</p></li>
+</ul>
+<p>あなたのトークンは次のようになるはずです:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pypi-abunchofrandomcharactershere...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">pypi</span></code> で始まり、ダッシュとたくさんの文字が続くはずです。</p>
+</section>
+<section id="upload-to-testpypi-using-hatch">
+<h3>Hatchを使用してTestPyPIにアップロードする<a class="headerlink" href="#upload-to-testpypi-using-hatch" title="Link to this heading">#</a></h3>
+<p>トークンを取得したら、TestPyPIに公開する準備ができました。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span> <span class="pre">-r</span> <span class="pre">test</span></code> を実行します</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">-r</span></code> はリポジトリを意味します。この場合、TestPyPIに公開するため、 <code class="docutils literal notranslate"><span class="pre">-r</span> <span class="pre">test</span></code> を使用します。 その後、Hatchはユーザー名と認証情報を要求します。</p>
+<ul class="simple">
+<li><p>ユーザー名には <code class="docutils literal notranslate"><span class="pre">__token__</span></code> を追加してください。これはTestPyPIに、ユーザ名ではなくトークンの値を使用していることを伝えます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">your</span> <span class="pre">credentials</span></code> プロンプトで TestPyPI トークンの値を貼り付けます:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>❯<span class="w"> </span>hatch<span class="w"> </span>publish<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
+Enter<span class="w"> </span>your<span class="w"> </span>username:<span class="w"> </span>__token__
+Enter<span class="w"> </span>your<span class="w"> </span>credentials:<span class="w"> </span>&lt;paste-your-token-value-here&gt;
+dist/pyospackage-0.1-py3-none-any.whl<span class="w"> </span>...<span class="w"> </span>already<span class="w"> </span>exists
+dist/pyospackage-0.1.tar.gz<span class="w"> </span>...<span class="w"> </span>already<span class="w"> </span>exists
+</pre></div>
+</div>
+<p>あなたの認証情報が有効で、すでに <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code> を実行し、2つの配布ファイルが <code class="docutils literal notranslate"><span class="pre">dist/</span></code> ディレクトリにあれば、Hatch はあなたのパッケージを TestPyPI に公開します。</p>
+<p>Hatchにはキャッシュシステムもあり、一度入力した認証情報は記憶されます。</p>
+</section>
+</section>
+<section id="install-your-package-from-testpypi">
+<h2>TestPyPIからパッケージをインストールする<a class="headerlink" href="#install-your-package-from-testpypi" title="Link to this heading">#</a></h2>
+<p>パッケージのアップロードが完了したら、TestPyPIからインストールできます。新しくアップロードしたパッケージのTestPyPIランディングページにインストール手順があります。</p>
+<figure class="align-default" id="testpypi-landing-page">
+<a class="reference internal image-reference" href="../_images/test-pypi-package.png"><img alt="pyosPackageのTestPyPIページのスクリーンショット。 一番上にpyosPackage 0.1.0と書いてあり、その下にpipのインストール方法が書いてあります。 パッケージのランディングページには、パッケージのREADMEファイルからの情報があります。" src="../_images/test-pypi-package.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">これはアップロードされたばかりのpyosPackageのランディングページの例です。 ページの一番上に、TestPyPIからパッケージをインストールする方法の説明があります。 そのコードをコピーし、それを使ってTestPyPIからパッケージをローカルにインストールするだけです。</span><a class="headerlink" href="#testpypi-landing-page" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>例として、 <a class="reference external" href="https://test.pypi.org/project/pyosPackage/">TestPyPIのpyOpenSci pyosPackageランディングページをご覧ください</a> 。 このページには、現在のパッケージのバージョンに関する情報と、次のようなインストール手順が記載されていることに注意してください:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-i</span> <span class="pre">https://test.pypi.org/simple/</span> <span class="pre">pyosPackage</span></code></p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>TestPyPIへの公開 vs PyPI TestPyPIからインストールすることはできますが、パッケージをインストールする恒久的な方法としてTestPyPIに公開することはお勧めしません。なぜなら、TestPyPIは時間が経つとアカウントを削除するかもしれないからです。TestPyPIは、パッケージを公開し、インストールプロセスをテストする方法を学ぶのに最適な場所です。しかし、最終的なゴールは、ワークフローを把握し、パッケージがデプロイできる状態になったら、PyPIに公開することです。</p>
+</div>
+<section id="time-to-install-your-package">
+<h3>パッケージのインストール<a class="headerlink" href="#time-to-install-your-package" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>お使いのコンピューターで、新しく公開するパッケージをインストールする開発環境をアクティブにします。</p></li>
+<li><p>TestPyPIからパッケージのインストール手順を実行します。</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Conda</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyospkg-dev
+&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>youPackageNameHere
+&gt;<span class="w"> </span>conda<span class="w"> </span>list
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+venv Mac / Linux</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>hatch<span class="w"> </span>shell
+&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>youPackageNameHere
+&gt;<span class="w"> </span>pip<span class="w"> </span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-the-value-of-end-to-end-tools-like-hatch-flit-and-poetry admonition">
+<p class="admonition-title">hatch、flit、poetryといったエンドツーエンドツールの価値</p>
+<p>このレッスンでは Hatch と hatchling を使って Python パッケージを作成、ビルド、公開します。 <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="std std-doc">エコシステム内の他のパッケージングツールについては、こちらをクリックしてください。</span></a></p>
+</div>
+</section>
+</section>
+<section id="package-specific-token-vs-trusted-publisher">
+<h2>パッケージ固有のトークンと信頼できるパブリッシャー<a class="headerlink" href="#package-specific-token-vs-trusted-publisher" title="Link to this heading">#</a></h2>
+<p>パッケージの長期的なメンテナンスのために、PyPI公開に関する2つのオプションがあります。</p>
+<ol class="arabic simple">
+<li><p>PyPIにパッケージを (手動で) 公開する際に使用する、パッケージ固有のトークンを作成することができます。これはPyPI公開のワークフローを自動化したくない場合に最適なオプションです。</p></li>
+<li><p>You can also create an automated publication workflow on GitHub using GitHub Actions. This is a great way to make the publication process easier and it also supports a growing maintainer team. In this case we suggest you don't worry about the token and instead setup a specific GitHub Actions that publishes your package when you make a release. You can then create a &quot;trusted publisher&quot; workflow on PyPI.</p></li>
+</ol>
+<p>自動化された信頼できるパブリッシャーワークフローの作成方法については、次のレッスンで学びます。</p>
+<section id="optional-if-you-want-to-use-a-manual-token-based-publication-workflow">
+<h3>オプション: 手動トークンベースの発行ワークフローを使用する場合<a class="headerlink" href="#optional-if-you-want-to-use-a-manual-token-based-publication-workflow" title="Link to this heading">#</a></h3>
+<p>トークンを定期的に使ってPyPIに公開する予定がある場合、新しいパッケージに固有のトークンを作成するために、上記の手順をもう一度行うことを強くお勧めします。</p>
+<p>そのためには:</p>
+<ol class="arabic simple">
+<li><p>TestPyPIに行きます。</p></li>
+<li><p>アカウントの &quot;Your Projects&quot; セクションに移動します</p></li>
+<li><p>トークンを追加したいプロジェクトの管理ボタンをクリックします</p></li>
+<li><p>設定に進む</p></li>
+<li><p>&quot;パッケージ名のトークンを作成する&quot; をクリックします</p></li>
+<li><p>トークンを作成し、上記の手順に従って、リポジトリ固有のトークンを使用してパッケージを公開します。</p></li>
+</ol>
+<p>そして、すべて終わりました！</p>
+</section>
+</section>
+<section id="you-have-published-your-package-to-testpypi">
+<h2>あなたはTestPyPIにパッケージを公開しました!<a class="headerlink" href="#you-have-published-your-package-to-testpypi" title="Link to this heading">#</a></h2>
+<p>おめでとうございます。これで、TestPyPIへのパッケージの公開が成功しました。実際のPyPIで利用できる準備が整ったパッケージがあれば、同じ手順で (上記の違いはありますが) PyPIに公開することができます。</p>
+<p>PyPIで公開したら、 <a class="reference external" href="https://conda-forge.org/blog/posts/2020-03-05-grayskull/">grayskull</a> ツールを使って簡単にconda-forgeエコシステムにパッケージを追加できます。</p>
+<p>その方法は次のレッスンで学習します。</p>
+</section>
+<section id="footnotes">
+<h2>脚注<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="venv" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>https://docs.python.org/3/library/venv.html</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="installable-code.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Pythonコードをインストール可能にする</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="publish-conda-forge.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">PyPIにあるPythonパッケージをconda-forgeに公開する</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testpypi-vs-pypi">TestPyPI vs PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-for-publishing-a-python-package-on-testpypi-or-pypi">TestPyPI (またはPyPI)でPythonパッケージを公開するための4つのステップ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-a-python-package-development-environment">ステップ1: Pythonパッケージ開発環境の構築</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-and-environments">Hatchと環境</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-build-your-package-s-sdist-and-wheel-distributions">ステップ 2: パッケージのsdistとwheelディストリビューションをビルドする</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#congratulations-you-ve-created-your-python-package-distribution-files"><i class="fa-solid fa-wand-magic-sparkles"></i> おめでとう - Pythonパッケージの配布ファイルを作成しました <i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-setup-your-testpypi-account">ステップ 3. TestPyPIアカウントをセットアップする</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-a-package-upload-token">ステップ4. パッケージアップロードトークンを作成する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#follow-the-steps-below-to-create-your-token">以下の手順に従ってトークンを作成してください。</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-testpypi-using-hatch">Hatchを使用してTestPyPIにアップロードする</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-your-package-from-testpypi">TestPyPIからパッケージをインストールする</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-install-your-package">パッケージのインストール</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-specific-token-vs-trusted-publisher">パッケージ固有のトークンと信頼できるパブリッシャー</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-if-you-want-to-use-a-manual-token-based-publication-workflow">オプション: 手動トークンベースの発行ワークフローを使用する場合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-have-published-your-package-to-testpypi">あなたはTestPyPIにパッケージを公開しました!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">脚注</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/publish-pypi.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tutorials/publish-pypi.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="docstringsを使って、パッケージのAPIのコードを文書化する。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="APIとは何か？: API は A pplied P rogramming I nterface の略です。 (Pythonの)パッケージの文脈で議論される場合、APIはパッケージメンテナがユーザーのために作成する関数、クラス、メソッド、属性を指します。 パッケージAPI要素の単純な例： 例えば、あるパッケージに add_numbers() という関数があり、その関数はたくさんの数字を足し算..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_documentation_write-user-documentation_document-your-code-api-docstrings_0a4ecff4.png" />
+<meta property="og:image:alt" content="APIとは何か？: API は A pplied P rogramming I nterface の略です。 (Pythonの)パッケージの文脈で議論される場合、APIはパッケージメンテナがユーザーのために作成する関数、クラス、メソッド、属性を指します。 パッケージAPI要素の単純な例： 例えば、あるパッケージに add_numbers() という関数があり、その関数はたくさんの数字を足し算..." />
+<meta name="description" content="APIとは何か？: API は A pplied P rogramming I nterface の略です。 (Pythonの)パッケージの文脈で議論される場合、APIはパッケージメンテナがユーザーのために作成する関数、クラス、メソッド、属性を指します。 パッケージAPI要素の単純な例： 例えば、あるパッケージに add_numbers() という関数があり、その関数はたくさんの数字を足し算..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>docstringsを使って、パッケージのAPIのコードを文書化する。 &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/translations.js?v=91613774"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/write-user-documentation/document-your-code-api-docstrings';</script>
+    <script src="../../_static/matomo.js?v=5a92784f"></script>
+    <script src="../../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/documentation/write-user-documentation/document-your-code-api-docstrings.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="Pythonパッケージのドキュメントにチュートリアルを作成する" href="create-package-tutorials.html" />
+    <link rel="prev" title="Pythonパッケージのユーザー向けドキュメントを作成する" href="get-started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/documentation/write-user-documentation/document-your-code-api-docstrings.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/documentation/write-user-documentation/document-your-code-api-docstrings.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/documentation/write-user-documentation/document-your-code-api-docstrings.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/documentation/write-user-documentation/document-your-code-api-docstrings.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/documentation/write-user-documentation/document-your-code-api-docstrings.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/documentation/write-user-documentation/document-your-code-api-docstrings.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ドキュメントの概要</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ユーザードキュメントの作成</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">ドキュメントの作成</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">コードを文書化する(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-package-tutorials.html">チュートリアルパッケージの作成</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">コントリビューターとメンテナーのためのドキュメント</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../repository-files/intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repository-files/contributing-file.html">貢献ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repository-files/development-guide.html">開発ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repository-files/changelog-file.html">変更履歴ファイル</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">コミュニティドキュメント</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../repository-files/readme-file-best-practices.html">README ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repository-files/code-of-conduct-file.html">行動規範ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repository-files/license-files.html">科学的Pythonオープンソースソフトウェアのライセンスファイル</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ドキュメント出版ツール</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/sphinx-python-package-documentation-tools.html">ドキュメント用Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/publish-documentation-online.html">ドキュメントを公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/website-hosting-optimizing-your-docs.html">ウェブサイトのホスティングと最適化</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">オープンソースPythonパッケージのドキュメント</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">docstringsを使って、パッケージのAPIのコードを文書化する。</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="document-the-code-in-your-package-s-api-using-docstrings">
+<h1>docstringsを使って、パッケージのAPIのコードを文書化する。<a class="headerlink" href="#document-the-code-in-your-package-s-api-using-docstrings" title="Link to this heading">#</a></h1>
+<section id="what-is-an-api">
+<h2>APIとは何か？<a class="headerlink" href="#what-is-an-api" title="Link to this heading">#</a></h2>
+<p>API は <strong>A</strong>pplied <strong>P</strong>rogramming <strong>I</strong>nterface の略です。 (Pythonの)パッケージの文脈で議論される場合、APIはパッケージメンテナがユーザーのために作成する関数、クラス、メソッド、属性を指します。</p>
+<p>パッケージAPI要素の単純な例： 例えば、あるパッケージに <code class="docutils literal notranslate"><span class="pre">add_numbers()</span></code> という関数があり、その関数はたくさんの数字を足し算するとします。 数字を足し算するには、ユーザは <code class="docutils literal notranslate"><span class="pre">add_numbers(1,2,3)</span></code> を呼び出すだけで、パッケージの関数が値を計算して <code class="docutils literal notranslate"><span class="pre">6</span></code> を返します。 <code class="docutils literal notranslate"><span class="pre">add_numbers</span></code> 関数を呼び出すことで、パッケージのAPIを使用していることになります。</p>
+<p>パッケージAPIは、ユーザーインターフェイスを作成する関数、クラス、メソッド、属性から構成されます。</p>
+</section>
+<section id="what-is-a-docstring-and-how-does-it-relate-to-documentation">
+<h2>docstringとは何ですか？docstringとドキュメンテーションの関係は？<a class="headerlink" href="#what-is-a-docstring-and-how-does-it-relate-to-documentation" title="Link to this heading">#</a></h2>
+<p>Pythonにおいてdocstringとは、関数、メソッド、クラスにおいて、その関数が何を行うのか、その入出力を記述したテキストを指します。 Pythonプログラマは通常、関数への入力を <a class="reference external" href="https://docs.python.org/3/glossary.html#term-parameter">&quot;parameters&quot;</a> または <a class="reference external" href="https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter">&quot;arguments&quot;</a> と呼び、出力を &quot;return values&quot; と呼ぶことが多いです。</p>
+<p>docstringは以下のために重要です:</p>
+<ul class="simple">
+<li><p>Pythonで <code class="docutils literal notranslate"><span class="pre">help()</span></code> を呼び出すと、例えば <code class="docutils literal notranslate"><span class="pre">help(add_numbers)</span></code> は関数のdocstringのテキストを表示します。 このようにdocstringは、ユーザが自分のワークフローにより効果的に関数を適用する方法をよりよく理解するのに役立ちます。</p></li>
+<li><p>パッケージのドキュメントを作成するとき、docstringsを使用して、すべての関数、クラス、メソッド、属性をきれいに表示する完全なAPIドキュメントを自動的に作成することもできます。</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>パッケージ内のすべての関数、クラス、メソッド、属性の API ドキュメントの例。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.fatiando.org/verde/latest/api/index.html">Verdeパッケージの高レベルAPIドキュメントの例をご覧ください。 このページには、パッケージ内のすべての関数とクラスが、その機能の簡単な説明とともに一覧表示されています</a></p></li>
+<li><p><a class="reference external" href="https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates">APIエレメントをクリックすることで、パッケージ内で特定の関数が何を行っているかをさらに掘り下げて確認することができます</a></p></li>
+</ul>
+</div>
+</section>
+<section id="python-package-api-documentation">
+<h2>PythonパッケージAPIドキュメント<a class="headerlink" href="#python-package-api-documentation" title="Link to this heading">#</a></h2>
+<p>もし、あなたのパッケージのすべてのユーザー向けクラス、メソッド、属性、関数に説明的なdocstringがあれば（<em>合理的な範囲内で</em>）、そのパッケージのAPIは十分に文書化されているとみなされます。</p>
+<p>Pythonの場合、これは、パッケージ内のすべてのユーザー向けのクラス、メソッド、属性、および/または関数について、 (<em>無理のない範囲で</em>) docstringを追加する必要があることを意味します:</p>
+<ul class="simple">
+<li><p>関数、メソッド、属性、またはクラスが何をするのかを説明します</p></li>
+<li><p>入力と出力の <code class="docutils literal notranslate"><span class="pre">type</span></code> を定義します( <code class="docutils literal notranslate"><span class="pre">string</span></code> 、 <code class="docutils literal notranslate"><span class="pre">int</span></code> 、 <code class="docutils literal notranslate"><span class="pre">np.array</span></code> など)</p></li>
+<li><p>オブジェクト、メソッド、関数の期待される出力 <code class="docutils literal notranslate"><span class="pre">return</span></code> を説明する。</p></li>
+</ul>
+<section id="three-python-docstring-formats-and-why-we-like-numpy-style">
+<span id="numpy-docstring"></span><h3>Pythonの3つのdocstringフォーマットとNumPyスタイルが好きな理由<a class="headerlink" href="#three-python-docstring-formats-and-why-we-like-numpy-style" title="Link to this heading">#</a></h3>
+<p>Pythonのdocstringフォーマットには、パッケージを文書化する際に使用できるものがいくつかあります:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">NumPy-style</a></p></li>
+<li><p><a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">google style</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html">reST style</a></p></li>
+</ul>
+<!-- https://peps.python.org/pep-0287/ - 2002 pep 287-->
+<p>Pythonのドキュメントには <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">NumPy-style docstrings</a> を使うことをお勧めします:</p>
+<ul class="simple">
+<li><p>NumPyスタイルのdocstringは、科学的なPythonエコシステムの中核であり、 <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">NumPyスタイルガイド</a> で定義されています。 そのため、NumPyスタイルガイドで広く使われています。</p></li>
+<li><p>Numpyスタイルのドキュメントストリングは単純化されているので、コード内でもPythonで <code class="docutils literal notranslate"><span class="pre">help()</span></code> を呼び出すときでも読みやすくなっています。 対照的に、reSTスタイルのdocstringは素早くスキャンするのが難しく、モジュールの中でより多くの行を占める可能性があると感じる人もいます。</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>もしNumPy形式のドキュメントを使用しているのであれば、ドキュメントの <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> ファイルに <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html">sphinx napoleon extension</a> を含めるようにしてください。 この拡張機能により、SphinxはNumPy形式のドキュメントを正しく読み、フォーマットすることができます。</p>
+</div>
+</section>
+<section id="docstring-examples-better-and-best">
+<h3>Docstringの例 Better と Best<a class="headerlink" href="#docstring-examples-better-and-best" title="Link to this heading">#</a></h3>
+<p>以下はよく文書化された関数の良い例です。 この関数のdocstringには、関数の入力と出力（または戻り値）が記述されていることに注目してください。 関数の最初の説明は短いです（1行）。 その1行の説明に続いて、関数が何をするのかについて少し長い説明があります（2～3文）。 関数の戻り値も指定されています。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert bounds to a shapely geojson like spatial object.</span>
+
+<span class="sd">    This format is what shapely uses. The output object can be used</span>
+<span class="sd">    to crop a raster image.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ext_obj : list or geopandas.GeoDataFrame</span>
+<span class="sd">        If provided with a `geopandas.GeoDataFrame`, the extent</span>
+<span class="sd">        will be generated from that. Otherwise, extent values</span>
+<span class="sd">        should be in the order: minx, miny, maxx, maxy.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    extent_json: A GeoJSON style dictionary of corner coordinates</span>
+<span class="sd">    for the extent</span>
+<span class="sd">        A GeoJSON style dictionary of corner coordinates representing</span>
+<span class="sd">        the spatial extent of the provided spatial object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<!-- I can't seem to get doc targets across pages to work-->
+</section>
+<section id="best-a-docstring-with-example-use-of-the-function">
+<span id="docstring-best-practice"></span><h3>ベスト: 関数の使用例を記載したdocstring<a class="headerlink" href="#best-a-docstring-with-example-use-of-the-function" title="Link to this heading">#</a></h3>
+<p>この例には、sphinxでも <a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctest</a> を使ってテストされている関数の使用例が含まれています。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert bounds to a shapely geojson like spatial object.</span>
+
+<span class="sd">    This format is what shapely uses. The output object can be used</span>
+<span class="sd">    to crop a raster image.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ext_obj : list or geopandas.GeoDataFrame</span>
+<span class="sd">        If provided with a `geopandas.GeoDataFrame`, the extent</span>
+<span class="sd">        will be generated from that. Otherwise, extent values</span>
+<span class="sd">        should be in the order: minx, miny, maxx, maxy.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    extent_json : A GeoJSON style dictionary of corner coordinates</span>
+<span class="sd">    for the extent</span>
+<span class="sd">        A GeoJSON style dictionary of corner coordinates representing</span>
+<span class="sd">        the spatial extent of the provided spatial object.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    Convert a `geopandas.GeoDataFrame` to an extent dictionary:</span>
+
+<span class="sd">    &gt;&gt;&gt; import geopandas as gpd</span>
+<span class="sd">    &gt;&gt;&gt; import earthpy.spatial as es</span>
+<span class="sd">    &gt;&gt;&gt; from earthpy.io import path_to_example</span>
+
+<span class="sd">	We start by loading a Shapefile.</span>
+
+<span class="sd">    &gt;&gt;&gt; rmnp = gpd.read_file(path_to_example(&#39;rmnp.shp&#39;))</span>
+
+<span class="sd">	And then use `extent_to_json` to do the conversion from `shp` to</span>
+<span class="sd">    `geopandas.GeoDataFrame`.</span>
+
+<span class="sd">    &gt;&gt;&gt; es.extent_to_json(rmnp)</span>
+<span class="sd">    {&#39;type&#39;: &#39;Polygon&#39;, &#39;coordinates&#39;: (((-105.4935937, 40.1580827), ...),)}</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<figure class="align-default" id="earthpy-json-example">
+<a class="reference internal image-reference" href="../../_images/sphinx-rendering-extent-to-json-earthpy.png"><img alt="../../_images/sphinx-rendering-extent-to-json-earthpy.png" src="../../_images/sphinx-rendering-extent-to-json-earthpy.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">上記のNumPyフォーマットのdocstringをsphinxで使用すると、autodocエクステンションが <code class="docutils literal notranslate"><span class="pre">extent_to_json</span></code> 関数のabout documentationセクションを作成します。  <code class="docutils literal notranslate"><span class="pre">es.extent_to_json(rmnp)</span></code> コマンドの出力は、doctestを使ってテストすることもできます。</span><a class="headerlink" href="#earthpy-json-example" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions">
+<h2>doctestを使って、パッケージのメソッドや関数でdocstringのサンプルを実行します。<a class="headerlink" href="#using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions" title="Link to this heading">#</a></h2>
+<!-- This link isn't working no matter how i create the target. Not sure
+why -->
+<p>上記では、良いdocstringフォーマット、より良いdocstringフォーマット、ベストなdocstringフォーマットの例をいくつか紹介しました。 もしSphinxを使ってドキュメントを作成しているのであれば、 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest</a> という拡張機能をSphinxビルドに追加することができます。Doctestは、サンプルコードを含むdocstringに対して追加のチェックを行います。 Doctest は、docstring <code class="docutils literal notranslate"><span class="pre">Examples</span></code> 内のサンプルコードを実行し、期待される出力が正しいかどうかをチェックします。 ドキュメントのチュートリアルを実行するのと同様に、 <code class="docutils literal notranslate"><span class="pre">doctest</span></code> はパッケージのコード (API) が期待通りに動作することを保証する便利なステップになります。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>It's important to keep in mind that examples in your docstrings
+help users using your package. Running <code class="docutils literal notranslate"><span class="pre">doctest</span></code> on those examples provides a
+check of your package's API. The doctest ensures that the functions and methods in your package
+run as you expect them to. Neither of these items replace a separate,
+stand-alone test suite that is designed to test your package's core functionality
+across operating systems and Python versions.</p>
+</div>
+<p>doctestは以下の例を実行し、 <code class="docutils literal notranslate"><span class="pre">add_me</span></code> に1と3の値を与えると4が返されることをテストします。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A function that sums two numbers.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    num1 : int</span>
+<span class="sd">        An integer value to be added</span>
+<span class="sd">    num2 : int</span>
+<span class="sd">        An integer value to be added</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">       The integer sum of the provided numbers.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Below you can see how the `add_me` function will return a number.</span>
+
+<span class="sd">    &gt;&gt;&gt; add_me(1, 3)</span>
+<span class="sd">    4</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+
+
+</pre></div>
+</div>
+</section>
+<section id="adding-type-hints-to-your-docstrings">
+<h2>docstringに型ヒントを追加する<a class="headerlink" href="#adding-type-hints-to-your-docstrings" title="Link to this heading">#</a></h2>
+<p>上の例では、パラメータとして関数に渡されるデータ型や、属性としてクラスに渡されるデータ型を記述するために、numpyスタイルのdocstringを使用することを見ました。 numpyスタイルのdocstringでは、docstringのParametersセクションにそれらのデータ型を追加します。 下の例では、パラメータ <code class="docutils literal notranslate"><span class="pre">num1</span></code> と <code class="docutils literal notranslate"><span class="pre">num2</span></code> は両方とも Python の <code class="docutils literal notranslate"><span class="pre">int</span></code> (整数) 値であるべきであることがわかります。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">Parameters</span>
+    <span class="o">----------</span>
+    <span class="n">num1</span> <span class="p">:</span> <span class="nb">int</span>
+        <span class="n">An</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">to</span> <span class="n">be</span> <span class="n">added</span>
+    <span class="n">num2</span> <span class="p">:</span> <span class="nb">int</span>
+        <span class="n">An</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">to</span> <span class="n">be</span> <span class="n">added</span>
+</pre></div>
+</div>
+<p>関数やメソッドが必要とするデータ型を記述することで、ユーザーが関数やメソッドの呼び出し方をより理解しやすくなります。</p>
+<p>型ヒントは、あなたのコードに型ドキュメントの別のレイヤーを追加します。 型ヒントは、新しい開発者や将来の自分、あるいは貢献者が、あなたのコードベースについて素早く知ることを容易にします。</p>
+<p>型のヒントは関数の定義に追加されます。 以下の例では、パラメータaNumとaNum2はtype = int（整数）として定義されています。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="s2">&quot;&quot;&quot;A function that sums two numbers.</span>
+</pre></div>
+</div>
+<p>さらに <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> を使って、期待される関数の出力を記述することができます。以下の関数の出力も int です。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="s2">&quot;&quot;&quot;A function that sums two numbers.</span>
+</pre></div>
+</div>
+<section id="why-use-type-hints">
+<span id="type-hints"></span><h3>型ヒントを使う理由<a class="headerlink" href="#why-use-type-hints" title="Link to this heading">#</a></h3>
+<p>型ヒント:</p>
+<ul class="simple">
+<li><p>開発とデバッグをより速くします、</p></li>
+<li><p>メソッドや関数のデータ・フォーマットの入出力を、ユーザーが見やすくします、</p></li>
+<li><p>型が正しいことを確認するためにコードをチェックする <a class="reference external" href="https://mypy-lang.org/"><code class="docutils literal notranslate"><span class="pre">mypy</span></code></a> のような静的型チェックツールの使用をサポートします。</p></li>
+</ul>
+<p>あなたのコードにタイプヒンティングを追加することを検討すべきです:</p>
+<ul class="simple">
+<li><p>あなたのパッケージはデータ処理を行います、</p></li>
+<li><p>複雑な入力を必要とする関数を使用しています</p></li>
+<li><p>あなたは、あなたのコードを手助けしてくれる新しい貢献者の入り口の障壁を低くしたいです。</p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">型ヒントの多用に注意してください</p>
+<p>コードに型ヒントを追加する際には、場合によってはこのようなこともあることを考慮してほしい:</p>
+<ul class="simple">
+<li><p>複雑なコードベースを持っている場合、型ヒントはコードを読みにくくする可能性がある。 パラメーターの入力が複数のデータ型を取り、それぞれをリストアップする場合は特にそうだ。</p></li>
+<li><p>単純なスクリプトや明らかな操作を行う関数に型ヒントを書いても意味がありません。</p></li>
+</ul>
+</div>
+</section>
+<section id="gradually-adding-type-hints">
+<h3>型ヒントを徐々に追加<a class="headerlink" href="#gradually-adding-type-hints" title="Link to this heading">#</a></h3>
+<p>型ヒントの追加には多くの時間がかかります。 しかし、コードを書きながら少しずつ型ヒントを追加していくことができます。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>型ヒントを追加することは、新しい貢献者にとっても素晴らしい作業です。 より複雑な貢献をする前に、あなたのパッケージのコードと構造をよりよく知ることができます。</p>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="get-started.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Pythonパッケージのユーザー向けドキュメントを作成する</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="create-package-tutorials.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">Pythonパッケージのドキュメントにチュートリアルを作成する</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-api">APIとは何か？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-docstring-and-how-does-it-relate-to-documentation">docstringとは何ですか？docstringとドキュメンテーションの関係は？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package-api-documentation">PythonパッケージAPIドキュメント</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-python-docstring-formats-and-why-we-like-numpy-style">Pythonの3つのdocstringフォーマットとNumPyスタイルが好きな理由</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docstring-examples-better-and-best">Docstringの例 Better と Best</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-a-docstring-with-example-use-of-the-function">ベスト: 関数の使用例を記載したdocstring</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions">doctestを使って、パッケージのメソッドや関数でdocstringのサンプルを実行します。</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-type-hints-to-your-docstrings">docstringに型ヒントを追加する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-type-hints">型ヒントを使う理由</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradually-adding-type-hints">型ヒントを徐々に追加</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/write-user-documentation/document-your-code-api-docstrings.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/documentation/write-user-documentation/document-your-code-api-docstrings.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

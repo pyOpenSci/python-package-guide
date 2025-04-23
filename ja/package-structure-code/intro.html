@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Python Package Structure" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/intro.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="This section provides guidance on your Python package's structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_intro_867e1f11.png" />
+<meta property="og:image:alt" content="This section provides guidance on your Python package's structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
+<meta name="description" content="This section provides guidance on your Python package's structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Python Package Structure &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/intro';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/package-structure-code/intro.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="科学的PythonプロジェクトのためのPythonパッケージ構造" href="python-package-structure.html" />
+    <link rel="prev" title="Hatchを使ってsetup.pyをpyproject.tomlに移行する" href="../tutorials/setup-py-to-pyproject-toml.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/package-structure-code/intro.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/package-structure-code/intro.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/package-structure-code/intro.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/package-structure-code/intro.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/package-structure-code/intro.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/package-structure-code/intro.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">コードスタイル</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Package Structure</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="python-package-structure">
+<h1>Python Package Structure<a class="headerlink" href="#python-package-structure" title="Link to this heading">#</a></h1>
+<p>This section provides guidance on your Python package's structure, code format,
+and style. It also reviews the various <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">packaging tools</span></a> you can use to
+<a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">build</span></a> and <a class="reference internal" href="publish-python-package-pypi-conda.html"><span class="doc std std-doc">publish</span></a> your Python package.</p>
+<p>If you want end-to-end tutorials, check out our tutorial series that starts by introducing <a class="reference internal" href="../tutorials/intro.html#what-is-a-package"><span class="std std-ref">what a Python package is</span></a>.</p>
+<p>If you are confused by Python packaging, you are not alone! The good news is
+that some great modern packaging tools ensure you follow
+best practices. Here, we review tool features and suggest tools you can use
+for your Python packaging workflow.</p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success sd-rounded-pill float-left reference external" href="/tutorials/intro"><span>Checkout our beginning-to-end create a Python package tutorials</span></a></p>
+<div class="admonition-how-this-content-is-developed admonition">
+<p class="admonition-title">How this content is developed</p>
+<p>All of the content in this guide has been vetted by community members, including maintainers and developers of the core packaging tools.</p>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 1. パッケージのファイル構成 ✨</div>
+<p class="sd-card-text">src レイアウト、フラットレイアウト、テストフォルダはどこに置くべきか？ あなたのパッケージング知識のレベルに関係なく、このページは最新のpythonのベストプラクティスに従ったパッケージ構造を決める助けになるでしょう。</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="python-package-structure.html"><span class="doc">科学的PythonプロジェクトのためのPythonパッケージ構造</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 2. パッケージの構築について学ぶ✨</div>
+<p class="sd-card-text">PythonパッケージをPyPIで公開するには、まずビルドする必要があります。 &quot;ビルド&quot; とは、パッケージのコードとメタデータをPyPIで公開できるような形式にすることです。 Pythonパッケージのビルドについての詳細はこちらをご覧ください。</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="python-package-structure.html"><span class="doc">科学的PythonプロジェクトのためのPythonパッケージ構造</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 4. メタデータを追加する ✨</div>
+<p class="sd-card-text">Python パッケージにプロジェクトのメタデータを追加して、PyPI でのフィルタリングと、パッケージインストーラがパッケージをビルドしてインストールするために必要なメタデータの両方をサポートする方法を学びましょう。</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="pyproject-toml-python-package-metadata.html"><span class="doc">パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 3. どのPythonパッケージツールを使うべきですか？ ✨</div>
+<p class="sd-card-text">パッケージングツール群についてもっと知りましょう。そして、どのツールがあなたに最適かを学びましょう。</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="python-package-build-tools.html"><span class="doc">Pythonパッケージングツール</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 4. PyPIとCondaに公開する ✨</div>
+<p class="sd-card-text">純粋なPythonパッケージであれば、PyPIとconda-forgeのようなCondaチャネルの両方に公開するのは簡単です。 詳しくはこちら。</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="python-package-build-tools.html"><span class="doc">Pythonパッケージングツール</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨ 5. パッケージのバージョニングを設定する ✨</div>
+<p class="sd-card-text">Semver (数値によるバージョン管理) と Calver (日付によるバージョン管理) は、パッケージをバージョン管理する2つの一般的な方法です。 どちらを選ぶべきでしょうか？ 詳しくはこちら。</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="python-package-versions.html"><span class="doc">Pythonパッケージの新しいバージョンを作成する</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+✨6. コードスタイルとリンター✨</div>
+<p class="sd-card-text">Black、blue、flake8、Ruff - あなたのパッケージがコードフォーマットのベストプラクティスに従っていることを確認するのに役立つツールはどれですか？ オプションの詳細と、なぜこれが重要なのかについては、こちらをご覧ください。</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="code-style-linting-format.html"><span class="doc">Pythonパッケージコードのスタイル、フォーマット、リンター</span></a></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="packaging-tools-decision-tree">
+<a class="reference internal image-reference" href="../_images/python-package-tools-decision-tree.png"><img alt="様々なパッケージングツールのフロントエンドとバックエンドのオプションの決定ツリーを示す図。" src="../_images/python-package-tools-decision-tree.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">選択可能な様々なフロントエンドビルドツールを示す図。 各ツールの詳細については、パッケージングツールのページを参照してください。</span><a class="headerlink" href="#packaging-tools-decision-tree" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>査読にパッケージを投稿しようと考えているなら、査読が始まる前にpyOpenSciが行う最低限の <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template">editor checks</a> を見てください。これらのチェックは、私たちにパッケージをレビューのために提出しようと計画している作者と、Pythonパッケージを作成し始めたばかりの人の両方にとって、調べるのに便利です。</p>
+</div>
+<section id="what-you-will-learn-here">
+<h2>ここで学べること<a class="headerlink" href="#what-you-will-learn-here" title="Link to this heading">#</a></h2>
+<p>Pythonパッケージングガイドのこのセクションでは、以下のことを説明します:</p>
+<ul class="simple">
+<li><p>Provide an overview of the options available to you when packaging your
+code.</p></li>
+<li><p>ニーズを満たし、かつ既存の基準をサポートするツールやアプローチを提案します。</p></li>
+<li><p>Suggest tools and approaches that will allow you to expand upon a workflow
+that may begin as a pure Python code and evolve into code that requires
+addition layers of complexity in the packaging build.</p></li>
+<li><p>私たちの提案を、現在受け入れられている <a class="reference external" href="https://peps.python.org/pep-0000/">PEPs (Python Enhancement Protocols)</a> と <a class="reference external" href="https://scientific-python.org/specs/">Scientific Python community SPECs</a> に合わせます。</p></li>
+<li><p>私たちのコミュニティ内での一貫性を維持するために、NumpyやSciPyなどのScientific Pythonのコアパッケージの開発者によって実装されている既存のベストプラクティスとも連携しています。</p></li>
+</ul>
+</section>
+<section id="guidelines-for-pyopensci-s-packaging-recommendations">
+<h2>pyOpenSciのパッケージング推奨のガイドライン<a class="headerlink" href="#guidelines-for-pyopensci-s-packaging-recommendations" title="Link to this heading">#</a></h2>
+<p>Pythonプログラミング言語の柔軟性は、Pythonパッケージを作成するための多様なツールオプションに適しています。Pythonはとても柔軟で、他の言語を包み込むように使える数少ない言語のひとつです。Pythonが他の言語をラッピングする能力は、Pythonが <a class="reference external" href="https://numpy.org/doc/stable/user/c-info.python-as-glue.html">&quot;glue&quot; language</a>&quot; と表現されるのをよく耳にする理由の1つです。</p>
+<p>純粋なPythonパッケージを構築するのであれば、パッケージングのセットアップは単純でよいです。しかし、科学的なパッケージの中には、CやC++のような他の言語で書かれた拡張機能やツールをサポートする必要があり、複雑な要件を持つものがあります。</p>
+<p>Python の様々な使い方をサポートするために、Python パッケージを作成する方法はたくさんあります。 このガイドでは、パッケージングのアプローチとツールを提案します:</p>
+<ol class="arabic simple">
+<li><p>パッケージングに慣れていない人たちにとって、私たちが最善で最も採用しやすいと考えるもの。</p></li>
+<li><p>よく整備され、文書化されていると思われるツール。</p></li>
+<li><p>この (科学的な) Pythonエコシステム全体でパッケージングアプローチを標準化するという共通の目標。</p></li>
+</ol>
+<p>ここでは、私たちの提案を、最新の、受け入れられている <a class="reference external" href="https://packaging.python.org/en/latest/">Pythonコミュニティ</a> と <a class="reference external" href="https://scientific-python.org/specs/">科学コミュニティ</a> に合わせることも試みています。</p>
+<div class="important admonition">
+<p class="admonition-title">このガイドの提案はpyOpenSciのレビュー要件ではありません</p>
+<p>このセクションのパッケージレイアウトの提案は、参考になることを意図しています。 これらは、あなたのパッケージがpyOpenSciオープンソースエコシステムにレビューされ、受け入れられるための特定の要件ではありません。</p>
+<p>pyOpenSciのPythonパッケージ審査要件をお探しの方は、 <a class="reference external" href="https://www.pyopensci.org/software-peer-review/about/package-scope.html">package scope page</a> と <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#">review requirements in our author guide</a> をご覧ください！</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../tutorials/setup-py-to-pyproject-toml.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Hatchを使ってsetup.pyをpyproject.tomlに移行する</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-package-structure.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">科学的PythonプロジェクトのためのPythonパッケージ構造</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn-here">ここで学べること</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-pyopensci-s-packaging-recommendations">pyOpenSciのパッケージング推奨のガイドライン</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/intro.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/package-structure-code/intro.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

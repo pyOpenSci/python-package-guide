@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Python パッケージングガイドへの貢献" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/CONTRIBUTING.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="ガイドはコミュニティの情報源です。 TL;DR: issueやプルリクエストという形での貢献を歓迎します: ガイドに含めるべきもののアイデアがあれば、 ここにissueを開いてください 。, もしタイプミスを見つけたら、遠慮なく submit a pull request して直接テキストを修正してください。 あるいは、プルリクエストに抵抗がある場合は、遠慮なくissueを開いてください。,..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_CONTRIBUTING_8c593bf5.png" />
+<meta property="og:image:alt" content="ガイドはコミュニティの情報源です。 TL;DR: issueやプルリクエストという形での貢献を歓迎します: ガイドに含めるべきもののアイデアがあれば、 ここにissueを開いてください 。, もしタイプミスを見つけたら、遠慮なく submit a pull request して直接テキストを修正してください。 あるいは、プルリクエストに抵抗がある場合は、遠慮なくissueを開いてください。,..." />
+<meta name="description" content="ガイドはコミュニティの情報源です。 TL;DR: issueやプルリクエストという形での貢献を歓迎します: ガイドに含めるべきもののアイデアがあれば、 ここにissueを開いてください 。, もしタイプミスを見つけたら、遠慮なく submit a pull request して直接テキストを修正してください。 あるいは、プルリクエストに抵抗がある場合は、遠慮なくissueを開いてください。,..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Python パッケージングガイドへの貢献 &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=be13464f"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/translations.js?v=91613774"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CONTRIBUTING';</script>
+    <script src="_static/matomo.js?v=5a92784f"></script>
+    <script src="_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/CONTRIBUTING.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/CONTRIBUTING.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/CONTRIBUTING.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/CONTRIBUTING.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/CONTRIBUTING.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/CONTRIBUTING.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/CONTRIBUTING.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python パッケージングガイドへの貢献</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contributing-to-the-python-packaging-guide">
+<h1>Python パッケージングガイドへの貢献<a class="headerlink" href="#contributing-to-the-python-packaging-guide" title="Link to this heading">#</a></h1>
+<p>ガイドはコミュニティの情報源です。</p>
+<section id="tl-dr">
+<h2>TL;DR<a class="headerlink" href="#tl-dr" title="Link to this heading">#</a></h2>
+<p>issueやプルリクエストという形での貢献を歓迎します:</p>
+<ul class="simple">
+<li><p>ガイドに含めるべきもののアイデアがあれば、 <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">ここにissueを開いてください</a> 。</p></li>
+<li><p>もしタイプミスを見つけたら、遠慮なく <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/pulls">submit a pull request</a> して直接テキストを修正してください。 あるいは、プルリクエストに抵抗がある場合は、遠慮なくissueを開いてください。</p></li>
+<li><p>このガイドを他の言語に翻訳することに興味がある方は、 <a class="reference internal" href="TRANSLATING.html"><span class="std std-doc">翻訳ガイド</span></a> をご覧ください。</p></li>
+<li><p>ガイドブックの内容をもっと大きく変えてほしいという方は、まずissueを投稿してください！</p></li>
+</ul>
+<p>どのように貢献すればいいのかわからない、あるいはgitやgithubに詳しくないという方は、このガイドを参考にしてください。</p>
+</section>
+<section id="how-the-python-packaging-guide-is-structured">
+<h2>Python パッケージングガイドの構成<a class="headerlink" href="#how-the-python-packaging-guide-is-structured" title="Link to this heading">#</a></h2>
+<p>Python パッケージングガイドは myST (MarkDown と rST の変種) で書かれており、 <strong>Sphinx</strong> という <code class="docutils literal notranslate"><span class="pre">Python</span></code> で構築されたドキュメントエンジンを使って、オンラインに表示される HTML バージョンをビルドしています。</p>
+<p>ガイドの作成プロセスを管理するためにNoxというツールを使っています。</p>
+</section>
+<section id="two-approaches-to-contributing">
+<h2>貢献するための2つのアプローチ<a class="headerlink" href="#two-approaches-to-contributing" title="Link to this heading">#</a></h2>
+<p>このガイドには2つの方法で貢献することができます。</p>
+<p>最初のアプローチは、あなたのコンピュータにあるガイドのローカルコピーを使用することです。 このオプションは、より複雑なセットアップを必要としますが、プルリクエストを提出する前に、ガイドをローカルでビルドし、あなたの貢献がバグを引き起こしていないことを確認することができます。 これは、新しいセクション全体を書くような、より大きな貢献のために推奨されるアプローチです。</p>
+<p>二つ目の方法は、GitHub のウェブサイトで直接貢献する方法です。 この方法ではコンピュータのセットアップは不要で、PRを投稿した時点であなたの貢献は (継続的インテグレーション) テストされますが、問題が発生した場合にフィードバックを得るまでに時間がかかります。 誤字脱字の修正のような小さな貢献をする場合や、オープンソースへの貢献が初めてで、最初のアプローチが敷居が高いと感じる場合に最適な方法です。</p>
+</section>
+<section id="forking-the-repository">
+<h2>リポジトリをフォークする<a class="headerlink" href="#forking-the-repository" title="Link to this heading">#</a></h2>
+<p>Independently of the approach you choose, the first step is to fork the Python Packaging Guide repository into your personal GitHub space.
+You can do this by clicking the &quot;Fork&quot; button in the top right corner of the repository page.</p>
+<p><a class="reference external" href="https://datascienceskills.org/lessons/git-github/git-intro/3-fork-clone/">Learn more: Fork and Clone GitHub Repos</a> is a good resource to learn more about forking.</p>
+<p>レポジトリをフォークする、</p>
+<ol class="arabic simple">
+<li><p>GitHubにログインしていることを確認してください。</p></li>
+<li><p>フォークしたいリポジトリ、ここでは <a class="reference external" href="https://www.github.com/pyopensci/python-package-guide">Pythonパッケージングガイド</a> リポジトリに移動します。</p></li>
+<li><p>ページの右上に 'Fork' ボタンがあります。そのボタンをクリックしてください。 新しいページが表示され、そこで '新しいフォークを作成' します。 デフォルトの入力のまま、'Create fork' をクリックします。 これで、 <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;username&gt;1/python-package-guide</span></code> にリポジトリのコピーが作成されます。 <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> はあなたの GitHub ユーザー名です。</p></li>
+</ol>
+<img width="395" alt="fork_repo" src="https://github.com/user-attachments/assets/949223fb-b58b-4b6d-85db-003bd117da46">
+</section>
+<section id="contributing-via-the-github-website">
+<h2>GitHubウェブサイトを通じて貢献する<a class="headerlink" href="#contributing-via-the-github-website" title="Link to this heading">#</a></h2>
+<section id="how-to-edit-a-markdown-file">
+<h3>MarkDownファイルの編集方法<a class="headerlink" href="#how-to-edit-a-markdown-file" title="Link to this heading">#</a></h3>
+<p>The Python Packaging Guide is written in myST, a variant of MarkDown. You can edit the files directly in the GitHub website.
+To do so, navigate to the file you want to edit and click the pencil icon in the top right corner of the file.</p>
+<figure class="align-default" id="edit-button-pencil-in-github">
+<a class="reference internal image-reference" href="_images/edit-button-pencil.png"><img alt="Edit button in GitHub" src="_images/edit-button-pencil.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing how to edit a file in GitHub. The pencil icon is highlighted with a red rectangle.</span><a class="headerlink" href="#edit-button-pencil-in-github" title="Link to this image">#</a></p>
+<div class="legend">
+<figure class="align-default" id="edit-file-in-github">
+<a class="reference internal image-reference" href="_images/edit-file.png"><img alt="Edit file in GitHub" src="_images/edit-file.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing when a file is being edited in GitHub. The file content is displayed in a text editor.</span><a class="headerlink" href="#edit-file-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</figcaption>
+</figure>
+<p>To preview your changes, click the &quot;Preview changes&quot; tab.</p>
+<figure class="align-default" id="preview-changes-in-github">
+<a class="reference internal image-reference" href="_images/preview-changes.png"><img alt="Preview changes in GitHub" src="_images/preview-changes.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing how to preview changes in GitHub. The file content is displayed in a text editor. The preview changes tab is highlighted with a red rectangle.</span><a class="headerlink" href="#preview-changes-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-to-commit-your-changes">
+<h3>変更をコミットする方法<a class="headerlink" href="#how-to-commit-your-changes" title="Link to this heading">#</a></h3>
+<p>When you are done editing the file, scroll down to the bottom of the page. You will see a section called &quot;Commit changes&quot;.
+Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made.</p>
+<figure class="align-default" id="commit-changes-in-github">
+<a class="reference internal image-reference" href="_images/commit-changes.png"><img alt="Commit changes in GitHub" src="_images/commit-changes.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing how to commit changes in GitHub. The commit message is displayed in a text editor. The commit changes section is highlighted with a red rectangle.</span><a class="headerlink" href="#commit-changes-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>After writing your commit message, click the &quot;Commit changes&quot; button to save your changes.</p>
+</section>
+</section>
+<section id="contributing-locally-on-your-computer">
+<h2>あなたのコンピュータでローカルに貢献する<a class="headerlink" href="#contributing-locally-on-your-computer" title="Link to this heading">#</a></h2>
+<section id="clone-your-forked-repository">
+<h3>フォークしたリポジトリをクローンする<a class="headerlink" href="#clone-your-forked-repository" title="Link to this heading">#</a></h3>
+<p>To clone your forked repository to your computer, you need to copy the URL of your forked repository and run the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;URL&gt;
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;URL&gt;</span></code> with the URL of your forked repository. You can find the URL by clicking the green &quot;Code&quot; button on your forked repository page.</p>
+<figure class="align-default" id="clone-repository-in-github">
+<a class="reference internal image-reference" href="_images/clone-repository.png"><img alt="Clone repository in GitHub" src="_images/clone-repository.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing how to clone a repository in GitHub. The URL of the repository is displayed in a text editor. The code button is highlighted with a red rectangle.</span><a class="headerlink" href="#clone-repository-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="create-a-new-branch">
+<h3>新しいブランチを作る<a class="headerlink" href="#create-a-new-branch" title="Link to this heading">#</a></h3>
+<p>Before making any changes, you should create a new branch to work on. This will help keep your changes separate from the main branch and make it easier to submit a pull request.</p>
+<p>To create a new branch, run the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;branch-name&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-a-virtual-environment">
+<h3>仮想環境を作る<a class="headerlink" href="#create-a-virtual-environment" title="Link to this heading">#</a></h3>
+<p>To build the guide locally, you need to create a virtual environment and install the dependencies. You can do this by running the following commands in your terminal:</p>
+<ul>
+<li><p><strong>On Windows</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</pre></div>
+</div>
+</li>
+<li><p><strong>On MacOS and Linux</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="install-the-development-dependencies">
+<h3>開発依存パッケージをインストールする<a class="headerlink" href="#install-the-development-dependencies" title="Link to this heading">#</a></h3>
+<p>To install the development dependencies, run the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="commit-your-changes">
+<h3>変更をコミットする<a class="headerlink" href="#commit-your-changes" title="Link to this heading">#</a></h3>
+<p>After making your changes, you need to commit them to your local repository. To do this, run the following commands in your terminal:</p>
+<ul>
+<li><p>To see the changes you made:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</li>
+<li><p>To add the changes to the staging area:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>To commit the changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Your commit message here&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&quot;Your</span> <span class="pre">commit</span> <span class="pre">message</span> <span class="pre">here&quot;</span></code> with a clear and concise message that describes the changes you made.</p>
+</section>
+<section id="how-to-build-the-guide-locally">
+<h3>ローカルでのガイドのビルド方法<a class="headerlink" href="#how-to-build-the-guide-locally" title="Link to this heading">#</a></h3>
+<p>To build the guide locally, you can use the <code class="docutils literal notranslate"><span class="pre">nox</span></code> command. This will run the default <code class="docutils literal notranslate"><span class="pre">nox</span></code> session, which builds the guide and opens it in your browser.</p>
+<p>To see the different sessions available, you can run the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>--list-sessions
+</pre></div>
+</div>
+<p>There are different sessions in nox related to building the docs: <code class="docutils literal notranslate"><span class="pre">docs</span></code>, <code class="docutils literal notranslate"><span class="pre">docs-test</span></code>, <code class="docutils literal notranslate"><span class="pre">docs-live</span></code>. You can run them by specifying the session name after the <code class="docutils literal notranslate"><span class="pre">nox</span></code> command.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs</span></code>: this session builds the guide and opens it in your browser.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs
+</pre></div>
+</div>
+<p>To see the guide built locally, open the file <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> in your browser.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs-test</span></code>: this session runs the tests for the guide.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-test
+</pre></div>
+</div>
+<p>If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs-live</span></code>: this session builds the guide and opens it in your browser with live reloading.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-live
+</pre></div>
+</div>
+<p>open the local version of the guide in your browser at <code class="docutils literal notranslate"><span class="pre">localhost</span></code> shown in the terminal.</p>
+</li>
+</ul>
+</section>
+<section id="before-you-submit-your-pull-request">
+<h3>プルリクエストを提出する前に<a class="headerlink" href="#before-you-submit-your-pull-request" title="Link to this heading">#</a></h3>
+<p>Before submitting your pull request, make sure to run the tests and check the formatting of your code.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-test
+</pre></div>
+</div>
+<p>If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
+Also make sure to check the formatting of your documentation by building the docs locally and checking that your changes look correct.</p>
+</section>
+</section>
+<section id="submitting-a-pull-request-with-your-contribution">
+<h2>あなたの貢献のプルリクエストを投稿する<a class="headerlink" href="#submitting-a-pull-request-with-your-contribution" title="Link to this heading">#</a></h2>
+<section id="how-to-make-a-pull-request">
+<h3>プルリクエストの作り方<a class="headerlink" href="#how-to-make-a-pull-request" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>To open a pull request on GitHub, navigate to the main page of your forked repository and click on the &quot;Pull requests&quot; tab.</p></li>
+</ol>
+<figure class="align-default" id="pull-requests-tab-in-github">
+<a class="reference internal image-reference" href="_images/pull-requests-tab.png"><img alt="Pull requests tab in GitHub" src="_images/pull-requests-tab.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing how to navigate to the pull requests tab in GitHub. The pull requests tab is highlighted with a red rectangle.</span><a class="headerlink" href="#pull-requests-tab-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Click on the &quot;New pull request&quot; button.</p></li>
+</ol>
+<figure class="align-default" id="new-pull-request-in-github">
+<a class="reference internal image-reference" href="_images/new-pull-request.png"><img alt="New pull request button in GitHub" src="_images/new-pull-request.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing how to create a new pull request in GitHub. The new pull request button is highlighted with a red rectangle.</span><a class="headerlink" href="#new-pull-request-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Write a clear and concise title and description for your pull request. Make sure to describe the changes you made and why they are necessary.</p></li>
+</ol>
+</section>
+<section id="what-happens-when-you-submit-a-pull-request-ci-cd">
+<h3>プルリクエストを提出するとどうなるか(CI/CD)<a class="headerlink" href="#what-happens-when-you-submit-a-pull-request-ci-cd" title="Link to this heading">#</a></h3>
+<p>Once you submit a pull request, a series of checks will be run to ensure that your changes do not introduce any bugs or errors. These checks include:</p>
+<ul class="simple">
+<li><p><strong>Code formatting and styles</strong>: checks that your code is formatted correctly, by <code class="docutils literal notranslate"><span class="pre">pre-commit.ci</span> <span class="pre">-</span> <span class="pre">pr</span> <span class="pre">check</span></code>.</p></li>
+<li><p><strong>docs build</strong>: checks that the documentation builds correctly, using <code class="docutils literal notranslate"><span class="pre">circleci</span></code>.</p></li>
+</ul>
+<p>You will see the status of these checks in your pull request.</p>
+<figure class="align-default" id="pull-requests-checks-in-github">
+<a class="reference internal image-reference" href="_images/pull-requests-checks.png"><img alt="Pull request checks in GitHub" src="_images/pull-requests-checks.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks are highlighted with a red rectangle.</span><a class="headerlink" href="#pull-requests-checks-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged.</p>
+<figure class="align-default" id="pull-requests-checks-fails-in-github">
+<a class="reference internal image-reference" href="_images/pull-requests-checks-fails.png"><img alt="Pull request checks failed in GitHub" src="_images/pull-requests-checks-fails.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks that failed and the details link are highlighted with a red rectangle.</span><a class="headerlink" href="#pull-requests-checks-fails-in-github" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To get more information about the errors, you can click on the &quot;Details&quot; link next to the failed check.</p>
+</section>
+<section id="what-to-expect-from-the-review-process">
+<h3>レビュープロセスに期待すること<a class="headerlink" href="#what-to-expect-from-the-review-process" title="Link to this heading">#</a></h3>
+<p>Once you submit a pull request, a maintainer of the repository will review your changes and provide feedback. The review process may involve:</p>
+<ul class="simple">
+<li><p><strong>Comments</strong>: the reviewer may leave comments on your pull request to ask questions or provide feedback.</p></li>
+<li><p><strong>Suggestions</strong>: the reviewer may suggest changes to your code or documentation.</p></li>
+<li><p><strong>Approvals</strong>: once the reviewer is satisfied with your changes, they will approve the pull request.</p></li>
+</ul>
+<p>You can make changes to your pull request by pushing new commits to the branch. The pull request will be updated automatically with your new changes.</p>
+<p>Once your pull request is approved, it will be merged into the main branch and your changes will be included in the guide.</p>
+</section>
+</section>
+<section id="additional-help">
+<h2>追加ヘルプ<a class="headerlink" href="#additional-help" title="Link to this heading">#</a></h2>
+<section id="how-to-get-help">
+<h3>助けを求めるには<a class="headerlink" href="#how-to-get-help" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: このセクションには、初心者の投稿者がさらに助けを必要とする場合に備えて、より多くの助けを見つけるためのオプション (イシューの作成、フォーラムへの投稿など) を記述してください。</em></p>
+</section>
+<section id="additional-resources">
+<h3>その他のリソース<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h3>
+<p><em><strong>TODO</strong>: また、GitHubのドキュメントのような初心者向けのドキュメントへのリンクも含める必要があります。</em></p>
+</section>
+</section>
+<section id="annex">
+<h2>付録<a class="headerlink" href="#annex" title="Link to this heading">#</a></h2>
+<section id="code-examples">
+<h3>コード例<a class="headerlink" href="#code-examples" title="Link to this heading">#</a></h3>
+<p>このガイドでは、可能な限り <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude">iteralinclude Sphinx ディレクティブ</a> を使用して、コードと散文を分けています。 ドキュメントで使用するコードは <code class="docutils literal notranslate"><span class="pre">examples/</span></code> フォルダにあります。</p>
+<section id="referencing-code-in-documentation">
+<span id="id1"></span><h4>ドキュメントでコードを参照する<a class="headerlink" href="#referencing-code-in-documentation" title="Link to this heading">#</a></h4>
+<p>使用したい例がドキュメントの他の場所にある場合、 <code class="docutils literal notranslate"><span class="pre">literalinclude</span></code> ディレクティブをそのままコピーすれば、例は同期されたままになります。</p>
+<p>すでに example フォルダに新しいドキュメントに使えそうなコードがある場合は、新しい <code class="docutils literal notranslate"><span class="pre">literalinclude</span></code> を作成して、それをサイトに展開することができます。 動作する <code class="docutils literal notranslate"><span class="pre">literalinclude</span></code> に必要なのはコードへの相対パスだけですが、ほとんどの場合 <code class="docutils literal notranslate"><span class="pre">:language:</span></code> と <code class="docutils literal notranslate"><span class="pre">:lines:</span></code> も指定する必要があります。 前者はコード例をより美しくし、後者は将来的なコードの変更からサンプルを守ることができます。</p>
+<p><strong>プロからのヒント</strong> : <code class="docutils literal notranslate"><span class="pre">:lines:</span></code> の代わりに <code class="docutils literal notranslate"><span class="pre">:start-after:</span></code>, <code class="docutils literal notranslate"><span class="pre">:start-at:</span></code>, <code class="docutils literal notranslate"><span class="pre">:end-before:</span></code>, <code class="docutils literal notranslate"><span class="pre">:end-at:</span></code> オプションもあります。 また、サンプルコードがPythonの場合、 <code class="docutils literal notranslate"><span class="pre">:pyobject:</span></code> を使用すると、コードのリファクタリングがあっても同じドキュメント内容を維持することができます。</p>
+<p>If you need example code that doesn't yet exist in <code class="docutils literal notranslate"><span class="pre">examples/</span></code> see <a class="reference internal" href="#creating-code-for-documentation">creating code for documentation</a>.</p>
+</section>
+<section id="creating-code-for-documentation">
+<span id="id2"></span><h4>ドキュメント用コードの作成<a class="headerlink" href="#creating-code-for-documentation" title="Link to this heading">#</a></h4>
+<p>コードブロックが役立つ場所に出くわしたら、コードフェンス (<code class="docutils literal notranslate"><span class="pre">```</span></code> ブロックテキスト)と一緒にインラインで書く代わりに、独自の形式でファイルとして書くことができます。 あなたの例はすでに存在しているかもしれません; <a class="reference internal" href="#referencing-code-in-documentation">ドキュメントのコードを参照する</a> を参照してください。</p>
+<p>既存のサンプルファイルのどれにも当てはまらない新しいサンプルを追加したい場合は、新しいファイルを作成して <code class="docutils literal notranslate"><span class="pre">literalinclude</span></code> ブロックで参照することができます。 もしそのファイルが既存のサンプルプロジェクトの中にあるのが理にかなっているのであれば、そこに追加してください。そうでなければ、 <code class="docutils literal notranslate"><span class="pre">examples</span></code> ディレクトリに新しいフォルダを作成してください。</p>
+<p>既存の例が不完全であったり、新しい例を既存のファイルに追加することに意味がある場合は、先に進んで追加してください。 可能な限り、例を書き直すのではなく、拡張してください。 例えば、ファイルの最後に新しい関数を追加したり、クラス内の既存のメソッドの後に新しいメソッドを追加したりします。</p>
+<p>例題のコードは正しさをチェックされるので、新しい例題を追加するには、カバレッジのためのテストを追加する必要があるかもしれないし、失敗したテストを修正する必要があるかもしれません。</p>
+<p><em><strong>⚠️ 警告</strong></em>: 既存のサンプル・コードを変更する場合、特にファイルの末尾に追加する以上の変更を加える場合は、細心の注意が必要です。 すべてのコード例は（潜在的に）共有例です。 これにより、ガイド内のサンプルはより一貫したものになりますが、ある特定のユースケースのためにサンプルを修正する場合、アクションが遠のく可能性があります。 もし既存のサンプルを修正することに気づいたら、このコマンドを実行し、新しいビルドでそれらのページをチェックしてみてください。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-lr<span class="w"> </span><span class="s1">&#39;\.\./examples/path/to/modified\.py&#39;</span><span class="w"> </span>documentation/
+</pre></div>
+</div>
+<p>例:</p>
+<p>このようにマークダウンでサンプルコードを書くのではなく</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Here is an example Python function:
+
+<span class="sb">```python</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+<p>python は <code class="docutils literal notranslate"><span class="pre">.py</span></code> ファイルに展開することができます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Here is an example Python function:
+
+:::{literalinclude} ../examples/contributing_example.py
+:language: python
+:lines: 1-2
+</pre></div>
+</div>
+<p>別の例として、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> の一部だけを表示する必要がある場合、我々はすでに完全なプロジェクト定義を持っているので、関連する部分を見つけるだけでよいです。</p>
+<p>こう書く代わりに</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Classifiers are just a list of plain strings
+<span class="sb">```toml</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+<p>例は、既存のtomlファイルから抽出することができます</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: classifiers = [
+:end-at: ]
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tl-dr">TL;DR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-python-packaging-guide-is-structured">Python パッケージングガイドの構成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-approaches-to-contributing">貢献するための2つのアプローチ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forking-the-repository">リポジトリをフォークする</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-via-the-github-website">GitHubウェブサイトを通じて貢献する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-edit-a-markdown-file">MarkDownファイルの編集方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-commit-your-changes">変更をコミットする方法</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-locally-on-your-computer">あなたのコンピュータでローカルに貢献する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-your-forked-repository">フォークしたリポジトリをクローンする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-branch">新しいブランチを作る</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-virtual-environment">仮想環境を作る</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-development-dependencies">開発依存パッケージをインストールする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-your-changes">変更をコミットする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-build-the-guide-locally">ローカルでのガイドのビルド方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-submit-your-pull-request">プルリクエストを提出する前に</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-a-pull-request-with-your-contribution">あなたの貢献のプルリクエストを投稿する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-pull-request">プルリクエストの作り方</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-you-submit-a-pull-request-ci-cd">プルリクエストを提出するとどうなるか(CI/CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect-from-the-review-process">レビュープロセスに期待すること</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-help">追加ヘルプ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-help">助けを求めるには</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">その他のリソース</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annex">付録</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-examples">コード例</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-code-in-documentation">ドキュメントでコードを参照する</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-code-for-documentation">ドキュメント用コードの作成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/CONTRIBUTING.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/CONTRIBUTING.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

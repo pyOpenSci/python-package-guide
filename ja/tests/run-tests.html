@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Run tests for your Python package across Python versions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tests/run-tests.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="Learn how to setup and run tests for your Python package locally on your computer using automation tools such as Nox. Also learn about other tools that scientific Python community members use to run tests." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_run-tests_10f73ac4.png" />
+<meta property="og:image:alt" content="テストを実行することは、パッケージが期待通りに動作していることを確認するために重要です。 テストは、あなたのコンピュータと、Python のバージョンやオペレーティングシステムが異なるユーザのコンピュータで実行されることを考慮するのがよい習慣です。 テストを実行する際には、以下のことを考慮してください: テストスイートは、Python のバージョンとユーザーが使用する可能性のあるオペレーティ..." />
+<meta name="description" content="テストを実行することは、パッケージが期待通りに動作していることを確認するために重要です。 テストは、あなたのコンピュータと、Python のバージョンやオペレーティングシステムが異なるユーザのコンピュータで実行されることを考慮するのがよい習慣です。 テストを実行する際には、以下のことを考慮してください: テストスイートは、Python のバージョンとユーザーが使用する可能性のあるオペレーティ..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Pythonパッケージテストの実行 &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tests/run-tests';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/tests/run-tests.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="継続的インテグレーションによるテストの実行" href="tests-ci.html" />
+    <link rel="prev" title="Pythonパッケージのテストタイプ" href="test-types.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tests/run-tests.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tests/run-tests.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tests/run-tests.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tests/run-tests.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tests/run-tests.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tests/run-tests.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">テストの作成と実行</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write-tests.html">テストを書く</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-types.html">テストの種類</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ローカルでテストを実行する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-ci.html">オンラインでテストを実行する(CIを使用する)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-cov.html">Code coverage</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Pythonパッケージのテストとデータ</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージテストの実行</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="run-python-package-tests">
+<h1>Pythonパッケージテストの実行<a class="headerlink" href="#run-python-package-tests" title="Link to this heading">#</a></h1>
+<p>テストを実行することは、パッケージが期待通りに動作していることを確認するために重要です。 テストは、あなたのコンピュータと、Python のバージョンやオペレーティングシステムが異なるユーザのコンピュータで実行されることを考慮するのがよい習慣です。 テストを実行する際には、以下のことを考慮してください:</p>
+<ol class="arabic simple">
+<li><p>テストスイートは、Python のバージョンとユーザーが使用する可能性のあるオペレーティングシステムを表す環境のマトリックスで実行します。</p></li>
+<li><p>隔離された環境でテストを実行することで、テストとその再現性に自信を持つことができます。 これにより、あなたのコンピュータの設定によってテストがランダムにパスすることがなくなります。 たとえば、あなたのパッケージの依存関係リストで宣言されていない依存関係を、予期せずローカルシステムにインストールしてしまったかもしれません。 このような見落としは、他の人があなたのパッケージを自分のコン ピュータにインストールしたり実行しようとしたときに、問題につながる可能性 があります。</p></li>
+</ol>
+<p>このページでは、隔離された環境でテストを実行したり、Python のバージョンを越えてテストを実行したりするために使えるツールについて学びます。</p>
+<section id="tools-to-run-your-tests">
+<h2>テストを実行するためのツール<a class="headerlink" href="#tools-to-run-your-tests" title="Link to this heading">#</a></h2>
+<p>さまざまな環境でのテストのセットアップと実行を容易にするツールには、3つのカテゴリーがあります:</p>
+<ol class="arabic simple">
+<li><p><strong>テストフレームワーク</strong> とは、テストを書いたり実行したりするための特定の構文やツールのセットを提供するパッケージのことです。 いくつかのテストフレームワークにはプラグインがあり、テストがカバーするコードの範囲を評価するなどの機能を追加することができます。 以下では、科学的なエコシステムで最もよく使われている Python テストフレームワークの一つである <strong>pytest</strong> フレームワークについて学びます。 テストフレームワークは必要不可欠ですが、テストを実行するためだけのものです。 これらのフレームワークは、追加の自動化ツールの助けを借りずに Python のバージョンをまたいだテストを簡単に実行する方法は提供しません。</p></li>
+<li><p><strong>自動化ツール</strong> を使うと、ユーザー定義のコマンドを使って、テストのようなワークフローを特定の方法で実行することを自動化できます。 例えば、1つのコマンドで異なるPythonのバージョンにまたがってテストを実行できると便利です。  <a class="reference external" href="https://nox.thea.codes/en/stable/index.html"><strong>nox</strong></a> や <a class="reference external" href="https://tox.wiki/en/latest/index.html"><strong>tox</strong></a> のようなツールも、Pythonのバージョンをまたいでテストを実行できます。 しかし、noxとtoxだけを使って異なるオペレーティングシステムでビルドをテストするのは難しいでしょう - ここで継続的インテグレーション(CI)の出番です。</p></li>
+<li><p><strong>継続的インテグレーション (CI):</strong> は、テストを実行するために必要な最後のツールです。 CI は、nox や tox を使って作成した自動ビルドを複製して、異なる Python 環境でパッケージを実行できるようにするだけではありません。 また、異なるオペレーティングシステム（Windows、Mac、Linux）でテストを実行することもできます。 <a class="reference internal" href="tests-ci.html"><span class="doc std std-doc">テストを実行するためにCIを使うことについては、ここで説明します</span></a> 。</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="pyos-table table table-center" id="id3">
+<caption><span class="caption-text">テーブル: テスト＆自動化ツール</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>機能</p></th>
+<th class="head"><p>テストフレームワーク (pytest)</p></th>
+<th class="head"><p>テストランナー (Tox)</p></th>
+<th class="head"><p>自動化ツール（Nox）</p></th>
+<th class="head"><p>継続的インテグレーション（GitHub Actions）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>ローカルでテストを実行する</p></th>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>オンラインテストを実行する</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Pythonのバージョンにまたがってテストを実行する</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>隔離された環境でのテストの実行</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>オペレーティングシステム（Windows、MacOS、Linux）にまたがるテストの実行</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>その他の自動化タスクに使用する（ドキュメントの作成など）</p></th>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+<td><p><i class="fa-solid fa-circle-check fa-xl"></i></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="what-testing-framework-package-should-i-use-to-run-tests">
+<h2>テストを実行するには、どのテストフレームワーク/パッケージを使用すればよいですか？<a class="headerlink" href="#what-testing-framework-package-should-i-use-to-run-tests" title="Link to this heading">#</a></h2>
+<p>パッケージテストのビルドと実行には <code class="docutils literal notranslate"><span class="pre">Pytest</span></code> を使うことを推奨します。 Pytest は Python のエコシステムで最もよく使われているテストツールです。</p>
+<p><a class="reference external" href="https://docs.pytest.org/en/latest/">Pytestパッケージ</a> には、以下のような機能を追加するために使用できる多くの拡張機能もあります：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pytest-cov.readthedocs.io/en/latest/">pytest-cov</a> を使うと、テスト中にパッケージのコードカバレッジを分析し、 <a class="reference external" href="https://codecov.io/">codecov</a> にアップロードできるレポートを生成することができます。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>お使いのエディタや IDE には、テストを実行したり、ブレークポイントを設定したり、 <code class="docutils literal notranslate"><span class="pre">-no-cov</span></code> フラグを切り替えたりするための便利な機能が追加されているかもしれません。 詳しくはエディタのドキュメントを参照してください。</p>
+</div>
+</section>
+<section id="run-tests-using-pytest">
+<h2>pytest を使ってテストを実行する<a class="headerlink" href="#run-tests-using-pytest" title="Link to this heading">#</a></h2>
+<p><strong>pytest</strong> を使用している場合、テストをローカルで実行することができます:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code></p>
+<p>また、特定のテストファイル - このファイルを &quot;<code class="docutils literal notranslate"><span class="pre">test_module.py</span></code>&quot; と呼ぶことにします - を実行したい場合は、次のようにします:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">test_module.py</span></code></p>
+<p>詳しくは <a class="reference external" href="https://docs.pytest.org/en/7.1.x/getting-started.html">ドキュメントスタートガイド</a> をご覧ください。</p>
+<p>あなたのコンピュータで pytest を実行すると、現在有効になっている Python 環境でテストが実行されます。 つまり、テストは単一のバージョンのPythonで、ローカルで実行しているオペレーティングシステム上でのみ実行されます。</p>
+<p>自動化ツールは、様々な Python 環境でテストを実行するプロセスを単純化することができます。</p>
+<div class="admonition-tests-across-operating-systems admonition">
+<p class="admonition-title">オペレーティングシステムをまたいだテスト</p>
+<p>異なるオペレーティングシステム間でテストを実行したい場合は、 <a class="reference internal" href="tests-ci.html"><span class="doc std std-doc">継続的インテグレーション。 詳細はこちら</span></a> を使用することができます。</p>
+</div>
+<section id="tools-to-automate-running-your-tests">
+<h3>テストの実行を自動化するツール<a class="headerlink" href="#tools-to-automate-running-your-tests" title="Link to this heading">#</a></h3>
+<p>一つのコマンドで様々な Python のバージョンや特定の環境でテストを実行するには、 <code class="docutils literal notranslate"><span class="pre">nox</span></code> や <code class="docutils literal notranslate"><span class="pre">tox</span></code> のような自動化ツールを使うことができます。 <code class="docutils literal notranslate"><span class="pre">nox</span></code> も <code class="docutils literal notranslate"><span class="pre">tox</span></code> も、隔離された仮想環境を作成することができます。 これにより、複数の環境や Python のバージョンをまたいだテストを簡単に実行することができます。</p>
+<p>このガイドでは、 <a class="reference external" href="https://nox.thea.codes/">Nox</a> に焦点を当てます。 <code class="docutils literal notranslate"><span class="pre">nox</span></code> は Python ベースの自動化ツールで、 <code class="docutils literal notranslate"><span class="pre">make</span></code> と <code class="docutils literal notranslate"><span class="pre">tox</span></code> の機能をベースにしています。 <code class="docutils literal notranslate"><span class="pre">nox</span></code> はテストと開発のワークフローを簡素化し、効率化するように設計されています。 <code class="docutils literal notranslate"><span class="pre">nox</span></code> で行うことはすべて、Pythonベースのインターフェースを使って実装することができます。</p>
+<div class="note admonition">
+<p class="admonition-title">その他の自動化ツール</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://tox.wiki/en/latest/index.html#useful-links">Tox</a></strong> is an automation tool that supports common steps such as building documentation, running tests across various versions of Python, and more.</p></li>
+<li><p><strong><a class="reference external" href="https://github.com/ofek/hatch">Hatch</a></strong> は、hatchlingと呼ばれる人気のあるビルドバックエンドで動作する最新のエンドツーエンドパッケージングツールです。  <code class="docutils literal notranslate"><span class="pre">hatch</span></code> は <code class="docutils literal notranslate"><span class="pre">tox</span></code> のようなセットアップを提供し、異なる Python バージョンを使ってローカルでテストを実行することができます。 パッケージングのワークフローをサポートするために <code class="docutils literal notranslate"><span class="pre">hatch</span></code> を使っているのであれば、 <code class="docutils literal notranslate"><span class="pre">nox</span></code> を使うよりも <code class="docutils literal notranslate"><span class="pre">hatch</span></code> のテスト機能を使った方が良いかもしれない。</p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gnu.org/software/make/manual/make.html"><strong>make:</strong></a> ビルド自動化ツールであるMakeは汎用性が高いため、テストの実行に使う開発者もいます; 特定の言語に縛られることなく、さまざまなビルドプロセスを実行するために使うことができます。しかし、Makeのユニークな構文とアプローチは、特にあなたがまだMakeに慣れていない場合、習得を難しくする可能性があります。Makeはまた、 <strong>nox</strong> がやってくれるような環境管理もしてくれません。</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="run-tests-across-python-versions-with-nox">
+<h2>noxでPythonのバージョンにまたがってテストを実行する<a class="headerlink" href="#run-tests-across-python-versions-with-nox" title="Link to this heading">#</a></h2>
+<p><strong>Nox</strong> は素晴らしい自動化ツールです:</p>
+<ul class="simple">
+<li><p>Pythonベースですので、Pythonをすでに知っていれば利用しやすいです。</p></li>
+<li><p>ワークフローを実行するための隔離された環境を構築します。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">nox</span></code> はテスト環境の作成と管理を簡単にします。 <code class="docutils literal notranslate"><span class="pre">nox</span></code> を使うと、仮想環境をセットアップし、好きな環境マネージャを使って Python のバージョンをまたいだテストをコマンド一つで実行することができます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Noxのインストール</p>
+<p>異なる Python バージョン間でテストを実行するために nox をインストールして使用する場合、nox は nox 関数で指定した Python バージョンごとに個別の <code class="docutils literal notranslate"><span class="pre">venv</span></code> 環境を作成して管理します。</p>
+<p>Noxはそれぞれの環境を独自に管理します。</p>
+</div>
+<p>nox は、ドキュメントのビルド、パッケージ配布の作成、PyPI 関連の環境 (venv や virtualenv など) と <code class="docutils literal notranslate"><span class="pre">conda</span></code> (conda-forge` など) の両方にわたるインストールのテストなど、その他の開発作業にも使用できます。</p>
+<p>noxを使い始めるには、プロジェクトディレクトリのルートに <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> ファイルを作成します。 そして、Pythonの関数を使ってコマンドを定義します。 以下にその例をいくつか挙ます。</p>
+</section>
+<section id="test-environments">
+<h2>テスト環境<a class="headerlink" href="#test-environments" title="Link to this heading">#</a></h2>
+<p>デフォルトでは、 <code class="docutils literal notranslate"><span class="pre">nox</span></code> は Python 組み込みの <code class="docutils literal notranslate"><span class="pre">venv</span></code> 環境マネージャを使用します。 仮想環境 (<code class="docutils literal notranslate"><span class="pre">venv</span></code>) は自己完結型の Python 環境で、異なる Python プロジェクトの依存関係を分離して管理することができます。 プロジェクト固有のライブラリやパッケージが互いに干渉しないようにし、クリーンで整理された開発環境を促進します。</p>
+<p>noxを使ってPythonバージョン3.9、3.10、3.11、3.12の <code class="docutils literal notranslate"><span class="pre">venv</span></code> 環境でテストを実行する例を以下に示します。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>以下のコードが動作するためには、 <code class="docutils literal notranslate"><span class="pre">nox</span></code> が見つけることができる4つのバージョンのPythonがコンピュータにインストールされている必要があることに注意してください。</p>
+</div>
+<section id="nox-with-venv-environments">
+<h3>venv環境のnox<a class="headerlink" href="#nox-with-venv-environments" title="Link to this heading">#</a></h3>
+<p>以下は、Pythonに組み込まれている環境マネージャーである <code class="docutils literal notranslate"><span class="pre">venv</span></code> を使ってテストを実行するようにnoxをセットアップする例です。</p>
+<p>以下の例では、 <a class="reference internal" href="../package-structure-code/declare-dependencies.html"><span class="std std-doc">pipが理解できる方法でテストの依存関係を宣言するように<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>をセットアップする</span></a> ことを前提としていることに注意してください。 そのセットアップの例を以下に示します。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyosPackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;geopandas&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;xarray&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest-cov&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>上記の設定ができていれば、 <code class="docutils literal notranslate"><span class="pre">session.install(&quot;.[tests]&quot;)</span></code> を使ってテストの依存関係をインストールすることができます。 以下のように、1つのnoxセッションで4つの異なるPython環境（Python 3.9、3.10、3.11、3.12）でテストを実行できることに注意してください。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code would live in a noxfile.py file located at the root of your project directory</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nox</span>
+
+<span class="c1"># For this to run you will need to have python3.9, python3.10 and python3.11 installed on your computer. Otherwise nox will skip running tests for whatever versions are missing</span>
+
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="n">python</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3.9&quot;</span><span class="p">,</span> <span class="s2">&quot;3.10&quot;</span><span class="p">,</span> <span class="s2">&quot;3.11&quot;</span><span class="p">,</span> <span class="s2">&quot;3.12&quot;</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+
+    <span class="c1"># install</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s2">&quot;.[tests]&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Run tests</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;pytest&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>上の例では、 <code class="docutils literal notranslate"><span class="pre">&#64;nox.session</span></code> デコレーターを使って関数の形で nox セッションを作成しています。 デコレータの中で、実行したい python のバージョンを宣言していることに注意してください。</p>
+<p>上記を実行するには、 <code class="docutils literal notranslate"><span class="pre">--session</span></code> （ <code class="docutils literal notranslate"><span class="pre">-s</span></code> と短縮されることもある）でセッションを指定し、以下のコマンドを実行します。上記の関数はtestという名前なので、セッション名はtestです。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nox</span> <span class="o">--</span><span class="n">session</span> <span class="n">test</span>
+</pre></div>
+</div>
+</section>
+<section id="nox-with-conda-mamba">
+<h3>conda / mamba による nox<a class="headerlink" href="#nox-with-conda-mamba" title="Link to this heading">#</a></h3>
+<p>以下は、noxが環境マネージャーにmamba（またはconda）を使うように設定する例です。venvと違って、condaは必要なPythonの様々なバージョンを自動的にインストールできることに注意してください。conda/mambaを使う場合は、 <code class="docutils literal notranslate"><span class="pre">venv</span></code> のように4つのPythonバージョンをインストールする必要はありません。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><code class="docutils literal notranslate"><span class="pre">nox</span></code> で <code class="docutils literal notranslate"><span class="pre">conda</span></code> を動作させるには、コンピュータに <code class="docutils literal notranslate"><span class="pre">conda</span></code> か <code class="docutils literal notranslate"><span class="pre">mamba</span></code> のどちらかがインストールされていることを確認する必要があります。</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code should live in your noxfile.py file</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nox</span>
+
+<span class="c1"># The syntax below allows you to use mamba / conda as your environment manager, if you use this approach you don’t have to worry about installing different versions of Python</span>
+
+<span class="nd">@nox</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="n">venv_backend</span><span class="o">=</span><span class="s1">&#39;mamba&#39;</span><span class="p">,</span> <span class="n">python</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3.9&quot;</span><span class="p">,</span> <span class="s2">&quot;3.10&quot;</span><span class="p">,</span> <span class="s2">&quot;3.11&quot;</span><span class="p">,</span> <span class="s2">&quot;3.12&quot;</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_mamba</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Nox function that installs dev requirements and runs</span>
+<span class="sd">    tests on Python 3.9 through 3.12</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Install dev requirements</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">conda_install</span><span class="p">(</span><span class="s2">&quot;.[tests]&quot;</span><span class="p">)</span>
+    <span class="c1"># Run tests using any parameters that you need</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;pytest&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上記のセッションを実行するには、次のようにします:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>--session<span class="w"> </span>test_mamba
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="test-types.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Pythonパッケージのテストタイプ</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tests-ci.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">継続的インテグレーションによるテストの実行</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-run-your-tests">テストを実行するためのツール</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-testing-framework-package-should-i-use-to-run-tests">テストを実行するには、どのテストフレームワーク/パッケージを使用すればよいですか？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests-using-pytest">pytest を使ってテストを実行する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-automate-running-your-tests">テストの実行を自動化するツール</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests-across-python-versions-with-nox">noxでPythonのバージョンにまたがってテストを実行する</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-environments">テスト環境</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nox-with-venv-environments">venv環境のnox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nox-with-conda-mamba">conda / mamba による nox</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tests/run-tests.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tests/run-tests.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

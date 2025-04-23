@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Pythonパッケージに LICENSE と CODE_OF_CONDUCT を追加します。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/add-license-coc.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="前のレッスン では、あなたは: 科学的 Python パッケージの基本的な README.md ファイルを作成しました。 README ファイルにあると便利なコアコンポーネントについて学んだ。 ライセンスとは何か？: ライセンスには、ユーザーがあなたのソフトウェアをどのように使用し、再利用することができるかについての法的な文言が含まれています。あなたのプロジェクトに LICENSE を設定す..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_add-license-coc_8a544b49.png" />
+<meta property="og:image:alt" content="前のレッスン では、あなたは: 科学的 Python パッケージの基本的な README.md ファイルを作成しました。 README ファイルにあると便利なコアコンポーネントについて学んだ。 ライセンスとは何か？: ライセンスには、ユーザーがあなたのソフトウェアをどのように使用し、再利用することができるかについての法的な文言が含まれています。あなたのプロジェクトに LICENSE を設定す..." />
+<meta name="description" content="前のレッスン では、あなたは: 科学的 Python パッケージの基本的な README.md ファイルを作成しました。 README ファイルにあると便利なコアコンポーネントについて学んだ。 ライセンスとは何か？: ライセンスには、ユーザーがあなたのソフトウェアをどのように使用し、再利用することができるかについての法的な文言が含まれています。あなたのプロジェクトに LICENSE を設定す..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Pythonパッケージに LICENSE と CODE_OF_CONDUCT を追加します。 &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/add-license-coc';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/tutorials/add-license-coc.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="PythonパッケージをPyPIに対応させる - pyproject.toml" href="pyproject-toml.html" />
+    <link rel="prev" title="PythonパッケージにREADMEファイルを追加する" href="add-readme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/add-license-coc.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/add-license-coc.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/add-license-coc.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/add-license-coc.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/add-license-coc.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/add-license-coc.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージングチュートリアルのセットアップ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Hatchを知る</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Pythonパッケージとは何ですか？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installable-code.html">コードをインストール可能にする</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">PyPIに公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">conda-forgeに公開する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">プロジェクト情報ファイルとメタデータ</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">README ファイルを追加する</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ライセンスと行動規範の追加</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Hatchを使ってsetup.pyをpyproject.tomlに移行する</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージング 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> と <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> を追加します。</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="add-a-license-code-of-conduct-to-your-python-package">
+<h1>Pythonパッケージに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> と <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> を追加します。<a class="headerlink" href="#add-a-license-code-of-conduct-to-your-python-package" title="Link to this heading">#</a></h1>
+<p><a class="reference internal" href="add-readme.html"><span class="doc std std-doc">前のレッスン</span></a> では、あなたは:</p>
+<p><i class="fa-solid fa-circle-check" style="color: #703c87;"></i> 科学的 Python パッケージの基本的な <code class="docutils literal notranslate"><span class="pre">README.md</span></code> ファイルを作成しました。</p>
+<p><i class="fa-solid fa-circle-check" style="color: #703c87;"></i> <code class="docutils literal notranslate"><span class="pre">README</span></code> ファイルにあると便利なコアコンポーネントについて学んだ。</p>
+<div class="tip admonition">
+<p class="admonition-title">学習目標</p>
+<p>このレッスンで学ぶこと:</p>
+<ol class="arabic simple">
+<li><p>ライセンスを選択し、パッケージリポジトリに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加する方法。</p></li>
+<li><p>パッケージリポジトリに <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイルを追加する方法。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> の出発点として一般的な言語を追加するために、Contributors Covenantのウェブサイトをどのように利用できるか。</p></li>
+</ol>
+</div>
+<section id="what-is-a-license">
+<h2>ライセンスとは何か？<a class="headerlink" href="#what-is-a-license" title="Link to this heading">#</a></h2>
+<p>ライセンスには、ユーザーがあなたのソフトウェアをどのように使用し、再利用することができるかについての法的な文言が含まれています。あなたのプロジェクトに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> を設定するには、次のようにします:</p>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file in your project directory that specifies the license that you choose for your package.</p></li>
+<li><p>Reference that file in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> data where metadata are set.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに追加することで、 <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> がパッケージのメタデータに含まれるようになります。 <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> は GitHub リポジトリのランディングページのインターフェイスでも使用されます。</p>
+<section id="what-license-should-you-use">
+<h3>どのライセンスを使うべきか？<a class="headerlink" href="#what-license-should-you-use" title="Link to this heading">#</a></h3>
+<p>科学的なPythonのエコシステムで最もよく使われるライセンス (MIT[^mit]とBSD-3[^bsd3]) に対応した寛容なライセンスを使うことをお勧めします。 よくわからない場合は、 <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a> で一般的に推奨されているライセンスである MIT を使ってください。</p>
+<div class="admonition-licenses-for-the-scientific-python-ecosystem admonition">
+<p class="admonition-title">科学的Pythonエコシステムのためのライセンス</p>
+<p><a class="reference internal" href="../documentation/repository-files/license-files.html"><span class="doc std std-doc">科学的Pythonエコシステムのライセンスについては、ガイドブックで詳しく説明しています</span></a></p>
+</div>
+</section>
+<section id="where-should-the-license-file-live">
+<h3><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルはどこに置くべきか<a class="headerlink" href="#where-should-the-license-file-live" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルは、パッケージのリポジトリのルートに置く必要があります。 ルートに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> を追加すると、GitHub が魔法のごとく自動的にそれを検出し、GitHub リポジトリ内の <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルへの直接リンクをユーザーに提供します。</p>
+<figure class="align-default" id="github-coc-readme-license-tabs">
+<a class="reference internal image-reference" href="../_images/license-github-root-dir.png"><img alt="pyOpenSci パッケージに採用された SunPy 用のGitHubリポジトリを示す画像。" src="../_images/license-github-root-dir.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">GitHubのランディングページのREADME部分の一番上に、 <code class="docutils literal notranslate"><span class="pre">README</span></code> ファイル、 <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイル、そしてSunPyが使用するライセンスを指定するタブの3つに直接リンクしていることに注目してください。 これらのファイルは標準的な命名規則を使ってプロジェクトディレクトリのルートに置かれているため、GitHubによって発見されます。</span><a class="headerlink" href="#github-coc-readme-license-tabs" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-to-add-a-license-file-to-your-package-directory">
+<h3>パッケージディレクトリに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加する方法<a class="headerlink" href="#how-to-add-a-license-file-to-your-package-directory" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加するにはいくつかの方法があります:</p>
+<ol class="arabic simple">
+<li><p>GitHub で新しいリポジトリを作成すると、そのときに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加するかどうかを尋ねられます。 yes を選ぶと、ファイルを作成してくれます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> は GitHub のguiから <a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository"><i class="fa-brands fa-github"></i>の説明はこちら</a> に従って追加することができます。</p></li>
+<li><p>このレッスンで行っているように、手動でファイルを追加することもできます。</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>以下を含む過去のレッスンを修了した場合</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="installable-code.html"><span class="std std-doc">コードをインストール可能にする</span></a> と</p></li>
+<li><p><a class="reference internal" href="publish-pypi.html"><span class="std std-doc">PyPIへのパッケージの公開</span></a></p></li>
+</ol>
+<p>は、Python パッケージの中に MIT ライセンスのテキストを含む <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルが既にあるということです。 従って、このチュートリアルの次のセクションの <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> の追加に進むことができます。</p>
+<p>あなたのディレクトリにまだ <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルがない場合は、このまま読み進めてください。</p>
+</div>
+</section>
+<section id="how-to-add-a-license-to-your-package-the-manual-way">
+<h3>パッケージに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> を追加する方法 - 手動の方法<a class="headerlink" href="#how-to-add-a-license-to-your-package-the-manual-way" title="Link to this heading">#</a></h3>
+<p>まだ <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルがなく、GitHub や GitLab などのプラットフォームを使っていない場合は、次のようにして <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを作成します。</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> という新しいファイルを作成します。 シェルを使っている場合は:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a `LICENSE` file in your shell</span>
+<span class="o">&gt;</span> <span class="n">touch</span> <span class="n">LICENSE</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://choosealicense.com/">choosealicense.com</a> へ。</p></li>
+<li><p>寛容なライセンスを選択する</p></li>
+<li><p><a class="reference external" href="https://choosealicense.com/licenses/mit/">MITライセンス</a> を使用するよう提案されます。</p></li>
+<li><p>そのライセンステキストを、上記で作成した <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルにコピーしてください。</p></li>
+<li><p>ファイルを保存します。これで完了です！</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">科学的Pythonエコシステムにおけるライセンスの概要</p>
+<p>pyOpenSci <a class="reference internal" href="../documentation/repository-files/license-files.html"><span class="doc std std-doc">パッケージングガイドブック</span></a> では、科学的Pythonエコシステムにおけるライセンスの概要を提供します。 なぜライセンスファイルが重要なのか、どのライセンスファイルが科学ソフトウェアに最もよく使われるのか、正しいライセンスを選択する方法についてレビューします。</p>
+<p>なぜライセンスがオープンソースソフトウェアを保護するために重要なのか、その大まかな概要をお知りになりたい方は、 <a class="reference external" href="https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project">法的側面を概観したこのブログ記事をご覧ください</a></p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-text">GitHubのインターフェイス内に <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加する手順</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+ライセンスの追加: 新しいGitHubリポジトリ</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">GitHub リポジトリを新規作成する際に、GitHub インターフェースから <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加することができます。</p>
+<figure class="align-default" id="github-new-repo">
+<a class="reference internal image-reference" href="../_images/github-new-repo.png"><img alt="GitHub が提供する新しいリポジトリの作成インターフェイスのスクリーンショット。 このインターフェイスの要素は、新しいリポジトリのオーナーとリポジトリ名です。 その下にリポジトリの説明を追加できます。 その下に公開か非公開かを設定できます。 インターフェースの一番下にはAdd a READMEチェックボックスがあり、空白のReadmeファイルを追加してくれます。 一番下には、.gitignoreファイルを追加する行と、ライセンスを選択する行があります。" src="../_images/github-new-repo.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">新規リポジトリ作成時に <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> と <code class="docutils literal notranslate"><span class="pre">README</span></code> ファイルを追加できる GitHub インターフェイスのイメージ。</span><a class="headerlink" href="#github-new-repo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+<code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> を追加する: 既存のGitHubリポジトリ</label><div class="sd-tab-content docutils">
+<p class="sd-card-text">パッケージ用のGitHubリポジトリが既にある場合は、GitHubのインターフェースで新しいファイルを追加することで <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加できます。</p>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository">GitHubのLICENSEページ</a> の指示に従って、リポジトリにライセンスを選択し追加してください。</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>ファイルを追加したら、必ずローカルのgitリポジトリをGitHub.com上のリポジトリと同期してください。これは、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>を実行してローカルブランチを更新することを意味します。</p></li>
+</ul>
+<figure class="align-default" id="view-license">
+<a class="reference internal image-reference" href="../_images/view-license-github.png"><img alt="GItHubインターフェイスでLICENSEファイルがどのように見えるかを示す画像。この画像では、BSD 3-clause New or revised licenseです。そして、そのライセンスが何であるかと、そのライセンスに関連するパーミッションの両方を説明するテキストがあります。画像の下部には、ライセンスの実際のテキストがLICENSEファイルに表示されています。" src="../_images/view-license-github.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">あなたのプロジェクトのGitHubのランディングページで、選ばれた <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> の概要を見ることができます。</span><a class="headerlink" href="#view-license" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</details><p>これで、プロジェクトに<code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>を追加する方法がわかりました。 次は、<code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code>ファイルと、それをパッケージディレクトリに追加する方法を説明します。</p>
+</section>
+</section>
+<section id="what-is-a-code-of-conduct-file">
+<span id="add-coc"></span><h2>code of conduct ファイルとは何ですか？<a class="headerlink" href="#what-is-a-code-of-conduct-file" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイルは、あなたのコミュニティの人々がどのように交流するかのガイドラインを確立するために使用されます。</p>
+<p>このファイルは、あなたのコミュニティが成長するのをサポートするために非常に重要です。 <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> は:</p>
+<ol class="arabic simple">
+<li><p>ソフトウェアリポジトリにおいて、ユーザーやコントリビューターがどのように相互作用するかについてのガイドラインを確立します。</p></li>
+<li><p>あなたが交流の中で望まない否定的な行動を特定します。</p></li>
+</ol>
+<p>行動規範は、困難な会話をモデレーティングする際に参照できるツールとして使うことができます。</p>
+<section id="what-to-put-in-your-code-of-conduct-file">
+<h3><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイルに書くべきこと<a class="headerlink" href="#what-to-put-in-your-code-of-conduct-file" title="Link to this heading">#</a></h3>
+<p>どの言語を <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイルに追加すればよいかわからない場合、 <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/">contributor covenant language</a> を出発点として採用することをお勧します。</p>
+<p><img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> は、 <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルと同様に、プロジェクトディレクトリのルートに置く必要があります。</p>
+</section>
+<section id="how-to-add-a-code-of-conduct-file-to-your-package-directory">
+<h3>パッケージディレクトリに <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイルを追加する方法。<a class="headerlink" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> ファイルがまだ存在しない場合は、リポジトリのルートに追加してください。</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>touch<span class="w"> </span>CODE_OF_CONDUCT.md
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.contributor-covenant.org/">contributor covenant website</a> を訪れ、 <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> ファイルに <a class="reference external" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md">the markdown version of their code of conduct</a> を追加します。 プレースホルダーの情報は必ず記入してください。 本文をよく読み、内容を理解し、同意すること！</p></li>
+</ul>
+<p>これであなたのパッケージディレクトリに行動規範が追加されたことになります。</p>
+<div class="note admonition">
+<p class="admonition-title">行動規範に関するその他のリソース</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project"><i class="fa-brands fa-github"></i> ガイド: <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> ファイル</a></p></li>
+<li><p><a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/repository-files/code-of-conduct-file.html">pyOpenSci パッケージガイド <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> 概要</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="wrap-up">
+<h2><i class="fa-solid fa-hands-bubbles"></i> まとめ<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
+<p>このレッスンと <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">最後のレッスンでは</span></a>, 以下を追加しました:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">README</span></code> ファイル;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルと</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイル。</p></li>
+</ul>
+<p>これらはすべての科学的なPythonパッケージリポジトリに必要な基本的なファイルです。 これらのファイルは、ユーザがあなたのパッケージの使い方を理解し、パッケージメンテナとやりとりするのに役立ちます。</p>
+<p>これからのレッスンでは、あなたは:</p>
+<ul class="simple">
+<li><p>PyPI でのパッケージのビルドと公開をサポートするために <a class="reference internal" href="pyproject-toml.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルにメタデータを追加します</span></a>  。</p></li>
+<li><p>あなたのPythonパッケージの新しいバージョンをテストPyPIに公開して、更新されたメタデータランディングページをプレビューしてください。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="footnotes">
+<h2>脚注<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="mit" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>https://opensource.org/license/mit/</p>
+</aside>
+<aside class="footnote brackets" id="bsd3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>https://opensource.org/license/bsd-3-clause/</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="add-readme.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">PythonパッケージにREADMEファイルを追加する</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pyproject-toml.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">PythonパッケージをPyPIに対応させる - pyproject.toml</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-license">ライセンスとは何か？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-license-should-you-use">どのライセンスを使うべきか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-should-the-license-file-live"><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルはどこに置くべきか</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-file-to-your-package-directory">パッケージディレクトリに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加する方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-license-to-your-package-the-manual-way">パッケージに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> を追加する方法 - 手動の方法</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-code-of-conduct-file">code of conduct ファイルとは何ですか？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-put-in-your-code-of-conduct-file"><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイルに書くべきこと</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-code-of-conduct-file-to-your-package-directory">パッケージディレクトリに <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> ファイルを追加する方法。</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up"><i class="fa-solid fa-hands-bubbles"></i> まとめ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">脚注</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/add-license-coc.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tutorials/add-license-coc.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

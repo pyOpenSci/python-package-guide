@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="CHANGELOG.md ガイド" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/documentation/repository-files/changelog-file.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="はじめに: CHANGELOG.md ドキュメントは、開発者にとってもユーザーにとっても、プロジェクトの進化を追跡するための貴重なリソースとなります。 変更履歴の構造と目的を理解することで、ユーザーや貢献者は各リリースで導入された新機能やバグ修正、その他の変更について常に情報を得ることができます。 CHANGELOG.mdとは？: CHANGELOG.md の主な目的は、新しいリリースごとに..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_documentation_repository-files_changelog-file_e1e33c66.png" />
+<meta property="og:image:alt" content="はじめに: CHANGELOG.md ドキュメントは、開発者にとってもユーザーにとっても、プロジェクトの進化を追跡するための貴重なリソースとなります。 変更履歴の構造と目的を理解することで、ユーザーや貢献者は各リリースで導入された新機能やバグ修正、その他の変更について常に情報を得ることができます。 CHANGELOG.mdとは？: CHANGELOG.md の主な目的は、新しいリリースごとに..." />
+<meta name="description" content="はじめに: CHANGELOG.md ドキュメントは、開発者にとってもユーザーにとっても、プロジェクトの進化を追跡するための貴重なリソースとなります。 変更履歴の構造と目的を理解することで、ユーザーや貢献者は各リリースで導入された新機能やバグ修正、その他の変更について常に情報を得ることができます。 CHANGELOG.mdとは？: CHANGELOG.md の主な目的は、新しいリリースごとに..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>CHANGELOG.md ガイド &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/translations.js?v=91613774"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/repository-files/changelog-file';</script>
+    <script src="../../_static/matomo.js?v=5a92784f"></script>
+    <script src="../../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/documentation/repository-files/changelog-file.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="READMEファイルのガイドラインとリソース" href="readme-file-best-practices.html" />
+    <link rel="prev" title="Pythonパッケージの開発ガイドに含めるべき内容" href="development-guide.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/documentation/repository-files/changelog-file.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/documentation/repository-files/changelog-file.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/documentation/repository-files/changelog-file.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/documentation/repository-files/changelog-file.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/documentation/repository-files/changelog-file.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/documentation/repository-files/changelog-file.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ドキュメントの概要</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ユーザードキュメントの作成</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/get-started.html">ドキュメントの作成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/document-your-code-api-docstrings.html">コードを文書化する(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/create-package-tutorials.html">チュートリアルパッケージの作成</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">コントリビューターとメンテナーのためのドキュメント</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing-file.html">貢献ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development-guide.html">開発ガイド</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">変更履歴ファイル</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">コミュニティドキュメント</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="readme-file-best-practices.html">README ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-of-conduct-file.html">行動規範ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license-files.html">科学的Pythonオープンソースソフトウェアのライセンスファイル</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ドキュメント出版ツール</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/sphinx-python-package-documentation-tools.html">ドキュメント用Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/publish-documentation-online.html">ドキュメントを公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/website-hosting-optimizing-your-docs.html">ウェブサイトのホスティングと最適化</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">オープンソースPythonパッケージのドキュメント</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">CHANGELOG.md ガイド</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="changelog-md-guide">
+<h1>CHANGELOG.md ガイド<a class="headerlink" href="#changelog-md-guide" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>はじめに<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> ドキュメントは、開発者にとってもユーザーにとっても、プロジェクトの進化を追跡するための貴重なリソースとなります。 変更履歴の構造と目的を理解することで、ユーザーや貢献者は各リリースで導入された新機能やバグ修正、その他の変更について常に情報を得ることができます。</p>
+</section>
+<section id="what-is-changelog-md">
+<h2>CHANGELOG.mdとは？<a class="headerlink" href="#what-is-changelog-md" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> の主な目的は、新しいリリースごとにプロジェクトに加えられた注目すべき変更の記録を提供することです。 このドキュメントは、ソフトウェアの各バージョンで何が追加、修正、変更、削除されたかをユーザーが理解するのに役立ちます。</p>
+<p><a class="reference external" href="https://keepachangelog.com/en/1.1.0/">Keep a CHAGELOG.md</a>は、変更ログとは何か、どのように良い変更ログを作成するかを理解するための、シンプルで素晴らしいリソースです。 また、避けるべきことの例も含まれています。</p>
+<div class="tip admonition">
+<p class="admonition-title">Pythonパッケージのバージョン管理とセマンティックバージョニング</p>
+<p>変更履歴ファイルのバックボーンとなるパッケージの重要なコンポーネントは、優れたバージョン管理スキームです。 セマンティック・バージョニングは Python パッケージ全体で広く使われています。</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../package-structure-code/python-package-versions.html"><span class="std std-doc">Python パッケージの新しいバージョンの作成</span></a></p></li>
+<li><p><a class="reference external" href="https://semver.org">セマンティック バージョニング</a></p></li>
+</ul>
+</div>
+</section>
+<section id="why-is-it-important">
+<h2>なぜそれが重要なのか？<a class="headerlink" href="#why-is-it-important" title="Link to this heading">#</a></h2>
+<p>ユーザーや開発者との透明性のあるコミュニケーションには、よく管理された変更履歴が不可欠です。 変更ログは、変更点を文書化し、各リリースでの進捗をハイライトするための一元的なハブとして機能します。 変更履歴を常に最新の状態に保つことで、プロジェクトメンテナはユーザーベースとの信頼を築き、ソフトウェアを改善するというコミットメントを示すことができます。</p>
+</section>
+<section id="what-does-it-include">
+<h2>その内容は？<a class="headerlink" href="#what-does-it-include" title="Link to this heading">#</a></h2>
+<p>changelog.md ファイルの内容は一般的に構造化されたフォーマットに従い、各リリースで導入された変更の詳細を記述します。 正確なフォーマットはプロジェクトの規約によって異なるかもしれませんが、 Python パッケージの changelog でよく見られる要素には以下のようなものがあります：</p>
+<ul class="simple">
+<li><p><strong>Versioning</strong>： セマンティックバージョニング、またはプロジェクトが採用するその他のバージョニングスキームを使って、各リリースのバージョンを明確に識別すること。</p></li>
+<li><p><strong>Release Date</strong>: 各バージョンが公開された日付で、変更のタイムラインのコンテキストを提供します。</p></li>
+<li><p><strong>変更カテゴリー</strong>: 変更を &quot;Added,&quot; &quot;Changed,&quot; &quot;Fixed,&quot; &quot;Removed&quot; などのカテゴリーに整理し、ナビゲーションと理解を容易にします。</p></li>
+<li><p><strong>変更の内容</strong>: 新機能、機能強化、バグフィックス、非推奨機能を含む、各カテゴリーにおける変更点の簡潔な説明。</p></li>
+<li><p><strong>課題またはプルリクエストへのリンク</strong>: 各変更に関連する課題追跡項目またはプルリクエストへの参照で、ユーザーは必要に応じてより詳細な情報にアクセスできます。</p></li>
+<li><p><strong>アップグレード手順</strong>: 最新バージョンへのアップグレード方法に関するガイダンス、注意すべき変更点や移行手順を含みます。</p></li>
+<li><p><strong>コントリビューターの認識</strong>: リリースに多大な貢献をした貢献者を認識し、彼らの努力に対する感謝の気持ちと共同体意識を醸成します。</p></li>
+</ul>
+</section>
+<section id="how-do-maintainers-use-it">
+<h2>メンテナーはどのように使っているのか？<a class="headerlink" href="#how-do-maintainers-use-it" title="Link to this heading">#</a></h2>
+<p>多くの場合、変更履歴を見ることができます:</p>
+<section id="unreleased-section">
+<h3>未リリースセクション<a class="headerlink" href="#unreleased-section" title="Link to this heading">#</a></h3>
+<p>未リリースのコミットは変更履歴の一番上にあり、一般的には <code class="docutils literal notranslate"><span class="pre">Unreleased</span></code> セクションにあります。 ここには、前回のリリース以降にパッケージに追加された新しい修正、更新、機能を追加することができます。</p>
+<p>このセクションは次のようなものです:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Unreleased</span>
+<span class="k">*</span><span class="w"> </span>Fix: Fixed a bug.... more here. (@github_username, <span class="ni">#issuenumber</span>)
+<span class="k">*</span><span class="w"> </span>Add: new feature to... more here. (@github_username, <span class="ni">#issuenumber</span>)
+</pre></div>
+</div>
+</section>
+<section id="release-sections">
+<h3>リリースセクション<a class="headerlink" href="#release-sections" title="Link to this heading">#</a></h3>
+<p>新しいリリースを作る準備ができたら、要素をその新しいリリース番号専用のセクションに移動させることができます。</p>
+<p>この特定のリリースセクションは、未リリースセクションの下に位置し、更新、追加、非推奨、貢献者を含むことができます。</p>
+<p>未発表のセクションは常にファイルの一番上にあり、新しい機能はそこに追加され続けます。 同時に、v1.0のようなバージョンをリリースした後も、すべての機能はその特定のセクションに残ります。</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Unreleased</span>
+
+<span class="gu">## v1.0</span>
+
+<span class="gu">### Updates</span>
+<span class="k">*</span><span class="w"> </span>Fix: Fixed a bug.... more here. (@github_username, <span class="ni">#issuenumber</span>)
+
+<span class="gu">### Additions</span>
+<span class="k">*</span><span class="w"> </span>Add: new feature to ...more here (@github_username, <span class="ni">#issuenumber</span>)
+
+<span class="gu">### Deprecations</span>
+
+<span class="gu">### Contributors to this release</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="what-does-it-look-like">
+<h2>それはどのようなものですか？<a class="headerlink" href="#what-does-it-look-like" title="Link to this heading">#</a></h2>
+<p>この例はpyOpenSci受諾パッケージの <a class="reference external" href="https://github.com/hpi-dhc/devicely/blob/main/CHANGELOG.md">Devicely</a> から来ています。</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Changelog</span>
+All notable changes to this project will be documented in this file.
+
+The format is based on [<span class="nt">Keep a Changelog</span>](<span class="na">https://keepachangelog.com/en/1.0.0/</span>),
+and this project adheres to [<span class="nt">Semantic Versioning</span>](<span class="na">https://semver.org/spec/v2.0.0.html</span>).
+
+<span class="gu">## [Unreleased]</span>
+
+<span class="gu">## [1.1.0] - 2021-08-24</span>
+<span class="k">-</span><span class="w"> </span>removed acceleration magnitude from devicely.EmpaticaReader and devicely.FarosReader since it was out of the scope of the package
+<span class="k">-</span><span class="w"> </span>added more flexibility to missing files (e.g. ACC.csv, EDA.csv) to devicely.EmpaticaReader
+<span class="k">-</span><span class="w"> </span>changed TagsReader to TimeStampReader to be more consistent with the class naming structure in devicely
+<span class="k">-</span><span class="w"> </span>deprecated methods in devicely.SpacelabsReader: set_window and drop_EB
+<span class="k">-</span><span class="w"> </span>fixed issue with the timestamp index and fixed column names in devicely.SpacelabsReader
+
+<span class="gu">## [1.0.0] - 2021-07-19</span>
+<span class="gu">### Added</span>
+<span class="k">-</span><span class="w"> </span>devicely.FarosReader can both read from and write to EDF files and directories
+<span class="k">-</span><span class="w"> </span>devicely.FarosReader has as attributes the individual dataframes (ACC, ECG, ...) and not only the joined dataframe
+
+<span class="gu">### Changed</span>
+<span class="k">-</span><span class="w"> </span>in devicely.SpacelabsReader, use xml.etree from the standard library instead of third-party &quot;xmltodict&quot;
+<span class="k">-</span><span class="w"> </span>switch from setuptools to Poetry
+
+<span class="gu">### Removed</span>
+<span class="k">-</span><span class="w"> </span>removed setup.py because static project files such as pyproject.toml are preferred
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="development-guide.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Pythonパッケージの開発ガイドに含めるべき内容</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="readme-file-best-practices.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">READMEファイルのガイドラインとリソース</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">はじめに</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-changelog-md">CHANGELOG.mdとは？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important">なぜそれが重要なのか？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-include">その内容は？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-maintainers-use-it">メンテナーはどのように使っているのか？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unreleased-section">未リリースセクション</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-sections">リリースセクション</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-it-look-like">それはどのようなものですか？</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/repository-files/changelog-file.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/documentation/repository-files/changelog-file.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

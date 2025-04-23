@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="科学的Pythonオープンソースソフトウェアのライセンスファイル" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="Want to learn how to add a license file to your GitHub repository? Check out this lesson. オープンソースライセンスファイルとは何ですか？: LICENSEファイルというのは、GitHubやGitLabのリポジトリにあるファイルのことです。このファイルには、あなたのパッケージをユーザーが合法的に使う（ある..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_documentation_repository-files_license-files_25c4ff1b.png" />
+<meta property="og:image:alt" content="Want to learn how to add a license file to your GitHub repository? Check out this lesson. オープンソースライセンスファイルとは何ですか？: LICENSEファイルというのは、GitHubやGitLabのリポジトリにあるファイルのことです。このファイルには、あなたのパッケージをユーザーが合法的に使う（ある..." />
+<meta name="description" content="Want to learn how to add a license file to your GitHub repository? Check out this lesson. オープンソースライセンスファイルとは何ですか？: LICENSEファイルというのは、GitHubやGitLabのリポジトリにあるファイルのことです。このファイルには、あなたのパッケージをユーザーが合法的に使う（ある..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>科学的Pythonオープンソースソフトウェアのライセンスファイル &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/translations.js?v=91613774"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/repository-files/license-files';</script>
+    <script src="../../_static/matomo.js?v=5a92784f"></script>
+    <script src="../../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/documentation/repository-files/license-files.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="ドキュメンテーションの構築とホスティングのためのツール" href="../hosting-tools/intro.html" />
+    <link rel="prev" title="CODE_OF_CONDUCT ファイル - Python Packaging" href="code-of-conduct-file.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/documentation/repository-files/license-files.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/documentation/repository-files/license-files.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/documentation/repository-files/license-files.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/documentation/repository-files/license-files.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/documentation/repository-files/license-files.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/documentation/repository-files/license-files.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ドキュメントの概要</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ユーザードキュメントの作成</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/get-started.html">ドキュメントの作成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/document-your-code-api-docstrings.html">コードを文書化する(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../write-user-documentation/create-package-tutorials.html">チュートリアルパッケージの作成</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">コントリビューターとメンテナーのためのドキュメント</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing-file.html">貢献ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development-guide.html">開発ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog-file.html">変更履歴ファイル</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">コミュニティドキュメント</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="readme-file-best-practices.html">README ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-of-conduct-file.html">行動規範ファイル</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">科学的Pythonオープンソースソフトウェアのライセンスファイル</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ドキュメント出版ツール</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/sphinx-python-package-documentation-tools.html">ドキュメント用Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/myst-markdown-rst-doc-syntax.html">myST vs Markdown vs rst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/publish-documentation-online.html">ドキュメントを公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hosting-tools/website-hosting-optimizing-your-docs.html">ウェブサイトのホスティングと最適化</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">オープンソースPythonパッケージのドキュメント</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">科学的Pythonオープンソースソフトウェアのライセンスファイル</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="license-files-for-scientific-python-open-source-software">
+<span id="license-file"></span><h1>科学的Pythonオープンソースソフトウェアのライセンスファイル<a class="headerlink" href="#license-files-for-scientific-python-open-source-software" title="Link to this heading">#</a></h1>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-rounded-pill float-left reference external" href="&lt;https://www.pyopensci.org/about-peer-review/&gt;"><span>Want to learn how to add a license file to your GitHub repository? Check out this lesson.</span></a></p>
+<section id="what-is-a-open-source-license-file">
+<h2>オープンソースライセンスファイルとは何ですか？<a class="headerlink" href="#what-is-a-open-source-license-file" title="Link to this heading">#</a></h2>
+<p>LICENSEファイルというのは、GitHubやGitLabのリポジトリにあるファイルのことです。このファイルには、あなたのパッケージをユーザーが合法的に使う（あるいは使わない）方法が書かれています。</p>
+</section>
+<section id="why-licenses-are-important">
+<h2>ライセンスが重要な理由<a class="headerlink" href="#why-licenses-are-important" title="Link to this heading">#</a></h2>
+<p>ライセンスファイルは、メンテナであるあなたとユーザの両方を保護するため、すべてのオープンソースプロジェクトにとって重要です。 ライセンスファイルは、あなたのユーザとコミュニティの理解を助けます:</p>
+<ol class="arabic simple">
+<li><p>ソフトウェアの利用方法</p></li>
+<li><p>ソフトウェアの再利用や他の目的への転用が可能かどうか</p></li>
+<li><p>プロジェクトに貢献する方法</p></li>
+</ol>
+<p>などなど。</p>
+<p><a class="reference external" href="https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project">科学的なPythonオープンソースパッケージのメンテナであるあなたとユーザの両方を保護するために、ライセンスファイルが重要である理由についてもっと読む</a></p>
+</section>
+<section id="where-to-store-your-license">
+<h2>ライセンスの保管場所<a class="headerlink" href="#where-to-store-your-license" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルは GitHub / GitLab リポジトリのルートに保存してください。</p>
+<p>特定の理由からライセンスファイルの言葉をカスタマイズするメンテナもいます。 しかし、これから始めるのであれば、寛容なライセンスを選択し、GitHubや <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a> のウェブサイトで提供されている法的な言語テンプレートを使うことをお勧めします。</p>
+<p>ライセンスには法的拘束力があるため、法律顧問の指導がない限り、独自のライセンスを作成しようとするのは避けるべきです。</p>
+<section id="use-open-permissive-licenses-when-possible">
+<h3>可能な限りオープンパーミッシブライセンスを使用する<a class="headerlink" href="#use-open-permissive-licenses-when-possible" title="Link to this heading">#</a></h3>
+<p>一般的に、 <a class="reference external" href="https://opensource.org/licenses/">Open Software Initiative (OSI) approved</a>の寛容なライセンスを使用することを推奨します。 もしあなたが<a class="reference external" href="https://www.pyopensci.org/about-peer-review/index.html">査読のためにpyOpenSciにパッケージを提出する</a> のであれば、OSIが承認したライセンスが必要です。</p>
+<div class="admonition-copyleft-licenses admonition">
+<p class="admonition-title">Copyleft licenses</p>
+<p>The other major category of licenses are <a class="reference external" href="https://en.wikipedia.org/wiki/Copyleft">&quot;copyleft&quot; licenses</a>.
+Copyleft licenses require people that use your work to redistribute it with the same (or greater) rights to modify, copy, share, and redistribute it.
+In other words, copyleft licenses prohibit someone taking your work, making a proprietary version of it, and redistributing it without providing the source code so others can do the same.
+Copyleft licenses are &quot;sticky&quot; in that they are designed to ensure that more free software is created.</p>
+<p>The difference between copyleft and permissive licenses is an important cultural divide in free and open source software (e.g., see <a class="footnote-reference brackets" href="#footcite-hunterreclaimingcomputingcommons2016" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, <a class="footnote-reference brackets" href="#footcite-gnuprojectwhatfreesoftware2019" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, <a class="footnote-reference brackets" href="#footcite-gnuprojectwhatcopyleft2022" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>).
+It is important to understand this difference when choosing your license. Copyleft licenses represents the &quot;free&quot; part of &quot;free and open source software&quot;.
+Free and open source software is intrinsically political, and it is important to be aware of power dynamics in computing as well as the practical problems of license compatibility (discussed below).</p>
+</div>
+</section>
+<section id="how-to-choose-a-license">
+<h3>ライセンスの選び方<a class="headerlink" href="#how-to-choose-a-license" title="Link to this heading">#</a></h3>
+<p>To select your license, we suggest that you use GitHub's
+<a class="reference external" href="https://choosealicense.com/">Choose a License tool</a>.</p>
+<p>GitHub リポジトリの新規作成時にライセンスを選択すると、自動的にライセンスファイルのテキストコピーを取得してリポジトリに追加することもできます。 しかし、オンラインプロセスでは希望のライセンスが取得できないこともあります。</p>
+<div class="admonition-license-recommendations-from-the-scipy-package admonition">
+<p class="admonition-title">SciPyパッケージからのライセンス勧告</p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing">The SciPy documentation has an excellent overview of licenses.</a>. One of the key elements
+that these docs recommend is ensuring that the license that you select is
+compatible with licenses used in many parts of the scientific Python ecosystem.
+Below is a highlight of this text which outlines license that are compatible
+with the modified BSD license that SciPy uses.</p>
+<blockquote>
+<div><p>SciPyが使用している修正BSDライセンスと互換性のある他のライセンスは、2-clause BSD、MIT、PSFです。 Licenses are legally binding, as such you should avoid trying to create your own license unless you have the guidance of legal council.互換性のないライセンスは、GPL、Apache、および帰属表示/引用を必要とする、または商用目的での使用を禁止するカスタムライセンスです。</p>
+</div></blockquote>
+<p>If your primary goal is for your code to be used by other, major packages in the scientific ecosystem, we also recommend
+that you consider using either BSD or MIT as your
+license. If you are unsure, the MIT license tends to be a simpler easier-to-understand option.</p>
+</div>
+</section>
+</section>
+<section id="important-make-sure-that-you-closely-follow-the-guidelines-outlines-by-the-license-that-you-chose">
+<h2>重要：選択したライセンスのガイドラインに忠実に従うこと<a class="headerlink" href="#important-make-sure-that-you-closely-follow-the-guidelines-outlines-by-the-license-that-you-chose" title="Link to this heading">#</a></h2>
+<p>どのライセンスも、あなたがパッケージの中でどのようなコードを使うことができるか、また、他の人があなたのパッケージの中のコードをどのように使うことができるか(あるいは使うことができないか)という点で、異なるガイドラインを持っています。</p>
+<p>他のツールやオンラインソースからコードを借用する場合は、使用するコードのライセンスが、あなたがパッケージに選択したライセンスにも準拠していることを確認してください。</p>
+<p>A useful way to think about license compatibility is the distinction between <strong>&quot;inbound&quot;</strong> and <strong>&quot;outbound&quot;</strong> compatibility.
+&quot;Inbound&quot; licenses are those that cover the software you plan to include in your package.
+Your package is protected by an &quot;outbound&quot; license.</p>
+<p><strong>Permissive licenses</strong> like BSD and MIT have few <strong>outbound</strong> restrictions - they can be used in any way by downstream consumers, including making them proprietary.
+This is why they are favored by many businesses and large packages that want to be adopted by businesses.
+Permissive licenses have more <strong>inbound</strong> restrictions - they can't use software that requires more freedoms to be preserved than they do, like copyleft licenses.
+A package licensed under MIT needs to take special care when including or modifying a package licensed under the GPL-3.</p>
+<p><strong>Copyleft licenses</strong> like GPL-3 have more <strong>outbound</strong> restrictions - they require more of packages that include, use, modify, and reproduce them.
+This is the purpose of copyleft licenses, to ensure that derivative works remain free and open source.
+They have fewer <strong>inbound</strong> restrictions - a GPL-3 licensed package can include any other permissively licensed and most copyleft licensed packages.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Compatible</p></th>
+<th class="head"><p>Dependency <br> (&quot;Inbound&quot;)</p></th>
+<th class="head"><p>Your Package</p></th>
+<th class="head"><p>Downstream Package <br> (&quot;Outbound&quot;)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p>Permissive</p></td>
+<td><p>Permissive</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-x" style="color: Crimson"></i></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Permissive</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p></p></td>
+<td><p>Permissive</p></td>
+<td><p>Permissive</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p></p></td>
+<td><p>Permissive</p></td>
+<td><p>Copyleft</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p>Permissive</p></td>
+<td><p>Copyleft</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Copyleft</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><i class="fa-solid fa-x" style="color: Crimson"></i></p></td>
+<td><p></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Permissive</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><i class="fa-solid fa-check" style="color: MediumSeaGreen"></i></p></td>
+<td><p></p></td>
+<td><p>Copyleft</p></td>
+<td><p>Copyleft</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note admonition">
+<p class="admonition-title">ライセンスがコードの再利用を決定する例</p>
+<p>StackOverflowを例に、ライセンスによってコードの使用可否がどのように決まるかを明らかにしましょう。</p>
+<p><a class="reference external" href="https://stackoverflow.com/help/licensing">Stack Overflow uses a Creative Commons Share Alike license.</a>. The sharealike license requires you to use the same sharealike license when you reuse any code from Stack Overflow.</p>
+<p>This means that from a legal perspective, if you copy code from the Stack Overflow website and use it in your package that is licensed differently, say with a MIT license, you are violating Stack Overflow's license requirements!
+This would not be true with a GPL licensed package. <code class="docutils literal notranslate"><span class="pre">GPL-3</span></code> packages can include code licensed by <code class="docutils literal notranslate"><span class="pre">CC-BY-SA</span></code> <a class="footnote-reference brackets" href="#footcite-creativecommonssharealikecompatibilitygplv32015" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<p>🚨 慎重に進め！ 🚨</p>
+</div>
+</section>
+<section id="what-about-software-citation">
+<h2>ソフトウェアの引用についてはどうだろうか？<a class="headerlink" href="#what-about-software-citation" title="Link to this heading">#</a></h2>
+<p>While many permissive licenses do not require citation we STRONG encourage that you cite all software that you use in papers, blogs and other publications. You tell your users how to cite your package by using a <a class="reference external" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files">citation.cff file</a>. We will cover this topic when we talk about creating DOI's for your package using Zenodo.</p>
+<!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with Zenodo (do they work??) will the citation info update with a new Zenodo link
+
+These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. If it's not dynamic it could be problematic
+
+-->
+</section>
+</section>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<div class="docutils container" id="id5">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-hunterreclaimingcomputingcommons2016" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Rob Hunter. Reclaiming the Computing Commons. <em>Jacobin</em>, May 2016. URL: <a class="reference external" href="https://jacobin.com/2016/02/free-software-movement-richard-stallman-linux-open-source-enclosure/">https://jacobin.com/2016/02/free-software-movement-richard-stallman-linux-open-source-enclosure/</a> (visited on 2023-03-09).</p>
+</aside>
+<aside class="footnote brackets" id="footcite-gnuprojectwhatfreesoftware2019" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>GNU Project. What is Free Software? July 2019. URL: <a class="reference external" href="https://www.gnu.org/philosophy/free-sw.html">https://www.gnu.org/philosophy/free-sw.html</a> (visited on 2024-03-01).</p>
+</aside>
+<aside class="footnote brackets" id="footcite-gnuprojectwhatcopyleft2022" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>GNU Project. What is Copyleft? January 2022. URL: <a class="reference external" href="https://www.gnu.org/copyleft/">https://www.gnu.org/copyleft/</a> (visited on 2024-03-01).</p>
+</aside>
+<aside class="footnote brackets" id="footcite-creativecommonssharealikecompatibilitygplv32015" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Creative Commons. ShareAlike compatibility: GPLv3. September 2015. URL: <a class="reference external" href="https://wiki.creativecommons.org/wiki/ShareAlike\_compatibility:\_GPLv3">https://wiki.creativecommons.org/wiki/ShareAlike\_compatibility:\_GPLv3</a> (visited on 2024-03-02).</p>
+</aside>
+</aside>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="code-of-conduct-file.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">CODE_OF_CONDUCT ファイル - Python Packaging</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../hosting-tools/intro.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">ドキュメンテーションの構築とホスティングのためのツール</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">科学的Pythonオープンソースソフトウェアのライセンスファイル</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-open-source-license-file">オープンソースライセンスファイルとは何ですか？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-licenses-are-important">ライセンスが重要な理由</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-store-your-license">ライセンスの保管場所</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-open-permissive-licenses-when-possible">可能な限りオープンパーミッシブライセンスを使用する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-a-license">ライセンスの選び方</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-make-sure-that-you-closely-follow-the-guidelines-outlines-by-the-license-that-you-chose">重要：選択したライセンスのガイドラインに忠実に従うこと</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-software-citation">ソフトウェアの引用についてはどうだろうか？</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/documentation/repository-files/license-files.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/documentation/repository-files/license-files.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

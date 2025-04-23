@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Pythonパッケージング 101" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/intro.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="初心者にやさしいチュートリアル pyOpenSci Pythonパッケージングチュートリアルシリーズへようこそ。 これからのページのレッスンは、Pythonパッケージを作成するために必要なコアステップを説明します。 パッケージングチュートリアルのレッスンを示す図。Pythonパッケージとは何か、コードをpipでインストール可能にする、パッケージをPyPIに公開する、READMEとLICENS..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_intro_d4b5f9e6.png" />
+<meta property="og:image:alt" content="初心者にやさしいチュートリアル pyOpenSci Pythonパッケージングチュートリアルシリーズへようこそ。 これからのページのレッスンは、Pythonパッケージを作成するために必要なコアステップを説明します。 パッケージングチュートリアルのレッスンを示す図。Pythonパッケージとは何か、コードをpipでインストール可能にする、パッケージをPyPIに公開する、READMEとLICENS..." />
+<meta name="description" content="初心者にやさしいチュートリアル pyOpenSci Pythonパッケージングチュートリアルシリーズへようこそ。 これからのページのレッスンは、Pythonパッケージを作成するために必要なコアステップを説明します。 パッケージングチュートリアルのレッスンを示す図。Pythonパッケージとは何か、コードをpipでインストール可能にする、パッケージをPyPIに公開する、READMEとLICENS..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Pythonパッケージング 101 &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/intro';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/tutorials/intro.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Hatchを知る" href="get-to-know-hatch.html" />
+    <link rel="prev" title="pyOpenSci Pythonパッケージガイド" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/intro.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/intro.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/intro.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/intro.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/intro.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/intro.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージングチュートリアルのセットアップ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Hatchを知る</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pythonパッケージとは何ですか？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installable-code.html">コードをインストール可能にする</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">PyPIに公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">conda-forgeに公開する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">プロジェクト情報ファイルとメタデータ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">README ファイルを追加する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Hatchを使ってsetup.pyをpyproject.tomlに移行する</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージング 101</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="python-packaging-101">
+<span id="packaging-101"></span><h1>Pythonパッケージング 101<a class="headerlink" href="#python-packaging-101" title="Link to this heading">#</a></h1>
+<p><em>初心者にやさしいチュートリアル</em></p>
+<p>pyOpenSci Pythonパッケージングチュートリアルシリーズへようこそ。 これからのページのレッスンは、Pythonパッケージを作成するために必要なコアステップを説明します。</p>
+<figure class="align-default" id="packaging-outline">
+<a class="reference internal image-reference" href="../_images/packaging-101-outline.png"><img alt="パッケージングチュートリアルのレッスンを示す図。Pythonパッケージとは何か、コードをpipでインストール可能にする、パッケージをPyPIに公開する、READMEとLICENSEファイルを追加する、PyPI用のメタデータを追加する、最後にconda forgeに公開する、の6つです。" src="../_images/packaging-101-outline.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">このレッスンは、Pythonのパッケージングを始めるのに役立つ一連のレッスンの最初のものです。</span><a class="headerlink" href="#packaging-outline" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="who-are-these-tutorials-for">
+<h2>このチュートリアルは誰のためのものですか？<a class="headerlink" href="#who-are-these-tutorials-for" title="Link to this heading">#</a></h2>
+<p>このチュートリアルシリーズの内容は初心者に優しく、Pythonパッケージを作成したことがないことを前提としています。 しかし、Pythonパッケージの作成に関わるステップをよりよく理解することに興味があるのであれば、このコンテンツはまだ価値があるでしょう。</p>
+<ul class="simple">
+<li><p>このシリーズでは、 <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a> にパッケージを公開するために必要なコアな要素について学びます。</p></li>
+<li><p>第2シリーズでは、パッケージのメンテナンスをサポートするために必要なインフラとドキュメントについて学びます。</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">学習目標</p>
+<p>このレッスンでは Python パッケージの基本的な構成要素を紹介します。 このレッスンを読めば、次のことがわかります:</p>
+<ul class="simple">
+<li><p>Pythonパッケージとは何かを理解する</p></li>
+<li><p>Pythonパッケージの5つのコアコンポーネントを列挙できます</p></li>
+<li><p>一般化可能なコードと特定の科学的アプリケーションをサポートするコードの違いを説明できます。</p></li>
+</ul>
+</div>
+</section>
+<section id="what-is-a-python-package">
+<span id="what-is-a-package"></span><h2>Pythonパッケージとは何ですか？<a class="headerlink" href="#what-is-a-python-package" title="Link to this heading">#</a></h2>
+<p>高レベルでは、Pythonパッケージは、様々なタスクを実行するために使用できるツールボックスと考えることができます。</p>
+<p>Pythonパッケージは基本的に特定のファイル構造を持つディレクトリです。 パッケージのディレクトリ構造の中に、<code class="docutils literal notranslate"><span class="pre">.py</span></code> で終わるファイル(Pythonスクリプトで見られるのと同じ拡張子)のモジュールがあります。これらのモジュールによって、Pythonコードをグループ化し、構造化することができます。各モジュールには関数とクラスが含まれており、それらはあなたの道具箱の中の道具だと考えることができます。</p>
+<figure class="align-default" id="python-toolbox">
+<a class="reference internal image-reference" href="../_images/toolbox.png"><img alt="ハンマーやノコギリなど、さまざまな工具が入った工具箱のスケッチを示す図。" src="../_images/toolbox.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">パッケージとは、コーディングツールが詰まった道具箱のようなものだと考えることができます。 ツールは関数かもしれないし、クラスかもしれません。 それぞれのツールは特定のことをよくします。</span><a class="headerlink" href="#python-toolbox" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="python-packages-are-installable">
+<h3>Pythonパッケージはインストール可能<a class="headerlink" href="#python-packages-are-installable" title="Link to this heading">#</a></h3>
+<p>パッケージはインストール可能で、パッケージのコード内の機能をどのPython環境にも追加でき、NumPyやMatplotlibのような科学的なPythonのコアパッケージをインポートするように、その機能をインポートできます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+</pre></div>
+</div>
+<p>パッケージを環境にインストールすることで、異なるプロジェクト間でのコードの管理と再利用が容易になる。あなたのコードをパッケージとして構造化することは、あなたが作成したツールボックスのツールを共有し、他の人がそれを使って構築できるようにするために必要な最初のステップです。</p>
+</section>
+</section>
+<section id="why-create-a-python-package">
+<span id="package-benefits"></span><h2>なぜPythonパッケージを作るのか？<a class="headerlink" href="#why-create-a-python-package" title="Link to this heading">#</a></h2>
+<p>Pythonパッケージを作りたいから作るかもしれません:</p>
+<ul class="simple">
+<li><p><strong>異なるプロジェクト間でコードを使用する:</strong> 最も基本的なレベルでは、パッケージを作成することで、あなたのコードをPython環境にインストールすることができます。 これにより、ローカルとクラウドの両方のワークフローに関数やクラスをインポートすることができます。</p></li>
+<li><p><strong>Share your code:</strong> PyPIやcondaのような公開リポジトリでパッケージを公開する場合、 あなたのパッケージは、pipやcondaを使ってどのマシンにもコマンドひとつでインストールできます。</p></li>
+<li><p><strong>コードの周りにコミュニティを構築する:</strong> パッケージは、 (特にGitHubで公開されている場合) 複数の人が同じプロジェクトで作業することを容易にします。 git (GitHubで使われているシステム) のようなバージョン管理システムを使えば、コードベースへの長期的な変更を追跡するのがさらに簡単になる。 issueやプルリクエストのようなツールは、外部のユーザーがバグ修正に貢献したり、コードベースへの変更を受け入れるためのレビュープロセスを確立したりすることを容易にします。</p></li>
+<li><p><strong>コードを整理する:</strong> パッケージは、大規模なコード・プロジェクトを整理し、より小さく管理しやすいコンポーネントに分割するために使用できます。 この構造は、コードベースを維持する上でも、理解しやすくする上でも役立ちます。</p></li>
+</ul>
+<section id="what-to-consider-before-you-create-a-package">
+<h3>パッケージを作成する前に考慮すべきこと<a class="headerlink" href="#what-to-consider-before-you-create-a-package" title="Link to this heading">#</a></h3>
+<p>他の人が使うPythonパッケージを作るには、かなりの時間と労力がかかります。 始める前に、以下のような目標について考えてください:</p>
+<ul class="simple">
+<li><p>あなたのパッケージを利用すると思われる人</p></li>
+<li><p>人々があなたのパッケージをどのように使うか、またどのようなデータについて使うか（データが関連する場合）</p></li>
+<li><p>ドキュメントやテストなどを追加する時間があるかどうか</p></li>
+<li><p>メンテナンスできる可能性のある期間: いったん人々があなたのパッケージを使い始めると、彼らはそれを更新し、バグを修正し、質問に答えるために、あなたのメンテナチームに依存することになることを忘れないでください。</p></li>
+</ul>
+<p>ユーザー向けのパッケージを作成する前に、上記のすべてを考慮することが重要です。</p>
+</section>
+</section>
+<section id="the-elements-of-a-python-package">
+<h2>Pythonパッケージの要素<a class="headerlink" href="#the-elements-of-a-python-package" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="package-components">
+<a class="reference internal image-reference" href="../_images/package-components.png"><img alt="図......これが残ればもっとここに。" src="../_images/package-components.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Pythonパッケージの要素には、コード、ドキュメント、テスト、OSIが承認したライセンス、インフラが含まれます。 メインテナーは、バグを修正し、ユーザーの懸念に対処しながら、すべてが機能し、最新であることを確認する中核を担っています。</span><a class="headerlink" href="#package-components" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Pythonパッケージの核となる要素は以下の通りです:</p>
+<ul class="simple">
+<li><p><strong>コード:</strong> パッケージのユーザーに機能を提供する関数とクラス</p></li>
+<li><p><strong>ドキュメンテーション:</strong> インストール手順、チュートリアル、サンプルは、ユーザがあなたのパッケージを使い始めるのを助け、貢献者やメンテナがバグを修正し、パッケージを保守するのを助けます。</p>
+<ul>
+<li><p><strong>CONTRIBUTING.md</strong> ファイル形式の貢献者ドキュメンテーションは、人々があなたのパッケージに貢献するのを助けるのに便利です。</p></li>
+<li><p>Development Documentation は、メンテナと貢献者の両方が、パッケージのインフラストラクチャをどのように保守するかを理解するのに役立ちます。</p></li>
+</ul>
+</li>
+<li><p><strong>テスト:</strong> これは、あなたのコードが本来の機能を発揮し、あなたや他の人が貢献しやすくなるようにするものです、 将来的にコードを修正更新します</p></li>
+<li><p><strong>ライセンス:</strong> オープンソースライセンス、あるいは <a class="reference external" href="https://opensource.org/licenses/">OSI認可</a> ライセンスとは、他の人があなたのパッケージを使うことを許可するライセンスのことです。また、パッケージの要素をどのように再利用できるか、また再利用できないかに関する法的な方向性も示しています。</p></li>
+<li><p><strong>インフラ</strong> 更新、公開ワークフロー、テストスイートの実行を自動化します。 インフラストラクチャーには、GitHubやGitLabのようなプラットフォーム、noxやtoxのようなローカルでテストやツールを実行するツール、パッケージメンテナンスのステップを自動化する継続的インテグレーションなど、一連のものが含まれます。</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">pyOpenSciがパッケージで探すもの</p>
+<p>pyOpenSciは、査読のために提出されたパッケージに対して、 <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template">最初のエディタチェック</a> を行います。 これらのチェックは、パッケージを作成する際に、パッケージが持つべきものの基準として役に立つかもしれません。</p>
+</div>
+</section>
+<section id="packages-are-more-than-just-code-infrastructure">
+<h2>パッケージは単なるコードではありません - インフラストラクチャー<a class="headerlink" href="#packages-are-more-than-just-code-infrastructure" title="Link to this heading">#</a></h2>
+<p>どの言語でも、パッケージは単なるコードではありません。 自分以外の人があなたのパッケージを使うことを期待するのであれば、高品質のコードを書くだけでなく、パッケージが有用なコミュニティリソースとなるための様々な要素も考慮すべきです。</p>
+<section id="version-control-and-storing-your-package-on-github-or-gitlab">
+<h3>GitHubまたはGitLabでのバージョン管理とパッケージの保存<a class="headerlink" href="#version-control-and-storing-your-package-on-github-or-gitlab" title="Link to this heading">#</a></h3>
+<p>ほとんどのPythonパッケージは、GitHubやGitLabのようなオンラインバージョン管理プラットフォームにあります。 GitHubとGitLabはどちらもバージョン管理のために <a class="reference external" href="https://git-scm.com/">git</a> を実行しています。 ソフトウェアをバージョン管理下に置くことは、時間の経過に伴う変更を追跡する一方で、コードベースへの変更が予期せず何かを壊してしまった場合に、履歴をさかのぼって変更を取り消すことができるからです。</p>
+<p>あなたのパッケージをGitHubやGitLabで公開することで、あなたはコードを公開することになります。 これは、他の人があなたのコードを見ることができ、プルリクエスト(GitHub)/マージリクエスト(GitLab)/コードレビューワークフローを使って貢献することもできることを意味します。</p>
+<div class="tip admonition">
+<p class="admonition-title">GitHub &amp; GitLab vs. Git</p>
+<p>GitHubとGitLabは、バックエンドで <code class="docutils literal notranslate"><span class="pre">git</span></code> (バージョン管理ソフトウェア) を実行するオンライン (クラウド) プラットフォームです。 コンピュータ上でローカルに git を実行すると、GitHub や GitLab にファイルをアップロード (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>) したりダウンロード (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>) したりすることができます。</p>
+</div>
+</section>
+<section id="issues-or-ticket-trackers">
+<h3>issue かチケットトラッカー<a class="headerlink" href="#issues-or-ticket-trackers" title="Link to this heading">#</a></h3>
+<p>GitHubとGitLabは、どちらもissueのようなコミュニティ機能を提供しています：</p>
+<ul class="simple">
+<li><p>メンテナや貢献者コミュニティとのコミュニケーション</p></li>
+<li><p>ユーザーによるバグ報告、質問、新機能のリクエスト</p></li>
+<li><p>あなたのパッケージのために取り組みたい機能強化や機能を公的に追跡することができます。</p></li>
+</ul>
+</section>
+<section id="continuous-integration-and-continuous-deployment">
+<h3>継続的インテグレーションと継続的デプロイメント<a class="headerlink" href="#continuous-integration-and-continuous-deployment" title="Link to this heading">#</a></h3>
+<p>GitHubとGitLabは、継続的インテグレーションと継続的デプロイメント (CI/CD) も提供しています。継続的インテグレーション (CI) とは、特定のイベントが発生したときに特定のジョブを自動的に実行するプラットフォームのことを指し、継続的デプロイメント (CD)とは、実行や構築だけでなく、最終的なアウトプットをどこかに公開することを指すCIの拡張です。</p>
+<p><strong>継続的インテグレーションの例:</strong></p>
+<ul class="simple">
+<li><p>誰かがあなたのコードに変更を加えた場合、あなたのテストは異なるオペレーティングシステム上で実行され、コードはフォーマットの問題がないかチェックされます。</p></li>
+</ul>
+<p><strong>継続的デプロイの例:</strong></p>
+<ul class="simple">
+<li><p>PyPIにパッケージをリリースする準備ができたら、リリース時に継続的デプロイ操作をトリガーしてパッケージをPyPIに公開することがあります。</p></li>
+</ul>
+<p>統合されたCI/CDは、コードの変更が予期せぬ事態を引き起こさないよう、ソフトウェアの保守を支援します。 また、コードに新しい変更が加えられるたびに、コードのスタイルや書式の一貫性を維持するのにも役立ちます。</p>
+<figure class="align-default" id="packaging-workflow">
+<a class="reference internal image-reference" href="../_images/packaging-lifecycle1.png"><img alt="図......これが残ればもっとここに。" src="../_images/packaging-lifecycle1.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">科学的Pythonパッケージのライフサイクル。</span><a class="headerlink" href="#packaging-workflow" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="when-should-you-turn-your-code-into-a-python-package">
+<h2>あなたのコードをPythonパッケージにするタイミングは？<a class="headerlink" href="#when-should-you-turn-your-code-into-a-python-package" title="Link to this heading">#</a></h2>
+<p>どのようなコードをPythonのパッケージにして、GitHubに置き、PyPIやconda-forgeに公開すればいいのか、疑問に思うかもしれません。</p>
+<p>考慮すべき使用例がいくつかあります:</p>
+<ol class="arabic simple">
+<li><p><strong>自分用の基本パッケージを作ります:</strong> 個人的に使用するためにパッケージを作成したいこともあるでしょう。 これは、コードをローカルにpipでインストールできるようにすることを意味するかもしれませんし、GitHubに公開したいと思うかもしれません。その場合、他の人があなたのコードを使うことを期待していないので、パッケージを更新する必要がある場合に、あなた自身と将来の自分のためのドキュメントしか用意できないかもしれません。</p></li>
+</ol>
+<blockquote>
+<div><p>この種のパッケージの例としては、いくつかのプロジェクトにまたがって有用な関数のセットを書くことができます。 これらの機能をすべてのプロジェクトで利用できれば便利でしょう。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>コミュニティ向けパッケージの作成:</strong> また、自分だけでなく他の人にとっても有用なコードを作成することもあるでしょう。 その場合は、パッケージを作成してGitHubで公開し、他のユーザーもそれを使うかもしれないので、CI/CDパイプラインや課題トラッカーなどのGitHubのインフラを利用することも検討できるでしょう。あなたのパッケージを他の人たちにも使ってもらいたいので、LICENSE情報、ユーザーや貢献者のための文書、テストも含めておきたいです。 このタイプのパッケージはPyPIに公開されることが多いです。</p></li>
+</ol>
+<p>例えば、すべての <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSciパッケージ</a> は、メンテナ以外の読者を想定して公開されています。</p>
+<section id="packages-that-you-expect-others-to-use-should-be-well-scoped">
+<h3>他の人が使用することを想定しているパッケージは、十分なスコープを持つべきです。<a class="headerlink" href="#packages-that-you-expect-others-to-use-should-be-well-scoped" title="Link to this heading">#</a></h3>
+<p>Pythonパッケージのコードは、特定のテーマやユースケースにフォーカスしているのが理想的です。 このテーマは、パッケージの内容に幅を持たせる方法として重要です。</p>
+<p>自分のコードが、いつ他の人に広く役立つものになるかを決めるのは、難しいことです。 しかし、自分自身に問いかけることができる質問が一つあります。それは、あなたのコードは特定の研究プロジェクトのために書かれたものですか？あるいは、あなたのドメインにおける複数のプロジェクトにまたがるより広範な応用が可能でしょうか？</p>
+<div class="note admonition">
+<p class="admonition-title">研究プロジェクトのコードとの関連は？</p>
+<p><a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/compendia.html">Research Compendium</a> とは、特定の研究プロジェクトをサポートするコード、データ、文書を整理したものです。 研究で使用された方法、データ、分析の包括的な記録を提供することで、研究の再現性と透明性を高めることを目的としています。</p>
+<p>Pythonパッケージは、特定のタスクを実行するために使用できるモジュールのコレクションです。 これらのタスクは、数多くのワークフローに適用できるはずです。 そのため、Pythonパッケージは、特定のプロジェクトをサポートするResearch Compendiumよりも汎用性が高いです。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510"><code class="docutils literal notranslate"><span class="pre">科学的コンピューティングにおける十分なプラクティス</span></code> について読む</a></p></li>
+<li><p><a class="reference external" href="https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-self/">リサーチコンペンディア (レポパックとも呼ばれる) については、こちらのブログ記事で詳しくご紹介しています。</a></p></li>
+</ul>
+</div>
+<p>以下はよくスコープされたpyOpenSciパッケージの例です:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://crowsetta.readthedocs.io/en/latest/">Crowsetta</a>: は、動物の発声や生物音響データの注釈付けを行うために設計されたパッケージです。このパッケージは、ユーザー固有の研究ワークフローに関連する特定の個々の研究アプリケーションに焦点を当てるのではなく、科学者がさまざまなタイプの生体音響データを処理するのを支援します。</p></li>
+<li><p><a class="reference external" href="https://www.union.ai/pandera">Pandera</a> もまた、より広く使われているPythonパッケージです。 Panderaはデータの検査をサポートしているため、広範な研究用途にも使用できます。</p></li>
+</ul>
+<div class="admonition-matplotlib-as-an-example admonition">
+<p class="admonition-title">例としてのMatplotlib</p>
+<p>大規模なユーザーでは、Matplotlibが良い例です。 Matplotlibは一つのことをとてもよくやってくれます:</p>
+<p><em>データの視覚的なプロットを作成します。</em></p>
+<p>Matplotlibは、何千人もの人々が、様々な種類のデータを使った様々なプロットアプリケーションに利用しています。 Matplotlibのような広範なアプリケーションと大規模なユーザーベースを持つ科学パッケージはほとんどないでしょうが、自分のパッケージが何をするのかを調べるという考え方は依然として重要です。</p>
+</div>
+</section>
+<section id="code-should-also-be-clean-readable-documented">
+<h3>コードはまた、クリーンで読みやすく、文書化されていなければなりません。<a class="headerlink" href="#code-should-also-be-clean-readable-documented" title="Link to this heading">#</a></h3>
+<p>パッケージ内のコードもまた、クリーンで読みやすく、十分に文書化されていなければなりません。</p>
+<p><strong>クリーンコード:</strong> クリーンなコードとは、表現力豊かな変数名を使い、簡潔で、繰り返しのないコードを指す。きれいなコードのためのベストプラクティスについては、今後のpyOpenSciチュートリアルで学ぶことができます。</p>
+<p><strong>読みやすいコード:</strong> 読みやすいコードとは、一貫したスタイルで書かれたコードのことです。blackやflake8などのリンターやコードフォーマッターを使用することで、パッケージ全体の一貫性を確保することができます。 <a class="reference internal" href="../package-structure-code/code-style-linting-format.html"><span class="doc std std-doc">コードフォーマッタの詳細はこちらです。</span></a></p>
+<p><strong>文書化されたコード:</strong> ドキュメント化されたコードは、ユーザーがコード内の関数やメソッドが何をするのか、また各関数の入出力要素が何なのかを理解するのに役立つdocstringを使って記述されます。 <a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html"><span class="doc std std-doc">docstringsについては、こちらのガイドで詳しく説明しています。</span></a></p>
+</section>
+</section>
+<section id="making-your-package-installable-publishing-to-pypi-conda-forge">
+<h2>パッケージをインストール可能にします - PyPIとconda-forgeに公開します<a class="headerlink" href="#making-your-package-installable-publishing-to-pypi-conda-forge" title="Link to this heading">#</a></h2>
+<section id="python-packages-and-environments">
+<h3>Pythonのパッケージと環境<a class="headerlink" href="#python-packages-and-environments" title="Link to this heading">#</a></h3>
+<p>NumPyやPandasをインストールするのと同じように、PythonパッケージをPython環境にインストールすることができます。 パッケージを環境にインストールすることで、特定のPython環境を有効にして実行したコードからそのパッケージにアクセスできるようになります。</p>
+<figure class="align-default" id="packages-environment-install">
+<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="パッケージを作成し、それをインストールする手順を示す図です。 最初の矢印はあなたのパッケージ、2番目はpip install packageと書かれています。2つ目の矢印は、PandasやNumPyなどのいくつかのパッケージがすでにインストールされているPython環境を表すボックスにつながります。あなたのパッケージも、pip installしたときに同じ環境にインストールされます。" src="../_images/environment-package-install.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">あなたのコードをインストール可能にするためにPyPIに公開する必要はありません。 正しいファイル構造とプロジェクトのメタデータがあれば、PyPIに公開することなく、コードをローカルにインストールし、作業中のプロジェクトに使用することができます。 PyPIへの公開は、自分のコードを公開し、他の人と共有したいときに便利です。</span><a class="headerlink" href="#packages-environment-install" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="publishing-a-package-to-pypi-conda-forge">
+<h3>PyPI / Conda-Forgeへのパッケージの公開<a class="headerlink" href="#publishing-a-package-to-pypi-conda-forge" title="Link to this heading">#</a></h3>
+<p>コードをローカルにダウンロードすることなく、パッケージを直接インストールできるようにしたい場合は、 <strong>PyPI</strong> や <strong>conda-forge</strong> のようなリポジトリで公開する必要があります。</p>
+<p><a class="reference internal" href="publish-pypi.html"><span class="std std-doc">このチュートリアルでは、パッケージをPyPIに公開する方法</span></a> を学びます。</p>
+<p>その後、 <a class="reference external" href="https://github.com/conda/grayskull">Grayskull</a> ツールを使ってconda-forgeレシピを作成することができます。 このレシピをconda-forgeに投稿することができます。</p>
+<p><a class="reference internal" href="publish-conda-forge.html"><span class="std std-doc">conda-forgeの公開プロセスについてはこちらをご覧ください。</span></a></p>
+<figure class="align-default" id="publish-package-pypi-conda-overview">
+<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. An arrow to the right takes you to a build distribution files box. That box leads you to either publishing to TestPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">上の画像では、PyPIとconda-forgeでパッケージを公開する手順を見ることができます。 PyPIが要求する配布ファイルは <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">sdist</span></a> と <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a> ファイルであることに注意してください。コードを一般にインストール可能にする準備ができたら、PyPIで公開できます。いったんコードをPyPIにアップしたら、conda-forgeに公開するのは簡単です。 Grayskullパッケージを使ってレシピを作成し、conda-forgeレシピリポジトリでprを開きます。このプロセスについては、 <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">conda-forgeのレッスン</span></a> で詳しく学びます。</span><a class="headerlink" href="#publish-package-pypi-conda-overview" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="yay-your-package-has-users-now-what">
+<h2>やった、あなたのパッケージにはユーザーがいます! さて、どうしますか？<a class="headerlink" href="#yay-your-package-has-users-now-what" title="Link to this heading">#</a></h2>
+<p>あなたのパッケージを使うコミュニティが大きくなるにつれて、あなたはユーザーや貢献者、その他あなたのパッケージと交流したい人たちを管理することになるかもしれません。開発に飛び込む前に、これらすべてを考慮することが重要です。 コミュニティーの中にユーザーベースができれば、人々はあなたのコードに依存するようになり、その使い方の指示を必要とするようになります。</p>
+<p>コミュニティをサポートするために、以下のようなものを追加したいです:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../documentation/repository-files/development-guide.html"><span class="std std-doc">メンテナーのワークフロープロセスを文書化した開発ガイド</span></a></p></li>
+<li><p><a class="reference internal" href="../documentation/repository-files/code-of-conduct-file.html"><span class="std std-doc">コミュニティとの交流の基準と期待を定める行動規範</span></a></p></li>
+<li><p><a class="reference internal" href="../documentation/repository-files/contributing-file.html"><span class="std std-doc">プロジェクトに貢献する際にユーザーが期待されることを理解するのに役立つ貢献ガイド</span></a></p></li>
+</ul>
+<div class="admonition-support-for-contributors-and-maintainers admonition">
+<p class="admonition-title">コントリビューターとメンテナーのサポート</p>
+<p>他の人があなたのコードを使用し、貢献することを意図しているのであれば、誰がそれを長期にわたって保守するかを検討しましょう。あなたは、新しい貢献者候補があなたのパッケージへの貢献を始められるようにするための <strong>貢献と開発</strong> ガイドと、コミュニティの交流があなたにとっても貢献者やメンテナチームにとっても健全であり続けるようにするための <strong>行動規範</strong> が欲しいでしょう。</p>
+<p>上記の要素は、今後のパッケージのメンテナンスにおいても重要です。 メンテナンスができなくなった場合、あるいは単に追加的な助けが欲しい場合、開発、そしてドキュメントの貢献は、新しいメンテナへの参加を支援します。</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="what-s-next">
+<h2>次のレッスン<a class="headerlink" href="#what-s-next" title="Link to this heading">#</a></h2>
+<p>今後のレッスンでは、公開された、メンテナンスが容易になり、他の人が貢献しやすくなり、他の科学者が使いやすくなるPythonパッケージのインフラについて学びます。しかし、まずはPythonパッケージを公開するという最初のゴールに到達してもらいたいと思います。</p>
+<p>この次のレッスンでは、インストール可能な Python パッケージの基本的な作り方を学びます。コードをpipインストール可能にします <installable-code></p>
+<div class="docutils">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">pyOpenSci Pythonパッケージガイド</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="get-to-know-hatch.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">Hatchを知る</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-are-these-tutorials-for">このチュートリアルは誰のためのものですか？</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-python-package">Pythonパッケージとは何ですか？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages-are-installable">Pythonパッケージはインストール可能</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-create-a-python-package">なぜPythonパッケージを作るのか？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-consider-before-you-create-a-package">パッケージを作成する前に考慮すべきこと</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-elements-of-a-python-package">Pythonパッケージの要素</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-are-more-than-just-code-infrastructure">パッケージは単なるコードではありません - インフラストラクチャー</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-and-storing-your-package-on-github-or-gitlab">GitHubまたはGitLabでのバージョン管理とパッケージの保存</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-or-ticket-trackers">issue かチケットトラッカー</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-and-continuous-deployment">継続的インテグレーションと継続的デプロイメント</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-should-you-turn-your-code-into-a-python-package">あなたのコードをPythonパッケージにするタイミングは？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-that-you-expect-others-to-use-should-be-well-scoped">他の人が使用することを想定しているパッケージは、十分なスコープを持つべきです。</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-should-also-be-clean-readable-documented">コードはまた、クリーンで読みやすく、文書化されていなければなりません。</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-package-installable-publishing-to-pypi-conda-forge">パッケージをインストール可能にします - PyPIとconda-forgeに公開します</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages-and-environments">Pythonのパッケージと環境</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-a-package-to-pypi-conda-forge">PyPI / Conda-Forgeへのパッケージの公開</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yay-your-package-has-users-now-what">やった、あなたのパッケージにはユーザーがいます! さて、どうしますか？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">次のレッスン</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/intro.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tutorials/intro.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1328 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="PythonパッケージをPyPIに対応させる - pyproject.toml" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/pyproject-toml.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="インストール可能なコードのレッスン では、 pyproject.toml ファイルに最低限の情報を追加してインストール可能にする方法を学びました。その後、 PyPIにパッケージの最小限のバージョンを公開する 方法を学びました。 それに続いて、あなたは以下の追加方法を学びました: README.md, LICENSE と, CODE_OF_CONDUCT. プロジェクトディレクトリのルートに。..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_pyproject-toml_c4e2e152.png" />
+<meta property="og:image:alt" content="インストール可能なコードのレッスン では、 pyproject.toml ファイルに最低限の情報を追加してインストール可能にする方法を学びました。その後、 PyPIにパッケージの最小限のバージョンを公開する 方法を学びました。 それに続いて、あなたは以下の追加方法を学びました: README.md, LICENSE と, CODE_OF_CONDUCT. プロジェクトディレクトリのルートに。..." />
+<meta name="description" content="インストール可能なコードのレッスン では、 pyproject.toml ファイルに最低限の情報を追加してインストール可能にする方法を学びました。その後、 PyPIにパッケージの最小限のバージョンを公開する 方法を学びました。 それに続いて、あなたは以下の追加方法を学びました: README.md, LICENSE と, CODE_OF_CONDUCT. プロジェクトディレクトリのルートに。..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>PythonパッケージをPyPIに対応させる - pyproject.toml &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/pyproject-toml';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/tutorials/pyproject-toml.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Command Line Reference Guide" href="command-line-reference.html" />
+    <link rel="prev" title="Pythonパッケージに LICENSE と CODE_OF_CONDUCT を追加します。" href="add-license-coc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/pyproject-toml.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/pyproject-toml.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/pyproject-toml.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/tutorials/pyproject-toml.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/tutorials/pyproject-toml.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/tutorials/pyproject-toml.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージングチュートリアルのセットアップ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Hatchを知る</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Pythonパッケージとは何ですか？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installable-code.html">コードをインストール可能にする</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">PyPIに公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">conda-forgeに公開する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">プロジェクト情報ファイルとメタデータ</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">README ファイルを追加する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pyproject.tomlのメタデータを更新する</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Hatchを使ってsetup.pyをpyproject.tomlに移行する</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージング 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">PythonパッケージをPyPIに対応させる - pyproject.toml</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="make-your-python-package-pypi-ready-pyproject-toml">
+<h1>PythonパッケージをPyPIに対応させる - pyproject.toml<a class="headerlink" href="#make-your-python-package-pypi-ready-pyproject-toml" title="Link to this heading">#</a></h1>
+<p><a class="reference internal" href="installable-code.html"><span class="doc std std-doc">インストール可能なコードのレッスン</span></a> では、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに最低限の情報を追加してインストール可能にする方法を学びました。その後、 <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">PyPIにパッケージの最小限のバージョンを公開する</span></a> 方法を学びました。</p>
+<p>それに続いて、あなたは以下の追加方法を学びました:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a></p></li>
+<li><p><a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc">LICENSE</span></a> と</p></li>
+<li><p><a class="reference internal" href="add-license-coc.html#add-coc"><span class="std std-ref">CODE_OF_CONDUCT</span></a></p></li>
+</ul>
+<p>プロジェクトディレクトリのルートに。</p>
+<p>PyPI 上でのパッケージの可視性を高め、Python のバージョンとの互換性、プロジェクトの開発状況、プロジェクトのメンテナーについてより多くの情報を提供するために、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに追加のメタデータを追加する必要があります。このレッスンでは、そのプロセスについて説明します。</p>
+<div class="tip admonition">
+<p class="admonition-title">学習目標</p>
+<p>このレッスンで学ぶこと:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの詳細と、パッケージに関するさまざまな種類のメタデータを格納するためにどのように使用されるかについて</p></li>
+<li><p>ユーザーがPyPIでプロジェクトを見つけ、理解しやすくするために、プロジェクトに関する情報 (メタデータ) を宣言する方法。</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> フォーマットについて詳しく知りたい方は、 <a class="reference internal" href="../package-structure-code/pyproject-toml-python-package-metadata.html"><span class="std std-doc">こちらのページをご覧ください。</span></a></p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">レッスンのポイントはこちら</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">pyproject.tomlファイルを作成する際、以下を考慮してください:</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Python パッケージをインストールして公開するために必要なメタデータテーブルは 2 つだけです:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>[build-system]</strong></p></li>
+<li><p class="sd-card-text"><strong>[project]</strong>.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>[project]</strong> テーブルには、パッケージのメタデータが格納されます。 <strong>[project]</strong> テーブルの中で、 <em>必須</em> フィールドは2つだけです:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>name=</strong></p></li>
+<li><p class="sd-card-text"><strong>version=</strong></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">ユーザーがPyPIであなたのプロジェクトを見つけやすくなるので、 <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルにもっとメタデータを追加するべきです。また、インストーラがあなたのパッケージのインストール方法を理解しやすくなります。</p></li>
+<li><p class="sd-card-text">When you are adding classifiers to the <strong>[project]</strong> table, only use valid values from <a class="reference external" href="https://PyPI.org/classifiers/">PyPI's classifier page</a>. An invalid value here will raise an error when you build and publish your package on PyPI.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイル内のテーブルには特定の順番はありません。 しかし、フィールドは正しいテーブルに配置する必要があります。 例えば <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> は常に <strong>[build-system]</strong> テーブルにある必要があります。</p></li>
+<li><p class="sd-card-text"><strong>[build-system]</strong> テーブルを <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの先頭に含めることをお勧めします。</p></li>
+</ol>
+</div>
+</details><section id="what-is-a-pyproject-toml-file">
+<h2>pyproject.tomlファイルとは何ですか？<a class="headerlink" href="#what-is-a-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルは人間や機械が読めるファイルで、Pythonパッケージの主要な設定ファイルとして機能します。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#build-package"><span class="std std-ref">パッケージのビルド</span></a> は、PyPIに公開するために必要な配布ファイルを作成するステップです。</p>
+</div>
+<section id="about-the-toml-format">
+<h3>.toml フォーマットについて<a class="headerlink" href="#about-the-toml-format" title="Link to this heading">#</a></h3>
+<p><strong>pyproject.toml</strong> ファイルは <a class="reference external" href="https://toml.io/en/">TOML (Tom's Obvious, Minimal Language) format</a> で書かれています。TOMLは、キーと値のペアに基づいた読みやすい構造です。 <strong>pyproject.toml</strong> ファイルの各セクションには <code class="docutils literal notranslate"><span class="pre">[table</span> <span class="pre">identifier]</span></code> が含まれています。TOMLフォーマットは、 <code class="docutils literal notranslate"><span class="pre">.json</span></code> などの他の構造化フォーマットと比較することができます。しかし、TOMLフォーマットは人間が読みやすいように設計されています。</p>
+<p>以下に <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> テーブルを示す。そのテーブルの中には、2つのキーと値のペアが必要です。</p>
+<p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> がキーで、値は角括弧 <code class="docutils literal notranslate"><span class="pre">[]</span></code> で指定された <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> 配列内の <code class="docutils literal notranslate"><span class="pre">[&quot;hatchling&quot;]</span></code> です。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span><span class="w"> </span><span class="c1"># &lt;- This is a table</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="c1"># The build backend defines the tool that should be used to build your package distribution files.</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="what-is-the-pyproject-toml-used-for">
+<h3>pyproject.tomlは何に使うのですか？<a class="headerlink" href="#what-is-the-pyproject-toml-used-for" title="Link to this heading">#</a></h3>
+<p>pyproject.tomlファイルは、ビルドツールに次のように指示します:</p>
+<ul class="simple">
+<li><p>パッケージのビルドに使用するビルドバックエンド (このチュートリアルでは <code class="docutils literal notranslate"><span class="pre">hatchling</span></code> を使用していますが、 <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="doc std std-doc">他にも多くの選択肢</span></a> があります)。</p></li>
+<li><p>パッケージのバージョンの取得方法と場所:</p>
+<ul>
+<li><p><strong>静的</strong> ここで、バージョン <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">&quot;0.1.0&quot;</span></code> または</p></li>
+<li><p><strong>動的</strong> このツールは、現在のバージョンを決定するために、履歴の最新のタグを検索します。</p></li>
+</ul>
+</li>
+<li><p>パッケージが必要とする依存関係</p></li>
+<li><p>パッケージがサポートするPythonのバージョン (ユーザーにとって重要）。</p></li>
+</ul>
+<p>また、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを使うことで、GitHub リポジトリを閲覧している人が次のようなパッケージの構造をすぐに理解できるようになります:</p>
+<ul class="simple">
+<li><p>パッケージの作り方、</p></li>
+<li><p>サポートするPythonのバージョンとオペレーティングシステム</p></li>
+<li><p>何をするのか？</p></li>
+<li><p>誰がメンテナンスするのか</p></li>
+</ul>
+<p>最後に、pyproject.tomlファイルは、静的タイプチェッカー (mypyなど) やコードフォーマッタ/リンタ (blackやruffなど) のようなツールを設定するためにもよく使われます。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>他のツールのビルド設定の設定に興味があれば、 <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend">PyPAのドキュメント</a> をチェックしてください。</p>
+<p>ビルドツールによっては、プロジェクトのメタデータを保存する方法が異なる場合があります。そのため、Hatch とhatchling以外のツールを使用する場合は、それらのドキュメントを参照することをお勧めします。このチュートリアルでは、PyPAのルールとガイドラインに準拠したツールであるhatchlingとhatchを選択しました。</p>
+</div>
+</section>
+<section id="how-is-pyproject-toml-metadata-used">
+<h3>pyproject.tomlのメタデータはどのように使用されますか？<a class="headerlink" href="#how-is-pyproject-toml-metadata-used" title="Link to this heading">#</a></h3>
+<p>pyproject.tomlファイルは、PyPIに公開されるPythonの配布ファイルに含まれる <code class="docutils literal notranslate"><span class="pre">METADATA</span></code> を生成するためにビルドツールが使用するファイルです。 この <code class="docutils literal notranslate"><span class="pre">METADATA</span></code> ファイルは、PyPI によってあなたのパッケージの PyPI ランディングページに入力され、そこで公開されている何万ものパッケージの中からユーザをフィルタリングするのに使われます。</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="xclimパッケージのPyPI左サイドバーの画像です。一番上のセクションにはClassifierとあります。その下に、開発状況、対象読者、ライセンス、自然言語、オペレーティングシステム、プログラミング言語、トピックなどの項目があります。 これらの各セクションの下には、さまざまな分類オプションがあります。 &quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">pyproject.tomlにclassifierセクションを追加してパッケージがビルドされると、ビルドツールはメタデータをPyPIが理解できる形式に整理し、PyPIのランディングページに表示します。 これらの分類子により、ユーザはサポートするpythonのバージョンやカテゴリなどでパッケージをソートすることもできます。</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>pyproject.tomlファイルのより詳細な概要</p>
+<p><a class="reference internal" href="../package-structure-code/pyproject-toml-python-package-metadata.html"><span class="doc std std-doc">ガイドブックページでは、このファイルについてより詳しく説明しています</span></a></p>
+</div>
+</section>
+</section>
+<section id="how-to-update-your-pyproject-toml-file">
+<h2>pyproject.tomlファイルを更新する方法<a class="headerlink" href="#how-to-update-your-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<p>最後のレッスンでは、パッケージのビルドに必要なコア要素を含む、素のpyproject.tomlファイルを作成しました:</p>
+<ol class="arabic simple">
+<li><p>プロジェクトのバックエンドビルドツールを定義した <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> テーブル (<code class="docutils literal notranslate"><span class="pre">hatchling</span></code>)</p></li>
+<li><p>プロジェクトのバージョンと名前を定義した <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブル。</p></li>
+</ol>
+<p>あなたが作成した <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルは次のようなものです:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+</pre></div>
+</div>
+<p>次のステップでは、PyPI であなたのパッケージを見つけるのに役立ち、またあなたのパッケージの範囲をよりよく説明するために、推奨されるメタデータフィールドを追加します。 一度このメタデータを追加すれば、もう二度と追加する必要はありません。 これらのメタデータ・フィールドが定期的に更新されるのは、あなたが次のようなことをしたときだけです:</p>
+<ul class="simple">
+<li><p>パッケージ依存の削除</p></li>
+<li><p>パッケージがサポートしているPythonのバージョンを変更します。</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Hatchlingの詳細</p>
+<p>Hatchlingのバックエンドのドキュメントは <a class="reference external" href="https://hatch.pypa.io/latest/config/metadata/">こちら</a> です。</p>
+</div>
+<section id="step-1-add-author-maintainer-and-project-description">
+<h3>ステップ1: 作者、メンテナ、プロジェクトの説明を追加する<a class="headerlink" href="#step-1-add-author-maintainer-and-project-description" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="installable-code.html"><span class="doc std std-doc">インストール可能なコードのチュートリアル</span></a> を完了すると、 <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルにプロジェクト名とバージョンを持つpyproject.tomlファイルができるはずです。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+</pre></div>
+</div>
+<p>テーブルに以下を追加します:</p>
+<ul class="simple">
+<li><p>パッケージの<strong>説明</strong> これは1行で、可能な限り専門用語を使わず、あなたのパッケージの目標を簡潔に記述してください！</p></li>
+<li><p>パッケージ <strong>著者</strong></p></li>
+<li><p>パッケージ <strong>メンテナー</strong></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">description</span></code> は、設定した他の値と同じように単なる文字列です:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can use &quot;&quot;&quot; for multiline strings like in python!</span>
+
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>作者とメンテナを追加するときは、Pythonのリストに辞書を追加したような書式を使う必要があります:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">著者名とEメール</p>
+<p>PyPIには、pyproject.tomlに名前があってもメールがない作者のための癖があります。 もし、1人以上の作者やメンテナのEメールが見つからない場合は、次のようにしてください:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>PyPIページですべてが正しく表示されるようにするために、名前のリストには名前のみを入力することをお勧めします - このように:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>全員のEメールを持っていない場合は、名前だけを追加することをお勧めします。</p>
+</div>
+<p>これで <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルは以下の例のようになるはずです。 作者が1人しかおらず、同じ作者がパッケージのメンテナでもある場合は問題ありません:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="hll"><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+</span><span class="hll"><span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+</span><span class="hll"><span class="s2">that is posted on our website</span>
+</span><span class="hll"><span class="s2">&quot;&quot;&quot;</span>
+</span><span class="hll"><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span class="hll"><span class="p">]</span>
+</span><span class="hll"><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span class="hll"><span class="p">]</span>
+</span></pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">さらに詳しく: オープンソースにおける作者とメンテナの違いは？</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">メンテナと著者を追加する際には、この2つの違いについて考えてみるとよいでしょう。</p>
+<p class="sd-card-text">著者には一般的に以下のような人々が含まれます:</p>
+<ul class="simple">
+<li><p class="sd-card-text">もともとパッケージを作成 / デザイン開発して</p></li>
+<li><p class="sd-card-text">パッケージに新しい機能を追加する人たち。</p></li>
+</ul>
+<p class="sd-card-text">一方、メンテナーは、現在、積極的にプロジェクトに取り組んでいる人々です。 作者とメンテナーが重なることはよくあることです。 そのため、これらのリストは似たり寄ったりかもしれません。</p>
+<p class="sd-card-text">リストが分岐する可能性のある良い例としては、最初の作者が開発したパッケージが、他のことに移るためにメンテナを降りる場合があります。この人物は引き続き作者とみなされるかもしれないが、もはやそのパッケージを積極的に保守することはありません。</p>
+<p class="sd-card-text">重要なのは、作者とメンテナを定義する方法はたくさんあるということです、そして、このチュートリアルでは、単一のアプローチを推奨するものではありません。</p>
+<p class="sd-card-text">しかし、PyPIで公開する際には、PyPIのランディングページに作者やメンテナとして誰を掲載するか、慎重に検討することをお勧めします。</p>
+</div>
+</details></section>
+<section id="step-2-add-readme-and-license">
+<h3>ステップ2: READMEとライセンスの追加<a class="headerlink" href="#step-2-add-readme-and-license" title="Link to this heading">#</a></h3>
+<p>前のレッスンでは、 <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a> ファイルと <a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc">LICENSE</span></a> の両方をパッケージリポジトリーに追加しました。これらのファイルを手に入れたら、以下の例に従ってpyproject.tomlファイルにリンクとして追加します。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="hll"><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+</span><span class="hll"><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;LICENSE&quot;</span><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="step-3-specify-python-version-with-requires-python">
+<h3>ステップ 3: <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> でPythonのバージョンを指定します<a class="headerlink" href="#step-3-specify-python-version-with-requires-python" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> の <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルに <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> フィールドを追加します。 <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> フィールドは、pipがあなたのパッケージがサポートする Pythonのバージョンを特定するのに役立ちます。 単一の値に設定されます。 <a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python">パッケージング仕様</a> では、 <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> をバージョン指定の文字列として定義している。ほとんどのプロジェクトは、そのパッケージがサポートする最も古いPythonのバージョンを指定します。いくつかの高度なケースでは、どの将来のPythonバージョンがサポートされるかを示す上限が設定されます。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="hll"><span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+</span></pre></div>
+</div>
+</section>
+<section id="step-4-specify-dependencies">
+<h3>ステップ4: 依存関係の指定<a class="headerlink" href="#step-4-specify-dependencies" title="Link to this heading">#</a></h3>
+<p>次に、依存関係テーブルをプロジェクトテーブルに追加します。 <code class="docutils literal notranslate"><span class="pre">dependencies</span> <span class="pre">=</span></code> セクションには、あなたのパッケージがPython環境で正しく動作するために必要なPythonパッケージのリスト（toml言語では配列）を記述します。 上記の <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> の表に記載されている要件と同様です:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span><span class="w"> </span><span class="c1"># &lt;- this is a table</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1"># this is an array (or list) of requirements</span>
+</pre></div>
+</div>
+<p>依存関係は配列（Pythonのリストに似ている）構造で追加されます。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>依存関係は、 <strong>バージョン指定子</strong> を使って特定のバージョンに限定することができます。 依存関係の名前の後にバージョン指定子がない場合、あなたのパッケージは依存パッケージのどのバージョンでも使うことができます。 コードは時間の経過とともに変化し、バグが修正され、APIが変更されます。そのため、コードを書いた依存関係がどのバージョンと互換性があるのかを明確にしておくことは良いことです - あなたが今年書いたパッケージは、おそらくnumpy v0.0.1とは互換性がありません！</p>
+<p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/version-specifiers/#id5">パッケージバージョンの範囲を指定する様々な方法については、こちらをご覧ください。</a></p>
+<p>最も一般的なバージョン指定子は <strong>lower bound</strong> で、指定されたバージョンより上位のバージョンを許可します。理想的には、あなたのパッケージとまだ互換性のある最も低いバージョンに設定すべきですが、実際には新しいパッケージの場合、パッケージが書かれた時点での最新バージョンに設定されることがよくあります [^lowerbound] 。</p>
+<p>下限は次のようになります:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="w"> </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>カンマは、個々の依存関係を区切るために使用します、 そして、<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> セクションの各パッケージは異なるタイプのバージョン指定子を使うことができます:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w">      </span><span class="c1"># Greater than or equal to 1.0</span>
+<span class="w">  </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1"># Exactly 10.1</span>
+<span class="w">  </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># Any version</span>
+<span class="w">  </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="w"> </span><span class="c1"># Greater than or equal to 1.7, but less than 2</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>これで <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルは次のようになります:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+
+<span class="hll"><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
+</span></pre></div>
+</div>
+<div class="admonition-pin-dependencies-with-caution admonition">
+<p class="admonition-title">依存関係のピン止めは慎重に</p>
+<p>依存関係を &quot;Pinning&quot; することは、次のように特定のバージョンに設定することを意味します:</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">==</span> <span class="pre">1.0</span></code> 。</p>
+<p>他の開発者が依存するライブラリパッケージを構築する場合、正確な依存バージョンに固定する前に慎重にならなければなりません。 本番用ウェブサイトのようなアプリケーションは、他のパッケージがそのプロジェクトに依存しないため、依存関係を固定することが多いです。 なぜなら、ユーザーはあなたのパッケージをさまざまな環境にインストールするからです。特定のバージョンに固定された依存関係は、Python環境の解決をより困難にします。 そのため、依存関係を特定のバージョンに固定するのは、どうしても必要な場合に限られます。</p>
+<p>同様に、パッケージの上限を指定する場合にも注意が必要です。これら2つの仕様は同等です:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pydantic</span><span class="o">&gt;=</span><span class="mf">1.10</span><span class="p">,</span><span class="o">&lt;</span><span class="mi">2</span>
+<span class="n">pydantic</span><span class="o">^</span><span class="mf">1.10</span>
+</pre></div>
+</div>
+<p>依存関係をデフォルトで上限値に固定するビルドツールとして知っておくべきもののひとつに、Poetryがあります。 <a class="reference internal" href="../package-structure-code/python-package-build-tools.html#challenges-with-poetry"><span class="std std-ref">Poetryで依存関係を安全に追加する方法については、こちらをお読みください。</span></a></p>
+</div>
+</section>
+<section id="step-5-add-pypi-classifiers">
+<h3>ステップ5: PyPI classifiersを追加する<a class="headerlink" href="#step-5-add-pypi-classifiers" title="Link to this heading">#</a></h3>
+<p>次に、<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>ファイルに分類子を追加します。 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに追加する各分類子の値は、 <a class="reference external" href="https://PyPI.org/classifiers/">ここにあるPyPIで認められている分類子</a> の一覧から選ぶ必要があります。スペルや書式に逸脱があると、PyPIに公開するときに問題が発生します。</p>
+<div class="tip admonition">
+<p class="admonition-title">間違った分類子を使うとどうなりますか？</p>
+<p>もし <a class="reference external" href="https://PyPI.org/classifiers/">標準的な分類器の値を使う</a> のでなければ、 PyPIでパッケージを公開しようとすると拒否されます。  最初のトライでPyPIに拒否されても心配しないでください！ それは私たち全員に起こったことです。</p>
+</div>
+<p>そのリストを見て、以下の項目を <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに追加します:</p>
+<ul class="simple">
+<li><p>開発状況</p></li>
+<li><p>対象読者</p></li>
+<li><p>トピック</p></li>
+<li><p>ライセンスと</p></li>
+<li><p>プログラミング言語サポート</p></li>
+</ul>
+<p>classifierのキーは、下の例のようになるはずです。 いくつか注意点があります:</p>
+<ul class="simple">
+<li><p>分類器の値は、パッケージに選択したライセンスによって異なる場合があります、 あなたの意図する読者、パッケージの開発状況とサポートしている Python のバージョンです。</p></li>
+<li><p><a class="reference external" href="https://PyPI.org/classifiers/">指定されたPyPIの分類子の値</a> を使う限り、好きなだけ分類子を追加できます。</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
+
+<span class="hll"><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="p">]</span>
+</span></pre></div>
+</div>
+<p>分類子は <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルでは必須ではありませんが、ユーザーがあなたのパッケージを見つけるのに役立つことに注意してください。そのため、追加することを強くお勧めします。</p>
+</section>
+<section id="step-6-add-the-project-urls-table">
+<h3>ステップ 6: <code class="docutils literal notranslate"><span class="pre">[project.urls]</span></code> テーブルを追加する<a class="headerlink" href="#step-6-add-the-project-urls-table" title="Link to this heading">#</a></h3>
+<p>最後に、pyproject.tomlファイルにproject.urlsテーブルを追加します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">project.urls</span></code> には、プロジェクトに関連するリンクが含まれています。以下を含めるとよいでしょう:</p>
+<ul class="simple">
+<li><p><strong>ホームページ:</strong> プロジェクトの公開ドキュメントへのリンク。 このチュートリアルを進めているのであれば、このリンクはまだ持っていないかもしれません。 大丈夫、当分は飛ばしてもいいです。</p></li>
+<li><p><strong>バグ報告:</strong> 課題 / ディスカッションへのリンク、またはユーザーがバグを報告できる場所です。</p></li>
+<li><p><strong>ソース:</strong> プロジェクトのGitHub / GitLabリンク。</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
+
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">]</span>
+
+<span class="hll"><span class="k">[project.urls]</span><span class="w"> </span><span class="c1"># Optional</span>
+</span><span class="hll"><span class="s2">&quot;Homepage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://www.pyopensci.org&quot;</span>
+</span><span class="hll"><span class="s2">&quot;Bug Reports&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/issues&quot;</span>
+</span><span class="hll"><span class="s2">&quot;Source&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/&quot;</span>
+</span></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>ここに追加できるURLは他にもたくさんある。 <a class="reference external" href="https://github.com/patrick91/links-demo">概要についてはこちらのREADMEファイル</a> をチェックしてください。</p>
+</div>
+</section>
+</section>
+<section id="putting-it-all-together-your-completed-pyproject-toml-file">
+<h2>すべてをまとめます - 完成したpyproject.tomlファイル<a class="headerlink" href="#putting-it-all-together-your-completed-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<p>以下は、上で説明したすべてのセクションがコメントされた <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの完全な例です。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
+
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">]</span>
+
+<span class="k">[project.urls]</span><span class="w"> </span><span class="c1"># Optional</span>
+<span class="s2">&quot;Homepage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://www.pyopensci.org&quot;</span>
+<span class="s2">&quot;Bug Reports&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/issues&quot;</span>
+<span class="s2">&quot;Source&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/&quot;</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">付録 - 完全にコメントされたpyproject.tomlファイルを見るにはクリックしてください</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">参考にしたいのであれば、以下は、完全にコメントされたpyproject.tomlファイルです。</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can delete all of the comments once you have created your own pyproject.toml file.</span>
+
+<span class="c1"># The build system table. Here we use hatchling as the build back end tool.</span>
+<span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="c1"># The [project] section contains your package&#39;s metadata</span>
+<span class="c1"># notice that the version is setup to be dynamically generated using dynamic=[“version”]</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="c1"># dynamic = [&quot;version&quot;] # you will learn how to dynamically set the version in a future lesson</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="w"> </span><span class="c1"># manually assign version (not preferred)</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+
+<span class="c1"># maintainers section is optional but suggested.</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;admin@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1"># Optional</span>
+<span class="p">]</span>
+
+<span class="c1"># Classifiers have set values - be sure to only use classifier values from the</span>
+<span class="c1"># PyPI page here: https://PyPI.org/classifiers/</span>
+
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="c1"># How mature is this project? Common values are</span>
+<span class="w">    </span><span class="c1">#   3 - Alpha</span>
+<span class="w">    </span><span class="c1">#   4 - Beta</span>
+<span class="w">    </span><span class="c1">#   5 - Production/Stable</span>
+<span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1"># Indicate who your project is intended for</span>
+<span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1"># Pick your license (using syntax from the classifier page). We suggest MIT, BSD3 or Apache if you are corporate</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1"># Specify the Python versions ensuring that you indicate you support Python 3.</span>
+<span class="w">    </span><span class="c1"># this is only for PyPI and other metadata associated with your package - for your users to see</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># BE sure to specify that you use python 3.x</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
+<span class="c1"># This is the metadata that pip reads to understand what versions your package supports</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;LICENSE&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1"># Add urls for your home page, issue tracker and source code</span>
+<span class="k">[project.urls]</span><span class="w"> </span><span class="c1"># Optional</span>
+<span class="s2">&quot;Homepage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://www.pyopensci.org&quot;</span>
+<span class="s2">&quot;Bug Reports&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyospackage/issues&quot;</span>
+<span class="c1">#&quot;Funding&quot; = &quot;&quot;</span>
+<span class="s2">&quot;Source&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyospackage&quot;</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="example-pyproject-toml-files">
+<h2>例 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイル<a class="headerlink" href="#example-pyproject-toml-files" title="Link to this heading">#</a></h2>
+<p>以下は、scientificとpyOpenSciエコシステムの様々なパッケージの <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの例です。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pypa/sampleproject/blob/main/pyproject.toml">PyPAの完全に文書化されたサンプルpyproject.tomlファイル</a></p></li>
+<li><p><a class="reference external" href="https://github.com/taxprofiler/taxpasta/blob/f9f6eea2ae7dd08bb60a53dd49ad77e4cf143573/pyproject.toml">taxpastaはきれいに整理されたpyproject.tomlファイルを持っており、pyOpenSci承認パッケージです</a></p></li>
+</ul>
+</section>
+<section id="wrap-up">
+<h2><i class="fa-solid fa-hands-bubbles"></i> まとめ<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
+<p>この時点であなたは以下を作成しました:</p>
+<ul class="simple">
+<li><p>パッケージの <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a> ファイル</p></li>
+<li><p>ユーザーコミュニティをサポートする <a class="reference internal" href="add-license-coc.html#add-coc"><span class="std std-ref">CODE_OF_CONDUCT.md</span></a> ファイル</p></li>
+<li><p><a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc">LICENSE</span></a> ファイルは、人々があなたのソフトウェアをどのように使用できるか、また使用できないかに関する法的な境界線を提供します。</p></li>
+</ul>
+<p>また、 <a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">パッケージを(test)PyPIに公開する方法</span></a> も学びました。</p>
+</section>
+<section id="publish-a-new-version-of-your-package-to-pypi">
+<h2>新しいバージョンのパッケージをPyPIに公開する<a class="headerlink" href="#publish-a-new-version-of-your-package-to-pypi" title="Link to this heading">#</a></h2>
+<p>これで、Pythonパッケージの新しいバージョンを(test)PyPIに公開する準備ができました。 そうすると、パッケージのランディングページに、より多くの情報が掲載されていることがわかります。</p>
+<p>今すぐ再公開を試みます。</p>
+<p>まず、pyprojectのtomlファイルでパッケージのバージョンを更新します。以下のバージョンが <code class="docutils literal notranslate"><span class="pre">0.1</span></code> から <code class="docutils literal notranslate"><span class="pre">0.1.1</span></code> に更新されました。</p>
+<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.1&quot;</span>
+</pre></div>
+</div>
+<p>次に hatch を使って、新しいバージョンのパッケージを test.PyPI.org に公開します。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>hatch<span class="w"> </span>publish<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<section id="next-optional-step-publishing-to-conda-forge">
+<h3>次のステップ(オプション) - conda-forgeに公開します。<a class="headerlink" href="#next-optional-step-publishing-to-conda-forge" title="Link to this heading">#</a></h3>
+<p>これであなたのパッケージをPyPIに公開するために必要なスキルはすべて揃いました。</p>
+<p>あなたのパッケージを(condaエコシステム内のチャンネルである)conda-forgeで公開したい場合 、 その方法は次のレッスンで学びます。</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="lowerbound" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>パッケージングツールの中には、cliインターフェイスを使って依存関係を追加するときに、これをやってくれるものもあります。 例えば、 <a class="reference external" href="https://python-poetry.org/docs/cli/#add"><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span></code></a> は <code class="docutils literal notranslate"><span class="pre">^</span></code> 指定子で最新バージョンを追加し、 <a class="reference external" href="https://pdm-project.org/latest/reference/cli/#add"><code class="docutils literal notranslate"><span class="pre">pdm</span> <span class="pre">add</span></code></a> は <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> 指定子で最新バージョンを追加します。</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="add-license-coc.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Pythonパッケージに <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> と <code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT</span></code> を追加します。</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="command-line-reference.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">Command Line Reference Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-pyproject-toml-file">pyproject.tomlファイルとは何ですか？</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-toml-format">.toml フォーマットについて</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-pyproject-toml-used-for">pyproject.tomlは何に使うのですか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-pyproject-toml-metadata-used">pyproject.tomlのメタデータはどのように使用されますか？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-your-pyproject-toml-file">pyproject.tomlファイルを更新する方法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-add-author-maintainer-and-project-description">ステップ1: 作者、メンテナ、プロジェクトの説明を追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-readme-and-license">ステップ2: READMEとライセンスの追加</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-specify-python-version-with-requires-python">ステップ 3: <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> でPythonのバージョンを指定します</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-specify-dependencies">ステップ4: 依存関係の指定</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-pypi-classifiers">ステップ5: PyPI classifiersを追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-the-project-urls-table">ステップ 6: <code class="docutils literal notranslate"><span class="pre">[project.urls]</span></code> テーブルを追加する</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together-your-completed-pyproject-toml-file">すべてをまとめます - 完成したpyproject.tomlファイル</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-pyproject-toml-files">例 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイル</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up"><i class="fa-solid fa-hands-bubbles"></i> まとめ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-a-new-version-of-your-package-to-pypi">新しいバージョンのパッケージをPyPIに公開する</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-optional-step-publishing-to-conda-forge">次のステップ(オプション) - conda-forgeに公開します。</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/pyproject-toml.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tutorials/pyproject-toml.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

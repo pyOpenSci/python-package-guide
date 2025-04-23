@@ -1,0 +1,1305 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Pythonパッケージングツール" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="パッケージ構築のためのツール: Python パッケージの sdist ディストリビューションと wheel ディストリビューションを作成する ために使えるビルドツールはいくつかあります。 以下では、最もよく使われる Python パッケージングツールの機能、利点、制限について説明します。 このガイドでは純粋な Python パッケージに焦点を当てます。 しかし、現在C/C++やその他の言語..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_python-package-build-tools_25e0f5fa.png" />
+<meta property="og:image:alt" content="パッケージ構築のためのツール: Python パッケージの sdist ディストリビューションと wheel ディストリビューションを作成する ために使えるビルドツールはいくつかあります。 以下では、最もよく使われる Python パッケージングツールの機能、利点、制限について説明します。 このガイドでは純粋な Python パッケージに焦点を当てます。 しかし、現在C/C++やその他の言語..." />
+<meta name="description" content="パッケージ構築のためのツール: Python パッケージの sdist ディストリビューションと wheel ディストリビューションを作成する ために使えるビルドツールはいくつかあります。 以下では、最もよく使われる Python パッケージングツールの機能、利点、制限について説明します。 このガイドでは純粋な Python パッケージに焦点を当てます。 しかし、現在C/C++やその他の言語..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Pythonパッケージングツール &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-build-tools';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/package-structure-code/python-package-build-tools.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="複雑なPythonパッケージのビルド" href="complex-python-package-builds.html" />
+    <link rel="prev" title="Pythonパッケージの依存関係" href="declare-dependencies.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/package-structure-code/python-package-build-tools.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/package-structure-code/python-package-build-tools.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/package-structure-code/python-package-build-tools.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/package-structure-code/python-package-build-tools.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/package-structure-code/python-package-build-tools.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/package-structure-code/python-package-build-tools.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">コードスタイル</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージングツール</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="python-packaging-tools">
+<h1>Pythonパッケージングツール<a class="headerlink" href="#python-packaging-tools" title="Link to this heading">#</a></h1>
+<section id="tools-for-building-your-package">
+<h2>パッケージ構築のためのツール<a class="headerlink" href="#tools-for-building-your-package" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Python パッケージの <em>sdist</em> ディストリビューションと <em>wheel</em> ディストリビューションを作成する</span></a> ために使えるビルドツールはいくつかあります。 以下では、最もよく使われる Python パッケージングツールの機能、利点、制限について説明します。 このガイドでは純粋な Python パッケージに焦点を当てます。 しかし、現在C/C++やその他の言語拡張を含むパッケージをサポートしているツールも紹介します。</p>
+<figure class="align-default" id="package-decision-tree">
+<a class="reference internal image-reference" href="../_images/python-package-tools-decision-tree.png"><img alt="さまざまなフロントエンドとバックエンドのパッケージングツールを示すデシジョンツリー図。 どのパッケージングツールを使うかは、どんな機能が必要かを考えることで決めることができます。 PDMとHatchは、異なるビルドバックエンドを使用しているため、現在のところ最も柔軟なツールです。 PDMとHatchは初心者に最も喜ばれるツールで、Poetryはその次です。 Poetryは純粋なPythonプロジェクトに適しています。" src="../_images/python-package-tools-decision-tree.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Pythonパッケージのエコシステムで利用可能な、さまざまなフロントエンドビルドツールを示す図です。この図に含めるツールは、エコシステムで最も利用されているツールを理解するのに役立ったPyPI調査に基づいて選択しました。各ツールには、以下のように異なる特徴があります。</span><a class="headerlink" href="#package-decision-tree" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>他の言語で書かれた拡張機能を持つPythonパッケージについてもっと知りたい場合は、 <a class="reference internal" href="complex-python-package-builds.html"><span class="doc std std-doc">複雑なパッケージのビルドのページをチェックしてください</span></a></p>
+</section>
+<section id="tools-that-we-review-here">
+<h2>ここでレビューするツール<a class="headerlink" href="#tools-that-we-review-here" title="Link to this heading">#</a></h2>
+<p>このセクションでは、PyPAのアンケートで最も人気のあったパッケージングツールを紹介します。 このページでは以下のツールについて詳しく説明します:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://twine.readthedocs.io/en/stable/">Twine</a>, <a class="reference external" href="https://pypa-build.readthedocs.io/en/stable/">Build</a> + <a class="reference external" href="https://setuptools.pypa.io/en/latest/">setuptools</a></p></li>
+<li><p><a class="reference external" href="https://flit.pypa.io/en/stable/">Flit</a></p></li>
+<li><p><a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a></p></li>
+<li><p><a class="reference external" href="https://pdm.fming.dev/latest/">PDM</a></p></li>
+<li><p><a class="reference external" href="https://python-poetry.org/docs/">Poetry</a></p></li>
+</ul>
+</section>
+<section id="summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools">
+<h2>ツールまとめ Hatch vs PDM vs Poetry (と setuptools)<a class="headerlink" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools" title="Link to this heading">#</a></h2>
+<p>簡単な要約をお探しの方は、以下をお読みください。</p>
+<ul class="simple">
+<li><p>一般的に、このページから選択した最新のツールは、パッケージを構築するのに適しています。 ツールの選択は、ワークフローに求める機能によって決まります。</p></li>
+<li><p>初心者の方は、 setuptools の複雑な操作ではなく、PDMのような最新のワークフローツールから始めることをお勧めします。</p></li>
+<li><p>Poetryを使うのであれば (最も人気のあるツールであり、最高のドキュメントを持っています) 、依存関係の追加上限値に注意し、依存関係を追加する際にオーバーライドすることを検討してください。 そうすれば、Poetryは純粋なPythonビルドでもうまく動くでしょう！ また、Poetryには活発な discord があり、質問をすることができます。</p></li>
+</ul>
+<p>以下は、ハッチとPDMが提供し、Poetryが提供しない機能です。</p>
+<p>PDM:</p>
+<ul class="simple">
+<li><p>他のバックエンドをサポートしているので、純粋な Python ではないビルドに最適です。 つまり、PDMはmeson-pythonや他のビルドバックエンドをサポートしているので、純粋なPythonにも、より複雑なPythonビルドにも最適なオプションです。</p></li>
+<li><p>依存関係の管理に柔軟性があります</p></li>
+<li><p>必要に応じてファイルをロックすることも可能です</p></li>
+</ul>
+<p>Hatch:</p>
+<ul class="simple">
+<li><p>Pythonのバージョンにまたがってテストを実行できるマトリックス環境管理を提供します。 もしこの機能があなたにとって重要なら、Hatch が明らかに勝者です。</p></li>
+<li><p>ビルドワークフローを効率化するNox/Makeファイルのようなツールを提供します。 ワークフローにおけるツールの数を減らしたいのであれば、Hatchはうってつけかもしれません。</p></li>
+</ul>
+</section>
+<section id="build-front-end-vs-build-back-end-tools">
+<h2>フロントエンド構築ツールとバックエンド構築ツール<a class="headerlink" href="#build-front-end-vs-build-back-end-tools" title="Link to this heading">#</a></h2>
+<p>Pythonパッケージのビルドに関して、あなたの選択肢をよりよく理解するためには、まずビルドツールのフロントエンドとビルドのバックエンドの違いを理解することが重要です。</p>
+<section id="build-back-ends">
+<span id="build-backends"></span><h3>バックエンドのビルド<a class="headerlink" href="#build-back-ends" title="Link to this heading">#</a></h3>
+<p>ほとんどのパッケージングツールには、パッケージをビルドし、関連する <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">(sdistとwheel)配布ファイル</span></a> を作成するバックエンドビルドツールがあります。  <strong>Flit</strong> のようないくつかのツールは、純粋なPythonパッケージのビルドのみをサポートしています。 純粋な Python のビルドとは、他のプログラミング言語 (<code class="docutils literal notranslate"><span class="pre">C</span></code> や <code class="docutils literal notranslate"><span class="pre">C++</span></code> など) で書かれた拡張機能を持たないパッケージのビルドを指します。</p>
+<p>C や C++の拡張を持つ他のパッケージ(あるいは fortran のような他の言語を包含するパッケージ)は、ビルド時に追加のコードコンパイルステップを必要とします。  <strong>setuptools.build</strong> 、 <strong>meson.build</strong> 、 <strong>scikit-build</strong> などのバックエンドは、カスタムステップによる複雑なビルドをサポートしています。ビルドが特に複雑な場合（つまり <code class="docutils literal notranslate"><span class="pre">C</span></code>/<code class="docutils literal notranslate"><span class="pre">C++</span></code> 拡張モジュールが数個以上ある場合）は、 <strong>meson.build</strong> または <strong>scikit-build</strong> を使用することをお勧めします。</p>
+</section>
+<section id="python-package-build-front-ends">
+<h3>Pythonパッケージビルドフロントエンド<a class="headerlink" href="#python-package-build-front-ends" title="Link to this heading">#</a></h3>
+<p>パッケージングフロントエンドツールとは、同様のコマンドを使用して一般的なパッケージングタスクを簡単に実行できるようにするツールのことです。 これらのタスクには以下のようなものがあります:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">パッケージのビルド (sdist と wheel ディストリビューションの作成)</span></a></p></li>
+<li><p>開発モードでパッケージをインストールします (コードを更新したときに更新されるようにします)</p></li>
+<li><p>PyPIへの公開</p></li>
+<li><p>テストの実行</p></li>
+<li><p>ドキュメントの作成</p></li>
+<li><p>テストの実行やパッケージの開発が必要な環境、または複数の環境の管理</p></li>
+</ul>
+<p>純粋な Python のビルドに使える Python パッケージングツールがいくつかあります。 以下で説明する各フロントエンドツールは、少しずつ異なる Python パッケージングタスクをサポートしています。</p>
+<p>例えば、パッケージングツールの <strong>Flit</strong>、<strong>Hatch</strong>、<strong>PDM</strong> を使って、パッケージのビルドと PyPI への公開の両方を行うことができます。 しかし、<strong>Hatch</strong>と<strong>PDM</strong>はバージョン管理と環境管理をサポートしていますが、 <strong>Flit</strong> はサポートしていません。 依存性ロックをサポートするツールが欲しい場合は、<strong>PDM</strong>や<strong>Poetry</strong>を使うことができますが、 <strong>Hatch</strong> は使えません。 パッケージのsdistとwheelの配布ファイルをビルドするだけなら、PyPAのBuildで十分です。 その後、Twineを使ってPyPIに公開します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><strong>Setuptools</strong> を使用している場合、複数のタスクを実行するデフォルトのユーザーフレンドリーなビルドフロントエンドはありません。 パッケージをビルドするには <strong>build</strong> を、PyPI に公開するには <strong>twine</strong> を使う必要があります。</p>
+</div>
+</section>
+<section id="example-build-steps-that-can-be-simplified-using-a-front-end-tool">
+<h3>フロントエンドツールを使って簡略化できるビルド手順の例<a class="headerlink" href="#example-build-steps-that-can-be-simplified-using-a-front-end-tool" title="Link to this heading">#</a></h3>
+<p>以下に、ビルドツールがパッケージングをどのように効率化するかを示します。  <strong>Hatch</strong> でパッケージをビルドする例です:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build your sDist and .whl files</span>
+hatch<span class="w"> </span>build
+
+<span class="c1"># Example to publish to PyPI:</span>
+hatch<span class="w"> </span>publish<span class="w"> </span>--repo<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p><strong>setuptools</strong> バックエンドと <strong>build</strong> を使用したビルド手順の例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the package</span>
+python3<span class="w"> </span>-m<span class="w"> </span>build
+
+<span class="c1"># Publish to test PyPI using twine</span>
+twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </span>testpypi<span class="w"> </span>dist/*
+</pre></div>
+</div>
+</section>
+</section>
+<section id="choosing-a-build-back-end">
+<h2>ビルドバックエンドの選択<a class="headerlink" href="#choosing-a-build-back-end" title="Link to this heading">#</a></h2>
+<p>ほとんどのフロントエンドパッケージングツールは、独自のバックエンドビルドツールを持っています。 ビルドツールはパッケージの (sdistやwheelの) 配布ファイルを作成します。 純粋なPythonパッケージの場合、以下で説明するビルドバックエンド間の主な違いは以下の通りです:</p>
+<ul class="simple">
+<li><p>設定可能性 - 例えば、Python以外の拡張機能をサポートするビルドステップを追加することはできますか？</p></li>
+<li><p>正しいファイルがsdistとwheelディストリビューションに含まれていることを確認するために、どの程度設定する必要があるか。</p></li>
+</ul>
+<section id="build-back-end-support-for-non-pure-python-packages">
+<h3>純粋なPythonパッケージ以外のバックエンドサポートの構築<a class="headerlink" href="#build-back-end-support-for-non-pure-python-packages" title="Link to this heading">#</a></h3>
+<p><strong>Flit-core</strong> のようないくつかのビルドバックエンドは、純粋なPythonビルドしかサポートしていないことに注意することが重要です。その他のバックエンドは、以下のようにCとC++の拡張をサポートしています:</p>
+<ul class="simple">
+<li><p>setuptools は、C / C++ 拡張モジュールを使用したビルドをサポートします。</p></li>
+<li><p>Hatchling (hatchのバックエンド) は、開発者がビルドをカスタマイズするために作成するプラグインによって、C/C++の拡張機能をサポートしています。</p></li>
+<li><p>PDMのバックエンドは、setuptoolsを使用してC / C++拡張をサポートしています。</p></li>
+<li><p>PoetryのバックエンドはC/C++拡張をサポートしていますが、この機能は現在ドキュメント化されていません。 そのため、ドキュメント化されるまでは、複雑なビルドや純粋なPython以外のビルドにPoetryを使うことはお勧めしません。</p></li>
+</ul>
+<p>以下では、より複雑なビルドについては説明しませんが、どのツールがC / C++の拡張機能を文書でサポートしているかを確認します。</p>
+</section>
+</section>
+<section id="an-ecosystem-of-python-build-tools">
+<h2>Pythonビルドツールのエコシステム<a class="headerlink" href="#an-ecosystem-of-python-build-tools" title="Link to this heading">#</a></h2>
+<p>以下では、最もよく使われる Python パッケージングビルドフロントエンドツールをいくつか紹介します。 どのツールがあなたのワークフローに最適かを決める手助けとして、各ツールが提供する機能を強調します。</p>
+<div class="note admonition">
+<p class="admonition-title">setuptools の使用はお勧めしません</p>
+<p>setuptoolsは、正しくセットアップするためにいくつかの追加知識を必要とするため、setuptoolsではなく、上記の近代的なツールのいずれかを選択することをお勧めします。</p>
+<p>バックエンドとしてsetuptoolsをレビューするのは、今でも人気があるからです。 しかし、それは最もユーザーフレンドリーなオプションではありません。</p>
+</div>
+<p>エコシステムで最もよく使われるツールは、setuptoolsのバックエンド（ビルド機能付き）とPoetry（多数の機能と優れたドキュメントを備えたフロントエンドツール）です。</p>
+<figure class="align-default" id="pypa-survey-plot">
+<a class="reference internal image-reference" href="../_images/python-package-tools-2022-survey-pypa.png"><img alt="2022年のPyPAによるPythonパッケージングツールの調査結果を示すグラフです。 X軸は回答率、Y軸はツールです。" src="../_images/python-package-tools-2022-survey-pypa.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Python developers survey results (n=&gt;8,000 PyPI users)では、最もよく使われているPythonパッケージングツールとしてsetuptoolsとpoetryが挙げられています。 科学コミュニティで使用されているコアツールはここに含まれています。 <a class="reference external" href="https://drive.google.com/file/d/1U5d5SiXLVkzDpS0i1dJIA4Hu5Qg704T9/view">ここをクリックすると、調査結果の全文を見ることができます。</a> 注意: このデータはドメイン全体のメンテナを表しており、ウェブ開発関係者が多く含まれているようです。 これはより広い Python エコシステム全体のスナップショットを表しています。</span><a class="headerlink" href="#pypa-survey-plot" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="chose-a-build-workflow-tool">
+<h2>ビルドワークフローツールの選択<a class="headerlink" href="#chose-a-build-workflow-tool" title="Link to this heading">#</a></h2>
+<p>以下にレビューするツールは以下の通り:</p>
+<ul class="simple">
+<li><p>Twine, Build + setuptools</p></li>
+<li><p>Flit</p></li>
+<li><p>Hatch</p></li>
+<li><p>PDM</p></li>
+<li><p>Poetry</p></li>
+</ul>
+<p>ツールを選ぶ際には、このような一般的な質問の流れを考慮するとよいでしょう:</p>
+<ol class="arabic simple">
+<li><p><strong>あなたのツールは純粋なパイソンですか？はい？</strong> お好きなツールをお使いください！ あなたのビルドワークフローで使いたい機能を持つツールを選んでください。 お勧めは:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Flit、Hatch、PDM、またはPoetry (詳しくは以下をお読みください)</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>あなたのツールはCやC++の拡張機能をいくつか持っていますか？</strong> 当面は <strong>PDM</strong> を使うことをお勧めします。 以下のリストの中で、このような拡張をサポートするワークフローが文書化されており、ビルドフックだけではワークフローが不十分な場合に他のバックエンドをサポートする唯一のツールです。 PDMは、scikit-buildやmeson-pythonなどの他のバックエンドをサポートしており、パッケージのビルドを完全にカスタマイズすることができます。</p></li>
+</ol>
+<p>注: 純粋なpython以外のビルドにもHatchを使うことができます。 Hatch は PDM と同様に、独自のビルドフックやプラグインを書くことができます。 しかし現在、hatchは他のビルドバックエンドをサポートしていない。コアな科学パッケージの多くは、パッケージをビルドするために meson-pythonに移行しています。したがって、PDMが特にmeson-pythonと連携できることはありがたいです。</p>
+</section>
+<section id="python-packaging-tools-summary">
+<h2>Pythonパッケージングツールまとめ<a class="headerlink" href="#python-packaging-tools-summary" title="Link to this heading">#</a></h2>
+<p>以下に、最も人気のあるビルドフロントエンドツールが提供する機能を要約します。これらのフロントエンドツールは、あなたのワークフローにおいて他のコアツールを使う必要性をなくすということを覚えておくことが重要です。 例えばsetuptoolsを使う場合、パッケージをビルドしてPyPIに公開するためにBuildとTwineも使う必要があります。 しかし、PoetryやHatch、PDMを使う場合は、同じツールを使ってこれらすべてを行うことができます (例：<code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>、<code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code>、<code class="docutils literal notranslate"><span class="pre">pdm</span> <span class="pre">build</span></code>、<code class="docutils literal notranslate"><span class="pre">pdm</span> <span class="pre">publish</span></code>) 。</p>
+<p>setuptoolsはフロントエンドインターフェースを提供していないので、この表には含まれていないことに注意してください。</p>
+<section id="package-tool-features-table">
+<span id="package-features"></span><h3>パッケージツール機能一覧表<a class="headerlink" href="#package-tool-features-table" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 47.4%" />
+<col style="width: 13.2%" />
+<col style="width: 13.2%" />
+<col style="width: 13.2%" />
+<col style="width: 13.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Flit, Hatch, PDM, Poetry の特徴</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>デフォルトのビルドバックエンド</p></td>
+<td><p>Flit-core</p></td>
+<td><p>hatchling</p></td>
+<td><p>PDM</p></td>
+<td><p>Poetry-core</p></td>
+</tr>
+<tr class="row-odd"><td><p>他のビルドバックエンドを使う</p></td>
+<td><p>✖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✖</p></td>
+</tr>
+<tr class="row-even"><td><p>依存関係の管理</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>PyPIに公開する</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>バージョン管理ベースのバージョニング ( <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tags</span></code> を使用)</p></td>
+<td><p>✖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>バージョンバンプ</p></td>
+<td><p>✖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>環境マネジメント</p></td>
+<td><p>✖</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>メンテナンス担当者が複数いるか？ (バスファクター)</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
+<td><p>✖</p></td>
+<td><p>✅</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注釈:</p>
+<ul class="simple">
+<li><p><em>Hatch は将来的に従属性管理をサポートする予定です</em></p></li>
+<li><p>Poetry はセマンティックバージョニングをサポートしています。 したがって、Python Semantic Releaseのようなツールを使えば、コミットメッセージに続くバージョンバンプをサポートします。</p></li>
+</ul>
+</section>
+</section>
+<section id="pdm">
+<h2>PDM<a class="headerlink" href="#pdm" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://pdm.fming.dev/latest/">PDMはPythonのパッケージングと依存関係の管理ツールです</a> 。 PDMは純粋なPythonプロジェクトのビルドをサポートします。また、CやC++の拡張を持つプロジェクトに対しても、多層的なサポートを提供します。</p>
+<div class="admonition-pdm-support-for-c-and-c-extensions admonition">
+<p class="admonition-title">CおよびC++拡張のPDMサポート</p>
+<p>PDMはPDM-back-endとsetuptoolsの同時使用をサポートしています。 つまり、setuptools を実行して C 拡張モジュールをコンパイルビルドすることができます。 PDMのビルドバックエンドはコンパイルされた拡張ファイル(.so, .pyd)を受け取り、純粋なPythonファイルと一緒にパッケージ化します。</p>
+</div>
+<section id="pdm-features">
+<h3>PDMの特徴<a class="headerlink" href="#pdm-features" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 26.7%" />
+<col style="width: 6.7%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>特徴, PDM, ノート</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>他のビルドバックエンドを使う</p></td>
+<td><p>✅</p></td>
+<td><p>PDMをセットアップする際、いくつかのビルドバックエンドから1つを選択することができます: PDM-core、flit-core、hatchlingなどです。 PDMはまた、複雑なPythonビルドをサポートするMeson-Pythonとも連携できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>依存仕様</p></td>
+<td><p>✅</p></td>
+<td><p>PDMは依存関係の管理を柔軟にサポートしています。 PDMはデフォルトで依存関係に対してオープンバウンド(例えば <code class="docutils literal notranslate"><span class="pre">requests</span> <span class="pre">&gt;=1.2</span></code> )アプローチを使用します。 しかし、 <a class="reference external" href="https://pdm.fming.dev/latest/usage/dependency/#about-update-strategy">Poetryのような上限を使用する別のアプローチを好む場合、依存関係を追加する方法をカスタマイズする</a> ことができます。</p></td>
+</tr>
+<tr class="row-even"><td><p>環境ロックファイル</p></td>
+<td><p>✅</p></td>
+<td><p>PDMとPoetryは現在、環境ロックファイルを作成する唯一のツールです。 ロックファイルは、一貫したユーザーエクスペリエンスのために環境をロックすることが重要なウェブアプリを作成する開発者にとって、しばしば最も有用です。 コミュニティで使われるパッケージでは、ロックファイルを使うことはないでしょう。</p></td>
+</tr>
+<tr class="row-odd"><td><p>環境マネジメント</p></td>
+<td><p>✅</p></td>
+<td><p>PDMは環境管理のサポートを提供します。 Python仮想環境、conda、そしてPythonエコシステムの新しいオプションであるローカルの <code class="docutils literal notranslate"><span class="pre">__pypackages__</span></code> 環境をサポートしています。 このサポートに拡張は必要ありません。</p></td>
+</tr>
+<tr class="row-even"><td><p>インストール時に環境タイプを選択</p></td>
+<td><p>✅</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PDM</span> <span class="pre">init</span></code> を実行すると、PDMがあなたのシステム上にある環境を検出し、プロジェクトに使用する環境を選択できるようになります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>PyPIに公開する</p></td>
+<td><p>✅</p></td>
+<td><p>PDM は test PyPI と PyPI の両方への公開をサポートしています</p></td>
+</tr>
+<tr class="row-even"><td><p>バージョン管理ベースのバージョニング</p></td>
+<td><p>✅</p></td>
+<td><p>PDMには setuptools_scm のようなツールが組み込まれており、gitタグに依存したダイナミックバージョニングを使うことができます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>バージョンバンプ</p></td>
+<td><p>✅</p></td>
+<td><p>PDMは、標準的なセマンティックバージョニングである patch; minor; major を使って、パッケージのバージョンをバンプすることをサポートしています。</p></td>
+</tr>
+<tr class="row-even"><td><p>現行のパッケージング基準に従う</p></td>
+<td><p>✅</p></td>
+<td><p>PDMは <strong>pyproject.toml</strong> ファイルにメタデータを追加するための現在のパッケージング標準をサポートしています。</p></td>
+</tr>
+<tr class="row-odd"><td><p>編集可能モードでパッケージをインストールする</p></td>
+<td><p>✅</p></td>
+<td><p>PDMは編集可能モードでのパッケージのインストールをサポートしています。</p></td>
+</tr>
+<tr class="row-even"><td><p>sdistとwheelディストリビューションの構築</p></td>
+<td><p>✅</p></td>
+<td><p>他のツール同様、PDMはパッケージのsdistとwheelファイルをビルドしてくれます。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-pdm-vs-poetry admonition">
+<p class="admonition-title">PDM vs. Poetry</p>
+<p>PDMの機能はPoetryに似ています。 しかし、PDMはC拡張やバージョン管理ベースのバージョニングを文書でサポートしています。 そのため、純粋なPython以外のパッケージで作業する場合は、PDMを使うことをお勧めします。</p>
+<p>もしあなたがPoetryとPDMのどちらを選ぶか決めているのであれば、より小さな違いは依存関係をpyproject.tomlファイルに追加するデフォルトの方法です。</p>
+<ul class="simple">
+<li><p>Poetryはデフォルトで、pyproject.tomlファイルに <a class="reference external" href="https://python-poetry.org/docs/dependency-specification/#version-constraints">上界制約(<code class="docutils literal notranslate"><span class="pre">^</span></code>)を使って</a> 依存関係を追加する、厳密なセマンティックバージョニングに従っています。 アッパーバウンズロックとは、ポエトリーが依存関係を次のメジャーバージョン（1.2から2.0など）にバンプさせないことを意味します。 しかし、次のように明示的にパッケージを追加することで、Poetryにオープンバウンドのアプローチを使うように指示することができる： poetry add requests &gt;= 1.2` のように明示的にパッケージを追加することで、Poetry にオープンバウンドのアプローチを使うように指示することができます (すなわち、アッパーバウンドロックとは、リクエスト2.0が出たとしてもインストールされることはなく、あなたのパッケージはその恩恵を受けることができるということです) 。</p></li>
+<li><p>PDMのデフォルトはオープンバウンド(<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>)依存性の追加で、これは科学的なpythonのエコシステムでは好ましいアプローチです。 しかし、PDMではデフォルトで依存関係を追加する方法を指定することもできます。 そのため、その方法が必要であれば、PDMを使用して上限 (<code class="docutils literal notranslate"><span class="pre">^</span></code>) を指定することもできます。</p></li>
+</ul>
+<p>最後に、両ツールのロックファイルの作成方法には微妙な違いがありますが、ここでは詳しく説明しません。</p>
+</div>
+</section>
+<section id="challenges-with-pdm">
+<h3>PDMの課題<a class="headerlink" href="#challenges-with-pdm" title="Link to this heading">#</a></h3>
+<p>PDMはフル機能のパッケージングツールです。しかし、課題がないわけではありません:</p>
+<ul class="simple">
+<li><p>PDMのドキュメントは、特に初めてパッケージングを行う場合、混乱する可能性があります。 例えば、PDMのドキュメントには、最初から最後までのワークフローが記載されていません。</p></li>
+<li><p>また、PDMには現在1人のメンテナしかいません。 私たちは、個々のメンテナチームは潜在的なリスクであると考えています。 もしメンテナがプロジェクトに取り組む時間がなくなったら、ユーザーにはサポートのギャップが残ります。 HatchとFlitにも、一人のメンテナチームがあります。</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/pyOpenSci/examplePy/tree/main/example4_pdm">PDMを使用したパッケージの例はこちらからご覧いただけます</a> 。 このREADMEファイルでは、PDMコマンドラインインターフェイスを使用する際にどのように見えるかの概要を直接説明しています。</p>
+</section>
+</section>
+<section id="flit">
+<h2>Flit<a class="headerlink" href="#flit" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://flit.pypa.io/en/stable/">Flitは、最新のPythonパッケージング標準をサポートする、飾り気のない、合理的なパッケージングツール</a> です。 Flitは、ローカル・ワークフローで使用する基本的なパッケージを構築し、高度な機能を必要としない場合に最適な選択です。 また、パッケージ構造がすでに作成されている場合。 詳しくは後述します。</p>
+<section id="flit-features">
+<h3>Flitの特徴<a class="headerlink" href="#flit-features" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 26.7%" />
+<col style="width: 6.7%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>特徴, Flit, ノート</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PyPIとtest PyPIに公開する</p></td>
+<td><p>✅</p></td>
+<td><p>Flit は test PyPI と PyPI の両方への公開をサポートしています</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pyproject.toml</strong> ファイルにメタデータを追加するのに役立ちます。</p></td>
+<td><p>✅</p></td>
+<td><p>Flitは <strong>pyproject.toml</strong> ファイルにメタデータを追加することをサポートしています。</p></td>
+</tr>
+<tr class="row-even"><td><p>現行のパッケージング基準に従う</p></td>
+<td><p>✅</p></td>
+<td><p>Flitは、 <strong>pyproject.toml</strong> ファイルにメタデータを追加する現在のパッケージング標準をサポートしています。</p></td>
+</tr>
+<tr class="row-odd"><td><p>編集可能モードでパッケージをインストールする</p></td>
+<td><p>✅</p></td>
+<td><p>Flitは編集可能モードでのパッケージのインストールをサポートしています。**</p></td>
+</tr>
+<tr class="row-even"><td><p>sdistとwheelディストリビューションの構築</p></td>
+<td><p>✅</p></td>
+<td><p>Flitはsdistとwheelのディストリビューションパッケージのビルドに使用できます。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注: <em>最新バージョンのpipを使用している場合、シンボリックリンクを使った <code class="docutils literal notranslate"><span class="pre">flit</span> <span class="pre">install</span> <span class="pre">-s</span></code> と <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></em> の両方をサポートしています。</p>
+<div class="admonition-learn-more-about-flit admonition">
+<p class="admonition-title">flitについてもっと知る</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://flit.pypa.io/en/stable/rationale.html">なぜflitを使うのか？</a></p></li>
+</ul>
+</div>
+</section>
+<section id="why-you-might-not-want-to-use-flit">
+<h3>Flitを使いたくない理由<a class="headerlink" href="#why-you-might-not-want-to-use-flit" title="Link to this heading">#</a></h3>
+<p>Flitは飾り気がないので、基本的で素早いビルドに最適です。 初心者の方は、一般的な操作をよりサポートしてくれるHatchやPDMを選ぶとよいでしょう。</p>
+<p>次のような場合は、flitを使用しない方がよいです:</p>
+<ul class="simple">
+<li><p>より高度なバージョン追跡と管理をセットアップしたい場合 (バージョン管理を使ってバージョンバンプを行う)</p></li>
+<li><p>依存性のあるバージョンを処理するツールが必要（代わりにPDMやPoetryを使用する）</p></li>
+<li><p>純粋なPythonではないプロジェクトを持っている（Hatch、PDM、またはsetuptoolsを使用する）</p></li>
+<li><p>環境を管理したい（PDM、Hatch、またはPoetryを使用する）</p></li>
+</ul>
+</section>
+</section>
+<section id="hatch">
+<span id="id1"></span><h2>Hatch<a class="headerlink" href="#hatch" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://hatch.pypa.io/latest/"><strong>Hatch</strong></a> は、ポエトリーやPDMと同様、統一されたコマンドラインインターフェイスを提供する。HatchをPoetryやPDMから切り離すために、Pythonの異なるバージョン間でローカルにテストを実行しやすくするテスト用の環境マネージャーも提供しています。 また、nox / makefileのような機能もあり、ドキュメントをローカルでビルドするようなカスタムビルドワークフローを作成することができる。 つまり、ワークフローから <strong>Make</strong> や <strong>Nox</strong> のようなツールを削除して、代わりにHatchを使うことができる可能性があるということだ。</p>
+<section id="hatch-features">
+<h3>Hatchの特徴<a class="headerlink" href="#hatch-features" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 26.7%" />
+<col style="width: 6.7%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>特徴, Hatch, ノート</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>他のビルドバックエンドを使う</p></td>
+<td><p>✅</p></td>
+<td><p>HatchはデフォルトでHatchlingバックエンドと一緒に使われますが、pyproject.tomlの宣言を切り替えることで別のバックエンドを使うことができます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>依存関係の管理</p></td>
+<td><p>✖</p></td>
+<td><p>現在のところ、Hatchを使って手動で依存関係を追加する必要があります。 しかし、依存関係の管理をサポートする機能が将来のリリースで追加されるかもしれません。</p></td>
+</tr>
+<tr class="row-even"><td><p>環境マネジメント</p></td>
+<td><p>✅</p></td>
+<td><p>HatchはPython仮想環境をサポートしています。 Condaのような他の環境を使いたい場合は、 <a class="reference external" href="https://github.com/OldGrumpyViking/hatch-conda">condaをサポートするhatch-condaのようなプラグインをインストールする</a> 必要があります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>PyPIとtest PyPIに公開する</p></td>
+<td><p>✅</p></td>
+<td><p>Hatch は test PyPI と PyPI の両方への公開をサポートしています</p></td>
+</tr>
+<tr class="row-even"><td><p>バージョン管理ベースのバージョニング</p></td>
+<td><p>✅</p></td>
+<td><p>Hatch が提供する <code class="docutils literal notranslate"><span class="pre">hatch_vcs</span></code> は setuptools_scm を使って git タグを使ったバージョン管理をサポートするプラグインです。 hatch_vcs<code class="docutils literal notranslate"><span class="pre">を使ったワークフローは</span></code>setuptools_scm` を使ったワークフローと同じです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>バージョンバンプ</p></td>
+<td><p>✅</p></td>
+<td><p>Hatchは、標準的なセマンティックバージョニングである patch; minor; major を使って、パッケージのバージョンをバンプすることをサポートしています。</p></td>
+</tr>
+<tr class="row-even"><td><p>現行のパッケージング基準に従う</p></td>
+<td><p>✅</p></td>
+<td><p>Hatchは、 <strong>pyproject.toml</strong> ファイルにメタデータを追加する現在のパッケージング標準をサポートしています。</p></td>
+</tr>
+<tr class="row-odd"><td><p>編集可能モードでパッケージをインストールする</p></td>
+<td><p>✅</p></td>
+<td><p>Hatchはデフォルトで編集可能なモードで、あなたのパッケージをどの環境にもインストールします。 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> を使って、編集可能モードでパッケージを手動でインストールできます。Hatchは <a class="reference external" href="https://hatch.pypa.io/latest/config/build/#dev-mode">editable installs</a> に言及していますが、ドキュメントではpipを参照しています。</p></td>
+</tr>
+<tr class="row-even"><td><p>sdistとwheelディストリビューションの構築</p></td>
+<td><p>✅</p></td>
+<td><p>Hatchはsdistとホイールのディストリビューションを構築します</p></td>
+</tr>
+<tr class="row-odd"><td><p>✨Pythonのバージョンをまたいだテストをサポートするためのマトリックス環境の構築✨</p></td>
+<td><p>✅</p></td>
+<td><p>マトリックス環境の作成は、パッケージングエコシステムにおける Hatch 独自の機能です。 この機能は、（tox のようなツールを使う代わりに）Python のバージョンにまたがってパッケージをローカルでテストしたい場合に便利です。</p></td>
+</tr>
+<tr class="row-even"><td><p>✨<a class="reference external" href="https://hatch.pypa.io/latest/environment/#selection">Nox / MAKEFILEのような機能性</a>✨</p></td>
+<td><p>✅</p></td>
+<td><p>これもHatchならではの特徴だ。この機能により、<strong>pyproject.toml</strong> 設定にワークフローを作成し、ドキュメントをローカルに提供したり、パッケージのビルドディレクトリをクリーニングしたりすることができます。これは、ビルドワークフローのツールが1つ減ることを意味します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>✨柔軟なビルドバックエンド: <strong>hatchling</strong>✨</p></td>
+<td><p>✅</p></td>
+<td><p>**Hatchのメンテナが提供するhatchlingビルドバックエンドは、開発者がパッケージング時にカスタムビルドステップをサポートするプラグインを簡単にビルドすることを可能にします。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>このアプローチは、メンテナにカスタムビルドシステムを作る負担を強いるという議論があリマス。 しかし、柔軟性を高く評価する人もいます。 ハッチのビルドフックアプローチは、PDMが提供する機能にも匹敵します。</em></p>
+</section>
+<section id="why-you-might-not-want-to-use-hatch">
+<h3>ハッチを使いたくない理由<a class="headerlink" href="#why-you-might-not-want-to-use-hatch" title="Link to this heading">#</a></h3>
+<p>hatchには、一部の人にとって重要かもしれないいくつかの機能が欠けています。 それは以下のようなものです:</p>
+<ul class="simple">
+<li><p>Hatchは依存関係の追加をサポートしていません。 手動で追加する必要があります。</p></li>
+<li><p>HatchはプラグインなしではデフォルトでConda環境を認識しません。</p></li>
+<li><p>PDMと同様、Hatchのドキュメントを読みこなすのは難しいです。 特にパッケージの作成を始めたばかりであればなおさらです。</p></li>
+<li><p>Hatchは、PDMやFlitと同様、現在1人のメンテナしかいません。</p></li>
+</ul>
+</section>
+</section>
+<section id="poetry">
+<h2>Poetry<a class="headerlink" href="#poetry" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://python-poetry.org/">Poetry はフル機能のビルドツールです。</a> また、（PyPAの調査に基づく）2番目に人気のあるフロントエンドパッケージングツールでもあります。 Poetry はユーザーフレンドリーで、きれいで読みやすいドキュメントを持っています。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>C/C++ 拡張を含む Python のビルドに Poetry を使っている人もいますが、このサポートは現在のところ文書化されていません。 したがって、より複雑なビルドに Poetry を使うことはお勧めしません。</p>
+</div>
+<section id="poetry-features">
+<h3>Poetryの特徴<a class="headerlink" href="#poetry-features" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 26.7%" />
+<col style="width: 6.7%" />
+<col style="width: 66.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>特徴, Poetry, ノート</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pyproject.tomlファイルに依存関係を追加</p></td>
+<td><p>✅</p></td>
+<td><p>Poetry は <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> メタデータに依存関係を追加するのに役立ちます。 _NOTE: 現在のところ、Poetry は現在の Python peps とは少しずれたアプローチで依存関係を追加しています - しかし、今後のリリースでこれを修正する予定です。 _ Poetryでは、ドキュメント、パッケージング、テストなどのグループに依存関係を整理することもできます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>依存仕様</p></td>
+<td><p>✅</p></td>
+<td><p>Poetryはパッケージのpyproject.tomlファイルに追加する依存関係のバージョンを指定することができます。 しかし、デフォルトの上限アプローチはパッケージによっては問題があります(依存関係を追加するときはデフォルトの設定を上書きすることをお勧めします)。 詳しくは以下をお読みください。</p></td>
+</tr>
+<tr class="row-even"><td><p>環境マネジメント</p></td>
+<td><p>✅</p></td>
+<td><p>Poetryでは、ビルトイン環境を使用するか、パッケージ管理に使用する環境タイプを選択することができます。 <a class="reference external" href="https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment">内蔵された環境管理オプションについての詳細はこちら</a> 。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ファイルのロック</p></td>
+<td><p>✅</p></td>
+<td><p>Poetryは <strong>poetry.lock</strong> ファイルを作成するので、ビルドにロックファイルが必要な場合に使用します。</p></td>
+</tr>
+<tr class="row-even"><td><p>PyPIとtest PyPIに公開する</p></td>
+<td><p>✅</p></td>
+<td><p>Poetry は test PyPI と PyPI の両方への公開をサポートしています</p></td>
+</tr>
+<tr class="row-odd"><td><p>バージョン管理ベースのバージョニング</p></td>
+<td><p>✅</p></td>
+<td><p><a class="reference external" href="https://github.com/mtkennerly/poetry-dynamic-versioning">Poetry dynamic versioning</a> プラグインは、Poetryでgitタグを使ったバージョン管理をサポートします。</p></td>
+</tr>
+<tr class="row-even"><td><p>バージョンバンプ</p></td>
+<td><p>✅</p></td>
+<td><p>Poetryでは、標準的なセマンティックバージョン用語である patch; minor; major を使ってパッケージのバージョンを上げることができます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>現行のパッケージング基準に従う</p></td>
+<td><p>✖✅</p></td>
+<td><p>Poetryは <strong>pyproject.toml</strong> ファイルにメタデータを追加する現在のパッケージング標準を完全にサポートしているわけではありませんが、今後のリリースでこれを修正する予定です。</p></td>
+</tr>
+<tr class="row-even"><td><p>編集可能モードでパッケージをインストールする</p></td>
+<td><p>✅</p></td>
+<td><p>Poetry は <code class="docutils literal notranslate"><span class="pre">--editable</span></code> を使った編集可能モードでのパッケージのインストールをサポートしています。</p></td>
+</tr>
+<tr class="row-odd"><td><p>sdistとwheelディストリビューションの構築</p></td>
+<td><p>✅</p></td>
+<td><p>Poetry は <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">build</span></code> を使って sdist と wheel ディストリビューションをビルドします。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- TODO: responses here on poetry's future dev work: https://github.com/python-poetry/poetry/discussions/7525 -->
+</section>
+<section id="challenges-with-poetry">
+<span id="id2"></span><h3>Poetryの課題<a class="headerlink" href="#challenges-with-poetry" title="Link to this heading">#</a></h3>
+<p>Poetryの課題には次のようなものがある:</p>
+<ul class="simple">
+<li><p>Poetryは、デフォルトでは、<code class="docutils literal notranslate"><span class="pre">^</span></code>シンボルで指定された &quot;上限&quot; 制限を使用して依存関係をピンします。 しかし、この動作は <code class="docutils literal notranslate"><span class="pre">Poetry</span> <span class="pre">add</span></code> を使うときに依存関係を以下のように指定することで上書きすることができます: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> アッパーバウンドピニングをめぐる問題については、以下のブレイクアウトを参照のしてください。</p></li>
+<li><p><em>マイナーチェンジ:</em> Poetryが現在pyproject.tomlファイルにメタデータを追加する方法は、現在のPythonの標準に従っていません。 しかし、これは Poetry リリースバージョン 2.0 で対処される予定です。</p></li>
+</ul>
+<p>Poetryは優れたツールです。 依存関係を固定するために Poetry を使う場合は注意してください。Poetry の固定方法は、多くのビルドで問題になる可能性があります。 Poetry を使用する場合は、デフォルトの上限依存性オプションをオーバーライドすることを強く推奨します。</p>
+<!--https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750
+discusses the slight differences in how poetry adds deps....-->
+<div class="important admonition">
+<p class="admonition-title">Poetry依存のピン留めの課題</p>
+<p>デフォルトでは、Poetry は <code class="docutils literal notranslate"><span class="pre">^</span></code> を使って依存関係をピン留めします。 このシンボル <code class="docutils literal notranslate"><span class="pre">^</span></code> は依存関係に &quot;上限&quot; があることを意味します。 従って、poetryは依存バージョンを新しいメジャーバージョンにバンプすることはありません。 したがって、あなたのパッケージがバージョン1.2.3の依存関係を使用している場合、Poetryは、パッケージの新しいメジャーバージョンがあっても、依存関係を2.0にバンプすることはありません。 Poetryは代わりに1.9.xにアップグレードします。</p>
+<p>Poetryは、メジャーバージョンアップ（例えば1.0から2.0へ）は、ツールに破壊的な変更があることを意味するという、厳密なセマンティックバージョニングを遵守しているからです。 しかし、すべてのツールが厳密なセマンティックバージョニングに従っているわけではありません。 <a class="reference external" href="https://iscinumpy.dev/post/bound-version-constraints/">このアプローチは、私たちのコアとなる科学パッケージの多くによって問題があることが判明しています</a></p>
+<p>例えば、 <a class="reference external" href="https://calver.org/">calver</a> を使って、日付に基づいて新しいバージョンを作成するツールもある。</p>
+</div>
+</section>
+</section>
+<section id="using-setuptools-back-end-for-python-packaging-with-build-front-end">
+<h2>PythonパッケージングのためのSetuptoolsバックエンドとBuildフロントエンドの使用<a class="headerlink" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">Setuptools</a>は最も成熟したPythonパッケージングビルドツールで、<a class="reference external" href="https://setuptools.pypa.io/en/latest/history.html#">開発は2009年以前にさかのぼります</a>。 また、（PyPAの調査によると）Setuptoolsは最も多くのコミュニティユーザを抱えています。 Setuptoolsは、Flit、Poetry、Hatchのようなユーザーフロントエンドを提供していません。そのため、パッケージの配布を作成するには <strong>build</strong> を、PyPI に公開するには <strong>twine</strong> などの他のツールを使用する必要があります。</p>
+<p>setuptoolsは最もよく使われるツールですが、パッケージメンテナには、PoetryやHatch、PDMなど、パッケージングにもっとモダンなツールを使うことを検討することをお勧めします。</p>
+<p>ここでsetuptoolsについて説明するのは、それがエコシステムでよく見られるものであり、貢献者がそれを理解することで恩恵を受けるかもしれないからです。</p>
+<section id="setuptools-features">
+<h3>Setuptoolsの特徴<a class="headerlink" href="#setuptools-features" title="Link to this heading">#</a></h3>
+<p>setuptoolsの機能には次のようなものがあります:</p>
+<ul class="simple">
+<li><p>完全にカスタマイズ可能なビルドワークフロー</p></li>
+<li><p>多くの科学的Pythonパッケージがこれを使用しています。</p></li>
+<li><p><strong>setuptools_scm</strong> を使用したバージョン管理ベースのパッケージのバージョン管理を提供します。</p></li>
+<li><p>メタデータに <strong>pyproject.toml</strong> を使用した最新のパッケージングをサポートしています。</p></li>
+<li><p>古いパッケージングアプローチの下位互換性をサポートします。</p></li>
+</ul>
+</section>
+<section id="challenges-using-setuptools">
+<h3>setuptoolsの課題<a class="headerlink" href="#challenges-using-setuptools" title="Link to this heading">#</a></h3>
+<!--https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#editable-install-modules-not-found  -->
+<p>Setuptoolsにはいくつかの課題があります:</p>
+<ul class="simple">
+<li><p>Setuptoolsは、VSCODEのようなIDEで作業し、編集可能なインストーラを開発に使用している場合、デフォルトでは自動/タブ補完のようなインタラクティブな機能をサポートしていません。 <a class="reference external" href="https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md#editable-install-modules-not-found">pylanceのサポートについてはこちらを参照</a> 。 それに比べて、flit、hatch、PDMのようなツールは、VSCODEやpycharmのようなIDE（pipのバージョンが最新である限り!）を使っているときに、タブや自動補完のようなインタラクティブな機能をサポートしています。</p></li>
+<li><p><strong>setuptools</strong> は様々なパッケージの後方互換性を維持しなければならないため、最新のPythonパッケージング標準を採用する柔軟性がありません。</p></li>
+<li><p>上記の後方互換性は、より複雑なコードベースとなります。</p></li>
+<li><p>このページで説明する他のツールに比べ、setuptoolsを使用した場合、ユーザーとしての体験は合理的でシンプルなものではなくなります。</p></li>
+</ul>
+<p>また、setuptoolsを使用する際にユーザーが注意すべき、問題のあるデフォルト設定がいくつかあります。 例えば:</p>
+<ul class="simple">
+<li><p>メタデータを保存するために <strong>pyproject.toml</strong> ファイルを使用していない場合、setuptoolsは名前やバージョンなしでプロジェクトをビルドします。</p></li>
+<li><p>setuptoolsは、 <strong>MANIFEST.in</strong> ファイルを使ってファイルを除外するように明示的に指示しなければ、パッケージリポジトリ内のすべてのファイルも含めます。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="declare-dependencies.html"
+       title="前のページ">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Pythonパッケージの依存関係</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="complex-python-package-builds.html"
+       title="次ページ">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">複雑なPythonパッケージのビルド</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-building-your-package">パッケージ構築のためのツール</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-that-we-review-here">ここでレビューするツール</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools">ツールまとめ Hatch vs PDM vs Poetry (と setuptools)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-front-end-vs-build-back-end-tools">フロントエンド構築ツールとバックエンド構築ツール</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-back-ends">バックエンドのビルド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package-build-front-ends">Pythonパッケージビルドフロントエンド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-build-steps-that-can-be-simplified-using-a-front-end-tool">フロントエンドツールを使って簡略化できるビルド手順の例</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-build-back-end">ビルドバックエンドの選択</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-back-end-support-for-non-pure-python-packages">純粋なPythonパッケージ以外のバックエンドサポートの構築</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-ecosystem-of-python-build-tools">Pythonビルドツールのエコシステム</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chose-a-build-workflow-tool">ビルドワークフローツールの選択</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packaging-tools-summary">Pythonパッケージングツールまとめ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-tool-features-table">パッケージツール機能一覧表</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm">PDM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm-features">PDMの特徴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-with-pdm">PDMの課題</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flit">Flit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flit-features">Flitの特徴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-might-not-want-to-use-flit">Flitを使いたくない理由</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch">Hatch</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-features">Hatchの特徴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-might-not-want-to-use-hatch">ハッチを使いたくない理由</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry">Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-features">Poetryの特徴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-with-poetry">Poetryの課題</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end">PythonパッケージングのためのSetuptoolsバックエンドとBuildフロントエンドの使用</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-features">Setuptoolsの特徴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-using-setuptools">setuptoolsの課題</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/python-package-build-tools.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/package-structure-code/python-package-build-tools.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

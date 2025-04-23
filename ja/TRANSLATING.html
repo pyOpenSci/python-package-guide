@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Python パッケージングガイドの翻訳ガイド" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/TRANSLATING.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="このガイドは Python パッケージングガイドの翻訳への貢献を始めるのに役立ちます。 ガイドの翻訳に貢献するプロセスは、ガイドのソースファイルに直接取り組むのではなく、翻訳ファイルに取り組むという点を除けば、ガイドそのものに貢献するプロセスと似ています。 翻訳プロセスの概要: ソフトウェアを異なる言語に適応させるプロセスは国際化、略してi18nと呼ばれます。 国際化はソースコード、私たちの..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_TRANSLATING_e5317856.png" />
+<meta property="og:image:alt" content="このガイドは Python パッケージングガイドの翻訳への貢献を始めるのに役立ちます。 ガイドの翻訳に貢献するプロセスは、ガイドのソースファイルに直接取り組むのではなく、翻訳ファイルに取り組むという点を除けば、ガイドそのものに貢献するプロセスと似ています。 翻訳プロセスの概要: ソフトウェアを異なる言語に適応させるプロセスは国際化、略してi18nと呼ばれます。 国際化はソースコード、私たちの..." />
+<meta name="description" content="このガイドは Python パッケージングガイドの翻訳への貢献を始めるのに役立ちます。 ガイドの翻訳に貢献するプロセスは、ガイドのソースファイルに直接取り組むのではなく、翻訳ファイルに取り組むという点を除けば、ガイドそのものに貢献するプロセスと似ています。 翻訳プロセスの概要: ソフトウェアを異なる言語に適応させるプロセスは国際化、略してi18nと呼ばれます。 国際化はソースコード、私たちの..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Python パッケージングガイドの翻訳ガイド &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=c07158ed" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=be13464f"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/translations.js?v=91613774"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'TRANSLATING';</script>
+    <script src="_static/matomo.js?v=5a92784f"></script>
+    <script src="_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="/TRANSLATING.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/TRANSLATING.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/TRANSLATING.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/TRANSLATING.html"
+  
+>
+  es
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/ja/TRANSLATING.html"
+  selected
+>
+  ja
+</option>
+<option
+  value="/TRANSLATING.html"
+  
+>
+  en
+</option>
+<option
+  value="/es/TRANSLATING.html"
+  
+>
+  es
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/intro.html">
+    チュートリアル
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="package-structure-code/intro.html">
+    パッケージング
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="documentation/index.html">
+    ドキュメンテーション
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tests/index.html">
+    テスト
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="パンくずリスト" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="ホーム">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python パッケージングガイドの翻訳ガイド</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="translation-guide-for-the-python-packaging-guide">
+<h1>Python パッケージングガイドの翻訳ガイド<a class="headerlink" href="#translation-guide-for-the-python-packaging-guide" title="Link to this heading">#</a></h1>
+<p>このガイドは Python パッケージングガイドの翻訳への貢献を始めるのに役立ちます。</p>
+<p>ガイドの翻訳に貢献するプロセスは、ガイドのソースファイルに直接取り組むのではなく、翻訳ファイルに取り組むという点を除けば、ガイドそのものに貢献するプロセスと似ています。</p>
+<section id="overview-of-the-translation-process">
+<h2>翻訳プロセスの概要<a class="headerlink" href="#overview-of-the-translation-process" title="Link to this heading">#</a></h2>
+<p>ソフトウェアを異なる言語に適応させるプロセスは国際化、略してi18nと呼ばれます。 国際化はソースコード、私たちの場合はガイドのオリジナルの英語のソースファイルを修正することなく翻訳が行われるようにします。</p>
+<p>Pythonパッケージガイドをビルドするために使っているドキュメントエンジンであるSphinxは、国際化をビルトインでサポートしているので、ワークフローはとても簡単です。</p>
+<p>ガイドを実際に異なる言語に翻訳するプロセスをローカリゼーション、略してl10nと呼びます。 あなたが貢献するのはこのステップです。</p>
+<p>ここでは、翻訳プロセスの概要を簡単に説明します:</p>
+<ol class="arabic simple">
+<li><p>このガイドはもともと英語で書かれており、MarkDownのファイル群に保存されています。</p></li>
+<li><p>ソースファイルはSphinxによって処理され、各ターゲット言語のフォルダに格納された翻訳ファイルのセットを生成します。</p></li>
+<li><p>（あなたのような!）貢献者は、これらのファイルをさまざまな言語に翻訳します。</p></li>
+<li><p>ガイドがビルドされると、Sphinxはオリジナルの言語(英語)と、コンフィグレーションで定義された言語の翻訳版のガイドを作成します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>貢献するために技術的な詳細を理解する必要はありませんが、もしSphinxがどのように国際化とローカライズを処理するのかに興味があれば、 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/advanced/intl.html">ここ</a> に詳しい情報があります。</p>
+</div>
+</section>
+<section id="setting-up-your-local-environment">
+<h2>ローカル環境の設定<a class="headerlink" href="#setting-up-your-local-environment" title="Link to this heading">#</a></h2>
+<p>作業を始める前に、ローカルの作業環境を設定する必要があります。</p>
+<p>まず、ガイドリポジトリを個人のGitHubアカウントにフォークし、フォークしたリポジトリをローカルコンピューターにクローンします。</p>
+<p>仮想環境を作成し、ガイドの開発依存関係をインストールするには、以下のコマンドを実行します:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./python-package-guide
+$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
+</pre></div>
+</div>
+<p>TODO: このセクションは、より多くの作業が必要か、CONTRIBUTINGガイドへの参照に置き換える必要があります。</p>
+</section>
+<section id="starting-a-new-language-translation">
+<h2>新しい言語の翻訳を始める<a class="headerlink" href="#starting-a-new-language-translation" title="Link to this heading">#</a></h2>
+<p>既存の翻訳に手を加える場合は、このステップを飛ばして直接次のセクションに進んでください。</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">重要</p>
+<p>新しい言語へのガイドの翻訳を開始したい場合は、リポジトリに <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issueを作成する</a> ことから始めてください。</p>
+</div>
+<p>新しい言語の翻訳ファイルを生成するには、 <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> 設定ファイルの <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> リストにその言語を追加します。 <a class="reference external" href="https://nox.thea.codes/en/stable/index.html">Nox</a> はガイドとその翻訳のビルドを管理するために使うツールです。</p>
+<p><code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> の中で <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> リストを見つけて、対応する2文字のコードを追加します。 例えば、フランス語への翻訳を開始したい場合は <code class="docutils literal notranslate"><span class="pre">'fr'</span></code> を追加します:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Localization options (translations)</span>
+
+<span class="c1"># List of languages for which locales will be generated in (/locales/&lt;lang&gt;)</span>
+<span class="n">LANGUAGES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;fr&quot;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>You can find a list of the two-letter Sphinx language option <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language">here</a>.</p>
+</div>
+</section>
+<section id="preparing-the-translation-files">
+<h2>翻訳ファイルの準備<a class="headerlink" href="#preparing-the-translation-files" title="Link to this heading">#</a></h2>
+<p>翻訳ファイルには、英語の原文と翻訳文を入力するスペースが含まれています。 翻訳を始める前に、翻訳ファイルがガイドの最新の変更に対応していることを確認する必要があります。</p>
+<p>You can do this by running the following command, replacing LANG by the language code you plan to work on (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code> for Spanish):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nox<span class="w"> </span>-s<span class="w"> </span>update-language<span class="w"> </span>--<span class="w"> </span>LANG
+</pre></div>
+</div>
+<p>このコマンドは、翻訳ファイルがまだ存在しない場合は作成し、すでに存在する場合は最新の変更内容で更新します。</p>
+<p>翻訳ファイルは拡張子が <code class="docutils literal notranslate"><span class="pre">.po</span></code> のテキストファイルで、各言語に対応するフォルダ <code class="docutils literal notranslate"><span class="pre">./locales</span></code> に格納されています。 例えば、スペイン語の翻訳ファイルは <code class="docutils literal notranslate"><span class="pre">locale/es/LC_MESSAGES</span></code> ディレクトリに格納されています。</p>
+<p>翻訳ファイルは、元の英文テキストと翻訳テキストを対応付けるため、 &quot;catalog&quot; ファイルや &quot;portable object&quot; ファイルと呼ばれることもあります。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>翻訳するためにPOフォーマットの詳細をすべて知っている必要はありません。 もっと詳しく知りたければ、 <a class="reference external" href="https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html">GNU gettext documentation</a> に詳細があります。</p>
+</div>
+</section>
+<section id="working-on-a-translation">
+<h2>翻訳作業<a class="headerlink" href="#working-on-a-translation" title="Link to this heading">#</a></h2>
+<p>翻訳を開始するには、翻訳したいターゲット言語に対応する <code class="docutils literal notranslate"><span class="pre">./locales</span></code> 内のフォルダに移動します（例えば、スペイン語翻訳なら <code class="docutils literal notranslate"><span class="pre">./locale/es/LC_MESSAGES/</span></code> です）。</p>
+<p>このフォルダには、ガイドの各セクションに対応する <code class="docutils literal notranslate"><span class="pre">.po</span></code> ファイルのセットがあります：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./locales/es/LC_MESSAGES/
+$<span class="w"> </span>ls<span class="w"> </span>*.po
+
+./locales/es/LC_MESSAGES/CONTRIBUTING.po
+./locales/es/LC_MESSAGES/index.po
+./locales/es/LC_MESSAGES/tests.po
+./locales/es/LC_MESSAGES/tutorials.po
+./locales/es/LC_MESSAGES/documentation.po
+./locales/es/LC_MESSAGES/package-structure-code.po
+./locales/es/LC_MESSAGES/TRANSLATING.po
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>また、同じフォルダにいくつかの <code class="docutils literal notranslate"><span class="pre">.mo</span></code> ファイルがあるかもしれません。 これらはSphinxがビルド中に作成した <code class="docutils literal notranslate"><span class="pre">.po</span></code> ファイルをコンパイルしたもので、翻訳されたバージョンのガイドを生成するために使用されます。 これらは中間的なファイルで、直接編集したり、リポジトリに保存したりするものではありません。</p>
+</div>
+<p>新しい翻訳をする場合は、<code class="docutils literal notranslate"><span class="pre">.po</span></code> ファイルを1つ選んで始めます。 既存の翻訳をする場合は、最も作業が必要な <code class="docutils literal notranslate"><span class="pre">.po</span></code> ファイルから始めることができます。</p>
+<p>各ファイルがどれくらい翻訳されたかを見るには、 <code class="docutils literal notranslate"><span class="pre">sphinx-intl</span> <span class="pre">stat</span></code> を使ってください。 それぞれの <code class="docutils literal notranslate"><span class="pre">.po</span></code> ファイルに含まれる、翻訳された文字列、あいまいな文字列、未翻訳の文字列の数を見ることができます。</p>
+<p>例えば、スペイン語翻訳の統計を見るには、次のように実行します:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sphinx-intl<span class="w"> </span>stat<span class="w"> </span>-l<span class="w"> </span>es
+
+locales/es/LC_MESSAGES/tutorials.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">950</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/TRANSLATING.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">44</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/package-structure-code.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">885</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/CONTRIBUTING.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">38</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/documentation.po:<span class="w"> </span><span class="m">0</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">430</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/tests.po:<span class="w"> </span><span class="m">155</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">2</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">3</span><span class="w"> </span>untranslated.
+locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span><span class="w"> </span>translated,<span class="w"> </span><span class="m">0</span><span class="w"> </span>fuzzy,<span class="w"> </span><span class="m">5</span><span class="w"> </span>untranslated.
+</pre></div>
+</div>
+<p>これらのカテゴリーは何を意味するのか:</p>
+<ul class="simple">
+<li><p>Translated stringsは、ターゲット言語に翻訳された文字列です。</p></li>
+<li><p>Fuzzy stringsとは、翻訳されたものの、ガイドの元の英語の文字列が変更されたため、見直しが必要な文字列のことです。</p></li>
+<li><p>Untranslated stringsは、まだ翻訳されていない文字列です。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Sphinxが他の言語でガイドをビルドしている場合、 <code class="docutils literal notranslate"><span class="pre">./locales/</span></code> にある対応するフォルダを調べて、翻訳された文字列を探します。 もし翻訳が利用可能であれば、Sphinxは英語のテキストをターゲット言語の同等のテキストに置き換えます。 もし翻訳が利用できない場合、Sphinxはオリジナルの英語の文字列を使用します。</p>
+</div>
+</section>
+<section id="editing-the-translation-files">
+<h2>翻訳ファイルの編集<a class="headerlink" href="#editing-the-translation-files" title="Link to this heading">#</a></h2>
+<p>.po`ファイルの編集にはどんなテキストエディタでも使えます。 しかし、お好みであれば、 <a class="reference external" href="https://poedit.net/">Poedit</a> のようなグラフィックなインターフェースを提供するツールもあります。</p>
+<p>お使いのエディタによっては、<code class="docutils literal notranslate"><span class="pre">.po</span></code>ファイルを扱うためのシンタックスハイライトやその他の機能を提供するプラグインや拡張機能をインストールできるかもしれません。 例えば、Visual Studio Codeの <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=mrorz.language-gettext">gettext</a> エクステンションのようなものです。</p>
+<p>.po`ファイルを開くと、次のようなエントリーが並んでいます:</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:1</span>
+<span class="nv">msgid</span> <span class="s">&quot;pyOpenSci Python Package Guide&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>エントリーの最初の行は <code class="docutils literal notranslate"><span class="pre">#:</span></code> で始まり、テキストが抽出された元のソースファイルと行番号への参照となります。 この情報は、ガイド内のテキストの文脈を見つけるのに便利です。</p>
+<p><code class="docutils literal notranslate"><span class="pre">msgid</span></code> フィールドには翻訳が必要な元の英語のテキストを入力します。 <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> フィールドには翻訳されたテキストを入力します。 このフィールドには他の人がすでに翻訳したテキストが入っているかもしれません。</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:1</span>
+<span class="nv">msgid</span> <span class="s">&quot;pyOpenSci Python Package Guide&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;La guía de paquetes de Python de pyOpenSci&quot;</span>
+</pre></div>
+</div>
+<p>英語の原文が1行では長すぎて、複数行に分かれている場合があります。 このような場合、翻訳されたテキストでも同じ構造を保つことができます。 以下の例の <code class="docutils literal notranslate"><span class="pre">msgid</span></code> フィールドと <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> フィールドの両方が空文字列で始まっていることに注意してください。</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:254</span>
+<span class="nv">msgid</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;Every page in this guidebook goes through an extensive community review &quot;</span>
+<span class="s">&quot;process. To ensure our guidebook is both beginner-friendly and accurate, &quot;</span>
+<span class="s">&quot;we encourage reviews from a diverse set of pythonistas and scientists &quot;</span>
+<span class="s">&quot;with a wide range of skills and expertise.&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;Cada página en esta guía es revisada extensamente por la &quot;</span>
+<span class="s">&quot;comunidad. Para asegurar que nuestra guía sea comprensible a los principiantes y &quot;</span>
+<span class="s">&quot;a la vez precisa, un conjunto diverso de desarrolladores y científicos con una amplia &quot;</span>
+<span class="s">&quot;gama de conocimientos y experiencia participa en el proceso.&quot;</span>
+</pre></div>
+</div>
+<p>英語のテキストには、太字や斜体などのMarkdown書式が含まれていることがあります。翻訳されたテキストで書式を維持する必要があります、フォーマットタグの中のテキストを翻訳してください。</p>
+<p>英文テキストには、ガイドの他のセクションや外部リソースへのリンクが含まれている場合があります。リンクは翻訳されたテキストの中に残し、必要に応じてリンクテキストを更新してください。</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:75</span>
+<span class="nv">msgid</span> <span class="s">&quot;[What is a Python package?](/tutorials/intro)&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;[¿Que es un paquete de Python?](/tutorials/intro)&quot;</span>
+</pre></div>
+</div>
+<p>エントリーには <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> と表示されることがありますが、これは原文の英文が翻訳後に変更され、翻訳を修正する必要があることを意味します。このような場合、エントリーに <code class="docutils literal notranslate"><span class="pre">#,</span></code> で始まる行が追加されます:</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../tests/write-tests.md:84</span>
+<span class="kt">#, fuzzy</span>
+<span class="nv">msgid</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;**Test special cases:** Sometimes there are special or outlier cases. For&quot;</span>
+<span class="s">&quot; instance, if a function performs a specific calculation that may become &quot;</span>
+<span class="s">&quot;problematic closer to the value = 0, test it with the input of both 0 and&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;**Prueba casos especiales:** A veces hay casos especiales o atípicos. Por&quot;</span>
+<span class="s">&quot; ejemplo, si una función realiza un cálculo específico que puede tener &quot;</span>
+<span class="s">&quot;problemas cerca del valor = 0, pruébalo con la entrada de 0 y un valor&quot;</span>
+<span class="s">&quot; normal.&quot;</span>
+</pre></div>
+</div>
+<p>翻訳を確認して必要な変更を加え、翻訳に満足したら <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> タグを削除することができます。</p>
+<p>文字で始まる行をエントリに追加することで、翻訳ファイルにコメントを追加することもできます。これは、他の翻訳者やレビュアーが翻訳を見るために文脈を追加するのに役立ちます、しかし、これは特別な状況でのみ必要かもしれません。</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">重要</p>
+<p>翻訳作業をするときは、 <code class="docutils literal notranslate"><span class="pre">msgid</span></code> フィールドの元の英文を修正 <strong>しないで</strong> ください。 もし原文に誤字や脱字があった場合は、原文のソースファイル（エントリーの1行目から探してください）を修正し、別途プルリクエストを提出してください。</p>
+</div>
+</section>
+<section id="building-the-translated-documentation">
+<h2>翻訳されたドキュメントのビルド<a class="headerlink" href="#building-the-translated-documentation" title="Link to this heading">#</a></h2>
+<p>Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command, replacing LANG by the proper language code (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code> for Spanish)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-language<span class="w"> </span>--<span class="w"> </span>LANG
+</pre></div>
+</div>
+<p>このコマンドは <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> の <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> リストで定義されたガイドの全ての翻訳版をビルドします。 これらの翻訳版は <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> に、言語コードにちなんだ名前(例えば <code class="docutils literal notranslate"><span class="pre">es</span></code>、<code class="docutils literal notranslate"><span class="pre">fr</span></code> など)のフォルダに保存されます。</p>
+<p>ブラウザで翻訳版のガイドを見るには、対応する <code class="docutils literal notranslate"><span class="pre">index.html</span></code> ファイルを開いてください。 例えば、スペイン語の翻訳版を見るには、 <code class="docutils literal notranslate"><span class="pre">_build/html/es/index.html</span></code> を開きます。</p>
+<p>また、翻訳ファイルを変更すると自動的に更新されるガイドのライブバージョンをビルドすることもできます。 これを行うには、<code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">docs-live-lang</span></code> コマンドを使用します。 この場合、ビルドしたい言語を指定する必要があることに注意してください。 例えば、スペイン語翻訳に取り組んでいる場合、次のように実行します:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>docs-live-lang<span class="w"> </span>--<span class="w"> </span>es
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">--</span></code> before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the <code class="docutils literal notranslate"><span class="pre">--</span></code>, nox will look instead for a session named 'es' and raise an error that it does not exist.</p>
+<p>このコマンドは <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> を使って、ローカルのWebサーバーを起動し、そこでガイドの翻訳版にアクセスすることができます。 ブラウザで <code class="docutils literal notranslate"><span class="pre">http://localhost:8000</span></code> に移動して、ガイドを開くことができます。</p>
+<p>これは、翻訳ファイルに変更を加えながら、翻訳版のガイドがどのように見えるかを確認するのに最適な方法です。</p>
+</section>
+<section id="submitting-a-pr-for-your-contribution">
+<h2>貢献PRの提出<a class="headerlink" href="#submitting-a-pr-for-your-contribution" title="Link to this heading">#</a></h2>
+<p>翻訳が終わり、翻訳のプルリクエスト（PR）を提出する前に、翻訳されたバージョンのガイドがエラーや警告なしにビルドされ、ブラウザで正しく表示されることを確認する必要があります。</p>
+<p>以下の手順に従ってください:</p>
+<ol class="arabic simple">
+<li><p>リリース時に使用されるのと同じパラメータでガイドの翻訳をビルドします:</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-all-languages-test
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>出力に警告やエラーがないことを確認してください。 もしあれば、PRを提出する前に修正する必要があります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_build/html/&lt;lang&gt;/index.html</span></code> ファイルを開いて、翻訳版のガイドがブラウザでうまく表示されることを確認してください。 <code class="docutils literal notranslate"><span class="pre">&lt;lang&gt;</span></code> は作業中の言語です。</p></li>
+</ol>
+<p>問題がなければ、変更内容をPRとして提出することができます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>翻訳のPRを提出する際は、1つの言語に対する変更のみを記載してください。 複数の言語で翻訳した場合は、言語ごとにPRを提出してください。</p>
+</div>
+<p>翻訳PRには、識別とレビューを容易にするため、言語を示すラベルが付けられます。 例えば、スペイン語翻訳への貢献には 'lang-es' というタグが付けられます。</p>
+<p>TODO: This tagging could be automated with a GitHub Actions.</p>
+<p>PRを提出する際には、あなたが行った変更についての簡単な説明と、レビュアーにとって参考になりそうな文脈（新しい文字列を翻訳した、あいまいなエントリーを見直した、誤字脱字を修正した、など）を必ず含めてください。</p>
+</section>
+<section id="the-review-process">
+<h2>レビュープロセス<a class="headerlink" href="#the-review-process" title="Link to this heading">#</a></h2>
+<p>翻訳貢献のレビュープロセスは、ガイドへの他のレビューのレビュープロセスと同様です。</p>
+<p>TODO: このセクションは、私たちが採用するレビューのワークフローによって、もっと作業が必要です。 他のプロジェクトでは、通常、言語ごとにコーディネーター/編集者を割り当て、その人が翻訳投稿のレビューとマージに責任を持ちます。</p>
+<p>各言語には担当エディターがおり、翻訳投稿の確認と統合を担当します。 エディターは、変更が正確で、ガイドのスタイルやトーンと一致していることを確認します。</p>
+<p>エディターが翻訳を改善するために説明を求めたり、変更を提案したりすることがあります。 このような場合は、要求された変更を行い、元のPRを投稿したブランチにプッシュしてください。</p>
+<p>エディターが翻訳に満足したら、PRをマージします。ガイドの翻訳版は言語がリリースされ次第、pyOpenSciのウェブサイトから入手できます。</p>
+</section>
+<section id="the-release-process">
+<h2>リリースのプロセス<a class="headerlink" href="#the-release-process" title="Link to this heading">#</a></h2>
+<p>言語がリリース準備できたら、メンテナは <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> 設定ファイルの <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> リストに言語コードを追加します。</p>
+<p>ガイドがCIでリリース用にビルドされると、Sphinxは <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> リストにある言語の翻訳版のガイドも生成します。</p>
+<p>翻訳版は英語版ガイドと同じ方法でリリースされ、言語コードにちなんだフォルダで利用できるようになります。 例えば、スペイン語版は <a class="reference external" href="https://www.pyopensci.org/python-package-guide/es/">https://www.pyopensci.org/python-package-guide/es/</a> にあります。</p>
+</section>
+<section id="frequently-asked-questions-faq">
+<h2>よくある質問(FAQ)<a class="headerlink" href="#frequently-asked-questions-faq" title="Link to this heading">#</a></h2>
+<section id="how-do-i-know-which-strings-need-to-be-translated">
+<h3>どの文字列を翻訳する必要があるか、どうすればわかりますか？<a class="headerlink" href="#how-do-i-know-which-strings-need-to-be-translated" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-intl</span> <span class="pre">stat</span></code> コマンドを実行すると、翻訳された文字列、あいまいな文字列、未翻訳の文字列を含む <code class="docutils literal notranslate"><span class="pre">.po</span></code> ファイルのリストが表示されます。 未翻訳の文字列が最も多いファイルから、作業を始めることができます。</p>
+</section>
+<section id="what-happens-when-a-string-has-changed-in-the-original-english-text">
+<h3>英語の原文で文字列が変更された場合はどうなりますか？<a class="headerlink" href="#what-happens-when-a-string-has-changed-in-the-original-english-text" title="Link to this heading">#</a></h3>
+<p>If a string has changed in the original English version, it will be marked as <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> in the translation file the next time it is updated (<code class="docutils literal notranslate"><span class="pre">update-language</span></code>, <code class="docutils literal notranslate"><span class="pre">update-all-languages</span></code>, or <code class="docutils literal notranslate"><span class="pre">update-all-release-languages</span></code>). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> tag.</p>
+</section>
+<section id="how-do-i-handle-links-in-the-translated-text">
+<h3>翻訳されたテキスト内のリンクはどのように扱えばいいですか？<a class="headerlink" href="#how-do-i-handle-links-in-the-translated-text" title="Link to this heading">#</a></h3>
+<p>翻訳文のリンクはそのままにしておきますが、必要に応じてリンクテキストを更新するようにしてください。 例えば、英語の原文に <code class="docutils literal notranslate"><span class="pre">[What</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">Python</span> <span class="pre">package?](/tutorials/intro)</span></code> へのリンクがある場合、翻訳文のリンクはそのままにして、リンクテキストを <code class="docutils literal notranslate"><span class="pre">[Pythonパッケージとは何ですか](/tutorials/intro)</span></code> に更新してください。</p>
+</section>
+<section id="how-do-i-handle-formatting-in-the-translated-text">
+<h3>翻訳されたテキストの書式設定はどうすればよいですか？<a class="headerlink" href="#how-do-i-handle-formatting-in-the-translated-text" title="Link to this heading">#</a></h3>
+<p>翻訳されたテキストの書式はそのままにして、書式タグの中のテキストも翻訳してください。 たとえば、元の英語のテキストが <code class="docutils literal notranslate"><span class="pre">**Test</span> <span class="pre">special</span> <span class="pre">cases:**</span></code> の場合、翻訳されたテキストでは太字の書式を維持しますが、書式タグ内のテキストを <code class="docutils literal notranslate"><span class="pre">**特殊ケーステスト:**</span></code> に更新する必要があります。</p>
+</section>
+<section id="how-do-i-handle-strings-that-are-too-long-for-a-single-line">
+<h3>1行では長すぎる文字列はどう扱えばいいですか？<a class="headerlink" href="#how-do-i-handle-strings-that-are-too-long-for-a-single-line" title="Link to this heading">#</a></h3>
+<p>元の英文が長すぎて1行に収まらない場合は、複数行に分けることができます。 <code class="docutils literal notranslate"><span class="pre">.po</span></code> ファイル内の複数行の文字列は <code class="docutils literal notranslate"><span class="pre">msgid</span></code> と <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> フィールドに空の文字列を入れ、その後に次の行のテキストの続きを入れることで示されます。 例えば:</p>
+<div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:254</span>
+<span class="nv">msgid</span> <span class="s">&quot;&quot;</span>
+<span class="s">&quot;This is a multiple line string. The text continues on the next line.&quot;</span>
+<span class="s">&quot; Notice the space in the beginning of the second line, you need to make sure&quot;</span>
+<span class="s">&quot; to account for the concatenation, there is no space inserted when starting a&quot;</span>
+<span class="s">&quot; a new line in a multiline string.&quot;</span>
+<span class="nv">msgstr</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="how-do-i-translate-images">
+<h3>画像を翻訳するにはどうすればよいですか？<a class="headerlink" href="#how-do-i-translate-images" title="Link to this heading">#</a></h3>
+<p>ガイド内の画像を翻訳すべきではありません。 画像の翻訳版を作成するのは、追加のツールやリソースを必要とする複雑なプロセスであり、翻訳された画像がオリジナルの画像と一緒に作成されない限り、通常は行われません。 多くの場合、画像の周りのテキストは、必要な翻訳を含むように修正されます。</p>
+<p>特殊なケースでは、画像がコンテンツの理解に不可欠な場合があります。 そのような場合、翻訳はこのワークフロー外のメンテナやエディタが担当します。</p>
+</section>
+<section id="i-am-interested-in-translating-the-guide-into-a-language-that-is-not-listed-how-can-i-get-started">
+<h3>ガイドに掲載されていない言語への翻訳に興味があります。 どうすれば始められますか？<a class="headerlink" href="#i-am-interested-in-translating-the-guide-into-a-language-that-is-not-listed-how-can-i-get-started" title="Link to this heading">#</a></h3>
+<p>リストにない言語へのガイドの新しい翻訳を始めたい場合は、リポジトリに <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue を作成</a> して、あなたがその翻訳に取り組むつもりであることをメンテナに知らせてください。 こうすることで、作業の重複を避け、あなたが作業を終えたときにメンテナがあなたの貢献をレビューできるようになります。</p>
+</section>
+<section id="how-do-i-know-when-a-translation-is-ready-to-be-released">
+<h3>翻訳がいつリリースできるか、どうすればわかりますか？<a class="headerlink" href="#how-do-i-know-when-a-translation-is-ready-to-be-released" title="Link to this heading">#</a></h3>
+<p>ガイドの次のリリースに翻訳を含める準備ができたら、メンテナは <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> 設定ファイルの <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> リストに言語コードを追加します。 これにより、リリースプロセス中に翻訳のビルドが開始され、翻訳されたバージョンのガイドがpyOpenSciのウェブサイトで利用できるようになります。</p>
+<p>TODO：ここにはさまざまなアプローチがあります。あるプロジェクトでは、いくつかの文字列が翻訳されるとすぐに翻訳をリリースしますし、ある一定の割合のコンテンツが翻訳されるまで待つプロジェクトもあります。</p>
+</section>
+<section id="how-can-i-get-help-with-my-translation">
+<h3>翻訳を手伝ってもらうにはどうすればよいですか？<a class="headerlink" href="#how-can-i-get-help-with-my-translation" title="Link to this heading">#</a></h3>
+<p>If you have any questions or need help with your translation, you can create an <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue</a> in the <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide">Packaging Guide repository</a></p>
+<p>You can also ask in the PyOpenSci Discord server (<a class="reference external" href="https://discord.gg/NQtTTqtv">click here</a> to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> このページでは
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-the-translation-process">翻訳プロセスの概要</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-local-environment">ローカル環境の設定</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-new-language-translation">新しい言語の翻訳を始める</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-translation-files">翻訳ファイルの準備</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-a-translation">翻訳作業</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-translation-files">翻訳ファイルの編集</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-translated-documentation">翻訳されたドキュメントのビルド</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-a-pr-for-your-contribution">貢献PRの提出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-review-process">レビュープロセス</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-release-process">リリースのプロセス</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequently-asked-questions-faq">よくある質問(FAQ)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-which-strings-need-to-be-translated">どの文字列を翻訳する必要があるか、どうすればわかりますか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-a-string-has-changed-in-the-original-english-text">英語の原文で文字列が変更された場合はどうなりますか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-handle-links-in-the-translated-text">翻訳されたテキスト内のリンクはどのように扱えばいいですか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-handle-formatting-in-the-translated-text">翻訳されたテキストの書式設定はどうすればよいですか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-handle-strings-that-are-too-long-for-a-single-line">1行では長すぎる文字列はどう扱えばいいですか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-translate-images">画像を翻訳するにはどうすればよいですか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-interested-in-translating-the-guide-into-a-language-that-is-not-listed-how-can-i-get-started">ガイドに掲載されていない言語への翻訳に興味があります。 どうすれば始められますか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-know-when-a-translation-is-ready-to-be-released">翻訳がいつリリースできるか、どうすればわかりますか？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-get-help-with-my-translation">翻訳を手伝ってもらうにはどうすればよいですか？</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/TRANSLATING.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          GitHub の編集
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/TRANSLATING.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
