@@ -1,0 +1,7 @@
+project_id: "${{ secrets.CROWDIN_PROJECT_ID }}"
+api_token: "${{ secrets.CROWDIN_PERSONAL_TOKEN }}"
+
+files:
+  - source: /locales/en/LC_MESSAGES/messages.po
+    translation: /locales/%two_letters_code%/LC_MESSAGES/messages.po
+    type: gettext
