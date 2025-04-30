@@ -1,7 +1,7 @@
 name: Crowdin Sync
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   sync-translations:
@@ -19,9 +19,9 @@ jobs:
           download_translations: true
           localization_branch_name: l10n_crowdin_translations
           create_pull_request: true
-          pull_request_title: 'Crowdin: New translations'
-          pull_request_body: 'Crowdin synced updated translations via GitHub Action.'
-          pull_request_base_branch_name: 'main'
+          pull_request_title: "Crowdin: New translations"
+          pull_request_body: "Crowdin synced updated translations via GitHub Action."
+          pull_request_base_branch_name: "main"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_CROWDIN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
