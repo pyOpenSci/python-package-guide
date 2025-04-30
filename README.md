@@ -1,4 +1,4 @@
-# <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci scientific Python Packaging Guide
+# <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci Python Packaging Guide and Tutorials
 
 [![All Contributors](https://img.shields.io/github/all-contributors/pyOpenSci/python-package-guide?color=ee8449)](#contributors-)
 
