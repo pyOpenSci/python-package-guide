@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Continuous Integration (CI) and Continuous Deployment (CD) for your Python package" />
+<meta property="og:title" content="Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/continuous-integration/index.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Continuous Integration: What is CI?- What is continuous integration?, What is Continuous Deployment (CD)?- Why use CI., CI / CD platforms- If you aren't sure, use GitHub Actions., Embrace automation.." />
+<meta property="og:description" content="継続的インテグレーション: CIとは何か？- 継続的インテグレーションとは何か？, 継続的デプロイメントとは (CD)?- CIを使う理由., CI / CD プラットフォーム- よくわからない場合は、GitHub Actionsを使ってください。., 自動化を受け入れる.." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_continuous-integration_index_207e8b44.png" />
-<meta property="og:image:alt" content="Continuous Integration: What is CI?- What is continuous integration?, What is Continuous Deployment (CD)?- Why use CI., CI / CD platforms- If you aren't sure, use GitHub Actions., Embrace automation.." />
-<meta name="description" content="Continuous Integration: What is CI?- What is continuous integration?, What is Continuous Deployment (CD)?- Why use CI., CI / CD platforms- If you aren't sure, use GitHub Actions., Embrace automation.." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_continuous-integration_index_5f44f7f2.png" />
+<meta property="og:image:alt" content="継続的インテグレーション: CIとは何か？- 継続的インテグレーションとは何か？, 継続的デプロイメントとは (CD)?- CIを使う理由., CI / CD プラットフォーム- よくわからない場合は、GitHub Actionsを使ってください。., 自動化を受け入れる.." />
+<meta name="description" content="継続的インテグレーション: CIとは何か？- 継続的インテグレーションとは何か？, 継続的デプロイメントとは (CD)?- CIを使う理由., CI / CD プラットフォーム- よくわからない場合は、GitHub Actionsを使ってください。., 自動化を受け入れる.." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Continuous Integration (CI) and Continuous Deployment (CD) for your Python package &#8212; Python Packaging Guide</title>
+    <title>Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD) &#8212; Python Packaging Guide</title>
   
   
   
@@ -66,7 +66,7 @@
     <link rel="canonical" href="/continuous-integration/index.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Continuous Integration and Continuous Deployment (CI/CD) For Python Packages" href="ci.html" />
+    <link rel="next" title="Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)" href="ci.html" />
     <link rel="prev" title="Code coverage for your Python package test suite" href="../tests/code-cov.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
@@ -474,9 +474,9 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuous Integration</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">継続的インテグレーション</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ci.html">What is CI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci.html">CIとは何か？</a></li>
 </ul>
 </div>
 </nav></div>
@@ -517,7 +517,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Continuous Integration (CI) and Continuous Deployment (CD) for your Python package</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)</span></li>
   </ul>
 </nav>
 </div>
@@ -535,21 +535,21 @@
                 <article class="bd-article">
                   
   <section id="continuous-integration-ci-and-continuous-deployment-cd-for-your-python-package">
-<span id="ci-cd-intro"></span><h1>Continuous Integration (CI) and Continuous Deployment (CD) for your Python package<a class="headerlink" href="#continuous-integration-ci-and-continuous-deployment-cd-for-your-python-package" title="Link to this heading">#</a></h1>
+<span id="ci-cd-intro"></span><h1>Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)<a class="headerlink" href="#continuous-integration-ci-and-continuous-deployment-cd-for-your-python-package" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuous Integration</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">継続的インテグレーション</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ci.html">What is CI?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#what-is-continuous-integration">What is continuous integration?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#what-is-continuous-deployment-cd">What is Continuous Deployment (CD)?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ci.html#why-use-ci">Why use CI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci.html">CIとは何か？</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ci.html#what-is-continuous-integration">継続的インテグレーションとは何か？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html#what-is-continuous-deployment-cd">継続的デプロイメントとは (CD)?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ci.html#why-use-ci">CIを使う理由</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#ci-cd-platforms">CI / CD platforms</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ci.html#if-you-aren-t-sure-use-github-actions">If you aren't sure, use GitHub Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html#ci-cd-platforms">CI / CD プラットフォーム</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ci.html#if-you-aren-t-sure-use-github-actions">よくわからない場合は、GitHub Actionsを使ってください。</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#embrace-automation">Embrace automation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html#embrace-automation">自動化を受け入れる</a></li>
 </ul>
 </li>
 </ul>
@@ -580,7 +580,7 @@
        title="次ページ">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">次へ</p>
-        <p class="prev-next-title">Continuous Integration and Continuous Deployment (CI/CD) For Python Packages</p>
+        <p class="prev-next-title">Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
