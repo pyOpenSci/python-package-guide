@@ -706,12 +706,7 @@ why -->
 <p>上記では、良いdocstringフォーマット、より良いdocstringフォーマット、ベストなdocstringフォーマットの例をいくつか紹介しました。 もしSphinxを使ってドキュメントを作成しているのであれば、 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest</a> という拡張機能をSphinxビルドに追加することができます。Doctestは、サンプルコードを含むdocstringに対して追加のチェックを行います。 Doctest は、docstring <code class="docutils literal notranslate"><span class="pre">Examples</span></code> 内のサンプルコードを実行し、期待される出力が正しいかどうかをチェックします。 ドキュメントのチュートリアルを実行するのと同様に、 <code class="docutils literal notranslate"><span class="pre">doctest</span></code> はパッケージのコード (API) が期待通りに動作することを保証する便利なステップになります。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>It's important to keep in mind that examples in your docstrings
-help users using your package. Running <code class="docutils literal notranslate"><span class="pre">doctest</span></code> on those examples provides a
-check of your package's API. The doctest ensures that the functions and methods in your package
-run as you expect them to. Neither of these items replace a separate,
-stand-alone test suite that is designed to test your package's core functionality
-across operating systems and Python versions.</p>
+<p>docstrings にあるサンプルは、あなたのパッケージを使っているユーザーを 助けるものであるということを覚えておくことが重要です。 これらのサンプルに対して <code class="docutils literal notranslate"><span class="pre">doctest</span></code> を実行することで、パッケージの API をチェックすることができます。 これらの項目はどちらも、オペレーティングシステムや Python のバージョンにまたがってパッケージのコア機能をテストするように設計された、独立したテストスイートを置き換えるものではありません。</p>
 </div>
 <p>doctestは以下の例を実行し、 <code class="docutils literal notranslate"><span class="pre">add_me</span></code> に1と3の値を与えると4が返されることをテストします。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_me</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
