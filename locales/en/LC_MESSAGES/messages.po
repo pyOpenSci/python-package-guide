@@ -13,503 +13,440 @@ msgstr ""
 "X-Crowdin-Project: pyos-python-package-guide\n"
 "X-Crowdin-Project-ID: 785976\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /translation2/locales/templates/LC_MESSAGES/CONTRIBUTING.pot\n"
-"X-Crowdin-File-ID: 34\n"
+"X-Crowdin-File: /translation2/locales/templates/LC_MESSAGES/TRANSLATING.pot\n"
+"X-Crowdin-File-ID: 36\n"
 "Language: en_US\n"
 
-#: ../../CONTRIBUTING.md:4
-msgid "Contributing to the Python Packaging Guide"
+#: ../../TRANSLATING.md:5
+msgid "Translation Guide for the Python Packaging Guide"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:6
-msgid "The guide is a community resource."
+#: ../../TRANSLATING.md:7
+msgid "This guide will help you get started contributing to the translation of the Python Packaging Guide."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:8
-msgid "TL;DR"
+#: ../../TRANSLATING.md:9
+msgid "The process of contributing to the translation of the guide is similar to the process of contributing to the guide itself, except that instead of working on the guide source files directly, you will be working on the translation files."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:10
-msgid "We welcome contributions in the form of issues and pull requests:"
+#: ../../TRANSLATING.md:11
+msgid "Overview of the Translation Process"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:12
-msgid "If you have an idea for something that should be included in the guide, [please open an issue here](https://github.com/pyOpenSci/python-package-guide/issues)."
+#: ../../TRANSLATING.md:13
+msgid "The process of adapting software to different languages is called internationalization, or i18n for short. Internationalization makes sure that translation can happen without having to modify the source code, or in our case, the original English source files of the guide."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:13
-msgid "If you find a typo, feel free to [submit a pull request](https://github.com/pyOpenSci/python-package-guide/pulls) to modify the text directly. Or, if you are less comfortable with pull requests, feel free to open an issue."
+#: ../../TRANSLATING.md:15
+msgid "Sphinx, the documentation engine we use to build the Python Package Guide, has built-in support for internationalization, so the workflow is very straightforward."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:14
-msgid "If you are interested in helping translate the guide into other languages, take a look at the [translation guide](./TRANSLATING.md)."
+#: ../../TRANSLATING.md:17
+msgid "The process of actually translating the guide into different languages is called localization, or l10n for short. This is the step you will be helping with your contribution."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:15
-msgid "If you want to see a larger change to the content of the guide book, please submit an issue first!"
+#: ../../TRANSLATING.md:19
+msgid "Here is a quick overview of how the translation process works:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:17
-msgid "If you are unsure about how to contribute or are not familiar with git and github, this guide will help you through the process."
+#: ../../TRANSLATING.md:21
+msgid "The guide is originally written in English and stored in a set of MarkDown files."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:19
-msgid "How the Python Packaging Guide is structured"
+#: ../../TRANSLATING.md:22
+msgid "The source files are processed by Sphinx to generate a set of translation files stored in a folder for each target language."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:21
-msgid "The Python Packaging Guide is written in myST (a variant of MarkDown and rST) and we use **Sphinx**, a documentation engine built in `Python` to build the HTML version you see online."
+#: ../../TRANSLATING.md:23
+msgid "Contributors (like you!) translate these files into the different languages."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:23
-msgid "We use a tool called Nox to manage the process of building the guide."
+#: ../../TRANSLATING.md:24
+msgid "When the guide is built, Sphinx creates a version of the guide in the original language (English) and the translated versions for the languages defined in the configuration."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:25
-msgid "Two approaches to contributing"
+#: ../../TRANSLATING.md:27
+msgid "You don't need to understand the technical details to contribute, but if you are interested in learning how Sphinx handles internationalization and localization, you can find more information [here](https://www.sphinx-doc.org/en/master/usage/advanced/intl.html)."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:27
-msgid "You can contribute to the guide using two approaches."
+#: ../../TRANSLATING.md:30
+msgid "Setting up Your Local Environment"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:29
-msgid "The first approach is using a local copy of the guide in your computer. This option requires a more involved setup, but allows you to build the guide locally to verify your contribution did not introduce any bugs before submitting a pull request. It is the recommended approach for larger contribution, like writing a whole new section."
+#: ../../TRANSLATING.md:32
+msgid "Before you start, you will need to set up your local work environment."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:31
-msgid "The second approach is making your contribution directly in the GitHub website. This option does not require any setup on your computer and while your contribution will still be tested when you submit a PR (continuous integration), it will take longer for you to get any feedback in case of issue. It is the best way to make small contribution, like fixing typos, or if this is your first contribution to open source and the first approach feels too intimidating."
+#: ../../TRANSLATING.md:34
+msgid "First, fork the guide repository into your personal GitHub account and clone the forked repository to your local computer."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:33
-msgid "Forking the repository"
+#: ../../TRANSLATING.md:36
+msgid "To create a virtual environment and install the development dependencies for the guide, run the following commands:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:35
-msgid "Independently of the approach you choose, the first step is to fork the Python Packaging Guide repository into your personal GitHub space. You can do this by clicking the \"Fork\" button in the top right corner of the repository page."
+#: ../../TRANSLATING.md:45
+msgid "TODO: This section needs more work or to be replaced with a reference to the CONTRIBUTING guide."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:38
-msgid "[Learn more: Fork and Clone GitHub Repos](https://datascienceskills.org/lessons/git-github/git-intro/3-fork-clone/) is a good resource to learn more about forking."
+#: ../../TRANSLATING.md:47
+msgid "Starting a New Language Translation"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:40
-msgid "To fork a repo,"
+#: ../../TRANSLATING.md:49
+msgid "If you plan to work on an existing translation, you can skip this step and go directly to the next section."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:42
-msgid "Make sure you are logged into GitHub."
+#: ../../TRANSLATING.md:51
+#: ../../TRANSLATING.md:217
+msgid "Important"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:44
-msgid "Go to the repo you would like to fork, in this case the [Python Packaging Guide](https://www.github.com/pyopensci/python-package-guide) repo."
+#: ../../TRANSLATING.md:52
+msgid "If you would like to start the translation of the guide into a new language, start by [creating an issue](https://github.com/pyOpenSci/python-package-guide/issues) in the repository."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:46
-msgid "In the top right-hand corner of the page there is a 'Fork' button. Click that button. You will be brought to a new page where you will 'Create a new fork'. Feel free to keep all the default inputs and click 'Create fork'. This will create a copy of the repo at `https://github.com/<username>/python-package-guide`, where `<username>` is your GitHub username."
+#: ../../TRANSLATING.md:55
+msgid "To generate the translation files for a new language, add the language to the `LANGUAGES` list in the `noxfile.py` configuration file. [Nox](https://nox.thea.codes/en/stable/index.html) is the tool we use to manage the building of the guide and its translations."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:51
-msgid "Contributing via the GitHub website"
+#: ../../TRANSLATING.md:57
+msgid "Inside `noxfile.py`, find the `LANGUAGES` list and add the corresponding two-letter code. For example, if you want to start the translation of the guide into French, you would add `'fr'`:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:53
-msgid "How to edit a MarkDown file"
+#: ../../TRANSLATING.md:68
+msgid "You can find a list of the two-letter Sphinx language option [here](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:55
-msgid "The Python Packaging Guide is written in myST, a variant of MarkDown. You can edit the files directly in the GitHub website. To do so, navigate to the file you want to edit and click the pencil icon in the top right corner of the file."
+#: ../../TRANSLATING.md:71
+msgid "Preparing the Translation Files"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:58
-msgid "Edit button in GitHub"
+#: ../../TRANSLATING.md:73
+msgid "The translation files contain the original English text and a space for you to enter the translated text. Before starting to translate, you need to make sure the translation files are up to date with the latest changes to the guide."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:64
-msgid "An image showing how to edit a file in GitHub. The pencil icon is highlighted with a red rectangle."
+#: ../../TRANSLATING.md:75
+msgid "You can do this by running the following command, replacing LANG by the language code you plan to work on (e.g., `es` for Spanish):"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:66
-msgid "Edit file in GitHub"
+#: ../../TRANSLATING.md:81
+msgid "This command will create the translation files if they don't exist yet, or update them with the latest changes if they already exist."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:72
-msgid "An image showing when a file is being edited in GitHub. The file content is displayed in a text editor."
+#: ../../TRANSLATING.md:83
+msgid "The translation files are text files with the `.po` extension stored in the `./locales`, in folders corresponding to each language. For example, the translation files for Spanish are stored in the `locale/es/LC_MESSAGES` directory."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:75
-msgid "To preview your changes, click the \"Preview changes\" tab."
+#: ../../TRANSLATING.md:85
+msgid "Because the translation files map the original English text to translated text, they are sometimes referred to as \"catalog\" files or \"portable object\" files."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:77
-msgid "Preview changes in GitHub"
+#: ../../TRANSLATING.md:88
+msgid "You don't need to know all the details about the PO format in order to translate. If you are interested in learning more, you can find additional details in the [GNU gettext documentation](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html)."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:83
-msgid "An image showing how to preview changes in GitHub. The file content is displayed in a text editor. The preview changes tab is highlighted with a red rectangle."
+#: ../../TRANSLATING.md:91
+msgid "Working on a Translation"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:86
-msgid "How to commit your changes"
+#: ../../TRANSLATING.md:93
+msgid "In order to start translating, go to the folder inside `./locales` corresponding to the target language you want to translate to (for example, `./locale/es/LC_MESSAGES/` for the Spanish translation)."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:88
-msgid "When you are done editing the file, scroll down to the bottom of the page. You will see a section called \"Commit changes\". Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made."
+#: ../../TRANSLATING.md:95
+msgid "In this folder you will find a set of `.po` files, corresponding to the different sections of the guide:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:91
-msgid "Commit changes in GitHub"
+#: ../../TRANSLATING.md:111
+msgid "You may also see some `.mo` files in the same folder. These are compiled versions of the `.po` files create by Sphinx during the build process, and used to generate the translated version of the guide. They are intermediary files and are not meant to be edited directly or stored in the repository."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:97
-msgid "An image showing how to commit changes in GitHub. The commit message is displayed in a text editor. The commit changes section is highlighted with a red rectangle."
+#: ../../TRANSLATING.md:114
+msgid "If you are working on a new translation, choose one of the `.po` files to start with. If you are working on an existing translation, you can start with the `.po` files that need the most work."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:100
-msgid "After writing your commit message, click the \"Commit changes\" button to save your changes."
+#: ../../TRANSLATING.md:116
+msgid "To see how much of each file has been translated, use the `sphinx-intl stat`. You will be able to see the number of translated, fuzzy, and untranslated strings in each `.po` file."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:102
-msgid "Contributing locally on your computer"
+#: ../../TRANSLATING.md:118
+msgid "For example, to see the statistics for the Spanish translation, you would run:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:104
-msgid "Clone your forked repository"
+#: ../../TRANSLATING.md:132
+msgid "What do these categories mean:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:106
-msgid "To clone your forked repository to your computer, you need to copy the URL of your forked repository and run the following command in your terminal:"
+#: ../../TRANSLATING.md:134
+msgid "Translated strings are strings that have been translated into the target language."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:111
-msgid "Replace `<URL>` with the URL of your forked repository. You can find the URL by clicking the green \"Code\" button on your forked repository page."
+#: ../../TRANSLATING.md:135
+msgid "Fuzzy strings are strings that have been translated but need to be reviewed because the original English string in the guide changed."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:113
-msgid "Clone repository in GitHub"
+#: ../../TRANSLATING.md:136
+msgid "Untranslated strings are strings that have not been translated yet."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:119
-msgid "An image showing how to clone a repository in GitHub. The URL of the repository is displayed in a text editor. The code button is highlighted with a red rectangle."
+#: ../../TRANSLATING.md:139
+msgid "When Sphinx is building the guide in another language, it will look into the corresponding folder in `./locales/` for translated strings. If the translation is available, Sphinx will replace the English text with the equivalent text in the target language. If the translation is not available, Sphinx will use the original English strings."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:122
-msgid "Create a new branch"
+#: ../../TRANSLATING.md:142
+msgid "Editing the Translation Files"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:124
-msgid "Before making any changes, you should create a new branch to work on. This will help keep your changes separate from the main branch and make it easier to submit a pull request."
+#: ../../TRANSLATING.md:144
+msgid "You can use any text editor to edit the `.po` file. But if you prefer, there are also tools like [Poedit](https://poedit.net/) that provide a graphic use interface."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:126
-msgid "To create a new branch, run the following command in your terminal:"
+#: ../../TRANSLATING.md:146
+msgid "Depending on your editor of choice, you may be able to install a plugin or extension that can provide syntax highlighting and other features for working with `.po` files. Like for example, the [gettext](https://marketplace.visualstudio.com/items?itemName=mrorz.language-gettext) extension for Visual Studio Code."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:132
-msgid "Create a virtual environment"
+#: ../../TRANSLATING.md:148
+msgid "When you open a `.po` file, you will see a series of entries that look like this:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:134
-msgid "To build the guide locally, you need to create a virtual environment and install the dependencies. You can do this by running the following commands in your terminal:"
+#: ../../TRANSLATING.md:158
+msgid "The first line of an entry starts with `#:` and is a reference to the original source file and line number from which the text was extracted. This information is useful for finding the context of the text in the guide."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:136
-msgid "**On Windows**:"
+#: ../../TRANSLATING.md:160
+msgid "The `msgid` field contains the original English text that needs to be translated. The `msgstr` field is where you will enter the translated text. This field might contain text if someone else already translated the entry."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:142
-msgid "**On MacOS and Linux**:"
+#: ../../TRANSLATING.md:170
+msgid "Sometimes the original English text may be too long for a single line, and it may be split into multiple lines. In this case, you can keep the same structure in the translated text. Notice that both the `msgid` and `msgstr` fields in the example below start with an empty string, indicating that the text continues in the next line."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:148
-msgid "Install the development dependencies"
+#: ../../TRANSLATING.md:186
+msgid "The English text will sometimes contain Markdown formatting, such as bold or italic text. You should keep the formatting in the translated text, making sure to translate the text inside the formatting tags."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:150
-msgid "To install the development dependencies, run the following command in your terminal:"
+#: ../../TRANSLATING.md:188
+msgid "The English text may also contain links to other sections of the guide or external resources. You should keep the links in the translated text, making sure to update the link text when appropriate."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:156
-msgid "Commit your changes"
+#: ../../TRANSLATING.md:196
+msgid "An entry may be marked as `fuzzy`, which means that the original English text has changed since the translation was made, and the translation may need to be revised. When this is the case you will see an additional line in the entry, starting with `#,`:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:158
-msgid "After making your changes, you need to commit them to your local repository. To do this, run the following commands in your terminal:"
+#: ../../TRANSLATING.md:213
+msgid "You can review the translation and make any necessary changes, removing the `fuzzy` tag once you are satisfied with the translation."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:160
-msgid "To see the changes you made:"
+#: ../../TRANSLATING.md:215
+msgid "You can also add comments to the translation file, by adding lines that start with a `#` character to the entry. This can be helpful to add context to the translation for other translators or reviewers to see, but this might be only necessary in special circumstances."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:164
-msgid "To add the changes to the staging area:"
+#: ../../TRANSLATING.md:218
+msgid "When working on a translation, you **should not** modify the original English text in the `msgid` field. If you see a typo or an error in the original text, please consider fixing it in the original source file (use the first line of the entry to locate it) and submit a separate pull request."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:168
-msgid "To commit the changes:"
+#: ../../TRANSLATING.md:221
+msgid "Building the Translated Documentation"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:172
-msgid "Replace `\"Your commit message here\"` with a clear and concise message that describes the changes you made."
+#: ../../TRANSLATING.md:223
+msgid "Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command, replacing LANG by the proper language code (e.g., `es` for Spanish)"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:174
-msgid "How to build the guide locally"
+#: ../../TRANSLATING.md:229
+msgid "This command will build all the translated versions of the guide defined in the `LANGUAGES` list in `noxfile.py`. These translations will be stored in the `_build/html`, in folders named after the language code (e.g., `es`, `fr`, etc.)."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:176
-msgid "To build the guide locally, you can use the `nox` command. This will run the default `nox` session, which builds the guide and opens it in your browser."
+#: ../../TRANSLATING.md:231
+msgid "To view the translated version of the guide in your browser, open the corresponding `index.html` file. For example, to view the Spanish translation, you would open `_build/html/es/index.html`."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:178
-msgid "To see the different sessions available, you can run the following command in your terminal:"
+#: ../../TRANSLATING.md:233
+msgid "You can also build a live version of the guide that updates automatically as you make changes to the translation files. To do this, use the `nox -s docs-live-lang` command. Note that in this case you need to specify which language you want to build. For example, if you are working on the Spanish translation, you would run:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:183
-msgid "There are different sessions in nox related to building the docs: `docs`, `docs-test`, `docs-live`. You can run them by specifying the session name after the `nox` command."
+#: ../../TRANSLATING.md:239
+msgid "Note the `--` before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the `--`, nox will look instead for a session named 'es' and raise an error that it does not exist."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:185
-msgid "`docs`: this session builds the guide and opens it in your browser."
+#: ../../TRANSLATING.md:241
+msgid "This command will use `sphinx-autobuild` to launch a local web server where you can access the translated version of the guide. You can open the guide in your browser by navigating to `http://localhost:8000`."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:189
-msgid "To see the guide built locally, open the file `_build/html/index.html` in your browser."
+#: ../../TRANSLATING.md:243
+msgid "This is a great way to see how the translated version of the guide looks as you make changes to the translation files."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:191
-msgid "`docs-test`: this session runs the tests for the guide."
+#: ../../TRANSLATING.md:245
+msgid "Submitting a PR for Your Contribution"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:195
-msgid "If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request."
+#: ../../TRANSLATING.md:247
+msgid "Once you are finished translating and before you submit a pull request (PR) for your translation, you need to make sure that the translated version of the guide builds without any errors or warning and looks correctly in the browser."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:197
-msgid "`docs-live`: this session builds the guide and opens it in your browser with live reloading."
+#: ../../TRANSLATING.md:249
+msgid "You can follow these steps:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:201
-msgid "open the local version of the guide in your browser at ``localhost`` shown in the terminal."
+#: ../../TRANSLATING.md:251
+msgid "Build the translations of the guide with same parameters that will be used during the release:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:203
-msgid "Before you submit your pull request"
+#: ../../TRANSLATING.md:257
+msgid "Make sure there are no warnings or errors in the output. If there are, you will need to fix them before submitting the PR."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:205
-msgid "Before submitting your pull request, make sure to run the tests and check the formatting of your code."
+#: ../../TRANSLATING.md:258
+msgid "Make sure the translated version of the guide looks good in the browser by opening the `_build/html/<lang>/index.html` file, where `<lang>` is the language you have been working on."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:210
-msgid "If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request. Also make sure to check the formatting of your documentation by building the docs locally and checking that your changes look correct."
+#: ../../TRANSLATING.md:260
+msgid "If everything looks good, you can submit a PR with your changes."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:214
-msgid "Submitting a pull request with your contribution"
+#: ../../TRANSLATING.md:263
+msgid "When you submit a PR for a translation, you should only include changes to one language. If you worked in multiple languages, please submit a separate PR for each language."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:216
-msgid "How to make a pull request"
+#: ../../TRANSLATING.md:266
+msgid "Translations PRs will be tagged with a label indicating the language to make them easier to identify and review. For example, contributions to the Spanish translation will be tagged with 'lang-es'."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:218
-msgid "To open a pull request on GitHub, navigate to the main page of your forked repository and click on the \"Pull requests\" tab."
+#: ../../TRANSLATING.md:268
+msgid "TODO: This tagging could be automated with a GitHub Actions."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:220
-msgid "Pull requests tab in GitHub"
+#: ../../TRANSLATING.md:270
+msgid "When you submit the PR, make sure to include a short description of the changes you made and any context that might be helpful for the reviewer (e.g., you translated new strings, you reviewed fuzzy entries, you fixed typos, etc.)"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:226
-msgid "An image showing how to navigate to the pull requests tab in GitHub. The pull requests tab is highlighted with a red rectangle."
+#: ../../TRANSLATING.md:272
+msgid "The Review Process"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:229
-msgid "Click on the \"New pull request\" button."
+#: ../../TRANSLATING.md:274
+msgid "The review process for a translation contribution is similar to the review process for any other contribution to the guide."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:231
-msgid "New pull request button in GitHub"
+#: ../../TRANSLATING.md:276
+msgid "TODO: This section needs more work, depending on the review workflow we decide to adopt. Other projects usually assign a coordinator/editor for each language, who is responsible for reviewing and merging translation contributions."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:237
-msgid "An image showing how to create a new pull request in GitHub. The new pull request button is highlighted with a red rectangle."
+#: ../../TRANSLATING.md:278
+msgid "Each language has an assigned editor who is responsible for reviewing and merging translation contributions. The editor will review the changes to make sure they are accurate and consistent with the style and tone of the guide."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:240
-msgid "Write a clear and concise title and description for your pull request. Make sure to describe the changes you made and why they are necessary."
+#: ../../TRANSLATING.md:280
+msgid "Sometimes the editor may ask for clarification or suggest changes to improve the translation. If this happens, you can make the requested changes and push them to the same branch where you submitted the original PR."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:242
-msgid "What happens when you submit a pull request (CI/CD)"
+#: ../../TRANSLATING.md:282
+msgid "When the editor is satisfied with the translation, they will merge the PR. The translated version of the guide will be available on the pyOpenSci website once the language is released."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:244
-msgid "Once you submit a pull request, a series of checks will be run to ensure that your changes do not introduce any bugs or errors. These checks include:"
+#: ../../TRANSLATING.md:284
+msgid "The Release Process"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:246
-msgid "**Code formatting and styles**: checks that your code is formatted correctly, by `pre-commit.ci - pr check`."
+#: ../../TRANSLATING.md:286
+msgid "If a language is ready to go live, the maintainers will add the language code to the `RELEASE_LANGUAGES` list in the `noxfile.py` configuration file."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:247
-msgid "**docs build**: checks that the documentation builds correctly, using `circleci`."
+#: ../../TRANSLATING.md:288
+msgid "When the guide is built for release in CI, Sphinx will also generate the translated versions of the guide for the languages in the `RELEASE_LANGUAGES` list."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:249
-msgid "You will see the status of these checks in your pull request."
+#: ../../TRANSLATING.md:290
+msgid "Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available in [https://www.pyopensci.org/python-package-guide/es/](https://www.pyopensci.org/python-package-guide/es/)."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:251
-msgid "Pull request checks in GitHub"
+#: ../../TRANSLATING.md:292
+msgid "Frequently Asked Questions (FAQ)"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:257
-msgid "An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks are highlighted with a red rectangle."
+#: ../../TRANSLATING.md:294
+msgid "How do I know which strings need to be translated?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:259
-msgid "If any of these checks fail, you will see an error message in your pull request. You need to fix the errors before your changes can be merged."
+#: ../../TRANSLATING.md:296
+msgid "When you run the `sphinx-intl stat` command, you will see a list of `.po` files with the number of translated, fuzzy, and untranslated strings. You can start by working on the files with the most untranslated strings."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:261
-msgid "Pull request checks failed in GitHub"
+#: ../../TRANSLATING.md:298
+msgid "What happens when a string has changed in the original English text?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:267
-msgid "An image showing the status of the checks in a pull request in GitHub. The checks are displayed in a table with a status icon next to each check. The checks that failed and the details link are highlighted with a red rectangle."
+#: ../../TRANSLATING.md:300
+msgid "If a string has changed in the original English version, it will be marked as `fuzzy` in the translation file the next time it is updated (`update-language`, `update-all-languages`, or `update-all-release-languages`). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the `fuzzy` tag."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:270
-msgid "To get more information about the errors, you can click on the \"Details\" link next to the failed check."
+#: ../../TRANSLATING.md:302
+msgid "How do I handle links in the translated text?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:272
-msgid "What to expect from the review process"
+#: ../../TRANSLATING.md:304
+msgid "You should keep the links in the translated text, but make sure to update the link text if necessary. For example, if the original English text contains a link to `[What is a Python package?](/tutorials/intro)`, you should keep the link in the translated text but update the link text to `[¿Que es un paquete de Python?](/tutorials/intro)`."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:274
-msgid "Once you submit a pull request, a maintainer of the repository will review your changes and provide feedback. The review process may involve:"
+#: ../../TRANSLATING.md:306
+msgid "How do I handle formatting in the translated text?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:276
-msgid "**Comments**: the reviewer may leave comments on your pull request to ask questions or provide feedback."
+#: ../../TRANSLATING.md:308
+msgid "You should keep the formatting in the translated text, but make sure to translate the text inside the formatting tags as well. For example, if the original English text is `**Test special cases:**`, you should keep the bold formatting in the translated text but update the text inside the formatting tags to `**Prueba casos especiales:**`."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:277
-msgid "**Suggestions**: the reviewer may suggest changes to your code or documentation."
+#: ../../TRANSLATING.md:310
+msgid "How do I handle strings that are too long for a single line?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:278
-msgid "**Approvals**: once the reviewer is satisfied with your changes, they will approve the pull request."
+#: ../../TRANSLATING.md:312
+msgid "If the original English text is too long for a single line, it may be split into multiple lines. Multiline strings in the `.po` file are indicated by an empty string in the `msgid` and `msgstr` fields, followed by the continuation of the text in the next line. For example:"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:280
-msgid "You can make changes to your pull request by pushing new commits to the branch. The pull request will be updated automatically with your new changes."
+#: ../../TRANSLATING.md:325
+msgid "How do I translate images?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:282
-msgid "Once your pull request is approved, it will be merged into the main branch and your changes will be included in the guide."
+#: ../../TRANSLATING.md:327
+msgid "You should not translate images in the guide. Producing translated versions of images is a complex process that requires additional tools and resources, and it is not typically done unless the translated images are created alongside the original images. More often, the text around the image is modified to include any necessary translations."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:284
-msgid "Additional help"
+#: ../../TRANSLATING.md:329
+msgid "In some special cases, an image might be critical to the understanding of the content. In those cases, the translations will be handled by the maintainers and editors outside this workflow."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:286
-msgid "How to get help"
+#: ../../TRANSLATING.md:331
+msgid "I am interested in translating the guide into a language that is not listed. How can I get started?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:288
-msgid "*__TODO__: This section should describe the options for finding more help in case beginner contributors need more help (e.g., create an issue, post in a forum, etc).*"
+#: ../../TRANSLATING.md:333
+msgid "If you want to start a new translation of the guide into a language that is not listed, you should [create an issue](https://github.com/pyOpenSci/python-package-guide/issues) in the repository to let the maintainers know that you intend to work on it. This will help avoid duplication of effort and ensure that the maintainers are ready to review your contribution when you are done."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:290
-msgid "Additional resources"
+#: ../../TRANSLATING.md:335
+msgid "How do I know when a translation is ready to be released?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:292
-msgid "*__TODO__: It should also include links to beginner documentation, like the GitHub docs.*"
+#: ../../TRANSLATING.md:337
+msgid "When a translation is ready to be included in the next release of the guide, the maintainers will add the language code to the `RELEASE_LANGUAGES` list in the `noxfile.py` configuration file. This will trigger the build of the translation during the release process, and the translated version of the guide will be available on the pyOpenSci website."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:294
-msgid "Annex"
+#: ../../TRANSLATING.md:339
+msgid "TODO: There are many approaches here, some projects release a translation as soon as some strings are translated, others wait until a certain percentage of the content is translated."
 msgstr ""
 
-#: ../../CONTRIBUTING.md:296
-msgid "Code examples"
+#: ../../TRANSLATING.md:341
+msgid "How can I get help with my translation?"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:298
-msgid "This guide uses the [literalinclude Sphinx directive](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude) whenever possible to keep code and prose separate. Code for use in the documentation is kept in the `examples/` folder."
+#: ../../TRANSLATING.md:343
+msgid "If you have any questions or need help with your translation, you can create an [issue](https://github.com/pyOpenSci/python-package-guide/issues) in the [Packaging Guide repository](https://github.com/pyOpenSci/python-package-guide)"
 msgstr ""
 
-#: ../../CONTRIBUTING.md:302
-msgid "Referencing code in documentation"
-msgstr ""
-
-#: ../../CONTRIBUTING.md:304
-msgid "If an example is present elsewhere in the documentation that you want to use, you can copy the `literalinclude` directive verbatim and the examples will stay in sync."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:307
-msgid "If you already see code in the examples folder that you can use for new documentation, a new `literalinclude` can be made to extract it into the site. Only a relative path to the code is required for a working `literalinclude`, but you should in almost all cases also provide a `:language:` and `:lines:`. The former makes code examples prettier, and the later can protect your example from future modifications to the code."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:312
-msgid "**Pro tip**: As an alternative to `:lines:` there are also the `:start-after:`, `:start-at:`, `:end-before:`, and `:end-at:` options. And if the example code is Python, `:pyobject:` can be an even more future-proof way to keep the same documentation content even through code refactors."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:316
-msgid "If you need example code that doesn't yet exist in `examples/` see [creating code for documentation](#creating-code-for-documentation)."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:319
-msgid "Creating code for documentation"
-msgstr ""
-
-#: ../../CONTRIBUTING.md:321
-msgid "Whenever you come across a place that could benefit from a code block, instead of writing it in-line with a code fence (`` ``` `` blocked text) you can write it as a file in its own format. Your example may even already exist; [see referencing code in documentation ](#referencing-code-in-documentation)."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:325
-msgid "If you want to add a new example that doesn't fit into any of the existing example files, you can create a new file and reference it in a `literalinclude` block. If it makes sense for that file to live within one of the existing example projects please add it there; otherwise create a new folder in the `examples` directory."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:329
-msgid "If an existing example is incomplete or a new example makes sense to be added to an existing file, go ahead and add it, but take care to not break the rest of the guide. Whenever possible, extend the example rather that rewrite it. So for instance, add new functions to the end of the file, new methods after all existing ones in a class."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:333
-msgid "Example code is checked for correctness, so adding a new example may require adding additional tests for coverage, and will require fixing any failing tests."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:336
-msgid "***⚠️ WARNING***: great care should be taken when modifying existing example code, especially any modification beyond appending to the end of the file. All code examples are (potentially) shared examples. This makes for more consistent examples in the guide but can mean action-at-a-distance when modifying the examples for one particular use case. If you find yourself modifying existing examples try running this command and then checking those pages in a new build."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:344
-msgid "Example:"
-msgstr ""
-
-#: ../../CONTRIBUTING.md:346
-msgid "Instead of writing example code in markdown like this"
-msgstr ""
-
-#: ../../CONTRIBUTING.md:357
-msgid "The python can be extracted into a `.py` file"
-msgstr ""
-
-#: ../../CONTRIBUTING.md:371
-msgid "As another example, if you only need to show part of a `pyproject.toml`, we already have complete project definitions, you need only to find the relevant part."
-msgstr ""
-
-#: ../../CONTRIBUTING.md:374
-msgid "Instead of writing this"
-msgstr ""
-
-#: ../../CONTRIBUTING.md:386
-msgid "an example could be extracted from an existing toml file"
+#: ../../TRANSLATING.md:345
+msgid "You can also ask in the PyOpenSci Discord server ([click here](https://discord.gg/NQtTTqtv) to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc)."
 msgstr ""
 
