@@ -95,7 +95,7 @@ favicons = [
     {"href": "https://www.pyopensci.org/images/favicon.ico"},
 ]
 
-html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+html_baseurl = "/python-package-guide/"
 if not sphinx_env == "production":
     # for links in language selector when developing locally
     html_baseurl = "/"
