@@ -95,10 +95,11 @@ favicons = [
     {"href": "https://www.pyopensci.org/images/favicon.ico"},
 ]
 
-html_baseurl = "/python-package-guide/"
+html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+lang_selector_baseurl = "/python-package-guide/"
 if not sphinx_env == "production":
     # for links in language selector when developing locally
-    html_baseurl = "/"
+    lang_selector_baseurl = "/"
 
 html_theme_options = {
     "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
@@ -148,7 +149,7 @@ html_context = {
     "github_version": "main",
     "language": language,
     "languages": build_languages,
-    "baseurl": html_baseurl,
+    "baseurl": lang_selector_baseurl,
 }
 
 # Add any paths that contain templates here, relative to this directory.
