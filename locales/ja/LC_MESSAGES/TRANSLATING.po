@@ -1,17 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, pyOpenSci
+# Copyright (C) 2025, pyOpenSci
 # This file is distributed under the same license as the pyOpenSci Python
 # Package Guide package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
+# Translators:
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2025
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pyOpenSci Python Package Guide \n"
+"Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-17 22:50+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-20 11:32+0900\n"
+"PO-Revision-Date: 2025-04-14 18:12+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -93,7 +95,7 @@ msgid ""
 "When the guide is built, Sphinx creates a version of the guide in the "
 "original language (English) and the translated versions for the languages"
 " defined in the configuration."
-msgstr "ガイドがビルドされると、Sphinxはオリジナルの言語(英語)と、コンフィグレーションで定義された言語の翻訳版のガイドを作成します。"
+msgstr "ガイドがビルドされると、Sphinxはオリジナルの言語(英語)と、設定で定義された言語の翻訳版のガイドを作成します。"
 
 #: ../../TRANSLATING.md:27
 msgid ""
@@ -176,14 +178,13 @@ msgstr ""
 "例えば、フランス語への翻訳を開始したい場合は `'fr'` を追加します:"
 
 #: ../../TRANSLATING.md:68
-#, fuzzy
 msgid ""
 "You can find a list of the two-letter Sphinx language option "
 "[here](https://www.sphinx-doc.org/en/master/usage/configuration.html"
 "#confval-language)."
 msgstr ""
-"2文字のISO言語コードのリストは "
-"[こちら](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)。"
+"[ここで](https://www.sphinx-doc.org/en/master/usage/configuration.html"
+"#confval-language) 、2文字のSphinx言語オプションのリストを見つけることができます。"
 
 #: ../../TRANSLATING.md:71
 msgid "Preparing the Translation Files"
@@ -203,7 +204,7 @@ msgstr ""
 msgid ""
 "You can do this by running the following command, replacing LANG by the "
 "language code you plan to work on (e.g., `es` for Spanish):"
-msgstr ""
+msgstr "以下のコマンドを実行し、LANGを作業する予定の言語コードに置き換えてください (例えばスペイン語は `es`):"
 
 #: ../../TRANSLATING.md:81
 msgid ""
@@ -379,7 +380,7 @@ msgid ""
 "the entry."
 msgstr ""
 "`msgid` フィールドには翻訳が必要な元の英語のテキストを入力します。 `msgstr` フィールドには翻訳されたテキストを入力します。 "
-"このフィールドには他の人がすでに翻訳したテキストが入っているかもしれません。"
+"このフィールドには他の人がすでに翻訳したテキストが入るかもしれません。"
 
 #: ../../TRANSLATING.md:170
 msgid ""
@@ -404,7 +405,7 @@ msgid ""
 "The English text may also contain links to other sections of the guide or"
 " external resources. You should keep the links in the translated text, "
 "making sure to update the link text when appropriate."
-msgstr "英文テキストには、ガイドの他のセクションや外部リソースへのリンクが含まれている場合があります。リンクは翻訳されたテキストの中に残し、必要に応じてリンクテキストを更新してください。"
+msgstr "英文テキストには、ガイドの他のセクションや外部リソースへのリンクが含まれている場合があります。リンクは翻訳されたテキストの中に残してください、必要に応じてリンクテキストを更新してください。"
 
 #: ../../TRANSLATING.md:196
 msgid ""
@@ -444,16 +445,17 @@ msgstr ""
 
 #: ../../TRANSLATING.md:221
 msgid "Building the Translated Documentation"
-msgstr "翻訳されたドキュメントのビルド"
+msgstr "翻訳されたドキュメントの構築"
 
 #: ../../TRANSLATING.md:223
-#, fuzzy
 msgid ""
 "Once you finished translating or when you want to check the translation "
 "in context, you can build the guide locally on your computer, using the "
 "following command, replacing LANG by the proper language code (e.g., `es`"
 " for Spanish)"
-msgstr "翻訳が終わったら、あるいは文脈の中で翻訳をチェックしたい場合は、次のコマンドを使用して、ガイドをコンピュータにローカルにビルドすることができます:"
+msgstr ""
+"翻訳が終わったら、あるいは文脈の中で翻訳をチェックしたい場合は、次のコマンドを使用して、ガイドをコンピュータにローカルに構築することができます、 "
+"LANGを適切な言語コードに置き換えます (例: スペイン語なら `es` )。"
 
 #: ../../TRANSLATING.md:229
 msgid ""
@@ -487,7 +489,6 @@ msgstr ""
 "例えば、スペイン語翻訳に取り組んでいる場合、次のように実行します:"
 
 #: ../../TRANSLATING.md:239
-#, fuzzy
 msgid ""
 "Note the `--` before the language code, it indicates that the following "
 "arguments should be passed into the nox session and not be interpreted "
@@ -495,7 +496,7 @@ msgid ""
 "session named 'es' and raise an error that it does not exist."
 msgstr ""
 "言語コードの前の `--` に注意してください。これは次の引数がnoxセッションに渡され、noxによって直接解釈されないことを示します。 もし "
-"`--` を忘れると、noxは代わりに 'es' という名前のセッションを探し、それが存在しないと文句を言います。"
+"`--` を忘れると、noxは代わりに 'es' という名前のセッションを探し、それが存在しないとエラーを発生させます。"
 
 #: ../../TRANSLATING.md:241
 msgid ""
@@ -571,9 +572,8 @@ msgstr ""
 "というタグが付けられます。"
 
 #: ../../TRANSLATING.md:268
-#, fuzzy
 msgid "TODO: This tagging could be automated with a GitHub Actions."
-msgstr "TODO: このタグ付けは、GitHubのアクションで自動化できるかもしれません。"
+msgstr "TODO: このタグ付けは、GitHub Actionsで自動化できるかもしれません。"
 
 #: ../../TRANSLATING.md:270
 msgid ""
@@ -640,7 +640,7 @@ msgid ""
 "code to the `RELEASE_LANGUAGES` list in the `noxfile.py` configuration "
 "file."
 msgstr ""
-"言語がリリース準備できたら、メンテナは `noxfile.py` 設定ファイルの `RELEASE_LANGUAGES` "
+"言語がライブにする準備ができたら、メンテナは `noxfile.py` 設定ファイルの `RELEASE_LANGUAGES` "
 "リストに言語コードを追加します。"
 
 #: ../../TRANSLATING.md:288
@@ -648,7 +648,9 @@ msgid ""
 "When the guide is built for release in CI, Sphinx will also generate the "
 "translated versions of the guide for the languages in the "
 "`RELEASE_LANGUAGES` list."
-msgstr "ガイドがCIでリリース用にビルドされると、Sphinxは `RELEASE_LANGUAGES` リストにある言語の翻訳版のガイドも生成します。"
+msgstr ""
+"ガイドがCIでリリースするためにビルドされると、Sphinxは `RELEASE_LANGUAGES` "
+"リストにある言語の翻訳版のガイドも生成します。"
 
 #: ../../TRANSLATING.md:290
 msgid ""
@@ -684,7 +686,6 @@ msgid "What happens when a string has changed in the original English text?"
 msgstr "英語の原文で文字列が変更された場合はどうなりますか？"
 
 #: ../../TRANSLATING.md:300
-#, fuzzy
 msgid ""
 "If a string has changed in the original English version, it will be "
 "marked as `fuzzy` in the translation file the next time it is updated "
@@ -693,8 +694,9 @@ msgid ""
 "fuzzy entries and make the necessary changes to ensure it is accurate, "
 "before removing the `fuzzy` tag."
 msgstr ""
-"オリジナルの英語版で文字列が変更された場合、次に翻訳ファイルが更新されるとき（ `nox -s update-translations` ）に "
-"`fuzzy` としてマークされます。 翻訳に携わっているコントリビューターは、 `fuzzy` "
+"オリジナルの英語版で文字列が変更された場合、次に翻訳ファイルが更新されるとき (`update-language`, `update-all-"
+"languages`, または `update-all-release-languages`) に `fuzzy` としてマークされます。 "
+"翻訳に携わっているコントリビューターは、 `fuzzy` "
 "タグを削除する前に、あいまいなエントリを確認し、正確であることを確認するために必要な変更を行うことができます。"
 
 #: ../../TRANSLATING.md:302
@@ -821,33 +823,18 @@ msgid ""
 "guide/issues) in the [Packaging Guide "
 "repository](https://github.com/pyOpenSci/python-package-guide)"
 msgstr ""
+"翻訳について質問がある場合や助けが必要な場合は、 [パッケージングガイドのリポジトリ](https://github.com/pyOpenSci"
+"/python-package-guide) に [issue](https://github.com/pyOpenSci/python-"
+"package-guide/issues) を作成してください。"
 
 #: ../../TRANSLATING.md:345
 msgid ""
 "You can also ask in the PyOpenSci Discord server ([click "
-"here](https://discord.gg/CvSMp4zcqX) to join), you will find a general "
+"here](https://discord.gg/NQtTTqtv) to join), you will find a general "
 "channel for questions related to our workflow, processes, and tools "
 "(translation-general) and channels for each of the languages we are "
 "working on (spanish-translation, japanese-translation, etc)."
 msgstr ""
-
-#~ msgid "You can do this by running the following command:"
-#~ msgstr "次のコマンドを実行すれば可能です:"
-
-#~ msgid ""
-#~ "If you have any questions or need"
-#~ " help with your translation, you can"
-#~ " create an issue in the repository"
-#~ " if you encounter any problems or "
-#~ "need assistance."
-#~ msgstr "もし翻訳で何か問題が発生したり、サポートが必要な場合は、リポジトリに課題を作成することができます。"
-
-#~ msgid ""
-#~ "TODO: Maybe "
-#~ "[Discourse](https://pyopensci.discourse.group/) could be"
-#~ " used as a way for contributors "
-#~ "to ask for help with translations "
-#~ "or the translation workflow?"
-#~ msgstr ""
-#~ "TODO: [Discourse](https://pyopensci.discourse.group/) "
-#~ "を、投稿者が翻訳や翻訳ワークフローについて助けを求める方法として使うことができるかもしれません。"
+"PyOpenSci Discord サーバでも質問できます (参加は [こちら](https://discord.gg/NQtTTqtv)) "
+"、私たちのワークフロー、プロセス、ツールに関する一般的な質問用のチャンネル (translation-general) "
+"と、私たちが取り組んでいる各言語のチャンネル (spanish-translation、japanese-translationなど) があります。"
