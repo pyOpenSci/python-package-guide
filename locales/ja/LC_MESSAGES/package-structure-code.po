@@ -1,17 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, pyOpenSci
+# Copyright (C) 2025, pyOpenSci
 # This file is distributed under the same license as the pyOpenSci Python
 # Package Guide package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
+# Translators:
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2025
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pyOpenSci Python Package Guide \n"
+"Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-17 22:50+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-20 11:32+0900\n"
+"PO-Revision-Date: 2025-04-14 18:12+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -559,7 +561,6 @@ msgid "Diagram showing the steps of a pre-commit workflow from left to right."
 msgstr "左から右へ、 pre-commit ワークフローのステップを示す図。"
 
 #: ../../package-structure-code/code-style-linting-format.md:262
-#, fuzzy
 msgid ""
 "The pre-commit workflow begins with you adding files that have changes to"
 " be staged in git. Next, you'd run git commit. When you run git commit, "
@@ -597,7 +598,6 @@ msgid "General pre commit checks"
 msgstr "一般的なコミット前のチェック"
 
 #: ../../package-structure-code/code-style-linting-format.md:284
-#, fuzzy
 msgid ""
 "In addition to calling tools, Pre-commit also has a suite of [built in "
 "format hooks](https://github.com/pre-commit/pre-commit-hooks#hooks-"
@@ -606,8 +606,8 @@ msgid ""
 "streamlined code files."
 msgstr ""
 "ツールを呼び出すだけでなく、Pre-commitには [ビルトインフォーマットフック](https://github.com/pre-commit"
-"/pre-commit-hooks#hooks-available) が用意されています。また、trailing-"
-"whitespaceのように、コミット前のワークフローに追加することで、クリーンで合理的なコードファイルを確保できるものもあります。"
+"/pre-commit-hooks#hooks-available) が用意されています。また、 `trailing-whitespace` "
+"のように、コミット前のワークフローに追加することで、クリーンで合理的なコードファイルを確保できるものもあります。"
 
 #: ../../package-structure-code/code-style-linting-format.md:289
 msgid ""
@@ -819,7 +819,6 @@ msgstr ""
 "Hatchのようなカスタムビルドステップをサポートするビルドツールを選択することをお勧めします。"
 
 #: ../../package-structure-code/complex-python-package-builds.md:18
-#, fuzzy
 msgid ""
 "**Python packages that have extensions written in different languages "
 "(e.g. Fortran and C++) or that have non Python dependencies that are "
@@ -831,7 +830,7 @@ msgid ""
 "can use meson-python with PDM."
 msgstr ""
 "**異なる言語で書かれた拡張(例えばFortranやC++)を持つPythonパッケージや、 "
-"インストールが困難なPython以外の依存関係(例えばGDAL)を持つPythonパッケージ ** "
+"インストールが困難なPython以外の依存関係(例えばGDAL)を持つPythonパッケージ: ** "
 "これらのパッケージは、しばしば複雑なビルド手順を持ちます(例えば、いくつかのC拡張を持つ パッケージよりも複雑です)。 "
 "そのため、これらのパッケージのビルドには [scikit-build](https://scikit-"
 "build.readthedocs.io/en/latest/) や [meson-python](https://mesonbuild.com"
@@ -895,7 +894,6 @@ msgid "Todo"
 msgstr "Todo"
 
 #: ../../package-structure-code/declare-dependencies.md:10
-#, fuzzy
 msgid ""
 "keep this comment - https://github.com/pyOpenSci/python-package-"
 "guide/pull/106#issuecomment-1844278487 in this file for now - jeremiah "
@@ -940,19 +938,16 @@ msgid ""
 msgstr "Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです:"
 
 #: ../../package-structure-code/declare-dependencies.md:29
-#, fuzzy
 msgid "Needs to function properly."
 msgstr "適切に機能する必要があります。"
 
 #: ../../package-structure-code/declare-dependencies.md:30
-#, fuzzy
 msgid ""
 "Requires if someone wants to develop / work on improving your package "
 "locally or"
 msgstr "もし、あなたのパッケージをローカルで開発したり、改良したりしたい人がいるか"
 
 #: ../../package-structure-code/declare-dependencies.md:31
-#, fuzzy
 msgid ""
 "Requires if a user wants to add additional functionality (that is not "
 "core) to your package"
@@ -970,7 +965,6 @@ msgid "Understanding optional vs. required dependencies"
 msgstr "オプションと必須の依存関係を理解する"
 
 #: ../../package-structure-code/declare-dependencies.md:38
-#, fuzzy
 msgid ""
 "You can think about dependencies as being either optional or required. If"
 " they are required, they will be listed in the `dependencies` key in the "
@@ -978,9 +972,9 @@ msgid ""
 " will be listed in the `[optional.dependencies]` table of your "
 "`pyproject.toml`."
 msgstr ""
-"依存関係はオプションか必須であると考えることができます。 必須であれば、 `pyproject.toml` ファイルの `[dependency]"
-" =` テーブルにリストされます。 オプションの場合は、 `pyproject.toml` の `[optional.dependencies]`"
-" テーブルにリストされます。"
+"依存関係はオプションか必須であると考えることができます。 必須であれば、 `pyproject` テーブルの `dependencies` "
+"キーにリストされます。 オプションの場合は、 `pyproject.toml` の `[optional.dependencies]` "
+"テーブルにリストされます。"
 
 #: ../../package-structure-code/declare-dependencies.md:40
 msgid "You will learn about both below."
@@ -1009,7 +1003,6 @@ msgid "Required (or core) dependencies"
 msgstr "必須（またはコア）の依存関係"
 
 #: ../../package-structure-code/declare-dependencies.md:53
-#, fuzzy
 msgid ""
 "Required dependencies are called directly within your package's code. On "
 "this page we refer to these dependencies as **core dependencies** as they"
@@ -1018,8 +1011,8 @@ msgid ""
 "of your `pyproject.toml` file."
 msgstr ""
 "必要な依存関係は、パッケージのコード内で直接呼び出されます。このページでは、パッケージを実行するために必要なこれらの依存関係を "
-"**コア依存関係** と呼びます。 `pyproject.toml` ファイルの `[dependency]=` "
-"テーブルに、コアまたは必要な依存関係を置く必要があります。"
+"**コア依存関係** と呼びます。 `pyproject.toml` ファイルの `[project]` テーブルの `dependencies`"
+" キーに、コアまたは必要な依存関係を置く必要があります。"
 
 #: ../../package-structure-code/declare-dependencies.md:56
 #: ../../package-structure-code/declare-dependencies.md:147
@@ -1139,7 +1132,6 @@ msgstr ""
 "`[project]` テーブルにある `dependencies` 配列に追加することができます。 これは次のようになります:"
 
 #: ../../package-structure-code/declare-dependencies.md:121
-#, fuzzy
 msgid ""
 "Ideally, you should only list the packages that are necessary to install "
 "and use your package in the `dependencies` key in the `[project]` table. "
@@ -1147,7 +1139,7 @@ msgid ""
 "install as well as the number of packages that depend upon your package "
 "must also install."
 msgstr ""
-"理想的には、 `[dependencies]` セクションに、あなたのパッケージをインス "
+"理想的には、 `[project]` テーブルの `dependencies` キーに、あなたのパッケージをインス "
 "トールして使用するために必要なパッケージだけをリストするようにしま す。 "
 "こうすることで、ユーザがインストールしなければならない追加パッケージの数や "
 "あなたのパッケージに依存するパッケージの数を最小限に抑えることができます。"
@@ -1232,7 +1224,6 @@ msgid "linting and other code cleanup tools"
 msgstr "リンティングとその他のコードクリーンナップツール"
 
 #: ../../package-structure-code/declare-dependencies.md:155
-#, fuzzy
 msgid ""
 "These dependencies are considered optional, because they are not required"
 " to install and use your package. Feature dependencies are considered "
@@ -1240,19 +1231,17 @@ msgid ""
 "dependencies]` table."
 msgstr ""
 "これらの依存関係はオプションとみなされます。なぜなら、あなたのパッケ ージをインストールして使用するのに必要ではないからです。 "
-"機能の依存関係はオプションとみなされ、 `[optional.dependencies]` テーブルに置く必要があります。"
+"機能の依存関係はオプションとみなされ、 `[project.optional-dependencies]` テーブルに置く必要があります。"
 
 #: ../../package-structure-code/declare-dependencies.md:158
-#, fuzzy
 msgid ""
 "Optional dependencies can be stored in an `[project.optional-"
 "dependencies]` table in your **pyproject.toml** file."
 msgstr ""
-"オプションの依存関係は **pyproject.toml** ファイルの `[optional.dependencies]` "
+"オプションの依存関係は **pyproject.toml** ファイルの `[project.optional-dependencies]` "
 "テーブルに格納することができます。"
 
 #: ../../package-structure-code/declare-dependencies.md:161
-#, fuzzy
 msgid ""
 "It's important to note that within the `[project.optional-dependencies]` "
 "table, you can store additional, optional dependencies within named sub-"
@@ -1260,7 +1249,7 @@ msgid ""
 "within the `[project]` table discussed above which contains a single "
 "array with a single list of required packages."
 msgstr ""
-"ここで重要なのは、 `[optional.dependencies]` "
+"ここで重要なのは、 `[project.optional-dependencies]` "
 "テーブルの中で、名前付きサブグループの中に追加のオプションの依存関係を格納できることです。これは、上で説明した `[project]` "
 "テーブル内の依存関係配列とは異なるテーブルであり、必要なパッケージのリストを1つだけ含む配列が1つ格納されています。"
 
@@ -1273,11 +1262,10 @@ msgid "To declare optional dependencies in your **pyproject.toml** file:"
 msgstr "**pyproject.toml** ファイルでオプションの依存関係を宣言します:"
 
 #: ../../package-structure-code/declare-dependencies.md:167
-#, fuzzy
 msgid ""
 "Add a `[project.optional-dependencies]` table to your **pyproject.toml** "
 "file."
-msgstr "**pyproject.toml** ファイルに `[optional.dependencies]` テーブルを追加します。"
+msgstr "**pyproject.toml** ファイルに `[project.optional-dependencies]` テーブルを追加します。"
 
 #: ../../package-structure-code/declare-dependencies.md:168
 msgid "Create named groups of dependencies using the syntax:"
@@ -1343,7 +1331,6 @@ msgid "Install dependency groups"
 msgstr "依存グループをインストールする"
 
 #: ../../package-structure-code/declare-dependencies.md:226
-#, fuzzy
 msgid ""
 "Diagram showing a Venn diagram with three sections representing the "
 "dependency groups listed above - docs feature and tests. In the center it"
@@ -1364,7 +1351,6 @@ msgstr ""
 "package、seaborn、numpy とテスト依存関係 pytest、pytest-cov の両方を含む環境が構築されます。"
 
 #: ../../package-structure-code/declare-dependencies.md:228
-#, fuzzy
 msgid ""
 "When a user installs your package locally using `python -m pip install "
 "your-package` only your package and it's core dependencies get installed."
@@ -1373,10 +1359,11 @@ msgid ""
 "dependencies plus any of the dependencies listed within the tests array "
 "of your `[project.optional-dependencies]` table."
 msgstr ""
-"ユーザがローカルで python -m pip install your-package "
+"ユーザがローカルで `python -m pip install your-package` "
 "を使ってあなたのパッケージをインストールすると、あなたのパッケージとそのコア依存関係のみがインストールされます。ユーザがあなたのパッケージ "
-"`[tests]` をインストールすると、pip はあなたのパッケージとそのコア依存パッケージの両方をインストールし、さらに "
-"`[optional.dependencies]` テーブルの tests 配列にリストされている依存パッケージをインストールします。"
+"`python -m pip install your-package[tests]` をインストールすると、pip "
+"はあなたのパッケージとそのコア依存パッケージの両方をインストールし、さらに `[project.optional-dependencies]` "
+"テーブルの tests 配列にリストされている依存パッケージをインストールします。"
 
 #: ../../package-structure-code/declare-dependencies.md:231
 msgid "Using `python -m pip install` vs. `pip install`"
@@ -1428,7 +1415,6 @@ msgid "dependencies needed for your documentation (`docs`),"
 msgstr "ドキュメント (`docs`) に必要な依存関係、"
 
 #: ../../package-structure-code/declare-dependencies.md:253
-#, fuzzy
 msgid "required package dependencies in the `dependencies` array and"
 msgstr "必要なパッケージの依存関係を `dependency` 配列で指定し"
 
@@ -1448,11 +1434,10 @@ msgid "`python -m pip install \".[tests]\"`"
 msgstr "`python -m pip install \".[tests]\"`"
 
 #: ../../package-structure-code/declare-dependencies.md:261
-#, fuzzy
 msgid ""
 "You can install multiple dependency groups in the `[project.optional-"
 "dependencies]` table using:"
-msgstr "`[optional.dependencies]` テーブルに複数の依存グループをインストールすることができます:"
+msgstr "`[project.optional-dependencies]` テーブルに複数の依存グループをインストールすることができます:"
 
 #: ../../package-structure-code/declare-dependencies.md:263
 msgid "`python -m pip install \".[docs, tests, lint]\"`"
@@ -1723,9 +1708,8 @@ msgid "Complex Builds"
 msgstr "複雑なビルド"
 
 #: ../../package-structure-code/intro.md:179
-#, fuzzy
 msgid "Create & Build Your Package"
-msgstr "パッケージをビルドする"
+msgstr "パッケージを作成 & ビルドする"
 
 #: ../../package-structure-code/intro.md:193
 msgid "Publish with Conda / PyPI"
@@ -1740,17 +1724,14 @@ msgid "Code style"
 msgstr "コードスタイル"
 
 #: ../../package-structure-code/intro.md:193
-#, fuzzy
 msgid "Publish your package"
-msgstr "パッケージの公開"
+msgstr "パッケージを公開する"
 
 #: ../../package-structure-code/intro.md:1
-#, fuzzy
 msgid "Python Package Structure"
 msgstr "Pythonパッケージ構造"
 
 #: ../../package-structure-code/intro.md:3
-#, fuzzy
 msgid ""
 "This section provides guidance on your Python package's structure, code "
 "format, and style. It also reviews the various [packaging tools](python-"
@@ -1758,17 +1739,20 @@ msgid ""
 "files-sdist-wheel) and [publish](publish-python-package-pypi-conda) your "
 "Python package."
 msgstr ""
-"このセクションでは Python パッケージの構造、コードフォーマット、スタイルに関するガイダンスを提供します。 "
-"また、パッケージのビルドと公開をサポートするために使用できる様々なパッケージングツールについても説明します。"
+"このセクションでは、Python パッケージの構造、コードフォーマット、スタイルに関するガイダンスを提供します。また、Pythonパッケージの "
+"[build](python-package-distribution-files-sdist-wheel) や [publish"
+"](publish-python-package-pypi-conda) に使える様々な [packaging tools](python-"
+"package-build-tools) もレビューしています。"
 
 #: ../../package-structure-code/intro.md:7
 msgid ""
 "If you want end-to-end tutorials, check out our tutorial series that "
 "starts by introducing [what a Python package is](what-is-a-package)."
 msgstr ""
+"チュートリアルが必要な場合は、 [Python パッケージとは](what-is-a-package) "
+"何かを紹介するところから始まるチュートリアルシリーズをご覧ください。"
 
 #: ../../package-structure-code/intro.md:9
-#, fuzzy
 msgid ""
 "If you are confused by Python packaging, you are not alone! The good news"
 " is that some great modern packaging tools ensure you follow best "
@@ -1781,17 +1765,17 @@ msgstr ""
 
 #: ../../package-structure-code/intro.md:14
 msgid "Checkout our beginning-to-end create a Python package tutorials"
-msgstr ""
+msgstr "Pythonパッケージ作成チュートリアルをご覧ください。"
 
 #: ../../package-structure-code/intro.md:23
 msgid "How this content is developed"
-msgstr ""
+msgstr "このコンテンツの開発方法"
 
 #: ../../package-structure-code/intro.md:24
 msgid ""
 "All of the content in this guide has been vetted by community members, "
 "including maintainers and developers of the core packaging tools."
-msgstr ""
+msgstr "このガイドの内容はすべて、コアパッケージングツールのメンテナや開発者を含むコミュニティメンバーによって吟味されています。"
 
 #: ../../package-structure-code/intro.md:35
 msgid "✨ 1. Package file structure ✨"
@@ -1918,11 +1902,10 @@ msgid "In this section of our Python packaging guide, we:"
 msgstr "Pythonパッケージングガイドのこのセクションでは、以下のことを説明します:"
 
 #: ../../package-structure-code/intro.md:129
-#, fuzzy
 msgid ""
 "Provide an overview of the options available to you when packaging your "
 "code."
-msgstr "ツールをパッケージングする際に利用可能なオプションの概要を説明する。"
+msgstr "コードをパッケージングする際に利用可能なオプションの概要を説明します。"
 
 #: ../../package-structure-code/intro.md:131
 msgid ""
@@ -1931,12 +1914,11 @@ msgid ""
 msgstr "ニーズを満たし、かつ既存の基準をサポートするツールやアプローチを提案します。"
 
 #: ../../package-structure-code/intro.md:133
-#, fuzzy
 msgid ""
 "Suggest tools and approaches that will allow you to expand upon a "
 "workflow that may begin as a pure Python code and evolve into code that "
 "requires addition layers of complexity in the packaging build."
-msgstr "純粋なPythonツールから始まり、パッケージングビルドに複雑なレイヤーを追加する必要のあるツールへと進化するワークフローを拡張することを可能にするツールやアプローチを提案します。"
+msgstr "純粋なPythonツールから始まり、パッケージングビルドに複雑なレイヤーを追加する必要のあるコードへと進化するワークフローを拡張することを可能にするコードやアプローチを提案します。"
 
 #: ../../package-structure-code/intro.md:136
 msgid ""
@@ -2089,7 +2071,6 @@ msgstr "以下では、PythonパッケージのPyPI公開とconda公開の違い
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:24
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:6
-#, fuzzy
 msgid ""
 "Image showing the progression of creating a Python package, building it "
 "and then publishing to PyPI and conda-forge. You take your code and turn "
@@ -2103,7 +2084,6 @@ msgstr ""
 "。PyPIからconda-forgeのレシピを作成し、conda-forgeに公開することができます。"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:26
-#, fuzzy
 msgid ""
 "Once you have published both package distributions (the source "
 "distribution and the wheel) to PyPI, you can then publish to conda-forge."
@@ -2259,23 +2239,21 @@ msgstr ""
 "チャンネルにあるかは Anaconda (会社) が決定します。"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:99
-#, fuzzy
 msgid ""
 "[**conda-forge:**](https://conda-forge.org/) this is a community-driven "
 "channel that focuses on scientific packages. This channel is ideal for "
 "tools that support geospatial data. Anyone can publish a package to this "
 "channel."
 msgstr ""
-"[**conda-forge:**](https://anaconda.org/conda-forge) "
+"[**conda-forge:**](https://conda-forge.org/) "
 "このチャンネルは科学的なパッケージに焦点を当てたコミュニティ主導のチャンネルです。 このチャンネルは地理空間データをサポートするツールに最適です。"
 " 誰でもこのチャンネルにパッケージを公開できます。"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:100
-#, fuzzy
 msgid ""
 "[**bioconda**](https://bioconda.github.io/): this channel focuses on "
 "biomedical tools."
-msgstr "[**bioconda**](https://anaconda.org/bioconda): このチャンネルは生物医学ツールに焦点を当てています。"
+msgstr "[**bioconda**](https://bioconda.github.io/): このチャンネルは生物医学ツールに焦点を当てています。"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:102
 msgid ""
@@ -2284,7 +2262,6 @@ msgid ""
 msgstr "科学的パッケージの多くが `defaults` Anaconda チャンネルに存在しなかったため、**conda-forge** が出現しました。"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:107
-#, fuzzy
 msgid ""
 "Graphic with the title Python package repositories. Below it says "
 "Anything hosted on PyPI can be installed using pip install. Packaging "
@@ -2377,12 +2354,11 @@ msgstr ""
 "そのため、pip と conda の両方からインストールされたパッケージを含む環境は、依存関係の衝突が起こりやすくなります。"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:144
-#, fuzzy
 msgid ""
 "Similarly installing packages from the default anaconda channel mixed "
 "with the conda-forge channel can also lead to dependency conflicts."
 msgstr ""
-"同様に、デフォルトの anaconda パッケージと conda-forge "
+"同様に、デフォルトの anaconda チャンネルと conda-forge "
 "チャンネルを混ぜてパッケージをインストールすることも依存関係の衝突につながります。"
 
 #: ../../package-structure-code/publish-python-package-pypi-conda.md:146
@@ -2794,32 +2770,28 @@ msgstr ""
 "/core-metadata/#project-url-multiple-use)"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:139
-#, fuzzy
 msgid "Required fields for the `[project]` table"
-msgstr "[project] テーブルの必須フィールド"
+msgstr "`[project]` テーブルの必須フィールド"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:141
-#, fuzzy
 msgid ""
 "As mentioned above, your `pyproject.toml` file needs to have a **`name`**"
 " and **`version`** field in order to properly build your package:"
 msgstr ""
-"上述したように、 pyproject.toml ファイルはパッケージを適切にビルドするために **name** と **version** "
-"フィールドを持つ必要があります:"
+"上述したように、 `pyproject.toml` ファイルはパッケージを適切にビルドするために **`name`** と "
+"**`version`** フィールドを持つ必要があります:"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:143
-#, fuzzy
 msgid "`name`: This is the name of your project provided as a string"
-msgstr "Name: プロジェクトの名前を文字列で指定します。"
+msgstr "`name`: プロジェクトの名前を文字列で指定します。"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:144
-#, fuzzy
 msgid ""
 "`version`: This is the version of your project. If you are using a SCM "
 "tool for versioning (using git tags to determine versions), then the "
 "version may be dynamic (more on that below)."
 msgstr ""
-"Version: プロジェクトのバージョンです。 バージョン管理に scm ツール (git タグを使用してバージョンを決定する) "
+"`version`: プロジェクトのバージョンです。 バージョン管理に SCM ツール (git タグを使用してバージョンを決定する) "
 "を使用している場合は、このバージョンは動的なものになります (詳細は後述します)。"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:146
@@ -2933,9 +2905,8 @@ msgid "Topic"
 msgstr "トピック"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:175
-#, fuzzy
 msgid "License"
-msgstr "LIcense"
+msgstr "License"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:176
 msgid "Programming language"
@@ -2961,7 +2932,6 @@ msgstr ""
 " 。"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:184
-#, fuzzy
 msgid ""
 "Here is an example of[a package that has entry point "
 "script](https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60)s."
@@ -2969,13 +2939,11 @@ msgid ""
 "perform sets of tasks. The pyOpenSci is using those scripts to process "
 "their metadata."
 msgstr ""
-"以下は、[エントリーポイントスクリプトを持つパッケージ](https://github.com/pyOpenSci/update-web-"
-"metadata/blob/main/pyproject.toml#L60) の例である。 "
-"そのパッケージには、一連のタスクを実行するいくつかのコアスクリプトが定義されていることに注目してほしい。 "
+"以下は、[エントリーポイントスクリプトを持つパッケージ](https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60)"
+" の例である。 そのパッケージには、一連のタスクを実行するいくつかのコアスクリプトが定義されていることに注目してほしい。 "
 "pyOpenSciはこれらのスクリプトを使ってメタデータを処理しています。"
 
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:185
-#, fuzzy
 msgid ""
 "**Dynamic Fields:** if you have fields that are dynamically populated. "
 "One example of this is if you are using scm / version control based "
@@ -4655,7 +4623,6 @@ msgid "Learn about Building a Python Package"
 msgstr "Pythonパッケージのビルドについて学ぶ"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:8
-#, fuzzy
 msgid ""
 "Once you have published both package distributions (the source "
 "distribution and the wheel) to PyPI, you can then publish to conda-forge."
@@ -4806,7 +4773,6 @@ msgid "An example - xclim"
 msgstr "例 - xclim"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:81
-#, fuzzy
 msgid ""
 "When you publish to PyPI, you will notice that each package has metadata "
 "listed. Let's have a look at [xclim](https://pypi.org/project/xclim/), "
@@ -4828,7 +4794,6 @@ msgstr ""
 "によって正しい構文と分類子を用いて定義されたメタデータを入力することができます。xclimパッケージがビルドされるとき、このメタデータは配布ファイルに変換され、PyPIがメタデータを読み込んでウェブサイトに出力できるようになります。"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:94
-#, fuzzy
 msgid ""
 "Graphic showing the high level packaging workflow. On the left you see a "
 "graphic with code, metadata and tests in it. Those items all go into your"
@@ -4855,7 +4820,6 @@ msgstr ""
 " 注意: conda-forgeが適切にパッケージを自動ビルドするためには、sdistをPyPIに公開する必要があります。"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:101
-#, fuzzy
 msgid ""
 "This screenshot shows the metadata on PyPI for the xclim package. On it "
 "you can see the name of the license, the author and maintainer names "
@@ -4868,7 +4832,6 @@ msgid "PyPI screenshot showing metadata for the xclim package."
 msgstr "xclimパッケージのメタデータを示すPyPIのスクリーンショット。"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:110
-#, fuzzy
 msgid ""
 "Here you see the maintainer metadata as it is displayed on PyPI. For "
 "xclim there are three maintainers listed with their profile pictures and "
@@ -4971,9 +4934,8 @@ msgstr ""
 "build/en/latest/user-guide/tutorials/index.html)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:155
-#, fuzzy
 msgid "What is a source distribution (sdist)"
-msgstr "ソースディストリビューション (sdist)"
+msgstr "ソースディストリビューションとは (sdist)"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:157
 msgid ""
@@ -5032,7 +4994,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:229
 msgid "What is a Python wheel (whl):"
-msgstr ""
+msgstr "Python wheel (whl)とは何ですか？"
 
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:231
 msgid ""
@@ -5139,18 +5101,15 @@ msgid "Python Package Structure for Scientific Python Projects"
 msgstr "科学的PythonプロジェクトのためのPythonパッケージ構造"
 
 #: ../../package-structure-code/python-package-structure.md:3
-#, fuzzy
 msgid ""
 "There are two different layouts that you will commonly see within the "
 "Python packaging ecosystem: src and flat layouts. Both layouts have "
 "advantages for different groups of maintainers."
 msgstr ""
 "Pythonのパッケージングエコシステムでよく見られるレイアウトは2種類あります。: "
-"[srcとフラットレイアウト。](https://packaging.python.org/en/latest/discussions/src-"
-"layout-vs-flat-layout/) どちらのレイアウトも、異なるメンテナグループにとって利点があります。"
+"srcとフラットレイアウどちらのレイアウトも、異なるメンテナグループにとって利点があります。"
 
 #: ../../package-structure-code/python-package-structure.md:8
-#, fuzzy
 msgid ""
 "We strongly suggest, but do not require, that you use the **src/** layout"
 " (discussed below) for creating your Python package. This layout is also "
@@ -5159,19 +5118,19 @@ msgid ""
 "projects/)."
 msgstr ""
 "Python パッケージの作成には **src/** レイアウト (後述) を使うことを強く推奨しますが、必須ではありません。 このレイアウトは、"
-" [PyPA packaging guide](https://packaging.python.org/en/latest/tutorials"
-"/packaging-projects/) でも推奨されています。"
+" [PyPA packaging guide "
+"tutorial](https://packaging.python.org/en/latest/tutorials/packaging-"
+"projects/) でも推奨されています。"
 
 #: ../../package-structure-code/python-package-structure.md:12
 msgid "pyOpenSci will never require a specific package structure for peer review"
 msgstr "pyOpenSciは査読のために特定のパッケージ構造を要求することはありません"
 
 #: ../../package-structure-code/python-package-structure.md:15
-#, fuzzy
 msgid ""
 "We understand that it would take significant effort for existing "
 "maintainers to move to a new layout."
-msgstr "新しいレイアウトに移行することは、既存のメンテナンス担当者にとって多大な労力となることは理解しています。"
+msgstr "新しいレイアウトに移行することは、既存のメンテナンス担当者にとって重要な労力となることは理解しています。"
 
 #: ../../package-structure-code/python-package-structure.md:18
 msgid ""
@@ -5185,7 +5144,7 @@ msgstr ""
 
 #: ../../package-structure-code/python-package-structure.md:22
 msgid "Other resources you can check out:"
-msgstr ""
+msgstr "他のリソースもチェックできます:"
 
 #: ../../package-structure-code/python-package-structure.md:23
 msgid ""
@@ -5193,26 +5152,28 @@ msgid ""
 "layouts](https://packaging.python.org/en/latest/discussions/src-layout-"
 "vs-flat-layout/)"
 msgstr ""
+"[PyPAによるsrcレイアウトとフラットレイアウトの概要](https://packaging.python.org/en/latest/discussions"
+"/src-layout-vs-flat-layout/)"
 
 #: ../../package-structure-code/python-package-structure.md:26
 msgid ""
 "You can use tools like Hatch to quickly create a modern Python package "
 "structure. Check out our quickstart tutorial:"
 msgstr ""
+"Hatch のようなツールを使って、最新の Python パッケージ構造を素早く作成することができます。 "
+"クイックスタートチュートリアルをご覧ください:"
 
 #: ../../package-structure-code/python-package-structure.md:29
 msgid ""
 "Want to learn how to create the structure to build your package? Click "
 "here."
-msgstr ""
+msgstr "パッケージを構築するための仕組み作りを学びたいですか？ こちらをクリックしてください。"
 
 #: ../../package-structure-code/python-package-structure.md:37
-#, fuzzy
 msgid "What is the Python package source layout?"
-msgstr "フラットなPythonパッケージレイアウトについて"
+msgstr "Pythonパッケージのソースレイアウトとは何ですか？"
 
 #: ../../package-structure-code/python-package-structure.md:39
-#, fuzzy
 msgid "An example of the **src/package** layout structure is below."
 msgstr "**src/package** のレイアウト構造の例を以下に示します。"
 
@@ -5221,7 +5182,6 @@ msgid "Note the location of the following directories in the example above:"
 msgstr "上の例では、以下のディレクトリの位置に注意してください:"
 
 #: ../../package-structure-code/python-package-structure.md:63
-#, fuzzy
 msgid ""
 "**docs/:** Discussed in our docs chapter, this directory contains your "
 "user-facing documentation website. In a **src/** layout docs/ are "
@@ -5231,7 +5191,6 @@ msgstr ""
 "レイアウトでは、通常 docs/ は **src/** フォルダの同じディレクトリレベルに含まれます。"
 
 #: ../../package-structure-code/python-package-structure.md:64
-#, fuzzy
 msgid ""
 "**tests/** This directory contains the tests for your project code. In a "
 "**src/** layout, tests are normally included at the same directory level "
@@ -5310,7 +5269,6 @@ msgid "The src/ layout and testing"
 msgstr "src/ のレイアウトとテスト"
 
 #: ../../package-structure-code/python-package-structure.md:98
-#, fuzzy
 msgid ""
 "The benefit of using the **src/package** layout is that it ensures tests "
 "are run against the installed version of your package rather than the "
@@ -5319,20 +5277,19 @@ msgid ""
 "missing issues that users encounter when your package is installed."
 msgstr ""
 "**src/package** "
-"レイアウトを使用する利点は、特に新しいパッケージを作成する場合、パッケージの作業ディレクトリ内のファイルではなく、インストールされたバージョンのパッケージに対してテストが実行されることを保証することです。"
+"レイアウトを使用する利点は、パッケージの作業ディレクトリ内のファイルではなく、インストールされたバージョンのパッケージに対してテストが実行されることを保証することです。"
 " "
-"インストールされたバージョンではなく、あなたのファイルでテストを実行すると、あなたのパッケージがインストールされたときにユーザが遭遇する問題を見逃してしまうかもしれません。"
+"あなたのパッケージのインストールされたバージョンではなく、あなたのファイルでテストを実行すると、あなたのパッケージがインストールされたときにユーザが遭遇する問題を見逃してしまうかもしれません。"
 
 #: ../../package-structure-code/python-package-structure.md:104
-#, fuzzy
 msgid ""
 "If `tests/` are outside the **src/package** directory, they aren't "
 "included in the package's [wheel](python-wheel). This makes your package "
 "size slightly smaller, which places a smaller storage burden on PyPI, and"
 " makes them faster to fetch."
 msgstr ""
-"`tests/` が **src/package** ディレクトリの外にある場合、それらはパッケージホイールに含まれません。 "
-"これにより、パッケージのサイズが少し小さくなり、400,000以上のパッケージをサポートするPyPIのストレージの負担が小さくなります。"
+"`tests/` が **src/package** ディレクトリの外にある場合、それらはパッケージの [wheel](python-wheel)"
+" には含まれません。これにより、パッケージのサイズがわずかに小さくなり、PyPIにかかるストレージの負担が小さくなり、フェッチが速くなります。"
 
 #: ../../package-structure-code/python-package-structure.md:106
 msgid ""
@@ -5363,7 +5320,6 @@ msgstr ""
 "はインストールされたパッケージを検出する前に `package/module.py` ファイルを検出します。"
 
 #: ../../package-structure-code/python-package-structure.md:114
-#, fuzzy
 msgid ""
 "However, if your package lives in a src/ directory structure "
 "**src/package**, then it won't be added to the Python path by default. "
@@ -5375,7 +5331,6 @@ msgstr ""
 "は（あなたのパッケージがインストールされている）アクティブな環境を強制的に検索することを意味します。"
 
 #: ../../package-structure-code/python-package-structure.md:116
-#, fuzzy
 msgid ""
 "Note: Python versions 3.11 and above have a path setting that can be "
 "adjusted to ensure the priority is to use installed packages first (e.g.,"
@@ -5385,12 +5340,10 @@ msgstr ""
 "`PYTHONSAFEPATH` など)。"
 
 #: ../../package-structure-code/python-package-structure.md:119
-#, fuzzy
 msgid "Don't include tests in your package wheel"
-msgstr "**テストスイートのデータセットをパッケージに含めないでください**"
+msgstr "パッケージホイールにテストを含めない"
 
 #: ../../package-structure-code/python-package-structure.md:121
-#, fuzzy
 msgid ""
 "Writing [tests](tests-intro) for your package is important; however, we "
 "do not recommend including tests as part of your [package wheel](python-"
@@ -5402,20 +5355,20 @@ msgid ""
 "`tests/` directory into the **src/package** directory (see example "
 "below)."
 msgstr ""
-"デフォルトでテストをパッケージホイールの一部として含めることはお勧めしません。 "
-"しかし、パッケージの配布にテストを含めないことは、あなた以外の人が、あなたのパッケージが自分のシステム上で正しく機能しているかどうかをテストすることを難しくします。小さなテストスイート"
+"パッケージに [tests](tests-intro) を書くことは重要です、しかし、デフォルトでテストを [パッケージホイール](python-"
+"wheel) "
+"の一部として含めることはお勧めしません。しかし、パッケージの配布にテストを含めないと、自分以外の人が自分のシステムでパッケージが正しく機能しているかどうかをテストすることが難しくなります。小さなテストスイート"
 " (Python ファイル + データ) を持っていて、ユーザが自分のシステムでローカルにテストを実行したいと思う場合、`tests/` "
 "ディレクトリを **src/package** ディレクトリに移動することでテストを含めることができます (以下の例を参照してください)。"
 
 #: ../../package-structure-code/python-package-structure.md:130
-#, fuzzy
 msgid ""
 "Including the **tests/** directory in your **src/package** directory "
 "ensures that tests will be included in your package's [wheel](python-"
 "wheel)."
 msgstr ""
-"**src/package** ディレクトリに **tests/** ディレクトリをインクルードすることで、パッケージの wheel "
-"にテストが含まれるようになります。"
+"**src/package** ディレクトリに **tests/** ディレクトリをインクルードすることで、パッケージの [wheel"
+"](python-wheel) にテストが含まれるようになります。"
 
 #: ../../package-structure-code/python-package-structure.md:132
 msgid ""
@@ -5434,26 +5387,22 @@ msgid "Challenges with including tests and data in a package wheel"
 msgstr "パッケージwheelにテストとデータを含める際の課題"
 
 #: ../../package-structure-code/python-package-structure.md:137
-#, fuzzy
 msgid ""
 "Tests, especially when accompanied by test data, can create a few small "
 "challenges, including:"
 msgstr "テストは、特にテストデータを伴う場合、以下のような小さな課題を生み出す可能性があります:"
 
 #: ../../package-structure-code/python-package-structure.md:139
-#, fuzzy
 msgid ""
 "Take up space in your distribution, which will build up over time as "
 "storage space on PyPI"
 msgstr "PyPI上のストレージスペースとして時間の経過とともに蓄積される、ディストリビューション内のスペースを占有します。"
 
 #: ../../package-structure-code/python-package-structure.md:140
-#, fuzzy
 msgid "Large file sizes can also slow down package installation."
 msgstr "ファイルサイズが大きいと、パッケージのインストールも遅くなります。"
 
 #: ../../package-structure-code/python-package-structure.md:142
-#, fuzzy
 msgid ""
 "However, in some cases, particularly in the scientific Python ecosystem, "
 "you may need to include tests."
@@ -5464,7 +5413,6 @@ msgid "**Don't include test suite datasets in your package**"
 msgstr "**テストスイートのデータセットをパッケージに含めないでください**"
 
 #: ../../package-structure-code/python-package-structure.md:147
-#, fuzzy
 msgid ""
 "If you include your tests in your package distribution, we strongly "
 "discourage you from including data in your test suite directory. Rather, "
@@ -5481,7 +5429,7 @@ msgstr ""
 msgid ""
 "For more information about Python package tests, see the [tests section "
 "of our guide](tests-intro)."
-msgstr ""
+msgstr "Python パッケージテストの詳細については、 [ガイドの tests のセクション](tests-intro) を参照してください。"
 
 #: ../../package-structure-code/python-package-structure.md:155
 msgid ""
@@ -5493,7 +5441,6 @@ msgstr ""
 "`tests/` と `docs/` はルートディレクトリにあります。"
 
 #: ../../package-structure-code/python-package-structure.md:159
-#, fuzzy
 msgid ""
 "If your package tests require data, do NOT include that data within your "
 "package structure. Including data in your package structure increases the"
@@ -5501,40 +5448,36 @@ msgid ""
 "repositories like PyPI and Anaconda.org that have to deal with thousands "
 "of package uploads."
 msgstr ""
-"パッケージのテストにデータが必要な場合は、そのデータをパッケージ構造に含めないことをお勧めします。 "
-"これについてはチュートリアルで詳しく説明します。 パッケージ構造にデータをインクルードすると、配布ファイルのサイズが大きくなります。 これは "
-"PyPI や Anaconda.org のような何千ものパッケージのアップロードに対応しなければならないリポジトリにメンテナンスの負担をかけます。"
+"パッケージのテストにデータが必要な場合は、そのデータをパッケージ構造に含めないでください。 "
+"パッケージ構造にデータをインクルードすると、配布ファイルのサイズが大きくなります。 これは PyPI や Anaconda.org "
+"のような何千ものパッケージのアップロードに対応しなければならないリポジトリにメンテナンスの負担をかけます。"
 
 #: ../../package-structure-code/python-package-structure.md:166
-#, fuzzy
 msgid "Click here for a quickstart tutorial on creating your Python package."
-msgstr "PyPIへのパッケージ公開のチュートリアルはこちら。"
+msgstr "Pythonパッケージ作成のクイックスタートチュートリアルはこちらです。"
 
 #: ../../package-structure-code/python-package-structure.md:176
-#, fuzzy
 msgid "What is the flat Python package layout?"
-msgstr "フラットなPythonパッケージレイアウトについて"
+msgstr "フラットなPythonパッケージレイアウトとは何ですか？"
 
 #: ../../package-structure-code/python-package-structure.md:178
-#, fuzzy
 msgid "Many scientific packages use the **flat-layout** given:"
-msgstr "現在、ほとんどの科学的パッケージは **flat-layout** を使用しています："
+msgstr "多くの科学的パッケージは **flat-layout** を使用しています："
 
 #: ../../package-structure-code/python-package-structure.md:180
 msgid ""
 "This layout is used by many core scientific Python packages such as "
 "NumPy, SciPy, and Matplotlib."
-msgstr ""
+msgstr "このレイアウトは、NumPy、SciPy、Matplotlibのような多くの科学的Pythonパッケージで使用されています。"
 
 #: ../../package-structure-code/python-package-structure.md:181
-#, fuzzy
 msgid ""
 "Many Python tools depend upon tools in other languages and/or complex "
 "builds with compilation steps. Many maintainers prefer features of the "
 "flat layout for more complex builds."
 msgstr ""
-"Pythonのツールの多くは、他の言語のツールに依存していたり、コンパイルステップのある複雑なビルドが必要だったりします。 "
-"そのため、多くの開発者はフラットレイアウトの機能を高く評価しています。"
+"多くのPythonツールは、他の言語のツールや、コンパイルステップを含む複雑なビルドに依存しています。 "
+"多くのメンテナーは、より複雑なビルドのためにフラットレイアウトの機能を好みます。"
 
 #: ../../package-structure-code/python-package-structure.md:185
 msgid ""
@@ -5542,41 +5485,39 @@ msgid ""
 " it's important to also understand the flat layout, especially if you "
 "plan to contribute to a package that uses this layout."
 msgstr ""
+"上述した **src/package** "
+"レイアウトを使用することを推奨しますが、特にこのレイアウトを使用するパッケージに貢献する予定がある場合は、フラットレイアウトも理解することが重要です。"
 
 #: ../../package-structure-code/python-package-structure.md:189
 msgid "Why most scientific Python packages do not use source"
 msgstr "ほとんどの科学的Pythonパッケージがソースを使わない理由"
 
 #: ../../package-structure-code/python-package-structure.md:192
-#, fuzzy
 msgid ""
 "In most cases, moving to the **src/package** layout for larger scientific"
 " packages that already use a flat layout would consume significant time."
 msgstr ""
-"ほとんどの場合、すでにフラットなアプローチを使っている大規模な科学パッケージで **src/package** "
-"レイアウトを使う利点は、それに見合うものではありません。 フラットレイアウトから **src/package** "
-"レイアウトへの移行は、メンテナにとって大きなコストとなります。"
+"ほとんどの場合、すでにフラットレイアウトを使用している大規模な科学パッケージの **src/package** "
+"レイアウトへの移行は、かなりの時間を消費します。"
 
 #: ../../package-structure-code/python-package-structure.md:195
-#, fuzzy
 msgid ""
 "However, the advantages of using the  **src/package** layout for a "
 "beginner are significant. As such, we recommend that you use the "
 "**src/package** layout if you are creating a new package."
 msgstr ""
-"しかし、初心者にとって**src/package**レイアウトを使う利点は大きいです。そのため、パッケージの作成を始めるのであれば、 "
-"**src/package** レイアウトの使用を検討することをお勧めします。"
+"しかし、初心者にとって**src/package**レイアウトを使う利点は大きいです。そのため、新しいパッケージを作成する場合は、 "
+"**src/package** レイアウトを使用することをお勧めします。"
 
 #: ../../package-structure-code/python-package-structure.md:198
-#, fuzzy
 msgid ""
 "Numerous packages in the ecosystem [have had to move to a **src/package**"
 " layout](https://github.com/scikit-build/cmake-python-"
 "distributions/pull/145)."
 msgstr ""
-"私たちのガイドではこのレイアウトを紹介しているので、pythonのパッケージングを始めたばかりの人は、上で説明したsrc/packageレイアウトから始めることをお勧めします。エコシステム内の数多くのパッケージが"
-" [src/レイアウトに移行しなければならなくなりました](https://github.com/scikit-build/cmake-"
-"python-distributions/pull/145)"
+"エコシステムの中で数多くのパッケージが [**src/package** "
+"レイアウトに移行しなければなりませんでした。](https://github.com/scikit-build/cmake-python-"
+"distributions/pull/145)"
 
 #: ../../package-structure-code/python-package-structure.md:202
 msgid "What does the flat layout structure look like?"
@@ -5664,7 +5605,6 @@ msgid "[scikit-learn](https://github.com/scikit-learn/scikit-learn)"
 msgstr "[scikit-learn](https://github.com/scikit-learn/scikit-learn)"
 
 #: ../../package-structure-code/python-package-structure.md:255
-#, fuzzy
 msgid ""
 "It would be a significant maintenance cost and burden to move all of "
 "these packages to a different layout. The potential benefits of the "
@@ -5747,7 +5687,6 @@ msgid ""
 msgstr "標準的なルールに基づいて、開発チームがパッケージのバージョンを上げるタイミングを判断するのに役立ちます。"
 
 #: ../../package-structure-code/python-package-versions.md:26
-#, fuzzy
 msgid ""
 "Consistent version increases following semver rules mean that values of "
 "your package version explain the extent of the changes made in the code "
@@ -5941,15 +5880,15 @@ msgid "Semantic release, vs version control based vs manual version bumping"
 msgstr "セマンティックリリース、バージョン管理ベースと手動バージョンバンプの比較"
 
 #: ../../package-structure-code/python-package-versions.md:107
-#, fuzzy
 msgid ""
 "Generally semantic release and version control system tools can be setup "
 "to run automatically on GitHub using GitHub Actions. This means that you "
 "can create a workflow where a GitHub release and associated new version "
 "tag is used to trigger an automated build that:"
 msgstr ""
-"一般的に、セマンティックリリースツールやバージョン管理システムツールは、GitHubアクションを使ってGitHub上で自動的に実行するように設定することができる。"
-" つまり、GitHub のリリースとそれに関連する新しいバージョンのタグを使って、自動ビルドのトリガーとなるワークフローを作れるということです:"
+"一般的に、セマンティックリリースツールやバージョン管理システムツールは、GitHub "
+"Actionsを使ってGitHub上で自動的に実行するように設定することができる。 つまり、GitHub "
+"のリリースとそれに関連する新しいバージョンのタグを使って、自動ビルドのトリガーとなるワークフローを作れるということです:"
 
 #: ../../package-structure-code/python-package-versions.md:113
 msgid "Builds your package and updates the version following the new tag"
@@ -5964,7 +5903,6 @@ msgid "Publishes the package to PyPI"
 msgstr "パッケージをPyPIに公開します"
 
 #: ../../package-structure-code/python-package-versions.md:118
-#, fuzzy
 msgid ""
 "Bumping a package version refers to the step of increasing the package "
 "version after a set number of changes have been made to it. For example, "
@@ -6090,7 +6028,6 @@ msgstr ""
 "これにより、パッケージのバージョンを手動で更新することに伴う潜在的なエラーを排除することができます。"
 
 #: ../../package-structure-code/python-package-versions.md:173
-#, fuzzy
 msgid ""
 "When you (or your CI system) build your package, hatch checks the current"
 " tag number for your package. If it has increased, it will update the "
@@ -6361,39 +6298,3 @@ msgid ""
 msgstr ""
 "バージョン番号は、 `pyproject.toml` のような設定ファイルとパッケージの **_version.py** "
 "ファイルの間で手動で更新されます。"
-
-#~ msgid "Package structure & code style"
-#~ msgstr "パッケージ構造とコードスタイル"
-
-#~ msgid "Python package structure information"
-#~ msgstr "Pythonパッケージ構造情報"
-
-#~ msgid "Wheel (.whl files):"
-#~ msgstr "Wheel(.whlファイル):"
-
-#~ msgid ""
-#~ "While we recommend the **src/** layout"
-#~ " we also review the **flat** layout"
-#~ " here. Both are used in the "
-#~ "Python ecosystem."
-#~ msgstr ""
-#~ "**src/** レイアウトを推奨しますが、ここでは **flat** レイアウトもレビューします。"
-#~ " どちらも Python のエコシステムで使われています。"
-
-#~ msgid "Sometimes tests are needed in a distribution"
-#~ msgstr "ディストリビューションでテストが必要になることがあります"
-
-#~ msgid ""
-#~ "Check out the testing section of "
-#~ "our guide for more information about "
-#~ "tests."
-#~ msgstr "テストの詳細については、ガイドのテストのセクションをご覧ください。"
-
-#~ msgid ""
-#~ "It's the most commonly found layout "
-#~ "with the scientific Python ecosystem and"
-#~ " people tend to look to other "
-#~ "packages / maintainers that they respect"
-#~ " for examples of how to build "
-#~ "Python packages."
-#~ msgstr "これは科学的なPythonエコシステムで最もよく見られるレイアウトであり、人々はPythonパッケージの構築方法の例として、尊敬する他のパッケージやメンテナに注目する傾向があります。"
