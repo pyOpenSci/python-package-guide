@@ -287,7 +287,7 @@ If a language is ready to go live, the maintainers will add the language code to
 
 When the guide is built for release in CI, Sphinx will also generate the translated versions of the guide for the languages in the `RELEASE_LANGUAGES` list.
 
-Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available in [https://www.pyopensci.org/python-package-guide/es/](https://www.pyopensci.org/python-package-guide/es/).
+Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available at: `https://www.pyopensci.org/python-package-guide/es/` when it is published online.
 
 ## Frequently Asked Questions (FAQ)
 
