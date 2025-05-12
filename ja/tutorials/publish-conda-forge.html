@@ -54,11 +54,11 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=be13464f"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/publish-conda-forge';</script>
     <script src="../_static/matomo.js?v=5a92784f"></script>
@@ -607,7 +607,7 @@
 <p>conda-forgeに公開する手順は以下の通りです:</p>
 <ol class="arabic simple">
 <li><p>Pythonパッケージの配布ファイル (sdistとwheel) をPyPIに公開する</p></li>
-<li><p>これは、 grayskull[^grayskull] パッケージを使用して、conda-forge上でパッケージをビルドする方法を説明したyamlファイルです。</p></li>
+<li><p>これは、 grayskull<a class="footnote-reference brackets" href="#grayskull" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> パッケージを使用して、conda-forge上でパッケージをビルドする方法を説明したyamlファイルです。</p></li>
 <li><p>レシピ (yamlファイル) をconda-forge staged recipesリポジトリにプルリクエストとして提出し、レビューを受けてください。 <a class="reference external" href="https://github.com/conda-forge/staged-recipes/pull/25173">pyOpenSciからの投稿例はこちらをクリックしてください</a></p></li>
 <li><p>conda-forgeチームの誰かがあなたのプルリクエストをレビューしたら、いくつかの変更が必要になるかもしれません。最終的にプルリクエストは承認され、マージされます。</p></li>
 </ol>
@@ -848,7 +848,7 @@ The home item is expected in the about section.
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Conda-forgeチェックリストヘルプ</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<h3 class="rubric" id="conda-forge-staged-recipes-pull-request-checklist">Conda-forge Staged-recipes プルリクエストチェックリスト</h3>
+<p class="rubric" id="conda-forge-staged-recipes-pull-request-checklist">Conda-forge Staged-recipes プルリクエストチェックリスト</p>
 <p class="sd-card-text">conda-forgeにパッケージを投稿する際、プルリクエストテンプレートには、あなたが確実にカバーしたいチェックリストが含まれています。</p>
 <p class="sd-card-text">以下では、そのリストの各要素を分解します。</p>
 <div class="note admonition">
@@ -964,6 +964,8 @@ build:
 </section>
 <section id="footnotes">
 <h2>脚注<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+</section>
+</section>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="grayskull" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -974,8 +976,6 @@ build:
 <p><a class="reference external" href="https://pipx.pypa.io/stable/">Pipx documentation</a></p>
 </aside>
 </aside>
-</section>
-</section>
 
 
                 </article>

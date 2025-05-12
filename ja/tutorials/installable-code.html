@@ -54,11 +54,11 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=be13464f"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/translations.js?v=91613774"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/installable-code';</script>
     <script src="../_static/matomo.js?v=5a92784f"></script>
@@ -572,7 +572,7 @@
 </ul>
 <p><strong>このレッスンを完了するために必要なもの</strong></p>
 <p>このレッスンを完了するには、あなたのコンピュータにローカルのPython環境とシェルが必要です。　<a class="reference internal" href="get-to-know-hatch.html"><span class="doc std std-doc">Hatchのインストール</span></a> も必要です。</p>
-<p>Windowsを使用している、またはシェルに精通していない場合は、Carpentriesのシェルレッスン[^shell-lesson] をチェックアウトすることをお勧めします。 Windowsユーザーは、Shellやgitに関連するステップのためにツールを設定する必要があるでしょう。</p>
+<p>Windowsを使用している、またはシェルに精通していない場合は、Carpentriesのシェルレッスン<a class="footnote-reference brackets" href="#shell-lesson" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> をチェックアウトすることをお勧めします。 Windowsユーザーは、Shellやgitに関連するステップのためにツールを設定する必要があるでしょう。</p>
 <p><strong>次に来るもの</strong></p>
 <p>これからのレッスンでは、その方法を学びます:</p>
 <ul class="simple">
@@ -740,7 +740,7 @@ pyos-package
 <div class="tip admonition">
 <p class="admonition-title">Pythonモジュールと <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> ファイル</p>
 <p>モジュールという言葉を目にしたとき、私たちはPythonのコードを含む <code class="docutils literal notranslate"><span class="pre">.py</span></code> ファイルを指しています。</p>
-<p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> は、Pythonがディレクトリに少なくとも1つのモジュールが含まれていることを認識できるようにします。 パッケージは複数のモジュール [^python-modules] を持つことができます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> は、Pythonがディレクトリに少なくとも1つのモジュールが含まれていることを認識できるようにします。 パッケージは複数のモジュール <a class="footnote-reference brackets" href="#python-modules" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> を持つことができます。</p>
 </div>
 <p>プロジェクトディレクトリはこのようになっているはずです:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pyospackage/
@@ -759,7 +759,7 @@ pyos-package
 <li><p>これは <a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#numpy-docstring"><span class="std std-ref">numpyスタイルのdocstring</span></a> を持っています。</p></li>
 <li><p><a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#type-hints"><span class="std std-ref">typing</span></a> を使用します。</p></li>
 </ol>
-<p>Pythonは、使いたいドキュメントのビルドシステムに応じて、多くの異なるdocstringsフォーマットをサポートすることができます。 Pythonオブジェクトを文書化するために最もよくサポートされている形式は、NumPy Style Docstring[^numpydoc]、Google Style Docstring[^googledoc]、Epytext Style Docstring[^epytextdoc]です。</p>
+<p>Pythonは、使いたいドキュメントのビルドシステムに応じて、多くの異なるdocstringsフォーマットをサポートすることができます。 Pythonオブジェクトを文書化するために最もよくサポートされている形式は、NumPy Style Docstring<a class="footnote-reference brackets" href="#numpydoc" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>、Google Style Docstring<a class="footnote-reference brackets" href="#googledoc" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>、Epytext Style Docstring<a class="footnote-reference brackets" href="#epytextdoc" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>です。</p>
 <p><strong>pyOpenSciは、NumPyのDocstring規約を使用することを推奨します。</strong></p>
 <p>If you aren't familiar with docstrings or typing yet, that is ok. You can review <a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html">this page in the pyOpenSci packaging guide</a> for an overview of both topics.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_num</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -1051,6 +1051,8 @@ Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class
 </section>
 <section id="footnotes">
 <h2>脚注<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+</section>
+</section>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="shell-lesson" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
@@ -1073,8 +1075,6 @@ Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class
 <p><a class="reference external" href="https://epydoc.sourceforge.net/epytext.html">epydoc</a></p>
 </aside>
 </aside>
-</section>
-</section>
 
 
                 </article>
