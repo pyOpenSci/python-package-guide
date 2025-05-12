@@ -36,10 +36,10 @@ First, fork the guide repository into your personal GitHub account and clone the
 To create a virtual environment and install the development dependencies for the guide, run the following commands:
 
 ```shell
-cd ./python-package-guide
-python -m venv .venv
-source .venv/bin/activate
-pip install .[dev]
+$ cd ./python-package-guide
+$ python -m venv .venv
+$ source .venv/bin/activate
+$ pip install .[dev]
 ```
 
 TODO: This section needs more work or to be replaced with a reference to the CONTRIBUTING guide.
@@ -75,7 +75,7 @@ The translation files contain the original English text and a space for you to e
 You can do this by running the following command, replacing LANG by the language code you plan to work on (e.g., `es` for Spanish):
 
 ```shell
-nox -s update-language -- LANG
+$ nox -s update-language -- LANG
 ```
 
 This command will create the translation files if they don't exist yet, or update them with the latest changes if they already exist.
