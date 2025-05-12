@@ -16,7 +16,7 @@ name: moving-pandas-github-community
 width: 80%
 alt: Image showing that the MovingPandas GitHub repository community health page with green checks next to each file including a description, README, code of conduct, contributing, license and issue templates. Note that Security policy has a yellow circle next to it as that is missing from the repo.
 ---
-GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/anitagraser/movingpandas/community) *(screen shot taken Nov 23 2022)*
+GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/movingpandas/movingpandas/community) *(screen shot taken Nov 23 2022)*
 ```
 
 [Snyk](https://snyk.io/advisor/python) is another well-known company that
