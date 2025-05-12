@@ -262,7 +262,7 @@ You type and run:
 The pre-commit workflow begins with you adding files that have changes to be
 staged in git. Next, you'd run git commit. When you run git commit, the pre-commit
 hooks will then run. In this example, Black, the code formatter and flake8, a linter both run. If all of the files pass Black and flake8 checks, then your commit will be recorded. If they don't, the commit is canceled. You will have to fix any flake8 issues,
-and then re-add / stage the files to be committed. [_Image Source_](https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/*)
+and then re-add / stage the files to be committed. [_Image Source_](https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/)
 :::
 
 <!-- For instance, if you setup the Black code formatter as a pre-commit hook,
