@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Add a README file to your Python package
+date: 1970-01-03
+---
+
 # Add a README file to your Python package
 
 In the previous lessons you learned:
