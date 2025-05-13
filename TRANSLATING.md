@@ -287,7 +287,7 @@ If a language is ready to go live, the maintainers will add the language code to
 
 When the guide is built for release in CI, Sphinx will also generate the translated versions of the guide for the languages in the `RELEASE_LANGUAGES` list.
 
-Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available in [https://www.pyopensci.org/python-package-guide/es/](https://www.pyopensci.org/python-package-guide/es/).
+Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available at: `https://www.pyopensci.org/python-package-guide/es/` when it is published online.
 
 ## Frequently Asked Questions (FAQ)
 
@@ -342,4 +342,4 @@ TODO: There are many approaches here, some projects release a translation as soo
 
 If you have any questions or need help with your translation, you can create an [issue](https://github.com/pyOpenSci/python-package-guide/issues) in the [Packaging Guide repository](https://github.com/pyOpenSci/python-package-guide)
 
-You can also ask in the PyOpenSci Discord server ([click here](https://discord.gg/CvSMp4zcqX) to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).
+You can also ask in the PyOpenSci Discord server ([click here](https://discord.gg/NQtTTqtv) to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).

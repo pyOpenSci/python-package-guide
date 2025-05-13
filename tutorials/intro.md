@@ -1,3 +1,4 @@
+(packaging-101)=
 # Python packaging 101
 
 _A start to finish beginner-friendly tutorial_
@@ -36,7 +37,7 @@ Get to know Hatch <get-to-know-hatch>
 :caption: Create and publish a Python Package
 
 What is a Python package? <self>
-Make your code installable <installable-code>
+Create a Python package <installable-code>
 Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
 :::
@@ -75,6 +76,7 @@ After reading this lesson you will:
 
 :::
 
+(what-is-a-package)=
 ## What is a Python package?
 
 At a high level, you can think about a Python package as a toolbox

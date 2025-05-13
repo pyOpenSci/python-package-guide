@@ -20,13 +20,23 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
-          cache: pip
+          python-version: "3.13"
 
       - name: Upgrade pip
         run: |
           # install pip=>20.1 to use "pip cache dir"
           python3 -m pip install --upgrade pip
+      - name: Get pip cache dir
+        id: pip-cache
+        run: echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: python3 -m pip install nox
@@ -46,7 +56,7 @@ jobs:
       - name: Push to GitHub Pages
         # Only push if on main branch
         if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3.8.0
+        uses: peaceiris/actions-gh-pages@v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html
@@ -58,4 +68,4 @@ jobs:
           directory: "_build/html"
           arguments: |
             --ignore-files "/.+\/_static\/.+/,/genindex.html/"
-            --ignore-status-codes "404, 403, 429, 503"
+            --ignore-status-codes "0, 403, 429, 503"

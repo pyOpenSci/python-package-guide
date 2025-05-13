@@ -15,9 +15,14 @@
 # sys.path.insert(0, os.path.abspath('.'))
 from datetime import datetime
 import subprocess
+import os
 
 current_year = datetime.now().year
 organization_name = "pyOpenSci"
+
+# env vars
+sphinx_env = os.environ.get("SPHINX_ENV", "development")
+language_env = os.environ.get("SPHINX_LANG", "en")
 
 
 # -- Project information -----------------------------------------------------
@@ -25,6 +30,24 @@ organization_name = "pyOpenSci"
 project = "pyOpenSci Python Package Guide"
 copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
+
+# Language of the current build
+# language can later be overridden (eg with the -D flag)
+# but we need it set here so it can make it into the html_context
+language = language_env
+# all languages that have .po files generated for them
+# (excluding english)
+languages = ["es", "ja"]
+# the languages that will be included in a production build
+# (also excluding english)
+release_languages = ["ja"]
+
+# languages that will be included in the language dropdown
+# (ie. all that are being built in this nox build session)
+if sphinx_env == "production":
+    build_languages = ["en"] + release_languages
+else:
+    build_languages = ["en"] + languages
 
 # Get the latest Git tag - there might be a prettier way to do this but...
 try:
@@ -54,6 +77,7 @@ extensions = [
     "sphinx_sitemap",
     "sphinxext.opengraph",
     "sphinx_favicon",
+    "sphinxcontrib.bibtex",
 ]
 
 # colon fence for card support in md
@@ -71,7 +95,12 @@ favicons = [
     {"href": "https://www.pyopensci.org/images/favicon.ico"},
 ]
 
-# Link to our repo for easy PR/ editing
+html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+lang_selector_baseurl = "/python-package-guide/"
+if not sphinx_env == "production":
+    # for links in language selector when developing locally
+    lang_selector_baseurl = "/"
+
 html_theme_options = {
     "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
     # "navbar_center": ["nav"], this can be a way to override the default navigation structure
@@ -102,7 +131,7 @@ html_theme_options = {
         "image_light": "logo-light-mode.png",
         "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
-    "header_links_before_dropdown": 4,
+    "header_links_before_dropdown": 5,
     "use_edit_page_button": True,
     "show_nav_level": 2,
     "navigation_depth": 3,
@@ -111,12 +140,16 @@ html_theme_options = {
     "github_url": "https://github.com/pyopensci/python-package-guide",
     "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
+    "navbar_persistent": ["language-selector", "search-button"]
 }
 
 html_context = {
     "github_user": "pyopensci",
     "github_repo": "python-package-guide",
     "github_version": "main",
+    "language": language,
+    "languages": build_languages,
+    "baseurl": lang_selector_baseurl,
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -140,7 +173,7 @@ exclude_patterns = [
 ]
 
 # For sitemap generation
-html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+
 sitemap_url_scheme = "{link}"
 
 # -- Options for HTML output -------------------------------------------------
@@ -152,7 +185,7 @@ html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 html_css_files = ["pyos.css"]
 html_title = "Python Packaging Guide"
-html_js_files = ["matomo.js"]
+html_js_files = ["matomo.js", "language_select.js"]
 
 
 # Social cards
@@ -161,3 +194,8 @@ ogp_social_cards = {
     "line_color": "#6D597A",
     "image": "_static/pyopensci-logo-package-guide.png",
 }
+
+# Bibliographies
+bibtex_bibfiles = ["bibliography.bib"]
+# myst complains about bibtex footnotes because of render order
+suppress_warnings = ["myst.footnote"]
