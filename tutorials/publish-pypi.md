@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Publish your Python package to PyPI
+date: 1970-01-07
+---
+
 # Publish your Python package to PyPI
 
 :::{todo}

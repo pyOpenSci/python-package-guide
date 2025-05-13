@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Add a License and Code of Conduct to your python package
+date: 1970-01-02
+---
+
 # Add a `LICENSE` & `CODE_OF_CONDUCT` to your Python package
 
 In the [previous lesson](add-readme) you:

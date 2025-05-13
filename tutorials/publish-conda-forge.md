@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Publish your Python package that is on PyPI to conda-forge
+date: 1970-01-06
+---
+
 # Publish your Python package that is on PyPI to conda-forge
 
 In the previous lessons, you've learned:

@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Using Hatch to Migrate setup.py to a pyproject.toml
+date: 1970-01-09
+---
+
 # Using Hatch to Migrate setup.py to a pyproject.toml
 
 Hatch can be particularly useful to generate your project's `pyproject.toml` if your project already has a `setup.py`.

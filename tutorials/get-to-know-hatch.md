@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Get to Know Hatch
+date: 1970-01-05
+---
+
 # Get to Know Hatch
 
 Our Python packaging tutorials use the tool
