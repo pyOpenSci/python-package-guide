@@ -30,7 +30,7 @@ class RSSItem:
     author: str = "PyOpenSci"
 
     @classmethod
-    def from_meta(cls, page_name: str, meta: dict, app: "Sphinx") -> "RSSMeta":
+    def from_meta(cls, page_name: str, meta: dict, app: "Sphinx") -> "RSSItem":
         """Create from a page's metadata"""
         url = urljoin(app.config.html_baseurl, app.builder.get_target_uri(page_name))
         # purposely don't use `get` here because we want to error if these fields are absent
