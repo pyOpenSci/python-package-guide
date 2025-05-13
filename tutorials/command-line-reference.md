@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Command Line Reference Guide
+date: 1970-01-04
+---
+
 # Command Line Reference Guide
 
 ```{important}

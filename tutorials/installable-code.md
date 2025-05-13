@@ -1,6 +1,7 @@
 ---
 :og:description: Learn how to make your Python code installable so you can use it across projects.
 :og:title: Make your Python code installable so it can be used across projects
+date: 1970-01-01
 ---
 
 # Make your Python code installable

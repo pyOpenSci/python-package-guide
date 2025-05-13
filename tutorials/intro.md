@@ -1,3 +1,9 @@
+---
+:og:description: Placeholder text!!!!
+:og:title: Python packaging 101
+date: 1970-01-05
+---
+
 (packaging-101)=
 # Python packaging 101
 
