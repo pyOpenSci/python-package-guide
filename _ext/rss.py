@@ -12,8 +12,6 @@ from pprint import pformat
 from typing import TYPE_CHECKING
 from urllib.parse import urljoin
 
-from sphinx.util import logging
-
 if TYPE_CHECKING:
     from sphinx.application import Sphinx
 
@@ -86,6 +84,8 @@ class RSSFeed:
 
 
 def generate_tutorials_feed(app: "Sphinx"):
+    from sphinx.util import logging
+
     logger = logging.getLogger("_ext.rss")
     logger.info("Generating RSS feed for tutorials")
     metadata = app.builder.env.metadata
