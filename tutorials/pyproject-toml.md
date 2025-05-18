@@ -1,5 +1,5 @@
 ---
-:og:description: Placeholder text!!!!
+:og:description: The pyproject.toml file is the central configuration file for building and packaging Python projects. This lesson explains key sections like name, version, dependencies, and how they support packaging and distribution. You’ll learn how to set up this file to ensure your package is ready for publishing.
 :og:title: Make your Python package PyPI ready - pyproject.toml
 date: 1970-01-08
 ---
