@@ -27,7 +27,7 @@ class RSSItem:
     date: datetime
     description: str
     url: str
-    author: str = "PyOpenSci"
+    author: str = "pyOpenSci"
 
     @classmethod
     def from_meta(cls, page_name: str, meta: dict, app: "Sphinx") -> "RSSItem":
