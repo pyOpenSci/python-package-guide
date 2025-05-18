@@ -1,3 +1,9 @@
+---
+:og:description: Learn how to add a command-line interface (CLI) to your Python package using the argparse library. This lesson walks you through creating a CLI entry point so users can run your package directly from the terminal.
+:og:title: Command Line Reference Guide
+date: 1970-01-04
+---
+
 # Command Line Reference Guide
 
 ```{important}
