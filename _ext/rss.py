@@ -38,7 +38,7 @@ class RSSItem:
             title=meta[":og:title"],
             description=meta[":og:description"],
             date=datetime.fromisoformat(meta["date"]),
-            author=meta.get(":og:author", "PyOpenSci"),
+            author=meta.get(":og:author", "pyOpenSci"),
             url=url,
         )
 
@@ -58,7 +58,7 @@ class RSSItem:
 class RSSFeed:
     items: list[RSSItem]
     last_build_date: datetime = datetime.now()
-    title: str = "PyOpenSci Tutorials"
+    title: str = "pyOpenSci Tutorials"
     link: str = "https://www.pyopensci.org/python-package-guide/tutorials/intro.html"
     self_link: str = "https://www.pyopensci.org/python-package-guide/tutorials.rss"
     description: str = "Tutorials for learning python i guess!!!"
