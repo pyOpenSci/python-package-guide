@@ -1,5 +1,5 @@
 ---
-:og:description: Placeholder text!!!!
+:og:description: Learn how to publish your Python package on conda-forge to make it easily installable with conda. This lesson covers the submission process, metadata requirements, and maintaining your feedstock.
 :og:title: Publish your Python package that is on PyPI to conda-forge
 date: 1970-01-06
 ---

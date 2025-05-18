@@ -1,5 +1,5 @@
 ---
-:og:description: Placeholder text!!!!
+:og:description: Get started with Hatch, a modern Python packaging tool. This lesson introduces Hatch’s features and shows how it simplifies environment management, project scaffolding, and building your package.
 :og:title: Get to Know Hatch
 date: 1970-01-05
 ---
