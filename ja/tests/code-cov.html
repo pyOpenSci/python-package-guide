@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Code coverage for your Python package test suite" />
+<meta property="og:title" content="Pythonパッケージのテストスイートのコードカバレッジ" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tests/code-cov.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Code coverage measures how much of your package's code runs during testing. Achieving high coverage can help ensure the reliability of your codebase, but it’s not a guarantee of quality. Below, we ..." />
+<meta property="og:description" content="コードカバレッジは、テスト中にパッケージのコードがどれだけ実行されるかを測定します。 高いカバレッジを達成することは、コードベースの信頼性を確保するのに役立ちますが、品質を保証するものではありません。 以下に、コードカバレッジを効果的に使用するための主な検討事項を概説します。 なぜ高いコードカバレッジを目指すのか？: 良い習慣は、テストスイートの間に、コードのすべての行が少なくとも一度は実行..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_code-cov_b01903ff.png" />
-<meta property="og:image:alt" content="Code coverage measures how much of your package's code runs during testing. Achieving high coverage can help ensure the reliability of your codebase, but it’s not a guarantee of quality. Below, we ..." />
-<meta name="description" content="Code coverage measures how much of your package's code runs during testing. Achieving high coverage can help ensure the reliability of your codebase, but it’s not a guarantee of quality. Below, we ..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_code-cov_75919bba.png" />
+<meta property="og:image:alt" content="コードカバレッジは、テスト中にパッケージのコードがどれだけ実行されるかを測定します。 高いカバレッジを達成することは、コードベースの信頼性を確保するのに役立ちますが、品質を保証するものではありません。 以下に、コードカバレッジを効果的に使用するための主な検討事項を概説します。 なぜ高いコードカバレッジを目指すのか？: 良い習慣は、テストスイートの間に、コードのすべての行が少なくとも一度は実行..." />
+<meta name="description" content="コードカバレッジは、テスト中にパッケージのコードがどれだけ実行されるかを測定します。 高いカバレッジを達成することは、コードベースの信頼性を確保するのに役立ちますが、品質を保証するものではありません。 以下に、コードカバレッジを効果的に使用するための主な検討事項を概説します。 なぜ高いコードカバレッジを目指すのか？: 良い習慣は、テストスイートの間に、コードのすべての行が少なくとも一度は実行..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Code coverage for your Python package test suite &#8212; Python Packaging Guide</title>
+    <title>Pythonパッケージのテストスイートのコードカバレッジ &#8212; Python Packaging Guide</title>
   
   
   
@@ -469,7 +469,7 @@
 <li class="toctree-l1"><a class="reference internal" href="test-types.html">テストの種類</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-tests.html">ローカルでテストを実行する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests-ci.html">オンラインでテストを実行する(CIを使用する)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code coverage</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">コードカバレッジ</a></li>
 </ul>
 </div>
 </nav></div>
@@ -513,7 +513,7 @@
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Pythonパッケージのテストとデータ</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Code coverage for your Python package test suite</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージのテストスイートのコードカバレッジ</span></li>
   </ul>
 </nav>
 </div>
@@ -531,62 +531,55 @@
                 <article class="bd-article">
                   
   <section id="code-coverage-for-your-python-package-test-suite">
-<h1>Code coverage for your Python package test suite<a class="headerlink" href="#code-coverage-for-your-python-package-test-suite" title="Link to this heading">#</a></h1>
-<p>Code coverage measures how much of your package's code runs during testing.
-Achieving high coverage can help ensure the reliability of your codebase, but
-it’s not a guarantee of quality. Below, we outline key considerations for
-using code coverage effectively.</p>
+<h1>Pythonパッケージのテストスイートのコードカバレッジ<a class="headerlink" href="#code-coverage-for-your-python-package-test-suite" title="Link to this heading">#</a></h1>
+<p>コードカバレッジは、テスト中にパッケージのコードがどれだけ実行されるかを測定します。 高いカバレッジを達成することは、コードベースの信頼性を確保するのに役立ちますが、品質を保証するものではありません。 以下に、コードカバレッジを効果的に使用するための主な検討事項を概説します。</p>
 <section id="why-aim-for-high-code-coverage">
-<h2>Why aim for high code coverage?<a class="headerlink" href="#why-aim-for-high-code-coverage" title="Link to this heading">#</a></h2>
-<p>A good practice is to ensure that every line of your code runs at least once
-during your test suite. This helps you:</p>
+<h2>なぜ高いコードカバレッジを目指すのか？<a class="headerlink" href="#why-aim-for-high-code-coverage" title="Link to this heading">#</a></h2>
+<p>良い習慣は、テストスイートの間に、コードのすべての行が少なくとも一度は実行されるようにすることです。これはあなたを助けます:</p>
 <ul class="simple">
-<li><p>Identify untested parts of your codebase.</p></li>
-<li><p>Catch bugs that might otherwise go unnoticed.</p></li>
-<li><p>Build confidence in your software's stability.</p></li>
+<li><p>コードベースのテストされていない部分を特定します。</p></li>
+<li><p>他の方法では気づかれないかもしれないバグをキャッチします。</p></li>
+<li><p>ソフトウェアの安定性に自信を持てます。</p></li>
 </ul>
 </section>
 <section id="limitations-of-code-coverage">
-<h2>Limitations of code coverage<a class="headerlink" href="#limitations-of-code-coverage" title="Link to this heading">#</a></h2>
-<p>While high code coverage is valuable, it has its limits:</p>
+<h2>コードカバレッジの限界<a class="headerlink" href="#limitations-of-code-coverage" title="Link to this heading">#</a></h2>
+<p>高いコードカバレッジは価値がありますが、それには限界があります:</p>
 <ul class="simple">
-<li><p><strong>Difficult-to-test code:</strong> Some parts of your code might be challenging to
-test, either due to complexity or limited resources.</p></li>
-<li><p><strong>Missed edge cases:</strong> Running all lines of code doesn’t guarantee that edge
-cases are handled correctly.</p></li>
+<li><p><strong>テストしにくいコード:</strong> コードの中には、複雑さや限られたリソースのために、テストが難しい部分があるかもしれません。</p></li>
+<li><p><strong>見逃されたエッジケース:</strong> すべてのコードを実行しても、エッジケースが正しく処理される保証はありません。</p></li>
 </ul>
-<p>Ultimately, you should focus on how your package will be used and ensure your
-tests cover those scenarios adequately.</p>
+<p>最終的には、パッケージがどのように使用されるかに焦点を当て、テストがそのシナリオを十分にカバーするようにしなければなりません。</p>
 </section>
 <section id="tools-for-analyzing-python-package-code-coverage">
-<h2>Tools for analyzing Python package code coverage<a class="headerlink" href="#tools-for-analyzing-python-package-code-coverage" title="Link to this heading">#</a></h2>
-<p>Some common services for analyzing code coverage are <a class="reference external" href="https://codecov.io/">codecov.io</a> and <a class="reference external" href="https://coveralls.io/">coveralls.io</a>. These projects are free for open source tools and will provide dashboards that tell you how much of your codebase is covered during your tests. We recommend setting up an account (on either CodeCov or Coveralls) and using it to keep track of your code coverage.</p>
+<h2>Pythonパッケージのコードカバレッジを分析するツール<a class="headerlink" href="#tools-for-analyzing-python-package-code-coverage" title="Link to this heading">#</a></h2>
+<p>コードカバレッジを分析するための一般的なサービスには、 <a class="reference external" href="https://codecov.io/">codecov.io</a> と <a class="reference external" href="https://coveralls.io/">coveralls.io</a> があります。 これらのプロジェクトはオープンソースのツールで無料であり、テスト中にコードベースがどの程度カバーされているかを示すダッシュボードを提供してくれます。 (CodeCovまたはCoverallsで) アカウントを設定し、コード・カバレッジを追跡するために使用することをお勧めします。</p>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/code-cov-stravalib.png"><img alt="Screenshot of the code cov service - showing test coverage for the stravalib package. This image shows a list of package modules and the associated number of lines and % lines covered by tests. At the top of the image, you can see what branch is being evaluated and the path to the repository." src="../_images/code-cov-stravalib.png" style="height: 450px;" />
+<a class="reference internal image-reference" href="../_images/code-cov-stravalib.png"><img alt="code covサービスのスクリーンショット - stravalibパッケージのテストカバレッジを示します。 この画像は、パッケージモジュールのリストと、関連する行数およびテスト対象行の割合を示しています。 画像の上部には、評価対象のブランチとリポジトリへのパスが表示されています。" src="../_images/code-cov-stravalib.png" style="height: 450px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">The CodeCov platform is a useful tool if you wish to track code coverage visually. Using it, you can not only get the same summary information that you can get with the <strong>pytest-cov</strong> extension. You can also see what lines are covered by your tests and which are not. Code coverage is useful for evaluating unit tests and/or how much of your package code is &quot;covered&quot;. It, however, will not evaluate things like integration tests and end-to-end workflows.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-text">CodeCovプラットフォームは、コードカバレッジを視覚的に追跡したい場合に便利なツールです。これを使えば、 <strong>pytest-cov</strong> 拡張機能で得られるのと同じサマリー情報を得られるだけではありません。また、テストの対象になっているラインとそうでないラインを確認することもできます。コードカバレッジは、単体テストの評価や、パッケージのコードがどれだけ &quot;カバー&quot; されているかを評価するのに役立ちます。しかし、統合テストやエンドツーエンドのワークフローなどは評価されません。</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-typing-mypy-coverage admonition">
-<p class="admonition-title">Typing &amp; MyPy coverage</p>
-<p>You can also create and upload typing reports to CodeCov.</p>
+<p class="admonition-title">型 &amp; MyPyのカバレッジ</p>
+<p>また、型レポートを作成し、CodeCovにアップロードすることもできます。</p>
 </div>
 </section>
 <section id="exporting-local-coverage-reports">
-<h2>Exporting Local Coverage Reports<a class="headerlink" href="#exporting-local-coverage-reports" title="Link to this heading">#</a></h2>
-<p>In addition to using services like CodeCov or Coveralls, you can generate local coverage reports directly using the <strong>coverage.py</strong> tool. This can be especially useful if you want to create reports in Markdown or HTML format for offline use or documentation.</p>
-<p>To generate a coverage report in <strong>Markdown</strong> format, run:</p>
+<h2>ローカルカバレッジレポートのエクスポート<a class="headerlink" href="#exporting-local-coverage-reports" title="Link to this heading">#</a></h2>
+<p>CodeCovやCoverallsのようなサービスを利用するだけでなく、 <strong>coverage.py</strong> ツールを使って直接ローカルカバレッジレポートを作成することもできます。 これは、オフラインでの使用や文書化のためにMarkdownやHTML形式でレポートを作成したい場合に特に便利です。</p>
+<p>カバレッジレポートを <strong>Markdown</strong> 形式で作成するには、以下を実行します:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>coverage<span class="w"> </span>report<span class="w"> </span>--format<span class="o">=</span>markdown
 </pre></div>
 </div>
-<p>This command will produce a Markdown-formatted coverage summary that you can easily include in project documentation or share with your team.</p>
-<p>To generate an HTML report that provides a detailed, interactive view of which lines are covered, use:</p>
+<p>このコマンドはMarkdown形式のカバレッジサマリーを作成し、プロジェクトのドキュメントに簡単に記載したり、チームと共有したりすることができます。</p>
+<p>どの行がカバーされているか、詳細でインタラクティブなビューを提供するHTMLレポートを生成するには、以下を使用します:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>coverage<span class="w"> </span>html
 </pre></div>
 </div>
-<p>The generated HTML report will be saved in a directory named htmlcov by default. Open the index.html file in your browser to explore your coverage results.</p>
-<p>These local reports are an excellent way to quickly review coverage without setting up an external service.</p>
+<p>生成されたHTMLレポートは、デフォルトでhtmlcovというディレクトリに保存されます。index.htmlファイルをブラウザで開き、カバレッジ結果をご覧ください。</p>
+<p>このようなローカルレポートは、外部サービスを立ち上げることなくカバレッジを素早く確認する優れた方法です。</p>
 </section>
 </section>
 
@@ -637,10 +630,10 @@ tests cover those scenarios adequately.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-aim-for-high-code-coverage">Why aim for high code coverage?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-code-coverage">Limitations of code coverage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-analyzing-python-package-code-coverage">Tools for analyzing Python package code coverage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-local-coverage-reports">Exporting Local Coverage Reports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-aim-for-high-code-coverage">なぜ高いコードカバレッジを目指すのか？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-code-coverage">コードカバレッジの限界</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-analyzing-python-package-code-coverage">Pythonパッケージのコードカバレッジを分析するツール</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-local-coverage-reports">ローカルカバレッジレポートのエクスポート</a></li>
 </ul>
   </nav></div>
 

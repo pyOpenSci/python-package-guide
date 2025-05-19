@@ -66,7 +66,7 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tests/tests-ci.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Code coverage for your Python package test suite" href="code-cov.html" />
+    <link rel="next" title="Pythonパッケージのテストスイートのコードカバレッジ" href="code-cov.html" />
     <link rel="prev" title="Pythonパッケージテストの実行" href="run-tests.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
@@ -469,7 +469,7 @@
 <li class="toctree-l1"><a class="reference internal" href="test-types.html">テストの種類</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-tests.html">ローカルでテストを実行する</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">オンラインでテストを実行する(CIを使用する)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-cov.html">Code coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-cov.html">コードカバレッジ</a></li>
 </ul>
 </div>
 </nav></div>
@@ -539,10 +539,8 @@
 <p>CIは、外部の人があなたのソフトウェアに貢献している場合、非常に貴重です。 リポジトリに投稿されたすべてのプルリクエストに対してCIを実行するように設定できます。 CIは、あなたのリポジトリを新しい将来の貢献者によりフレンドリーなものにします。 開発環境の構築、テストの実行、ドキュメントのビルドをローカルで行うことなく、コードやドキュメントの修正などに貢献することができます。</p>
 </section>
 <section id="example-github-actions-that-runs-tests">
-<h2>Example GitHub Actions that runs tests<a class="headerlink" href="#example-github-actions-that-runs-tests" title="Link to this heading">#</a></h2>
-<p>Below is an example GitHub Actions that runs tests using nox
-across both Windows, Mac and Linux and on Python versions
-3.9-3.11.</p>
+<h2>テストを実行する GitHub Actionsの例<a class="headerlink" href="#example-github-actions-that-runs-tests" title="Link to this heading">#</a></h2>
+<p>以下は、Windows、Mac、Linuxの両方で、Pythonのバージョン3.9-3.11でnoxを使ってテストを実行するGitHub Actionsの例です。</p>
 <p>正しく動作させるには、このファイルをGitHubリポジトリのルートディレクトリに置く必要があります:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyospackage/
 ├──.github/
@@ -622,7 +620,7 @@ across both Windows, Mac and Linux and on Python versions
        title="次ページ">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">次へ</p>
-        <p class="prev-next-title">Code coverage for your Python package test suite</p>
+        <p class="prev-next-title">Pythonパッケージのテストスイートのコードカバレッジ</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -646,7 +644,7 @@ across both Windows, Mac and Linux and on Python versions
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-pull-requests">CIとプルリクエスト</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-actions-that-runs-tests">Example GitHub Actions that runs tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-actions-that-runs-tests">テストを実行する GitHub Actionsの例</a></li>
 </ul>
   </nav></div>
 

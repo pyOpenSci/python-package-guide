@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tests/index.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="テストは Python パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。 In this section, you will learn more about the importance of writing tests for your Python package and how you ca..." />
+<meta property="og:description" content="テストは Python パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。 このセクションでは、Python パッケージのテストを書くことの重要性と、ローカルと GitHub の両方でテストを実行するためのインフラストラクチャの設定方法について学びます。 ✨テストを書く理由✨ Python パッケージ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_index_e3e11fc6.png" />
-<meta property="og:image:alt" content="テストは Python パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。 In this section, you will learn more about the importance of writing tests for your Python package and how you ca..." />
-<meta name="description" content="テストは Python パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。 In this section, you will learn more about the importance of writing tests for your Python package and how you ca..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_index_0240f878.png" />
+<meta property="og:image:alt" content="テストは Python パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。 このセクションでは、Python パッケージのテストを書くことの重要性と、ローカルと GitHub の両方でテストを実行するためのインフラストラクチャの設定方法について学びます。 ✨テストを書く理由✨ Python パッケージ..." />
+<meta name="description" content="テストは Python パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。 このセクションでは、Python パッケージのテストを書くことの重要性と、ローカルと GitHub の両方でテストを実行するためのインフラストラクチャの設定方法について学びます。 ✨テストを書く理由✨ Python パッケージ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Pythonパッケージのテストとデータ &#8212; Python Packaging Guide</title>
@@ -469,7 +469,7 @@
 <li class="toctree-l1"><a class="reference internal" href="test-types.html">テストの種類</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-tests.html">ローカルでテストを実行する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests-ci.html">オンラインでテストを実行する(CIを使用する)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-cov.html">Code coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-cov.html">コードカバレッジ</a></li>
 </ul>
 </div>
 </nav></div>
@@ -530,9 +530,7 @@
   <section id="tests-and-data-for-your-python-package">
 <span id="tests-intro"></span><h1>Pythonパッケージのテストとデータ<a class="headerlink" href="#tests-and-data-for-your-python-package" title="Link to this heading">#</a></h1>
 <p>テストは Python パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。</p>
-<p>In this section, you will learn more about the importance of writing
-tests for your Python package and how you can set up infrastructure
-to run your tests both locally and on GitHub.</p>
+<p>このセクションでは、Python パッケージのテストを書くことの重要性と、ローカルと GitHub の両方でテストを実行するためのインフラストラクチャの設定方法について学びます。</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-column docutils">
@@ -567,9 +565,7 @@ to run your tests both locally and on GitHub.</p>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 ✨オンラインでテストを実行する(CIを使用する)✨</div>
-<p class="sd-card-text">Continuous integration platforms such as GitHub Actions can be
-useful for running your tests across both different Python versions
-and different operating systems. Learn about setting up tests to run in Continuous Integration here.</p>
+<p class="sd-card-text">GitHub Actionsのような継続的インテグレーションプラットフォームは、Python のバージョンやオペレーティングシステムの違いを問わずテストを実行するのに便利です。 継続的インテグレーションで実行するテストの設定については、こちらを参照してください。</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="tests-ci.html"><span class="doc">継続的インテグレーションによるテストの実行</span></a></div>
 </div>

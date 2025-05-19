@@ -469,7 +469,7 @@
 <li class="toctree-l1"><a class="reference internal" href="test-types.html">テストの種類</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">ローカルでテストを実行する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests-ci.html">オンラインでテストを実行する(CIを使用する)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-cov.html">Code coverage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-cov.html">コードカバレッジ</a></li>
 </ul>
 </div>
 </nav></div>
@@ -539,7 +539,7 @@
 </ol>
 <p>このページでは、隔離された環境でテストを実行したり、Python のバージョンを越えてテストを実行したりするために使えるツールについて学びます。</p>
 <section id="tools-to-run-your-tests">
-<h2>テストを実行するためのツール<a class="headerlink" href="#tools-to-run-your-tests" title="Link to this heading">#</a></h2>
+<h2>Tools to run your tests<a class="headerlink" href="#tools-to-run-your-tests" title="Link to this heading">#</a></h2>
 <p>さまざまな環境でのテストのセットアップと実行を容易にするツールには、3つのカテゴリーがあります:</p>
 <ol class="arabic simple">
 <li><p><strong>テストフレームワーク</strong> とは、テストを書いたり実行したりするための特定の構文やツールのセットを提供するパッケージのことです。 いくつかのテストフレームワークにはプラグインがあり、テストがカバーするコードの範囲を評価するなどの機能を追加することができます。 以下では、科学的なエコシステムで最もよく使われている Python テストフレームワークの一つである <strong>pytest</strong> フレームワークについて学びます。 テストフレームワークは必要不可欠ですが、テストを実行するためだけのものです。 これらのフレームワークは、追加の自動化ツールの助けを借りずに Python のバージョンをまたいだテストを簡単に実行する方法は提供しません。</p></li>
@@ -636,7 +636,7 @@
 <div class="note admonition">
 <p class="admonition-title">その他の自動化ツール</p>
 <ul class="simple">
-<li><p><strong><a class="reference external" href="https://tox.wiki/en/latest/index.html#useful-links">Tox</a></strong> is an automation tool that supports common steps such as building documentation, running tests across various versions of Python, and more.</p></li>
+<li><p><strong><a class="reference external" href="https://tox.wiki/en/latest/index.html#useful-links">Tox</a></strong> は自動化ツールで、ドキュメントのビルドや、Pythonの様々なバージョン間でのテストの実行など、一般的なステップをサポートしています。</p></li>
 <li><p><strong><a class="reference external" href="https://github.com/ofek/hatch">Hatch</a></strong> は、hatchlingと呼ばれる人気のあるビルドバックエンドで動作する最新のエンドツーエンドパッケージングツールです。  <code class="docutils literal notranslate"><span class="pre">hatch</span></code> は <code class="docutils literal notranslate"><span class="pre">tox</span></code> のようなセットアップを提供し、異なる Python バージョンを使ってローカルでテストを実行することができます。 パッケージングのワークフローをサポートするために <code class="docutils literal notranslate"><span class="pre">hatch</span></code> を使っているのであれば、 <code class="docutils literal notranslate"><span class="pre">nox</span></code> を使うよりも <code class="docutils literal notranslate"><span class="pre">hatch</span></code> のテスト機能を使った方が良いかもしれない。</p></li>
 </ul>
 <ul class="simple">
@@ -792,7 +792,7 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-run-your-tests">テストを実行するためのツール</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-run-your-tests">Tools to run your tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-testing-framework-package-should-i-use-to-run-tests">テストを実行するには、どのテストフレームワーク/パッケージを使用すればよいですか？</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests-using-pytest">pytest を使ってテストを実行する</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-automate-running-your-tests">テストの実行を自動化するツール</a></li>
