@@ -1,13 +1,29 @@
-# Python package structure information
+# Python Package Structure
 
-This section provides guidance on your Python package's structure, code formats
-and style. It also reviews the various packaging tools that you can use to
-support building and publishing your package.
+This section provides guidance on your Python package's structure, code format,
+and style. It also reviews the various [packaging tools](python-package-build-tools) you can use to
+[build](python-package-distribution-files-sdist-wheel) and [publish](publish-python-package-pypi-conda) your Python package.
+
+If you want end-to-end tutorials, check out our tutorial series that starts by introducing [what a Python package is](what-is-a-package).
 
 If you are confused by Python packaging, you are not alone! The good news is
-there are some great modern packaging tools that ensure that you're following
-best practices. Here, we review tool features and suggest tools that might be
-best fitted for your workflow.
+that some great modern packaging tools ensure you follow
+best practices. Here, we review tool features and suggest tools you can use
+for your Python packaging workflow.
+
+:::{button-link} /tutorials/intro
+:color: success
+:class: sd-rounded-pill float-left
+
+Checkout our beginning-to-end create a Python package tutorials
+
+:::
+
+
+:::{admonition} How this content is developed
+All of the content in this guide has been vetted by community members, including maintainers and developers of the core packaging tools.
+:::
+
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
@@ -111,11 +127,11 @@ and for anyone who is just getting started with creating a Python package.
 In this section of our Python packaging guide, we:
 
 - Provide an overview of the options available to you when packaging your
-  tool.
+  code.
 - Suggest tools and approaches that both meet your needs and also support
   existing standards.
 - Suggest tools and approaches that will allow you to expand upon a workflow
-  that may begin as a pure Python tool and evolve into a tool that requires
+  that may begin as a pure Python code and evolve into code that requires
   addition layers of complexity in the packaging build.
 - Align our suggestions with the most current, accepted
   [PEPs (Python Enhancement Protocols)](https://peps.python.org/pep-0000/)
@@ -162,7 +178,7 @@ if you are looking for pyOpenSci's Python package review requirements!
 
 :::{toctree}
 :hidden:
-:caption: Package structure & code style
+:caption: Create & Build Your Package
 
 Intro <self>
 
@@ -176,7 +192,7 @@ Complex Builds <complex-python-package-builds>
 
 :::{toctree}
 :hidden:
-:caption: Publishing a package
+:caption: Publish your package
 
 Publish with Conda / PyPI <publish-python-package-pypi-conda>
 Package versions <python-package-versions>

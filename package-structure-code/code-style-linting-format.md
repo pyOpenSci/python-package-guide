@@ -260,9 +260,9 @@ You type and run:
 <img src="../images/precommit-hook-python-code.png" alt="Diagram showing the steps of a pre-commit workflow from left to right." width="700px">
 
 The pre-commit workflow begins with you adding files that have changes to be
-staged in git. Next, you'd run git commit. when you run git commit, the pre-commit
+staged in git. Next, you'd run git commit. When you run git commit, the pre-commit
 hooks will then run. In this example, Black, the code formatter and flake8, a linter both run. If all of the files pass Black and flake8 checks, then your commit will be recorded. If they don't, the commit is canceled. You will have to fix any flake8 issues,
-and then re-add / stage the files to be committed. [_Image Source_](https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/*)
+and then re-add / stage the files to be committed. [_Image Source_](https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/)
 :::
 
 <!-- For instance, if you setup the Black code formatter as a pre-commit hook,
@@ -283,7 +283,7 @@ new changes are merged.
 
 In addition to calling tools, Pre-commit also has a suite of [built in format
 hooks](https://github.com/pre-commit/pre-commit-hooks#hooks-available) that
-you can call. Some, such as trailing-whitespace can be also useful to add
+you can call. Some, such as `trailing-whitespace` can be also useful to add
 to your pre-commit workflow to ensure clean, streamlined code files.
 
 An example pre-commit-config.yaml file is below with examples of how this is

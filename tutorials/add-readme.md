@@ -1,3 +1,9 @@
+---
+:og:description: Learn how to create a clear, effective README file for your Python package. This lesson covers what to include, why each section matters, and how a well-structured README improves usability and discoverability on GitHub and PyPI.
+:og:title: Add a README file to your Python package
+date: 1970-01-03
+---
+
 # Add a README file to your Python package
 
 In the previous lessons you learned:
@@ -188,7 +194,7 @@ Your finished `README.md` file should look something like this:
 # pyosPackage
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8365068.svg)](https://doi.org/10.5281/zenodo.8365068)
-[![pyOpenSci](https://tinyurl.com/y22nb8up)](https://github.com/pyOpenSci/software-review/issues/115)
+[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-review/issues/115)
 
 ## What pyosPackage does
 
@@ -204,7 +210,7 @@ To install this package run:
 
 `python -m pip install pyosPackage`
 
-## OPTIONAL - if you have additional setup instructions add them here. if not, skip this section.
+## OPTIONAL - if you have additional setup instructions add them here. If not, skip this section.
 
 ## Get started using pyosPackage
 

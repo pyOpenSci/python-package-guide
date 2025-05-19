@@ -1,3 +1,9 @@
+---
+:og:description: Learn how to add a LICENSE and CODE_OF_CONDUCT file to your Python package. This lesson covers choosing a permissive license, placing key files for visibility on GitHub and PyPI, and adopting the Contributor Covenant to support an inclusive community.
+:og:title: Add a License and Code of Conduct to your python package
+date: 1970-01-02
+---
+
 # Add a `LICENSE` & `CODE_OF_CONDUCT` to your Python package
 
 In the [previous lesson](add-readme) you:
@@ -20,8 +26,8 @@ In this lesson you will learn:
 
 A license contains legal language about how users can use and reuse your software. To set the `LICENSE` for your project, you:
 
-1. create a `LICENSE` file in your project directory that specifies the license that you choose for your package and
-2. reference that file in your `pyproject.toml` data where metadata are set.
+1. Create a `LICENSE` file in your project directory that specifies the license that you choose for your package.
+2. Reference that file in your `pyproject.toml` data where metadata are set.
 
 By adding the `LICENSE` file to your `pyproject.toml` file, the `LICENSE` will be included in your package's metadata which is used to populate your package's PyPI landing page. The `LICENSE` is also used in your GitHub repository's landing page interface.
 

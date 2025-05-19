@@ -1,3 +1,10 @@
+---
+:og:description: This page outlines the key steps to create, document, and share a high-quality scientific Python package. Here you will also get an overview of the pyOpenSci packaging guide and what you’ll learn.
+:og:title: Python packaging 101
+date: 1970-01-05
+---
+
+(packaging-101)=
 # Python packaging 101
 
 _A start to finish beginner-friendly tutorial_
@@ -36,7 +43,7 @@ Get to know Hatch <get-to-know-hatch>
 :caption: Create and publish a Python Package
 
 What is a Python package? <self>
-Make your code installable <installable-code>
+Create a Python package <installable-code>
 Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
 :::
@@ -48,6 +55,13 @@ Publish to conda-forge <publish-conda-forge>
 Add README file <add-readme>
 Add a license & code of conduct <add-license-coc>
 Update metadata in pyproject.toml <pyproject-toml>
+:::
+
+:::{toctree}
+:hidden:
+:caption: Reference Guides
+
+Command Line Reference Guide <command-line-reference>
 :::
 
 :::{toctree}
@@ -68,6 +82,7 @@ After reading this lesson you will:
 
 :::
 
+(what-is-a-package)=
 ## What is a Python package?
 
 At a high level, you can think about a Python package as a toolbox
@@ -321,7 +336,7 @@ Then you can create a conda-forge recipe using the [Grayskull](https://github.co
 [You will learn more about the conda-forge publication process here.](publish-conda-forge.md)
 
 :::{figure-md} publish-package-pypi-conda-overview
-<img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. an arrow to the right takes you to a build distribution files box. that box leads you to either publishing to TestPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
+<img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. An arrow to the right takes you to a build distribution files box. That box leads you to either publishing to TestPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
 
 In the image above, you can see the steps associated with publishing
 your package on PyPI and conda-forge. Note that the distribution files that PyPI requires are the [sdist](#python-source-distribution) and [wheel](#python-wheel) files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda-forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repository. You will learn more about this process in the [conda-forge lesson](/tutorials/publish-conda-forge).
