@@ -479,9 +479,9 @@
 <li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">リファレンスガイド</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">コマンドラインリファレンスガイド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
 <ul class="nav bd-sidenav">
@@ -597,7 +597,7 @@
 <li><p>いくつかのコード。</p></li>
 <li><p>コードディレクトリの <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> ファイル。</p></li>
 </ul>
-<p>The directory structure you'll create in this lesson will look like this:</p>
+<p>このレッスンで作成するディレクトリ構造は次のようになります:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyospackage/<span class="w">  </span><span class="c1"># Your project directory</span>
 <span class="w"> </span>└─<span class="w"> </span>pyproject.toml
 <span class="w"> </span>└─<span class="w"> </span>src/<span class="w">  </span><span class="c1"># The source (src) directory ensures your tests always run on the installed version of your code</span>
@@ -630,7 +630,7 @@
 <h3>pyproject.tomlファイルとは何ですか？<a class="headerlink" href="#what-is-a-pyproject-toml-file" title="Link to this heading">#</a></h3>
 <p><strong>pyproject.toml</strong> ファイルは:</p>
 <ul class="simple">
-<li><p>Where you define your project's metadata (including its name, authors, license, etc)</p></li>
+<li><p>プロジェクトのメタデータ (名前、作者、ライセンスなど) を定義します。</p></li>
 <li><p>依存関係 (依存するパッケージ) を定義します。</p></li>
 <li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">パッケージのビルド</span></a> に使用するビルドバックエンドを指定し、設定します。</p></li>
 </ul>
@@ -761,7 +761,7 @@ pyos-package
 </ol>
 <p>Pythonは、使いたいドキュメントのビルドシステムに応じて、多くの異なるdocstringsフォーマットをサポートすることができます。 Pythonオブジェクトを文書化するために最もよくサポートされている形式は、NumPy Style Docstring<a class="footnote-reference brackets" href="#numpydoc" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>、Google Style Docstring<a class="footnote-reference brackets" href="#googledoc" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>、Epytext Style Docstring<a class="footnote-reference brackets" href="#epytextdoc" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>です。</p>
 <p><strong>pyOpenSciは、NumPyのDocstring規約を使用することを推奨します。</strong></p>
-<p>If you aren't familiar with docstrings or typing yet, that is ok. You can review <a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html">this page in the pyOpenSci packaging guide</a> for an overview of both topics.</p>
+<p>もしあなたがまだdocstringsやタイピングに慣れていなくても大丈夫です。 両方のトピックの概要については、 <a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html">pyOpenSciパッケージングガイドのこのページ</a> を参照してください。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_num</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add two numbers.</span>
@@ -922,8 +922,7 @@ pyos-package
 <div class="tip admonition">
 <p class="admonition-title">pyproject.tomlファイルに最低限必要なもの</p>
 <p>PyPIで公開するために <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに必要な情報は、 <strong>パッケージ名</strong> と <strong>バージョン</strong> です。 しかし、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの早い段階でメタデータを具体化することをお勧めします。</p>
-<p>Once you have your project metadata in the pyproject.toml file, you will
-rarely update it. In the next lesson you'll add more metadata and structure to this file.</p>
+<p>一度pyproject.tomlファイルにプロジェクトのメタデータがあれば、それを更新することはほとんどありません。次のレッスンでは、このファイルにさらにメタデータと構造を追加します。</p>
 </div>
 </section>
 </section>

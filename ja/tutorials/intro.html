@@ -479,9 +479,9 @@
 <li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">リファレンスガイド</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">コマンドラインリファレンスガイド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
 <ul class="nav bd-sidenav">
@@ -758,7 +758,7 @@
 <p>その後、 <a class="reference external" href="https://github.com/conda/grayskull">Grayskull</a> ツールを使ってconda-forgeレシピを作成することができます。 このレシピをconda-forgeに投稿することができます。</p>
 <p><a class="reference internal" href="publish-conda-forge.html"><span class="std std-doc">conda-forgeの公開プロセスについてはこちらをご覧ください。</span></a></p>
 <figure class="align-default" id="publish-package-pypi-conda-overview">
-<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. An arrow to the right takes you to a build distribution files box. That box leads you to either publishing to TestPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/publish-package-pypi-conda.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="../_images/publish-package-pypi-conda.png"><img alt="ハイレベルなパッケージングのワークフローを示すグラフィックです。左側には、コード、メタデータ、テストが入ったグラフィックがあります。ドキュメンテーションやデータは、通常、パッケージホイールの配布物には掲載されないため、そのボックスの下にあります。右の矢印は、ビルド配布ファイルのボックスに移動します。このボックスは、TestPyPIか本物のPyPIのどちらかに公開するように導きます。PyPIからconda-forgeに接続し、ディストリビューションをPyPIからconda-forgeに送る自動ビルドを行うことができます。" src="../_images/publish-package-pypi-conda.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-text">上の画像では、PyPIとconda-forgeでパッケージを公開する手順を見ることができます。 PyPIが要求する配布ファイルは <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">sdist</span></a> と <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a> ファイルであることに注意してください。コードを一般にインストール可能にする準備ができたら、PyPIで公開できます。いったんコードをPyPIにアップしたら、conda-forgeに公開するのは簡単です。 Grayskullパッケージを使ってレシピを作成し、conda-forgeレシピリポジトリでprを開きます。このプロセスについては、 <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">conda-forgeのレッスン</span></a> で詳しく学びます。</span><a class="headerlink" href="#publish-package-pypi-conda-overview" title="Link to this image">#</a></p>

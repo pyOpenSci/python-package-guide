@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Command Line Reference Guide" />
+<meta property="og:title" content="コマンドラインリファレンスガイド" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/command-line-reference.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Environment Setup:,, Description, Syntax,,, Set PowerShell execution policy (Windows), Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser,, Install Scoop (Windows), Invoke-RestMet..." />
+<meta property="og:description" content="環境設定:,, Description, Syntax,,, Set PowerShell execution policy (Windows), Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser,, Install Scoop (Windows), Invoke-RestMethod -Uri http..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_command-line-reference_a51f2601.png" />
-<meta property="og:image:alt" content="Environment Setup:,, Description, Syntax,,, Set PowerShell execution policy (Windows), Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser,, Install Scoop (Windows), Invoke-RestMet..." />
-<meta name="description" content="Environment Setup:,, Description, Syntax,,, Set PowerShell execution policy (Windows), Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser,, Install Scoop (Windows), Invoke-RestMet..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_command-line-reference_70c7039e.png" />
+<meta property="og:image:alt" content="環境設定:,, Description, Syntax,,, Set PowerShell execution policy (Windows), Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser,, Install Scoop (Windows), Invoke-RestMethod -Uri http..." />
+<meta name="description" content="環境設定:,, Description, Syntax,,, Set PowerShell execution policy (Windows), Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser,, Install Scoop (Windows), Invoke-RestMethod -Uri http..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Command Line Reference Guide &#8212; Python Packaging Guide</title>
+    <title>コマンドラインリファレンスガイド &#8212; Python Packaging Guide</title>
   
   
   
@@ -479,9 +479,9 @@
 <li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">リファレンスガイド</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Command Line Reference Guide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">コマンドラインリファレンスガイド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
 <ul class="nav bd-sidenav">
@@ -529,7 +529,7 @@
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージング 101</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Command Line Reference Guide</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">コマンドラインリファレンスガイド</span></li>
   </ul>
 </nav>
 </div>
@@ -547,15 +547,15 @@
                 <article class="bd-article">
                   
   <section id="command-line-reference-guide">
-<h1>Command Line Reference Guide<a class="headerlink" href="#command-line-reference-guide" title="Link to this heading">#</a></h1>
+<h1>コマンドラインリファレンスガイド<a class="headerlink" href="#command-line-reference-guide" title="Link to this heading">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">重要</p>
-<p><strong>What these tables are:</strong> These tables summarize the command line inputs (e.g., <code class="docutils literal notranslate"><span class="pre">pipx</span> <span class="pre">install</span> <span class="pre">hatch</span></code>,  <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>) necessary to complete all steps in the package creation process, from installing Hatch to publishing the package on PyPI and conda-forge.</p>
-<p><strong>What these tables are not:</strong> These tables do not cover the manual/non-automated steps (e.g., create PyPI account, create PyPI API token) you have to complete throughout the package creation process.</p>
-<p><strong>Operating system note:</strong> The current iteration of this guide has been tested on the Windows OS only. Many commands are Windows-specific. OS-specific commands are indicated with parentheses after the description of the command, e.g., [COMMAND_DESCRIPTION] (Windows). Corresponding commands for macOS and Linux will be added in the future.</p>
+<p><strong>これらの表は何であるか:</strong> これらの表は、Hatch のインストールから PyPI や conda-forge でのパッケージの公開まで、パッケージ作成プロセスのすべてのステップを完了するために必要なコマンドライン入力 (e.g., <code class="docutils literal notranslate"><span class="pre">pipx</span> <span class="pre">install</span> <span class="pre">hatch</span></code>, <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>) をまとめたものです。</p>
+<p><strong>これらの表は何でないか:</strong> これらの表は、パッケージの作成プロセスを通して完了しなければならない手動/非自動ステップ (PyPIアカウントの作成、PyPI APIトークンの作成など) をカバーしていません。</p>
+<p><strong>オペレーティングシステム:</strong> 本ガイドの現在のバージョンは、Windows OSのみでテストされています。多くのコマンドはWindows固有のものでス。OS固有のコマンドは、コマンドの説明の後に　[COMMAND_DESCRIPTION] (Windows) のように括弧をつけて表示されます。 macOSとLinuxに対応するコマンドは今後追加されます。</p>
 </div>
 <section id="environment-setup">
-<h2>Environment Setup<a class="headerlink" href="#environment-setup" title="Link to this heading">#</a></h2>
+<h2>環境設定<a class="headerlink" href="#environment-setup" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table table-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Description</p></th>
@@ -601,7 +601,7 @@
 </div>
 </section>
 <section id="package-development">
-<h2>Package Development<a class="headerlink" href="#package-development" title="Link to this heading">#</a></h2>
+<h2>パッケージ開発<a class="headerlink" href="#package-development" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table table-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Description</p></th>
@@ -638,7 +638,7 @@
 </div>
 </section>
 <section id="package-publishing">
-<h2>Package Publishing<a class="headerlink" href="#package-publishing" title="Link to this heading">#</a></h2>
+<h2>パッケージパブリッシング<a class="headerlink" href="#package-publishing" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table table-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Description</p></th>
@@ -675,7 +675,7 @@
 </div>
 </section>
 <section id="versions-and-environments">
-<h2>Versions and Environments<a class="headerlink" href="#versions-and-environments" title="Link to this heading">#</a></h2>
+<h2>バージョンと環境<a class="headerlink" href="#versions-and-environments" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table table-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Description</p></th>
@@ -754,10 +754,10 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-setup">Environment Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-development">Package Development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-publishing">Package Publishing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions-and-environments">Versions and Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-setup">環境設定</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-development">パッケージ開発</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-publishing">パッケージパブリッシング</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions-and-environments">バージョンと環境</a></li>
 </ul>
   </nav></div>
 

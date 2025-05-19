@@ -479,9 +479,9 @@
 <li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">pyproject.tomlのメタデータを更新する</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">リファレンスガイド</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">コマンドラインリファレンスガイド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
 <ul class="nav bd-sidenav">
@@ -687,9 +687,7 @@ different from the output above in this tutorial.</em></p>
 <h3>ステップ4: 設定ファイルを閉じて、 <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code> を実行します。<a class="headerlink" href="#step-4-close-the-config-file-and-run-hatch-config-show" title="Link to this heading">#</a></h3>
 <p>上記の手順が完了したら、シェルで以下のコマンドを実行します。</p>
 <p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code> will print out the contents of your <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file in
-your shell. Look at the values and ensure that your name, email is set. Also
-make sure that <code class="docutils literal notranslate"><span class="pre">tests=false</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code> はシェルの <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> ファイルの内容を出力します。 値を見て、あなたの名前とEメールが設定されていることを確認してください。また、 <code class="docutils literal notranslate"><span class="pre">tests=false</span></code> であることを確認すること。</p>
 </section>
 </section>
 <section id="hatch-features">
@@ -702,7 +700,7 @@ make sure that <code class="docutils literal notranslate"><span class="pre">test
 <p><a class="reference internal" href="../package-structure-code/python-package-build-tools.html#hatch"><span class="std std-ref">Hatchの詳細はこちら</span></a></p>
 <p>Hatchが提供するいくつかの機能</p>
 <ol class="arabic simple">
-<li><p>It will convert metadata stored in a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to a pyproject.toml file for you (see <a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Migrating setup.py to pyproject.toml using Hatch</span></a>)</p></li>
+<li><p>これは <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> または <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> ファイルに保存されたメタデータを pyproject.toml ファイルに変換します。 (<a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Hatchを使用してsetup.pyをpyproject.tomlに移行する</span></a> を参照)</p></li>
 <li><p>PyPIに公開するための設定情報を、一度入力した後に保存してくれます。</p></li>
 </ol>
 <p>利用可能なコマンドをすべて表示するには、 <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">-h</span></code> を使用します。</p>
