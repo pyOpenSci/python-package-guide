@@ -57,7 +57,7 @@ def calculate_translation_percentage(po_path : Path, locale : str) -> dict:
 def main():
     # Get all .po files in the locales directory
     po_files = list(LOCALES_DIR.rglob("*.po"))
-    
+
     # Let's use a dictionary to store the results
     #
     # We will store the info as
@@ -83,20 +83,20 @@ def main():
     #        ...
     # }
     results = {}
-    
+
     # Calculate translation percentages for each file
     for po_file in po_files:
         # Get the locale from the file path
         locale = po_file.parent.parent.name
         stats = calculate_translation_percentage(po_file, locale)
         print(f"({po_file.stem}): {stats['percentage']}% translated ({stats['translated']} of {stats['total']})")
-        
+
         # Store the results in the dictionary
         if locale not in results:
             results[locale] = {}
-        
+
         results[locale][po_file.stem] = stats
-    
+
     # Dump the results to a JSON file
     with open(STATIC_DIR / "translation_stats.json", "w") as f:
         import json
