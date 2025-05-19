@@ -462,7 +462,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを作成 &amp; ビルドする</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
@@ -472,7 +472,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">複雑なビルド</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">複雑なPythonパッケージのビルド</span></li>
   </ul>
@@ -547,8 +547,7 @@
 <ol class="arabic simple">
 <li><p><strong>純粋なPythonパッケージ:</strong> Pythonだけに依存して機能するパッケージです。 純粋なPythonパッケージの構築はよりシンプルです。 そのため、以下のツールの中から自分の欲しい機能を持つものを選び、決定しましょう!</p></li>
 <li><p><strong>Python以外の拡張を持つPythonパッケージ:</strong> これらのパッケージには、他の言語(CやC++など)で書かれた拡張と呼ばれる 追加コンポーネントがあります。 Python 以外の拡張を持つパッケージがある場合、拡張コードをコンパイルするために必要な、追加のビルドステップを可能にするビルドバックエンドツールを選択する必要があります。 さらに、ワークフローをサポートするフロントエンドツールを使いたい場合は、追加のビルド設定をサポートするツールを選択する必要があります。 Hatchのようなカスタムビルドステップをサポートするビルドツールを選択することをお勧めします。</p></li>
-<li><p><strong>Python packages that have extensions written in different languages (e.g. Fortran and C++) or that have non Python dependencies that are difficult to install (e.g. GDAL):</strong> These packages often have complex build steps (more complex than a package with just a few C extensions for instance). As such, these packages require tools such as <a class="reference external" href="https://scikit-build.readthedocs.io/en/latest/">scikit-build</a>
-or <a class="reference external" href="https://mesonbuild.com/Python-module.html">meson-python</a> to build. NOTE: you can use meson-python with PDM.</p></li>
+<li><p>**異なる言語で書かれた拡張(例えばFortranやC++)を持つPythonパッケージや、 インストールが困難なPython以外の依存関係(例えばGDAL)を持つPythonパッケージ: ** これらのパッケージは、しばしば複雑なビルド手順を持ちます(例えば、いくつかのC拡張を持つ パッケージよりも複雑です)。 そのため、これらのパッケージのビルドには <a class="reference external" href="https://scikit-build.readthedocs.io/en/latest/">scikit-build</a> や <a class="reference external" href="https://mesonbuild.com/Python-module.html">meson-python</a> といったツールが必要になります。 注：meson-pythonはPDMと一緒に使うことができます。</p></li>
 </ol>
 </section>
 <section id="mixing-frontend-and-backend-projects">

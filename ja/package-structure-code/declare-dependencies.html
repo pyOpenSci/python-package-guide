@@ -14,9 +14,9 @@
 <meta property="og:description" content="A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_063334df.png" />
-<meta property="og:image:alt" content="パッケージ依存性とは何か？: Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです: Needs to function properly., Requires if someone wants to develop / work on improving your package locally or, Requires if a use..." />
-<meta name="description" content="パッケージ依存性とは何か？: Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです: Needs to function properly., Requires if someone wants to develop / work on improving your package locally or, Requires if a use..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_9d1afb9a.png" />
+<meta property="og:image:alt" content="パッケージ依存性とは何か？: Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです: 適切に機能する必要があります。, もし、あなたのパッケージをローカルで開発したり、改良したりしたい人がいるか, ユーザが（コアではない）追加機能をパッケージに追加したい場合に必要です。. 依存関係は、プロジェクトのコードベースの一部ではありません。 プロジ..." />
+<meta name="description" content="パッケージ依存性とは何か？: Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです: 適切に機能する必要があります。, もし、あなたのパッケージをローカルで開発したり、改良したりしたい人がいるか, ユーザが（コアではない）追加機能をパッケージに追加したい場合に必要です。. 依存関係は、プロジェクトのコードベースの一部ではありません。 プロジ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Pythonパッケージの依存関係 &#8212; Python Packaging Guide</title>
@@ -462,7 +462,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを作成 &amp; ビルドする</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
@@ -472,7 +472,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージの依存関係</span></li>
   </ul>
@@ -543,14 +543,14 @@
 <h2>パッケージ依存性とは何か？<a class="headerlink" href="#what-is-a-package-dependency" title="Link to this heading">#</a></h2>
 <p>Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです:</p>
 <ol class="arabic simple">
-<li><p>Needs to function properly.</p></li>
-<li><p>Requires if someone wants to develop / work on improving your package locally or</p></li>
-<li><p>Requires if a user wants to add additional functionality (that is not core) to your package</p></li>
+<li><p>適切に機能する必要があります。</p></li>
+<li><p>もし、あなたのパッケージをローカルで開発したり、改良したりしたい人がいるか</p></li>
+<li><p>ユーザが（コアではない）追加機能をパッケージに追加したい場合に必要です。</p></li>
 </ol>
 <p>依存関係は、プロジェクトのコードベースの一部ではありません。 プロジェクトのコード内やパッケージの開発中に呼び出されるパッケージやソフトウェアです。</p>
 <section id="understanding-optional-vs-required-dependencies">
 <h3>オプションと必須の依存関係を理解する<a class="headerlink" href="#understanding-optional-vs-required-dependencies" title="Link to this heading">#</a></h3>
-<p>You can think about dependencies as being either optional or required. If they are required, they will be listed in the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> key in the <code class="docutils literal notranslate"><span class="pre">project</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. If they are optional, they will be listed in the <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<p>依存関係はオプションか必須であると考えることができます。 必須であれば、 <code class="docutils literal notranslate"><span class="pre">pyproject</span></code> テーブルの <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> キーにリストされます。 オプションの場合は、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> の <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> テーブルにリストされます。</p>
 <p>両者については後述します。</p>
 <figure class="align-default" id="python-package-dependency-types">
 <img alt="" src="../_images/python-package-dependency-types.png" />
@@ -561,8 +561,7 @@
 </section>
 <section id="required-or-core-dependencies">
 <h3>必須（またはコア）の依存関係<a class="headerlink" href="#required-or-core-dependencies" title="Link to this heading">#</a></h3>
-<p>Required dependencies are called directly within your package's code. On this page we refer to these dependencies
-as <strong>core dependencies</strong> as they are needed in order to run your package. You should place your core or required dependencies in the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> key of the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
+<p>必要な依存関係は、パッケージのコード内で直接呼び出されます。このページでは、パッケージを実行するために必要なこれらの依存関係を <strong>コア依存関係</strong> と呼びます。 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルの <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> キーに、コアまたは必要な依存関係を置く必要があります。</p>
 </section>
 <section id="optional-dependencies">
 <h3>オプションの依存関係<a class="headerlink" href="#optional-dependencies" title="Link to this heading">#</a></h3>
@@ -601,12 +600,7 @@ as <strong>core dependencies</strong> as they are needed in order to run your pa
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>Ideally, you should only list the packages that are
-necessary to install and use your package in the
-<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> key in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table. This minimizes the number of
-additional packages that your users must install as well
-as the number of packages that depend upon your package
-must also install.</p>
+<p>理想的には、 <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルの <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> キーに、あなたのパッケージをインス トールして使用するために必要なパッケージだけをリストするようにしま す。 こうすることで、ユーザがインストールしなければならない追加パッケージの数や あなたのパッケージに依存するパッケージの数を最小限に抑えることができます。</p>
 <p>インストールする依存関係を少なくすることで、ユーザー環境でのバージョン不一致の可能性が低くなることを覚えておいてください。</p>
 <div class="admonition-a-dependency-example admonition">
 <p class="admonition-title">依存関係の例</p>
@@ -629,18 +623,16 @@ must also install.</p>
 <li><p>ドキュメントの作成</p></li>
 <li><p>リンティングとその他のコードクリーンナップツール</p></li>
 </ul>
-<p>These dependencies are considered optional, because they are not required to install and use your package. Feature
-dependencies are considered optional and should also be placed in the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</p>
-<p>Optional dependencies can be stored in an
-<code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table in your <strong>pyproject.toml</strong> file.</p>
-<p>It's important to note that within the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table, you can store additional, optional dependencies within named sub-groups. This is a different table than the dependencies array located within the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table discussed above which contains a single array with a single list of required packages.</p>
+<p>これらの依存関係はオプションとみなされます。なぜなら、あなたのパッケ ージをインストールして使用するのに必要ではないからです。 機能の依存関係はオプションとみなされ、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルに置く必要があります。</p>
+<p>オプションの依存関係は <strong>pyproject.toml</strong> ファイルの <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルに格納することができます。</p>
+<p>ここで重要なのは、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルの中で、名前付きサブグループの中に追加のオプションの依存関係を格納できることです。これは、上で説明した <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブル内の依存関係配列とは異なるテーブルであり、必要なパッケージのリストを1つだけ含む配列が1つ格納されています。</p>
 </section>
 </section>
 <section id="create-optional-dependency-groups">
 <h2>オプションの依存グループを作成する<a class="headerlink" href="#create-optional-dependency-groups" title="Link to this heading">#</a></h2>
 <p><strong>pyproject.toml</strong> ファイルでオプションの依存関係を宣言します:</p>
 <ol class="arabic simple">
-<li><p>Add a <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table to your <strong>pyproject.toml</strong> file.</p></li>
+<li><p><strong>pyproject.toml</strong> ファイルに <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルを追加します。</p></li>
 <li><p>構文を使って、依存関係の名前付きグループを作成します:</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">group-name</span> <span class="pre">=</span> <span class="pre">[&quot;dep1&quot;,</span> <span class="pre">&quot;dep2&quot;]</span></code></p>
@@ -683,9 +675,9 @@ dependencies are considered optional and should also be placed in the <code clas
 <section id="install-dependency-groups">
 <h3>依存グループをインストールする<a class="headerlink" href="#install-dependency-groups" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id3">
-<img alt="Diagram showing a Venn diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
+<img alt="上記の依存グループを表す3つのセクションを持つven図を示す図 - ドキュメント機能とテスト。中央には your-package と表示され、そのパッケージの主要な依存関係であるseabornとnumpyがリストされています。 右側に2つの矢印があります。最初のものは、コマンド python - m pip install your-package を示しています。それらをインストールすると、パッケージと2つのコア依存関係のみがユーザー環境にインストールされることを示しています。以下は、2つ目の矢印で、 python -m pip install youPackage[tests] とあります。これにより、パッケージ依存関係 - your-package、seaborn、numpy とテスト依存関係 pytest、pytest-cov の両方を含む環境が構築されます。" src="../_images/python-package-dependencies.png" />
 <figcaption>
-<p><span class="caption-text">When a user installs your package locally using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package</span></code> only your package and it's core dependencies get installed. When they install your package <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package[tests]</span></code> pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text">ユーザがローカルで <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package</span></code> を使ってあなたのパッケージをインストールすると、あなたのパッケージとそのコア依存関係のみがインストールされます。ユーザがあなたのパッケージ <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package[tests]</span></code> をインストールすると、pip はあなたのパッケージとそのコア依存パッケージの両方をインストールし、さらに <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルの tests 配列にリストされている依存パッケージをインストールします。</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-using-python-m-pip-install-vs-pip-install admonition">
@@ -700,12 +692,12 @@ dependencies are considered optional and should also be placed in the <code clas
 <p>上記でインストールするのは:</p>
 <ul class="simple">
 <li><p>ドキュメント (<code class="docutils literal notranslate"><span class="pre">docs</span></code>) に必要な依存関係、</p></li>
-<li><p>required package dependencies in the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> array and</p></li>
+<li><p>必要なパッケージの依存関係を <code class="docutils literal notranslate"><span class="pre">dependency</span></code> 配列で指定し</p></li>
 <li><p>あなたのパッケージ</p></li>
 </ul>
 <p>pipを使います。 以下では、パッケージ、必要な依存関係、オプションのテスト依存関係をインストールします。</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests]&quot;</span></code></p>
-<p>You can install multiple dependency groups in the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table using:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルに複数の依存グループをインストールすることができます:</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[docs,</span> <span class="pre">tests,</span> <span class="pre">lint]&quot;</span></code></p>
 <div class="tip admonition">
 <p class="admonition-title">zshシェルユーザーの場合</p>

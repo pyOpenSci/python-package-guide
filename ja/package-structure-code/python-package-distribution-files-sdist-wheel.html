@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-distribution-files-sdist-wheel.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that Py..." />
+<meta property="og:description" content="Pythonパッケージの作成、ビルド、そしてPyPIとconda-forgeへの公開の流れを示す画像です。あなたのコードをPyPIが受け付ける配布ファイル(sdistとwheel)に変換します。そして、両方のディストリビューションを公開しているPyPIリポジトリへの矢印があります。PyPIからconda-forgeのレシピを作成し、conda-forgeに公開することができます。 両方のパッ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_python-package-distribution-files-sdist-wheel_ad96e31d.png" />
-<meta property="og:image:alt" content="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that Py..." />
-<meta name="description" content="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that Py..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_python-package-distribution-files-sdist-wheel_eca376ac.png" />
+<meta property="og:image:alt" content="Pythonパッケージの作成、ビルド、そしてPyPIとconda-forgeへの公開の流れを示す画像です。あなたのコードをPyPIが受け付ける配布ファイル(sdistとwheel)に変換します。そして、両方のディストリビューションを公開しているPyPIリポジトリへの矢印があります。PyPIからconda-forgeのレシピを作成し、conda-forgeに公開することができます。 両方のパッ..." />
+<meta name="description" content="Pythonパッケージの作成、ビルド、そしてPyPIとconda-forgeへの公開の流れを示す画像です。あなたのコードをPyPIが受け付ける配布ファイル(sdistとwheel)に変換します。そして、両方のディストリビューションを公開しているPyPIリポジトリへの矢印があります。PyPIからconda-forgeのレシピを作成し、conda-forgeに公開することができます。 両方のパッ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Pythonパッケージのビルドについて学ぶ &#8212; Python Packaging Guide</title>
@@ -462,7 +462,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを作成 &amp; ビルドする</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
@@ -472,7 +472,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージのビルドについて学ぶ</span></li>
   </ul>
@@ -540,10 +540,10 @@
   <section id="learn-about-building-a-python-package">
 <h1>Pythonパッケージのビルドについて学ぶ<a class="headerlink" href="#learn-about-building-a-python-package" title="Link to this heading">#</a></h1>
 <figure class="align-default" id="pypi-conda-overview">
-<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. Then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Pythonパッケージの作成、ビルド、そしてPyPIとconda-forgeへの公開の流れを示す画像です。あなたのコードをPyPIが受け付ける配布ファイル(sdistとwheel)に変換します。そして、両方のディストリビューションを公開しているPyPIリポジトリへの矢印があります。PyPIからconda-forgeのレシピを作成し、conda-forgeに公開することができます。" src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. The conda-forge requires an source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#pypi-conda-overview" title="Link to this image">#</a></p>
+<p><span class="caption-text">両方のパッケージ配布(ソース配布とホイール)をPyPIに公開したら、次にconda-forgeに公開します。conda-forgeでパッケージをビルドするには、PyPIでのソース配布が必要です。conda-forgeに公開するためにパッケージをリビルドする必要はありません。</span><a class="headerlink" href="#pypi-conda-overview" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>PythonパッケージをPyPI（またはcondaチャンネル）に公開するには、ビルドする必要があります。ビルドプロセスは、あなたのコードとメタデータをPyPIにアップロードできる配布フォーマットに整理し、その後ユーザーがダウンロードしてインストールできるようにします。 注意: conda-forgeが適切にパッケージを自動ビルドするためには、sdistをPyPIに公開する必要があります。</p>
@@ -607,7 +607,7 @@
 </section>
 <section id="an-example-xclim">
 <h3>例 - xclim<a class="headerlink" href="#an-example-xclim" title="Link to this heading">#</a></h3>
-<p>When you publish to PyPI, you will notice that each package has metadata listed. Let's have a look at <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a>, one of our <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a>. Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim's maintainers, <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a>. This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.</p>
+<p>PyPIに公開すると、各パッケージにメタデータがリストされていることに気づくでしょう。<a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSciパッケージ</a> の一つである <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a> を見てみましょう。PyPIのランディングページには、pythonやメンテナ情報など、パッケージに関するメタデータが表示されていることに注目してください。PyPIは、Xclimのメンテナ <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a> によって正しい構文と分類子を用いて定義されたメタデータを入力することができます。xclimパッケージがビルドされるとき、このメタデータは配布ファイルに変換され、PyPIがメタデータを読み込んでウェブサイトに出力できるようになります。</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="xclimパッケージのPyPI左サイドバーの画像です。一番上のセクションにはClassifierとあります。その下に、開発状況、対象読者、ライセンス、自然言語、オペレーティングシステム、プログラミング言語、トピックなどの項目があります。 これらの各セクションの下には、さまざまな分類オプションがあります。 &quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" />
 </a>
@@ -616,14 +616,14 @@
 </figcaption>
 </figure>
 <figure class="align-default" id="build-workflow">
-<a class="reference internal image-reference" href="../_images/python-package-development-process.png"><img alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. An arrow to the right takes you to a build distribution files box. That box leads you to either publishing to TestPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." src="../_images/python-package-development-process.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="../_images/python-package-development-process.png"><img alt="ハイレベルなパッケージングのワークフローを示すグラフィックです。左側には、コード、メタデータ、テストが入ったグラフィックがあります。ドキュメンテーションやデータは、通常、パッケージホイールの配布物には掲載されないため、そのボックスの下にあります。右の矢印は、ビルド配布ファイルのボックスに移動します。このボックスは、TestPyPIか本物のPyPIのどちらかに公開するように導きます。PyPIからconda-forgeに接続し、ディストリビューションをPyPIからconda-forgeに送る自動ビルドを行うことができます。" src="../_images/python-package-development-process.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-text">PythonパッケージをPyPI（またはConda）に公開するには、ビルドする必要があります。ビルドプロセスは、あなたのコードとメタデータをPyPIにアップロードできる配布フォーマットに整理し、その後ユーザーがダウンロードしてインストールできるようにします。 注意: conda-forgeが適切にパッケージを自動ビルドするためには、sdistをPyPIに公開する必要があります。</span><a class="headerlink" href="#build-workflow" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="../_images/pypi-metadata-keywords-license.png"><img alt="This screenshot shows the metadata on PyPI for the xclim package. On it you can see the name of the license, the author and maintainer names keywords associated with the package and the base python version it requires which is 3.8." src="../_images/pypi-metadata-keywords-license.png" style="width: 400px;" />
+<a class="reference internal image-reference" href="../_images/pypi-metadata-keywords-license.png"><img alt="このスクリーンショットは、PyPI上のxclimパッケージのメタデータを示しています。そこには、ライセンスの名前、そのパッケージに関連する作者とメンテナの名前のキーワード、そしてそのパッケージが必要とするpythonの基本バージョン3.8が表示されています。" src="../_images/pypi-metadata-keywords-license.png" style="width: 400px;" />
 </a>
 <figcaption>
 <p><span class="caption-text">xclimパッケージのメタデータを示すPyPIのスクリーンショット。</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
@@ -631,7 +631,7 @@
 </figure>
 <hr class="docutils" />
 <figure class="align-default" id="pypi-metadata-maintainers">
-<a class="reference internal image-reference" href="../_images/pypi-metadata-maintainers.png"><img alt="Here you see the maintainer metadata as it is displayed on PyPI. For xclim there are three maintainers listed with their profile pictures and github user names to the right." src="../_images/pypi-metadata-maintainers.png" style="width: 300px;" />
+<a class="reference internal image-reference" href="../_images/pypi-metadata-maintainers.png"><img alt="ここでは、PyPIに表示されているメインテナメタデータを見ることができます。xclimの場合、3人のメンテナがリストアップされており、右側にプロフィール写真とgithubユーザー名が表示されています。" src="../_images/pypi-metadata-maintainers.png" style="width: 300px;" />
 </a>
 <figcaption>
 <p><span class="caption-text">PyPI に表示されている xclim パッケージのメンテナ名と GitHub ユーザ名。 この情報はpyproject.tomlに記録され、ビルドツールで処理され、パッケージのsdistとwheelディストリビューションに保存されます。</span><a class="headerlink" href="#pypi-metadata-maintainers" title="Link to this image">#</a></p>
@@ -657,7 +657,7 @@
 </div>
 </section>
 <section id="what-is-a-source-distribution-sdist">
-<span id="python-source-distribution"></span><h2>What is a source distribution (sdist)<a class="headerlink" href="#what-is-a-source-distribution-sdist" title="Link to this heading">#</a></h2>
+<span id="python-source-distribution"></span><h2>ソースディストリビューションとは (sdist)<a class="headerlink" href="#what-is-a-source-distribution-sdist" title="Link to this heading">#</a></h2>
 <p><strong>ソースファイル</strong> は、パッケージをビルドするために必要な、ビルドされていないファイルです。 これらは、GitHubやあなたがコードを管理するために使っているプラットフォームに保存する &quot;raw / as-is&quot; ファイルです。</p>
 <p>Source Distributions（<strong>S</strong> + <strong>Dist</strong>）はsdistと呼ばれます。その名の通り、SDISTにはソースコードが含まれています; ビルドもコンパイルもされていません。 したがって、ユーザーがpipを使ってソースディストリビューションをインストールする場合、pipは最初にビルドステップを実行する必要があります。 このため、ソース・ディストリビューションを、（プロジェクトの依存関係を除いた）ホイールのビルドに必要なすべてを含む圧縮アーカイブとして、ネットワークアクセスなしで定義することができます。</p>
 <p>Sdist は通常、 <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> アーカイブ (しばしば &quot;tarball&quot; と呼ばれます) として保存されます。 そのため、ユーザーが pip を使用してソースディストリビューションをインストールする場合、pip は最初にビルドステップを実行する必要があります。</p>
@@ -716,7 +716,7 @@ consistency -->
 </div>
 </section>
 <section id="what-is-a-python-wheel-whl">
-<span id="python-wheel"></span><h2>What is a Python wheel (whl):<a class="headerlink" href="#what-is-a-python-wheel-whl" title="Link to this heading">#</a></h2>
+<span id="python-wheel"></span><h2>Python wheel (whl)とは何ですか？<a class="headerlink" href="#what-is-a-python-wheel-whl" title="Link to this heading">#</a></h2>
 <p>ホイールファイルはZIP形式のアーカイブで、ファイル名は特定のフォーマット（下記）に従い、拡張子は <code class="docutils literal notranslate"><span class="pre">.whl</span></code> です。 <code class="docutils literal notranslate"><span class="pre">.whl</span></code> アーカイブには、プロジェクトのpyproject.tomlファイルから生成されたメタデータを含む特定のファイル群が含まれています。 pyproject.tomlや、ソース配布物に含まれる可能性のあるその他のファイルは、ビルドされた配布物であるため、wheelには含まれません。</p>
 <p>wheel（.whl）は、ビルドされたバイナリーディストリビューションです。 <strong>バイナリファイル</strong> は、ビルド/コンパイルされたソースファイルです。 これらのファイルはすぐにインストールできます。 wheel (<strong>.whl</strong>) は、パッケージを直接インストールするために必要な すべてのファイルを含む <strong>zip</strong> ファイルです。 wheelに含まれるファイルはすべてバイナリで、これはコードがすでにコンパイル/ビルドされていることを意味します。 wheelの取り付けがより迅速に - 特にビルド・ステップが必要なパッケージの場合はそうなります。</p>
 <p>ホイールには、<strong>setup.cfg</strong> や <strong>pyproject.toml</strong> のようなパッケージの設定ファイルは含まれていません。 このディストリビューションはすでにビルドされていますので、すぐにインストールできます。</p>
@@ -829,8 +829,8 @@ included what is the issue? i need more input here-->
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-the-distribution-format-that-pypi-and-pip-expects">PyPIやPipが期待する配布フォーマットを作るには？</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-source-distribution-sdist">What is a source distribution (sdist)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-python-wheel-whl">What is a Python wheel (whl):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-source-distribution-sdist">ソースディストリビューションとは (sdist)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-python-wheel-whl">Python wheel (whl)とは何ですか？</a></li>
 </ul>
   </nav></div>
 

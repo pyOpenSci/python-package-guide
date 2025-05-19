@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/publish-python-package-pypi-conda.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="pyOpenSci は、あなたのパッケージが PyPI のようなパブリックコミュニティリポジトリや Anaconda.org の bioconda や conda-forge のような conda チャンネルからインストールできるディストリビューションを持っていることを要求します。 以下では、Pythonパッケージの様々な公開オプションについて詳しく説明します。 Image showing ..." />
+<meta property="og:description" content="pyOpenSci は、あなたのパッケージが PyPI のようなパブリックコミュニティリポジトリや Anaconda.org の bioconda や conda-forge のような conda チャンネルからインストールできるディストリビューションを持っていることを要求します。 以下では、Pythonパッケージの様々な公開オプションについて詳しく説明します。 Pythonパッケージの作成..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
 <meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_publish-python-package-pypi-conda_dabc89dd.png" />
-<meta property="og:image:alt" content="pyOpenSci は、あなたのパッケージが PyPI のようなパブリックコミュニティリポジトリや Anaconda.org の bioconda や conda-forge のような conda チャンネルからインストールできるディストリビューションを持っていることを要求します。 以下では、Pythonパッケージの様々な公開オプションについて詳しく説明します。 Image showing ..." />
-<meta name="description" content="pyOpenSci は、あなたのパッケージが PyPI のようなパブリックコミュニティリポジトリや Anaconda.org の bioconda や conda-forge のような conda チャンネルからインストールできるディストリビューションを持っていることを要求します。 以下では、Pythonパッケージの様々な公開オプションについて詳しく説明します。 Image showing ..." />
+<meta property="og:image:alt" content="pyOpenSci は、あなたのパッケージが PyPI のようなパブリックコミュニティリポジトリや Anaconda.org の bioconda や conda-forge のような conda チャンネルからインストールできるディストリビューションを持っていることを要求します。 以下では、Pythonパッケージの様々な公開オプションについて詳しく説明します。 Pythonパッケージの作成..." />
+<meta name="description" content="pyOpenSci は、あなたのパッケージが PyPI のようなパブリックコミュニティリポジトリや Anaconda.org の bioconda や conda-forge のような conda チャンネルからインストールできるディストリビューションを持っていることを要求します。 以下では、Pythonパッケージの様々な公開オプションについて詳しく説明します。 Pythonパッケージの作成..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>コミュニティリポジトリでパッケージを公開する: PyPI または Anaconda.org &#8212; Python Packaging Guide</title>
@@ -462,7 +462,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを作成 &amp; ビルドする</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
@@ -472,7 +472,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Conda / PyPIで公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">コミュニティリポジトリでパッケージを公開する: PyPI または Anaconda.org</span></li>
   </ul>
@@ -551,10 +551,10 @@
 <p>以下では、PythonパッケージのPyPI公開とconda公開の違いについて詳しく説明します。</p>
 </div>
 <figure class="align-default" id="upload-conda-forge">
-<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. Then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Pythonパッケージの作成、ビルド、そしてPyPIとconda-forgeへの公開の流れを示す画像です。あなたのコードをPyPIが受け付ける配布ファイル(sdistとwheel)に変換します。そして、両方のディストリビューションを公開しているPyPIリポジトリへの矢印があります。PyPIからconda-forgeのレシピを作成し、conda-forgeに公開することができます。" src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. The conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#upload-conda-forge" title="Link to this image">#</a></p>
+<p><span class="caption-text">両方のパッケージ配布(ソース配布とホイール)をPyPIに公開したら、次にconda-forgeに公開します。conda-forgeでパッケージをビルドするには、PyPIでのソース配布が必要です。conda-forgeに公開するためにパッケージをリビルドする必要はありません。</span><a class="headerlink" href="#upload-conda-forge" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="what-is-pypi">
@@ -588,12 +588,12 @@
 <p>多くの人がcondaを使ってパッケージをインストールする際に使う、いくつかのコアなパブリックチャンネルがあります:</p>
 <ul class="simple">
 <li><p><strong>defaults:</strong> これは Anaconda が管理するチャンネルです。 Anaconda ディストリビューションをインストールするとインストールされる Python パッケージのバージョンです。 どのパッケージが <code class="docutils literal notranslate"><span class="pre">defaults</span></code> チャンネルにあるかは Anaconda (会社) が決定します。</p></li>
-<li><p><a class="reference external" href="https://conda-forge.org/"><strong>conda-forge:</strong></a> this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.</p></li>
-<li><p><a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a>: this channel focuses on biomedical tools.</p></li>
+<li><p><a class="reference external" href="https://conda-forge.org/"><strong>conda-forge:</strong></a> このチャンネルは科学的なパッケージに焦点を当てたコミュニティ主導のチャンネルです。 このチャンネルは地理空間データをサポートするツールに最適です。 誰でもこのチャンネルにパッケージを公開できます。</p></li>
+<li><p><a class="reference external" href="https://bioconda.github.io/"><strong>bioconda</strong></a>: このチャンネルは生物医学ツールに焦点を当てています。</p></li>
 </ul>
 <p>科学的パッケージの多くが <code class="docutils literal notranslate"><span class="pre">defaults</span></code> Anaconda チャンネルに存在しなかったため、<strong>conda-forge</strong> が出現しました。</p>
 <figure class="align-default" id="pypi-conda-channels">
-<a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says Anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI. And test PyPI. A testbed server for you to practice." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Python package repositoriesというタイトルのグラフィック。 PyPI でホストされているものは pip install でインストールできます。 condaチャンネルでホストされているパッケージはconda installを使ってインストールできます。 その下に2つの行があり、一番上の行には conda channels と書かれています。その隣には3つのボックスがあり、1つは conda-forge、コミュニティによって管理されているもの、bioconda、そして default - anaconda チームによって管理されているものです。 その下にPyPIサーバーという行があります。 PyPI - 誰でもPyPIに公開することができます、とPyPIをテストするためのテストベッドサーバ。" src="../_images/python-pypi-conda-channels.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-text">Condaチャンネルは、パッケージをインストールできる様々なリポジトリです。 conda-forge はコミュニティによって管理されているため、誰でもレシピを投稿することができます。 PyPIもコミュニティによって管理されているリポジトリです。 誰でもPyPIにパッケージを投稿し、PyPIをテストすることができます。 conda-forge とは異なり、PyPI に投稿されたパッケージを手動でチェックすることはありません。</span><a class="headerlink" href="#pypi-conda-channels" title="Link to this image">#</a></p>
@@ -616,7 +616,7 @@
 <section id="managing-python-package-dependency-conflicts">
 <h3>Pythonパッケージの依存関係の競合を管理する<a class="headerlink" href="#managing-python-package-dependency-conflicts" title="Link to this heading">#</a></h3>
 <p>Python環境は、Pythonツールが異なるリポジトリからインストールされることがあるため、競合に遭遇する可能性があります。 大まかに言えば、Python環境は、ツールが同じパッケージリポジトリからインストールされるとき、依存関係の衝突の可能性が小さくなります。 そのため、pip と conda の両方からインストールされたパッケージを含む環境は、依存関係の衝突が起こりやすくなります。</p>
-<p>Similarly installing packages from the default anaconda channel mixed with the conda-forge channel can also lead to dependency conflicts.</p>
+<p>同様に、デフォルトの anaconda チャンネルと conda-forge チャンネルを混ぜてパッケージをインストールすることも依存関係の衝突につながります。</p>
 <p>多くのパッケージは conda <code class="docutils literal notranslate"><span class="pre">defaults</span></code> チャンネルから直接インストールします。 しかし、このチャンネルは Anaconda によって管理されているため、このチャンネルで利用可能なパッケージは、Anaconda が安定したインストールの中核となるべきと判断したものに限定されます。 conda-forge チャンネルは <code class="docutils literal notranslate"><span class="pre">defaults</span></code> チャンネルを補完するために作成されました。 誰でもこのチャンネルで公開するパッケージを投稿することができます。 このように、 <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> チャネルは、ユーザが開発したコミュニティパッケージの広範なスイートを conda からインストールできるようにします。</p>
 </section>
 <section id="take-aways-if-you-can-publish-on-both-pypi-and-conda-forge-to-accommodate-more-users-of-your-package">

@@ -462,7 +462,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを作成 &amp; ビルドする</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
@@ -472,7 +472,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。</span></li>
   </ul>
@@ -616,11 +616,11 @@ https://packaging.python.org/en/latest/specifications/declaring-project-metadata
 <p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを作成するとき、使用できるメタデータフィールドがたくさんあります。 以下では、PyPI での公開とユーザがあなたのパッケージを見つけることをサポートする、特定のフィールドを提案します。</p>
 <p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use">プロジェクトの全メタデータ要素の概要は、こちらをご覧ください。</a></p>
 <section id="required-fields-for-the-project-table">
-<h3>Required fields for the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table<a class="headerlink" href="#required-fields-for-the-project-table" title="Link to this heading">#</a></h3>
-<p>As mentioned above, your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file needs to have a <strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">version</span></code></strong> field in order to properly build your package:</p>
+<h3><code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルの必須フィールド<a class="headerlink" href="#required-fields-for-the-project-table" title="Link to this heading">#</a></h3>
+<p>上述したように、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルはパッケージを適切にビルドするために <strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> と <strong><code class="docutils literal notranslate"><span class="pre">version</span></code></strong> フィールドを持つ必要があります:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: This is the name of your project provided as a string</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: This is the version of your project. If you are using a SCM tool for versioning (using git tags to determine versions), then the version may be dynamic (more on that below).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: プロジェクトの名前を文字列で指定します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: プロジェクトのバージョンです。 バージョン管理に SCM ツール (git タグを使用してバージョンを決定する) を使用している場合は、このバージョンは動的なものになります (詳細は後述します)。</p></li>
 </ul>
 </section>
 <section id="optional-fields-to-include-in-the-project-table">
@@ -660,10 +660,10 @@ https://packaging.python.org/en/latest/specifications/declaring-project-metadata
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.scripts]</span></code> (Entry points):</strong> エントリーポイントは任意です。 パッケージでホストされている特定のスクリプトを実行するコマンドラインツールがある場合、そのスクリプトを(Pythonシェルではなく)コマンドラインで直接呼び出すためのエントリポイントを含めることができます 。</p>
 <ul>
-<li><p>Here is an example of<a class="reference external" href="https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60">a package that has entry point script</a>s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.</p></li>
+<li><p>以下は、<a class="reference external" href="https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60">エントリーポイントスクリプトを持つパッケージ</a> の例である。 そのパッケージには、一連のタスクを実行するいくつかのコアスクリプトが定義されていることに注目してほしい。 pyOpenSciはこれらのスクリプトを使ってメタデータを処理しています。</p></li>
 </ul>
 </li>
-<li><p><strong>Dynamic Fields:</strong> if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>, then you might use the dynamic field, such as version (using scm) <strong>dynamic = [&quot;version&quot;]</strong></p></li>
+<li><p><strong>ダイナミックフィールド:</strong> 動的に入力されるフィールドがある場合。 <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>のようなツールでscm/バージョン管理ベースのバージョンを使用している場合、ダイナミックフィールドを使用することができます。 (scmを使用した)バージョンなど <strong>dynamic = [&quot;version&quot;]</strong></p></li>
 </ul>
 </section>
 </section>
@@ -841,7 +841,7 @@ https://packaging.python.org/en/latest/specifications/declaring-project-metadata
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-a-pyproject-toml-file">pyproject.tomlファイルを使用する利点</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">pyproject.toml ファイルのフィールドの任意と必須</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table">Required fields for the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table"><code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルの必須フィールド</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fields-to-include-in-the-project-table"><code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルに含めるオプションフィールド</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options-in-the-pyproject-toml-file">pyproject.tomlファイルの高度なオプション</a></li>
 </ul>

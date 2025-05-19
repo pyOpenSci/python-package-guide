@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Python Package Structure" />
+<meta property="og:title" content="Pythonパッケージ構造" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/intro.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="This section provides guidance on your Python package's structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
+<meta property="og:description" content="このセクションでは、Python パッケージの構造、コードフォーマット、スタイルに関するガイダンスを提供します。また、Pythonパッケージの build や publish に使える様々な packaging tools もレビューしています。 チュートリアルが必要な場合は、 Python パッケージとは 何かを紹介するところから始まるチュートリアルシリーズをご覧ください。 Python ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_intro_867e1f11.png" />
-<meta property="og:image:alt" content="This section provides guidance on your Python package's structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
-<meta name="description" content="This section provides guidance on your Python package's structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_intro_b1d470c5.png" />
+<meta property="og:image:alt" content="このセクションでは、Python パッケージの構造、コードフォーマット、スタイルに関するガイダンスを提供します。また、Pythonパッケージの build や publish に使える様々な packaging tools もレビューしています。 チュートリアルが必要な場合は、 Python パッケージとは 何かを紹介するところから始まるチュートリアルシリーズをご覧ください。 Python ..." />
+<meta name="description" content="このセクションでは、Python パッケージの構造、コードフォーマット、スタイルに関するガイダンスを提供します。また、Pythonパッケージの build や publish に使える様々な packaging tools もレビューしています。 チュートリアルが必要な場合は、 Python パッケージとは 何かを紹介するところから始まるチュートリアルシリーズをご覧ください。 Python ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Python Package Structure &#8212; Python Packaging Guide</title>
+    <title>Pythonパッケージ構造 &#8212; Python Packaging Guide</title>
   
   
   
@@ -462,7 +462,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを作成 &amp; ビルドする</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
@@ -472,7 +472,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">パッケージバージョン</a></li>
@@ -517,7 +517,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Package Structure</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージ構造</span></li>
   </ul>
 </nav>
 </div>
@@ -535,19 +535,14 @@
                 <article class="bd-article">
                   
   <section id="python-package-structure">
-<h1>Python Package Structure<a class="headerlink" href="#python-package-structure" title="Link to this heading">#</a></h1>
-<p>This section provides guidance on your Python package's structure, code format,
-and style. It also reviews the various <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">packaging tools</span></a> you can use to
-<a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">build</span></a> and <a class="reference internal" href="publish-python-package-pypi-conda.html"><span class="doc std std-doc">publish</span></a> your Python package.</p>
-<p>If you want end-to-end tutorials, check out our tutorial series that starts by introducing <a class="reference internal" href="../tutorials/intro.html#what-is-a-package"><span class="std std-ref">what a Python package is</span></a>.</p>
-<p>If you are confused by Python packaging, you are not alone! The good news is
-that some great modern packaging tools ensure you follow
-best practices. Here, we review tool features and suggest tools you can use
-for your Python packaging workflow.</p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success sd-rounded-pill float-left reference external" href="/tutorials/intro"><span>Checkout our beginning-to-end create a Python package tutorials</span></a></p>
+<h1>Pythonパッケージ構造<a class="headerlink" href="#python-package-structure" title="Link to this heading">#</a></h1>
+<p>このセクションでは、Python パッケージの構造、コードフォーマット、スタイルに関するガイダンスを提供します。また、Pythonパッケージの <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">build</span></a> や <a class="reference internal" href="publish-python-package-pypi-conda.html"><span class="doc std std-doc">publish</span></a> に使える様々な <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">packaging tools</span></a> もレビューしています。</p>
+<p>チュートリアルが必要な場合は、 <a class="reference internal" href="../tutorials/intro.html#what-is-a-package"><span class="std std-ref">Python パッケージとは</span></a> 何かを紹介するところから始まるチュートリアルシリーズをご覧ください。</p>
+<p>Python のパッケージングに戸惑っているのはあなただけではありません！ 良いニュースは、あなたがベストプラクティスに従っていることを保証する、いくつかの素晴らしい最新のパッケージングツールがあるということです。 ここでは、ツールの機能をレビューし、あなたのワークフローに最適なツールを提案します。</p>
+<p>Pythonパッケージ作成チュートリアルをご覧ください。</p>
 <div class="admonition-how-this-content-is-developed admonition">
-<p class="admonition-title">How this content is developed</p>
-<p>All of the content in this guide has been vetted by community members, including maintainers and developers of the core packaging tools.</p>
+<p class="admonition-title">このコンテンツの開発方法</p>
+<p>このガイドの内容はすべて、コアパッケージングツールのメンテナや開発者を含むコミュニティメンバーによって吟味されています。</p>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
@@ -631,12 +626,9 @@ for your Python packaging workflow.</p>
 <h2>ここで学べること<a class="headerlink" href="#what-you-will-learn-here" title="Link to this heading">#</a></h2>
 <p>Pythonパッケージングガイドのこのセクションでは、以下のことを説明します:</p>
 <ul class="simple">
-<li><p>Provide an overview of the options available to you when packaging your
-code.</p></li>
+<li><p>コードをパッケージングする際に利用可能なオプションの概要を説明します。</p></li>
 <li><p>ニーズを満たし、かつ既存の基準をサポートするツールやアプローチを提案します。</p></li>
-<li><p>Suggest tools and approaches that will allow you to expand upon a workflow
-that may begin as a pure Python code and evolve into code that requires
-addition layers of complexity in the packaging build.</p></li>
+<li><p>純粋なPythonツールから始まり、パッケージングビルドに複雑なレイヤーを追加する必要のあるコードへと進化するワークフローを拡張することを可能にするコードやアプローチを提案します。</p></li>
 <li><p>私たちの提案を、現在受け入れられている <a class="reference external" href="https://peps.python.org/pep-0000/">PEPs (Python Enhancement Protocols)</a> と <a class="reference external" href="https://scientific-python.org/specs/">Scientific Python community SPECs</a> に合わせます。</p></li>
 <li><p>私たちのコミュニティ内での一貫性を維持するために、NumpyやSciPyなどのScientific Pythonのコアパッケージの開発者によって実装されている既存のベストプラクティスとも連携しています。</p></li>
 </ul>

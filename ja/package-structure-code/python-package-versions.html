@@ -462,7 +462,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="セクションナビゲーション">
   <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを作成 &amp; ビルドする</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
@@ -472,7 +472,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Conda / PyPIで公開する</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">パッケージバージョン</a></li>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージの新しいバージョンを作成する</span></li>
   </ul>
@@ -555,7 +555,7 @@
 <ol class="arabic simple">
 <li><p>これは、あなたのユーザ (あなたのパッケージに依存している他の開発者を含むかもしれません) がパッケージの変更範囲を理解するのに役立ちます。</p></li>
 <li><p>標準的なルールに基づいて、開発チームがパッケージのバージョンを上げるタイミングを判断するのに役立ちます。</p></li>
-<li><p>Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. Thus your package version numbers become &quot;expressive&quot; in the same way that naming code variables well can <a class="reference external" href="https://medium.com/&#64;daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa">make code expressive</a>.</p></li>
+<li><p>センバーのルールに従った一貫したバージョンの増加とは、パッケージのバージョンの値が、バージョンごとにコードベースで行われた変更の程度を説明することを意味します。こうしてパッケージのバージョン番号は、コードの変数にうまく名前をつけることで <a class="reference external" href="https://medium.com/&#64;daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa">コードを表現豊かにする</a> ことができるのと同じように、 &quot;表現豊かに&quot; なります。</p></li>
 </ol>
 <div class="admonition-a-note-about-versioning admonition">
 <p class="admonition-title">バージョン管理について</p>
@@ -609,11 +609,7 @@ that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 </ol>
 <section id="semantic-release-vs-version-control-based-vs-manual-version-bumping">
 <h3>セマンティックリリース、バージョン管理ベースと手動バージョンバンプの比較<a class="headerlink" href="#semantic-release-vs-version-control-based-vs-manual-version-bumping" title="Link to this heading">#</a></h3>
-<p>Generally semantic release and version control system tools
-can be setup to run automatically on GitHub using GitHub Actions.
-This means that you can create a workflow where a GitHub release
-and associated new version tag is used to trigger an automated
-build that:</p>
+<p>一般的に、セマンティックリリースツールやバージョン管理システムツールは、GitHub Actionsを使ってGitHub上で自動的に実行するように設定することができる。 つまり、GitHub のリリースとそれに関連する新しいバージョンのタグを使って、自動ビルドのトリガーとなるワークフローを作れるということです:</p>
 <ol class="arabic simple">
 <li><p>パッケージをビルドし、新しいタグに従ってバージョンを更新します。</p></li>
 <li><p>ビルドをテストし、テスト用PyPIに公開します。</p></li>
@@ -621,9 +617,7 @@ build that:</p>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>Bumping a package version refers to the step of increasing the package
-version after a set number of changes have been made to it. For example,
-you might bump from version 0.8 to 0.9 of a package or from 0.9 to 1.0.</p>
+<p>パッケージのバージョンを上げるとは、パッケージのバージョンに一定の 変更が加えられた後に、そのパッケージのバージョンを上げることです。 たとえば、あるパッケージのバージョン 0.8 から 0.9 にバンプしたり、0.9 から 1.0 にバンプしたりします。</p>
 <p>セマンティックバージョニングを使用する場合、3つの主な &quot;レベル&quot; が考えられます:</p>
 <p>メジャー、マイナー、パッチ。 これらの詳細については後述します。</p>
 </div>
@@ -663,8 +657,7 @@ you might bump from version 0.8 to 0.9 of a package or from 0.9 to 1.0.</p>
 <h3>ツール 2: Hatch_vcs &amp; hatchling ビルドバックエンド<a class="headerlink" href="#tool-2-hatch-vcs-hatchling-build-back-end" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://github.com/ofek/hatch-vcs">hatch_vcs</a>は、 <strong>git tags</strong> を使ってパッケージのバージョンを管理できるバージョン管理ツールです。Hatch_vcs はパッケージの現在のバージョンを追跡する <strong>_version.py</strong> ファイルをパッケージのエコシステムに作成します。</p>
 <p>Hatch はパッケージのバージョンを <code class="docutils literal notranslate"><span class="pre">_version.py</span></code> ファイルに記録しています。 Hatchが管理する単一のファイルにバージョンを保存することで、パッケージにバージョン番号の &quot;単一の真のソース&quot; 値を提供します。 これにより、パッケージのバージョンを手動で更新することに伴う潜在的なエラーを排除することができます。</p>
-<p>When you (or your CI system) build your package, hatch checks the current tag number for your package. If it has increased, it will update
-the <strong>_version.py</strong> file with the new value.</p>
+<p>あなた（またはあなたのCIシステム）がパッケージをビルドするとき、hatchはあなたのパッケージの現在のタグ番号をチェックします。 もし増加していれば、新しい値で <strong>_version.py</strong> ファイルを更新します。</p>
 <p>このように、新しいタグを作成したり、タグ付きの新しいリリースを作成してパッケージをビルドすると、Hatchは新しいタグの値にアクセスし、それを使ってパッケージのバージョンを更新します。</p>
 <p><strong>hatch_vcs</strong> を使用するには、 <strong>hatchling</strong> ビルドバックエンドを使用する必要があります。</p>
 <div class="admonition tip">
