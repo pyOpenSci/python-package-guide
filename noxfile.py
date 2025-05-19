@@ -78,7 +78,7 @@ def docs_test(session):
                 env={'SPHINX_ENV': 'production'})
     # When building the guide with additional parameters, also build the translations in RELEASE_LANGUAGES
     # with those same parameters.
-    session.notify("build-release-languages", [*TEST_PARAMETERS, *session.posargs])
+    session.notify("build-release-languages", ["production", *TEST_PARAMETERS, *session.posargs])
 
 def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
     cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
@@ -274,7 +274,6 @@ def build_release_languages(session):
     session.install("-e", ".")
     for lang in RELEASE_LANGUAGES:
         session.log(f"Building [{lang}] guide")
-        session.run(SPHINX_BUILD, *BUILD_PARAMETERS, "-D", f"language={lang}", ".", OUTPUT_DIR / lang, *session.posargs)
         if lang == 'en':
             out_dir = OUTPUT_DIR
         else:
@@ -328,6 +327,9 @@ def _sphinx_env(session) -> str:
     ``SPHINX_ENV`` environment variable, defaulting to "development"
     """
     if session.posargs and session.posargs[0] in SPHINX_ENVS:
-        return session.posargs.pop(0)
+        env = session.posargs.pop(0)
+        session.log(f"Using SPHINX_ENV={env} from posargs")
     else:
-        return os.environ.get('SPHINX_ENV', 'development')
+        env = os.environ.get('SPHINX_ENV', 'development')
+        session.log(f"Using SPHINX_ENV={env} from os.environ")
+    return env

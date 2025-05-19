@@ -1,6 +1,7 @@
 ---
-:og:description: Learn how to make your Python code installable so you can use it across projects.
+:og:description: Learn how to make your code installable as a Python package using Hatch. This lesson walks you through structuring your code and configuring pyproject.toml so others can easily install and use your package.
 :og:title: Make your Python code installable so it can be used across projects
+date: 1970-01-01
 ---
 
 # Make your Python code installable
