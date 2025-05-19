@@ -1,3 +1,9 @@
+---
+:og:description: Learn how to publish your Python package on PyPI so others can install it using pip. This lesson covers building your package, creating a PyPI account, and uploading your distribution files.
+:og:title: Publish your Python package to PyPI
+date: 1970-01-07
+---
+
 # Publish your Python package to PyPI
 
 :::{todo}

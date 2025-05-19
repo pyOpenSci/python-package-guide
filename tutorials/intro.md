@@ -1,3 +1,9 @@
+---
+:og:description: This page outlines the key steps to create, document, and share a high-quality scientific Python package. Here you will also get an overview of the pyOpenSci packaging guide and what you’ll learn.
+:og:title: Python packaging 101
+date: 1970-01-05
+---
+
 (packaging-101)=
 # Python packaging 101
 
