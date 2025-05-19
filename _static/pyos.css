@@ -179,7 +179,7 @@ ugly scrollbar to show all the time
 
 html[data-theme="light"] {
   --pst-color-primary: var(--pyos-color-primary);
-  --pst-color-primary-text: #fff;
+  --pst-color-primary-text: #272424;
   --pst-color-primary-highlight: #053f49;
   --sd-color-primary: var(--pst-color-primary);
   --sd-color-primary-text: var(--pst-color-primary-text);
@@ -405,7 +405,7 @@ aside.footnote {
 /* Make the first column in a table a "header" like thing */
 
 /* Dark mode fix for tables */
-@media (prefers-color-scheme: dark) {
+@media (data-theme="dark") {
   td:not(.row-header):nth-child(1) {
     background-color: var(--pst-color-tbl-row); /* Adjust the dark mode color */
     color: #ffffff; /* Adjust the text color for better contrast */

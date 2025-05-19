@@ -208,7 +208,7 @@ included in the table.
 ### Package tool features table
 
 ```{csv-table}
-:header: Feature, Flit, Hatch, PDM, Poetry
+:header: Feature|Flit|Hatch|PDM|Poetry
 :widths: 36, 10,10,10,10
 :delim: "|"
 
@@ -244,7 +244,7 @@ packages them with the pure Python files.
 ### PDM Features
 
 ```{csv-table}
-:header: Feature, PDM, Notes
+:header: Feature|PDM|Notes
 :widths: 20,5,50
 :delim: "|"
 
@@ -297,7 +297,7 @@ building a basic package to use in a local workflow that doesn't require any adv
 ### Flit Features
 
 ```{csv-table}
-:header: Feature, Flit, Notes
+:header: Feature|Flit|Notes
 :widths: 20,5,50
 :delim: "|"
 
@@ -340,7 +340,7 @@ as building your documentation locally. This means that you could potentially dr
 ### Hatch features
 
 ```{csv-table}
-:header: Feature, Hatch, Notes
+:header: Feature|Hatch|Notes
 :widths: 20,5,50
 :delim: "|"
 
@@ -385,7 +385,7 @@ is currently undocumented. Thus, we don't recommend using Poetry for more comple
 ### Poetry features
 
 ```{csv-table}
-:header: Feature, Poetry, Notes
+:header: Feature|Poetry|Notes
 :widths: 20,5,50
 :delim: "|"
 
