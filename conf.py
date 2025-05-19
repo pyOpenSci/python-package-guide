@@ -160,3 +160,15 @@ ogp_social_cards = {
     "line_color": "#6D597A",
     "image": "_static/pyopensci-logo-package-guide.png",
 }
+
+# -- Additional configuration for build process ------------------------------
+
+# Use the default linkcheck ignore list
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-linkcheck_ignore
+#
+# This is a list of regular expressions that match URIs to ignore when
+# doing linkcheck. Make sure to use raw strings (r"") for regexes. Also, any added
+# item should also be included in the .lycheeignore file.
+linkcheck_ignore = [
+    r"https://github.com/",
+]
