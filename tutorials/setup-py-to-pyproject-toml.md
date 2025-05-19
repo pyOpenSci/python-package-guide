@@ -1,3 +1,9 @@
+---
+:og:description: If you’re creating a pure Python project, pyproject.toml is preferred over setup.py for packaging and configuration. Learn how to migrate from the older setup.py format to the modern pyproject.toml file. This lesson walks you through updating your package metadata and build settings to align with current Python packaging standards.
+:og:title: Using Hatch to Migrate setup.py to a pyproject.toml
+date: 1970-01-09
+---
+
 # Using Hatch to Migrate setup.py to a pyproject.toml
 
 Hatch can be particularly useful to generate your project's `pyproject.toml` if your project already has a `setup.py`.

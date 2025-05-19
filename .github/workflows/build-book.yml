@@ -20,7 +20,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
+          python-version: "3.13"
 
       - name: Upgrade pip
         run: |
@@ -68,4 +68,4 @@ jobs:
           directory: "_build/html"
           arguments: |
             --ignore-files "/.+\/_static\/.+/,/genindex.html/"
-            --ignore-status-codes "404, 403, 429, 503"
+            --ignore-status-codes "0, 200, 403, 429, 503"
