@@ -22,9 +22,8 @@ def calculate_translation_percentage(po_path : Path, locale : str) -> dict:
     Returns
     -------
     dict
-        A dictionary containing the total number of strings, the number
-        of translated strings, the number of untranslated strings, and
-        the translation percentage.
+        A dictionary containing the total number of strings, translated strings,
+        fuzzy strings, untranslated strings, and the translation percentage.
     """
     with open(po_path, "r", encoding="utf-8") as f:
         catalog = pofile.read_po(f, locale=locale)
