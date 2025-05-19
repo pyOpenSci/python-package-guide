@@ -5,7 +5,7 @@ bibliography:
 
 (license-file)=
 
-# License files for scientific Python open source software
+# License files for Python open source software
 
 :::{button-link} <https://www.pyopensci.org/about-peer-review/>
 :color: primary
@@ -69,7 +69,7 @@ in some cases the license that you want is not available through that online
 process.
 
 :::{admonition} License recommendations from the SciPy package
-[The SciPy documentation has an excellent overview of licenses.](https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing). One of the key elements
+[The SciPy documentation has an excellent overview of licenses.](https://docs.scipy.org/doc/scipy/dev/core-dev/index.html#licensing) One of the key elements
 that these docs recommend is ensuring that the license that you select is
 compatible with licenses used in many parts of the scientific Python ecosystem.
 Below is a highlight of this text which outlines license that are compatible

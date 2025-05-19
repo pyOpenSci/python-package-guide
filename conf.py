@@ -10,12 +10,17 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
 from datetime import datetime
 import subprocess
 import os
+from typing import TYPE_CHECKING
+from _ext import rss
+
+if TYPE_CHECKING:
+    from sphinx.application import Sphinx
 
 current_year = datetime.now().year
 organization_name = "pyOpenSci"
@@ -96,9 +101,10 @@ favicons = [
 ]
 
 html_baseurl = "https://www.pyopensci.org/python-package-guide/"
+lang_selector_baseurl = "/python-package-guide/"
 if not sphinx_env == "production":
     # for links in language selector when developing locally
-    html_baseurl = "/"
+    lang_selector_baseurl = "/"
 
 html_theme_options = {
     "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
@@ -148,7 +154,7 @@ html_context = {
     "github_version": "main",
     "language": language,
     "languages": build_languages,
-    "baseurl": html_baseurl,
+    "baseurl": lang_selector_baseurl,
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -198,3 +204,14 @@ ogp_social_cards = {
 bibtex_bibfiles = ["bibliography.bib"]
 # myst complains about bibtex footnotes because of render order
 suppress_warnings = ["myst.footnote"]
+
+
+def _post_build(app: "Sphinx", exception: Exception | None) -> None:
+    rss.generate_tutorials_feed(app)
+
+
+def setup(app: "Sphinx"):
+    app.connect("build-finished", _post_build)
+
+    # Parallel safety: https://www.sphinx-doc.org/en/master/extdev/index.html#extension-metadata
+    return {"parallel_read_safe": True, "parallel_write_safe": True}
