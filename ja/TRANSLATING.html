@@ -523,7 +523,7 @@
 <li><p>このガイドはもともと英語で書かれており、MarkDownのファイル群に保存されています。</p></li>
 <li><p>ソースファイルはSphinxによって処理され、各ターゲット言語のフォルダに格納された翻訳ファイルのセットを生成します。</p></li>
 <li><p>（あなたのような!）貢献者は、これらのファイルをさまざまな言語に翻訳します。</p></li>
-<li><p>ガイドがビルドされると、Sphinxはオリジナルの言語(英語)と、コンフィグレーションで定義された言語の翻訳版のガイドを作成します。</p></li>
+<li><p>ガイドがビルドされると、Sphinxはオリジナルの言語(英語)と、設定で定義された言語の翻訳版のガイドを作成します。</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
@@ -561,13 +561,13 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>You can find a list of the two-letter Sphinx language option <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language">here</a>.</p>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language">ここで</a> 、2文字のSphinx言語オプションのリストを見つけることができます。</p>
 </div>
 </section>
 <section id="preparing-the-translation-files">
 <h2>翻訳ファイルの準備<a class="headerlink" href="#preparing-the-translation-files" title="Link to this heading">#</a></h2>
 <p>翻訳ファイルには、英語の原文と翻訳文を入力するスペースが含まれています。 翻訳を始める前に、翻訳ファイルがガイドの最新の変更に対応していることを確認する必要があります。</p>
-<p>You can do this by running the following command, replacing LANG by the language code you plan to work on (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code> for Spanish):</p>
+<p>以下のコマンドを実行し、LANGを作業する予定の言語コードに置き換えてください (例えばスペイン語は <code class="docutils literal notranslate"><span class="pre">es</span></code>):</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nox<span class="w"> </span>-s<span class="w"> </span>update-language<span class="w"> </span>--<span class="w"> </span>LANG
 </pre></div>
 </div>
@@ -635,7 +635,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </pre></div>
 </div>
 <p>エントリーの最初の行は <code class="docutils literal notranslate"><span class="pre">#:</span></code> で始まり、テキストが抽出された元のソースファイルと行番号への参照となります。 この情報は、ガイド内のテキストの文脈を見つけるのに便利です。</p>
-<p><code class="docutils literal notranslate"><span class="pre">msgid</span></code> フィールドには翻訳が必要な元の英語のテキストを入力します。 <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> フィールドには翻訳されたテキストを入力します。 このフィールドには他の人がすでに翻訳したテキストが入っているかもしれません。</p>
+<p><code class="docutils literal notranslate"><span class="pre">msgid</span></code> フィールドには翻訳が必要な元の英語のテキストを入力します。 <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> フィールドには翻訳されたテキストを入力します。 このフィールドには他の人がすでに翻訳したテキストが入るかもしれません。</p>
 <div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:1</span>
 <span class="nv">msgid</span> <span class="s">&quot;pyOpenSci Python Package Guide&quot;</span>
 <span class="nv">msgstr</span> <span class="s">&quot;La guía de paquetes de Python de pyOpenSci&quot;</span>
@@ -656,7 +656,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </pre></div>
 </div>
 <p>英語のテキストには、太字や斜体などのMarkdown書式が含まれていることがあります。翻訳されたテキストで書式を維持する必要があります、フォーマットタグの中のテキストを翻訳してください。</p>
-<p>英文テキストには、ガイドの他のセクションや外部リソースへのリンクが含まれている場合があります。リンクは翻訳されたテキストの中に残し、必要に応じてリンクテキストを更新してください。</p>
+<p>英文テキストには、ガイドの他のセクションや外部リソースへのリンクが含まれている場合があります。リンクは翻訳されたテキストの中に残してください、必要に応じてリンクテキストを更新してください。</p>
 <div class="highlight-po notranslate"><div class="highlight"><pre><span></span><span class="kd">#: ../../index.md:75</span>
 <span class="nv">msgid</span> <span class="s">&quot;[What is a Python package?](/tutorials/intro)&quot;</span>
 <span class="nv">msgstr</span> <span class="s">&quot;[¿Que es un paquete de Python?](/tutorials/intro)&quot;</span>
@@ -684,8 +684,8 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </div>
 </section>
 <section id="building-the-translated-documentation">
-<h2>翻訳されたドキュメントのビルド<a class="headerlink" href="#building-the-translated-documentation" title="Link to this heading">#</a></h2>
-<p>Once you finished translating or when you want to check the translation in context, you can build the guide locally on your computer, using the following command, replacing LANG by the proper language code (e.g., <code class="docutils literal notranslate"><span class="pre">es</span></code> for Spanish)</p>
+<h2>翻訳されたドキュメントの構築<a class="headerlink" href="#building-the-translated-documentation" title="Link to this heading">#</a></h2>
+<p>翻訳が終わったら、あるいは文脈の中で翻訳をチェックしたい場合は、次のコマンドを使用して、ガイドをコンピュータにローカルに構築することができます、 LANGを適切な言語コードに置き換えます (例: スペイン語なら <code class="docutils literal notranslate"><span class="pre">es</span></code> )。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>build-language<span class="w"> </span>--<span class="w"> </span>LANG
 </pre></div>
 </div>
@@ -695,7 +695,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>docs-live-lang<span class="w"> </span>--<span class="w"> </span>es
 </pre></div>
 </div>
-<p>Note the <code class="docutils literal notranslate"><span class="pre">--</span></code> before the language code, it indicates that the following arguments should be passed into the nox session and not be interpreted directly by nox. If you forget the <code class="docutils literal notranslate"><span class="pre">--</span></code>, nox will look instead for a session named 'es' and raise an error that it does not exist.</p>
+<p>言語コードの前の <code class="docutils literal notranslate"><span class="pre">--</span></code> に注意してください。これは次の引数がnoxセッションに渡され、noxによって直接解釈されないことを示します。 もし <code class="docutils literal notranslate"><span class="pre">--</span></code> を忘れると、noxは代わりに 'es' という名前のセッションを探し、それが存在しないとエラーを発生させます。</p>
 <p>このコマンドは <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> を使って、ローカルのWebサーバーを起動し、そこでガイドの翻訳版にアクセスすることができます。 ブラウザで <code class="docutils literal notranslate"><span class="pre">http://localhost:8000</span></code> に移動して、ガイドを開くことができます。</p>
 <p>これは、翻訳ファイルに変更を加えながら、翻訳版のガイドがどのように見えるかを確認するのに最適な方法です。</p>
 </section>
@@ -719,7 +719,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 <p>翻訳のPRを提出する際は、1つの言語に対する変更のみを記載してください。 複数の言語で翻訳した場合は、言語ごとにPRを提出してください。</p>
 </div>
 <p>翻訳PRには、識別とレビューを容易にするため、言語を示すラベルが付けられます。 例えば、スペイン語翻訳への貢献には 'lang-es' というタグが付けられます。</p>
-<p>TODO: This tagging could be automated with a GitHub Actions.</p>
+<p>TODO: このタグ付けは、GitHub Actionsで自動化できるかもしれません。</p>
 <p>PRを提出する際には、あなたが行った変更についての簡単な説明と、レビュアーにとって参考になりそうな文脈（新しい文字列を翻訳した、あいまいなエントリーを見直した、誤字脱字を修正した、など）を必ず含めてください。</p>
 </section>
 <section id="the-review-process">
@@ -732,8 +732,8 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </section>
 <section id="the-release-process">
 <h2>リリースのプロセス<a class="headerlink" href="#the-release-process" title="Link to this heading">#</a></h2>
-<p>言語がリリース準備できたら、メンテナは <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> 設定ファイルの <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> リストに言語コードを追加します。</p>
-<p>ガイドがCIでリリース用にビルドされると、Sphinxは <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> リストにある言語の翻訳版のガイドも生成します。</p>
+<p>言語がライブにする準備ができたら、メンテナは <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code> 設定ファイルの <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> リストに言語コードを追加します。</p>
+<p>ガイドがCIでリリースするためにビルドされると、Sphinxは <code class="docutils literal notranslate"><span class="pre">RELEASE_LANGUAGES</span></code> リストにある言語の翻訳版のガイドも生成します。</p>
 <p>Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available at: <code class="docutils literal notranslate"><span class="pre">https://www.pyopensci.org/python-package-guide/es/</span></code> when it is published online.</p>
 </section>
 <section id="frequently-asked-questions-faq">
@@ -744,7 +744,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </section>
 <section id="what-happens-when-a-string-has-changed-in-the-original-english-text">
 <h3>英語の原文で文字列が変更された場合はどうなりますか？<a class="headerlink" href="#what-happens-when-a-string-has-changed-in-the-original-english-text" title="Link to this heading">#</a></h3>
-<p>If a string has changed in the original English version, it will be marked as <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> in the translation file the next time it is updated (<code class="docutils literal notranslate"><span class="pre">update-language</span></code>, <code class="docutils literal notranslate"><span class="pre">update-all-languages</span></code>, or <code class="docutils literal notranslate"><span class="pre">update-all-release-languages</span></code>). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> tag.</p>
+<p>オリジナルの英語版で文字列が変更された場合、次に翻訳ファイルが更新されるとき (<code class="docutils literal notranslate"><span class="pre">update-language</span></code>, <code class="docutils literal notranslate"><span class="pre">update-all-languages</span></code>, または <code class="docutils literal notranslate"><span class="pre">update-all-release-languages</span></code>) に <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> としてマークされます。 翻訳に携わっているコントリビューターは、 <code class="docutils literal notranslate"><span class="pre">fuzzy</span></code> タグを削除する前に、あいまいなエントリを確認し、正確であることを確認するために必要な変更を行うことができます。</p>
 </section>
 <section id="how-do-i-handle-links-in-the-translated-text">
 <h3>翻訳されたテキスト内のリンクはどのように扱えばいいですか？<a class="headerlink" href="#how-do-i-handle-links-in-the-translated-text" title="Link to this heading">#</a></h3>
@@ -783,8 +783,8 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 </section>
 <section id="how-can-i-get-help-with-my-translation">
 <h3>翻訳を手伝ってもらうにはどうすればよいですか？<a class="headerlink" href="#how-can-i-get-help-with-my-translation" title="Link to this heading">#</a></h3>
-<p>If you have any questions or need help with your translation, you can create an <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue</a> in the <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide">Packaging Guide repository</a></p>
-<p>You can also ask in the PyOpenSci Discord server (<a class="reference external" href="https://discord.gg/NQtTTqtv">click here</a> to join), you will find a general channel for questions related to our workflow, processes, and tools (translation-general) and channels for each of the languages we are working on (spanish-translation, japanese-translation, etc).</p>
+<p>翻訳について質問がある場合や助けが必要な場合は、 <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide">パッケージングガイドのリポジトリ</a> に <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue</a> を作成してください。</p>
+<p>PyOpenSci Discord サーバでも質問できます (参加は <a class="reference external" href="https://discord.gg/NQtTTqtv">こちら</a>) 、私たちのワークフロー、プロセス、ツールに関する一般的な質問用のチャンネル (translation-general) と、私たちが取り組んでいる各言語のチャンネル (spanish-translation、japanese-translationなど) があります。</p>
 </section>
 </section>
 </section>
@@ -824,7 +824,7 @@ locales/es/LC_MESSAGES/index.po:<span class="w"> </span><span class="m">88</span
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-translation-files">翻訳ファイルの準備</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-a-translation">翻訳作業</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-translation-files">翻訳ファイルの編集</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-translated-documentation">翻訳されたドキュメントのビルド</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-translated-documentation">翻訳されたドキュメントの構築</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-a-pr-for-your-contribution">貢献PRの提出</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-review-process">レビュープロセス</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-release-process">リリースのプロセス</a></li>
