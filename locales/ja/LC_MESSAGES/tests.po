@@ -1,17 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, pyOpenSci
+# Copyright (C) 2025, pyOpenSci
 # This file is distributed under the same license as the pyOpenSci Python
 # Package Guide package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
+# Translators:
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2025
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pyOpenSci Python Package Guide \n"
+"Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-17 22:50+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-20 11:32+0900\n"
+"PO-Revision-Date: 2025-04-14 18:12+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,9 +23,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../tests/code-cov.md:1
-#, fuzzy
 msgid "Code coverage for your Python package test suite"
-msgstr "Pythonパッケージのテストを書く"
+msgstr "Pythonパッケージのテストスイートのコードカバレッジ"
 
 #: ../../tests/code-cov.md:3
 msgid ""
@@ -32,58 +33,61 @@ msgid ""
 "codebase, but it’s not a guarantee of quality. Below, we outline key "
 "considerations for using code coverage effectively."
 msgstr ""
+"コードカバレッジは、テスト中にパッケージのコードがどれだけ実行されるかを測定します。 "
+"高いカバレッジを達成することは、コードベースの信頼性を確保するのに役立ちますが、品質を保証するものではありません。 "
+"以下に、コードカバレッジを効果的に使用するための主な検討事項を概説します。"
 
 #: ../../tests/code-cov.md:8
 msgid "Why aim for high code coverage?"
-msgstr ""
+msgstr "なぜ高いコードカバレッジを目指すのか？"
 
 #: ../../tests/code-cov.md:10
 msgid ""
 "A good practice is to ensure that every line of your code runs at least "
 "once during your test suite. This helps you:"
-msgstr ""
+msgstr "良い習慣は、テストスイートの間に、コードのすべての行が少なくとも一度は実行されるようにすることです。これはあなたを助けます:"
 
 #: ../../tests/code-cov.md:13
 msgid "Identify untested parts of your codebase."
-msgstr ""
+msgstr "コードベースのテストされていない部分を特定します。"
 
 #: ../../tests/code-cov.md:14
 msgid "Catch bugs that might otherwise go unnoticed."
-msgstr ""
+msgstr "他の方法では気づかれないかもしれないバグをキャッチします。"
 
 #: ../../tests/code-cov.md:15
 msgid "Build confidence in your software's stability."
-msgstr ""
+msgstr "ソフトウェアの安定性に自信を持てます。"
 
 #: ../../tests/code-cov.md:17
 msgid "Limitations of code coverage"
-msgstr ""
+msgstr "コードカバレッジの限界"
 
 #: ../../tests/code-cov.md:19
 msgid "While high code coverage is valuable, it has its limits:"
-msgstr ""
+msgstr "高いコードカバレッジは価値がありますが、それには限界があります:"
 
 #: ../../tests/code-cov.md:21
 msgid ""
 "**Difficult-to-test code:** Some parts of your code might be challenging "
 "to test, either due to complexity or limited resources."
-msgstr ""
+msgstr "**テストしにくいコード:** コードの中には、複雑さや限られたリソースのために、テストが難しい部分があるかもしれません。"
 
 #: ../../tests/code-cov.md:23
 msgid ""
 "**Missed edge cases:** Running all lines of code doesn’t guarantee that "
 "edge cases are handled correctly."
-msgstr ""
+msgstr "**見逃されたエッジケース:** すべてのコードを実行しても、エッジケースが正しく処理される保証はありません。"
 
 #: ../../tests/code-cov.md:26
 msgid ""
 "Ultimately, you should focus on how your package will be used and ensure "
 "your tests cover those scenarios adequately."
-msgstr ""
+msgstr "最終的には、パッケージがどのように使用されるかに焦点を当て、テストがそのシナリオを十分にカバーするようにしなければなりません。"
 
 #: ../../tests/code-cov.md:29
 msgid "Tools for analyzing Python package code coverage"
-msgstr ""
+msgstr "Pythonパッケージのコードカバレッジを分析するツール"
 
 #: ../../tests/code-cov.md:31
 msgid ""
@@ -95,6 +99,10 @@ msgid ""
 " (on either CodeCov or Coveralls) and using it to keep track of your code"
 " coverage."
 msgstr ""
+"コードカバレッジを分析するための一般的なサービスには、 [codecov.io](https://codecov.io/) と "
+"[coveralls.io](https://coveralls.io/) があります。 "
+"これらのプロジェクトはオープンソースのツールで無料であり、テスト中にコードベースがどの程度カバーされているかを示すダッシュボードを提供してくれます。"
+" (CodeCovまたはCoverallsで) アカウントを設定し、コード・カバレッジを追跡するために使用することをお勧めします。"
 
 #: ../../tests/code-cov.md:33
 #, python-format
@@ -105,6 +113,9 @@ msgid ""
 "the image, you can see what branch is being evaluated and the path to the"
 " repository."
 msgstr ""
+"code covサービスのスクリーンショット - stravalibパッケージのテストカバレッジを示します。 "
+"この画像は、パッケージモジュールのリストと、関連する行数およびテスト対象行の割合を示しています。 "
+"画像の上部には、評価対象のブランチとリポジトリへのパスが表示されています。"
 
 #: ../../tests/code-cov.md:38
 msgid ""
@@ -116,18 +127,21 @@ msgid ""
 "\"covered\". It, however, will not evaluate things like integration tests"
 " and end-to-end workflows."
 msgstr ""
+"CodeCovプラットフォームは、コードカバレッジを視覚的に追跡したい場合に便利なツールです。これを使えば、 **pytest-cov** "
+"拡張機能で得られるのと同じサマリー情報を得られるだけではありません。また、テストの対象になっているラインとそうでないラインを確認することもできます。コードカバレッジは、単体テストの評価や、パッケージのコードがどれだけ"
+" \"カバー\" されているかを評価するのに役立ちます。しかし、統合テストやエンドツーエンドのワークフローなどは評価されません。"
 
 #: ../../tests/code-cov.md:43
 msgid "Typing & MyPy coverage"
-msgstr ""
+msgstr "型 & MyPyのカバレッジ"
 
 #: ../../tests/code-cov.md:44
 msgid "You can also create and upload typing reports to CodeCov."
-msgstr ""
+msgstr "また、型レポートを作成し、CodeCovにアップロードすることもできます。"
 
 #: ../../tests/code-cov.md:47
 msgid "Exporting Local Coverage Reports"
-msgstr ""
+msgstr "ローカルカバレッジレポートのエクスポート"
 
 #: ../../tests/code-cov.md:49
 msgid ""
@@ -136,35 +150,38 @@ msgid ""
 " be especially useful if you want to create reports in Markdown or HTML "
 "format for offline use or documentation."
 msgstr ""
+"CodeCovやCoverallsのようなサービスを利用するだけでなく、 **coverage.py** "
+"ツールを使って直接ローカルカバレッジレポートを作成することもできます。 "
+"これは、オフラインでの使用や文書化のためにMarkdownやHTML形式でレポートを作成したい場合に特に便利です。"
 
 #: ../../tests/code-cov.md:51
 msgid "To generate a coverage report in **Markdown** format, run:"
-msgstr ""
+msgstr "カバレッジレポートを **Markdown** 形式で作成するには、以下を実行します:"
 
 #: ../../tests/code-cov.md:56
 msgid ""
 "This command will produce a Markdown-formatted coverage summary that you "
 "can easily include in project documentation or share with your team."
-msgstr ""
+msgstr "このコマンドはMarkdown形式のカバレッジサマリーを作成し、プロジェクトのドキュメントに簡単に記載したり、チームと共有したりすることができます。"
 
 #: ../../tests/code-cov.md:58
 msgid ""
 "To generate an HTML report that provides a detailed, interactive view of "
 "which lines are covered, use:"
-msgstr ""
+msgstr "どの行がカバーされているか、詳細でインタラクティブなビューを提供するHTMLレポートを生成するには、以下を使用します:"
 
 #: ../../tests/code-cov.md:64
 msgid ""
 "The generated HTML report will be saved in a directory named htmlcov by "
 "default. Open the index.html file in your browser to explore your "
 "coverage results."
-msgstr ""
+msgstr "生成されたHTMLレポートは、デフォルトでhtmlcovというディレクトリに保存されます。index.htmlファイルをブラウザで開き、カバレッジ結果をご覧ください。"
 
 #: ../../tests/code-cov.md:66
 msgid ""
 "These local reports are an excellent way to quickly review coverage "
 "without setting up an external service."
-msgstr ""
+msgstr "このようなローカルレポートは、外部サービスを立ち上げることなくカバレッジを素早く確認する優れた方法です。"
 
 #: ../../tests/index.md:73
 msgid "Intro"
@@ -188,7 +205,7 @@ msgstr "オンラインでテストを実行する(CIを使用する)"
 
 #: ../../tests/index.md:73
 msgid "Code coverage"
-msgstr ""
+msgstr "コードカバレッジ"
 
 #: ../../tests/index.md:73
 msgid "Create & Run Tests"
@@ -208,7 +225,6 @@ msgstr ""
 "パッケージの重要な一部です。なぜなら、テストはパッケージが期待通りに動作しているかどうかを確認するための一連のチェック機能を提供するからです。"
 
 #: ../../tests/index.md:8
-#, fuzzy
 msgid ""
 "In this section, you will learn more about the importance of writing "
 "tests for your Python package and how you can set up infrastructure to "
@@ -263,14 +279,13 @@ msgid "✨ Run tests online (using CI) ✨"
 msgstr "✨オンラインでテストを実行する(CIを使用する)✨"
 
 #: ../../tests/index.md:59
-#, fuzzy
 msgid ""
 "Continuous integration platforms such as GitHub Actions can be useful for"
 " running your tests across both different Python versions and different "
 "operating systems. Learn about setting up tests to run in Continuous "
 "Integration here."
 msgstr ""
-"GitHub アクションのような継続的インテグレーションプラットフォームは、Python "
+"GitHub Actionsのような継続的インテグレーションプラットフォームは、Python "
 "のバージョンやオペレーティングシステムの違いを問わずテストを実行するのに便利です。 "
 "継続的インテグレーションで実行するテストの設定については、こちらを参照してください。"
 
@@ -323,6 +338,7 @@ msgid ""
 msgstr "このページでは、隔離された環境でテストを実行したり、Python のバージョンを越えてテストを実行したりするために使えるツールについて学びます。"
 
 #: ../../tests/run-tests.md:19
+#, fuzzy
 msgid "Tools to run your tests"
 msgstr "テストを実行するためのツール"
 
@@ -593,16 +609,13 @@ msgid "Other automation tools you'll see in the wild"
 msgstr "その他の自動化ツール"
 
 #: ../../tests/run-tests.md:125
-#, fuzzy
 msgid ""
 "**[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an "
 "automation tool that supports common steps such as building "
 "documentation, running tests across various versions of Python, and more."
 msgstr ""
 "**[Tox](https://tox.wiki/en/latest/index.html#useful-links)** "
-"は自動化ツールで、ドキュメントのビルドや、Pythonの様々なバージョン間でのテストの実行など、一般的なステップをサポートしています。 "
-"[plasmaPyのドキュメントによいtoxの概要があります](https://docs.plasmapy.org/en/stable/contributing/testing_guide.html"
-"#using-tox) 。"
+"は自動化ツールで、ドキュメントのビルドや、Pythonの様々なバージョン間でのテストの実行など、一般的なステップをサポートしています。"
 
 #: ../../tests/run-tests.md:127
 msgid ""
@@ -1075,12 +1088,10 @@ msgstr ""
 "開発環境の構築、テストの実行、ドキュメントのビルドをローカルで行うことなく、コードやドキュメントの修正などに貢献することができます。"
 
 #: ../../tests/tests-ci.md:22
-#, fuzzy
 msgid "Example GitHub Actions that runs tests"
 msgstr "テストを実行する GitHub Actionsの例"
 
 #: ../../tests/tests-ci.md:24
-#, fuzzy
 msgid ""
 "Below is an example GitHub Actions that runs tests using nox across both "
 "Windows, Mac and Linux and on Python versions 3.9-3.11."
@@ -1186,7 +1197,6 @@ msgstr ""
 "パッケージが進化するにつれて、テストは、時間の経過とともに変更を加えても、コードが期待通りに動作し続けることを保証します。こうして、テストを書くときに将来の自分を助けることになります。"
 
 #: ../../tests/write-tests.md:21
-#, fuzzy
 msgid ""
 "**Easier pull request reviews:** By running your tests in a CI framework "
 "such as GitHub Actions, each time you or a contributor makes a change to "
@@ -1194,7 +1204,7 @@ msgid ""
 "your code base. This ensures that your software behaves the way you "
 "expect it to."
 msgstr ""
-"**より簡単なプルリクエストのレビュー:** GitHub actions のような CI "
+"**より簡単なプルリクエストのレビュー:** GitHub Actionsのような CI "
 "フレームワークでテストを実行することで、あなたや貢献者がコードベースに変更を加えるたびに、コードベースの問題や変更点をキャッチすることができます。"
 " これにより、あなたのソフトウェアが期待通りに動作することが保証されます。"
 
