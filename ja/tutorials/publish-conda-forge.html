@@ -751,7 +751,7 @@ example<span class="w">         </span>pyospackage
 <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span>
 
 <span class="nt">source</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/</span><span class="cp">{{</span> <span class="nv">name</span><span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/pyospackage-</span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">.tar.gz</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.org/packages/source/</span><span class="cp">{{</span> <span class="nv">name</span><span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="cp">{{</span> <span class="nv">name.replace</span><span class="o">(</span><span class="s1">&#39;-&#39;</span><span class="o">,</span> <span class="s1">&#39;_&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">-</span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">.tar.gz</span>
 <span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">43ec82da3a10752a5dbf2f0ef742e357803a3ddb400005f87e86534685bfb8a7</span>
 
 <span class="nt">build</span><span class="p">:</span>
@@ -887,7 +887,7 @@ The home item is expected in the about section.
 </div></blockquote>
 <p class="sd-card-text"><strong>翻訳:</strong> レシピのビルド番号は、パッケージのソース配布場所のすぐ下にあります。 <code class="docutils literal notranslate"><span class="pre">number:</span> <span class="pre">0</span></code> は、レシピのそのセクションに表示されるべきものです。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source:
-<span class="w"> </span>url:<span class="w"> </span>https://pypi.io/packages/source/<span class="o">{{</span><span class="w"> </span>name<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">}}</span>/<span class="o">{{</span><span class="w"> </span>name<span class="w"> </span><span class="o">}}</span>/pyospackage-<span class="o">{{</span><span class="w"> </span>version<span class="w"> </span><span class="o">}}</span>.tar.gz
+<span class="w"> </span>url:<span class="w"> </span>https://pypi.org/packages/source/<span class="o">{{</span><span class="w"> </span>name<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">}}</span>/<span class="o">{{</span><span class="w"> </span>name<span class="w"> </span><span class="o">}}</span>/<span class="o">{{</span><span class="w"> </span>name.replace<span class="o">(</span><span class="s1">&#39;-&#39;</span>,<span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">}}</span>-<span class="o">{{</span><span class="w"> </span>version<span class="w"> </span><span class="o">}}</span>.tar.gz
 <span class="w"> </span>sha256:<span class="w"> </span>01e31f5521973710d0d91b15a94491d4f8f8f54566322110098c0f2381dd09ab
 
 build:
@@ -902,7 +902,7 @@ build:
 </ul>
 </div></blockquote>
 <p class="sd-card-text"><strong>翻訳:</strong> ここでcondaは、あなたのGitHubリポジトリ配布へのリンクではなく、PyPI上のソース配布へのリンクを提供することを望んでいます。レシピのSourceセクションに <code class="docutils literal notranslate"><span class="pre">url:</span></code> セクションがあり、tar.gzで終わるPyPIのURLを提供していることに注意してください。これは、conda-forgeが使用するソースディストリビューションへのリンクです。</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ version }}.tar.gz</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace(&#39;-&#39;, &#39;_&#39;) }}-{{ version }}.tar.gz</span>
 </pre></div>
 </div>
 <blockquote>

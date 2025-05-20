@@ -759,7 +759,7 @@ where it saved the recipe file.</p>
 <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span>
 
 <span class="nt">source</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/</span><span class="cp">{{</span> <span class="nv">name</span><span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/pyospackage-</span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">.tar.gz</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.org/packages/source/</span><span class="cp">{{</span> <span class="nv">name</span><span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="cp">{{</span> <span class="nv">name.replace</span><span class="o">(</span><span class="s1">&#39;-&#39;</span><span class="o">,</span> <span class="s1">&#39;_&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">-</span><span class="cp">{{</span> <span class="nv">version</span> <span class="cp">}}</span><span class="l l-Scalar l-Scalar-Plain">.tar.gz</span>
 <span class="w">  </span><span class="nt">sha256</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">43ec82da3a10752a5dbf2f0ef742e357803a3ddb400005f87e86534685bfb8a7</span>
 
 <span class="nt">build</span><span class="p">:</span>
@@ -898,7 +898,7 @@ C++, then be sure to include the proper licenses for those extensions in your me
 </div></blockquote>
 <p class="sd-card-text"><strong>Translation:</strong> The build number in your recipe is right below the source location of your package’s source distribution. <code class="docutils literal notranslate"><span class="pre">number:</span> <span class="pre">0</span></code> is what you should see in that section of your recipe.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>source:
-<span class="w"> </span>url:<span class="w"> </span>https://pypi.io/packages/source/<span class="o">{{</span><span class="w"> </span>name<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">}}</span>/<span class="o">{{</span><span class="w"> </span>name<span class="w"> </span><span class="o">}}</span>/pyospackage-<span class="o">{{</span><span class="w"> </span>version<span class="w"> </span><span class="o">}}</span>.tar.gz
+<span class="w"> </span>url:<span class="w"> </span>https://pypi.org/packages/source/<span class="o">{{</span><span class="w"> </span>name<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">}}</span>/<span class="o">{{</span><span class="w"> </span>name<span class="w"> </span><span class="o">}}</span>/<span class="o">{{</span><span class="w"> </span>name.replace<span class="o">(</span><span class="s1">&#39;-&#39;</span>,<span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">}}</span>-<span class="o">{{</span><span class="w"> </span>version<span class="w"> </span><span class="o">}}</span>.tar.gz
 <span class="w"> </span>sha256:<span class="w"> </span>01e31f5521973710d0d91b15a94491d4f8f8f54566322110098c0f2381dd09ab
 
 build:
@@ -913,7 +913,7 @@ build:
 </ul>
 </div></blockquote>
 <p class="sd-card-text"><strong>Translation:</strong> Here conda wants you to provide a link to the source distribution on PyPI rather than a link to your GitHub repository distribution. Notice above in the Source section of your recipe there is a <code class="docutils literal notranslate"><span class="pre">url:</span></code> section that provides a PyPI url that ends in tar.gz. That is a link to your source distribution that conda-forge will use.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyospackage-{{ version }}.tar.gz</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace(&#39;-&#39;, &#39;_&#39;) }}-{{ version }}.tar.gz</span>
 </pre></div>
 </div>
 <blockquote>
