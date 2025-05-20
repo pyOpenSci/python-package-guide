@@ -307,7 +307,7 @@ The `requires-python` field helps pip identify which Python versions that your p
 It is set to a single value.
 The [packaging specification](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python) defines`requires-python` as a string that uses version specifiers. Most projects will specify the oldest Python version supported by the package. In some advanced cases, an upper bound is set to indicate which future Python versions, if any, will be supported.
 
-:::{admonition} But how do I figure out which Python versions I should support? 
+:::{admonition} But how do I figure out which Python versions I should support?
 :class: tip
 Good question. The Python developer guide provides a [status page](https://devguide.python.org/versions/) (and a handy visualization) that explains the status of each Python release. Python releases go through several different phases that are explained in [PEP 602](https://peps.python.org/pep-0602/).
 
