@@ -718,25 +718,24 @@ safely learn how to publish a package without accidentally “releasing” your 
 <li><p>Search on <a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> (and also on <a class="reference external" href="https://pypi.org/">https://pypi.org/</a>) to ensure that the package name that you have selected doesn’t already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it’s unique.</p></li>
 </ol>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
-<span class="sd-summary-text">Renaming your project before publishing</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="tip admonition">
+<p class="admonition-title">How to rename your Python package if the name is already taken in (test) PyPI</p>
 <p class="rubric" id="required">Required</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Search your publishing location(s) to make sure your new name isn’t taken (<a class="reference external" href="https://test.pypi.org/">TestPyPI</a>, <a class="reference external" href="https://pypi.org/">PyPI</a>, <a class="reference external" href="https://conda-forge.org/packages/">conda-forge</a>)</p></li>
-<li><p class="sd-card-text">Update the project name in your pyproject.toml file (e.g. <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;pyospackage_yourNameHere&quot;</span></code>)</p></li>
-<li><p class="sd-card-text">Update the module folder name to be the same (e.g. <code class="docutils literal notranslate"><span class="pre">src/pyospackage_yourNameHere</span></code>)</p></li>
-<li><p class="sd-card-text">Rebuild your project (<code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>)</p></li>
-<li><p class="sd-card-text">Publish your package to capture the name (continue this tutorial!)</p></li>
+<li><p>Search your publishing location(s) to make sure your new name isn’t taken (<a class="reference external" href="https://test.pypi.org/">TestPyPI</a>, <a class="reference external" href="https://pypi.org/">PyPI</a>, <a class="reference external" href="https://conda-forge.org/packages/">conda-forge</a>)</p></li>
+<li><p>Update the project name in your pyproject.toml file (e.g. <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;pyospackage_yourNameHere&quot;</span></code>)</p></li>
+<li><p>Update the module folder name to be the same (e.g. <code class="docutils literal notranslate"><span class="pre">src/pyospackage_yourNameHere</span></code>)</p></li>
+<li><p>Rebuild your project (<code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>)</p></li>
+<li><p>Publish your package to capture the name (continue this tutorial!)</p></li>
 </ol>
 <p class="rubric" id="recommended">Recommended</p>
 <ul class="simple">
-<li><p class="sd-card-text">Update the GitHub repository name to align with the new package name</p></li>
-<li><p class="sd-card-text">Update your local project folder to match the new package name (e.g. <code class="docutils literal notranslate"><span class="pre">pyospackage_yourNameHere/src</span></code>)</p></li>
-<li><p class="sd-card-text">Update mentions of your repository name in other files (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>)</p></li>
+<li><p>Update the GitHub repository name to align with the new package name</p></li>
+<li><p>Update your local project folder to match the new package name (e.g. <code class="docutils literal notranslate"><span class="pre">pyospackage_yourNameHere/src</span></code>)</p></li>
+<li><p>Update mentions of your repository name in other files (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>)</p></li>
 </ul>
 </div>
-</details><figure class="align-default" id="test-pypi-search">
+<figure class="align-default" id="test-pypi-search">
 <a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="This is a screenshot of the TestPyPI website. At the top in the search bar, you can see the search for pyosPackage. The search return says there were no results for pyosPackage Did you mean probpackage" src="../_images/testpypi-search.png" style="width: 700px;" />
 </a>
 <figcaption>

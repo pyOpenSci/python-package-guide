@@ -702,25 +702,24 @@ dist/pyospackage-0.1-py3-none-any.whl
 <li><p><a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> で検索して ( <a class="reference external" href="https://pypi.org/">https://pypi.org/</a> でも検索して) 、選択したパッケージ名がすでに存在しないことを確認してください。 テスト用のpyosPackageを使う場合は、一意であることを保証するために、パッケージ名の最後に自分の名前かGitHubのユーザー名を追加することをお勧めします。</p></li>
 </ol>
 <p>例: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
-<span class="sd-summary-text">公開前にプロジェクト名を変更する</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="tip admonition">
+<p class="admonition-title">How to rename your Python package if the name is already taken in (test) PyPI</p>
 <p class="rubric" id="required">要件</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">デプロイする (複数) 箇所を検索し、新しい名前が取られていないことを確認します (<a class="reference external" href="https://test.pypi.org/">TestPyPI</a>, <a class="reference external" href="https://pypi.org/">PyPI</a>, <a class="reference external" href="https://conda-forge.org/packages/">conda-forge</a>)</p></li>
-<li><p class="sd-card-text">pyproject.toml ファイルのプロジェクト名を更新します (e.g. <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;pyospackage_yourNameHere&quot;</span></code>)</p></li>
-<li><p class="sd-card-text">モジュールフォルダ名を同じに更新します (例: <code class="docutils literal notranslate"><span class="pre">src/pyospackage_yourNameHere</span></code>)</p></li>
-<li><p class="sd-card-text">プロジェクトの再ビルド (<code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>)</p></li>
-<li><p class="sd-card-text">パッケージを公開して名前を取得する(このチュートリアルを続けましょう!)</p></li>
+<li><p>デプロイする (複数) 箇所を検索し、新しい名前が取られていないことを確認します (<a class="reference external" href="https://test.pypi.org/">TestPyPI</a>, <a class="reference external" href="https://pypi.org/">PyPI</a>, <a class="reference external" href="https://conda-forge.org/packages/">conda-forge</a>)</p></li>
+<li><p>pyproject.toml ファイルのプロジェクト名を更新します (e.g. <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;pyospackage_yourNameHere&quot;</span></code>)</p></li>
+<li><p>モジュールフォルダ名を同じに更新します (例: <code class="docutils literal notranslate"><span class="pre">src/pyospackage_yourNameHere</span></code>)</p></li>
+<li><p>プロジェクトの再ビルド (<code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>)</p></li>
+<li><p>パッケージを公開して名前を取得する(このチュートリアルを続けましょう!)</p></li>
 </ol>
 <p class="rubric" id="recommended">おすすめ</p>
 <ul class="simple">
-<li><p class="sd-card-text">GitHubリポジトリ名を新しいパッケージ名に合わせて更新します</p></li>
-<li><p class="sd-card-text">ローカルのプロジェクトフォルダを新しいパッケージ名に合わせて更新します (例: <code class="docutils literal notranslate"><span class="pre">pyospackage_yourNameHere/src</span></code> ）。</p></li>
-<li><p class="sd-card-text">他のファイル (例えば <code class="docutils literal notranslate"><span class="pre">README.md</span></code> ) のリポジトリ名の記述を更新します。</p></li>
+<li><p>GitHubリポジトリ名を新しいパッケージ名に合わせて更新します</p></li>
+<li><p>ローカルのプロジェクトフォルダを新しいパッケージ名に合わせて更新します (例: <code class="docutils literal notranslate"><span class="pre">pyospackage_yourNameHere/src</span></code> ）。</p></li>
+<li><p>他のファイル (例えば <code class="docutils literal notranslate"><span class="pre">README.md</span></code> ) のリポジトリ名の記述を更新します。</p></li>
 </ul>
 </div>
-</details><figure class="align-default" id="test-pypi-search">
+<figure class="align-default" id="test-pypi-search">
 <a class="reference internal image-reference" href="../_images/testpypi-search.png"><img alt="これはTestPyPIのウェブサイトのスクリーンショットです。 検索バーの一番上にpyosPackageの検索があります。pyosPackage の検索結果はありませんでした。 probpackageのことですか？" src="../_images/testpypi-search.png" style="width: 700px;" />
 </a>
 <figcaption>
