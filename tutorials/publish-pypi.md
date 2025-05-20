@@ -211,7 +211,8 @@ If you have a package that you are confident belongs on PyPI, all of the steps b
 
 Example: `pyosPackage_yourNameHere`.
 
-:::{admonition} How to rename your Python package if the name is already taken in PyPI // TestPyPI
+:::{admonition} How to rename your Python package if the name is already taken in (test) PyPI
+:class: tip
 :color: secondary
 
 #### Required
