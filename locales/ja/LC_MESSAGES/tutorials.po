@@ -1,17 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, pyOpenSci
+# Copyright (C) 2025, pyOpenSci
 # This file is distributed under the same license as the pyOpenSci Python
 # Package Guide package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
+# Translators:
+# Kozo Nishida <kozo.nishida@gmail.com>, 2025
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2025
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pyOpenSci Python Package Guide \n"
+"Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-17 22:50+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-20 11:32+0900\n"
+"PO-Revision-Date: 2025-04-14 18:12+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -86,14 +89,12 @@ msgstr ""
 " `LICENSE` を設定するには、次のようにします:"
 
 #: ../../tutorials/add-license-coc.md:23
-#, fuzzy
 msgid ""
 "Create a `LICENSE` file in your project directory that specifies the "
 "license that you choose for your package."
 msgstr "プロジェクトディレクトリに `LICENSE` ファイルを作成し、パッケージに選択したライセンスを指定します。"
 
 #: ../../tutorials/add-license-coc.md:24
-#, fuzzy
 msgid "Reference that file in your `pyproject.toml` data where metadata are set."
 msgstr "メタデータが設定されている `pyproject.toml` データでそのファイルを参照します。"
 
@@ -1029,7 +1030,7 @@ msgstr "パッケージと関連コードの悪用を防ぐ"
 
 #: ../../tutorials/command-line-reference.md:1 ../../tutorials/intro.md:54
 msgid "Command Line Reference Guide"
-msgstr ""
+msgstr "コマンドラインリファレンスガイド"
 
 #: ../../tutorials/command-line-reference.md:4
 msgid ""
@@ -1038,6 +1039,9 @@ msgid ""
 "steps in the package creation process, from installing Hatch to "
 "publishing the package on PyPI and conda-forge."
 msgstr ""
+"**これらの表は何であるか:** これらの表は、Hatch のインストールから PyPI や conda-forge "
+"でのパッケージの公開まで、パッケージ作成プロセスのすべてのステップを完了するために必要なコマンドライン入力 (e.g., `pipx "
+"install hatch`, `hatch build`) をまとめたものです。"
 
 #: ../../tutorials/command-line-reference.md:6
 msgid ""
@@ -1045,6 +1049,8 @@ msgid ""
 "automated steps (e.g., create PyPI account, create PyPI API token) you "
 "have to complete throughout the package creation process."
 msgstr ""
+"**これらの表は何でないか:** これらの表は、パッケージの作成プロセスを通して完了しなければならない手動/非自動ステップ "
+"(PyPIアカウントの作成、PyPI APIトークンの作成など) をカバーしていません。"
 
 #: ../../tutorials/command-line-reference.md:8
 msgid ""
@@ -1054,25 +1060,26 @@ msgid ""
 " the command, e.g., [COMMAND_DESCRIPTION] (Windows). Corresponding "
 "commands for macOS and Linux will be added in the future."
 msgstr ""
+"**オペレーティングシステム:** 本ガイドの現在のバージョンは、Windows "
+"OSのみでテストされています。多くのコマンドはWindows固有のものでス。OS固有のコマンドは、コマンドの説明の後に　"
+"[COMMAND_DESCRIPTION] (Windows) のように括弧をつけて表示されます。 "
+"macOSとLinuxに対応するコマンドは今後追加されます。"
 
 #: ../../tutorials/command-line-reference.md:11
-#, fuzzy
 msgid "Environment Setup"
-msgstr "開発状況"
+msgstr "環境設定"
 
 #: ../../tutorials/command-line-reference.md:33
-#, fuzzy
 msgid "Package Development"
-msgstr "Pythonのパッケージと環境"
+msgstr "パッケージ開発"
 
 #: ../../tutorials/command-line-reference.md:52
 msgid "Package Publishing"
-msgstr ""
+msgstr "パッケージパブリッシング"
 
 #: ../../tutorials/command-line-reference.md:71
-#, fuzzy
 msgid "Versions and Environments"
-msgstr "Hatchと環境"
+msgstr "バージョンと環境"
 
 #: ../../tutorials/get-to-know-hatch.md:1
 msgid "Get to Know Hatch"
@@ -1382,7 +1389,6 @@ msgid "`hatch config show`"
 msgstr "`hatch config show`"
 
 #: ../../tutorials/get-to-know-hatch.md:202
-#, fuzzy
 msgid ""
 "`hatch config show` will print out the contents of your `config.toml` "
 "file in your shell. Look at the values and ensure that your name, email "
@@ -1423,7 +1429,6 @@ msgid "A few features that Hatch offers"
 msgstr "Hatchが提供するいくつかの機能"
 
 #: ../../tutorials/get-to-know-hatch.md:220
-#, fuzzy
 msgid ""
 "It will convert metadata stored in a `setup.py` or `setup.cfg` file to a "
 "pyproject.toml file for you (see [Migrating setup.py to pyproject.toml "
@@ -1499,7 +1504,6 @@ msgid "Does this lesson run as expected on windows and mac?"
 msgstr "このレッスンは、windowsやmacで期待通りに動きますか？"
 
 #: ../../tutorials/installable-code.md:26
-#, fuzzy
 msgid ""
 "ADD: note about what makes something \"package worthy\", with a common "
 "misconception being that a package should be production-ready code that's"
@@ -1665,7 +1669,6 @@ msgid "An `__init__.py` file in your code directory."
 msgstr "コードディレクトリの `__init__.py` ファイル。"
 
 #: ../../tutorials/installable-code.md:83
-#, fuzzy
 msgid "The directory structure you'll create in this lesson will look like this:"
 msgstr "このレッスンで作成するディレクトリ構造は次のようになります:"
 
@@ -1753,7 +1756,6 @@ msgid "The **pyproject.toml** file is:"
 msgstr "**pyproject.toml** ファイルは:"
 
 #: ../../tutorials/installable-code.md:121
-#, fuzzy
 msgid ""
 "Where you define your project's metadata (including its name, authors, "
 "license, etc)"
@@ -2009,7 +2011,6 @@ msgid "**pyOpenSci recommends using the NumPy Docstring convention.**"
 msgstr "**pyOpenSciは、NumPyのDocstring規約を使用することを推奨します。**"
 
 #: ../../tutorials/installable-code.md:282
-#, fuzzy
 msgid ""
 "If you aren't familiar with docstrings or typing yet, that is ok. You can"
 " review [this page in the pyOpenSci packaging "
@@ -2203,7 +2204,6 @@ msgstr ""
 "しかし、 `pyproject.toml` ファイルの早い段階でメタデータを具体化することをお勧めします。"
 
 #: ../../tutorials/installable-code.md:482
-#, fuzzy
 msgid ""
 "Once you have your project metadata in the pyproject.toml file, you will "
 "rarely update it. In the next lesson you'll add more metadata and "
@@ -2527,7 +2527,7 @@ msgstr "プロジェクト情報ファイルとメタデータ"
 
 #: ../../tutorials/intro.md:54
 msgid "Reference Guides"
-msgstr ""
+msgstr "リファレンスガイド"
 
 #: ../../tutorials/intro.md:61
 msgid "Migrate setup.py to a pyproject.toml using Hatch"
@@ -3301,7 +3301,6 @@ msgid ""
 msgstr "[conda-forgeの公開プロセスについてはこちらをご覧ください。](publish-conda-forge.md)"
 
 #: ../../tutorials/intro.md:333
-#, fuzzy
 msgid ""
 "Graphic showing the high level packaging workflow. On the left you see a "
 "graphic with code, metadata and tests in it. Those items all go into your"
@@ -3507,7 +3506,6 @@ msgstr ""
 "forgeはPyPIのソース配布ファイル (sdist) からビルドします。"
 
 #: ../../tutorials/publish-conda-forge.md:33
-#, fuzzy
 msgid ""
 "Image showing the progression of creating a Python package, building it "
 "and then publishing to PyPI and conda-forge. You take your code and turn "
@@ -3806,7 +3804,6 @@ msgid ""
 msgstr "このコマンドを実行するには、前のチュートリアルでhatchコマンドを実行するのに使ったのと同じシェル/ターミナルを使います。"
 
 #: ../../tutorials/publish-conda-forge.md:127
-#, fuzzy
 msgid ""
 "You can also install grayskull using pipx[^pipx]. pipx is a tool that "
 "allows you to install commonly used tools that you might want to have "
@@ -3920,7 +3917,6 @@ msgid "Step 3b: Bug fix - add a home url to the about: section"
 msgstr "ステップ 3b: バグフィクス - about:セクションにホームURLを追加します"
 
 #: ../../tutorials/publish-conda-forge.md:279
-#, fuzzy
 msgid ""
 "There is currently a small bug in Grayskull where it doesn't populate the"
 " home: element of the recipe. If you don't include this, [you will "
@@ -4572,14 +4568,13 @@ msgid "**Publish to TestPyPI using `hatch publish`**"
 msgstr "** `hatch publish` を使用してTestPyPIにパブリッシュする**"
 
 #: ../../tutorials/publish-pypi.md:60
-#, fuzzy
 msgid ""
 "In a future lesson, you will learn how to create an automated GitHub "
 "Actions workflow that publishes an updated version of your package to "
 "PyPI every time you create a GitHub release."
 msgstr ""
-"今後のレッスンでは、GitHub リリースを作成するたびにパッケージの更新版を PyPI に公開する、自動化された GitHub "
-"アクションのワークフローを作成する方法を学びます。"
+"今後のレッスンでは、GitHub リリースを作成するたびにパッケージの更新版を PyPI に公開する、自動化された GitHub Actions "
+"のワークフローを作成する方法を学びます。"
 
 #: ../../tutorials/publish-pypi.md:64
 msgid "Learn more about building Python packages in our guide"
@@ -4625,7 +4620,7 @@ msgstr "Hatchを使って環境を整えましょう。"
 
 #: ../../tutorials/publish-pypi.md:85
 msgid "Then view all of the current environments that hatch has access to:"
-msgstr "次に、ハッチがアクセスできる現在の環境をすべて表示します:"
+msgstr "次に、Hatchがアクセスできる現在の環境をすべて表示します:"
 
 #: ../../tutorials/publish-pypi.md:97
 msgid ""
@@ -4886,9 +4881,8 @@ msgid "Recommended"
 msgstr "おすすめ"
 
 #: ../../tutorials/publish-pypi.md:221
-#, fuzzy
 msgid "Update the GitHub repository name to align with the new package name"
-msgstr "Githubリポジトリ名を新しいパッケージ名に合わせて更新します"
+msgstr "GitHubリポジトリ名を新しいパッケージ名に合わせて更新します"
 
 #: ../../tutorials/publish-pypi.md:222
 msgid ""
@@ -5199,7 +5193,6 @@ msgstr ""
 "公開する際に使用する、パッケージ固有のトークンを作成することができます。これはPyPI公開のワークフローを自動化したくない場合に最適なオプションです。"
 
 #: ../../tutorials/publish-pypi.md:363
-#, fuzzy
 msgid ""
 "You can also create an automated publication workflow on GitHub using "
 "GitHub Actions. This is a great way to make the publication process "
@@ -5208,10 +5201,10 @@ msgid ""
 "GitHub Actions that publishes your package when you make a release. You "
 "can then create a \"trusted publisher\" workflow on PyPI."
 msgstr ""
-"GitHubアクションを使って、GitHub上で自動公開ワークフローを作成することもできます。 "
+"GitHub Actionsを使って、GitHub上で自動公開ワークフローを作成することもできます。 "
 "これは、出版プロセスをより簡単にする素晴らしい方法であり、また、成長するメンテナーチームをサポートするものでもあります。 "
-"この場合、トークンのことは気にせず、リリース時にパッケージを公開する GitHub アクションを設定することをお勧めします。 その後、PyPIで "
-"\"trusted publisher\" ワークフローを作成することができます。"
+"この場合、トークンのことは気にせず、リリース時にパッケージを公開する GitHub Actionsを設定することをお勧めします。 "
+"その後、PyPIで \"trusted publisher\" ワークフローを作成することができます。"
 
 #: ../../tutorials/publish-pypi.md:365
 msgid ""
@@ -5414,7 +5407,6 @@ msgstr ""
 "テーブルにもっとメタデータを追加するべきです。また、インストーラがあなたのパッケージのインストール方法を理解しやすくなります。"
 
 #: ../../tutorials/pyproject-toml.md:43
-#, fuzzy
 msgid ""
 "When you are adding classifiers to the **[project]** table, only use "
 "valid values from [PyPI's classifier "
