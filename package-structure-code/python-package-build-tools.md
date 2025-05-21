@@ -389,15 +389,15 @@ is currently undocumented. Thus, we don't recommend using Poetry for more comple
 :widths: 20,5,50
 :delim: "|"
 
-Add dependencies to your pyproject.toml file |✅|Poetry helps you add dependencies to your `pyproject.toml` metadata. _NOTE: currently Poetry adds dependencies using an approach that is slightly out of alignment with current Python peps - however there is a plan to fix this in an upcoming release._ Poetry also allows you to organize dependencies in groups such as  documentation, packaging and tests.
+Add dependencies to your pyproject.toml file |✅|Poetry helps you add dependencies to your `pyproject.toml` metadata.
 Dependency specification |✅ |Poetry allows you to be specific about version of dependencies that you add to your package's pyproject.toml file. However, it's default upper bound approach can be problematic for some packages (We suggest you override the default setting when adding dependencies). Read below for more.
 Environment management |✅ | Poetry allows you to either use its built in environment or you can select the environment type that you want to use for managing your package. [Read more about its built in environment management options](https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment).
 Lock files| ✅ | Poetry creates a **poetry.lock** file that you can use if you need a lock file for your build.
 Publish to PyPI and test PyPI|✅|Poetry supports publishing to both test PyPI and PyPI
 Version Control based versioning|✅ | The plugin [Poetry dynamic versioning](https://github.com/mtkennerly/poetry-dynamic-versioning) supports versioning using git tags with Poetry.
 Version bumping| ✅ | Poetry supports you bumping the version of your package using standard semantic version terms patch; minor; major
-Follows current packaging standards|✖✅|Poetry does not quite support current packaging standards for adding metadata to the **pyproject.toml** file but plans to fix this in an upcoming release.
-Install your package in editable mode|✅|Poetry supports installing your package in editable mode using `--editable`
+Follows current packaging standards|✅|Since version 2.0, Poetry supports most current project metadata standards. However, not all standards are supported, and it also supports the legacy Poetry format. Read below for more.
+Install your package in editable mode|✅|Poetry supports installing your package in editable mode.
 Build your sdist and wheel distributions|✅|Poetry will build your sdist and wheel distributions using `poetry build`
 ```
 
@@ -408,11 +408,11 @@ Build your sdist and wheel distributions|✅|Poetry will build your sdist and wh
 
 Some challenges of Poetry include:
 
-- Poetry, by default, pins dependencies using an "upper bound" limit specified with the `^` symbol by default. However, this behavior can be over-written by specifying the dependency when you use `Poetry add` as follows: `poetry add "requests>=2.1"` See breakout below for more discussion on issues surrounding upper-bounds pinning.
-- _Minor Challenge:_ The way Poetry currently adds metadata to your pyproject.toml file does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.
+- Poetry has its own concept of grouped dependencies (`poetry add --group=GROUP_NAME DEPENDENCY`). Dependencies added as grouped dependencies are not optional and there is no Python standard for this type of dependency. This should not be confused with "optional" dependencies (`poetry add --optional=GROUP_NAME DEPENDENCY`), which is standardised and lets you group your dependencies into several optional groups.
+- While Poetry supports "development" dependencies (i.e. dependencies you use for development but not running the code, such as `pytest`), Poetry does not yet follow the standardised format for specifying such dependencies.
+- Poetry, by default, pins dependencies using an "upper bound" limit (which is specified with the `^` symbol in the legacy format). However, this behavior can be over-written by specifying the dependency when you use `poetry add` as follows: `poetry add "requests>=2.1"` See breakout below for more discussion on issues surrounding upper-bounds pinning.
 
-Poetry is an excellent tool. Use caution when using it to pin dependencies as
-Poetry's approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.
+Poetry is a popular packaging tool and introduced many very useful features. However, if you decide to use it, then use caution when adding dependencies as Poetry's approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.
 
 <!--https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750
 discusses the slight differences in how poetry adds deps....-->
