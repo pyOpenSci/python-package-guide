@@ -83,7 +83,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx_favicon",
     "sphinxcontrib.bibtex",
-    '_ext.translation_graph',
+    "_ext.translation_graph",
 ]
 
 # colon fence for card support in md
