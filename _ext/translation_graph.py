@@ -13,8 +13,8 @@ class TranslationGraph(Directive):
 
     def run(self):
         # Read the JSON file containing translation statistics
-        json_path = Path(__file__).parent.parent / '_static' / 'translation_stats.json'
-        with json_path.open('r') as f:
+        json_path = Path(__file__).parent.parent / "_static" / "translation_stats.json"
+        with json_path.open("r") as f:
             data = json.load(f)
 
         # Collect all module names -- iterates over the JSON data in 2 levels
@@ -53,7 +53,7 @@ class TranslationGraph(Directive):
         # Create figure
         fig = go.Figure(data=traces)
         fig.update_layout(
-            barmode='group',
+            barmode="group",
             title="Translation Coverage by Module and Locale",
             xaxis_title="Module",
             yaxis_title="Percentage Translated",
@@ -61,8 +61,8 @@ class TranslationGraph(Directive):
             margin=dict(l=40, r=40, t=40, b=40)
         )
 
-        div = plot(fig, output_type='div', include_plotlyjs=True)
-        return [nodes.raw('', div, format='html')]
+        div = plot(fig, output_type="div", include_plotlyjs=True)
+        return [nodes.raw("", div, format="html")]
 
 def setup(app):
     app.add_directive("translation-graph", TranslationGraph)
