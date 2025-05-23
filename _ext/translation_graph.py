@@ -8,7 +8,7 @@ from plotly.offline import plot
 
 class TranslationGraph(Directive):
     # Tells Sphinx that this directive can be used in the document body
-     # and has no content
+    # and has no content
     has_content = False
 
     def run(self):
