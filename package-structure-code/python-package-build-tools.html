@@ -1091,7 +1091,7 @@ is currently undocumented. Thus, we don’t recommend using Poetry for more comp
 <tbody>
 <tr class="row-even"><td><p>Add dependencies to your pyproject.toml file</p></td>
 <td><p>✅</p></td>
-<td><p>Poetry helps you add dependencies to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> metadata. <em>NOTE: currently Poetry adds dependencies using an approach that is slightly out of alignment with current Python peps - however there is a plan to fix this in an upcoming release.</em> Poetry also allows you to organize dependencies in groups such as  documentation, packaging and tests.</p></td>
+<td><p>Poetry helps you add dependencies to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> metadata.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Dependency specification</p></td>
 <td><p>✅</p></td>
@@ -1118,12 +1118,12 @@ is currently undocumented. Thus, we don’t recommend using Poetry for more comp
 <td><p>Poetry supports you bumping the version of your package using standard semantic version terms patch; minor; major</p></td>
 </tr>
 <tr class="row-odd"><td><p>Follows current packaging standards</p></td>
-<td><p>✖✅</p></td>
-<td><p>Poetry does not quite support current packaging standards for adding metadata to the <strong>pyproject.toml</strong> file but plans to fix this in an upcoming release.</p></td>
+<td><p>✅</p></td>
+<td><p>Since version 2.0, Poetry supports most current project metadata standards. However, not all standards are supported, and it also supports the legacy Poetry format. Read below for more.</p></td>
 </tr>
 <tr class="row-even"><td><p>Install your package in editable mode</p></td>
 <td><p>✅</p></td>
-<td><p>Poetry supports installing your package in editable mode using <code class="docutils literal notranslate"><span class="pre">--editable</span></code></p></td>
+<td><p>Poetry supports installing your package in editable mode.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Build your sdist and wheel distributions</p></td>
 <td><p>✅</p></td>
@@ -1138,11 +1138,11 @@ is currently undocumented. Thus, we don’t recommend using Poetry for more comp
 <span id="id2"></span><h3>Challenges with Poetry<a class="headerlink" href="#challenges-with-poetry" title="Link to this heading">#</a></h3>
 <p>Some challenges of Poetry include:</p>
 <ul class="simple">
-<li><p>Poetry, by default, pins dependencies using an “upper bound” limit specified with the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol by default. However, this behavior can be over-written by specifying the dependency when you use <code class="docutils literal notranslate"><span class="pre">Poetry</span> <span class="pre">add</span></code> as follows: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> See breakout below for more discussion on issues surrounding upper-bounds pinning.</p></li>
-<li><p><em>Minor Challenge:</em> The way Poetry currently adds metadata to your pyproject.toml file does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.</p></li>
+<li><p>Poetry has its own concept of grouped dependencies (<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">--group=GROUP_NAME</span> <span class="pre">DEPENDENCY</span></code>). Dependencies added as grouped dependencies are not optional and there is no Python standard for this type of dependency. This should not be confused with “optional” dependencies (<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">--optional=GROUP_NAME</span> <span class="pre">DEPENDENCY</span></code>), which is standardised and lets you group your dependencies into several optional groups.</p></li>
+<li><p>While Poetry supports “development” dependencies (i.e. dependencies you use for development but not running the code, such as <code class="docutils literal notranslate"><span class="pre">pytest</span></code>), Poetry does not yet follow the standardised format for specifying such dependencies.</p></li>
+<li><p>Poetry, by default, pins dependencies using an “upper bound” limit (which is specified with the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol in the legacy format). However, this behavior can be over-written by specifying the dependency when you use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span></code> as follows: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> See breakout below for more discussion on issues surrounding upper-bounds pinning.</p></li>
 </ul>
-<p>Poetry is an excellent tool. Use caution when using it to pin dependencies as
-Poetry’s approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.</p>
+<p>Poetry is a popular packaging tool and introduced many very useful features. However, if you decide to use it, then use caution when adding dependencies as Poetry’s approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.</p>
 <!--https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750
 discusses the slight differences in how poetry adds deps....-->
 <div class="important admonition">

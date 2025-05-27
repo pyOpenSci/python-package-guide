@@ -1025,7 +1025,7 @@ twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </
 <tbody>
 <tr class="row-even"><td><p>pyproject.tomlファイルに依存関係を追加</p></td>
 <td><p>✅</p></td>
-<td><p>Poetry は <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> メタデータに依存関係を追加するのに役立ちます。 _NOTE: 現在のところ、Poetry は現在の Python peps とは少しずれたアプローチで依存関係を追加しています - しかし、今後のリリースでこれを修正する予定です。 _ Poetryでは、ドキュメント、パッケージング、テストなどのグループに依存関係を整理することもできます。</p></td>
+<td><p>Poetry helps you add dependencies to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> metadata.</p></td>
 </tr>
 <tr class="row-odd"><td><p>依存仕様</p></td>
 <td><p>✅</p></td>
@@ -1052,12 +1052,12 @@ twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </
 <td><p>Poetryでは、標準的なセマンティックバージョン用語である patch; minor; major を使ってパッケージのバージョンを上げることができます。</p></td>
 </tr>
 <tr class="row-odd"><td><p>現行のパッケージング基準に従う</p></td>
-<td><p>✖✅</p></td>
-<td><p>Poetryは <strong>pyproject.toml</strong> ファイルにメタデータを追加する現在のパッケージング標準を完全にサポートしているわけではありませんが、今後のリリースでこれを修正する予定です。</p></td>
+<td><p>✅</p></td>
+<td><p>Since version 2.0, Poetry supports most current project metadata standards. However, not all standards are supported, and it also supports the legacy Poetry format. Read below for more.</p></td>
 </tr>
 <tr class="row-even"><td><p>編集可能モードでパッケージをインストールする</p></td>
 <td><p>✅</p></td>
-<td><p>Poetry は <code class="docutils literal notranslate"><span class="pre">--editable</span></code> を使った編集可能モードでのパッケージのインストールをサポートしています。</p></td>
+<td><p>Poetry supports installing your package in editable mode.</p></td>
 </tr>
 <tr class="row-odd"><td><p>sdistとwheelディストリビューションの構築</p></td>
 <td><p>✅</p></td>
@@ -1072,10 +1072,11 @@ twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </
 <span id="id2"></span><h3>Poetryの課題<a class="headerlink" href="#challenges-with-poetry" title="Link to this heading">#</a></h3>
 <p>Poetryの課題には次のようなものがある:</p>
 <ul class="simple">
-<li><p>Poetryは、デフォルトでは、<code class="docutils literal notranslate"><span class="pre">^</span></code>シンボルで指定された &quot;上限&quot; 制限を使用して依存関係をピンします。 しかし、この動作は <code class="docutils literal notranslate"><span class="pre">Poetry</span> <span class="pre">add</span></code> を使うときに依存関係を以下のように指定することで上書きすることができます: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> アッパーバウンドピニングをめぐる問題については、以下のブレイクアウトを参照のしてください。</p></li>
-<li><p><em>マイナーチェンジ:</em> Poetryが現在pyproject.tomlファイルにメタデータを追加する方法は、現在のPythonの標準に従っていません。 しかし、これは Poetry リリースバージョン 2.0 で対処される予定です。</p></li>
+<li><p>Poetry has its own concept of grouped dependencies (<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">--group=GROUP_NAME</span> <span class="pre">DEPENDENCY</span></code>). Dependencies added as grouped dependencies are not optional and there is no Python standard for this type of dependency. This should not be confused with &quot;optional&quot; dependencies (<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">--optional=GROUP_NAME</span> <span class="pre">DEPENDENCY</span></code>), which is standardised and lets you group your dependencies into several optional groups.</p></li>
+<li><p>While Poetry supports &quot;development&quot; dependencies (i.e. dependencies you use for development but not running the code, such as <code class="docutils literal notranslate"><span class="pre">pytest</span></code>), Poetry does not yet follow the standardised format for specifying such dependencies.</p></li>
+<li><p>Poetry, by default, pins dependencies using an &quot;upper bound&quot; limit (which is specified with the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol in the legacy format). However, this behavior can be over-written by specifying the dependency when you use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span></code> as follows: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> See breakout below for more discussion on issues surrounding upper-bounds pinning.</p></li>
 </ul>
-<p>Poetryは優れたツールです。 依存関係を固定するために Poetry を使う場合は注意してください。Poetry の固定方法は、多くのビルドで問題になる可能性があります。 Poetry を使用する場合は、デフォルトの上限依存性オプションをオーバーライドすることを強く推奨します。</p>
+<p>Poetry is a popular packaging tool and introduced many very useful features. However, if you decide to use it, then use caution when adding dependencies as Poetry's approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.</p>
 <!--https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750
 discusses the slight differences in how poetry adds deps....-->
 <div class="important admonition">
