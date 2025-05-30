@@ -1,10 +1,22 @@
 from pathlib import Path
 import json
+from typing import TypeAlias, TypedDict, Annotated as A
 
 from docutils import nodes
 from docutils.parsers.rst import Directive
 import plotly.graph_objects as go
 from plotly.offline import plot
+
+
+class ModuleStats(TypedDict):
+    total: int
+    translated: int
+    fuzzy: int
+    untranslated: int
+    percentage: float
+
+TranslationStats: TypeAlias = dict[A[str, "locale"], dict[A[str, "module"], ModuleStats]]
+
 
 class TranslationGraph(Directive):
     # Tells Sphinx that this directive can be used in the document body
@@ -15,7 +27,7 @@ class TranslationGraph(Directive):
         # Read the JSON file containing translation statistics
         json_path = Path(__file__).parent.parent / "_static" / "translation_stats.json"
         with json_path.open("r") as f:
-            data = json.load(f)
+            data: TranslationStats = json.load(f)
 
         # Collect all module names -- iterates over the JSON data in 2 levels
         all_modules = {module for stats in data.values() for module in stats}
