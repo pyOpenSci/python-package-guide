@@ -8,6 +8,7 @@ jobs:
       - run:
           name: Restore mtimes from git history
           command: |
+            sudo apt-get update
             sudo apt-get install git-restore-mtime
             git restore-mtime
       - run:
