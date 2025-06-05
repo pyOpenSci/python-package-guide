@@ -6,6 +6,7 @@ from docutils import nodes
 from docutils.parsers.rst import Directive
 import plotly.graph_objects as go
 from plotly.offline import plot
+import numpy as np
 
 
 class ModuleStats(TypedDict):
