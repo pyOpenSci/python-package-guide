@@ -33,14 +33,25 @@ class RSSItem:
     def from_meta(cls, page_name: str, meta: dict, app: "Sphinx") -> "RSSItem":
         """Create from a page's metadata"""
         url = urljoin(app.config.html_baseurl, app.builder.get_target_uri(page_name))
+
         # purposely don't use `get` here because we want to error if these fields are absent
         return RSSItem(
             title=meta[":og:title"],
             description=meta[":og:description"],
-            date=datetime.fromisoformat(meta["date"]),
+            date=cls.get_date_updated(page_name, meta, app),
             author=meta.get(":og:author", "pyOpenSci"),
             url=url,
         )
+
+    @staticmethod
+    def get_date_updated(page_name: str, meta: dict, app: "Sphinx") -> datetime:
+        """if the page has an explicit date_updated, use that, otherwise get mtime"""
+        if 'date_updated' in meta:
+            return datetime.fromisoformat(meta['date_updated'])
+        else:
+            page_path = app.srcdir / (page_name + ".md")
+            mtime = page_path.stat().st_mtime
+            return datetime.fromtimestamp(mtime)
 
     def render(self) -> str:
         return f"""\
@@ -61,7 +72,7 @@ class RSSFeed:
     title: str = "pyOpenSci Tutorials"
     link: str = "https://www.pyopensci.org/python-package-guide/tutorials/intro.html"
     self_link: str = "https://www.pyopensci.org/python-package-guide/tutorials.rss"
-    description: str = "Tutorials for learning python i guess!!!"
+    description: str = "A tutorial feed that lists metadata for the pyOpenSci Python packaging tutorials so we can automatically list them on our website."
     language: str = "en"
 
     def render(self) -> str:
