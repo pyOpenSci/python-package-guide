@@ -24,56 +24,70 @@ class TranslationGraph(Directive):
     # and has no content
     has_content = False
 
+    # oddly, this is evaluated in the js not python,
+    # so we treat customdata like a json object
+    HOVER_TEMPLATE = """
+    <b>%{customdata.module}</b><br>
+    Translated: %{customdata.translated}<br>
+    Fuzzy: %{customdata.fuzzy}<br>
+    Untranslated: %{customdata.untranslated}<br>
+    Total: %{customdata.total}<br>
+    Completed: %{customdata.percentage}%
+    """
     def run(self):
         # Read the JSON file containing translation statistics
         json_path = Path(__file__).parent.parent / "_static" / "translation_stats.json"
         with json_path.open("r") as f:
             data: TranslationStats = json.load(f)
 
-        # Collect all module names -- iterates over the JSON data in 2 levels
-        all_modules = {module for stats in data.values() for module in stats}
-        all_modules = sorted(all_modules)
+        # Sort data by locale and module
+        data = {locale: dict(sorted(loc_stats.items())) for locale, loc_stats in sorted(data.items())}
 
-        # Build one trace per locale with full hover info
-        traces = []
+        # prepend english, everything set to 100%
+        en = {module: ModuleStats(total=stats['total'], translated=stats['total'], fuzzy=stats['total'], untranslated=0, percentage=100) for module, stats in next(iter(data.values())).items()}
+        data = {'en': en} | data
 
-        for locale, modules in data.items():
-            y_vals = []
-            hover_texts = []
-
-            for module in all_modules:
-                stats = modules.get(module)
-                y_vals.append(stats["percentage"])
-
-                hover_text = (
-                    f"<b>{module}</b><br>"
-                    f"Translated: {stats['translated']}<br>"
-                    f"Fuzzy: {stats['fuzzy']}<br>"
-                    f"Untranslated: {stats['untranslated']}<br>"
-                    f"Total: {stats['total']}<br>"
-                    f"Completed: {stats['percentage']}%"
-                )
-                hover_texts.append(hover_text)
-
-            traces.append(go.Bar(
-                name=locale,
-                x=all_modules,
-                y=y_vals,
-                hovertext=hover_texts,
-                hoverinfo="text"
-            ))
-
-        # Create figure
-        fig = go.Figure(data=traces)
-        fig.update_layout(
-            barmode="group",
-            title="Translation Coverage by Module and Locale",
-            xaxis_title="Module",
-            yaxis_title="Percentage Translated",
-            height=600,
-            margin=dict(l=40, r=40, t=40, b=40)
+        # extract data to plot
+        locales = list(data.keys())
+        modules = list(data[locales[-1]].keys())
+        values = [[stats['percentage'] for stats in loc_stats.values()] for loc_stats in data.values()]
+        hoverdata = [[{'module': module} | stats for module, stats in loc_stats.items()] for loc_stats in data.values()]
+        heatmap = go.Heatmap(
+            x =modules,
+            y=locales,
+            z=values,
+            xgap=5,
+            ygap=5,
+            customdata=np.array(hoverdata),
+            hovertemplate=self.HOVER_TEMPLATE,
+            colorbar={
+                'orientation': 'h',
+                'y': 0,
+                "yanchor": "bottom",
+                "yref": "container",
+                "title": "Completion %",
+                "thickness": 10,
+            },
+            colorscale="Plotly3",
         )
-
+        # Create figure
+        fig = go.Figure(data=heatmap)
+        fig.update_layout(
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+            font_color="var(--bs-body-color)",
+            margin=dict(l=40, r=40, t=40, b=40),
+            xaxis_showgrid=False,
+            xaxis_side="top",
+            xaxis_tickangle=-45,
+            xaxis_tickfont = {
+                "family": "var(--bs-font-monospace)",
+                "color": "#fff"
+            },
+            yaxis_showgrid=False,
+            yaxis_title="Locale",
+            yaxis_autorange="reversed",
+        )
         div = plot(fig, output_type="div", include_plotlyjs=True)
         return [nodes.raw("", div, format="html")]
 
