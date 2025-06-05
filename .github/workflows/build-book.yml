@@ -16,6 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch_depth: 0
+
+      - name: Restore mtimes from git history
+        run: |
+          sudo apt-get install git-restore-mtime
+          git restore-mtime
 
       - name: Setup Python
         uses: actions/setup-python@v5

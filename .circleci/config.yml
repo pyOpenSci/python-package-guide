@@ -6,6 +6,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Restore mtimes from git history
+          command: |
+            sudo apt-get install git-restore-mtime
+            git restore-mtime
+      - run:
           name: setup environment
           command: |
             pip install --upgrade pip
