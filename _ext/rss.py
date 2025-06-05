@@ -72,7 +72,7 @@ class RSSFeed:
     title: str = "pyOpenSci Tutorials"
     link: str = "https://www.pyopensci.org/python-package-guide/tutorials/intro.html"
     self_link: str = "https://www.pyopensci.org/python-package-guide/tutorials.rss"
-    description: str = "Tutorials for learning python i guess!!!"
+    description: str = "A tutorial feed that lists metadata for the pyOpenSci Python packaging tutorials so we can automatically list them on our website."
     language: str = "en"
 
     def render(self) -> str:
