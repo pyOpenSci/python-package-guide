@@ -47,15 +47,31 @@ class TranslationGraph(Directive):
         en = {module: ModuleStats(total=stats['total'], translated=stats['total'], fuzzy=stats['total'], untranslated=0, percentage=100) for module, stats in next(iter(data.values())).items()}
         data = {'en': en} | data
 
-        # extract data to plot
+        # Calculate average completion percentage for each locale and sort locales
+        locale_completion = {locale: np.mean([stats['percentage'] for stats in loc_stats.values()]) for locale, loc_stats in data.items()}
+        sorted_locales = sorted(locale_completion.keys(), key=lambda locale: locale_completion[locale], reverse=True)
+
+        # Reorder data based on sorted locales
+        data = {locale: data[locale] for locale in sorted_locales}
+
+        # Update locales list after sorting
         locales = list(data.keys())
-        modules = list(data[locales[-1]].keys())
+        modules = list(next(iter(data.values())).keys())
+
+        # Extract data to plot
         values = [[stats['percentage'] for stats in loc_stats.values()] for loc_stats in data.values()]
         hoverdata = [[{'module': module} | stats for module, stats in loc_stats.items()] for loc_stats in data.values()]
+
+        # Add text to display percentages directly in the heatmap boxes
+        text = [[f"{int(stats['percentage'])}%" for stats in loc_stats.values()] for loc_stats in data.values()]
+
         heatmap = go.Heatmap(
-            x =modules,
+            x=modules,
             y=locales,
             z=values,
+            text=text,  # Add text to the heatmap
+            texttemplate="%{text}",  # Format the text to display directly
+            textfont={"size": 10},  # Adjust font size for better readability
             xgap=5,
             ygap=5,
             customdata=np.array(hoverdata),
@@ -67,8 +83,18 @@ class TranslationGraph(Directive):
                 "yref": "container",
                 "title": "Completion %",
                 "thickness": 10,
+                "tickvals": [12.5, 50, 87.5, 100],  # Midpoints for each category
+                "ticktext": ["0-25%", "25-75%", "75-<100%", "100%"],  # Labels for categories
             },
-            colorscale="Plotly3",
+            colorscale=[
+                [0.0, "rgb(254, 255, 231)"],    # 0-25%
+                [0.25, "rgb(254, 255, 231)"],
+                [0.25, "rgb(187, 130, 176)"],   # 25-75%
+                [0.75, "rgb(187, 130, 176)"],
+                [0.75, "rgb(129, 192, 170)"],   # 75-<100%
+                [0.99, "rgb(129, 192, 170)"],
+                [1.0, "rgb(0, 128, 0)"],        # 100%
+            ],
         )
         # Create figure
         fig = go.Figure(data=heatmap)
@@ -82,7 +108,6 @@ class TranslationGraph(Directive):
             xaxis_tickangle=-45,
             xaxis_tickfont = {
                 "family": "var(--bs-font-monospace)",
-                "color": "#fff"
             },
             yaxis_showgrid=False,
             yaxis_title="Locale",
