@@ -816,6 +816,12 @@ links following the example below.</p>
 The <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field helps pip identify which Python versions that your package supports.
 It is set to a single value.
 The <a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python">packaging specification</a> defines<code class="docutils literal notranslate"><span class="pre">requires-python</span></code> as a string that uses version specifiers. Most projects will specify the oldest Python version supported by the package. In some advanced cases, an upper bound is set to indicate which future Python versions, if any, will be supported.</p>
+<div class="tip admonition">
+<p class="admonition-title">But how do I figure out which Python versions I should support?</p>
+<p>Good question. The Python developer guide provides a <a class="reference external" href="https://devguide.python.org/versions/">status page</a> (and a handy visualization) that explains the status of each Python release. Python releases go through several different phases that are explained in <a class="reference external" href="https://peps.python.org/pep-0602/">PEP 602</a>.</p>
+<p>We recommend that you use the latest Python release in the <strong>bugfix</strong> phase. If your Python release is in the <strong>security</strong> phase, we recommend migrating to a newer version of Python.</p>
+<p><a class="reference external" href="https://scientific-python.org/specs/spec-0000/">SPEC 0</a> of the Scientific Python project suggests a common schedule for dependencies, including Python release versions, and is also worth considering for your project.</p>
+</div>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
 <span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>

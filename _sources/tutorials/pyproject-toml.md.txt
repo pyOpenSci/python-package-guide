@@ -306,6 +306,14 @@ The `requires-python` field helps pip identify which Python versions that your p
 It is set to a single value.
 The [packaging specification](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python) defines`requires-python` as a string that uses version specifiers. Most projects will specify the oldest Python version supported by the package. In some advanced cases, an upper bound is set to indicate which future Python versions, if any, will be supported.
 
+:::{admonition} But how do I figure out which Python versions I should support?
+:class: tip
+Good question. The Python developer guide provides a [status page](https://devguide.python.org/versions/) (and a handy visualization) that explains the status of each Python release. Python releases go through several different phases that are explained in [PEP 602](https://peps.python.org/pep-0602/).
+
+We recommend that you use the latest Python release in the **bugfix** phase. If your Python release is in the **security** phase, we recommend migrating to a newer version of Python.
+
+[SPEC 0](https://scientific-python.org/specs/spec-0000/) of the Scientific Python project suggests a common schedule for dependencies, including Python release versions, and is also worth considering for your project.
+:::
 
 {emphasize-lines="22"}
 ```toml
