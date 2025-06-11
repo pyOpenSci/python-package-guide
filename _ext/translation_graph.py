@@ -71,7 +71,7 @@ class TranslationGraph(Directive):
             z=values,
             text=text,  # Add text to the heatmap
             texttemplate="%{text}",  # Format the text to display directly
-            textfont={"size": 10},  # Adjust font size for better readability
+            textfont={"size": 15},  # Adjust font size for better readability
             xgap=5,
             ygap=5,
             customdata=np.array(hoverdata),
@@ -87,13 +87,13 @@ class TranslationGraph(Directive):
                 "ticktext": ["0-25%", "25-75%", "75-<100%", "100%"],  # Labels for categories
             },
             colorscale=[
-                [0.0, "rgb(254, 255, 231)"],    # 0-25%
+                [0.0,  "rgb(254, 255, 231)"],   # 0-25%
                 [0.25, "rgb(254, 255, 231)"],
                 [0.25, "rgb(187, 130, 176)"],   # 25-75%
                 [0.75, "rgb(187, 130, 176)"],
                 [0.75, "rgb(129, 192, 170)"],   # 75-<100%
                 [0.99, "rgb(129, 192, 170)"],
-                [1.0, "rgb(78, 112, 100)"],        # 100%
+                [1.0,  "rgb(78,  112, 100)"],   # 100%
             ],
         )
         # Create figure
