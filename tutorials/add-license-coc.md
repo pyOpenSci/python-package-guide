@@ -1,7 +1,6 @@
 ---
 :og:description: Learn how to add a LICENSE and CODE_OF_CONDUCT file to your Python package. This lesson covers choosing a permissive license, placing key files for visibility on GitHub and PyPI, and adopting the Contributor Covenant to support an inclusive community.
 :og:title: Add a License and Code of Conduct to your python package
-date: 1970-01-02
 ---
 
 # Add a `LICENSE` & `CODE_OF_CONDUCT` to your Python package
