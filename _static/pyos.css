@@ -419,6 +419,31 @@ th {
   padding: 8px; /* Add some padding for better readability */
 }
 
+/* -------------- */
+/* Plotly Heatmap */
+/* -------------- */
+
+.plotly svg {
+  g:not(.heatmap-label) > text {
+    fill: var(--pst-color-text-base) !important;
+  }
+
+  @media (max-width: 540px) {
+    g.heatmap-label > text {
+      display: none;
+    }
+  }
+}
+
 /* ----------------- */
 /* Language Selector */
 /* ----------------- */
+
+/* Hide the left-side column for pages marked as orphan */
+.orphan .bd-sidebar {
+  display: none !important;
+}
+
+.orphan .bd-main {
+  margin-left: 0 !important;
+}

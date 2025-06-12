@@ -76,6 +76,7 @@ class TranslationGraph(Directive):
             ygap=5,
             customdata=np.array(hoverdata),
             hovertemplate=self.HOVER_TEMPLATE,
+            name="",  # Set the trace name to an empty string to remove "trace 0" from hoverbox
             colorbar={
                 'orientation': 'h',
                 'y': 0,
@@ -113,7 +114,12 @@ class TranslationGraph(Directive):
             yaxis_title="Locale",
             yaxis_autorange="reversed",
         )
-        div = plot(fig, output_type="div", include_plotlyjs=True)
+        div = plot(
+            fig,
+            output_type="div",
+            include_plotlyjs=True,
+            config={"displayModeBar": False},
+        )
         return [nodes.raw("", div, format="html")]
 
 def setup(app):
