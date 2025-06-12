@@ -8,6 +8,11 @@ This guide will help you get started contributing to the translation of the Pyth
 
 The process of contributing to the translation of the guide is similar to the process of contributing to the guide itself, except that instead of working on the guide source files directly, you will be working on the translation files.
 
+# Translation Status
+
+```{translation-graph}
+```
+
 ## Overview of the Translation Process
 
 The process of adapting software to different languages is called internationalization, or i18n for short. Internationalization makes sure that translation can happen without having to modify the source code, or in our case, the original English source files of the guide.
