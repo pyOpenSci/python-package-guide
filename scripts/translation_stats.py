@@ -100,7 +100,7 @@ def main():
     # Dump the results to a JSON file
     with open(STATIC_DIR / "translation_stats.json", "w") as f:
         import json
-        json.dump(results, f, indent=4)
+        json.dump(results, f, indent=2)
 
 if __name__ == "__main__":
     main()
