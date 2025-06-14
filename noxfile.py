@@ -83,7 +83,7 @@ def docs_test(session):
 def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
     cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
     for folder in AUTOBUILD_IGNORE:
-        cmd.extend(["--ignore", f"*/{folder}/*"])
+        cmd.extend(["--ignore", f'"{folder}"'])
     return cmd
 
 
