@@ -127,7 +127,6 @@ class TranslationGraph(Directive):
         )
         return [nodes.raw("", div, format="html")]
 
-
 def calculate_translation_percentage(po_path : Path, locale : str) -> ModuleStats:
     """
     Calculate the translation percentage for a given .po file.
