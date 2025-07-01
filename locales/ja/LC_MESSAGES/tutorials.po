@@ -53,7 +53,7 @@ msgid "Learning objectives"
 msgstr "学習目標"
 
 #: ../../tutorials/add-license-coc.md:12 ../../tutorials/add-readme.md:12
-#: ../../tutorials/installable-code.md:41 ../../tutorials/pyproject-toml.md:22
+#: ../../tutorials/create-python-package.md:41 ../../tutorials/pyproject-toml.md:22
 #: ../../tutorials/setup-py-to-pyproject-toml.md:15
 msgid "In this lesson you will learn:"
 msgstr "このレッスンで学ぶこと:"
@@ -207,8 +207,8 @@ msgid "If you completed the past lessons including"
 msgstr "以下を含む過去のレッスンを修了した場合"
 
 #: ../../tutorials/add-license-coc.md:65
-msgid "[Making your code installable](installable-code.md) and"
-msgstr "[コードをインストール可能にする](installable-code.md) と"
+msgid "[Making your code installable](create-python-package.md) and"
+msgstr "[コードをインストール可能にする](create-python-package.md) と"
 
 #: ../../tutorials/add-license-coc.md:66
 msgid "[publishing your package to PyPI](publish-pypi.md)"
@@ -563,7 +563,7 @@ msgid ""
 msgstr "あなたのPythonパッケージの新しいバージョンをテストPyPIに公開して、更新されたメタデータランディングページをプレビューしてください。"
 
 #: ../../tutorials/add-license-coc.md:199
-#: ../../tutorials/installable-code.md:642
+#: ../../tutorials/create-python-package.md:642
 #: ../../tutorials/publish-conda-forge.md:475
 #: ../../tutorials/publish-pypi.md:394
 msgid "Footnotes"
@@ -590,8 +590,8 @@ msgid "[What a Python package is](intro.md)"
 msgstr "[Pythonパッケージとは何か?](intro.md)"
 
 #: ../../tutorials/add-readme.md:6
-msgid "[How to make your code installable](installable-code)"
-msgstr "[コードをインストール可能にする](installable-code)"
+msgid "[How to make your code installable](create-python-package)"
+msgstr "[コードをインストール可能にする](create-python-package)"
 
 #: ../../tutorials/add-readme.md:7
 msgid "[How to publish your package to (test) PyPI](publish-pypi.md)"
@@ -1360,9 +1360,9 @@ msgid "You are of course welcome to select another license."
 msgstr "もちろん、他のライセンスを選択することも歓迎します。"
 
 #: ../../tutorials/get-to-know-hatch.md:192
-#: ../../tutorials/installable-code.md:22
-#: ../../tutorials/installable-code.md:411
-#: ../../tutorials/installable-code.md:502 ../../tutorials/intro.md:235
+#: ../../tutorials/create-python-package.md:22
+#: ../../tutorials/create-python-package.md:411
+#: ../../tutorials/create-python-package.md:502 ../../tutorials/intro.md:235
 #: ../../tutorials/publish-pypi.md:3 ../../tutorials/publish-pypi.md:178
 #: ../../tutorials/publish-pypi.md:350 ../../tutorials/pyproject-toml.md:718
 msgid "Todo"
@@ -1458,15 +1458,15 @@ msgid ""
 "installable using Hatch."
 msgstr "次のレッスンでは、Hatchを使ってコードをパッケージ化し、インストール可能にする方法を学びます。"
 
-#: ../../tutorials/installable-code.md:6
+#: ../../tutorials/create-python-package.md:6
 msgid "Make your Python code installable"
 msgstr "Pythonコードをインストール可能にする"
 
-#: ../../tutorials/installable-code.md:8
+#: ../../tutorials/create-python-package.md:8
 msgid "What we previously covered"
 msgstr "以前取り上げたレッスン"
 
-#: ../../tutorials/installable-code.md:9
+#: ../../tutorials/create-python-package.md:9
 msgid ""
 "[In the previous lesson](intro), you learned about what a Python package "
 "is. You also learned about the [benefits of creating a Python package"
@@ -1475,7 +1475,7 @@ msgstr ""
 "[前のレッスンで](intro) 、Pythonパッケージとは何かについて学びました。また、 [Pythonパッケージを作成する利点"
 "](package-benefits) についても学びました。"
 
-#: ../../tutorials/installable-code.md:13
+#: ../../tutorials/create-python-package.md:13
 msgid ""
 "Your next step in our packaging tutorial series is to create a Python "
 "package that is installable both locally and remotely from a website such"
@@ -1487,23 +1487,23 @@ msgstr ""
 "などのウェブサイトからリモートでもインストール可能な Python "
 "パッケージを作成することです。このレッスンで作成するパッケージは、Python環境にインストールするために必要な最低限の要素しか持っていません。"
 
-#: ../../tutorials/installable-code.md:18
+#: ../../tutorials/create-python-package.md:18
 msgid ""
 "Making your code installable is an important steps towards creating a "
 "full Python package that is directly installable from PyPI."
 msgstr "あなたのコードをインストール可能にすることは、PyPIから直接インストール可能な完全なPythonパッケージを作成するための重要なステップです。"
 
-#: ../../tutorials/installable-code.md:23
+#: ../../tutorials/create-python-package.md:23
 msgid ""
 "Is it clear where to add commands? Bash vs. Python console Bash vs. Zsh "
 "is different"
 msgstr "コマンドを追加する場所は明確ですか？ BashとPythonのコンソールの違い BashとZshの違い"
 
-#: ../../tutorials/installable-code.md:25
+#: ../../tutorials/create-python-package.md:25
 msgid "Does this lesson run as expected on windows and mac?"
 msgstr "このレッスンは、windowsやmacで期待通りに動きますか？"
 
-#: ../../tutorials/installable-code.md:26
+#: ../../tutorials/create-python-package.md:26
 msgid ""
 "ADD: note about what makes something \"package worthy\", with a common "
 "misconception being that a package should be production-ready code that's"
@@ -1514,7 +1514,7 @@ msgstr ""
 "追加: 何をもって \"パッケージに値する\" とするのかについて、 "
 "一般的な誤解は、パッケージは幅広いオーディエンスにとって価値のある、生産可能なコードであるべきだというものです。これはPythonに蔓延している誤解ではないかもしれませんが、パッケージがどのようなもので構成されるかを簡単に説明することは役に立つでしょう。"
 
-#: ../../tutorials/installable-code.md:31
+#: ../../tutorials/create-python-package.md:31
 msgid ""
 "Diagram showing the basic steps to creating an installable package. There"
 " are 4 boxes with arrows pointing towards the right. The boxes read, your"
@@ -1525,7 +1525,7 @@ msgstr ""
 "ボックスは、あなたのコード、パッケージ構造の作成、pyproject.tomlへのメタデータの追加、およびpip "
 "installパッケージを読み込みます。"
 
-#: ../../tutorials/installable-code.md:33
+#: ../../tutorials/create-python-package.md:33
 msgid ""
 "A basic installable package needs a few things: code, a [specific package"
 " file structure](https://www.pyopensci.org/python-package-guide/package-"
@@ -1541,17 +1541,17 @@ msgstr ""
 "`pyproject.toml` "
 "が必要です。これらのアイテムが正しいディレクトリ構造になっていれば、pipであなたのコンピュータのどの環境にもパッケージをインストールすることができます。このレッスンでは、基本的なインストール可能パッケージの作成方法を学びます。"
 
-#: ../../tutorials/installable-code.md:37
+#: ../../tutorials/create-python-package.md:37
 msgid "About this lesson"
 msgstr "このレッスンについて"
 
-#: ../../tutorials/installable-code.md:43
+#: ../../tutorials/create-python-package.md:43
 msgid ""
 "How to make your code installable into any Python environment both "
 "locally and from GitHub"
 msgstr "ローカルとGitHubの両方で、あなたのコードをあらゆるPython環境にインストール可能にする方法"
 
-#: ../../tutorials/installable-code.md:44
+#: ../../tutorials/create-python-package.md:44
 msgid ""
 "How to create a basic `pyproject.toml` file that includes package "
 "dependencies and metadata. This file is required to make your package "
@@ -1560,7 +1560,7 @@ msgstr ""
 "パッケージの依存関係とメタデータを含む基本的な `pyproject.toml` "
 "ファイルの作成方法。このファイルは、パッケージをインストール可能にするために必要です。"
 
-#: ../../tutorials/installable-code.md:45
+#: ../../tutorials/create-python-package.md:45
 msgid ""
 "How to declare a [build backend](build_backends) which will be used to "
 "[build](build-package) and install your package"
@@ -1568,15 +1568,15 @@ msgstr ""
 "パッケージの [ビルド](build-package) とインストールに使用する [ビルドバックエンド](build_backends) "
 "を宣言する方法"
 
-#: ../../tutorials/installable-code.md:46
+#: ../../tutorials/create-python-package.md:46
 msgid "How to install your package in editable mode for interactive development"
 msgstr "インタラクティブな開発のために編集可能モードでパッケージをインストールする方法"
 
-#: ../../tutorials/installable-code.md:48
+#: ../../tutorials/create-python-package.md:48
 msgid "**What you need to complete this lesson**"
 msgstr "**このレッスンを完了するために必要なもの**"
 
-#: ../../tutorials/installable-code.md:50
+#: ../../tutorials/create-python-package.md:50
 msgid ""
 "To complete this lesson you will need a local Python environment and "
 "shell on your computer. You will also need to have [Hatch installed](get-"
@@ -1585,7 +1585,7 @@ msgstr ""
 "このレッスンを完了するには、あなたのコンピュータにローカルのPython環境とシェルが必要です。　[Hatchのインストール](get-to-"
 "know-hatch) も必要です。"
 
-#: ../../tutorials/installable-code.md:53
+#: ../../tutorials/create-python-package.md:53
 msgid ""
 "If you are using Windows or are not familiar with Shell, you may want to "
 "check out the Carpentries shell lesson[^shell-lesson]. Windows users will"
@@ -1595,29 +1595,29 @@ msgstr ""
 "をチェックアウトすることをお勧めします。 "
 "Windowsユーザーは、Shellやgitに関連するステップのためにツールを設定する必要があるでしょう。"
 
-#: ../../tutorials/installable-code.md:55
+#: ../../tutorials/create-python-package.md:55
 msgid "**What comes next**"
 msgstr "**次に来るもの**"
 
-#: ../../tutorials/installable-code.md:57
+#: ../../tutorials/create-python-package.md:57
 msgid "In the upcoming lessons you will learn how to:"
 msgstr "これからのレッスンでは、その方法を学びます:"
 
-#: ../../tutorials/installable-code.md:59
+#: ../../tutorials/create-python-package.md:59
 msgid "[Publish your package to PyPI](publish-pypi)"
 msgstr "[PyPIへのパッケージの公開](publish-pypi)"
 
-#: ../../tutorials/installable-code.md:60
+#: ../../tutorials/create-python-package.md:60
 msgid "Add a README file to your package to support community use"
 msgstr "コミュニティの利用をサポートするために、パッケージに README ファイルを追加してください。"
 
-#: ../../tutorials/installable-code.md:61
+#: ../../tutorials/create-python-package.md:61
 msgid ""
 "Add additional project metadata to your package to support PyPI "
 "publication"
 msgstr "PyPI公開をサポートするために、パッケージにプロジェクトのメタデータを追加します"
 
-#: ../../tutorials/installable-code.md:67
+#: ../../tutorials/create-python-package.md:67
 msgid ""
 "This diagram has two smaller boxes with arrows pointing to the right to a"
 " Python environment. The small boxes read your-package and pip install "
@@ -1630,7 +1630,7 @@ msgstr ""
 "Matplotlib、NumPy、Pandas、Xarray、GeoPandasなどのコアパッケージとともに、your-"
 "packageがリストアップされています。"
 
-#: ../../tutorials/installable-code.md:69
+#: ../../tutorials/create-python-package.md:69
 msgid ""
 "Making your code installable is the first step towards creating a "
 "publishable Python package. Once your code is installable, it is a Python"
@@ -1642,45 +1642,45 @@ msgstr ""
 "あなたのコードをインストール可能にすることは、公開可能なPythonパッケージを作成するための最初のステップです。 "
 "あなたのコードがインストール可能になると、それはPythonパッケージとなり、あなたのコンピュータ上の任意のPython環境に追加し、PandasやGeoPandasなどのパッケージをインポートするのと同じ方法でインポートすることができます。あなたのコードがGitHubやGitLabにあるなら、そこから直接インストールすることもできます。"
 
-#: ../../tutorials/installable-code.md:74
+#: ../../tutorials/create-python-package.md:74
 msgid "About the Python package directory structure"
 msgstr "Pythonパッケージのディレクトリ構造について"
 
-#: ../../tutorials/installable-code.md:76
+#: ../../tutorials/create-python-package.md:76
 msgid ""
 "To make your Python code installable you need to create a specific "
 "directory structure with the following elements:"
 msgstr "Pythonコードをインストール可能にするには、以下の要素を含む特定のディレクトリ構造を作成する必要があります:"
 
-#: ../../tutorials/installable-code.md:78
+#: ../../tutorials/create-python-package.md:78
 msgid "A `pyproject.toml` file."
 msgstr "`pyproject.toml` ファイル。"
 
-#: ../../tutorials/installable-code.md:79
+#: ../../tutorials/create-python-package.md:79
 msgid "A specific directory structure."
 msgstr "特定のディレクトリ構造。"
 
-#: ../../tutorials/installable-code.md:80
+#: ../../tutorials/create-python-package.md:80
 msgid "Some code."
 msgstr "いくつかのコード。"
 
-#: ../../tutorials/installable-code.md:81
+#: ../../tutorials/create-python-package.md:81
 msgid "An `__init__.py` file in your code directory."
 msgstr "コードディレクトリの `__init__.py` ファイル。"
 
-#: ../../tutorials/installable-code.md:83
+#: ../../tutorials/create-python-package.md:83
 msgid "The directory structure you'll create in this lesson will look like this:"
 msgstr "このレッスンで作成するディレクトリ構造は次のようになります:"
 
-#: ../../tutorials/installable-code.md:95
+#: ../../tutorials/create-python-package.md:95
 msgid "About the basic package directory structure"
 msgstr "基本パッケージのディレクトリ構造について"
 
-#: ../../tutorials/installable-code.md:97
+#: ../../tutorials/create-python-package.md:97
 msgid "Notice a few things about the above layout:"
 msgstr "上記のレイアウトについて、いくつかの点に注目してください:"
 
-#: ../../tutorials/installable-code.md:99
+#: ../../tutorials/create-python-package.md:99
 msgid ""
 "Your package code lives within a `src/packagename` directory. We suggest "
 "that you use `src` (short for **source code**) directory as it [ensures "
@@ -1694,7 +1694,7 @@ msgstr ""
 "structure.html#the-src-layout-and-testing) `src`（ **source code** "
 "の略）ディレクトリを使用することをお勧めします。"
 
-#: ../../tutorials/installable-code.md:100
+#: ../../tutorials/create-python-package.md:100
 msgid ""
 "Within the `src` directory you have a package directory called "
 "`pyospackage`. Use the name of your package for that directory name. This"
@@ -1704,7 +1704,7 @@ msgstr ""
 "`src` ディレクトリの中に `pyospackage` というパッケージディレクトリがあります。 ディレクトリ名にはパッケージ名を使用します。"
 " これは、インストール後にPythonコードでパッケージをインポートする際の名前になります。"
 
-#: ../../tutorials/installable-code.md:101
+#: ../../tutorials/create-python-package.md:101
 msgid ""
 "In your package directory, you have an `__init__.py` file and all of your"
 " Python modules. You will learn more about the `__init__.py` file below."
@@ -1712,11 +1712,11 @@ msgstr ""
 "パッケージディレクトリには `__init__.py` ファイルと Python モジュールがあります。以下に `__init__.py` "
 "ファイルについて詳しく説明します。"
 
-#: ../../tutorials/installable-code.md:102
+#: ../../tutorials/create-python-package.md:102
 msgid "The `pyproject.toml` file lives at the root directory of your package."
 msgstr "`pyproject.toml` ファイルはパッケージのルートディレクトリにあります。"
 
-#: ../../tutorials/installable-code.md:103
+#: ../../tutorials/create-python-package.md:103
 msgid ""
 "The name of the root directory for the package is **pyospackage** which "
 "is the name of the package. This is not a requirement but you will often "
@@ -1726,11 +1726,11 @@ msgstr ""
 "パッケージのルートディレクトリの名前は、パッケージ名である **pyospackage** です。これは必須ではありませんが、GitHub / "
 "GitLabのリポジトリ名とルートディレクトリ名がパッケージ名と同じであることをよく見かけます。"
 
-#: ../../tutorials/installable-code.md:105
+#: ../../tutorials/create-python-package.md:105
 msgid "What is an `__init__.py` file?"
 msgstr "`__init__.py` ファイルとは何ですか？"
 
-#: ../../tutorials/installable-code.md:107
+#: ../../tutorials/create-python-package.md:107
 msgid ""
 "The `__init__.py` file tells Python that a directory should be treated as"
 " a Python package. As such, a directory with an `__init__.py` file can be"
@@ -1741,31 +1741,31 @@ msgstr ""
 "このように、`__init__.py` ファイルがあるディレクトリは Python に直接インポートすることができます。 Python "
 "に認識させるために `__init__.py` ファイルにコードを記述する必要はありません; 空であることもあります。"
 
-#: ../../tutorials/installable-code.md:111
+#: ../../tutorials/create-python-package.md:111
 msgid ""
 "For example, following the file structure example above which has an "
 "`__init__.py` file within it, you can run:"
 msgstr "例えば、 `__init__.py` ファイルを持つ上記のファイル構造の例に従って、次のように実行します:"
 
-#: ../../tutorials/installable-code.md:117 ../../tutorials/pyproject-toml.md:48
+#: ../../tutorials/create-python-package.md:117 ../../tutorials/pyproject-toml.md:48
 msgid "What is a pyproject.toml file?"
 msgstr "pyproject.tomlファイルとは何ですか？"
 
-#: ../../tutorials/installable-code.md:119
+#: ../../tutorials/create-python-package.md:119
 msgid "The **pyproject.toml** file is:"
 msgstr "**pyproject.toml** ファイルは:"
 
-#: ../../tutorials/installable-code.md:121
+#: ../../tutorials/create-python-package.md:121
 msgid ""
 "Where you define your project's metadata (including its name, authors, "
 "license, etc)"
 msgstr "プロジェクトのメタデータ (名前、作者、ライセンスなど) を定義します。"
 
-#: ../../tutorials/installable-code.md:122
+#: ../../tutorials/create-python-package.md:122
 msgid "Where you define dependencies (the packages that it depends on)"
 msgstr "依存関係 (依存するパッケージ) を定義します。"
 
-#: ../../tutorials/installable-code.md:123
+#: ../../tutorials/create-python-package.md:123
 msgid ""
 "Used to specify and configure what build backend you want to use to "
 "[build your package](../package-structure-code/python-package-"
@@ -1774,7 +1774,7 @@ msgstr ""
 "[パッケージのビルド](../package-structure-code/python-package-distribution-files-"
 "sdist-wheel) に使用するビルドバックエンドを指定し、設定します。"
 
-#: ../../tutorials/installable-code.md:125
+#: ../../tutorials/create-python-package.md:125
 msgid ""
 "After the `__init__.py` and `pyproject.toml` files have been added, your "
 "package can be built and distributed as an installable Python package "
@@ -1787,19 +1787,19 @@ msgstr ""
 "`pyproject.toml` "
 "ファイルには、パッケージをインストールするために、以下のようないくつかの基本的な項目が定義されている必要があることに注意してください:"
 
-#: ../../tutorials/installable-code.md:131
+#: ../../tutorials/create-python-package.md:131
 msgid "The `build-backend` that you want to use,"
 msgstr "使用したい `build-backend` を指定します、"
 
-#: ../../tutorials/installable-code.md:132
+#: ../../tutorials/create-python-package.md:132
 msgid "The project `name` and `version`."
 msgstr "プロジェクトの `name` と `version` を指定する。"
 
-#: ../../tutorials/installable-code.md:134
+#: ../../tutorials/create-python-package.md:134
 msgid "Why the pyproject.toml file is important"
 msgstr "pyproject.tomlファイルが重要な理由"
 
-#: ../../tutorials/installable-code.md:138
+#: ../../tutorials/create-python-package.md:138
 msgid ""
 "The `pyproject.toml` file replaces some of the functionality of both the "
 "`setup.py` file and `setup.cfg` files. If you try to pip install a "
@@ -1808,11 +1808,11 @@ msgstr ""
 "`pyproject.toml` ファイルは `setup.py` ファイルと `setup.cfg` ファイルの機能の一部を置き換えます。 "
 "`pyproject.toml` がないパッケージをpipインストールしようとすると、以下のエラーが発生します:"
 
-#: ../../tutorials/installable-code.md:150
+#: ../../tutorials/create-python-package.md:150
 msgid "Note about `setup.py`"
 msgstr "`setup.py` についてのメモ"
 
-#: ../../tutorials/installable-code.md:154
+#: ../../tutorials/create-python-package.md:154
 msgid ""
 "If your project already defines a `setup.py` file, Hatch can be used to "
 "automatically create the `pyproject.toml`."
@@ -1820,7 +1820,7 @@ msgstr ""
 "プロジェクトが既に `setup.py` ファイルを定義している場合、ハッチを使用して自動的に `pyproject.toml` "
 "を作成することができます。"
 
-#: ../../tutorials/installable-code.md:155
+#: ../../tutorials/create-python-package.md:155
 msgid ""
 "See [Using Hatch to Migrate setup.py to a pyproject.toml ](setup-py-to-"
 "pyproject-toml.md)"
@@ -1828,11 +1828,11 @@ msgstr ""
 "[Hatchを使ってsetup.pyをpyproject.tomlに移行する ](setup-py-to-pyproject-toml.md) "
 "を参照"
 
-#: ../../tutorials/installable-code.md:161
+#: ../../tutorials/create-python-package.md:161
 msgid "Time to create your Python package!"
 msgstr "Pythonパッケージを作成しましょう！"
 
-#: ../../tutorials/installable-code.md:163
+#: ../../tutorials/create-python-package.md:163
 msgid ""
 "Now that you understand the basics of the Python package directory "
 "structure, and associated key files (`__init__.py` and `pyproject.toml`),"
@@ -1843,36 +1843,36 @@ msgstr ""
 "`pyproject.toml`) を理解したところで、いよいよ Python パッケージを作成します！ "
 "以下では、Hatchを使って、上で説明したようなディレクトリ構造を作成します。"
 
-#: ../../tutorials/installable-code.md:167
+#: ../../tutorials/create-python-package.md:167
 msgid "Step 1: Set Up the Package Directory Structure"
 msgstr "ステップ1: パッケージのディレクトリ構造を設定する"
 
-#: ../../tutorials/installable-code.md:169
+#: ../../tutorials/create-python-package.md:169
 msgid "Open your shell or preferred terminal."
 msgstr "シェルまたはお好みのターミナルを開きます。"
 
-#: ../../tutorials/installable-code.md:170
+#: ../../tutorials/create-python-package.md:170
 msgid ""
 "Use the shell `cd` command to navigate in your shell to the location "
 "where you'd like your package directory to live. Hatch will create the "
 "package directory for you"
 msgstr "シェルで `cd` コマンドを使い、パッケージのディレクトリを置く場所に移動します。 Hatchがパッケージディレクトリを作成してくれます。"
 
-#: ../../tutorials/installable-code.md:171
+#: ../../tutorials/create-python-package.md:171
 msgid "Choose a name for your package. The name should:"
 msgstr "パッケージの名前を決めてください。 名前は以下のようにします:"
 
-#: ../../tutorials/installable-code.md:172
+#: ../../tutorials/create-python-package.md:172
 msgid "Have no spaces (*Required*)"
 msgstr "スペースがない (*必須*)"
 
-#: ../../tutorials/installable-code.md:173
+#: ../../tutorials/create-python-package.md:173
 msgid ""
 "Use all lowercase characters (*Recommended*). For this tutorial we will "
 "use `pyospackage`."
 msgstr "すべて小文字を使用 (*推奨*)。 このチュートリアルでは `pyospackage` を使用します。"
 
-#: ../../tutorials/installable-code.md:174
+#: ../../tutorials/create-python-package.md:174
 msgid ""
 "Only use letter and the characters _ or - in the name. This means that "
 "the name `pyos*package` is not an acceptable name. However, the names "
@@ -1882,55 +1882,55 @@ msgstr ""
 "のみを使用してください。これは、`pyos*package`という名前は使えないことを意味します。しかし、 `pyos_package` または "
 "`pyos-package` という名前であれば、どちらでも構いません。"
 
-#: ../../tutorials/installable-code.md:176
+#: ../../tutorials/create-python-package.md:176
 msgid "Hatch and project names"
 msgstr "Hatchとプロジェクト名"
 
-#: ../../tutorials/installable-code.md:177
+#: ../../tutorials/create-python-package.md:177
 msgid ""
 "Hatch makes some decisions for your project's name when you run `hatch "
 "new`"
 msgstr "`hatch new` を実行したとき、 Hatch は、あなたのプロジェクトの名前を決定します。"
 
-#: ../../tutorials/installable-code.md:179
+#: ../../tutorials/create-python-package.md:179
 msgid "These include using:"
 msgstr "これには以下のようなものがあります:"
 
-#: ../../tutorials/installable-code.md:180
+#: ../../tutorials/create-python-package.md:180
 msgid "dashes for the top level directory"
 msgstr "最上位ディレクトリのダッシュ記号"
 
-#: ../../tutorials/installable-code.md:181
+#: ../../tutorials/create-python-package.md:181
 msgid "dashes for the project name in the pyproject.toml"
 msgstr "pyproject.tomlのプロジェクト名をダッシュで囲みます"
 
-#: ../../tutorials/installable-code.md:182
+#: ../../tutorials/create-python-package.md:182
 msgid "underscores for the package directory name"
 msgstr "パッケージディレクトリ名のアンダースコア"
 
-#: ../../tutorials/installable-code.md:196
+#: ../../tutorials/create-python-package.md:196
 msgid "If you use a name with underscores, Hatch will return the same thing:"
 msgstr "アンダースコア付きの名前を使っても、Hatchは同じものを返します:"
 
-#: ../../tutorials/installable-code.md:209
+#: ../../tutorials/create-python-package.md:209
 msgid ""
 "In both of the examples above the project name in the pyproject.toml file"
 " that hatch creates is `pyos-package`."
 msgstr "上記のどちらの例でも、hatchが作成するpyproject.tomlファイルのプロジェクト名は `pyos-package` です。"
 
-#: ../../tutorials/installable-code.md:213
+#: ../../tutorials/create-python-package.md:213
 msgid "Next run:"
 msgstr "次に実行するのは:"
 
-#: ../../tutorials/installable-code.md:228
+#: ../../tutorials/create-python-package.md:228
 msgid "Your final project directory structure should look like this:"
 msgstr "最終的なプロジェクトのディレクトリ構造は以下のようになるはずです:"
 
-#: ../../tutorials/installable-code.md:243
+#: ../../tutorials/create-python-package.md:243
 msgid "Step 2: Add module to your package"
 msgstr "ステップ 2: パッケージにモジュールを追加する"
 
-#: ../../tutorials/installable-code.md:245
+#: ../../tutorials/create-python-package.md:245
 msgid ""
 "A Python module refers to a `.py` file containing the code that you want "
 "your package to access and run. Within the `pyospackage` subdirectory, "
@@ -1939,7 +1939,7 @@ msgstr ""
 "Python モジュールとは、パッケージにアクセスさせ、実行させたいコードを含む `.py` ファイルを指します。 `pyospackage` "
 "サブディレクトリに、少なくとも1つのPythonモジュール (.py ファイル) を追加します。"
 
-#: ../../tutorials/installable-code.md:247
+#: ../../tutorials/create-python-package.md:247
 msgid ""
 "If you don't have code already and are just learning how to create a "
 "Python package, then create an empty `add_numbers.py` file. You will "
@@ -1948,17 +1948,17 @@ msgstr ""
 "もしまだコードを持っておらず、Python パッケージの作成方法を学んでいるところなら、空の `add_numbers.py` "
 "ファイルを作成してください。 この `add_numbers.py` ファイルに以下に示すコードを入力します。"
 
-#: ../../tutorials/installable-code.md:250
+#: ../../tutorials/create-python-package.md:250
 msgid "Python modules and the `__init__.py` file"
 msgstr "Pythonモジュールと `__init__.py` ファイル"
 
-#: ../../tutorials/installable-code.md:254
+#: ../../tutorials/create-python-package.md:254
 msgid ""
 "When you see the word module, we are referring to a `.py` file containing"
 " Python code."
 msgstr "モジュールという言葉を目にしたとき、私たちはPythonのコードを含む `.py` ファイルを指しています。"
 
-#: ../../tutorials/installable-code.md:257
+#: ../../tutorials/create-python-package.md:257
 msgid ""
 "The `__init__.py`  allows Python to recognize that a directory contains "
 "at least one module that may be imported and used in your code. A package"
@@ -1967,15 +1967,15 @@ msgstr ""
 "`__init__.py` は、Pythonがディレクトリに少なくとも1つのモジュールが含まれていることを認識できるようにします。 "
 "パッケージは複数のモジュール [^python-modules] を持つことができます。"
 
-#: ../../tutorials/installable-code.md:261
+#: ../../tutorials/create-python-package.md:261
 msgid "Your project directory should now look like this:"
 msgstr "プロジェクトディレクトリはこのようになっているはずです:"
 
-#: ../../tutorials/installable-code.md:271
+#: ../../tutorials/create-python-package.md:271
 msgid "Step 3: Add code to your module"
 msgstr "ステップ3: モジュールにコードを追加する"
 
-#: ../../tutorials/installable-code.md:273
+#: ../../tutorials/create-python-package.md:273
 msgid ""
 "If you are following along and making a Python package from scratch then "
 "you can add the code below to your `add_numbers.py` module. The function "
@@ -1985,15 +1985,15 @@ msgstr ""
 "Python のパッケージをゼロから作るのであれば、以下のコードを `add_numbers.py` モジュールに追加してください。 "
 "以下の関数は2つの整数を加算して結果を返します。以下のコードには、今後のチュートリアルで確認するいくつかの機能があることに注目してください:"
 
-#: ../../tutorials/installable-code.md:275
+#: ../../tutorials/create-python-package.md:275
 msgid "It has a [numpy-style docstring](numpy-docstring)"
 msgstr "これは [numpyスタイルのdocstring](numpy-docstring) を持っています。"
 
-#: ../../tutorials/installable-code.md:276
+#: ../../tutorials/create-python-package.md:276
 msgid "It uses [typing](type-hints)"
 msgstr "[typing](type-hints) を使用します。"
 
-#: ../../tutorials/installable-code.md:278
+#: ../../tutorials/create-python-package.md:278
 msgid ""
 "Python can support many different docstrings formats depending on the "
 "documentation build system you wish to use. The most popular supported "
@@ -2006,11 +2006,11 @@ msgstr ""
 "Docstring[^numpydoc]、Google Style Docstring[^googledoc]、Epytext Style "
 "Docstring[^epytextdoc]です。"
 
-#: ../../tutorials/installable-code.md:280
+#: ../../tutorials/create-python-package.md:280
 msgid "**pyOpenSci recommends using the NumPy Docstring convention.**"
 msgstr "**pyOpenSciは、NumPyのDocstring規約を使用することを推奨します。**"
 
-#: ../../tutorials/installable-code.md:282
+#: ../../tutorials/create-python-package.md:282
 msgid ""
 "If you aren't familiar with docstrings or typing yet, that is ok. You can"
 " review [this page in the pyOpenSci packaging "
@@ -2023,11 +2023,11 @@ msgstr ""
 "guide/documentation/write-user-documentation/document-your-code-api-"
 "docstrings.html) を参照してください。"
 
-#: ../../tutorials/installable-code.md:311
+#: ../../tutorials/create-python-package.md:311
 msgid "Step 4: Modify metadata in your `pyproject.toml` file"
 msgstr "ステップ 4: `pyproject.toml` ファイルのメタデータを修正する"
 
-#: ../../tutorials/installable-code.md:313
+#: ../../tutorials/create-python-package.md:313
 msgid ""
 "Next, you will modify some of the metadata (information) that Hatch adds "
 "to your `pyproject.toml` file. You are are welcome to copy the file we "
@@ -2038,21 +2038,21 @@ msgstr ""
 "pyospackage GitHubリポジトリ](https://github.com/pyOpenSci/pyosPackage) "
 "にあるファイルをコピーしてください。"
 
-#: ../../tutorials/installable-code.md:317
+#: ../../tutorials/create-python-package.md:317
 msgid "Brief overview of the TOML file"
 msgstr "TOMLファイルの概要"
 
-#: ../../tutorials/installable-code.md:320
+#: ../../tutorials/create-python-package.md:320
 msgid ""
 "[The TOML format](https://toml.io/en/) consists of tables and variables. "
 "Tables are sections of information denoted by square brackets:"
 msgstr "[TOMLフォーマット](https://toml.io/en/) は表と変数で構成されます。 表は角括弧で示される情報のセクションです:"
 
-#: ../../tutorials/installable-code.md:322
+#: ../../tutorials/create-python-package.md:322
 msgid "`[this-is-a-table]`."
 msgstr "`[this-is-a-table]`."
 
-#: ../../tutorials/installable-code.md:324
+#: ../../tutorials/create-python-package.md:324
 msgid ""
 "Tables can contain variables within them defined by an variable name and "
 "an `=` sign. For instance, a `build-system` table most often holds two "
@@ -2061,7 +2061,7 @@ msgstr ""
 "テーブルには、変数名と `=` 記号で定義された変数を入れることができます。 例えば、`build-system` "
 "テーブルは以下の2(つの)変数を保持することが多いです:"
 
-#: ../../tutorials/installable-code.md:327
+#: ../../tutorials/create-python-package.md:327
 msgid ""
 "`requires = `, which tells a build tool what tools it needs to install "
 "prior to building your package. In this case "
@@ -2070,7 +2070,7 @@ msgstr ""
 "`requires=` は、ビルドツールに対して、パッケージをビルドする前にインス トールする必要があるツールを指示します。 この場合 "
 "[hatchling](https://pypi.org/project/hatchling/)"
 
-#: ../../tutorials/installable-code.md:329
+#: ../../tutorials/create-python-package.md:329
 msgid ""
 "`build-backend = `, which is used to define the specific build-backend "
 "name, (in this example we are using `hatchling.build`)."
@@ -2078,13 +2078,13 @@ msgstr ""
 "`build-backend = ` 、これは、特定のビルドバックエンド名を定義するために使われます、(この例では、 "
 "`hatchling.build` を使用しています)。"
 
-#: ../../tutorials/installable-code.md:338
+#: ../../tutorials/create-python-package.md:338
 msgid ""
 "TOML organizes data structures, defining relationships within a "
 "configuration file."
 msgstr "TOMLはデータ構造を整理し、設定ファイル内の関係を定義します。"
 
-#: ../../tutorials/installable-code.md:341
+#: ../../tutorials/create-python-package.md:341
 msgid ""
 "[Learn more about the pyproject.toml format here.](../package-structure-"
 "code/pyproject-toml-python-package-metadata)"
@@ -2092,7 +2092,7 @@ msgstr ""
 "[pyproject.tomlフォーマットの詳細はこちら。](../package-structure-code/pyproject-toml-"
 "python-package-metadata)"
 
-#: ../../tutorials/installable-code.md:345
+#: ../../tutorials/create-python-package.md:345
 msgid ""
 "You will learn more about the `pyproject.toml` format in the [next lesson"
 " when you add additional metadata / information to this file.](pyproject-"
@@ -2101,17 +2101,17 @@ msgstr ""
 "`pyproject.toml` フォーマットについては、 [このファイルにメタデータや情報を追加する次のレッスン](pyproject-"
 "toml.md) で詳しく学びます。"
 
-#: ../../tutorials/installable-code.md:348
+#: ../../tutorials/create-python-package.md:348
 msgid ""
 "Open up the `pyproject.toml` file that Hatch created in your favorite "
 "text editor. It should look something like the example below."
 msgstr "Hatchが作成した `pyproject.toml` ファイルをお好みのテキストエディタで開いてください。 下の例のようになるはずです。"
 
-#: ../../tutorials/installable-code.md:390
+#: ../../tutorials/create-python-package.md:390
 msgid "Edit the file as follows:"
 msgstr "以下のようにファイルを編集します:"
 
-#: ../../tutorials/installable-code.md:392
+#: ../../tutorials/create-python-package.md:392
 msgid ""
 "Delete `dynamic = [\"version\"]`: This sets up dynamic versioning based "
 "on tags stored in your git commit history. We will walk through "
@@ -2120,7 +2120,7 @@ msgstr ""
 "`dynamic = [\"version\"]` を削除する: これは、git "
 "のコミット履歴に保存されているタグに基づいて、動的なバージョン管理を設定します。後のレッスンでこの実装方法を説明します。"
 
-#: ../../tutorials/installable-code.md:393
+#: ../../tutorials/create-python-package.md:393
 msgid ""
 "Add `version = \"0.1\"` in the place of  `dynamic = [\"version\"]` which "
 "you just deleted. This sets up manual versioning."
@@ -2128,15 +2128,15 @@ msgstr ""
 "先ほど削除した `dynamic = [\"version\"]` の場所に `version = \"0.1\"` "
 "を追加します。これで手動バージョン管理が設定されます。"
 
-#: ../../tutorials/installable-code.md:394
+#: ../../tutorials/create-python-package.md:394
 msgid "Fill in the description if it doesn't already exist."
 msgstr "説明文がなければ記入してください。"
 
-#: ../../tutorials/installable-code.md:404
+#: ../../tutorials/create-python-package.md:404
 msgid "Remove the `[tool.hatch.version]` table from the bottom of the file."
 msgstr "ファイルの一番下にある `[tool.hatch.version]` テーブルを削除します。"
 
-#: ../../tutorials/installable-code.md:412
+#: ../../tutorials/create-python-package.md:412
 msgid ""
 "When this lesson exists, uncomment this admonition You will learn how to "
 "automate defining a package version using git tags in the version and "
@@ -2145,11 +2145,11 @@ msgstr ""
 "このレッスンが存在する場合、この戒めのコメントを解除します。 このレッスンでは、git "
 "タグを使ってパッケージのバージョン定義を自動化する方法と、パッケージのリリースについて学びます。"
 
-#: ../../tutorials/installable-code.md:417
+#: ../../tutorials/create-python-package.md:417
 msgid "OPTIONAL: Adjust project classifiers"
 msgstr "オプション: プロジェクトの分類子を調整する"
 
-#: ../../tutorials/installable-code.md:419
+#: ../../tutorials/create-python-package.md:419
 msgid ""
 "Hatch by default provides a list of classifiers that define what Python "
 "versions your package supports. These classifiers do not in any way "
@@ -2157,21 +2157,21 @@ msgid ""
 "you publish your package to PyPI."
 msgstr "Hatchはデフォルトで、パッケージがサポートするPythonのバージョンを定義する分類子のリストを提供します。これらの分類子はパッケージのビルドには一切影響を与えず、主にパッケージをPyPIに公開するときに使用することを目的としています。"
 
-#: ../../tutorials/installable-code.md:424
+#: ../../tutorials/create-python-package.md:424
 msgid ""
 "If you don't plan on publishing to PyPI, you can skip this section. "
 "However, if you wish, you can clean it up a bit."
 msgstr "PyPIに公開する予定がなければ、このセクションは飛ばして構いません。しかし、もし望むなら、少しきれいにすることもできます。"
 
-#: ../../tutorials/installable-code.md:427
+#: ../../tutorials/create-python-package.md:427
 msgid "To begin:"
 msgstr "はじめに:"
 
-#: ../../tutorials/installable-code.md:429
+#: ../../tutorials/create-python-package.md:429
 msgid "Remove support for Python 3.8"
 msgstr "Python 3.8のサポートを削除"
 
-#: ../../tutorials/installable-code.md:430
+#: ../../tutorials/create-python-package.md:430
 msgid ""
 "Within the `[project]` table, update `requires-python = \">3.8\"` to "
 "`requires-python = \">3.9\"`"
@@ -2179,21 +2179,21 @@ msgstr ""
 "`[project]` テーブル内で、 `requires-python = \">3.8\"` を `requires-python = "
 "\">3.9\"` に更新します。"
 
-#: ../../tutorials/installable-code.md:432
+#: ../../tutorials/create-python-package.md:432
 msgid ""
 "Since you are creating a pure Python package in this lesson, you can "
 "remove the following classifiers:"
 msgstr "このレッスンでは純粋な Python パッケージを作成するので、以下の分類子は削除してかまいません:"
 
-#: ../../tutorials/installable-code.md:442
+#: ../../tutorials/create-python-package.md:442
 msgid "Your new pyproject.toml file should now look something like this:"
 msgstr "新しいpyproject.tomlファイルは次のようになるはずです:"
 
-#: ../../tutorials/installable-code.md:477
+#: ../../tutorials/create-python-package.md:477
 msgid "The bare minimum needed in a pyproject.toml file"
 msgstr "pyproject.tomlファイルに最低限必要なもの"
 
-#: ../../tutorials/installable-code.md:480
+#: ../../tutorials/create-python-package.md:480
 msgid ""
 "The core information that you need in a `pyproject.toml` file in order to"
 " publish on PyPI is your **package's name**  and the **version**. "
@@ -2203,45 +2203,45 @@ msgstr ""
 "PyPIで公開するために `pyproject.toml` ファイルに必要な情報は、 **パッケージ名** と **バージョン** です。 "
 "しかし、 `pyproject.toml` ファイルの早い段階でメタデータを具体化することをお勧めします。"
 
-#: ../../tutorials/installable-code.md:482
+#: ../../tutorials/create-python-package.md:482
 msgid ""
 "Once you have your project metadata in the pyproject.toml file, you will "
 "rarely update it. In the next lesson you'll add more metadata and "
 "structure to this file."
 msgstr "一度pyproject.tomlファイルにプロジェクトのメタデータがあれば、それを更新することはほとんどありません。次のレッスンでは、このファイルにさらにメタデータと構造を追加します。"
 
-#: ../../tutorials/installable-code.md:486
+#: ../../tutorials/create-python-package.md:486
 msgid "Step 5: Install your package locally"
 msgstr "ステップ 5: パッケージをローカルにインストールする"
 
-#: ../../tutorials/installable-code.md:488
+#: ../../tutorials/create-python-package.md:488
 msgid "At this point you should have:"
 msgstr "この時点であなたは以下を持っているはずです:"
 
-#: ../../tutorials/installable-code.md:490
+#: ../../tutorials/create-python-package.md:490
 msgid "A project directory structure with a `pyproject.toml` file at the root"
 msgstr "`pyproject.toml` ファイルをルートに持つプロジェクトのディレクトリ構造"
 
-#: ../../tutorials/installable-code.md:491
+#: ../../tutorials/create-python-package.md:491
 msgid "A package directory containing an empty `__init__.py` file and"
 msgstr "空の `__init__.py` ファイルを含むパッケージ・ディレクトリと"
 
-#: ../../tutorials/installable-code.md:492
+#: ../../tutorials/create-python-package.md:492
 msgid "At least one Python module (e.g. `add_numbers.py`)"
 msgstr "少なくとも1つのPythonモジュール (e.g. `add_numbers.py`)"
 
-#: ../../tutorials/installable-code.md:494
+#: ../../tutorials/create-python-package.md:494
 msgid "You are now ready to install (and build) your Python package!"
 msgstr "これで Python パッケージをインストール（ビルド）する準備ができました！"
 
-#: ../../tutorials/installable-code.md:496
+#: ../../tutorials/create-python-package.md:496
 msgid ""
 "While you can do this using hatch, we are going to use pip for this "
 "lesson, so you can see how to install your tool into your preferred "
 "environment."
 msgstr "hatchを使ってもできますが、このレッスンではpipを使います、そうすれば、あなたの好みの環境にツールをインストールする方法を見ることができます。"
 
-#: ../../tutorials/installable-code.md:498
+#: ../../tutorials/create-python-package.md:498
 msgid ""
 "First open your preferred shell (Windows users may be using something "
 "like gitbash) and `cd` into your project directory if you are not already"
@@ -2250,33 +2250,33 @@ msgstr ""
 "まず、お好みのシェルを開き (Windowsユーザーはgitbashのようなものを使っているかもしれません) "
 "、まだプロジェクトディレクトリにいなければ、 `cd` してください。"
 
-#: ../../tutorials/installable-code.md:499
+#: ../../tutorials/create-python-package.md:499
 msgid "Activate the Python environment that you wish to use."
 msgstr "使用したいPython環境をアクティブにします。"
 
-#: ../../tutorials/installable-code.md:500
+#: ../../tutorials/create-python-package.md:500
 msgid "Run `python -m pip install -e .`"
 msgstr "`python -m pip install -e .` を実行します。"
 
-#: ../../tutorials/installable-code.md:503
+#: ../../tutorials/create-python-package.md:503
 msgid "Add this back in when the lesson is published"
 msgstr "レッスンが公開されたら、これを追加してください。"
 
-#: ../../tutorials/installable-code.md:504
+#: ../../tutorials/create-python-package.md:504
 msgid ""
 "Activate the Python environment that you wish to use. If you need help "
 "with working with virtual environments check out this lesson (add link)."
 msgstr "使用したいPython環境をアクティブにします。 仮想環境での作業で助けが必要な場合は、このレッスンをチェックしてください（リンクを追加）。"
 
-#: ../../tutorials/installable-code.md:530
+#: ../../tutorials/create-python-package.md:530
 msgid "What does `python -m pip install -e .` do?"
 msgstr "`python -m pip install -e .` は何をしているのか？"
 
-#: ../../tutorials/installable-code.md:533
+#: ../../tutorials/create-python-package.md:533
 msgid "Let's break down `python -m pip install -e .`"
 msgstr "`python -m pip install -e .` を分解してみましょう"
 
-#: ../../tutorials/installable-code.md:535
+#: ../../tutorials/create-python-package.md:535
 msgid ""
 "`python -m pip install -e .` installs your package into the current "
 "active Python environment in **editable mode** (`-e`). Installing your "
@@ -2291,21 +2291,21 @@ msgstr ""
 " 編集可能モードの重要な注意点のひとつは、コードを更新するたびに、そのコードが更新されるということです、 "
 "その場合、Pythonを再起動する必要があるかもしれません。"
 
-#: ../../tutorials/installable-code.md:540
+#: ../../tutorials/create-python-package.md:540
 msgid ""
 "If you wish to install the package regularly (not in editable mode) you "
 "can use:"
 msgstr "(編集可能モードではなく) 定期的にパッケージをインストールしたい場合は、次のようにします:"
 
-#: ../../tutorials/installable-code.md:543
+#: ../../tutorials/create-python-package.md:543
 msgid "`python -m pip install . `"
 msgstr "`python -m pip install . `"
 
-#: ../../tutorials/installable-code.md:545
+#: ../../tutorials/create-python-package.md:545
 msgid "**Using `python -m` when calling `pip`**"
 msgstr "**`pip` を呼び出す際に `python -m` を使用する**"
 
-#: ../../tutorials/installable-code.md:547
+#: ../../tutorials/create-python-package.md:547
 msgid ""
 "Above, you use`python -m` to call the version of pip installed into your "
 "current active environment. `python -m` is important to ensure that you "
@@ -2314,11 +2314,11 @@ msgstr ""
 "上記では、 `python -m` を使用して、現在アクティブな環境にインストールされている pip のバージョンを呼び出します。 `python"
 " -m` は、現在の環境にインストールされているバージョンの pip を呼び出していることを確認するために重要です。"
 
-#: ../../tutorials/installable-code.md:552
+#: ../../tutorials/create-python-package.md:552
 msgid "Look for pyospackage in your environment"
 msgstr "あなたの環境でpyospackageを探す"
 
-#: ../../tutorials/installable-code.md:554
+#: ../../tutorials/create-python-package.md:554
 msgid ""
 "Once you have installed your package, you can view it in your current "
 "environment. If you are using `venv` or `conda`, `pip` list will allow "
@@ -2327,7 +2327,7 @@ msgstr ""
 "パッケージをインストールしたら、現在の環境でそれを見ることができます。 `venv` または `conda` を使用している場合、 `pip` "
 "list で現在インストールされているパッケージを確認することができます。"
 
-#: ../../tutorials/installable-code.md:558
+#: ../../tutorials/create-python-package.md:558
 msgid ""
 "Note that because pyospackage is installed in editable mode (`-e`) pip "
 "will show you the directory path to your project's code"
@@ -2335,11 +2335,11 @@ msgstr ""
 "pyospackageは編集可能モード (`-e`) "
 "でインストールされるため、pipはプロジェクトのコードへのディレクトリパスを表示することに注意してください。"
 
-#: ../../tutorials/installable-code.md:586
+#: ../../tutorials/create-python-package.md:586
 msgid "Step 6: Test out your new package"
 msgstr "ステップ 6: 新しいパッケージをテストする"
 
-#: ../../tutorials/installable-code.md:588
+#: ../../tutorials/create-python-package.md:588
 msgid ""
 "After installing your package, type “python” at the command prompt in "
 "your chosen terminal to start a Python session in your active Python "
@@ -2348,35 +2348,35 @@ msgstr ""
 "パッケージをインストールしたら、選択したターミナルのコマンドプロンプトで \"python\" "
 "と入力し、アクティブなPython環境でPythonセッションを開始します。"
 
-#: ../../tutorials/installable-code.md:591
+#: ../../tutorials/create-python-package.md:591
 msgid "You can now import your package and access the `add_num` function."
 msgstr "これでパッケージをインポートして `add_num` 関数にアクセスできます。"
 
-#: ../../tutorials/installable-code.md:603
+#: ../../tutorials/create-python-package.md:603
 msgid "Installing packages from GitHub"
 msgstr "GitHubからパッケージをインストールする"
 
-#: ../../tutorials/installable-code.md:605
+#: ../../tutorials/create-python-package.md:605
 msgid ""
 "If you wish to share your code without publishing to PyPI you can always "
 "install packages directly from GitHub using the syntax:"
 msgstr "PyPIに公開せずにコードを共有したい場合は、いつでも構文を使ってGitHubから直接パッケージをインストールできます:"
 
-#: ../../tutorials/installable-code.md:612
+#: ../../tutorials/create-python-package.md:612
 msgid "To make your package GitHub installable, you can:"
 msgstr "GitHubのパッケージをインストール可能にするには、次のようにします:"
 
-#: ../../tutorials/installable-code.md:614
+#: ../../tutorials/create-python-package.md:614
 msgid "Create a new GitHub repository"
 msgstr "新しいGitHubリポジトリを作成する"
 
-#: ../../tutorials/installable-code.md:615
+#: ../../tutorials/create-python-package.md:615
 msgid ""
 "Push the contents of the project directory that you created above, to "
 "GitHub"
 msgstr "上記で作成したプロジェクトディレクトリの内容をGitHubにプッシュします"
 
-#: ../../tutorials/installable-code.md:616
+#: ../../tutorials/create-python-package.md:616
 msgid ""
 "Finally install the package from GitHub using the command above. When you"
 " use the command above, don't forget to substitute the user, repo, and "
@@ -2385,57 +2385,57 @@ msgstr ""
 "最後に、上記のコマンドを使ってGitHubからパッケージをインストールします。 "
 "上記のコマンドを使用する際は、user、repo、branch_or_tag を特定の値に置き換えることをお忘れなく。"
 
-#: ../../tutorials/installable-code.md:618
+#: ../../tutorials/create-python-package.md:618
 msgid ""
 "For instance below you install the pyospackage from the main branch of "
 "the pyOpenSci repository."
 msgstr "例えば、以下のようにpyOpenSciリポジトリのmainブランチからpyospackageをインストールします。"
 
-#: ../../tutorials/installable-code.md:621
+#: ../../tutorials/create-python-package.md:621
 msgid "`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`"
 msgstr "`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`"
 
-#: ../../tutorials/installable-code.md:625
+#: ../../tutorials/create-python-package.md:625
 msgid "Congratulations! You created your first Python package"
 msgstr "おめでとうございます！ あなたは最初のPythonパッケージを作成しました"
 
-#: ../../tutorials/installable-code.md:627
+#: ../../tutorials/create-python-package.md:627
 msgid ""
 "You did it! You have now created a Python package that you can install "
 "into any Python environment."
 msgstr "やったね！ これでどんなPython環境にもインストールできるPythonパッケージができました。"
 
-#: ../../tutorials/installable-code.md:630
+#: ../../tutorials/create-python-package.md:630
 msgid "In the upcoming lessons you will:"
 msgstr "これからのレッスンではあなたは:"
 
-#: ../../tutorials/installable-code.md:632
+#: ../../tutorials/create-python-package.md:632
 msgid ""
 "Learn how to [build and publish your Python package to (test) PyPI"
 "](publish-pypi)"
 msgstr "[Python パッケージをビルドして (test) PyPI に公開する](publish-pypi) 方法を学びましょう。"
 
-#: ../../tutorials/installable-code.md:633
+#: ../../tutorials/create-python-package.md:633
 msgid "Add a README file and LICENSE to your package"
 msgstr "READMEファイルとLICENSEをパッケージに追加する。"
 
-#: ../../tutorials/installable-code.md:634
+#: ../../tutorials/create-python-package.md:634
 msgid ""
 "Add more metadata to your `pyproject.toml` file to support PyPI "
 "publication."
 msgstr "PyPI での公開をサポートするために `pyproject.toml` ファイルにメタデータを追加します。"
 
-#: ../../tutorials/installable-code.md:635
+#: ../../tutorials/create-python-package.md:635
 msgid "learn how to publish to **conda-forge** from **PyPI**."
 msgstr "**PyPI** から **conda-forge** に公開する方法を学んでください。"
 
-#: ../../tutorials/installable-code.md:637
+#: ../../tutorials/create-python-package.md:637
 msgid ""
 "Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to "
 "your package"
 msgstr "[READMEファイル](add-readme.md) と [LICENSE](add-license-coc.md) をパッケージに追加する。"
 
-#: ../../tutorials/installable-code.md:638
+#: ../../tutorials/create-python-package.md:638
 msgid ""
 "[Add more metadata to your `pyproject.toml`](pyproject-toml.md) file to "
 "support PyPI publication."
@@ -2443,7 +2443,7 @@ msgstr ""
 "PyPI での公開をサポートするために [ `pyproject.toml` ファイルにメタデータを追加します。](pyproject-"
 "toml.md)"
 
-#: ../../tutorials/installable-code.md:639
+#: ../../tutorials/create-python-package.md:639
 msgid ""
 "[Learn how to build your package distribution](publish-pypi) files "
 "(**sdist** and **wheel**) and publish to **test PyPI**."
@@ -2451,17 +2451,17 @@ msgstr ""
 "[パッケージ配布ファイルをビルド](publish-pypi) して (**sdist** と **wheel**) 、 **test "
 "PyPI** に公開する方法を学びます。"
 
-#: ../../tutorials/installable-code.md:640
+#: ../../tutorials/create-python-package.md:640
 msgid ""
 "Finally you will learn how to [publish to **conda-forge**](publish-conda-"
 "forge) from **PyPI**."
 msgstr "**PyPI** から [**conda-forge**](publish-conda-forge)  に公開する方法を学んでください。"
 
-#: ../../tutorials/installable-code.md:644
+#: ../../tutorials/create-python-package.md:644
 msgid "[Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)"
 msgstr "[Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)"
 
-#: ../../tutorials/installable-code.md:646
+#: ../../tutorials/create-python-package.md:646
 msgid ""
 "[Python module "
 "docs](https://docs.python.org/3/tutorial/modules.html#packages)"
@@ -2469,15 +2469,15 @@ msgstr ""
 "[Python module "
 "docs](https://docs.python.org/3/tutorial/modules.html#packages)"
 
-#: ../../tutorials/installable-code.md:648
+#: ../../tutorials/create-python-package.md:648
 msgid "[Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)"
 msgstr "[Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)"
 
-#: ../../tutorials/installable-code.md:647
+#: ../../tutorials/create-python-package.md:647
 msgid "[Google docstring style](https://google.github.io/styleguide/pyguide.html)"
 msgstr "[Google docstring style](https://google.github.io/styleguide/pyguide.html)"
 
-#: ../../tutorials/installable-code.md:649
+#: ../../tutorials/create-python-package.md:649
 msgid "[epydoc](https://epydoc.sourceforge.net/epytext.html)"
 msgstr "[epydoc](https://epydoc.sourceforge.net/epytext.html)"
 
@@ -3421,10 +3421,10 @@ msgstr "今後のレッスンでは、公開された、メンテナンスが容
 #: ../../tutorials/intro.md:362
 msgid ""
 "In this next lesson you will learn how to create a basic installable "
-"Python package. Make your code pip installable <installable-code>"
+"Python package. Make your code pip installable <create-python-package>"
 msgstr ""
 "この次のレッスンでは、インストール可能な Python パッケージの基本的な作り方を学びます。コードをpipインストール可能にします "
-"<installable-code>"
+"<create-python-package>"
 
 #: ../../tutorials/publish-conda-forge.md:1
 msgid "Publish your Python package that is on PyPI to conda-forge"
@@ -3439,7 +3439,7 @@ msgid ""
 "How to [create the most basic version of a Python package](installable-"
 "code.md). This entailed making your code installable."
 msgstr ""
-"[Pythonパッケージの最も基本的なバージョンの作り方](installable-code.md) 。 "
+"[Pythonパッケージの最も基本的なバージョンの作り方](create-python-package.md) 。 "
 "これは、あなたのコードをインストール可能にすることが必要でした。"
 
 #: ../../tutorials/publish-conda-forge.md:6
@@ -4361,9 +4361,9 @@ msgstr "[Pythonパッケージとは何か](intro.md) を理解する"
 
 #: ../../tutorials/publish-conda-forge.md:468
 msgid ""
-"Know how to [make your code installable](installable-code.md) into Python"
+"Know how to [make your code installable](create-python-package.md) into Python"
 " environments"
-msgstr "[コードをPython環境にインストール可能にする方法](installable-code.md) を知る"
+msgstr "[コードをPython環境にインストール可能にする方法](create-python-package.md) を知る"
 
 #: ../../tutorials/publish-conda-forge.md:469
 msgid ""
@@ -4711,7 +4711,7 @@ msgstr ""
 "Hatchを **フロントエンド** "
 "ツールとして使い、hatchlingビルドバックエンドを使ってパッケージのsdistとwheelをビルドします。 "
 "[hatchling](https://hatch.pypa.io/latest/) ビルドバックエンドを使用するのは、 [前のレッスン"
-"](installable-code)でpyproject.tomlファイルで宣言したからです。"
+"](create-python-package)でpyproject.tomlファイルで宣言したからです。"
 
 #: ../../tutorials/publish-pypi.md:158
 msgid "To build your package run `hatch build`:"
@@ -5297,12 +5297,12 @@ msgstr "PythonパッケージをPyPIに対応させる - pyproject.toml"
 
 #: ../../tutorials/pyproject-toml.md:3
 msgid ""
-"In [the installable code lesson](installable-code), you learned how to "
+"In [the installable code lesson](create-python-package), you learned how to "
 "add the bare minimum information to a `pyproject.toml` file to make it "
 "installable. You then learned how to [publish a bare minimum version of "
 "your package to PyPI](publish-pypi.md)."
 msgstr ""
-"[インストール可能なコードのレッスン](installable-code) では、 `pyproject.toml` "
+"[インストール可能なコードのレッスン](create-python-package) では、 `pyproject.toml` "
 "ファイルに最低限の情報を追加してインストール可能にする方法を学びました。その後、 [PyPIにパッケージの最小限のバージョンを公開する"
 "](publish-pypi.md) 方法を学びました。"
 
@@ -5684,11 +5684,11 @@ msgstr "ステップ1: 作者、メンテナ、プロジェクトの説明を追
 
 #: ../../tutorials/pyproject-toml.md:159
 msgid ""
-"After completing the [installable code tutorial](installable-code), you "
+"After completing the [installable code tutorial](create-python-package), you "
 "should have a pyproject.toml file with a project name and a version in "
 "the `[project]` table."
 msgstr ""
-"[インストール可能なコードのチュートリアル](installable-code) を完了すると、 `[project]` "
+"[インストール可能なコードのチュートリアル](create-python-package) を完了すると、 `[project]` "
 "テーブルにプロジェクト名とバージョンを持つpyproject.tomlファイルができるはずです。"
 
 #: ../../tutorials/pyproject-toml.md:167
@@ -6250,7 +6250,7 @@ msgstr "このステップは必要なく、プロジェクトに既に `setup.p
 #: ../../tutorials/setup-py-to-pyproject-toml.md:9
 msgid ""
 "If your project does not already define a `setup.py` see [Make your "
-"Python code installable](installable-code.md)"
+"Python code installable](create-python-package.md)"
 msgstr ""
 "プロジェクトで `setup.py` が定義されていない場合は、 [Python コードをインストール可能にする](installable-"
 "code.md) を参照してください。"
