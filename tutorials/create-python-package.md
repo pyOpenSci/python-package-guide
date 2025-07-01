@@ -60,7 +60,9 @@ copier copy gh:pyopensci/pyos-package-template .
 
 After running the command above, the template will walk you through a series of questions.
 
-Note that when you reach the prompt "Do you want to answer one more question, and skip the rest, using the default values?" you can choose <kbd>Yes, but with a minimal setup</kbd> to create the most basic version of your package. After this question, the template will ask you for your preferred GitHub username and will then create a package with basic tests, documentation, and GitHub configuration setup for you.
+Note that when you reach the prompt "Do you want to answer one more question, and skip the rest, using the default values?" you can choose <kbd>Yes, but with a minimal setup</kbd> to create the most basic version of your package that contains documentation, tests and a example module for you to use.
+
+After this question, the template will ask you for your preferred GitHub username and will then create a package with basic tests, documentation, and GitHub configuration setup for you.
 
 ```console
 
@@ -120,16 +122,10 @@ Copying from template version 0.6.2
 
 ```
 
-### A package with minimal setup
-If you choose minimal setup,
-
-`Yes, but with a minimal setup`
-
-Then you will see the output below. Notice that in this package, you have basic tests, documentation and a package module setup for you. This is the bare minimum setup required to create a robust, scientific Python package. You will also notice a `.github` folder that contains the setup for your GitHub repository. You can delete the directory if you don't plan to use GitHub, or you can rerun the template and fully customize all of the settings as you wish.
-
 The final package structure will look like this:
 
 ```console
+└── .github/ # a hidden directory with templates for github and actions to run your tests
 ├── CHANGELOG.md
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
@@ -318,7 +314,8 @@ dev = [
     "pre-commit",
 ]
 ```
-Below the above section, you will see a section that defines Hatch environments.
+At the bottom of the template-generated pyproject.toml file, you will see a section that defines Hatch environments.
+
 We will cover environments in a later lesson.
 
 
