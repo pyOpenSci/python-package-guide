@@ -9,6 +9,8 @@ import subprocess
 sys.path.insert(0, str(pathlib.Path(__file__).parent.absolute()))
 import conf
 
+nox.needs_version = ">=2024.3.2"
+nox.options.default_venv_backend = "uv|virtualenv"
 
 ## Sphinx related options
 
