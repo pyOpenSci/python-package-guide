@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/publish-conda-forge.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="前回のレッスンであなたは以下のことを学びました: Pythonパッケージの最も基本的なバージョンの作り方 。 これは、あなたのコードをインストール可能にすることが必要でした。, PythonパッケージをPyPIに公開する方法, パッケージに README と LICENSE ファイルを追加する方法, どのように pyproject.toml ファイルに PyPI が要求するすべてのメタデータ..." />
+<meta property="og:description" content="前回のレッスンであなたは以下のことを学びました: How to create the most basic version of a Python package. This entailed making your code installable., PythonパッケージをPyPIに公開する方法, パッケージに README と LICENSE ファイルを追加する方法, どのように p..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-conda-forge_4192449a.png" />
-<meta property="og:image:alt" content="前回のレッスンであなたは以下のことを学びました: Pythonパッケージの最も基本的なバージョンの作り方 。 これは、あなたのコードをインストール可能にすることが必要でした。, PythonパッケージをPyPIに公開する方法, パッケージに README と LICENSE ファイルを追加する方法, どのように pyproject.toml ファイルに PyPI が要求するすべてのメタデータ..." />
-<meta name="description" content="前回のレッスンであなたは以下のことを学びました: Pythonパッケージの最も基本的なバージョンの作り方 。 これは、あなたのコードをインストール可能にすることが必要でした。, PythonパッケージをPyPIに公開する方法, パッケージに README と LICENSE ファイルを追加する方法, どのように pyproject.toml ファイルに PyPI が要求するすべてのメタデータ..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_publish-conda-forge_293422bb.png" />
+<meta property="og:image:alt" content="前回のレッスンであなたは以下のことを学びました: How to create the most basic version of a Python package. This entailed making your code installable., PythonパッケージをPyPIに公開する方法, パッケージに README と LICENSE ファイルを追加する方法, どのように p..." />
+<meta name="description" content="前回のレッスンであなたは以下のことを学びました: How to create the most basic version of a Python package. This entailed making your code installable., PythonパッケージをPyPIに公開する方法, パッケージに README と LICENSE ファイルを追加する方法, どのように p..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>PyPIにあるPythonパッケージをconda-forgeに公開する &#8212; Python Packaging Guide</title>
@@ -469,7 +469,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Pythonパッケージとは何ですか？</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installable-code.html">Create a Python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-python-package.html">Create a Python package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">PyPIに公開する</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">conda-forgeに公開する</a></li>
 </ul>
@@ -550,7 +550,7 @@
 <h1>PyPIにあるPythonパッケージをconda-forgeに公開する<a class="headerlink" href="#publish-your-python-package-that-is-on-pypi-to-conda-forge" title="Link to this heading">#</a></h1>
 <p>前回のレッスンであなたは以下のことを学びました:</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="installable-code.html"><span class="std std-doc">Pythonパッケージの最も基本的なバージョンの作り方</span></a> 。 これは、あなたのコードをインストール可能にすることが必要でした。</p></li>
+<li><p>How to <a class="reference internal" href="create-python-package.html"><span class="std std-doc">create the most basic version of a Python package</span></a>. This entailed making your code installable.</p></li>
 <li><p><a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">PythonパッケージをPyPIに公開する方法</span></a></p></li>
 <li><p>パッケージに <code class="docutils literal notranslate"><span class="pre">README</span></code> と <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> ファイルを追加する方法</p></li>
 <li><p>どのように <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに PyPI が要求するすべてのメタデータと、ユーザがあなたのパッケージを見つけるのに役立つメタデータをセットアップするかです。</p></li>
@@ -955,7 +955,7 @@ build:
 <p>このチュートリアルシリーズを一通りご覧になった方なら、もうお分かりでしょう:</p>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="intro.html"><span class="std std-doc">Pythonパッケージとは何か</span></a> を理解する</p></li>
-<li><p><a class="reference internal" href="installable-code.html"><span class="std std-doc">コードをPython環境にインストール可能にする方法</span></a> を知る</p></li>
+<li><p><a class="reference internal" href="create-python-package.html"><span class="std std-doc">コードをPython環境にインストール可能にする方法</span></a> を知る</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイル、 <code class="docutils literal notranslate"><span class="pre">README</span></code> ファイル、 <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> と行動規範の作成方法を知っている。</p></li>
 <li><p><a class="reference internal" href="publish-pypi.html"><span class="std std-doc">パッケージをPyPIに公開する</span></a> 方法と</p></li>
 <li><p>パッケージをconda-forgeに公開する方法を知ります</p></li>

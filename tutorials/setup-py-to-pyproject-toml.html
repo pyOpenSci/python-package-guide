@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/setup-py-to-pyproject-toml.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Hatch can be particularly useful to generate your project’s pyproject.toml if your project already has a setup.py. What is Hatch?: Hatch is a Python package manager designed to streamline the proce..." />
+<meta property="og:description" content="Hatch can be useful for generating your project’s pyproject.toml file if your project already has a setup.py file. What is Hatch?: Hatch is a Python package manager designed to streamline the proce..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_setup-py-to-pyproject-toml_aca0d264.png" />
-<meta property="og:image:alt" content="Hatch can be particularly useful to generate your project’s pyproject.toml if your project already has a setup.py. What is Hatch?: Hatch is a Python package manager designed to streamline the proce..." />
-<meta name="description" content="Hatch can be particularly useful to generate your project’s pyproject.toml if your project already has a setup.py. What is Hatch?: Hatch is a Python package manager designed to streamline the proce..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_setup-py-to-pyproject-toml_99fc1d1f.png" />
+<meta property="og:image:alt" content="Hatch can be useful for generating your project’s pyproject.toml file if your project already has a setup.py file. What is Hatch?: Hatch is a Python package manager designed to streamline the proce..." />
+<meta name="description" content="Hatch can be useful for generating your project’s pyproject.toml file if your project already has a setup.py file. What is Hatch?: Hatch is a Python package manager designed to streamline the proce..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Using Hatch to Migrate setup.py to a pyproject.toml &#8212; Python Packaging Guide</title>
@@ -468,7 +468,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installable-code.html">Create a Python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-python-package.html">Create a Python package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
 </ul>
@@ -547,17 +547,17 @@
                   
   <section id="using-hatch-to-migrate-setup-py-to-a-pyproject-toml">
 <h1>Using Hatch to Migrate setup.py to a pyproject.toml<a class="headerlink" href="#using-hatch-to-migrate-setup-py-to-a-pyproject-toml" title="Link to this heading">#</a></h1>
-<p>Hatch can be particularly useful to generate your project’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> if your project already has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>.</p>
+<p>Hatch can be useful for generating your project’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file if your project already has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file.</p>
 <div class="tip admonition">
 <p class="admonition-title">Note</p>
-<p>This step is not necessary and is only useful if your project already has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file defined.</p>
+<p>This step is not necessary and is only helpful if your project already has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file defined.</p>
 <ul class="simple">
-<li><p>If your project does not already define a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> see <a class="reference internal" href="installable-code.html"><span class="std std-doc">Make your Python code installable</span></a></p></li>
+<li><p>If your project does not already define a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> see <a class="reference internal" href="create-python-package.html"><span class="doc std std-doc">Make your Python code installable</span></a></p></li>
 </ul>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Learning Objectives</p>
-<p>In this lesson you will learn:</p>
+<p>In this lesson, you will learn:</p>
 <ol class="arabic simple">
 <li><p>The process of using Hatch to transition to using <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> for projects that already have a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> defined.</p></li>
 </ol>
@@ -567,7 +567,7 @@
 <p>Hatch is a Python package manager designed to streamline the process of creating, managing, and distributing Python packages. It provides a convenient CLI (Command-Line Interface) for tasks such as creating new projects, managing dependencies, building distributions, and publishing packages to repositories like PyPI.</p>
 <div class="tip admonition">
 <p class="admonition-title">Get to know Hatch</p>
-<p>See <a class="reference internal" href="get-to-know-hatch.html"><span class="std std-doc">Get to know Hatch</span></a> for more information.</p>
+<p>See <a class="reference internal" href="get-to-know-hatch.html"><span class="doc std std-doc">Get to know Hatch</span></a> for more information.</p>
 </div>
 </section>
 <section id="prerequisites">
@@ -626,8 +626,8 @@
 </pre></div>
 </div>
 </li>
-<li><p><strong>Review and Customize</strong>: After running the previous command, Hatch will automatically generate a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file based on your existing project configuration. Take some time to review the contents of the generated <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. You may want to customize certain settings or dependencies based on your project’s requirements (see <a class="reference internal" href="pyproject-toml.html"><span class="std std-doc">pyproject.toml tutorial</span></a> for more information about the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>).</p></li>
-<li><p><strong>Verify</strong>: Verify that the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file accurately reflects your project configuration and dependencies. You can manually edit the file if needed, but be cautious and ensure that the syntax is correct.</p></li>
+<li><p><strong>Review and Customize</strong>: After running the previous command, Hatch will automatically generate a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file based on your existing project configuration. Take some time to review the contents of the generated <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. You may want to customize certain settings or dependencies based on your project’s requirements (see <a class="reference internal" href="pyproject-toml.html"><span class="doc std std-doc">pyproject.toml tutorial</span></a> for more information about the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>).</p></li>
+<li><p><strong>Verify</strong>: Verify that the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file accurately reflects your project configuration and dependencies. You can manually edit the file, but be cautious and ensure that the syntax is correct.</p></li>
 <li><p><strong>Delete setup.py</strong>: Since we’re migrating to using <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> exclusively, the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file becomes unnecessary. You can safely delete it from your project directory.</p></li>
 <li><p><strong>Test Build</strong>: Before proceeding further, it’s essential to ensure that your project builds successfully using only the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. Run the following command to build your project:</p></li>
 </ol>

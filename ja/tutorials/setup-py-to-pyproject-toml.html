@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/setup-py-to-pyproject-toml.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="プロジェクトに既に setup.py がある場合、Hatchはプロジェクトの pyproject.toml を生成するのに便利です。 Hatchとは何か？: HatchはPythonパッケージマネージャで、Pythonパッケージの作成、管理、配布のプロセスを効率化するように設計されています。 新しいプロジェクトの作成、依存関係の管理、ディストリビューションのビルド、PyPI のようなリポジト..." />
+<meta property="og:description" content="Hatch can be useful for generating your project's pyproject.toml file if your project already has a setup.py file. Hatchとは何か？: HatchはPythonパッケージマネージャで、Pythonパッケージの作成、管理、配布のプロセスを効率化するように設計されています。 新し..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_setup-py-to-pyproject-toml_abdb9707.png" />
-<meta property="og:image:alt" content="プロジェクトに既に setup.py がある場合、Hatchはプロジェクトの pyproject.toml を生成するのに便利です。 Hatchとは何か？: HatchはPythonパッケージマネージャで、Pythonパッケージの作成、管理、配布のプロセスを効率化するように設計されています。 新しいプロジェクトの作成、依存関係の管理、ディストリビューションのビルド、PyPI のようなリポジト..." />
-<meta name="description" content="プロジェクトに既に setup.py がある場合、Hatchはプロジェクトの pyproject.toml を生成するのに便利です。 Hatchとは何か？: HatchはPythonパッケージマネージャで、Pythonパッケージの作成、管理、配布のプロセスを効率化するように設計されています。 新しいプロジェクトの作成、依存関係の管理、ディストリビューションのビルド、PyPI のようなリポジト..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_setup-py-to-pyproject-toml_32e6119c.png" />
+<meta property="og:image:alt" content="Hatch can be useful for generating your project's pyproject.toml file if your project already has a setup.py file. Hatchとは何か？: HatchはPythonパッケージマネージャで、Pythonパッケージの作成、管理、配布のプロセスを効率化するように設計されています。 新し..." />
+<meta name="description" content="Hatch can be useful for generating your project's pyproject.toml file if your project already has a setup.py file. Hatchとは何か？: HatchはPythonパッケージマネージャで、Pythonパッケージの作成、管理、配布のプロセスを効率化するように設計されています。 新し..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Hatchを使ってsetup.pyをpyproject.tomlに移行する &#8212; Python Packaging Guide</title>
@@ -469,7 +469,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Pythonパッケージとは何ですか？</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installable-code.html">Create a Python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-python-package.html">Create a Python package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">PyPIに公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">conda-forgeに公開する</a></li>
 </ul>
@@ -548,17 +548,17 @@
                   
   <section id="using-hatch-to-migrate-setup-py-to-a-pyproject-toml">
 <h1>Hatchを使ってsetup.pyをpyproject.tomlに移行する<a class="headerlink" href="#using-hatch-to-migrate-setup-py-to-a-pyproject-toml" title="Link to this heading">#</a></h1>
-<p>プロジェクトに既に <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> がある場合、Hatchはプロジェクトの <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> を生成するのに便利です。</p>
+<p>Hatch can be useful for generating your project's <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file if your project already has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file.</p>
 <div class="tip admonition">
 <p class="admonition-title">注釈</p>
-<p>このステップは必要なく、プロジェクトに既に <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ファイルが定義されている場合にのみ有用です。</p>
+<p>This step is not necessary and is only helpful if your project already has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file defined.</p>
 <ul class="simple">
-<li><p>プロジェクトで <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> が定義されていない場合は、 <a class="reference internal" href="installable-code.html"><span class="std std-doc">Python コードをインストール可能にする</span></a> を参照してください。</p></li>
+<li><p>If your project does not already define a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> see <a class="reference internal" href="create-python-package.html"><span class="doc std std-doc">Make your Python code installable</span></a></p></li>
 </ul>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">学習目標</p>
-<p>このレッスンで学ぶこと:</p>
+<p>In this lesson, you will learn:</p>
 <ol class="arabic simple">
 <li><p>すでに <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> が定義されているプロジェクトで <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> を使用するように移行するために Hatch を使用するプロセスです。</p></li>
 </ol>
@@ -568,7 +568,7 @@
 <p>HatchはPythonパッケージマネージャで、Pythonパッケージの作成、管理、配布のプロセスを効率化するように設計されています。 新しいプロジェクトの作成、依存関係の管理、ディストリビューションのビルド、PyPI のようなリポジトリへのパッケージの公開といったタスクのための便利な CLI (Command-Line Interface) を提供します。</p>
 <div class="tip admonition">
 <p class="admonition-title">Hatchを知る</p>
-<p>詳しくは <a class="reference internal" href="get-to-know-hatch.html"><span class="std std-doc">Hatch</span></a> を知るをご覧ください。</p>
+<p>See <a class="reference internal" href="get-to-know-hatch.html"><span class="doc std std-doc">Get to know Hatch</span></a> for more information.</p>
 </div>
 </section>
 <section id="prerequisites">
@@ -627,8 +627,8 @@
 </pre></div>
 </div>
 </li>
-<li><p><strong>レビューとカスタマイズ</strong>: 先ほどのコマンドを実行すると、Hatchは既存のプロジェクト構成に基づいて <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを自動的に生成します。 生成された <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの内容を確認するのに時間をかけてください。プロジェクトの要件に応じて、特定の設定や依存関係をカスタマイズしたいかもしれません( <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> の詳細については <a class="reference internal" href="pyproject-toml.html"><span class="std std-doc">pyproject.toml</span></a> チュートリアルを参照してください)。</p></li>
-<li><p><strong>検証</strong>: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルがプロジェクト構成と依存関係を正確に反映していることを確認します。 必要であればファイルを手動で編集することもできますが、慎重を期して構文が正しいことを確認してください。</p></li>
+<li><p><strong>Review and Customize</strong>: After running the previous command, Hatch will automatically generate a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file based on your existing project configuration. Take some time to review the contents of the generated <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. You may want to customize certain settings or dependencies based on your project's requirements (see <a class="reference internal" href="pyproject-toml.html"><span class="doc std std-doc">pyproject.toml tutorial</span></a> for more information about the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>).</p></li>
+<li><p><strong>Verify</strong>: Verify that the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file accurately reflects your project configuration and dependencies. You can manually edit the file, but be cautious and ensure that the syntax is correct.</p></li>
 <li><p><strong>setup.py を削除する</strong>: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> のみを使用するように移行するので、 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ファイルは不要になります。 プロジェクトディレクトリから安全に削除できます。</p></li>
 <li><p><strong>テストビルド</strong>: 先に進む前に、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルだけを使ってプロジェクトが正常にビルドされることを確認する必要がある。 以下のコマンドを実行してプロジェクトをビルドします:</p></li>
 </ol>

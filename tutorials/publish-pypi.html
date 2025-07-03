@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Publish your Python package that is on PyPI to conda-forge" href="publish-conda-forge.html" />
-    <link rel="prev" title="Make your Python code installable" href="installable-code.html" />
+    <link rel="prev" title="Create a pure Python package" href="create-python-package.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -468,7 +468,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installable-code.html">Create a Python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-python-package.html">Create a Python package</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish to PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
 </ul>
@@ -680,7 +680,7 @@ by default it uses venv<a class="footnote-reference brackets" href="#venv" id="i
 </ol>
 <p>You will use Hatch as a <strong>Front end</strong> tool that builds
 your package’s sdist and wheel using the <a class="reference external" href="https://hatch.pypa.io/latest/">hatchling</a> build back-end.
-The hatchling build back-end is used because you declared it in your pyproject.toml file in the <a class="reference internal" href="installable-code.html"><span class="doc std std-doc">previous lesson</span></a>.</p>
+The hatchling build back-end is used because you declared it in your pyproject.toml file in the <a class="reference internal" href="create-python-package.html"><span class="doc std std-doc">previous lesson</span></a>.</p>
 <p>To build your package run <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>hatch<span class="w"> </span>build
 ────────────────<span class="w"> </span>sdist<span class="w"> </span>─────────────────
@@ -718,7 +718,7 @@ safely learn how to publish a package without accidentally “releasing” your 
 <li><p>Search on <a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> (and also on <a class="reference external" href="https://pypi.org/">https://pypi.org/</a>) to ensure that the package name that you have selected doesn’t already exist. If you are using our test pyosPackage, then we suggest that you add your name or GitHub username to the end of the package name to ensure it’s unique.</p></li>
 </ol>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
-<div class="tip admonition">
+<div class="secondary admonition">
 <p class="admonition-title">How to rename your Python package if the name is already taken in (test) PyPI</p>
 <p class="rubric" id="required">Required</p>
 <ol class="arabic simple">
@@ -912,12 +912,12 @@ a token specific to your new package.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="installable-code.html"
+       href="create-python-package.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Make your Python code installable</p>
+        <p class="prev-next-title">Create a pure Python package</p>
       </div>
     </a>
     <a class="right-next"

@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Create a pure Python package" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - you..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_create-python-package_4053832c.png" />
+<meta property="og:image:alt" content="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - you..." />
+<meta name="description" content="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - you..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Create a pure Python package &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=94b124cf" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/create-python-package';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Publish your Python package to PyPI" href="publish-pypi.html" />
+    <link rel="prev" title="Get to Know Hatch" href="get-to-know-hatch.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    Packaging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    Tests
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/python-package-guide/tutorials/create-python-package.html"
+  selected
+>
+  en
+</option>
+<option
+  value="/python-package-guide/ja/tutorials/create-python-package.html"
+  
+>
+  ja
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/python-package-guide/tutorials/create-python-package.html"
+  selected
+>
+  en
+</option>
+<option
+  value="/python-package-guide/ja/tutorials/create-python-package.html"
+  
+>
+  ja
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    Packaging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    Tests
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging Tutorial Setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Create a Python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project information files &amp; metadata</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="add-readme.html">Add README file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">Add a license &amp; code of conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">Update metadata in pyproject.toml</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hatch for Existing Packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Migrate setup.py to a pyproject.toml using Hatch</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python packaging 101</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Create a pure Python package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="create-a-pure-python-package">
+<span id="create-pure-python-package"></span><h1>Create a pure Python package<a class="headerlink" href="#create-a-pure-python-package" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">About this lesson</p>
+<p>This lesson uses the pyOpenSci Python package copier template to create a Python package quickly. Your package will be installable both locally and remotely from a website such as
+GitHub (or GitLab) into a Python environment.</p>
+<p>In this lesson, you will learn:</p>
+<ul class="simple">
+<li><p>How to make your code installable into any Python environment, both locally and from GitHub</p></li>
+<li><p>How to update a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, which contains the metadata needed to build, install, and publish your package.</p></li>
+<li><p>How to declare a <a class="reference internal" href="../package-structure-code/python-package-build-tools.html#build-backends"><span class="std std-ref">build backend</span></a> which will be used to <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#build-package"><span class="std std-ref">build</span></a> and install your package</p></li>
+<li><p>How to install your package in editable mode for interactive development</p></li>
+</ul>
+<p><strong>What you need to complete this lesson</strong></p>
+<p>To complete this lesson, you will need a local Python
+environment and shell on your computer.
+You will need to have <a class="reference external" href="https://copier.readthedocs.io/en/stable/">Copier</a> and <a class="reference internal" href="get-to-know-hatch.html"><span class="doc std std-doc">Hatch installed</span></a> to complete the lesson successfully.</p>
+<p>If you are using Windows or are not familiar with Shell, you may want to check out the Carpentries shell lesson<a class="footnote-reference brackets" href="#shell-lesson" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Windows users will likely need to configure a tool such as <a class="reference external" href="https://gitforwindows.org/">gitbash</a> for any Shell and git-related steps.</p>
+</div>
+<figure class="align-default" id="packages-environment">
+<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." src="../_images/environment-package-install.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">In a <a class="reference internal" href="intro.html"><span class="doc std std-doc">previous lesson, you learned what a Python package is</span></a>. Creating a Python package allows you to install your code into any Python environment on your computer. You can then import it into workflows in the same way that you might import a package such as Pandas or GeoPandas. If you push your code to GitHub or GitLab, you can also install it directly from there. <a class="reference internal" href="#package-overview"><span class="std std-ref">Scroll to the bottom of the page to learn more about the basic elements of a Python package.</span></a>.</span><a class="headerlink" href="#packages-environment" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="create-your-python-package">
+<h2>Create your Python package<a class="headerlink" href="#create-your-python-package" title="Link to this heading">#</a></h2>
+<p>Below, you will create a pure Python package using the <a class="reference external" href="https://github.com/pyOpenSci/pyos-package-template">pyOpenSci copier template</a>. Our template uses Hatch as the default packaging tool. At the bottom of this lesson, you’ll learn more about the basics of the Python package directory structure, and associated key files (<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> and <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>).</p>
+</section>
+<section id="step-1-set-up-the-package-directory-structure">
+<h2>Step 1: Set Up the Package Directory Structure<a class="headerlink" href="#step-1-set-up-the-package-directory-structure" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Open your shell or preferred terminal.</p></li>
+<li><p>Use the shell <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to navigate in your shell to the location where you’d like your package to live. Our template will create the package directory structure for you</p></li>
+<li><p>Choose a name for your package. The name should:</p>
+<ul>
+<li><p>Have no spaces (<em>Required</em>)</p></li>
+<li><p>Use all lowercase characters (<em>Recommended</em>). For this tutorial, we will use <code class="docutils literal notranslate"><span class="pre">pyospackage</span></code>.</p></li>
+<li><p>Only use letters and the characters _ or - in the name. This means that the name <code class="docutils literal notranslate"><span class="pre">pyos*package</span></code> is not an acceptable name. However, the names <code class="docutils literal notranslate"><span class="pre">pyos_package</span></code> or <code class="docutils literal notranslate"><span class="pre">pyos-package</span></code> are both OK.</p></li>
+</ul>
+</li>
+</ul>
+<p>In your terminal, <strong>run the command below</strong>. This will begin a series of prompts that will ask you questions and help you to customize your Python package.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>copier<span class="w"> </span>copy<span class="w"> </span>gh:pyopensci/pyos-package-template<span class="w"> </span>.
+</pre></div>
+</div>
+<p>After running the command above, the template will walk you through a series of questions.</p>
+<p>Note that when you reach the prompt “Do you want to answer one more question, and skip the rest, using the default values?” you can choose <kbd>Yes, but with a minimal setup</kbd> to create the most basic version of your package that contains documentation, tests and a example module for you to use.</p>
+<p>After this question, the template will ask you for your preferred GitHub username and will then create a package with basic tests, documentation, and GitHub configuration setup for you.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">➜ copier copy gh:pyopensci/pyos-package-template .</span>
+<span class="go">🎤 &quot;Welcome to the pyOpenSci package template.</span>
+<span class="go">Please select the type of template that you want to create today.&quot;</span>
+<span class="go"> &gt;&gt; MINIMAL: I want a minimal setup (package, tests and docs; typing); linting not included).</span>
+<span class="go">    FULL DEFAULT: I want to use the default settings but I want it setup for me.</span>
+<span class="go">    FULL CUSTOM: I want it all but I want to fully customize all template elements.</span>
+<span class="go">🎤 What is the name of the project? Used as the README.md title, in the</span>
+<span class="go">   pyospackage_juno</span>
+<span class="go">🎤 Please provide a short description for the package.</span>
+<span class="go">    (Finish with &#39;Alt+Enter&#39; or &#39;Esc then Enter&#39;)</span>
+<span class="go">&gt; A great package that adds and subtracts numbers.</span>
+<span class="go">🎤 Who is the author of the package? Used in the package description.</span>
+<span class="go">   juno dawg</span>
+<span class="go">🎤 Provide you or your organization&#39;s GitHub username. Used to generate</span>
+<span class="go">   pyopensci</span>
+</pre></div>
+</div>
+<p>The template will then begin to copy files into the directory that used above. (<code class="docutils literal notranslate"><span class="pre">.</span></code> means current working directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">...Copying from template version 0.6.4.1</span>
+<span class="go">    create  CODE_OF_CONDUCT.md</span>
+<span class="go">    ...The template will continue to copy files...</span>
+</pre></div>
+</div>
+<p>The final package structure will look like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">└── .github/ # a hidden directory with templates for github and actions to run your tests</span>
+<span class="go">├── CHANGELOG.md</span>
+<span class="go">├── CODE_OF_CONDUCT.md</span>
+<span class="go">├── CONTRIBUTING.md</span>
+<span class="go">├── LICENSE</span>
+<span class="go">├── README.md</span>
+<span class="go">├── pyproject.toml</span>
+<span class="go">└── src/  # This is your package directory where your code lives</span>
+<span class="go">└── docs/ # this is where your documentation lives</span>
+<span class="go">└── tests/ # Your tests are here</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">A full package with tests, docs, and GitHub infrastructure</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If you use the “bells and whistles” default option when working through the template prompts,
+our template will create a complete package setup with GitHub CI actions, typing, tests, environments
+, and more using Hatch. If you customize the entire package, then you can select what platform you wish to host it on (GitHub vs GitLab), whether you want typing, what documentation engine you want to use, and more.</p>
+<p class="sd-card-text">The resulting package directory looks like this</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">├── CHANGELOG.md</span>
+<span class="go">├── CODE_OF_CONDUCT.md</span>
+<span class="go">├── CONTRIBUTING.md</span>
+<span class="go">├── LICENSE</span>
+<span class="go">├── README.md</span>
+<span class="go">├── docs # This defaults to sphinx docs</span>
+<span class="go">│   ├── conf.py</span>
+<span class="go">│   └── index.md</span>
+<span class="go">├── pyproject.toml</span>
+<span class="go">├── src/   # This is your package directory where your code lives</span>
+<span class="go">│   └── pyospackage_pyopensci/</span>
+<span class="go">|       ├── __init__.py</span>
+<span class="go">|       └── example.py</span>
+<span class="go">└── tests/   # This is where your tests live, you don&#39;t need subdirectories, but they are nice to have</span>
+<span class="go">    ├── integration/</span>
+<span class="go">    ├── system/</span>
+<span class="go">    └── unit/</span>
+<span class="go">        └── test_example.py</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The default tools that your package uses are:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx</a> with the pydata_sphinx_theme for documentation</p></li>
+<li><p class="sd-card-text">pytest for testing</p></li>
+<li><p class="sd-card-text">Hatch for environment setup</p></li>
+</ul>
+<p class="sd-card-text"><strong>Full customization</strong>
+If you want to customize any elements of your package setup, choose <code class="docutils literal notranslate"><span class="pre">No,</span> <span class="pre">I</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">fully</span> <span class="pre">customize</span> <span class="pre">the</span> <span class="pre">template.</span></code>.  This will allow you to select:</p>
+<ul class="simple">
+<li><p class="sd-card-text">sphinx vs <a class="reference external" href="https://www.mkdocs.org/">mkdocs</a> vs no documentation</p></li>
+<li><p class="sd-card-text">GitHub vs GitLab</p></li>
+<li><p class="sd-card-text">VCS versioning</p></li>
+<li><p class="sd-card-text">and more</p></li>
+</ul>
+</div>
+</details></section>
+<section id="step-2-explore-the-existing-module-in-your-package">
+<h2>Step 2: Explore the existing module in your package<a class="headerlink" href="#step-2-explore-the-existing-module-in-your-package" title="Link to this heading">#</a></h2>
+<p>A Python module refers to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file containing the code that you want your package to access and run. Within the <code class="docutils literal notranslate"><span class="pre">pyospackage</span></code> subdirectory, you have an example.py module that you can use to test out your package quickly.</p>
+<p>Notice that the code in the example.py module, has a few features:</p>
+<ol class="arabic simple">
+<li><p>It has a <a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#numpy-docstring"><span class="std std-ref">numpy-style docstring</span></a></p></li>
+<li><p>It uses <a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#type-hints"><span class="std std-ref">typing</span></a></p></li>
+<li><p>At the top of the module, there is a docstring explaining what the module does.</p></li>
+</ol>
+<p>Python supports different docstring formats. The most popular formats for documenting Python objects are NumPy Style Docstring<a class="footnote-reference brackets" href="#numpydoc" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, Google Style Docstring<a class="footnote-reference brackets" href="#googledoc" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, and the Epytext Style Docstrings<a class="footnote-reference brackets" href="#epytextdoc" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<p><strong>pyOpenSci recommends using the NumPy Docstring convention.</strong></p>
+<p><a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#api-docstrings"><span class="std std-ref">Learn more about docstrings here</span></a> for an overview of both topics.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_num</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add two numbers.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : int</span>
+<span class="sd">        The first number to be added.</span>
+<span class="sd">    b : int</span>
+<span class="sd">        The second number to be added.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        The sum of the two input numbers (a + b).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; add_num(3, 5)</span>
+<span class="sd">    8</span>
+<span class="sd">    &gt;&gt;&gt; add_num(-2, 7)</span>
+<span class="sd">    5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Python modules and the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file</p>
+<p>The word module refers to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file containing Python code.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>  allows Python to recognize that a directory contains at least one module that may be imported and used in your code.
+A package can have multiple modules<a class="footnote-reference brackets" href="#python-modules" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+</div>
+</section>
+<section id="step-3-optional-add-code-to-your-module">
+<h2>Step 3: Optional – Add code to your module<a class="headerlink" href="#step-3-optional-add-code-to-your-module" title="Link to this heading">#</a></h2>
+<p>If you want, add a second function to the <code class="docutils literal notranslate"><span class="pre">example.py</span></code> module. It can be a simple function.
+For example, write a second function that multiplies numbers.</p>
+</section>
+<section id="step-4-check-out-the-metadata-in-your-pyproject-toml-file">
+<h2>Step 4: Check out the metadata in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file<a class="headerlink" href="#step-4-check-out-the-metadata-in-your-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file stores metadata that provides instructions to various tools interacting with it, including Hatch, which will build your package. You can also specify metadata for your package.</p>
+<p>You will learn more about the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> format in the
+<a class="reference internal" href="pyproject-toml.html"><span class="std std-doc">next lesson when you add additional metadata/information to this file.</span></a></p>
+<p>The metadata in your generated pyproject.toml is already setup for you using the information you provided the copier template above.</p>
+<div class="tip admonition">
+<p class="admonition-title">Brief overview of the TOML file</p>
+<p><a class="reference external" href="https://toml.io/en/">The TOML format</a> consists of tables and variables. Tables are sections of information denoted by square brackets:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[this-is-a-table]</span></code>.</p>
+<p>Tables can contain variables within them defined by a variable name and an <code class="docutils literal notranslate"><span class="pre">=</span></code> sign.
+For instance, a <code class="docutils literal notranslate"><span class="pre">build-system</span></code> table most often holds two (2) variables:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span> </code>, which tells a build tool what tools it needs to install prior to building your package. In this case
+<a class="reference external" href="https://pypi.org/project/hatchling/">hatchling</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">build-backend</span> <span class="pre">=</span> </code>, which is used to define the specific build-backend name, (in this example we are using <code class="docutils literal notranslate"><span class="pre">hatchling.build</span></code>).</p></li>
+</ol>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># An example of the build-system table which contains two variables - requires and build-backend</span>
+<span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
+</pre></div>
+</div>
+<p>TOML organizes data structures, defining relationships within a configuration
+file.</p>
+<p><a class="reference internal" href="../package-structure-code/pyproject-toml-python-package-metadata.html#pyprojecttoml-metadata"><span class="std std-ref">Learn more about the pyproject.toml format here.</span></a></p>
+</div>
+<ul class="simple">
+<li><p>Open up the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file that Hatch created in your favorite text editor. It should look something like the example below.</p></li>
+<li><p>Make sure the package version, package name, and author name look correct. The email is optional.</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A small template package that does cool things.&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pyopensci@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;content-type&quot;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;text/markdown&quot;</span><span class="p">}</span>
+<span class="c1"># Please consult https://pypi.org/classifiers/ for a full list.</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Development Status :: 2 - Pre-Alpha&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Intended Audience :: Science/Research&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="c1"># TODO: add keywords</span>
+<span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<span class="c1"># TODO: add dependencies</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+
+<span class="k">[project.urls]</span>
+<span class="n">Homepage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyospackage&quot;</span>
+<span class="s2">&quot;Source Code&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyospackage&quot;</span>
+<span class="s2">&quot;Bug Tracker&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyospackage/issues&quot;</span>
+<span class="n">Documentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://pyospackage.readthedocs.io&quot;</span>
+<span class="n">Download</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://pypi.org/project/pyospackage/#files&quot;</span>
+
+<span class="k">[project.optional-dependencies]</span>
+<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;hatch&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;pre-commit&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>At the bottom of the template-generated <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, you will see a section that defines Hatch environments. We will cover Hatch environments in a later lesson.</p>
+<div class="tip admonition">
+<p class="admonition-title">The bare minimum needed in a pyproject.toml file</p>
+<p>The core information that you need in a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to publish on PyPI is your <strong>package’s name</strong>  and the <strong>version</strong>. However, we suggest that you flesh out your metadata early on in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
+<p>Once you have your project metadata in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, you will
+rarely update it.</p>
+</div>
+</section>
+<section id="step-5-install-your-package-locally">
+<h2>Step 5: Install your package locally<a class="headerlink" href="#step-5-install-your-package-locally" title="Link to this heading">#</a></h2>
+<p>At this point, you should have:</p>
+<ol class="arabic simple">
+<li><p>A project directory structure with a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file at the root</p></li>
+<li><p>A package directory containing an empty <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and</p></li>
+<li><p>At least one Python module (e.g. <code class="docutils literal notranslate"><span class="pre">example.py</span></code>)</p></li>
+</ol>
+<p>You are now ready to install (and build) your Python package!</p>
+<p>While you can do this using Hatch, we will use pip for this lesson, so you can see how to install your tool into your preferred environment.</p>
+<p>First, open your preferred shell (Windows users may use something like GitBash) and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into your project directory if you are not already there.</p>
+<ul class="simple">
+<li><p>Activate the Python environment that you wish to use.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Activate your environment using conda or venv</span>
+<span class="c1"># Below we use conda but you can do the same thing with venv!</span>
+&gt;<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>pyosdev
+<span class="o">(</span>pyosdev<span class="o">)</span>
+&gt;<span class="w"> </span>conda<span class="w"> </span>info
+<span class="w">    </span>active<span class="w"> </span>environment<span class="w"> </span>:<span class="w"> </span>pyosdev
+<span class="w">    </span>active<span class="w"> </span>env<span class="w"> </span>location<span class="w"> </span>:<span class="w"> </span>/Users/your-path/mambaforge/envs/pyosdev
+<span class="c1"># Cd into your project directory</span>
+&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>pyospackage
+<span class="c1"># Install your package</span>
+&gt;<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+
+Obtaining<span class="w"> </span>file:///Users/leahawasser/Documents/GitHub/pyos/pyosPackage
+<span class="w">  </span>Installing<span class="w"> </span>build<span class="w"> </span>dependencies<span class="w"> </span>...<span class="w"> </span><span class="k">done</span>
+<span class="w">  </span>Checking<span class="w"> </span><span class="k">if</span><span class="w"> </span>build<span class="w"> </span>backend<span class="w"> </span>supports<span class="w"> </span>build_editable<span class="w"> </span>...<span class="w"> </span><span class="k">done</span>
+<span class="w">  </span>Getting<span class="w"> </span>requirements<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>editable<span class="w"> </span>...<span class="w"> </span><span class="k">done</span>
+
+<span class="c1"># Check to see if the package is installed</span>
+&gt;<span class="w"> </span>conda<span class="w"> </span>list
+<span class="c1"># use pip list instead of conda list here if you are working in an venv environment rather than a conda envt</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">What does <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> do?</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> installs your package into the current active
+Python environment in <strong>editable mode</strong> (<code class="docutils literal notranslate"><span class="pre">-e</span></code>). Installing your package in
+editable mode, allows you to work on your code and then test the updates
+interactively in your favorite Python interface. One important caveat of editable mode is that every time you update your code, you need to restart Python.</p>
+<p>If you wish to install the package regularly (not in editable
+mode) you can use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span> </code></p></li>
+</ul>
+<p><strong>Using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> when calling <code class="docutils literal notranslate"><span class="pre">pip</span></code></strong></p>
+<p>Above, you use<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> to call the version of pip installed into your
+current active environment. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> is important to ensure that you are
+calling the version of pip installed in your current environment.</p>
+<p>IMPORTANT: pip can also be used to install packages from PyPI. However, in this case, you are telling pip to install your package from a local folder by using the <code class="docutils literal notranslate"><span class="pre">.</span></code>. You could also specify a path to the project directory on your computer instead of the <code class="docutils literal notranslate"><span class="pre">.</span></code> which tells pip to use the current working directory.</p>
+</div>
+<section id="look-for-pyospackage-in-your-environment">
+<h3>Look for pyospackage in your environment<a class="headerlink" href="#look-for-pyospackage-in-your-environment" title="Link to this heading">#</a></h3>
+<p>Once you have installed your package, you can view it in your current
+environment. If you are using <code class="docutils literal notranslate"><span class="pre">venv</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code> list will return
+a list of packages in the current active environment.</p>
+<p>Note that because <code class="docutils literal notranslate"><span class="pre">pyospackage</span></code> is installed in editable mode (<code class="docutils literal notranslate"><span class="pre">-e</span></code>), pip will show you the directory path to your project’s code</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>list
+
+➜<span class="w"> </span>pip<span class="w"> </span>list
+Package<span class="w">                       </span>Version<span class="w">        </span>Editable<span class="w"> </span>project<span class="w"> </span>location
+-----------------------------<span class="w"> </span>--------------<span class="w"> </span>--------------------------------------------------------------
+...
+arrow<span class="w">                         </span><span class="m">1</span>.2.3
+...
+...
+mamba<span class="w">                         </span><span class="m">1</span>.1.0
+markdown-it-py<span class="w">                </span><span class="m">2</span>.2.0
+MarkupSafe<span class="w">                    </span><span class="m">2</span>.1.2
+matplotlib<span class="w">                    </span><span class="m">3</span>.7.1
+msgpack<span class="w">                       </span><span class="m">1</span>.0.5
+mypy<span class="w">                          </span><span class="m">1</span>.4.1
+nox<span class="w">                           </span><span class="m">2021</span>.10.1
+numpy<span class="w">                         </span><span class="m">1</span>.24.2
+packaging<span class="w">                     </span><span class="m">23</span>.0
+pandas<span class="w">                        </span><span class="m">1</span>.5.3
+pyosPackage<span class="w">                   </span><span class="m">0</span>.1<span class="w">            </span>/Users/yourusername/path/here/pyosPackage
+...
+...
+...
+</pre></div>
+</div>
+</section>
+</section>
+<section id="step-6-test-out-your-new-package">
+<h2>Step 6: Test out your new package<a class="headerlink" href="#step-6-test-out-your-new-package" title="Link to this heading">#</a></h2>
+<p>After installing your package, type “python” at the command prompt in your chosen terminal to start
+a Python session in your active Python environment.</p>
+<p>You can now import your package and access the <code class="docutils literal notranslate"><span class="pre">add_numbers</span></code> function.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>python
+Python<span class="w"> </span><span class="m">3</span>.11.4<span class="w"> </span><span class="p">|</span><span class="w"> </span>packaged<span class="w"> </span>by<span class="w"> </span>conda-forge
+Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class="w"> </span><span class="s2">&quot;copyright&quot;</span>,<span class="w"> </span><span class="s2">&quot;credits&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;license&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
+&gt;&gt;&gt;<span class="w"> </span>from<span class="w"> </span>pyospackage.example<span class="w"> </span>import<span class="w"> </span>add_numbers
+&gt;&gt;&gt;<span class="w"> </span>add_numbers<span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+<span class="m">3</span>
+</pre></div>
+</div>
+<div class="admonition-installing-packages-from-github admonition">
+<p class="admonition-title">Installing packages from GitHub</p>
+<p>If you wish to share your code without publishing to PyPI you can
+always install packages directly from GitHub using the syntax:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/user/repo.git@branch_or_tag
+</pre></div>
+</div>
+<p>To make your package GitHub installable, you can:</p>
+<ol class="arabic simple">
+<li><p>Create a new GitHub repository</p></li>
+<li><p>Push the contents of the project directory that you created above, to GitHub</p></li>
+<li><p>Finally install the package from GitHub using the command above. When you use the command above, don’t forget to substitute the user, repo, and branch_or_tag with your specific values.</p></li>
+</ol>
+<p>For instance below you install the pyospackage from the main branch of the
+pyOpenSci repository.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/user/repo.git&#64;branch_or_tag</span></code></p>
+</div>
+</section>
+<section id="congratulations-you-created-your-first-python-package">
+<h2>Congratulations! You created your first Python package<a class="headerlink" href="#congratulations-you-created-your-first-python-package" title="Link to this heading">#</a></h2>
+<p>You have now created a Python package that you can install
+into any Python environment.</p>
+<p>In the upcoming lessons, you will:</p>
+<ul class="simple">
+<li><p>Add a <a class="reference internal" href="add-readme.html"><span class="std std-doc">README file</span></a> and <a class="reference internal" href="add-license-coc.html"><span class="std std-doc">LICENSE</span></a> to your package</p></li>
+<li><p><a class="reference internal" href="pyproject-toml.html"><span class="std std-doc">Add more metadata to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></span></a> file to support PyPI publication.</p></li>
+<li><p><a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">Learn how to build your package distribution</span></a> files (<strong>sdist</strong> and <strong>wheel</strong>) and publish to <strong>test PyPI</strong>.</p></li>
+<li><p>Finally you will learn how to <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">publish to <strong>conda-forge</strong></span></a> from <strong>PyPI</strong>.</p></li>
+</ul>
+</section>
+<section id="about-the-python-package-directory-structure">
+<span id="package-overview"></span><h2>About the Python package directory structure<a class="headerlink" href="#about-the-python-package-directory-structure" title="Link to this heading">#</a></h2>
+<p>To make your Python code installable you need to create a specific directory structure with the following elements:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p></li>
+<li><p>A specific directory structure.</p></li>
+<li><p>Some code.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file in your code directory.</p></li>
+</ul>
+<p>The directory structure you’ll create in this lesson will look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyospackage/<span class="w">  </span><span class="c1"># Your project directory</span>
+<span class="w"> </span>└─<span class="w"> </span>pyproject.toml
+<span class="w"> </span>└─<span class="w"> </span>src/<span class="w">  </span><span class="c1"># The source (src) directory ensures your tests always run on the installed version of your code</span>
+<span class="w">    </span>└──<span class="w"> </span>pyospackage/<span class="w">  </span><span class="c1"># Package directory where code lives</span>
+<span class="w">        </span>├──<span class="w"> </span>__init__.py
+<span class="w">        </span>├──<span class="w"> </span>add_numbers.py
+<span class="w">        </span>└──<span class="w"> </span><span class="c1"># Add any other .py modules that you want here</span>
+</pre></div>
+</div>
+<figure class="align-default" id="code-to-python-package">
+<a class="reference internal image-reference" href="../_images/code-to-python-package.png"><img alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." src="../_images/code-to-python-package.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Once you have the basic items of a Python package (code, metadata and a file structure), you can <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> your package into any Python environment on your computer.</span><a class="headerlink" href="#code-to-python-package" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="about-the-basic-package-directory-structure">
+<h3>About the basic package directory structure<a class="headerlink" href="#about-the-basic-package-directory-structure" title="Link to this heading">#</a></h3>
+<p>Notice a few things about the above layout:</p>
+<ol class="arabic simple">
+<li><p>Your package code lives within a <code class="docutils literal notranslate"><span class="pre">src/packagename</span></code> directory. We suggest that you use <code class="docutils literal notranslate"><span class="pre">src</span></code> (short for <strong>source code</strong>) directory as it <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html#the-src-layout-and-testing">ensures that you are running tests on the installed version of your code</a>.</p></li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory you have a package directory called <code class="docutils literal notranslate"><span class="pre">pyospackage</span></code>. Use the name of your package for that directory name. This will be the name for importing your package in Python code once installed.</p></li>
+<li><p>In your package directory, you have an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and all of your Python modules. You will learn more about the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file below.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file lives at the root directory of your package.</p></li>
+<li><p>The name of the root directory for the package is <strong>pyospackage</strong> which is the name of the package. This is not a requirement but you will often see that the GitHub / GitLab repository and the root directory name are the same as the package name.</p></li>
+</ol>
+</section>
+<section id="what-is-an-init-py-file">
+<h3>What is an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file?<a class="headerlink" href="#what-is-an-init-py-file" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file tells Python that a directory
+should be treated as a Python package. As such, a directory with an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file can be imported
+directly into Python. The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file does not need to contain any code in order for Python to recognize it; it can be empty.</p>
+<p>For example, following the file structure example above which has an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file within it, you can run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyospackage</span>
+</pre></div>
+</div>
+</section>
+<section id="what-is-a-pyproject-toml-file">
+<h3>What is a pyproject.toml file?<a class="headerlink" href="#what-is-a-pyproject-toml-file" title="Link to this heading">#</a></h3>
+<p>The <strong>pyproject.toml</strong> file is:</p>
+<ul class="simple">
+<li><p>Where you define your project’s metadata (including its name, authors, license, etc)</p></li>
+<li><p>Where you define dependencies (the packages that it depends on)</p></li>
+<li><p>Used to specify and configure what build backend you want to use to <a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">build your package</span></a>.</p></li>
+</ul>
+<p>After the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> and <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> files have been added,
+your package can be built and distributed as an installable Python
+package using tools such as pip. Note that the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file
+needs to have a few basic items defined for the package to be
+installable including:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">build-backend</span></code> that you want to use,</p></li>
+<li><p>The project <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">version</span></code>.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Why the pyproject.toml file is important</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file replaces some of the functionality of both the
+<code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file and <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> files.
+If you try to pip install a package with no <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, you will get the following error:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GitHub/pyospackage/testme
+➜<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+ERROR:<span class="w"> </span>Directory<span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installable.
+Neither<span class="w"> </span><span class="s1">&#39;setup.py&#39;</span><span class="w"> </span>nor<span class="w"> </span><span class="s1">&#39;pyproject.toml&#39;</span><span class="w"> </span>found.
+</pre></div>
+</div>
+<p>If your project already has a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file, Hatch can be used to automatically create a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Using Hatch to Migrate setup.py to a pyproject.toml</span></a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="shell-lesson" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://swcarpentry.github.io/shell-novice/">Carpentries shell lesson</a></p>
+</aside>
+<aside class="footnote brackets" id="numpydoc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">Numpy style docs</a></p>
+</aside>
+<aside class="footnote brackets" id="googledoc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google docstring style</a></p>
+</aside>
+<aside class="footnote brackets" id="epytextdoc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://epydoc.sourceforge.net/epytext.html">epydoc</a></p>
+</aside>
+<aside class="footnote brackets" id="python-modules" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#packages">Python module docs</a></p>
+</aside>
+</aside>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="get-to-know-hatch.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Get to Know Hatch</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="publish-pypi.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Publish your Python package to PyPI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-python-package">Create your Python package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-set-up-the-package-directory-structure">Step 1: Set Up the Package Directory Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-explore-the-existing-module-in-your-package">Step 2: Explore the existing module in your package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-optional-add-code-to-your-module">Step 3: Optional – Add code to your module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-check-out-the-metadata-in-your-pyproject-toml-file">Step 4: Check out the metadata in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-install-your-package-locally">Step 5: Install your package locally</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#look-for-pyospackage-in-your-environment">Look for pyospackage in your environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-test-out-your-new-package">Step 6: Test out your new package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#congratulations-you-created-your-first-python-package">Congratulations! You created your first Python package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-python-package-directory-structure">About the Python package directory structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-basic-package-directory-structure">About the basic package directory structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-init-py-file">What is an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-pyproject-toml-file">What is a pyproject.toml file?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/tutorials/create-python-package.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tutorials/create-python-package.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

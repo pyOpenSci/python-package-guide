@@ -26,7 +26,7 @@ Other resources you can check out:
 You can use tools like Hatch to quickly create a modern Python package structure. Check out our quickstart tutorial:
 
 
-:::{button-link} https://www.pyopensci.org/python-package-guide/tutorials/installable-code.html#step-1-set-up-the-package-directory-structure
+:::{button-link} https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure
 :color: success
 :class: sd-rounded-pill float-left
 
@@ -163,7 +163,7 @@ Anaconda.org that have to deal with thousands of package uploads.
 ```
 
 
-:::{button-link} /tutorials/installable-code.html#step-1-set-up-the-package-directory-structure
+:::{button-link} /tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure
 :color: success
 :class: sd-rounded-pill float-left
 

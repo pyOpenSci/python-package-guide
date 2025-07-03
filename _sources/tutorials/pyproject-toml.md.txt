@@ -5,7 +5,7 @@
 
 # Make your Python package PyPI ready - pyproject.toml
 
-In [the installable code lesson](installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish a bare minimum version of your package to PyPI](publish-pypi.md).
+In [the installable code lesson](create-python-package), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish a bare minimum version of your package to PyPI](publish-pypi.md).
 
 Following that you learned how to add a:
 * [README.md](add-readme)
@@ -161,7 +161,7 @@ The documentation for the hatchling back-end is [here](https://hatch.pypa.io/lat
 
 ### Step 1: Add Author, maintainer and project description
 
-After completing the [installable code tutorial](installable-code), you should have a pyproject.toml file with a project name and a version in the `[project]` table.
+After completing the [installable code tutorial](create-python-package), you should have a pyproject.toml file with a project name and a version in the `[project]` table.
 
 ```toml
 [project]

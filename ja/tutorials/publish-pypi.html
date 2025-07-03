@@ -67,7 +67,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="PyPIにあるPythonパッケージをconda-forgeに公開する" href="publish-conda-forge.html" />
-    <link rel="prev" title="Pythonコードをインストール可能にする" href="installable-code.html" />
+    <link rel="prev" title="Create a pure Python package" href="create-python-package.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
   <meta name="docsearch:version" content="" />
@@ -469,7 +469,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonパッケージの作成と公開</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Pythonパッケージとは何ですか？</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installable-code.html">Create a Python package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-python-package.html">Create a Python package</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">PyPIに公開する</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">conda-forgeに公開する</a></li>
 </ul>
@@ -669,7 +669,9 @@ pyosPackage<span class="w"> </span><span class="o">(</span>☊<span class="w"> <
 <li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheelディストリビューション</span></a> は、あなたのパッケージのビルド済みバージョンです。 <code class="docutils literal notranslate"><span class="pre">pip</span></code> などのツールを使って直接インストールできるので、ユーザーにとっては便利です。このファイルの拡張子は <code class="docutils literal notranslate"><span class="pre">.whl</span></code> です。</p></li>
 <li><p><a class="reference internal" href="../package-structure-code/python-package-distribution-files-sdist-wheel.html#python-source-distribution"><span class="std std-ref">ソースディストリビューション</span></a> には、あなたのパッケージを構成するファイルが、ビルドされていない状態で含まれています。 このファイルの拡張子は <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> となります。</p></li>
 </ol>
-<p>Hatchを <strong>フロントエンド</strong> ツールとして使い、hatchlingビルドバックエンドを使ってパッケージのsdistとwheelをビルドします。 <a class="reference external" href="https://hatch.pypa.io/latest/">hatchling</a> ビルドバックエンドを使用するのは、 <a class="reference internal" href="installable-code.html"><span class="doc std std-doc">前のレッスン</span></a>でpyproject.tomlファイルで宣言したからです。</p>
+<p>You will use Hatch as a <strong>Front end</strong> tool that builds
+your package's sdist and wheel using the <a class="reference external" href="https://hatch.pypa.io/latest/">hatchling</a> build back-end.
+The hatchling build back-end is used because you declared it in your pyproject.toml file in the <a class="reference internal" href="create-python-package.html"><span class="doc std std-doc">previous lesson</span></a>.</p>
 <p>パッケージをビルドするには <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code> を実行します:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>hatch<span class="w"> </span>build
 ────────────────<span class="w"> </span>sdist<span class="w"> </span>─────────────────
@@ -702,7 +704,7 @@ dist/pyospackage-0.1-py3-none-any.whl
 <li><p><a class="reference external" href="https://test.pypi.org/">https://test.pypi.org/</a> で検索して ( <a class="reference external" href="https://pypi.org/">https://pypi.org/</a> でも検索して) 、選択したパッケージ名がすでに存在しないことを確認してください。 テスト用のpyosPackageを使う場合は、一意であることを保証するために、パッケージ名の最後に自分の名前かGitHubのユーザー名を追加することをお勧めします。</p></li>
 </ol>
 <p>例: <code class="docutils literal notranslate"><span class="pre">pyosPackage_yourNameHere</span></code>.</p>
-<div class="tip admonition">
+<div class="secondary admonition">
 <p class="admonition-title">How to rename your Python package if the name is already taken in (test) PyPI</p>
 <p class="rubric" id="required">要件</p>
 <ol class="arabic simple">
@@ -880,12 +882,12 @@ venv Mac / Linux</label><div class="sd-tab-content docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="installable-code.html"
+       href="create-python-package.html"
        title="前のページ">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">前へ</p>
-        <p class="prev-next-title">Pythonコードをインストール可能にする</p>
+        <p class="prev-next-title">Create a pure Python package</p>
       </div>
     </a>
     <a class="right-next"

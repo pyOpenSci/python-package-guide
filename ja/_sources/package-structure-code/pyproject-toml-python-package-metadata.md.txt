@@ -1,3 +1,4 @@
+(pyprojecttoml-metadata)=
 # Use a pyproject.toml file for your package configuration & metadata
 
 <!-- :::{admonition} TODOs for this page
