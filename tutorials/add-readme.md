@@ -8,7 +8,7 @@
 In the previous lessons you learned:
 
 1. [What a Python package is](intro.md)
-2. [How to make your code installable](installable-code)
+2. [How to make your code installable](create-python-package)
 3. [How to publish your package to (test) PyPI](publish-pypi.md)
 4. [How to publish your package to conda-forge](publish-conda-forge.md)
 
