@@ -35,9 +35,10 @@ If you are using Windows or are not familiar with Shell, you may want to check o
 
 <img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." width="700px">
 
+In a [previous lesson, you learned what a Python package is](intro). Creating a Python package allows you to install your code into any Python environment on your computer. You can then import it into workflows in the same way that you might import a package such as Pandas or GeoPandas. If you push your code to GitHub or GitLab, you can also install it directly from there. [Scroll to the bottom of the page to learn more about the basic elements of a Python package.](package-overview).
 :::
 
-In a [previous lesson, you learned what a Python package is](intro). Creating a Python package allows you to install your code into any Python environment on your computer. You can then import it into workflows in the same way that you might import a package such as Pandas or GeoPandas. If you push your code to GitHub or GitLab, you can also install it directly from there. [Scroll to the bottom of the page to learn more about the basic elements of a Python package.](package-overview).
+
 
 
 ## Create your Python package
