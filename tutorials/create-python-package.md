@@ -157,8 +157,9 @@ The resulting package directory looks like this
 │   └── index.md
 ├── pyproject.toml
 ├── src/   # This is your package directory where your code lives
-│   └── pyospackage_pyopensci
-        └── example.py
+│   └── pyospackage_pyopensci/
+|       ├── __init__.py
+|       └── example.py
 └── tests/   # This is where your tests live, you don't need subdirectories, but they are nice to have
     ├── integration/
     ├── system/
