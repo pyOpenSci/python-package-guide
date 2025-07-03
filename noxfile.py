@@ -9,6 +9,7 @@ import subprocess
 sys.path.insert(0, str(pathlib.Path(__file__).parent.absolute()))
 import conf
 
+reuse_existing_virtualenvs = True
 
 ## Sphinx related options
 

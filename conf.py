@@ -18,6 +18,9 @@ import subprocess
 import os
 from typing import TYPE_CHECKING
 from _ext import rss
+# Support add fonts to opengraph (noto sans jp)
+import matplotlib.font_manager as fm
+from pathlib import Path
 
 if TYPE_CHECKING:
     from sphinx.application import Sphinx
@@ -194,11 +197,19 @@ html_title = "Python Packaging Guide"
 html_js_files = ["matomo.js", "language_select.js"]
 
 
+
+
+# Path to the custom font
+font_path = Path(__file__).parent / "_static/fonts/NotoSansJP-VariableFont_wght.ttf"
+fm.fontManager.addfont(str(font_path))
+
 # Social cards
 ogp_site_url = "https://www.pyopensci.org/python-package-guide/"
 ogp_social_cards = {
     "line_color": "#6D597A",
     "image": "_static/pyopensci-logo-package-guide.png",
+    "font": "Noto Sans JP",
+    "font_path": str(font_path),
 }
 
 # Bibliographies
