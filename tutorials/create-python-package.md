@@ -35,8 +35,9 @@ If you are using Windows or are not familiar with Shell, you may want to check o
 
 <img src="../images/tutorials/environment-package-install.png" alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." width="700px">
 
-Creating a Python package allows you to install your code into any Python environment on your computer. You can then import it into workflows in the same way that you might import a package such as Pandas or GeoPandas. If you push your code to GitHub or GitLab, you can also install it directly from there.
 :::
+
+In a [previous lesson, you learned what a Python package is](intro). Creating a Python package allows you to install your code into any Python environment on your computer. You can then import it into workflows in the same way that you might import a package such as Pandas or GeoPandas. If you push your code to GitHub or GitLab, you can also install it directly from there. [Scroll to the bottom of the page to learn more about the basic elements of a Python package.](package-overview).
 
 
 ## Create your Python package
@@ -66,60 +67,29 @@ After this question, the template will ask you for your preferred GitHub usernam
 
 ```console
 
-➜ copier copy . _law_tests/ --vcs-ref contributing
-🎤 Who is the copyright holder, for example, yourself or your organization?
-   pyOpenSci
-🎤 Who is the author of the package to be? Used in the package description.
-   pyOpenSci
-🎤 The author's email address. Used in the package description.
-   pyopensci@pyopensci.org
-🎤 What is the name of the project? Used as the title in the README.md and
-   pyospackage
+➜ copier copy gh:pyopensci/pyos-package-template .
+🎤 "Welcome to the pyOpenSci package template.
+Please select the type of template that you want to create today."
+ >> MINIMAL: I want a minimal setup (package, tests and docs; typing); linting not included).
+    FULL DEFAULT: I want to use the default settings but I want it setup for me.
+    FULL CUSTOM: I want it all but I want to fully customize all template elements.
+🎤 What is the name of the project? Used as the README.md title, in the
+   pyospackage_juno
 🎤 Please provide a short description for the package.
     (Finish with 'Alt+Enter' or 'Esc then Enter')
-> A small template package that does cool things.
-
-🎤 Do you want to answer one more question, and skip the rest, using the default values?
-   Yes, but with a minimal setup (package, tests and docs only).
-🎤 Provide you or your organization's GitHub username. Used to generate certain documentation...
+> A great package that adds and subtracts numbers.
+🎤 Who is the author of the package? Used in the package description.
+   juno dawg
+🎤 Provide you or your organization's GitHub username. Used to generate
    pyopensci
 
-Copying from template version 0.6.2
-    create  CODE_OF_CONDUCT.md
-    create  .gitignore
-    create  CHANGELOG.md
-    create  LICENSE
-    create  README.md
-    create  tests
-    create  tests/unit
-    create  tests/unit/.keep
-    create  tests/integration
-    create  tests/integration/.keep
-    create  tests/system
-    create  tests/system/test_import.py
-    create  tests/system/.keep
-    create  .editorconfig
-    create  .github
-    create  .github/SUPPORT.md
-    create  .github/workflows
-    create  .github/workflows/release.yml
-    create  .github/workflows/test.yml
-    create  .github/PULL_REQUEST_TEMPLATE.md
-    create  .github/ISSUE_TEMPLATE
-    create  .github/ISSUE_TEMPLATE/config.yml
-    create  .github/ISSUE_TEMPLATE/02-question.yml
-    create  .github/ISSUE_TEMPLATE/03-feature-request.yml
-    create  .github/ISSUE_TEMPLATE/01-bug-report.yml
-    create  CONTRIBUTING.md
-    create  docs
-    create  docs/conf.py
-    create  docs/index.md
-    create  pyproject.toml
-    create  src
-    create  src/pyospackage
-    create  src/pyospackage/example.py
-    create  src/pyospackage/__init__.py
+```
+The template will then begin to copy files into the directory that used above. (`.` means current working directory
 
+```console
+...Copying from template version 0.6.4.1
+    create  CODE_OF_CONDUCT.md
+    ...The template will continue to copy files...
 ```
 
 The final package structure will look like this:
@@ -184,9 +154,9 @@ If you want to customize any elements of your package setup, choose `No, I want 
 
 ## Step 2: Explore the existing module in your package
 
-A Python module refers to a `.py` file containing the code that you want your package to access and run. Within the `pyospackage` subdirectory you have an example.py module that you can use to test out your package quickly.
+A Python module refers to a `.py` file containing the code that you want your package to access and run. Within the `pyospackage` subdirectory, you have an example.py module that you can use to test out your package quickly.
 
-Notice that the code in the example.py modulf, has a few features:
+Notice that the code in the example.py module, has a few features:
 
 1. It has a [numpy-style docstring](numpy-docstring)
 2. It uses [typing](type-hints)
@@ -238,11 +208,15 @@ A package can have multiple modules[^python-modules].
 
 ## Step 3: Optional -- Add code to your module
 
-If you want, add a second function to the example.py module.
+If you want, add a second function to the `example.py` module. It can be a simple function.
+For example, write a second function that multiplies numbers.
 
 ## Step 4: Check out the metadata in your `pyproject.toml` file
 
-A pyproject.toml file is a metadata file that provudes instructions to various tools interacting with it including Hatch which will build your package. You can also specify metadata for your package which you will learn about in the next lesson.
+A `pyproject.toml` file stores metadata that provides instructions to various tools interacting with it, including Hatch, which will build your package. You can also specify metadata for your package.
+
+You will learn more about the `pyproject.toml` format in the
+[next lesson when you add additional metadata/information to this file.](pyproject-toml.md)
 
 The metadata in your generated pyproject.toml is already setup for you using the information you provided the copier template above.
 
@@ -273,11 +247,8 @@ file.
 [Learn more about the pyproject.toml format here.](pyprojecttoml-metadata)
 :::
 
-You will learn more about the `pyproject.toml` format in the
-[next lesson when you add additional metadata/information to this file.](pyproject-toml.md)
-
 - Open up the `pyproject.toml` file that Hatch created in your favorite text editor. It should look something like the example below.
-- You will customize this file more in the next lesson.
+- Make sure the package version, package name, and author name look correct. The email is optional.
 
 ```toml
 [project]
@@ -315,18 +286,16 @@ dev = [
     "pre-commit",
 ]
 ```
-At the bottom of the template-generated pyproject.toml file, you will see a section that defines Hatch environments.
 
-We will cover environments in a later lesson.
-
+At the bottom of the template-generated `pyproject.toml` file, you will see a section that defines Hatch environments. We will cover Hatch environments in a later lesson.
 
 :::{admonition} The bare minimum needed in a pyproject.toml file
 :class: tip
 
-The core information that you need in a `pyproject.toml` file in order to publish on PyPI is your **package's name**  and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
+The core information that you need in a `pyproject.toml` file to publish on PyPI is your **package's name**  and the **version**. However, we suggest that you flesh out your metadata early on in the `pyproject.toml` file.
 
-Once you have your project metadata in the pyproject.toml file, you will
-rarely update it. In the next lesson you'll add more metadata and structure to this file.
+Once you have your project metadata in the `pyproject.toml` file, you will
+rarely update it.
 :::
 
 ## Step 5: Install your package locally
@@ -481,7 +450,7 @@ In the upcoming lessons, you will:
 * Finally you will learn how to [publish to **conda-forge**](publish-conda-forge) from **PyPI**.
 
 
-
+(package-overview)=
 ## About the Python package directory structure
 
 To make your Python code installable you need to create a specific directory structure with the following elements:
