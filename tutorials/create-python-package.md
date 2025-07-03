@@ -176,7 +176,7 @@ The default tools that your package uses are:
 **Full customization**
 If you want to customize any elements of your package setup, choose `No, I want to fully customize the template.`.  This will allow you to select:
 
-* sphinx vs makedocs vs no documentation
+* sphinx vs [mkdocs](https://www.mkdocs.org/) vs no documentation
 * GitHub vs GitLab
 * VCS versioning
 * and more
