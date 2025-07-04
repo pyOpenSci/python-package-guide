@@ -51,6 +51,7 @@ Publish to conda-forge <publish-conda-forge>
 :hidden:
 :caption: Project information files & metadata
 
+Develop package (Hatch environments) <develop-python-package-hatch>
 Add README file <add-readme>
 Add a license & code of conduct <add-license-coc>
 Update metadata in pyproject.toml <pyproject-toml>

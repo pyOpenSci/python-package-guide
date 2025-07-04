@@ -1,5 +1,5 @@
 ---
-:og:description: Learn how to create a Python package and make your code installable using Hatch. This tutorial walks you through structuring your code and configuring a pyproject.toml so others can easily install and use your package.
+:og:description: "Learn how to create a Python package and make your code installable using Hatch. This tutorial walks you through structuring your code and configuring a pyproject.toml so others can easily install and use your package."
 :og:title: Create a Python package from scratch, a beginner-friendly tutorial
 ---
 
