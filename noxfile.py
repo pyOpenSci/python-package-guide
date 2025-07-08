@@ -9,6 +9,8 @@ import subprocess
 sys.path.insert(0, str(pathlib.Path(__file__).parent.absolute()))
 import conf
 
+nox.needs_version = ">=2024.3.2"
+nox.options.default_venv_backend = "uv|virtualenv"
 
 ## Sphinx related options
 
@@ -83,7 +85,7 @@ def docs_test(session):
 def _autobuild_cmd(posargs: list[str], output_dir = OUTPUT_DIR) -> list[str]:
     cmd = [SPHINX_AUTO_BUILD, *BUILD_PARAMETERS, str(SOURCE_DIR), str(output_dir), *posargs]
     for folder in AUTOBUILD_IGNORE:
-        cmd.extend(["--ignore", f"*/{folder}/*"])
+        cmd.extend(["--ignore", f'"{folder}"'])
     return cmd
 
 

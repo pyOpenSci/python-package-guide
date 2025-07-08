@@ -67,7 +67,7 @@ There are several ways to add a `LICENSE` file:
 :::{tip}
 If you completed the past lessons including
 
-1. [Making your code installable](installable-code.md) and
+1. [Making your code installable](create-python-package.md) and
 2. [publishing your package to PyPI](publish-pypi.md)
 
 then you already have a `LICENSE` file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorial which walks you through adding a `CODE_OF_CONDUCT`.
