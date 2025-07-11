@@ -1,13 +1,21 @@
 from pathlib import Path
 import json
-from typing import TypeAlias, TypedDict, Annotated as A
+from typing import TYPE_CHECKING, TypeAlias, TypedDict, Annotated as A
 
+from babel.messages import pofile
 from docutils import nodes
 from docutils.parsers.rst import Directive
 import plotly.graph_objects as go
 from plotly.offline import plot
 import numpy as np
 
+if TYPE_CHECKING:
+    from sphinx.application import Sphinx
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent  # Repository base directory
+LOCALES_DIR = BASE_DIR / "locales"  # Locales directory
+STATIC_DIR = BASE_DIR / "_static"  # Static directory
 
 class ModuleStats(TypedDict):
     total: int
@@ -35,10 +43,7 @@ class TranslationGraph(Directive):
     Completed: %{customdata.percentage}%
     """
     def run(self):
-        # Read the JSON file containing translation statistics
-        json_path = Path(__file__).parent.parent / "_static" / "translation_stats.json"
-        with json_path.open("r") as f:
-            data: TranslationStats = json.load(f)
+        data = get_translation_stats()
 
         # Sort data by locale and module
         data = {locale: dict(sorted(loc_stats.items())) for locale, loc_stats in sorted(data.items())}
@@ -122,8 +127,113 @@ class TranslationGraph(Directive):
         )
         return [nodes.raw("", div, format="html")]
 
+def calculate_translation_percentage(po_path : Path, locale : str) -> ModuleStats:
+    """
+    Calculate the translation percentage for a given .po file.
+
+    Parameters
+    ----------
+    po_path : Path
+        Path to the .po file.
+    locale : str
+        Locale code (e.g., 'es', 'fr').
+
+    Returns
+    -------
+    dict
+        A dictionary containing the total number of strings, translated strings,
+        fuzzy strings, untranslated strings, and the translation percentage.
+    """
+    with open(po_path, "r", encoding="utf-8") as f:
+        catalog = pofile.read_po(f, locale=locale)
+
+    total = 0
+    translated = 0
+    fuzzy = 0
+
+    for message in catalog:
+        if message.id:
+            total += 1
+            # Check if the message is fuzzy
+            # Fuzzy messages are not considered translated
+            if message.fuzzy:
+                fuzzy += 1
+                break
+            # Check if the message is translated
+            if message.string:
+                translated += 1
+
+    percentage = (translated / total * 100) if total > 0 else 0
+
+    return {
+        "total": total,
+        "translated": translated,
+        "fuzzy": fuzzy,
+        "untranslated": total - translated - fuzzy,
+        "percentage": round(percentage, 2)
+    }
+
+
+def get_translation_stats() -> TranslationStats:
+    # Get all .po files in the locales directory
+    po_files = list(LOCALES_DIR.rglob("*.po"))
+
+    # Let's use a dictionary to store the results
+    #
+    # We will store the info as
+    # {
+    #    "es": {
+    #        "file1": {
+    #            "total": 100,
+    #            "translated": 50,
+    #            "fuzzy": 0,
+    #            "untranslated": 50,
+    #            "percentage": 50.0
+    #        },
+    #        ...
+    #    },
+    #    "fr": {
+    #        "file1": {
+    #            "total": 100,
+    #            "translated": 50,
+    #            "fuzzy": 0,
+    #            "untranslated": 50,
+    #            "percentage": 50.0
+    #        },
+    #        ...
+    # }
+    results = {}
+
+    # Calculate translation percentages for each file
+    for po_file in po_files:
+        # Get the locale from the file path
+        locale = po_file.parent.parent.name
+        stats = calculate_translation_percentage(po_file, locale)
+
+        # Store the results in the dictionary
+        if locale not in results:
+            results[locale] = {}
+
+        results[locale][po_file.stem] = stats
+
+    return results
+
+def write_translation_stats(app: "Sphinx", exception: Exception | None) -> None:
+    from sphinx.util import logging
+    logger = logging.getLogger("_ext.translation_graph")
+
+    stats = get_translation_stats()
+    out_path = app.outdir / "_static" / "translation_stats.json"
+    with open(out_path, "w") as f:
+        json.dump(stats, f, indent=2)
+
+    logger.info("Wrote translation stats to %s", out_path)
+
+
 def setup(app):
     app.add_directive("translation-graph", TranslationGraph)
+    app.connect("build-finished", write_translation_stats)
+
     return {
         "version": "0.1",
         "parallel_read_safe": True,
