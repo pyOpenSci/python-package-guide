@@ -130,13 +130,42 @@ This would not be true with a GPL licensed package. `GPL-3` packages can include
 
 ## What about software citation?
 
-While many permissive licenses do not require citation we STRONG encourage that you cite all software that you use in papers, blogs and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files). We will cover this topic when we talk about creating DOI's for your package using Zenodo.
+While many permissive licenses do not require citation, we strongly encourage that you cite all software that you use in papers, blogs, and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
 
-<!-- TODO: add link when lesson is created - but also we don't yet know how citation.cff files work with Zenodo (do they work??) will the citation info update with a new Zenodo link
+### Citation.cff files: Making your software citable
 
-These files - we need to understand if that date releases auto populates or forces zenodo to modify it's citation. If it's not dynamic it could be problematic
+A `CITATION.cff` file is a machine-readable file that provides citation information for your software package. The "cff" stands for "Citation File Format," which is a standardized format for software citation metadata.
 
--->
+#### What citation.cff files add to your repository
+
+When you add a `CITATION.cff` file to your repository, GitHub automatically detects it and displays a "Cite this repository" button. This makes it easy for users to properly cite your software. The file contains standardized citation information that tools and services can automatically read and use. GitHub will generate both APA and BibTeX citation formats for users.
+
+#### How dates are tracked in citation.cff files
+
+The citation file tracks important dates for your software. The `date-released` field shows when the current version was released. The `date-published` field shows when the software was first made available. You also include a `version` field with the specific version number.
+
+You should update these dates with each new release so people cite the correct version of your software.
+
+#### Integration with Zenodo
+
+Citation.cff files work well with Zenodo, which is a popular place to store research software and get DOIs. When you create a Zenodo release, it can automatically pull information from your citation file. This keeps your citation information the same between GitHub and Zenodo. You can also include your Zenodo DOI in the citation file. Each time you make a new GitHub release, it can create a new Zenodo version with updated citation information.
+
+
+Here's a basic example of what a `CITATION.cff` file might look like:
+
+```yaml
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Your Last Name"
+    given-names: "Your First Name"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "Your Package Name"
+version: 1.0.0
+doi: "10.5281/zenodo.1234"
+date-released: 2025-07-12
+url: "https://github.com/yourusername/your-package"
+```
 
 # References
 
