@@ -1,5 +1,5 @@
 ---
-:og:description: Learn how to publish your Python package automically via GitHub Actions. This lessons also covers how to do publishing in a secure way by using Trusted Publishing.
+:og:description: Learn how to publish your Python package automatically via GitHub Actions. This lessons also covers how to do publishing in a secure way by using Trusted Publishing.
 :og:title: Setup Trusted Publishing for secure and automated publishing via GitHub Actions
 ---
 
@@ -199,7 +199,7 @@ still need to upload it to PyPI. We could upload the package from the same job,
 but it is better to create a separate one, to maintain separation of concerns.
 This is why in the previous section we uploaded the artifact to the temporary
 storage -- in the new job, we will download the package from there and upload it
-to PyPI. Since this job does nothing else, there is no possiblity that the
+to PyPI. Since this job does nothing else, there is no possibility that the
 package could get compromised before the release.
 
 ### Step 1: Add the upload job
