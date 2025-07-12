@@ -45,7 +45,6 @@ What is a Python package? <self>
 Create a Python package <create-python-package>
 Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
-Publish using GitHub Actions and Trusted Publishing <trusted-publishing>
 :::
 
 :::{toctree}
