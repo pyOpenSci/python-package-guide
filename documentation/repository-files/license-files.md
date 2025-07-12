@@ -142,7 +142,7 @@ When you add a `CITATION.cff` file to your repository, GitHub automatically dete
 
 #### How dates are tracked in citation.cff files
 
-The citation file tracks important dates for your software. The `date-released` field shows when the current version was released. The `date-published` field shows when the software was first made available. You also include a `version` field with the specific version number. 
+The citation file tracks important dates for your software. The `date-released` field shows when the current version was released. The `date-published` field shows when the software was first made available. You also include a `version` field with the specific version number.
 
 You should update these dates with each new release so people cite the correct version of your software.
 
