@@ -62,7 +62,7 @@ to TestPyPI. You need to:
 1. **Create an account on TestPyPI (or PyPI)**: You will need to create a TestPyPI account and associated token which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.
 1. **Publish to TestPyPI using `hatch publish`**
 
-In a [future lesson](trusted-publishing), you will learn how to create an automated GitHub Actions workflow that publishes an updated version of your package to PyPI every time you create a GitHub release.
+In a future lesson, you will learn how to create an automated GitHub Actions workflow that publishes an updated version of your package to PyPI every time you create a GitHub release.
 
 :::{admonition} Learn more about building Python packages in our guide
 :class: tip
