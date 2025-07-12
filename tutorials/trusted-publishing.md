@@ -194,7 +194,7 @@ publishing.
 
 ## Configure automatic publishing to PyPI
 
-The job we configured on GitHub ACtions builds a package for our code, but we
+The job we configured on GitHub Actions builds a package for our code, but we
 still need to upload it to PyPI. We could upload the package from the same job,
 but it is better to create a separate one, to maintain separation of concerns.
 This is why in the previous section we uploaded the artifact to the temporary
