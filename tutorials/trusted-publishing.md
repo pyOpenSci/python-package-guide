@@ -275,7 +275,7 @@ On the ["Your projects" page on PyPI](https://pypi.org/manage/projects/), click
 Then click "Publishing" in the project's sidebar.
 
 :::{figure-md} trusted-publishing-publishing
-<img src="../images/tutorials/trusted-publishing-publishin.png" alt="Graphic showing the management page for one project. The "Publishing" link in the sidebar is highlighted." width="700px">
+<img src="../images/tutorials/trusted-publishing-publishing.png" alt="Graphic showing the management page for one project. The "Publishing" link in the sidebar is highlighted." width="700px">
 :::
 
 This will take you to the publisher configuration page for the project. Trusted
