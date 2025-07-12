@@ -44,7 +44,7 @@ To create a virtual environment and install the development dependencies for the
 $ cd ./python-package-guide
 $ python -m venv .venv
 $ source .venv/bin/activate
-$ pip install .[dev]
+$ pip install '.[dev]'
 ```
 
 TODO: This section needs more work or to be replaced with a reference to the CONTRIBUTING guide.
