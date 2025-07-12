@@ -394,10 +394,6 @@ Once you publish on PyPI, you can then easily add your package to the conda-forg
 
 You will learn how to do that in the next lesson.
 
-
-
-
 ## Footnotes
 
 [^venv]: https://docs.python.org/3/library/venv.html
-```
