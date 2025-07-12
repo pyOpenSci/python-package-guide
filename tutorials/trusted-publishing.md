@@ -64,7 +64,7 @@ This gives a name to the workflow. It allows you to quickly find all runs of
 this GitHub Action on the "Actions" tab in the GitHub repository.
 
 :::{figure-md} github-actions-release-workflows-summary
-<img src="../images/tutorials/github-actions-release-workflows-summary.png" alt="Graphic showing an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package." width="700px">
+<img src="../images/tutorials/github-actions-release-workflows-summary.png" alt='Graphic showing an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package.' width="700px">
 
 This image shows an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package.
 :::
@@ -275,7 +275,7 @@ On the ["Your projects" page on PyPI](https://pypi.org/manage/projects/), click
 "Manage" on any project you want to configure.
 
 :::{figure-md} trusted-publishing-your-projects
-<img src="../images/tutorials/trusted-publishing-your-projects.png" alt="Graphic showing a screenshot of the "Your projects" page on PyPI. The "Manage" button for one of the projects is highlighted." width="700px">
+<img src="../images/tutorials/trusted-publishing-your-projects.png" alt='Graphic showing a screenshot of the "Your projects" page on PyPI. The "Manage" button for one of the projects is highlighted.' width="700px">
 
 This image shows several projects. The "Manage" button is highlighted for one of the projects, the one we want to configure trusted publishing for.
 :::
@@ -283,7 +283,7 @@ This image shows several projects. The "Manage" button is highlighted for one of
 Then click "Publishing" in the project's sidebar.
 
 :::{figure-md} trusted-publishing-publishing
-<img src="../images/tutorials/trusted-publishing-publishing.png" alt="Graphic showing the management page for one project. The "Publishing" link in the sidebar is highlighted." width="700px">
+<img src="../images/tutorials/trusted-publishing-publishing.png" alt='Graphic showing the management page for one project. The "Publishing" link in the sidebar is highlighted.' width="700px">
 
 Once clicking on the "Manage" button we got to the project's page. In the
 sidebar, we have the "publishing" option, as highlighted here.
