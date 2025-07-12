@@ -1,5 +1,5 @@
 ---
-:og:description: Learn how to publish your Python package automatically via GitHub Actions. This lessons also covers how to do publishing in a secure way by using Trusted Publishing.
+:og:description: Learn how to publish your Python package automatically via GitHub Actions. This lesson also covers how to do publishing in a secure way by using Trusted Publishing.
 :og:title: Setup Trusted Publishing for secure and automated publishing via GitHub Actions
 ---
 
