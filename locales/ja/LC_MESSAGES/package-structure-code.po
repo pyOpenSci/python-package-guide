@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 11:32+0900\n"
+"POT-Creation-Date: 2025-07-12 11:17+0200\n"
 "PO-Revision-Date: 2025-04-14 18:12+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
@@ -561,6 +561,7 @@ msgid "Diagram showing the steps of a pre-commit workflow from left to right."
 msgstr "左から右へ、 pre-commit ワークフローのステップを示す図。"
 
 #: ../../package-structure-code/code-style-linting-format.md:262
+#, fuzzy
 msgid ""
 "The pre-commit workflow begins with you adding files that have changes to"
 " be staged in git. Next, you'd run git commit. When you run git commit, "
@@ -570,7 +571,7 @@ msgid ""
 "commit is canceled. You will have to fix any flake8 issues, and then re-"
 "add / stage the files to be committed. [_Image "
 "Source_](https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-"
-"using-black-and-flake8/*)"
+"using-black-and-flake8/)"
 msgstr ""
 "pre-commit のワークフローは、まず git にステージすべき変更があるファイルを追加することから始まります。 次に git commit"
 " を実行します。git commit を実行すると、pre-commit フックが実行されます。 この例では、コード整形ツールである Black "
@@ -889,7 +890,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:8
 #: ../../package-structure-code/declare-dependencies.md:375
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:22
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:23
 msgid "Todo"
 msgstr "Todo"
 
@@ -2484,15 +2485,15 @@ msgstr ""
 "プルリクエストの内容に満足したら、プルリクエストをマージすることができます。 "
 "すぐにマージできるPRとは、通常、プルリクエストにある更新されたYAMLファイルに記載されているあなたのプロジェクトの依存関係（実行時要件として知られています）が、新しいリリースのPyPIメタデータと一致していることを確認することです。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:1
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:2
 msgid "Use a pyproject.toml file for your package configuration & metadata"
 msgstr "パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:10
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:11
 msgid "Important pyproject.toml take aways"
 msgstr "pyproject.tomlから得られる重要なこと"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:14
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:15
 msgid ""
 "There are only two tables that are required for an installable Python "
 "package: **[build-system]** and **[project]**. The **[project]** table "
@@ -2501,13 +2502,13 @@ msgstr ""
 "インストール可能なPythonパッケージに必要なテーブルは2つだけです: **[build-system]** と **[project]** "
 "です。 **[project]** テーブルにはパッケージのメタデータが格納されます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:15
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:16
 msgid ""
 "There are only two _required_ fields in the **[project]** table: "
 "**name=** and **version=**."
 msgstr "**[project]** テーブルの必須フィールドは2つだけです: **name=**と **version=** です。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:16
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:17
 msgid ""
 "We suggest you add additional metadata to your `pyproject.toml` file as "
 "it will make it easier for users to find your project on PyPI."
@@ -2515,7 +2516,7 @@ msgstr ""
 "`pyproject.toml` ファイルにメタデータを追加することをお勧めします。 "
 "そうすることで、ユーザがPyPIであなたのプロジェクトを見つけやすくなります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:17
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:18
 msgid ""
 "When you are adding classifiers to the [project] table, only use valid "
 "values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An "
@@ -2525,7 +2526,7 @@ msgstr ""
 "[project] テーブルに分類を追加するときは、 [PyPIの分類ページ](https://PyPI.org/classifiers/) "
 "にある有効な値のみを使用してください。 ここで無効な値を指定すると、パッケージをビルドするときやPyPIに公開するときにエラーが発生します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:18
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:19
 msgid ""
 "There is no specific order for tables in the `pyproject.toml` file. "
 "However fields need to be placed within the correct table sections. For "
@@ -2536,7 +2537,7 @@ msgstr ""
 "しかし、フィールドは正しいテーブルセクションに配置する必要があります。 例えば `requires =` は常に **[build-"
 "system]** テーブルと関連付ける必要があります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:19
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:20
 msgid ""
 "**python-requires**: is important to have in your `pyproject.toml` file "
 "as it helps pip install your package."
@@ -2544,27 +2545,27 @@ msgstr ""
 "**python-requires**: `pyproject.toml`ファイルに記述することが重要です。 "
 "これはpipがパッケージをインストールするのに役立つからです。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:24
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:25
 msgid "when these are published, remove this todo"
 msgstr "これらが公開されたら、このtodoを削除します"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:33
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:34
 msgid ""
 "Need help creating your pyproject.toml file?  This tutorial will walk you"
 " through the process."
 msgstr "pyproject.tomlファイルの作成にヘルプが必要ですか？ このチュートリアルはそのプロセスを説明します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:47
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:48
 msgid ""
 "Click here if need help migrating from setup.py/setup.cfg to "
 "pyproject.toml"
 msgstr "setup.py/setup.cfg から pyproject.toml への移行にヘルプが必要な場合はここをクリックしてください。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:57
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:58
 msgid "About the pyproject.toml file"
 msgstr "pyproject.tomlファイルについて"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:59
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:60
 msgid ""
 "Every modern Python package should include a `pyproject.toml` file. If "
 "your project is pure Python and you're using a `setup.py` or `setup.cfg` "
@@ -2575,7 +2576,7 @@ msgstr ""
 "Python で、メタデータを記述するために `setup.py` や `setup.cfg` ファイルを使っているなら、メタデータとビルド情報を"
 " `pyproject.toml` ファイルに移行することを検討するべきです。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:61
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:62
 msgid ""
 "If your project isn’t pure-python, you might still require a `setup.py` "
 "file to build the non Python extensions. However, a `pyproject.toml` file"
@@ -2585,11 +2586,11 @@ msgstr ""
 "ファイルが必要になるかもしれません。 しかし、プロジェクトのメタデータを保存するために `pyproject.toml` "
 "ファイルを使用する必要があります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:63
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:64
 msgid "What happened to setup.py & how do i migrate to pyproject.toml?"
 msgstr "setup.pyに何が起こったのか、そしてどのようにpyproject.tomlに移行するのか？"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:65
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:66
 msgid ""
 "Prior to August 2017, Python package metadata was stored either in the "
 "`setup.py` file or a `setup.cfg` file. In recent years, there has been a "
@@ -2600,11 +2601,11 @@ msgstr ""
 "ファイルに保存されていました。 近年、Python パッケージのメタデータは、よりユーザが読みやすい `pyproject.toml` "
 "フォーマットで保存されるようになりました。 すべてのメタデータを1つのファイルに持つことです:"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:67
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:68
 msgid "simplifies package management,"
 msgstr "パッケージ管理を簡素化します、"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:68
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:69
 msgid ""
 "allows you to use a suite of different [build "
 "backends](https://www.pyopensci.org/python-package-guide/package-"
@@ -2616,11 +2617,11 @@ msgstr ""
 "structure-code/python-package-build-tools.html#build-back-ends) "
 "を使うことができます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:69
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:70
 msgid "aligns with modern best practices."
 msgstr "現代のベストプラクティスに合致しています。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:76
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:77
 msgid ""
 "The standard file that Python packages use to [specify build requirements"
 " and metadata is called a "
@@ -2634,11 +2635,11 @@ msgstr ""
 "project-metadata/) 。メタデータ、ビルド要件、パッケージの依存関係を **pyproject.toml** "
 "ファイルに追加することは、 setup.py や setup.cfg ファイルに情報を格納することに取って代わります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:81
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:82
 msgid "About the .toml format"
 msgstr ".toml フォーマットについて"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:83
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:84
 msgid ""
 "The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal "
 "Language) format](https://toml.io/en/). TOML is an easy-to-read structure"
@@ -2652,25 +2653,25 @@ msgstr ""
 "TOMLは読みやすい構造で、キーと値のペアで成り立っています。 **pyproject.toml** ファイルの各セクションは "
 "`[テーブル識別子]` を含んでいます。 そのテーブル識別子の下には、その特定のテーブルの設定をサポートするキーと値のペアがあります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:87
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:88
 msgid "Below `[build-system]` is considered a table in the toml language."
 msgstr "`[build-system]` 以下はtoml言語ではテーブルとみなされます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:88
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:89
 msgid "Within the `build-system` table below `requires =` is a key."
 msgstr "以下の `build-system` テーブルの中で `requires =` がキーです。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:89
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:90
 msgid ""
 "The associated value for `requires` is an array containing the value "
 "`\"hatchling\"`."
 msgstr "`requires` に関連する値は、値 `\"hatchling\"` を含む配列です。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:97
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:98
 msgid "How the pyproject.toml is used when you build a package"
 msgstr "パッケージのビルド時にpyproject.tomlがどのように使用されるか"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:101
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:102
 msgid ""
 "When you publish to PyPI, you will notice that each package has metadata "
 "listed. Let’s have a look at [xclim](https://pypi.org/project/xclim/), "
@@ -2691,7 +2692,7 @@ msgstr ""
 "file](https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml) "
 "によって正しい構文と分類子を用いて定義されたメタデータを入力することができます。xclimパッケージがビルドされるとき、このメタデータは配布ファイルに変換され、PyPIがメタデータを読み込んでウェブサイトに出力できるようになります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:103
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:104
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:83
 msgid ""
 "Image showing the left side bar of PyPI for the package xclim. The "
@@ -2703,7 +2704,7 @@ msgstr ""
 "xclimパッケージのPyPI左サイドバーの画像です。一番上のセクションにはClassifierとあります。その下に、開発状況、対象読者、ライセンス、自然言語、オペレーティングシステム、プログラミング言語、トピックなどの項目があります。"
 " これらの各セクションの下には、さまざまな分類オプションがあります。 \" width=\"300px\">"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:108
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:109
 #: ../../package-structure-code/python-package-distribution-files-sdist-wheel.md:88
 msgid ""
 "When you add the classifier section to your pyproject.toml and your "
@@ -2715,11 +2716,11 @@ msgstr ""
 "pyproject.tomlにclassifierセクションを追加してパッケージがビルドされると、ビルドツールはメタデータをPyPIが理解できる形式に整理し、PyPIのランディングページに表示します。"
 " これらの分類子により、ユーザはサポートするpythonのバージョンやカテゴリなどでパッケージをソートすることもできます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:113
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:114
 msgid "Benefits of using a pyproject.toml file"
 msgstr "pyproject.tomlファイルを使用する利点"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:115
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:116
 msgid ""
 "Including your package's metadata in a separate human-readable "
 "**pyproject.toml** format also allows someone to view the project's "
@@ -2728,11 +2729,11 @@ msgstr ""
 "パッケージのメタデータを人間が読める **pyproject.toml** "
 "形式で含めると、GitHubのリポジトリでプロジェクトのメタデータを見ることができます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:123
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:124
 msgid "Setup.py is still useful for complex package builds"
 msgstr "Setup.py は、複雑なパッケージのビルドに便利です。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:127
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:128
 msgid ""
 "Using **setup.py** to manage package builds and metadata [can cause "
 "problems with package "
@@ -2747,11 +2748,11 @@ msgstr ""
 "/setup-py-deprecated.html) 。 Python パッケージのビルドが複雑な場合、**setup.py** "
 "ファイルが必要になるかもしれません。 このガイドでは複雑なビルドは扱いませんが、将来的には複雑なビルドを扱うリソースを提供する予定です。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:133
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:134
 msgid "Optional vs. Required pyproject.toml file fields"
 msgstr "pyproject.toml ファイルのフィールドの任意と必須"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:135
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:136
 msgid ""
 "When you create your `pyproject.toml` file, there are numerous metadata "
 "fields that you can use. Below we suggest specific fields to get you "
@@ -2760,7 +2761,7 @@ msgstr ""
 "`pyproject.toml` ファイルを作成するとき、使用できるメタデータフィールドがたくさんあります。 以下では、PyPI "
 "での公開とユーザがあなたのパッケージを見つけることをサポートする、特定のフィールドを提案します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:137
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:138
 msgid ""
 "[An overview of all of the project metadata elements can be found "
 "here.](https://packaging.python.org/en/latest/specifications/core-"
@@ -2769,11 +2770,11 @@ msgstr ""
 "[プロジェクトの全メタデータ要素の概要は、こちらをご覧ください。](https://packaging.python.org/en/latest/specifications"
 "/core-metadata/#project-url-multiple-use)"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:139
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:140
 msgid "Required fields for the `[project]` table"
 msgstr "`[project]` テーブルの必須フィールド"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:141
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:142
 msgid ""
 "As mentioned above, your `pyproject.toml` file needs to have a **`name`**"
 " and **`version`** field in order to properly build your package:"
@@ -2781,11 +2782,11 @@ msgstr ""
 "上述したように、 `pyproject.toml` ファイルはパッケージを適切にビルドするために **`name`** と "
 "**`version`** フィールドを持つ必要があります:"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:143
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:144
 msgid "`name`: This is the name of your project provided as a string"
 msgstr "`name`: プロジェクトの名前を文字列で指定します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:144
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:145
 msgid ""
 "`version`: This is the version of your project. If you are using a SCM "
 "tool for versioning (using git tags to determine versions), then the "
@@ -2794,11 +2795,11 @@ msgstr ""
 "`version`: プロジェクトのバージョンです。 バージョン管理に SCM ツール (git タグを使用してバージョンを決定する) "
 "を使用している場合は、このバージョンは動的なものになります (詳細は後述します)。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:146
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:147
 msgid "Optional fields to include in the `[project]` table"
 msgstr "`[project]` テーブルに含めるオプションフィールド"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:148
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:149
 msgid ""
 "We strongly suggest that you also add the metadata keys below as they "
 "will help users finding your package on PyPI. These fields will make it "
@@ -2808,11 +2809,11 @@ msgstr ""
 "以下のメタデータキーも追加することを強くお勧めします。 "
 "これらのフィールドを追加することで、あなたのパッケージがどのような構造になっているのか、どのプラットフォームをサポートしているのか、どのような依存関係が必要なのかを明確にすることができます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:153
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:154
 msgid "**Description:** this is a short one-line description of your package."
 msgstr "**Description:** これはあなたのパッケージの短い一行説明です。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:154
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:155
 msgid ""
 "**Readme:** A link to your README.md file is used for the long long-"
 "description. This information will be published on your packages PyPI "
@@ -2821,7 +2822,7 @@ msgstr ""
 "**Readme:** 長い長い説明には README.md ファイルへのリンクが使われます。 "
 "この情報はあなたのパッケージのPyPIランディングページで公開されます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:155
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:156
 msgid ""
 "**Requires-python** (used by pip): this is a field that is used by pip. "
 "Here you tell the installer whether you are using Python 2.x or 3.x. Most"
@@ -2830,18 +2831,18 @@ msgstr ""
 "**Requires-python** (pipで使用): これはpipが使用するフィールドです。 ここでは、Python "
 "2.xと3.xのどちらを使っているかをインストーラに伝えます。 ほとんどのプロジェクトは3.xを使うでしょう。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:156
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:157
 msgid "**License:** the license you are using"
 msgstr "**ライセンス:** 使用しているライセンス"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:157
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:158
 msgid ""
 "**Authors:** these are the original authors of the package. Sometimes the"
 " authors are different from the maintainers. Other times they might be "
 "the same."
 msgstr "**Authors:** パッケージの原作者です。 作者がメンテナと異なることもあります。 また、同じ場合もあります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:158
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:159
 msgid ""
 "**Maintainers:** you can choose to populate this or not. You can populate"
 " this using a list with a sub element for each author or maintainer name,"
@@ -2850,7 +2851,7 @@ msgstr ""
 "**Maintainers:** これを入力するかどうかを選択できます。 "
 "各作者やメンテナーの名前、Eメール、メールアドレスなどのサブ要素を持つリストを使って、この情報を入力することができます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:166
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:167
 msgid ""
 "**dependencies:** dependencies are optional but we strongly suggest you "
 "include them in your pyproject.toml. Dependencies will be installed by "
@@ -2859,7 +2860,7 @@ msgstr ""
 "**dependencies:** 依存関係はオプションですが、pyproject.tomlに含めることを強く推奨します。 "
 "依存関係はプロジェクトがインストールされるときにpipによってインストールされ、より良いユーザーエクスペリエンスを提供します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:168
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:169
 msgid ""
 "**`[project.optional-dependencies]`:** the optional or development "
 "dependencies will be installed if someone runs `python -m pip install "
@@ -2870,7 +2871,7 @@ msgstr ""
 "projectname[dev]` を実行したときに、オプションまたは開発用の依存パッケージがインストールされます。 "
 "これは、あなたのプロジェクトに貢献したいユーザのために、開発用の依存関係を含める良い方法です。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:170
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:171
 msgid ""
 "**keywords:** These are the keywords that will appear on your PyPI "
 "landing page. Think of them as words that people might use to search for "
@@ -2879,7 +2880,7 @@ msgstr ""
 "**keywords:** これらはPyPIのランディングページに表示されるキーワードです。 "
 "人々があなたのパッケージを検索するときに使う言葉だと考えてください。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:171
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:172
 msgid ""
 "**classifiers:** The classifiers section of your metadata is also "
 "important for the landing page of your package in PyPI and for filtering "
@@ -2892,35 +2893,35 @@ msgstr ""
 " [分類子の全オプションはこちらです](https://PyPI.org/classifiers/) 。 "
 "以下のようなクラシファイアを検討する必要があります。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:172
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:173
 msgid "Development Status"
 msgstr "開発状況"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:173
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:174
 msgid "Intended Audience"
 msgstr "対象読者"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:174
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:175
 msgid "Topic"
 msgstr "トピック"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:175
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:176
 msgid "License"
 msgstr "License"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:176
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:177
 msgid "Programming language"
 msgstr "プログラミング言語"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:178
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:179
 msgid "Advanced options in the pyproject.toml file"
 msgstr "pyproject.tomlファイルの高度なオプション"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:180
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:181
 msgid "The examples at the bottom of this page contain ..."
 msgstr "このページの下にある例には ..."
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:182
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:183
 msgid ""
 "**`[project.scripts]` (Entry points):** Entry points are optional. If you"
 " have a command line tool that runs a specific script hosted in your "
@@ -2931,7 +2932,7 @@ msgstr ""
 "パッケージでホストされている特定のスクリプトを実行するコマンドラインツールがある場合、そのスクリプトを(Pythonシェルではなく)コマンドラインで直接呼び出すためのエントリポイントを含めることができます"
 " 。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:184
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:185
 msgid ""
 "Here is an example of[a package that has entry point "
 "script](https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60)s."
@@ -2943,7 +2944,7 @@ msgstr ""
 " の例である。 そのパッケージには、一連のタスクを実行するいくつかのコアスクリプトが定義されていることに注目してほしい。 "
 "pyOpenSciはこれらのスクリプトを使ってメタデータを処理しています。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:185
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:186
 msgid ""
 "**Dynamic Fields:** if you have fields that are dynamically populated. "
 "One example of this is if you are using scm / version control based "
@@ -2954,12 +2955,12 @@ msgstr ""
 "`setuptooms_scm`のようなツールでscm/バージョン管理ベースのバージョンを使用している場合、ダイナミックフィールドを使用することができます。"
 " (scmを使用した)バージョンなど **dynamic = [\"version\"]**"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:187
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:188
 #: ../../package-structure-code/python-package-build-tools.md:392
 msgid "Add dependencies to your pyproject.toml file"
 msgstr "pyproject.tomlファイルに依存関係を追加"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:189
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:190
 msgid ""
 "The pyproject.toml file can also be used as a replacement for the "
 "requirements.txt file which has been traditionally used to store "
@@ -2967,7 +2968,7 @@ msgid ""
 "and documentation tools such as sphinx."
 msgstr "pyproject.tomlファイルは、従来pytestのような開発依存ファイル、Blackのようなコードフォーマッタ、sphinxのようなドキュメントツールを保存するために使われてきたrequirements.txtファイルの代わりとして使うこともできます。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:191
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:192
 msgid ""
 "To add dependencies to your build, add a `[project.optional-"
 "dependencies]` table to your pyproject.toml file."
@@ -2975,19 +2976,19 @@ msgstr ""
 "ビルドに依存関係を追加するには、 `[project.optional-dependencies]` "
 "テーブルをpyproject.tomlファイルに追加します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:193
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:194
 msgid "Then specify dependency groups as follows:"
 msgstr "次に、依存グループを以下のように指定する:"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:200
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:201
 msgid "Following the above example, you install dependencies like this:"
 msgstr "上記の例に従って、依存関係を次のようにインストールします:"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:202
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:203
 msgid "`python -m pip install -e .[tests]`"
 msgstr "`python -m pip install -e .[tests]`"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:204
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:205
 msgid ""
 "The above will install both your package in editable mode and all of the "
 "dependencies declared in the tests section of your `[project.optional-"
@@ -2996,19 +2997,19 @@ msgstr ""
 "上記は、編集可能モードのパッケージと、 `[project.optional-dependencies]` "
 "テーブルのtestsセクションで宣言されたすべての依存関係の両方をインストールします。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:206
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:207
 msgid "To install all dependencies and also your package, you'd use:"
 msgstr "すべての依存関係をインストールし、あなたのパッケージもインストールするには、次のようにします:"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:208
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:209
 msgid "`python -m pip install -e .[tests,lint,docs]`"
 msgstr "`python -m pip install -e .[tests,lint,docs]`"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:210
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:211
 msgid "Recursive dependencies"
 msgstr "再帰的依存関係"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:214
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:215
 msgid ""
 "You can also setup sets of recursive dependencies. [See this blog post "
 "for more.](https://hynek.me/articles/python-recursive-optional-"
@@ -3017,11 +3018,11 @@ msgstr ""
 "再帰的依存関係のセットをセットアップすることもできます。 [詳しくはこのブログ記事を参照。](https://hynek.me/articles"
 "/python-recursive-optional-dependencies/)"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:217
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:218
 msgid "Example pyproject.toml for building using hatchling"
 msgstr "hatchlingを使用してビルドするpyproject.tomlの例"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:219
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:220
 msgid ""
 "Below is an example build configuration for a Python project. This "
 "example package setup uses **hatchling** to build the [package's sdist "
@@ -3031,15 +3032,15 @@ msgstr ""
 "](python-package-distribution-files-sdist-wheel) をビルドするのに **hatchling** "
 "を使っています。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:227
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:228
 msgid "Notice that dependencies are specified in this file."
 msgstr "このファイルには依存関係が指定されています。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:229
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:230
 msgid "Example pyproject.toml for building using setuptools"
 msgstr "setuptoolsを使ってビルドするpyproject.tomlの例"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:231
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:232
 msgid ""
 "The package metadata including authors, keywords, etc is also easy to "
 "read. Below you can see the same TOML file that uses a different build "
@@ -3050,11 +3051,11 @@ msgstr ""
 "下の図は、異なるビルドシステム(setuptools)を使った同じTOMLファイルです。 "
 "このパッケージのビルドに必要なツールを入れ替えるのがいかに簡単かに注目してください！"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:235
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:236
 msgid "In this example package setup you use:"
 msgstr "このパッケージのセットアップ例では:"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:237
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:238
 msgid ""
 "**setuptools** to build the [package's sdist and wheels](python-package-"
 "distribution-files-sdist-wheel)"
@@ -3062,13 +3063,13 @@ msgstr ""
 "[パッケージのsdistとwheel](python-package-distribution-files-sdist-wheel) "
 "をビルドするための **setuptools** 。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:238
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:239
 msgid ""
 "**setuptools_scm** to manage package version updates using version "
 "control tags"
 msgstr "**setuptools_scm** は、バージョン管理タグを使ってパッケージのバージョン更新を管理します。"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:240
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:241
 msgid ""
 "In the example below `[build-system]` is the first table of values. It "
 "has two keys that specify the build backend API and containing package:"
@@ -3076,15 +3077,15 @@ msgstr ""
 "以下の例では、`[build-system]` が最初の値のテーブルです。 "
 "このテーブルには2つのキーがあり、ビルドバックエンドAPIとそれを含むパッケージを指定します:"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:243
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:244
 msgid "`requires =`"
 msgstr "`requires =`"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:244
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:245
 msgid "`build-back-end =`"
 msgstr "`build-back-end =`"
 
-#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:251
+#: ../../package-structure-code/pyproject-toml-python-package-metadata.md:252
 msgid ""
 "[Click here to read about our packaging build tools including PDM, "
 "setuptools, Poetry and Hatch.](/package-structure-code/python-package-"
@@ -3552,23 +3553,30 @@ msgid "Twine, Build + setuptools"
 msgstr "Twine, Build + setuptools"
 
 #: ../../package-structure-code/python-package-build-tools.md:181
+#: ../../package-structure-code/python-package-build-tools.md:215
 #: ../../package-structure-code/python-package-build-tools.md:291
+#: ../../package-structure-code/python-package-build-tools.md:304
 msgid "Flit"
 msgstr "Flit"
 
 #: ../../package-structure-code/python-package-build-tools.md:182
+#: ../../package-structure-code/python-package-build-tools.md:215
 #: ../../package-structure-code/python-package-build-tools.md:331
+#: ../../package-structure-code/python-package-build-tools.md:348
 msgid "Hatch"
 msgstr "Hatch"
 
 #: ../../package-structure-code/python-package-build-tools.md:183
 #: ../../package-structure-code/python-package-build-tools.md:215
 #: ../../package-structure-code/python-package-build-tools.md:230
+#: ../../package-structure-code/python-package-build-tools.md:251
 msgid "PDM"
 msgstr "PDM"
 
 #: ../../package-structure-code/python-package-build-tools.md:184
+#: ../../package-structure-code/python-package-build-tools.md:215
 #: ../../package-structure-code/python-package-build-tools.md:374
+#: ../../package-structure-code/python-package-build-tools.md:392
 msgid "Poetry"
 msgstr "Poetry"
 
@@ -3649,8 +3657,13 @@ msgid "Package tool features table"
 msgstr "パッケージツール機能一覧表"
 
 #: ../../package-structure-code/python-package-build-tools.md:215
-msgid "Feature, Flit, Hatch, PDM, Poetry"
-msgstr "Flit, Hatch, PDM, Poetry の特徴"
+#: ../../package-structure-code/python-package-build-tools.md:251
+#: ../../package-structure-code/python-package-build-tools.md:304
+#: ../../package-structure-code/python-package-build-tools.md:348
+#: ../../package-structure-code/python-package-build-tools.md:392
+#, fuzzy
+msgid "Feature"
+msgstr "PDMの特徴"
 
 #: ../../package-structure-code/python-package-build-tools.md:215
 msgid "Default Build Back-end"
@@ -3764,8 +3777,12 @@ msgid "PDM Features"
 msgstr "PDMの特徴"
 
 #: ../../package-structure-code/python-package-build-tools.md:251
-msgid "Feature, PDM, Notes"
-msgstr "特徴, PDM, ノート"
+#: ../../package-structure-code/python-package-build-tools.md:304
+#: ../../package-structure-code/python-package-build-tools.md:348
+#: ../../package-structure-code/python-package-build-tools.md:392
+#, fuzzy
+msgid "Notes"
+msgstr "注釈:"
 
 #: ../../package-structure-code/python-package-build-tools.md:251
 msgid ""
@@ -4015,10 +4032,6 @@ msgid "Flit Features"
 msgstr "Flitの特徴"
 
 #: ../../package-structure-code/python-package-build-tools.md:304
-msgid "Feature, Flit, Notes"
-msgstr "特徴, Flit, ノート"
-
-#: ../../package-structure-code/python-package-build-tools.md:304
 #: ../../package-structure-code/python-package-build-tools.md:348
 #: ../../package-structure-code/python-package-build-tools.md:392
 msgid "Publish to PyPI and test PyPI"
@@ -4125,10 +4138,6 @@ msgstr ""
 #: ../../package-structure-code/python-package-build-tools.md:340
 msgid "Hatch features"
 msgstr "Hatchの特徴"
-
-#: ../../package-structure-code/python-package-build-tools.md:348
-msgid "Feature, Hatch, Notes"
-msgstr "特徴, Hatch, ノート"
 
 #: ../../package-structure-code/python-package-build-tools.md:348
 msgid ""
@@ -4309,21 +4318,9 @@ msgid "Poetry features"
 msgstr "Poetryの特徴"
 
 #: ../../package-structure-code/python-package-build-tools.md:392
-msgid "Feature, Poetry, Notes"
-msgstr "特徴, Poetry, ノート"
-
-#: ../../package-structure-code/python-package-build-tools.md:392
-msgid ""
-"Poetry helps you add dependencies to your `pyproject.toml` metadata. "
-"_NOTE: currently Poetry adds dependencies using an approach that is "
-"slightly out of alignment with current Python peps - however there is a "
-"plan to fix this in an upcoming release._ Poetry also allows you to "
-"organize dependencies in groups such as  documentation, packaging and "
-"tests."
-msgstr ""
-"Poetry は `pyproject.toml` メタデータに依存関係を追加するのに役立ちます。 _NOTE: 現在のところ、Poetry "
-"は現在の Python peps とは少しずれたアプローチで依存関係を追加しています - しかし、今後のリリースでこれを修正する予定です。 _ "
-"Poetryでは、ドキュメント、パッケージング、テストなどのグループに依存関係を整理することもできます。"
+#, fuzzy
+msgid "Poetry helps you add dependencies to your `pyproject.toml` metadata."
+msgstr "pyproject.tomlファイルに依存関係を追加"
 
 #: ../../package-structure-code/python-package-build-tools.md:392
 msgid "Dependency specification"
@@ -4385,23 +4382,16 @@ msgstr ""
 "を使ってパッケージのバージョンを上げることができます。"
 
 #: ../../package-structure-code/python-package-build-tools.md:392
-msgid "✖✅"
-msgstr "✖✅"
-
-#: ../../package-structure-code/python-package-build-tools.md:392
 msgid ""
-"Poetry does not quite support current packaging standards for adding "
-"metadata to the **pyproject.toml** file but plans to fix this in an "
-"upcoming release."
+"Since version 2.0, Poetry supports most current project metadata "
+"standards. However, not all standards are supported, and it also supports"
+" the legacy Poetry format. Read below for more."
 msgstr ""
-"Poetryは **pyproject.toml** "
-"ファイルにメタデータを追加する現在のパッケージング標準を完全にサポートしているわけではありませんが、今後のリリースでこれを修正する予定です。"
 
 #: ../../package-structure-code/python-package-build-tools.md:392
-msgid ""
-"Poetry supports installing your package in editable mode using "
-"`--editable`"
-msgstr "Poetry は `--editable` を使った編集可能モードでのパッケージのインストールをサポートしています。"
+#, fuzzy
+msgid "Poetry supports installing your package in editable mode."
+msgstr "PDMは編集可能モードでのパッケージのインストールをサポートしています。"
 
 #: ../../package-structure-code/python-package-build-tools.md:392
 msgid "Poetry will build your sdist and wheel distributions using `poetry build`"
@@ -4417,29 +4407,41 @@ msgstr "Poetryの課題には次のようなものがある:"
 
 #: ../../package-structure-code/python-package-build-tools.md:411
 msgid ""
+"Poetry has its own concept of grouped dependencies (`poetry add "
+"--group=GROUP_NAME DEPENDENCY`). Dependencies added as grouped "
+"dependencies are not optional and there is no Python standard for this "
+"type of dependency. This should not be confused with \"optional\" "
+"dependencies (`poetry add --optional=GROUP_NAME DEPENDENCY`), which is "
+"standardised and lets you group your dependencies into several optional "
+"groups."
+msgstr ""
+
+#: ../../package-structure-code/python-package-build-tools.md:412
+msgid ""
+"While Poetry supports \"development\" dependencies (i.e. dependencies you"
+" use for development but not running the code, such as `pytest`), Poetry "
+"does not yet follow the standardised format for specifying such "
+"dependencies."
+msgstr ""
+
+#: ../../package-structure-code/python-package-build-tools.md:413
+#, fuzzy
+msgid ""
 "Poetry, by default, pins dependencies using an \"upper bound\" limit "
-"specified with the `^` symbol by default. However, this behavior can be "
-"over-written by specifying the dependency when you use `Poetry add` as "
-"follows: `poetry add \"requests>=2.1\"` See breakout below for more "
-"discussion on issues surrounding upper-bounds pinning."
+"(which is specified with the `^` symbol in the legacy format). However, "
+"this behavior can be over-written by specifying the dependency when you "
+"use `poetry add` as follows: `poetry add \"requests>=2.1\"` See breakout "
+"below for more discussion on issues surrounding upper-bounds pinning."
 msgstr ""
 "Poetryは、デフォルトでは、`^`シンボルで指定された \"上限\" 制限を使用して依存関係をピンします。 しかし、この動作は `Poetry"
 " add` を使うときに依存関係を以下のように指定することで上書きすることができます: `poetry add "
 "\"requests>=2.1\"` アッパーバウンドピニングをめぐる問題については、以下のブレイクアウトを参照のしてください。"
 
-#: ../../package-structure-code/python-package-build-tools.md:412
+#: ../../package-structure-code/python-package-build-tools.md:415
+#, fuzzy
 msgid ""
-"_Minor Challenge:_ The way Poetry currently adds metadata to your "
-"pyproject.toml file does not follow current Python standards. However, "
-"this is going to be addressed with Poetry release version 2.0."
-msgstr ""
-"_マイナーチェンジ:_ "
-"Poetryが現在pyproject.tomlファイルにメタデータを追加する方法は、現在のPythonの標準に従っていません。 しかし、これは "
-"Poetry リリースバージョン 2.0 で対処される予定です。"
-
-#: ../../package-structure-code/python-package-build-tools.md:414
-msgid ""
-"Poetry is an excellent tool. Use caution when using it to pin "
+"Poetry is a popular packaging tool and introduced many very useful "
+"features. However, if you decide to use it, then use caution when adding "
 "dependencies as Poetry's approach to pinning can be problematic for many "
 "builds. If you use Poetry, we strongly suggest that you override the "
 "default upper bound dependency option."
@@ -6298,3 +6300,65 @@ msgid ""
 msgstr ""
 "バージョン番号は、 `pyproject.toml` のような設定ファイルとパッケージの **_version.py** "
 "ファイルの間で手動で更新されます。"
+
+#~ msgid "Feature, Flit, Hatch, PDM, Poetry"
+#~ msgstr "Flit, Hatch, PDM, Poetry の特徴"
+
+#~ msgid "Feature, PDM, Notes"
+#~ msgstr "特徴, PDM, ノート"
+
+#~ msgid "Feature, Flit, Notes"
+#~ msgstr "特徴, Flit, ノート"
+
+#~ msgid "Feature, Hatch, Notes"
+#~ msgstr "特徴, Hatch, ノート"
+
+#~ msgid "Feature, Poetry, Notes"
+#~ msgstr "特徴, Poetry, ノート"
+
+#~ msgid ""
+#~ "Poetry helps you add dependencies to "
+#~ "your `pyproject.toml` metadata. _NOTE: "
+#~ "currently Poetry adds dependencies using "
+#~ "an approach that is slightly out "
+#~ "of alignment with current Python peps"
+#~ " - however there is a plan to"
+#~ " fix this in an upcoming release._"
+#~ " Poetry also allows you to organize"
+#~ " dependencies in groups such as  "
+#~ "documentation, packaging and tests."
+#~ msgstr ""
+#~ "Poetry は `pyproject.toml` メタデータに依存関係を追加するのに役立ちます。"
+#~ " _NOTE: 現在のところ、Poetry は現在の Python peps "
+#~ "とは少しずれたアプローチで依存関係を追加しています - しかし、今後のリリースでこれを修正する予定です。 "
+#~ "_ Poetryでは、ドキュメント、パッケージング、テストなどのグループに依存関係を整理することもできます。"
+
+#~ msgid "✖✅"
+#~ msgstr "✖✅"
+
+#~ msgid ""
+#~ "Poetry does not quite support current"
+#~ " packaging standards for adding metadata"
+#~ " to the **pyproject.toml** file but "
+#~ "plans to fix this in an upcoming"
+#~ " release."
+#~ msgstr ""
+#~ "Poetryは **pyproject.toml** "
+#~ "ファイルにメタデータを追加する現在のパッケージング標準を完全にサポートしているわけではありませんが、今後のリリースでこれを修正する予定です。"
+
+#~ msgid ""
+#~ "Poetry supports installing your package "
+#~ "in editable mode using `--editable`"
+#~ msgstr "Poetry は `--editable` を使った編集可能モードでのパッケージのインストールをサポートしています。"
+
+#~ msgid ""
+#~ "_Minor Challenge:_ The way Poetry "
+#~ "currently adds metadata to your "
+#~ "pyproject.toml file does not follow "
+#~ "current Python standards. However, this "
+#~ "is going to be addressed with "
+#~ "Poetry release version 2.0."
+#~ msgstr ""
+#~ "_マイナーチェンジ:_ "
+#~ "Poetryが現在pyproject.tomlファイルにメタデータを追加する方法は、現在のPythonの標準に従っていません。 "
+#~ "しかし、これは Poetry リリースバージョン 2.0 で対処される予定です。"
