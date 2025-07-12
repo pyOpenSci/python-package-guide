@@ -162,7 +162,7 @@ authors:
     orcid: "https://orcid.org/0000-0000-0000-0000"
 title: "Your Package Name"
 version: 1.0.0
-doi: 10.5281/zenodo.1234
+doi: "10.5281/zenodo.1234"
 date-released: 2025-07-12
 url: "https://github.com/yourusername/your-package"
 ```
