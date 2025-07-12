@@ -146,7 +146,8 @@ class TranslationGraph(Directive):
         fig.update_layout(
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
-            hoverlabel=dict(bgcolor="white"),
+            hoverlabel_bgcolor="white",
+            hoverlabel_font_color = "black",
             font_color="var(--bs-body-color)",
             margin=dict(l=40, r=40, t=40, b=40),
             xaxis_showgrid=False,
