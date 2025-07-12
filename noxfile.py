@@ -78,7 +78,7 @@ def docs(session):
 @nox.session(name="docs-linkcheck")
 def docs_linkcheck(session):
     """
-    Check that links are valid (well-formed and point to something that exists).
+    Check that links are well-formed and point to something that exists.
     """
     session.install("-e", ".")
     session.run(

@@ -208,15 +208,15 @@ suppress_warnings = ["myst.footnote"]
 
 # -- Options for linkcheck -------------------------------------------------
 
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-linkcheck_anchors_ignore_for_url
+# config reference: https://www.sphinx-doc.org/en/master/usage/configuration.html
 linkcheck_anchors_ignore_for_url = [
     # GitHub code links with line-number anchors are reported as "not found"
-    r"https://github\\.com/.*#L[0-9]+[0-9L\\-]+",
+    r"https:\/\/.*github\.com.*\/blob\/.*",
 ]
 
 linkcheck_ignore = [
     # gnu.org is so strictly rate-limited that retries to it really slow down link-checking... just assume they're fine
-    r".*gnu\\.org.*",
+    r"https:\/\/.*gnu\.org.*",
 ]
 
 def _post_build(app: "Sphinx", exception: Exception | None) -> None:
