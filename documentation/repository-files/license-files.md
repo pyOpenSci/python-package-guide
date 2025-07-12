@@ -130,7 +130,7 @@ This would not be true with a GPL licensed package. `GPL-3` packages can include
 
 ## What about software citation?
 
-While many permissive licenses do not require citation we STRONG encourage that you cite all software that you use in papers, blogs and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
+While many permissive licenses do not require citation, we strongly encourage that you cite all software that you use in papers, blogs, and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
 
 ### Citation.cff files: Making your software citable
 
