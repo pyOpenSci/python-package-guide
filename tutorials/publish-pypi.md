@@ -373,7 +373,7 @@ While publishing from GitHub Action is possible using tokens, we recommend the _
 
 On the usability front, when Trusted Publishing is enabled, users no longer need to manually create API tokens on PyPI and store them in the GitHub release workflow.
 
-On the security front, Trusted Publishing reduces a risk related to the API token being long lived: with API tokens, as soon as an attacker gets access to it, they can publish many packages and versions in your name (dependending on the scope of the token), until you discover the token compromise and rotate the credential. Trusted Publishing avoids this problem by minting very short lived tokens which expire automatically.
+On the security front, Trusted Publishing reduces a risk related to the API token being long lived: with API tokens, as soon as an attacker gets access to it, they can publish many packages and versions in your name (depending on the scope of the token), until you discover the token compromise and rotate the credential. Trusted Publishing avoids this problem by minting very short lived tokens which expire automatically.
 
 For these benefits, it is recommended that users use _only_ the GitHub Actions release workflow to publish packages.
 :::
