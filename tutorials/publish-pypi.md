@@ -6,7 +6,7 @@
 # Publish your Python package to PyPI
 
 :::{todo}
-- Make sure they add /dist to their .gitignore file. We have not discussed GitHub workflows anywhere yet. Where does that fit?
+- Make sure they add /dist to their .gitignore file. Where does that fit?
 
 :::
 
@@ -62,9 +62,7 @@ to TestPyPI. You need to:
 1. **Create an account on TestPyPI (or PyPI)**: You will need to create a TestPyPI account and associated token which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.
 1. **Publish to TestPyPI using `hatch publish`**
 
-In a future lesson, you will learn how to create an automated
-GitHub Actions workflow that publishes an updated
-version of your package to PyPI every time you create a GitHub release.
+In a [future lesson](trusted-publishing), you will learn how to create an automated GitHub Actions workflow that publishes an updated version of your package to PyPI every time you create a GitHub release.
 
 :::{admonition} Learn more about building Python packages in our guide
 :class: tip
@@ -368,8 +366,19 @@ related to PyPI publication.
 1. You can create a package-specific token which you will use to publish your package (manually) to PyPI. This is a great option if you don't wish to automate your PyPI publication workflow.
 2. You can also create an automated publication workflow on GitHub using GitHub Actions. This is a great way to make the publication process easier and it also supports a growing maintainer team. In this case we suggest you don't worry about the token and instead setup a specific GitHub Actions that publishes your package when you make a release. You can then create a "trusted publisher" workflow on PyPI.
 
-You will learn how to create the automated trusted publisher workflow in a followup lesson.
+:::{admonition} Trusted Publishing
+:class: tip
 
+While publishing from GitHub Action is possible using tokens, we recommend the _Trusted Publishing_ approach as it also confers significant security and usability benefits.
+
+On the usability front, when Trusted Publishing is enabled, users no longer need to manually create API tokens on PyPI and store them in the GitHub release workflow.
+
+On the security front, Trusted Publishing reduces a risk related to the API token being long lived: with API tokens, as soon as an attacker gets access to it, they can publish many packages and versions in your name (dependending on the scope of the token), until you discover the token compromise and rotate the credential. Trusted Publishing avoids this problem by minting very short lived tokens which expire automatically.
+
+For these benefits, it is recommended that users use _only_ the GitHub Actions release workflow to publish packages.
+:::
+
+You will learn how to create the automated trusted publisher workflow in a followup lesson.
 
 ### OPTIONAL: If you want to use a manual token-based publication workflow
 
@@ -385,6 +394,15 @@ To do this:
 5. Create the token and follow the steps above publish your package using the repository specific token.
 
 And you're all done!
+
+:::{admonition} Trusted Publishing instead of token-based publication
+:class: tip
+
+Trusted Publishing will generate short lived tokens, scoped to the project, on
+demand, only when a specific release workflows gets triggered. This solves all
+the security and usability issues associated with storing credentials in
+files/GitHub secrets.
+:::
 
 ## You have published your package to TestPyPI!
 
