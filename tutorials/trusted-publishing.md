@@ -41,7 +41,7 @@ to publish a package from your project to PyPI.
 To get started, create a file named `release.yaml` under the `.github/workflows`
 directory of your project.
 
-:::{admonition}
+:::{admonition} Naming the workflow
 :class: tip
 
 The name of the worklow is not relevant, but `release.yaml` is the most
@@ -65,6 +65,8 @@ this GitHub Action on the "Actions" tab in the GitHub repository.
 
 :::{figure-md} github-actions-release-workflows-summary
 <img src="../images/tutorials/github-actions-release-workflows-summary.png" alt="Graphic showing an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package." width="700px">
+
+This image shows an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package.
 :::
 
 ### Step 2: Add triggers to the workflow
@@ -159,7 +161,7 @@ the following to the `release.yaml` file:
         retention-days: 1
 ```
 
-:::{admonition}
+:::{admonition} Upload artifacts parameters
 :class: tip
 
 We have configured the artifact to be deleted after 1 day. The artifacts storage
@@ -178,6 +180,8 @@ storage.
 
 :::{figure-md} github-actions-release-workflows-run
 <img src="../images/tutorials/github-actions-release-workflows-run.png" alt="Graphic showing an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition." width="700px">
+
+This figure shows an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition." width
 :::
 
 At the bottom of the workflow run page on GitHub you should see a section for
@@ -185,6 +189,8 @@ the artifacts produced during runtime and uploaded to this storage area:
 
 :::{figure-md} github-actions-release-workflows-artifacts
 <img src="../images/tutorials/github-actions-release-workflows-artifacts.png" alt="Graphic showing an example of an artifact produced by the release workflow." width="700px">
+
+This figure shows the artifact produced by the above release workflow. It is now marked as expired since the workflow ran more than a day ago.
 :::
 
 You can download the artifact (before it expires), unzip it and install the
@@ -223,7 +229,7 @@ the previous section:
       - uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
 ```
 
-:::{admonition}
+:::{admonition} Make sure to change the URL
 
 Remember to change the `url:` to the URL for your package on PyPI!
 :::
@@ -251,7 +257,7 @@ developers created Trusted Publishing. This allows registering publishers on
 PyPI and mapping them to the automation workflow that is allowed to publish the
 package.
 
-:::{admonition}
+:::{admonition} Trusted Publishing outside of GitHub Actions
 :class: tip
 
 Trusted Publishing supports other automation platforms, beyond GitHub Actions.
@@ -270,12 +276,17 @@ On the ["Your projects" page on PyPI](https://pypi.org/manage/projects/), click
 
 :::{figure-md} trusted-publishing-your-projects
 <img src="../images/tutorials/trusted-publishing-your-projects.png" alt="Graphic showing a screenshot of the "Your projects" page on PyPI. The "Manage" button for one of the projects is highlighted." width="700px">
+
+This image shows several projects. The "Manage" button is highlighted for one of the projects, the one we want to configure trusted publishing for.
 :::
 
 Then click "Publishing" in the project's sidebar.
 
 :::{figure-md} trusted-publishing-publishing
 <img src="../images/tutorials/trusted-publishing-publishing.png" alt="Graphic showing the management page for one project. The "Publishing" link in the sidebar is highlighted." width="700px">
+
+Once clicking on the "Manage" button we got to the project's page. In the
+sidebar, we have the "publishing" option, as highlighted here.
 :::
 
 This will take you to the publisher configuration page for the project. Trusted
@@ -293,7 +304,7 @@ the following information:
 Once you fill in this form and click "Add" the publisher is configured and can
 be used to publish new releases of your package.
 
-:::{admonition} Fully hardeneds GitHub Actions release workflow
+:::{admonition} Fully hardened GitHub Actions release workflow
 
 For better security it is recommended to also control the permissions of the
 GitHub token used within each job of the workflow. The permissions should be
