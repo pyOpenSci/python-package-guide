@@ -214,6 +214,7 @@ Depending on your project, you might want to add the following to sort imports c
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
 :start-at: [tool.ruff.isort]
+:end-before: [tool.pytest.ini_options]
 :::
 
 ## How to use code formatter in your local workflow
