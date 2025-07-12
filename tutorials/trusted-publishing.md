@@ -181,7 +181,7 @@ storage.
 :::{figure-md} github-actions-release-workflows-run
 <img src="../images/tutorials/github-actions-release-workflows-run.png" alt="Graphic showing an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition." width="700px">
 
-This figure shows an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition." width
+This figure shows an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition.
 :::
 
 At the bottom of the workflow run page on GitHub you should see a section for
