@@ -147,7 +147,7 @@ class TranslationGraph(Directive):
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
             hoverlabel_bgcolor="var(--bs-body-bg)",
-            hoverlabel_font_color="rgba(255, 255, 255, 1)",
+            hoverlabel_font_color="var(--bs-body-color)",
             font_color="var(--bs-body-color)",
             margin=dict(l=40, r=40, t=40, b=40),
             xaxis_showgrid=False,
