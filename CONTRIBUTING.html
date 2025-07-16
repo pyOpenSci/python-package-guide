@@ -678,6 +678,12 @@ Here you can write a title and a description for your changes. Make sure to writ
 </div>
 <p>To see the guide built locally, open the file <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> in your browser.</p>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs-linkcheck</span></code>: this session checks that links in documentation work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-linkcheck
+</pre></div>
+</div>
+<p>If the tests fail, you will see logs in the terminal and in <code class="docutils literal notranslate"><span class="pre">_build/linkcheck_output/output.txt</span></code>.</p>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">docs-test</span></code>: this session runs the tests for the guide.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-test
 </pre></div>

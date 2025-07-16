@@ -676,6 +676,12 @@
 </div>
 <p>ローカルに構築されたガイドを見るには、ブラウザで <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> ファイルを開いてください。</p>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs-linkcheck</span></code>: this session checks that links in documentation work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-linkcheck
+</pre></div>
+</div>
+<p>If the tests fail, you will see logs in the terminal and in <code class="docutils literal notranslate"><span class="pre">_build/linkcheck_output/output.txt</span></code>.</p>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">docs-test</span></code>: このセッションでは、ガイドのテストを実行します。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-test
 </pre></div>
