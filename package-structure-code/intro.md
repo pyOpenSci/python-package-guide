@@ -40,7 +40,7 @@ src layout, flat layout and where should tests folders live? No matter what your
 
 ::::{grid-item}
 :::{card} ✨ 2. Learn about building your package ✨
-:link: python-package-structure
+:link: python-package-distribution-files-sdist-wheel
 :link-type: doc
 
 To publish your Python package on PyPI, you will need to first build it. The act
@@ -52,7 +52,7 @@ your Python package.
 
 
 ::::{grid-item}
-:::{card} ✨ 4. Add metadata ✨
+:::{card} ✨ 3. Add metadata ✨
 :link: pyproject-toml-python-package-metadata
 :link-type: doc
 
@@ -63,7 +63,7 @@ build and install your package.
 ::::
 
 ::::{grid-item}
-:::{card} ✨ 3. What Python package tool should you use? ✨
+:::{card} ✨ 4. What Python package tool should you use? ✨
 :link: python-package-build-tools
 :link-type: doc
 
@@ -73,8 +73,8 @@ And learn which tool might be best for you.
 ::::
 
 ::::{grid-item}
-:::{card} ✨ 4. Publish to PyPI and Conda ✨
-:link: python-package-build-tools
+:::{card} ✨ 5. Publish to PyPI and Conda ✨
+:link: publish-python-package-pypi-conda
 :link-type: doc
 
 If you have a pure Python package, it's a straight forward
@@ -84,7 +84,7 @@ conda-forge. Learn more here.
 ::::
 
 ::::{grid-item}
-:::{card} ✨ 5. Setup package versioning ✨
+:::{card} ✨ 6. Setup package versioning ✨
 :link: python-package-versions
 :link-type: doc
 
@@ -94,7 +94,7 @@ common ways to version a package. Which one should you pick? Learn more here.
 ::::
 
 ::::{grid-item}
-:::{card} ✨ 6. Code style & linters ✨
+:::{card} ✨ 7. Code style & linters ✨
 :link: code-style-linting-format
 :link-type: doc
 
