@@ -188,6 +188,12 @@ There are different sessions in nox related to building the docs: `docs`, `docs-
     ```
     To see the guide built locally, open the file `_build/html/index.html` in your browser.
 
+- `docs-linkcheck`: this session checks that links in documentation work
+    ```bash
+    nox -e docs-linkcheck
+    ```
+    If the tests fail, you will see logs in the terminal and in `_build/linkcheck_output/output.txt`.
+
 - `docs-test`: this session runs the tests for the guide.
     ```bash
     nox -e docs-test
