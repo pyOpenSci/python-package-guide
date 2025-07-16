@@ -223,7 +223,7 @@ If you use **setuptools_scm**, then you might find **hatch_vcs** and **hatchling
 
 ### Tool 3: setuptools-scm versioning using git tags
 
-[`Setuptools_scm`](https://github.com/pypa/setuptools_scm/) is an
+[`Setuptools_scm`](https://github.com/pypa/setuptools-scm/) is an
 extension that you can use with setuptools to manage package
 versions. **Setuptools_scm** operates the same way that
 **hatch_vcs** (discussed above) does. It stores a version in a **\_version.py** file and relies on (**git**) tags to
