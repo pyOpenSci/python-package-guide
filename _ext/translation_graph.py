@@ -143,12 +143,14 @@ class TranslationGraph(Directive):
         )
         # Create figure
         fig = go.Figure(data=heatmap)
+
+        # plotly only lets us use css variables for colors in some places,
+        # and plotly otherwise inlines a lot of CSS itself.
+        # so colors are partially specified here, and partially (forcefully)
+        # overridden in _static/pyos.css
         fig.update_layout(
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
-            hoverlabel_bgcolor="var(--bs-body-bg)",
-            hoverlabel_font_color="var(--bs-body-color)",
-            font_color="var(--bs-body-color)",
             margin=dict(l=40, r=40, t=40, b=40),
             xaxis_showgrid=False,
             xaxis_side="top",
