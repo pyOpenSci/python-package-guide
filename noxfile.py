@@ -31,6 +31,11 @@ SPHINX_AUTO_BUILD = "sphinx-autobuild"
 # Sphinx parameters used to build the guide
 BUILD_PARAMETERS = ["-b", "html"]
 
+# Sphinx parameters used when checking that links work
+# ref: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
+LINKCHECK_PARAMETERS = ["-b", "linkcheck", "-Dlinkcheck_timeout=5", "-Dlinkcheck_rate_limit_timeout=30", "--fail-on-warning"]
+LINKCHECK_OUTPUT_DIR = pathlib.Path(BUILD_DIR, "linkcheck_output")
+
 # Sphinx parameters used to test the build of the guide
 TEST_PARAMETERS = ["--keep-going", "-E", "-a"]
 
@@ -68,6 +73,22 @@ def docs(session):
     )
     # When building the guide, also build the translations in RELEASE_LANGUAGES
     session.notify("build-release-languages", session.posargs)
+
+
+@nox.session(name="docs-linkcheck")
+def docs_linkcheck(session):
+    """
+    Check that links are well-formed and point to something that exists.
+    """
+    session.install("-e", ".")
+    session.run(
+        SPHINX_BUILD,
+        *LINKCHECK_PARAMETERS,
+        SOURCE_DIR,
+        LINKCHECK_OUTPUT_DIR,
+        *session.posargs,
+        env={"SPHINX_ENV": "development"},
+    )
 
 
 @nox.session(name="docs-test")
