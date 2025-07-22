@@ -471,6 +471,7 @@
 <li class="toctree-l1"><a class="reference internal" href="create-python-package.html">Create a Python package</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Publish to PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trusted-publishing.html">Publish using GitHub Actions and Trusted Publishing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project information files &amp; metadata</span></p>
 <ul class="nav bd-sidenav">
@@ -596,9 +597,7 @@ to TestPyPI. You need to:</p>
 <li><p><strong>Create an account on TestPyPI (or PyPI)</strong>: You will need to create a TestPyPI account and associated token which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.</p></li>
 <li><p><strong>Publish to TestPyPI using <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">publish</span></code></strong></p></li>
 </ol>
-<p>In a future lesson, you will learn how to create an automated
-GitHub Actions workflow that publishes an updated
-version of your package to PyPI every time you create a GitHub release.</p>
+<p>In a <a class="reference internal" href="trusted-publishing.html"><span class="doc std std-doc">future lesson</span></a>, you will learn how to create an automated GitHub Actions workflow that publishes an updated version of your package to PyPI every time you create a GitHub release.</p>
 <div class="tip admonition">
 <p class="admonition-title">Learn more about building Python packages in our guide</p>
 <ul class="simple">
@@ -865,6 +864,13 @@ related to PyPI publication.</p>
 <li><p>You can create a package-specific token which you will use to publish your package (manually) to PyPI. This is a great option if you don’t wish to automate your PyPI publication workflow.</p></li>
 <li><p>You can also create an automated publication workflow on GitHub using GitHub Actions. This is a great way to make the publication process easier and it also supports a growing maintainer team. In this case we suggest you don’t worry about the token and instead setup a specific GitHub Actions that publishes your package when you make a release. You can then create a “trusted publisher” workflow on PyPI.</p></li>
 </ol>
+<div class="tip admonition">
+<p class="admonition-title">Trusted Publishing</p>
+<p>While publishing from GitHub Action is possible using tokens, we recommend the <em>Trusted Publishing</em> approach as it also confers significant security and usability benefits.</p>
+<p>On the usability front, when Trusted Publishing is enabled, users no longer need to manually create API tokens on PyPI and store them in the GitHub release workflow.</p>
+<p>On the security front, Trusted Publishing reduces a risk related to the API token being long lived: with API tokens, as soon as an attacker gets access to it, they can publish many packages and versions in your name (depending on the scope of the token), until you discover the token compromise and rotate the credential. Trusted Publishing avoids this problem by minting very short lived tokens which expire automatically.</p>
+<p>For these benefits, it is recommended that users use <em>only</em> the GitHub Actions release workflow to publish packages.</p>
+</div>
 <p>You will learn how to create the automated trusted publisher workflow in a followup lesson.</p>
 <section id="optional-if-you-want-to-use-a-manual-token-based-publication-workflow">
 <h3>OPTIONAL: If you want to use a manual token-based publication workflow<a class="headerlink" href="#optional-if-you-want-to-use-a-manual-token-based-publication-workflow" title="Link to this heading">#</a></h3>
@@ -880,6 +886,13 @@ a token specific to your new package.</p>
 <li><p>Create the token and follow the steps above publish your package using the repository specific token.</p></li>
 </ol>
 <p>And you’re all done!</p>
+<div class="tip admonition">
+<p class="admonition-title">Trusted Publishing instead of token-based publication</p>
+<p>Trusted Publishing will generate short lived tokens, scoped to the project, on
+demand, only when a specific release workflows gets triggered. This solves all
+the security and usability issues associated with storing credentials in
+files/GitHub secrets.</p>
+</div>
 </section>
 </section>
 <section id="you-have-published-your-package-to-testpypi">
