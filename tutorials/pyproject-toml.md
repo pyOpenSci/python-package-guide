@@ -272,8 +272,10 @@ you want to have listed as authors and maintainers on your PyPI landing page.
 ### Step 2: Add README and license
 
 In the previous lessons, you added both a [README.md](add-readme) file and a [LICENSE](add-license-coc) to your package repository.
-Once you have those files, you can add them to your pyproject.toml file as
-links following the example below.
+Once you have those files, you can refer to the README from your pyproject.toml file, and add a short reference to your LICENSE
+following the example below. 
+
+The reference to your license should use the [license expression syntax](https://packaging.python.org/en/latest/specifications/license-expression/), which can generally be a short name (with no spaces) for the license, such as "MIT", "BSD-3-Clause" or "Apache-2.0".
 
 {emphasize-lines="20-21"}
 ```toml
@@ -297,7 +299,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = "LICENSE"}
+license = "MIT"
 ```
 ### Step 3: Specify Python version with `requires-python`
 
@@ -337,7 +339,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
+license = "MIT"
 requires-python = ">=3.10"
 ```
 
@@ -409,7 +411,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
+license = "MIT"
 requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
@@ -454,12 +456,11 @@ Review that list and add items below to your `pyproject.toml` file:
 - development status
 - intended audiences
 - topic
-- license and
 - programming language support
 
 The classifier key should look something like the example below. A few notes:
 
-- Your classifier values might be different depending upon the license you have selected for your package, your intended audience, development status of your package and the Python versions that you support
+- Your classifier values might be different depending upon your intended audience, development status of your package and the Python versions that you support
 - You can add as many classifiers as you wish as long as you use the [designated PyPI classifier values](https://PyPI.org/classifiers/).
 
 {emphasize-lines="26-34"}
@@ -484,7 +485,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
+license = "MIT"
 requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
@@ -493,7 +494,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -534,7 +534,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
+license = "MIT"
 requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
@@ -543,7 +543,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -585,7 +584,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
+license = "MIT"
 requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
@@ -594,7 +593,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -650,9 +648,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
 
-    # Pick your license (using syntax from the classifier page). We suggest MIT, BSD3 or Apache if you are corporate
-    "License :: OSI Approved :: MIT License",
-
     # Specify the Python versions ensuring that you indicate you support Python 3.
     # this is only for PyPI and other metadata associated with your package - for your users to see
     "Programming Language :: Python :: 3 :: Only", # BE sure to specify that you use python 3.x
@@ -665,7 +660,11 @@ dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 # This is the metadata that pip reads to understand what versions your package supports
 requires-python = ">=3.10"
 readme = "README.md"
-license = { file = "LICENSE" }
+
+# Pick your license using license expression syntax specified here:
+# https://packaging.python.org/en/latest/specifications/license-expression/
+# We suggest MIT, BSD-3-Clause or Apache-2.0 if you are corporate
+license = "MIT"
 
 # Add urls for your home page, issue tracker and source code
 [project.urls] # Optional

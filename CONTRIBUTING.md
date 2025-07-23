@@ -383,7 +383,6 @@ Classifiers are just a list of plain strings
 ```toml
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
 ]
 ```
