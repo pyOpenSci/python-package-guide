@@ -265,7 +265,6 @@ readme = {"file" = "README.md", "content-type" = "text/markdown"}
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
 ]
