@@ -231,8 +231,6 @@ Learn about best practices for:
 ::::{grid-item}
 :::{card} ✨ Code style & Format ✨
 :class-card: left-aligned
-:link: CONTRIBUTING
-:link-type: doc
 
 * [Code style](package-structure-code/code-style-linting-format.md)
 :::
