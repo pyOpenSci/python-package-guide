@@ -161,7 +161,7 @@ The core elements of Python package include:
   - Contributor Documentation in the form of a **CONTRIBUTING.md** file is useful to help people to contribute to your package.
   - Development Documentation helps both maintainers and contributors understand how to maintain a package's infrastructure.
 - **Tests:** that make sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future
-- **License:** An open source license, or license that is [OSI approved](https://opensource.org/licenses/), refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
+- **License:** An open source license, or license that is [OSI approved](https://opensource.org/license/), refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
 - **Infrastructure** that automates updates, publication workflows and runs test suites. Infrastructure includes a suite of things such as platforms like GitHub and GitLab, tools to run tests and tools locally such as nox and tox and continuous integration that automates package maintenance steps.
 
 :::{admonition} What pyOpenSci looks for in a package
@@ -257,7 +257,7 @@ It can be tricky to decide when your code becomes something that might be more b
 :::{admonition} How does this relate to code for a research project?
 :class: note
 
-A [Research Compendium](https://the-turing-way.netlify.app/reproducible-research/compendia.html) is an organized set of code, data and documentation that
+A [Research Compendium](https://book.the-turing-way.org/reproducible-research/compendia.html) is an organized set of code, data and documentation that
 supports a specific research project. It aims to enhance the reproducibility and
 transparency of research by providing a comprehensive record of the methods,
 data, and analyses used in a study.

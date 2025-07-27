@@ -27,7 +27,7 @@ You will learn more about the following tools on this page:
 - [Twine](https://twine.readthedocs.io/en/stable/), [Build](https://pypa-build.readthedocs.io/en/stable/) + [setuptools](https://setuptools.pypa.io/en/latest/)
 - [Flit](https://flit.pypa.io/en/stable/)
 - [Hatch](https://hatch.pypa.io/latest/)
-- [PDM](https://pdm.fming.dev/latest/)
+- [PDM](https://pdm-project.org/latest/)
 - [Poetry](https://python-poetry.org/docs/)
 
 ## Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)
@@ -229,7 +229,7 @@ Notes:
 
 ## PDM
 
-[PDM is a Python packaging and dependency management tool](https://pdm.fming.dev/latest/).
+[PDM is a Python packaging and dependency management tool](https://pdm-project.org/latest/).
 PDM supports builds for pure Python projects. It also provides multiple layers of
 support for projects that have C and C++ extensions.
 
@@ -249,7 +249,7 @@ packages them with the pure Python files.
 :delim: "|"
 
 Use Other Build Backends| ✅| When you setup PDM it allows you to select one of several build back ends including: PDM-core, flit-core and hatchling. PDM also can work with Meson-Python which supports move complex python builds.
-Dependency specifications |✅|PDM has flexible support for  managing dependencies. PDM defaults to using an open bound (e.g. `requests >=1.2`) approach to dependencies. However you can  [customize how you want to add dependencies in case you prefer another approach such as that of Poetry which uses an upper bound limit](https://pdm.fming.dev/latest/usage/dependency/#about-update-strategy).**
+Dependency specifications |✅|PDM has flexible support for  managing dependencies. PDM defaults to using an open bound (e.g. `requests >=1.2`) approach to dependencies. However you can  [customize how you want to add dependencies in case you prefer another approach such as that of Poetry which uses an upper bound limit](https://pdm-project.org/en/latest/usage/dependency/#about-update-strategy).**
 Environment lock files |✅|PDM and Poetry are currently the only tools that create environment lock files. Lock files are often most useful to developers creating web apps where locking the environment is critical for consistent user experience. For community-used packages, you will likely never want to use a lock file.
 Environment management |✅ | PDM provides environment management support. It supports Python virtual environments, conda and a local `__pypackages__` environment which is a newer option in the Python ecosystem. No extensions are needed for this support.
 Select your environment type on install |✅ | When you run `PDM init`, PDM will discover environments that are already on your system and allow you to select one to use for your project.

@@ -148,7 +148,7 @@ similar content. However if your package has extensions in other languages
 or is more complex in its build, the two distributions will be very different.
 
 Also note that we are not discussing conda build workflows in this section.
-[You can learn more about conda builds here.](https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
+[You can learn more about conda builds here.](https://docs.conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
 ```
 
 (python-source-distribution)=
