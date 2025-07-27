@@ -217,6 +217,8 @@ linkcheck_anchors_ignore_for_url = [
 linkcheck_ignore = [
     # gnu.org is so strictly rate-limited that retries to it really slow down link-checking... just assume they're fine
     r"https:\/\/.*gnu\.org.*",
+    # this discord link is correct, but unauthenticated it redirects to a sign-up page
+    r"https:\/\/discord\.gg/NQtTTqtv",
 ]
 
 def _post_build(app: "Sphinx", exception: Exception | None) -> None:
