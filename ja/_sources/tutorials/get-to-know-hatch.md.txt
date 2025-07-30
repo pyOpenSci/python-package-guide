@@ -189,7 +189,7 @@ src-layout = true
 Also notice that the default license option is MIT. While we will discuss
 license in more detail in a later lesson, the MIT license is the
 recommended permissive license from
-[choosealicense.com](https://www.choosealicense.com) and as such we will
+[choosealicense.com](https://choosealicense.com/) and as such we will
 use it for this tutorial series.
 
 You are of course welcome to select another license.

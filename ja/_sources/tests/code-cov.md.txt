@@ -28,7 +28,7 @@ tests cover those scenarios adequately.
 
 ## Tools for analyzing Python package code coverage
 
-Some common services for analyzing code coverage are [codecov.io](https://codecov.io/) and [coveralls.io](https://coveralls.io/). These projects are free for open source tools and will provide dashboards that tell you how much of your codebase is covered during your tests. We recommend setting up an account (on either CodeCov or Coveralls) and using it to keep track of your code coverage.
+Some common services for analyzing code coverage are [codecov.io](https://about.codecov.io/) and [coveralls.io](https://coveralls.io/). These projects are free for open source tools and will provide dashboards that tell you how much of your codebase is covered during your tests. We recommend setting up an account (on either CodeCov or Coveralls) and using it to keep track of your code coverage.
 
 :::{figure} ../images/code-cov-stravalib.png
 :height: 450px

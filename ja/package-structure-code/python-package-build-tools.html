@@ -558,7 +558,7 @@
 <li><p><a class="reference external" href="https://twine.readthedocs.io/en/stable/">Twine</a>, <a class="reference external" href="https://pypa-build.readthedocs.io/en/stable/">Build</a> + <a class="reference external" href="https://setuptools.pypa.io/en/latest/">setuptools</a></p></li>
 <li><p><a class="reference external" href="https://flit.pypa.io/en/stable/">Flit</a></p></li>
 <li><p><a class="reference external" href="https://hatch.pypa.io/latest/">Hatch</a></p></li>
-<li><p><a class="reference external" href="https://pdm.fming.dev/latest/">PDM</a></p></li>
+<li><p><a class="reference external" href="https://pdm-project.org/latest/">PDM</a></p></li>
 <li><p><a class="reference external" href="https://python-poetry.org/docs/">Poetry</a></p></li>
 </ul>
 </section>
@@ -770,7 +770,9 @@ twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </
 </section>
 <section id="pdm">
 <h2>PDM<a class="headerlink" href="#pdm" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://pdm.fming.dev/latest/">PDMはPythonのパッケージングと依存関係の管理ツールです</a> 。 PDMは純粋なPythonプロジェクトのビルドをサポートします。また、CやC++の拡張を持つプロジェクトに対しても、多層的なサポートを提供します。</p>
+<p><a class="reference external" href="https://pdm-project.org/latest/">PDM is a Python packaging and dependency management tool</a>.
+PDM supports builds for pure Python projects. It also provides multiple layers of
+support for projects that have C and C++ extensions.</p>
 <div class="admonition-pdm-support-for-c-and-c-extensions admonition">
 <p class="admonition-title">CおよびC++拡張のPDMサポート</p>
 <p>PDMはPDM-back-endとsetuptoolsの同時使用をサポートしています。 つまり、setuptools を実行して C 拡張モジュールをコンパイルビルドすることができます。 PDMのビルドバックエンドはコンパイルされた拡張ファイル(.so, .pyd)を受け取り、純粋なPythonファイルと一緒にパッケージ化します。</p>
@@ -796,7 +798,7 @@ twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </
 </tr>
 <tr class="row-odd"><td><p>依存仕様</p></td>
 <td><p>✅</p></td>
-<td><p>PDMは依存関係の管理を柔軟にサポートしています。 PDMはデフォルトで依存関係に対してオープンバウンド(例えば <code class="docutils literal notranslate"><span class="pre">requests</span> <span class="pre">&gt;=1.2</span></code> )アプローチを使用します。 しかし、 <a class="reference external" href="https://pdm.fming.dev/latest/usage/dependency/#about-update-strategy">Poetryのような上限を使用する別のアプローチを好む場合、依存関係を追加する方法をカスタマイズする</a> ことができます。</p></td>
+<td><p>PDM has flexible support for  managing dependencies. PDM defaults to using an open bound (e.g. <code class="docutils literal notranslate"><span class="pre">requests</span> <span class="pre">&gt;=1.2</span></code>) approach to dependencies. However you can  <a class="reference external" href="https://pdm-project.org/en/latest/usage/dependency/#about-update-strategy">customize how you want to add dependencies in case you prefer another approach such as that of Poetry which uses an upper bound limit</a>.**</p></td>
 </tr>
 <tr class="row-even"><td><p>環境ロックファイル</p></td>
 <td><p>✅</p></td>

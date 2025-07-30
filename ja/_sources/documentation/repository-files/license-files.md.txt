@@ -43,7 +43,7 @@ Licenses are legally binding, as such you should avoid trying to create your own
 
 ### Use open permissive licenses when possible
 
-We generally suggest that you use a permissive, license that is [Open Software Initiative (OSI) approved](https://opensource.org/licenses/). If you are
+We generally suggest that you use a permissive, license that is [Open Software Initiative (OSI) approved](https://opensource.org/license). If you are
 [submitting your package to pyOpenSci for peer review](https://www.pyopensci.org/about-peer-review/index.html), then we require an OSI approved
 license.
 
