@@ -26,9 +26,9 @@ In this lesson you will learn:
 A license contains legal language about how users can use and reuse your software. To set the `LICENSE` for your project, you:
 
 1. Create a `LICENSE` file in your project directory that specifies the license that you choose for your package.
-2. Reference that license in your `pyproject.toml` data where metadata are set.
+2. Describe your choice of license in your `pyproject.toml` data where metadata are set.
 
-By adding the license reference to your `pyproject.toml` file, the license will be included in your package's metadata which is used to populate your package's PyPI landing page. The `LICENSE` is also used in your GitHub repository's landing page interface.
+By adding this metadata to your `pyproject.toml` file, the choice of license will be included in your package's metadata which is used to populate your package's PyPI landing page. The `LICENSE` file is also used in your GitHub repository's landing page interface.
 
 ### What license should you use?
 

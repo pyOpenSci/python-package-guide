@@ -272,10 +272,8 @@ you want to have listed as authors and maintainers on your PyPI landing page.
 ### Step 2: Add README and license
 
 In the previous lessons, you added both a [README.md](add-readme) file and a [LICENSE](add-license-coc) to your package repository.
-Once you have those files, you can refer to the README from your pyproject.toml file, and add a short reference to your LICENSE
+Once you have those files, you can refer to the README from your pyproject.toml file, and add a short code indicating your choice of LICENSE
 following the example below. 
-
-The reference to your license should use the [license expression syntax](https://packaging.python.org/en/latest/specifications/license-expression/), which can generally be a short name (with no spaces) for the license, such as "MIT", "BSD-3-Clause" or "Apache-2.0".
 
 {emphasize-lines="20-21"}
 ```toml
@@ -301,6 +299,13 @@ maintainers = [
 readme = "README.md"
 license = "MIT"
 ```
+
+The license entry in your pyproject.toml file must use the [license expression syntax](https://packaging.python.org/en/latest/specifications/license-expression/). Often this is a short name (with no spaces) for the license, such as "MIT", "BSD-3-Clause" or "Apache-2.0". More precisely, it must be a valid SPDX license expression, as documented in the [SPDX specification](https://spdx.github.io/spdx-spec/v2.2.2/SPDX-license-expressions/), either version 2.2 or a later compatible version.
+
+If you have multiple licenses, or a custom license, you can also express these using a license expression.
+
+If you want to distribute license files, or other files containing legal information, with your package, you can include these using the [`license-files`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license-files) entry, but this is not required.
+
 ### Step 3: Specify Python version with `requires-python`
 
 Add the `requires-python` field to your `pyproject.toml` `[project]` table.
@@ -663,7 +668,7 @@ readme = "README.md"
 
 # Pick your license using license expression syntax specified here:
 # https://packaging.python.org/en/latest/specifications/license-expression/
-# We suggest MIT, BSD-3-Clause or Apache-2.0 if you are corporate
+# We suggest MIT, BSD-3-Clause or Apache-2.0
 license = "MIT"
 
 # Add urls for your home page, issue tracker and source code
