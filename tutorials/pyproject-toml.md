@@ -666,7 +666,7 @@ dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 requires-python = ">=3.10"
 readme = "README.md"
 
-# Pick your license using license expression syntax specified here:
+# Pick your license using the license expression syntax specified here:
 # https://packaging.python.org/en/latest/specifications/license-expression/
 # We suggest MIT, BSD-3-Clause or Apache-2.0
 license = "MIT"
