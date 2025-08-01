@@ -273,7 +273,7 @@ you want to have listed as authors and maintainers on your PyPI landing page.
 
 In the previous lessons, you added both a [README.md](add-readme) file and a [LICENSE](add-license-coc) to your package repository.
 Once you have those files, you can refer to the README from your pyproject.toml file, and add a short code indicating your choice of LICENSE
-following the example below. 
+following the example below.
 
 {emphasize-lines="20-21"}
 ```toml
