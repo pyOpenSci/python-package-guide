@@ -636,7 +636,7 @@ You will need to have <a class="reference external" href="https://copier.readthe
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">A full package with tests, docs, and GitHub infrastructure</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">テスト、ドキュメント、GitHubインフラストラクチャを備えた完全なパッケージ</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">If you use the &quot;bells and whistles&quot; default option when working through the template prompts,
 our template will create a complete package setup with GitHub CI actions, typing, tests, environments
 , and more using Hatch. If you customize the entire package, then you can select what platform you wish to host it on (GitHub vs GitLab), whether you want typing, what documentation engine you want to use, and more.</p>
@@ -661,18 +661,18 @@ our template will create a complete package setup with GitHub CI actions, typing
 <span class="go">        └── test_example.py</span>
 </pre></div>
 </div>
-<p class="sd-card-text">The default tools that your package uses are:</p>
+<p class="sd-card-text">パッケージが使用するデフォルトのツールは以下の通りです:</p>
 <ul class="simple">
 <li><p class="sd-card-text"><a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx</a> with the pydata_sphinx_theme for documentation</p></li>
-<li><p class="sd-card-text">pytest for testing</p></li>
+<li><p class="sd-card-text">テスト用のpytest</p></li>
 <li><p class="sd-card-text">Hatch for environment setup</p></li>
 </ul>
 <p class="sd-card-text"><strong>Full customization</strong>
 If you want to customize any elements of your package setup, choose <code class="docutils literal notranslate"><span class="pre">No,</span> <span class="pre">I</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">fully</span> <span class="pre">customize</span> <span class="pre">the</span> <span class="pre">template.</span></code>.  This will allow you to select:</p>
 <ul class="simple">
-<li><p class="sd-card-text">sphinx vs <a class="reference external" href="https://www.mkdocs.org/">mkdocs</a> vs no documentation</p></li>
+<li><p class="sd-card-text">sphinx vs <a class="reference external" href="https://www.mkdocs.org/">mkdocs</a> vs ドキュメントなし</p></li>
 <li><p class="sd-card-text">GitHub vs GitLab</p></li>
-<li><p class="sd-card-text">VCS versioning</p></li>
+<li><p class="sd-card-text">VCSバージョン管理</p></li>
 <li><p class="sd-card-text">and more</p></li>
 </ul>
 </div>
@@ -680,7 +680,7 @@ If you want to customize any elements of your package setup, choose <code class=
 <section id="step-2-explore-the-existing-module-in-your-package">
 <h2>Step 2: Explore the existing module in your package<a class="headerlink" href="#step-2-explore-the-existing-module-in-your-package" title="Link to this heading">#</a></h2>
 <p>A Python module refers to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file containing the code that you want your package to access and run. Within the <code class="docutils literal notranslate"><span class="pre">pyospackage</span></code> subdirectory, you have an example.py module that you can use to test out your package quickly.</p>
-<p>Notice that the code in the example.py module, has a few features:</p>
+<p>example.pyモジュールのコードには、いくつかの機能があることに注意してください:</p>
 <ol class="arabic simple">
 <li><p>これは <a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#numpy-docstring"><span class="std std-ref">numpyスタイルのdocstring</span></a> を持っています。</p></li>
 <li><p><a class="reference internal" href="../documentation/write-user-documentation/document-your-code-api-docstrings.html#type-hints"><span class="std std-ref">typing</span></a> を使用します。</p></li>
@@ -848,7 +848,7 @@ interactively in your favorite Python interface. One important caveat of editabl
 </ul>
 <p><strong><code class="docutils literal notranslate"><span class="pre">pip</span></code> を呼び出す際に <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> を使用する</strong></p>
 <p>上記では、 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> を使用して、現在アクティブな環境にインストールされている pip のバージョンを呼び出します。 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> は、現在の環境にインストールされているバージョンの pip を呼び出していることを確認するために重要です。</p>
-<p>IMPORTANT: pip can also be used to install packages from PyPI. However, in this case, you are telling pip to install your package from a local folder by using the <code class="docutils literal notranslate"><span class="pre">.</span></code>. You could also specify a path to the project directory on your computer instead of the <code class="docutils literal notranslate"><span class="pre">.</span></code> which tells pip to use the current working directory.</p>
+<p>重要: pipはPyPIからパッケージをインストールするためにも使用できます。しかし、この場合、<code class="docutils literal notranslate"><span class="pre">.</span></code>を使用してローカルフォルダからパッケージをインストールするようpipに指示しています。<code class="docutils literal notranslate"><span class="pre">.</span></code>の代わりにコンピュータ上のプロジェクトディレクトリへのパスを指定することもできます。<code class="docutils literal notranslate"><span class="pre">.</span></code>はpipに現在の作業ディレクトリを使用するよう指示します。</p>
 </div>
 <section id="look-for-pyospackage-in-your-environment">
 <h3>あなたの環境でpyospackageを探す<a class="headerlink" href="#look-for-pyospackage-in-your-environment" title="Link to this heading">#</a></h3>
@@ -885,7 +885,7 @@ pyosPackage<span class="w">                   </span><span class="m">0</span>.1<
 </section>
 <section id="step-6-test-out-your-new-package">
 <h2>ステップ 6: 新しいパッケージをテストする<a class="headerlink" href="#step-6-test-out-your-new-package" title="Link to this heading">#</a></h2>
-<p>パッケージをインストールしたら、選択したターミナルのコマンドプロンプトで &quot;python&quot; と入力し、アクティブなPython環境でPythonセッションを開始します。</p>
+<p>パッケージをインストールした後、選択したターミナルのコマンドプロンプトで“python”と入力して、アクティブなPython環境でPythonセッションを開始します。パッケージをインストールしたら、選択したターミナルのコマンドプロンプトで &quot;python&quot; と入力し、アクティブなPython環境でPythonセッションを開始します。</p>
 <p>You can now import your package and access the <code class="docutils literal notranslate"><span class="pre">add_numbers</span></code> function.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>➜<span class="w"> </span>python
 Python<span class="w"> </span><span class="m">3</span>.11.4<span class="w"> </span><span class="p">|</span><span class="w"> </span>packaged<span class="w"> </span>by<span class="w"> </span>conda-forge
