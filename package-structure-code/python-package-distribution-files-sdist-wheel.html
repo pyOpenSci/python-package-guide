@@ -586,7 +586,7 @@ and PyPI can use, is called a build step.</p>
 <li><p>When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:</p></li>
 </ol>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">classifiers</span> <span class="pre">=</span> </code> section of your <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that contain specific licenses or that support specific versions of python.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">classifiers</span> <span class="pre">=</span> </code> section of your <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that address different topics or that support specific versions of python.</p></li>
 </ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="c1"># How mature is this project? Common values are</span>
@@ -595,7 +595,6 @@ and PyPI can use, is called a build step.</p>
 <span class="w">    </span><span class="c1"># Indicate who your project is intended for</span>
 <span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>

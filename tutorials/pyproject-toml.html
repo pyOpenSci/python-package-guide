@@ -786,8 +786,8 @@ you want to have listed as authors and maintainers on your PyPI landing page.</p
 <section id="step-2-add-readme-and-license">
 <h3>Step 2: Add README and license<a class="headerlink" href="#step-2-add-readme-and-license" title="Link to this heading">#</a></h3>
 <p>In the previous lessons, you added both a <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a> file and a <a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc">LICENSE</span></a> to your package repository.
-Once you have those files, you can add them to your pyproject.toml file as
-links following the example below.</p>
+Once you have those files, you can refer to the README from your pyproject.toml file, and add a short code indicating your choice of LICENSE
+following the example below.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
 <span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
@@ -808,9 +808,12 @@ links following the example below.</p>
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 <span class="hll"><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-</span><span class="hll"><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;LICENSE&quot;</span><span class="p">}</span>
+</span><span class="hll"><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
 </span></pre></div>
 </div>
+<p>The license entry in your pyproject.toml file must use the <a class="reference external" href="https://packaging.python.org/en/latest/specifications/license-expression/">license expression syntax</a>. Often this is a short name (with no spaces) for the license, such as “MIT”, “BSD-3-Clause” or “Apache-2.0”. More precisely, it must be a valid SPDX license expression, as documented in the <a class="reference external" href="https://spdx.github.io/spdx-spec/v2.2.2/SPDX-license-expressions/">SPDX specification</a>, either version 2.2 or a later compatible version.</p>
+<p>If you have multiple licenses, or a custom license, you can also express these using a license expression.</p>
+<p>If you want to distribute license files, or other files containing legal information, with your package, you can include these using the <a class="reference external" href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license-files"><code class="docutils literal notranslate"><span class="pre">license-files</span></code></a> entry, but this is not required.</p>
 </section>
 <section id="step-3-specify-python-version-with-requires-python">
 <h3>Step 3: Specify Python version with <code class="docutils literal notranslate"><span class="pre">requires-python</span></code><a class="headerlink" href="#step-3-specify-python-version-with-requires-python" title="Link to this heading">#</a></h3>
@@ -844,7 +847,7 @@ The <a class="reference external" href="https://packaging.python.org/en/latest/s
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
 <span class="hll"><span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 </span></pre></div>
 </div>
@@ -901,7 +904,7 @@ Ideally you should set this to the lowest version that is still compatible with 
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
 <span class="hll"><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
@@ -939,12 +942,11 @@ These two specifications are equivalent:</p>
 <li><p>development status</p></li>
 <li><p>intended audiences</p></li>
 <li><p>topic</p></li>
-<li><p>license and</p></li>
 <li><p>programming language support</p></li>
 </ul>
 <p>The classifier key should look something like the example below. A few notes:</p>
 <ul class="simple">
-<li><p>Your classifier values might be different depending upon the license you have selected for your package, your intended audience, development status of your package and the Python versions that you support</p></li>
+<li><p>Your classifier values might be different depending upon your intended audience, development status of your package and the Python versions that you support</p></li>
 <li><p>You can add as many classifiers as you wish as long as you use the <a class="reference external" href="https://PyPI.org/classifiers/">designated PyPI classifier values</a>.</p></li>
 </ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
@@ -967,21 +969,20 @@ These two specifications are equivalent:</p>
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
 <span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
 
-<span class="hll"><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="p">]</span>
-</span></pre></div>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
 </div>
 <p>Note that while classifiers are not required in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, they will help users find your package. As such we strongly recommend that you add them.</p>
 </section>
@@ -1014,7 +1015,7 @@ These two specifications are equivalent:</p>
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
 <span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
@@ -1023,17 +1024,16 @@ These two specifications are equivalent:</p>
 <span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">]</span>
 
-<span class="hll"><span class="k">[project.urls]</span><span class="w"> </span><span class="c1"># Optional</span>
-</span><span class="hll"><span class="s2">&quot;Homepage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://www.pyopensci.org&quot;</span>
-</span><span class="hll"><span class="s2">&quot;Bug Reports&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/issues&quot;</span>
-</span><span class="hll"><span class="s2">&quot;Source&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/&quot;</span>
-</span></pre></div>
+<span class="k">[project.urls]</span><span class="w"> </span><span class="c1"># Optional</span>
+<span class="s2">&quot;Homepage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://www.pyopensci.org&quot;</span>
+<span class="s2">&quot;Bug Reports&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/issues&quot;</span>
+<span class="s2">&quot;Source&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/pyopensci/pyosmeta/&quot;</span>
+</pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1065,7 +1065,7 @@ is commented with all of the sections we discussed above.</p>
 <span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 
 <span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;numpy&gt;=1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;requests==10.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydantic&gt;=1.7,&lt;2&quot;</span><span class="p">]</span>
@@ -1074,7 +1074,6 @@ is commented with all of the sections we discussed above.</p>
 <span class="w">    </span><span class="s2">&quot;Development Status :: 4 - Beta&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
@@ -1126,9 +1125,6 @@ is commented with all of the sections we discussed above.</p>
 <span class="w">    </span><span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;Topic :: Software Development :: Build Tools&quot;</span><span class="p">,</span>
 
-<span class="w">    </span><span class="c1"># Pick your license (using syntax from the classifier page). We suggest MIT, BSD3 or Apache if you are corporate</span>
-<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-
 <span class="w">    </span><span class="c1"># Specify the Python versions ensuring that you indicate you support Python 3.</span>
 <span class="w">    </span><span class="c1"># this is only for PyPI and other metadata associated with your package - for your users to see</span>
 <span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># BE sure to specify that you use python 3.x</span>
@@ -1141,7 +1137,11 @@ is commented with all of the sections we discussed above.</p>
 <span class="c1"># This is the metadata that pip reads to understand what versions your package supports</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;LICENSE&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1"># Pick your license using the license expression syntax specified here:</span>
+<span class="c1"># https://packaging.python.org/en/latest/specifications/license-expression/</span>
+<span class="c1"># We suggest MIT, BSD-3-Clause or Apache-2.0</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span>
 
 <span class="c1"># Add urls for your home page, issue tracker and source code</span>
 <span class="k">[project.urls]</span><span class="w"> </span><span class="c1"># Optional</span>
