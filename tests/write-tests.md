@@ -74,7 +74,7 @@ test_add_numbers()
 ### How do I know what type of tests to write?
 
 :::{note}
-This section has been adapted from [a presentation by Nick Murphy](https://zenodo.org/record/8185113).
+This section has been adapted from [a presentation by Nick Murphy](https://zenodo.org/records/8185113).
 :::
 
 At this point, you may be wondering - what should you be testing in your package? Below are a few examples:

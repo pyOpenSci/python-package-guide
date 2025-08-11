@@ -53,7 +53,7 @@ dependencies = [
 
 2. When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:
 
-- The `classifiers = ` section of your `[project]` table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that contain specific licenses or that support specific versions of python.
+- The `classifiers = ` section of your `[project]` table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that address different topics or that support specific versions of python.
 
 ```toml
 classifiers = [
@@ -63,7 +63,6 @@ classifiers = [
     # Indicate who your project is intended for
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -148,7 +147,7 @@ similar content. However if your package has extensions in other languages
 or is more complex in its build, the two distributions will be very different.
 
 Also note that we are not discussing conda build workflows in this section.
-[You can learn more about conda builds here.](https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
+[You can learn more about conda builds here.](https://docs.conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
 ```
 
 (python-source-distribution)=

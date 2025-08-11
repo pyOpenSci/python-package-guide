@@ -1285,7 +1285,7 @@ msgstr "最終的なプロジェクトのディレクトリ構造は以下のよ
 
 #: ../../tutorials/create-python-package.md
 msgid "A full package with tests, docs, and GitHub infrastructure"
-msgstr ""
+msgstr "テスト、ドキュメント、GitHubインフラストラクチャを備えた完全なパッケージ"
 
 #: ../../tutorials/create-python-package.md:114
 msgid ""
@@ -1304,7 +1304,7 @@ msgstr "プロジェクトディレクトリはこのようになっているは
 
 #: ../../tutorials/create-python-package.md:141
 msgid "The default tools that your package uses are:"
-msgstr ""
+msgstr "パッケージが使用するデフォルトのツールは以下の通りです:"
 
 #: ../../tutorials/create-python-package.md:143
 msgid ""
@@ -1315,7 +1315,7 @@ msgstr ""
 
 #: ../../tutorials/create-python-package.md:144
 msgid "pytest for testing"
-msgstr ""
+msgstr "テスト用のpytest"
 
 #: ../../tutorials/create-python-package.md:145
 #, fuzzy
@@ -1331,7 +1331,7 @@ msgstr ""
 
 #: ../../tutorials/create-python-package.md:150
 msgid "sphinx vs [mkdocs](https://www.mkdocs.org/) vs no documentation"
-msgstr ""
+msgstr "sphinx vs [mkdocs](https://www.mkdocs.org/) vs ドキュメントなし"
 
 #: ../../tutorials/create-python-package.md:151
 #, fuzzy
@@ -1340,7 +1340,7 @@ msgstr "GitHub & GitLab vs. Git"
 
 #: ../../tutorials/create-python-package.md:152
 msgid "VCS versioning"
-msgstr ""
+msgstr "VCSバージョン管理"
 
 #: ../../tutorials/create-python-package.md:153
 #, fuzzy
@@ -1365,7 +1365,7 @@ msgstr ""
 
 #: ../../tutorials/create-python-package.md:160
 msgid "Notice that the code in the example.py module, has a few features:"
-msgstr ""
+msgstr "example.pyモジュールのコードには、いくつかの機能があることに注意してください:"
 
 #: ../../tutorials/create-python-package.md:162
 msgid "It has a [numpy-style docstring](numpy-docstring)"
@@ -1512,7 +1512,7 @@ msgstr "TOMLはデータ構造を整理し、設定ファイル内の関係を�
 #: ../../tutorials/create-python-package.md:248
 #, fuzzy
 msgid "[Learn more about the pyproject.toml format here.](pyprojecttoml-metadata)"
-msgstr ""
+msgstr "[pyproject.tomlフォーマットの詳細はこちら。](pyprojecttoml-metadata)"
 "[pyproject.tomlフォーマットの詳細はこちら。](../package-structure-code/pyproject-toml-"
 "python-package-metadata)"
 
@@ -1678,6 +1678,10 @@ msgid ""
 "directory on your computer instead of the `.` which tells pip to use the "
 "current working directory."
 msgstr ""
+"重要: pipはPyPIからパッケージをインストールするためにも使用できます。しかし、"
+"この場合、`.`を使用してローカルフォルダからパッケージをインストールするようpipに指示しています。"
+"`.`の代わりにコンピュータ上のプロジェクトディレクトリへのパスを指定することもできます。"
+"`.`はpipに現在の作業ディレクトリを使用するよう指示します。"
 
 #: ../../tutorials/create-python-package.md:368
 msgid "Look for pyospackage in your environment"
@@ -1712,6 +1716,8 @@ msgid ""
 "your chosen terminal to start a Python session in your active Python "
 "environment."
 msgstr ""
+"パッケージをインストールした後、選択したターミナルのコマンドプロンプトで“python”と入力して、"
+"アクティブなPython環境でPythonセッションを開始します。"
 "パッケージをインストールしたら、選択したターミナルのコマンドプロンプトで \"python\" "
 "と入力し、アクティブなPython環境でPythonセッションを開始します。"
 
@@ -2117,11 +2123,11 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:27
 msgid "Each `[]` section in the toml file is called a table."
-msgstr ""
+msgstr "tomlファイルの各 `[]` セクションはテーブルと呼ばれます。"
 
 #: ../../tutorials/develop-python-package-hatch.md:28
 msgid "You can nest tables with double brackets like this`[[]]`"
-msgstr ""
+msgstr "このように二重括弧`[[]]`でテーブルをネストできます"
 
 #: ../../tutorials/develop-python-package-hatch.md:29
 msgid ""
@@ -2188,7 +2194,7 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:66
 msgid "So `tool.hatch.envs.build` will create an environment called `build`."
-msgstr ""
+msgstr "つまり `tool.hatch.envs.build` は `build` という環境を作成します。"
 
 #: ../../tutorials/develop-python-package-hatch.md:68
 msgid ""
@@ -2233,11 +2239,11 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:91
 msgid "Hatch scripts"
-msgstr ""
+msgstr "Hatchスクリプト"
 
 #: ../../tutorials/develop-python-package-hatch.md:93
 msgid "Hatch supports defining scripts that run in specific Hatch environments."
-msgstr ""
+msgstr "Hatchは特定のHatch環境で実行されるスクリプトの定義をサポートしています。"
 
 #: ../../tutorials/develop-python-package-hatch.md:95
 msgid ""
@@ -2254,19 +2260,19 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:99
 msgid "`[tool.hatch.envs.build.scripts]`"
-msgstr ""
+msgstr "`[tool.hatch.envs.build.scripts]`"
 
 #: ../../tutorials/develop-python-package-hatch.md:101
 msgid "You define this `scripts` to run using the following syntax, where:"
-msgstr ""
+msgstr "この `scripts` を実行するために次の構文を使用して定義します:"
 
 #: ../../tutorials/develop-python-package-hatch.md:103
 msgid "`tool.hatch`: Alerts Hatch that this table is for Hatch to use"
-msgstr ""
+msgstr "`tool.hatch`: このテーブルがHatch用であることをHatchに通知します"
 
 #: ../../tutorials/develop-python-package-hatch.md:104
 msgid "`envs.build`: Use the defined build environment."
-msgstr ""
+msgstr "`envs.build`: 定義されたビルド環境を使用します。"
 
 #: ../../tutorials/develop-python-package-hatch.md:105
 msgid ""
@@ -2282,7 +2288,7 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:110
 msgid "`pip check` # verifies your dependencies"
-msgstr ""
+msgstr "`pip check` # 依存関係を検証します"
 
 #: ../../tutorials/develop-python-package-hatch.md:111
 #, fuzzy
@@ -2309,11 +2315,11 @@ msgstr "テストの実行"
 
 #: ../../tutorials/develop-python-package-hatch.md:131
 msgid "You can run the build script and build your package like this:"
-msgstr ""
+msgstr "ビルドスクリプトを実行し、次のようにパッケージをビルドできます:"
 
 #: ../../tutorials/develop-python-package-hatch.md:133
 msgid "`hatch run build:check`"
-msgstr ""
+msgstr "`hatch run build:check`"
 
 #: ../../tutorials/develop-python-package-hatch.md:135
 msgid ""
@@ -2323,11 +2329,11 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:137
 msgid "You can enter the build environment in your shell to check it out:"
-msgstr ""
+msgstr "シェルでビルド環境に入って確認できます:"
 
 #: ../../tutorials/develop-python-package-hatch.md:143
 msgid "If you run `pip list` in the environment, twine will be there:"
-msgstr ""
+msgstr "環境で `pip list` を実行すると、twineが入っています:"
 
 #: ../../tutorials/develop-python-package-hatch.md:149
 #: ../../tutorials/develop-python-package-hatch.md:207
@@ -2349,7 +2355,7 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:159
 msgid "Below, you see the Hatch environment test table."
-msgstr ""
+msgstr "以下に、Hatch環境テストテーブルが表示されます。"
 
 #: ../../tutorials/develop-python-package-hatch.md:161
 msgid ""
@@ -2360,7 +2366,7 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:175
 msgid "Your test environment has a matrix associated with it"
-msgstr ""
+msgstr "テスト環境にはマトリックスが関連付けられています"
 
 #: ../../tutorials/develop-python-package-hatch.md:177
 msgid ""
@@ -2411,11 +2417,11 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:225
 msgid "To run this script in your terminal, use the syntax:"
-msgstr ""
+msgstr "ターミナルでこのスクリプトを実行するには、次の構文を使用します:"
 
 #: ../../tutorials/develop-python-package-hatch.md:227
 msgid "`hatch run test:run`"
-msgstr ""
+msgstr "`hatch run test:run`"
 
 #: ../../tutorials/develop-python-package-hatch.md:229
 #, fuzzy
@@ -2445,7 +2451,7 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:266
 msgid "Build your documentation with Hatch environments"
-msgstr ""
+msgstr "Hatch環境でドキュメントをビルドする"
 
 #: ../../tutorials/develop-python-package-hatch.md:268
 msgid ""
@@ -2455,7 +2461,7 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:271
 msgid "`hatch run docs:build`"
-msgstr ""
+msgstr "`hatch run docs:build`"
 
 #: ../../tutorials/develop-python-package-hatch.md:273
 msgid ""
@@ -2465,15 +2471,15 @@ msgstr ""
 
 #: ../../tutorials/develop-python-package-hatch.md:275
 msgid "`hatch run docs:serve`"
-msgstr ""
+msgstr "`hatch run docs:serve`"
 
 #: ../../tutorials/develop-python-package-hatch.md:277
 msgid "To stop serving the docs use:"
-msgstr ""
+msgstr "ドキュメントの提供を停止するには:"
 
 #: ../../tutorials/develop-python-package-hatch.md:279
 msgid "mac: <kbd>ctrl + c</kbd> windows:"
-msgstr ""
+msgstr "mac: <kbd>ctrl + c</kbd> windows:"
 
 #: ../../tutorials/get-to-know-hatch.md:6
 msgid "Get to Know Hatch"

@@ -75,7 +75,7 @@ Some badges that you might consider adding to your README file include:
 
 Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)](https://pypi.org/project/pandera/)
 
-* Status of tests (pass or fail) - Example: [![CI Build](https://github.com/pandera-dev/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com/pandera-dev/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)
+* Status of tests (pass or fail) - Example: [![CI Build](https://github.com/unionai-oss/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com/unionai-oss/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)
 
 * Documentation build - Example: ![Docs Building](https://github.com/pyOpenSci/python-package-guide/actions/workflows/build-book.yml/badge.svg)
 
@@ -84,7 +84,7 @@ Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)]
 ```{tip}
 Once you package is accepted to pyOpenSci, we will provide you with
 a badge to add to your repository that shows that it has been reviewed.
-[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-submission/issues/12)
+[![pyOpenSci](https://www.pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-submission/issues/12)
 
 ```
 

@@ -41,7 +41,7 @@ To fork a repo,
 
 1. Make sure you are logged into GitHub.
 
-2. Go to the repo you would like to fork, in this case the [Python Packaging Guide](https://www.github.com/pyopensci/python-package-guide) repo.
+2. Go to the repo you would like to fork, in this case the [Python Packaging Guide](https://github.com/pyopensci/python-package-guide) repo.
 
 3. In the top right-hand corner of the page there is a 'Fork' button. Click that button. You will be brought to a new page where you will 'Create a new fork'. Feel free to keep all the default inputs and click 'Create fork'. This will create a copy of the repo at `https://github.com/<username>/python-package-guide`, where `<username>` is your GitHub username.
 
@@ -383,7 +383,6 @@ Classifiers are just a list of plain strings
 ```toml
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
 ]
 ```
