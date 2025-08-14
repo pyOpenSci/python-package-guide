@@ -195,6 +195,7 @@ Then specify dependency groups as follows:
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
 :start-at: [project.optional-dependencies]
+:end-before: [tool.ruff]
 :::
 
 Following the above example, you install dependencies like this:
