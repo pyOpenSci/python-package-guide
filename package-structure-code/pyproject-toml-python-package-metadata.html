@@ -697,17 +697,6 @@ what dependencies your package requires.</p>
 <span class="w">    </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;pydata-sphinx-theme&quot;</span>
 <span class="p">]</span>
-
-<span class="k">[tool.ruff]</span>
-<span class="n">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle errors</span>
-<span class="w">    </span><span class="s2">&quot;W&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle warnings</span>
-<span class="w">    </span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pyflakes. &quot;E&quot; + &quot;W&quot; + &quot;F&quot; + &quot;C90&quot; (mccabe complexity) is equivalent to flake8</span>
-<span class="w">    </span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># isort</span>
-<span class="p">]</span>
-
-<span class="k">[tool.ruff.isort]</span>
-<span class="n">known-first-party</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;examplePy&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Following the above example, you install dependencies like this:</p>
