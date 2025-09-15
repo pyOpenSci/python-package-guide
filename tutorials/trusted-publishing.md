@@ -5,7 +5,7 @@
  
 # Setup Trusted Publishing for secure and automated publishing via GitHub Actions 
  
-In the previous Python packaging lessons, you've learned: 
+In the previous Python packaging lessons, you learned: 
  
 1. [How to create a Python package](create-python-package) 
 1. How to publish the code to [PyPI](publish-pypi) and [Conda](publish-conda-forge) 
@@ -24,15 +24,15 @@ In this lesson you will learn how to:
  
 GitHub Actions[^gha] is an infrastructure provided by GitHub to automate 
 software workflows, straight from the GitHub repository of the project. You can 
-configure automated testing for every pull request, automated publishing of 
-documentation, automated creation of webpages for the project, and even automate 
+configure automated testing for every pull request, automate publishing of 
+documentation, automate creation of webpages for the project, and even automate 
 the release process. For this lesson we will only focus on the release process 
 itself. 
  
 :::{admonition} Learning Objectives 
 :class: tip 
  
-This tutorial assumes that your project is published to GitHub and that you want 
+This tutorial assumes that your project is hosted to GitHub and that you want 
 to publish a package from your project to PyPI. 
 ::: 
  
@@ -64,15 +64,15 @@ This gives a name to the workflow. It allows you to quickly find all runs of
 this GitHub Action on the "Actions" tab in the GitHub repository. 
  
 :::{figure-md} github-actions-release-workflows-summary 
-<img src="../images/tutorials/github-actions-release-workflows-summary.png" alt='Graphic showing an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package.' width="700px"> 
+<img src="../images/tutorials/github-actions-release-workflows-summary.png" alt='Graphic showing an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, "Release," as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package.' width="700px"> 
  
 This image shows an example of a configured workflow for the release. On the top, in the red box labeled "1" you see the "Actions" tab of the GitHub repository. On the left, in the red box labeled "2" you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled "3" you can see several runs of the workflow, for the "1.0" and "1.0.1" releases of the package. 
 ::: 
  
 ### Step 2: Add triggers to the workflow 
  
-Every GitHub Actions workflow runs only when certain conditions are met. A 
-release workflow should only run when the repository owner creates a new release 
+Every GitHub Actions workflow runs only when [certain conditions](https://docs.github.com/en/actions/reference/events-that-trigger-workflows) are met. A 
+release workflow should only run when the repository owner creates a new [release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 for the package. Add the following to the `release.yaml` file: 
  
 ```yaml 
@@ -84,7 +84,10 @@ on:
  
 ### Step 3: Configure the jobs in the workflow 
  
-When triggered, the GitHub Actions runs multiple jobs. We have to configure at 
+A GitHub Actions *workflow* file can contain multiple *jobs* that run independently, each of which can have multiple *steps.*
+When triggered, the GitHub Actions runs all the jobs in a workflow[^conditionally]. We have to configure at 
+
+[^conditionally]: Jobs and steps can also have [conditional logic](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idif) that makes them only run in certain circumstances.
 least one job in the workflow file. 
  
 For a release job, we need to clone the repository and then use `hatch` to build 
@@ -104,7 +107,7 @@ jobs:
     - run: hatch build 
 ``` 
  
-:::{admonition} Hardening the GitHub Actions workflow 
+:::{admonition} Securing the GitHub Actions workflow 
  
 There are several improvements we can make to the GitHub Actions workflow we 
 just configured to improve security and readability. 
@@ -140,11 +143,11 @@ jobs:
  
 ::: 
  
-Now, you can commit the `.github/workflows/release.yaml` file to the repository. 
+Now, you can commit the `.github/workflows/release.yaml` file to the repository and push to GitHub. 
  
 At this point, if you create a new release for your project on GitHub, the 
 configured workflow should run and build a wheel for you. Unfortunately, the 
-wheel is only available on the runner. 
+wheel is only available on the runner, and will be deleted at the end of the workflow run.
  
 ### Step 4: Upload the built artifact to the GitHub Artifacts 
  
@@ -165,8 +168,7 @@ the following to the `release.yaml` file:
 :class: tip 
  
 We have configured the artifact to be deleted after 1 day. The artifacts storage 
-on GitHub actions is temporary, and users should not be getting the package from 
-here. 
+on GitHub actions is temporary; users should not be getting the package from here. 
  
 We have also configured the release job to error if the `dist/` directory does 
 not exist. This means that `hatch build` (from the previous step) failed to 
@@ -205,7 +207,7 @@ still need to upload it to PyPI. We could upload the package from the same job,
 but it is better to create a separate one, to maintain separation of concerns. 
 This is why in the previous section we uploaded the artifact to the temporary 
 storage -- in the new job, we will download the package from there and upload it 
-to PyPI. Since this job does nothing else, there is no possibility that the 
+to PyPI. Since the `build` job does nothing else, there is no possibility that the 
 package could get compromised before the release. 
  
 ### Step 1: Add the upload job 
@@ -216,7 +218,7 @@ the previous section:
 ```yaml 
   publish_release_to_pypi: 
     name: Publish release to PyPI 
-    needs: [build_package] 
+    needs: [build_package]  # only run if `build_package` succeeded
     runs-on: ubuntu-latest 
     environment: 
       name: pypi 
@@ -252,8 +254,8 @@ were pasting it directly in the workflow file. Furthermore, accidental leakage
 of the token could allow attackers to publish new packages in your name, until 
 you discover the compromise and revoke the leaked credential. 
  
-To prevent these incidents and improve security, supply chain security 
-developers created Trusted Publishing. This allows registering publishers on 
+To prevent these incidents and improve supply chain security 
+developers created [Trusted Publishing](https://docs.pypi.org/trusted-publishers/). This allows registering publishers on 
 PyPI and mapping them to the automation workflow that is allowed to publish the 
 package. 
  
