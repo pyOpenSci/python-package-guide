@@ -32,7 +32,7 @@ itself.
 :::{admonition} Learning Objectives 
 :class: tip 
  
-This tutorial assumes that your project is hosted to GitHub and that you want 
+This tutorial assumes that your project is hosted on GitHub and that you want 
 to publish a package from your project to PyPI. 
 ::: 
  
