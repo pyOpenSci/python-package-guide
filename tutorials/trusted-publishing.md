@@ -107,7 +107,7 @@ jobs:
 
 Notice that above, you provide a version for each action step. `action/checkout@v5` tells GitHub to use version 5 of the checkout action. The checkout action checks out the code from your repository. In this case, the code will be used to build your package.
 
-Next, you will learn about an even better way to secure your workflow
+Next, you will learn about a better way to secure (or "harden") your workflow
 
 ### Step 4: Secure the GitHub Actions workflow
 
@@ -131,6 +131,13 @@ date. Once Dependabot is enabled, it will update these hashes for you in the fut
 :::
 
 Thus, the workflow that you should use should be similar to:
+
+```{literalinclude} ../examples/pure-hatch/.github/release.yml
+:language: python
+:lines: 10-20
+
+```
+
 
 ```yaml}
 jobs:
