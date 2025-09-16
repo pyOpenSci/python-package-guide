@@ -1,24 +1,9 @@
 version: 2
 updates:
-  - package-ecosystem: "pip"
-    directory: "/"
-    insecure-external-code-execution: allow
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 100
-    labels:
-      - "maintenance"
-      - "dependencies"
-    groups:
-      pip:
-        patterns:
-          - "*"
-    commit-message:
-      prefix: "chore"
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directory: "examples/pure-hatch/.github/workflows"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     open-pull-requests-limit: 100
     labels:
       - "maintenance"
