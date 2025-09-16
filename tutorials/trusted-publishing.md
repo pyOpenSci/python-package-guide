@@ -132,26 +132,10 @@ date. Once Dependabot is enabled, it will update these hashes for you in the fut
 
 Thus, the workflow that you should use should be similar to:
 
-```{literalinclude} ../examples/pure-hatch/.github/release.yml
-:language: python
-:lines: 10-20
+```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
+:language: yaml
+:lines: 1-23
 
-```
-
-
-```yaml}
-jobs:
-  build_package:
-    name: Build the package
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0
-      with:
-        persist-credentials: false
-    - name: Set up Hatch
-      uses: pypa/hatch@257e27e51a6a5616ed08a39a408a21c35c9931bc
-    - name: Build artifacts
-      run: hatch build
 ```
 
 Now, you can commit the `.github/workflows/release.yaml` file to the repository and push to GitHub.
@@ -166,13 +150,10 @@ You need to add one more step to the job definition to be able to access the
 wheel. You will upload it to the artifacts temporary area[^github-artifacts]. Add
 the following to the `release.yaml` file:
 
-```yaml
-    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-      with:
-        path: dist/
-        name: dist.zip
-        if-no-files-found: error
-        retention-days: 1
+```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
+:language: yaml
+:lines: 24-29
+
 ```
 
 :::{admonition} Upload artifacts parameters
@@ -230,20 +211,11 @@ package could get compromised before the release.
 In the `release.yaml` file, add the following new job, after the job defined in
 the previous section:
 
-```yaml
-  publish_release_to_pypi:
-    name: Publish release to PyPI
-    needs: [build_package]  # only run if `build_package` succeeded
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: <URL TO YOUR PROJECT HERE>
-    steps:
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
-        with:
-          name: dist.zip
-          path: dist/
-      - uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+
+```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
+:language: yaml
+:lines: 31-46
+
 ```
 
 :::{admonition} Make sure to change the URL
@@ -321,65 +293,23 @@ the following information:
 Once you fill in this form and click "Add" the publisher is configured and can
 be used to publish new releases of your package.
 
-:::{admonition} Fully hardened GitHub Actions release workflow
+## Fully hardened GitHub Actions release workflow
 
-For better security it is recommended to also control the permissions of the
+For better security, it is also recommended to control the permissions of the
 GitHub token used within each job of the workflow. The permissions should be
 scoped at job level and be as minimal as possible. A workflow that configures
 trusted publishing and also does this is the following:
 
-```yaml
-name: Release
+```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
+:language: yaml
 
-on:
-  release:
-    types:
-      - published
-
-permissions: {}  # no permissions to the token at global level
-
-jobs:
-  build_package:
-    name: Build the package
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read  # this job only needs read access
-    steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      with:
-        persist-credentials: false
-    - name: Set up Hatch
-      uses: pypa/hatch@257e27e51a6a5616ed08a39a408a21c35c9931bc
-    - name: Build artifacts
-      run: hatch build
-    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-      with:
-        path: dist/
-        name: dist.zip
-        if-no-files-found: error
-        retention-days: 1
-
-  publish_release_to_pypi:
-    name: Publish release to PyPI
-    needs: [build_package]
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: <URL TO YOUR PROJECT HERE>
-    permissions:
-      contents: read  # this job needs read access
-      id-token: write # but also needs to be able to write the publishing token
-    steps:
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
-        with:
-          name: dist.zip
-          path: dist/
-      - uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
 ```
 
 You can copy the above into your `release.yaml` file. You only need to update
 the `url:` field and configure trusted publishing on PyPI.
 
+:::{note}
+The workflow above should be up to date with the current versions of GitHub actions. However, it's good to turn on Dependabot to update the action versions in the future.
 :::
 
 ## You have enabled trusted publishing for your project
