@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tutorials/trusted-publishing.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="In the previous Python packaging lessons, you’ve learned: How to create a Python package, How to publish the code to PyPI and Conda. Configure a release job on GitHub Actions: GitHub Actions 1 is a..." />
+<meta property="og:description" content="In the previous Python packaging lessons, you learned: How to create a Python package, How to publish the code to PyPI and Conda. Configure a release job on GitHub Actions: GitHub Actions 1 is an i..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_trusted-publishing_53b4f67b.png" />
-<meta property="og:image:alt" content="In the previous Python packaging lessons, you’ve learned: How to create a Python package, How to publish the code to PyPI and Conda. Configure a release job on GitHub Actions: GitHub Actions 1 is a..." />
-<meta name="description" content="In the previous Python packaging lessons, you’ve learned: How to create a Python package, How to publish the code to PyPI and Conda. Configure a release job on GitHub Actions: GitHub Actions 1 is a..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tutorials_trusted-publishing_6f57772c.png" />
+<meta property="og:image:alt" content="In the previous Python packaging lessons, you learned: How to create a Python package, How to publish the code to PyPI and Conda. Configure a release job on GitHub Actions: GitHub Actions 1 is an i..." />
+<meta name="description" content="In the previous Python packaging lessons, you learned: How to create a Python package, How to publish the code to PyPI and Conda. Configure a release job on GitHub Actions: GitHub Actions 1 is an i..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Setup Trusted Publishing for secure and automated publishing via GitHub Actions &#8212; Python Packaging Guide</title>
@@ -549,55 +549,57 @@
                   
   <section id="setup-trusted-publishing-for-secure-and-automated-publishing-via-github-actions">
 <h1>Setup Trusted Publishing for secure and automated publishing via GitHub Actions<a class="headerlink" href="#setup-trusted-publishing-for-secure-and-automated-publishing-via-github-actions" title="Link to this heading">#</a></h1>
-<p>In the previous Python packaging lessons, you’ve learned:</p>
+<p>In the previous Python packaging lessons, you learned:</p>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="create-python-package.html"><span class="doc std std-doc">How to create a Python package</span></a></p></li>
 <li><p>How to publish the code to <a class="reference internal" href="publish-pypi.html"><span class="doc std std-doc">PyPI</span></a> and <a class="reference internal" href="publish-conda-forge.html"><span class="doc std std-doc">Conda</span></a></p></li>
 </ol>
 <div class="tip admonition">
 <p class="admonition-title">Learning Objectives</p>
-<p>In this lesson you will learn how to:</p>
+<p>In this lesson, you will learn how to:</p>
 <ul class="simple">
 <li><p>Automate building and publishing the package on GitHub Actions</p></li>
-<li><p>Configure trusted publishing for the project</p></li>
+<li><p>Configure PyPI Trusted Publishing for the project</p></li>
+<li><p>Secure your workflow using GitHub action hashes and versions in your workflow file</p></li>
 </ul>
+<p>This tutorial assumes that your project is hosted on GitHub and that you want
+to publish a package from your project to PyPI.</p>
 </div>
 <section id="configure-a-release-job-on-github-actions">
 <h2>Configure a release job on GitHub Actions<a class="headerlink" href="#configure-a-release-job-on-github-actions" title="Link to this heading">#</a></h2>
 <p>GitHub Actions<a class="footnote-reference brackets" href="#gha" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is an infrastructure provided by GitHub to automate
 software workflows, straight from the GitHub repository of the project. You can
-configure automated testing for every pull request, automated publishing of
-documentation, automated creation of webpages for the project, and even automate
-the release process. For this lesson we will only focus on the release process
-itself.</p>
-<div class="tip admonition">
-<p class="admonition-title">Learning Objectives</p>
-<p>This tutorial assumes that your project is published to GitHub and that you want
-to publish a package from your project to PyPI.</p>
+configure automated testing for every pull request, automate publishing of
+documentation, automate creation of web pages for the project, and even automate
+the release process. For this lesson, we will focus on using actions to release
+and publish your Python package securely to PyPI.</p>
+<div class="admonition-why-trusted-publishing-matters admonition">
+<p class="admonition-title">Why Trusted Publishing Matters</p>
+<p>If you are wondering why trusted publishing is so important, <a class="reference external" href="https://www.pyopensci.org/blog/python-packaging-security-publish-pypi.html">check out this blog post:</a> that dives deeper into what can happen when you don’t lock down your publishing workflows.</p>
 </div>
 <section id="step-0-create-a-release-workflow">
 <h3>Step 0: Create a release workflow<a class="headerlink" href="#step-0-create-a-release-workflow" title="Link to this heading">#</a></h3>
 <p>To get started, create a file named <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> under the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code>
-directory of your project.</p>
-<div class="tip admonition">
-<p class="admonition-title">Naming the workflow</p>
-<p>The name of the worklow is not relevant, but <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> is the most
-informative name.</p>
-<p>If the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory does not exist, you can create it. It is
+directory of your project. If the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory does not exist, you can create it. It is
 GitHub’s convention that all GitHub Actions are configured via YAML files in the
 <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory.</p>
+<div class="note admonition">
+<p class="admonition-title">Naming your workflow file</p>
+<p>You can name the workflow file whatever you wish. We suggest using something
+simple and expressive like <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> so you, your future self, and contributors
+who work on your project know exactly what the workflow does.</p>
 </div>
 </section>
 <section id="step-1-name-the-workflow">
 <h3>Step 1: Name the workflow<a class="headerlink" href="#step-1-name-the-workflow" title="Link to this heading">#</a></h3>
-<p>At the top of the <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file type the following:</p>
+<p>At the top of the <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file, type the following:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Release</span>
 </pre></div>
 </div>
-<p>This gives a name to the workflow. It allows you to quickly find all runs of
+<p>This provides a name to the workflow that you can use to quickly find all runs of
 this GitHub Action on the “Actions” tab in the GitHub repository.</p>
 <figure class="align-default" id="github-actions-release-workflows-summary">
-<a class="reference internal image-reference" href="../_images/github-actions-release-workflows-summary.png"><img alt="Graphic showing an example of a configured workflow for the release. On the top, in the red box labeled &quot;1&quot; you see the &quot;Actions&quot; tab of the GitHub repository. On the left, in the red box labeled &quot;2&quot; you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled &quot;3&quot; you can see several runs of the workflow, for the &quot;1.0&quot; and &quot;1.0.1&quot; releases of the package." src="../_images/github-actions-release-workflows-summary.png" style="width: 700px;" />
+<a class="reference internal image-reference" href="../_images/github-actions-release-workflows-summary.png"><img alt="Graphic showing an example of a configured workflow for the release. On the top, in the red box labeled &quot;1&quot; you see the &quot;Actions&quot; tab of the GitHub repository. On the left, in the red box labeled &quot;2&quot; you can see the name of the workflow, &quot;Release,&quot; as configured in this step. Finally, in the center, in the red box labeled &quot;3&quot; you can see several runs of the workflow, for the &quot;1.0&quot; and &quot;1.0.1&quot; releases of the package." src="../_images/github-actions-release-workflows-summary.png" style="width: 700px;" />
 </a>
 <figcaption>
 <p><span class="caption-text">This image shows an example of a configured workflow for the release. On the top, in the red box labeled “1” you see the “Actions” tab of the GitHub repository. On the left, in the red box labeled “2” you can see the name of the workflow, as configured in this step. Finally, in the center, in the red box labeled “3” you can see several runs of the workflow, for the “1.0” and “1.0.1” releases of the package.</span><a class="headerlink" href="#github-actions-release-workflows-summary" title="Link to this image">#</a></p>
@@ -606,95 +608,134 @@ this GitHub Action on the “Actions” tab in the GitHub repository.</p>
 </section>
 <section id="step-2-add-triggers-to-the-workflow">
 <h3>Step 2: Add triggers to the workflow<a class="headerlink" href="#step-2-add-triggers-to-the-workflow" title="Link to this heading">#</a></h3>
-<p>Every GitHub Actions workflow runs only when certain conditions are met. A
-release workflow should only run when the repository owner creates a new release
-for the package. Add the following to the <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file:</p>
+<p>Every GitHub Actions workflow runs when <a class="reference external" href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows">certain conditions</a> are met. In this case,
+we assume that a
+release workflow should only run when the repository owner creates a new <a class="reference external" href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">release</a>
+for the package. Add the following to the <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file to ensure it runs when you create and publish a release:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">release</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">types</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">published</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">published</span><span class="w">  </span><span class="c1"># This tells GitHub to only run this workflow when a release of your package is published</span>
 </pre></div>
 </div>
 </section>
 <section id="step-3-configure-the-jobs-in-the-workflow">
 <h3>Step 3: Configure the jobs in the workflow<a class="headerlink" href="#step-3-configure-the-jobs-in-the-workflow" title="Link to this heading">#</a></h3>
-<p>When triggered, the GitHub Actions runs multiple jobs. We have to configure at
-least one job in the workflow file.</p>
-<p>For a release job, we need to clone the repository and then use <code class="docutils literal notranslate"><span class="pre">hatch</span></code> to build
-the package. We also need to make sure we set up Hatch on the machine GitHub is
+<p>A GitHub Actions <em>workflow</em> file can contain multiple <em>jobs</em> that run independently; each job can also have multiple <em>steps.</em>
+When triggered, the GitHub Action runs all the jobs in a workflow (excluding any steps that have conditional requirements).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jobs and steps can also have <a class="reference external" href="https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idif">conditional logic</a> that allows them only to run if specific criteria exist. For instance, you may want only to have a job step to publish to PyPI if a release was made for the package. But you might want to test building the package every time you merge a new pull request.</p>
+</div>
+<p>For a release job, you need to clone or check out the repository. You can use the <code class="docutils literal notranslate"><span class="pre">actions/checkout</span></code> action to check out the code. You then install and use <code class="docutils literal notranslate"><span class="pre">hatch</span></code> to build
+your package.</p>
+<p>You also need to make sure to set up Hatch on the machine GitHub is
 using to run the workflow.</p>
-<p>A minimal job definition would be:</p>
+<p>A minimal job definition would look like this:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jobs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">build_package</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the package</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/hatch</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hatch build</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v5</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v6</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="w"> </span><span class="c1"># Select the version that you want to build your package on</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upgrade pip, install Hatch, and check Hatch version</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install --upgrade pip</span>
+<span class="w">          </span><span class="no">pip install --upgrade hatch</span>
+<span class="w">          </span><span class="no">hatch --version # Verify that Hatch is installed</span>
 </pre></div>
 </div>
-<div class="admonition-hardening-the-github-actions-workflow admonition">
-<p class="admonition-title">Hardening the GitHub Actions workflow</p>
-<p>There are several improvements we can make to the GitHub Actions workflow we
+<p>Notice that above, you provide a version for each action step. <code class="docutils literal notranslate"><span class="pre">action/checkout&#64;v5</span></code> tells GitHub to use version 5 of the checkout action. The checkout action checks out the code from your repository. In this case, the code will be used to build your package.</p>
+<p>Next, you will learn about a better way to secure (or “harden”) your workflow</p>
+</section>
+<section id="step-4-secure-the-github-actions-workflow">
+<h3>Step 4: Secure the GitHub Actions workflow<a class="headerlink" href="#step-4-secure-the-github-actions-workflow" title="Link to this heading">#</a></h3>
+<p>There are several improvements you can make to the GitHub Actions workflow you
 just configured to improve security and readability.</p>
-<p>First, we can give names to relevant steps in the process, to increase
-readability of the logs generated during the workflow run. This can be achieved
+<p>First, we can give names to relevant steps in the process to increase
+the readability of the logs generated during the workflow run. This can be achieved
 using <code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">&lt;your</span> <span class="pre">description</span> <span class="pre">here&gt;</span></code> lines.</p>
-<p>More importantly, each time we use an existing action (via <code class="docutils literal notranslate"><span class="pre">uses</span></code>) we should pin
-that action to a commit hash. This ensures that if a malicious user takes over
+<p>More importantly, each time you use an existing action (via <code class="docutils literal notranslate"><span class="pre">uses</span></code>) you should pin
+that action to a commit hash. Pinning your action ensures that if a malicious user takes over
 the action, they won’t be able to impact your repository (an example of a supply
 chain attack due to GitHub Actions is the recent <code class="docutils literal notranslate"><span class="pre">tj-actions/changed-files</span></code>
-attack<a class="footnote-reference brackets" href="#changed-files-supply-chain-attack" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>). Enabling Dependabot<a class="footnote-reference brackets" href="#dependabot" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> in
-the repository will ensure that you always get a PR to keep the actions up to
-date.</p>
-<p>Thus, the workflow that you should use, should be similar to:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jobs</span><span class="p">:</span>
+attack<a class="footnote-reference brackets" href="#changed-files-supply-chain-attack" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Enabling Dependabot<a class="footnote-reference brackets" href="#dependabot" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> in
+the repository will ensure that your actions stay up to date. The dependabot tool will open
+pull requests that update your action versions at whatever frequency you want.</p>
+</div>
+<p>Thus, the workflow that you should use should be similar to:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Release</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">published</span>
+
+<span class="nt">permissions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"> </span><span class="c1"># no permissions to the token at global level</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">build_package</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the package</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job only needs read access</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="w"> </span><span class="c1"># v4.2.2</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Hatch</span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/hatch@257e27e51a6a5616ed08a39a408a21c35c9931bc</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build artifacts</span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hatch build</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8</span><span class="w"> </span><span class="c1"># v5.0.0</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c</span><span class="w"> </span><span class="c1"># v6.0.0</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="w"> </span><span class="c1"># Select the version that you want to build your package on</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upgrade pip, install Hatch, and check Hatch version</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install --upgrade pip</span>
+<span class="w">          </span><span class="no">pip install --upgrade hatch</span>
+<span class="w">          </span><span class="no">hatch --version # Verify that Hatch is installed</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build artifacts</span>
 </pre></div>
 </div>
-</div>
-<p>Now, you can commit the <code class="docutils literal notranslate"><span class="pre">.github/workflows/release.yaml</span></code> file to the repository.</p>
+<p>Now, you can commit the <code class="docutils literal notranslate"><span class="pre">.github/workflows/release.yaml</span></code> file to the repository and push to GitHub.</p>
 <p>At this point, if you create a new release for your project on GitHub, the
 configured workflow should run and build a wheel for you. Unfortunately, the
-wheel is only available on the runner.</p>
+wheel is only available on the runner and will be deleted at the end of the workflow run.</p>
 </section>
-<section id="step-4-upload-the-built-artifact-to-the-github-artifacts">
-<h3>Step 4: Upload the built artifact to the GitHub Artifacts<a class="headerlink" href="#step-4-upload-the-built-artifact-to-the-github-artifacts" title="Link to this heading">#</a></h3>
-<p>We need to add one more step to the job definition to be able to access the
-wheel. We will upload it to the artifacts temporary area<a class="footnote-reference brackets" href="#github-artifacts" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. Add
+<section id="step-5-upload-the-built-artifact-to-github-artifacts">
+<h3>Step 5: Upload the built artifact to GitHub Artifacts<a class="headerlink" href="#step-5-upload-the-built-artifact-to-github-artifacts" title="Link to this heading">#</a></h3>
+<p>You need to add one more step to the job definition to be able to access the
+wheel. You will upload it to the artifacts temporary area<a class="footnote-reference brackets" href="#github-artifacts" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. Add
 the following to the <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02</span><span class="w"> </span><span class="c1"># v4.6.2</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
-<span class="w">        </span><span class="nt">if-no-files-found</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">error</span>
-<span class="w">        </span><span class="nt">retention-days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
+<span class="w">          </span><span class="nt">if-no-files-found</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">error</span>
+<span class="w">          </span><span class="nt">retention-days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Upload artifacts parameters</p>
-<p>We have configured the artifact to be deleted after 1 day. The artifacts storage
-on GitHub actions is temporary, and users should not be getting the package from
-here.</p>
-<p>We have also configured the release job to error if the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> directory does
+<p>Above, you have configured the artifact to be deleted after 1 day. The artifacts storage
+on GitHub actions is temporary; users should not download your package from the GitHub artifacts.</p>
+<p>You have also configured the release job to error if the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> directory does
 not exist. This means that <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">build</span></code> (from the previous step) failed to
 build our package, so there is nothing to release.</p>
 </div>
 <p>At this point, if you push the <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> to GitHub and create a new
-release, the GitHub Actions job will run, will clone your repository, set up
-Hatch, build the package and then upload it as an archive to the artifacts
-storage.</p>
+release, the GitHub Actions job will:</p>
+<ul class="simple">
+<li><p>run,</p></li>
+<li><p>clone your repository,</p></li>
+<li><p>install and set up Hatch,</p></li>
+<li><p>build your package and</p></li>
+<li><p>upload your package as an archive to the artifacts storage.</p></li>
+</ul>
 <figure class="align-default" id="github-actions-release-workflows-run">
 <a class="reference internal image-reference" href="../_images/github-actions-release-workflows-run.png"><img alt="Graphic showing an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition." src="../_images/github-actions-release-workflows-run.png" style="width: 700px;" />
 </a>
@@ -702,7 +743,7 @@ storage.</p>
 <p><span class="caption-text">This figure shows an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition.</span><a class="headerlink" href="#github-actions-release-workflows-run" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>At the bottom of the workflow run page on GitHub you should see a section for
+<p>At the bottom of the workflow run page on GitHub, you should see a section for
 the artifacts produced during runtime and uploaded to this storage area:</p>
 <figure class="align-default" id="github-actions-release-workflows-artifacts">
 <a class="reference internal image-reference" href="../_images/github-actions-release-workflows-artifacts.png"><img alt="Graphic showing an example of an artifact produced by the release workflow." src="../_images/github-actions-release-workflows-artifacts.png" style="width: 700px;" />
@@ -711,66 +752,78 @@ the artifacts produced during runtime and uploaded to this storage area:</p>
 <p><span class="caption-text">This figure shows the artifact produced by the above release workflow. It is now marked as expired since the workflow ran more than a day ago.</span><a class="headerlink" href="#github-actions-release-workflows-artifacts" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>You can download the artifact (before it expires), unzip it and install the
+<p>You can download the artifact (before it expires), unzip it, and install the
 wheel contained within. However, this should only be done if you want to test
-the built wheel. We will proceed to configure uploading to PyPI using trusted
+the built wheel. Next, you will configure uploading to PyPI using trusted
 publishing.</p>
 </section>
 </section>
 <section id="configure-automatic-publishing-to-pypi">
 <h2>Configure automatic publishing to PyPI<a class="headerlink" href="#configure-automatic-publishing-to-pypi" title="Link to this heading">#</a></h2>
-<p>The job we configured on GitHub Actions builds a package for our code, but we
-still need to upload it to PyPI. We could upload the package from the same job,
-but it is better to create a separate one, to maintain separation of concerns.
-This is why in the previous section we uploaded the artifact to the temporary
-storage – in the new job, we will download the package from there and upload it
-to PyPI. Since this job does nothing else, there is no possibility that the
+<p>The job you configured above using GitHub Actions builds your package using your code.
+You still need to upload it to PyPI. You could upload the package from the same job,
+but it is better to create a separate one to maintain a separation of tasks.
+This is why, in the previous section, we uploaded the artifact to the temporary
+storage.</p>
+<p>In the new job, you will download the package from there and upload it
+to PyPI. Since the <code class="docutils literal notranslate"><span class="pre">build</span></code> job does nothing else, there is no possibility that the
 package could get compromised before the release.</p>
 <section id="step-1-add-the-upload-job">
 <h3>Step 1: Add the upload job<a class="headerlink" href="#step-1-add-the-upload-job" title="Link to this heading">#</a></h3>
 <p>In the <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file, add the following new job, after the job defined in
 the previous section:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">publish_release_to_pypi</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish release to PyPI</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish release to PyPI</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">build_package</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypi</span>
 <span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;URL TO YOUR PROJECT HERE&gt;</span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job needs read access</span>
+<span class="w">      </span><span class="nt">id-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"> </span><span class="c1"># but also needs to be able to write the publishing token</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093</span><span class="w"> </span><span class="c1"># v4.3.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0</span><span class="w"> </span><span class="c1"># v5.0.0</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
 <span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc</span><span class="w"> </span><span class="c1"># v1.12.4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e</span><span class="w"> </span><span class="c1"># v1.13.0</span>
 </pre></div>
 </div>
 <div class="admonition-make-sure-to-change-the-url admonition">
 <p class="admonition-title">Make sure to change the URL</p>
-<p>Remember to change the <code class="docutils literal notranslate"><span class="pre">url:</span></code> to the URL for your package on PyPI!</p>
+<p>Remember to change the <code class="docutils literal notranslate"><span class="pre">url:</span></code> value to the URL for your package on PyPI!</p>
 </div>
 <p>This job has two steps:</p>
 <ul class="simple">
-<li><p>as discussed above, it uses <code class="docutils literal notranslate"><span class="pre">download-artifact</span></code> to download the artifacts
+<li><p>It uses <code class="docutils literal notranslate"><span class="pre">download-artifact</span></code> to download the artifacts
 built in the previous job</p></li>
-<li><p>it uses <code class="docutils literal notranslate"><span class="pre">gh-action-pypi-publish</span></code> to publish the package to PyPI.</p></li>
+<li><p>It uses <code class="docutils literal notranslate"><span class="pre">gh-action-pypi-publish</span></code> to publish the package to PyPI.</p></li>
 </ul>
-<p>We are almost there. We just need to enable trusted publishing for the project
-and then we are done.</p>
+<p>You are almost there!! Now, you just need to enable trusted publishing for your project
+on PyPI. And then, your work is done!</p>
 </section>
 <section id="step-2-enable-trusted-publishing-on-pypi">
 <h3>Step 2: Enable trusted publishing on PyPI<a class="headerlink" href="#step-2-enable-trusted-publishing-on-pypi" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="trusted-publishing-image">
+<a class="reference internal image-reference" href="../_images/trusted-publisher-pypi-github.png"><img alt="Diagram showing PyPI's trusted publisher workflow: Step 1 builds distribution files via GitHub, Step 2 uses a trusted environment (PyPI), Step 3 securely uploads to PyPI. Shows chain of trust with lock icon connecting GitHub Action to Python Package Index." src="../_images/trusted-publisher-pypi-github.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">This lesson is the first in a series of lessons to help you get started with Python packaging.</span><a class="headerlink" href="#trusted-publishing-image" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Before trusted publishing was created, in order to upload to PyPI from GitHub
 actions you would have needed to add the username and password as arguments to
 the <code class="docutils literal notranslate"><span class="pre">gh-action-pypi-publish</span></code> step. While documentation recommends using the
-GitHub’s <code class="docutils literal notranslate"><span class="pre">secrets</span></code> environment for the password/token, in several cases users
-were pasting it directly in the workflow file. Furthermore, accidental leakage
-of the token could allow attackers to publish new packages in your name, until
-you discover the compromise and revoke the leaked credential.</p>
-<p>To prevent these incidents and improve security, supply chain security
-developers created Trusted Publishing. This allows registering publishers on
-PyPI and mapping them to the automation workflow that is allowed to publish the
-package.</p>
+GitHub’s <code class="docutils literal notranslate"><span class="pre">secrets</span></code> environment for the password/token, in several cases, users
+were pasting the password directly into the workflow file. Furthermore, accidental leakage
+of the password or token could allow attackers to publish new packages using your account, until
+you discover the compromise and revoke the leaked credentials.</p>
+<p>To prevent these incidents and improve supply chain security, developers created <a class="reference external" href="https://docs.pypi.org/trusted-publishers/">Trusted Publishing</a>. Trusted publishing allows you to register a
+publishing workflow on
+PyPI and then map that workflow to an automation workflow (e.g., GitHub Actions) that is allowed
+to publish the package.</p>
+<p>You do not need to enter a token or password value in a trusted publisher workflow. It’s a
+secure connection between your</p>
 <div class="tip admonition">
 <p class="admonition-title">Trusted Publishing outside of GitHub Actions</p>
 <p>Trusted Publishing supports other automation platforms, beyond GitHub Actions.
@@ -813,9 +866,11 @@ workflow we just configured.</p></li>
 </ul>
 <p>Once you fill in this form and click “Add” the publisher is configured and can
 be used to publish new releases of your package.</p>
-<div class="admonition-fully-hardened-github-actions-release-workflow admonition">
-<p class="admonition-title">Fully hardened GitHub Actions release workflow</p>
-<p>For better security it is recommended to also control the permissions of the
+</section>
+</section>
+<section id="fully-hardened-github-actions-release-workflow">
+<h2>Fully hardened GitHub Actions release workflow<a class="headerlink" href="#fully-hardened-github-actions-release-workflow" title="Link to this heading">#</a></h2>
+<p>For better security, it is also recommended to control the permissions of the
 GitHub token used within each job of the workflow. The permissions should be
 scoped at job level and be as minimal as possible. A workflow that configures
 trusted publishing and also does this is the following:</p>
@@ -826,28 +881,35 @@ trusted publishing and also does this is the following:</p>
 <span class="w">    </span><span class="nt">types</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">published</span>
 
-<span class="nt">permissions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w">  </span><span class="c1"># no permissions to the token at global level</span>
+<span class="nt">permissions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"> </span><span class="c1"># no permissions to the token at global level</span>
 
 <span class="nt">jobs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">build_package</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the package</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 <span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w">  </span><span class="c1"># this job only needs read access</span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job only needs read access</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</span><span class="w"> </span><span class="c1"># v4.2.2</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Hatch</span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/hatch@257e27e51a6a5616ed08a39a408a21c35c9931bc</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build artifacts</span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hatch build</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02</span><span class="w"> </span><span class="c1"># v4.6.2</span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
-<span class="w">        </span><span class="nt">if-no-files-found</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">error</span>
-<span class="w">        </span><span class="nt">retention-days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8</span><span class="w"> </span><span class="c1"># v5.0.0</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c</span><span class="w"> </span><span class="c1"># v6.0.0</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="w"> </span><span class="c1"># Select the version that you want to build your package on</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upgrade pip, install Hatch, and check Hatch version</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install --upgrade pip</span>
+<span class="w">          </span><span class="no">pip install --upgrade hatch</span>
+<span class="w">          </span><span class="no">hatch --version # Verify that Hatch is installed</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build artifacts</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hatch build</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02</span><span class="w"> </span><span class="c1"># v4.6.2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
+<span class="w">          </span><span class="nt">if-no-files-found</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">error</span>
+<span class="w">          </span><span class="nt">retention-days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 
 <span class="w">  </span><span class="nt">publish_release_to_pypi</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish release to PyPI</span>
@@ -857,24 +919,26 @@ trusted publishing and also does this is the following:</p>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypi</span>
 <span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;URL TO YOUR PROJECT HERE&gt;</span>
 <span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w">  </span><span class="c1"># this job needs read access</span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job needs read access</span>
 <span class="w">      </span><span class="nt">id-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"> </span><span class="c1"># but also needs to be able to write the publishing token</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093</span><span class="w"> </span><span class="c1"># v4.3.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0</span><span class="w"> </span><span class="c1"># v5.0.0</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
 <span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc</span><span class="w"> </span><span class="c1"># v1.12.4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e</span><span class="w"> </span><span class="c1"># v1.13.0</span>
 </pre></div>
 </div>
 <p>You can copy the above into your <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file. You only need to update
 the <code class="docutils literal notranslate"><span class="pre">url:</span></code> field and configure trusted publishing on PyPI.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The workflow above should be up to date with the current versions of GitHub actions. However, it’s good to turn on Dependabot to update the action versions in the future.</p>
 </div>
-</section>
 </section>
 <section id="you-have-enabled-trusted-publishing-for-your-project">
 <h2>You have enabled trusted publishing for your project<a class="headerlink" href="#you-have-enabled-trusted-publishing-for-your-project" title="Link to this heading">#</a></h2>
-<p>Congratulations. You have now configured your project to do secure releases when a new version is being tagged on GitHub. The workflow we have configured builds the package from the exact version of code that we are tagging. This provides a guarantee for your users that the package we have released does exactly what the code states it does – there is no potential for supply chain related vulnerabilities arising from our package! If you have a package that is ready for real-world use on the real PyPI, then you can follow the same steps to publish it securely.</p>
+<p>Congratulations!! You have now configured your project to do secure releases when a new version is being tagged on GitHub. The workflow we have configured builds the package from the exact version of code that we are tagging. This provides a guarantee for your users that the package that you have released does precisely what the code states it does. There is little to no potential for supply chain related vulnerabilities arising from your package! If you have a package that is ready for real-world use on the real PyPI, then you can follow the same steps to publish it securely.</p>
 </section>
 <section id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading">#</a></h2>
@@ -883,19 +947,19 @@ the <code class="docutils literal notranslate"><span class="pre">url:</span></co
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="gha" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>https://github.com/features/actions</p>
+<p><a class="github reference external" href="https://github.com/features/actions">features/actions</a></p>
 </aside>
 <aside class="footnote brackets" id="changed-files-supply-chain-attack" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066</p>
+<p><a class="reference external" href="https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066">https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066</a></p>
 </aside>
 <aside class="footnote brackets" id="dependabot" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
-<p>https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot</p>
+<p><a class="reference external" href="https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot">https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot</a></p>
 </aside>
 <aside class="footnote brackets" id="github-artifacts" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
-<p>https://docs.github.com/en/actions/tutorials/store-and-share-data</p>
+<p><a class="reference external" href="https://docs.github.com/en/actions/tutorials/store-and-share-data">https://docs.github.com/en/actions/tutorials/store-and-share-data</a></p>
 </aside>
 </aside>
 
@@ -951,7 +1015,8 @@ the <code class="docutils literal notranslate"><span class="pre">url:</span></co
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-name-the-workflow">Step 1: Name the workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-triggers-to-the-workflow">Step 2: Add triggers to the workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-configure-the-jobs-in-the-workflow">Step 3: Configure the jobs in the workflow</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-upload-the-built-artifact-to-the-github-artifacts">Step 4: Upload the built artifact to the GitHub Artifacts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-secure-the-github-actions-workflow">Step 4: Secure the GitHub Actions workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-upload-the-built-artifact-to-github-artifacts">Step 5: Upload the built artifact to GitHub Artifacts</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-automatic-publishing-to-pypi">Configure automatic publishing to PyPI</a><ul class="nav section-nav flex-column">
@@ -959,6 +1024,7 @@ the <code class="docutils literal notranslate"><span class="pre">url:</span></co
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-enable-trusted-publishing-on-pypi">Step 2: Enable trusted publishing on PyPI</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-hardened-github-actions-release-workflow">Fully hardened GitHub Actions release workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-have-enabled-trusted-publishing-for-your-project">You have enabled trusted publishing for your project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
 </ul>
