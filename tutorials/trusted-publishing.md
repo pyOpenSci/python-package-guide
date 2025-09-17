@@ -134,7 +134,7 @@ Thus, the workflow that you should use should be similar to:
 
 ```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
 :language: yaml
-:lines: 1-23
+:lines: 1-29
 
 ```
 
@@ -152,7 +152,7 @@ the following to the `release.yaml` file:
 
 ```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
 :language: yaml
-:lines: 24-29
+:lines: 32-37
 
 ```
 
@@ -170,11 +170,11 @@ build our package, so there is nothing to release.
 At this point, if you push the `release.yaml` to GitHub and create a new
 release, the GitHub Actions job will:
 
-* run,
-* clone your repository,
-* install and set up Hatch,
-* build your package and
-* upload your package as an archive to the artifacts storage.
+- run,
+- clone your repository,
+- install and set up Hatch,
+- build your package and
+- upload your package as an archive to the artifacts storage.
 
 :::{figure-md} github-actions-release-workflows-run
 <img src="../images/tutorials/github-actions-release-workflows-run.png" alt="Graphic showing an example of a release workflow that has just finished running. Each step in the log is matched to one step in the workflow definition." width="700px">
@@ -198,11 +198,13 @@ publishing.
 
 ## Configure automatic publishing to PyPI
 
-The job you configured above on GitHub Actions builds a package using your code.
+The job you configured above using GitHub Actions builds your package using your code.
 You still need to upload it to PyPI. You could upload the package from the same job,
-but it is better to create a separate one, to maintain separation of concerns.
-This is why in the previous section we uploaded the artifact to the temporary
-storage -- in the new job, you will download the package from there and upload it
+but it is better to create a separate one to maintain a separation of tasks.
+This is why, in the previous section, we uploaded the artifact to the temporary
+storage.
+
+In the new job, you will download the package from there and upload it
 to PyPI. Since the `build` job does nothing else, there is no possibility that the
 package could get compromised before the release.
 
@@ -211,10 +213,9 @@ package could get compromised before the release.
 In the `release.yaml` file, add the following new job, after the job defined in
 the previous section:
 
-
 ```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
 :language: yaml
-:lines: 31-46
+:lines: 39-54
 
 ```
 
@@ -224,12 +225,13 @@ Remember to change the `url:` to the URL for your package on PyPI!
 :::
 
 This job has two steps:
+
 - as discussed above, it uses `download-artifact` to download the artifacts
   built in the previous job
 - it uses `gh-action-pypi-publish` to publish the package to PyPI.
 
-We are almost there. We just need to enable trusted publishing for the project
-and then we are done.
+You are almost there!! Now, you just need to enable trusted publishing for the project
+on PyPI. And then, your work is done!
 
 ### Step 2: Enable trusted publishing on PyPI
 
@@ -318,7 +320,7 @@ Congratulations. You have now configured your project to do secure releases when
 
 ## Footnotes
 
-[^gha]: https://github.com/features/actions
-[^changed-files-supply-chain-attack]: https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066
-[^dependabot]: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot
-[^github-artifacts]: https://docs.github.com/en/actions/tutorials/store-and-share-data
+[^gha]: <https://github.com/features/actions>
+[^changed-files-supply-chain-attack]: <https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066>
+[^dependabot]: <https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot>
+[^github-artifacts]: <https://docs.github.com/en/actions/tutorials/store-and-share-data>
