@@ -468,7 +468,7 @@ The classifier key should look something like the example below. A few notes:
 - Your classifier values might be different depending upon your intended audience, development status of your package and the Python versions that you support
 - You can add as many classifiers as you wish as long as you use the [designated PyPI classifier values](https://PyPI.org/classifiers/).
 
-{emphasize-lines="26-34"}
+{emphasize-lines="26-33"}
 ```toml
 [build-system]
 requires = ["hatchling"]
@@ -514,10 +514,10 @@ Finally, add the project.urls table to your pyproject.toml file.
 `project.urls` contains links that are relevant for your project. You might want to include:
 
 - **Homepage:** A link to your published documentation for your project. If you are working through this tutorial, then you may not have this link yet. That's ok, you can skip it for the time being.
-- **Bug reports:** a link to your issues / discussions or wherever you want users to report bugs.
+- **Bug reports:** a link to your issues/discussions or wherever you want users to report bugs.
 - **Source:** the GitHub / GitLab link for your project.
 
-{emphasize-lines="36-39"}
+{emphasize-lines="35-38"}
 ```toml
 [build-system]
 requires = ["hatchling"]
