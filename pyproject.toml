@@ -1,3 +1,50 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python-package-guide"
+dynamic = [
+    "version"
+]
+dependencies = [
+    "pydata-sphinx-theme==0.16.1",
+    "myst-nb",
+    "sphinx",
+    "sphinx-autobuild",
+    "sphinx-copybutton",
+    "sphinx-design",
+    "sphinx-favicon",
+    # XML feed for analytics
+    "sphinx-sitemap",
+    # Support for social / adds meta tags
+    "sphinxext-opengraph",
+    "sphinx-inline-tabs",
+    # for project cards
+    "matplotlib",
+    # for translation graphs
+    "plotly",
+    # for license page bibliography
+    "sphinxcontrib-bibtex",
+]
+
+[project.optional-dependencies]
+dev = [
+    # for general build workflows
+    "nox",
+    # for prose linting
+    "vale",
+    # for managing translation files
+    "sphinx-intl",
+]
+
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
+
+[tool.hatch]
+version.source = "vcs"
+
+
 # https://github.com/codespell-project/codespell#usage
 [tool.codespell]
 ignore-words = "codespell-ignore.txt"

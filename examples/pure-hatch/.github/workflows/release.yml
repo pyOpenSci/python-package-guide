@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  release:
+    types:
+      - published
+
+permissions: {} # no permissions to the token at global level
+
+jobs:
+  build_package:
+    name: Build the package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # this job only needs read access
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Setup Python
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: "3.12" # Select the version that you want to build your package on
+      - name: Upgrade pip, install Hatch, and check Hatch version
+        run: |
+          pip install --upgrade pip
+          pip install --upgrade hatch
+          hatch --version # Verify that Hatch is installed
+      - name: Build artifacts
+        run: hatch build
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          path: dist/
+          name: dist.zip
+          if-no-files-found: error
+          retention-days: 1
+
+  publish_release_to_pypi:
+    name: Publish release to PyPI
+    needs: [build_package]
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: <URL TO YOUR PROJECT HERE>
+    permissions:
+      contents: read # this job needs read access
+      id-token: write # but also needs to be able to write the publishing token
+    steps:
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
+        with:
+          name: dist.zip
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0

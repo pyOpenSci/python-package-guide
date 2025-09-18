@@ -1,3 +1,5 @@
+(readme-file)=
+
 # README File Guidelines and Resources
 
 Your **README.md** file should be located in the root of your GitHub repository.
@@ -6,13 +8,13 @@ sees before they install your package.
 
 The README.md file is the landing page of:
 
-* Your package as it appears on a repository site such as PyPI or Anaconda
+* Your package as it appears on a repository site such as PyPI or Anaconda.org
 * Your package's GitHub repository
 
 Your README.md file is also used as a measure of package and community
 health on sites such as:
-* [GitHub community health for MovingPandas (available for all repositories)](https://github.com/anitagraser/movingpandas/community) and [Snyk - moving pandas example](https://snyk.io/advisor/python/movingpandas)
 
+* [GitHub community health for MovingPandas (available for all repositories)](https://github.com/movingpandas/movingpandas/community) and [Snyk - MovingPandas example](https://snyk.io/advisor/python/movingpandas)
 
 ```{figure} /images/pandera-python-package-readme-github.png
 ---
@@ -52,10 +54,11 @@ Your README file should have the following information:
 Your **README.md** file should contain the following things (listed from top to bottom):
 
 ### ✔️ Your package's name
+
 Ideally your GitHub repository's name is also the name of your package. The more
 self explanatory that name is, the better.
 
-###  ✔️ Badges for current package version, continuous integration and test coverage
+### ✔️ Badges for current package version, continuous integration and test coverage
 
 Badges are a useful way to draw attention to the quality of your project. Badges
 assure users that your package is well-designed, tested, and maintained. They
@@ -68,11 +71,11 @@ README file for others to quickly browse.
 
 Some badges that you might consider adding to your README file include:
 
-* Current version of the package on PyPI / Anaconda Cloud
+* Current version of the package on PyPI / Anaconda.org
 
 Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)](https://pypi.org/project/pandera/)
 
-* Status of tests (pass or fail) - Example: [![CI Build](https://github.com/pandera-dev/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com/pandera-dev/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)
+* Status of tests (pass or fail) - Example: [![CI Build](https://github.com/unionai-oss/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com/unionai-oss/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)
 
 * Documentation build - Example: ![Docs Building](https://github.com/pyOpenSci/python-package-guide/actions/workflows/build-book.yml/badge.svg)
 
@@ -81,10 +84,9 @@ Example: [![PyPI version shields.io](https://img.shields.io/pypi/v/pandera.svg)]
 ```{tip}
 Once you package is accepted to pyOpenSci, we will provide you with
 a badge to add to your repository that shows that it has been reviewed.
-[![pyOpenSci](https://tinyurl.com/y22nb8up)](https://github.com/pyOpenSci/software-review/issues/12)
+[![pyOpenSci](https://www.pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-submission/issues/12)
 
 ```
-
 
 ```{caution}
 Beware of the overuse of badges! There is such a thing as too much of a good thing (which can overload a potential user!).
@@ -114,7 +116,7 @@ file.
 ### ✔️ Installation instructions
 
 Include instructions for installing your package. If you have published
-the package on both PyPI and Anaconda Cloud be sure to include instructions for both.
+the package on both PyPI and Anaconda.org, be sure to include instructions for both.
 
 ### ✔️ Document any additional setup required
 
@@ -164,7 +166,7 @@ Finally be sure to include instructions on how to cite your package.
 Citation should include the DOI that you want used when citing your package,
 and any language that you'd like to see associated with the citation.
 
-```{tip} README Resources
+:::{admonition} README Resources
 :class: tip
 
 Below are some resources on creating great README.md files that you
@@ -173,4 +175,4 @@ might find helpful.
 * [How to Write a Great README - Bane Sullivan](https://github.com/banesullivan/README)
 * [Art of README - Kira (@hackergrrl)](https://github.com/hackergrrl/art-of-readme)
 
-```
+:::

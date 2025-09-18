@@ -6,7 +6,7 @@ at a minimum have the following files:
 
 The files mentions above (README, Code of Conduct, license
 file, etc) are used as a measure of package community health
-on many online platforms. Below, you can see an example how Github
+on many online platforms. Below, you can see an example how GitHub
 evaluates community health. This community health link is available for
 all GitHub repositories.
 
@@ -16,12 +16,12 @@ name: moving-pandas-github-community
 width: 80%
 alt: Image showing that the MovingPandas GitHub repository community health page with green checks next to each file including a description, README, code of conduct, contributing, license and issue templates. Note that Security policy has a yellow circle next to it as that is missing from the repo.
 ---
-GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/anitagraser/movingpandas/community) *(screen shot taken Nov 23 2022)*
+GitHub community health looks for a readme file among other elements when it evaluates the community level health of your repository. This example is from the [MovingPandas GitHub repo](https://github.com/movingpandas/movingpandas/community) *(screen shot taken Nov 23 2022)*
 ```
 
 [Snyk](https://snyk.io/advisor/python) is another well-known company that
 keeps tabs on package health. Below you can see a similar evaluation of files
-in the Github repo as a measure of community health.
+in the GitHub repo as a measure of community health.
 
 ```{figure} /images/moving-pandas-python-package-snyk-health.png
 ---

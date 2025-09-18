@@ -37,11 +37,11 @@ This extension is lightweight.
 
 It [requires that you to add it to your Sphinx `conf.py` extension list and site your documentation base url](https://sphinx-sitemap.readthedocs.io/en/latest/getting-started.html).
 
-### [sphinxext.opengraph](https://github.com/wpilibsuite/sphinxext-opengraph)
+### [sphinxext.opengraph](https://github.com/sphinx-doc/sphinxext-opengraph)
 
 OpenGraph is an extension that allows you to add metadata to your documentation
 content pages. [The OpenGraph protocol allows other websites to provide a
-useful preview of the content on your page when shared](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/#what-is-open-graph). This is important
+useful preview of the content on your page when shared](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/#heading-what-is-open-graph). This is important
 for when the pages in your documentation are shared on social
 media sites like Twitter and Mastodon and even for shares on
 tools like Slack and Discourse.

@@ -1,11 +1,17 @@
-name: Book Preview
-
+name: Book Preview Redirect
 on: [status]
+
+concurrency:
+  group: docs-preview-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   circleci_artifacts_redirector_job:
     runs-on: ubuntu-latest
-    if: "${{ github.event.context == 'ci/circleci: build_book' }}"
+    # For testing this action on a fork, remove the "github.repository =="" condition.
+    if: "github.event.context == 'ci/circleci: build-book'"
+    permissions:
+      statuses: write
     name: Run CircleCI artifacts redirector
     steps:
       - name: GitHub Action step
@@ -13,6 +19,7 @@ jobs:
         uses: larsoner/circleci-artifacts-redirector-action@master
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          api-token: ${{ secrets.CIRCLECI_TOKEN }}
           artifact-path: 0/html/index.html
-          circleci-jobs: build_book
-          job-title: Click to preview rendered book
+          circleci-jobs: build-book
+          job-title: View rendered book here!

@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "examplePy"
+authors = [
+    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
+]
+maintainers = [
+    {name = "All the contributors"},
+]
+description = "An example Python package used to support Python packaging tutorials"
+keywords = ["pyOpenSci", "python packaging"]
+readme = "README.md"
+license = "BSD-3-Clause"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "dependency-package-name-1",
+    "dependency-package-name-2",
+]
+
+[project.optional-dependencies]
+tests = [
+  "pytest",
+  "pytest-cov"
+]
+lint = [
+  "black",
+  "flake8"
+]
+docs = [
+    "sphinx",
+    "pydata-sphinx-theme"
+]
+
+[tool.ruff]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes. "E" + "W" + "F" + "C90" (mccabe complexity) is equivalent to flake8
+    "I", # isort
+]
+
+[tool.ruff.isort]
+known-first-party = ["examplePy"]
+
+[tool.pytest.ini_options]
+pythonpath = "src"
