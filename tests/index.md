@@ -1,4 +1,5 @@
 (tests-intro)=
+
 # Tests and data for your Python package
 
 Adding tests to your package provides a set of checks that ensure that its
@@ -79,6 +80,13 @@ Learn to generate local reports and visualize coverage online.
 
 :::::
 
+:::{figure-md} fig-target
+
+<img src="../images/packaging-lifecycle.png" alt="" width="800px">
+
+Graphic showing the elements of the packaging process.
+:::
+
 ```{toctree}
 :hidden:
 :maxdepth: 2
@@ -91,4 +99,12 @@ Run tests locally <run-tests>
 Run tests with Nox <run-tests-nox>
 Run tests online (using CI) <tests-ci>
 Code coverage <code-cov>
+```
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+:caption: Data for Your Package
+
+Package Data <package-data>
 ```
