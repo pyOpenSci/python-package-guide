@@ -37,7 +37,35 @@ Specifying dependencies in your `pyproject.toml` file ensures that your package 
 Users automatically get the packages your code needs to run. For instance, if your package requires Pandas to run properly, Pandas will be installed into the users' environment when they install your package using uv, pip or conda, if you specify it as a dependency in your pyproject.toml file.
 
 :::{tip}
-You can control which versions of dependencies are compatible with your package using specifiers. You will learn more about dependency specifiers below.
+You can control which versions of dependencies are compatible with your package using specifiers. You will learn more about dependency specifiers in the sections below.
+:::
+
+## Version specifiers
+
+Version specifiers control which versions of a dependency work with your
+package. Use them to specify minimum versions, exclude buggy releases, or
+set version ranges.
+
+### Common operators
+
+- **`>=`** - Minimum version set: `numpy>=1.20` (This is the most common approach and is recommended)
+- **`==`** - Exact version: `requests==2.28.0` (Avoid pinning dependencies like this unless absolutely necessary)
+- **`~=`** - Compatible release: `django~=4.2.0` (Allows patches: >=4.2.0,<4.3.0)
+- **`<` or `>`** - Upper/lower bounds: `pandas>=1.0,<3.0`
+- **`!=`** - Exclude version: `scipy>=1.7,!=1.8.0` (Rare but allows you to skip a buggy release version)
+
+:::{tip}
+**Best practice:** Use `>=` to specify your minimum tested version and
+avoid upper bounds unless you know a future version will break. UV will do this by
+default when it adds a dependency to your pyproject.toml file. This keeps
+your package flexible and reduces dependency conflicts.
+```toml
+dependencies = [
+    "numpy>=1.20",              # Good - flexible
+    "pandas>=1.0,<3.0",         # OK - known breaking change in 3.0
+    "requests==2.28.0",         # Avoid - too restrictive
+]
+```
 :::
 
 
