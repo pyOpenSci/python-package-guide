@@ -1,5 +1,5 @@
 ```{eval-rst}
-:og:title: Add Required, Optional Dependencies and Development Groups to Your Python Package
+:og:title: Add Required, Optional Dependencies and Dependency Groups to Your Python Package
 :og:description: A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package.
 ```
 
