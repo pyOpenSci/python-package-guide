@@ -404,6 +404,47 @@ dependencies = [
 ```
 :::
 
+
+:::{todo}
+### Using conda and pixi
+
+::::{todo}
+Ask Matthew to review this section...
+:::
+
+The `pyproject.toml` file works great for pure-Python packages. However,
+some packages (particularly in the scientific Python ecosystem) require
+dependencies written in other languages like C or Fortran. Conda was
+created to support the distribution of tools with non-Python dependencies.
+
+**For conda users:**
+
+You can maintain an `environment.yml` file to help users and contributors
+set up conda environments. This is especially useful for packages with
+system-level dependencies like GDAL.
+
+**Consider pixi for conda workflows:**
+
+[Pixi](https://pixi.sh) is a modern package manager built on conda that
+uses `pyproject.toml` for configuration. If your project relies heavily
+on conda packages, pixi offers a streamlined workflow with lockfiles and
+faster dependency resolution.
+
+:::{admonition} A note for conda users
+:class: tip
+
+If you use a conda environment for development and install your package
+with `python -m pip install -e .`, dependencies will be installed from
+PyPI rather than conda. This can cause conflicts, especially for packages
+with system dependencies.
+
+To avoid this, install your package without dependencies:
+`python -m pip install -e . --no-deps`
+
+Then install dependencies through your conda environment.yml file.
+:::
+::::
+
 ### Using conda and pixi
 
 :::{todo}
