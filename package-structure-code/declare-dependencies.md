@@ -165,7 +165,7 @@ when a user runs:
 
 `python -m pip install plotMe`
 
-or if plotMe is in the pyproject.toml:
+The same is true if you run uv sync:
 
 `uv sync`
 
