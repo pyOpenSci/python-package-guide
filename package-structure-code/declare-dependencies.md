@@ -3,16 +3,12 @@
 :og:description: A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package.
 ```
 
-
 # Dependencies for your Python Package
-
 
 In the [pyproject.toml overview page](pyproject-toml-python-package-metadata),
 you learned how to set up a **pyproject.toml** file with basic metadata
 for your package. On this page, you will learn how to specify different types of
 dependencies in your `pyproject.toml`.
-
-
 
 ## What is a package dependency?
 
@@ -58,13 +54,11 @@ tests = [
 
 There are three different types of dependencies that you will learn about on this page:
 
-1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `project.dependencies` table in your pyproject.toml file.
-2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package.
-3. **Development Dependencies:** These dependencies are required is someone wants to develop or work on your package. For instance linters, testing tools like pytest and mypy are examples of development dependencies.
+1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `[project.dependencies]` table in your pyproject.toml file.
+2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional.dependencies]` table or your pyproject.toml file.
+3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[project.dependency.groups]` table or your pyproject.toml file.
 
 :::{admonition}
-:class: tip
-
 A dependency is not part of your project's codebase. It is a package or software called
 within the code of your project or used during the development of your package.
 :::
@@ -74,10 +68,10 @@ within the code of your project or used during the development of your package.
 Required dependencies are imported and called directly within your package's code.
 They are needed for your package to run.
 
-You can add your core dependencies to the `dependencies` array in the
+You can add your required dependencies to the `dependencies` array in the
 `[project]` table of your **pyproject.toml** file. When users install
 your package with uv, pip, or conda, these dependencies will be
-automatically installed alongside your package.
+automatically installed alongside your package in their environment.
 
 ```toml
 [project]
@@ -126,22 +120,22 @@ dependencies = [
 :class: tip
 
 If you have dependencies that need to be installed directly from GitHub,
-you can specify them in your pyproject.toml file:
+you can specify them in your pyproject.toml file like this:
 
 ```toml
 dependencies = [
-"my_dependency >= 1.0.1 @ git+https://git.server.example.com/mydependency.git"
+"my_dependency >= 1.0.1 @ git+https://git.server.example.com/mydependency.git@commitHashHere"
 ]
 ```
-IMPORTANT: For security reasons, if your library depends on a
-GitHub-hosted project, you will need to point to a specific
-commit/tag/hash of that repository in order to upload your project to
-PyPI.
+IMPORTANT: If your library depends on a GitHub-hosted project,
+you should point to a specific commit/tag/hash of that repository before you upload your project to
+PyPI. You never know how the project might change over time. Commit hashes
+are more reliable as they can't be changed
 :::
 
 ## 2. Optional dependencies
 
-Optional (sometimes referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh as an `[optional.dependency]`. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.
+Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh as an `[optional.dependency]`. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.
 
 Place these dependencies in the `[project.optional-dependencies]` table.
 
@@ -150,14 +144,11 @@ Place these dependencies in the `[project.optional-dependencies]` table.
 ...
 ...
 ...
-# Below you see a optional. A dependency array called plot that lists packages a user needs to access the plotting functionality, which is a feature of your project.
 [optional.dependencies]
 plot = ["bokeh"]
 ```
 
 When a user installs your package, uv, pip, or conda automatically installs all required dependencies. Optional dependencies are only installed if the user explicitly requests them.
-
-
 
 :::{dropdown} How to Add optional.dependencies using UV
 :icon: eye
@@ -273,7 +264,7 @@ dependencies for development work or additional features.
 
 ### Install dependency groups
 
-When users install your package, only core dependencies are installed by
+When someone installs your package, only core dependencies are installed by
 default. To install optional dependencies, you
 need to specify which groups to include when installing the package.
 
@@ -288,75 +279,83 @@ core dependencies, and the test dependencies from the
 `[project.optional-dependencies]` table.
 :::
 
-### Using uv
+### Using uv or pip for installation
 
 UV streamlines this process, allowing you to sync a venv in your project directory
 with both an editable install of your package and its dependencies automatically.
+You can also use pip and install dependencies into the environment of your choice.
 
 :::{todo}
 We shouldn't show UV pip install, so how do you add optional feature deps with UV??
 :::
 
-**Install optional dependencies:**
-```bash
-# FIXME
-uv pip install -e ".[docs]"              # Single group
-uv pip install -e ".[docs,tests,lint]"   # Multiple groups
-```
 
 **Install development groups:**
 
-You can use uv sync to sync dependency groups too
-```bash
-# TEST ME
-uv sync --group docs                     # Single group
-uv sync --group docs --group test        # Multiple groups
-uv sync --all-groups                     # All development groups
+:::::{tab-set}
+
+::::{tab-item} Use UV
+You can use uv sync to sync dependency groups in your uv-managed venv
+
+```console
+$ uv sync --group docs                     # Single group
+$ uv sync --group docs --group test        # Multiple groups
+$ uv sync --all-groups                     # All development groups
+```
+
+**Install optional dependencies:**
+
+```console
+# uv pip install is not idea if you are using uv supported venvs for your project
+$ uv pip install -e ".[docs]"              # Single group
+$ uv pip install -e ".[docs,tests,lint]"   # Multiple groups
 ```
 
 **Install everything (package + all dependencies):**
-```bash
-uv sync --all-extras --all-groups
-```
 
-:::{admonition} uv sync vs uv pip install
-:class: tip
+```console
+$ uv sync --all-extras --all-groups
+```
 
 `uv sync` is the recommended command for development workflows. It
 manages your virtual environment and keeps your lockfile up to date.
 Use `uv pip install` when you need pip-compatible behavior.
-:::
+::::
 
-### Using pip
+::::{tab-item} Use pip (version >=25.1)
 
 **Install optional dependencies:**
-```bash
+
+```console
 python -m pip install -e ".[docs]"              # Single group
 python -m pip install -e ".[docs,tests,lint]"   # Multiple groups
 ```
+**Install dependency groups:**
 
-:::{admonition} Using `python -m pip install` vs. `pip install`
+```console
+python -m pip install --group test              # Single group
+python -m pip install --group docs   # Multiple groups
+```
 
-We recommend calling pip using `python -m pip` to ensure you're using
+Always call pip using `python -m pip` to ensure you're using
 the pip from your current active Python environment. This helps avoid
 installation conflicts.
-:::
 
-
-:::{admonition} For zsh shell users
-:class: tip
-
-Some shells (like zsh on Mac and certain Windows shells) require quotes
-around brackets:
+**Note:** Some shells (like zsh on Mac) require quotes around brackets to run successfully:
 
 `python -m pip install ".[tests]"`
 
-Without quotes, the command may fail in these shells.
 :::
+::::
+
+:::::
+
+
 
 ### Combining dependency groups
 
-You can create combined groups that reference other groups:
+You can also create combined groups that reference other groups:
+
 ```toml
 [project.optional-dependencies]
 test = ["pytest", "pytest-cov"]
@@ -364,7 +363,7 @@ docs = ["sphinx", "pydata-sphinx-theme"]
 dev = ["your-package[test,docs]", "build", "twine"]
 ```
 
-Then install everything with:
+Then install everything with pip install or uv sync as needed:
 ```bash
 uv pip install -e ".[dev]"
 # or
@@ -372,13 +371,10 @@ python -m pip install ".[dev]"
 ```
 
 :::{tip}
-When you install optional dependencies, pip and uv also install your
+When you install optional dependencies, pip and uv  install your
 package and its core dependencies automatically.
 :::
 
-:::{tip}
-You can control which versions of dependencies are compatible with your package using specifiers. You will learn more about dependency specifiers in the sections below.
-:::
 
 ## Version specifiers for dependencies
 
@@ -388,11 +384,11 @@ set version ranges.
 
 ### Common operators
 
-- **`>=`** - Minimum version set: `numpy>=1.20` (This is the most common approach and is recommended)
-- **`==`** - Exact version: `requests==2.28.0` (Avoid pinning dependencies like this unless absolutely necessary)
-- **`~=`** - Compatible release: `django~=4.2.0` (Allows patches: >=4.2.0,<4.3.0)
+- **`>=`** Minimum version set: `numpy>=1.20` (This is the most common approach and is recommended)
+- **`==`** Exact version: `requests==2.28.0` (Avoid pinning dependencies like this unless necessary)
+- **`~=`** Compatible release: `django~=4.2.0` (Allows patches: >=4.2.0,<4.3.0)
 - **`<` or `>`** - Upper/lower bounds: `pandas>=1.0,<3.0`
-- **`!=`** - Exclude version: `scipy>=1.7,!=1.8.0` (Rare but allows you to skip a buggy release version)
+- **`!=`** Exclude version: `scipy>=1.7,!=1.8.0` (Rare but allows you to skip a buggy release version)
 
 :::{tip}
 **Best practice:** Use `>=` to specify your minimum tested version and
@@ -410,10 +406,14 @@ dependencies = [
 
 ### Using conda and pixi
 
+:::{todo}
+Ask matthew to review this section...
+:::
+
 The `pyproject.toml` file works great for pure-Python packages. However,
 some packages (particularly in the scientific Python ecosystem) require
 dependencies written in other languages like C or Fortran. Conda was
-created to support distribution of tools with non-Python dependencies.
+created to support the distribution of tools with non-Python dependencies.
 
 **For conda users:**
 
