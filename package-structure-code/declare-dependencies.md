@@ -292,7 +292,7 @@ PyPI.
 ### Install dependency groups
 
 When users install your package, only core dependencies are installed by
-default. To install optional dependencies or development groups, you
+default. To install optional dependencies, you
 need to specify which groups to include when installing the package.
 
 :::{figure-md} python-package-dependencies
