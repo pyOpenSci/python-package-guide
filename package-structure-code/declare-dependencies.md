@@ -56,7 +56,7 @@ set version ranges.
 
 :::{tip}
 **Best practice:** Use `>=` to specify your minimum tested version and
-avoid upper bounds unless you know a future version will break. UV will do this by
+avoid upper bounds unless you know at what version that dependency is no longer compatible. UV will do this by
 default when it adds a dependency to your pyproject.toml file. This keeps
 your package flexible and reduces dependency conflicts.
 ```toml
