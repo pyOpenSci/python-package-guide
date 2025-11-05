@@ -33,8 +33,8 @@ within the code of your project or used during the development of your package.
 
 ### Why you specify dependencies
 
-Specifying dependencies in your `pyproject.toml` file ensures that your package works correctly.
-Users automatically get the packages your code needs to run. For instance, if your package requires Pandas to run properly, Pandas will be installed into the users' environment when they install your package using uv, pip or conda, if you specify it as a dependency in your pyproject.toml file.
+Specifying dependencies in your `pyproject.toml` file ensures that libraries needed to run your package are correctly installed.
+Users automatically get the packages your code needs to run. For instance, if your package requires Pandas to run properly, Pandas will be installed into the users' environment when they install your package using uv, pip or conda, if you specify it as a dependency in your `pyproject.toml` file.
 
 :::{tip}
 You can control which versions of dependencies are compatible with your package using specifiers. You will learn more about dependency specifiers in the sections below.
