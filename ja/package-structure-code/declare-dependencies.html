@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Add required and optional dependencies to your Python package" />
+<meta property="og:title" content="Add Required, Optional Dependencies and Dependency Groups to Your Python Package" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/declare-dependencies.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_9d1afb9a.png" />
-<meta property="og:image:alt" content="パッケージ依存性とは何か？: Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです: 適切に機能する必要があります。, もし、あなたのパッケージをローカルで開発したり、改良したりしたい人がいるか, ユーザが（コアではない）追加機能をパッケージに追加したい場合に必要です。. 依存関係は、プロジェクトのコードベースの一部ではありません。 プロジ..." />
-<meta name="description" content="パッケージ依存性とは何か？: Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです: 適切に機能する必要があります。, もし、あなたのパッケージをローカルで開発したり、改良したりしたい人がいるか, ユーザが（コアではない）追加機能をパッケージに追加したい場合に必要です。. 依存関係は、プロジェクトのコードベースの一部ではありません。 プロジ..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_ee99d3da.png" />
+<meta property="og:image:alt" content="pyproject.tomlの概要ページ では、パッケージの基本的なメタデータを持つ pyproject.toml ファイルをセットアップする方法を学びました。 このページでは、 pyproject.toml で異なるタイプの依存関係を指定する方法を学びます。 パッケージ依存性とは何か？: A Python package dependency refers to an external p..." />
+<meta name="description" content="pyproject.tomlの概要ページ では、パッケージの基本的なメタデータを持つ pyproject.toml ファイルをセットアップする方法を学びました。 このページでは、 pyproject.toml で異なるタイプの依存関係を指定する方法を学びます。 パッケージ依存性とは何か？: A Python package dependency refers to an external p..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Pythonパッケージの依存関係 &#8212; Python Packaging Guide</title>
+    <title>Dependencies for your Python Package &#8212; Python Packaging Guide</title>
   
   
   
@@ -520,7 +520,7 @@
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージの依存関係</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Dependencies for your Python Package</span></li>
   </ul>
 </nav>
 </div>
@@ -537,134 +537,203 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-package-dependencies">
-<h1>Pythonパッケージの依存関係<a class="headerlink" href="#python-package-dependencies" title="Link to this heading">#</a></h1>
+  <section id="dependencies-for-your-python-package">
+<h1>Dependencies for your Python Package<a class="headerlink" href="#dependencies-for-your-python-package" title="Link to this heading">#</a></h1>
+<p><a class="reference internal" href="pyproject-toml-python-package-metadata.html"><span class="doc std std-doc">pyproject.tomlの概要ページ</span></a> では、パッケージの基本的なメタデータを持つ <strong>pyproject.toml</strong> ファイルをセットアップする方法を学びました。 このページでは、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> で異なるタイプの依存関係を指定する方法を学びます。</p>
 <section id="what-is-a-package-dependency">
 <h2>パッケージ依存性とは何か？<a class="headerlink" href="#what-is-a-package-dependency" title="Link to this heading">#</a></h2>
-<p>Pythonパッケージ依存とは、Pythonプロジェクトが使用する外部パッケージやソフトウェアのことです:</p>
-<ol class="arabic simple">
-<li><p>適切に機能する必要があります。</p></li>
-<li><p>もし、あなたのパッケージをローカルで開発したり、改良したりしたい人がいるか</p></li>
-<li><p>ユーザが（コアではない）追加機能をパッケージに追加したい場合に必要です。</p></li>
-</ol>
-<p>依存関係は、プロジェクトのコードベースの一部ではありません。 プロジェクトのコード内やパッケージの開発中に呼び出されるパッケージやソフトウェアです。</p>
-<section id="understanding-optional-vs-required-dependencies">
-<h3>オプションと必須の依存関係を理解する<a class="headerlink" href="#understanding-optional-vs-required-dependencies" title="Link to this heading">#</a></h3>
-<p>依存関係はオプションか必須であると考えることができます。 必須であれば、 <code class="docutils literal notranslate"><span class="pre">pyproject</span></code> テーブルの <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> キーにリストされます。 オプションの場合は、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> の <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> テーブルにリストされます。</p>
-<p>両者については後述します。</p>
-<figure class="align-default" id="python-package-dependency-types">
-<img alt="" src="../_images/python-package-dependency-types.png" />
-<figcaption>
-<p><span class="caption-text">Pythonパッケージの依存関係には、オプションのものと必須のものの2つの大きなグループがあります。必須パッケージとは、ユーザがあなたのパッケージを使うために必要なパッケージのことです。オプションの依存関係とは、パッケージの機能を追加するために、ユーザーがインストールを選択できるパッケージのことです。この2つのグループの中で、3つのユースケースを考えることができます。1. コアの依存関係は、ユーザがあなたのパッケージを使うために <strong>必須</strong> です。2. 開発依存関係はオプションで、誰かがあなたのパッケージをローカルで作業したい場合にのみ必要です。3. 最後に、機能依存はオプションであり、パッケージに追加機能を追加します。 すべてのパッケージが機能依存を持つわけではありません。</span><a class="headerlink" href="#python-package-dependency-types" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="required-or-core-dependencies">
-<h3>必須（またはコア）の依存関係<a class="headerlink" href="#required-or-core-dependencies" title="Link to this heading">#</a></h3>
-<p>必要な依存関係は、パッケージのコード内で直接呼び出されます。このページでは、パッケージを実行するために必要なこれらの依存関係を <strong>コア依存関係</strong> と呼びます。 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルの <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> キーに、コアまたは必要な依存関係を置く必要があります。</p>
-</section>
-<section id="optional-dependencies">
-<h3>オプションの依存関係<a class="headerlink" href="#optional-dependencies" title="Link to this heading">#</a></h3>
-<p>オプションの依存関係依存関係は、ユーザーが必要に応じてオプションでインストールすることができます。 オプションの依存関係には、大きく分けて2つのグループがあります:</p>
-<ol class="arabic simple">
-<li><p><strong>開発依存</strong> :これらは、あなたのパッケージの開発をサポートするために必要な依存関係です。pytest<code class="docutils literal notranslate"><span class="pre">のようなテストを実行するツールや、</span> <span class="pre">(</span></code>flake8<code class="docutils literal notranslate"><span class="pre">や</span></code>ruff<code class="docutils literal notranslate"> <span class="pre">のような)</span> <span class="pre">リンター、</span></code>black<code class="docutils literal notranslate"><span class="pre">のようなコードフォーマッター、さらにはタスクを実行する</span></code>nox<code class="docutils literal notranslate"><span class="pre">や</span></code>tox` のような自動化ツールも含まれます。</p></li>
-<li><p><strong>Feature dependencies:</strong> これらは、パッケージに機能を追加するために、ユーザーが インストールを選択できる依存関係です。</p></li>
-</ol>
-<p>Python プロジェクトがインストールされると、Python パッケージマネージャ (<code class="docutils literal notranslate"><span class="pre">pip</span></code> または <code class="docutils literal notranslate"><span class="pre">conda</span></code>) はパッケージの依存関係を自動的にインストールします。これにより、特定の依存関係にある関数を呼び出すと、ユーザーの環境でその関数が利用できるようになります。</p>
-<div class="admonition-dependencies-can-be-added-to-your-pyproject-toml-file admonition">
-<p class="admonition-title">依存関係はpyproject.tomlファイルに追加できます</p>
-<p><a class="reference internal" href="pyproject-toml-python-package-metadata.html"><span class="doc std std-doc">pyproject.tomlの概要ページ</span></a> では、パッケージの基本的なメタデータを持つ <strong>pyproject.toml</strong> ファイルをセットアップする方法を学びました。 このページでは、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> で異なるタイプの依存関係を指定する方法を学びます。</p>
-</div>
-</section>
-</section>
-<section id="how-do-you-declare-dependencies">
-<h2>依存関係はどのように宣言するのか？<a class="headerlink" href="#how-do-you-declare-dependencies" title="Link to this heading">#</a></h2>
-<p>依存関係は <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを使って宣言することを推奨します。 こうすることで、パッケージに関連するすべてのメタデータが一箇所で宣言され、ユーザや貢献者がパッケージのインフラストラクチャを理解するのがより簡単になります。</p>
-<p>以前は <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> ファイルを使ってパッケージの依存関係を宣言するのが一般的でした。しかし近年、エコシステムはこの情報を <strong>pyproject.toml</strong> ファイルに保存するようになりました。しかし、プロジェクトによっては、特定のローカルな開発ニーズのために <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> ファイルを保持していることに気づくかもしれません。</p>
+<p>A Python package dependency refers to an external package or
+A tool that is needed when using or working on your Python project. Declare your dependencies in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. This keeps all package metadata in one place, making it simpler for users and contributors to understand your package.</p>
 <div class="tip admonition">
-<p class="admonition-title">パッケージが依存関係を保存する他の方法</p>
-<p>プロジェクトが他の言語で書かれた拡張機能を含んでいる場合、 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ファイルが必要になるかもしれません。あるいは、依存関係の宣言に <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> を使っているパッケージに貢献することもできます。 <a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#declaring-required-dependency">これについては setuptools のドキュメントを参照してください</a></p>
+<p class="admonition-title">Older ways to declare dependencies</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> is now the standard, you may sometimes encounter older approaches to storing dependencies &quot;in the wild&quot;:</p>
+<ul class="simple">
+<li><p><strong>requirements.txt</strong>: Previously common for dependencies, still used by some projects for local development</p></li>
+<li><p><strong>setup.py or setup.cfg</strong>: May be needed for packages with extensions in other languages</p></li>
+</ul>
+<p><a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#declaring-required-dependency">Learn more in the setuptools documentation</a></p>
 </div>
-<section id="add-required-dependencies-to-your-pyproject-toml-file">
-<h3>必要な依存関係をpyproject.tomlファイルに追加<a class="headerlink" href="#add-required-dependencies-to-your-pyproject-toml-file" title="Link to this heading">#</a></h3>
-<p>コアプロジェクトの依存関係は、ユーザがパッケージをインストールするときに <code class="docutils literal notranslate"><span class="pre">pip</span></code> や <code class="docutils literal notranslate"><span class="pre">conda</span></code> のようなパッケージマネージャによってインストールされる必要があります。 これらの依存関係は、<strong>pyproject.toml</strong> ファイルの <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルにある <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 配列に追加することができます。 これは次のようになります:</p>
+<section id="why-specify-dependencies">
+<h3>Why specify dependencies<a class="headerlink" href="#why-specify-dependencies" title="Link to this heading">#</a></h3>
+<p>Specifying dependencies in the [project.dependency] array of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file ensures that libraries needed to run your package are correctly installed into a user's environment.
+For instance, if your package requires Pandas to run properly, and you add Pandas to the <code class="docutils literal notranslate"><span class="pre">project.dependency</span></code> array, Pandas will be installed into the users' environment when they install your package using uv, pip, or conda.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
+<span class="p">...</span>
+<span class="p">...</span>
+<span class="p">...</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a <code class="docutils literal notranslate"><span class="pre">[development-group]</span></code> table.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[development-group]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;pytest-cov&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="types-of-dependencies">
+<h3>Types of dependencies<a class="headerlink" href="#types-of-dependencies" title="Link to this heading">#</a></h3>
+<p>There are three different types of dependencies that you will learn about on this page:</p>
+<ol class="arabic simple">
+<li><p><strong>Required dependencies:</strong> These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the <code class="docutils literal notranslate"><span class="pre">[project.dependencies]</span></code> table in your pyproject.toml file.</p></li>
+<li><p><strong>Feature Dependencies:</strong> These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the <code class="docutils literal notranslate"><span class="pre">[project.optional.dependencies]</span></code> table or your pyproject.toml file.</p></li>
+<li><p><strong>Development Dependencies:</strong> These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the <code class="docutils literal notranslate"><span class="pre">[project.dependency.groups]</span></code> table or your pyproject.toml file.</p></li>
+</ol>
+</section>
+</section>
+<section id="required-dependencies">
+<h2>1. Required dependencies<a class="headerlink" href="#required-dependencies" title="Link to this heading">#</a></h2>
+<p>Required dependencies are imported and called directly within your package's code.
+They are needed for your package to run.</p>
+<p>You can add your required dependencies to the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> array in the
+<code class="docutils literal notranslate"><span class="pre">[project]</span></code> table of your <strong>pyproject.toml</strong> file. When users install
+your package with uv, pip, or conda, these dependencies will be
+automatically installed alongside your package in their environment.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;examplePy&quot;</span>
 <span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
 <span class="p">]</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="{admonition docutils">
+<p>Try your best to minimize dependencies whenever possible. Remember that
+fewer dependencies reduce the possibility of version conflicts in user
+environments.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-eye" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14c-1.981 0-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2ZM1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5c1.473 0 2.825-.742 3.955-1.715 1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5c-1.473 0-2.825.742-3.955 1.715-1.124.967-1.954 2.096-2.366 2.717ZM8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10Z"></path></svg></span><span class="sd-summary-text">How to Add Required Dependencies with UV</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can use uv to add dependencies to your pyproject.toml file:</p>
+<p class="sd-card-text"><strong>Add a required dependency:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>numpy
+</pre></div>
+</div>
+<p class="sd-card-text">Will add numpy as a dependency to your <code class="docutils literal notranslate"><span class="pre">project.dependency</span></code> array:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
 
 <span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;rioxarray&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;geopandas&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;numpy&gt;=2.2.6&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>理想的には、 <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルの <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> キーに、あなたのパッケージをインス トールして使用するために必要なパッケージだけをリストするようにしま す。 こうすることで、ユーザがインストールしなければならない追加パッケージの数や あなたのパッケージに依存するパッケージの数を最小限に抑えることができます。</p>
-<p>インストールする依存関係を少なくすることで、ユーザー環境でのバージョン不一致の可能性が低くなることを覚えておいてください。</p>
-<div class="admonition-a-dependency-example admonition">
-<p class="admonition-title">依存関係の例</p>
-<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> 配列に格納されたデータの美しいプロットを作成する <code class="docutils literal notranslate"><span class="pre">plotMe</span></code> というパッケージがあるとしましょう。 <code class="docutils literal notranslate"><span class="pre">plotMe</span></code> パッケージでプロットを作成するには、 <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> パッケージを使用してプロットをスタイリングし、 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> パッケージを使用して配列フォーマットのデータを処理します。</p>
-<p>上の例では、plotMeパッケージは2つのパッケージに依存しています:</p>
-<ul class="simple">
-<li><p>seaborn</p></li>
-<li><p>numpy</p></li>
-</ul>
-<p>つまり、plotMeをインストールしたユーザーの <code class="docutils literal notranslate"><span class="pre">環境</span></code> で動作させるためには、そのユーザーの環境にも必要な <code class="docutils literal notranslate"><span class="pre">依存関係</span></code> の両方がインストールされていることを確認する必要があります。</p>
-<p>依存関係を <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルで宣言することで、あなたのパッケージが PyPI に公開されるときに必須の依存関係としてリストされ、パッケージマネージャ ( <code class="docutils literal notranslate"><span class="pre">pip</span></code> や <code class="docutils literal notranslate"><span class="pre">conda</span></code> ) があなたのパッケージと一緒にユーザーの環境に自動的にインストールするようになります:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">plotMe</span></code></p>
 </div>
-</section>
-<section id="id2">
-<h3>オプションの依存関係<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>ドキュメントの構築、テストの実行、パッケージの配布ファイルの構築のための オプションの依存関係は、しばしば開発依存関係と呼ばれます。 これらは、ユーザがあなたのパッケージをローカルで作業し、以下のようなタスクを実行するために必要な依存関係です:</p>
-<ul class="simple">
-<li><p>テストスイートの実行</p></li>
-<li><p>ドキュメントの作成</p></li>
-<li><p>リンティングとその他のコードクリーンナップツール</p></li>
-</ul>
-<p>これらの依存関係はオプションとみなされます。なぜなら、あなたのパッケ ージをインストールして使用するのに必要ではないからです。 機能の依存関係はオプションとみなされ、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルに置く必要があります。</p>
-<p>オプションの依存関係は <strong>pyproject.toml</strong> ファイルの <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルに格納することができます。</p>
-<p>ここで重要なのは、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルの中で、名前付きサブグループの中に追加のオプションの依存関係を格納できることです。これは、上で説明した <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブル内の依存関係配列とは異なるテーブルであり、必要なパッケージのリストを1つだけ含む配列が1つ格納されています。</p>
-</section>
-</section>
-<section id="create-optional-dependency-groups">
-<h2>オプションの依存グループを作成する<a class="headerlink" href="#create-optional-dependency-groups" title="Link to this heading">#</a></h2>
-<p><strong>pyproject.toml</strong> ファイルでオプションの依存関係を宣言します:</p>
-<ol class="arabic simple">
-<li><p><strong>pyproject.toml</strong> ファイルに <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルを追加します。</p></li>
-<li><p>構文を使って、依存関係の名前付きグループを作成します:</p></li>
-</ol>
-<p><code class="docutils literal notranslate"><span class="pre">group-name</span> <span class="pre">=</span> <span class="pre">[&quot;dep1&quot;,</span> <span class="pre">&quot;dep2&quot;]</span></code></p>
-<div class="tip admonition">
-<p class="admonition-title">GitHub / Gitlab からパッケージをインストールする</p>
-<p>GitHubから直接インストールする必要がある依存関係がある場合は、<code class="docutils literal notranslate"><span class="pre">git+https</span></code>というインストール方法を使います、以下のように <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを使用します:</p>
+</details><div class="tip admonition">
+<p class="admonition-title">Requiring packages from GitHub / Gitlab</p>
+<p>If you have dependencies that need to be installed directly from GitHub,
+you can specify them in your pyproject.toml file like this:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="s2">&quot;my_dependency &gt;= 1.0.1 @ git+https://git.server.example.com/mydependency.git&quot;</span>
+<span class="s2">&quot;my_dependency &gt;= 1.0.1 @ git+https://git.server.example.com/mydependency.git@commitHashHere&quot;</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>重要:セキュリティ上の理由から、あなたのライブラリがGitHubでホストされているプロジェクトに依存している場合、あなたのプロジェクトをPyPIにアップロードするには、そのリポジトリの特定のコミット/タグ/ハッシュを指す必要があります。</p>
+<p>IMPORTANT: If your library depends on a GitHub-hosted project,
+you should point to a specific commit/tag/hash of that repository before you upload your project to
+PyPI. You never know how the project might change over time. Commit hashes
+are more reliable as they can't be changed</p>
 </div>
-<p>以下では、tests、docs、lintという3つのオプションの開発依存関係を作成しました。また、機能依存のセットも追加しました。</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+</section>
+<section id="optional-dependencies">
+<h2>2. Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Link to this heading">#</a></h2>
+<p>Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh as an <code class="docutils literal notranslate"><span class="pre">[optional.dependency]</span></code>. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.</p>
+<p>Place these dependencies in the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
+<span class="p">...</span>
+<span class="p">...</span>
+<span class="p">...</span>
+<span class="k">[optional.dependencies]</span>
+<span class="n">plot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bokeh&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>When a user installs your package, uv, pip, or conda automatically installs all required dependencies. Optional dependencies are only installed if the user explicitly requests them.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-eye" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14c-1.981 0-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2ZM1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5c1.473 0 2.825-.742 3.955-1.715 1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5c-1.473 0-2.825.742-3.955 1.715-1.124.967-1.954 2.096-2.366 2.717ZM8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10Z"></path></svg></span><span class="sd-summary-text">How to Add optional.dependencies using UV</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can use uv to add dependencies to your pyproject.toml file:</p>
+<p class="sd-card-text"><strong>Add an optional dependency:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>--optional<span class="w"> </span>feature<span class="w"> </span>pandas
+</pre></div>
+</div>
+<p class="sd-card-text">Will add this to your pyproject.toml file:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[optional.dependencies]</span>
+<span class="n">feature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;pandas&gt;=2.3.3&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="dependency-groups">
+<h2>3. Dependency groups<a class="headerlink" href="#dependency-groups" title="Link to this heading">#</a></h2>
+<p>Development dependencies include packages needed to work on your package
+locally. They are used to perform tasks such as:</p>
+<ul class="simple">
+<li><p>running your test suite (pytest, pytest-cov)</p></li>
+<li><p>building your documentation (sphinx, sphinx-theme packages)</p></li>
+<li><p>linting and formatting code (ruff, black)</p></li>
+<li><p>building package distribution files (build, twine)</p></li>
+</ul>
+<p>Dependency groups are optional because they are not required for users
+to install and use your package. However, they will make it easier for
+contributors to your project to setup development environments
+locally.</p>
+<div class="note admonition">
+<p class="admonition-title">New: PEP 735 development dependency groups</p>
+<p><code class="docutils literal notranslate"><span class="pre">[development-groups]</span></code> is a newer specification introduced by PEP 735.
+They are intended to organize development dependencies and are intentionally separate from  <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>, which can be installed into a user's
+environment.</p>
+</div>
+<section id="how-to-declare-dependency-groups">
+<h3>How to declare dependency groups<a class="headerlink" href="#how-to-declare-dependency-groups" title="Link to this heading">#</a></h3>
+<p>You declare development dependencies in your <strong>pyproject.toml</strong> file
+within a <code class="docutils literal notranslate"><span class="pre">[development-groups]</span></code> table.</p>
+<p>Similar to optional-dependencies, you can create separate subgroups or arrays with names using the syntax: <code class="docutils literal notranslate"><span class="pre">group-name</span> <span class="pre">=</span> <span class="pre">[&quot;dep1&quot;,</span> <span class="pre">&quot;dep2&quot;]</span></code></p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[development-groups]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest-cov&quot;</span><span class="p">]</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydata-sphinx-theme&quot;</span><span class="p">]</span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ruff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-eye" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14c-1.981 0-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2ZM1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5c1.473 0 2.825-.742 3.955-1.715 1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5c-1.473 0-2.825.742-3.955 1.715-1.124.967-1.954 2.096-2.366 2.717ZM8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10Z"></path></svg></span><span class="sd-summary-text">How to Add [development.group] using UV</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can use uv to add dependencies to your pyproject.toml file:</p>
+<p class="sd-card-text"><strong>Add a development group dependency:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>--group<span class="w"> </span>tests<span class="w"> </span>pytest
+uv<span class="w"> </span>add<span class="w"> </span>--group<span class="w"> </span>docs<span class="w"> </span>sphinx
+</pre></div>
+</div>
+<p class="sd-card-text">Will add the following to your pyproject.toml file:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[dependency-groups]</span>
 <span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;pytest-cov&quot;</span>
+<span class="w">    </span><span class="s2">&quot;pytest&gt;=8.4.2&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;pydata_sphinx_theme&quot;</span>
-<span class="p">]</span>
-<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;flake8&quot;</span>
-<span class="p">]</span>
-<span class="n">feature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;pandas&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;sphinx&gt;=8.1.3&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</details></section>
+</section>
+<section id="understanding-required-vs-optional-dependencies">
+<h2>Understanding required vs. optional dependencies<a class="headerlink" href="#understanding-required-vs-optional-dependencies" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="python-package-dependency-types">
+<img alt="Diagram showing two main groups of Python package dependencies: required and optional. Required dependencies include core packages needed to use your package. Optional dependencies include development dependencies for working on the package locally and feature dependencies for additional functionality." src="../_images/python-package-dependency-types.png" />
+<figcaption>
+<p><span class="caption-text">Python package dependencies fall into two categories: <strong>required</strong>
+dependencies that users need to run your package, and <strong>optional</strong>
+dependencies for development work or additional features.</span><a class="headerlink" href="#python-package-dependency-types" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition-additional-dependency-resources admonition">
 <p class="admonition-title">その他の依存リソース</p>
 <ul class="simple">
@@ -674,107 +743,197 @@
 </div>
 <section id="install-dependency-groups">
 <h3>依存グループをインストールする<a class="headerlink" href="#install-dependency-groups" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="id3">
-<img alt="上記の依存グループを表す3つのセクションを持つven図を示す図 - ドキュメント機能とテスト。中央には your-package と表示され、そのパッケージの主要な依存関係であるseabornとnumpyがリストされています。 右側に2つの矢印があります。最初のものは、コマンド python - m pip install your-package を示しています。それらをインストールすると、パッケージと2つのコア依存関係のみがユーザー環境にインストールされることを示しています。以下は、2つ目の矢印で、 python -m pip install youPackage[tests] とあります。これにより、パッケージ依存関係 - your-package、seaborn、numpy とテスト依存関係 pytest、pytest-cov の両方を含む環境が構築されます。" src="../_images/python-package-dependencies.png" />
+<p>When someone installs your package, only core dependencies are installed by
+default. To install optional dependencies, you
+need to specify which groups to include when installing the package.</p>
+<figure class="align-default" id="python-package-dependencies">
+<img alt="Diagram showing a Venn diagram with three sections representing dependency groups - docs, feature, and tests. In the center it shows your-package with core dependencies seaborn and numpy. Two arrows on the right demonstrate: first, python -m pip install your-package installs only the package and core dependencies. Second, python -m pip install your-package[tests] installs the package, core dependencies, and test dependencies including pytest and pytest-cov." src="../_images/python-package-dependencies.png" />
 <figcaption>
-<p><span class="caption-text">ユーザがローカルで <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package</span></code> を使ってあなたのパッケージをインストールすると、あなたのパッケージとそのコア依存関係のみがインストールされます。ユーザがあなたのパッケージ <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package[tests]</span></code> をインストールすると、pip はあなたのパッケージとそのコア依存パッケージの両方をインストールし、さらに <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルの tests 配列にリストされている依存パッケージをインストールします。</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text">When a user installs your package using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package</span></code>, only
+your package and its core dependencies get installed. When they install
+with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package[tests]</span></code>, pip will install your package,
+core dependencies, and the test dependencies from the
+<code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</span><a class="headerlink" href="#python-package-dependencies" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="admonition-using-python-m-pip-install-vs-pip-install admonition">
-<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span></code> と <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> の比較</p>
-<p>このガイドのすべての例で、構文を使って <code class="docutils literal notranslate"><span class="pre">pip</span></code> を呼び出していることに気づくでしょう:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> を使用して pip を呼び出すと、パッケージをインストールするために使用する <code class="docutils literal notranslate"><span class="pre">pip</span></code> が、現在アクティブな Python 環境のものであることが保証されます。インストールの衝突を避けるために、 <code class="docutils literal notranslate"><span class="pre">pip</span></code> を呼び出すときは常にこの方法を使うことを強く推奨します。</p>
-<p>これが思い通りに動くようにするには、 <code class="docutils literal notranslate"><span class="pre">pip</span></code> を使って何かをインストールする前に、パッケージの開発環境を有効にしてください。</p>
+</section>
+<section id="using-uv-or-pip-for-installation">
+<h3>Using uv or pip for installation<a class="headerlink" href="#using-uv-or-pip-for-installation" title="Link to this heading">#</a></h3>
+<p>UV streamlines this process, allowing you to sync a venv in your project directory
+with both an editable install of your package and its dependencies automatically.
+You can also use pip and install dependencies into the environment of your choice.</p>
+<p><strong>Install development groups:</strong></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Use UV</label><div class="sd-tab-content docutils">
+<p>You can use uv sync to sync dependency groups in your uv-managed venv</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--group<span class="w"> </span>docs<span class="w">                     </span><span class="c1"># Single group</span>
+<span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--group<span class="w"> </span>docs<span class="w"> </span>--group<span class="w"> </span><span class="nb">test</span><span class="w">        </span><span class="c1"># Multiple groups</span>
+<span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--all-groups<span class="w">                     </span><span class="c1"># All development groups</span>
+</pre></div>
 </div>
-<p>上記で定義したグループを使用して、構文を使って開発依存ファイルをインストールすることができます:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[docs]&quot;</span></code></p>
-<p>上記でインストールするのは:</p>
-<ul class="simple">
-<li><p>ドキュメント (<code class="docutils literal notranslate"><span class="pre">docs</span></code>) に必要な依存関係、</p></li>
-<li><p>必要なパッケージの依存関係を <code class="docutils literal notranslate"><span class="pre">dependency</span></code> 配列で指定し</p></li>
-<li><p>あなたのパッケージ</p></li>
-</ul>
-<p>pipを使います。 以下では、パッケージ、必要な依存関係、オプションのテスト依存関係をインストールします。</p>
+<p><strong>Install optional dependencies:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>idea<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>using<span class="w"> </span>uv<span class="w"> </span>supported<span class="w"> </span>venvs<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>project
+<span class="gp">$ </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[docs]&quot;</span><span class="w">              </span><span class="c1"># Single group</span>
+<span class="gp">$ </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[docs,tests,lint]&quot;</span><span class="w">   </span><span class="c1"># Multiple groups</span>
+</pre></div>
+</div>
+<p><strong>Install everything (package + all dependencies):</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras<span class="w"> </span>--all-groups
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> is the recommended command for development workflows. It
+manages your virtual environment and keeps your lockfile up to date.
+Use <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">install</span></code> when you need pip-compatible behavior.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Use pip (version &gt;=25.1)</label><div class="sd-tab-content docutils">
+<p><strong>Install optional dependencies:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install -e &quot;.[docs]&quot;              # Single group</span>
+<span class="go">python -m pip install -e &quot;.[docs,tests,lint]&quot;   # Multiple groups</span>
+</pre></div>
+</div>
+<p><strong>Install dependency groups:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --group test              # Single group</span>
+<span class="go">python -m pip install --group docs   # Multiple groups</span>
+</pre></div>
+</div>
+<p>Always call pip using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code> to ensure you're using
+the pip from your current active Python environment. This helps avoid
+installation conflicts.</p>
+<p><strong>Note:</strong> Some shells (like zsh on Mac) require quotes around brackets to run successfully:</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests]&quot;</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルに複数の依存グループをインストールすることができます:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[docs,</span> <span class="pre">tests,</span> <span class="pre">lint]&quot;</span></code></p>
-<div class="tip admonition">
-<p class="admonition-title">zshシェルユーザーの場合</p>
-<p>あなたやパッケージの貢献者が使うかもしれません、さまざまなシェルアプリケーションがあります。</p>
-<ul class="simple">
-<li><p>zsh は、新しい Mac OS コンピュータにデフォルトで搭載されているシェルです</p></li>
-<li><p>Windowsユーザーは、git bashのようなツールを使うことができます</p></li>
-</ul>
-<p>シェルによっては、引用符で囲まれていない括弧 (<code class="docutils literal notranslate"><span class="pre">[tests]</span></code>) をサポートしていないものもあるので、このガイドではこのようにコマンドに引用符を追加しています:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests]&quot;</span></code></p>
-<p>ガイドブックやコントリビューションガイドでは、以下の例のように引用符を使わないコマンドを見かけることがあります:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package[tests]</span></code></p>
-<p>二重引用符を付けずに your-package[tests] を呼び出すと、一部のシェルでは動作しますが、 <em>すべてではありません</em> 。</p>
+<div class="docutils">
+</div>
+</div>
 </div>
 </section>
-<section id="combining-sets-of-dependencies">
-<h3>依存関係のセットを組み合わせる<a class="headerlink" href="#combining-sets-of-dependencies" title="Link to this heading">#</a></h3>
-<p>上記では、 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> から依存関係をインストールする方法を説明しました。 場合によっては、依存関係のセットをこのようにグループ化したいこともあるでしょう:</p>
+<section id="combining-dependency-groups">
+<h3>Combining dependency groups<a class="headerlink" href="#combining-dependency-groups" title="Link to this heading">#</a></h3>
+<p>You can also create combined groups that reference other groups:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
-<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest-cov&quot;</span><span class="p">]</span>
-<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydata_sphinx_theme&quot;</span><span class="p">]</span>
-<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;packageName[tests, docs]&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;build&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;twine&quot;</span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest-cov&quot;</span><span class="p">]</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pydata-sphinx-theme&quot;</span><span class="p">]</span>
+<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;your-package[test,docs]&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;build&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;twine&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then install everything with pip install or uv sync as needed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+<span class="c1"># or</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you install optional dependencies, pip and uv  install your
+package and its core dependencies automatically.</p>
+</div>
+</section>
+</section>
+<section id="version-specifiers-for-dependencies">
+<h2>Version specifiers for dependencies<a class="headerlink" href="#version-specifiers-for-dependencies" title="Link to this heading">#</a></h2>
+<p>Version specifiers control which versions of a dependency work with your
+package. Use them to specify minimum versions, exclude buggy releases, or
+set version ranges.</p>
+<section id="common-operators">
+<h3>Common operators<a class="headerlink" href="#common-operators" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></strong> Minimum version set: <code class="docutils literal notranslate"><span class="pre">numpy&gt;=1.20</span></code> (This is the most common approach and is recommended)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">==</span></code></strong> Exact version: <code class="docutils literal notranslate"><span class="pre">requests==2.28.0</span></code> (Avoid pinning dependencies like this unless necessary)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">~=</span></code></strong> Compatible release: <code class="docutils literal notranslate"><span class="pre">django~=4.2.0</span></code> (Allows patches: &gt;=4.2.0,&lt;4.3.0)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></strong> - Upper/lower bounds: <code class="docutils literal notranslate"><span class="pre">pandas&gt;=1.0,&lt;3.0</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">!=</span></code></strong> Exclude version: <code class="docutils literal notranslate"><span class="pre">scipy&gt;=1.7,!=1.8.0</span></code> (Rare but allows you to skip a buggy release version)</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Best practice:</strong> Use <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> to specify your minimum tested version and
+avoid upper bounds unless you know at what version that dependency is no longer compatible. UV will do this by
+default when it adds a dependency to your pyproject.toml file. This keeps
+your package flexible and reduces dependency conflicts.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;numpy&gt;=1.20&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1"># Good - flexible</span>
+<span class="w">    </span><span class="s2">&quot;pandas&gt;=1.0,&lt;3.0&quot;</span><span class="p">,</span><span class="w">         </span><span class="c1"># OK - known breaking change in 3.0</span>
+<span class="w">    </span><span class="s2">&quot;requests==2.28.0&quot;</span><span class="p">,</span><span class="w">         </span><span class="c1"># Avoid - too restrictive</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>上記のコマンドを使えば、testsとdocsの両方の依存リストをインストールできます:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[dev]&quot;</span></code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>上記の構文を使って依存関係をインストールする場合:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;.[tests,</span> <span class="pre">docs]&quot;</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> はあなたのパッケージとそのコアの依存関係もインストールします。</p>
 </div>
-<div class="note admonition">
-<p class="admonition-title">condaはどこに入りますか？</p>
-<p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを使うと、PyPI(またはGitHub/ GitLab)で公開されているPythonパッケージを依存関係として列挙することができます。 このファイルを作成し、依存関係を宣言し、 <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="std std-doc">パッケージをビルドする</span></a> 、 <a class="reference internal" href="publish-python-package-pypi-conda.html"><span class="std std-doc">パッケージをPyPIに公開する</span></a> とすると、1つのコマンドであなたのパッケージと依存関係のあるパッケージの両方をインストールすることができます。</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">your-package</span></code></p>
-<p>これは、パッケージが純粋なpython (他の言語が使われていない) のであれば、とてもうまくいきます。</p>
-<p>いくつかのパッケージ、特に科学的なPythonエコシステムでは、Pythonで書かれていない依存関係を必要とします。 Condaは、PythonとPython以外の言語の両方で書かれたコードを持つツールの配布をサポートするために作られました。</p>
-</div>
-</section>
-</section>
-<section id="support-conda-users-with-environment-yml-files">
-<h2>environment.yml ファイルで conda ユーザーをサポートする<a class="headerlink" href="#support-conda-users-with-environment-yml-files" title="Link to this heading">#</a></h2>
-<p>上記のワークフローは、PyPIでパッケージを公開することを想定しています。そして、 <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/publish-python-package-pypi-conda.html">grayskullを使ってレシピを投稿する</a> ことで、conda-forgeに(オプションで)公開する予定です。</p>
-<p>conda ユーザーをサポートしたいのであれば、彼らがあなたのパッケージをインス トールするのに使える conda 環境も管理した方が良いでしょう。 conda 環境を維持することは、あなたのパッケージが conda 環境に期待通りにインストールされるかをテストするのにも役立ちます。</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file works great for pure-Python packages. However,
+some packages (particularly in the scientific Python ecosystem) require
+dependencies written in other languages like C or Fortran. Conda was
+created to support the distribution of tools with non-Python dependencies.</p>
+<p><strong>For conda users:</strong></p>
+<p>You can maintain an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file to help users and contributors
+set up conda environments. This is especially useful for packages with
+system-level dependencies like GDAL.</p>
+<p><strong>Consider pixi for conda workflows:</strong></p>
+<p><a class="reference external" href="https://pixi.sh">Pixi</a> is a modern package manager built on conda that
+uses <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> for configuration. If your project relies heavily
+on conda packages, pixi offers a streamlined workflow with lockfiles and
+faster dependency resolution.</p>
 <div class="tip admonition">
 <p class="admonition-title">condaユーザーへのメモ</p>
-<p>ツールの開発にconda環境を使用している場合、 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> を使用してパッケージをインストールするとき（または一般的にpipを使用するとき）、依存関係はcondaではなくPyPIからインストールされることに注意してください。</p>
-<p>したがって、conda環境を実行している場合、パッケージを &quot;editable &quot;モードでインス トールすると、依存関係が衝突する危険性があります。 これは、GDALのような地理空間システムライブラリや他のシステムレベルの依存関係を必要とする空間パッケージがある場合、特に重要です。</p>
-<p>あるいは、 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span> <span class="pre">--no-deps</span></code> を使ってパッケージだけをインストールすることもできます。そして、conda環境ファイルを使って残りの依存関係をインストールします。</p>
+<p>If you use a conda environment for development and install your package
+with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>, dependencies will be installed from
+PyPI rather than conda. This can cause conflicts, especially for packages
+with system dependencies.</p>
+<p>To avoid this, install your package without dependencies:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span> <span class="pre">--no-deps</span></code></p>
+<p>Then install dependencies through your conda environment.yml file.</p>
 </div>
-</section>
-<section id="dependencies-in-read-the-docs">
-<h2>Read the Docs の依存関係<a class="headerlink" href="#dependencies-in-read-the-docs" title="Link to this heading">#</a></h2>
-<p>プロジェクトで依存関係を指定できたので、Read the Docsへのパブリッシュなど、他のワークフローをサポートするためにそれらを使用できます。</p>
-<p><a class="reference external" href="https://readthedocs.org">Read the Docs</a> は、継続的インテグレーション/継続的デプロイメントサービスを備えたドキュメントプラットフォームで、あなたのドキュメントを自動的にビルドして公開します。</p>
-<p>Read the Docsを使用してドキュメントを構築している場合、 <strong>readthedocs.yaml</strong> ファイルを使用して依存関係をインストールする必要があるかもしれません。</p>
-<p>以下は、readthedocs.yamlファイル内のpyproject.tomlファイルに依存関係テーブルの <strong>docs</strong> セクションをインストールする例です。</p>
+<div class="docutils">
+<p class="rubric" id="id6">Using conda and pixi</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file works great for pure-Python packages. However,
+some packages (particularly in the scientific Python ecosystem) require
+dependencies written in other languages like C or Fortran. Conda was
+created to support the distribution of tools with non-Python dependencies.</p>
+<p><strong>For conda users:</strong></p>
+<p>You can maintain an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file to help users and contributors
+set up conda environments. This is especially useful for packages with
+system-level dependencies like GDAL.</p>
+<p><strong>Consider pixi for conda workflows:</strong></p>
+<p><a class="reference external" href="https://pixi.sh">Pixi</a> is a modern package manager built on conda that
+uses <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> for configuration. If your project relies heavily
+on conda packages, pixi offers a streamlined workflow with lockfiles and
+faster dependency resolution.</p>
+<div class="tip admonition">
+<p class="admonition-title">condaユーザーへのメモ</p>
+<p>If you use a conda environment for development and install your package
+with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>, dependencies will be installed from
+PyPI rather than conda. This can cause conflicts, especially for packages
+with system dependencies.</p>
+<p>To avoid this, install your package without dependencies:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span> <span class="pre">--no-deps</span></code></p>
+<p>Then install dependencies through your conda environment.yml file.</p>
+</div>
+<p class="rubric" id="dependencies-in-read-the-docs">Read the Docs の依存関係</p>
+<p>Once you've specified dependencies in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, you can use
+them in other workflows like building documentation on Read the Docs.</p>
+<p><a class="reference external" href="https://readthedocs.org">Read the Docs</a> is a documentation platform
+that automatically builds and publishes your documentation. To install
+your dependencies during the build process, configure them in a
+<strong>readthedocs.yaml</strong> file.</p>
+<p>Here's an example that installs your <code class="docutils literal notranslate"><span class="pre">docs</span></code> optional dependencies:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">python</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">install</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
 <span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
 <span class="w">      </span><span class="nt">extra_requirements</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docs</span><span class="w"> </span><span class="c1"># you can add any of the subgroups of dependencies from your pyproject.toml file to this list.</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docs</span>
 </pre></div>
 </div>
 <div class="note admonition">
-<p class="admonition-title">Read the DocsとPythonパッケージ</p>
+<p class="admonition-title">Learn more about Read the Docs</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.readthedocs.io/en/stable/config-file/index.html"> <code class="docutils literal notranslate"><span class="pre">readthedocs.yaml</span></code> ファイルの作成方法についてはこちらをご覧ください。</a></p></li>
-<li><p>Read the DocsのPoetryを使って依存関係をインストールしたい場合は、 <a class="reference external" href="https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry">こちらで詳しく説明されています。</a></p></li>
+<li><p><a class="reference external" href="https://docs.readthedocs.io/en/stable/config-file/index.html">Creating a readthedocs.yaml file</a></p></li>
+<li><p><a class="reference external" href="https://docs.readthedocs.io/en/stable/build-customization.html">Using uv with Read the Docs</a></p></li>
+<li><p><a class="reference external" href="https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry">Using Poetry with Read the Docs</a></p></li>
 </ul>
 </div>
+</div>
+</section>
 </section>
 </section>
 
@@ -826,23 +985,26 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-package-dependency">パッケージ依存性とは何か？</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-optional-vs-required-dependencies">オプションと必須の依存関係を理解する</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-or-core-dependencies">必須（またはコア）の依存関係</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-dependencies">オプションの依存関係</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-specify-dependencies">Why specify dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-dependencies">Types of dependencies</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-declare-dependencies">依存関係はどのように宣言するのか？</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-required-dependencies-to-your-pyproject-toml-file">必要な依存関係をpyproject.tomlファイルに追加</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">オプションの依存関係</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-dependencies">1. Required dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-dependencies">2. Optional dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-groups">3. Dependency groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-declare-dependency-groups">How to declare dependency groups</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-optional-dependency-groups">オプションの依存グループを作成する</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-required-vs-optional-dependencies">Understanding required vs. optional dependencies</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependency-groups">依存グループをインストールする</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-sets-of-dependencies">依存関係のセットを組み合わせる</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-uv-or-pip-for-installation">Using uv or pip for installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-dependency-groups">Combining dependency groups</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-conda-users-with-environment-yml-files">environment.yml ファイルで conda ユーザーをサポートする</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-in-read-the-docs">Read the Docs の依存関係</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-specifiers-for-dependencies">Version specifiers for dependencies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operators">Common operators</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

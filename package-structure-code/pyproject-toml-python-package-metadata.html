@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. If your project is pure Python and you’re using a setup.py or setup.cfg file to describe its metadat..." />
+<meta property="og:description" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. For pure Python packages, this file replaces the setup.py and/or setup.cfg file to describe project ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_fc736789.png" />
-<meta property="og:image:alt" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. If your project is pure Python and you’re using a setup.py or setup.cfg file to describe its metadat..." />
-<meta name="description" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. If your project is pure Python and you’re using a setup.py or setup.cfg file to describe its metadat..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_e5fea193.png" />
+<meta property="og:image:alt" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. For pure Python packages, this file replaces the setup.py and/or setup.cfg file to describe project ..." />
+<meta name="description" content="About the pyproject.toml file: Every modern Python package should include a pyproject.toml file. For pure Python packages, this file replaces the setup.py and/or setup.cfg file to describe project ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Use a pyproject.toml file for your package configuration &amp; metadata &#8212; Python Packaging Guide</title>
@@ -538,51 +538,34 @@
                   
   <section id="use-a-pyproject-toml-file-for-your-package-configuration-metadata">
 <span id="pyprojecttoml-metadata"></span><h1>Use a pyproject.toml file for your package configuration &amp; metadata<a class="headerlink" href="#use-a-pyproject-toml-file-for-your-package-configuration-metadata" title="Link to this heading">#</a></h1>
-<!-- :::{admonition} TODOs for this page
-:class: important
-
-what's missing
-
-::: -->
-<div class="todo admonition">
-<p class="admonition-title">Important pyproject.toml take aways</p>
+<div class="admonition-pyproject-toml-takeaways admonition">
+<p class="admonition-title">pyproject.toml takeaways</p>
 <ol class="arabic simple">
 <li><p>There are only two tables that are required for an installable Python package: <strong>[build-system]</strong> and <strong>[project]</strong>. The <strong>[project]</strong> table stores your package’s metadata.</p></li>
-<li><p>There are only two <em>required</em> fields in the <strong>[project]</strong> table: <strong>name=</strong> and <strong>version=</strong>.</p></li>
-<li><p>We suggest you add additional metadata to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file as it will make it easier for users to find your project on PyPI.</p></li>
+<li><p>There are two <em>required</em> fields in the <strong>[project]</strong> table: <strong>name=</strong> and <strong>version=</strong>.</p></li>
+<li><p>Add metadata to the classifiers section of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to make it easier for users to find your project on PyPI.</p></li>
 <li><p>When you are adding classifiers to the [project] table, only use valid values from <a class="reference external" href="https://PyPI.org/classifiers/">PyPI’s classifier page</a>. An invalid value here will raise an error when you build your package or publish to PyPI.</p></li>
 <li><p>There is no specific order for tables in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. However fields need to be placed within the correct table sections. For example <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> always need to be associated with the <strong>[build-system]</strong> table.</p></li>
-<li><p><strong>python-requires</strong>: is important to have in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file as it helps pip install your package.</p></li>
 </ol>
 </div>
 <section id="about-the-pyproject-toml-file">
 <h2>About the pyproject.toml file<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
-<p>Every modern Python package should include a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. If your project is pure Python and you’re using a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to describe its metadata, you should consider migrating your metadata and build information to a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
-<p>If your project isn’t pure-python, you might still require a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to build the non Python extensions. However, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file should still be used to store your project’s metadata.</p>
+<p>Every modern Python package should include a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. For pure Python packages, this file replaces the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and/or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to describe project metadata.</p>
+<p>If your project isn’t pure Python, you might still require a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to build the non-Python extensions. However, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file should still be used to store your project’s metadata.</p>
 <div class="note admonition">
-<p class="admonition-title">What happened to setup.py &amp; how do i migrate to pyproject.toml?</p>
-<p>Prior to August 2017, Python package metadata was stored either in the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file or a <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file. In recent years, there has been a shift to storing Python package metadata in a much more user-readable <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> format. Having all metadata in a single file:</p>
-<ul class="simple">
-<li><p>simplifies package management,</p></li>
-<li><p>allows you to use a suite of different <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html#build-back-ends">build backends</a> such as (flit-core, hatchling, pdm-build), and</p></li>
-<li><p>aligns with modern best practices.</p></li>
-</ul>
-<!--Commented until tutorials go live
-
- If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](../tutorials/extras/6-setuppy-to-pyproject-toml.md) -->
+<p class="admonition-title">Tutorial</p>
+<p>If you are migrating from a <strong>setup.py</strong> or <strong>setup.cfg</strong> file, and want help, <a class="reference internal" href="../tutorials/setup-py-to-pyproject-toml.html#migrate-pyproj"><span class="std std-ref">check out this tutorial.</span></a>
+<a class="reference external" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/">specify build requirements and
+metadata is called a <strong>pyproject.toml</strong></a></p>
 </div>
-<p>The standard file that Python packages use to <a class="reference external" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/">specify build requirements and
-metadata is called a <strong>pyproject.toml</strong></a>. Adding metadata, build requirements
-and package dependencies to a <strong>pyproject.toml</strong> file replaces storing that
-information in a setup.py or setup.cfg file.</p>
 <section id="about-the-toml-format">
 <h3>About the .toml format<a class="headerlink" href="#about-the-toml-format" title="Link to this heading">#</a></h3>
-<p>The <strong>pyproject.toml</strong> file is written in <a class="reference external" href="https://toml.io/en/">TOML (Tom’s Obvious, Minimal Language) format</a>. TOML is an easy-to-read structure that is founded on key/value pairs. Each section in the <strong>pyproject.toml</strong> file contains a <code class="docutils literal notranslate"><span class="pre">[table</span> <span class="pre">identifier]</span></code>.
+<p>The <strong>pyproject.toml</strong> file is written in <a class="reference external" href="https://toml.io/en/">TOML (Tom’s Obvious, Minimal Language) format</a>. TOML is an easy-to-read structure based on key/value pairs. Each section in the <strong>pyproject.toml</strong> file contains a <code class="docutils literal notranslate"><span class="pre">[table</span> <span class="pre">identifier]</span></code>.
 Below that table identifier are key/value pairs that
 support configuration for that particular table.</p>
 <ul class="simple">
 <li><p>Below <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> is considered a table in the toml language.</p></li>
-<li><p>Within the <code class="docutils literal notranslate"><span class="pre">build-system</span></code> table below <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> is a key.</p></li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">build-system</span></code> table, <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> is a key.</p></li>
 <li><p>The associated value for <code class="docutils literal notranslate"><span class="pre">requires</span></code> is an array containing the value <code class="docutils literal notranslate"><span class="pre">&quot;hatchling&quot;</span></code>.</p></li>
 </ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
@@ -609,10 +592,6 @@ represent on your PyPI landing page. These classifiers also allow users to sort 
 <h2>Benefits of using a pyproject.toml file<a class="headerlink" href="#benefits-of-using-a-pyproject-toml-file" title="Link to this heading">#</a></h2>
 <p>Including your package’s metadata in a separate human-readable <strong>pyproject.toml</strong>
 format also allows someone to view the project’s metadata in a GitHub repository.</p>
-<!-- setup.cfg for project metadata is being deprecated - set setuptools guide and
-https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
-pypa -
-https://packaging.python.org/en/latest/specifications/declaring-project-metadata/ -->
 <div class="tip admonition">
 <p class="admonition-title">Setup.py is still useful for complex package builds</p>
 <p>Using <strong>setup.py</strong> to manage package builds and metadata <a class="reference external" href="https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html">can cause problems with package development</a>.
@@ -653,10 +632,11 @@ what dependencies your package requires.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>dependencies:</strong> dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</strong> the optional or development dependencies will be installed if someone runs <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[dev]</span></code>. This is a nice way to include your development dependencies for users who may wish to contribute to your project.</p></li>
+<li><p><strong>project.dependencies:</strong> The dependency group is optional because not all packages require dependencies. However, if your project has specific dependencies, include this section in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. Dependencies declared in the pyproject.toml file will be installed by uv or pip when your project is installed.</p></li>
+<li><p><strong>project.optional-dependencies:</strong> Optional or feature dependencies will be installed if someone runs <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[feature]</span></code>. Use this array to declare dependencies that add specific features to your package that are not installed by default when a user runs <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code>.</p></li>
+<li><p><strong>dependency-groups:</strong> Dependency groups organize packages and tools that a contributor or developer would need to work on your package. These dependencies may include tools for building and running tests, linters, and code formatters. This is an optional but highly suggested way to organize and install dependencies. This section can replace a requirements.txt file. <a class="reference external" href="https://packaging.python.org/en/latest/specifications/dependency-groups/">Learn more about adding these to your package in the PyPA guide here.</a></p></li>
 <li><p><strong>keywords:</strong> These are the keywords that will appear on your PyPI landing page. Think of them as words that people might use to search for your package.</p></li>
-<li><p><strong>classifiers:</strong> The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of <a class="reference external" href="https://PyPI.org/classifiers/">all options for classifiers can be found her</a>e. Some of the classifiers that you should consider including</p>
+<li><p><strong>classifiers:</strong> The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of <a class="reference external" href="https://PyPI.org/classifiers/">all options for classifiers can be found here</a>. Some of the classifiers that you should consider including</p>
 <ul>
 <li><p>Development Status</p></li>
 <li><p>Intended Audience</p></li>
@@ -668,21 +648,20 @@ what dependencies your package requires.</p>
 </section>
 <section id="advanced-options-in-the-pyproject-toml-file">
 <h3>Advanced options in the pyproject.toml file<a class="headerlink" href="#advanced-options-in-the-pyproject-toml-file" title="Link to this heading">#</a></h3>
-<p>The examples at the bottom of this page contain …</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.scripts]</span></code> (Entry points):</strong> Entry points are optional. If you have a command line tool that runs a specific script hosted in your package, you may include an entry point to call that script directly at the command line (rather than at the Python shell).</p>
 <ul>
 <li><p>Here is an example of<a class="reference external" href="https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60">a package that has entry point script</a>s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.</p></li>
 </ul>
 </li>
-<li><p><strong>Dynamic Fields:</strong> if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>, then you might use the dynamic field, such as version (using scm) <strong>dynamic = [“version”]</strong></p></li>
+<li><p>Use <strong>Dynamic Fields</strong> If you have fields that are dynamically populated. For example, you may wish to automatically update your package’s version using Git tags (SCM/version control-based versioning). Example:  <strong>dynamic = [“version”]</strong></p></li>
 </ul>
 </section>
 </section>
 <section id="add-dependencies-to-your-pyproject-toml-file">
 <h2>Add dependencies to your pyproject.toml file<a class="headerlink" href="#add-dependencies-to-your-pyproject-toml-file" title="Link to this heading">#</a></h2>
-<p>The pyproject.toml file can also be used as a replacement for the requirements.txt file which has been traditionally used to store development dependencies such as pytest, code formatters such as Black and documentation tools such as sphinx.</p>
-<p>To add dependencies to your build, add a <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table to your pyproject.toml file.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file is a modern replacement for the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, which has been traditionally used to store development dependencies and also configuration for tools such as pytest, black, and others.</p>
+<p>To add development dependencies to your build, add a <code class="docutils literal notranslate"><span class="pre">[dependency-groups]</span></code> array to your pyproject.toml file.</p>
 <p>Then specify dependency groups as follows:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
 <span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
@@ -702,6 +681,7 @@ what dependencies your package requires.</p>
 <p>Following the above example, you install dependencies like this:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests]</span></code></p></li>
+<li><p>pip install –group test <em># requires pip 25.1 or greater</em></p></li>
 </ul>
 <p>The above will install both your package in editable mode and all of the dependencies declared in the tests section of your <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</p>
 <p>To install all dependencies and also your package, you’d use:</p>

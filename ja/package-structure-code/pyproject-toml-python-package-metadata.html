@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="pyproject.tomlファイルについて: 最近の Python パッケージには pyproject.toml ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために setup.py や setup.cfg ファイルを使っているなら、メタデータとビルド情報を pyproject.toml ファイルに移行することを検討するべきです..." />
+<meta property="og:description" content="pyproject.tomlファイルについて: Every modern Python package should include a pyproject.toml file. For pure Python packages, this file replaces the setup.py and/or setup.cfg file to describe project metadat..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_77632c26.png" />
-<meta property="og:image:alt" content="pyproject.tomlファイルについて: 最近の Python パッケージには pyproject.toml ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために setup.py や setup.cfg ファイルを使っているなら、メタデータとビルド情報を pyproject.toml ファイルに移行することを検討するべきです..." />
-<meta name="description" content="pyproject.tomlファイルについて: 最近の Python パッケージには pyproject.toml ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために setup.py や setup.cfg ファイルを使っているなら、メタデータとビルド情報を pyproject.toml ファイルに移行することを検討するべきです..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_fb05532f.png" />
+<meta property="og:image:alt" content="pyproject.tomlファイルについて: Every modern Python package should include a pyproject.toml file. For pure Python packages, this file replaces the setup.py and/or setup.cfg file to describe project metadat..." />
+<meta name="description" content="pyproject.tomlファイルについて: Every modern Python package should include a pyproject.toml file. For pure Python packages, this file replaces the setup.py and/or setup.cfg file to describe project metadat..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。 &#8212; Python Packaging Guide</title>
@@ -539,46 +539,34 @@
                   
   <section id="use-a-pyproject-toml-file-for-your-package-configuration-metadata">
 <span id="pyprojecttoml-metadata"></span><h1>パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。<a class="headerlink" href="#use-a-pyproject-toml-file-for-your-package-configuration-metadata" title="Link to this heading">#</a></h1>
-<!-- :::{admonition} TODOs for this page
-:class: important
-
-what's missing
-
-::: -->
-<div class="todo admonition">
-<p class="admonition-title">pyproject.tomlから得られる重要なこと</p>
+<div class="admonition-pyproject-toml-takeaways admonition">
+<p class="admonition-title">pyproject.toml takeaways</p>
 <ol class="arabic simple">
 <li><p>インストール可能なPythonパッケージに必要なテーブルは2つだけです: <strong>[build-system]</strong> と <strong>[project]</strong> です。 <strong>[project]</strong> テーブルにはパッケージのメタデータが格納されます。</p></li>
-<li><p><strong>[project]</strong> テーブルの必須フィールドは2つだけです: **name=**と <strong>version=</strong> です。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルにメタデータを追加することをお勧めします。 そうすることで、ユーザがPyPIであなたのプロジェクトを見つけやすくなります。</p></li>
+<li><p>There are two <em>required</em> fields in the <strong>[project]</strong> table: <strong>name=</strong> and <strong>version=</strong>.</p></li>
+<li><p>Add metadata to the classifiers section of your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to make it easier for users to find your project on PyPI.</p></li>
 <li><p>[project] テーブルに分類を追加するときは、 <a class="reference external" href="https://PyPI.org/classifiers/">PyPIの分類ページ</a> にある有効な値のみを使用してください。 ここで無効な値を指定すると、パッケージをビルドするときやPyPIに公開するときにエラーが発生します。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイル内のテーブルには特定の順番はありません。 しかし、フィールドは正しいテーブルセクションに配置する必要があります。 例えば <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> は常に <strong>[build-system]</strong> テーブルと関連付ける必要があります。</p></li>
-<li><p><strong>python-requires</strong>: <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>ファイルに記述することが重要です。 これはpipがパッケージをインストールするのに役立つからです。</p></li>
 </ol>
 </div>
 <section id="about-the-pyproject-toml-file">
 <h2>pyproject.tomlファイルについて<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
-<p>最近の Python パッケージには <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルが含まれているはずです。 もしあなたのプロジェクトが純粋な Python で、メタデータを記述するために <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> や <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> ファイルを使っているなら、メタデータとビルド情報を <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルに移行することを検討するべきです。</p>
-<p>あなたのプロジェクトが純粋な Python でない場合、Python 以外の拡張機能をビルドするために <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ファイルが必要になるかもしれません。 しかし、プロジェクトのメタデータを保存するために <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを使用する必要があります。</p>
+<p>Every modern Python package should include a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. For pure Python packages, this file replaces the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and/or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to describe project metadata.</p>
+<p>If your project isn’t pure Python, you might still require a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to build the non-Python extensions. However, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file should still be used to store your project’s metadata.</p>
 <div class="note admonition">
-<p class="admonition-title">setup.pyに何が起こったのか、そしてどのようにpyproject.tomlに移行するのか？</p>
-<p>2017年8月以前は、Pythonパッケージのメタデータは <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ファイルか <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> ファイルに保存されていました。 近年、Python パッケージのメタデータは、よりユーザが読みやすい <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> フォーマットで保存されるようになりました。 すべてのメタデータを1つのファイルに持つことです:</p>
-<ul class="simple">
-<li><p>パッケージ管理を簡素化します、</p></li>
-<li><p>(flit-core, hatchling, pdm-build)のような一連の異なる <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html#build-back-ends">ビルドバックエンド</a> を使うことができます。</p></li>
-<li><p>現代のベストプラクティスに合致しています。</p></li>
-</ul>
-<!--Commented until tutorials go live
-
- If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](../tutorials/extras/6-setuppy-to-pyproject-toml.md) -->
+<p class="admonition-title">Tutorial</p>
+<p>If you are migrating from a <strong>setup.py</strong> or <strong>setup.cfg</strong> file, and want help, <a class="reference internal" href="../tutorials/setup-py-to-pyproject-toml.html#migrate-pyproj"><span class="std std-ref">check out this tutorial.</span></a>
+<a class="reference external" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/">specify build requirements and
+metadata is called a <strong>pyproject.toml</strong></a></p>
 </div>
-<p>Python パッケージが <a class="reference external" href="https://packaging.python.org/en/latest/specifications/declaring-project-metadata/">ビルド要件とメタデータを指定するために使う標準のファイルは <strong>pyproject.toml</strong> と呼ばれます</a> 。メタデータ、ビルド要件、パッケージの依存関係を <strong>pyproject.toml</strong> ファイルに追加することは、 setup.py や setup.cfg ファイルに情報を格納することに取って代わります。</p>
 <section id="about-the-toml-format">
 <h3>.toml フォーマットについて<a class="headerlink" href="#about-the-toml-format" title="Link to this heading">#</a></h3>
-<p><strong>pyproject.toml</strong>ファイルは <a class="reference external" href="https://toml.io/en/">TOML(Tom's Obvious, Minimal Language)フォーマット</a> で書かれています。 TOMLは読みやすい構造で、キーと値のペアで成り立っています。 <strong>pyproject.toml</strong> ファイルの各セクションは <code class="docutils literal notranslate"><span class="pre">[テーブル識別子]</span></code> を含んでいます。 そのテーブル識別子の下には、その特定のテーブルの設定をサポートするキーと値のペアがあります。</p>
+<p>The <strong>pyproject.toml</strong> file is written in <a class="reference external" href="https://toml.io/en/">TOML (Tom's Obvious, Minimal Language) format</a>. TOML is an easy-to-read structure based on key/value pairs. Each section in the <strong>pyproject.toml</strong> file contains a <code class="docutils literal notranslate"><span class="pre">[table</span> <span class="pre">identifier]</span></code>.
+Below that table identifier are key/value pairs that
+support configuration for that particular table.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> 以下はtoml言語ではテーブルとみなされます。</p></li>
-<li><p>以下の <code class="docutils literal notranslate"><span class="pre">build-system</span></code> テーブルの中で <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> がキーです。</p></li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">build-system</span></code> table, <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> is a key.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">requires</span></code> に関連する値は、値 <code class="docutils literal notranslate"><span class="pre">&quot;hatchling&quot;</span></code> を含む配列です。</p></li>
 </ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
@@ -602,10 +590,6 @@ what's missing
 <section id="benefits-of-using-a-pyproject-toml-file">
 <h2>pyproject.tomlファイルを使用する利点<a class="headerlink" href="#benefits-of-using-a-pyproject-toml-file" title="Link to this heading">#</a></h2>
 <p>パッケージのメタデータを人間が読める <strong>pyproject.toml</strong> 形式で含めると、GitHubのリポジトリでプロジェクトのメタデータを見ることができます。</p>
-<!-- setup.cfg for project metadata is being deprecated - set setuptools guide and
-https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
-pypa -
-https://packaging.python.org/en/latest/specifications/declaring-project-metadata/ -->
 <div class="tip admonition">
 <p class="admonition-title">Setup.py は、複雑なパッケージのビルドに便利です。</p>
 <p>パッケージのビルドとメタデータを管理するために <strong>setup.py</strong> を使うことは  <a class="reference external" href="https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html">パッケージ開発に問題を引き起こす可能性があります</a> 。 Python パッケージのビルドが複雑な場合、<strong>setup.py</strong> ファイルが必要になるかもしれません。 このガイドでは複雑なビルドは扱いませんが、将来的には複雑なビルドを扱うリソースを提供する予定です。</p>
@@ -640,10 +624,11 @@ https://packaging.python.org/en/latest/specifications/declaring-project-metadata
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>dependencies:</strong> 依存関係はオプションですが、pyproject.tomlに含めることを強く推奨します。 依存関係はプロジェクトがインストールされるときにpipによってインストールされ、より良いユーザーエクスペリエンスを提供します。</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</strong> 誰かが <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[dev]</span></code> を実行したときに、オプションまたは開発用の依存パッケージがインストールされます。 これは、あなたのプロジェクトに貢献したいユーザのために、開発用の依存関係を含める良い方法です。</p></li>
+<li><p><strong>project.dependencies:</strong> The dependency group is optional because not all packages require dependencies. However, if your project has specific dependencies, include this section in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. Dependencies declared in the pyproject.toml file will be installed by uv or pip when your project is installed.</p></li>
+<li><p><strong>project.optional-dependencies:</strong> Optional or feature dependencies will be installed if someone runs <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[feature]</span></code>. Use this array to declare dependencies that add specific features to your package that are not installed by default when a user runs <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code>.</p></li>
+<li><p><strong>dependency-groups:</strong> Dependency groups organize packages and tools that a contributor or developer would need to work on your package. These dependencies may include tools for building and running tests, linters, and code formatters. This is an optional but highly suggested way to organize and install dependencies. This section can replace a requirements.txt file. <a class="reference external" href="https://packaging.python.org/en/latest/specifications/dependency-groups/">Learn more about adding these to your package in the PyPA guide here.</a></p></li>
 <li><p><strong>keywords:</strong> これらはPyPIのランディングページに表示されるキーワードです。 人々があなたのパッケージを検索するときに使う言葉だと考えてください。</p></li>
-<li><p><strong>classifiers:</strong> メタデータのclassifiersセクションは、PyPIでのパッケージのランディングページや、PyPIでのパッケージのフィルタリングにも重要です。 <a class="reference external" href="https://PyPI.org/classifiers/">分類子の全オプションはこちらです</a> 。 以下のようなクラシファイアを検討する必要があります。</p>
+<li><p><strong>classifiers:</strong> The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of <a class="reference external" href="https://PyPI.org/classifiers/">all options for classifiers can be found here</a>. Some of the classifiers that you should consider including</p>
 <ul>
 <li><p>開発状況</p></li>
 <li><p>対象読者</p></li>
@@ -655,21 +640,20 @@ https://packaging.python.org/en/latest/specifications/declaring-project-metadata
 </section>
 <section id="advanced-options-in-the-pyproject-toml-file">
 <h3>pyproject.tomlファイルの高度なオプション<a class="headerlink" href="#advanced-options-in-the-pyproject-toml-file" title="Link to this heading">#</a></h3>
-<p>このページの下にある例には ...</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.scripts]</span></code> (Entry points):</strong> エントリーポイントは任意です。 パッケージでホストされている特定のスクリプトを実行するコマンドラインツールがある場合、そのスクリプトを(Pythonシェルではなく)コマンドラインで直接呼び出すためのエントリポイントを含めることができます 。</p>
 <ul>
 <li><p>以下は、<a class="reference external" href="https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60">エントリーポイントスクリプトを持つパッケージ</a> の例である。 そのパッケージには、一連のタスクを実行するいくつかのコアスクリプトが定義されていることに注目してほしい。 pyOpenSciはこれらのスクリプトを使ってメタデータを処理しています。</p></li>
 </ul>
 </li>
-<li><p><strong>ダイナミックフィールド:</strong> 動的に入力されるフィールドがある場合。 <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>のようなツールでscm/バージョン管理ベースのバージョンを使用している場合、ダイナミックフィールドを使用することができます。 (scmを使用した)バージョンなど <strong>dynamic = [&quot;version&quot;]</strong></p></li>
+<li><p>Use <strong>Dynamic Fields</strong> If you have fields that are dynamically populated. For example, you may wish to automatically update your package's version using Git tags (SCM/version control-based versioning). Example:  <strong>dynamic = [&quot;version&quot;]</strong></p></li>
 </ul>
 </section>
 </section>
 <section id="add-dependencies-to-your-pyproject-toml-file">
 <h2>pyproject.tomlファイルに依存関係を追加<a class="headerlink" href="#add-dependencies-to-your-pyproject-toml-file" title="Link to this heading">#</a></h2>
-<p>pyproject.tomlファイルは、従来pytestのような開発依存ファイル、Blackのようなコードフォーマッタ、sphinxのようなドキュメントツールを保存するために使われてきたrequirements.txtファイルの代わりとして使うこともできます。</p>
-<p>ビルドに依存関係を追加するには、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルをpyproject.tomlファイルに追加します。</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file is a modern replacement for the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, which has been traditionally used to store development dependencies and also configuration for tools such as pytest, black, and others.</p>
+<p>To add development dependencies to your build, add a <code class="docutils literal notranslate"><span class="pre">[dependency-groups]</span></code> array to your pyproject.toml file.</p>
 <p>次に、依存グループを以下のように指定する:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
 <span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
@@ -689,6 +673,7 @@ https://packaging.python.org/en/latest/specifications/declaring-project-metadata
 <p>上記の例に従って、依存関係を次のようにインストールします:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests]</span></code></p></li>
+<li><p>pip install --group test <em># requires pip 25.1 or greater</em></p></li>
 </ul>
 <p>上記は、編集可能モードのパッケージと、 <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> テーブルのtestsセクションで宣言されたすべての依存関係の両方をインストールします。</p>
 <p>すべての依存関係をインストールし、あなたのパッケージもインストールするには、次のようにします:</p>
