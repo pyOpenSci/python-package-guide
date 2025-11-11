@@ -58,7 +58,7 @@ There are three different types of dependencies that you will learn about on thi
 2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional.dependencies]` table or your pyproject.toml file.
 3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[project.dependency.groups]` table or your pyproject.toml file.
 
-:::{admonition}
+:::{tip}
 A dependency is not part of your project's codebase. It is a package or software called
 within the code of your project or used during the development of your package.
 :::
@@ -85,7 +85,7 @@ dependencies = [
 ]
 ```
 
-:::{admonition
+:::{tip}
 Try your best to minimize dependencies whenever possible. Remember that
 fewer dependencies reduce the possibility of version conflicts in user
 environments.
