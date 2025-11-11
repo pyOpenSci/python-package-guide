@@ -1,4 +1,5 @@
 (tests-intro)=
+
 # Tests and data for your Python package
 
 Tests are an important part of your Python package because they
@@ -8,7 +9,6 @@ functioning how you expect it to.
 In this section, you will learn more about the importance of writing
 tests for your Python package and how you can set up infrastructure
 to run your tests both locally and on GitHub.
-
 
 :::::{grid} 1 1 3 2
 :class-container: text-center
@@ -62,7 +62,6 @@ and different operating systems. Learn about setting up tests to run in Continuo
 
 :::::
 
-
 :::{figure-md} fig-target
 
 <img src="../images/packaging-lifecycle.png" alt="" width="800px">
@@ -81,4 +80,12 @@ Test types <test-types>
 Run tests locally <run-tests>
 Run tests online (using CI) <tests-ci>
 Code coverage <code-cov>
+```
+
+```{toctree}
+:hidden:
+:maxdepth: 2
+:caption: Data for Your Package
+
+Package Data <package-data>
 ```
