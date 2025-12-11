@@ -101,7 +101,7 @@ These tools are best for scientific computing projects and environments that nee
 # conda
 conda install numpy
 
-# mamba (faster/preferred  alternative)
+# mamba (faster/preferred alternative)
 mamba install numpy
 ```
 
