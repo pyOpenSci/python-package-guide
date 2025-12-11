@@ -19,11 +19,9 @@ Checkout our beginning-to-end create a Python package tutorials
 
 :::
 
-
 :::{admonition} How this content is developed
 All of the content in this guide has been vetted by community members, including maintainers and developers of the core packaging tools.
 :::
-
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
@@ -49,7 +47,6 @@ metadata into a format that can be published on PyPI. Learn more about building
 your Python package.
 :::
 ::::
-
 
 ::::{grid-item}
 :::{card} ✨ 3. Add metadata ✨
@@ -188,13 +185,6 @@ Build Your Package <python-package-distribution-files-sdist-wheel>
 Declare dependencies <declare-dependencies>
 Package Build Tools <python-package-build-tools>
 Complex Builds <complex-python-package-builds>
-:::
-
-:::{toctree}
-:hidden:
-:caption: Tools to manage your package
-
-Environment & package managers  <environment-managers>
 :::
 
 :::{toctree}

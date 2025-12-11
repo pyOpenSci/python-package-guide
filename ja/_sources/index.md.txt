@@ -42,7 +42,6 @@ This guide will help you:
 You will also find best practice recommendations and curated lists of community resources surrounding packaging and package documentation.
 ::::
 
-
 ```{todo}
 TODO: change the navigation of docs to have a
 
@@ -56,10 +55,10 @@ Community docs
 
 Publish your docs
 ```
-## _new_ Tutorial Series: Create a Python Package
+
+##  Tutorial Series: Create a Python Package
 
 The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [GitHub repo here](https://github.com/pyOpenSci/python-package-guide).
-
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
@@ -106,7 +105,6 @@ The first round of our community-developed, how to create a Python package tutor
 ::::
 
 :::::
-
 
 ## Python Packaging for Scientists
 
@@ -195,7 +193,6 @@ Learn about best practices for:
 
 ## Tests
 
-*We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)*
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
@@ -227,7 +224,6 @@ Learn about best practices for:
 :class-container: text-center
 :gutter: 3
 
-
 ::::{grid-item}
 :::{card} ✨ Code style & Format ✨
 :class-card: left-aligned
@@ -249,8 +245,7 @@ contribute.
 
 :::::
 
-
-:::{figure} https://www.pyopensci.org/images/people-building-blocks.jpg
+:::{figure} <https://www.pyopensci.org/images/people-building-blocks.jpg>
 :align: right
 :width: 350
 :alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. Box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. Box 2 - the person on the ground says - come join us programming is fun again. It's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. The person on the ground is saying - that's it?
@@ -286,7 +281,6 @@ If you have questions about our peer review process or packaging in general, you
 
 This living Python packaging guide is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
 
-
 :::{toctree}
 :hidden:
 :caption: Tutorials
@@ -310,7 +304,6 @@ Documentation <documentation/index>
 
 :::
 
-
 :::{toctree}
 :hidden:
 :caption: Testing
@@ -318,7 +311,6 @@ Documentation <documentation/index>
 Tests  <tests/index>
 
 :::
-
 
 :::{toctree}
 :hidden:
