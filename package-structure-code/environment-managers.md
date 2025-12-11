@@ -206,8 +206,7 @@ source .venv/bin/activate
 We recommend **uv** for fast, reliable Python package and environment management. It's significantly faster than pip and easily handles both installing packages and creating environments.
 :::
 
-UV is a fast, Rust-based tool that replaces both pip and venv. It installs packages and creates virtual environments at lightning speed. UV is best for any pure Python project. Pixi is better if are working
-In the non-pure Python packaging space.
+UV is a fast, Rust-based tool that replaces both pip and venv. It installs packages and creates virtual environments at lightning speed. UV is best for any pure Python project. Pixi is better if are working in the non-pure Python packaging space.
 
 **Basic usage:**
 
