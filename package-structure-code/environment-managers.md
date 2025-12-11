@@ -247,7 +247,7 @@ pixi init
 pixi add numpy
 
 # Install your package in dev mode
-pixi run pip install -e ".[dev]"
+pixi add --pypi --editable "package-name[dev] @ file:///absolute/path/to/package"
 ```
 :::
 
