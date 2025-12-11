@@ -3,9 +3,11 @@
 :og:title: Publish your Python package to PyPI
 ---
 
+(publish-pypi-tutorial)=
 # Publish your Python package to PyPI
 
 :::{todo}
+
 - Make sure they add /dist to their .gitignore file. Where does that fit?
 
 :::
@@ -254,7 +256,7 @@ To upload your package to TestPyPI (or PyPI), you will need to create a token fo
 It's ideal to create a package-specific token. When you create an account-wide token this allows anyone with access to the account to then access all of your TestPyPI (or PyPI) projects. By creating a package-specific token, you are limiting the scope of the token to only your specific package. This is just a safe way to set things up for you particularly if you are collaborating with others on package development.
 :::
 
-### Follow the steps below to create your token.
+### Follow the steps below to create your token
 
 - Login to TestPyPI and go to your account settings
 - Scroll down to the **API tokens** section

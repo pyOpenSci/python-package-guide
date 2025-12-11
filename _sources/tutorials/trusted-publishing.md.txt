@@ -37,7 +37,6 @@ and publish your Python package securely to PyPI.
 If you are wondering why trusted publishing is so important, [check out this blog post:](https://www.pyopensci.org/blog/python-packaging-security-publish-pypi.html) that dives deeper into what can happen when you don't lock down your publishing workflows.
 :::
 
-
 ### Step 0: Create a release workflow
 
 To get started, create a file named `release.yaml` under the `.github/workflows`
@@ -229,7 +228,7 @@ the previous section:
 
 ```{literalinclude} ../examples/pure-hatch/.github/workflows/release.yml
 :language: yaml
-:lines: 39-54
+:lines: 39-53
 
 ```
 
@@ -240,9 +239,9 @@ Remember to change the `url:` value to the URL for your package on PyPI!
 
 This job has two steps:
 
-* It uses `download-artifact` to download the artifacts
+- It uses `download-artifact` to download the artifacts
   built in the previous job
-* It uses `gh-action-pypi-publish` to publish the package to PyPI.
+- It uses `gh-action-pypi-publish` to publish the package to PyPI.
 
 You are almost there!! Now, you just need to enable trusted publishing for your project
 on PyPI. And then, your work is done!

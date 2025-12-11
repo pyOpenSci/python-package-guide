@@ -2,24 +2,24 @@
 <!DOCTYPE html>
 
 
-<html lang="ja" data-content_root="../" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)" />
+<meta property="og:title" content="Automate Workflows and Maintain Your Package" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/continuous-integration/index.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/maintain-automate/index.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="継続的インテグレーション: CIとは何か？- 継続的インテグレーションとは何か？, 継続的デプロイメントとは (CD)?- CIを使う理由., CI / CD プラットフォーム- よくわからない場合は、GitHub Actionsを使ってください。., 自動化を受け入れる.." />
+<meta property="og:description" content="Once you’ve created your package, published it, and set up a repository for it, the next step is to automate development and maintenance workflows. Automation makes maintaining your package easier,..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_continuous-integration_index_5f44f7f2.png" />
-<meta property="og:image:alt" content="継続的インテグレーション: CIとは何か？- 継続的インテグレーションとは何か？, 継続的デプロイメントとは (CD)?- CIを使う理由., CI / CD プラットフォーム- よくわからない場合は、GitHub Actionsを使ってください。., 自動化を受け入れる.." />
-<meta name="description" content="継続的インテグレーション: CIとは何か？- 継続的インテグレーションとは何か？, 継続的デプロイメントとは (CD)?- CIを使う理由., CI / CD プラットフォーム- よくわからない場合は、GitHub Actionsを使ってください。., 自動化を受け入れる.." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_maintain-automate_index_be61a490.png" />
+<meta property="og:image:alt" content="Once you’ve created your package, published it, and set up a repository for it, the next step is to automate development and maintenance workflows. Automation makes maintaining your package easier,..." />
+<meta name="description" content="Once you’ve created your package, published it, and set up a repository for it, the next step is to automate development and maintenance workflows. Automation makes maintaining your package easier,..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD) &#8212; Python Packaging Guide</title>
+    <title>Automate Workflows and Maintain Your Package &#8212; Python Packaging Guide</title>
   
   
   
@@ -53,23 +53,22 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=be13464f"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/translations.js?v=4755f45a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'continuous-integration/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'maintain-automate/index';</script>
     <script src="../_static/matomo.js?v=5a92784f"></script>
     <script src="../_static/language_select.js?v=a2e723a3"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/continuous-integration/index.html" />
-    <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)" href="ci.html" />
-    <link rel="prev" title="Pythonパッケージのテストスイートのコードカバレッジ" href="../tests/code-cov.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/maintain-automate/index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Task Runners for Python Packaging" href="task-runners.html" />
+    <link rel="prev" title="Code coverage for your Python package test suite" href="../tests/code-cov.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
   </head>
   
@@ -78,12 +77,12 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <dialog id="pst-search-dialog">
@@ -106,7 +105,7 @@
   </dialog>
 
   <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
   <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
@@ -115,7 +114,7 @@
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -157,35 +156,35 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tutorials/intro.html">
-    チュートリアル
+    Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
-    パッケージング
+    Packaging
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../documentation/index.html">
-    ドキュメンテーション
+    Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tests/index.html">
-    テスト
+    Tests
   </a>
 </li>
 
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
-    CI/CD
+    Maintain
   </a>
 </li>
 
@@ -232,16 +231,16 @@
           <select class="dropdown" id="language-selector" aria-label="Choose a language">
   
 <option
-  value="/python-package-guide/ja/continuous-integration/index.html"
+  value="/python-package-guide/maintain-automate/index.html"
   selected
 >
-  ja
+  en
 </option>
 <option
-  value="/python-package-guide/continuous-integration/index.html"
+  value="/python-package-guide/ja/maintain-automate/index.html"
   
 >
-  en
+  ja
 </option>
 </select>
         </div>
@@ -249,7 +248,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
         </div>
@@ -258,8 +257,8 @@
         <div class="navbar-item">
 
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
       
@@ -299,30 +298,30 @@
     <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
   
 <option
-  value="/python-package-guide/ja/continuous-integration/index.html"
+  value="/python-package-guide/maintain-automate/index.html"
   selected
 >
-  ja
+  en
 </option>
 <option
-  value="/python-package-guide/continuous-integration/index.html"
+  value="/python-package-guide/ja/maintain-automate/index.html"
   
 >
-  en
+  ja
 </option>
 </select>
     </div>
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
     </div>
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -354,35 +353,35 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tutorials/intro.html">
-    チュートリアル
+    Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
-    パッケージング
+    Packaging
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../documentation/index.html">
-    ドキュメンテーション
+    Documentation
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tests/index.html">
-    テスト
+    Tests
   </a>
 </li>
 
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
-    CI/CD
+    Maintain
   </a>
 </li>
 
@@ -420,8 +419,8 @@
           <div class="navbar-item">
 
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
         
@@ -460,11 +459,12 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 <nav class="bd-docs-nav bd-links"
-     aria-label="セクションナビゲーション">
-  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">継続的インテグレーション</span></p>
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Maintain &amp; Automate</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ci.html">CIとは何か？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task-runners.html">Task runners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci.html">What is CI?</a></li>
 </ul>
 </div>
 </nav></div>
@@ -497,15 +497,15 @@
       
         <div class="header-article-item">
 
-<nav aria-label="パンくずリスト" class="d-print-none">
+<nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../index.html" class="nav-link" aria-label="ホーム">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Automate Workflows and Maintain Your Package</span></li>
   </ul>
 </nav>
 </div>
@@ -522,26 +522,48 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="continuous-integration-ci-and-continuous-deployment-cd-for-your-python-package">
-<span id="ci-cd-intro"></span><h1>Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)<a class="headerlink" href="#continuous-integration-ci-and-continuous-deployment-cd-for-your-python-package" title="Link to this heading">#</a></h1>
+  <section id="automate-workflows-and-maintain-your-package">
+<span id="maintain-intro"></span><h1>Automate Workflows and Maintain Your Package<a class="headerlink" href="#automate-workflows-and-maintain-your-package" title="Link to this heading">#</a></h1>
+<p>Once you’ve <a class="reference internal" href="../tutorials/create-python-package.html#create-pure-python-package"><span class="std std-ref">created your package</span></a>,
+<a class="reference internal" href="../tutorials/publish-pypi.html#publish-pypi-tutorial"><span class="std std-ref">published it</span></a>, and set up a repository for it, the next
+step is to automate development and maintenance workflows. Automation
+makes maintaining your package easier, more robust, and more secure. It
+also helps new contributors get started quickly without having to
+manually set up complex development environments and testing workflows.</p>
+<section id="why-automate">
+<h2>Why automate?<a class="headerlink" href="#why-automate" title="Link to this heading">#</a></h2>
+<p>When you automate repetitive tasks like running tests, checking code
+style, and building documentation, you ensure that these important steps
+happen consistently every time. This consistency helps you catch bugs
+early, maintain code quality, and make it easier for others to
+contribute to your package. Automation also saves you time—instead of
+remembering and typing long command sequences, you can run everything
+with simple commands or have workflows run automatically when you push
+code to GitHub.</p>
+</section>
+<section id="what-you-ll-learn">
+<h2>What you’ll learn<a class="headerlink" href="#what-you-ll-learn" title="Link to this heading">#</a></h2>
+<p>This section will walk you through two key automation strategies for
+Python packages:</p>
+<p><a class="reference internal" href="task-runners.html#task-runners-intro"><span class="std std-ref"><strong>Task runners</strong></span></a> help you automate common development tasks locally—
+things like running tests, building documentation, formatting code, and
+checking for errors. Instead of typing out long command sequences every
+time, you define tasks once and run them with simple commands. Task
+runners like Hatch and Nox also manage isolated environments for
+different workflows, ensuring you have the right dependencies for each
+task.</p>
+<p><a class="reference internal" href="ci.html#ci-cd"><span class="std std-ref"><strong>Continuous Integration (CI)</strong></span></a> takes automation further by running your
+tests and checks automatically every time code is pushed to GitHub or
+when someone opens a pull request. CI ensures that all changes are
+tested across different Python versions and operating systems before
+they’re merged. You can also use Continuous Deployment (CD) to automate
+publishing your package to PyPI and deploying your documentation.</p>
+<p>Together, task runners and CI/CD create a robust development workflow
+that makes your package easier to maintain and more welcoming to
+contributors.</p>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">継続的インテグレーション</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ci.html">CIとは何か？</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#what-is-continuous-integration">継続的インテグレーションとは何か？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#what-is-continuous-deployment-cd">継続的デプロイメントとは (CD)?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ci.html#why-use-ci">CIを使う理由</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#ci-cd-platforms">CI / CD プラットフォーム</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ci.html#if-you-aren-t-sure-use-github-actions">よくわからない場合は、GitHub Actionsを使ってください。</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html#embrace-automation">自動化を受け入れる</a></li>
-</ul>
-</li>
-</ul>
 </div>
+</section>
 </section>
 
 
@@ -556,19 +578,19 @@
 <div class="prev-next-area">
     <a class="left-prev"
        href="../tests/code-cov.html"
-       title="前のページ">
+       title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">前へ</p>
-        <p class="prev-next-title">Pythonパッケージのテストスイートのコードカバレッジ</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Code coverage for your Python package test suite</p>
       </div>
     </a>
     <a class="right-next"
-       href="ci.html"
-       title="次ページ">
+       href="task-runners.html"
+       title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">次へ</p>
-        <p class="prev-next-title">Pythonパッケージの継続的インテグレーションと継続的デプロイメント(CI/CD)</p>
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Task Runners for Python Packaging</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -584,15 +606,28 @@
 
 
   <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-automate">Why automate?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-learn">What you’ll learn</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/continuous-integration/index.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/maintain-automate/index.md">
       <i class="fa-solid fa-pencil"></i>
       
       
         
-          GitHub の編集
+          Edit on GitHub
         
       
     </a>
@@ -601,10 +636,10 @@
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
-    <h3>このページ</h3>
+    <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/continuous-integration/index.md.txt"
-            rel="nofollow">ソースコードを表示</a></li>
+      <li><a href="../_sources/maintain-automate/index.md.txt"
+            rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
 

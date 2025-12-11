@@ -2,19 +2,19 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="ja" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta property="og:title" content="Continuous Integration and Continuous Deployment (CI/CD) For Python Packages" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/continuous-integration/ci.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/maintain-automate/ci.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="When you develop, work on, and contribute to software, there is more to consider than just writing code. Having tests and checks ensures that your code runs reliably and follows a consistent format..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_continuous-integration_ci_f374f1f7.png" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_maintain-automate_ci_f374f1f7.png" />
 <meta property="og:image:alt" content="When you develop, work on, and contribute to software, there is more to consider than just writing code. Having tests and checks ensures that your code runs reliably and follows a consistent format..." />
 <meta name="description" content="When you develop, work on, and contribute to software, there is more to consider than just writing code. Having tests and checks ensures that your code runs reliably and follows a consistent format..." />
 <meta name="twitter:card" content="summary_large_image" />
@@ -53,21 +53,22 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'continuous-integration/ci';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'maintain-automate/ci';</script>
     <script src="../_static/matomo.js?v=5a92784f"></script>
     <script src="../_static/language_select.js?v=a2e723a3"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/continuous-integration/ci.html" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Continuous Integration (CI) and Continuous Deployment (CD) for your Python package" href="index.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/maintain-automate/ci.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="Task Runners for Python Packaging" href="task-runners.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="ja"/>
   <meta name="docsearch:version" content="" />
   </head>
   
@@ -76,12 +77,12 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
 
   
   <dialog id="pst-search-dialog">
@@ -104,7 +105,7 @@
   </dialog>
 
   <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
   <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
@@ -113,7 +114,7 @@
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -155,35 +156,35 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tutorials/intro.html">
-    Tutorials
+    チュートリアル
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
-    Packaging
+    パッケージング
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../documentation/index.html">
-    Documentation
+    ドキュメンテーション
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tests/index.html">
-    Tests
+    テスト
   </a>
 </li>
 
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
-    CI/CD
+    Maintain
   </a>
 </li>
 
@@ -230,16 +231,16 @@
           <select class="dropdown" id="language-selector" aria-label="Choose a language">
   
 <option
-  value="/python-package-guide/continuous-integration/ci.html"
+  value="/python-package-guide/ja/maintain-automate/ci.html"
   selected
 >
-  en
+  ja
 </option>
 <option
-  value="/python-package-guide/ja/continuous-integration/ci.html"
+  value="/python-package-guide/maintain-automate/ci.html"
   
 >
-  ja
+  en
 </option>
 </select>
         </div>
@@ -247,7 +248,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
         </div>
@@ -256,8 +257,8 @@
         <div class="navbar-item">
 
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
       
@@ -297,30 +298,30 @@
     <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
   
 <option
-  value="/python-package-guide/continuous-integration/ci.html"
+  value="/python-package-guide/ja/maintain-automate/ci.html"
   selected
 >
-  en
+  ja
 </option>
 <option
-  value="/python-package-guide/ja/continuous-integration/ci.html"
+  value="/python-package-guide/maintain-automate/ci.html"
   
 >
-  ja
+  en
 </option>
 </select>
     </div>
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
     </div>
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -352,35 +353,35 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tutorials/intro.html">
-    Tutorials
+    チュートリアル
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
-    Packaging
+    パッケージング
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../documentation/index.html">
-    Documentation
+    ドキュメンテーション
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tests/index.html">
-    Tests
+    テスト
   </a>
 </li>
 
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
-    CI/CD
+    Maintain
   </a>
 </li>
 
@@ -418,8 +419,8 @@
           <div class="navbar-item">
 
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
         
@@ -458,10 +459,11 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 <nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuous Integration</span></p>
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Maintain &amp; Automate</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="task-runners.html">Task runners</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">What is CI?</a></li>
 </ul>
 </div>
@@ -495,16 +497,16 @@
       
         <div class="header-article-item">
 
-<nav aria-label="Breadcrumb" class="d-print-none">
+<nav aria-label="パンくずリスト" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Continuous Integration (CI) and Continuous Deployment (CD) for your Python package</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Automate Workflows and Maintain Your Package</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Continuous Integration and Continuous Deployment (CI/CD) For Python Packages</span></li>
   </ul>
@@ -525,24 +527,27 @@
                   
   <section id="continuous-integration-and-continuous-deployment-ci-cd-for-python-packages">
 <span id="ci-cd"></span><h1>Continuous Integration and Continuous Deployment (CI/CD) For Python Packages<a class="headerlink" href="#continuous-integration-and-continuous-deployment-ci-cd-for-python-packages" title="Link to this heading">#</a></h1>
-<p>When you develop, work on, and contribute to software, there is more to consider than
-just writing code. Having tests and checks ensures that your code
-runs reliably and follows a consistent format is also important. You can use
-<strong>Continuous Integration (CI)</strong> and <strong>Continuous
-Deployment (CD)</strong> to run tests and checks on your code every time someone suggests a change online
-in a platform like GitHub or GitLab.</p>
+<p>When you develop, work on, and contribute to software, there is more
+to consider than just writing code. Having tests and checks ensures
+that your code runs reliably and follows a consistent format is also
+important. You can use <strong>Continuous Integration (CI)</strong> and
+<strong>Continuous Deployment (CD)</strong> to run tests and checks on your code
+every time someone suggests a change online in a platform like GitHub
+or GitLab.</p>
 <ul class="simple">
-<li><p><strong>Continuous Integration (CI):</strong> Automates the process of running tests,
-code checks, and other workflows each time code is updated.</p></li>
-<li><p><strong>Continuous Deployment (CD):</strong> Extends CI by allowing you to automate publishing your package to PyPI, publishing your documentation, and more.</p></li>
+<li><p><strong>Continuous Integration (CI):</strong> Automates the process of running
+tests, code checks, and other workflows each time code is updated.</p></li>
+<li><p><strong>Continuous Deployment (CD):</strong> Extends CI by allowing you to
+automate publishing your package to PyPI, publishing your
+documentation, and more.</p></li>
 </ul>
 <p>CI and CD streamline software development by automating repetitive
-tasks and ensuring code quality and consistency. Having CI setup also makes it easier for new contributors
-to contribute to your code base without setting up all your test suites and
-other local checks.</p>
+tasks and ensuring code quality and consistency. Having CI setup also
+makes it easier for new contributors to contribute to your code base
+without setting up all your test suites and other local checks.</p>
 <section id="what-is-continuous-integration">
 <h2>What is continuous integration?<a class="headerlink" href="#what-is-continuous-integration" title="Link to this heading">#</a></h2>
-<p>When you’re ready to publish your code online, you can set up Continuous Integration (CI). CI is a platform that allows you to specify and run jobs or workflows you define.
+<p>When you're ready to publish your code online, you can set up Continuous Integration (CI). CI is a platform that allows you to specify and run jobs or workflows you define.
 These workflows include:</p>
 <ul class="simple">
 <li><p>Running your test suite</p></li>
@@ -556,53 +561,77 @@ These workflows include:</p>
 </ul>
 </section>
 <section id="what-is-continuous-deployment-cd">
-<h2>What is Continuous Deployment (CD)?<a class="headerlink" href="#what-is-continuous-deployment-cd" title="Link to this heading">#</a></h2>
+<h2>What is continuous deployment (CD)?<a class="headerlink" href="#what-is-continuous-deployment-cd" title="Link to this heading">#</a></h2>
 <p>Continuous deployment (CD) extends the CI process by automating the deployment of code changes to production or staging environments. In the case of your open source tool, CD can be used to:</p>
 <ul class="simple">
 <li><p>Automate publishing to PyPI</p></li>
 <li><p>Automate publishing your documentation to GitHub Pages or Read the Docs.</p></li>
 </ul>
-<p>It is also used once your conda-forge recipe is set up to keep your package up to date on conda-forge.</p>
+<p>It is also used once your conda-forge recipe is set up to keep your
+package up to date on conda-forge.</p>
 <section id="why-use-ci">
-<h3>Why use CI<a class="headerlink" href="#why-use-ci" title="Link to this heading">#</a></h3>
-<p>CI can be configured to run a workflow on every commit pushed to GitHub and every pull request opened. This ensures that any changes made to your package are tested across environments before merging into the main branch of your code.</p>
-<p>These checks are particularly useful if someone new is contributing to your code. Every contributor’s change will be tested when pushed to your code repository.</p>
-<p>Together, CI and CD streamline the process of building, testing, and deploying code. They aim to improve software development and publication efficiency, quality, and reliability.</p>
+<h3>Why use CI?<a class="headerlink" href="#why-use-ci" title="Link to this heading">#</a></h3>
+<p>CI can be configured to run a workflow on every commit pushed to
+GitHub and every pull request opened. This ensures that any changes
+made to your package are tested across environments before merging into
+the main branch of your code.</p>
+<p>These checks are particularly useful if someone new is contributing to
+your code. Every contributor's change will be tested when pushed to
+your code repository.</p>
+<p>Together, CI and CD streamline the process of building, testing, and
+deploying code. They aim to improve software development and
+publication efficiency, quality, and reliability.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All pyOpenSci packages must use some form of continuous integration. Even if you are not planning to go through peer review, we strongly recommend that you use continuous integration, too!</p>
+<p class="admonition-title">注釈</p>
+<p>All pyOpenSci packages must use some form of continuous integration.
+Even if you are not planning to go through peer review, we strongly
+recommend that you use continuous integration, too!</p>
 </div>
-<p>In the case of GitHub actions (which we will focus on here), CI workflows are running on online servers that support GitHub.</p>
+<p>In the case of GitHub actions (which we will focus on here), CI
+workflows are running on online servers that support GitHub.</p>
 </section>
 </section>
 <section id="ci-cd-platforms">
-<h2>CI / CD platforms<a class="headerlink" href="#ci-cd-platforms" title="Link to this heading">#</a></h2>
-<p>There are numerous platforms available for CI/CD. Here, we will focus on GitHub Actions (GHA), built into GitHub. GitHub is the most commonly used platform to store scientific open-source software.</p>
+<h2>CI/CD platforms<a class="headerlink" href="#ci-cd-platforms" title="Link to this heading">#</a></h2>
+<p>There are numerous platforms available for CI/CD. Here, we will focus
+on GitHub Actions (GHA), built into GitHub. GitHub is the most commonly
+used platform to store scientific open-source software.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you use <a class="reference external" href="https://about.gitlab.com/">GitLab</a> CI/CD, many of the principles described here will apply. However, the workflow files may look different.</p>
+<p class="admonition-title">注釈</p>
+<p>If you use <a class="reference external" href="https://about.gitlab.com/">GitLab</a> CI/CD, many of the
+principles described here will apply. However, the workflow files may
+look different.</p>
 </div>
 <section id="if-you-aren-t-sure-use-github-actions">
-<h3>If you aren’t sure, use GitHub Actions<a class="headerlink" href="#if-you-aren-t-sure-use-github-actions" title="Link to this heading">#</a></h3>
-<p>While you are welcome to use the continuous integration platform of your choice,
-we recommend GitHub Actions because it is free-to-use and integrated tightly
-into the GitHub user interface. There is also an entire store of GitHub action
-templates that you can easily use and adapt to your own needs.</p>
+<h3>If you aren't sure, use GitHub Actions<a class="headerlink" href="#if-you-aren-t-sure-use-github-actions" title="Link to this heading">#</a></h3>
+<p>While you are welcome to use the continuous integration platform of
+your choice, we recommend GitHub Actions because it is free-to-use and
+integrated tightly into the GitHub user interface. There is also an
+entire store of GitHub action templates that you can easily use and
+adapt to your own needs.</p>
 <div class="info admonition">
 <p class="admonition-title">Other platforms that you may run into</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.appveyor.com/">Appveyor:</a>: Supports running tests on Windows operating systems and predated the release of GitHub Actions. Today, AppVeyor supports operating systems beyond Windows.</p></li>
-<li><p><a class="reference external" href="https://www.travis-ci.com/">Travis CI:</a> had been a common CI platform choice in our ecosystem. Usage dropped after Travis CI ended free support for open-source projects.</p></li>
-<li><p><a class="reference external" href="https://circleci.com/">CircleCI:</a> CircleCI can be useful for automated builds of websites and documentation since it offers a preview of the PR changes.</p></li>
+<li><p><a class="reference external" href="https://www.appveyor.com/">Appveyor:</a>: Supports running tests on
+Windows operating systems and predated the release of GitHub Actions.
+Today, AppVeyor supports operating systems beyond Windows.</p></li>
+<li><p><a class="reference external" href="https://www.travis-ci.com/">Travis CI:</a> had been a common CI
+platform choice in our ecosystem. Usage dropped after Travis CI ended
+free support for open-source projects.</p></li>
+<li><p><a class="reference external" href="https://circleci.com/">CircleCI:</a> CircleCI can be useful for
+automated builds of websites and documentation since it offers a
+preview of the PR changes.</p></li>
 </ul>
 </div>
 </section>
 </section>
 <section id="embrace-automation">
 <h2>Embrace automation<a class="headerlink" href="#embrace-automation" title="Link to this heading">#</a></h2>
-<p>By embracing CI/CD, you can ensure that your code runs as you expect it to across the diverse landscapes of user environments. Further, you can
-automate certain checks (and, in some cases, code fixes), including linting and code style. You can even automate spell-checking your documentation
-and docstrings!</p>
+<p>By embracing CI/CD, you can ensure that your code runs as you expect
+it to across the diverse landscapes of user environments. Further, you
+can automate certain checks (and, in some cases, code fixes), including
+linting and code style. You can even automate spell-checking your
+documentation and docstrings!</p>
 </section>
 </section>
 
@@ -617,12 +646,12 @@ and docstrings!</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
-       title="previous page">
+       href="task-runners.html"
+       title="前のページ">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Continuous Integration (CI) and Continuous Deployment (CD) for your Python package</p>
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Task Runners for Python Packaging</p>
       </div>
     </a>
 </div>
@@ -640,17 +669,17 @@ and docstrings!</p>
 <div
     id="pst-page-navigation-heading-2"
     class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
+    <i class="fa-solid fa-list"></i> このページでは
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-continuous-integration">What is continuous integration?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-continuous-deployment-cd">What is Continuous Deployment (CD)?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-ci">Why use CI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-continuous-deployment-cd">What is continuous deployment (CD)?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-ci">Why use CI?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-platforms">CI / CD platforms</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-aren-t-sure-use-github-actions">If you aren’t sure, use GitHub Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-cd-platforms">CI/CD platforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-aren-t-sure-use-github-actions">If you aren't sure, use GitHub Actions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embrace-automation">Embrace automation</a></li>
@@ -661,12 +690,12 @@ and docstrings!</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/continuous-integration/ci.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/maintain-automate/ci.md">
       <i class="fa-solid fa-pencil"></i>
       
       
         
-          Edit on GitHub
+          GitHub の編集
         
       
     </a>
@@ -675,10 +704,10 @@ and docstrings!</p>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
-    <h3>This Page</h3>
+    <h3>このページ</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/continuous-integration/ci.md.txt"
-            rel="nofollow">Show Source</a></li>
+      <li><a href="../_sources/maintain-automate/ci.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
     </ul>
    </div></div>
 

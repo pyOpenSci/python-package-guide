@@ -324,6 +324,6 @@ Tests  <tests/index>
 :hidden:
 :caption: Continuous Integration
 
-CI/CD  <continuous-integration/index>
+Maintain  <maintain-automate/index>
 
 :::
