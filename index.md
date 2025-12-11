@@ -56,7 +56,7 @@ Community docs
 Publish your docs
 ```
 
-## _new_ Tutorial Series: Create a Python Package
+##  Tutorial Series: Create a Python Package
 
 The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [GitHub repo here](https://github.com/pyOpenSci/python-package-guide).
 
