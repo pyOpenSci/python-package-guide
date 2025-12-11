@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Environment Managers for Python Packaging" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/environment-managers.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="Environment and package managers: Package and environment managers are important tools in your Python packaging workflows. To make Your packaging experience when selecting a tool will be easier if ..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_environment-managers_25100ebb.png" />
+<meta property="og:image:alt" content="Environment and package managers: Package and environment managers are important tools in your Python packaging workflows. To make Your packaging experience when selecting a tool will be easier if ..." />
+<meta name="description" content="Environment and package managers: Package and environment managers are important tools in your Python packaging workflows. To make Your packaging experience when selecting a tool will be easier if ..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Environment Managers for Python Packaging &#8212; Python Packaging Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/environment-managers';</script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
+    <script src="../_static/language_select.js?v=a2e723a3"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/environment-managers.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Publishing Your Package In A Community Repository: PyPI or Anaconda.org" href="publish-python-package-pypi-conda.html" />
+    <link rel="prev" title="Complex Python package builds" href="complex-python-package-builds.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <img src="../_static/logo-dark-mode.png" class="logo__image only-dark pst-js-only" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    Packaging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    Tests
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          <select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/python-package-guide/package-structure-code/environment-managers.html"
+  selected
+>
+  en
+</option>
+<option
+  value="/python-package-guide/ja/package-structure-code/environment-managers.html"
+  
+>
+  ja
+</option>
+</select>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
+  
+<option
+  value="/python-package-guide/package-structure-code/environment-managers.html"
+  selected
+>
+  en
+</option>
+<option
+  value="/python-package-guide/ja/package-structure-code/environment-managers.html"
+  
+>
+  ja
+</option>
+</select>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/intro.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="intro.html">
+    Packaging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../documentation/index.html">
+    Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tests/index.html">
+    Tests
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+    pyOpenSci Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+    Peer Review Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+    Handbook
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools to manage your package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Environment Managers for Python Packaging</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish with Conda / PyPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Environment Managers for Python Packaging</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="environment-managers-for-python-packaging">
+<span id="environment-managers"></span><h1>Environment Managers for Python Packaging<a class="headerlink" href="#environment-managers-for-python-packaging" title="Link to this heading">#</a></h1>
+<div class="admonition-quick-decision-guide admonition">
+<p class="admonition-title">Quick Decision Guide</p>
+<ul class="simple">
+<li><p><strong>Python-only project, want simplicity?</strong> → venv + pip</p></li>
+<li><p><strong>Python-only, want speed?</strong> → <strong>uv</strong> (recommended)</p></li>
+<li><p><strong>Installing CLI tools globally?</strong> → pipx</p></li>
+<li><p><strong>Need conda packages or cross-language dependencies?</strong> → <strong>pixi</strong> (recommended) or conda/mamba</p></li>
+<li><p><strong>Creating a Python package?</strong> → Use Hatch – with UV as a dependency manager</p></li>
+</ul>
+<p>You can mix tools! For example, use <strong>pipx</strong> to install tools you use often (at the command line) like Hatch, ruff or pre-commit, then use <strong>uv</strong> within your projects for package and environment management.</p>
+</div>
+</section>
+<section id="environment-and-package-managers">
+<h1>Environment and package managers<a class="headerlink" href="#environment-and-package-managers" title="Link to this heading">#</a></h1>
+<p>Package and environment managers are important tools in your Python packaging workflows. To make
+Your packaging experience when selecting a tool will be easier if you understand the difference between the two.</p>
+<ol class="arabic simple">
+<li><p>A <strong>package manager</strong> is used to install, update, and remove Python packages (libraries and tools) and their dependencies in your environment. When you use a package manager, you are often downloading packages from a repository like PyPI (Python Package Index) or a local repository like GitHub / GitLab.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code>, pip acts as a package manager and installs numpy from PyPI. Pip’s default repository when you install a package is PyPI, but it can be used to install packages from other repositories such as GitHub.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>An <strong>environment manager</strong> creates isolated spaces (environments) for your Python projects. Each environment has its own Python installation and its own installed packages. Using isolated environments for different projects reduces the change of environment conflicts when using the same environment across different projects with different dependencies.</p></li>
+</ol>
+<p>There are many tools listed below, but if you’re short on time, you may want to consider</p>
+<ol class="arabic simple">
+<li><p>Hatch combined with UV if you are managing a Python package. <a class="reference internal" href="../tutorials/create-python-package.html#create-pure-python-package"><span class="std std-ref">Check out our tutorials for more on this workflow.</span></a></p></li>
+<li><p>Pixi or mamba as faster alternatives to conda if you are working in the non-Pure Python packaging space.</p></li>
+</ol>
+<section id="where-environment-managers-save-your-environment">
+<h2>Where environment managers save your environment<a class="headerlink" href="#where-environment-managers-save-your-environment" title="Link to this heading">#</a></h2>
+<p>Environment managers save environments in different locations by default. For instance, <code class="docutils literal notranslate"><span class="pre">venv</span></code>, an environment manager that ships with Python, saves an environment by default in your current working directory. UV has the same native behavior. In contrast, conda and mamba save environments in a global location, allowing you to access them easily across projects.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>UV does have a global cache even tho its default behavior is to create an environment in your current working directory.</p>
+</div>
+</section>
+<section id="some-tools-do-everything">
+<h2>Some tools do everything<a class="headerlink" href="#some-tools-do-everything" title="Link to this heading">#</a></h2>
+<p>Some modern tools handle both package installation and environment management. For instance, UV, conda and mamba can be used to both create environments, add dependencies, and build and install tools.</p>
+</section>
+<section id="comparison-table-pip-ecosystem">
+<h2>Comparison Table: pip ecosystem<a class="headerlink" href="#comparison-table-pip-ecosystem" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Language</p></th>
+<th class="head"><p>Speed</p></th>
+<th class="head"><p>Default Environment Location</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>pip</strong></p></td>
+<td><p>Package manager</p></td>
+<td><p>Python</p></td>
+<td><p>Slower</p></td>
+<td><p>N/A (uses existing environment)</p></td>
+<td><p>Python’s standard package installer. pip also builds packages</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pipx</strong></p></td>
+<td><p>Package manager</p></td>
+<td><p>Python</p></td>
+<td><p>Slower</p></td>
+<td><p>Global (isolated per tool)</p></td>
+<td><p>Installs tools that you need to regularly use across projects such as nox, pytest or ruff in a global location</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>uv</strong></p></td>
+<td><p>Both</p></td>
+<td><p>Rust</p></td>
+<td><p>Fastest</p></td>
+<td><p>Current working directory</p></td>
+<td><p>Fast package installer and environment creator</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>venv</strong></p></td>
+<td><p>Environment manager</p></td>
+<td><p>Python</p></td>
+<td><p>Slower</p></td>
+<td><p>Current working directory</p></td>
+<td><p>Python’s built-in environment creator</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>virtualenv</strong></p></td>
+<td><p>Environment manager</p></td>
+<td><p>Python</p></td>
+<td><p>Moderate</p></td>
+<td><p>Current working directory</p></td>
+<td><p>Feature-rich alternative to venv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="comparison-table-conda-ecosystem">
+<h2>Comparison Table: conda ecosystem<a class="headerlink" href="#comparison-table-conda-ecosystem" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Language</p></th>
+<th class="head"><p>Speed</p></th>
+<th class="head"><p>Default Environment Location</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>conda</strong></p></td>
+<td><p>Both</p></td>
+<td><p>Python/C++</p></td>
+<td><p>Slower</p></td>
+<td><p>Global (<code class="docutils literal notranslate"><span class="pre">~/anaconda3/envs/</span></code>)</p></td>
+<td><p>Cross-language package and environment manager</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mamba</strong></p></td>
+<td><p>Both</p></td>
+<td><p>C++</p></td>
+<td><p>Faster</p></td>
+<td><p>Global (<code class="docutils literal notranslate"><span class="pre">~/anaconda3/envs/</span></code>)</p></td>
+<td><p>Faster drop-in replacement for conda</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>pixi</strong></p></td>
+<td><p>Both</p></td>
+<td><p>Rust</p></td>
+<td><p>Fastest</p></td>
+<td><p>Current working directory (<code class="docutils literal notranslate"><span class="pre">.pixi/</span></code>)</p></td>
+<td><p>Modern conda-based tool with lock files</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Speed comparison:</strong> Rust-based tools (uv, pixi) are significantly faster when installing packages and resolving complex environments than Python-based tools. Mamba is faster than conda but might be slower than Rust-based alternatives such as Pixi.</p>
+</div>
+</section>
+<section id="package-managers">
+<h2>Package Managers<a class="headerlink" href="#package-managers" title="Link to this heading">#</a></h2>
+<section id="pip">
+<h3>pip<a class="headerlink" href="#pip" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pip is Python’s standard package installer. It is included with Python by default.</p></li>
+<li><p>Pip is great for installing packages from PyPI and GitHub / GitLab into existing environments.</p></li>
+<li><p>It is also great for development if you want to install your package locally in editable mode.</p></li>
+</ul>
+<p><strong>Basic usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w">  </span><span class="c1"># Install your package in editable mode</span>
+</pre></div>
+</div>
+</section>
+<section id="pipx">
+<h3>pipx<a class="headerlink" href="#pipx" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pipx is can be used to install a tool that you need to use across projects (like <code class="docutils literal notranslate"><span class="pre">riff</span></code>, <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, <code class="docutils literal notranslate"><span class="pre">sphinx</span></code>, <code class="docutils literal notranslate"><span class="pre">nox</span></code>), globally.</p></li>
+</ul>
+<p>Why use it: You might use it to avoid reinstalling the same tool over and over on your machine.</p>
+<p><strong>Basic usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>black
+pipx<span class="w"> </span>install<span class="w"> </span>hatch
+</pre></div>
+</div>
+</section>
+<section id="conda-mamba">
+<h3>conda / mamba<a class="headerlink" href="#conda-mamba" title="Link to this heading">#</a></h3>
+<p>Conda is a cross-language package manager that installs Python packages, R packages, system libraries, and more. Mamba is a faster, drop-in replacement for conda and we highly recommend mamba over conda if you are still using conda.</p>
+<p>These tools are best for scientific computing projects and environments that need non-Python dependencies (like C libraries, GDAL, or R packages).</p>
+<p><strong>Basic usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># conda</span>
+conda<span class="w"> </span>install<span class="w"> </span>numpy
+
+<span class="c1"># mamba (faster/preferred alternative)</span>
+mamba<span class="w"> </span>install<span class="w"> </span>numpy
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Conda and mamba also function as environment managers - see below!</p>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>Environment Managers<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="hatch-for-pure-python-packaging">
+<h3>hatch for pure Python packaging<a class="headerlink" href="#hatch-for-pure-python-packaging" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">pyOpenSci Recommends</p>
+<p>We recommend <strong>hatch</strong> as a complete project management tool for Python packaging. Hatch manages environments, builds packages, runs tests, and handles publishing—all in one tool. It can use <strong>uv</strong> as its backend for even faster operations.</p>
+</div>
+<p>Hatch is a comprehensive modern Python project manager that handles environments, package building, testing, and publishing. Hatch creates isolated environments for different tasks (testing, docs, development). Hatch uses UV under the hood to install Python, and can be set to use UV to manage environment installations too.</p>
+<p>Hatch is best for Python package developers who want an all-in-one tool that handles the entire packaging workflow from development to publication.</p>
+<p><a class="reference internal" href="../tutorials/create-python-package.html#create-pure-python-package"><span class="std std-ref">Check out our tutorial</span></a></p>
+<p><strong>Basic usage:</strong></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+hatch (recommended)</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new project (using the pyOpenSci template (requires that you install copier)</span>
+copier<span class="w"> </span>copy<span class="w"> </span>gh:pyopensci/pyos-package-template<span class="w"> </span>.
+
+<span class="c1"># or with hatch</span>
+hatch<span class="w"> </span>new<span class="w"> </span>my-project
+
+<span class="c1"># Run tests in an isolated environment using the pyOpenSci template</span>
+hatch<span class="w"> </span>run<span class="w"> </span>tests:run
+
+<span class="c1"># Build your package using a Hatch environment and our template</span>
+hatch<span class="w"> </span>run<span class="w"> </span>build:check
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+hatch with uv backend</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configure hatch to use uv (in pyproject.toml or hatch.toml)</span>
+<span class="c1"># [tool.hatch.envs.default]</span>
+<span class="c1"># installer = &quot;uv&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hatch acts as a task runner and can manage multiple environments that you define. It also handles project and dependency installation, making it ideal for package maintainers who want consistency across development tasks.</p>
+</div>
+</section>
+<section id="venv">
+<h3>venv<a class="headerlink" href="#venv" title="Link to this heading">#</a></h3>
+<p>venv is Python’s built-in environment creator (included with Python 3.3+).
+It is best for simple pure Python projects. Because venv ships with Python, and it is used by Hatch, UV and other tools under the hood, it is the most widely used tool.</p>
+<p>Basic usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+
+<span class="c1"># Activate (Mac/Linux)</span>
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+
+<span class="c1"># Activate (Windows)</span>
+.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+
+<span class="c1"># Install packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>numpy
+</pre></div>
+</div>
+</section>
+<section id="virtualenv">
+<h3>virtualenv<a class="headerlink" href="#virtualenv" title="Link to this heading">#</a></h3>
+<p>virtualenv is a more feature-rich alternative to venv with better performance and additional options.
+It’s best for you if you need more control over your environments.</p>
+<p><strong>Basic usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install virtualenv first</span>
+pip<span class="w"> </span>install<span class="w"> </span>virtualenv
+
+<span class="c1"># Create environment</span>
+virtualenv<span class="w"> </span>.venv
+
+<span class="c1"># Activate (same as venv)</span>
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+</section>
+<section id="uv">
+<h3>uv<a class="headerlink" href="#uv" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">pyOpenSci Recommends</p>
+<p>We recommend <strong>uv</strong> for fast, reliable Python package and environment management. It’s significantly faster than pip and easily handles both installing packages and creating environments.</p>
+</div>
+<p>UV is a fast, Rust-based tool that replaces both pip and venv. It installs packages and creates virtual environments at lightning speed. UV is best for any pure Python project. Pixi is better if are working in the non-pure Python packaging space.</p>
+<p><strong>Basic usage:</strong></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+uv (recommended)</label><div class="sd-tab-content docutils">
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Add<span class="w"> </span>a<span class="w"> </span>dependency<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>project<span class="w"> </span>with<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span><span class="o">(</span>will<span class="w"> </span>add<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>pyproject.toml<span class="w"> </span>file<span class="o">)</span>
+<span class="go">&gt; uv add numpy</span>
+
+<span class="gp"># </span>Create<span class="w"> </span>environment<span class="w"> </span>and<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>with<span class="w"> </span>your<span class="w"> </span>dependencies<span class="w"> </span>installed
+<span class="gp"># </span>UV<span class="w"> </span>will<span class="w"> </span>also<span class="w"> </span>install<span class="w"> </span>your<span class="w"> </span>package<span class="w"> </span><span class="k">in</span><span class="w"> </span>editable<span class="w"> </span>mode
+<span class="go">&gt; uv run python</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+venv + pip</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+
+<span class="c1"># Install packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>numpy
+
+<span class="c1"># Install your package in editable mode with your dev dependency group</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+pixi</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize project (creates environment automatically)</span>
+pixi<span class="w"> </span>init
+
+<span class="c1"># Add packages</span>
+pixi<span class="w"> </span>add<span class="w"> </span>numpy
+
+<span class="c1"># Install your package in dev mode</span>
+pixi<span class="w"> </span>add<span class="w"> </span>--pypi<span class="w"> </span>--editable<span class="w"> </span><span class="s2">&quot;package-name[dev] @ file:///absolute/path/to/package&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conda-mamba-as-environment-managers">
+<h3>conda / mamba (as environment managers)<a class="headerlink" href="#conda-mamba-as-environment-managers" title="Link to this heading">#</a></h3>
+<p>Conda and mamba create isolated environments that can contain Python, R, system libraries, and more.
+The conda ecosystem tools are best for managing complex dependencies across languages or when you need specific system libraries.</p>
+<p><strong>Basic usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create environment with conda</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>myenv
+
+<span class="c1"># Or with mamba (faster)</span>
+mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+mamba<span class="w"> </span>activate<span class="w"> </span>myenv
+</pre></div>
+</div>
+</section>
+<section id="pixi">
+<h3>pixi<a class="headerlink" href="#pixi" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">pyOpenSci Recommends</p>
+<p>For projects needing conda packages, we recommend <strong>pixi</strong> over conda/mamba. It’s faster, uses lock files for reproducibility, and works cross-platform.</p>
+</div>
+<p>Pixi is a modern, fast package and environment manager built on conda ecosystems. Similar to UV, Pixi uses lock files for reproducible environments. Pixi is best suited for scientific projects that require conda packages, teams that require exact reproducibility, or cross-platform development.</p>
+<p><strong>Basic usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize new project</span>
+pixi<span class="w"> </span>init
+
+<span class="c1"># Add Python packages</span>
+pixi<span class="w"> </span>add<span class="w"> </span>numpy<span class="w"> </span>pandas
+
+<span class="c1"># Add conda packages (like GDAL)</span>
+pixi<span class="w"> </span>add<span class="w"> </span>gdal
+
+<span class="c1"># Run commands in the environment</span>
+pixi<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>script.py
+
+<span class="c1"># Activate environment in an interactive shell</span>
+pixi<span class="w"> </span>shell
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pixi automatically creates a lock file (<code class="docutils literal notranslate"><span class="pre">pixi.lock</span></code>) ensuring everyone on your team gets identical environments.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="complex-python-package-builds.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Complex Python package builds</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="publish-python-package-pypi-conda.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Publishing Your Package In A Community Repository: PyPI or Anaconda.org</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Environment Managers for Python Packaging</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-and-package-managers">Environment and package managers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-environment-managers-save-your-environment">Where environment managers save your environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tools-do-everything">Some tools do everything</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-table-pip-ecosystem">Comparison Table: pip ecosystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-table-conda-ecosystem">Comparison Table: conda ecosystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-managers">Package Managers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pip">pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipx">pipx</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-mamba">conda / mamba</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Environment Managers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-for-pure-python-packaging">hatch for pure Python packaging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#venv">venv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtualenv">virtualenv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uv">uv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-mamba-as-environment-managers">conda / mamba (as environment managers)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pixi">pixi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/environment-managers.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/package-structure-code/environment-managers.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -192,6 +192,13 @@ Complex Builds <complex-python-package-builds>
 
 :::{toctree}
 :hidden:
+:caption: Tools to manage your package
+
+Environment & package managers  <environment-managers>
+:::
+
+:::{toctree}
+:hidden:
 :caption: Publish your package
 
 Publish with Conda / PyPI <publish-python-package-pypi-conda>
