@@ -9,7 +9,7 @@
 - **Need conda packages or cross-language dependencies?** → **pixi** (recommended) or conda/mamba
 - **Creating a Python package?** → Use Hatch -- with UV as a dependency manager
 
-You can mix tools! For example, use **pipx** to install command-line tools like Hatch or Sphinx, then use **uv** within your projects for package and environment management.
+You can mix tools! For example, use **pipx** to install tools you use often (at the command line) like Hatch, ruff or pre-commit, then use **uv** within your projects for package and environment management.
 :::
 
 # Environment and package managers
