@@ -47,6 +47,7 @@ contributors.
 :caption: Maintain & Automate
 :hidden: true
 
-Task runners  <task-runners.md>
 What is CI?  <ci.md>
+Task runners  <task-runners.md>
+Environment Managers <environment-managers.md>
 :::
