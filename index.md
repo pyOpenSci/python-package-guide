@@ -193,7 +193,6 @@ Learn about best practices for:
 
 ## Tests
 
-_We are actively working on this section. [Follow development here.](https://github.com/pyOpenSci/python-package-guide)_
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
