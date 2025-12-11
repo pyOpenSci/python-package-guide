@@ -292,7 +292,7 @@ pixi add gdal
 # Run commands in the environment
 pixi run python script.py
 
-# Activate environment
+# Activate environment in an interactive shell
 pixi shell
 ```
 ```{note}
