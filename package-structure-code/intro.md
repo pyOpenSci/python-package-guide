@@ -68,15 +68,14 @@ Our recommendations align with current [Python packaging standards](https://pack
 
 ::::{grid-item}
 :::{card} ✨ Package file structure ✨
-:link: python-package-structure#package-source-layout
-:link-type: doc
 
-Learn how to organize your package files using [src or flat layouts](package-source-layout). This page helps you decide on a package structure that follows modern Python best practices, including where to place [tests](src-layout-testing) and [documentation](package-source-layout).
+Learn how to organize your package files using [src or flat layouts](package-source-layout). This page helps you decide on a package structure that follows modern Python best practices, including where to place [tests](src-layout-test) and [documentation](package-source-layout).
 :::
 ::::
 
 ::::{grid-item}
 :::{card} ✨ Add metadata ✨
+
 Learn how to add [project metadata](pyproject-toml-python-package-metadata) to your Python package to support both
 filtering on PyPI and also the metadata that a package installer needs to
 build and install your package.

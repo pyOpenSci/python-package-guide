@@ -20,6 +20,7 @@ someone getting started with Python packaging or someone who's package
 has a simple build and might be open to moving to a more fail-proof approach.
 
 Other resources you can check out:
+
 * [PyPA's overview of src vs flat layouts](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 :::
 
@@ -60,19 +61,19 @@ myPackageRepoName
 
 Note the location of the following directories in the example above:
 
-- **docs/:** Discussed in our docs chapter, this directory contains your user-facing documentation website. In a **src/** layout docs/ are normally included at the same directory level as the **src/** folder.
-- **tests/** This directory contains the tests for your project code. In a **src/** layout, tests are normally included at the same directory level as the **src/** folder.
-- **src/package/**: this is the directory that contains the code for your Python project. "Package" is normally your project's name.
+* **docs/:** Discussed in our docs chapter, this directory contains your user-facing documentation website. In a **src/** layout docs/ are normally included at the same directory level as the **src/** folder.
+* **tests/** This directory contains the tests for your project code. In a **src/** layout, tests are normally included at the same directory level as the **src/** folder.
+* **src/package/**: this is the directory that contains the code for your Python project. "Package" is normally your project's name.
 
 Also in the above example, notice that all of the core documentation files that
 pyOpenSci requires live in the root of your project directory. These files
 include:
 
-- CHANGELOG.md
-- CODE_OF_CONDUCT.md
-- CONTRIBUTING.md
-- LICENSE.txt
-- README.md
+* CHANGELOG.md
+* CODE_OF_CONDUCT.md
+* CONTRIBUTING.md
+* LICENSE.txt
+* README.md
 
 <!-- TODO: CHANGELOG is not mentioned in either documentation nor peer review -->
 
@@ -137,8 +138,8 @@ Be sure to read the [pytest documentation for more about including tests in your
 
 Tests, especially when accompanied by test data, can create a few small challenges, including:
 
-- Take up space in your distribution, which will build up over time as storage space on PyPI
-- Large file sizes can also slow down package installation.
+* Take up space in your distribution, which will build up over time as storage space on PyPI
+* Large file sizes can also slow down package installation.
 
 However, in some cases, particularly in the scientific Python ecosystem, you may need to include tests.
 :::
@@ -153,7 +154,7 @@ the data when you (or a user) runs tests.
 
 For more information about Python package tests, see the [tests section of our guide](tests-intro).
 
-- The **src/package** layout is semantically more clear. Code is always found in the
+* The **src/package** layout is semantically more clear. Code is always found in the
   **src/package** directory, `tests/` and `docs/`are in the root directory.
 
 :::{important}
@@ -176,8 +177,8 @@ Click here for a quickstart tutorial on creating your Python package.
 
 Many scientific packages use the **flat-layout** given:
 
-- This layout is used by many core scientific Python packages such as NumPy, SciPy, and Matplotlib.
-- Many Python tools depend upon tools in other languages and/or complex builds
+* This layout is used by many core scientific Python packages such as NumPy, SciPy, and Matplotlib.
+* Many Python tools depend upon tools in other languages and/or complex builds
   with compilation steps. Many maintainers prefer features
   of the flat layout for more complex builds.
 
@@ -200,9 +201,9 @@ Numerous packages in the ecosystem [have had to move to a
 
 The flat layout's primary characteristics are:
 
-- The source code for your package lives in a directory with your package's
+* The source code for your package lives in a directory with your package's
   name in the root of your directory
-- Often the `tests/` directory also lives within that same `package` directory.
+* Often the `tests/` directory also lives within that same `package` directory.
 
 Below you can see the recommended structure of a scientific Python package
 using the flat layout.
@@ -230,9 +231,9 @@ myPackage/
 
 There are some benefits to the scientific community in using the flat layout.
 
-- This structure has historically been used across the ecosystem and packages
+* This structure has historically been used across the ecosystem and packages
   using it are unlikely to change.
-- You can import the package directly from the root directory. For some this
+* You can import the package directly from the root directory. For some this
   is engrained in their respective workflows. However, for a beginner the
   danger of doing this is that you are not developing and testing against the
   installed version of your package. Rather, you are working directly with the
