@@ -1,4 +1,4 @@
-# Python Package Structure for Scientific Python Projects
+# Python Package Structure & Layout
 
 There are two different layouts that you will commonly see
 within the Python packaging ecosystem:
@@ -9,7 +9,7 @@ We strongly suggest, but do not require, that you use the **src/** layout (discu
 for creating your Python package. This layout is also recommended in the
 [PyPA packaging guide tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
 
-```{admonition} pyOpenSci will never require a specific package structure for peer review
+:::{admonition} pyOpenSci will never require a specific package structure for peer review
 :class: important
 
 We understand that it would take significant effort for existing
@@ -21,12 +21,11 @@ has a simple build and might be open to moving to a more fail-proof approach.
 
 Other resources you can check out:
 * [PyPA's overview of src vs flat layouts](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
-```
+:::
 
 You can use tools like Hatch to quickly create a modern Python package structure. Check out our quickstart tutorial:
 
-
-:::{button-link} https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure
+:::{button-link} <https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure>
 :color: success
 :class: sd-rounded-pill float-left
 
@@ -34,11 +33,12 @@ Want to learn how to create the structure to build your package? Click here.
 
 :::
 
+(package-source-layout)=
 ## What is the Python package source layout?
 
 An example of the **src/package** layout structure is below.
 
-```
+```{console}
 myPackageRepoName
 ├── CHANGELOG.md               ┐
 ├── CODE_OF_CONDUCT.md         │
@@ -81,9 +81,9 @@ include:
 :class: sd-rounded-pill
 
 Click here to read about our packaging documentation requirements.
-```
+:::
 
-```{admonition} Example scientific packages that use **src/package** layout
+:::{admonition} Example scientific packages that use **src/package** layout
 
 * [Sourmash](https://github.com/sourmash-bio/sourmash)
 * [bokeh](https://github.com/bokeh/bokeh)
@@ -91,8 +91,9 @@ Click here to read about our packaging documentation requirements.
 * [awkward](https://github.com/scikit-hep/awkward)
 * [poliastro](https://github.com/poliastro/poliastro/)
 
-```
+:::
 
+(src-layout-testing)=
 ## The src/ layout and testing
 
 The benefit of using the **src/package** layout is that it ensures tests are run against the
@@ -105,7 +106,7 @@ If `tests/` are outside the **src/package** directory, they aren't included in t
 
 - [Read more about reasons to use the **src/package** layout](https://hynek.me/articles/testing-packaging/)
 
-```{admonition} How Python discovers and prioritizes importing modules
+:::{admonition} How Python discovers and prioritizes importing modules
 
 By default, Python adds a module in your current working directory to the front of the Python module search path.
 
@@ -114,7 +115,7 @@ This means that if you run your tests in your package's working directory, using
 However, if your package lives in a src/ directory structure **src/package**, then it won't be added to the Python path by default. This means that when you import your package, Python will be forced to search the active environment (which has your package installed).
 
 Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g., `PYTHONSAFEPATH`).
-```
+:::
 
 ### Don't include tests in your package wheel
 
@@ -131,7 +132,7 @@ Including the **tests/** directory in your **src/package** directory ensures tha
 
 Be sure to read the [pytest documentation for more about including tests in your package distribution](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules).
 
-```{admonition} Challenges with including tests and data in a package wheel
+:::{admonition} Challenges with including tests and data in a package wheel
 :class: tip
 
 Tests, especially when accompanied by test data, can create a few small challenges, including:
@@ -140,7 +141,7 @@ Tests, especially when accompanied by test data, can create a few small challeng
 - Large file sizes can also slow down package installation.
 
 However, in some cases, particularly in the scientific Python ecosystem, you may need to include tests.
-```
+:::
 
 ### **Don't include test suite datasets in your package**
 
@@ -155,18 +156,16 @@ For more information about Python package tests, see the [tests section of our g
 - The **src/package** layout is semantically more clear. Code is always found in the
   **src/package** directory, `tests/` and `docs/`are in the root directory.
 
-```{important}
+:::{important}
 If your package tests require data, do NOT include that
 data within your package structure. Including data in your package structure increases the size of your
 distribution files. This places a maintenance toll on repositories like PyPI and
 Anaconda.org that have to deal with thousands of package uploads.
-```
-
+:::
 
 :::{button-link} /tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure
 :color: success
 :class: sd-rounded-pill float-left
-
 
 Click here for a quickstart tutorial on creating your Python package.
 
@@ -185,19 +184,17 @@ Many scientific packages use the **flat-layout** given:
 While we suggest that you use the **src/package** layout discussed above, it's important to also
 understand the flat layout, especially if you plan to contribute to a package that uses this layout.
 
-
-```{admonition} Why most scientific Python packages do not use source
+:::{admonition} Why most scientific Python packages do not use src/ layout
 :class: tip
 
-In most cases, moving to the **src/package** layout for
-larger scientific packages that already use a flat layout would consume significant time.
+Migrating larger scientific packages that already use a flat layout would consume significant time and resources.
 
 However, the advantages of using the  **src/package** layout for a beginner are significant.
 As such, we recommend that you use the **src/package** layout if you are creating a new package.
 
 Numerous packages in the ecosystem [have had to move to a
 **src/package** layout](https://github.com/scikit-build/cmake-python-distributions/pull/145).
-```
+:::
 
 ## What does the flat layout structure look like?
 
@@ -257,18 +254,8 @@ packages to a different layout. The potential benefits of the source layout
 for these tools are not worth the maintenance investment.
 ```
 
-<!--
-Not sure where to put this now ... most new users won't have multiple packages. Maybe this goes into the complex packing page as we build that out?
-
 ```{admonition} Multiple packages in a src/ folder
 :class: tip
 
 In some more advanced cases, you may have more than one package in your **src/** directory. See [Black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However, for most beginners you will likely only have one sub-directory in your **src/** folder.
-``` -->
-
-<!--
-```{admonition} A few notes about the src/ layout
-:class: tip
-
-It is important to note here that sometimes, when using the **src/package** structure, the directory name (e.g., package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a subdirectory within **src/**.
-``` -->
+```
