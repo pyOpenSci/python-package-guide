@@ -3,9 +3,11 @@
 This guide is focused on packages that are either pure-python or that
 have a few simple extensions in another language such as C or C++.
 
-In the future, we want to provide resources for packaging workflows that require more complex builds. If you have questions about these types of package, please [add a question to our discourse](https://pyopensci.discourse.group/) or open an [issue about this guide specifically in the GitHub repo for this guide](https://github.com/pyOpenSci/python-package-guide/issues). There are many nuances to building and distributing Python packages that have compiled extensions requiring non-Python dependencies at build time. For an overview and thorough discussion of these nuances, please see [this site.](https://pypackaging-native.github.io/)
+For comprehensive guidance on packaging compiled projects with C/C++/Fortran/Rust extensions, see the [Scientific Python Development Guide on compiled packaging](https://learn.scientific-python.org/development/guides/packaging-compiled/). This is the best reference for complex builds and covers scikit-build-core, meson-python, maturin, and other modern build backends.
 
-## Pure Python Packages vs. packages with extensions in other languages
+If you have questions about these types of package, please open an [issue about this guide specifically in the GitHub repo for this guide](https://github.com/pyOpenSci/python-package-guide/issues). There are many nuances to building and distributing Python packages that have compiled extensions requiring non-Python dependencies at build time. For an overview and thorough discussion of these nuances, please see [this site.](https://pypackaging-native.github.io/)
+
+## Pure Python packages vs. packages with extensions in other languages
 
 You can classify Python package complexity into three general categories. These
 categories can in turn help you select the correct package frontend and

@@ -46,6 +46,7 @@ Click here if need help migrating from setup.py/setup.cfg to pyproject.toml
 ::::
 :::::
 
+(pyproject-toml-overview)=
 ## About the pyproject.toml file
 
 Every modern Python package should include a `pyproject.toml` file. For pure Python packages, this file replaces the `setup.py` and/or `setup.cfg` file to describe project metadata.
@@ -107,7 +108,7 @@ resources working with complex builds in the future.
 
 :::
 
-## Optional vs. Required pyproject.toml file fields
+## Optional vs. required pyproject.toml file fields
 
 When you create your `pyproject.toml` file, there are numerous metadata fields that you can use. Below we suggest specific fields to get you started that support publication on PyPI and users finding your package.
 
@@ -176,7 +177,7 @@ Following the above example, you install dependencies like this:
 
 - `python -m pip install -e .[tests]`
 
-- pip install --group test *# requires pip 25.1 or greater*
+- pip install --group test _# requires pip 25.1 or greater_
 
 The above will install both your package in editable mode and all of the dependencies declared in the tests section of your `[project.optional-dependencies]` table.
 
@@ -224,6 +225,6 @@ of values. It has two keys that specify the build backend API and containing pac
 :language: toml
 :::
 
-```{note}
+:::{note}
 [Click here to read about our packaging build tools including PDM, setuptools, Poetry and Hatch.](/package-structure-code/python-package-build-tools)
-```
+:::
