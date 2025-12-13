@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -467,9 +467,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">コミュニティリポジトリでパッケージを公開する: PyPI または Anaconda.org</span></li>
   </ul>
@@ -558,7 +558,7 @@
 </figcaption>
 </figure>
 <section id="what-is-pypi">
-<h2>PyPIとは<a class="headerlink" href="#what-is-pypi" title="Link to this heading">#</a></h2>
+<span id="publish-pypi-conda"></span><h2>PyPIとは<a class="headerlink" href="#what-is-pypi" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pypi.org/">PyPI</a> はオンラインのPythonパッケージリポジトリで、Pythonパッケージの検索やインストール、公開に利用できます。テスト用のPyPIリポジトリもあり、最終的にPyPIで公開する前に、パッケージの公開をテストすることができます。</p>
 <p>ほとんどのPythonパッケージはPyPIで見つけることができ、 <code class="docutils literal notranslate"><span class="pre">pip</span></code> を使ってインストールすることができます。</p>
 <p>パッケージのインストールにpipを使う場合とcondaを使う場合の最大の違いは、condaは(複数の)言語に関係なくどんなパッケージでもインストールできるということです。 一方、 <code class="docutils literal notranslate"><span class="pre">pip</span></code> は Python パッケージしかインストールできません。</p>
@@ -633,7 +633,7 @@
 </section>
 </section>
 <section id="how-to-submit-to-conda-forge">
-<h2>conda-forgeへの投稿方法<a class="headerlink" href="#how-to-submit-to-conda-forge" title="Link to this heading">#</a></h2>
+<span id="id1"></span><h2>conda-forgeへの投稿方法<a class="headerlink" href="#how-to-submit-to-conda-forge" title="Link to this heading">#</a></h2>
 <p>pyOpenSciはあなたのパッケージをconda-forgeに追加する必要はありませんが、追加することを検討することを推奨します！</p>
 <p>パッケージが PyPI に登録されたら、conda-forge にパッケージを追加する手順は簡単です。 <a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs.html">conda-forge メンテナチームが提供している詳細な手順に従うことができます</a> 。</p>
 <p>conda-forgeにパッケージを追加するチュートリアルはこちらをご覧ください。</p>

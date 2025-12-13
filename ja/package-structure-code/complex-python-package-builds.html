@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/complex-python-package-builds.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="このガイドでは、純粋なPythonか、CやC++のような他の言語でいくつかの簡単な拡張を持つパッケージのどちらかに焦点を当てています。 将来的には、より複雑なビルドを必要とするパッケージングワークフローのためのリソースを提供したいと考えています。 このようなタイプのパッケージについて質問がある場合は、 私たちのdiscourseに質問を追加する か、 このガイドの GitHub リポジトリで..." />
+<meta property="og:description" content="このガイドでは、純粋なPythonか、CやC++のような他の言語でいくつかの簡単な拡張を持つパッケージのどちらかに焦点を当てています。 For comprehensive guidance on packaging compiled projects with C/C++/Fortran/Rust extensions, see the Scientific Python Developme..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_complex-python-package-builds_34395832.png" />
-<meta property="og:image:alt" content="このガイドでは、純粋なPythonか、CやC++のような他の言語でいくつかの簡単な拡張を持つパッケージのどちらかに焦点を当てています。 将来的には、より複雑なビルドを必要とするパッケージングワークフローのためのリソースを提供したいと考えています。 このようなタイプのパッケージについて質問がある場合は、 私たちのdiscourseに質問を追加する か、 このガイドの GitHub リポジトリで..." />
-<meta name="description" content="このガイドでは、純粋なPythonか、CやC++のような他の言語でいくつかの簡単な拡張を持つパッケージのどちらかに焦点を当てています。 将来的には、より複雑なビルドを必要とするパッケージングワークフローのためのリソースを提供したいと考えています。 このようなタイプのパッケージについて質問がある場合は、 私たちのdiscourseに質問を追加する か、 このガイドの GitHub リポジトリで..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_complex-python-package-builds_d49d38da.png" />
+<meta property="og:image:alt" content="このガイドでは、純粋なPythonか、CやC++のような他の言語でいくつかの簡単な拡張を持つパッケージのどちらかに焦点を当てています。 For comprehensive guidance on packaging compiled projects with C/C++/Fortran/Rust extensions, see the Scientific Python Developme..." />
+<meta name="description" content="このガイドでは、純粋なPythonか、CやC++のような他の言語でいくつかの簡単な拡張を持つパッケージのどちらかに焦点を当てています。 For comprehensive guidance on packaging compiled projects with C/C++/Fortran/Rust extensions, see the Scientific Python Developme..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>複雑なPythonパッケージのビルド &#8212; Python Packaging Guide</title>
@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -67,7 +67,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="コミュニティリポジトリでパッケージを公開する: PyPI または Anaconda.org" href="publish-python-package-pypi-conda.html" />
-    <link rel="prev" title="Pythonパッケージングツール" href="python-package-build-tools.html" />
+    <link rel="prev" title="Pythonパッケージのビルドについて学ぶ" href="python-package-distribution-files-sdist-wheel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
   <meta name="docsearch:version" content="" />
@@ -467,9 +467,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">複雑なビルド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">複雑なPythonパッケージのビルド</span></li>
   </ul>
@@ -540,9 +540,10 @@
   <section id="complex-python-package-builds">
 <h1>複雑なPythonパッケージのビルド<a class="headerlink" href="#complex-python-package-builds" title="Link to this heading">#</a></h1>
 <p>このガイドでは、純粋なPythonか、CやC++のような他の言語でいくつかの簡単な拡張を持つパッケージのどちらかに焦点を当てています。</p>
-<p>将来的には、より複雑なビルドを必要とするパッケージングワークフローのためのリソースを提供したいと考えています。 このようなタイプのパッケージについて質問がある場合は、 <a class="reference external" href="https://pyopensci.discourse.group/">私たちのdiscourseに質問を追加する</a> か、 <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">このガイドの GitHub リポジトリでこのガイドに関する issue を発行する</a> してください。 ビルド時に Python 以外の依存関係を必要とするコンパイルされた拡張機能を持つ Python パッケージをビルドして配布するには、多くの微妙な違いがあります。 これらの微妙な違いの概要と徹底的な議論については、 <a class="reference external" href="https://pypackaging-native.github.io/">このサイト</a> を参照してください。</p>
+<p>For comprehensive guidance on packaging compiled projects with C/C++/Fortran/Rust extensions, see the <a class="reference external" href="https://learn.scientific-python.org/development/guides/packaging-compiled/">Scientific Python Development Guide on compiled packaging</a>. This is the best reference for complex builds and covers scikit-build-core, meson-python, maturin, and other modern build backends.</p>
+<p>If you have questions about these types of package, please open an <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue about this guide specifically in the GitHub repo for this guide</a>. There are many nuances to building and distributing Python packages that have compiled extensions requiring non-Python dependencies at build time. For an overview and thorough discussion of these nuances, please see <a class="reference external" href="https://pypackaging-native.github.io/">this site.</a></p>
 <section id="pure-python-packages-vs-packages-with-extensions-in-other-languages">
-<h2>純粋なPythonパッケージと他言語の拡張機能付きパッケージの比較<a class="headerlink" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages" title="Link to this heading">#</a></h2>
+<h2>Pure Python packages vs. packages with extensions in other languages<a class="headerlink" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages" title="Link to this heading">#</a></h2>
 <p>Pythonパッケージの複雑さを3つの一般的なカテゴリに分類することができます。 これらの分類は、正しいパッケージフロントエンドとバックエンドツールを選択するのに役立ちます。</p>
 <ol class="arabic simple">
 <li><p><strong>純粋なPythonパッケージ:</strong> Pythonだけに依存して機能するパッケージです。 純粋なPythonパッケージの構築はよりシンプルです。 そのため、以下のツールの中から自分の欲しい機能を持つものを選び、決定しましょう!</p></li>
@@ -576,12 +577,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python-package-build-tools.html"
+       href="python-package-distribution-files-sdist-wheel.html"
        title="前のページ">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">前へ</p>
-        <p class="prev-next-title">Pythonパッケージングツール</p>
+        <p class="prev-next-title">Pythonパッケージのビルドについて学ぶ</p>
       </div>
     </a>
     <a class="right-next"
@@ -612,7 +613,7 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages">純粋なPythonパッケージと他言語の拡張機能付きパッケージの比較</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages">Pure Python packages vs. packages with extensions in other languages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-frontend-and-backend-projects">フロントエンドとバックエンドの混合プロジェクト</a></li>
 </ul>
   </nav></div>

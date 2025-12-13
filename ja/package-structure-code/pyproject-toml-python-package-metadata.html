@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -66,8 +66,8 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Pythonパッケージのビルドについて学ぶ" href="python-package-distribution-files-sdist-wheel.html" />
-    <link rel="prev" title="科学的PythonプロジェクトのためのPythonパッケージ構造" href="python-package-structure.html" />
+    <link rel="next" title="Dependencies for your Python Package" href="declare-dependencies.html" />
+    <link rel="prev" title="Python Package Structure &amp; Layout" href="python-package-structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
   <meta name="docsearch:version" content="" />
@@ -467,9 +467,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">pyproject.toml パッケージのメタデータ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。</span></li>
   </ul>
@@ -550,7 +550,7 @@
 </ol>
 </div>
 <section id="about-the-pyproject-toml-file">
-<h2>pyproject.tomlファイルについて<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<span id="pyproject-toml-overview"></span><h2>pyproject.tomlファイルについて<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
 <p>Every modern Python package should include a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. For pure Python packages, this file replaces the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and/or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to describe project metadata.</p>
 <p>If your project isn’t pure Python, you might still require a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to build the non-Python extensions. However, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file should still be used to store your project’s metadata.</p>
 <div class="note admonition">
@@ -596,7 +596,7 @@ support configuration for that particular table.</p>
 </div>
 </section>
 <section id="optional-vs-required-pyproject-toml-file-fields">
-<h2>pyproject.toml ファイルのフィールドの任意と必須<a class="headerlink" href="#optional-vs-required-pyproject-toml-file-fields" title="Link to this heading">#</a></h2>
+<h2>Optional vs. required pyproject.toml file fields<a class="headerlink" href="#optional-vs-required-pyproject-toml-file-fields" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルを作成するとき、使用できるメタデータフィールドがたくさんあります。 以下では、PyPI での公開とユーザがあなたのパッケージを見つけることをサポートする、特定のフィールドを提案します。</p>
 <p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use">プロジェクトの全メタデータ要素の概要は、こちらをご覧ください。</a></p>
 <section id="required-fields-for-the-project-table">
@@ -776,15 +776,15 @@ support configuration for that particular table.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">前へ</p>
-        <p class="prev-next-title">科学的PythonプロジェクトのためのPythonパッケージ構造</p>
+        <p class="prev-next-title">Python Package Structure &amp; Layout</p>
       </div>
     </a>
     <a class="right-next"
-       href="python-package-distribution-files-sdist-wheel.html"
+       href="declare-dependencies.html"
        title="次ページ">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">次へ</p>
-        <p class="prev-next-title">Pythonパッケージのビルドについて学ぶ</p>
+        <p class="prev-next-title">Dependencies for your Python Package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -813,7 +813,7 @@ support configuration for that particular table.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-a-pyproject-toml-file">pyproject.tomlファイルを使用する利点</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">pyproject.toml ファイルのフィールドの任意と必須</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">Optional vs. required pyproject.toml file fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table"><code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルの必須フィールド</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fields-to-include-in-the-project-table"><code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルに含めるオプションフィールド</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options-in-the-pyproject-toml-file">pyproject.tomlファイルの高度なオプション</a></li>

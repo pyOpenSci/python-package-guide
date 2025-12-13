@@ -1,176 +1,183 @@
-# Python Package Structure
+# Python Package Structure & Code
 
-This section provides guidance on your Python package's structure, code format,
-and style. It also reviews the various [packaging tools](python-package-build-tools) you can use to
-[build](python-package-distribution-files-sdist-wheel) and [publish](publish-python-package-pypi-conda) your Python package.
+This section covers everything you need to structure your Python package, configure metadata, choose build tools, and publish your package to PyPI and conda-forge.
 
-If you want end-to-end tutorials, check out our tutorial series that starts by introducing [what a Python package is](what-is-a-package).
+:::::{grid} 1 2
+:gutter: 3
 
-If you are confused by Python packaging, you are not alone! The good news is
-that some great modern packaging tools ensure you follow
-best practices. Here, we review tool features and suggest tools you can use
-for your Python packaging workflow.
+::::{grid-item}
+:::{card} New to Python packaging?
+:class-card: sd-shadow-sm
 
-:::{button-link} /tutorials/intro
+**Start with our step-by-step tutorials:**
+
+- Follow along as we create a package from scratch
+- Learn by doing with guided examples
+- Perfect for your first package
+
+```{button-link} /tutorials/intro
 :color: success
-:class: sd-rounded-pill float-left
+:class: sd-rounded-pill
 
-Checkout our beginning-to-end create a Python package tutorials
+Start the tutorial series
+```
 
 :::
+::::
+
+::::{grid-item}
+:::{card} Already have code to package?
+:class-card: sd-shadow-sm
+
+**Jump into the reference guides:**
+
+- Learn about package structure and metadata
+- Compare build tools and choose what's right for you
+- Understand the publishing process
+
+Start with the cards below ↓
+:::
+::::
+
+:::::
 
 :::{admonition} How this content is developed
+:class: note
+
 All of the content in this guide has been vetted by community members, including maintainers and developers of the core packaging tools.
 :::
+
+## What you'll learn
+
+In this section, you'll learn how to:
+
+- **Structure your package** - Choose between src and flat layouts, organize tests and documentation
+- **Configure metadata** - Set up `pyproject.toml` with project information, dependencies, and versioning
+- **Choose build tools** - Compare Hatch, PDM, Poetry, and setuptools to find the right fit
+- **Build distributions** - Create sdist and wheel files ready for publication
+- **Publish your package** - Make your package available on PyPI and optionally conda-forge
+- **Maintain code quality** - Set up linters and formatters to keep your code consistent
+
+Our recommendations align with current [Python packaging standards](https://packaging.python.org/en/latest/) and [Scientific Python community specs](https://scientific-python.org/specs/), while prioritizing tools that are beginner-friendly and well-maintained.
+
+## Package setup
 
 :::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 3
 
 ::::{grid-item}
-:::{card} ✨ 1. Package file structure ✨
-:link: python-package-structure
-:link-type: doc
+:::{card} ✨ Package file structure ✨
 
-src layout, flat layout and where should tests folders live? No matter what your level of packaging knowledge is, this page will help you decide upon a package structure that follows modern python best practices.
+Learn how to organize your package files using [src or flat layouts](package-source-layout). This page helps you decide on a package structure that follows modern Python best practices, including where to place [tests](src-layout-test) and [documentation](package-source-layout).
 :::
 ::::
 
 ::::{grid-item}
-:::{card} ✨ 2. Learn about building your package ✨
-:link: python-package-distribution-files-sdist-wheel
-:link-type: doc
+:::{card} ✨ Add metadata ✨
 
-To publish your Python package on PyPI, you will need to first build it. The act
-of "building" refers to the process of placing your package code and
-metadata into a format that can be published on PyPI. Learn more about building
-your Python package.
-:::
-::::
-
-::::{grid-item}
-:::{card} ✨ 3. Add metadata ✨
-:link: pyproject-toml-python-package-metadata
-:link-type: doc
-
-Learn how to add project metadata to your Python package to support both
+Learn how to add [project metadata](pyproject-toml-python-package-metadata) to your Python package to support both
 filtering on PyPI and also the metadata that a package installer needs to
 build and install your package.
 :::
 ::::
 
 ::::{grid-item}
-:::{card} ✨ 4. What Python package tool should you use? ✨
-:link: python-package-build-tools
-:link-type: doc
+:::{card} ✨ Declare dependencies ✨
 
-Learn more about the suite of packaging tools out there.
-And learn which tool might be best for you.
+Learn how to specify [required dependencies](required-dependencies), [optional feature dependencies](optional-dependencies), and [development dependencies](dependency-groups) in your [pyproject.toml file](pyproject-toml-overview).
 :::
 ::::
 
 ::::{grid-item}
-:::{card} ✨ 5. Publish to PyPI and Conda ✨
-:link: publish-python-package-pypi-conda
-:link-type: doc
+:::{card} ✨ Setup package versioning ✨
 
-If you have a pure Python package, it's a straight forward
-process to publish to both PyPI and then a Conda channel such as
-conda-forge. Learn more here.
-:::
-::::
-
-::::{grid-item}
-:::{card} ✨ 6. Setup package versioning ✨
-:link: python-package-versions
-:link-type: doc
-
-Semver (numeric versioning) and Calver (versioning using the date) are 2
-common ways to version a package. Which one should you pick? Learn more here.
-:::
-::::
-
-::::{grid-item}
-:::{card} ✨ 7. Code style & linters ✨
-:link: code-style-linting-format
-:link-type: doc
-
-Black, blue, flake8, Ruff - which tools can help you ensure your
-package follows best practices for code format? Learn more about the options
-and why this is important here.
+Learn how to manage package versions using [semantic versioning (SemVer)](package-versioning) or [calendar versioning (CalVer)](package-versioning). This page helps you choose the right versioning strategy and set up [automated version management](tools-version-management) using tools like hatch_vcs or setuptools-scm.
 :::
 ::::
 
 :::::
 
+## Development practices
+
+:::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
+
+::::{grid-item}
+:::{card} ✨ Code style & linters ✨
+
+Learn how to set up [code formatters and linters](code-style-tools) ([Black](about-black), [Ruff](about-ruff), [flake8](about-flake8)) to ensure your package follows [PEP 8 standards](code-style-tools) and maintains consistent code style throughout your project.
+:::
+::::
+
+:::::
+
+## Build & publish
+
+:::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 3
+
+::::{grid-item}
+:::{card} ✨ Choose your build tool ✨
+
+Learn how to choose the right packaging tool for your project. Compare [Hatch](about-hatch), [PDM](about-pdm), [Poetry](about-poetry), and [setuptools](about-setuptools) to find the best fit for your workflow. See the [summary comparison](summary-build-tools) to help decide.
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Build your package ✨
+
+Learn how to build your Python package into [distribution files](build-package) ([sdist](python-source-distribution) and [wheel](python-wheel)) that can be published on [PyPI](publish-pypi-conda).
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Publish to PyPI and Conda ✨
+
+Learn how to publish your package to [PyPI](publish-pypi-conda) and optionally to [conda-forge](how-to-submit-to-conda-forge). This page covers the complete process for making your package available to users, including the [conda-forge submission process](how-to-submit-to-conda-forge) after publishing to PyPI.
+:::
+::::
+
+:::::
+
+## Choosing the right tools
+
+Not sure which build tool to use? This decision tree can help you choose based on your package's needs:
+
 :::{figure-md} packaging-tools-decision-tree
 
 <img src="../images/python-package-tools-decision-tree.png" alt="Figure showing a decision tree with the various packaging tool front-end and back-end options." width="700px">
 
-Diagram showing the various front-end build tools that you can select from.
-See the packaging tools page to learn more about each tool.
+Use this decision tree to help select a packaging tool. See the [packaging tools page](python-package-build-tools) for detailed comparisons and recommendations.
 :::
 
-:::{note}
-If you are considering submitting a package for peer review, have a look
-at the bare-minimum [editor checks](https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template)
-that pyOpenSci performs before a review begins. These checks are useful
-to explore for both authors planning to submit a package to us for review
-and for anyone who is just getting started with creating a Python package.
-:::
+## Our recommendations
 
-## What you will learn here
+We suggest tools and approaches based on three principles:
 
-In this section of our Python packaging guide, we:
+1. **Beginner-friendly** - Tools that are easy to learn and use for those new to packaging
+2. **Well-maintained** - Tools with active development and good documentation
+3. **Standards-aligned** - Tools that follow current [Python packaging standards](https://packaging.python.org/en/latest/) and [Scientific Python community specs](https://scientific-python.org/specs/)
 
-- Provide an overview of the options available to you when packaging your
-  code.
-- Suggest tools and approaches that both meet your needs and also support
-  existing standards.
-- Suggest tools and approaches that will allow you to expand upon a workflow
-  that may begin as a pure Python code and evolve into code that requires
-  addition layers of complexity in the packaging build.
-- Align our suggestions with the most current, accepted
-  [PEPs (Python Enhancement Protocols)](https://peps.python.org/pep-0000/)
-  and the [Scientific Python community SPECs](https://scientific-python.org/specs/).
-- In an effort to maintain consistency within our community, we also align
-  with existing best practices being implemented by developers of core
-  Scientific Python packages such as Numpy, SciPy and others.
+### Pure Python vs. complex builds
 
-## Guidelines for pyOpenSci's packaging recommendations
+- **Pure Python packages** can use any modern tool (Hatch, PDM, Poetry, Flit) - choose based on the features you want
+- **Packages with C/C++ extensions** may need additional build steps. See our [complex builds page](complex-python-package-builds) for guidance. For comprehensive information on packaging compiled projects, see the [Scientific Python Development Guide on compiled packaging](https://learn.scientific-python.org/development/guides/packaging-compiled/).
 
-The flexibility of the Python programming language lends itself to a diverse
-range of tool options for creating a Python package. Python is so flexible that
-it is one of the few languages that can be used to wrap around other languages.
-The ability of Python to wrap other languages is one the reasons you will often
-hear Python described as a ["glue" language](https://numpy.org/doc/stable/user/c-info.python-as-glue.html)"
+Most scientific Python packages start simple and can evolve to handle more complex requirements as needed.
 
-If you are building a pure Python package, then your packaging setup can be
-simple. However, some scientific packages have complex requirements as they may
-need to support extensions or tools written in other languages such as C or C++.
+## Submitting your package for peer review?
 
-To support the many different uses of Python, there are many ways to create a
-Python package. In this guide, we suggest packaging approaches and tools based on:
+If you're planning to submit your package to pyOpenSci for [peer review](https://www.pyopensci.org/about-peer-review/index.html), check out our [editor checklist](https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template) for the minimum requirements. These checks are useful for anyone creating a Python package, not just those submitting for review.
 
-1. What we think will be best and easiest to adopt for those who are newer to
-   packaging.
-2. Tools that we think are well maintained and documented.
-3. A shared goal of standardizing packaging approaches across this (scientific)
-   Python ecosystem.
+:::{admonition} These are recommendations, not requirements
+:class: tip
 
-Here, we also try to align our suggestions with the most current, accepted
-[Python community](https://packaging.python.org/en/latest/) and [scientific community](https://scientific-python.org/specs/).
+The suggestions in this guide are designed to help you create a well-structured package. They are **not** specific requirements for pyOpenSci peer review.
 
-:::{admonition} Suggestions in this guide are not pyOpenSci review requirements
-:class: important
-
-The suggestions for package layout in this section are made with the
-intent of being helpful; they are not specific requirements for your
-package to be reviewed and accepted into our pyOpenSci open source ecosystem.
-
-Please check out our [package scope page](https://www.pyopensci.org/software-peer-review/about/package-scope.html)
-and [review requirements in our author guide](https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#)
-if you are looking for pyOpenSci's Python package review requirements!
+If you're submitting to pyOpenSci, see our [package scope](https://www.pyopensci.org/software-peer-review/about/package-scope.html) and [author guide](https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#) for actual review requirements.
 :::
 
 :::{toctree}
@@ -181,9 +188,9 @@ Intro <self>
 
 Python package structure <python-package-structure>
 pyproject.toml Package Metadata <pyproject-toml-python-package-metadata>
-Build Your Package <python-package-distribution-files-sdist-wheel>
 Declare dependencies <declare-dependencies>
 Package Build Tools <python-package-build-tools>
+Build Your Package <python-package-distribution-files-sdist-wheel>
 Complex Builds <complex-python-package-builds>
 :::
 

@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -466,9 +466,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
@@ -517,7 +517,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Creating New Versions of Your Python Package</span></li>
   </ul>
@@ -571,7 +571,7 @@ document your deprecation policy for code.</p>
 </div>
 <!-- TODO: Better link to what expressive code is?-->
 <section id="semver-rules">
-<h2>SemVer rules<a class="headerlink" href="#semver-rules" title="Link to this heading">#</a></h2>
+<span id="package-versioning"></span><h2>SemVer rules<a class="headerlink" href="#semver-rules" title="Link to this heading">#</a></h2>
 <p>Following SemVer, your bump your package version to a:</p>
 <ul class="simple">
 <li><p>patch (1.1.1 –&gt; 1.1.<strong>2</strong>)</p></li>
@@ -614,7 +614,7 @@ Python package versions.</p>
 <!-- bump2version isn't really maintained anymore - are there alternatives? -->
 </section>
 <section id="tools-to-manage-versions-for-your-python-package">
-<h2>Tools to manage versions for your Python package<a class="headerlink" href="#tools-to-manage-versions-for-your-python-package" title="Link to this heading">#</a></h2>
+<span id="tools-version-management"></span><h2>Tools to manage versions for your Python package<a class="headerlink" href="#tools-to-manage-versions-for-your-python-package" title="Link to this heading">#</a></h2>
 <p>There are a handful of tools that are widely used in the scientific ecosystem that you can use to manage your package
 versions. Some of these tools are built into or work with your chosen
 <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">packaging build tools that discussed in this chapter.</span></a></p>
@@ -678,13 +678,13 @@ to update the version at the command line using commands such as:</p>
 <p><a class="reference external" href="https://hatch.pypa.io/latest/version/">Hatch</a>, for instance offers <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">version</span> <span class="pre">minor</span></code> which will modify
 the version of your package incrementally. With <strong>Hatch</strong> the version value will be found in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. <!-- TODO double check this --></p>
 <section id="hatch-or-other-tools-like-pdm-pros">
-<h4>Hatch (or other tools like PDM) Pros<a class="headerlink" href="#hatch-or-other-tools-like-pdm-pros" title="Link to this heading">#</a></h4>
+<h4>Hatch (or other tools like PDM) pros<a class="headerlink" href="#hatch-or-other-tools-like-pdm-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Easy to use version updates locally using a single tool!</p></li>
 </ul>
 </section>
 <section id="hatch-or-other-tools-like-pdm-cons">
-<h4>Hatch (or other tools like PDM) Cons<a class="headerlink" href="#hatch-or-other-tools-like-pdm-cons" title="Link to this heading">#</a></h4>
+<h4>Hatch (or other tools like PDM) cons<a class="headerlink" href="#hatch-or-other-tools-like-pdm-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>There will be some setup involved to ensure package version is updated throughout your package</p></li>
 </ul>
@@ -733,7 +733,7 @@ push to PyPI workflow on GitHub.</p>
 </div>
 </section>
 <section id="hatch-vcs-pros">
-<h4>hatch_vcs Pros<a class="headerlink" href="#hatch-vcs-pros" title="Link to this heading">#</a></h4>
+<h4>hatch_vcs pros<a class="headerlink" href="#hatch-vcs-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Hatch supports modern Python packaging standards</p></li>
 <li><p>It creates a single-source file that contains your package version.</p></li>
@@ -745,7 +745,7 @@ push to PyPI workflow on GitHub.</p>
 </ul>
 </section>
 <section id="hatch-vcs-cons">
-<h4>hatch_vcs Cons<a class="headerlink" href="#hatch-vcs-cons" title="Link to this heading">#</a></h4>
+<h4>hatch_vcs cons<a class="headerlink" href="#hatch-vcs-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub. But you could locally develop a build to “bump” tag
 versions</p></li>
@@ -772,7 +772,7 @@ determine the package’s current version.</p>
 <li><p><strong>setuptools</strong> is still the most commonly used Python packaging build tool</p></li>
 </ul>
 <section id="setuptools-scm-cons">
-<h4>setuptools_scm Cons<a class="headerlink" href="#setuptools-scm-cons" title="Link to this heading">#</a></h4>
+<h4>setuptools_scm cons<a class="headerlink" href="#setuptools-scm-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub.</p></li>
 <li><p>Not well documented</p></li>
@@ -782,12 +782,12 @@ determine the package’s current version.</p>
 <strong>hatch_vcs</strong> and <strong>hatchling</strong> to build your package and manage
 package versions.</p>
 <!--
-```{important}
+:::{important}
 pyOpenSci will be creating tutorials on working with `setuptools-scm` and GitHub releases to
 update versions of your package and push to PyPI. These should be published sometime
 during the spring/summer 2023. In the meantime [here is a high quality blog post
 that will help you get started with using setuptools-scm](https://www.moritzkoerber.com/posts/versioning-with-setuptools_scm/)
-``` -->
+::: -->
 </section>
 </section>
 <section id="tool-4-python-semantic-release">
@@ -803,7 +803,7 @@ Semantic Release to implement a <strong>patch</strong> version bump.
 For instance if your package was at version 1.1.0 and you
 made the commit below with the words fix(text-here), Python Semantic
 Release would bump your package to version 1.1.1.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;fix(mod_plotting): fix warnings returned athlete attributes&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;fix(mod_plotting): fix warnings returned athlete attributes&quot;</span>
 </pre></div>
 </div>
 <p>Similarly a feature (<code class="docutils literal notranslate"><span class="pre">feat()</span></code>) triggers a minor version bump.
@@ -816,14 +816,14 @@ For example from version 1.1 to version 1.2</p>
 <p>You can find a thoughtful discussion of python semantic version <a class="reference external" href="https://py-pkgs.org/07-releasing-versioning#automatic-version-bumping">in this Python package guide</a>. Note that the guide hasn’t been updated since 2020 and will potentially be updated in the future! But for now, some of the commands are dated but the content is still excellent.</p>
 </div>
 <section id="python-semantic-release-pros">
-<h4>Python Semantic Release Pros<a class="headerlink" href="#python-semantic-release-pros" title="Link to this heading">#</a></h4>
+<h4>Python Semantic Release pros<a class="headerlink" href="#python-semantic-release-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Follows semver versioning closely</p></li>
 <li><p>Enforces maintainers using descriptive commit messages which can simplify troubleshooting and ensure a cleaner and more self-describing git history.</p></li>
 </ul>
 </section>
 <section id="python-semantic-release-cons">
-<h4>Python Semantic Release Cons<a class="headerlink" href="#python-semantic-release-cons" title="Link to this heading">#</a></h4>
+<h4>Python Semantic Release cons<a class="headerlink" href="#python-semantic-release-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Requires very specific commit language to work. In practice some maintainers and contributors may not be able to maintain that level of specificity in commit messages (NOTE: there are bots that will check git commit messages in a repo)</p></li>
 <li><p>Release happens at the command line. This makes is harder to implement a GitHub based release workflow as the wrong commit message could trigger a release.</p></li>
@@ -892,23 +892,23 @@ control tag, is used to trigger a version update.  -->
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-bumping-python-package-versions">Tools for bumping Python package versions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning">Tool 1: Hatch and other build tools that offer incremental versioning</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-pros">Hatch (or other tools like PDM) Pros</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-cons">Hatch (or other tools like PDM) Cons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-pros">Hatch (or other tools like PDM) pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-cons">Hatch (or other tools like PDM) cons</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-2-hatch-vcs-hatchling-build-back-end">Tool 2: Hatch_vcs &amp; hatchling build back-end</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-example-setup-in-your-pyproject-toml">Hatch example setup in your pyproject.toml</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-pros">hatch_vcs Pros</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-cons">hatch_vcs Cons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-pros">hatch_vcs pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-cons">hatch_vcs cons</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-3-setuptools-scm-versioning-using-git-tags">Tool 3: setuptools-scm versioning using git tags</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-scm-cons">setuptools_scm Cons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-scm-cons">setuptools_scm cons</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-4-python-semantic-release">Tool 4: Python semantic release</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-pros">Python Semantic Release Pros</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-cons">Python Semantic Release Cons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-pros">Python Semantic Release pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-cons">Python Semantic Release cons</a></li>
 </ul>
 </li>
 </ul>

@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -467,9 +467,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージコードのスタイル、フォーマット、リンター</span></li>
   </ul>
@@ -563,7 +563,7 @@
 <li><p>pre-commitフックとpre-commit.ciボットを設定することで、日々のワークフローやGitHubのプルリクエストでコードフォーマットツールを簡単に使えるようになります。</p></li>
 </ol>
 <section id="use-a-code-format-tool-or-tools-to-make-your-life-easier">
-<h2>コードフォーマットツール (または複数のツール) を使って生活を楽にします<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Link to this heading">#</a></h2>
+<span id="code-style-tools"></span><h2>コードフォーマットツール (または複数のツール) を使って生活を楽にします<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Link to this heading">#</a></h2>
 <p>コードフォーマットツール、あるいはフォーマットツールのセットを使うことをお勧めします。PEP 8 のフォーマット仕様をすべて手作業で適用するのは、メンテナにとって時間がかかるだけでなく、潜在的な新規貢献者にとっては障害になりかねないからです。 コードフォーマッタはあなたのコードを自動的に再フォーマットし、PEP 8の標準を遵守し、一貫したスタイル決定を適用します。</p>
 <p>コードフォーマット一式のツールを設定します:</p>
 <ul class="simple">
@@ -576,14 +576,14 @@
 <p>（科学的な）Pythonエコシステム内のパッケージ間で統一されたコードフォーマットは、広くコードをスキャンし、理解し、貢献することを容易にします。</p>
 </section>
 <section id="linting-vs-format-and-style">
-<h2>リンティング vs フォーマットとスタイル<a class="headerlink" href="#linting-vs-format-and-style" title="Link to this heading">#</a></h2>
+<h2>Linting vs. format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Link to this heading">#</a></h2>
 <p>その前に、いくつかの定義を整理しておきましょう。</p>
 <section id="code-linting">
-<h3>コードリンティング<a class="headerlink" href="#code-linting" title="Link to this heading">#</a></h3>
+<h3>Code linting<a class="headerlink" href="#code-linting" title="Link to this heading">#</a></h3>
 <p>コードリンターは、コードをレビューしてエラーや問題を特定するツールです。 リンターは通常、あなたのコードを修正しません。 エラーが何であり、どの行で発見されたかを教えてくれます。 後述するFlake8は、よく使われるコードリンターの一例です。</p>
 </section>
 <section id="code-formatters-and-stylers">
-<h3>コードフォーマッタ（およびスタイラーズ）<a class="headerlink" href="#code-formatters-and-stylers" title="Link to this heading">#</a></h3>
+<h3>Code formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Link to this heading">#</a></h3>
 <p>コードフォーマッタはあなたのコードを再フォーマットしてくれます。 Python に特化したコードフォーマッタは PEP 8 標準に従うことが多いです。 しかし、コードの一貫性に関する文体的な決定も行います。</p>
 <p>Blackはよく使われるコードフォーマッターの一例です。 BlackはPEP 8の標準を適用すると同時に、文字列に対する二重引用符の一貫した使用や、リスト内の項目のスペーシングなどについても決定しています。</p>
 <p>Black については後述します。</p>
@@ -592,7 +592,7 @@
 <section id="code-linting-formatting-and-styling-tools">
 <h2>コードリンティング、フォーマット、スタイリングツール<a class="headerlink" href="#code-linting-formatting-and-styling-tools" title="Link to this heading">#</a></h2>
 <section id="black">
-<h3>Black<a class="headerlink" href="#black" title="Link to this heading">#</a></h3>
+<span id="about-black"></span><h3>Black<a class="headerlink" href="#black" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> はコードフォーマッタです。 Blackは自動的に(そして <em>unapologetically</em> に)スペーシングの問題を修正し、コードフォーマットがパッケージ全体で一貫していることを保証します。 Blackはまた、いくつかの例外を除き、一般的にPEP 8スタイルガイドラインを遵守します。 以下にその例外の例をいくつか示します:</p>
 <ul class="simple">
 <li><p>Blackのデフォルトの行の長さは、79文字の <code class="docutils literal notranslate"><span class="pre">PEP</span> <span class="pre">8</span></code> 仕様ではなく、88 (79 + 10%) です。 しかし、行の長さは Black の設定で手動で上書きすることができます。</p></li>
@@ -606,7 +606,7 @@
 <p>Blackのようなコードフォーマッターを使うことで、書式を気にするよりもコードの機能に時間を割くことができます。</p>
 </section>
 <section id="flake8">
-<h3>Flake8<a class="headerlink" href="#flake8" title="Link to this heading">#</a></h3>
+<span id="about-flake8"></span><h3>Flake8<a class="headerlink" href="#flake8" title="Link to this heading">#</a></h3>
 <p>Python の <code class="docutils literal notranslate"><span class="pre">pep8</span></code> フォーマットの標準に準拠するために、<a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> をコードフォーマットツールボックスに追加するとよいでしょう。</p>
 <p>flake8 は:</p>
 <ul class="simple">
@@ -668,7 +668,7 @@ stravalib/model.py:496:80:<span class="w"> </span>E501<span class="w"> </span>li
 </section>
 </section>
 <section id="ruff">
-<h3>Ruff<a class="headerlink" href="#ruff" title="Link to this heading">#</a></h3>
+<span id="about-ruff"></span><h3>Ruff<a class="headerlink" href="#ruff" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://docs.astral.sh/ruff/">Ruff</a> は、コードクオリティのエコシステムに新しく追加されたもので、リリース以来人気を集めています。 <code class="docutils literal notranslate"><span class="pre">ruff</span></code> はPythonのリンターであり、コード整形ツールでもあります。 そのため、 <code class="docutils literal notranslate"><span class="pre">ruff</span></code> はここで紹介する他のすべてのツールの置き換えとして、あるいはいくつかのツールの補完として使用することができます。</p>
 <p><code class="docutils literal notranslate"><span class="pre">ruff</span></code> には他のリンターと異なる興味深い特徴があります:</p>
 <ul class="simple">
@@ -869,9 +869,9 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier">コードフォーマットツール (または複数のツール) を使って生活を楽にします</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-vs-format-and-style">リンティング vs フォーマットとスタイル</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linting">コードリンティング</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatters-and-stylers">コードフォーマッタ（およびスタイラーズ）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-vs-format-and-style">Linting vs. format and style</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linting">Code linting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatters-and-stylers">Code formatters (and stylers)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linting-formatting-and-styling-tools">コードリンティング、フォーマット、スタイリングツール</a><ul class="nav section-nav flex-column">

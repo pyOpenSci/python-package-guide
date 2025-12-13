@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -66,7 +66,7 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="複雑なPythonパッケージのビルド" href="complex-python-package-builds.html" />
+    <link rel="next" title="Pythonパッケージのビルドについて学ぶ" href="python-package-distribution-files-sdist-wheel.html" />
     <link rel="prev" title="Dependencies for your Python Package" href="declare-dependencies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
@@ -467,9 +467,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージングツール</span></li>
   </ul>
@@ -540,7 +540,7 @@
   <section id="python-packaging-tools">
 <h1>Pythonパッケージングツール<a class="headerlink" href="#python-packaging-tools" title="Link to this heading">#</a></h1>
 <section id="tools-for-building-your-package">
-<h2>パッケージ構築のためのツール<a class="headerlink" href="#tools-for-building-your-package" title="Link to this heading">#</a></h2>
+<span id="build-tools-overview"></span><h2>パッケージ構築のためのツール<a class="headerlink" href="#tools-for-building-your-package" title="Link to this heading">#</a></h2>
 <p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Python パッケージの <em>sdist</em> ディストリビューションと <em>wheel</em> ディストリビューションを作成する</span></a> ために使えるビルドツールはいくつかあります。 以下では、最もよく使われる Python パッケージングツールの機能、利点、制限について説明します。 このガイドでは純粋な Python パッケージに焦点を当てます。 しかし、現在C/C++やその他の言語拡張を含むパッケージをサポートしているツールも紹介します。</p>
 <figure class="align-default" id="package-decision-tree">
 <a class="reference internal image-reference" href="../_images/python-package-tools-decision-tree.png"><img alt="さまざまなフロントエンドとバックエンドのパッケージングツールを示すデシジョンツリー図。 どのパッケージングツールを使うかは、どんな機能が必要かを考えることで決めることができます。 PDMとHatchは、異なるビルドバックエンドを使用しているため、現在のところ最も柔軟なツールです。 PDMとHatchは初心者に最も喜ばれるツールで、Poetryはその次です。 Poetryは純粋なPythonプロジェクトに適しています。" src="../_images/python-package-tools-decision-tree.png" style="width: 700px;" />
@@ -563,7 +563,7 @@
 </ul>
 </section>
 <section id="summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools">
-<h2>ツールまとめ Hatch vs PDM vs Poetry (と setuptools)<a class="headerlink" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools" title="Link to this heading">#</a></h2>
+<span id="summary-build-tools"></span><h2>ツールまとめ Hatch vs PDM vs Poetry (と setuptools)<a class="headerlink" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools" title="Link to this heading">#</a></h2>
 <p>簡単な要約をお探しの方は、以下をお読みください。</p>
 <ul class="simple">
 <li><p>一般的に、このページから選択した最新のツールは、パッケージを構築するのに適しています。 ツールの選択は、ワークフローに求める機能によって決まります。</p></li>
@@ -769,7 +769,7 @@ twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </
 </section>
 </section>
 <section id="pdm">
-<h2>PDM<a class="headerlink" href="#pdm" title="Link to this heading">#</a></h2>
+<span id="about-pdm"></span><h2>PDM<a class="headerlink" href="#pdm" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pdm-project.org/latest/">PDM is a Python packaging and dependency management tool</a>.
 PDM supports builds for pure Python projects. It also provides multiple layers of
 support for projects that have C and C++ extensions.</p>
@@ -778,7 +778,7 @@ support for projects that have C and C++ extensions.</p>
 <p>PDMはPDM-back-endとsetuptoolsの同時使用をサポートしています。 つまり、setuptools を実行して C 拡張モジュールをコンパイルビルドすることができます。 PDMのビルドバックエンドはコンパイルされた拡張ファイル(.so, .pyd)を受け取り、純粋なPythonファイルと一緒にパッケージ化します。</p>
 </div>
 <section id="pdm-features">
-<h3>PDMの特徴<a class="headerlink" href="#pdm-features" title="Link to this heading">#</a></h3>
+<h3>PDM features<a class="headerlink" href="#pdm-features" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -864,7 +864,7 @@ support for projects that have C and C++ extensions.</p>
 <h2>Flit<a class="headerlink" href="#flit" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://flit.pypa.io/en/stable/">Flitは、最新のPythonパッケージング標準をサポートする、飾り気のない、合理的なパッケージングツール</a> です。 Flitは、ローカル・ワークフローで使用する基本的なパッケージを構築し、高度な機能を必要としない場合に最適な選択です。 また、パッケージ構造がすでに作成されている場合。 詳しくは後述します。</p>
 <section id="flit-features">
-<h3>Flitの特徴<a class="headerlink" href="#flit-features" title="Link to this heading">#</a></h3>
+<h3>Flit features<a class="headerlink" href="#flit-features" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -921,8 +921,8 @@ support for projects that have C and C++ extensions.</p>
 </ul>
 </section>
 </section>
-<section id="hatch">
-<span id="id1"></span><h2>Hatch<a class="headerlink" href="#hatch" title="Link to this heading">#</a></h2>
+<section id="about-hatch">
+<span id="hatch"></span><span id="id1"></span><h2>Hatch<a class="headerlink" href="#about-hatch" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://hatch.pypa.io/latest/"><strong>Hatch</strong></a> は、ポエトリーやPDMと同様、統一されたコマンドラインインターフェイスを提供する。HatchをPoetryやPDMから切り離すために、Pythonの異なるバージョン間でローカルにテストを実行しやすくするテスト用の環境マネージャーも提供しています。 また、nox / makefileのような機能もあり、ドキュメントをローカルでビルドするようなカスタムビルドワークフローを作成することができる。 つまり、ワークフローから <strong>Make</strong> や <strong>Nox</strong> のようなツールを削除して、代わりにHatchを使うことができる可能性があるということだ。</p>
 <section id="hatch-features">
 <h3>Hatchの特徴<a class="headerlink" href="#hatch-features" title="Link to this heading">#</a></h3>
@@ -1004,7 +1004,7 @@ support for projects that have C and C++ extensions.</p>
 </section>
 </section>
 <section id="poetry">
-<h2>Poetry<a class="headerlink" href="#poetry" title="Link to this heading">#</a></h2>
+<span id="about-poetry"></span><h2>Poetry<a class="headerlink" href="#poetry" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://python-poetry.org/">Poetry はフル機能のビルドツールです。</a> また、（PyPAの調査に基づく）2番目に人気のあるフロントエンドパッケージングツールでもあります。 Poetry はユーザーフレンドリーで、きれいで読みやすいドキュメントを持っています。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
@@ -1090,12 +1090,12 @@ discusses the slight differences in how poetry adds deps....-->
 </section>
 </section>
 <section id="using-setuptools-back-end-for-python-packaging-with-build-front-end">
-<h2>PythonパッケージングのためのSetuptoolsバックエンドとBuildフロントエンドの使用<a class="headerlink" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end" title="Link to this heading">#</a></h2>
+<span id="about-setuptools"></span><h2>Using Setuptools back-end for Python packaging with Build front-end<a class="headerlink" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">Setuptools</a>は最も成熟したPythonパッケージングビルドツールで、<a class="reference external" href="https://setuptools.pypa.io/en/latest/history.html#">開発は2009年以前にさかのぼります</a>。 また、（PyPAの調査によると）Setuptoolsは最も多くのコミュニティユーザを抱えています。 Setuptoolsは、Flit、Poetry、Hatchのようなユーザーフロントエンドを提供していません。そのため、パッケージの配布を作成するには <strong>build</strong> を、PyPI に公開するには <strong>twine</strong> などの他のツールを使用する必要があります。</p>
 <p>setuptoolsは最もよく使われるツールですが、パッケージメンテナには、PoetryやHatch、PDMなど、パッケージングにもっとモダンなツールを使うことを検討することをお勧めします。</p>
 <p>ここでsetuptoolsについて説明するのは、それがエコシステムでよく見られるものであり、貢献者がそれを理解することで恩恵を受けるかもしれないからです。</p>
 <section id="setuptools-features">
-<h3>Setuptoolsの特徴<a class="headerlink" href="#setuptools-features" title="Link to this heading">#</a></h3>
+<h3>Setuptools features<a class="headerlink" href="#setuptools-features" title="Link to this heading">#</a></h3>
 <p>setuptoolsの機能には次のようなものがあります:</p>
 <ul class="simple">
 <li><p>完全にカスタマイズ可能なビルドワークフロー</p></li>
@@ -1144,11 +1144,11 @@ discusses the slight differences in how poetry adds deps....-->
       </div>
     </a>
     <a class="right-next"
-       href="complex-python-package-builds.html"
+       href="python-package-distribution-files-sdist-wheel.html"
        title="次ページ">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">次へ</p>
-        <p class="prev-next-title">複雑なPythonパッケージのビルド</p>
+        <p class="prev-next-title">Pythonパッケージのビルドについて学ぶ</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1191,16 +1191,16 @@ discusses the slight differences in how poetry adds deps....-->
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm">PDM</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm-features">PDMの特徴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm-features">PDM features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-with-pdm">PDMの課題</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flit">Flit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flit-features">Flitの特徴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flit-features">Flit features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-might-not-want-to-use-flit">Flitを使いたくない理由</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch">Hatch</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-hatch">Hatch</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-features">Hatchの特徴</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-might-not-want-to-use-hatch">ハッチを使いたくない理由</a></li>
 </ul>
@@ -1210,8 +1210,8 @@ discusses the slight differences in how poetry adds deps....-->
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-with-poetry">Poetryの課題</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end">PythonパッケージングのためのSetuptoolsバックエンドとBuildフロントエンドの使用</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-features">Setuptoolsの特徴</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end">Using Setuptools back-end for Python packaging with Build front-end</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-features">Setuptools features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-using-setuptools">setuptoolsの課題</a></li>
 </ul>
 </li>

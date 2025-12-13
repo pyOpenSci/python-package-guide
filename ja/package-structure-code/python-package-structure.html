@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="科学的PythonプロジェクトのためのPythonパッケージ構造" />
+<meta property="og:title" content="Python Package Structure & Layout" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="Pythonのパッケージングエコシステムでよく見られるレイアウトは2種類あります。: srcとフラットレイアウどちらのレイアウトも、異なるメンテナグループにとって利点があります。 Python パッケージの作成には src/ レイアウト (後述) を使うことを強く推奨しますが、必須ではありません。 このレイアウトは、 PyPA packaging guide tutorial でも推奨されて..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_python-package-structure_d826651f.png" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_python-package-structure_6fad8f00.png" />
 <meta property="og:image:alt" content="Pythonのパッケージングエコシステムでよく見られるレイアウトは2種類あります。: srcとフラットレイアウどちらのレイアウトも、異なるメンテナグループにとって利点があります。 Python パッケージの作成には src/ レイアウト (後述) を使うことを強く推奨しますが、必須ではありません。 このレイアウトは、 PyPA packaging guide tutorial でも推奨されて..." />
 <meta name="description" content="Pythonのパッケージングエコシステムでよく見られるレイアウトは2種類あります。: srcとフラットレイアウどちらのレイアウトも、異なるメンテナグループにとって利点があります。 Python パッケージの作成には src/ レイアウト (後述) を使うことを強く推奨しますが、必須ではありません。 このレイアウトは、 PyPA packaging guide tutorial でも推奨されて..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>科学的PythonプロジェクトのためのPythonパッケージ構造 &#8212; Python Packaging Guide</title>
+    <title>Python Package Structure &amp; Layout &#8212; Python Packaging Guide</title>
   
   
   
@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -67,7 +67,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="パッケージの設定とメタデータにはpyproject.tomlファイルを使用します。" href="pyproject-toml-python-package-metadata.html" />
-    <link rel="prev" title="Pythonパッケージ構造" href="intro.html" />
+    <link rel="prev" title="Python Package Structure &amp; Code" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
   <meta name="docsearch:version" content="" />
@@ -467,9 +467,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pythonパッケージ構造</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
@@ -518,9 +518,9 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">科学的PythonプロジェクトのためのPythonパッケージ構造</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Package Structure &amp; Layout</span></li>
   </ul>
 </nav>
 </div>
@@ -537,8 +537,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-package-structure-for-scientific-python-projects">
-<h1>科学的PythonプロジェクトのためのPythonパッケージ構造<a class="headerlink" href="#python-package-structure-for-scientific-python-projects" title="Link to this heading">#</a></h1>
+  <section id="python-package-structure-layout">
+<h1>Python Package Structure &amp; Layout<a class="headerlink" href="#python-package-structure-layout" title="Link to this heading">#</a></h1>
 <p>Pythonのパッケージングエコシステムでよく見られるレイアウトは2種類あります。: srcとフラットレイアウどちらのレイアウトも、異なるメンテナグループにとって利点があります。</p>
 <p>Python パッケージの作成には <strong>src/</strong> レイアウト (後述) を使うことを強く推奨しますが、必須ではありません。 このレイアウトは、 <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">PyPA packaging guide tutorial</a> でも推奨されています。</p>
 <div class="important admonition">
@@ -553,27 +553,8 @@
 <p>Hatch のようなツールを使って、最新の Python パッケージ構造を素早く作成することができます。 クイックスタートチュートリアルをご覧ください:</p>
 <p>パッケージを構築するための仕組み作りを学びたいですか？ こちらをクリックしてください。</p>
 <section id="what-is-the-python-package-source-layout">
-<h2>Pythonパッケージのソースレイアウトとは何ですか？<a class="headerlink" href="#what-is-the-python-package-source-layout" title="Link to this heading">#</a></h2>
+<span id="package-source-layout"></span><h2>Pythonパッケージのソースレイアウトとは何ですか？<a class="headerlink" href="#what-is-the-python-package-source-layout" title="Link to this heading">#</a></h2>
 <p><strong>src/package</strong> のレイアウト構造の例を以下に示します。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>myPackageRepoName
-├── CHANGELOG.md               ┐
-├── CODE_OF_CONDUCT.md         │
-├── CONTRIBUTING.md            │
-├── docs                       │ Package documentation
-│   └── index.md
-│   └── ...                    │
-├── LICENSE                    │
-├── README.md                  ┘
-├── pyproject.toml             ] Package metadata and build configuration
-├── src                        ┐
-│   └── myPackage              │
-│       ├── __init__.py        │ Package source code
-│       ├── moduleA.py         │
-│       └── moduleB.py         ┘
-└── tests                      ┐
-   └── ...                     ┘ Package tests
-</pre></div>
-</div>
 <p>上の例では、以下のディレクトリの位置に注意してください:</p>
 <ul class="simple">
 <li><p><strong>docs/:</strong> docsの章で説明したように、このディレクトリにはユーザー向けのドキュメントサイトが含まれます。 <strong>src/</strong> レイアウトでは、通常 docs/ は <strong>src/</strong> フォルダの同じディレクトリレベルに含まれます。</p></li>
@@ -589,41 +570,52 @@
 <li><p>README.md</p></li>
 </ul>
 <!-- TODO: CHANGELOG is not mentioned in either documentation nor peer review -->
-<p>パッケージングに関するドキュメント要件については、こちらをご覧ください。</p>
-<div class="admonition-example-scientific-packages-that-use-src-package-layout admonition">
-<p class="admonition-title"><strong>src/package</strong> レイアウトを使用する科学的パッケージの例</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/sourmash-bio/sourmash">Sourmash</a></p></li>
-<li><p><a class="reference external" href="https://github.com/bokeh/bokeh">bokeh</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openscm/openscm-runner">openscm</a></p></li>
-<li><p><a class="reference external" href="https://github.com/scikit-hep/awkward">awkward</a></p></li>
-<li><p><a class="reference external" href="https://github.com/poliastro/poliastro/">poliastro</a></p></li>
-</ul>
-</div>
-</section>
-<section id="the-src-layout-and-testing">
-<h2>src/ のレイアウトとテスト<a class="headerlink" href="#the-src-layout-and-testing" title="Link to this heading">#</a></h2>
-<p><strong>src/package</strong> レイアウトを使用する利点は、パッケージの作業ディレクトリ内のファイルではなく、インストールされたバージョンのパッケージに対してテストが実行されることを保証することです。 あなたのパッケージのインストールされたバージョンではなく、あなたのファイルでテストを実行すると、あなたのパッケージがインストールされたときにユーザが遭遇する問題を見逃してしまうかもしれません。</p>
-<p><code class="docutils literal notranslate"><span class="pre">tests/</span></code> が <strong>src/package</strong> ディレクトリの外にある場合、それらはパッケージの <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a> には含まれません。これにより、パッケージのサイズがわずかに小さくなり、PyPIにかかるストレージの負担が小さくなり、フェッチが速くなります。</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://hynek.me/articles/testing-packaging/"><strong>src/package</strong> レイアウトを使用する理由についてもっと読む</a></p></li>
-</ul>
-<div class="admonition-how-python-discovers-and-prioritizes-importing-modules admonition">
-<p class="admonition-title">Pythonはどのようにインポートモジュールを検出し、優先順位をつけるか</p>
-<p>デフォルトでは、Pythonは現在の作業ディレクトリにあるモジュールをPythonモジュール検索パスの先頭に追加します。</p>
-<p>つまり、パッケージの作業ディレクトリでフラットレイアウトの <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code> を使ってテストを実行すると、Python はインストールされたパッケージを検出する前に <code class="docutils literal notranslate"><span class="pre">package/module.py</span></code> ファイルを検出します。</p>
-<p>しかし、あなたのパッケージが src/ ディレクトリ構造の <strong>src/package</strong> にある場合、デフォルトでは Python のパスに追加されません。 これは、あなたのパッケージをインポートするとき、Python は（あなたのパッケージがインストールされている）アクティブな環境を強制的に検索することを意味します。</p>
-<p>注意: Pythonのバージョン3.11以上では、インストールされているパッケージを優先的に使うようにパスの設定を調整することができます ( <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code> など)。</p>
-</div>
-<section id="don-t-include-tests-in-your-package-wheel">
-<h3>パッケージホイールにテストを含めない<a class="headerlink" href="#don-t-include-tests-in-your-package-wheel" title="Link to this heading">#</a></h3>
-<p>パッケージに <a class="reference internal" href="../tests/index.html#tests-intro"><span class="std std-ref">tests</span></a> を書くことは重要です、しかし、デフォルトでテストを <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">パッケージホイール</span></a> の一部として含めることはお勧めしません。しかし、パッケージの配布にテストを含めないと、自分以外の人が自分のシステムでパッケージが正しく機能しているかどうかをテストすることが難しくなります。小さなテストスイート (Python ファイル + データ) を持っていて、ユーザが自分のシステムでローカルにテストを実行したいと思う場合、<code class="docutils literal notranslate"><span class="pre">tests/</span></code> ディレクトリを <strong>src/package</strong> ディレクトリに移動することでテストを含めることができます (以下の例を参照してください)。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>src/
-<span class="w">  </span>package/
-<span class="w">    </span>tests/
-docs/
-</pre></div>
-</div>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-info sd-rounded-pill reference external" href="https://www.pyopensci.org/python-package-guide/documentation"><span>Click here to read about our packaging documentation requirements.
+:::
+
+:::{admonition} Example scientific packages that use <strong>src/package</strong> layout
+
+* <a class="reference external" href="https://github.com/sourmash-bio/sourmash">Sourmash</a>
+* <a class="reference external" href="https://github.com/bokeh/bokeh">bokeh</a>
+* <a class="reference external" href="https://github.com/openscm/openscm-runner">openscm</a>
+* <a class="reference external" href="https://github.com/scikit-hep/awkward">awkward</a>
+* <a class="reference external" href="https://github.com/poliastro/poliastro/">poliastro</a>
+
+:::
+
+(src-layout-test)=
+## The src/ layout and testing
+
+The benefit of using the <strong>src/package</strong> layout is that it ensures tests are run against the
+installed version of your package rather than the files in your package
+working directory. If you run your tests on your files rather than the
+installed version of your package, you may be missing issues that users encounter when
+your package is installed.
+
+If <code class="docutils literal notranslate"><span class="pre">tests/</span></code> are outside the <strong>src/package</strong> directory, they aren't included in the package's <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a>. This makes your package size slightly smaller, which places a smaller storage burden on PyPI, and makes them faster to fetch.
+
+- <a class="reference external" href="https://hynek.me/articles/testing-packaging/">Read more about reasons to use the <strong>src/package</strong> layout</a>
+
+:::{admonition} How Python discovers and prioritizes importing modules
+
+By default, Python adds a module in your current working directory to the front of the Python module search path.
+
+This means that if you run your tests in your package's working directory, using a flat layout, <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code>, Python will discover <code class="docutils literal notranslate"><span class="pre">package/module.py</span></code> file before it discovers the installed package.
+
+However, if your package lives in a src/ directory structure <strong>src/package</strong>, then it won't be added to the Python path by default. This means that when you import your package, Python will be forced to search the active environment (which has your package installed).
+
+Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g., <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code>).
+:::
+
+### Don't include tests in your package wheel
+
+Writing <a class="reference internal" href="../tests/index.html#tests-intro"><span class="std std-ref">tests</span></a> for your package is important; however, we do not recommend including tests as part of your <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">package wheel</span></a> by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package runs properly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory into the <strong>src/package</strong> directory (see example below).
+
+```bash
+src/
+package/
+tests/
+docs/</span></a></p>
 <p><strong>src/package</strong> ディレクトリに <strong>tests/</strong> ディレクトリをインクルードすることで、パッケージの <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a> にテストが含まれるようになります。</p>
 <p>パッケージ配布にテストを含める方法については、 <a class="reference external" href="https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules">pytest documentation for more about including tests in your package distribution</a> を必ず読んでください。</p>
 <div class="tip admonition">
@@ -635,7 +627,6 @@ docs/
 </ul>
 <p>しかし、場合によっては、特に科学的なPythonのエコシステムでは、テストを含める必要があるかもしれません。</p>
 </div>
-</section>
 <section id="don-t-include-test-suite-datasets-in-your-package">
 <h3><strong>テストスイートのデータセットをパッケージに含めないでください</strong><a class="headerlink" href="#don-t-include-test-suite-datasets-in-your-package" title="Link to this heading">#</a></h3>
 <p>テストをパッケージ配布に含める場合、テストスイートディレクトリにデータを含めることは強くお勧めしません。 そうではなく、FigshareやZenodoのようなリポジトリでテストデータをホストします。 <a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a> のようなツールを使用して、あなた（またはユーザー）がテストを実行する際にデータにアクセスします。</p>
@@ -659,8 +650,8 @@ docs/
 </ul>
 <p>上述した <strong>src/package</strong> レイアウトを使用することを推奨しますが、特にこのレイアウトを使用するパッケージに貢献する予定がある場合は、フラットレイアウトも理解することが重要です。</p>
 <div class="tip admonition">
-<p class="admonition-title">ほとんどの科学的Pythonパッケージがソースを使わない理由</p>
-<p>ほとんどの場合、すでにフラットレイアウトを使用している大規模な科学パッケージの <strong>src/package</strong> レイアウトへの移行は、かなりの時間を消費します。</p>
+<p class="admonition-title">Why most scientific Python packages do not use src/ layout</p>
+<p>Migrating larger scientific packages that already use a flat layout would consume significant time and resources.</p>
 <p>しかし、初心者にとって<strong>src/package</strong>レイアウトを使う利点は大きいです。そのため、新しいパッケージを作成する場合は、 <strong>src/package</strong> レイアウトを使用することをお勧めします。</p>
 <p>エコシステムの中で数多くのパッケージが <a class="reference external" href="https://github.com/scikit-build/cmake-python-distributions/pull/145"><strong>src/package</strong> レイアウトに移行しなければなりませんでした。</a></p>
 </div>
@@ -711,20 +702,10 @@ docs/
 </ul>
 <p>これらのパッケージをすべて別のレイアウトに移行するのは、かなりのメンテナンスコストと負担になるでしょう。 これらのツールのソースレイアウトの潜在的な利点は、メンテナンスの投資に見合うものではありません。</p>
 </div>
-<!--
-Not sure where to put this now ... most new users won't have multiple packages. Maybe this goes into the complex packing page as we build that out?
-
-```{admonition} Multiple packages in a src/ folder
-:class: tip
-
-In some more advanced cases, you may have more than one package in your **src/** directory. See [Black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However, for most beginners you will likely only have one sub-directory in your **src/** folder.
-``` -->
-<!--
-```{admonition} A few notes about the src/ layout
-:class: tip
-
-It is important to note here that sometimes, when using the **src/package** structure, the directory name (e.g., package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a subdirectory within **src/**.
-``` -->
+<div class="tip admonition">
+<p class="admonition-title">Multiple packages in a src/ folder</p>
+<p>In some more advanced cases, you may have more than one package in your <strong>src/</strong> directory. See <a class="reference external" href="https://github.com/psf/black/tree/main/src">Black's GitHub repo</a> for an example of this. However, for most beginners you will likely only have one sub-directory in your <strong>src/</strong> folder.</p>
+</div>
 </section>
 </section>
 </section>
@@ -745,7 +726,7 @@ It is important to note here that sometimes, when using the **src/package** stru
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">前へ</p>
-        <p class="prev-next-title">Pythonパッケージ構造</p>
+        <p class="prev-next-title">Python Package Structure &amp; Code</p>
       </div>
     </a>
     <a class="right-next"
@@ -776,9 +757,7 @@ It is important to note here that sometimes, when using the **src/package** stru
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-python-package-source-layout">Pythonパッケージのソースレイアウトとは何ですか？</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-src-layout-and-testing">src/ のレイアウトとテスト</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-include-tests-in-your-package-wheel">パッケージホイールにテストを含めない</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-python-package-source-layout">Pythonパッケージのソースレイアウトとは何ですか？</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-include-test-suite-datasets-in-your-package"><strong>テストスイートのデータセットをパッケージに含めないでください</strong></a></li>
 </ul>
 </li>

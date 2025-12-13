@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/complex-python-package-builds.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. In the future, we want to provide resources for packaging wo..." />
+<meta property="og:description" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. For comprehensive guidance on packaging compiled projects wi..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_complex-python-package-builds_f5870ce0.png" />
-<meta property="og:image:alt" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. In the future, we want to provide resources for packaging wo..." />
-<meta name="description" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. In the future, we want to provide resources for packaging wo..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_complex-python-package-builds_f7881641.png" />
+<meta property="og:image:alt" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. For comprehensive guidance on packaging compiled projects wi..." />
+<meta name="description" content="This guide is focused on packages that are either pure-python or that have a few simple extensions in another language such as C or C++. For comprehensive guidance on packaging compiled projects wi..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Complex Python package builds &#8212; Python Packaging Guide</title>
@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Publishing Your Package In A Community Repository: PyPI or Anaconda.org" href="publish-python-package-pypi-conda.html" />
-    <link rel="prev" title="Python Packaging Tools" href="python-package-build-tools.html" />
+    <link rel="prev" title="Learn about Building a Python Package" href="python-package-distribution-files-sdist-wheel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -466,9 +466,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
@@ -517,7 +517,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Complex Python package builds</span></li>
   </ul>
@@ -540,9 +540,10 @@
 <h1>Complex Python package builds<a class="headerlink" href="#complex-python-package-builds" title="Link to this heading">#</a></h1>
 <p>This guide is focused on packages that are either pure-python or that
 have a few simple extensions in another language such as C or C++.</p>
-<p>In the future, we want to provide resources for packaging workflows that require more complex builds. If you have questions about these types of package, please <a class="reference external" href="https://pyopensci.discourse.group/">add a question to our discourse</a> or open an <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue about this guide specifically in the GitHub repo for this guide</a>. There are many nuances to building and distributing Python packages that have compiled extensions requiring non-Python dependencies at build time. For an overview and thorough discussion of these nuances, please see <a class="reference external" href="https://pypackaging-native.github.io/">this site.</a></p>
+<p>For comprehensive guidance on packaging compiled projects with C/C++/Fortran/Rust extensions, see the <a class="reference external" href="https://learn.scientific-python.org/development/guides/packaging-compiled/">Scientific Python Development Guide on compiled packaging</a>. This is the best reference for complex builds and covers scikit-build-core, meson-python, maturin, and other modern build backends.</p>
+<p>If you have questions about these types of package, please open an <a class="reference external" href="https://github.com/pyOpenSci/python-package-guide/issues">issue about this guide specifically in the GitHub repo for this guide</a>. There are many nuances to building and distributing Python packages that have compiled extensions requiring non-Python dependencies at build time. For an overview and thorough discussion of these nuances, please see <a class="reference external" href="https://pypackaging-native.github.io/">this site.</a></p>
 <section id="pure-python-packages-vs-packages-with-extensions-in-other-languages">
-<h2>Pure Python Packages vs. packages with extensions in other languages<a class="headerlink" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages" title="Link to this heading">#</a></h2>
+<h2>Pure Python packages vs. packages with extensions in other languages<a class="headerlink" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages" title="Link to this heading">#</a></h2>
 <p>You can classify Python package complexity into three general categories. These
 categories can in turn help you select the correct package frontend and
 backend tools.</p>
@@ -591,12 +592,12 @@ to make a change like this</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python-package-build-tools.html"
+       href="python-package-distribution-files-sdist-wheel.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Packaging Tools</p>
+        <p class="prev-next-title">Learn about Building a Python Package</p>
       </div>
     </a>
     <a class="right-next"
@@ -627,7 +628,7 @@ to make a change like this</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages">Pure Python Packages vs. packages with extensions in other languages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-python-packages-vs-packages-with-extensions-in-other-languages">Pure Python packages vs. packages with extensions in other languages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-frontend-and-backend-projects">Mixing frontend and backend projects</a></li>
 </ul>
   </nav></div>

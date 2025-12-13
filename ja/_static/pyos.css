@@ -4,7 +4,7 @@
   --pyos-color-secondary: #8045e5;
   --pyos-color-secondary-highlight: #591bc2;
   --pyos-color-tertiary: #a66c98;
-  --pyos-color-dark: #542568;
+  --pyos-color-dark: #33205c; /* Brand dark purple - #33205c */
   --pyos-color-light: #daabcf;
 
   /* Darkmode Adjustments*/
@@ -12,8 +12,9 @@
 
   /* Fonts (overrides base theme) */
   --pst-font-family-heading: "Poppins", sans-serif;
-  --pst-font-family-base: "Poppins", sans-serif;
-  --pyos-font-family-h1: "Itim", serif;
+  --pst-font-family-base: "NunitoSans", sans-serif;
+  --pyos-font-family-h1: "Poppins", sans-serif;
+  --pst-font-family-heading-weight: 400;
 }
 
 /* anything related to the dark theme */
@@ -30,6 +31,17 @@ html[data-theme="light"] {
 html,
 body {
   font-size: 1rem;
+}
+
+/* nav bar poppins font */
+.bd-header,
+.bd-header .navbar-nav,
+.bd-header .navbar-nav .nav-link,
+.bd-header .navbar-header-items,
+.bd-header .navbar-item,
+.navbar-item .nav-item {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
 }
 
 /* Allow the center content to expand to wide on wide screens */
@@ -65,6 +77,10 @@ body p {
   margin-bottom: 70px !important;
 }
 
+.admonition-title {
+  font-family: "Poppins", sans-serif !important;
+}
+
 h1 {
   margin-top: 10px;
   margin-bottom: 40px;
@@ -73,6 +89,7 @@ h1 {
 }
 h2 {
   margin-top: 1em;
+  color: var(--pyos-h1-color);
 }
 
 h3 {
@@ -94,7 +111,9 @@ figcaption {
 }
 
 .admonition p {
-  font-size: 0.9em;
+  font-size: 0.95em;
+  font-family: Poppins, sans-serif;
+  font-weight: 200;
 }
 
 /* Navbar */
@@ -198,12 +217,14 @@ html[data-theme="light"] {
   --pst-color-success-text: #fff;
   --pst-color-success-highlight: #00381a;
   --sd-color-success: var(--pst-color-success);
+  --pst-color-link: #735fab;
+  --pst-color-link-hover: #591bc2;
   --sd-color-success-text: var(--pst-color-success-text);
   --sd-color-success-highlight: var(--pst-color-success-highlight);
   --sd-color-success-bg: #d6ece1;
   --sd-color-success-bg-text: #14181e;
-  --pst-color-info: #a66c98; /* general admonition */
-  --pst-color-info-bg: #eac8e2;
+  --pst-color-info: #33205c; /* general admonition */
+  --pst-color-info-bg: #bab3d4;
   --pst-heading-color: var(--pyos-color-dark);
   --pyos-h1-color: var(--pyos-color-dark);
 }
@@ -318,6 +339,25 @@ See https://github.com/pydata/pydata-sphinx-theme/pull/1784
   font-weight: 600;
   src: url("./fonts/poppins-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+/* nunitosans-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "NunitoSans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/NunitoSans-VariableFont.woff2") format("woff2");
+}
+
+/* nunitosans-italic - latin */
+@font-face {
+  font-display: swap;
+  font-family: "NunitoSans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./fonts/NunitoSans-Italic-VariableFont.woff2") format("woff2");
+}
+
 /* Cards */
 
 /* todo light and dark adaptations needed */
@@ -329,6 +369,7 @@ See https://github.com/pydata/pydata-sphinx-theme/pull/1784
   border-bottom: 2px solid #999;
   font-size: 1.2rem;
   font-weight: 600 !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .sd-card-header {

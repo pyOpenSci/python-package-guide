@@ -1,6 +1,6 @@
 # Python Package Code Style, Format and Linters
 
-```{admonition} Take Aways
+:::{admonition} Take Aways
 
 * pyOpenSci requires authors to follow PEP 8 code format guidelines
 * Setting up a code formatters like Black and isort will help you enforce PEP 8 style guidelines and also consistent, readable code format
@@ -9,7 +9,7 @@
 each time you make a commit.
 * [precommit.ci](https://pre-commit.ci/) is a bot that you can add to your GitHub repository. It will automagically apply code format to every PR using the tools specified in your pre-commit-config.yaml file. It can save significant time and make contributions easier for new contributors.
 * Automation is good! By making code quality tools care of your code, you can focus on structural and high values tasks.
-```
+:::
 
 Consistent code format and style is useful to both your package
 and across the scientific Python ecosystem because using similar
@@ -35,6 +35,7 @@ a discussion of:
 1. Setting up pre-commit hooks and the pre-commit.ci bot to make using code
    format tools in daily workflows and in pull requests on GitHub easier.
 
+(code-style-tools)=
 ## Use a code format tool (or tools) to make your life easier
 
 We suggest that you use a code format tool, or a set of format tools, because
@@ -57,18 +58,18 @@ the work out of manually implementing code format requirements.
 Consistent code format across packages within the (scientific) Python ecosystem,
 will also broadly make code easier to scan, understand and contribute to.
 
-## Linting vs format and style
+## Linting vs. format and style
 
 Before we dive in let's get a few definitions out of the way.
 
-### Code Linting
+### Code linting
 
 A code linter is a tool that will review your code and
 identify errors or issues. A linter typically does not modify your code. It
 will tell you what the error is and on what line it was discovered. Flake8,
 discussed below, is an example of a commonly-used code linter.
 
-### Code Formatters (and stylers)
+### Code formatters (and stylers)
 
 Code formatters will reformat your code for you. Python focused code formatters
 often follow PEP 8 standards. However, they also make stylistic decisions about
@@ -82,6 +83,7 @@ You will learn more about Black below.
 
 ## Code linting, formatting and styling tools
 
+(about-black)=
 ### Black
 
 [Black](https://black.readthedocs.io/en/stable/) is a code
@@ -94,14 +96,15 @@ some exceptions. A few examples of those exceptions are below:
 - Black will not adjust line length in your comments or docstrings.
 - This tool will not review and fix import order (you need `isort` or `ruff` to do that - see below).
 
-```{tip}
+:::{tip}
 If you are interested in seeing how Black will format your code, you can
 use the [Black playground](https://black.vercel.app/)
-```
+:::
 
 Using a code formatter like Black will leave you more time to work on
 code function rather than worry about format.
 
+(about-flake8)=
 ### Flake8
 
 To adhere to Python `pep8` format standards, you might want to add
@@ -186,6 +189,7 @@ Python file `temporal.py` imports after `isort` has been run
 :end-before: def calc_annual_mean
 :::
 
+(about-ruff)=
 ### Ruff
 
 [Ruff](https://docs.astral.sh/ruff/) is a new addition to the code quality
@@ -272,13 +276,13 @@ on your the code files in your commit. It will update any files to match
 black format standards. You can then retype the commit and push files to
 GitHub that have been formatted by black. -->
 
-```{important}
+:::{important}
 If have a Python code-base and multiple maintainers actively working
 on the code, and you intend to run a tool like Black, be sure to coordinate across your team. An initial commit that
 applies Black to your entire package will likely change a significant amount of
 your code. This could lead to merge conflicts on open and new PR's before the
 new changes are merged.
-```
+:::
 
 ## General pre commit checks
 

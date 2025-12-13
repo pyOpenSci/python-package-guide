@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -65,8 +65,8 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Learn about Building a Python Package" href="python-package-distribution-files-sdist-wheel.html" />
-    <link rel="prev" title="Python Package Structure for Scientific Python Projects" href="python-package-structure.html" />
+    <link rel="next" title="Dependencies for your Python Package" href="declare-dependencies.html" />
+    <link rel="prev" title="Python Package Structure &amp; Layout" href="python-package-structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -466,9 +466,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
@@ -517,7 +517,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Use a pyproject.toml file for your package configuration &amp; metadata</span></li>
   </ul>
@@ -549,7 +549,7 @@
 </ol>
 </div>
 <section id="about-the-pyproject-toml-file">
-<h2>About the pyproject.toml file<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
+<span id="pyproject-toml-overview"></span><h2>About the pyproject.toml file<a class="headerlink" href="#about-the-pyproject-toml-file" title="Link to this heading">#</a></h2>
 <p>Every modern Python package should include a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. For pure Python packages, this file replaces the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and/or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to describe project metadata.</p>
 <p>If your project isn’t pure Python, you might still require a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to build the non-Python extensions. However, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file should still be used to store your project’s metadata.</p>
 <div class="note admonition">
@@ -601,7 +601,7 @@ resources working with complex builds in the future.</p>
 </div>
 </section>
 <section id="optional-vs-required-pyproject-toml-file-fields">
-<h2>Optional vs. Required pyproject.toml file fields<a class="headerlink" href="#optional-vs-required-pyproject-toml-file-fields" title="Link to this heading">#</a></h2>
+<h2>Optional vs. required pyproject.toml file fields<a class="headerlink" href="#optional-vs-required-pyproject-toml-file-fields" title="Link to this heading">#</a></h2>
 <p>When you create your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, there are numerous metadata fields that you can use. Below we suggest specific fields to get you started that support publication on PyPI and users finding your package.</p>
 <p><a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#project-url-multiple-use">An overview of all of the project metadata elements can be found here.</a></p>
 <section id="required-fields-for-the-project-table">
@@ -788,15 +788,15 @@ of values. It has two keys that specify the build backend API and containing pac
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Package Structure for Scientific Python Projects</p>
+        <p class="prev-next-title">Python Package Structure &amp; Layout</p>
       </div>
     </a>
     <a class="right-next"
-       href="python-package-distribution-files-sdist-wheel.html"
+       href="declare-dependencies.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Learn about Building a Python Package</p>
+        <p class="prev-next-title">Dependencies for your Python Package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -825,7 +825,7 @@ of values. It has two keys that specify the build backend API and containing pac
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-a-pyproject-toml-file">Benefits of using a pyproject.toml file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">Optional vs. Required pyproject.toml file fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-vs-required-pyproject-toml-file-fields">Optional vs. required pyproject.toml file fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-fields-for-the-project-table">Required fields for the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-fields-to-include-in-the-project-table">Optional fields to include in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options-in-the-pyproject-toml-file">Advanced options in the pyproject.toml file</a></li>

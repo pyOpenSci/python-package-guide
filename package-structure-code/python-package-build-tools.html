@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -65,7 +65,7 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Complex Python package builds" href="complex-python-package-builds.html" />
+    <link rel="next" title="Learn about Building a Python Package" href="python-package-distribution-files-sdist-wheel.html" />
     <link rel="prev" title="Dependencies for your Python Package" href="declare-dependencies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -466,9 +466,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
@@ -517,7 +517,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Packaging Tools</span></li>
   </ul>
@@ -539,7 +539,7 @@
   <section id="python-packaging-tools">
 <h1>Python Packaging Tools<a class="headerlink" href="#python-packaging-tools" title="Link to this heading">#</a></h1>
 <section id="tools-for-building-your-package">
-<h2>Tools for building your package<a class="headerlink" href="#tools-for-building-your-package" title="Link to this heading">#</a></h2>
+<span id="build-tools-overview"></span><h2>Tools for building your package<a class="headerlink" href="#tools-for-building-your-package" title="Link to this heading">#</a></h2>
 <p>There are a several different build tools that you can use to <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">create your Python package’s <em>sdist</em> and <em>wheel</em> distributions</span></a>. Below, we discuss the features,
 benefits and limitations of the most commonly used Python packaging tools.
 We focus on pure-python packages in this guide. However, we also
@@ -569,7 +569,7 @@ You will learn more about the following tools on this page:</p>
 </ul>
 </section>
 <section id="summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools">
-<h2>Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)<a class="headerlink" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools" title="Link to this heading">#</a></h2>
+<span id="summary-build-tools"></span><h2>Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)<a class="headerlink" href="#summary-of-tools-hatch-vs-pdm-vs-poetry-and-setuptools" title="Link to this heading">#</a></h2>
 <p>If you are looking for a quick summary, read below.</p>
 <ul class="simple">
 <li><p>In general, any modern tool that you select from this page will be great to build your package. Selecting a tool comes down to the features that you are looking for in your workflow.</p></li>
@@ -810,7 +810,7 @@ included in the table.</p>
 </section>
 </section>
 <section id="pdm">
-<h2>PDM<a class="headerlink" href="#pdm" title="Link to this heading">#</a></h2>
+<span id="about-pdm"></span><h2>PDM<a class="headerlink" href="#pdm" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pdm-project.org/latest/">PDM is a Python packaging and dependency management tool</a>.
 PDM supports builds for pure Python projects. It also provides multiple layers of
 support for projects that have C and C++ extensions.</p>
@@ -822,7 +822,7 @@ PDM’s build back-end receives the compiled extension files (.so, .pyd) and
 packages them with the pure Python files.</p>
 </div>
 <section id="pdm-features">
-<h3>PDM Features<a class="headerlink" href="#pdm-features" title="Link to this heading">#</a></h3>
+<h3>PDM features<a class="headerlink" href="#pdm-features" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -917,7 +917,7 @@ an overview of what the PDM command line interface looks like when you use it.</
 Flit is a great choice if you are
 building a basic package to use in a local workflow that doesn’t require any advanced features. And if your package structure is already created. More on that below.</p>
 <section id="flit-features">
-<h3>Flit Features<a class="headerlink" href="#flit-features" title="Link to this heading">#</a></h3>
+<h3>Flit features<a class="headerlink" href="#flit-features" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 26.7%" />
@@ -976,8 +976,8 @@ in common operations.</p>
 </ul>
 </section>
 </section>
-<section id="hatch">
-<span id="id1"></span><h2>Hatch<a class="headerlink" href="#hatch" title="Link to this heading">#</a></h2>
+<section id="about-hatch">
+<span id="hatch"></span><span id="id1"></span><h2>Hatch<a class="headerlink" href="#about-hatch" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://hatch.pypa.io/latest/"><strong>Hatch</strong></a>, similar to Poetry and PDM, provides a
 unified command line interface. To separate Hatch from Poetry and PDM, it also
 provides an environment manager for testing that will make it easier for
@@ -1065,7 +1065,7 @@ These include:</p>
 </section>
 </section>
 <section id="poetry">
-<h2>Poetry<a class="headerlink" href="#poetry" title="Link to this heading">#</a></h2>
+<span id="about-poetry"></span><h2>Poetry<a class="headerlink" href="#poetry" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://python-poetry.org/">Poetry is a full-featured build tool.</a> It is also
 the second most popular front-end packaging tool (based upon the PyPA survey).
 Poetry is user-friendly and has clean and easy-to-read documentation.</p>
@@ -1162,7 +1162,7 @@ some tools use <a class="reference external" href="https://calver.org/">calver</
 </section>
 </section>
 <section id="using-setuptools-back-end-for-python-packaging-with-build-front-end">
-<h2>Using Setuptools Back-end for Python Packaging with Build Front-end<a class="headerlink" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end" title="Link to this heading">#</a></h2>
+<span id="about-setuptools"></span><h2>Using Setuptools back-end for Python packaging with Build front-end<a class="headerlink" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://setuptools.pypa.io/en/latest/">Setuptools</a> is the most
 mature Python packaging build tool with <a class="reference external" href="https://setuptools.pypa.io/en/latest/history.html#">development dating back to 2009 and earlier</a>.
 Setuptools also has the largest number of community users (according to the PyPA
@@ -1175,7 +1175,7 @@ to consider using a more modern tool for packaging such as Poetry, Hatch or PDM.
 <p>We discuss setuptools here because it’s commonly found in the ecosystem and
 contributors may benefit from understanding it.</p>
 <section id="setuptools-features">
-<h3>Setuptools Features<a class="headerlink" href="#setuptools-features" title="Link to this heading">#</a></h3>
+<h3>Setuptools features<a class="headerlink" href="#setuptools-features" title="Link to this heading">#</a></h3>
 <p>Some of features of setuptools include:</p>
 <ul class="simple">
 <li><p>Fully customizable build workflow</p></li>
@@ -1230,11 +1230,11 @@ repository if you do not explicitly tell it to exclude files using a
       </div>
     </a>
     <a class="right-next"
-       href="complex-python-package-builds.html"
+       href="python-package-distribution-files-sdist-wheel.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Complex Python package builds</p>
+        <p class="prev-next-title">Learn about Building a Python Package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1277,16 +1277,16 @@ repository if you do not explicitly tell it to exclude files using a
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm">PDM</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm-features">PDM Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdm-features">PDM features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-with-pdm">Challenges with PDM</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flit">Flit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flit-features">Flit Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flit-features">Flit features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-might-not-want-to-use-flit">Why you might not want to use Flit</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch">Hatch</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-hatch">Hatch</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-features">Hatch features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-you-might-not-want-to-use-hatch">Why you might not want to use Hatch</a></li>
 </ul>
@@ -1296,8 +1296,8 @@ repository if you do not explicitly tell it to exclude files using a
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-with-poetry">Challenges with Poetry</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end">Using Setuptools Back-end for Python Packaging with Build Front-end</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-features">Setuptools Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-setuptools-back-end-for-python-packaging-with-build-front-end">Using Setuptools back-end for Python packaging with Build front-end</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-features">Setuptools features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-using-setuptools">Challenges using setuptools</a></li>
 </ul>
 </li>

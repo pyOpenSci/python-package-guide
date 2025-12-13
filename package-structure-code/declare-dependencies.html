@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python Packaging Tools" href="python-package-build-tools.html" />
-    <link rel="prev" title="Learn about Building a Python Package" href="python-package-distribution-files-sdist-wheel.html" />
+    <link rel="prev" title="Use a pyproject.toml file for your package configuration &amp; metadata" href="pyproject-toml-python-package-metadata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -466,9 +466,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Declare dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
@@ -517,7 +517,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Dependencies for your Python Package</span></li>
   </ul>
@@ -543,7 +543,7 @@ you learned how to set up a <strong>pyproject.toml</strong> file with basic meta
 for your package. On this page, you will learn how to specify different types of
 dependencies in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
 <section id="what-is-a-package-dependency">
-<h2>What is a package dependency?<a class="headerlink" href="#what-is-a-package-dependency" title="Link to this heading">#</a></h2>
+<span id="package-dependencies"></span><h2>What is a package dependency?<a class="headerlink" href="#what-is-a-package-dependency" title="Link to this heading">#</a></h2>
 <p>A Python package dependency refers to an external package or
 A tool that is needed when using or working on your Python project. Declare your dependencies in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. This keeps all package metadata in one place, making it simpler for users and contributors to understand your package.</p>
 <div class="tip admonition">
@@ -593,7 +593,7 @@ within the code of your project or used during the development of your package.<
 </section>
 </section>
 <section id="required-dependencies">
-<h2>1. Required dependencies<a class="headerlink" href="#required-dependencies" title="Link to this heading">#</a></h2>
+<span id="id1"></span><h2>1. Required dependencies<a class="headerlink" href="#required-dependencies" title="Link to this heading">#</a></h2>
 <p>Required dependencies are imported and called directly within your package’s code.
 They are needed for your package to run.</p>
 <p>You can add your required dependencies to the <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> array in the
@@ -622,7 +622,7 @@ environments.</p>
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-eye" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14c-1.981 0-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2ZM1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5c1.473 0 2.825-.742 3.955-1.715 1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5c-1.473 0-2.825.742-3.955 1.715-1.124.967-1.954 2.096-2.366 2.717ZM8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10Z"></path></svg></span><span class="sd-summary-text">How to Add Required Dependencies with UV</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">You can use uv to add dependencies to your pyproject.toml file:</p>
 <p class="sd-card-text"><strong>Add a required dependency:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>numpy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>numpy
 </pre></div>
 </div>
 <p class="sd-card-text">Will add numpy as a dependency to your <code class="docutils literal notranslate"><span class="pre">project.dependency</span></code> array:</p>
@@ -650,7 +650,7 @@ are more reliable as they can’t be changed</p>
 </div>
 </section>
 <section id="optional-dependencies">
-<h2>2. Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Link to this heading">#</a></h2>
+<span id="id2"></span><h2>2. Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Link to this heading">#</a></h2>
 <p>Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh as an <code class="docutils literal notranslate"><span class="pre">[optional.dependency]</span></code>. Users who want interactive plotting will install it. Users who don’t need plotting don’t have to install it.</p>
 <p>Place these dependencies in the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
@@ -680,7 +680,7 @@ are more reliable as they can’t be changed</p>
 </div>
 </details></section>
 <section id="dependency-groups">
-<h2>3. Dependency groups<a class="headerlink" href="#dependency-groups" title="Link to this heading">#</a></h2>
+<span id="id3"></span><h2>3. Dependency groups<a class="headerlink" href="#dependency-groups" title="Link to this heading">#</a></h2>
 <p>Development dependencies include packages needed to work on your package
 locally. They are used to perform tasks such as:</p>
 <ul class="simple">
@@ -776,9 +776,9 @@ You can also use pip and install dependencies into the environment of your choic
 <label class="sd-tab-label" for="sd-tab-item-0">
 Use UV</label><div class="sd-tab-content docutils">
 <p>You can use uv sync to sync dependency groups in your uv-managed venv</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--group<span class="w"> </span>docs<span class="w">                     </span><span class="c1"># Single group</span>
-<span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--group<span class="w"> </span>docs<span class="w"> </span>--group<span class="w"> </span><span class="nb">test</span><span class="w">        </span><span class="c1"># Multiple groups</span>
-<span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--all-groups<span class="w">                     </span><span class="c1"># All development groups</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv sync --group docs                     # Single group</span>
+<span class="go">uv sync --group docs --group test        # Multiple groups</span>
+<span class="go">uv sync --all-groups                     # All development groups</span>
 </pre></div>
 </div>
 <p><strong>Install optional dependencies:</strong></p>
@@ -788,7 +788,7 @@ Use UV</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p><strong>Install everything (package + all dependencies):</strong></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras<span class="w"> </span>--all-groups
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv sync --all-extras --all-groups</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> is the recommended command for development workflows. It
@@ -946,12 +946,12 @@ your dependencies during the build process, configure them in a
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python-package-distribution-files-sdist-wheel.html"
+       href="pyproject-toml-python-package-metadata.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Learn about Building a Python Package</p>
+        <p class="prev-next-title">Use a pyproject.toml file for your package configuration &amp; metadata</p>
       </div>
     </a>
     <a class="right-next"

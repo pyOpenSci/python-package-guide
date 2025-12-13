@@ -1,5 +1,6 @@
 # Python Packaging Tools
 
+(build-tools-overview)=
 ## Tools for building your package
 
 There are a several different build tools that you can use to [create your Python package's _sdist_ and _wheel_ distributions](python-package-distribution-files-sdist-wheel). Below, we discuss the features,
@@ -30,6 +31,7 @@ You will learn more about the following tools on this page:
 - [PDM](https://pdm-project.org/latest/)
 - [Poetry](https://python-poetry.org/docs/)
 
+(summary-build-tools)=
 ## Summary of tools Hatch vs. PDM vs. Poetry (and setuptools)
 
 If you are looking for a quick summary, read below.
@@ -96,9 +98,9 @@ to both build and publish your package to PyPI. However while **Hatch** and
 locking, you can use **PDM** or **Poetry** but not **Hatch**.
 If you only need to build your package's sdist and wheel distribution files, then you can stick with PyPA's Build. You'd then use Twine to publish to PyPI.
 
-```{note}
+:::{note}
 If you are using **Setuptools**, there is no default user-friendly build front-end that performs multiple tasks. You will need to use **build** to build your package and **twine** to publish to PyPI.
-```
+:::
 
 ### Example build steps that can be simplified using a front-end tool
 
@@ -151,7 +153,7 @@ Below we introduce several of the most commonly used Python packaging build
 front-end tools. We highlight the features that each tool offers as a way to
 help you decide what tool might be best for your workflow.
 
-```{admonition} We do not suggest using setuptools
+:::{admonition} We do not suggest using setuptools
 :class: note
 
 We suggest that you pick one of the modern tools listed above rather than
@@ -160,7 +162,7 @@ to set up correctly.
 
 We review setuptools as a back-end because it is still popular. However it is
 not the most user friendly option.
-```
+:::
 
 The most commonly used tools in the ecosystem are
 setuptools back-end (with build) and Poetry (a front end tool with numerous
@@ -227,21 +229,22 @@ Notes:
 - _Hatch plans to support dependency management in the future_
 - Poetry supports semantic versioning. Thus, it will support version bumping following commit messages if you use a tool such as Python Semantic Release
 
+(about-pdm)=
 ## PDM
 
 [PDM is a Python packaging and dependency management tool](https://pdm-project.org/latest/).
 PDM supports builds for pure Python projects. It also provides multiple layers of
 support for projects that have C and C++ extensions.
 
-```{admonition} PDM support for C and C++ extensions
+:::{admonition} PDM support for C and C++ extensions
 
 PDM supports using the PDM-back-end and setuptools at the same time.
 This means that you can run setuptools to compile and build C extensions.
 PDM's build back-end receives the compiled extension files (.so, .pyd) and
 packages them with the pure Python files.
-```
+:::
 
-### PDM Features
+### PDM features
 
 ```{csv-table}
 :header: Feature|PDM|Notes
@@ -261,18 +264,18 @@ Install your package in editable mode|✅|PDM supports installing your package i
 Build your sdist and wheel distributions|✅| Similar to all of the other tools PDM builds your packages sdist and wheel files for you.
 ```
 
-```{admonition} PDM vs. Poetry
+:::{admonition} PDM vs. Poetry
 The functionality of PDM is similar to Poetry. However, PDM also offers
 additional, documented support for C extensions and version control based
 versioning. As such, PDM is preferred for those working on non pure-Python packages.
 
 If you are deciding between the Poetry and PDM, a smaller  difference is the default way that dependencies are added to your pyproject.toml file.
 
-* Poetry by default follows strict semantic versioning adding dependencies to your pyproject.toml file [using an upper bounds constraint (`^`)](https://python-poetry.org/docs/dependency-specification/#version-constraints). Upper bounds lock means that Poetry will never bump a dependency to the next major version (i.e. from 1.2 to 2.0). However, you can tell Poetry to use an open bound approach by explicitly adding the package like this: `poetry add requests >= 1.2` rather than just using `poetry add requests` which will result in a upper bound locked (ie Upper bound locks means that requests 2.0 could never be installed even if it came out and your package could benefit from it).
-* PDM defaults to open-bounds (`>=`) dependency additions which is the preferred approach in the scientific python ecosystem. However, PDM also allows you to specify the way dependencies are added by default. As such, you can also specify upper-bounds (`^`) using PDM if require that approach.
+- Poetry by default follows strict semantic versioning adding dependencies to your pyproject.toml file [using an upper bounds constraint (`^`)](https://python-poetry.org/docs/dependency-specification/#version-constraints). Upper bounds lock means that Poetry will never bump a dependency to the next major version (i.e. from 1.2 to 2.0). However, you can tell Poetry to use an open bound approach by explicitly adding the package like this: `poetry add requests >= 1.2` rather than just using `poetry add requests` which will result in a upper bound locked (ie Upper bound locks means that requests 2.0 could never be installed even if it came out and your package could benefit from it).
+- PDM defaults to open-bounds (`>=`) dependency additions which is the preferred approach in the scientific python ecosystem. However, PDM also allows you to specify the way dependencies are added by default. As such, you can also specify upper-bounds (`^`) using PDM if require that approach.
 
 Finally there are some nuanced differences in how both tools create lock files which we will not go into detail about here.
-```
+:::
 
 ### Challenges with PDM
 
@@ -294,7 +297,7 @@ an overview of what the PDM command line interface looks like when you use it.
 Flit is a great choice if you are
 building a basic package to use in a local workflow that doesn't require any advanced features. And if your package structure is already created. More on that below.
 
-### Flit Features
+### Flit features
 
 ```{csv-table}
 :header: Feature|Flit|Notes
@@ -310,9 +313,10 @@ Build your sdist and wheel distributions|✅| Flit can be used to build your pac
 
 NOTE: _If you are using the most current version of pip, it supports both a symlink approach `flit install -s` and `python -m pip install -e .`_
 
-```{admonition} Learn more about flit
-* [Why use flit?](https://flit.pypa.io/en/stable/rationale.html)
-```
+:::{admonition} Learn more about flit
+
+- [Why use flit?](https://flit.pypa.io/en/stable/rationale.html)
+:::
 
 ### Why you might not want to use Flit
 
@@ -328,6 +332,7 @@ You may NOT want to use flit if:
 - You want environment management (use PDM, Hatch or Poetry)
 
 (hatch)=
+(about-hatch)=
 ## Hatch
 
 [**Hatch**](https://hatch.pypa.io/latest/), similar to Poetry and PDM, provides a
@@ -371,16 +376,17 @@ These include:
 - Similar to PDM, Hatch's documentation can difficult to work through, particularly if you are just getting started with creating a package.
 - Hatch, similar to PDM and Flit currently only has one maintainer.
 
+(about-poetry)=
 ## Poetry
 
 [Poetry is a full-featured build tool.](https://python-poetry.org/) It is also
 the second most popular front-end packaging tool (based upon the PyPA survey).
 Poetry is user-friendly and has clean and easy-to-read documentation.
 
-```{note}
+:::{note}
 While some have used Poetry for Python builds with C/C++ extensions, this support
 is currently undocumented. Thus, we don't recommend using Poetry for more complex builds.
-```
+:::
 
 ### Poetry features
 
@@ -417,7 +423,7 @@ Poetry is a popular packaging tool and introduced many very useful features. How
 <!--https://github.com/py-pkgs/py-pkgs/issues/95#issuecomment-1035584750
 discusses the slight differences in how poetry adds deps....-->
 
-```{admonition} Challenges with Poetry dependency pinning
+:::{admonition} Challenges with Poetry dependency pinning
 :class: important
 
 By default, Poetry pins dependencies using `^` by default. This `^` symbol means that there is
@@ -433,9 +439,10 @@ changes in the tool. However, not all tools follow strict semantic versioning.
 
 This approach also won't support others ways of versioning tools, for instance,
 some tools use [calver](https://calver.org/) which creates new versions based on the date.
-```
+:::
 
-## Using Setuptools Back-end for Python Packaging with Build Front-end
+(about-setuptools)=
+## Using Setuptools back-end for Python packaging with Build front-end
 
 [Setuptools](https://setuptools.pypa.io/en/latest/) is the most
 mature Python packaging build tool with [development dating back to 2009 and earlier](https://setuptools.pypa.io/en/latest/history.html#).
@@ -451,7 +458,7 @@ to consider using a more modern tool for packaging such as Poetry, Hatch or PDM.
 We discuss setuptools here because it's commonly found in the ecosystem and
 contributors may benefit from understanding it.
 
-### Setuptools Features
+### Setuptools features
 
 Some of features of setuptools include:
 

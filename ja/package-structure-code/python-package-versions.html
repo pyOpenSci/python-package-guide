@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -467,9 +467,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">イントロ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Pythonパッケージ構造</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml パッケージのメタデータ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">依存関係の宣言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">パッケージビルドツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">パッケージをビルドする</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">複雑なビルド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">パッケージを公開する</span></p>
@@ -518,7 +518,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Pythonパッケージ構造</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pythonパッケージの新しいバージョンを作成する</span></li>
   </ul>
@@ -563,7 +563,7 @@
 </div>
 <!-- TODO: Better link to what expressive code is?-->
 <section id="semver-rules">
-<h2>SemVerルール<a class="headerlink" href="#semver-rules" title="Link to this heading">#</a></h2>
+<span id="package-versioning"></span><h2>SemVerルール<a class="headerlink" href="#semver-rules" title="Link to this heading">#</a></h2>
 <p>SemVerに従って、パッケージのバージョンを上げます:</p>
 <ul class="simple">
 <li><p>パッチ (1.1.1 --&gt; 1.1.<strong>2</strong>)</p></li>
@@ -594,7 +594,7 @@
 <!-- bump2version isn't really maintained anymore - are there alternatives? -->
 </section>
 <section id="tools-to-manage-versions-for-your-python-package">
-<h2>Pythonパッケージのバージョンを管理するツール<a class="headerlink" href="#tools-to-manage-versions-for-your-python-package" title="Link to this heading">#</a></h2>
+<span id="tools-version-management"></span><h2>Pythonパッケージのバージョンを管理するツール<a class="headerlink" href="#tools-to-manage-versions-for-your-python-package" title="Link to this heading">#</a></h2>
 <p>パッケージのバージョンを管理するために使用できる、科学的なエコシステムで広く使われているツールがいくつかあります。 これらのツールのいくつかは、あなたが選択した <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">この章で議論するパッケージングビルドツール</span></a> に組み込まれているか、それらと連携しています。</p>
 <!-- TODO: ADD LINK when other pr merged -->
 <p>以下に、これらのツールの概要を示します。</p>
@@ -641,13 +641,13 @@ that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 </ul>
 <p>例えば、<a class="reference external" href="https://hatch.pypa.io/latest/version/">Hatch</a> は、パッケージのバージョンをインクリメンタルに変更する <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">version</span> <span class="pre">minor</span></code> を提供しています。 <strong>Hatch</strong> の場合、バージョン値は<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>ファイルにあります。 <!-- TODO double check this --></p>
 <section id="hatch-or-other-tools-like-pdm-pros">
-<h4>Hatch（またはPDMのような他のツール）の長所<a class="headerlink" href="#hatch-or-other-tools-like-pdm-pros" title="Link to this heading">#</a></h4>
+<h4>Hatch (or other tools like PDM) pros<a class="headerlink" href="#hatch-or-other-tools-like-pdm-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>1つのツールを使ってローカルで簡単にバージョン更新ができます！</p></li>
 </ul>
 </section>
 <section id="hatch-or-other-tools-like-pdm-cons">
-<h4>Hatch（またはPDMのような他のツール）の短所<a class="headerlink" href="#hatch-or-other-tools-like-pdm-cons" title="Link to this heading">#</a></h4>
+<h4>Hatch (or other tools like PDM) cons<a class="headerlink" href="#hatch-or-other-tools-like-pdm-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>パッケージのバージョンがパッケージ全体で更新されるようにするには、いくつかの設定が必要です。</p></li>
 </ul>
@@ -684,7 +684,7 @@ that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 </div>
 </section>
 <section id="hatch-vcs-pros">
-<h4>hatch_vcs Pros<a class="headerlink" href="#hatch-vcs-pros" title="Link to this heading">#</a></h4>
+<h4>hatch_vcs pros<a class="headerlink" href="#hatch-vcs-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Hatchは最新のPythonパッケージング標準をサポート</p></li>
 <li><p>これは、あなたのパッケージバージョンを含む単一ソースファイルを作成します。</p></li>
@@ -696,7 +696,7 @@ that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 </ul>
 </section>
 <section id="hatch-vcs-cons">
-<h4>hatch_vcs Cons<a class="headerlink" href="#hatch-vcs-cons" title="Link to this heading">#</a></h4>
+<h4>hatch_vcs cons<a class="headerlink" href="#hatch-vcs-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>CIワークフローでは、GitHubのタグを使ってバージョン番号を手動で入力したり作成したりすることになります。 しかし、タグのバージョンを &quot;bump&quot; するビルドをローカルで開発することもできます。</p></li>
 </ul>
@@ -718,7 +718,7 @@ that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 <li><p><strong>setuptools</strong> は今でも最もよく使われているPythonパッケージング構築ツールです。</p></li>
 </ul>
 <section id="setuptools-scm-cons">
-<h4>setuptools_scm Cons<a class="headerlink" href="#setuptools-scm-cons" title="Link to this heading">#</a></h4>
+<h4>setuptools_scm cons<a class="headerlink" href="#setuptools-scm-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>CIワークフローでは、GitHubのタグを使って手動でバージョン番号を入力したり作成したりすることになります。</p></li>
 <li><p>文書化されていません</p></li>
@@ -726,12 +726,12 @@ that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 </ul>
 <p>そのため、パッケージのビルドやパッケージのバージョン管理には、 <strong>hatch_vcs</strong> や <strong>hatchling</strong> のような、より現代的なツールの使用を検討してください。</p>
 <!--
-```{important}
+:::{important}
 pyOpenSci will be creating tutorials on working with `setuptools-scm` and GitHub releases to
 update versions of your package and push to PyPI. These should be published sometime
 during the spring/summer 2023. In the meantime [here is a high quality blog post
 that will help you get started with using setuptools-scm](https://www.moritzkoerber.com/posts/versioning-with-setuptools_scm/)
-``` -->
+::: -->
 </section>
 </section>
 <section id="tool-4-python-semantic-release">
@@ -739,7 +739,7 @@ that will help you get started with using setuptools-scm](https://www.moritzkoer
 <p>Python semantic release はコミットメッセージのワークフローを使い、コミットメッセージに含まれるキーワードに基づいてパッケージのバージョンを更新します。 その名の通り、Python Semantic Release は semver release のルールに従います。</p>
 <p>Python Semantic Release では、git のコミットメッセージにある特定の言語を使ってバージョンをトリガーします。</p>
 <p>例えば、 <code class="docutils literal notranslate"><span class="pre">fix(attribute_warning):</span></code> という言葉は、Python Semantic Releaseが <strong>patch</strong> バージョンバンプを実装する引き金になります。 例えば、あなたのパッケージのバージョンが1.1.0で、fix(text-here) と書かれた以下のコミットをした場合、Python Semantic Release はあなたのパッケージをバージョン1.1.1にします。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;fix(mod_plotting): fix warnings returned athlete attributes&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;fix(mod_plotting): fix warnings returned athlete attributes&quot;</span>
 </pre></div>
 </div>
 <p>同様に、機能（<code class="docutils literal notranslate"><span class="pre">feat()</span></code>）はマイナーバージョンアップの引き金となります。 例えばバージョン1.1からバージョン1.2へ</p>
@@ -751,14 +751,14 @@ that will help you get started with using setuptools-scm](https://www.moritzkoer
 <p><a class="reference external" href="https://py-pkgs.org/07-releasing-versioning#automatic-version-bumping">このPythonパッケージガイド</a> で、pythonのセマンティックバージョンについての丁寧な議論を見つけることができます。なお、このガイドは2020年以降更新されておらず、今後も更新される可能性があります！しかし、今のところ、いくつかのコマンドは古いが、内容は依然として素晴らしいです。</p>
 </div>
 <section id="python-semantic-release-pros">
-<h4>Pythonセマンティックリリースの長所<a class="headerlink" href="#python-semantic-release-pros" title="Link to this heading">#</a></h4>
+<h4>Python Semantic Release pros<a class="headerlink" href="#python-semantic-release-pros" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>センバーのバージョニングに忠実に従う</p></li>
 <li><p>説明的なコミットメッセージを使ってメンテナを強制します。これにより、トラブルシューティングを簡素化し、よりクリーンで自己記述的なgit履歴を確保することができます。</p></li>
 </ul>
 </section>
 <section id="python-semantic-release-cons">
-<h4>Pythonセマンティックリリースの短所<a class="headerlink" href="#python-semantic-release-cons" title="Link to this heading">#</a></h4>
+<h4>Python Semantic Release cons<a class="headerlink" href="#python-semantic-release-cons" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>動作させるには、非常に特殊なコミット言語が必要です。 実際には、メンテナや貢献者の中にはコミットメッセージにそのレベルの具体性を保てない人もいるでしょう (注意: リポジトリ内の git commit メッセージをチェックするボットがあります)。</p></li>
 <li><p>リリースはコマンドラインで行われます。 このため、GitHub ベースのリリースワークフローを実装するのが難しくなります。間違ったコミットメッセージがリリースのトリガーになってしまう可能性があるからです。</p></li>
@@ -827,23 +827,23 @@ control tag, is used to trigger a version update.  -->
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-bumping-python-package-versions">Pythonパッケージのバージョンを上げるツール</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-1-hatch-and-other-build-tools-that-offer-incremental-versioning">ツール1: インクリメンタルバージョニングを提供するHatchやその他のビルドツール</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-pros">Hatch（またはPDMのような他のツール）の長所</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-cons">Hatch（またはPDMのような他のツール）の短所</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-pros">Hatch (or other tools like PDM) pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-or-other-tools-like-pdm-cons">Hatch (or other tools like PDM) cons</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-2-hatch-vcs-hatchling-build-back-end">ツール 2: Hatch_vcs &amp; hatchling ビルドバックエンド</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-example-setup-in-your-pyproject-toml">pyproject.tomlでのHatchのセットアップ例</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-pros">hatch_vcs Pros</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-cons">hatch_vcs Cons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-pros">hatch_vcs pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hatch-vcs-cons">hatch_vcs cons</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-3-setuptools-scm-versioning-using-git-tags">ツール3: gitタグを使ったsetuptools-scmのバージョン管理</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-scm-cons">setuptools_scm Cons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools-scm-cons">setuptools_scm cons</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-4-python-semantic-release">ツール4: Pythonセマンティックリリース</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-pros">Pythonセマンティックリリースの長所</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-cons">Pythonセマンティックリリースの短所</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-pros">Python Semantic Release pros</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-semantic-release-cons">Python Semantic Release cons</a></li>
 </ul>
 </li>
 </ul>

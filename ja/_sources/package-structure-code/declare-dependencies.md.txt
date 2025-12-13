@@ -10,6 +10,7 @@ you learned how to set up a **pyproject.toml** file with basic metadata
 for your package. On this page, you will learn how to specify different types of
 dependencies in your `pyproject.toml`.
 
+(package-dependencies)=
 ## What is a package dependency?
 
 A Python package dependency refers to an external package or
@@ -19,6 +20,7 @@ A tool that is needed when using or working on your Python project. Declare your
 :class: tip
 
 While `pyproject.toml` is now the standard, you may sometimes encounter older approaches to storing dependencies "in the wild":
+
 - **requirements.txt**: Previously common for dependencies, still used by some projects for local development
 - **setup.py or setup.cfg**: May be needed for packages with extensions in other languages
 
@@ -63,6 +65,7 @@ A dependency is not part of your project's codebase. It is a package or software
 within the code of your project or used during the development of your package.
 :::
 
+(required-dependencies)=
 ## 1. Required dependencies
 
 Required dependencies are imported and called directly within your package's code.
@@ -91,7 +94,6 @@ fewer dependencies reduce the possibility of version conflicts in user
 environments.
 :::
 
-
 ::::{dropdown} How to Add Required Dependencies with UV
 :icon: eye
 :color: primary
@@ -101,7 +103,7 @@ You can use uv to add dependencies to your pyproject.toml file:
 **Add a required dependency:**
 
 ```bash
-$ uv add numpy
+uv add numpy
 ```
 
 Will add numpy as a dependency to your `project.dependency` array:
@@ -127,12 +129,14 @@ dependencies = [
 "my_dependency >= 1.0.1 @ git+https://git.server.example.com/mydependency.git@commitHashHere"
 ]
 ```
+
 IMPORTANT: If your library depends on a GitHub-hosted project,
 you should point to a specific commit/tag/hash of that repository before you upload your project to
 PyPI. You never know how the project might change over time. Commit hashes
 are more reliable as they can't be changed
 :::
 
+(optional-dependencies)=
 ## 2. Optional dependencies
 
 Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh as an `[optional.dependency]`. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.
@@ -163,23 +167,26 @@ uv add --optional feature pandas
 ```
 
 Will add this to your pyproject.toml file:
+
 ```toml
 [optional.dependencies]
 feature = [
     "pandas>=2.3.3",
 ]
 ```
+
 :::
 
+(dependency-groups)=
 ## 3. Dependency groups
 
 Development dependencies include packages needed to work on your package
 locally. They are used to perform tasks such as:
 
-* running your test suite (pytest, pytest-cov)
-* building your documentation (sphinx, sphinx-theme packages)
-* linting and formatting code (ruff, black)
-* building package distribution files (build, twine)
+- running your test suite (pytest, pytest-cov)
+- building your documentation (sphinx, sphinx-theme packages)
+- linting and formatting code (ruff, black)
+- building package distribution files (build, twine)
 
 Dependency groups are optional because they are not required for users
 to install and use your package. However, they will make it easier for
@@ -215,10 +222,12 @@ lint = ["ruff", "black"]
 You can use uv to add dependencies to your pyproject.toml file:
 
 **Add a development group dependency:**
+
 ```bash
 uv add --group tests pytest
 uv add --group docs sphinx
 ```
+
 Will add the following to your pyproject.toml file:
 
 ```toml
@@ -230,6 +239,7 @@ docs = [
     "sphinx>=8.1.3",
 ]
 ```
+
 :::
 
 :::{todo}
@@ -252,13 +262,10 @@ dependencies that users need to run your package, and **optional**
 dependencies for development work or additional features.
 :::
 
-
-
-
 :::{admonition} Additional dependency resources
 
-* [Learn more: View PyPA's overview of declaring optional dependencies](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#dependencies-optional-dependencies)
-* [Dependency specifiers](https://packaging.python.org/en/latest/specifications/dependency-specifiers/)
+- [Learn more: View PyPA's overview of declaring optional dependencies](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#dependencies-optional-dependencies)
+- [Dependency specifiers](https://packaging.python.org/en/latest/specifications/dependency-specifiers/)
 
 :::
 
@@ -289,7 +296,6 @@ You can also use pip and install dependencies into the environment of your choic
 We shouldn't show UV pip install, so how do you add optional feature deps with UV??
 :::
 
-
 **Install development groups:**
 
 :::::{tab-set}
@@ -298,9 +304,9 @@ We shouldn't show UV pip install, so how do you add optional feature deps with U
 You can use uv sync to sync dependency groups in your uv-managed venv
 
 ```console
-$ uv sync --group docs                     # Single group
-$ uv sync --group docs --group test        # Multiple groups
-$ uv sync --all-groups                     # All development groups
+uv sync --group docs                     # Single group
+uv sync --group docs --group test        # Multiple groups
+uv sync --all-groups                     # All development groups
 ```
 
 **Install optional dependencies:**
@@ -314,7 +320,7 @@ $ uv pip install -e ".[docs,tests,lint]"   # Multiple groups
 **Install everything (package + all dependencies):**
 
 ```console
-$ uv sync --all-extras --all-groups
+uv sync --all-extras --all-groups
 ```
 
 `uv sync` is the recommended command for development workflows. It
@@ -330,6 +336,7 @@ Use `uv pip install` when you need pip-compatible behavior.
 python -m pip install -e ".[docs]"              # Single group
 python -m pip install -e ".[docs,tests,lint]"   # Multiple groups
 ```
+
 **Install dependency groups:**
 
 ```console
@@ -350,8 +357,6 @@ installation conflicts.
 
 :::::
 
-
-
 ### Combining dependency groups
 
 You can also create combined groups that reference other groups:
@@ -364,6 +369,7 @@ dev = ["your-package[test,docs]", "build", "twine"]
 ```
 
 Then install everything with pip install or uv sync as needed:
+
 ```bash
 uv pip install -e ".[dev]"
 # or
@@ -374,7 +380,6 @@ python -m pip install ".[dev]"
 When you install optional dependencies, pip and uv  install your
 package and its core dependencies automatically.
 :::
-
 
 ## Version specifiers for dependencies
 
@@ -395,6 +400,7 @@ set version ranges.
 avoid upper bounds unless you know at what version that dependency is no longer compatible. UV will do this by
 default when it adds a dependency to your pyproject.toml file. This keeps
 your package flexible and reduces dependency conflicts.
+
 ```toml
 dependencies = [
     "numpy>=1.20",              # Good - flexible
@@ -402,8 +408,8 @@ dependencies = [
     "requests==2.28.0",         # Avoid - too restrictive
 ]
 ```
-:::
 
+:::
 
 :::{todo}
 ### Using conda and Pixi
@@ -469,6 +475,7 @@ your dependencies during the build process, configure them in a
 **readthedocs.yaml** file.
 
 Here's an example that installs your `docs` optional dependencies:
+
 ```yaml
 python:
   install:
@@ -481,18 +488,17 @@ python:
 :::{admonition} Learn more about Read the Docs
 :class: note
 
-* [Creating a readthedocs.yaml file](https://docs.readthedocs.io/en/stable/config-file/index.html)
-* [Using uv with Read the Docs](https://docs.readthedocs.io/en/stable/build-customization.html)
-* [Using Poetry with Read the Docs](https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry)
+- [Creating a readthedocs.yaml file](https://docs.readthedocs.io/en/stable/config-file/index.html)
+- [Using uv with Read the Docs](https://docs.readthedocs.io/en/stable/build-customization.html)
+- [Using Poetry with Read the Docs](https://docs.readthedocs.io/en/stable/build-customization.html#install-dependencies-with-poetry)
 :::
-
 
 :::{todo}
 
-Keep this comment - https://github.com/pyOpenSci/python-package-guide/pull/106#issuecomment-1844278487 in this file for now - Jeremiah did a nice inventory of common shells and whether they need quotes or not. It's really comprehensive. But do we want it in the guide?? It's really useful for more advanced users.
+Keep this comment - <https://github.com/pyOpenSci/python-package-guide/pull/106#issuecomment-1844278487> in this file for now - Jeremiah did a nice inventory of common shells and whether they need quotes or not. It's really comprehensive. But do we want it in the guide?? It's really useful for more advanced users.
 
 Following this comment:
-https://github.com/pyOpenSci/python-package-guide/pull/106#pullrequestreview-1766663571
+<https://github.com/pyOpenSci/python-package-guide/pull/106#pullrequestreview-1766663571>
 
 Jonny will add a section that talks about:
 

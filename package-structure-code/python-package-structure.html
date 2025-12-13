@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Python Package Structure for Scientific Python Projects" />
+<meta property="og:title" content="Python Package Structure & Layout" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_python-package-structure_f103f834.png" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_python-package-structure_03fec495.png" />
 <meta property="og:image:alt" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
 <meta name="description" content="There are two different layouts that you will commonly see within the Python packaging ecosystem: src and flat layouts. Both layouts have advantages for different groups of maintainers. We strongly..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Python Package Structure for Scientific Python Projects &#8212; Python Packaging Guide</title>
+    <title>Python Package Structure &amp; Layout &#8212; Python Packaging Guide</title>
   
   
   
@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Use a pyproject.toml file for your package configuration &amp; metadata" href="pyproject-toml-python-package-metadata.html" />
-    <link rel="prev" title="Python Package Structure" href="intro.html" />
+    <link rel="prev" title="Python Package Structure &amp; Code" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -466,9 +466,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
@@ -517,9 +517,9 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Package Structure for Scientific Python Projects</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Package Structure &amp; Layout</span></li>
   </ul>
 </nav>
 </div>
@@ -536,8 +536,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-package-structure-for-scientific-python-projects">
-<h1>Python Package Structure for Scientific Python Projects<a class="headerlink" href="#python-package-structure-for-scientific-python-projects" title="Link to this heading">#</a></h1>
+  <section id="python-package-structure-layout">
+<h1>Python Package Structure &amp; Layout<a class="headerlink" href="#python-package-structure-layout" title="Link to this heading">#</a></h1>
 <p>There are two different layouts that you will commonly see
 within the Python packaging ecosystem:
 src and flat layouts.
@@ -558,29 +558,10 @@ has a simple build and might be open to moving to a more fail-proof approach.</p
 </ul>
 </div>
 <p>You can use tools like Hatch to quickly create a modern Python package structure. Check out our quickstart tutorial:</p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success sd-rounded-pill float-left reference external" href="https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure"><span>Want to learn how to create the structure to build your package? Click here.</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success sd-rounded-pill float-left reference external" href="&lt;https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure&gt;"><span>Want to learn how to create the structure to build your package? Click here.</span></a></p>
 <section id="what-is-the-python-package-source-layout">
-<h2>What is the Python package source layout?<a class="headerlink" href="#what-is-the-python-package-source-layout" title="Link to this heading">#</a></h2>
+<span id="package-source-layout"></span><h2>What is the Python package source layout?<a class="headerlink" href="#what-is-the-python-package-source-layout" title="Link to this heading">#</a></h2>
 <p>An example of the <strong>src/package</strong> layout structure is below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>myPackageRepoName
-├── CHANGELOG.md               ┐
-├── CODE_OF_CONDUCT.md         │
-├── CONTRIBUTING.md            │
-├── docs                       │ Package documentation
-│   └── index.md
-│   └── ...                    │
-├── LICENSE                    │
-├── README.md                  ┘
-├── pyproject.toml             ] Package metadata and build configuration
-├── src                        ┐
-│   └── myPackage              │
-│       ├── __init__.py        │ Package source code
-│       ├── moduleA.py         │
-│       └── moduleB.py         ┘
-└── tests                      ┐
-   └── ...                     ┘ Package tests
-</pre></div>
-</div>
 <p>Note the location of the following directories in the example above:</p>
 <ul class="simple">
 <li><p><strong>docs/:</strong> Discussed in our docs chapter, this directory contains your user-facing documentation website. In a <strong>src/</strong> layout docs/ are normally included at the same directory level as the <strong>src/</strong> folder.</p></li>
@@ -598,45 +579,52 @@ include:</p>
 <li><p>README.md</p></li>
 </ul>
 <!-- TODO: CHANGELOG is not mentioned in either documentation nor peer review -->
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-info sd-rounded-pill reference external" href="https://www.pyopensci.org/python-package-guide/documentation"><span>Click here to read about our packaging documentation requirements.</span></a></p>
-<div class="admonition-example-scientific-packages-that-use-src-package-layout admonition">
-<p class="admonition-title">Example scientific packages that use <strong>src/package</strong> layout</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/sourmash-bio/sourmash">Sourmash</a></p></li>
-<li><p><a class="reference external" href="https://github.com/bokeh/bokeh">bokeh</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openscm/openscm-runner">openscm</a></p></li>
-<li><p><a class="reference external" href="https://github.com/scikit-hep/awkward">awkward</a></p></li>
-<li><p><a class="reference external" href="https://github.com/poliastro/poliastro/">poliastro</a></p></li>
-</ul>
-</div>
-</section>
-<section id="the-src-layout-and-testing">
-<h2>The src/ layout and testing<a class="headerlink" href="#the-src-layout-and-testing" title="Link to this heading">#</a></h2>
-<p>The benefit of using the <strong>src/package</strong> layout is that it ensures tests are run against the
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-info sd-rounded-pill reference external" href="https://www.pyopensci.org/python-package-guide/documentation"><span>Click here to read about our packaging documentation requirements.
+:::
+
+:::{admonition} Example scientific packages that use <strong>src/package</strong> layout
+
+* <a class="reference external" href="https://github.com/sourmash-bio/sourmash">Sourmash</a>
+* <a class="reference external" href="https://github.com/bokeh/bokeh">bokeh</a>
+* <a class="reference external" href="https://github.com/openscm/openscm-runner">openscm</a>
+* <a class="reference external" href="https://github.com/scikit-hep/awkward">awkward</a>
+* <a class="reference external" href="https://github.com/poliastro/poliastro/">poliastro</a>
+
+:::
+
+(src-layout-test)=
+## The src/ layout and testing
+
+The benefit of using the <strong>src/package</strong> layout is that it ensures tests are run against the
 installed version of your package rather than the files in your package
 working directory. If you run your tests on your files rather than the
 installed version of your package, you may be missing issues that users encounter when
-your package is installed.</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">tests/</span></code> are outside the <strong>src/package</strong> directory, they aren’t included in the package’s <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a>. This makes your package size slightly smaller, which places a smaller storage burden on PyPI, and makes them faster to fetch.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://hynek.me/articles/testing-packaging/">Read more about reasons to use the <strong>src/package</strong> layout</a></p></li>
-</ul>
-<div class="admonition-how-python-discovers-and-prioritizes-importing-modules admonition">
-<p class="admonition-title">How Python discovers and prioritizes importing modules</p>
-<p>By default, Python adds a module in your current working directory to the front of the Python module search path.</p>
-<p>This means that if you run your tests in your package’s working directory, using a flat layout, <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code>, Python will discover <code class="docutils literal notranslate"><span class="pre">package/module.py</span></code> file before it discovers the installed package.</p>
-<p>However, if your package lives in a src/ directory structure <strong>src/package</strong>, then it won’t be added to the Python path by default. This means that when you import your package, Python will be forced to search the active environment (which has your package installed).</p>
-<p>Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g., <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code>).</p>
-</div>
-<section id="don-t-include-tests-in-your-package-wheel">
-<h3>Don’t include tests in your package wheel<a class="headerlink" href="#don-t-include-tests-in-your-package-wheel" title="Link to this heading">#</a></h3>
-<p>Writing <a class="reference internal" href="../tests/index.html#tests-intro"><span class="std std-ref">tests</span></a> for your package is important; however, we do not recommend including tests as part of your <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">package wheel</span></a> by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package runs properly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory into the <strong>src/package</strong> directory (see example below).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>src/
-<span class="w">  </span>package/
-<span class="w">    </span>tests/
-docs/
-</pre></div>
-</div>
+your package is installed.
+
+If <code class="docutils literal notranslate"><span class="pre">tests/</span></code> are outside the <strong>src/package</strong> directory, they aren’t included in the package’s <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a>. This makes your package size slightly smaller, which places a smaller storage burden on PyPI, and makes them faster to fetch.
+
+- <a class="reference external" href="https://hynek.me/articles/testing-packaging/">Read more about reasons to use the <strong>src/package</strong> layout</a>
+
+:::{admonition} How Python discovers and prioritizes importing modules
+
+By default, Python adds a module in your current working directory to the front of the Python module search path.
+
+This means that if you run your tests in your package’s working directory, using a flat layout, <code class="docutils literal notranslate"><span class="pre">/package/module.py</span></code>, Python will discover <code class="docutils literal notranslate"><span class="pre">package/module.py</span></code> file before it discovers the installed package.
+
+However, if your package lives in a src/ directory structure <strong>src/package</strong>, then it won’t be added to the Python path by default. This means that when you import your package, Python will be forced to search the active environment (which has your package installed).
+
+Note: Python versions 3.11 and above have a path setting that can be adjusted to ensure the priority is to use installed packages first (e.g., <code class="docutils literal notranslate"><span class="pre">PYTHONSAFEPATH</span></code>).
+:::
+
+### Don’t include tests in your package wheel
+
+Writing <a class="reference internal" href="../tests/index.html#tests-intro"><span class="std std-ref">tests</span></a> for your package is important; however, we do not recommend including tests as part of your <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">package wheel</span></a> by default. However, not including tests in your package distribution will make it harder for people other than yourself to test whether your package runs properly on their system. If you have a small test suite (Python files + data), and think your users may want to run tests locally on their systems, you can include tests by moving the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory into the <strong>src/package</strong> directory (see example below).
+
+```bash
+src/
+package/
+tests/
+docs/</span></a></p>
 <p>Including the <strong>tests/</strong> directory in your <strong>src/package</strong> directory ensures that tests will be included in your package’s <a class="reference internal" href="python-package-distribution-files-sdist-wheel.html#python-wheel"><span class="std std-ref">wheel</span></a>.</p>
 <p>Be sure to read the <a class="reference external" href="https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules">pytest documentation for more about including tests in your package distribution</a>.</p>
 <div class="tip admonition">
@@ -648,7 +636,6 @@ docs/
 </ul>
 <p>However, in some cases, particularly in the scientific Python ecosystem, you may need to include tests.</p>
 </div>
-</section>
 <section id="don-t-include-test-suite-datasets-in-your-package">
 <h3><strong>Don’t include test suite datasets in your package</strong><a class="headerlink" href="#don-t-include-test-suite-datasets-in-your-package" title="Link to this heading">#</a></h3>
 <p>If you include your tests in your package distribution, we strongly
@@ -668,8 +655,7 @@ data within your package structure. Including data in your package structure inc
 distribution files. This places a maintenance toll on repositories like PyPI and
 Anaconda.org that have to deal with thousands of package uploads.</p>
 </div>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success sd-rounded-pill float-left reference external" href="/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure"><span>
-Click here for a quickstart tutorial on creating your Python package.</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success sd-rounded-pill float-left reference external" href="/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure"><span>Click here for a quickstart tutorial on creating your Python package.</span></a></p>
 </section>
 </section>
 <section id="what-is-the-flat-python-package-layout">
@@ -684,9 +670,8 @@ of the flat layout for more complex builds.</p></li>
 <p>While we suggest that you use the <strong>src/package</strong> layout discussed above, it’s important to also
 understand the flat layout, especially if you plan to contribute to a package that uses this layout.</p>
 <div class="tip admonition">
-<p class="admonition-title">Why most scientific Python packages do not use source</p>
-<p>In most cases, moving to the <strong>src/package</strong> layout for
-larger scientific packages that already use a flat layout would consume significant time.</p>
+<p class="admonition-title">Why most scientific Python packages do not use src/ layout</p>
+<p>Migrating larger scientific packages that already use a flat layout would consume significant time and resources.</p>
 <p>However, the advantages of using the  <strong>src/package</strong> layout for a beginner are significant.
 As such, we recommend that you use the <strong>src/package</strong> layout if you are creating a new package.</p>
 <p>Numerous packages in the ecosystem <a class="reference external" href="https://github.com/scikit-build/cmake-python-distributions/pull/145">have had to move to a
@@ -748,20 +733,10 @@ flat files.</p></li>
 packages to a different layout. The potential benefits of the source layout
 for these tools are not worth the maintenance investment.</p>
 </div>
-<!--
-Not sure where to put this now ... most new users won't have multiple packages. Maybe this goes into the complex packing page as we build that out?
-
-```{admonition} Multiple packages in a src/ folder
-:class: tip
-
-In some more advanced cases, you may have more than one package in your **src/** directory. See [Black's GitHub repo](https://github.com/psf/black/tree/main/src) for an example of this. However, for most beginners you will likely only have one sub-directory in your **src/** folder.
-``` -->
-<!--
-```{admonition} A few notes about the src/ layout
-:class: tip
-
-It is important to note here that sometimes, when using the **src/package** structure, the directory name (e.g., package name) is different from the actual project or package name. What is important to take away here is that you should store your code within a subdirectory within **src/**.
-``` -->
+<div class="tip admonition">
+<p class="admonition-title">Multiple packages in a src/ folder</p>
+<p>In some more advanced cases, you may have more than one package in your <strong>src/</strong> directory. See <a class="reference external" href="https://github.com/psf/black/tree/main/src">Black’s GitHub repo</a> for an example of this. However, for most beginners you will likely only have one sub-directory in your <strong>src/</strong> folder.</p>
+</div>
 </section>
 </section>
 </section>
@@ -782,7 +757,7 @@ It is important to note here that sometimes, when using the **src/package** stru
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Package Structure</p>
+        <p class="prev-next-title">Python Package Structure &amp; Code</p>
       </div>
     </a>
     <a class="right-next"
@@ -813,9 +788,7 @@ It is important to note here that sometimes, when using the **src/package** stru
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-python-package-source-layout">What is the Python package source layout?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-src-layout-and-testing">The src/ layout and testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-include-tests-in-your-package-wheel">Don’t include tests in your package wheel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-python-package-source-layout">What is the Python package source layout?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-include-test-suite-datasets-in-your-package"><strong>Don’t include test suite datasets in your package</strong></a></li>
 </ul>
 </li>

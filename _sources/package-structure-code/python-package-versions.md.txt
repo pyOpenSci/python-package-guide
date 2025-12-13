@@ -3,13 +3,13 @@
 <!-- * mention release should be incremental
 * rep changes in the code that are either patches, minor fixes, major updates -->
 
-```{admonition} Key Takeways
+:::{admonition} Key Takeways
 
 * Follow [semantic versioning guidelines (SemVer) rules](https://semver.org/) when bumping (increasing) your Python's package version; for example a major version bump (version 1.0 --> 2.0) equates to breaking changes in your package's code for a user.
 * You may want to consider using a plugin like hatch_vsc for managing versions of your package - if you want to have a GitHub only release workflow.
 * Otherwise most major package build tools such as Hatch, Flit and PDM have a version feature that will help you update your package's version
 * Avoid updating your packages version number manually by hand in your code!
-```
+:::
 
 pyOpenSci recommends that you follow the [Python PEP 440](https://peps.python.org/pep-0440) which recommends using
 [semantic versioning guidelines](https://www.python.org/dev/peps/pep-0440/#semantic-versioning)
@@ -25,40 +25,41 @@ with how and when you update your package versions is important as:
    bump a package version based on standard rules.
 3. Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. Thus your package version numbers become "expressive" in the same way that naming code variables well can [make code expressive](https://medium.com/@daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa).
 
-```{admonition} A note about versioning
+:::{admonition} A note about versioning
 In some cases even small version changes can turn a package update
 into a breaking change for some users. What is also important is that
 you document how you version your code and if you can, also
 document your deprecation policy for code.
-```
+:::
 
 <!-- TODO: Better link to what expressive code is?-->
 
+(package-versioning)=
 ## SemVer rules
 
 Following SemVer, your bump your package version to a:
 
-- patch (1.1.1 --> 1.1.**2**)
-- minor (1.1.1 --> 1.**2**.1)
-- major (1.1.1 --> **2**.1.1)
+* patch (1.1.1 --> 1.1.**2**)
+* minor (1.1.1 --> 1.**2**.1)
+* major (1.1.1 --> **2**.1.1)
 
 version number change based on the following rules:
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
 >
-> - **MAJOR version** when you make incompatible API changes
-> - **MINOR version** when you add functionality in a backwards compatible manner
-> - **PATCH version** when you make backwards compatible bug fixes
+> * **MAJOR version** when you make incompatible API changes
+> * **MINOR version** when you add functionality in a backwards compatible manner
+> * **PATCH version** when you make backwards compatible bug fixes
 >   Additional labels for pre-release and build metadata are
 >   available as extensions to the MAJOR.MINOR.PATCH format.
 
-```{note}
+:::{note}
 Some people prefer to use [calver](https://calver.org/index.html) for versioning. It may be a simpler-to-use system given it relies upon date values associated with released versions. However, calver does not provide a user with a sense of when a new version
 might break an existing build. As such we still suggest semver.
 
 pyOpenSci will never require semver in a peer review as long as a
 package has a reasonable approach to versioning!
-```
+:::
 
 ## Avoid manually updating Python package version numbers if you can
 
@@ -80,6 +81,7 @@ Python package versions.
 
 <!-- bump2version isn't really maintained anymore - are there alternatives? -->
 
+(tools-version-management)=
 ## Tools to manage versions for your Python package
 
 There are a handful of tools that are widely used in the scientific ecosystem that you can use to manage your package
@@ -114,7 +116,7 @@ build that:
 1. Tests the build and publishes to test PyPI
 1. Publishes the package to PyPI
 
-```{note}
+:::{note}
 Bumping a package version refers to the step of increasing the package
 version after a set number of changes have been made to it. For example,
 you might bump from version 0.8 to 0.9 of a package or from 0.9 to 1.0.
@@ -123,17 +125,17 @@ Using semantic versioning, there are three main "levels"
 of versions that you might consider:
 
 Major, minor and patch. These are described in more detail below.
-```
+:::
 
 ## Tools for bumping Python package versions
 
 In this section we discuss the following tools for managing
 your Python package's version:
 
-- hatch &
-- hatch_vcs plugin for hatchling
-- setuptools-scm
-- python-semantic-version
+* hatch &
+* hatch_vcs plugin for hatchling
+* setuptools-scm
+* python-semantic-version
 
 ### Tool 1: Hatch and other build tools that offer incremental versioning
 
@@ -143,19 +145,19 @@ from Python Semantic Version in that they do not require specific
 commit messages to implement version. Rather, they allow you
 to update the version at the command line using commands such as:
 
-- `tool-name version update major`
-- `tool-name version update minor`
+* `tool-name version update major`
+* `tool-name version update minor`
 
 [Hatch](https://hatch.pypa.io/latest/version/), for instance offers `hatch version minor` which will modify
 the version of your package incrementally. With **Hatch** the version value will be found in your `pyproject.toml` file. <!-- TODO double check this -->
 
-#### Hatch (or other tools like PDM) Pros
+#### Hatch (or other tools like PDM) pros
 
-- Easy to use version updates locally using a single tool!
+* Easy to use version updates locally using a single tool!
 
-#### Hatch (or other tools like PDM) Cons
+#### Hatch (or other tools like PDM) cons
 
-- There will be some setup involved to ensure package version is updated throughout your package
+* There will be some setup involved to ensure package version is updated throughout your package
 
 ### Tool 2: Hatch_vcs & hatchling build back-end
 
@@ -178,11 +180,11 @@ your package version.
 
 To use **hatch_vcs** you will need to use the **hatchling** build back end.
 
-```{tip}
+:::{tip}
 Hatchling can also be used with any of the modern build tools
 including **Flit** and **PDM** if you prefer those for your day to
 day workflow.
-```
+:::
 
 #### Hatch example setup in your pyproject.toml
 
@@ -202,23 +204,23 @@ push to PyPI workflow on GitHub.
 version-file = "_version.py"
 ```
 
-```{tip}
+:::{tip}
 If you use **setuptools_scm**, then you might find **hatch_vcs** and **hatchling** to be the modern equivalent to your current setuptools / build workflow.
-```
+:::
 
-#### hatch_vcs Pros
+#### hatch_vcs pros
 
-- Hatch supports modern Python packaging standards
-- It creates a single-source file that contains your package version.
-- You never manually update the package version
-- You can automate writing the version anywhere in your package including your documentation!
-- It supports a purely GitHub based release workflow. This simplifies maintenance workflows.
-- Version number is updated in your package via a hidden `_version.py` file. There is no manual configuration updates required.
-- While we like detailed commit messages (See Python Semantic Version below), we know that sometimes when maintaining a package specific guidelines around commit messages can be hard to apply and manage.
+* Hatch supports modern Python packaging standards
+* It creates a single-source file that contains your package version.
+* You never manually update the package version
+* You can automate writing the version anywhere in your package including your documentation!
+* It supports a purely GitHub based release workflow. This simplifies maintenance workflows.
+* Version number is updated in your package via a hidden `_version.py` file. There is no manual configuration updates required.
+* While we like detailed commit messages (See Python Semantic Version below), we know that sometimes when maintaining a package specific guidelines around commit messages can be hard to apply and manage.
 
-#### hatch_vcs Cons
+#### hatch_vcs cons
 
-- In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub. But you could locally develop a build to "bump" tag
+* In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub. But you could locally develop a build to "bump" tag
   versions
 
 ### Tool 3: setuptools-scm versioning using git tags
@@ -235,31 +237,31 @@ If you are using **setuptools** as your primary build tool, then `*setuptools-sc
 
 setuptools_scm Pros
 
-- It creates a single-source file that contains your package version.
-- You never manually update the package version
-- You can automate writing the version anywhere in your package including your documentation!
-- It supports a purely GitHub based release workflow. This simplifies maintenance workflows.
-- Version number is updated in your package via a hidden `_version.py` file. There is no manual configuration updates required.
-- While we like detailed commit messages (See Python Semantic Version below), we know that sometimes when maintaining a package specific guidelines around commit messages can be hard to apply and manage.
-- **setuptools** is still the most commonly used Python packaging build tool
+* It creates a single-source file that contains your package version.
+* You never manually update the package version
+* You can automate writing the version anywhere in your package including your documentation!
+* It supports a purely GitHub based release workflow. This simplifies maintenance workflows.
+* Version number is updated in your package via a hidden `_version.py` file. There is no manual configuration updates required.
+* While we like detailed commit messages (See Python Semantic Version below), we know that sometimes when maintaining a package specific guidelines around commit messages can be hard to apply and manage.
+* **setuptools** is still the most commonly used Python packaging build tool
 
-#### setuptools_scm Cons
+#### setuptools_scm cons
 
-- In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub.
-- Not well documented
-- Because setuptools will always have to support backwards compatibility it will always be slower in adopting modern Python packaging conventions.
+* In a CI workflow you will end up manually entering or creating the version number via a tag on GitHub.
+* Not well documented
+* Because setuptools will always have to support backwards compatibility it will always be slower in adopting modern Python packaging conventions.
 
 As such you might consider using a more modern tool such as
 **hatch_vcs** and **hatchling** to build your package and manage
 package versions.
 
 <!--
-```{important}
+:::{important}
 pyOpenSci will be creating tutorials on working with `setuptools-scm` and GitHub releases to
 update versions of your package and push to PyPI. These should be published sometime
 during the spring/summer 2023. In the meantime [here is a high quality blog post
 that will help you get started with using setuptools-scm](https://www.moritzkoerber.com/posts/versioning-with-setuptools_scm/)
-``` -->
+::: -->
 
 ### Tool 4: [Python semantic release](https://python-semantic-release.readthedocs.io/en/latest/)
 
@@ -278,7 +280,7 @@ made the commit below with the words fix(text-here), Python Semantic
 Release would bump your package to version 1.1.1.
 
 ```bash
-$ git commit -m "fix(mod_plotting): fix warnings returned athlete attributes"
+git commit -m "fix(mod_plotting): fix warnings returned athlete attributes"
 ```
 
 Similarly a feature (`feat()`) triggers a minor version bump.
@@ -288,20 +290,20 @@ For example from version 1.1 to version 1.2
 git commit -m "feature(add_conversions): add value conversions to activity date"
 ```
 
-```{tip}
+:::{tip}
 You can find a thoughtful discussion of python semantic version [in this Python package guide](https://py-pkgs.org/07-releasing-versioning#automatic-version-bumping). Note that the guide hasn't been updated since 2020 and will potentially be updated in the future! But for now, some of the commands are dated but the content is still excellent.
-```
+:::
 
-#### Python Semantic Release Pros
+#### Python Semantic Release pros
 
-- Follows semver versioning closely
-- Enforces maintainers using descriptive commit messages which can simplify troubleshooting and ensure a cleaner and more self-describing git history.
+* Follows semver versioning closely
+* Enforces maintainers using descriptive commit messages which can simplify troubleshooting and ensure a cleaner and more self-describing git history.
 
-#### Python Semantic Release Cons
+#### Python Semantic Release cons
 
-- Requires very specific commit language to work. In practice some maintainers and contributors may not be able to maintain that level of specificity in commit messages (NOTE: there are bots that will check git commit messages in a repo)
-- Release happens at the command line. This makes is harder to implement a GitHub based release workflow as the wrong commit message could trigger a release.
-- The version number is manually updated in a configuration file such as `pyproject.toml` vs. in a package **\_version.py** file.
+* Requires very specific commit language to work. In practice some maintainers and contributors may not be able to maintain that level of specificity in commit messages (NOTE: there are bots that will check git commit messages in a repo)
+* Release happens at the command line. This makes is harder to implement a GitHub based release workflow as the wrong commit message could trigger a release.
+* The version number is manually updated in a configuration file such as `pyproject.toml` vs. in a package **\_version.py** file.
 
 <!-- However, this tool differs
 from **setuptools-scm**. With **setuptools-scm**, a version

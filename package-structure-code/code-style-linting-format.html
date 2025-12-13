@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=676a615a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -466,9 +466,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
@@ -517,7 +517,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure &amp; Code</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Package Code Style, Format and Linters</span></li>
   </ul>
@@ -571,7 +571,7 @@ a discussion of:</p>
 format tools in daily workflows and in pull requests on GitHub easier.</p></li>
 </ol>
 <section id="use-a-code-format-tool-or-tools-to-make-your-life-easier">
-<h2>Use a code format tool (or tools) to make your life easier<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Link to this heading">#</a></h2>
+<span id="code-style-tools"></span><h2>Use a code format tool (or tools) to make your life easier<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Link to this heading">#</a></h2>
 <p>We suggest that you use a code format tool, or a set of format tools, because
 manually applying all of the PEP 8 format specifications is both time consuming
 for maintainers and can be a road block for potential new contributors.
@@ -591,17 +591,17 @@ the work out of manually implementing code format requirements.</p>
 will also broadly make code easier to scan, understand and contribute to.</p>
 </section>
 <section id="linting-vs-format-and-style">
-<h2>Linting vs format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Link to this heading">#</a></h2>
+<h2>Linting vs. format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Link to this heading">#</a></h2>
 <p>Before we dive in let’s get a few definitions out of the way.</p>
 <section id="code-linting">
-<h3>Code Linting<a class="headerlink" href="#code-linting" title="Link to this heading">#</a></h3>
+<h3>Code linting<a class="headerlink" href="#code-linting" title="Link to this heading">#</a></h3>
 <p>A code linter is a tool that will review your code and
 identify errors or issues. A linter typically does not modify your code. It
 will tell you what the error is and on what line it was discovered. Flake8,
 discussed below, is an example of a commonly-used code linter.</p>
 </section>
 <section id="code-formatters-and-stylers">
-<h3>Code Formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Link to this heading">#</a></h3>
+<h3>Code formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Link to this heading">#</a></h3>
 <p>Code formatters will reformat your code for you. Python focused code formatters
 often follow PEP 8 standards. However, they also make stylistic decisions about
 code consistency.</p>
@@ -614,7 +614,7 @@ quotes for strings, and spacing of items in lists.</p>
 <section id="code-linting-formatting-and-styling-tools">
 <h2>Code linting, formatting and styling tools<a class="headerlink" href="#code-linting-formatting-and-styling-tools" title="Link to this heading">#</a></h2>
 <section id="black">
-<h3>Black<a class="headerlink" href="#black" title="Link to this heading">#</a></h3>
+<span id="about-black"></span><h3>Black<a class="headerlink" href="#black" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> is a code
 formatter. Black will automagically (and <em>unapologetically</em>)
 fix spacing issues and ensure code format is consistent throughout your
@@ -634,7 +634,7 @@ use the <a class="reference external" href="https://black.vercel.app/">Black pla
 code function rather than worry about format.</p>
 </section>
 <section id="flake8">
-<h3>Flake8<a class="headerlink" href="#flake8" title="Link to this heading">#</a></h3>
+<span id="about-flake8"></span><h3>Flake8<a class="headerlink" href="#flake8" title="Link to this heading">#</a></h3>
 <p>To adhere to Python <code class="docutils literal notranslate"><span class="pre">pep8</span></code> format standards, you might want to add
 <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> to your code format
 toolbox.</p>
@@ -712,7 +712,7 @@ Also notice that there are no spaces in the imports listed below.</p>
 </section>
 </section>
 <section id="ruff">
-<h3>Ruff<a class="headerlink" href="#ruff" title="Link to this heading">#</a></h3>
+<span id="about-ruff"></span><h3>Ruff<a class="headerlink" href="#ruff" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://docs.astral.sh/ruff/">Ruff</a> is a new addition to the code quality
 ecosystem, gaining some traction since its release. <code class="docutils literal notranslate"><span class="pre">ruff</span></code> is both a linter
 and a code formatter for Python, aiming to replace several tools behind a single
@@ -955,9 +955,9 @@ style.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier">Use a code format tool (or tools) to make your life easier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-vs-format-and-style">Linting vs format and style</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linting">Code Linting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatters-and-stylers">Code Formatters (and stylers)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linting-vs-format-and-style">Linting vs. format and style</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linting">Code linting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatters-and-stylers">Code formatters (and stylers)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linting-formatting-and-styling-tools">Code linting, formatting and styling tools</a><ul class="nav section-nav flex-column">
