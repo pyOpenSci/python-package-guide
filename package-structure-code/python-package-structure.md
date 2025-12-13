@@ -94,7 +94,7 @@ Click here to read about our packaging documentation requirements.
 
 :::
 
-(src-layout-testing)=
+(src-layout-test)=
 ## The src/ layout and testing
 
 The benefit of using the **src/package** layout is that it ensures tests are run against the
