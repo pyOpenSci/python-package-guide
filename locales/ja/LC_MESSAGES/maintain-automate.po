@@ -1,0 +1,1616 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, pyOpenSci
+# This file is distributed under the same license as the pyOpenSci Python
+# Package Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pyOpenSci Python Package Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-04 09:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../maintain-automate/ci.md:2
+msgid ""
+"Continuous Integration and Continuous Deployment (CI/CD) For Python "
+"Packages"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:4
+msgid ""
+"When you develop, work on, and contribute to software, there is more to "
+"consider than just writing code. Having tests and checks ensures that "
+"your code runs reliably and follows a consistent format is also "
+"important. You can use **Continuous Integration (CI)** and **Continuous "
+"Deployment (CD)** to run tests and checks on your code every time someone"
+" suggests a change online in a platform like GitHub or GitLab."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:12
+msgid ""
+"**Continuous Integration (CI):** Automates the process of running tests, "
+"code checks, and other workflows each time code is updated."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:14
+msgid ""
+"**Continuous Deployment (CD):** Extends CI by allowing you to automate "
+"publishing your package to PyPI, publishing your documentation, and more."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:18
+msgid ""
+"CI and CD streamline software development by automating repetitive tasks "
+"and ensuring code quality and consistency. Having CI setup also makes it "
+"easier for new contributors to contribute to your code base without "
+"setting up all your test suites and other local checks."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:23
+msgid "What is continuous integration?"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:25
+msgid ""
+"When you're ready to publish your code online, you can set up Continuous "
+"Integration (CI). CI is a platform that allows you to specify and run "
+"jobs or workflows you define. These workflows include:"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:28
+msgid "Running your test suite"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:29
+msgid "Running code checkers / linters / spellcheck"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:30
+msgid "Building your documentation"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:32
+msgid ""
+"CI allows you to automate running workflows across a suite of "
+"environments, including:"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:34
+msgid "environments containing different Python versions and"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:35
+msgid "different operating systems (Mac, Linux, Windows)."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:37
+msgid "What is continuous deployment (CD)?"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:39
+msgid ""
+"Continuous deployment (CD) extends the CI process by automating the "
+"deployment of code changes to production or staging environments. In the "
+"case of your open source tool, CD can be used to:"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:41
+msgid "Automate publishing to PyPI"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:42
+msgid "Automate publishing your documentation to GitHub Pages or Read the Docs."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:44
+msgid ""
+"It is also used once your conda-forge recipe is set up to keep your "
+"package up to date on conda-forge."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:47
+msgid "Why use CI?"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:49
+msgid ""
+"CI can be configured to run a workflow on every commit pushed to GitHub "
+"and every pull request opened. This ensures that any changes made to your"
+" package are tested across environments before merging into the main "
+"branch of your code."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:54
+msgid ""
+"These checks are particularly useful if someone new is contributing to "
+"your code. Every contributor's change will be tested when pushed to your "
+"code repository."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:58
+msgid ""
+"Together, CI and CD streamline the process of building, testing, and "
+"deploying code. They aim to improve software development and publication "
+"efficiency, quality, and reliability."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:63
+msgid ""
+"All pyOpenSci packages must use some form of continuous integration. Even"
+" if you are not planning to go through peer review, we strongly recommend"
+" that you use continuous integration, too!"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:68
+msgid ""
+"In the case of GitHub actions (which we will focus on here), CI workflows"
+" are running on online servers that support GitHub."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:71
+msgid "CI/CD platforms"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:73
+msgid ""
+"There are numerous platforms available for CI/CD. Here, we will focus on "
+"GitHub Actions (GHA), built into GitHub. GitHub is the most commonly used"
+" platform to store scientific open-source software."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:78
+msgid ""
+"If you use [GitLab](https://about.gitlab.com/) CI/CD, many of the "
+"principles described here will apply. However, the workflow files may "
+"look different."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:83
+msgid "If you aren't sure, use GitHub Actions"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:85
+msgid ""
+"While you are welcome to use the continuous integration platform of your "
+"choice, we recommend GitHub Actions because it is free-to-use and "
+"integrated tightly into the GitHub user interface. There is also an "
+"entire store of GitHub action templates that you can easily use and adapt"
+" to your own needs."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:91
+msgid "Other platforms that you may run into"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:94
+msgid ""
+"[Appveyor:](https://www.appveyor.com/): Supports running tests on Windows"
+" operating systems and predated the release of GitHub Actions. Today, "
+"AppVeyor supports operating systems beyond Windows."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:97
+msgid ""
+"[Travis CI:](https://www.travis-ci.com/) had been a common CI platform "
+"choice in our ecosystem. Usage dropped after Travis CI ended free support"
+" for open-source projects."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:100
+msgid ""
+"[CircleCI:](https://circleci.com/) CircleCI can be useful for automated "
+"builds of websites and documentation since it offers a preview of the PR "
+"changes."
+msgstr ""
+
+#: ../../maintain-automate/ci.md:105
+msgid "Embrace automation"
+msgstr ""
+
+#: ../../maintain-automate/ci.md:107
+msgid ""
+"By embracing CI/CD, you can ensure that your code runs as you expect it "
+"to across the diverse landscapes of user environments. Further, you can "
+"automate certain checks (and, in some cases, code fixes), including "
+"linting and code style. You can even automate spell-checking your "
+"documentation and docstrings!"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:2
+msgid "Environment Managers for Python Packaging"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:4
+msgid "Quick Decision Guide"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:6
+msgid "**Python-only project, want simplicity?** → venv + pip"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:7
+msgid "**Python-only, want speed?** → **uv** (recommended)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:8
+msgid "**Installing CLI tools globally?** → pipx"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:9
+msgid ""
+"**Need conda packages or cross-language dependencies?** → **pixi** "
+"(recommended) or conda/mamba"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:10
+msgid ""
+"**Creating a Python package?** → Use Hatch -- with UV as a dependency "
+"manager"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:12
+msgid ""
+"You can mix tools! For example, use **pipx** to install tools you use "
+"often (at the command line) like Hatch, ruff or pre-commit, then use "
+"**uv** within your projects for package and environment management."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:15
+msgid "Environment and package managers"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:17
+msgid ""
+"Package and environment managers are important tools in your Python "
+"packaging workflows. To make Your packaging experience when selecting a "
+"tool will be easier if you understand the difference between the two."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:20
+msgid ""
+"A **package manager** is used to install, update, and remove Python "
+"packages (libraries and tools) and their dependencies in your "
+"environment. When you use a package manager, you are often downloading "
+"packages from a repository like PyPI (Python Package Index) or a local "
+"repository like GitHub / GitLab."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:23
+msgid ""
+"When you run `pip install numpy`, pip acts as a package manager and "
+"installs numpy from PyPI. Pip's default repository when you install a "
+"package is PyPI, but it can be used to install packages from other "
+"repositories such as GitHub."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:26
+msgid ""
+"An **environment manager** creates isolated spaces (environments) for "
+"your Python projects. Each environment has its own Python installation "
+"and its own installed packages. Using isolated environments for different"
+" projects reduces the change of environment conflicts when using the same"
+" environment across different projects with different dependencies."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:28
+msgid ""
+"There are many tools listed below, but if you're short on time, you may "
+"want to consider"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:30
+msgid ""
+"Hatch combined with UV if you are managing a Python package. [Check out "
+"our tutorials for more on this workflow.](create-pure-python-package)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:31
+msgid ""
+"Pixi or mamba as faster alternatives to conda if you are working in the "
+"non-Pure Python packaging space."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:33
+msgid "Where environment managers save your environment"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:35
+msgid ""
+"Environment managers save environments in different locations by default."
+" For instance, `venv`, an environment manager that ships with Python, "
+"saves an environment by default in your current working directory. UV has"
+" the same native behavior. In contrast, conda and mamba save environments"
+" in a global location, allowing you to access them easily across "
+"projects."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:38
+msgid ""
+"UV does have a global cache even tho its default behavior is to create an"
+" environment in your current working directory."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:42
+msgid "Some tools do everything"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:44
+msgid ""
+"Some modern tools handle both package installation and environment "
+"management. For instance, UV, conda and mamba can be used to both create "
+"environments, add dependencies, and build and install tools."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:46
+msgid "Comparison Table: pip ecosystem"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Tool"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Type"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Language"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Speed"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Default Environment Location"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Description"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**pip**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Package manager"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+#: ../../maintain-automate/task-runners.md
+msgid "Python"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Slower"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "N/A (uses existing environment)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Python's standard package installer. pip also builds packages"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**pipx**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Global (isolated per tool)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid ""
+"Installs tools that you need to regularly use across projects such as "
+"nox, pytest or ruff in a global location"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**uv**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Both"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Rust"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Fastest"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Current working directory"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Fast package installer and environment creator"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**venv**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Environment manager"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Python's built-in environment creator"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**virtualenv**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Moderate"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Feature-rich alternative to venv"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:56
+msgid "Comparison Table: conda ecosystem"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**conda**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Python/C++"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Global (`~/anaconda3/envs/`)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Cross-language package and environment manager"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**mamba**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "C++"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Faster"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Faster drop-in replacement for conda"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "**pixi**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Current working directory (`.pixi/`)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:37
+msgid "Modern conda-based tool with lock files"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:64
+msgid ""
+"**Speed comparison:** Rust-based tools (uv, pixi) are significantly "
+"faster when installing packages and resolving complex environments than "
+"Python-based tools. Mamba is faster than conda but might be slower than "
+"Rust-based alternatives such as Pixi."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:67
+msgid "Package Managers"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:69
+msgid "pip"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:71
+msgid ""
+"Pip is Python's standard package installer. It is included with Python by"
+" default."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:72
+msgid ""
+"Pip is great for installing packages from PyPI and GitHub / GitLab into "
+"existing environments."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:73
+msgid ""
+"It is also great for development if you want to install your package "
+"locally in editable mode."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:75
+#: ../../maintain-automate/environment-managers.md:87
+#: ../../maintain-automate/environment-managers.md:99
+#: ../../maintain-automate/environment-managers.md:127
+#: ../../maintain-automate/environment-managers.md:189
+#: ../../maintain-automate/environment-managers.md:211
+#: ../../maintain-automate/environment-managers.md:261
+#: ../../maintain-automate/environment-managers.md:280
+msgid "**Basic usage:**"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:81
+msgid "pipx"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:83
+msgid ""
+"Pipx is can be used to install a tool that you need to use across "
+"projects (like `riff`, `pytest`, `sphinx`, `nox`), globally."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:85
+msgid ""
+"Why use it: You might use it to avoid reinstalling the same tool over and"
+" over on your machine."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:93
+msgid "conda / mamba"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:95
+msgid ""
+"Conda is a cross-language package manager that installs Python packages, "
+"R packages, system libraries, and more. Mamba is a faster, drop-in "
+"replacement for conda and we highly recommend mamba over conda if you are"
+" still using conda."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:97
+msgid ""
+"These tools are best for scientific computing projects and environments "
+"that need non-Python dependencies (like C libraries, GDAL, or R "
+"packages)."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:109
+msgid "Conda and mamba also function as environment managers - see below!"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:112
+#: ../../maintain-automate/index.md:46
+msgid "Environment Managers"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:114
+msgid "hatch for pure Python packaging"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:116
+#: ../../maintain-automate/environment-managers.md:204
+#: ../../maintain-automate/environment-managers.md:273
+msgid "pyOpenSci Recommends"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:118
+msgid ""
+"We recommend **hatch** as a complete project management tool for Python "
+"packaging. Hatch manages environments, builds packages, runs tests, and "
+"handles publishing—all in one tool. It can use **uv** as its backend for "
+"even faster operations."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:121
+msgid ""
+"Hatch is a comprehensive modern Python project manager that handles "
+"environments, package building, testing, and publishing. Hatch creates "
+"isolated environments for different tasks (testing, docs, development). "
+"Hatch uses UV under the hood to install Python, and can be set to use UV "
+"to manage environment installations too."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:123
+msgid ""
+"Hatch is best for Python package developers who want an all-in-one tool "
+"that handles the entire packaging workflow from development to "
+"publication."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:125
+msgid "[Check out our tutorial](create-pure-python-package)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md
+msgid "hatch (recommended)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md
+msgid "hatch with uv backend"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:160
+msgid ""
+"Hatch acts as a task runner and can manage multiple environments that you"
+" define. It also handles project and dependency installation, making it "
+"ideal for package maintainers who want consistency across development "
+"tasks."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:163
+msgid "venv"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:165
+msgid ""
+"venv is Python's built-in environment creator (included with Python "
+"3.3+). It is best for simple pure Python projects. Because venv ships "
+"with Python, and it is used by Hatch, UV and other tools under the hood, "
+"it is the most widely used tool."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:168
+msgid "Basic usage:"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:184
+msgid "virtualenv"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:186
+msgid ""
+"virtualenv is a more feature-rich alternative to venv with better "
+"performance and additional options. It's best for you if you need more "
+"control over your environments."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:202
+msgid "uv"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:206
+msgid ""
+"We recommend **uv** for fast, reliable Python package and environment "
+"management. It's significantly faster than pip and easily handles both "
+"installing packages and creating environments."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:209
+msgid ""
+"UV is a fast, Rust-based tool that replaces both pip and venv. It "
+"installs packages and creates virtual environments at lightning speed. UV"
+" is best for any pure Python project. Pixi is better if are working in "
+"the non-pure Python packaging space."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md
+msgid "uv (recommended)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md
+msgid "venv + pip"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md
+#: ../../maintain-automate/environment-managers.md:272
+msgid "pixi"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:256
+msgid "conda / mamba (as environment managers)"
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:258
+msgid ""
+"Conda and mamba create isolated environments that can contain Python, R, "
+"system libraries, and more. The conda ecosystem tools are best for "
+"managing complex dependencies across languages or when you need specific "
+"system libraries."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:275
+msgid ""
+"For projects needing conda packages, we recommend **pixi** over "
+"conda/mamba. It's faster, uses lock files for reproducibility, and works "
+"cross-platform."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:278
+msgid ""
+"Pixi is a modern, fast package and environment manager built on conda "
+"ecosystems. Similar to UV, Pixi uses lock files for reproducible "
+"environments. Pixi is best suited for scientific projects that require "
+"conda packages, teams that require exact reproducibility, or cross-"
+"platform development."
+msgstr ""
+
+#: ../../maintain-automate/environment-managers.md:299
+msgid ""
+"Pixi automatically creates a lock file (`pixi.lock`) ensuring everyone on"
+" your team gets identical environments."
+msgstr ""
+
+#: ../../maintain-automate/index.md:46
+msgid "What is CI?"
+msgstr ""
+
+#: ../../maintain-automate/index.md:46
+msgid "Task runners"
+msgstr ""
+
+#: ../../maintain-automate/index.md:46
+msgid "Maintain & Automate"
+msgstr ""
+
+#: ../../maintain-automate/index.md:2
+msgid "Automate Workflows and Maintain Your Package"
+msgstr ""
+
+#: ../../maintain-automate/index.md:4
+msgid ""
+"Once you've [created your package](create-pure-python-package), "
+"[published it](publish-pypi-tutorial), and set up a repository for it, "
+"the next step is to automate development and maintenance workflows. "
+"Automation makes maintaining your package easier, more robust, and more "
+"secure. It also helps new contributors get started quickly without having"
+" to manually set up complex development environments and testing "
+"workflows."
+msgstr ""
+
+#: ../../maintain-automate/index.md:11
+msgid "Why automate?"
+msgstr ""
+
+#: ../../maintain-automate/index.md:13
+msgid ""
+"When you automate repetitive tasks like running tests, checking code "
+"style, and building documentation, you ensure that these important steps "
+"happen consistently every time. This consistency helps you catch bugs "
+"early, maintain code quality, and make it easier for others to contribute"
+" to your package. Automation also saves you time—instead of remembering "
+"and typing long command sequences, you can run everything with simple "
+"commands or have workflows run automatically when you push code to "
+"GitHub."
+msgstr ""
+
+#: ../../maintain-automate/index.md:22
+msgid "What you'll learn"
+msgstr ""
+
+#: ../../maintain-automate/index.md:24
+msgid ""
+"This section will walk you through two key automation strategies for "
+"Python packages:"
+msgstr ""
+
+#: ../../maintain-automate/index.md:27
+msgid ""
+"[**Task runners**](task-runners-intro) help you automate common "
+"development tasks locally— things like running tests, building "
+"documentation, formatting code, and checking for errors. Instead of "
+"typing out long command sequences every time, you define tasks once and "
+"run them with simple commands. Task runners like Hatch and Nox also "
+"manage isolated environments for different workflows, ensuring you have "
+"the right dependencies for each task."
+msgstr ""
+
+#: ../../maintain-automate/index.md:35
+msgid ""
+"[**Continuous Integration (CI)**](ci-cd) takes automation further by "
+"running your tests and checks automatically every time code is pushed to "
+"GitHub or when someone opens a pull request. CI ensures that all changes "
+"are tested across different Python versions and operating systems before "
+"they're merged. You can also use Continuous Deployment (CD) to automate "
+"publishing your package to PyPI and deploying your documentation."
+msgstr ""
+
+#: ../../maintain-automate/index.md:42
+msgid ""
+"Together, task runners and CI/CD create a robust development workflow "
+"that makes your package easier to maintain and more welcoming to "
+"contributors."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:2
+msgid "Task Runners for Python Packaging"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:4
+msgid "What is a Task Runner?"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:6
+msgid ""
+"A task runner is a tool that automates repetitive development workflows. "
+"Instead of typing out long command sequences every time you need to test "
+"your code, build documentation, or check your package, you define these "
+"tasks once and run them with simple commands."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:11
+msgid "For example, rather than running:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:19
+msgid "You can define a task and run:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:25
+msgid ""
+"Most modern task runners also include environment management features "
+"that make it quick and easy to run tasks. Task runners ensure that "
+"workflows are executed consistently every time, whether you're running "
+"them on your laptop or in continuous integration, and they also make it "
+"easier for contributors to recreate the same workflows in their local "
+"environments."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:32
+msgid "Benefits of task runners"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:34
+msgid ""
+"Task runners provide several benefits for package development. When you "
+"use a task runner, everyone on your team runs tasks the same way, "
+"reducing environment-specific issues and \"works on my machine\" "
+"problems. Complex multi-step processes become single commands, so "
+"contributors don't need to memorize or look up lengthy command sequences."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:41
+msgid ""
+"Many task runners also create isolated environments for different "
+"workflows, ensuring the right dependencies are available for each task "
+"without conflicts. This means your tasks run the same way locally and in "
+"continuous integration, making debugging easier and builds more reliable."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:47
+msgid "Two types of task runners"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:49
+msgid ""
+"The most common task runners used in the Python ecosystem fall into two "
+"categories:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:51
+msgid "Environment + command managers"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:53
+msgid ""
+"You can use these to both create custom isolated environments and also to"
+" run your tasks."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:55
+msgid ""
+"**[Hatch](https://hatch.pypa.io/):** Hatch is an all-in-one package "
+"management tool that includes a built-in task runner. It uses a "
+"declarative TOML configuration in your `pyproject.toml` file, which means"
+" everything related to your package—metadata, dependencies, and "
+"tasks—lives in one place. Hatch also integrates with UV for fast "
+"environment creation."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:56
+msgid ""
+"**[Nox](https://nox.thea.codes/):** Nox is a flexible Python-based task "
+"runner that uses a code-based (imperative) configuration approach. You "
+"write Python functions to define your tasks in a `noxfile.py`, which "
+"gives you maximum flexibility for complex testing scenarios and "
+"conditional logic. It's especially popular in the Scientific Python "
+"ecosystem."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:57
+msgid ""
+"**[Tox](https://tox.wiki/):** Tox is a mature declarative tool that uses "
+"INI or TOML configuration files. It's particularly well-suited for "
+"testing across multiple Python versions and dependency combinations, and "
+"has been a standard in the Python community for years."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:59
+msgid "Command-only tools"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:61
+msgid "These tools execute your commands but don't manage environments."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:63
+msgid ""
+"**[Make](https://www.gnu.org/software/make/):** Make is a traditional "
+"build automation tool that uses Makefiles. It's widely known and "
+"available on most systems, making it a good choice for simple task "
+"automation when you don't need Python-specific features. However, it can "
+"have cross-platform compatibility issues, especially on Windows."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:64
+msgid ""
+"**[Just](https://just.systems/):** Just is a modern command runner "
+"written in Rust with simple, Make-like syntax. It's fast, cross-platform,"
+" and easy to learn, making it a good lightweight alternative when you "
+"need basic task running without environment management."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:66
+msgid ""
+"Generally the two task runners that pyOpenSci suggests and uses are "
+"[Nox](https://nox.thea.codes/en/stable/) and [Hatch (also a package "
+"management tool)](https://hatch.pypa.io/latest/). Below, you will learn "
+"about the differences between all of the tools and can make a decision "
+"for yourself depending on your needs."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:71
+msgid "pyOpenSci recommends: Hatch and Nox"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:73
+msgid ""
+"At pyOpenSci, the recommendation is **Hatch** for Python package "
+"development. Hatch also includes a task and environment system feature. "
+"Using Hatch means you don't need to setup another tool like Nox."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:77
+msgid ""
+"However, **Nox** is also an excellent choice, particularly if you need "
+"complex testing, build or workflow logic."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:80
+msgid ""
+"You'll find many of the pyOpenSci documentation repositories use Nox to "
+"automate workflows such as building and testing documentation."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:83
+msgid "Why use Hatch?"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:85
+msgid ""
+"Hatch is an all-in-one tool that helps you manage metadata, dependencies,"
+" build configuration, and tasks together in `pyproject.toml`. Using "
+"Hatch, everything related to your package lives in one place. It combines"
+" packaging (building and publishing) with everyday development tasks like"
+" testing, docs, and formatting, making workflows easier to run and share."
+" Hatch also integrates with UV making it extremely fast. Finally, Hatch "
+"follows modern packaging practices (for example, PEP 621), so your "
+"project stays aligned with community standards."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:95
+msgid "Why use Nox?"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:97
+msgid ""
+"Python-based configuration gives Nox maximum flexibility, making it easy "
+"to express complex logic and conditionals directly. Because sessions are "
+"written in Python, they are explicit and easy to inspect and debug. Nox "
+"is particularly powerful for handling complex test and build scenarios "
+"that some packages require."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:103
+msgid "Declarative vs. imperative configuration"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:105
+msgid "An important distinction between these tools is how you configure them:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:107
+msgid ""
+"Hatch is a **Declarative tool**. This means it uses a configuration file "
+"where you specify *what* you want. See the example below:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:119
+msgid ""
+"Nox uses an **Imperative** approach to defining workflows. With Nox, you "
+"write Python code that defines how to perform a task. An example of a Nox"
+" function (which would live in a separate noxfile.py file) is shown "
+"below:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:132
+msgid "Trade-offs: declarative vs. imperative"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:134
+msgid ""
+"**Declarative (Hatch, Tox):** Simpler syntax, easier to read and "
+"maintain. Might be slightly less flexible for complex logic (this is user"
+" dependent)."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:137
+msgid ""
+"**Imperative (Nox):** You can easily include complex logic and "
+"conditionals. Because it uses Python, it might be more familiar to you!"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:141
+msgid ""
+"Neither approach is inherently better—it depends on your needs and "
+"preferences. Projects with complex testing scenarios may benefit from "
+"Nox's flexibility, while projects wanting simple, standardized workflows "
+"may prefer the clarity of declarative configuration."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:146
+msgid "An overview of the core task runners tools that you will find in"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:147
+msgid "the Python ecosystem"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:149
+msgid "Comparison table"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:151
+msgid ""
+"Below you will see a comparison of features associated with each tool. "
+"Each tool is then described in a bit more detail just in case you want a "
+"better lay of the land."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Feature"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+#: ../../maintain-automate/task-runners.md:167
+msgid "Hatch"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+#: ../../maintain-automate/task-runners.md:223
+msgid "Nox"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+#: ../../maintain-automate/task-runners.md:275
+msgid "Tox"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+#: ../../maintain-automate/task-runners.md:321
+msgid "Make"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+#: ../../maintain-automate/task-runners.md:360
+msgid "Just"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Configuration**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "pyproject.toml"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "noxfile.py"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "tox.ini"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Makefile"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "justfile"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Configuration Style**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Declarative"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Imperative"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Language**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "TOML"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "INI/TOML"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Make syntax"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Just syntax"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Python-specific**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Yes"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "No"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Environment Management**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Matrix Testing**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Packaging Integration**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Cross-platform**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Limited"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "**Best For**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Complete package development"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Complex testing workflows and other builds"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Legacy projects, standard testing"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Simple tasks"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md
+msgid "Simple commands"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:169
+msgid ""
+"[Hatch](https://hatch.pypa.io/) is a modern, all-in-one packaging and "
+"task automation tool that simplifies Python package development by "
+"handling everything from building and publishing to running tests and "
+"formatting code. Hatch is what we use [in our packaging tutorials found "
+"in this guidebook](packaging-101)."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:174
+msgid "Why we like Hatch"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:176
+msgid ""
+"Hatch stands out because it's a single tool that handles both packaging "
+"AND task running. Instead of juggling multiple tools, you configure "
+"everything in your `pyproject.toml` file—no extra configuration files "
+"needed. Hatch creates isolated environments for different tasks (like "
+"testing or building docs) and integrates with UV for extremely fast "
+"environment setup. It uses a declarative, clean syntax that's easy to "
+"read and maintain, and it supports matrix testing so you can easily test "
+"your package across multiple Python versions."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:185
+msgid "When to use Hatch"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:187
+msgid ""
+"Hatch is ideal for complete package development workflows. You can use it"
+" for testing across Python versions, building documentation, running code"
+" formatters and linters, and building and publishing your package to "
+"PyPI. If you want a modern, all-in-one solution that follows current "
+"Python packaging standards (like PEP 621), Hatch is an excellent choice."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:194
+#: ../../maintain-automate/task-runners.md:251
+#: ../../maintain-automate/task-runners.md:299
+#: ../../maintain-automate/task-runners.md:344
+#: ../../maintain-automate/task-runners.md:383
+msgid "Example configuration"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:196
+msgid ""
+"Below is an example of how you'd set up a test environment in Hatch. This"
+" configuration creates a `test` environment with pytest and pytest-cov "
+"installed, defines a `run` script to execute your tests, and sets up "
+"matrix testing to run tests on Python 3.10, 3.11, and 3.12:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:217
+#: ../../maintain-automate/task-runners.md:269
+#: ../../maintain-automate/task-runners.md:315
+#: ../../maintain-automate/task-runners.md:356
+#: ../../maintain-automate/task-runners.md:396
+msgid "You would run the above in your terminal using:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:219
+msgid "`hatch run test:run`"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:221
+msgid "**Learn more:** [Hatch documentation](https://hatch.pypa.io/)"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:225
+msgid ""
+"[Nox](https://nox.thea.codes/) is a Python-based automation toolkit "
+"focused on testing across environments. It uses a code-based (imperative)"
+" configuration approach that gives you maximum flexibility for complex "
+"testing workflows."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:230
+msgid "Why we like Nox"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:232
+msgid ""
+"Nox stands out because it uses Python code to define your tasks, which "
+"means you can include complex logic and conditionals directly in your "
+"automation workflows. Because sessions are written in Python, they're "
+"explicit, easy to inspect, and straightforward to debug. Nox is "
+"particularly powerful for handling complex test and build scenarios that "
+"some packages require, and it's especially popular in the Scientific "
+"Python ecosystem. You'll find many pyOpenSci documentation repositories "
+"use Nox to automate workflows such as building and testing documentation."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:242
+msgid "When to use Nox"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:244
+msgid ""
+"Nox is ideal when you need complex testing scenarios with conditional "
+"logic or when you prefer Python-based configuration over declarative "
+"formats. It's excellent for testing across Python versions and managing "
+"multiple testing environments. If packaging is handled separately and you"
+" want maximum flexibility in your task automation, Nox is a great choice."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:253
+msgid ""
+"Below is an example of a Nox session that runs tests across multiple "
+"Python versions. The `@nox.session` decorator defines a session (similar "
+"to a task), and you specify which Python versions to test with. Nox will "
+"create isolated environments for each version and run your tests:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:271
+msgid "`nox -s tests`"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:273
+msgid "**Learn more:** [Nox documentation](https://nox.thea.codes/)"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:277
+msgid ""
+"[Tox](https://tox.wiki/) is a mature automation tool for testing in "
+"multiple environments. It uses declarative configuration and has been a "
+"standard in the Python community for years."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:281
+msgid "Why people use Tox"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:283
+msgid ""
+"Tox is mature and stable, with a long history in the Python ecosystem. It"
+" uses declarative configuration (traditionally INI format, though TOML "
+"support was added recently) and is particularly good for testing across "
+"Python versions and dependency sets. Many projects use Tox because it "
+"integrates well with CI/CD systems and has a robust plugin ecosystem."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:290
+msgid "When to use Tox"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:292
+msgid ""
+"Tox is ideal if you're maintaining a legacy project that already uses it,"
+" or if you have existing `tox.ini` configuration you want to preserve. "
+"It's also a good choice if you need specific Tox plugins or prefer "
+"declarative configuration separate from your packaging tools. However, "
+"keep in mind that Tox can be slower than modern alternatives like Hatch."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:301
+msgid ""
+"Below is an example of a Tox configuration that runs tests across "
+"multiple Python versions. The `envlist` specifies which Python versions "
+"to test, and the `testenv` section defines what to install and run:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:317
+msgid ""
+"`tox` (runs all environments) or `tox -e py310` (runs a specific "
+"environment)"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:319
+msgid "**Learn more:** [Tox documentation](https://tox.wiki/)"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:323
+msgid ""
+"[Make](https://www.gnu.org/software/make/) is a traditional build "
+"automation tool that uses Makefiles. It's been around since the 1970s and"
+" is widely used across many programming languages."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:327
+msgid "Why people use Make"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:329
+msgid ""
+"Make is widely known and available on most systems, making it a familiar "
+"choice for many developers. It has simple syntax for basic tasks and "
+"executes very quickly. Because it's not Python-specific, you can use it "
+"to coordinate tasks across different languages in the same project."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:335
+msgid "When to use Make"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:337
+msgid ""
+"Make is best for simple task automation when you don't need Python-"
+"specific features or environment management. It's a good lightweight "
+"option if you want something fast and universally available. However, be "
+"aware that Make can have cross-platform compatibility issues, especially "
+"on Windows, and you'll need to handle Python environment management "
+"separately."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:346
+msgid ""
+"Below is an example of a simple Makefile with tasks for testing and "
+"building documentation:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:358
+msgid "`make test` or `make docs`"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:362
+msgid ""
+"[Just](https://just.systems/) is a modern command runner written in Rust "
+"that offers a simpler, more user-friendly alternative to Make."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:365
+msgid "Why people use Just"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:367
+msgid ""
+"Just has simple, Make-like syntax but with better error messages and more"
+" intuitive behavior. It's fast, truly cross-platform (unlike Make), and "
+"easy to learn. The tool is written in Rust, which makes it very "
+"performant, and it avoids many of the quirks and gotchas that Make has "
+"accumulated over decades."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:373
+msgid "When to use Just"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:375
+msgid ""
+"Just is ideal when you need a lightweight command runner for simple tasks"
+" and don't require Python-specific features or environment management. "
+"It's a great choice if you want something faster and more modern than "
+"Make, with better cross-platform support. However, keep in mind that Just"
+" requires separate installation and has less integration with the Python "
+"packaging ecosystem compared to tools like Hatch or Nox."
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:385
+msgid ""
+"Below is an example of a justfile with tasks for testing and building "
+"documentation:"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:398
+msgid "`just test` or `just docs`"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:400
+msgid "**Learn more:** [Just documentation](https://just.systems/)"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:402
+msgid "Choosing the right task runner"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:404
+msgid "**Choose Hatch if:**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:406
+msgid "You're building a Python package"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:407
+msgid "You want an all-in-one tool"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:408
+msgid "You prefer configuration in pyproject.toml"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:409
+msgid "You want fast environment management"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:410
+msgid "You prefer declarative configuration"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:412
+msgid "**Choose Nox if:**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:414
+msgid "You need complex testing scenarios with conditional logic"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:415
+msgid "You prefer Python-based, imperative configuration"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:416
+msgid "You're working in the Scientific Python ecosystem"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:417
+msgid "Packaging is handled separately"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:418
+msgid "You want maximum flexibility"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:420
+msgid "**Choose Tox if:**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:422
+msgid "You're maintaining a legacy project already using it"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:423
+msgid "You have existing tox.ini configuration"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:424
+msgid "You need specific tox plugins"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:425
+msgid "You prefer declarative configuration separate from packaging"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:427
+msgid "**Choose Make or Just if:**"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:429
+msgid "You need a lightweight command runner"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:430
+msgid "You're not doing Python-specific workflows"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:431
+msgid "You want something simple and fast"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:432
+msgid "You don't need environment management"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:434
+msgid "Next steps"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:436
+msgid ""
+"Learn how to use [Hatch "
+"environments](https://hatch.pypa.io/latest/tutorials/environment/basic-"
+"usage/)"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:437
+msgid ""
+"[Create a package using the Python package tutorial.](create-pure-python-"
+"package)"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:438
+msgid ""
+"Explore and use the [pyOpenSci package "
+"template](https://github.com/pyOpenSci/pyos-package-template) with pre-"
+"configured Hatch tasks"
+msgstr ""
+
+#: ../../maintain-automate/task-runners.md:441
+msgid ""
+"Read the [Scientific Python development guide on task "
+"runners](https://learn.scientific-python.org/development/guides/tasks/). "
+"This guide is excellent if you plan to use nox as your task runner as it "
+"has lots of examples that you can follow."
+msgstr ""
+

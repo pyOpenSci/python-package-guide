@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-12 11:17+0200\n"
+"POT-Creation-Date: 2026-01-04 09:59+0900\n"
 "PO-Revision-Date: 2025-04-14 18:12+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
@@ -94,15 +94,19 @@ msgid ""
 msgstr "プロジェクトディレクトリに `LICENSE` ファイルを作成し、パッケージに選択したライセンスを指定します。"
 
 #: ../../tutorials/add-license-coc.md:29
-msgid "Reference that file in your `pyproject.toml` data where metadata are set."
+#, fuzzy
+msgid ""
+"Describe your choice of license in your `pyproject.toml` data where "
+"metadata are set."
 msgstr "メタデータが設定されている `pyproject.toml` データでそのファイルを参照します。"
 
 #: ../../tutorials/add-license-coc.md:31
+#, fuzzy
 msgid ""
-"By adding the `LICENSE` file to your `pyproject.toml` file, the `LICENSE`"
-" will be included in your package's metadata which is used to populate "
-"your package's PyPI landing page. The `LICENSE` is also used in your "
-"GitHub repository's landing page interface."
+"By adding this metadata to your `pyproject.toml` file, the choice of "
+"license will be included in your package's metadata which is used to "
+"populate your package's PyPI landing page. The `LICENSE` file is also "
+"used in your GitHub repository's landing page interface."
 msgstr ""
 "`LICENSE` ファイルを `pyproject.toml` ファイルに追加することで、 `LICENSE` "
 "がパッケージのメタデータに含まれるようになります。 `LICENSE` は GitHub "
@@ -113,11 +117,13 @@ msgid "What license should you use?"
 msgstr "どのライセンスを使うべきか？"
 
 #: ../../tutorials/add-license-coc.md:35
+#, fuzzy
 msgid ""
 "We suggest that you use a permissive license that accommodates the other "
 "most commonly used licenses in the scientific Python ecosystem (MIT[^mit]"
-" and BSD-3[^bsd3]). If you are unsure, use MIT given it's the generally "
-"recommended license on [choosealicense.com](https://choosealicense.com/)."
+" and BSD-3-Clause[^bsd3]). If you are unsure, use MIT given it's the "
+"generally recommended license on "
+"[choosealicense.com](https://choosealicense.com/)."
 msgstr ""
 "科学的なPythonのエコシステムで最もよく使われるライセンス (MIT[^mit]とBSD-3[^bsd3]) "
 "に対応した寛容なライセンスを使うことをお勧めします。 よくわからない場合は、 "
@@ -514,7 +520,7 @@ msgstr ""
 
 #: ../../tutorials/add-license-coc.md:184 ../../tutorials/add-readme.md:238
 #: ../../tutorials/publish-conda-forge.md:468
-#: ../../tutorials/pyproject-toml.md:686
+#: ../../tutorials/pyproject-toml.md:690
 msgid "<i class=\"fa-solid fa-hands-bubbles\"></i> Wrap up"
 msgstr "<i class=\"fa-solid fa-hands-bubbles\"></i> まとめ"
 
@@ -544,7 +550,7 @@ msgstr ""
 "これらのファイルは、ユーザがあなたのパッケージの使い方を理解し、パッケージメンテナとやりとりするのに役立ちます。"
 
 #: ../../tutorials/add-license-coc.md:196
-#: ../../tutorials/create-python-package.md:446
+#: ../../tutorials/create-python-package.md:445
 msgid "In the upcoming lessons, you will:"
 msgstr "これからのレッスンでは、あなたは:"
 
@@ -563,9 +569,10 @@ msgid ""
 msgstr "あなたのPythonパッケージの新しいバージョンをテストPyPIに公開して、更新されたメタデータランディングページをプレビューしてください。"
 
 #: ../../tutorials/add-license-coc.md:204
-#: ../../tutorials/create-python-package.md:541
+#: ../../tutorials/create-python-package.md:540
 #: ../../tutorials/publish-conda-forge.md:480
-#: ../../tutorials/publish-pypi.md:400
+#: ../../tutorials/publish-pypi.md:417
+#: ../../tutorials/trusted-publishing.md:344
 msgid "Footnotes"
 msgstr "脚注"
 
@@ -1028,7 +1035,7 @@ msgstr "ユーザーとの信頼関係を築く"
 msgid "Discourages misuse of your package and associated code"
 msgstr "パッケージと関連コードの悪用を防ぐ"
 
-#: ../../tutorials/command-line-reference.md:6 ../../tutorials/intro.md:60
+#: ../../tutorials/command-line-reference.md:6 ../../tutorials/intro.md:61
 msgid "Command Line Reference Guide"
 msgstr "コマンドラインリファレンスガイド"
 
@@ -1100,7 +1107,7 @@ msgid ""
 msgstr ""
 
 #: ../../tutorials/create-python-package.md:16
-#: ../../tutorials/setup-py-to-pyproject-toml.md:20
+#: ../../tutorials/setup-py-to-pyproject-toml.md:21
 #, fuzzy
 msgid "In this lesson, you will learn:"
 msgstr "このレッスンで学ぶこと:"
@@ -1512,9 +1519,10 @@ msgstr "TOMLはデータ構造を整理し、設定ファイル内の関係を�
 #: ../../tutorials/create-python-package.md:248
 #, fuzzy
 msgid "[Learn more about the pyproject.toml format here.](pyprojecttoml-metadata)"
-msgstr "[pyproject.tomlフォーマットの詳細はこちら。](pyprojecttoml-metadata)"
-"[pyproject.tomlフォーマットの詳細はこちら。](../package-structure-code/pyproject-toml-"
-"python-package-metadata)"
+msgstr ""
+"[pyproject.tomlフォーマットの詳細はこちら。](pyprojecttoml-"
+"metadata)[pyproject.tomlフォーマットの詳細はこちら。](../package-structure-code"
+"/pyproject-toml-python-package-metadata)"
 
 #: ../../tutorials/create-python-package.md:251
 msgid ""
@@ -1528,18 +1536,18 @@ msgid ""
 "correct. The email is optional."
 msgstr ""
 
-#: ../../tutorials/create-python-package.md:291
+#: ../../tutorials/create-python-package.md:290
 msgid ""
 "At the bottom of the template-generated `pyproject.toml` file, you will "
 "see a section that defines Hatch environments. We will cover Hatch "
 "environments in a later lesson."
 msgstr ""
 
-#: ../../tutorials/create-python-package.md:293
+#: ../../tutorials/create-python-package.md:292
 msgid "The bare minimum needed in a pyproject.toml file"
 msgstr "pyproject.tomlファイルに最低限必要なもの"
 
-#: ../../tutorials/create-python-package.md:296
+#: ../../tutorials/create-python-package.md:295
 #, fuzzy
 msgid ""
 "The core information that you need in a `pyproject.toml` file to publish "
@@ -1550,47 +1558,47 @@ msgstr ""
 "PyPIで公開するために `pyproject.toml` ファイルに必要な情報は、 **パッケージ名** と **バージョン** です。 "
 "しかし、 `pyproject.toml` ファイルの早い段階でメタデータを具体化することをお勧めします。"
 
-#: ../../tutorials/create-python-package.md:298
+#: ../../tutorials/create-python-package.md:297
 #, fuzzy
 msgid ""
 "Once you have your project metadata in the `pyproject.toml` file, you "
 "will rarely update it."
 msgstr "一度pyproject.tomlファイルにプロジェクトのメタデータがあれば、それを更新することはほとんどありません。次のレッスンでは、このファイルにさらにメタデータと構造を追加します。"
 
-#: ../../tutorials/create-python-package.md:302
+#: ../../tutorials/create-python-package.md:301
 msgid "Step 5: Install your package locally"
 msgstr "ステップ 5: パッケージをローカルにインストールする"
 
-#: ../../tutorials/create-python-package.md:304
+#: ../../tutorials/create-python-package.md:303
 #, fuzzy
 msgid "At this point, you should have:"
 msgstr "この時点であなたは以下を持っているはずです:"
 
-#: ../../tutorials/create-python-package.md:306
+#: ../../tutorials/create-python-package.md:305
 msgid "A project directory structure with a `pyproject.toml` file at the root"
 msgstr "`pyproject.toml` ファイルをルートに持つプロジェクトのディレクトリ構造"
 
-#: ../../tutorials/create-python-package.md:307
+#: ../../tutorials/create-python-package.md:306
 msgid "A package directory containing an empty `__init__.py` file and"
 msgstr "空の `__init__.py` ファイルを含むパッケージ・ディレクトリと"
 
-#: ../../tutorials/create-python-package.md:308
+#: ../../tutorials/create-python-package.md:307
 #, fuzzy
 msgid "At least one Python module (e.g. `example.py`)"
 msgstr "少なくとも1つのPythonモジュール (e.g. `add_numbers.py`)"
 
-#: ../../tutorials/create-python-package.md:310
+#: ../../tutorials/create-python-package.md:309
 msgid "You are now ready to install (and build) your Python package!"
 msgstr "これで Python パッケージをインストール（ビルド）する準備ができました！"
 
-#: ../../tutorials/create-python-package.md:312
+#: ../../tutorials/create-python-package.md:311
 #, fuzzy
 msgid ""
 "While you can do this using Hatch, we will use pip for this lesson, so "
 "you can see how to install your tool into your preferred environment."
 msgstr "hatchを使ってもできますが、このレッスンではpipを使います、そうすれば、あなたの好みの環境にツールをインストールする方法を見ることができます。"
 
-#: ../../tutorials/create-python-package.md:314
+#: ../../tutorials/create-python-package.md:313
 #, fuzzy
 msgid ""
 "First, open your preferred shell (Windows users may use something like "
@@ -1600,38 +1608,38 @@ msgstr ""
 "まず、お好みのシェルを開き (Windowsユーザーはgitbashのようなものを使っているかもしれません) "
 "、まだプロジェクトディレクトリにいなければ、 `cd` してください。"
 
-#: ../../tutorials/create-python-package.md:315
+#: ../../tutorials/create-python-package.md:314
 msgid "Activate the Python environment that you wish to use."
 msgstr "使用したいPython環境をアクティブにします。"
 
-#: ../../tutorials/create-python-package.md:316
+#: ../../tutorials/create-python-package.md:315
 msgid "Run `python -m pip install -e .`"
 msgstr "`python -m pip install -e .` を実行します。"
 
-#: ../../tutorials/create-python-package.md:318
-#: ../../tutorials/create-python-package.md:551
-#: ../../tutorials/create-python-package.md:558
-#: ../../tutorials/get-to-know-hatch.md:197 ../../tutorials/intro.md:241
-#: ../../tutorials/publish-pypi.md:8 ../../tutorials/publish-pypi.md:183
-#: ../../tutorials/publish-pypi.md:356 ../../tutorials/pyproject-toml.md:731
+#: ../../tutorials/create-python-package.md:317
+#: ../../tutorials/create-python-package.md:550
+#: ../../tutorials/create-python-package.md:557
+#: ../../tutorials/get-to-know-hatch.md:197 ../../tutorials/intro.md:242
+#: ../../tutorials/publish-pypi.md:9 ../../tutorials/publish-pypi.md:183
+#: ../../tutorials/publish-pypi.md:356 ../../tutorials/pyproject-toml.md:735
 msgid "Todo"
 msgstr "Todo"
 
-#: ../../tutorials/create-python-package.md:319
+#: ../../tutorials/create-python-package.md:318
 msgid "Add this back in when the lesson is published"
 msgstr "レッスンが公開されたら、これを追加してください。"
 
-#: ../../tutorials/create-python-package.md:320
+#: ../../tutorials/create-python-package.md:319
 msgid ""
 "Activate the Python environment that you wish to use. If you need help "
 "with working with virtual environments check out this lesson (add link)."
 msgstr "使用したいPython環境をアクティブにします。 仮想環境での作業で助けが必要な場合は、このレッスンをチェックしてください（リンクを追加）。"
 
-#: ../../tutorials/create-python-package.md:346
+#: ../../tutorials/create-python-package.md:345
 msgid "What does `python -m pip install -e .` do?"
 msgstr "`python -m pip install -e .` は何をしているのか？"
 
-#: ../../tutorials/create-python-package.md:349
+#: ../../tutorials/create-python-package.md:348
 #, fuzzy
 msgid ""
 "`python -m pip install -e .` installs your package into the current "
@@ -1647,21 +1655,21 @@ msgstr ""
 " 編集可能モードの重要な注意点のひとつは、コードを更新するたびに、そのコードが更新されるということです、 "
 "その場合、Pythonを再起動する必要があるかもしれません。"
 
-#: ../../tutorials/create-python-package.md:354
+#: ../../tutorials/create-python-package.md:353
 msgid ""
 "If you wish to install the package regularly (not in editable mode) you "
 "can use:"
 msgstr "(編集可能モードではなく) 定期的にパッケージをインストールしたい場合は、次のようにします:"
 
-#: ../../tutorials/create-python-package.md:357
+#: ../../tutorials/create-python-package.md:356
 msgid "`python -m pip install . `"
 msgstr "`python -m pip install . `"
 
-#: ../../tutorials/create-python-package.md:359
+#: ../../tutorials/create-python-package.md:358
 msgid "**Using `python -m` when calling `pip`**"
 msgstr "**`pip` を呼び出す際に `python -m` を使用する**"
 
-#: ../../tutorials/create-python-package.md:361
+#: ../../tutorials/create-python-package.md:360
 msgid ""
 "Above, you use`python -m` to call the version of pip installed into your "
 "current active environment. `python -m` is important to ensure that you "
@@ -1670,7 +1678,7 @@ msgstr ""
 "上記では、 `python -m` を使用して、現在アクティブな環境にインストールされている pip のバージョンを呼び出します。 `python"
 " -m` は、現在の環境にインストールされているバージョンの pip を呼び出していることを確認するために重要です。"
 
-#: ../../tutorials/create-python-package.md:365
+#: ../../tutorials/create-python-package.md:364
 msgid ""
 "IMPORTANT: pip can also be used to install packages from PyPI. However, "
 "in this case, you are telling pip to install your package from a local "
@@ -1678,16 +1686,14 @@ msgid ""
 "directory on your computer instead of the `.` which tells pip to use the "
 "current working directory."
 msgstr ""
-"重要: pipはPyPIからパッケージをインストールするためにも使用できます。しかし、"
-"この場合、`.`を使用してローカルフォルダからパッケージをインストールするようpipに指示しています。"
-"`.`の代わりにコンピュータ上のプロジェクトディレクトリへのパスを指定することもできます。"
-"`.`はpipに現在の作業ディレクトリを使用するよう指示します。"
+"重要: "
+"pipはPyPIからパッケージをインストールするためにも使用できます。しかし、この場合、`.`を使用してローカルフォルダからパッケージをインストールするようpipに指示しています。`.`の代わりにコンピュータ上のプロジェクトディレクトリへのパスを指定することもできます。`.`はpipに現在の作業ディレクトリを使用するよう指示します。"
 
-#: ../../tutorials/create-python-package.md:368
+#: ../../tutorials/create-python-package.md:367
 msgid "Look for pyospackage in your environment"
 msgstr "あなたの環境でpyospackageを探す"
 
-#: ../../tutorials/create-python-package.md:370
+#: ../../tutorials/create-python-package.md:369
 #, fuzzy
 msgid ""
 "Once you have installed your package, you can view it in your current "
@@ -1697,7 +1703,7 @@ msgstr ""
 "パッケージをインストールしたら、現在の環境でそれを見ることができます。 `venv` または `conda` を使用している場合、 `pip` "
 "list で現在インストールされているパッケージを確認することができます。"
 
-#: ../../tutorials/create-python-package.md:374
+#: ../../tutorials/create-python-package.md:373
 #, fuzzy
 msgid ""
 "Note that because `pyospackage` is installed in editable mode (`-e`), pip"
@@ -1706,51 +1712,49 @@ msgstr ""
 "pyospackageは編集可能モード (`-e`) "
 "でインストールされるため、pipはプロジェクトのコードへのディレクトリパスを表示することに注意してください。"
 
-#: ../../tutorials/create-python-package.md:402
+#: ../../tutorials/create-python-package.md:401
 msgid "Step 6: Test out your new package"
 msgstr "ステップ 6: 新しいパッケージをテストする"
 
-#: ../../tutorials/create-python-package.md:404
+#: ../../tutorials/create-python-package.md:403
 msgid ""
 "After installing your package, type “python” at the command prompt in "
 "your chosen terminal to start a Python session in your active Python "
 "environment."
 msgstr ""
-"パッケージをインストールした後、選択したターミナルのコマンドプロンプトで“python”と入力して、"
-"アクティブなPython環境でPythonセッションを開始します。"
-"パッケージをインストールしたら、選択したターミナルのコマンドプロンプトで \"python\" "
-"と入力し、アクティブなPython環境でPythonセッションを開始します。"
+"パッケージをインストールした後、選択したターミナルのコマンドプロンプトで“python”と入力して、アクティブなPython環境でPythonセッションを開始します。パッケージをインストールしたら、選択したターミナルのコマンドプロンプトで"
+" \"python\" と入力し、アクティブなPython環境でPythonセッションを開始します。"
 
-#: ../../tutorials/create-python-package.md:407
+#: ../../tutorials/create-python-package.md:406
 #, fuzzy
 msgid "You can now import your package and access the `add_numbers` function."
 msgstr "これでパッケージをインポートして `add_num` 関数にアクセスできます。"
 
-#: ../../tutorials/create-python-package.md:419
+#: ../../tutorials/create-python-package.md:418
 msgid "Installing packages from GitHub"
 msgstr "GitHubからパッケージをインストールする"
 
-#: ../../tutorials/create-python-package.md:421
+#: ../../tutorials/create-python-package.md:420
 msgid ""
 "If you wish to share your code without publishing to PyPI you can always "
 "install packages directly from GitHub using the syntax:"
 msgstr "PyPIに公開せずにコードを共有したい場合は、いつでも構文を使ってGitHubから直接パッケージをインストールできます:"
 
-#: ../../tutorials/create-python-package.md:428
+#: ../../tutorials/create-python-package.md:427
 msgid "To make your package GitHub installable, you can:"
 msgstr "GitHubのパッケージをインストール可能にするには、次のようにします:"
 
-#: ../../tutorials/create-python-package.md:430
+#: ../../tutorials/create-python-package.md:429
 msgid "Create a new GitHub repository"
 msgstr "新しいGitHubリポジトリを作成する"
 
-#: ../../tutorials/create-python-package.md:431
+#: ../../tutorials/create-python-package.md:430
 msgid ""
 "Push the contents of the project directory that you created above, to "
 "GitHub"
 msgstr "上記で作成したプロジェクトディレクトリの内容をGitHubにプッシュします"
 
-#: ../../tutorials/create-python-package.md:432
+#: ../../tutorials/create-python-package.md:431
 msgid ""
 "Finally install the package from GitHub using the command above. When you"
 " use the command above, don't forget to substitute the user, repo, and "
@@ -1759,34 +1763,34 @@ msgstr ""
 "最後に、上記のコマンドを使ってGitHubからパッケージをインストールします。 "
 "上記のコマンドを使用する際は、user、repo、branch_or_tag を特定の値に置き換えることをお忘れなく。"
 
-#: ../../tutorials/create-python-package.md:434
+#: ../../tutorials/create-python-package.md:433
 msgid ""
 "For instance below you install the pyospackage from the main branch of "
 "the pyOpenSci repository."
 msgstr "例えば、以下のようにpyOpenSciリポジトリのmainブランチからpyospackageをインストールします。"
 
-#: ../../tutorials/create-python-package.md:437
+#: ../../tutorials/create-python-package.md:436
 msgid "`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`"
 msgstr "`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`"
 
-#: ../../tutorials/create-python-package.md:441
+#: ../../tutorials/create-python-package.md:440
 msgid "Congratulations! You created your first Python package"
 msgstr "おめでとうございます！ あなたは最初のPythonパッケージを作成しました"
 
-#: ../../tutorials/create-python-package.md:443
+#: ../../tutorials/create-python-package.md:442
 #, fuzzy
 msgid ""
 "You have now created a Python package that you can install into any "
 "Python environment."
 msgstr "やったね！ これでどんなPython環境にもインストールできるPythonパッケージができました。"
 
-#: ../../tutorials/create-python-package.md:448
+#: ../../tutorials/create-python-package.md:447
 msgid ""
 "Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to "
 "your package"
 msgstr "[READMEファイル](add-readme.md) と [LICENSE](add-license-coc.md) をパッケージに追加する。"
 
-#: ../../tutorials/create-python-package.md:449
+#: ../../tutorials/create-python-package.md:448
 msgid ""
 "[Add more metadata to your `pyproject.toml`](pyproject-toml.md) file to "
 "support PyPI publication."
@@ -1794,7 +1798,7 @@ msgstr ""
 "PyPI での公開をサポートするために [ `pyproject.toml` ファイルにメタデータを追加します。](pyproject-"
 "toml.md)"
 
-#: ../../tutorials/create-python-package.md:450
+#: ../../tutorials/create-python-package.md:449
 msgid ""
 "[Learn how to build your package distribution](publish-pypi) files "
 "(**sdist** and **wheel**) and publish to **test PyPI**."
@@ -1802,43 +1806,43 @@ msgstr ""
 "[パッケージ配布ファイルをビルド](publish-pypi) して (**sdist** と **wheel**) 、 **test "
 "PyPI** に公開する方法を学びます。"
 
-#: ../../tutorials/create-python-package.md:451
+#: ../../tutorials/create-python-package.md:450
 msgid ""
 "Finally you will learn how to [publish to **conda-forge**](publish-conda-"
 "forge) from **PyPI**."
 msgstr "**PyPI** から [**conda-forge**](publish-conda-forge)  に公開する方法を学んでください。"
 
-#: ../../tutorials/create-python-package.md:455
+#: ../../tutorials/create-python-package.md:454
 msgid "About the Python package directory structure"
 msgstr "Pythonパッケージのディレクトリ構造について"
 
-#: ../../tutorials/create-python-package.md:457
+#: ../../tutorials/create-python-package.md:456
 msgid ""
 "To make your Python code installable you need to create a specific "
 "directory structure with the following elements:"
 msgstr "Pythonコードをインストール可能にするには、以下の要素を含む特定のディレクトリ構造を作成する必要があります:"
 
-#: ../../tutorials/create-python-package.md:459
+#: ../../tutorials/create-python-package.md:458
 msgid "A `pyproject.toml` file."
 msgstr "`pyproject.toml` ファイル。"
 
-#: ../../tutorials/create-python-package.md:460
+#: ../../tutorials/create-python-package.md:459
 msgid "A specific directory structure."
 msgstr "特定のディレクトリ構造。"
 
-#: ../../tutorials/create-python-package.md:461
+#: ../../tutorials/create-python-package.md:460
 msgid "Some code."
 msgstr "いくつかのコード。"
 
-#: ../../tutorials/create-python-package.md:462
+#: ../../tutorials/create-python-package.md:461
 msgid "An `__init__.py` file in your code directory."
 msgstr "コードディレクトリの `__init__.py` ファイル。"
 
-#: ../../tutorials/create-python-package.md:464
+#: ../../tutorials/create-python-package.md:463
 msgid "The directory structure you'll create in this lesson will look like this:"
 msgstr "このレッスンで作成するディレクトリ構造は次のようになります:"
 
-#: ../../tutorials/create-python-package.md:479
+#: ../../tutorials/create-python-package.md:478
 msgid ""
 "Diagram showing the basic steps to creating an installable package. There"
 " are 4 boxes with arrows pointing towards the right. The boxes read, your"
@@ -1849,7 +1853,7 @@ msgstr ""
 "ボックスは、あなたのコード、パッケージ構造の作成、pyproject.tomlへのメタデータの追加、およびpip "
 "installパッケージを読み込みます。"
 
-#: ../../tutorials/create-python-package.md:481
+#: ../../tutorials/create-python-package.md:480
 #, fuzzy
 msgid ""
 "Once you have the basic items of a Python package (code, metadata and a "
@@ -1857,15 +1861,15 @@ msgid ""
 "environment on your computer."
 msgstr "やったね！ これでどんなPython環境にもインストールできるPythonパッケージができました。"
 
-#: ../../tutorials/create-python-package.md:484
+#: ../../tutorials/create-python-package.md:483
 msgid "About the basic package directory structure"
 msgstr "基本パッケージのディレクトリ構造について"
 
-#: ../../tutorials/create-python-package.md:486
+#: ../../tutorials/create-python-package.md:485
 msgid "Notice a few things about the above layout:"
 msgstr "上記のレイアウトについて、いくつかの点に注目してください:"
 
-#: ../../tutorials/create-python-package.md:488
+#: ../../tutorials/create-python-package.md:487
 msgid ""
 "Your package code lives within a `src/packagename` directory. We suggest "
 "that you use `src` (short for **source code**) directory as it [ensures "
@@ -1879,7 +1883,7 @@ msgstr ""
 "structure.html#the-src-layout-and-testing) `src`（ **source code** "
 "の略）ディレクトリを使用することをお勧めします。"
 
-#: ../../tutorials/create-python-package.md:489
+#: ../../tutorials/create-python-package.md:488
 msgid ""
 "Within the `src` directory you have a package directory called "
 "`pyospackage`. Use the name of your package for that directory name. This"
@@ -1889,7 +1893,7 @@ msgstr ""
 "`src` ディレクトリの中に `pyospackage` というパッケージディレクトリがあります。 ディレクトリ名にはパッケージ名を使用します。"
 " これは、インストール後にPythonコードでパッケージをインポートする際の名前になります。"
 
-#: ../../tutorials/create-python-package.md:490
+#: ../../tutorials/create-python-package.md:489
 msgid ""
 "In your package directory, you have an `__init__.py` file and all of your"
 " Python modules. You will learn more about the `__init__.py` file below."
@@ -1897,11 +1901,11 @@ msgstr ""
 "パッケージディレクトリには `__init__.py` ファイルと Python モジュールがあります。以下に `__init__.py` "
 "ファイルについて詳しく説明します。"
 
-#: ../../tutorials/create-python-package.md:491
+#: ../../tutorials/create-python-package.md:490
 msgid "The `pyproject.toml` file lives at the root directory of your package."
 msgstr "`pyproject.toml` ファイルはパッケージのルートディレクトリにあります。"
 
-#: ../../tutorials/create-python-package.md:492
+#: ../../tutorials/create-python-package.md:491
 msgid ""
 "The name of the root directory for the package is **pyospackage** which "
 "is the name of the package. This is not a requirement but you will often "
@@ -1911,11 +1915,11 @@ msgstr ""
 "パッケージのルートディレクトリの名前は、パッケージ名である **pyospackage** です。これは必須ではありませんが、GitHub / "
 "GitLabのリポジトリ名とルートディレクトリ名がパッケージ名と同じであることをよく見かけます。"
 
-#: ../../tutorials/create-python-package.md:494
+#: ../../tutorials/create-python-package.md:493
 msgid "What is an `__init__.py` file?"
 msgstr "`__init__.py` ファイルとは何ですか？"
 
-#: ../../tutorials/create-python-package.md:496
+#: ../../tutorials/create-python-package.md:495
 msgid ""
 "The `__init__.py` file tells Python that a directory should be treated as"
 " a Python package. As such, a directory with an `__init__.py` file can be"
@@ -1926,32 +1930,32 @@ msgstr ""
 "このように、`__init__.py` ファイルがあるディレクトリは Python に直接インポートすることができます。 Python "
 "に認識させるために `__init__.py` ファイルにコードを記述する必要はありません; 空であることもあります。"
 
-#: ../../tutorials/create-python-package.md:500
+#: ../../tutorials/create-python-package.md:499
 msgid ""
 "For example, following the file structure example above which has an "
 "`__init__.py` file within it, you can run:"
 msgstr "例えば、 `__init__.py` ファイルを持つ上記のファイル構造の例に従って、次のように実行します:"
 
-#: ../../tutorials/create-python-package.md:506
+#: ../../tutorials/create-python-package.md:505
 #: ../../tutorials/pyproject-toml.md:53
 msgid "What is a pyproject.toml file?"
 msgstr "pyproject.tomlファイルとは何ですか？"
 
-#: ../../tutorials/create-python-package.md:508
+#: ../../tutorials/create-python-package.md:507
 msgid "The **pyproject.toml** file is:"
 msgstr "**pyproject.toml** ファイルは:"
 
-#: ../../tutorials/create-python-package.md:510
+#: ../../tutorials/create-python-package.md:509
 msgid ""
 "Where you define your project's metadata (including its name, authors, "
 "license, etc)"
 msgstr "プロジェクトのメタデータ (名前、作者、ライセンスなど) を定義します。"
 
-#: ../../tutorials/create-python-package.md:511
+#: ../../tutorials/create-python-package.md:510
 msgid "Where you define dependencies (the packages that it depends on)"
 msgstr "依存関係 (依存するパッケージ) を定義します。"
 
-#: ../../tutorials/create-python-package.md:512
+#: ../../tutorials/create-python-package.md:511
 msgid ""
 "Used to specify and configure what build backend you want to use to "
 "[build your package](../package-structure-code/python-package-"
@@ -1960,7 +1964,7 @@ msgstr ""
 "[パッケージのビルド](../package-structure-code/python-package-distribution-files-"
 "sdist-wheel) に使用するビルドバックエンドを指定し、設定します。"
 
-#: ../../tutorials/create-python-package.md:514
+#: ../../tutorials/create-python-package.md:513
 msgid ""
 "After the `__init__.py` and `pyproject.toml` files have been added, your "
 "package can be built and distributed as an installable Python package "
@@ -1973,19 +1977,19 @@ msgstr ""
 "`pyproject.toml` "
 "ファイルには、パッケージをインストールするために、以下のようないくつかの基本的な項目が定義されている必要があることに注意してください:"
 
-#: ../../tutorials/create-python-package.md:520
+#: ../../tutorials/create-python-package.md:519
 msgid "The `build-backend` that you want to use,"
 msgstr "使用したい `build-backend` を指定します、"
 
-#: ../../tutorials/create-python-package.md:521
+#: ../../tutorials/create-python-package.md:520
 msgid "The project `name` and `version`."
 msgstr "プロジェクトの `name` と `version` を指定する。"
 
-#: ../../tutorials/create-python-package.md:523
+#: ../../tutorials/create-python-package.md:522
 msgid "Why the pyproject.toml file is important"
 msgstr "pyproject.tomlファイルが重要な理由"
 
-#: ../../tutorials/create-python-package.md:526
+#: ../../tutorials/create-python-package.md:525
 #, fuzzy
 msgid ""
 "The `pyproject.toml` file replaces some of the functionality of both the "
@@ -1995,7 +1999,7 @@ msgstr ""
 "`pyproject.toml` ファイルは `setup.py` ファイルと `setup.cfg` ファイルの機能の一部を置き換えます。 "
 "`pyproject.toml` がないパッケージをpipインストールしようとすると、以下のエラーが発生します:"
 
-#: ../../tutorials/create-python-package.md:536
+#: ../../tutorials/create-python-package.md:535
 #, fuzzy
 msgid ""
 "If your project already has a `setup.py` file, Hatch can be used to "
@@ -2004,7 +2008,7 @@ msgstr ""
 "プロジェクトが既に `setup.py` ファイルを定義している場合、ハッチを使用して自動的に `pyproject.toml` "
 "を作成することができます。"
 
-#: ../../tutorials/create-python-package.md:537
+#: ../../tutorials/create-python-package.md:536
 #, fuzzy
 msgid ""
 "See [Using Hatch to Migrate setup.py to a pyproject.toml](setup-py-to-"
@@ -2013,13 +2017,13 @@ msgstr ""
 "[Hatchを使ってsetup.pyをpyproject.tomlに移行する ](setup-py-to-pyproject-toml.md) "
 "を参照"
 
-#: ../../tutorials/create-python-package.md:552
+#: ../../tutorials/create-python-package.md:551
 msgid ""
 "Is it clear where to add commands? Bash vs. Python console Bash vs. Zsh "
 "is different"
 msgstr "コマンドを追加する場所は明確ですか？ BashとPythonのコンソールの違い BashとZshの違い"
 
-#: ../../tutorials/create-python-package.md:554
+#: ../../tutorials/create-python-package.md:553
 msgid ""
 "ADD: note about what makes something \"package worthy\", with a common "
 "misconception being that a package should be production-ready code that's"
@@ -2030,12 +2034,12 @@ msgstr ""
 "追加: 何をもって \"パッケージに値する\" とするのかについて、 "
 "一般的な誤解は、パッケージは幅広いオーディエンスにとって価値のある、生産可能なコードであるべきだというものです。これはPythonに蔓延している誤解ではないかもしれませんが、パッケージがどのようなもので構成されるかを簡単に説明することは役に立つでしょう。"
 
-#: ../../tutorials/create-python-package.md:555
+#: ../../tutorials/create-python-package.md:554
 #, fuzzy
 msgid "They can use a codespace to complete this lesson too."
 msgstr "**このレッスンを完了するために必要なもの**"
 
-#: ../../tutorials/create-python-package.md:559
+#: ../../tutorials/create-python-package.md:558
 msgid ""
 "When this lesson exists, uncomment this admonition You will learn how to "
 "automate defining a package version using git tags in the version and "
@@ -2044,23 +2048,23 @@ msgstr ""
 "このレッスンが存在する場合、この戒めのコメントを解除します。 このレッスンでは、git "
 "タグを使ってパッケージのバージョン定義を自動化する方法と、パッケージのリリースについて学びます。"
 
-#: ../../tutorials/create-python-package.md:543
+#: ../../tutorials/create-python-package.md:542
 msgid "[Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)"
 msgstr "[Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)"
 
-#: ../../tutorials/create-python-package.md:547
+#: ../../tutorials/create-python-package.md:546
 msgid "[Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)"
 msgstr "[Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)"
 
-#: ../../tutorials/create-python-package.md:546
+#: ../../tutorials/create-python-package.md:545
 msgid "[Google docstring style](https://google.github.io/styleguide/pyguide.html)"
 msgstr "[Google docstring style](https://google.github.io/styleguide/pyguide.html)"
 
-#: ../../tutorials/create-python-package.md:548
+#: ../../tutorials/create-python-package.md:547
 msgid "[epydoc](https://epydoc.sourceforge.net/epytext.html)"
 msgstr "[epydoc](https://epydoc.sourceforge.net/epytext.html)"
 
-#: ../../tutorials/create-python-package.md:545
+#: ../../tutorials/create-python-package.md:544
 msgid ""
 "[Python module "
 "docs](https://docs.python.org/3/tutorial/modules.html#packages)"
@@ -2744,12 +2748,13 @@ msgid "Your `config.toml` file should look something like the one below."
 msgstr "あなたの `config.toml` ファイルは以下のようになるはずです。"
 
 #: ../../tutorials/get-to-know-hatch.md:189
+#, fuzzy
 msgid ""
 "Also notice that the default license option is MIT. While we will discuss"
 " license in more detail in a later lesson, the MIT license is the "
 "recommended permissive license from "
-"[choosealicense.com](https://www.choosealicense.com) and as such we will "
-"use it for this tutorial series."
+"[choosealicense.com](https://choosealicense.com/) and as such we will use"
+" it for this tutorial series."
 msgstr ""
 "また、デフォルトのライセンスオプションがMITであることにも注目してください。 ライセンスについては後のレッスンで詳しく説明しますが、 "
 "MITライセンスは [choosealicense.com](https://www.choosealicense.com) "
@@ -2849,7 +2854,7 @@ msgid ""
 "installable using Hatch."
 msgstr "次のレッスンでは、Hatchを使ってコードをパッケージ化し、インストール可能にする方法を学びます。"
 
-#: ../../tutorials/intro.md:33 ../../tutorials/setup-py-to-pyproject-toml.md:29
+#: ../../tutorials/intro.md:33 ../../tutorials/setup-py-to-pyproject-toml.md:30
 msgid "Get to know Hatch"
 msgstr "Hatchを知る"
 
@@ -2857,7 +2862,7 @@ msgstr "Hatchを知る"
 msgid "Python Packaging Tutorial Setup"
 msgstr "Pythonパッケージングチュートリアルのセットアップ"
 
-#: ../../tutorials/intro.md:40 ../../tutorials/intro.md:86
+#: ../../tutorials/intro.md:40 ../../tutorials/intro.md:87
 msgid "What is a Python package?"
 msgstr "Pythonパッケージとは何ですか？"
 
@@ -2875,39 +2880,43 @@ msgid "Publish to conda-forge"
 msgstr "conda-forgeに公開する"
 
 #: ../../tutorials/intro.md:40
+msgid "Publish using GitHub Actions and Trusted Publishing"
+msgstr ""
+
+#: ../../tutorials/intro.md:40
 msgid "Create and publish a Python Package"
 msgstr "Pythonパッケージの作成と公開"
 
-#: ../../tutorials/intro.md:50
+#: ../../tutorials/intro.md:51
 #, fuzzy
 msgid "Develop package (Hatch environments)"
 msgstr "Pythonのパッケージと環境"
 
-#: ../../tutorials/intro.md:50
+#: ../../tutorials/intro.md:51
 msgid "Add README file"
 msgstr "README ファイルを追加する"
 
-#: ../../tutorials/intro.md:50
+#: ../../tutorials/intro.md:51
 msgid "Add a license & code of conduct"
 msgstr "ライセンスと行動規範の追加"
 
-#: ../../tutorials/intro.md:50
+#: ../../tutorials/intro.md:51
 msgid "Update metadata in pyproject.toml"
 msgstr "pyproject.tomlのメタデータを更新する"
 
-#: ../../tutorials/intro.md:50
+#: ../../tutorials/intro.md:51
 msgid "Project information files & metadata"
 msgstr "プロジェクト情報ファイルとメタデータ"
 
-#: ../../tutorials/intro.md:60
+#: ../../tutorials/intro.md:61
 msgid "Reference Guides"
 msgstr "リファレンスガイド"
 
-#: ../../tutorials/intro.md:67
+#: ../../tutorials/intro.md:68
 msgid "Migrate setup.py to a pyproject.toml using Hatch"
 msgstr "Hatchを使ってsetup.pyをpyproject.tomlに移行する"
 
-#: ../../tutorials/intro.md:67
+#: ../../tutorials/intro.md:68
 msgid "Hatch for Existing Packages"
 msgstr "既存パッケージ用Hatch"
 
@@ -2938,7 +2947,7 @@ msgstr ""
 "パッケージングチュートリアルのレッスンを示す図。Pythonパッケージとは何か、コードをpipでインストール可能にする、パッケージをPyPIに公開する、READMEとLICENSEファイルを追加する、PyPI用のメタデータを追加する、最後にconda"
 " forgeに公開する、の6つです。"
 
-#: ../../tutorials/intro.md:19
+#: ../../tutorials/intro.md:19 ../../tutorials/trusted-publishing.md:255
 msgid ""
 "This lesson is the first in a series of lessons to help you get started "
 "with Python packaging."
@@ -2973,39 +2982,40 @@ msgid ""
 "documentation needed to support package maintenance."
 msgstr "第2シリーズでは、パッケージのメンテナンスをサポートするために必要なインフラとドキュメントについて学びます。"
 
-#: ../../tutorials/intro.md:74 ../../tutorials/publish-conda-forge.md:20
-#: ../../tutorials/publish-pypi.md:18 ../../tutorials/pyproject-toml.md:24
-#: ../../tutorials/setup-py-to-pyproject-toml.md:17
+#: ../../tutorials/intro.md:75 ../../tutorials/publish-conda-forge.md:20
+#: ../../tutorials/publish-pypi.md:20 ../../tutorials/pyproject-toml.md:24
+#: ../../tutorials/setup-py-to-pyproject-toml.md:18
+#: ../../tutorials/trusted-publishing.md:13
 msgid "Learning Objectives"
 msgstr "学習目標"
 
-#: ../../tutorials/intro.md:76
+#: ../../tutorials/intro.md:77
 msgid ""
 "This lesson introduces you to the basic components of a Python package. "
 "After reading this lesson you will:"
 msgstr "このレッスンでは Python パッケージの基本的な構成要素を紹介します。 このレッスンを読めば、次のことがわかります:"
 
-#: ../../tutorials/intro.md:79
+#: ../../tutorials/intro.md:80
 msgid "Understand what a Python package is"
 msgstr "Pythonパッケージとは何かを理解する"
 
-#: ../../tutorials/intro.md:80
+#: ../../tutorials/intro.md:81
 msgid "Be able to list the 5 core components of a Python package"
 msgstr "Pythonパッケージの5つのコアコンポーネントを列挙できます"
 
-#: ../../tutorials/intro.md:81
+#: ../../tutorials/intro.md:82
 msgid ""
 "Be able to explain the difference between generalizable code and code "
 "that supports a specific scientific application"
 msgstr "一般化可能なコードと特定の科学的アプリケーションをサポートするコードの違いを説明できます。"
 
-#: ../../tutorials/intro.md:88
+#: ../../tutorials/intro.md:89
 msgid ""
 "At a high level, you can think about a Python package as a toolbox that "
 "you can use to perform various tasks."
 msgstr "高レベルでは、Pythonパッケージは、様々なタスクを実行するために使用できるツールボックスと考えることができます。"
 
-#: ../../tutorials/intro.md:91
+#: ../../tutorials/intro.md:92
 msgid ""
 "A Python package is basically a directory with a specific file structure."
 " Within the package directory structure, there are modules which are "
@@ -3017,13 +3027,13 @@ msgstr ""
 "Pythonパッケージは基本的に特定のファイル構造を持つディレクトリです。 パッケージのディレクトリ構造の中に、`.py` "
 "で終わるファイル(Pythonスクリプトで見られるのと同じ拡張子)のモジュールがあります。これらのモジュールによって、Pythonコードをグループ化し、構造化することができます。各モジュールには関数とクラスが含まれており、それらはあなたの道具箱の中の道具だと考えることができます。"
 
-#: ../../tutorials/intro.md:100
+#: ../../tutorials/intro.md:101
 msgid ""
 "Diagram showing a sketch of a toolbox filled with different tools "
 "including a hammer and a saw."
 msgstr "ハンマーやノコギリなど、さまざまな工具が入った工具箱のスケッチを示す図。"
 
-#: ../../tutorials/intro.md:102
+#: ../../tutorials/intro.md:103
 msgid ""
 "You can think about a package as a toolbox filled with coding tools. A "
 "tool may be a function or a class. Each tool does a specific thing well."
@@ -3031,11 +3041,11 @@ msgstr ""
 "パッケージとは、コーディングツールが詰まった道具箱のようなものだと考えることができます。 ツールは関数かもしれないし、クラスかもしれません。 "
 "それぞれのツールは特定のことをよくします。"
 
-#: ../../tutorials/intro.md:107
+#: ../../tutorials/intro.md:108
 msgid "Python packages are installable"
 msgstr "Pythonパッケージはインストール可能"
 
-#: ../../tutorials/intro.md:109
+#: ../../tutorials/intro.md:110
 msgid ""
 "A package is installable, which means that you can add the functionality "
 "within the package's code to any Python environment and import that "
@@ -3043,7 +3053,7 @@ msgid ""
 "as NumPy or Matplotlib."
 msgstr "パッケージはインストール可能で、パッケージのコード内の機能をどのPython環境にも追加でき、NumPyやMatplotlibのような科学的なPythonのコアパッケージをインポートするように、その機能をインポートできます。"
 
-#: ../../tutorials/intro.md:118
+#: ../../tutorials/intro.md:119
 msgid ""
 "Installing a package into an environment makes it easier to manage and "
 "reuse your code across different projects. Structuring your code as a "
@@ -3051,15 +3061,15 @@ msgid ""
 "the toolbox you've created and let others build with it."
 msgstr "パッケージを環境にインストールすることで、異なるプロジェクト間でのコードの管理と再利用が容易になる。あなたのコードをパッケージとして構造化することは、あなたが作成したツールボックスのツールを共有し、他の人がそれを使って構築できるようにするために必要な最初のステップです。"
 
-#: ../../tutorials/intro.md:123
+#: ../../tutorials/intro.md:124
 msgid "Why create a Python package?"
 msgstr "なぜPythonパッケージを作るのか？"
 
-#: ../../tutorials/intro.md:125
+#: ../../tutorials/intro.md:126
 msgid "You might create a Python package because you want to:"
 msgstr "Pythonパッケージを作りたいから作るかもしれません:"
 
-#: ../../tutorials/intro.md:127
+#: ../../tutorials/intro.md:128
 msgid ""
 "**Use your code across different projects:** At its most basic level, "
 "creating a package allows you to install your code into a Python "
@@ -3070,7 +3080,7 @@ msgstr ""
 "最も基本的なレベルでは、パッケージを作成することで、あなたのコードをPython環境にインストールすることができます。 "
 "これにより、ローカルとクラウドの両方のワークフローに関数やクラスをインポートすることができます。"
 
-#: ../../tutorials/intro.md:128
+#: ../../tutorials/intro.md:129
 msgid ""
 "**Share your code:** If you publish a package on a public repository such"
 " as PyPI or conda, your package can be installed on any machine using pip"
@@ -3079,7 +3089,7 @@ msgstr ""
 "**Share your code:** PyPIやcondaのような公開リポジトリでパッケージを公開する場合、 "
 "あなたのパッケージは、pipやcondaを使ってどのマシンにもコマンドひとつでインストールできます。"
 
-#: ../../tutorials/intro.md:129
+#: ../../tutorials/intro.md:130
 msgid ""
 "**Build community around your code:** Packages make it easier for "
 "multiple people to work on the same project (particularly when published "
@@ -3094,7 +3104,7 @@ msgstr ""
 "のようなバージョン管理システムを使えば、コードベースへの長期的な変更を追跡するのがさらに簡単になる。 "
 "issueやプルリクエストのようなツールは、外部のユーザーがバグ修正に貢献したり、コードベースへの変更を受け入れるためのレビュープロセスを確立したりすることを容易にします。"
 
-#: ../../tutorials/intro.md:130
+#: ../../tutorials/intro.md:131
 msgid ""
 "**Organize your code:** Packages can be used to organize large code "
 "projects, dividing them into smaller, more manageable components. This "
@@ -3104,29 +3114,29 @@ msgstr ""
 "**コードを整理する:** パッケージは、大規模なコード・プロジェクトを整理し、より小さく管理しやすいコンポーネントに分割するために使用できます。"
 " この構造は、コードベースを維持する上でも、理解しやすくする上でも役立ちます。"
 
-#: ../../tutorials/intro.md:132
+#: ../../tutorials/intro.md:133
 msgid "What to consider before you create a package"
 msgstr "パッケージを作成する前に考慮すべきこと"
 
-#: ../../tutorials/intro.md:134
+#: ../../tutorials/intro.md:135
 msgid ""
 "Creating a Python package that others use takes considerable time and "
 "effort. Before you begin, think about your goals including:"
 msgstr "他の人が使うPythonパッケージを作るには、かなりの時間と労力がかかります。 始める前に、以下のような目標について考えてください:"
 
-#: ../../tutorials/intro.md:137
+#: ../../tutorials/intro.md:138
 msgid "Who you think will use your package"
 msgstr "あなたのパッケージを利用すると思われる人"
 
-#: ../../tutorials/intro.md:138
+#: ../../tutorials/intro.md:139
 msgid "How people might use your package and on what data (if data are relevant)"
 msgstr "人々があなたのパッケージをどのように使うか、またどのようなデータについて使うか（データが関連する場合）"
 
-#: ../../tutorials/intro.md:139
+#: ../../tutorials/intro.md:140
 msgid "Whether you have time to add things such as documentation and tests"
 msgstr "ドキュメントやテストなどを追加する時間があるかどうか"
 
-#: ../../tutorials/intro.md:140
+#: ../../tutorials/intro.md:141
 msgid ""
 "How long you might be able to maintain it: remember that once people "
 "begin using your package they will depend on your maintainer team to "
@@ -3135,21 +3145,21 @@ msgstr ""
 "メンテナンスできる可能性のある期間: "
 "いったん人々があなたのパッケージを使い始めると、彼らはそれを更新し、バグを修正し、質問に答えるために、あなたのメンテナチームに依存することになることを忘れないでください。"
 
-#: ../../tutorials/intro.md:142
+#: ../../tutorials/intro.md:143
 msgid ""
 "Before creating a user-facing package, it's important to consider all of "
 "the above."
 msgstr "ユーザー向けのパッケージを作成する前に、上記のすべてを考慮することが重要です。"
 
-#: ../../tutorials/intro.md:144
+#: ../../tutorials/intro.md:145
 msgid "The elements of a Python package"
 msgstr "Pythonパッケージの要素"
 
-#: ../../tutorials/intro.md:148 ../../tutorials/intro.md:226
+#: ../../tutorials/intro.md:149 ../../tutorials/intro.md:227
 msgid "Diagram showing .. more here if this stays."
 msgstr "図......これが残ればもっとここに。"
 
-#: ../../tutorials/intro.md:150
+#: ../../tutorials/intro.md:151
 msgid ""
 "The elements of a Python package include code, documentation, tests, an "
 "OSI-approved license and infrastructure. Maintainers are at the core "
@@ -3159,17 +3169,17 @@ msgstr ""
 "Pythonパッケージの要素には、コード、ドキュメント、テスト、OSIが承認したライセンス、インフラが含まれます。 "
 "メインテナーは、バグを修正し、ユーザーの懸念に対処しながら、すべてが機能し、最新であることを確認する中核を担っています。"
 
-#: ../../tutorials/intro.md:156
+#: ../../tutorials/intro.md:157
 msgid "The core elements of Python package include:"
 msgstr "Pythonパッケージの核となる要素は以下の通りです:"
 
-#: ../../tutorials/intro.md:158
+#: ../../tutorials/intro.md:159
 msgid ""
 "**Code:** Functions and classes that provide functionality for a user of "
 "your package"
 msgstr "**コード:** パッケージのユーザーに機能を提供する関数とクラス"
 
-#: ../../tutorials/intro.md:159
+#: ../../tutorials/intro.md:160
 msgid ""
 "**Documentation:** Installation instructions, tutorials, and examples "
 "that both help users get started using your package and contributors and "
@@ -3178,13 +3188,13 @@ msgstr ""
 "**ドキュメンテーション:** "
 "インストール手順、チュートリアル、サンプルは、ユーザがあなたのパッケージを使い始めるのを助け、貢献者やメンテナがバグを修正し、パッケージを保守するのを助けます。"
 
-#: ../../tutorials/intro.md:160
+#: ../../tutorials/intro.md:161
 msgid ""
 "Contributor Documentation in the form of a **CONTRIBUTING.md** file is "
 "useful to help people to contribute to your package."
 msgstr "**CONTRIBUTING.md** ファイル形式の貢献者ドキュメンテーションは、人々があなたのパッケージに貢献するのを助けるのに便利です。"
 
-#: ../../tutorials/intro.md:161
+#: ../../tutorials/intro.md:162
 msgid ""
 "Development Documentation helps both maintainers and contributors "
 "understand how to maintain a package's infrastructure."
@@ -3192,24 +3202,25 @@ msgstr ""
 "Development Documentation "
 "は、メンテナと貢献者の両方が、パッケージのインフラストラクチャをどのように保守するかを理解するのに役立ちます。"
 
-#: ../../tutorials/intro.md:162
+#: ../../tutorials/intro.md:163
 msgid ""
 "**Tests:** that make sure your code works as it should and makes it "
 "easier for you and others to contribute to, modify and update the code in"
 " the future"
 msgstr "**テスト:** これは、あなたのコードが本来の機能を発揮し、あなたや他の人が貢献しやすくなるようにするものです、 将来的にコードを修正更新します"
 
-#: ../../tutorials/intro.md:163
+#: ../../tutorials/intro.md:164
+#, fuzzy
 msgid ""
 "**License:** An open source license, or license that is [OSI "
-"approved](https://opensource.org/licenses/), refers to an license that "
+"approved](https://opensource.org/license/), refers to an license that "
 "allows others to use your package. It also provides legal direction "
 "regarding how elements of the package can and can't be reused."
 msgstr ""
 "**ライセンス:** オープンソースライセンス、あるいは [OSI認可](https://opensource.org/licenses/) "
 "ライセンスとは、他の人があなたのパッケージを使うことを許可するライセンスのことです。また、パッケージの要素をどのように再利用できるか、また再利用できないかに関する法的な方向性も示しています。"
 
-#: ../../tutorials/intro.md:164
+#: ../../tutorials/intro.md:165
 msgid ""
 "**Infrastructure** that automates updates, publication workflows and runs"
 " test suites. Infrastructure includes a suite of things such as platforms"
@@ -3220,11 +3231,11 @@ msgstr ""
 "**インフラ** 更新、公開ワークフロー、テストスイートの実行を自動化します。 "
 "インフラストラクチャーには、GitHubやGitLabのようなプラットフォーム、noxやtoxのようなローカルでテストやツールを実行するツール、パッケージメンテナンスのステップを自動化する継続的インテグレーションなど、一連のものが含まれます。"
 
-#: ../../tutorials/intro.md:166
+#: ../../tutorials/intro.md:167
 msgid "What pyOpenSci looks for in a package"
 msgstr "pyOpenSciがパッケージで探すもの"
 
-#: ../../tutorials/intro.md:169
+#: ../../tutorials/intro.md:170
 msgid ""
 "pyOpenSci performs an [initial set of editor "
 "checks](https://www.pyopensci.org/software-peer-review/how-to/editor-in-"
@@ -3236,11 +3247,11 @@ msgstr ""
 "/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-"
 "template) を行います。 これらのチェックは、パッケージを作成する際に、パッケージが持つべきものの基準として役に立つかもしれません。"
 
-#: ../../tutorials/intro.md:175
+#: ../../tutorials/intro.md:176
 msgid "Packages are more than just code - Infrastructure"
 msgstr "パッケージは単なるコードではありません - インフラストラクチャー"
 
-#: ../../tutorials/intro.md:177
+#: ../../tutorials/intro.md:178
 msgid ""
 "A package in any language is more than just code. If you expect other "
 "people to use your package, besides yourself, you should consider not "
@@ -3250,11 +3261,11 @@ msgstr ""
 "どの言語でも、パッケージは単なるコードではありません。 "
 "自分以外の人があなたのパッケージを使うことを期待するのであれば、高品質のコードを書くだけでなく、パッケージが有用なコミュニティリソースとなるための様々な要素も考慮すべきです。"
 
-#: ../../tutorials/intro.md:182
+#: ../../tutorials/intro.md:183
 msgid "Version control and storing your package on GitHub or GitLab"
 msgstr "GitHubまたはGitLabでのバージョン管理とパッケージの保存"
 
-#: ../../tutorials/intro.md:184
+#: ../../tutorials/intro.md:185
 msgid ""
 "Most Python packages live in an online version control platform such as "
 "GitHub or GitLab. GitHub and GitLab both run [git](https://git-scm.com/) "
@@ -3267,7 +3278,7 @@ msgstr ""
 "GitHubとGitLabはどちらもバージョン管理のために [git](https://git-scm.com/) を実行しています。 "
 "ソフトウェアをバージョン管理下に置くことは、時間の経過に伴う変更を追跡する一方で、コードベースへの変更が予期せず何かを壊してしまった場合に、履歴をさかのぼって変更を取り消すことができるからです。"
 
-#: ../../tutorials/intro.md:189
+#: ../../tutorials/intro.md:190
 msgid ""
 "By publishing your package on GitHub or GitLab, you are making your code "
 "public facing. This means that others can both see your code and also "
@@ -3277,11 +3288,11 @@ msgstr ""
 "あなたのパッケージをGitHubやGitLabで公開することで、あなたはコードを公開することになります。 "
 "これは、他の人があなたのコードを見ることができ、プルリクエスト(GitHub)/マージリクエスト(GitLab)/コードレビューワークフローを使って貢献することもできることを意味します。"
 
-#: ../../tutorials/intro.md:191
+#: ../../tutorials/intro.md:192
 msgid "GitHub & GitLab vs. Git"
 msgstr "GitHub & GitLab vs. Git"
 
-#: ../../tutorials/intro.md:194
+#: ../../tutorials/intro.md:195
 msgid ""
 "GitHub and GitLab are online (cloud) platforms that run `git` (version "
 "control software) on the backend. Running git locally on your computer "
@@ -3292,35 +3303,35 @@ msgstr ""
 "プラットフォームです。 コンピュータ上でローカルに git を実行すると、GitHub や GitLab にファイルをアップロード (`git "
 "push`) したりダウンロード (`git pull`) したりすることができます。"
 
-#: ../../tutorials/intro.md:199
+#: ../../tutorials/intro.md:200
 msgid "Issues or Ticket Trackers"
 msgstr "issue かチケットトラッカー"
 
-#: ../../tutorials/intro.md:201
+#: ../../tutorials/intro.md:202
 msgid ""
 "GitHub and GitLab also both offer community features such as issues that "
 "allow:"
 msgstr "GitHubとGitLabは、どちらもissueのようなコミュニティ機能を提供しています："
 
-#: ../../tutorials/intro.md:203
+#: ../../tutorials/intro.md:204
 msgid "you to communicate with your maintainers and contributor community"
 msgstr "メンテナや貢献者コミュニティとのコミュニケーション"
 
-#: ../../tutorials/intro.md:204
+#: ../../tutorials/intro.md:205
 msgid "users to report bugs, ask questions and request new features"
 msgstr "ユーザーによるバグ報告、質問、新機能のリクエスト"
 
-#: ../../tutorials/intro.md:205
+#: ../../tutorials/intro.md:206
 msgid ""
 "you to publicly keep track of enhancements and features you want to work "
 "on for your package."
 msgstr "あなたのパッケージのために取り組みたい機能強化や機能を公的に追跡することができます。"
 
-#: ../../tutorials/intro.md:207
+#: ../../tutorials/intro.md:208
 msgid "Continuous integration and continuous deployment"
 msgstr "継続的インテグレーションと継続的デプロイメント"
 
-#: ../../tutorials/intro.md:209
+#: ../../tutorials/intro.md:210
 msgid ""
 "GitHub and GitLab also provide continuous integration and continuous "
 "deployment (CI/CD). Continuous integration (CI) refers to a platform that"
@@ -3332,29 +3343,29 @@ msgstr ""
 " とは、特定のイベントが発生したときに特定のジョブを自動的に実行するプラットフォームのことを指し、継続的デプロイメント "
 "(CD)とは、実行や構築だけでなく、最終的なアウトプットをどこかに公開することを指すCIの拡張です。"
 
-#: ../../tutorials/intro.md:211
+#: ../../tutorials/intro.md:212
 msgid "**An example of Continuous integration:**"
 msgstr "**継続的インテグレーションの例:**"
 
-#: ../../tutorials/intro.md:213
+#: ../../tutorials/intro.md:214
 msgid ""
 "When someone submits a change to your code, your tests will run across "
 "different operating systems and the code will be checked for format "
 "issues."
 msgstr "誰かがあなたのコードに変更を加えた場合、あなたのテストは異なるオペレーティングシステム上で実行され、コードはフォーマットの問題がないかチェックされます。"
 
-#: ../../tutorials/intro.md:215
+#: ../../tutorials/intro.md:216
 msgid "**An example of Continuous deployment:**"
 msgstr "**継続的デプロイの例:**"
 
-#: ../../tutorials/intro.md:217
+#: ../../tutorials/intro.md:218
 msgid ""
 "When you are ready to release your package to PyPI, a continuous "
 "deployment operation might be triggered on release to publish your "
 "package to PyPI."
 msgstr "PyPIにパッケージをリリースする準備ができたら、リリース時に継続的デプロイ操作をトリガーしてパッケージをPyPIに公開することがあります。"
 
-#: ../../tutorials/intro.md:219
+#: ../../tutorials/intro.md:220
 msgid ""
 "Integrated CI/CD will help you maintain your software, ensuring that "
 "changes to the code don't break things unexpectedly. They can also help "
@@ -3364,15 +3375,15 @@ msgstr ""
 "統合されたCI/CDは、コードの変更が予期せぬ事態を引き起こさないよう、ソフトウェアの保守を支援します。 "
 "また、コードに新しい変更が加えられるたびに、コードのスタイルや書式の一貫性を維持するのにも役立ちます。"
 
-#: ../../tutorials/intro.md:228
+#: ../../tutorials/intro.md:229
 msgid "The lifecycle of a scientific Python package."
 msgstr "科学的Pythonパッケージのライフサイクル。"
 
-#: ../../tutorials/intro.md:231
+#: ../../tutorials/intro.md:232
 msgid "When should you turn your code into a Python package?"
 msgstr "あなたのコードをPythonパッケージにするタイミングは？"
 
-#: ../../tutorials/intro.md:233
+#: ../../tutorials/intro.md:234
 msgid ""
 "You may be wondering, what types of code should become a Python package "
 "that is both on GitHub and published to PyPI and/or conda-forge."
@@ -3380,11 +3391,11 @@ msgstr ""
 "どのようなコードをPythonのパッケージにして、GitHubに置き、PyPIやconda-"
 "forgeに公開すればいいのか、疑問に思うかもしれません。"
 
-#: ../../tutorials/intro.md:235
+#: ../../tutorials/intro.md:236
 msgid "There are a few use cases to consider:"
 msgstr "考慮すべき使用例がいくつかあります:"
 
-#: ../../tutorials/intro.md:237
+#: ../../tutorials/intro.md:238
 msgid ""
 "**Creating a basic package for yourself:** Sometimes you want create a "
 "package for your own personal use. This might mean making your code "
@@ -3396,7 +3407,7 @@ msgstr ""
 "**自分用の基本パッケージを作ります:** 個人的に使用するためにパッケージを作成したいこともあるでしょう。 "
 "これは、コードをローカルにpipでインストールできるようにすることを意味するかもしれませんし、GitHubに公開したいと思うかもしれません。その場合、他の人があなたのコードを使うことを期待していないので、パッケージを更新する必要がある場合に、あなた自身と将来の自分のためのドキュメントしか用意できないかもしれません。"
 
-#: ../../tutorials/intro.md:239
+#: ../../tutorials/intro.md:240
 msgid ""
 "An example of this type of package might be a set of functions that you "
 "write that are useful across several of your projects. It could be useful"
@@ -3405,11 +3416,11 @@ msgstr ""
 "この種のパッケージの例としては、いくつかのプロジェクトにまたがって有用な関数のセットを書くことができます。 "
 "これらの機能をすべてのプロジェクトで利用できれば便利でしょう。"
 
-#: ../../tutorials/intro.md:242
+#: ../../tutorials/intro.md:243
 msgid "LINK to pip installable lesson when it's published - it's in review now"
 msgstr "レッスンが公開されたら、pipでインストールできるようにリンクします - 審査中になります"
 
-#: ../../tutorials/intro.md:245
+#: ../../tutorials/intro.md:246
 msgid ""
 "**Creating a package for the community:** In other cases, you may create "
 "some code that you soon realize might also be useful to not just you, but"
@@ -3425,7 +3436,7 @@ msgstr ""
 "その場合は、パッケージを作成してGitHubで公開し、他のユーザーもそれを使うかもしれないので、CI/CDパイプラインや課題トラッカーなどのGitHubのインフラを利用することも検討できるでしょう。あなたのパッケージを他の人たちにも使ってもらいたいので、LICENSE情報、ユーザーや貢献者のための文書、テストも含めておきたいです。"
 " このタイプのパッケージはPyPIに公開されることが多いです。"
 
-#: ../../tutorials/intro.md:248
+#: ../../tutorials/intro.md:249
 msgid ""
 "For example, all of the [pyOpenSci packages](https://www.pyopensci.org"
 "/python-packages.html) are public facing with an intended audience beyond"
@@ -3434,11 +3445,11 @@ msgstr ""
 "例えば、すべての [pyOpenSciパッケージ](https://www.pyopensci.org/python-packages.html)"
 " は、メンテナ以外の読者を想定して公開されています。"
 
-#: ../../tutorials/intro.md:250
+#: ../../tutorials/intro.md:251
 msgid "Packages that you expect others to use should be well-scoped"
 msgstr "他の人が使用することを想定しているパッケージは、十分なスコープを持つべきです。"
 
-#: ../../tutorials/intro.md:252
+#: ../../tutorials/intro.md:253
 msgid ""
 "Ideally the code in your Python package is focused on a specific theme or"
 " use case. This theme is important as it's a way to scope the content of "
@@ -3447,7 +3458,7 @@ msgstr ""
 "Pythonパッケージのコードは、特定のテーマやユースケースにフォーカスしているのが理想的です。 "
 "このテーマは、パッケージの内容に幅を持たせる方法として重要です。"
 
-#: ../../tutorials/intro.md:254
+#: ../../tutorials/intro.md:255
 msgid ""
 "It can be tricky to decide when your code becomes something that might be"
 " more broadly useful to others. But one question you can ask yourself is "
@@ -3458,13 +3469,14 @@ msgstr ""
 "自分のコードが、いつ他の人に広く役立つものになるかを決めるのは、難しいことです。 "
 "しかし、自分自身に問いかけることができる質問が一つあります。それは、あなたのコードは特定の研究プロジェクトのために書かれたものですか？あるいは、あなたのドメインにおける複数のプロジェクトにまたがるより広範な応用が可能でしょうか？"
 
-#: ../../tutorials/intro.md:256
+#: ../../tutorials/intro.md:257
 msgid "How does this relate to code for a research project?"
 msgstr "研究プロジェクトのコードとの関連は？"
 
-#: ../../tutorials/intro.md:259
+#: ../../tutorials/intro.md:260
+#, fuzzy
 msgid ""
-"A [Research Compendium](https://the-turing-way.netlify.app/reproducible-"
+"A [Research Compendium](https://book.the-turing-way.org/reproducible-"
 "research/compendia.html) is an organized set of code, data and "
 "documentation that supports a specific research project. It aims to "
 "enhance the reproducibility and transparency of research by providing a "
@@ -3474,7 +3486,7 @@ msgstr ""
 "research/compendia.html) とは、特定の研究プロジェクトをサポートするコード、データ、文書を整理したものです。 "
 "研究で使用された方法、データ、分析の包括的な記録を提供することで、研究の再現性と透明性を高めることを目的としています。"
 
-#: ../../tutorials/intro.md:264
+#: ../../tutorials/intro.md:265
 msgid ""
 "A Python package is a collection of modules that can be used to perform a"
 " specific set of tasks. These tasks should be applicable to numerous "
@@ -3485,7 +3497,7 @@ msgstr ""
 "これらのタスクは、数多くのワークフローに適用できるはずです。 そのため、Pythonパッケージは、特定のプロジェクトをサポートするResearch"
 " Compendiumよりも汎用性が高いです。"
 
-#: ../../tutorials/intro.md:269
+#: ../../tutorials/intro.md:270
 msgid ""
 "[Read about `Good enough practices in scientific "
 "computing`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)"
@@ -3493,7 +3505,7 @@ msgstr ""
 "[`科学的コンピューティングにおける十分なプラクティス` "
 "について読む](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)"
 
-#: ../../tutorials/intro.md:270
+#: ../../tutorials/intro.md:271
 msgid ""
 "[Learn more about research compendia (also called repo-packs) in this "
 "blog post.](https://lorenabarba.com/blog/how-repro-packs-can-save-your-"
@@ -3503,11 +3515,11 @@ msgstr ""
 "については、こちらのブログ記事で詳しくご紹介しています。](https://lorenabarba.com/blog/how-repro-"
 "packs-can-save-your-future-self/)"
 
-#: ../../tutorials/intro.md:273
+#: ../../tutorials/intro.md:274
 msgid "Below are a few examples well scoped pyOpenSci packages:"
 msgstr "以下はよくスコープされたpyOpenSciパッケージの例です:"
 
-#: ../../tutorials/intro.md:275
+#: ../../tutorials/intro.md:276
 msgid ""
 "[Crowsetta](https://crowsetta.readthedocs.io/en/latest/): is a package "
 "designed to work with annotating animal vocalizations and bioacoustics "
@@ -3518,7 +3530,7 @@ msgstr ""
 "[Crowsetta](https://crowsetta.readthedocs.io/en/latest/): "
 "は、動物の発声や生物音響データの注釈付けを行うために設計されたパッケージです。このパッケージは、ユーザー固有の研究ワークフローに関連する特定の個々の研究アプリケーションに焦点を当てるのではなく、科学者がさまざまなタイプの生体音響データを処理するのを支援します。"
 
-#: ../../tutorials/intro.md:276
+#: ../../tutorials/intro.md:277
 msgid ""
 "[Pandera](https://www.union.ai/pandera) is another more broadly used "
 "Python package. Pandera supports data testing and thus also has a broader"
@@ -3527,21 +3539,21 @@ msgstr ""
 "[Pandera](https://www.union.ai/pandera) もまた、より広く使われているPythonパッケージです。 "
 "Panderaはデータの検査をサポートしているため、広範な研究用途にも使用できます。"
 
-#: ../../tutorials/intro.md:278
+#: ../../tutorials/intro.md:279
 msgid "Matplotlib as an example"
 msgstr "例としてのMatplotlib"
 
-#: ../../tutorials/intro.md:280
+#: ../../tutorials/intro.md:281
 msgid ""
 "At the larger end of the user spectrum, Matplotlib is a great example. "
 "Matplotlib does one thing really well:"
 msgstr "大規模なユーザーでは、Matplotlibが良い例です。 Matplotlibは一つのことをとてもよくやってくれます:"
 
-#: ../../tutorials/intro.md:283
+#: ../../tutorials/intro.md:284
 msgid "_It creates visual plots of data._"
 msgstr "_データの視覚的なプロットを作成します。_"
 
-#: ../../tutorials/intro.md:285
+#: ../../tutorials/intro.md:286
 msgid ""
 "Thousands of people use Matplotlib for different plotting applications "
 "using different types of data. While few scientific packages will have "
@@ -3551,17 +3563,17 @@ msgstr ""
 "Matplotlibは、何千人もの人々が、様々な種類のデータを使った様々なプロットアプリケーションに利用しています。 "
 "Matplotlibのような広範なアプリケーションと大規模なユーザーベースを持つ科学パッケージはほとんどないでしょうが、自分のパッケージが何をするのかを調べるという考え方は依然として重要です。"
 
-#: ../../tutorials/intro.md:291
+#: ../../tutorials/intro.md:292
 msgid "Code should also be clean & readable & documented"
 msgstr "コードはまた、クリーンで読みやすく、文書化されていなければなりません。"
 
-#: ../../tutorials/intro.md:293
+#: ../../tutorials/intro.md:294
 msgid ""
 "The code in your package should also be clean, readable, and well "
 "documented."
 msgstr "パッケージ内のコードもまた、クリーンで読みやすく、十分に文書化されていなければなりません。"
 
-#: ../../tutorials/intro.md:295
+#: ../../tutorials/intro.md:296
 msgid ""
 "**Clean code:** Clean code refers to code that uses expressive variable "
 "names, is concise and doesn't repeat itself. You can learn about best "
@@ -3570,7 +3582,7 @@ msgstr ""
 "**クリーンコード:** "
 "クリーンなコードとは、表現力豊かな変数名を使い、簡潔で、繰り返しのないコードを指す。きれいなコードのためのベストプラクティスについては、今後のpyOpenSciチュートリアルで学ぶことができます。"
 
-#: ../../tutorials/intro.md:299
+#: ../../tutorials/intro.md:300
 msgid ""
 "**Readable code:** readable code is code written with a consistent style."
 " You can use linters and code formatters such as black and flake8 to "
@@ -3583,7 +3595,7 @@ msgstr ""
 " [コードフォーマッタの詳細はこちらです。](../package-structure-code/code-style-linting-"
 "format)"
 
-#: ../../tutorials/intro.md:303
+#: ../../tutorials/intro.md:304
 msgid ""
 "**Documented code:** documented code is written using docstrings that "
 "help a user understand both what the functions and methods in your code "
@@ -3596,15 +3608,15 @@ msgstr ""
 " [docstringsについては、こちらのガイドで詳しく説明しています。](../documentation/write-user-"
 "documentation/document-your-code-api-docstrings)"
 
-#: ../../tutorials/intro.md:307
+#: ../../tutorials/intro.md:308
 msgid "Making your package installable - publishing to PyPI & conda-forge"
 msgstr "パッケージをインストール可能にします - PyPIとconda-forgeに公開します"
 
-#: ../../tutorials/intro.md:309
+#: ../../tutorials/intro.md:310
 msgid "Python packages and environments"
 msgstr "Pythonのパッケージと環境"
 
-#: ../../tutorials/intro.md:311
+#: ../../tutorials/intro.md:312
 msgid ""
 "You can install a Python package into a Python environment in the same "
 "way you might install NumPy or Pandas. Installing your package into an "
@@ -3614,7 +3626,7 @@ msgstr ""
 "NumPyやPandasをインストールするのと同じように、PythonパッケージをPython環境にインストールすることができます。 "
 "パッケージを環境にインストールすることで、特定のPython環境を有効にして実行したコードからそのパッケージにアクセスできるようになります。"
 
-#: ../../tutorials/intro.md:317
+#: ../../tutorials/intro.md:318
 msgid ""
 "Diagram showing the steps associated with creating a package and then "
 "installing it. The first arrow says your package and the second says pip "
@@ -3627,7 +3639,7 @@ msgstr ""
 "packageと書かれています。2つ目の矢印は、PandasやNumPyなどのいくつかのパッケージがすでにインストールされているPython環境を表すボックスにつながります。あなたのパッケージも、pip"
 " installしたときに同じ環境にインストールされます。"
 
-#: ../../tutorials/intro.md:319
+#: ../../tutorials/intro.md:320
 msgid ""
 "You don't have to publish to PyPI to make your code installable. With the"
 " correct file structure and project metadata you can make your code "
@@ -3640,11 +3652,11 @@ msgstr ""
 "正しいファイル構造とプロジェクトのメタデータがあれば、PyPIに公開することなく、コードをローカルにインストールし、作業中のプロジェクトに使用することができます。"
 " PyPIへの公開は、自分のコードを公開し、他の人と共有したいときに便利です。"
 
-#: ../../tutorials/intro.md:326
+#: ../../tutorials/intro.md:327
 msgid "Publishing a package to PyPI / Conda-Forge"
 msgstr "PyPI / Conda-Forgeへのパッケージの公開"
 
-#: ../../tutorials/intro.md:328
+#: ../../tutorials/intro.md:329
 msgid ""
 "If you want to make your package directly installable without having to "
 "download the code to your computer locally then you need to publish it in"
@@ -3653,13 +3665,13 @@ msgstr ""
 "コードをローカルにダウンロードすることなく、パッケージを直接インストールできるようにしたい場合は、 **PyPI** や **conda-"
 "forge** のようなリポジトリで公開する必要があります。"
 
-#: ../../tutorials/intro.md:332
+#: ../../tutorials/intro.md:333
 msgid ""
 "Learn [how to publish your package to PyPI in this tutorial.](publish-"
 "pypi.md)"
 msgstr "[このチュートリアルでは、パッケージをPyPIに公開する方法](publish-pypi.md) を学びます。"
 
-#: ../../tutorials/intro.md:334
+#: ../../tutorials/intro.md:335
 msgid ""
 "Then you can create a conda-forge recipe using the "
 "[Grayskull](https://github.com/conda/grayskull) tool. You can then submit"
@@ -3668,13 +3680,13 @@ msgstr ""
 "その後、 [Grayskull](https://github.com/conda/grayskull) ツールを使ってconda-"
 "forgeレシピを作成することができます。 このレシピをconda-forgeに投稿することができます。"
 
-#: ../../tutorials/intro.md:336
+#: ../../tutorials/intro.md:337
 msgid ""
 "[You will learn more about the conda-forge publication process here"
 ".](publish-conda-forge.md)"
 msgstr "[conda-forgeの公開プロセスについてはこちらをご覧ください。](publish-conda-forge.md)"
 
-#: ../../tutorials/intro.md:339
+#: ../../tutorials/intro.md:340
 msgid ""
 "Graphic showing the high level packaging workflow. On the left you see a "
 "graphic with code, metadata and tests in it. Those items all go into your"
@@ -3688,16 +3700,16 @@ msgstr ""
 "ハイレベルなパッケージングのワークフローを示すグラフィックです。左側には、コード、メタデータ、テストが入ったグラフィックがあります。ドキュメンテーションやデータは、通常、パッケージホイールの配布物には掲載されないため、そのボックスの下にあります。右の矢印は、ビルド配布ファイルのボックスに移動します。このボックスは、TestPyPIか本物のPyPIのどちらかに公開するように導きます"
 "。PyPIからconda-forgeに接続し、ディストリビューションをPyPIからconda-forgeに送る自動ビルドを行うことができます。"
 
-#: ../../tutorials/intro.md:341
+#: ../../tutorials/intro.md:342
 msgid ""
 "In the image above, you can see the steps associated with publishing your"
-" package on PyPI and conda-forge. PyPI supports [sdist](#python-source-distribution)"
-" and [wheel](#python-wheel) files. Once you are ready to make your code publicly "
-"installable, you can publish it on PyPI. Once your code is on PyPI it is "
-"straight forward to then publish to conda-forge. You create a recipe "
-"using the Grayskull package and then you open a pr in the conda-forge "
-"recipe repository. You will learn more about this process in the [conda-"
-"forge lesson](/tutorials/publish-conda-forge)."
+" package on PyPI and conda-forge. PyPI supports [sdist](#python-source-"
+"distribution) and [wheel](#python-wheel) files. Once you are ready to "
+"make your code publicly installable, you can publish it on PyPI. Once "
+"your code is on PyPI it is straight forward to then publish to conda-"
+"forge. You create a recipe using the Grayskull package and then you open "
+"a pr in the conda-forge recipe repository. You will learn more about this"
+" process in the [conda-forge lesson](/tutorials/publish-conda-forge)."
 msgstr ""
 "上の画像では、PyPIとconda-forgeでパッケージを公開する手順を見ることができます。 PyPIが要求する配布ファイルは [sdist"
 "](#python-source-distribution) と [wheel](#python-wheel) "
@@ -3706,11 +3718,11 @@ msgstr ""
 "forgeレシピリポジトリでprを開きます。このプロセスについては、 [conda-forgeのレッスン](/tutorials/publish-"
 "conda-forge) で詳しく学びます。"
 
-#: ../../tutorials/intro.md:345
+#: ../../tutorials/intro.md:346
 msgid "Yay, your package has users! Now what?"
 msgstr "やった、あなたのパッケージにはユーザーがいます! さて、どうしますか？"
 
-#: ../../tutorials/intro.md:347
+#: ../../tutorials/intro.md:348
 msgid ""
 "As the community using your package grows, you may also find yourself "
 "managing users, contributors, and others who want to interact with your "
@@ -3722,11 +3734,11 @@ msgstr ""
 "あなたのパッケージを使うコミュニティが大きくなるにつれて、あなたはユーザーや貢献者、その他あなたのパッケージと交流したい人たちを管理することになるかもしれません。開発に飛び込む前に、これらすべてを考慮することが重要です。"
 " コミュニティーの中にユーザーベースができれば、人々はあなたのコードに依存するようになり、その使い方の指示を必要とするようになります。"
 
-#: ../../tutorials/intro.md:349
+#: ../../tutorials/intro.md:350
 msgid "To support your community, you'll want to add things like:"
 msgstr "コミュニティをサポートするために、以下のようなものを追加したいです:"
 
-#: ../../tutorials/intro.md:351
+#: ../../tutorials/intro.md:352
 msgid ""
 "[a development guide that documents your maintainer workflow process "
 "](/documentation/repository-files/development-guide.md)"
@@ -3734,7 +3746,7 @@ msgstr ""
 "[メンテナーのワークフロープロセスを文書化した開発ガイド](/documentation/repository-files"
 "/development-guide.md)"
 
-#: ../../tutorials/intro.md:352
+#: ../../tutorials/intro.md:353
 msgid ""
 "[a code of conduct to defines community interaction standards and "
 "expectations](/documentation/repository-files/code-of-conduct-file.md)"
@@ -3742,7 +3754,7 @@ msgstr ""
 "[コミュニティとの交流の基準と期待を定める行動規範](/documentation/repository-files/code-of-"
 "conduct-file.md)"
 
-#: ../../tutorials/intro.md:353
+#: ../../tutorials/intro.md:354
 msgid ""
 "[a contributing guide that helps users understand expectations associated"
 " with making contributions to your project](/documentation/repository-"
@@ -3751,11 +3763,11 @@ msgstr ""
 "[プロジェクトに貢献する際にユーザーが期待されることを理解するのに役立つ貢献ガイド](/documentation/repository-"
 "files/contributing-file.md)"
 
-#: ../../tutorials/intro.md:355
+#: ../../tutorials/intro.md:356
 msgid "Support for contributors and maintainers"
 msgstr "コントリビューターとメンテナーのサポート"
 
-#: ../../tutorials/intro.md:357
+#: ../../tutorials/intro.md:358
 msgid ""
 "If you intend for others to use and contribute to your code, consider who"
 " will maintain it over time. You will want a **contributing and "
@@ -3768,7 +3780,7 @@ msgstr ""
 " **貢献と開発** ガイドと、コミュニティの交流があなたにとっても貢献者やメンテナチームにとっても健全であり続けるようにするための "
 "**行動規範** が欲しいでしょう。"
 
-#: ../../tutorials/intro.md:359
+#: ../../tutorials/intro.md:360
 msgid ""
 "The elements above are also important for future maintenance of your "
 "package. In the case that you are no long able to maintain it or simply "
@@ -3778,11 +3790,11 @@ msgstr ""
 "上記の要素は、今後のパッケージのメンテナンスにおいても重要です。 "
 "メンテナンスができなくなった場合、あるいは単に追加的な助けが欲しい場合、開発、そしてドキュメントの貢献は、新しいメンテナへの参加を支援します。"
 
-#: ../../tutorials/intro.md:364
+#: ../../tutorials/intro.md:365
 msgid "What's next?"
 msgstr "次のレッスン"
 
-#: ../../tutorials/intro.md:366
+#: ../../tutorials/intro.md:367
 msgid ""
 "In future lessons you will learn more about the infrastructure around a "
 "published Python package that makes it both easier to maintain, easier "
@@ -3791,7 +3803,7 @@ msgid ""
 "Python package."
 msgstr "今後のレッスンでは、公開された、メンテナンスが容易になり、他の人が貢献しやすくなり、他の科学者が使いやすくなるPythonパッケージのインフラについて学びます。しかし、まずはPythonパッケージを公開するという最初のゴールに到達してもらいたいと思います。"
 
-#: ../../tutorials/intro.md:368
+#: ../../tutorials/intro.md:369
 msgid ""
 "In this next lesson you will learn how to create a basic installable "
 "Python package. Make your code pip installable <create-python-package>"
@@ -3848,7 +3860,7 @@ msgstr ""
 "**重要:** パッケージをconda-forgeに公開する練習はしないでください。 conda-"
 "forgeに公開するのは、pypi.orgにメンテナンスする予定のパッケージがあるときだけにしてください。"
 
-#: ../../tutorials/publish-conda-forge.md:24 ../../tutorials/publish-pypi.md:22
+#: ../../tutorials/publish-conda-forge.md:24 ../../tutorials/publish-pypi.md:24
 msgid "In this lesson you will learn how to:"
 msgstr "このレッスンで学ぶこと:"
 
@@ -4770,49 +4782,48 @@ msgstr "[Grayskull blogpost](https://conda-forge.org/blog/2020/03/05/grayskull/)
 msgid "[Pipx documentation](https://pipx.pypa.io/stable/)"
 msgstr "[Pipx documentation](https://pipx.pypa.io/stable/)"
 
-#: ../../tutorials/publish-pypi.md:6
+#: ../../tutorials/publish-pypi.md:7
 msgid "Publish your Python package to PyPI"
 msgstr "PythonパッケージをPyPIに公開する"
 
-#: ../../tutorials/publish-pypi.md:9
-msgid ""
-"Make sure they add /dist to their .gitignore file. We have not discussed "
-"GitHub workflows anywhere yet. Where does that fit?"
+#: ../../tutorials/publish-pypi.md:11
+#, fuzzy
+msgid "Make sure they add /dist to their .gitignore file. Where does that fit?"
 msgstr ""
 ".gitignoreファイルに/distが追加されていることを確認してください。GitHubのワークフローについては、まだどこにも触れていません。"
 " それはどこに当てはまりますか？"
 
-#: ../../tutorials/publish-pypi.md:13
+#: ../../tutorials/publish-pypi.md:15
 msgid "In the previous Python packaging lessons, you've learned:"
 msgstr "これまでのPythonパッケージングレッスンで、あなたは次のことを学びました:"
 
-#: ../../tutorials/publish-pypi.md:15
+#: ../../tutorials/publish-pypi.md:17
 msgid "What a Python package is"
 msgstr "Pythonパッケージとは"
 
-#: ../../tutorials/publish-pypi.md:16
+#: ../../tutorials/publish-pypi.md:18
 msgid "How to make your code installable."
 msgstr "コードをインストール可能にします。"
 
-#: ../../tutorials/publish-pypi.md:24
+#: ../../tutorials/publish-pypi.md:26
 msgid "Build your package's source (sdist) and wheel distributions"
 msgstr "パッケージのソース (sdist) とwheelディストリビューションをビルドします。"
 
-#: ../../tutorials/publish-pypi.md:25
+#: ../../tutorials/publish-pypi.md:27
 msgid "Setup an account on TestPyPI (the process is similar for PyPI)"
 msgstr "TestPyPIにアカウントを設定する（PyPIでも同様の手順です）"
 
-#: ../../tutorials/publish-pypi.md:26
+#: ../../tutorials/publish-pypi.md:28
 msgid "Publish your package to TestPyPI and PyPI"
 msgstr "パッケージをTestPyPIとPyPIに公開する"
 
-#: ../../tutorials/publish-pypi.md:28
+#: ../../tutorials/publish-pypi.md:30
 msgid ""
 "You will do all of your development work in this lesson using "
 "[Hatch](https://hatch.pypa.io/latest/)."
 msgstr "このレッスンでは、すべての開発作業を [Hatch](https://hatch.pypa.io/latest/) を使って行います。"
 
-#: ../../tutorials/publish-pypi.md:30
+#: ../../tutorials/publish-pypi.md:32
 msgid ""
 "Once your package is on PyPI you can publish it to conda-forge (which is "
 "a channel on conda) using "
@@ -4821,13 +4832,13 @@ msgstr ""
 "パッケージがPyPIに載ったら、 [Grayskull](https://conda.github.io/grayskull/) "
 "を使ってconda-forge (condaのチャンネルです) に公開できます。"
 
-#: ../../tutorials/publish-pypi.md:33
+#: ../../tutorials/publish-pypi.md:35
 msgid ""
 "You will learn how to publish to conda-forge in the [next lesson"
 "](publish-conda-forge)."
 msgstr "conda-forgeに公開する方法は [次のレッスン](publish-conda-forge) で学びます。"
 
-#: ../../tutorials/publish-pypi.md:37
+#: ../../tutorials/publish-pypi.md:39
 msgid ""
 "Graphic showing the high level packaging workflow. On the left you see a "
 "graphic with code, metadata and tests in it. Those items all go into your"
@@ -4844,7 +4855,7 @@ msgstr ""
 "。PyPIからconda-forgeに接続することで、PyPIからconda-"
 "forgeにディストリビューションを送る自動ビルドを行うことができるからです。"
 
-#: ../../tutorials/publish-pypi.md:39
+#: ../../tutorials/publish-pypi.md:41
 msgid ""
 "You need to build your Python package in order to publish it to PyPI (or "
 "Conda). The build process organizes your code and metadata into a "
@@ -4854,17 +4865,17 @@ msgstr ""
 "PythonパッケージをPyPI（またはConda）に公開するには、ビルドする必要があります。ビルドプロセスは、あなたのコードとメタデータをPyPIにアップロードできる配布フォーマットに整理し、その後ユーザーがダウンロードしてインストールできるようにします。"
 " "
 
-#: ../../tutorials/publish-pypi.md:42
+#: ../../tutorials/publish-pypi.md:44
 msgid "TestPyPI vs PyPI"
 msgstr "TestPyPI vs PyPI"
 
-#: ../../tutorials/publish-pypi.md:44
+#: ../../tutorials/publish-pypi.md:46
 msgid ""
 "There are two repositories associated with PyPI to which you can upload "
 "your Python package."
 msgstr "PyPIには、Pythonパッケージをアップロードできる2つのリポジトリがあります。"
 
-#: ../../tutorials/publish-pypi.md:47
+#: ../../tutorials/publish-pypi.md:49
 msgid ""
 "**[TestPyPI](https://test.pypi.org):** TestPyPI is a package repository "
 "provided by PyPI that you can use for testing that your package can be "
@@ -4875,7 +4886,7 @@ msgstr ""
 "**[TestPyPI](https://test.pypi.org):** "
 "TestPyPIはPyPIが提供するパッケージリポジトリで、あなたのパッケージが正しくアップロード、ダウンロード、インストールできるかをテストするために使用できます。これは、実際のPyPIサービスに不完全なパッケージを公開することなく、パッケージを公開する方法を学び、練習するのに最適な場所です。"
 
-#: ../../tutorials/publish-pypi.md:48
+#: ../../tutorials/publish-pypi.md:50
 msgid ""
 "**[PyPI](https://pypi.org):** This is the live, production PyPI "
 "repository where you can officially publish your Python package, and from"
@@ -4889,17 +4900,17 @@ msgstr ""
 "PyPIにパッケージを公開するのは、それが他の人に使われる準備ができたとき、そして/またはそれがあなたが保守するパッケージになると確信したときだけにしてください。"
 " PyPIはPythonパッケージの公開方法を学ぶ練習の場ではありません。"
 
-#: ../../tutorials/publish-pypi.md:50
+#: ../../tutorials/publish-pypi.md:52
 msgid ""
 "The steps for publishing on TestPyPI vs. PyPI are similar with the "
 "exception of a different url. We will point out where they differ."
 msgstr "TestPyPIとPyPIで公開する手順は、URLが異なることを除いて似ています。両者の相違点を指摘します。"
 
-#: ../../tutorials/publish-pypi.md:53
+#: ../../tutorials/publish-pypi.md:55
 msgid "4 Steps for publishing a Python package on TestPyPI (or PyPI)"
 msgstr "TestPyPI (またはPyPI)でPythonパッケージを公開するための4つのステップ"
 
-#: ../../tutorials/publish-pypi.md:55
+#: ../../tutorials/publish-pypi.md:57
 msgid ""
 "In this lesson you will learn how to publish your package to TestPyPI "
 "using [Hatch](https://hatch.pypa.io/latest/). There are 4 things that you"
@@ -4909,11 +4920,11 @@ msgstr ""
 "を使ってパッケージをTestPyPIに公開する方法を学びます。 Pythonパッケージを公開するために必要なことは4つあります: "
 "TestPyPIでは。必要なのは:"
 
-#: ../../tutorials/publish-pypi.md:60
+#: ../../tutorials/publish-pypi.md:62
 msgid "**Create a package development environment**"
 msgstr "**パッケージ開発環境の構築**"
 
-#: ../../tutorials/publish-pypi.md:61
+#: ../../tutorials/publish-pypi.md:63
 msgid ""
 "[**Build your package using `hatch build`**](../package-structure-code"
 "/python-package-distribution-files-sdist-wheel). Building a package is "
@@ -4926,7 +4937,7 @@ msgstr ""
 "パッケージのビルドは、コードを2種類の配布ファイルに変換するプロセスです: sdistとwheel。wheel配布ファイルは、あなたのパッケージを"
 " `pip install` するユーザーにとって特に重要です。"
 
-#: ../../tutorials/publish-pypi.md:62
+#: ../../tutorials/publish-pypi.md:64
 msgid ""
 "**Create an account on TestPyPI (or PyPI)**: You will need to create a "
 "TestPyPI account and associated token which provides permissions for you "
@@ -4937,15 +4948,16 @@ msgstr ""
 "TestPyPIアカウントと、パッケージをアップロードするためのパーミッションを提供する関連トークンを作成する必要があります。 "
 "後でパッケージをPyPIに公開するときは、別のPyPIアカウントとトークンが必要になります。"
 
-#: ../../tutorials/publish-pypi.md:63
+#: ../../tutorials/publish-pypi.md:65
 msgid "**Publish to TestPyPI using `hatch publish`**"
 msgstr "** `hatch publish` を使用してTestPyPIにパブリッシュする**"
 
-#: ../../tutorials/publish-pypi.md:65
+#: ../../tutorials/publish-pypi.md:67
+#, fuzzy
 msgid ""
-"In a future lesson, you will learn how to create an automated GitHub "
-"Actions workflow that publishes an updated version of your package to "
-"PyPI every time you create a GitHub release."
+"In a [future lesson](trusted-publishing), you will learn how to create an"
+" automated GitHub Actions workflow that publishes an updated version of "
+"your package to PyPI every time you create a GitHub release."
 msgstr ""
 "今後のレッスンでは、GitHub リリースを作成するたびにパッケージの更新版を PyPI に公開する、自動化された GitHub Actions "
 "のワークフローを作成する方法を学びます。"
@@ -5348,7 +5360,8 @@ msgstr ""
 "パッケージ固有のトークンを作成することで、トークンのスコープを特定のパッケージのみに限定することができます。これは、特にパッケージ開発で他の人と共同作業する場合に、安全な設定方法です。"
 
 #: ../../tutorials/publish-pypi.md:259
-msgid "Follow the steps below to create your token."
+#, fuzzy
+msgid "Follow the steps below to create your token"
 msgstr "以下の手順に従ってトークンを作成してください。"
 
 #: ../../tutorials/publish-pypi.md:261
@@ -5584,63 +5597,110 @@ msgstr ""
 "その後、PyPIで \"trusted publisher\" ワークフローを作成することができます。"
 
 #: ../../tutorials/publish-pypi.md:371
+#, fuzzy
+msgid "Trusted Publishing"
+msgstr "パッケージパブリッシング"
+
+#: ../../tutorials/publish-pypi.md:374
+msgid ""
+"While publishing from GitHub Action is possible using tokens, we "
+"recommend the _Trusted Publishing_ approach as it also confers "
+"significant security and usability benefits."
+msgstr ""
+
+#: ../../tutorials/publish-pypi.md:376
+msgid ""
+"On the usability front, when Trusted Publishing is enabled, users no "
+"longer need to manually create API tokens on PyPI and store them in the "
+"GitHub release workflow."
+msgstr ""
+
+#: ../../tutorials/publish-pypi.md:378
+msgid ""
+"On the security front, Trusted Publishing reduces a risk related to the "
+"API token being long lived: with API tokens, as soon as an attacker gets "
+"access to it, they can publish many packages and versions in your name "
+"(depending on the scope of the token), until you discover the token "
+"compromise and rotate the credential. Trusted Publishing avoids this "
+"problem by minting very short lived tokens which expire automatically."
+msgstr ""
+
+#: ../../tutorials/publish-pypi.md:380
+msgid ""
+"For these benefits, it is recommended that users use _only_ the GitHub "
+"Actions release workflow to publish packages."
+msgstr ""
+
+#: ../../tutorials/publish-pypi.md:383
 msgid ""
 "You will learn how to create the automated trusted publisher workflow in "
 "a followup lesson."
 msgstr "自動化された信頼できるパブリッシャーワークフローの作成方法については、次のレッスンで学びます。"
 
-#: ../../tutorials/publish-pypi.md:374
+#: ../../tutorials/publish-pypi.md:385
 msgid "OPTIONAL: If you want to use a manual token-based publication workflow"
 msgstr "オプション: 手動トークンベースの発行ワークフローを使用する場合"
 
-#: ../../tutorials/publish-pypi.md:376
+#: ../../tutorials/publish-pypi.md:387
 msgid ""
 "If you plan to use your token regularly to publish to PyPI, we strongly "
 "recommend going through the above steps again to create a token specific "
 "to your new package."
 msgstr "トークンを定期的に使ってPyPIに公開する予定がある場合、新しいパッケージに固有のトークンを作成するために、上記の手順をもう一度行うことを強くお勧めします。"
 
-#: ../../tutorials/publish-pypi.md:379
+#: ../../tutorials/publish-pypi.md:390
 msgid "To do this:"
 msgstr "そのためには:"
 
-#: ../../tutorials/publish-pypi.md:380
+#: ../../tutorials/publish-pypi.md:391
 msgid "Go to TestPyPI."
 msgstr "TestPyPIに行きます。"
 
-#: ../../tutorials/publish-pypi.md:381
+#: ../../tutorials/publish-pypi.md:392
 msgid "Navigate to the \"Your Projects\" section of your account"
 msgstr "アカウントの \"Your Projects\" セクションに移動します"
 
-#: ../../tutorials/publish-pypi.md:382
+#: ../../tutorials/publish-pypi.md:393
 msgid ""
 "Click on the manage button for the project that you wish to add a token "
 "for"
 msgstr "トークンを追加したいプロジェクトの管理ボタンをクリックします"
 
-#: ../../tutorials/publish-pypi.md:383
+#: ../../tutorials/publish-pypi.md:394
 msgid "Go to settings"
 msgstr "設定に進む"
 
-#: ../../tutorials/publish-pypi.md:384
+#: ../../tutorials/publish-pypi.md:395
 msgid "Click on \"Create a token for your-package-name-here\""
 msgstr "\"パッケージ名のトークンを作成する\" をクリックします"
 
-#: ../../tutorials/publish-pypi.md:385
+#: ../../tutorials/publish-pypi.md:396
 msgid ""
 "Create the token and follow the steps above publish your package using "
 "the repository specific token."
 msgstr "トークンを作成し、上記の手順に従って、リポジトリ固有のトークンを使用してパッケージを公開します。"
 
-#: ../../tutorials/publish-pypi.md:387
+#: ../../tutorials/publish-pypi.md:398
 msgid "And you're all done!"
 msgstr "そして、すべて終わりました！"
 
-#: ../../tutorials/publish-pypi.md:389
+#: ../../tutorials/publish-pypi.md:400
+msgid "Trusted Publishing instead of token-based publication"
+msgstr ""
+
+#: ../../tutorials/publish-pypi.md:403
+msgid ""
+"Trusted Publishing will generate short lived tokens, scoped to the "
+"project, on demand, only when a specific release workflows gets "
+"triggered. This solves all the security and usability issues associated "
+"with storing credentials in files/GitHub secrets."
+msgstr ""
+
+#: ../../tutorials/publish-pypi.md:409
 msgid "You have published your package to TestPyPI!"
 msgstr "あなたはTestPyPIにパッケージを公開しました!"
 
-#: ../../tutorials/publish-pypi.md:391
+#: ../../tutorials/publish-pypi.md:411
 msgid ""
 "Congratulations. You have now successfully published your package to "
 "TestPyPI. If you have a package that is ready for real-world use on the "
@@ -5650,7 +5710,7 @@ msgstr ""
 "おめでとうございます。これで、TestPyPIへのパッケージの公開が成功しました。実際のPyPIで利用できる準備が整ったパッケージがあれば、同じ手順で"
 " (上記の違いはありますが) PyPIに公開することができます。"
 
-#: ../../tutorials/publish-pypi.md:393
+#: ../../tutorials/publish-pypi.md:413
 msgid ""
 "Once you publish on PyPI, you can then easily add your package to the "
 "conda-forge ecosystem using the [grayskull](https://conda-"
@@ -5660,11 +5720,11 @@ msgstr ""
 "forge.org/blog/posts/2020-03-05-grayskull/) ツールを使って簡単にconda-"
 "forgeエコシステムにパッケージを追加できます。"
 
-#: ../../tutorials/publish-pypi.md:395
+#: ../../tutorials/publish-pypi.md:415
 msgid "You will learn how to do that in the next lesson."
 msgstr "その方法は次のレッスンで学習します。"
 
-#: ../../tutorials/publish-pypi.md:402
+#: ../../tutorials/publish-pypi.md:419
 msgid "https://docs.python.org/3/library/venv.html"
 msgstr "https://docs.python.org/3/library/venv.html"
 
@@ -6188,20 +6248,47 @@ msgid "Step 2: Add README and license"
 msgstr "ステップ2: READMEとライセンスの追加"
 
 #: ../../tutorials/pyproject-toml.md:274
+#, fuzzy
 msgid ""
 "In the previous lessons, you added both a [README.md](add-readme) file "
 "and a [LICENSE](add-license-coc) to your package repository. Once you "
-"have those files, you can add them to your pyproject.toml file as links "
-"following the example below."
+"have those files, you can refer to the README from your pyproject.toml "
+"file, and add a short code indicating your choice of LICENSE following "
+"the example below."
 msgstr ""
 "前のレッスンでは、 [README.md](add-readme) ファイルと [LICENSE](add-license-coc) "
 "の両方をパッケージリポジトリーに追加しました。これらのファイルを手に入れたら、以下の例に従ってpyproject.tomlファイルにリンクとして追加します。"
 
-#: ../../tutorials/pyproject-toml.md:302
+#: ../../tutorials/pyproject-toml.md:303
+msgid ""
+"The license entry in your pyproject.toml file must use the [license "
+"expression syntax](https://packaging.python.org/en/latest/specifications"
+"/license-expression/). Often this is a short name (with no spaces) for "
+"the license, such as \"MIT\", \"BSD-3-Clause\" or \"Apache-2.0\". More "
+"precisely, it must be a valid SPDX license expression, as documented in "
+"the [SPDX specification](https://spdx.github.io/spdx-spec/v2.2.2/SPDX-"
+"license-expressions/), either version 2.2 or a later compatible version."
+msgstr ""
+
+#: ../../tutorials/pyproject-toml.md:305
+msgid ""
+"If you have multiple licenses, or a custom license, you can also express "
+"these using a license expression."
+msgstr ""
+
+#: ../../tutorials/pyproject-toml.md:307
+msgid ""
+"If you want to distribute license files, or other files containing legal "
+"information, with your package, you can include these using the "
+"[`license-files`](https://packaging.python.org/en/latest/guides/writing-"
+"pyproject-toml/#license-files) entry, but this is not required."
+msgstr ""
+
+#: ../../tutorials/pyproject-toml.md:309
 msgid "Step 3: Specify Python version with `requires-python`"
 msgstr "ステップ 3: `requires-python` でPythonのバージョンを指定します"
 
-#: ../../tutorials/pyproject-toml.md:304
+#: ../../tutorials/pyproject-toml.md:311
 msgid ""
 "Add the `requires-python` field to your `pyproject.toml` `[project]` "
 "table. The `requires-python` field helps pip identify which Python "
@@ -6221,12 +6308,12 @@ msgstr ""
 "metadata/#core-metadata-requires-python) では、 `requires-python` "
 "をバージョン指定の文字列として定義している。ほとんどのプロジェクトは、そのパッケージがサポートする最も古いPythonのバージョンを指定します。いくつかの高度なケースでは、どの将来のPythonバージョンがサポートされるかを示す上限が設定されます。"
 
-#: ../../tutorials/pyproject-toml.md:309
+#: ../../tutorials/pyproject-toml.md:316
 #, fuzzy
 msgid "But how do I figure out which Python versions I should support?"
 msgstr "パッケージがサポートしているPythonのバージョンを変更します。"
 
-#: ../../tutorials/pyproject-toml.md:311
+#: ../../tutorials/pyproject-toml.md:318
 msgid ""
 "Good question. The Python developer guide provides a [status "
 "page](https://devguide.python.org/versions/) (and a handy visualization) "
@@ -6235,14 +6322,14 @@ msgid ""
 "602](https://peps.python.org/pep-0602/)."
 msgstr ""
 
-#: ../../tutorials/pyproject-toml.md:313
+#: ../../tutorials/pyproject-toml.md:320
 msgid ""
 "We recommend that you use the latest Python release in the **bugfix** "
 "phase. If your Python release is in the **security** phase, we recommend "
 "migrating to a newer version of Python."
 msgstr ""
 
-#: ../../tutorials/pyproject-toml.md:315
+#: ../../tutorials/pyproject-toml.md:322
 msgid ""
 "[SPEC 0](https://scientific-python.org/specs/spec-0000/) of the "
 "Scientific Python project suggests a common schedule for dependencies, "
@@ -6250,11 +6337,11 @@ msgid ""
 " project."
 msgstr ""
 
-#: ../../tutorials/pyproject-toml.md:344
+#: ../../tutorials/pyproject-toml.md:351
 msgid "Step 4: Specify Dependencies"
 msgstr "ステップ4: 依存関係の指定"
 
-#: ../../tutorials/pyproject-toml.md:346
+#: ../../tutorials/pyproject-toml.md:353
 msgid ""
 "Next add your dependencies table to the project table. The `dependencies "
 "=` section contains a list (or array in the toml language) of the Python "
@@ -6266,11 +6353,11 @@ msgstr ""
 "セクションには、あなたのパッケージがPython環境で正しく動作するために必要なPythonパッケージのリスト（toml言語では配列）を記述します。"
 " 上記の `[build-system]` の表に記載されている要件と同様です:"
 
-#: ../../tutorials/pyproject-toml.md:354
+#: ../../tutorials/pyproject-toml.md:361
 msgid "dependencies are added in an array (similar to a Python list) structure."
 msgstr "依存関係は配列（Pythonのリストに似ている）構造で追加されます。"
 
-#: ../../tutorials/pyproject-toml.md:360
+#: ../../tutorials/pyproject-toml.md:367
 msgid ""
 "A dependency can be limited to specific versions using a **version "
 "specifier.** If the dependency has no version specifier after the "
@@ -6285,7 +6372,7 @@ msgstr ""
 "コードは時間の経過とともに変化し、バグが修正され、APIが変更されます。そのため、コードを書いた依存関係がどのバージョンと互換性があるのかを明確にしておくことは良いことです"
 " - あなたが今年書いたパッケージは、おそらくnumpy v0.0.1とは互換性がありません！"
 
-#: ../../tutorials/pyproject-toml.md:364
+#: ../../tutorials/pyproject-toml.md:371
 msgid ""
 "[Learn more about various ways to specify ranges of package versions "
 "here.](https://packaging.python.org/en/latest/specifications/version-"
@@ -6294,7 +6381,7 @@ msgstr ""
 "[パッケージバージョンの範囲を指定する様々な方法については、こちらをご覧ください。](https://packaging.python.org/en/latest/specifications"
 "/version-specifiers/#id5)"
 
-#: ../../tutorials/pyproject-toml.md:366
+#: ../../tutorials/pyproject-toml.md:373
 msgid ""
 "The most common version specifier is a **lower bound,** allowing any "
 "version higher than the specified version. Ideally you should set this to"
@@ -6306,11 +6393,11 @@ msgstr ""
 "で、指定されたバージョンより上位のバージョンを許可します。理想的には、あなたのパッケージとまだ互換性のある最も低いバージョンに設定すべきですが、実際には新しいパッケージの場合、パッケージが書かれた時点での最新バージョンに設定されることがよくあります"
 " [^lowerbound] 。"
 
-#: ../../tutorials/pyproject-toml.md:371
+#: ../../tutorials/pyproject-toml.md:378
 msgid "Lower bounds look like this:"
 msgstr "下限は次のようになります:"
 
-#: ../../tutorials/pyproject-toml.md:377
+#: ../../tutorials/pyproject-toml.md:384
 msgid ""
 "Commas are used to separate individual dependencies, and each package in "
 "your `dependencies` section can use different types of version "
@@ -6319,25 +6406,25 @@ msgstr ""
 "カンマは、個々の依存関係を区切るために使用します、 そして、`dependencies` "
 "セクションの各パッケージは異なるタイプのバージョン指定子を使うことができます:"
 
-#: ../../tutorials/pyproject-toml.md:388
+#: ../../tutorials/pyproject-toml.md:395
 msgid "Your `pyproject.toml` file will now look like this:"
 msgstr "これで `pyproject.toml` ファイルは次のようになります:"
 
-#: ../../tutorials/pyproject-toml.md:418
+#: ../../tutorials/pyproject-toml.md:425
 msgid "Pin dependencies with caution"
 msgstr "依存関係のピン止めは慎重に"
 
-#: ../../tutorials/pyproject-toml.md:419
+#: ../../tutorials/pyproject-toml.md:426
 msgid ""
 "\"Pinning\" a dependency means setting it to a specific version, like "
 "this:"
 msgstr "依存関係を \"Pinning\" することは、次のように特定のバージョンに設定することを意味します:"
 
-#: ../../tutorials/pyproject-toml.md:421
+#: ../../tutorials/pyproject-toml.md:428
 msgid "`numpy == 1.0`."
 msgstr "`numpy == 1.0` 。"
 
-#: ../../tutorials/pyproject-toml.md:423
+#: ../../tutorials/pyproject-toml.md:430
 msgid ""
 "If you are building a library package that other developers will depend "
 "upon, you must be cautious before pinning to a precise dependency "
@@ -6353,13 +6440,13 @@ msgstr ""
 "なぜなら、ユーザーはあなたのパッケージをさまざまな環境にインストールするからです。特定のバージョンに固定された依存関係は、Python環境の解決をより困難にします。"
 " そのため、依存関係を特定のバージョンに固定するのは、どうしても必要な場合に限られます。"
 
-#: ../../tutorials/pyproject-toml.md:431
+#: ../../tutorials/pyproject-toml.md:438
 msgid ""
 "Similarly, you should be cautious when specifying an upper bound on a "
 "package. These two specifications are equivalent:"
 msgstr "同様に、パッケージの上限を指定する場合にも注意が必要です。これら2つの仕様は同等です:"
 
-#: ../../tutorials/pyproject-toml.md:439
+#: ../../tutorials/pyproject-toml.md:446
 msgid ""
 "One build tool that you should be aware of that pins dependencies to an "
 "upper bound by default is Poetry. [Read more about how to safely add "
@@ -6368,11 +6455,11 @@ msgstr ""
 "依存関係をデフォルトで上限値に固定するビルドツールとして知っておくべきもののひとつに、Poetryがあります。 "
 "[Poetryで依存関係を安全に追加する方法については、こちらをお読みください。](challenges-with-poetry)"
 
-#: ../../tutorials/pyproject-toml.md:442
+#: ../../tutorials/pyproject-toml.md:449
 msgid "Step 5: Add PyPI classifiers"
 msgstr "ステップ5: PyPI classifiersを追加する"
 
-#: ../../tutorials/pyproject-toml.md:444
+#: ../../tutorials/pyproject-toml.md:451
 msgid ""
 "Next you will add classifiers to your `pyproject.toml` file. The value "
 "for each classifier that you add to your `pyproject.toml` file must come "
@@ -6384,11 +6471,11 @@ msgstr ""
 "[ここにあるPyPIで認められている分類子](https://PyPI.org/classifiers/) "
 "の一覧から選ぶ必要があります。スペルや書式に逸脱があると、PyPIに公開するときに問題が発生します。"
 
-#: ../../tutorials/pyproject-toml.md:446
+#: ../../tutorials/pyproject-toml.md:453
 msgid "What happens when you use incorrect classifiers?"
 msgstr "間違った分類子を使うとどうなりますか？"
 
-#: ../../tutorials/pyproject-toml.md:449
+#: ../../tutorials/pyproject-toml.md:456
 msgid ""
 "If you do not [use standard classifier "
 "values](https://PyPI.org/classifiers/), when you try to publish your "
@@ -6399,52 +6486,49 @@ msgstr ""
 "PyPIでパッケージを公開しようとすると拒否されます。  最初のトライでPyPIに拒否されても心配しないでください！ "
 "それは私たち全員に起こったことです。"
 
-#: ../../tutorials/pyproject-toml.md:452
+#: ../../tutorials/pyproject-toml.md:459
 msgid "Review that list and add items below to your `pyproject.toml` file:"
 msgstr "そのリストを見て、以下の項目を `pyproject.toml` ファイルに追加します:"
 
-#: ../../tutorials/pyproject-toml.md:454
+#: ../../tutorials/pyproject-toml.md:461
 msgid "development status"
 msgstr "開発状況"
 
-#: ../../tutorials/pyproject-toml.md:455
+#: ../../tutorials/pyproject-toml.md:462
 msgid "intended audiences"
 msgstr "対象読者"
 
-#: ../../tutorials/pyproject-toml.md:456
+#: ../../tutorials/pyproject-toml.md:463
 msgid "topic"
 msgstr "トピック"
 
-#: ../../tutorials/pyproject-toml.md:457
-msgid "license and"
-msgstr "ライセンスと"
-
-#: ../../tutorials/pyproject-toml.md:458
+#: ../../tutorials/pyproject-toml.md:464
 msgid "programming language support"
 msgstr "プログラミング言語サポート"
 
-#: ../../tutorials/pyproject-toml.md:460
+#: ../../tutorials/pyproject-toml.md:466
 msgid ""
 "The classifier key should look something like the example below. A few "
 "notes:"
 msgstr "classifierのキーは、下の例のようになるはずです。 いくつか注意点があります:"
 
-#: ../../tutorials/pyproject-toml.md:462
+#: ../../tutorials/pyproject-toml.md:468
+#, fuzzy
 msgid ""
-"Your classifier values might be different depending upon the license you "
-"have selected for your package, your intended audience, development "
-"status of your package and the Python versions that you support"
+"Your classifier values might be different depending upon your intended "
+"audience, development status of your package and the Python versions that"
+" you support"
 msgstr ""
 "分類器の値は、パッケージに選択したライセンスによって異なる場合があります、 あなたの意図する読者、パッケージの開発状況とサポートしている "
 "Python のバージョンです。"
 
-#: ../../tutorials/pyproject-toml.md:463
+#: ../../tutorials/pyproject-toml.md:469
 msgid ""
 "You can add as many classifiers as you wish as long as you use the "
 "[designated PyPI classifier values](https://PyPI.org/classifiers/)."
 msgstr "[指定されたPyPIの分類子の値](https://PyPI.org/classifiers/) を使う限り、好きなだけ分類子を追加できます。"
 
-#: ../../tutorials/pyproject-toml.md:503
+#: ../../tutorials/pyproject-toml.md:508
 msgid ""
 "Note that while classifiers are not required in your `pyproject.toml` "
 "file, they will help users find your package. As such we strongly "
@@ -6453,21 +6537,21 @@ msgstr ""
 "分類子は `pyproject.toml` "
 "ファイルでは必須ではありませんが、ユーザーがあなたのパッケージを見つけるのに役立つことに注意してください。そのため、追加することを強くお勧めします。"
 
-#: ../../tutorials/pyproject-toml.md:505
+#: ../../tutorials/pyproject-toml.md:510
 msgid "Step 6: Add the `[project.urls]` table"
 msgstr "ステップ 6: `[project.urls]` テーブルを追加する"
 
-#: ../../tutorials/pyproject-toml.md:507
+#: ../../tutorials/pyproject-toml.md:512
 msgid "Finally, add the project.urls table to your pyproject.toml file."
 msgstr "最後に、pyproject.tomlファイルにproject.urlsテーブルを追加します。"
 
-#: ../../tutorials/pyproject-toml.md:509
+#: ../../tutorials/pyproject-toml.md:514
 msgid ""
 "`project.urls` contains links that are relevant for your project. You "
 "might want to include:"
 msgstr "`project.urls` には、プロジェクトに関連するリンクが含まれています。以下を含めるとよいでしょう:"
 
-#: ../../tutorials/pyproject-toml.md:511
+#: ../../tutorials/pyproject-toml.md:516
 msgid ""
 "**Homepage:** A link to your published documentation for your project. If"
 " you are working through this tutorial, then you may not have this link "
@@ -6476,17 +6560,18 @@ msgstr ""
 "**ホームページ:** プロジェクトの公開ドキュメントへのリンク。 "
 "このチュートリアルを進めているのであれば、このリンクはまだ持っていないかもしれません。 大丈夫、当分は飛ばしてもいいです。"
 
-#: ../../tutorials/pyproject-toml.md:512
+#: ../../tutorials/pyproject-toml.md:517
+#, fuzzy
 msgid ""
-"**Bug reports:** a link to your issues / discussions or wherever you want"
-" users to report bugs."
+"**Bug reports:** a link to your issues/discussions or wherever you want "
+"users to report bugs."
 msgstr "**バグ報告:** 課題 / ディスカッションへのリンク、またはユーザーがバグを報告できる場所です。"
 
-#: ../../tutorials/pyproject-toml.md:513
+#: ../../tutorials/pyproject-toml.md:518
 msgid "**Source:** the GitHub / GitLab link for your project."
 msgstr "**ソース:** プロジェクトのGitHub / GitLabリンク。"
 
-#: ../../tutorials/pyproject-toml.md:559
+#: ../../tutorials/pyproject-toml.md:563
 msgid ""
 "There are many other urls that you can add here. Check out the [README "
 "file here for an overview](https://github.com/patrick91/links-demo)."
@@ -6495,11 +6580,11 @@ msgstr ""
 "[概要についてはこちらのREADMEファイル](https://github.com/patrick91/links-demo) "
 "をチェックしてください。"
 
-#: ../../tutorials/pyproject-toml.md:562
+#: ../../tutorials/pyproject-toml.md:566
 msgid "Putting it all together - your completed pyproject.toml file"
 msgstr "すべてをまとめます - 完成したpyproject.tomlファイル"
 
-#: ../../tutorials/pyproject-toml.md:564
+#: ../../tutorials/pyproject-toml.md:568
 msgid ""
 "Below is an example of a complete `pyproject.toml` file that is commented"
 " with all of the sections we discussed above."
@@ -6509,48 +6594,48 @@ msgstr "以下は、上で説明したすべてのセクションがコメント
 msgid "Appendix - Click for a fully commented pyproject.toml file"
 msgstr "付録 - 完全にコメントされたpyproject.tomlファイルを見るにはクリックしてください"
 
-#: ../../tutorials/pyproject-toml.md:614
+#: ../../tutorials/pyproject-toml.md:617
 msgid ""
 "Below is a fully commented pyproject.toml file if you want to use it for "
 "reference."
 msgstr "参考にしたいのであれば、以下は、完全にコメントされたpyproject.tomlファイルです。"
 
-#: ../../tutorials/pyproject-toml.md:679
+#: ../../tutorials/pyproject-toml.md:683
 msgid "Example `pyproject.toml` files"
 msgstr "例 `pyproject.toml` ファイル"
 
-#: ../../tutorials/pyproject-toml.md:681
+#: ../../tutorials/pyproject-toml.md:685
 msgid ""
 "Below are some examples of `pyproject.toml` files from various packages "
 "in the scientific and pyOpenSci ecosystem."
 msgstr "以下は、scientificとpyOpenSciエコシステムの様々なパッケージの `pyproject.toml` ファイルの例です。"
 
-#: ../../tutorials/pyproject-toml.md:682
+#: ../../tutorials/pyproject-toml.md:686
 msgid ""
 "[PyPA's fully documented example pyproject.toml "
 "file](https://github.com/pypa/sampleproject/blob/main/pyproject.toml)"
 msgstr "[PyPAの完全に文書化されたサンプルpyproject.tomlファイル](https://github.com/pypa/sampleproject/blob/main/pyproject.toml)"
 
-#: ../../tutorials/pyproject-toml.md:683
+#: ../../tutorials/pyproject-toml.md:687
 msgid ""
 "[taxpasta has a nicely organized pyproject.toml file and is a pyOpenSci "
 "approved "
 "package](https://github.com/taxprofiler/taxpasta/blob/f9f6eea2ae7dd08bb60a53dd49ad77e4cf143573/pyproject.toml)"
 msgstr "[taxpastaはきれいに整理されたpyproject.tomlファイルを持っており、pyOpenSci承認パッケージです](https://github.com/taxprofiler/taxpasta/blob/f9f6eea2ae7dd08bb60a53dd49ad77e4cf143573/pyproject.toml)"
 
-#: ../../tutorials/pyproject-toml.md:689
+#: ../../tutorials/pyproject-toml.md:693
 msgid "At this point you've created:"
 msgstr "この時点であなたは以下を作成しました:"
 
-#: ../../tutorials/pyproject-toml.md:691
+#: ../../tutorials/pyproject-toml.md:695
 msgid "A [README.md](add-readme) file for your package"
 msgstr "パッケージの [README.md](add-readme) ファイル"
 
-#: ../../tutorials/pyproject-toml.md:692
+#: ../../tutorials/pyproject-toml.md:696
 msgid "A [CODE_OF_CONDUCT.md](add-coc) file to support your user community"
 msgstr "ユーザーコミュニティをサポートする [CODE_OF_CONDUCT.md](add-coc) ファイル"
 
-#: ../../tutorials/pyproject-toml.md:693
+#: ../../tutorials/pyproject-toml.md:697
 msgid ""
 "And a [LICENSE](add-license-coc) file which provides legal boundaries "
 "around how people can and can't use your software"
@@ -6558,17 +6643,17 @@ msgstr ""
 "[LICENSE](add-license-coc) "
 "ファイルは、人々があなたのソフトウェアをどのように使用できるか、また使用できないかに関する法的な境界線を提供します。"
 
-#: ../../tutorials/pyproject-toml.md:695
+#: ../../tutorials/pyproject-toml.md:699
 msgid ""
 "You also learned [how to publish your package to (test)PyPI](publish-"
 "pypi)."
 msgstr "また、 [パッケージを(test)PyPIに公開する方法](publish-pypi) も学びました。"
 
-#: ../../tutorials/pyproject-toml.md:697
+#: ../../tutorials/pyproject-toml.md:701
 msgid "Publish a new version of your package to PyPI"
 msgstr "新しいバージョンのパッケージをPyPIに公開する"
 
-#: ../../tutorials/pyproject-toml.md:699
+#: ../../tutorials/pyproject-toml.md:703
 msgid ""
 "You are now ready to publish a new version of your Python package to "
 "(test) PyPI. When you do this you will see that the landing page for your"
@@ -6577,11 +6662,11 @@ msgstr ""
 "これで、Pythonパッケージの新しいバージョンを(test)PyPIに公開する準備ができました。 "
 "そうすると、パッケージのランディングページに、より多くの情報が掲載されていることがわかります。"
 
-#: ../../tutorials/pyproject-toml.md:701
+#: ../../tutorials/pyproject-toml.md:705
 msgid "Try to republish now."
 msgstr "今すぐ再公開を試みます。"
 
-#: ../../tutorials/pyproject-toml.md:703
+#: ../../tutorials/pyproject-toml.md:707
 msgid ""
 "First, update the version of your package in your pyproject toml file. "
 "Below version is updated from `0.1` to `0.1.1`."
@@ -6589,28 +6674,28 @@ msgstr ""
 "まず、pyprojectのtomlファイルでパッケージのバージョンを更新します。以下のバージョンが `0.1` から `0.1.1` "
 "に更新されました。"
 
-#: ../../tutorials/pyproject-toml.md:716
+#: ../../tutorials/pyproject-toml.md:720
 msgid "Now use hatch to publish the new version of your package to test.PyPI.org."
 msgstr "次に hatch を使って、新しいバージョンのパッケージを test.PyPI.org に公開します。"
 
-#: ../../tutorials/pyproject-toml.md:723
+#: ../../tutorials/pyproject-toml.md:727
 msgid "Next (optional) step - publishing to conda-forge"
 msgstr "次のステップ(オプション) - conda-forgeに公開します。"
 
-#: ../../tutorials/pyproject-toml.md:725
+#: ../../tutorials/pyproject-toml.md:729
 msgid ""
 "You now have all of the skills that you need to publish your package to "
 "PyPI."
 msgstr "これであなたのパッケージをPyPIに公開するために必要なスキルはすべて揃いました。"
 
-#: ../../tutorials/pyproject-toml.md:728
+#: ../../tutorials/pyproject-toml.md:732
 msgid ""
 "If you also want to publish your package on conda-forge (which is a "
 "channel within the conda ecosystem), you will learn how to do that in the"
 " next lesson."
 msgstr "あなたのパッケージを(condaエコシステム内のチャンネルである)conda-forgeで公開したい場合 、 その方法は次のレッスンで学びます。"
 
-#: ../../tutorials/pyproject-toml.md:732
+#: ../../tutorials/pyproject-toml.md:736
 msgid ""
 "Really good resources from jeremiah "
 "https://daniel.feldroy.com/posts/2023-08-pypi-project-urls-cheatsheet "
@@ -6619,7 +6704,7 @@ msgstr ""
 "jeremiah からの本当に良い情報源 https://daniel.feldroy.com/posts/2023-08-pypi-"
 "project-urls-cheatsheet が役に立ちます (リンク先のデモはなおさら)。"
 
-#: ../../tutorials/pyproject-toml.md:369
+#: ../../tutorials/pyproject-toml.md:376
 msgid ""
 "Some packaging tools will do this for you when you add a dependency using"
 " their cli interface. For example [`poetry add`](https://python-"
@@ -6633,29 +6718,29 @@ msgstr ""
 "指定子で最新バージョンを追加し、 [`pdm add`](https://pdm-"
 "project.org/latest/reference/cli/#add) は `>=` 指定子で最新バージョンを追加します。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:6
+#: ../../tutorials/setup-py-to-pyproject-toml.md:7
 msgid "Using Hatch to Migrate setup.py to a pyproject.toml"
 msgstr "Hatchを使ってsetup.pyをpyproject.tomlに移行する"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:8
+#: ../../tutorials/setup-py-to-pyproject-toml.md:9
 #, fuzzy
 msgid ""
 "Hatch can be useful for generating your project's `pyproject.toml` file "
 "if your project already has a `setup.py` file."
 msgstr "プロジェクトに既に `setup.py` がある場合、Hatchはプロジェクトの `pyproject.toml` を生成するのに便利です。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:10
+#: ../../tutorials/setup-py-to-pyproject-toml.md:11
 msgid "Note"
 msgstr "注釈"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:13
+#: ../../tutorials/setup-py-to-pyproject-toml.md:14
 #, fuzzy
 msgid ""
 "This step is not necessary and is only helpful if your project already "
 "has a `setup.py` file defined."
 msgstr "このステップは必要なく、プロジェクトに既に `setup.py` ファイルが定義されている場合にのみ有用です。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:14
+#: ../../tutorials/setup-py-to-pyproject-toml.md:15
 #, fuzzy
 msgid ""
 "If your project does not already define a `setup.py` see [Make your "
@@ -6664,7 +6749,7 @@ msgstr ""
 "プロジェクトで `setup.py` が定義されていない場合は、 [Python コードをインストール可能にする](installable-"
 "code.md) を参照してください。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:22
+#: ../../tutorials/setup-py-to-pyproject-toml.md:23
 msgid ""
 "The process of using Hatch to transition to using `pyproject.toml` for "
 "projects that already have a `setup.py` defined."
@@ -6672,11 +6757,11 @@ msgstr ""
 "すでに `setup.py` が定義されているプロジェクトで `pyproject.toml` を使用するように移行するために Hatch "
 "を使用するプロセスです。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:25
+#: ../../tutorials/setup-py-to-pyproject-toml.md:26
 msgid "What is Hatch?"
 msgstr "Hatchとは何か？"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:27
+#: ../../tutorials/setup-py-to-pyproject-toml.md:28
 msgid ""
 "Hatch is a Python package manager designed to streamline the process of "
 "creating, managing, and distributing Python packages. It provides a "
@@ -6688,40 +6773,40 @@ msgstr ""
 "新しいプロジェクトの作成、依存関係の管理、ディストリビューションのビルド、PyPI "
 "のようなリポジトリへのパッケージの公開といったタスクのための便利な CLI (Command-Line Interface) を提供します。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:33
+#: ../../tutorials/setup-py-to-pyproject-toml.md:34
 #, fuzzy
 msgid "See [Get to know Hatch](get-to-know-hatch) for more information."
 msgstr "詳しくは [Hatch](get-to-know-hatch.md) を知るをご覧ください。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:36
+#: ../../tutorials/setup-py-to-pyproject-toml.md:37
 msgid "Prerequisites"
 msgstr "前提条件"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:38
+#: ../../tutorials/setup-py-to-pyproject-toml.md:39
 msgid ""
 "Before we begin, ensure that you have Hatch installed on your system. You"
 " can install it via pip:"
 msgstr "始める前に、システムにHatchがインストールされていることを確認してください。pipでインストールできます:"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:44
+#: ../../tutorials/setup-py-to-pyproject-toml.md:45
 msgid "Sample Directory Tree"
 msgstr "サンプルディレクトリツリー"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:46
+#: ../../tutorials/setup-py-to-pyproject-toml.md:47
 msgid ""
 "Let's take a look at a sample directory tree structure before and after "
 "using `hatch init`:"
 msgstr "それでは、 `hatch init` を使う前と後のディレクトリツリー構造のサンプルを見てみましょう: "
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:48
+#: ../../tutorials/setup-py-to-pyproject-toml.md:49
 msgid "Before `hatch init`"
 msgstr "`hatch init` 前"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:64
+#: ../../tutorials/setup-py-to-pyproject-toml.md:65
 msgid "After `hatch init`"
 msgstr "`hatch init` 後"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:82
+#: ../../tutorials/setup-py-to-pyproject-toml.md:83
 msgid ""
 "As you can see, the main change after running `hatch init` is the "
 "addition of the `pyproject.toml` file in the project directory."
@@ -6729,30 +6814,30 @@ msgstr ""
 "ご覧のように、 `hatch init` を実行した後の主な変化は、プロジェクトディレクトリに `pyproject.toml` "
 "ファイルが追加されたことです。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:84
+#: ../../tutorials/setup-py-to-pyproject-toml.md:85
 msgid "Step-by-Step Guide"
 msgstr "ステップバイステップガイド"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:86
+#: ../../tutorials/setup-py-to-pyproject-toml.md:87
 msgid ""
 "Now, let's walk through the steps to use Hatch to create a "
 "`pyproject.toml` file for your project."
 msgstr "では、Hatchを使ってプロジェクトの `pyproject.toml` ファイルを作成する手順を説明しましょう。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:88
+#: ../../tutorials/setup-py-to-pyproject-toml.md:89
 msgid ""
 "**Navigate to Your Project Directory**: Open your terminal or command "
 "prompt and navigate to the directory where your Python project is "
 "located."
 msgstr "**プロジェクトディレクトリに移動する**: ターミナルかコマンドプロンプトを開き、Pythonプロジェクトがあるディレクトリに移動します。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:90
+#: ../../tutorials/setup-py-to-pyproject-toml.md:91
 msgid ""
 "**Initialize Hatch**: Run the following command to initialize Hatch in "
 "your project directory:"
 msgstr "**Hatchの初期化**: 以下のコマンドを実行し、プロジェクトディレクトリのHatchを初期化します:"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:96
+#: ../../tutorials/setup-py-to-pyproject-toml.md:97
 #, fuzzy
 msgid ""
 "**Review and Customize**: After running the previous command, Hatch will "
@@ -6769,7 +6854,7 @@ msgstr ""
 "`pyproject.toml` の詳細については [pyproject.toml](pyproject-toml.md) "
 "チュートリアルを参照してください)。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:98
+#: ../../tutorials/setup-py-to-pyproject-toml.md:99
 #, fuzzy
 msgid ""
 "**Verify**: Verify that the `pyproject.toml` file accurately reflects "
@@ -6779,7 +6864,7 @@ msgstr ""
 "**検証**: `pyproject.toml` ファイルがプロジェクト構成と依存関係を正確に反映していることを確認します。 "
 "必要であればファイルを手動で編集することもできますが、慎重を期して構文が正しいことを確認してください。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:100
+#: ../../tutorials/setup-py-to-pyproject-toml.md:101
 msgid ""
 "**Delete setup.py**: Since we're migrating to using `pyproject.toml` "
 "exclusively, the `setup.py` file becomes unnecessary. You can safely "
@@ -6788,7 +6873,7 @@ msgstr ""
 "**setup.py を削除する**: `pyproject.toml` のみを使用するように移行するので、 `setup.py` "
 "ファイルは不要になります。 プロジェクトディレクトリから安全に削除できます。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:102
+#: ../../tutorials/setup-py-to-pyproject-toml.md:103
 msgid ""
 "**Test Build**: Before proceeding further, it's essential to ensure that "
 "your project builds successfully using only the `pyproject.toml` file. "
@@ -6797,7 +6882,7 @@ msgstr ""
 "**テストビルド**: 先に進む前に、 `pyproject.toml` "
 "ファイルだけを使ってプロジェクトが正常にビルドされることを確認する必要がある。 以下のコマンドを実行してプロジェクトをビルドします:"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:108
+#: ../../tutorials/setup-py-to-pyproject-toml.md:109
 msgid ""
 "This command will build your project based on the specifications in the "
 "`pyproject.toml` file. Make sure to check for any errors or warnings "
@@ -6806,7 +6891,7 @@ msgstr ""
 "このコマンドは `pyproject.toml` ファイルの仕様に基づいてプロジェクトをビルドします。 "
 "ビルドの過程でエラーや警告がないか、必ず確認してください。"
 
-#: ../../tutorials/setup-py-to-pyproject-toml.md:110
+#: ../../tutorials/setup-py-to-pyproject-toml.md:111
 msgid ""
 "**Test Existing Functionality**: After successfully building your project"
 " with `pyproject.toml`, it's crucial to ensure that your project's "
@@ -6815,6 +6900,623 @@ msgid ""
 msgstr ""
 "**既存機能のテスト**: `pyproject.toml` でプロジェクトのビルドに成功したら、 "
 "プロジェクトの既存の機能が損なわれないようにすることが重要です。既存のテストを実行し、すべてが期待通りに動作することを確認します。"
+
+#: ../../tutorials/trusted-publishing.md:6
+msgid ""
+"Setup Trusted Publishing for secure and automated publishing via GitHub "
+"Actions"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:8
+#, fuzzy
+msgid "In the previous Python packaging lessons, you learned:"
+msgstr "これまでのPythonパッケージングレッスンで、あなたは次のことを学びました:"
+
+#: ../../tutorials/trusted-publishing.md:10
+#, fuzzy
+msgid "[How to create a Python package](create-python-package)"
+msgstr "[コードをインストール可能にする](create-python-package)"
+
+#: ../../tutorials/trusted-publishing.md:11
+#, fuzzy
+msgid ""
+"How to publish the code to [PyPI](publish-pypi) and [Conda](publish-"
+"conda-forge)"
+msgstr "[パッケージをconda-forgeに公開する方法](publish-conda-forge.md)"
+
+#: ../../tutorials/trusted-publishing.md:16
+#, fuzzy
+msgid "In this lesson, you will learn how to:"
+msgstr "このレッスンで学ぶこと:"
+
+#: ../../tutorials/trusted-publishing.md:18
+msgid "Automate building and publishing the package on GitHub Actions"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:19
+msgid "Configure PyPI Trusted Publishing for the project"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:20
+msgid ""
+"Secure your workflow using GitHub action hashes and versions in your "
+"workflow file"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:22
+msgid ""
+"This tutorial assumes that your project is hosted on GitHub and that you "
+"want to publish a package from your project to PyPI."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:26
+msgid "Configure a release job on GitHub Actions"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:28
+msgid ""
+"GitHub Actions[^gha] is an infrastructure provided by GitHub to automate "
+"software workflows, straight from the GitHub repository of the project. "
+"You can configure automated testing for every pull request, automate "
+"publishing of documentation, automate creation of web pages for the "
+"project, and even automate the release process. For this lesson, we will "
+"focus on using actions to release and publish your Python package "
+"securely to PyPI."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:35
+msgid "Why Trusted Publishing Matters"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:37
+msgid ""
+"If you are wondering why trusted publishing is so important, [check out "
+"this blog post:](https://www.pyopensci.org/blog/python-packaging-"
+"security-publish-pypi.html) that dives deeper into what can happen when "
+"you don't lock down your publishing workflows."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:40
+#, fuzzy
+msgid "Step 0: Create a release workflow"
+msgstr "ステップ0: READMEファイルの作成"
+
+#: ../../tutorials/trusted-publishing.md:42
+msgid ""
+"To get started, create a file named `release.yaml` under the "
+"`.github/workflows` directory of your project. If the `.github/workflows`"
+" directory does not exist, you can create it. It is GitHub's convention "
+"that all GitHub Actions are configured via YAML files in the "
+"`.github/workflows` directory."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:47
+msgid "Naming your workflow file"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:50
+msgid ""
+"You can name the workflow file whatever you wish. We suggest using "
+"something simple and expressive like `release.yaml` so you, your future "
+"self, and contributors who work on your project know exactly what the "
+"workflow does."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:55
+msgid "Step 1: Name the workflow"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:57
+#, fuzzy
+msgid "At the top of the `release.yaml` file, type the following:"
+msgstr "`README.md` ファイルの先頭に、パッケージ名を追加します。"
+
+#: ../../tutorials/trusted-publishing.md:63
+msgid ""
+"This provides a name to the workflow that you can use to quickly find all"
+" runs of this GitHub Action on the \"Actions\" tab in the GitHub "
+"repository."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:67
+msgid ""
+"Graphic showing an example of a configured workflow for the release. On "
+"the top, in the red box labeled \"1\" you see the \"Actions\" tab of the "
+"GitHub repository. On the left, in the red box labeled \"2\" you can see "
+"the name of the workflow, \"Release,\" as configured in this step. "
+"Finally, in the center, in the red box labeled \"3\" you can see several "
+"runs of the workflow, for the \"1.0\" and \"1.0.1\" releases of the "
+"package."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:69
+msgid ""
+"This image shows an example of a configured workflow for the release. On "
+"the top, in the red box labeled \"1\" you see the \"Actions\" tab of the "
+"GitHub repository. On the left, in the red box labeled \"2\" you can see "
+"the name of the workflow, as configured in this step. Finally, in the "
+"center, in the red box labeled \"3\" you can see several runs of the "
+"workflow, for the \"1.0\" and \"1.0.1\" releases of the package."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:72
+msgid "Step 2: Add triggers to the workflow"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:74
+msgid ""
+"Every GitHub Actions workflow runs when [certain "
+"conditions](https://docs.github.com/en/actions/reference/events-that-"
+"trigger-workflows) are met. In this case, we assume that a release "
+"workflow should only run when the repository owner creates a new "
+"[release](https://docs.github.com/en/repositories/releasing-projects-on-"
+"github/managing-releases-in-a-repository) for the package. Add the "
+"following to the `release.yaml` file to ensure it runs when you create "
+"and publish a release:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:86
+msgid "Step 3: Configure the jobs in the workflow"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:88
+msgid ""
+"A GitHub Actions *workflow* file can contain multiple *jobs* that run "
+"independently; each job can also have multiple *steps.* When triggered, "
+"the GitHub Action runs all the jobs in a workflow (excluding any steps "
+"that have conditional requirements)."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:92
+msgid ""
+"Jobs and steps can also have [conditional "
+"logic](https://docs.github.com/en/actions/reference/workflow-syntax-for-"
+"github-actions#jobsjob_idif) that allows them only to run if specific "
+"criteria exist. For instance, you may want only to have a job step to "
+"publish to PyPI if a release was made for the package. But you might want"
+" to test building the package every time you merge a new pull request."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:95
+msgid ""
+"For a release job, you need to clone or check out the repository. You can"
+" use the `actions/checkout` action to check out the code. You then "
+"install and use `hatch` to build your package."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:98
+msgid ""
+"You also need to make sure to set up Hatch on the machine GitHub is using"
+" to run the workflow."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:101
+msgid "A minimal job definition would look like this:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:121
+msgid ""
+"Notice that above, you provide a version for each action step. "
+"`action/checkout@v5` tells GitHub to use version 5 of the checkout "
+"action. The checkout action checks out the code from your repository. In "
+"this case, the code will be used to build your package."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:123
+msgid ""
+"Next, you will learn about a better way to secure (or \"harden\") your "
+"workflow"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:125
+msgid "Step 4: Secure the GitHub Actions workflow"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:127
+msgid ""
+"There are several improvements you can make to the GitHub Actions "
+"workflow you just configured to improve security and readability."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:130
+msgid ""
+"First, we can give names to relevant steps in the process to increase the"
+" readability of the logs generated during the workflow run. This can be "
+"achieved using `name: <your description here>` lines."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:134
+msgid ""
+"More importantly, each time you use an existing action (via `uses`) you "
+"should pin that action to a commit hash. Pinning your action ensures that"
+" if a malicious user takes over the action, they won't be able to impact "
+"your repository (an example of a supply chain attack due to GitHub "
+"Actions is the recent `tj-actions/changed-files` attack[^changed-files-"
+"supply-chain-attack])."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:141
+msgid ""
+"Enabling Dependabot[^dependabot] in the repository will ensure that your "
+"actions stay up to date. The dependabot tool will open pull requests that"
+" update your action versions at whatever frequency you want."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:146
+msgid "Thus, the workflow that you should use should be similar to:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:154
+msgid ""
+"Now, you can commit the `.github/workflows/release.yaml` file to the "
+"repository and push to GitHub."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:156
+msgid ""
+"At this point, if you create a new release for your project on GitHub, "
+"the configured workflow should run and build a wheel for you. "
+"Unfortunately, the wheel is only available on the runner and will be "
+"deleted at the end of the workflow run."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:160
+msgid "Step 5: Upload the built artifact to GitHub Artifacts"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:162
+msgid ""
+"You need to add one more step to the job definition to be able to access "
+"the wheel. You will upload it to the artifacts temporary area[^github-"
+"artifacts]. Add the following to the `release.yaml` file:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:172
+msgid "Upload artifacts parameters"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:175
+msgid ""
+"Above, you have configured the artifact to be deleted after 1 day. The "
+"artifacts storage on GitHub actions is temporary; users should not "
+"download your package from the GitHub artifacts."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:178
+msgid ""
+"You have also configured the release job to error if the `dist/` "
+"directory does not exist. This means that `hatch build` (from the "
+"previous step) failed to build our package, so there is nothing to "
+"release."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:183
+msgid ""
+"At this point, if you push the `release.yaml` to GitHub and create a new "
+"release, the GitHub Actions job will:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:186
+msgid "run,"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:187
+msgid "clone your repository,"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:188
+#, fuzzy
+msgid "install and set up Hatch,"
+msgstr "Hatchのインストール"
+
+#: ../../tutorials/trusted-publishing.md:189
+#, fuzzy
+msgid "build your package and"
+msgstr "パッケージをビルドするには `hatch build` を実行します:"
+
+#: ../../tutorials/trusted-publishing.md:190
+msgid "upload your package as an archive to the artifacts storage."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:193
+msgid ""
+"Graphic showing an example of a release workflow that has just finished "
+"running. Each step in the log is matched to one step in the workflow "
+"definition."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:195
+msgid ""
+"This figure shows an example of a release workflow that has just finished"
+" running. Each step in the log is matched to one step in the workflow "
+"definition."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:198
+msgid ""
+"At the bottom of the workflow run page on GitHub, you should see a "
+"section for the artifacts produced during runtime and uploaded to this "
+"storage area:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:202
+msgid ""
+"Graphic showing an example of an artifact produced by the release "
+"workflow."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:204
+msgid ""
+"This figure shows the artifact produced by the above release workflow. It"
+" is now marked as expired since the workflow ran more than a day ago."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:207
+msgid ""
+"You can download the artifact (before it expires), unzip it, and install "
+"the wheel contained within. However, this should only be done if you want"
+" to test the built wheel. Next, you will configure uploading to PyPI "
+"using trusted publishing."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:212
+msgid "Configure automatic publishing to PyPI"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:214
+msgid ""
+"The job you configured above using GitHub Actions builds your package "
+"using your code. You still need to upload it to PyPI. You could upload "
+"the package from the same job, but it is better to create a separate one "
+"to maintain a separation of tasks. This is why, in the previous section, "
+"we uploaded the artifact to the temporary storage."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:220
+msgid ""
+"In the new job, you will download the package from there and upload it to"
+" PyPI. Since the `build` job does nothing else, there is no possibility "
+"that the package could get compromised before the release."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:224
+msgid "Step 1: Add the upload job"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:226
+msgid ""
+"In the `release.yaml` file, add the following new job, after the job "
+"defined in the previous section:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:235
+msgid "Make sure to change the URL"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:237
+msgid "Remember to change the `url:` value to the URL for your package on PyPI!"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:240
+msgid "This job has two steps:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:242
+msgid ""
+"It uses `download-artifact` to download the artifacts built in the "
+"previous job"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:244
+msgid "It uses `gh-action-pypi-publish` to publish the package to PyPI."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:246
+msgid ""
+"You are almost there!! Now, you just need to enable trusted publishing "
+"for your project on PyPI. And then, your work is done!"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:249
+msgid "Step 2: Enable trusted publishing on PyPI"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:253
+msgid ""
+"Diagram showing PyPI's trusted publisher workflow: Step 1 builds "
+"distribution files via GitHub, Step 2 uses a trusted environment (PyPI), "
+"Step 3 securely uploads to PyPI. Shows chain of trust with lock icon "
+"connecting GitHub Action to Python Package Index."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:258
+msgid ""
+"Before trusted publishing was created, in order to upload to PyPI from "
+"GitHub actions you would have needed to add the username and password as "
+"arguments to the `gh-action-pypi-publish` step. While documentation "
+"recommends using the GitHub's `secrets` environment for the "
+"password/token, in several cases, users were pasting the password "
+"directly into the workflow file. Furthermore, accidental leakage of the "
+"password or token could allow attackers to publish new packages using "
+"your account, until you discover the compromise and revoke the leaked "
+"credentials."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:266
+msgid ""
+"To prevent these incidents and improve supply chain security, developers "
+"created [Trusted Publishing](https://docs.pypi.org/trusted-publishers/). "
+"Trusted publishing allows you to register a publishing workflow on PyPI "
+"and then map that workflow to an automation workflow (e.g., GitHub "
+"Actions) that is allowed to publish the package."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:271
+msgid ""
+"You do not need to enter a token or password value in a trusted publisher"
+" workflow. It's a secure connection between your"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:274
+msgid "Trusted Publishing outside of GitHub Actions"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:277
+msgid ""
+"Trusted Publishing supports other automation platforms, beyond GitHub "
+"Actions. It is also possible to configure a trusted publisher for "
+"multiple workflows or multiple publishers for the same package. These are"
+" advanced uses, out of scope for this lesson."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:283
+msgid ""
+"For this lesson, we will focus on configuring a trusted publisher for a "
+"project that already exists on PyPI. If you completed the [lesson about "
+"PyPI publishing](create-python-package), you should have this project "
+"already created."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:285
+msgid ""
+"This setup step needs to be performed only once for the project. Future "
+"releases will only run the GitHub Actions workflow we are configuring in "
+"`release.yaml`."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:288
+msgid ""
+"On the [\"Your projects\" page on "
+"PyPI](https://pypi.org/manage/projects/), click \"Manage\" on any project"
+" you want to configure."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:292
+msgid ""
+"Graphic showing a screenshot of the \"Your projects\" page on PyPI. The "
+"\"Manage\" button for one of the projects is highlighted."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:294
+msgid ""
+"This image shows several projects. The \"Manage\" button is highlighted "
+"for one of the projects, the one we want to configure trusted publishing "
+"for."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:297
+msgid "Then click \"Publishing\" in the project's sidebar."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:300
+msgid ""
+"Graphic showing the management page for one project. The \"Publishing\" "
+"link in the sidebar is highlighted."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:302
+msgid ""
+"Once clicking on the \"Manage\" button we got to the project's page. In "
+"the sidebar, we have the \"publishing\" option, as highlighted here."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:306
+msgid ""
+"This will take you to the publisher configuration page for the project. "
+"Trusted publishers can be configured via the forms here. Fill in the "
+"GitHub form with the following information:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:310
+msgid ""
+"Owner: the GitHub organization name for the organization that owns the "
+"project. If this is your personal project, then use your GitHub username "
+"here."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:312
+msgid "Repository name: the name of the repository that contains the project."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:313
+msgid ""
+"Workflow name: Should be `release.yaml` if you followed this guide, it is"
+" the workflow we just configured."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:315
+msgid ""
+"Environment name: Should be `pypi`, as that is what we configured in "
+"`release.yaml`."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:318
+msgid ""
+"Once you fill in this form and click \"Add\" the publisher is configured "
+"and can be used to publish new releases of your package."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:321
+msgid "Fully hardened GitHub Actions release workflow"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:323
+msgid ""
+"For better security, it is also recommended to control the permissions of"
+" the GitHub token used within each job of the workflow. The permissions "
+"should be scoped at job level and be as minimal as possible. A workflow "
+"that configures trusted publishing and also does this is the following:"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:333
+msgid ""
+"You can copy the above into your `release.yaml` file. You only need to "
+"update the `url:` field and configure trusted publishing on PyPI."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:337
+msgid ""
+"The workflow above should be up to date with the current versions of "
+"GitHub actions. However, it's good to turn on Dependabot to update the "
+"action versions in the future."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:340
+msgid "You have enabled trusted publishing for your project"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:342
+msgid ""
+"Congratulations!! You have now configured your project to do secure "
+"releases when a new version is being tagged on GitHub. The workflow we "
+"have configured builds the package from the exact version of code that we"
+" are tagging. This provides a guarantee for your users that the package "
+"that you have released does precisely what the code states it does. There"
+" is little to no potential for supply chain related vulnerabilities "
+"arising from your package! If you have a package that is ready for real-"
+"world use on the real PyPI, then you can follow the same steps to publish"
+" it securely."
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:346
+msgid "<https://github.com/features/actions>"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:347
+msgid ""
+"<https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-"
+"chain-attack-cve-2025-30066>"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:348
+msgid ""
+"<https://docs.github.com/en/code-security/dependabot/working-with-"
+"dependabot/keeping-your-actions-up-to-date-with-dependabot>"
+msgstr ""
+
+#: ../../tutorials/trusted-publishing.md:349
+msgid "<https://docs.github.com/en/actions/tutorials/store-and-share-data>"
+msgstr ""
 
 #~ msgid "Make your Python code installable"
 #~ msgstr "Pythonコードをインストール可能にする"
@@ -7112,3 +7814,7 @@ msgstr ""
 
 #~ msgid "Renaming your project before publishing"
 #~ msgstr "公開前にプロジェクト名を変更する"
+
+#~ msgid "license and"
+#~ msgstr "ライセンスと"
+
