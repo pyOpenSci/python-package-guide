@@ -91,6 +91,5 @@ setting up an external service.
 
 Writing meaningful tests is the foundation of useful coverage.
 See [Write tests](write-tests.md) and [Test types](test-types.md)
-to design strong test suites. Run coverage regularly both
-[locally](run-tests.md) and in [continuous integration](tests-ci.md)
-to track progress over time.
+to learn more about developing better test suites. Learn how to run your tests both
+[locally](run-tests.md) and in [continuous integration](tests-ci.md).
