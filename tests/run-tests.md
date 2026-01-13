@@ -1,74 +1,101 @@
 ```{eval-rst}
-:og:description: Learn how to setup and run tests for your Python package locally on your computer using automation tools such as Nox. Also learn about other tools that scientific Python community members use to run tests.
-:og:title: Run tests for your Python package across Python versions
+:og:description: Learn how to run tests for your Python package locally
+  across multiple Python versions and operating systems using Hatch or Nox.
+:og:title: Run tests for your Python package across environments
 ```
 
-# Run Python package tests
+# Run tests for your Python package
 
-Running your tests is important to ensure that your package
-is working as expected. It's good practice to consider that tests will run on your computer and your users' computers that may be running a different Python version and operating systems. Think about the following when running your tests:
+Running your tests across different Python versions and operating systems is
+critical to ensuring your package works for your users. Your users may be
+running different versions of Python and operating systems than you are.
 
-1. Run your test suite in a matrix of environments that represent the Python versions and operating systems your users are likely to have.
-2. Running your tests in an isolated environment provides confidence in the tests and their reproducibility. This ensures that tests do not pass randomly due to your computer's specific setup. For instance, you might have unexpectedly installed dependencies on your local system that are not declared in your package's dependency list. This oversight could lead to issues when others try to install or run your package on their computers.
+This page teaches you how to run tests locally in isolated environments and
+across multiple Python versions. You'll learn about two main automation tools:
+[**Hatch**](https://hatch.pypa.io/) and
+[**Nox**](https://nox.thea.codes/en/stable/index.html). In the next lesson,
+you will learn about running your tests online in
+[continuous integration (CI)](tests-ci).
 
-On this page, you will learn about the tools that you can use to both run tests in isolated environments and across
-Python versions.
+## Why test across multiple environments?
 
+When you develop a package on your computer, it works in one specific
+environment: your Python version, your operating system, and your installed
+dependencies. Your users, however, will run your code in many different
+environments. By running your tests across multiple Python versions and
+operating systems, you catch compatibility issues before users do.
 
+Additionally, running tests in isolated environments ensures that your tests
+pass because of your code, not because of unexpected dependencies installed
+on your computer. This gives you confidence that your package will work when
+others install it.
+
+On this page, you will learn about the tools that you can use to both
+run tests in isolated environments and across Python versions.
+
+:::{seealso}
+**Related pages:**
+
+* [Write tests](write-tests.md) for best practices on writing test
+  suites
+* [Test types](test-types.md) to understand unit, integration, and
+  end-to-end tests
+* [Run tests online with CI](tests-ci.md) for GitHub Actions setup
+* [Code coverage](code-cov.md) to measure how much code your tests
+  cover
+:::
 
 ## Tools to run your tests
 
-There are three categories of tools that will make is easier to setup
+There are three categories of tools that will make it easier to setup
 and run your tests in various environments:
 
-1. A **test framework**, is a package that provides a particular syntax and set of tools for _both writing and running your tests_. Some test frameworks also have plugins that add additional features such as evaluating how much of your code the tests cover. Below you will learn about the **pytest** framework which is one of the most commonly used Python testing frameworks in the scientific ecosystem. Testing frameworks are essential but they only serve to run your tests. These frameworks don't provide a way to easily run tests across Python versions without the aid of additional automation tools.
-2. **Automation tools** allow you to automate running workflows such as tests in specific ways using user-defined commands. For instance it's useful to be able to run tests across different Python versions with a single command. Tools such as [**nox**](https://nox.thea.codes/en/stable/index.html) and [**tox**](https://tox.wiki/en/latest/index.html) also allow you to run tests across Python versions. However, it will be difficult to test your build on different operating systems using only nox and tox - this is where continuous integration (CI) comes into play.
-3. **Continuous Integration (CI):** is the last tool that you'll need to run your tests. CI will not only allow you to replicate any automated builds you create using nox or tox to run your package in different Python environments. It will also allow you to run your tests on different operating systems (Windows, Mac and Linux). [We discuss using CI to run tests here](tests-ci).
+1. **Testing framework (pytest):** Provides the syntax and tools for
+   writing and running your tests. Learn more from the
+   [pytest documentation](https://docs.pytest.org/). Below you will learn
+   about pytest, the most commonly used testing framework in the scientific
+   Python ecosystem. Testing frameworks are essential for running tests, but
+   they don't provide an easy way to run tests across Python versions
+   or in isolated environments—that's where automation tools come in.
 
-:::{list-table} Table: Testing & Automation Tool
-:widths: 40 15 15 15 15
-:header-rows: 1
-:align: center
-:stub-columns: 1
-:class: pyos-table
+2. **Automation tools (Nox, Tox, Hatch):** Allow you to run tests in
+   isolated environments and across multiple Python versions with a
+   single command. We focus on
+   [**Hatch**](https://hatch.pypa.io/) and
+   [**Nox**](https://nox.thea.codes/) below. These tools create virtual
+   environments automatically and ensure your tests run consistently.
+   However, they typically only test on your local operating system.
 
-*   - Features
-    - Testing Framework (pytest)
-    - Test Runner (Tox)
-    - Automation Tools (Nox)
-    - Continuous Integration (GitHub Actions)
-*   - Run Tests Locally
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-*   - Run Tests Online
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Run Tests Across Python Versions
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Run Tests In Isolated Environments
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Run Tests Across Operating Systems (Windows, MacOS, Linux)
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-*   - Use for other automation tasks (e.g. building docs)
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-xmark fa-xl" style="color: #afb3bb;"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-    - <i class="fa-solid fa-circle-check fa-xl"></i>
-:::
+3. **Continuous Integration (CI):** Runs your tests online across
+   different operating systems (Windows, Mac, and Linux) and Python
+   versions. CI integrates with platforms like GitHub Actions to
+   automatically test every pull request and code change.
+   [Learn about CI here](tests-ci), or see our
+   [continuous integration tutorial](../../maintain-automate/ci.html)
+   for more context.
 
+### Quick comparison: what each tool does
+
+**Testing Framework (pytest):**
+
+* Runs your tests locally in your current Python environment
+* Provides the core syntax for writing tests (assertions, fixtures,
+  etc.)
+* Can be extended with plugins (like pytest-cov for coverage)
+
+**Automation Tools (Nox, Tox, Hatch):**
+
+* Run tests locally across multiple Python versions
+* Create and manage isolated virtual environments automatically
+* Can automate other tasks like building documentation
+* Make it easy to reproduce test environments
+
+**Continuous Integration (GitHub Actions):**
+
+* Runs tests online automatically for every pull request
+* Tests across different operating systems (Windows, Mac, Linux)
+* Tests across multiple Python versions in parallel
+* Can automate deployments, releases, and other workflows
 
 ## What testing framework / package should I use to run tests?
 
@@ -77,7 +104,7 @@ We recommend using `Pytest` to build and run your package tests. Pytest is the m
 [The Pytest package](https://docs.pytest.org/en/latest/) also has a number of
 extensions that can be used to add functionality such as:
 
-- [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/) allows you to analyze the code coverage of your package during your tests, and generates a report that you can [upload to codecov](https://about.codecov.io/).
+* [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/) allows you to analyze the code coverage of your package during your tests, and generates a report that you can [upload to codecov](https://about.codecov.io/).
 
 :::{todo}
 Learn more about code coverage here. (add link)
@@ -122,147 +149,183 @@ We will focus on [Nox](https://nox.thea.codes/) in this guide. `nox` is a Python
 ```{admonition} Other automation tools you'll see in the wild
 :class: note
 
-- **[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an automation tool that supports common steps such as building documentation, running tests across various versions of Python, and more.
+- **[Tox](https://tox.wiki/en/latest/index.html#useful-links)** is an
+  automation tool that supports common steps such as building
+  documentation, running tests across various versions of Python, and
+  more.
 
-- **[Hatch](https://github.com/pypa/hatch)** is a modern end-to-end packaging tool that works with the popular build backend called hatchling. `hatch` offers a `tox`-like setup where you can run tests locally using different Python versions. If you are using `hatch` to support your packaging workflow, you may want to also use its testing capabilities rather than using `nox`.
-
-* [**make:**](https://www.gnu.org/software/make/manual/make.html) Some developers use Make, which is a build automation tool, for running tests
-due to its versatility; it's not tied to a specific language and can be used
-to run various build processes. However, Make's unique syntax and approach can
-make it more challenging to learn, particularly if you're not already familiar
-with it. Make also won't manage environments for you like **nox** will do.
+- **[Make](https://www.gnu.org/software/make/manual/make.html)** is a
+  build automation tool that some developers use for running tests due
+  to its versatility. However, Make's unique syntax can be challenging
+  to learn, and it won't manage environments for you like Hatch and Nox
+  do.
 ```
 
-## Run tests across Python versions with nox
+## Run tests with Hatch
 
-**Nox** is a great automation tool to learn because it:
+**Hatch** is a modern Python packaging and environment manager that
+integrates test running capabilities directly into your `pyproject.toml`.
+Unlike Nox (which uses a separate `noxfile.py`), Hatch keeps all your
+project configuration in one place, making it ideal if you're already
+using Hatch for packaging workflows.
 
-- Is Python-based making it accessible if you already know Python and
-- Will create isolated environments to run workflows.
+### Why Hatch for testing?
 
-`nox` simplifies creating and managing testing environments. With `nox`, you can
-set up virtual environments, and run tests across Python versions using the environment manager of your choice with a
-single command.
+* Configuration lives in `pyproject.toml` alongside your project
+  metadata
+* Integrates seamlessly with Hatch's packaging and build workflows
+* No separate Python file needed (unlike Nox)
+* Easy to share standardized test environments across your team
 
-:::{note} Nox Installations
+### Setting up Hatch environments
 
-When you install and use nox to run tests across different Python versions, nox will create and manage individual `venv` environments for each Python version that you specify in the nox function.
-
-Nox will manage each environment on its own.
-:::
-
-Nox can also be used for other development tasks such as building
-documentation, creating your package distribution, and testing installations
-across both PyPI related environments (e.g. venv, virtualenv) and `conda` (e.g. `conda-forge`).
-
-To get started with nox, you create a `noxfile.py` file at the root of your
-project directory. You then define commands using Python functions.
-Some examples of that are below.
-
-## Test Environments
-
-By default, `nox` uses the Python built in `venv` environment manager. A virtual environment (`venv`) is a self-contained Python environment that allows you to isolate and manage dependencies for different Python projects. It helps ensure that project-specific libraries and packages do not interfere with each other, promoting a clean and organized development environment.
-
-An example of using nox to run tests in `venv` environments for Python versions 3.9, 3.10, 3.11 and 3.12 is below.
-
-```{warning}
-Note that for the code below to work, you need to have all 4 versions of Python installed on your computer for `nox` to find.
-```
-
-### Nox with venv environments
-
-```{todo}
-TODO: add some tests above and show what the output would look like in the examples below...
-```
-
-Below is an example of setting up nox to run tests using `venv` which is the built in environment manager that comes with base Python.
-
-Note that the example below assumes that you have [setup your `pyproject.toml` to declare test dependencies in a way that pip
-can understand](../package-structure-code/declare-dependencies.md). An example
-of that setup is below.
+Hatch environments are defined in your `pyproject.toml`. Rather than
+duplicating dependencies, use `dependency-groups` to reference your test
+dependencies:
 
 ```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project]
-name = "pyosPackage"
-version = "0.1.0"
-dependencies = [
-  "geopandas",
-  "xarray",
+[dependency-groups]
+tests = [
+    "pytest>=7.0",
+    "pytest-cov",
 ]
 
-[project.optional-dependencies]
-tests = ["pytest", "pytest-cov"]
-```
+[tool.hatch.envs.test]
+dependency-groups = [
+     "tests",
+]
 
-If you have the above setup, then you can use `session.install(".[tests]")` to install your test dependencies.
-Notice that below one single nox session allows you to run
-your tests on 4 different Python environments (Python 3.9, 3.10, 3.11, and 3.12).
-
-```python
-# This code would live in a noxfile.py file located at the root of your project directory
-import nox
-
-# For this to run you will need to have python3.9, python3.10 and python3.11 installed on your computer. Otherwise nox will skip running tests for whatever versions are missing
-
-@nox.session(python=["3.9", "3.10", "3.11", "3.12"])
-def test(session):
-
-    # install
-    session.install(".[tests]")
-
-    # Run tests
-    session.run("pytest")
+[tool.hatch.envs.test.scripts]
+run = "pytest {args:--cov=test --cov-report=term-missing --cov-report=xml}"
 
 ```
 
-Above you create a nox session in the form of a function
-with a `@nox.session` decorator. Notice that within the decorator you declare the versions of python that you
-wish to run.
+This approach keeps your test dependencies in one place and avoids
+duplication. For a complete example, see our
+[packaging template tutorial](https://www.pyopensci.org/tutorials/create-python-package.html)
+which shows a full `pyproject.toml` configuration.
 
-To run the above you'd execute the following command, specifying which session
-with `--session` (sometimes shortened to `-s`). Your function above
-is called test, therefore the session name is test.
+### Running tests with Hatch
 
-```
-nox --session test
-```
+Once you've defined your test environment, you can run tests with simple
+commands:
 
-### Nox with conda / mamba
-
-Below is an example for setting up nox to use mamba (or conda) for your
-environment manager.
-Note that unlike venv, conda can automatically install
-the various versions of Python that you need. You won't need to install all four Python versions if you use conda/mamba, like you do with `venv`.
-
-```{note}
-For `conda` to work with `nox`, you will need to
-ensure that either `conda` or `mamba` is installed on your computer.
-```
-
-```python
-# This code should live in your noxfile.py file
-import nox
-
-# The syntax below allows you to use mamba / conda as your environment manager, if you use this approach you don’t have to worry about installing different versions of Python
-
-@nox.session(venv_backend='mamba', python=["3.9", "3.10", "3.11", "3.12"])
-def test_mamba(session):
-    """Nox function that installs dev requirements and runs
-    tests on Python 3.9 through 3.12
-    """
-
-    # Install dev requirements
-    session.conda_install(".[tests]")
-    # Run tests using any parameters that you need
-    session.run("pytest")
-```
-
-To run the above session you'd use:
+**List available environments:**
 
 ```bash
-nox --session test_mamba
+hatch env show
 ```
+
+**Run pytest in the test environment:**
+
+```bash
+hatch run test:run
+```
+
+### Testing across Python versions
+
+To test across multiple Python versions, define a matrix in your
+`pyproject.toml`:
+
+```toml
+[dependency-groups]
+tests = [
+    "pytest>=7.0",
+    "pytest-cov",
+]
+
+[tool.hatch.envs.test]
+dependency-groups = [
+     "tests",
+]
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.10", "3.11", "3.12"]
+```
+
+Then run all versions with a single command:
+
+```bash
+hatch run test:run
+```
+
+Hatch will automatically run your tests on Python 3.10, 3.11, and 3.12.
+If you only want to test a specific Python version:
+
+```bash
+hatch run test.py3.11:pytest
+```
+
+### Using Hatch in GitHub Actions
+
+Hatch integrates well with CI/CD. Here's a minimal GitHub Actions
+setup:
+
+```yaml
+name: Run tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hynek/setup-hatch@v1
+      - run: hatch run test:pytest
+```
+
+Since all test dependencies are declared in `pyproject.toml`, your CI
+environment is reproducible and consistent with local testing.
+
+## Nox vs Hatch: choosing the right tool
+
+Both Hatch and Nox are excellent automation tools for running tests
+across Python versions. Here's how they compare to help you decide which
+fits your workflow:
+
+### Hatch
+
+* **Configuration:** All settings live in `pyproject.toml` alongside your
+  project metadata
+* **Integration:** Seamlessly integrates with Hatch's packaging and build
+  workflows—use the same tool for everything
+* **Learning curve:** Easier if you prefer configuration over code
+* **Best for:** Teams using Hatch for packaging, or those who want
+  standardized configuration in one place
+
+### Nox
+
+* **Configuration:** Python-driven via `noxfile.py` for maximum flexibility
+* **Customization:** Great for complex workflows that need custom logic
+* **Learning curve:** Easier if you already know Python and want flexible
+  session control
+* **Best for:** Complex automation needs, building docs alongside tests,
+  or workflows that don't fit the standard model
+
+### What we recommend
+
+**If you're using Hatch for packaging:** Use Hatch for testing too. You get
+everything in one place and one consistent tool.
+
+**If you need maximum flexibility:** Choose Nox. Its Python-driven approach
+lets you implement almost any workflow.
+
+**If you're just starting out:** Start with Hatch. It's simpler to set up
+and understand, and you can always switch to Nox later if you need to.
+
+**Both tools are solid choices.** The Python scientific community uses both
+extensively. For a complete guide to Nox, see [Run tests with
+Nox](run-tests-nox.md) and the [Scientific Python testing
+guide](https://scientific-python.org/tools/testing).
+
+## Next steps
+
+Now that you understand how to run tests locally across Python versions, you
+can learn about [running tests automatically in GitHub Actions with
+continuous integration](tests-ci). You can also review [test types](test-types)
+and [write tests](write-tests) for your package.
