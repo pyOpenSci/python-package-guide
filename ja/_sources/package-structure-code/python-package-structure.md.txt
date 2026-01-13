@@ -77,7 +77,7 @@ include:
 
 <!-- TODO: CHANGELOG is not mentioned in either documentation nor peer review -->
 
-```{button-link} https://www.pyopensci.org/python-package-guide/documentation
+:::{button-link} <https://www.pyopensci.org/python-package-guide/documentation>
 :color: info
 :class: sd-rounded-pill
 
@@ -95,7 +95,7 @@ Click here to read about our packaging documentation requirements.
 :::
 
 (src-layout-test)=
-## The src/ layout and testing
+## The src layout and testing
 
 The benefit of using the **src/package** layout is that it ensures tests are run against the
 installed version of your package rather than the files in your package
@@ -105,7 +105,7 @@ your package is installed.
 
 If `tests/` are outside the **src/package** directory, they aren't included in the package's [wheel](python-wheel). This makes your package size slightly smaller, which places a smaller storage burden on PyPI, and makes them faster to fetch.
 
-- [Read more about reasons to use the **src/package** layout](https://hynek.me/articles/testing-packaging/)
+* [Read more about reasons to use the **src/package** layout](https://hynek.me/articles/testing-packaging/)
 
 :::{admonition} How Python discovers and prioritizes importing modules
 
