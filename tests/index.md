@@ -30,7 +30,7 @@ package and how they help you and potential contributors.
 :link-type: doc
 :class-card: left-aligned
 
-Understand the three test types: unit, integration, and
+Get to know the three test types: unit, integration, and
 end-to-end tests. Learn when and how to use each.
 :::
 ::::
@@ -41,7 +41,7 @@ end-to-end tests. Learn when and how to use each.
 :link-type: doc
 :class-card: left-aligned
 
-Learn about testing tools like pytest, nox, and tox to run
+Learn about testing frameworks like pytest and taskrunners/automation tools like nox, and tox that can be used to run
 tests across different Python versions on your computer.
 :::
 ::::
