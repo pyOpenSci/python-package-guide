@@ -85,7 +85,7 @@ Please select the type of template that you want to create today."
    pyopensci
 
 ```
-The template will then begin to copy files into the directory that used above. (`.` means current working directory
+The template will then begin to copy files into the directory that used above. (`.` means current working directory.)
 
 ```console
 ...Copying from template version 0.6.4.1
@@ -112,10 +112,10 @@ The final package structure will look like this:
 :animate: fade-in-slide-down
 
 If you use the "bells and whistles" default option when working through the template prompts,
-our template will create a complete package setup with GitHub CI actions, typing, tests, environments
-, and more using Hatch. If you customize the entire package, then you can select what platform you wish to host it on (GitHub vs GitLab), whether you want typing, what documentation engine you want to use, and more.
+our template will create a complete package setup with GitHub CI actions, typing, tests, environments,
+and more using Hatch. If you customize the entire package, then you can select what platform you wish to host it on (GitHub vs GitLab), whether you want typing, what documentation engine you want to use, and more.
 
-The resulting package directory looks like this
+The resulting package directory looks like this:
 
 ```console
 ├── CHANGELOG.md
@@ -140,14 +140,14 @@ The resulting package directory looks like this
 
 The default tools that your package uses are:
 
-* [Sphinx](https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/sphinx-python-package-documentation-tools.html) with the pydata_sphinx_theme for documentation
+* [Sphinx](https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/sphinx-python-package-documentation-tools.html) with the PyData Sphinx Theme for documentation
 * pytest for testing
 * Hatch for environment setup
 
 **Full customization**
 If you want to customize any elements of your package setup, choose `No, I want to fully customize the template.`.  This will allow you to select:
 
-* sphinx vs [mkdocs](https://www.mkdocs.org/) vs no documentation
+* Sphinx vs [MkDocs](https://www.mkdocs.org/) vs no documentation
 * GitHub vs GitLab
 * VCS versioning
 * and more
@@ -219,7 +219,7 @@ A `pyproject.toml` file stores metadata that provides instructions to various to
 You will learn more about the `pyproject.toml` format in the
 [next lesson when you add additional metadata/information to this file.](pyproject-toml.md)
 
-The metadata in your generated pyproject.toml is already setup for you using the information you provided the copier template above.
+The metadata in your generated `pyproject.toml` is already setup for you using the information you provided the copier template above.
 
 :::{admonition} Brief overview of the TOML file
 :class: tip
@@ -232,7 +232,7 @@ Tables can contain variables within them defined by a variable name and an `=` s
 For instance, a `build-system` table most often holds two (2) variables:
 
 1. `requires = `, which tells a build tool what tools it needs to install prior to building your package. In this case
-   [hatchling](https://pypi.org/project/hatchling/)
+   [hatchling](https://pypi.org/project/hatchling/).
 2. `build-backend = `, which is used to define the specific build-backend name, (in this example we are using `hatchling.build`).
 
 ```toml
