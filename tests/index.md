@@ -9,7 +9,6 @@ In this section, you will learn more about the importance of writing
 tests for your Python package and how you can set up infrastructure
 to run your tests both locally and on GitHub.
 
-
 :::::{grid} 1 1 3 2
 :class-container: text-center
 :gutter: 3
@@ -20,9 +19,8 @@ to run your tests both locally and on GitHub.
 :link-type: doc
 :class-card: left-aligned
 
-Learn more about the art of writing tests for your Python package.
-Learn about why you should write tests and how they can help you and
-potential contributors to your project.
+Learn about the importance of writing tests for your Python
+package and how they help you and potential contributors.
 :::
 ::::
 
@@ -32,8 +30,8 @@ potential contributors to your project.
 :link-type: doc
 :class-card: left-aligned
 
-There are three general types of tests that you can write for your Python
-package: unit tests, integration tests and end-to-end (or functional) tests. Learn about all three.
+Get to know the three test types: unit, integration, and
+end-to-end tests. Learn when and how to use each.
 :::
 ::::
 
@@ -43,8 +41,8 @@ package: unit tests, integration tests and end-to-end (or functional) tests. Lea
 :link-type: doc
 :class-card: left-aligned
 
-If you expect your users to use your package across different versions
-of Python, then using an automation tool such as nox to run your tests is useful. Learn about the various tools that you can use to run your tests across python versions here.
+Learn about testing frameworks like pytest and taskrunners/automation tools like nox, and tox that can be used to run
+tests across different Python versions on your computer.
 :::
 ::::
 
@@ -54,21 +52,23 @@ of Python, then using an automation tool such as nox to run your tests is useful
 :link-type: doc
 :class-card: left-aligned
 
-Continuous integration platforms such as GitHub Actions can be
-useful for running your tests across both different Python versions
-and different operating systems. Learn about setting up tests to run in Continuous Integration here.
+Set up continuous integration with GitHub Actions to run
+tests across Python versions and operating systems.
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Code coverage ✨
+:link: code-cov
+:link-type: doc
+:class-card: left-aligned
+
+Measure how much of your package code runs during tests.
+Learn to generate local reports and visualize coverage online.
 :::
 ::::
 
 :::::
-
-
-:::{figure-md} fig-target
-
-<img src="../images/packaging-lifecycle.png" alt="" width="800px">
-
-Graphic showing the elements of the packaging process.
-:::
 
 ```{toctree}
 :hidden:
@@ -79,6 +79,7 @@ Intro <self>
 Write tests <write-tests>
 Test types <test-types>
 Run tests locally <run-tests>
+Run tests with Nox <run-tests-nox>
 Run tests online (using CI) <tests-ci>
 Code coverage <code-cov>
 ```
