@@ -615,7 +615,7 @@ You will need to have <a class="reference external" href="https://copier.readthe
 <span class="go">   pyopensci</span>
 </pre></div>
 </div>
-<p>The template will then begin to copy files into the directory that used above. (<code class="docutils literal notranslate"><span class="pre">.</span></code> means current working directory</p>
+<p>The template will then begin to copy files into the directory that used above. (<code class="docutils literal notranslate"><span class="pre">.</span></code> means current working directory.)</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">...Copying from template version 0.6.4.1</span>
 <span class="go">    create  CODE_OF_CONDUCT.md</span>
 <span class="go">    ...The template will continue to copy files...</span>
@@ -638,9 +638,9 @@ You will need to have <a class="reference external" href="https://copier.readthe
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">テスト、ドキュメント、GitHubインフラストラクチャを備えた完全なパッケージ</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">If you use the &quot;bells and whistles&quot; default option when working through the template prompts,
-our template will create a complete package setup with GitHub CI actions, typing, tests, environments
-, and more using Hatch. If you customize the entire package, then you can select what platform you wish to host it on (GitHub vs GitLab), whether you want typing, what documentation engine you want to use, and more.</p>
-<p class="sd-card-text">The resulting package directory looks like this</p>
+our template will create a complete package setup with GitHub CI actions, typing, tests, environments,
+and more using Hatch. If you customize the entire package, then you can select what platform you wish to host it on (GitHub vs GitLab), whether you want typing, what documentation engine you want to use, and more.</p>
+<p class="sd-card-text">The resulting package directory looks like this:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">├── CHANGELOG.md</span>
 <span class="go">├── CODE_OF_CONDUCT.md</span>
 <span class="go">├── CONTRIBUTING.md</span>
@@ -663,14 +663,14 @@ our template will create a complete package setup with GitHub CI actions, typing
 </div>
 <p class="sd-card-text">パッケージが使用するデフォルトのツールは以下の通りです:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx</a> with the pydata_sphinx_theme for documentation</p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/hosting-tools/sphinx-python-package-documentation-tools.html">Sphinx</a> with the PyData Sphinx Theme for documentation</p></li>
 <li><p class="sd-card-text">テスト用のpytest</p></li>
 <li><p class="sd-card-text">Hatch for environment setup</p></li>
 </ul>
 <p class="sd-card-text"><strong>Full customization</strong>
 If you want to customize any elements of your package setup, choose <code class="docutils literal notranslate"><span class="pre">No,</span> <span class="pre">I</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">fully</span> <span class="pre">customize</span> <span class="pre">the</span> <span class="pre">template.</span></code>.  This will allow you to select:</p>
 <ul class="simple">
-<li><p class="sd-card-text">sphinx vs <a class="reference external" href="https://www.mkdocs.org/">mkdocs</a> vs ドキュメントなし</p></li>
+<li><p class="sd-card-text">Sphinx vs <a class="reference external" href="https://www.mkdocs.org/">MkDocs</a> vs no documentation</p></li>
 <li><p class="sd-card-text">GitHub vs GitLab</p></li>
 <li><p class="sd-card-text">VCSバージョン管理</p></li>
 <li><p class="sd-card-text">and more</p></li>
@@ -731,7 +731,7 @@ For example, write a second function that multiplies numbers.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file stores metadata that provides instructions to various tools interacting with it, including Hatch, which will build your package. You can also specify metadata for your package.</p>
 <p>You will learn more about the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> format in the
 <a class="reference internal" href="pyproject-toml.html"><span class="std std-doc">next lesson when you add additional metadata/information to this file.</span></a></p>
-<p>The metadata in your generated pyproject.toml is already setup for you using the information you provided the copier template above.</p>
+<p>The metadata in your generated <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> is already setup for you using the information you provided the copier template above.</p>
 <div class="tip admonition">
 <p class="admonition-title">TOMLファイルの概要</p>
 <p><a class="reference external" href="https://toml.io/en/">TOMLフォーマット</a> は表と変数で構成されます。 表は角括弧で示される情報のセクションです:</p>
@@ -739,7 +739,8 @@ For example, write a second function that multiplies numbers.</p>
 <p>Tables can contain variables within them defined by a variable name and an <code class="docutils literal notranslate"><span class="pre">=</span></code> sign.
 For instance, a <code class="docutils literal notranslate"><span class="pre">build-system</span></code> table most often holds two (2) variables:</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">requires=</span></code> は、ビルドツールに対して、パッケージをビルドする前にインス トールする必要があるツールを指示します。 この場合 <a class="reference external" href="https://pypi.org/project/hatchling/">hatchling</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span> </code>, which tells a build tool what tools it needs to install prior to building your package. In this case
+<a class="reference external" href="https://pypi.org/project/hatchling/">hatchling</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build-backend</span> <span class="pre">=</span> </code> 、これは、特定のビルドバックエンド名を定義するために使われます、(この例では、 <code class="docutils literal notranslate"><span class="pre">hatchling.build</span></code> を使用しています)。</p></li>
 </ol>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># An example of the build-system table which contains two variables - requires and build-backend</span>
