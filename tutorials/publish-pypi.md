@@ -214,6 +214,9 @@ Example: `pyosPackage_yourNameHere`.
 :class: tip
 :class: secondary
 
+Before renaming your package, it helps to understand where the PyPI package name comes from. The name that PyPI registers is defined in the `pyproject.toml` file under the `[project]` section. This name does not have to match your GitHub repository name, but many projects keep them the same for clarity.
+
+If the name in `pyproject.toml` is already taken on PyPI, you will need to choose a different name before publishing.
 #### Required
 
 1. Search your publishing location(s) to make sure your new name isn't taken ([TestPyPI](https://test.pypi.org/), [PyPI](https://pypi.org/), [conda-forge](https://conda-forge.org/packages/))
