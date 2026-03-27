@@ -24,7 +24,6 @@ Initiatives.
 
 ## Contributing statement
 
-
 ## How to setup
 
 This repository contains the source files for the [pyOpenSci Python packaging guide](https://pyopensci.org/python-package-guide).
@@ -44,12 +43,13 @@ To build, follow these steps:
 1. Install `nox`
 
    ```console
-   $ python -m pip install nox
+   python -m pip install nox
    ```
+
 2. Build the documentation:
 
    ```console
-   $ nox -s docs
+   nox -s docs
    ```
 
 This should create a local environment in a `.nox` folder, build the documentation (as specified in the `noxfile.py` configuration), and the output will be in `_build/html`.
@@ -57,8 +57,12 @@ This should create a local environment in a `.nox` folder, build the documentati
 To build live documentation that updates when you update local files, run the following command:
 
 ```console
-$ nox -s docs-live
+nox -s docs-live
 ```
+
+If you are a uv user, you can also skip installing `nox` and use `uvx` instead:
+
+`uvx nox -s docs-live`
 
 ### Building for release
 
@@ -67,21 +71,21 @@ but translations are only included in the production version of the guide after 
 
 The sphinx build environment is controlled by an environment variable `SPHINX_ENV`
 
-- when `SPHINX_ENV=development` (default), sphinx assumes all languages are built,
+* when `SPHINX_ENV=development` (default), sphinx assumes all languages are built,
   and includes them in the language selector
-- when `SPHINX_ENV=production`, only those languages in `release_languages` (set in `conf.py`)
+* when `SPHINX_ENV=production`, only those languages in `release_languages` (set in `conf.py`)
   are built and included in the language selector.
 
 Most of the time you should not need to set `SPHINX_ENV`,
 as it is forced by the primary nox sessions intended to be used for release or development:
 
 `SPHINX_ENV=development`
-- `docs-live` - autobuild english
-- `docs-live-lang` - autobuild a single language
-- `docs-live-langs` - autobuild all languages
+* `docs-live` - autobuild english
+* `docs-live-lang` - autobuild a single language
+* `docs-live-langs` - autobuild all languages
 
 `SPHINX_ENV=production`
-- `build-test` - build all languages for production
+* `build-test` - build all languages for production
 
 ## Contributing to this guide
 
