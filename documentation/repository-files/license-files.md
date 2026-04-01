@@ -7,7 +7,7 @@ bibliography:
 
 # License files for Python open source software
 
-:::{button-link} <https://www.pyopensci.org/about-peer-review/>
+:::{button-link} https://www.pyopensci.org/about-peer-review/
 :color: primary
 :class: sd-rounded-pill float-left
 
