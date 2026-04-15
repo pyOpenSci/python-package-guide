@@ -40,10 +40,6 @@ end-to-end tests. Learn when and how to use each.
 :link-type: doc
 :class-card: left-aligned
 
-<<<<<<< HEAD
-Learn about testing frameworks like pytest and taskrunners/automation tools like nox, and tox that can be used to run
-tests across different Python versions on your computer.
-=======
 Learn about testing tools like pytest, nox, and tox to run
 tests across different Python versions on your computer. And explore examples of using Hatch with UV as a task runner to run tests across Python versions.
 :::
@@ -56,7 +52,6 @@ tests across different Python versions on your computer. And explore examples of
 :class-card: left-aligned
 
 Nox is a python powered task runner that can be used to run tests. Learn how to use nox to run tests.
->>>>>>> 078e0c9a (enh: tests)
 :::
 ::::
 
