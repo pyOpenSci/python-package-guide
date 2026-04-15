@@ -143,7 +143,6 @@ If you want to run your tests on different operating systems you can use continu
 To run tests on various Python versions or in various specific environments with a single command, you can use an automation tool such as `nox` or `tox`.
 Both `nox` and `tox` can create an isolated virtual environments. This allows you to easily run your tests in multiple environments and across Python versions.
 
-(create-pure-python-package)=
 We will focus on Hatch on this page as Hatch is the default tool that we use in our [tutorials](create-pure-python-package)
 and for our [Python package template](https://github.com/pyOpenSci/pyos-package-template).
 
@@ -283,12 +282,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install hatch
-      - run: hatch run test:pytest
+      - run: hatch run test:run
 ```
 
 Since all of your test dependencies are declared in the `dependency-group` table of your `pyproject.toml`, your CI
 environment is reproducible and consistent with the environments that you are using for local testing.
 
+(nox-vs-hatch)=
 ## Nox vs Hatch: choosing the right tool
 
 Both Hatch and Nox are excellent automation tools / task runners for running tests

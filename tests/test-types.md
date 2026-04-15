@@ -81,7 +81,7 @@ situations and is the beginning of thinking about programming
 defensively.
 
 You can run this test from your terminal using
-`pytest tests/example.py`.
+`pytest tests/test_math_utils.py`.
 
 ```{figure} ../images/pyopensci-puzzle-pieces-tests.png
 :height: 300px
@@ -345,5 +345,8 @@ complement each other.
 
 ## Next steps
 
-Now that you understand test types, learn how to [write effective tests](write-tests) for your package. Then explore how to [run tests locally](run-tests) and in [continuous integration](tests-ci). Track your
-(run-tests) and in [continuous integration](tests-ci). You can also learn about tracking the progress of test coverage using tools like [Code cov](code-cov).
+Now that you understand test types, learn how to
+[write effective tests](write-tests) for your package. Then explore how to
+[run tests locally](run-tests) and in
+[continuous integration](tests-ci). You can also learn about tracking test
+coverage using tools like [CodeCov](code-cov).

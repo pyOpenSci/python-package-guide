@@ -156,7 +156,7 @@ nox --session test_mamba
 ## Hatch vs Nox
 
 If you're trying to decide between Hatch and Nox, see the
-[comparison and recommendations on the main testing page](run-tests.md#nox-vs-hatch-choosing-the-right-tool).
+[comparison and recommendations on the main testing page](run-tests.md).
 
 ## In summary
 

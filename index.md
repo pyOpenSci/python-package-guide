@@ -91,7 +91,7 @@ The first round of our community-developed, how to create a Python package tutor
 :class-card: left-aligned
 
 * [Introduction to Hatch](/tutorials/get-to-know-hatch)
-* [Run standalone Python scripts with Hatch](/tutorials/run-python-scripts-hatch)
+* [Run Python scripts using Hatch](/tutorials/run-python-scripts-hatch)
 
 :::
 ::::
@@ -246,7 +246,7 @@ contribute.
 
 :::::
 
-:::{image} https://www.pyopensci.org/images/people-building-blocks.jpg
+:::{image} <https://www.pyopensci.org/images/people-building-blocks.jpg>
 :align: right
 :width: 350
 :alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. Box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. Box 2 - the person on the ground says - come join us programming is fun again. It's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. The person on the ground is saying - that's it?
