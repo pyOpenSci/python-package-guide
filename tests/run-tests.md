@@ -257,7 +257,7 @@ Hatch will automatically run your tests on Python 3.10, 3.11, and 3.12.
 If you only want to test a specific Python version:
 
 ```bash
-hatch run test.py3.11:pytest
+hatch run test.py3.11:run
 ```
 
 ### Using Hatch in GitHub Actions
