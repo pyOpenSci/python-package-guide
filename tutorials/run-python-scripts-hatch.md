@@ -13,7 +13,7 @@ automatically.
 
 Many tools support this workflow, including PDM, Hatch, and uv. In this
 tutorial, we focus on Hatch and UV. The same metadata format can also be used with
-other tools like PDM.
+other tools.
 
 :::{seealso}
 
