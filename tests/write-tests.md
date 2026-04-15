@@ -56,13 +56,6 @@ For a good introduction to testing, see [this Software Carpentry lesson](https:/
 
 :::
 
-```{figure} ../images/python-tests-puzzle.png
-:height: 350px
-
-Imagine you're working on a puzzle where each puzzle piece represents a function, method, class or attribute in your Python package that you want other people to be able to use. Would you want to give someone a puzzle that has missing pieces or pieces that don't fit together? Providing people with the right puzzle pieces that work together can be compared to writing tests for your Python package.
-
-```
-
 ````{admonition} Test examples
 :class: note
 
@@ -135,9 +128,7 @@ package? Below are a few examples:
 - **Test at and near expected boundaries:** If a function requires a value
   that is greater than or equal to 1, make sure that the function still
   works with the values 1 and 0.999, as well as 1.001 (values close to the
-  constraint).
-
-  than or equal to 1, test it at 0.999 to ensure failure. Make sure that
+  constraint). Make sure that
   the function fails gracefully when given unexpected values and that the
   user can easily understand why it failed by providing a useful error
   message.

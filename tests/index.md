@@ -1,13 +1,12 @@
 (tests-intro)=
 # Tests and data for your Python package
 
-Tests are an important part of your Python package because they
-provide a set of checks that ensure that your package is
+Adding tests to your package provides a set of checks that ensure that its
 functioning how you expect it to.
 
-In this section, you will learn more about the importance of writing
-tests for your Python package and how you can set up infrastructure
-to run your tests both locally and on GitHub.
+In this section, you will learn about the importance of writing
+tests for your Python package, different [types of tests that you should consider](test-types) and how you can set up infrastructure
+to run your tests both [locally](run-tests) and [on GitHub](tests-ci).
 
 :::::{grid} 1 1 3 2
 :class-container: text-center
@@ -41,8 +40,23 @@ end-to-end tests. Learn when and how to use each.
 :link-type: doc
 :class-card: left-aligned
 
+<<<<<<< HEAD
 Learn about testing frameworks like pytest and taskrunners/automation tools like nox, and tox that can be used to run
 tests across different Python versions on your computer.
+=======
+Learn about testing tools like pytest, nox, and tox to run
+tests across different Python versions on your computer. And explore examples of using Hatch with UV as a task runner to run tests across Python versions.
+:::
+::::
+
+::::{grid-item}
+:::{card} ✨ Run tests locally (using nox) ✨
+:link: run-tests-nox
+:link-type: doc
+:class-card: left-aligned
+
+Nox is a python powered task runner that can be used to run tests. Learn how to use nox to run tests.
+>>>>>>> 078e0c9a (enh: tests)
 :::
 ::::
 

@@ -10,8 +10,7 @@ creating your test suite:
 3. End-to-end (also known as functional) tests
 
 Each type of test has a different purpose. Here, you will learn
-about all three types of tests by working through simple, runnable
-examples that you can use in your own package.
+about all three types of tests by working through simple examples.
 
 ## Unit tests
 
@@ -21,7 +20,7 @@ testing is to verify that each part of the software, typically at the
 function or method level, performs its intended task correctly.
 
 Unit tests can be compared to examining each piece of your puzzle to
-ensure parts of it are not broken. If all of the pieces of your puzzle
+ensure parts or subsections of it are not broken. If all of the pieces of that section of your puzzle
 don't fit together, you will never complete it. Similarly, when working
 with code, tests ensure that each function, attribute, class, and
 method works properly when isolated.
@@ -290,38 +289,39 @@ documentation is built, could also serve as end-to-end tests.
 
 ## When to use which test type
 
-Choosing the right test type depends on what you are trying to verify.
-Use this guide to decide which test type is most appropriate for
-different situations:
+If you’re new to testing, start with unit tests. They are the simplest to write, fastest to run, and easiest to debug. As your package grows, you can then add integration and end-to-end tests where they add the most value.
 
-### Decision tree
+### Start by writing unit tests
 
-**Are you testing a single function, method, or class in isolation?**
+Are you testing a single function, method, or class in isolation?
 
-→ **Yes:** Use a [unit test](test-types.md#unit-tests).
+→ Yes: Write a [unit test](test-types.md#unit-tests).
 
-- Example: Testing that `add_numbers(2, 3)` returns `5`.
-- Unit tests are fast and help you pinpoint exactly where errors occur.
-- Write unit tests for all the core building blocks of your package.
+* Example: Check that add_numbers(2, 3) returns 5
+* Unit tests don’t rely on other parts of your code
+* These tests form the foundation of your test suite
+* If something breaks, unit tests make it easy to find where
 
-**Are you testing how multiple components work together?**
+### Add integration tests next
 
-→ **Yes:** Use an [integration test](test-types.md#integration-tests).
+Are you testing how multiple components work together?
 
-- Example: Testing that temperature conversion and averaging functions
-    work together correctly in a single workflow.
-- Integration tests verify that your components communicate properly.
-- Use these after you have tested individual components with unit tests.
+→ **Yes:** Write [integration tests](test-types.md#integration-tests).
 
-**Are you testing a complete, realistic user workflow from start to finish?**
+* Example: Converting temperatures and then computing their average
+* Integration tests assume individual pieces already work
+* These tests verify that components interact correctly
+
+### Use end-to-end tests for core workflows
+
+Are you testing a complete, realistic user workflow from start to finish?
 
 → **Yes:** Use an [end-to-end test](test-types.md#end-to-end-functional-tests).
 
-- Example: Simulating a user loading data, processing it, and getting a
-    summary result.
-- End-to-end tests catch issues that do not show up in smaller tests.
-- For scientific packages, tutorials run during documentation builds can
-    serve as end-to-end tests.
+* Example: Run a full data-processing workflow a user would follow
+* These tests often mirror examples in your documentation
+* Use them sparingly for the most important workflows.
+* Tutorials run during documentation builds can serve as end-to-end tests.
 
 ## Comparing unit, integration, and end-to-end tests
 
