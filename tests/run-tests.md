@@ -325,8 +325,7 @@ lets you implement almost any workflow.
 **If you're just starting out:** Start with Hatch. It's simpler to set up
 and understand, and you can always switch to Nox later if you need to.
 
-**Both tools are solid choices.** The Python scientific community uses both
-extensively. For a complete guide to Nox, see [Run tests with
+**Both tools are good choices.** For a more comprehensive  guide to using Nox, see [Run tests with
 Nox](run-tests-nox.md) and the [Scientific Python testing
 guide](https://scientific-python.org/tools/testing).
 
