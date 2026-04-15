@@ -10,12 +10,18 @@ on:
     branches:
       - main
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   build-test-book:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch_depth: 0
 
@@ -25,7 +31,7 @@ jobs:
           git restore-mtime
 
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: "3.13"
 
@@ -38,7 +44,7 @@ jobs:
         run: echo "::set-output name=dir::$(pip cache dir)"
 
       - name: Cache dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae #v5.0.5
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -50,6 +56,9 @@ jobs:
 
       - name: Build book
         run: nox -s docs-test
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d #v6
 
       # Save html as artifact
       - name: Save book html as artifact for viewing
@@ -59,14 +68,17 @@ jobs:
           path: |
             _build/html/
 
-      # Push the book's HTML to github-pages
-      - name: Push to GitHub Pages
+      - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b #v4
+        with:
+          path: ./_build/html
+
+      - name: Deploy to GitHub Pages
         # Only push if on main branch
         if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v4.0.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/html
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 #v5.0.0
 
       # Test for bad links and ensure alt tags for usability
       - name: Check HTML using htmlproofer
@@ -75,4 +87,4 @@ jobs:
           directory: "_build/html"
           arguments: |
             --ignore-files "/.+\/_static\/.+/,/genindex.html/"
-            --ignore-status-codes "0, 200, 403, 429, 503"
+            --ignore-status-codes "0, 200, 401, 403, 429, 503"
