@@ -16,7 +16,7 @@ permissions:
   pages: write
   id-token: write
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
+# Build and test the book, then deploy from a separate job.
 jobs:
   build-test-book:
     runs-on: ubuntu-latest
@@ -74,17 +74,24 @@ jobs:
         with:
           path: ./_build/html
 
-      - name: Deploy to GitHub Pages
-        # Only push if on main branch
-        if: github.ref == 'refs/heads/main'
-        id: deployment
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 #v5.0.0
-
       # Test for bad links and ensure alt tags for usability
       - name: Check HTML using htmlproofer
+        continue-on-error: true
         uses: chabad360/htmlproofer@master
         with:
           directory: "_build/html"
           arguments: |
             --ignore-files "/.+\/_static\/.+/,/genindex.html/"
             --ignore-status-codes "0, 200, 401, 403, 429, 503"
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build-test-book
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 #v5.0.0
