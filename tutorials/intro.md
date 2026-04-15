@@ -35,6 +35,7 @@ understanding the steps involved in creating a Python package.
 :caption: Python Packaging Tutorial Setup
 
 Get to know Hatch <get-to-know-hatch>
+Run standalone Python scripts with Hatch <run-python-scripts-hatch>
 :::
 
 :::{toctree}
