@@ -7,29 +7,55 @@
 
 # Run standalone Python scripts with Hatch
 
+Python supports inline metadata for scripts (a feature added in 2024). This makes it possible to run
+standalone scripts with dependencies and Python versions managed
+automatically.
+
+Many tools support this workflow, including PDM, Hatch, and uv. In this
+tutorial, we focus on Hatch and UV. The same metadata format can also be used with
+other tools like PDM.
+
+:::{seealso}
+
+* [Hatch: How to run Python scripts](https://hatch.pypa.io/latest/how-to/run/python-scripts/)
+* [uv: Running scripts](https://docs.astral.sh/uv/guides/scripts/#creating-a-python-script)
+:::
+
+## How to create a reproducible script
+
 Sometimes you want to share or run a single script without creating a full
-package. Hatch supports this workflow using inline script metadata.
+package. To do this, you can use inline script metadata. This format lets you
+specify dependencies and Python versions at the top of your script in a
+comment block.
 
-When you add metadata at the top of a script, Hatch can:
+When you add metadata at the top of a script, Hatch (or PDM or uv) will use
+that metadata to:
 
-* Create an isolated environment for that script.
-* Install only the dependencies listed in the script.
-* Use the required Python version that you specify.
+* Create an isolated virtual Python environment for that script.
+* Install the dependencies listed in the script into that environment.
+* Use the required Python version that you specify in the metadata.
 
-This is useful for quick analyses, data cleanup scripts, and reproducible
-automation tasks.
+This approach is useful for workflows that you want to make reproducible, but
+that do not need to become full Python packages.
 
 ## Why use Hatch for scripts?
 
-Inline metadata helps you avoid "it works on my machine" issues. Anyone can
-run the script with Hatch and get the same dependency set.
+Inline metadata helps you make scripts reproducible. Anyone can run your
+script without manually creating a new environment or guessing which
+dependencies it needs. Hatch takes care of installing dependencies and using
+the correct Python version.
 
-Compared to running a script in your currently active environment, this
-approach is more reproducible because dependencies are declared with the code.
+## How to add inline metadata to your script
 
-## Add inline metadata to your script
+You will use Hatch in this example, but you can also use uv if that is your
+preferred tool.
 
-Create a new file named `script.py` with the block below at the top:
+First, create a new file named `script.py` with the block below at the top.
+The metadata block starts with `# /// script` and ends with `# ///`.
+Everything in between must be TOML metadata written as comments.
+
+In the example below, the script requires Python 3.11 or newer, and NumPy is
+declared as a dependency.
 
 ```python
 # /// script
@@ -49,19 +75,17 @@ print(f"Mean temperature: {mean_temp:.2f} C")
 print("Temperature anomalies:", np.round(anomalies, 2))
 ```
 
-The metadata block starts with `# /// script` and ends with `# ///`.
-Everything in between must be TOML-style metadata written as comments.
-
 ## Run the script with Hatch
 
-From your terminal, run:
+Open your terminal and change to the directory where `script.py` lives.
+Then run:
 
 ```bash
 hatch run script.py
 ```
 
 On first run, Hatch will create an environment and install dependencies. On
-later runs, Hatch will reuse that environment and start faster.
+later runs, Hatch will reuse that environment so startup is faster.
 
 :::{note}
 The environment name is based on the script path. If you move the script to a
@@ -83,11 +107,30 @@ For example, to use `pip` instead of `uv` as the installer:
 # ///
 ```
 
-## When to use scripts vs packages
+:::{admonition} Run the same script with uv
 
-Use this script workflow when:
+If you prefer uv, you can run the same inline-metadata script with:
 
-* You have one small task.
+```bash
+uv run script.py
+```
+
+The same `# /// script` metadata block works with uv, including
+`requires-python` and `dependencies`.
+
+For more on using uv to run scripts, see the guide:
+[Running scripts with uv](https://docs.astral.sh/uv/guides/scripts/#creating-a-python-script).
+:::
+
+## When to use scripts vs. packages
+
+You may be wondering when to use scripts versus creating a package.
+
+This depends on your use case. Scripts are often useful when:
+
+* You have one small task, or a specific workflow that is not generalizable.
+* Your workflow is still evolving, but you want to run it in a reproducible
+  environment.
 * You want reproducible dependencies quickly.
 * You are sharing a single file with collaborators.
 
