@@ -2,7 +2,7 @@
 
 This section covers everything you need to structure your Python package, configure metadata, choose build tools, and publish your package to PyPI and conda-forge.
 
-:::::{grid} 1 2
+:::::{grid} 1 1 2 2
 :gutter: 3
 
 ::::{grid-item}
