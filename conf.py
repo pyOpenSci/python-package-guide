@@ -181,6 +181,7 @@ exclude_patterns = [
     ".venv",
     "venv",
     "env",
+    "LICENSE.rst"
 ]
 
 # For sitemap generation
