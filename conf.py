@@ -177,6 +177,10 @@ exclude_patterns = [
     "vale-styles/*",
     "CODE_OF_CONDUCT.md",
     "CLAUDE.md",
+    # Local virtualenv under the doc root; otherwise Sphinx/Myst scans site-packages.
+    ".venv",
+    "venv",
+    "env",
 ]
 
 # For sitemap generation
