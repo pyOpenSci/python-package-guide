@@ -7,7 +7,7 @@ bibliography:
 
 # License files for Python open source software
 
-:::{button-link} https://www.pyopensci.org/python-package-guide/tutorials/add-license-coc/
+:::{button-link} https://www.pyopensci.org/python-package-guide/tutorials/add-license-coc.html
 :color: primary
 :class: sd-rounded-pill float-left
 
