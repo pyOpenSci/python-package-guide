@@ -17,7 +17,7 @@ We support the Python tools that scientists need to create open science workflow
 
 ```{only} html
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/python-package-guide?color=purple&display_name=tag&style=plastic)
-[![](https://img.shields.io/github/stars/pyopensci/python-package-guide?style=social)](https://github.com/pyopensci/contributing-guide)
+[![](https://img.shields.io/github/stars/pyopensci/python-package-guide?style=social)](https://github.com/pyopensci/python-package-guide)
 [![DOI](https://zenodo.org/badge/556814582.svg)](https://zenodo.org/badge/latestdoi/556814582)
 ```
 
@@ -56,7 +56,7 @@ Community docs
 Publish your docs
 ```
 
-##  Tutorial Series: Create a Python Package
+## Tutorial Series: Create a Python Package
 
 The first round of our community-developed, how to create a Python package tutorial series for scientists is complete! Join our community review process or watch development of future tutorials in our [GitHub repo here](https://github.com/pyOpenSci/python-package-guide).
 
@@ -91,6 +91,7 @@ The first round of our community-developed, how to create a Python package tutor
 :class-card: left-aligned
 
 * [Introduction to Hatch](/tutorials/get-to-know-hatch)
+* [Run Python scripts using Hatch](/tutorials/run-python-scripts-hatch)
 
 :::
 ::::
@@ -193,7 +194,6 @@ Learn about best practices for:
 
 ## Tests
 
-
 :::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 3
@@ -212,7 +212,8 @@ Learn about best practices for:
 :::{card} ✨ Run your tests ✨
 :class-card: left-aligned
 
-* [Run tests locally](tests/run-tests)
+* [Run tests locally with Hatch](tests/run-tests)
+* [Run tests with nox](tests/run-tests-nox)
 * [Run tests in CI](tests/tests-ci)
 :::
 ::::
@@ -245,7 +246,7 @@ contribute.
 
 :::::
 
-:::{image} https://www.pyopensci.org/images/people-building-blocks.jpg
+:::{image} <https://www.pyopensci.org/images/people-building-blocks.jpg>
 :align: right
 :width: 350
 :alt: xkcd comic showing a stick figure on the ground and one in the air. The one on the ground is saying. `You're flying! how?`  The person in the air replies  `Python!` Below is a 3 rectangle comic with the following text in each box. Box 1 - I learned it last night. Everything is so simple. Hello world is just print hello world. Box 2 - the person on the ground says - come join us programming is fun again. It's a whole new world. But how are you flying? box 3 - the person flying says - i just typed import antigravity. I also sampled everything in the medicine cabinet. But i think this is the python. The person on the ground is saying - that's it?

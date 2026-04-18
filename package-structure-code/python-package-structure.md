@@ -39,7 +39,7 @@ Want to learn how to create the structure to build your package? Click here.
 
 An example of the **src/package** layout structure is below.
 
-```{console}
+```bash
 myPackageRepoName
 ├── CHANGELOG.md               ┐
 ├── CODE_OF_CONDUCT.md         │
