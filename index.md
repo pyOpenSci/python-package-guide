@@ -319,3 +319,11 @@ Tests  <tests/index>
 Maintain  <maintain-automate/index>
 
 :::
+
+:::{toctree}
+:hidden:
+:caption: Reference
+
+Glossary <documentation/glossary>
+
+:::

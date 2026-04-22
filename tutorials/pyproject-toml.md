@@ -5,7 +5,10 @@
 
 # Make your Python package PyPI ready - pyproject.toml
 
-In [the installable code lesson](create-python-package), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish a bare minimum version of your package to PyPI](publish-pypi.md).
+In [the installable code lesson](create-python-package), you learned how to add
+the bare minimum information to a `pyproject.toml` file to make it
+installable. You then learned how to publish a bare minimum version of your
+package to [PyPI](publish-pypi).
 
 Following that you learned how to add a:
 * [README.md](add-readme)
@@ -52,7 +55,8 @@ When creating your pyproject.toml file, consider the following:
 
 ## What is a pyproject.toml file?
 
-The `pyproject.toml` file is a human and machine-readable file that serves as the primary configuration file for your Python package.
+The `pyproject.toml` file is a human and machine-readable file that
+serves as the primary configuration file for your Python package.
 
 
 :::{tip}
@@ -62,7 +66,10 @@ The `pyproject.toml` file is a human and machine-readable file that serves as th
 
 ### About the .toml format
 
-The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is based on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`. The TOML format can be compared to other structured formats such as`.json`. However, the TOML format was designed to be easier to read for humans.
+The **pyproject.toml** file is written in {term}`TOML` format. TOML is an
+easy-to-read structure that is based on key/value pairs. Each section in the
+**pyproject.toml** file contains a `[table identifier]`. The TOML format can be
+compared to other structured formats such as `.json`.
 
 Below you can see the `[build-system]` table. Within
 that table there are two required key/value pairs.
@@ -81,11 +88,13 @@ build-backend = "hatchling.build"
 
 The pyproject.toml file tells your build tool:
 
-- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to choose from](/package-structure-code/python-package-build-tools)).
+- What {term}`Build backend` to use to build your package (we are using
+  `hatchling` in this tutorial but there are
+  [many others to choose from](/package-structure-code/python-package-build-tools)).
 - How and where to retrieve your package's version:
     - **statically** where you declare the version `version = "0.1.0"` or
     - **dynamically** where the tool looks to the most recent tag in your history to determine the current version.
-- What dependencies your package needs
+- What {term}`Dependencies` your package needs
 - What versions of Python your package supports (important for your users).
 
 The `pyproject.toml` file also makes it easy for anyone browsing your GitHub

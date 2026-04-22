@@ -10,7 +10,7 @@ _A start to finish beginner-friendly tutorial_
 
 Welcome to the pyOpenSci Python packaging tutorial series. The lessons
 on the upcoming pages walk you through the core steps needed to
-create a Python package.
+create a {term}`Python package`.
 
 :::{figure-md} packaging-outline
 
@@ -26,7 +26,8 @@ that you have not created a Python package before. However, the
 content will still be valuable if you are interested in better
 understanding the steps involved in creating a Python package.
 
-- In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
+- In this series you will learn about the core elements that you need to
+  publish your package to [PyPI](publish-pypi).
 
 - In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
@@ -92,7 +93,7 @@ that you can use to perform various tasks.
 
 A Python package is basically a directory with a specific
 file structure. Within the package directory structure, there are
-modules which are files that end in `.py` (the same extension you'd
+{term}`Module` objects which are files that end in `.py` (the same extension you'd
 see in a Python script). These modules allow you to group and
 structure your Python code. Each module contains functions and classes,
 that you can think about as the tools in your toolbox.
@@ -127,7 +128,9 @@ Structuring your code as a package is the first step you need to take so you can
 You might create a Python package because you want to:
 
 - **Use your code across different projects:** At its most basic level, creating a package allows you to install your code into a Python environment. This allows you to then import functions and classes into any workflows both locally and in the cloud.
-- **Share your code:** If you publish a package on a public repository such as PyPI or conda, your package can be installed on any machine using pip or conda with a single command.
+- **Share your code:** If you publish a package on a public repository such as
+  PyPI or conda, your package can be installed on any machine using
+  {term}`pip` or conda with a single command.
 - **Build community around your code:** Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version control system such as git (the system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base.
 - **Organize your code:** Packages can be used to organize large code projects, dividing them into smaller, more manageable components. This structure can help with both maintaining the codebase and with making it easier to understand.
 

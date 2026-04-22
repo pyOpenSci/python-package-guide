@@ -16,7 +16,7 @@ In the previous Python packaging lessons, you learned:
 In this lesson, you will learn how to:
 
 - Automate building and publishing the package on GitHub Actions
-- Configure PyPI Trusted Publishing for the project
+- Configure {term}`Trusted publishing` for the project
 - Secure your workflow using GitHub action hashes and versions in your workflow file
 
 This tutorial assumes that your project is hosted on GitHub and that you want
@@ -30,7 +30,8 @@ software workflows, straight from the GitHub repository of the project. You can
 configure automated testing for every pull request, automate publishing of
 documentation, automate creation of web pages for the project, and even automate
 the release process. For this lesson, we will focus on using actions to release
-and publish your Python package securely to PyPI.
+and publish your Python package securely to
+[PyPI](publish-pypi).
 
 :::{admonition} Why Trusted Publishing Matters
 
@@ -92,7 +93,9 @@ When triggered, the GitHub Action runs all the jobs in a workflow (excluding any
 Jobs and steps can also have [conditional logic](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idif) that allows them only to run if specific criteria exist. For instance, you may want only to have a job step to publish to PyPI if a release was made for the package. But you might want to test building the package every time you merge a new pull request.
 :::
 
-For a release job, you need to clone or check out the repository. You can use the `actions/checkout` action to check out the code. You then install and use `hatch` to build
+For a release job, you need to clone or check out the repository. You can use
+the `actions/checkout` action to check out the code. You then install and use
+[Hatch](get-to-know-hatch) to build
 your package.
 
 You also need to make sure to set up Hatch on the machine GitHub is

@@ -6,9 +6,14 @@
 # Command Line Reference Guide
 
 ```{important}
-**What these tables are:** These tables summarize the command line inputs (e.g., `pipx install hatch`,  `hatch build`) necessary to complete all steps in the package creation process, from installing Hatch to publishing the package on PyPI and conda-forge.
+**What these tables are:** These tables summarize the command line inputs (e.g.,
+`pipx install hatch`, `hatch build`) necessary to complete all steps in the
+package creation process, from installing [Hatch](get-to-know-hatch) to
+publishing the package on [PyPI](publish-pypi) and conda-forge.
 
-**What these tables are not:** These tables do not cover the manual/non-automated steps (e.g., create PyPI account, create PyPI API token) you have to complete throughout the package creation process.
+**What these tables are not:** These tables do not cover the manual or
+non-automated steps (e.g., create a PyPI account, create a {term}`API token`)
+you have to complete throughout the package creation process.
 
 **Operating system note:** The current iteration of this guide has been tested on the Windows OS only. Many commands are Windows-specific. OS-specific commands are indicated with parentheses after the description of the command, e.g., [COMMAND_DESCRIPTION] (Windows). Corresponding commands for macOS and Linux will be added in the future.
 ```

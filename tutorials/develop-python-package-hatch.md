@@ -20,9 +20,13 @@ If you are using Windows or are not familiar with Shell, you may want to check o
 
 :::
 
-Welcome to your shiny new package! This page will help you get started with using Hatch to run tests, build and check your package, and build your documentation.
+Welcome to your shiny new package! This page will help you get started with
+using [Hatch](get-to-know-hatch) to run tests, build and check your package, and build your
+documentation.
 
-To begin, have a look at the `pyproject.toml` file in your package directory. This file contains the configuration for your package. This file is written using a .toml format. [You can learn more about toml here.](https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html) Here's the TL&DR:
+To begin, have a look at the [pyproject.toml](pyproject-toml) file in your package
+directory. This file contains the configuration for your package and is written
+using {term}`TOML` format. Here's the TL&DR:
 
 * Each `[]` section in the toml file is called a table.
 * You can nest tables with double brackets like this`[[]]`
@@ -41,7 +45,10 @@ installer = "uv"
 
 ## Using Hatch for developing, building, and maintaining your pure Python package
 
-In the pyOpenSci Python package template, we have set up Hatch environments. You will notice at the bottom of the file, a [hatch environment](https://hatch.pypa.io/1.13/environment/) section, that looks like this:
+In the pyOpenSci Python package template, we have set up
+{term}`Hatch environment` definitions. You will notice at the bottom of the
+file, a [hatch environment](https://hatch.pypa.io/1.13/environment/) section,
+that looks like this:
 
 ```
 ########################################
@@ -69,9 +76,15 @@ Below the environment "declaration," you can see the definition of what should b
 
 ## A Hatch environment to build your package
 
-Below is a Hatch environment definition that you will find in your [new project's pyproject.toml file](create-python-package). It is set up to [build your package's](build-package) distribution files ([source distribution](python-source-distribution) and [wheel](python-wheel)).
+Below is a Hatch environment definition that you will find in your new
+project's [pyproject.toml](pyproject-toml) file. It is set up to build your package's
+{term}`Distribution files` ({term}`Source distribution (sdist)` and
+{term}`Wheel (.whl)`).
 
-Notice that the environment definition declares two dependencies: `pip` and `twine`, which the environment needs to run successfully. This declaration is similar to declaring dependencies for your package at the top of your `pyproject.toml`. This section tells Hatch to create a new VENV with pip and twine installed.
+Notice that the environment definition declares two {term}`Dependencies`: `pip`
+and `twine`, which the environment needs to run successfully. This declaration
+is similar to declaring dependencies for your package at the top of your
+[pyproject.toml](pyproject-toml).
 
 ```toml
 [tool.hatch.envs.build]
@@ -90,7 +103,8 @@ Notice the `detached = True` flag at the bottom of the environment. By default, 
 
 ### Hatch scripts
 
-Hatch supports defining scripts that run in specific Hatch environments.
+Hatch supports defining {term}`Script (Hatch)` commands that run in specific
+Hatch environments.
 
 Above, you have defined a new environment called 'build' that Hatch will create as a virtual environment (venv). Because `detached = True` in that environment, Hatch won't install your package into it.
 
