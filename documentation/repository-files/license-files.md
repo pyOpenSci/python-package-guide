@@ -7,7 +7,7 @@ bibliography:
 
 # License files for Python open source software
 
-:::{button-link} <https://www.pyopensci.org/about-peer-review/>
+:::{button-link} https://www.pyopensci.org/python-package-guide/tutorials/add-license-coc.html
 :color: primary
 :class: sd-rounded-pill float-left
 
@@ -131,6 +131,13 @@ This would not be true with a GPL licensed package. `GPL-3` packages can include
 ## What about software citation?
 
 While many permissive licenses do not require citation, we strongly encourage that you cite all software that you use in papers, blogs, and other publications. You tell your users how to cite your package by using a [citation.cff file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
+
+:::{tip} Additional resources on software citation
+The Turing Way has excellent guides on this topic:
+
+- [CITATION.cff files](https://book.the-turing-way.org/communication/citable/citable-cff) — detailed guide on creating and maintaining citation files
+- [Software citation pathways](https://book.the-turing-way.org/pathways/pathways-software-citation) — overview of how software citation works in practice
+:::
 
 ### Citation.cff files: Making your software citable
 

@@ -26,7 +26,7 @@ Other resources you can check out:
 
 You can use tools like Hatch to quickly create a modern Python package structure. Check out our quickstart tutorial:
 
-:::{button-link} <https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure>
+:::{button-link} ../tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure
 :color: success
 :class: sd-rounded-pill float-left
 
@@ -39,7 +39,7 @@ Want to learn how to create the structure to build your package? Click here.
 
 An example of the **src/package** layout structure is below.
 
-```{console}
+```bash
 myPackageRepoName
 ├── CHANGELOG.md               ┐
 ├── CODE_OF_CONDUCT.md         │
@@ -77,7 +77,7 @@ include:
 
 <!-- TODO: CHANGELOG is not mentioned in either documentation nor peer review -->
 
-:::{button-link} <https://www.pyopensci.org/python-package-guide/documentation>
+:::{button-link} ../documentation/index.html
 :color: info
 :class: sd-rounded-pill
 
@@ -164,7 +164,7 @@ distribution files. This places a maintenance toll on repositories like PyPI and
 Anaconda.org that have to deal with thousands of package uploads.
 :::
 
-:::{button-link} /tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure
+:::{button-link} ../tutorials/create-python-package.html#step-1-set-up-the-package-directory-structure
 :color: success
 :class: sd-rounded-pill float-left
 

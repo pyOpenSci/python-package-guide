@@ -176,6 +176,12 @@ exclude_patterns = [
     ".pytest_cache/README.md",
     "vale-styles/*",
     "CODE_OF_CONDUCT.md",
+    "CLAUDE.md",
+    # Local virtualenv under the doc root; otherwise Sphinx/Myst scans site-packages.
+    ".venv",
+    "venv",
+    "env",
+    "LICENSE.rst"
 ]
 
 # For sitemap generation

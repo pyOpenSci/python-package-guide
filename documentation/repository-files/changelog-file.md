@@ -8,7 +8,7 @@ The `CHANGELOG.md` document serves as a valuable resource for developers and use
 
 The primary purpose of `CHANGELOG.md` is to provide a record of notable changes made to the project with each new release. This document helps users understand what has been added, fixed, modified, or removed with each version of the software.
 
-[Keep a CHAGELOG.md](https://keepachangelog.com/en/1.1.0/) is a great, simple resource for understanding what a changelog is and how to create a good changelog. It also includes examples of things to avoid.
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) is a great, simple resource for understanding what a changelog is and how to create a good changelog. It also includes examples of things to avoid.
 
 ```{admonition} Versioning your Python package and semantic versioning
 :class: tip
@@ -24,7 +24,7 @@ A well-maintained changelog is essential for transparent communication with user
 
 ## What does it include?
 
-The contents of a changelog.md file typically follow a structured format, detailing the changes introduced in each release. While the exact format may vary depending on the project's conventions, some common elements found in changelogs for Python packages include:
+The contents of a `CHANGELOG.md` file typically follow a structured format, detailing the changes introduced in each release. While the exact format may vary depending on the project's conventions, some common elements found in changelogs for Python packages include:
 
 - **Versioning**: Clear identification of each release version using semantic versioning or another versioning scheme adopted by the project.
 
