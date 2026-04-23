@@ -126,7 +126,7 @@ pip
   `pip install package-name`. See [pip.pypa.io](https://pip.pypa.io).
 
 pytest
-  A widely used Python testing framework for discovering and runnning tests.
+  A widely used Python testing framework for discovering and running tests.
   In this guide, pytest often runs through Hatch scripts. See
   [docs.pytest.org](https://docs.pytest.org).
 
