@@ -7,7 +7,7 @@
 
 ```{important}
 **What these tables are:** These tables summarize the command line inputs (e.g.,
-`pipx install hatch`, `hatch build`) necessary to complete all steps in the
+`pipx install hatch`, `hatch build` or `python -m build`) necessary to complete all steps in the
 package creation process, from installing [Hatch](get-to-know-hatch) to
 publishing the package on [PyPI](publish-pypi) and conda-forge.
 
