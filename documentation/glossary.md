@@ -85,8 +85,8 @@ Trusted publishing
   trust your repository directly.
   See also [Setup Trusted Publishing for secure and automated publishing via GitHub Actions](../tutorials/trusted-publishing).
 
-Wheel (.whl) (binary distribution)
-  One of the two distribution file types for a Python package. A wheel
+Wheel (.whl)
+  The binary distribution type for a Python package. A wheel
   is a pre-built binary format (`.whl`, a ZIP file) that installs directly
   without a build step. For many pure Python packages, one wheel can
   work across platforms.
