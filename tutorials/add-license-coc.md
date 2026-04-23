@@ -28,7 +28,10 @@ A license contains legal language about how users can use and reuse your softwar
 1. Create a `LICENSE` file in your project directory that specifies the license that you choose for your package.
 2. Describe your choice of license in your `pyproject.toml` data where metadata are set.
 
-By adding this metadata to your `pyproject.toml` file, the choice of license will be included in your package's metadata which is used to populate your package's PyPI landing page. The `LICENSE` file is also used in your GitHub repository's landing page interface.
+By adding this metadata to your [pyproject.toml](pyproject-toml) file, the choice of
+license will be included in your package's metadata which is used to populate
+your package's PyPI landing page. The `LICENSE` file is also used in your
+GitHub repository's landing page interface, and makes its way into your distributions.
 
 ### What license should you use?
 
@@ -143,7 +146,8 @@ package directory.
 (add-coc)=
 ## What is a code of conduct file?
 
-A `CODE_OF_CONDUCT` file is used to establish guidelines for how people in your community interact.
+A `CODE_OF_CONDUCT` file is a {term}`Code of conduct` used to establish
+guidelines for how people in your community interact.
 
 This file is critical to supporting your community as it
 grows. The `CODE_OF_CONDUCT`:

@@ -22,11 +22,13 @@ In the previous Python packaging lessons, you've learned:
 
 In this lesson you will learn how to:
 
-- Build your package's source (sdist) and wheel distributions
+- Build your package's {term}`Source distribution (sdist)` and
+  {term}`Wheel (.whl)` {term}`Distribution files`
 - Setup an account on TestPyPI (the process is similar for PyPI)
 - Publish your package to TestPyPI and PyPI
 
-You will do all of your development work in this lesson using [Hatch](https://hatch.pypa.io/latest/).
+You will do all of your development work in this lesson using
+[Hatch](get-to-know-hatch).
 
 Once your package is on PyPI you can publish it to conda-forge (which is a channel on conda)
 using [Grayskull](https://conda.github.io/grayskull/).
@@ -60,8 +62,8 @@ you need to do to publish your Python package:
 to TestPyPI. You need to:
 
 1. **Create a package development environment**
-1. [**Build your package using `hatch build`**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into two types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will `pip install` your package.
-1. **Create an account on TestPyPI (or PyPI)**: You will need to create a TestPyPI account and associated token which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.
+1. [**Build your package using `hatch build`**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into two types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will use {term}`pip` to install your package.
+1. **Create an account on TestPyPI (or PyPI)**: You will need to create a TestPyPI account and associated {term}`API token` which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.
 1. **Publish to TestPyPI using `hatch publish`**
 
 In a [future lesson](trusted-publishing), you will learn how to create an automated GitHub Actions workflow that publishes an updated version of your package to PyPI every time you create a GitHub release.
