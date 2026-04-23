@@ -62,9 +62,6 @@ try:
         .decode("utf-8")
         .strip()
     )
-    # Basic check: short SHA should be hex.
-    if not release_value or any(c not in "0123456789abcdef" for c in release_value.lower()):
-        raise ValueError(f"Unexpected git sha: {release_value!r}")
 except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
     # Fallback when building from a source archive or without git available
     release_value = "unknown"
