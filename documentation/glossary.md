@@ -1,10 +1,8 @@
-# Python packaging glossary
-
-```{eval-rst}
+---
+:og:title: Python packaging glossary
 :og:description: A glossary of common terms used across this Python package
   guide.
-:og:title: Python packaging glossary
-```
+---
 
 ## Core packaging
 
