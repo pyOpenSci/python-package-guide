@@ -129,7 +129,7 @@ You might create a Python package because you want to:
 
 - **Use your code across different projects:** At its most basic level, creating a package allows you to install your code into a Python environment. This allows you to then import functions and classes into any workflows both locally and in the cloud.
 - **Share your code:** If you publish a package on a public repository such as
-  PyPI or conda, your package can be installed on any machine using
+  PyPI or conda-forge, your package can be installed on any machine using
   {term}`pip` or conda with a single command.
 - **Build community around your code:** Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version control system such as git (the system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base.
 - **Organize your code:** Packages can be used to organize large code projects, dividing them into smaller, more manageable components. This structure can help with both maintaining the codebase and with making it easier to understand.

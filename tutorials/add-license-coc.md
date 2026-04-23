@@ -31,7 +31,7 @@ A license contains legal language about how users can use and reuse your softwar
 By adding this metadata to your [pyproject.toml](pyproject-toml) file, the choice of
 license will be included in your package's metadata which is used to populate
 your package's PyPI landing page. The `LICENSE` file is also used in your
-GitHub repository's landing page interface.
+GitHub repository's landing page interface, and makes its way into your distributions.
 
 ### What license should you use?
 

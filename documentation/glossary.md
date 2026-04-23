@@ -9,23 +9,29 @@
 ## Core packaging
 
 ```{glossary}
-__init__.py
+`__init__.py`
   A special Python file that marks a directory as a Python package.
   When Python sees this file, it knows the folder contains importable
-  code. It can be empty or contain code that runs when the package is
-  imported.
+  code. It can either be empty or contain code that runs when the package
+  is imported.
 
 API token
-  A secret key used to authenticate with PyPI or Test PyPI when
+  A secret key used to authenticate with PyPI or TestPyPI when
   publishing a package. You generate one in your account settings and
-  use it in place of a password. Treat it like a password and never
-  share it or commit it to version control.
+  use it in place of a password. **Treat it like a password and never
+  share it or commit it to version control**.
 
 Build backend
   The tool that does the actual work of building your package into
   distribution files. In this guide, the build backend is Hatchling.
-  You specify it in your `pyproject.toml` file and it runs when you run
-  `hatch build`.
+  You specify it in your `pyproject.toml` file:
+  
+  [build-system]
+  requires = ["hatchling >= 1.26"]
+  build-backend = "hatchling.build"
+
+  You execute a build by running `hatch build`. Alternatively, you can run  `python -m build`.
+  [Reference: official Python Packaging documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend)
 
 Distribution files
   The files you upload to PyPI so others can install your package.
@@ -38,7 +44,7 @@ Module
   classes, or variables that can be imported. A package is made up of
   one or more modules.
 
-pyproject.toml
+`pyproject.toml`
   The configuration file at the root of your Python package. Written in
   TOML format, it stores metadata such as name, version, authors, and
   license. It can also configure tools such as Hatch, uv, and pytest.
@@ -47,12 +53,17 @@ pyproject.toml
 Python package
   A directory of Python code structured so it can be installed,
   imported, and shared with others. A package includes at least an
-  `__init__.py` file and a `pyproject.toml` file.
+  `__init__.py` file and a `pyproject.toml` file. This is sometimes
+  referred to as a **regular package**.
+  
+  Info: You may hear the term **namespaced package** which is not really
+  a package at all but a container of subpackages. This is out of scope
+  for this guide. If interested, consult the [Python documentation](https://docs.python.org/3/glossary.html#term-namespace-package).
 
-PyPI / Test PyPI
+PyPI / TestPyPI
   PyPI (the Python Package Index) is the official repository where
-  Python packages are published and installed from. Test PyPI is a
-  separate practice environment used for learning and testing publish
+  Python packages are published and installed from. TestPyPI is a
+  separate practice environment used for learning and testing publishing
   workflows. See [pypi.org](https://pypi.org) and
   [test.pypi.org](https://test.pypi.org).
   See also [Publish your Python package to PyPI](../tutorials/publish-pypi).
@@ -74,10 +85,11 @@ Trusted publishing
   trust your repository directly.
   See also [Setup Trusted Publishing for secure and automated publishing via GitHub Actions](../tutorials/trusted-publishing).
 
-Wheel (.whl)
+Wheel (.whl) (binary distribution)
   One of the two distribution file types for a Python package. A wheel
-  is a pre-built format that installs directly without a build step.
-  For many pure Python packages, one wheel can work across platforms.
+  is a pre-built binary format (`.whl`, a ZIP file) that installs directly
+  without a build step. For many pure Python packages, one wheel can
+  work across platforms.
   See also [Publish your Python package to PyPI](../tutorials/publish-pypi).
 ```
 
@@ -103,8 +115,9 @@ Hatch
   See also [Get to know Hatch](../tutorials/get-to-know-hatch).
 
 Hatchling
-  The build backend used by Hatch. When you run `hatch build`,
-  Hatchling reads `pyproject.toml` and creates wheel and sdist files.
+  The build backend used by Hatch. When you run `python -m build` or
+  `hatch build`, Hatchling reads `pyproject.toml` and creates sdist
+  and wheel files.
   See [hatch.pypa.io/latest/backend](https://hatch.pypa.io/latest/backend/).
 
 pip
@@ -113,13 +126,13 @@ pip
   `pip install package-name`. See [pip.pypa.io](https://pip.pypa.io).
 
 pytest
-  The standard Python testing framework used to discover and run tests.
+  A widely used Python testing framework for discovering and runnning tests.
   In this guide, pytest often runs through Hatch scripts. See
   [docs.pytest.org](https://docs.pytest.org).
 
 Ruff
   A fast Python linter and formatter. It checks style and can
-  automatically fix many issues. See
+  automatically fix many styling issues. See
   [docs.astral.sh/ruff](https://docs.astral.sh/ruff).
 
 Sphinx
@@ -128,7 +141,7 @@ Sphinx
   [sphinx-doc.org](https://www.sphinx-doc.org).
 
 Twine
-  A tool for securely uploading distribution files to PyPI or Test PyPI.
+  A tool for securely uploading distribution files to PyPI or TestPyPI.
   See [twine.readthedocs.io](https://twine.readthedocs.io).
 
 uv
@@ -200,6 +213,12 @@ Version specifier / lower bound
 ## Git / GitHub
 
 ```{glossary}
+git
+  A tool for version control.
+
+GitHub
+  A service providing accounts and organizations to facilitate sharing repositories.
+
 GitHub Codespace
   A cloud-based development environment that runs in a browser. See
   [github.com/features/codespaces](https://github.com/features/codespaces).

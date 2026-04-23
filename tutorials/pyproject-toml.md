@@ -89,7 +89,7 @@ build-backend = "hatchling.build"
 The pyproject.toml file tells your build tool:
 
 - What {term}`Build backend` to use to build your package (we are using
-  `hatchling` in this tutorial but there are
+  {term}`Hatchling` in this tutorial but there are
   [many others to choose from](/package-structure-code/python-package-build-tools)).
 - How and where to retrieve your package's version:
     - **statically** where you declare the version `version = "0.1.0"` or
