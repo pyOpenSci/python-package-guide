@@ -24,11 +24,7 @@ API token
 Build backend
   The tool that does the actual work of building your package into
   distribution files. In this guide, the build backend is Hatchling.
-  You specify it in your `pyproject.toml` file:
-
-     [build-system]
-     requires = ["hatchling >= 1.26"]
-     build-backend = "hatchling.build"
+  You specify it in your `pyproject.toml` file under `[build-system]`.
 
   You execute a build by running `hatch build`. Alternatively, you can run  `python -m build`.
   [Reference: official Python Packaging documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend)
