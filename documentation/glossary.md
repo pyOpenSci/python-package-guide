@@ -25,7 +25,7 @@ Build backend
   The tool that does the actual work of building your package into
   distribution files. In this guide, the build backend is Hatchling.
   You specify it in your `pyproject.toml` file:
-  
+
   [build-system]
   requires = ["hatchling >= 1.26"]
   build-backend = "hatchling.build"
@@ -55,7 +55,7 @@ Python package
   imported, and shared with others. A package includes at least an
   `__init__.py` file and a `pyproject.toml` file. This is sometimes
   referred to as a **regular package**.
-  
+
   Info: You may hear the term **namespaced package** which is not really
   a package at all but a container of subpackages. This is out of scope
   for this guide. If interested, consult the [Python documentation](https://docs.python.org/3/glossary.html#term-namespace-package).
