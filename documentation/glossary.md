@@ -4,6 +4,8 @@
   guide.
 ---
 
+# Python packaging glossary
+
 ## Core packaging
 
 ```{glossary}
