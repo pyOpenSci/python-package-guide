@@ -64,8 +64,7 @@ The first round of our community-developed, how to create a Python package tutor
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✿ Create a Package Tutorials ✿
+::::{grid-item-card} ✿ Create a Package Tutorials ✿
 :class-card: left-aligned
 
 * [What is a Python package?](/tutorials/intro)
@@ -73,36 +72,29 @@ The first round of our community-developed, how to create a Python package tutor
 * [Publish your package to (test) PyPI](/tutorials/publish-pypi)
 * [Publish your package to conda-forge](/tutorials/publish-conda-forge)
 
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✿ Package Metadata Tutorials ✿
+::::{grid-item-card} ✿ Package Metadata Tutorials ✿
 :class-card: left-aligned
 
 * [How to add a README file](/tutorials/add-readme)
 * [How to add metadata to a pyproject.toml file for publication to PyPI.](/tutorials/pyproject-toml.md)
 
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✿ Packaging Tool Tutorials ✿
+::::{grid-item-card} ✿ Packaging Tool Tutorials ✿
 :class-card: left-aligned
 
 * [Introduction to Hatch](/tutorials/get-to-know-hatch)
 * [Run Python scripts using Hatch](/tutorials/run-python-scripts-hatch)
 
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✿ Reference Guides ✿
+::::{grid-item-card} ✿ Reference Guides ✿
 :class-card: left-aligned
 
 * [Command Line Reference Guide](/tutorials/command-line-reference)
 
-:::
 ::::
 
 :::::
@@ -116,8 +108,7 @@ the vibrant ecosystem of packaging tools that are available to help you with you
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✨ Create your package ✨
+::::{grid-item-card} ✨ Create your package ✨
 :class-card: left-aligned
 
 * [Package file structure](/package-structure-code/python-package-structure)
@@ -127,11 +118,9 @@ the vibrant ecosystem of packaging tools that are available to help you with you
 * [Navigate the packaging tool ecosystem](package-structure-code/python-package-build-tools.md)
 * [Non pure Python builds](package-structure-code/complex-python-package-builds.md)
 
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Publish your package ✨
+::::{grid-item-card} ✨ Publish your package ✨
 :class-card: left-aligned
 
 Gain a better understanding of the Python packaging ecosystem
@@ -140,7 +129,6 @@ Learn about best practices for:
 * [Package versioning & release](/package-structure-code/python-package-versions.md)
 * [Publish to PyPI & Conda-forge](/package-structure-code/publish-python-package-pypi-conda.md)
 
-:::
 ::::
 :::::
 
@@ -150,44 +138,36 @@ Learn about best practices for:
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✨ Write The Docs ✨
+::::{grid-item-card} ✨ Write The Docs ✨
 :class-card: left-aligned
 
 * [Create documentation for your users](/documentation/write-user-documentation/intro)
 * [Core files to include in your package repository](/documentation/repository-files/intro)
 * [Write tutorials to show how your package is used](/documentation/write-user-documentation/create-package-tutorials)
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Developer Docs ✨
+::::{grid-item-card} ✨ Developer Docs ✨
 :class-card: left-aligned
 
 * [Create documentation for collaborating developers](/documentation/repository-files/contributing-file)
 * [Write a development guide](/documentation/repository-files/development-guide)
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Document For A Community ✨
+::::{grid-item-card} ✨ Document For A Community ✨
 :class-card: left-aligned
 
 * [Writing a README file](/documentation/repository-files/readme-file-best-practices)
 * [Set norms with a Code of Conduct](/documentation/repository-files/code-of-conduct-file)
 * [License your package](/documentation/repository-files/license-files)
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Publish Your Docs ✨
+::::{grid-item-card} ✨ Publish Your Docs ✨
 :class-card: left-aligned
 
 * [How to publish your docs](/documentation/hosting-tools/intro)
 * [Using Sphinx](/documentation/hosting-tools/intro)
 * [Markdown, MyST, and ReST](/documentation/hosting-tools/myst-markdown-rst-doc-syntax)
 * [Host your docs on Read The Docs or GitHub Pages](/documentation/hosting-tools/publish-documentation-online)
-:::
 ::::
 
 :::::
@@ -198,24 +178,20 @@ Learn about best practices for:
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✨ Tests for your Python package ✨
+::::{grid-item-card} ✨ Tests for your Python package ✨
 :class-card: left-aligned
 
 * [Intro to testing](tests/index.md)
 * [Write tests](tests/write-tests)
 * [Types of tests](tests/test-types)
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Run your tests ✨
+::::{grid-item-card} ✨ Run your tests ✨
 :class-card: left-aligned
 
 * [Run tests locally with Hatch](tests/run-tests)
 * [Run tests with nox](tests/run-tests-nox)
 * [Run tests in CI](tests/tests-ci)
-:::
 ::::
 :::::
 
@@ -225,23 +201,19 @@ Learn about best practices for:
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✨ Code style & Format ✨
+::::{grid-item-card} ✨ Code style & Format ✨
 :class-card: left-aligned
 
 * [Code style](package-structure-code/code-style-linting-format.md)
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Want to contribute? ✨
+::::{grid-item-card} ✨ Want to contribute? ✨
 :link: CONTRIBUTING
 :link-type: doc
 :class-card: left-aligned
 
 We welcome contributions to this guide. Learn more about how you can
 contribute.
-:::
 ::::
 
 :::::

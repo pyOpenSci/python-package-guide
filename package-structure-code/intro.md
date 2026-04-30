@@ -5,8 +5,7 @@ This section covers everything you need to structure your Python package, config
 :::::{grid} 1 1 2 2
 :gutter: 3
 
-::::{grid-item}
-:::{card} New to Python packaging?
+::::{grid-item-card} New to Python packaging?
 :class-card: sd-shadow-sm
 
 **Start with our step-by-step tutorials:**
@@ -22,11 +21,9 @@ This section covers everything you need to structure your Python package, config
 Start the tutorial series
 ```
 
-:::
 ::::
 
-::::{grid-item}
-:::{card} Already have code to package?
+::::{grid-item-card} Already have code to package?
 :class-card: sd-shadow-sm
 
 **Jump into the reference guides:**
@@ -36,7 +33,6 @@ Start the tutorial series
 - Understand the publishing process
 
 Start with the cards below ↓
-:::
 ::::
 
 :::::
@@ -66,34 +62,26 @@ Our recommendations align with current [Python packaging standards](https://pack
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✨ Package file structure ✨
+::::{grid-item-card} ✨ Package file structure ✨
 
 Learn how to organize your package files using [src or flat layouts](package-source-layout). This page helps you decide on a package structure that follows modern Python best practices, including where to place [tests](src-layout-test) and [documentation](package-source-layout).
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Add metadata ✨
+::::{grid-item-card} ✨ Add metadata ✨
 
 Learn how to add [project metadata](pyproject-toml-python-package-metadata) to your Python package to support both
 filtering on PyPI and also the metadata that a package installer needs to
 build and install your package.
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Declare dependencies ✨
+::::{grid-item-card} ✨ Declare dependencies ✨
 
 Learn how to specify [required dependencies](required-dependencies), [optional feature dependencies](optional-dependencies), and [development dependencies](dependency-groups) in your [pyproject.toml file](pyproject-toml-overview).
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Setup package versioning ✨
+::::{grid-item-card} ✨ Setup package versioning ✨
 
 Learn how to manage package versions using [semantic versioning (SemVer)](package-versioning) or [calendar versioning (CalVer)](package-versioning). This page helps you choose the right versioning strategy and set up [automated version management](tools-version-management) using tools like hatch_vcs or setuptools-scm.
-:::
 ::::
 
 :::::
@@ -104,11 +92,9 @@ Learn how to manage package versions using [semantic versioning (SemVer)](packag
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✨ Code style & linters ✨
+::::{grid-item-card} ✨ Code style & linters ✨
 
 Learn how to set up [code formatters and linters](code-style-tools) ([Black](about-black), [Ruff](about-ruff), [flake8](about-flake8)) to ensure your package follows [PEP 8 standards](code-style-tools) and maintains consistent code style throughout your project.
-:::
 ::::
 
 :::::
@@ -119,25 +105,19 @@ Learn how to set up [code formatters and linters](code-style-tools) ([Black](abo
 :class-container: text-center
 :gutter: 3
 
-::::{grid-item}
-:::{card} ✨ Choose your build tool ✨
+::::{grid-item-card} ✨ Choose your build tool ✨
 
 Learn how to choose the right packaging tool for your project. Compare [Hatch](about-hatch), [PDM](about-pdm), [Poetry](about-poetry), and [setuptools](about-setuptools) to find the best fit for your workflow. See the [summary comparison](summary-build-tools) to help decide.
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Build your package ✨
+::::{grid-item-card} ✨ Build your package ✨
 
 Learn how to build your Python package into [distribution files](build-package) ([sdist](python-source-distribution) and [wheel](python-wheel)) that can be published on [PyPI](publish-pypi-conda).
-:::
 ::::
 
-::::{grid-item}
-:::{card} ✨ Publish to PyPI and Conda ✨
+::::{grid-item-card} ✨ Publish to PyPI and Conda ✨
 
 Learn how to publish your package to [PyPI](publish-pypi-conda) and optionally to [conda-forge](how-to-submit-to-conda-forge). This page covers the complete process for making your package available to users, including the [conda-forge submission process](how-to-submit-to-conda-forge) after publishing to PyPI.
-:::
 ::::
 
 :::::
