@@ -279,7 +279,7 @@ Documentation <documentation/index>
 
 :::{toctree}
 :hidden:
-:caption: Testing
+:caption: Tests & Data
 
 Tests  <tests/index>
 
