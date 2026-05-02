@@ -250,7 +250,7 @@ This guidebook is for anyone interested in learning more about Python packaging.
 If you have ideas of things you'd like
 to see here clarified in this guide, [we invite you to open an issue on GitHub.](https://github.com/pyOpenSci/python-package-guide/issues).
 
-If you have questions about our peer review process or packaging in general, you are welcome to use our [pyOpenSci Discourse forum](https://pyopensci.discourse.group/).
+If you have questions about our peer review process or packaging in general, you are welcome to use our [GitHub Discussions](https://github.com/orgs/pyOpenSci/discussions).
 
 This living Python packaging guide is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
 

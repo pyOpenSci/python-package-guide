@@ -43,5 +43,4 @@ OpenGraph is an extension that allows you to add metadata to your documentation
 content pages. [The OpenGraph protocol allows other websites to provide a
 useful preview of the content on your page when shared](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/#heading-what-is-open-graph). This is important
 for when the pages in your documentation are shared on social
-media sites like Twitter and Mastodon and even for shares on
-tools like Slack and Discourse.
+media and even for shares on collaboration platforms like Slack and Discourse.
