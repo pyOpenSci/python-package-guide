@@ -272,8 +272,17 @@ def write_translation_stats(app: "Sphinx", exception: Exception | None) -> None:
         logger.info("Skipping translation stats for non-HTML build")
         return
 
+    if exception is not None:
+        logger.info("Skipping translation stats because the build raised an exception")
+        return
+
     stats = get_translation_stats()
-    out_path = app.outdir / "_static" / "translation_stats.json"
+    if not stats:
+        logger.info("Skipping translation stats because no .po files were found")
+        return
+
+    out_path = Path(app.outdir) / "_static" / "translation_stats.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w") as f:
         json.dump(stats, f, indent=2)
 
