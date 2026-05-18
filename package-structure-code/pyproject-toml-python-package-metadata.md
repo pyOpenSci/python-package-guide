@@ -7,7 +7,7 @@
 2. There are two _required_ fields in the **[project]** table: **name=** and **version=**.
 3. Add metadata to the classifiers section of your `pyproject.toml` file to make it easier for users to find your project on PyPI.
 4. When you are adding classifiers to the [project] table, only use valid values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build your package or publish to PyPI.
-5. There is no specific order for tables in the `pyproject.toml` file. However fields need to be placed within the correct table sections. For example `requires =` always need to be associated with the **[build-system]** table.
+5. There is no specific order for tables in the `pyproject.toml` file. However, fields need to be placed within the correct table sections. For example `requires =` always needs to be associated with the **[build-system]** table.
 
 :::
 

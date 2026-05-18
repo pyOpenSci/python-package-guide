@@ -19,23 +19,31 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "dependency-package-name-1",
-    "dependency-package-name-2",
+    "pandas",
+    "matplotlib"
 ]
 
-[project.optional-dependencies]
+[development-group]
 tests = [
   "pytest",
   "pytest-cov"
 ]
+
 lint = [
   "black",
-  "flake8"
+  "ruff"
 ]
+
 docs = [
     "sphinx",
     "pydata-sphinx-theme"
 ]
+
+[optional.dependencies]
+plot = ["bokeh"]
+test = ["pytest", "pytest-cov"]
+docs = ["sphinx", "pydata-sphinx-theme"]
+dev = ["examplePy[test,docs,plot]", "build", "twine"]  # "examplePy" is the name of the package in [project]
 
 [tool.ruff]
 select = [
