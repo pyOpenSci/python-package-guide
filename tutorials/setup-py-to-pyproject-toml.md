@@ -6,7 +6,9 @@
 (migrate-pyproj)=
 # Using Hatch to Migrate setup.py to a pyproject.toml
 
-Hatch can be useful for generating your project's `pyproject.toml` file if your project already has a `setup.py` file.
+[Hatch](get-to-know-hatch) can be useful for generating your project's
+[pyproject.toml](pyproject-toml) file if your project already has a `setup.py`
+file.
 
 :::{admonition} Note
 :class: tip
@@ -25,7 +27,11 @@ In this lesson, you will learn:
 
 ## What is Hatch?
 
-Hatch is a Python package manager designed to streamline the process of creating, managing, and distributing Python packages. It provides a convenient CLI (Command-Line Interface) for tasks such as creating new projects, managing dependencies, building distributions, and publishing packages to repositories like PyPI.
+Hatch is a Python package manager designed to streamline the process of
+creating, managing, and distributing Python packages. It provides a convenient
+CLI (Command-Line Interface) for tasks such as creating new projects, managing
+{term}`Dependencies`, building distributions, and publishing packages to
+repositories like [PyPI](publish-pypi).
 
 :::{admonition} Get to know Hatch
 :class: tip

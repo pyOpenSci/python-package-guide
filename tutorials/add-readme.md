@@ -3,7 +3,7 @@
 :og:title: Add a README file to your Python package
 ---
 
-# Add a README file to your Python package
+# Add a {term}`README` file to your {term}`Python package`
 
 In the previous lessons you learned:
 
@@ -22,7 +22,8 @@ In this lesson you will learn:
 
 ## What is a README file?
 
-The `README.md` file is a markdown file located at the root of your project directory that helps
+The `README.md` file is the project's {term}`README` and is located at the
+root of your project directory. It helps
 a user understand:
 
 - You package's name
@@ -93,7 +94,7 @@ Remember that the more people understand what your package does, the more people
 
 Next, add instructions that tell users how to install your package.
 
-For example, can they use pip to install your package?
+For example, can they use {term}`pip` to install your package?
 `python -m pip install packagename`
 
 or conda?
@@ -160,7 +161,8 @@ help users understand how to use your package for common workflows.
 The community section of your README file is a place to include information for users who may want to engage with your project. This engagement will likely happen on a platform like GitHub or GitLab.
 
 In the community section, you will add links to your contributing guide
-and `CODE_OF_CONDUCT.md`. You will create a [`CODE_OF_CONDUCT.md` file in the next lesson](add-license-coc).
+and `CODE_OF_CONDUCT.md`. You will create a code of conduct file in the
+[next lesson](add-license-coc).
 
 As your package grows you may also have a link to a development guide that contributors and your maintainer team will follow. The development guide
 outlines how to perform maintenance tasks such as:

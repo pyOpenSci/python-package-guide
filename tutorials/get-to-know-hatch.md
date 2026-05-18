@@ -5,15 +5,15 @@
 
 # Get to Know Hatch
 
-Our Python packaging tutorials use the tool
-[Hatch](https://hatch.pypa.io/latest/). While there are [many great packaging
+Our Python packaging tutorials use Hatch.
+While there are [many great packaging
 tools](/package-structure-code/python-package-build-tools) out there, we have
 selected Hatch because:
 
 1. It is an end-to-end tool that supports most of the steps required to create
    a quality Python package. Beginners will have fewer tools to learn if they
    use Hatch.
-2. It supports different build back-ends if you ever need to compile code in
+2. It supports different {term}`Build backend` options if you ever need to compile code in
    other languages.
 3. As a community, pyOpenSci has decided that Hatch is a user-friendly tool that
    supports many different scientific Python use cases.
@@ -72,7 +72,8 @@ however, if you prefer another method, check out the [Hatch installation documen
 ::::
 
 :::{tip}
-Hatch can also be installed directly using [pip](https://hatch.pypa.io/latest/install/#pip) or [conda](https://hatch.pypa.io/latest/install/#conda). We encourage you to
+Hatch can also be installed directly using {term}`pip` or
+[conda](https://hatch.pypa.io/latest/install/#conda). We encourage you to
 follow the instructions above because we have found that the Hatch installers
 for Windows and Mac are the easiest and most efficient.
 
@@ -130,7 +131,8 @@ hatch config find
 ### Step 2 - update your email and name
 
 Once the file is open, update the [template] table of the `config.toml` file
-with your name and email. This information will be used in any `pyproject.toml`
+with your name and email. This information will be used in any
+[pyproject.toml](pyproject-toml)
 metadata files that you create using Hatch.
 
 ```toml

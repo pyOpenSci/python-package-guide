@@ -1,4 +1,5 @@
 """Pytest-based unit test examples for the temporal module"""
+
 import pathlib
 
 import numpy
@@ -28,8 +29,7 @@ def test_calc_annual_mean(temperatures):
     df_mean, df_final = temporal.calc_annual_mean(temperatures)
 
     # Compare specific means to validate the calculations
-    assert numpy.isclose(
-        df_mean.loc[[1988], "Temperature"].iloc[0], expected_mean_1988)
+    assert numpy.isclose(df_mean.loc[[1988], "Temperature"].iloc[0], expected_mean_1988)
     assert numpy.isclose(df_final.loc["Temperature"], expected_mean_final)
 
 

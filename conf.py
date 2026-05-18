@@ -54,18 +54,18 @@ if sphinx_env == "production":
 else:
     build_languages = ["en"] + languages
 
-# Get the latest Git tag - there might be a prettier way to do this but...
+# Use only the Git SHA for the Sphinx "release" string.
+# (Sphinx doesn't require PEP 440 here, but we keep it well-formed and stable.)
 try:
     release_value = (
-        subprocess.check_output(["git", "describe", "--tags"])
+        subprocess.check_output(["git", "rev-parse", "--short=12", "HEAD"])
         .decode("utf-8")
         .strip()
     )
-    release_value = release_value[:4]
-except subprocess.CalledProcessError:
-    release_value = "0.1"  # Default value in case there's no tag
+except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
+    # Fallback when building from a source archive or without git available
+    release_value = "unknown"
 
-# Update the release value
 release = release_value
 
 # -- General configuration ---------------------------------------------------
@@ -181,7 +181,8 @@ exclude_patterns = [
     ".venv",
     "venv",
     "env",
-    "LICENSE.rst"
+    "LICENSE.rst",
+    "SECURITY.md"
 ]
 
 # For sitemap generation

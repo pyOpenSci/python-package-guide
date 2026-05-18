@@ -9,14 +9,18 @@
 :::{admonition} About this lesson
 :class: tip
 
-This lesson uses the pyOpenSci Python package copier template to create a Python package quickly. Your package will be installable both locally and remotely from a website such as
+This lesson uses the pyOpenSci Python package copier template to create a
+{term}`Python package` quickly. Your package will be installable both locally
+and remotely from a website such as
 GitHub (or GitLab) into a Python environment.
 
 In this lesson, you will learn:
 
 - How to make your code installable into any Python environment, both locally and from GitHub
-- How to update a `pyproject.toml` file, which contains the metadata needed to build, install, and publish your package.
-- How to declare a [build backend](build_backends) which will be used to [build](build-package) and install your package
+- How to update a [pyproject.toml file](pyproject-toml), which contains the metadata
+  needed to build, install, and publish your package.
+- How to declare a {term}`Build backend` which will be used to
+  [build](build-package) and install your package
 - How to install your package in editable mode for interactive development
 
 
@@ -24,7 +28,8 @@ In this lesson, you will learn:
 
 To complete this lesson, you will need a local Python
 environment and shell on your computer.
- You will need to have [Copier](https://copier.readthedocs.io/en/stable/) and [Hatch installed](get-to-know-hatch) to complete the lesson successfully.
+ You will need to have [Copier](https://copier.readthedocs.io/en/stable/) and
+ [Hatch installed](get-to-know-hatch) to complete the lesson successfully.
 
 If you are using Windows or are not familiar with Shell, you may want to check out the Carpentries shell lesson[^shell-lesson]. Windows users will likely need to configure a tool such as [gitbash](https://gitforwindows.org/) for any Shell and git-related steps.
 
@@ -155,7 +160,9 @@ If you want to customize any elements of your package setup, choose `No, I want 
 
 ## Step 2: Explore the existing module in your package
 
-A Python module refers to a `.py` file containing the code that you want your package to access and run. Within the `pyospackage` subdirectory, you have an example.py module that you can use to test out your package quickly.
+A {term}`Module` refers to a `.py` file containing the code that you want your
+package to access and run. Within the `pyospackage` subdirectory, you have an
+`example.py` module that you can use to test out your package quickly.
 
 Notice that the code in the example.py module, has a few features:
 
@@ -214,7 +221,10 @@ For example, write a second function that multiplies numbers.
 
 ## Step 4: Check out the metadata in your `pyproject.toml` file
 
-A `pyproject.toml` file stores metadata that provides instructions to various tools interacting with it, including Hatch, which will build your package. You can also specify metadata for your package.
+A [pyproject.toml](pyproject-toml) file stores metadata that provides
+instructions to various tools interacting with it, including
+[Hatch](get-to-know-hatch), which will build
+your package. You can also specify metadata for your package.
 
 You will learn more about the `pyproject.toml` format in the
 [next lesson when you add additional metadata/information to this file.](pyproject-toml.md)

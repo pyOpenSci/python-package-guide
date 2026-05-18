@@ -11,7 +11,9 @@ Python supports inline metadata for scripts (a feature added in 2024). This make
 standalone scripts with dependencies and Python versions managed
 automatically.
 
-Many tools support this workflow, including PDM, Hatch, and uv. In this
+Many tools support this workflow, including PDM,
+[Hatch](get-to-know-hatch), and {term}`uv`.
+In this
 tutorial, we focus on Hatch and UV. The same metadata format can also be used with
 other tools.
 
@@ -24,7 +26,8 @@ other tools.
 ## How to create a reproducible script
 
 Sometimes you want to share or run a single script without creating a full
-package. To do this, you can use inline script metadata. This format lets you
+{term}`Python package`. To do this, you can use inline script metadata. This
+format lets you
 specify dependencies and Python versions at the top of your script in a
 comment block.
 
@@ -32,7 +35,7 @@ When you add metadata at the top of a script, Hatch (or PDM or uv) will use
 that metadata to:
 
 * Create an isolated virtual Python environment for that script.
-* Install the dependencies listed in the script into that environment.
+* Install the {term}`Dependencies` listed in the script into that environment.
 * Use the required Python version that you specify in the metadata.
 
 This approach is useful for workflows that you want to make reproducible, but
@@ -52,7 +55,7 @@ preferred tool.
 
 First, create a new file named `script.py` with the block below at the top.
 The metadata block starts with `# /// script` and ends with `# ///`.
-Everything in between must be TOML metadata written as comments.
+Everything in between must be {term}`TOML` metadata written as comments.
 
 In the example below, the script requires Python 3.11 or newer, and NumPy is
 declared as a dependency.
