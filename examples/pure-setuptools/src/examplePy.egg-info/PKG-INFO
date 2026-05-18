@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: examplePy
+Version: 0.0.0
+Summary: A setuptools example Python package used to support Python packaging tutorials
+Author-email: Some Maintainer <some-email@pyopensci.org>
+Maintainer: All the contributors
+License-Expression: BSD-3-Clause
+Keywords: pyOpenSci,python packaging
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: numpy; extra == "test"
+Requires-Dist: pandas; extra == "test"
+Requires-Dist: ruff; extra == "test"
+Provides-Extra: contrib
+Requires-Dist: pre-commit>=4.1.0; extra == "contrib"
