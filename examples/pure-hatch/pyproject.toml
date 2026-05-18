@@ -1,3 +1,4 @@
+# pyproject.toml example build setup to use hatchling and hatch_vcs
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
@@ -15,11 +16,19 @@ keywords = ["pyOpenSci", "python packaging"]
 readme = "README.md"
 license = "BSD-3-Clause"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent",
+    # How mature is this project? Common values are
+    "Development Status :: 4 - Beta",
+
+    # Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
     "pandas",
+    "geopandas",
     "matplotlib"
 ]
 
@@ -58,3 +67,7 @@ known-first-party = ["examplePy"]
 
 [tool.pytest.ini_options]
 pythonpath = "src"
+
+# Example hatch vcs setup in the pyproject.toml file
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
