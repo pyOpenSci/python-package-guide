@@ -33,7 +33,7 @@ If conda is already working well for your project, keep using conda to manage th
 
 If you are curious about other tools like uv, pixi, Hatch, or pip-only workflows, see [Environment Managers](environment-managers.md). Those tools can be great choices. But you do not need to switch tools just to develop your local package inside a conda environment.
 
-As a final note, people in the conda ecosystem are actively working on better conda/pip interop. In the future, this workflow may become less awkward. For now, `python -m pip install -e . --no-deps` is the standard bridge.
+As a final note, people in the conda ecosystem are actively working on better conda/pip interoperability. In the future, this workflow may become less awkward. For now, `python -m pip install -e . --no-deps` is the standard bridge.
 
 (the-full-command)=
 ## The full command
