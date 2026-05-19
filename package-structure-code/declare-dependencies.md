@@ -53,7 +53,7 @@ Development dependencies make it easier for contributors to work on your package
 There are three different types of dependencies that you will learn about on this page:
 
 1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `[project.dependencies]` table in your pyproject.toml file.
-2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional.dependencies]` table or your pyproject.toml file.
+2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.project.optional-dependencies]` table or your pyproject.toml file.
 3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[project.dependency.groups]` table or your pyproject.toml file.
 
 :::{tip}
@@ -139,13 +139,13 @@ Place these dependencies in the `[project.optional-dependencies]` table.
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
 :prepend: "[project]\n...\n...\n..."
-:start-at: [optional.dependencies]
+:start-at: [project.optional-dependencies]
 :end-at: plot = ["bokeh"]
 :::
 
 When a user installs your package, uv, pip, or conda automatically installs all required dependencies. Optional dependencies are only installed if the user explicitly requests them.
 
-:::{dropdown} How to Add optional.dependencies using UV
+:::{dropdown} How to Add project.optional-dependencies using UV
 :icon: eye
 :color: primary
 
@@ -160,7 +160,7 @@ uv add --optional feature pandas
 Will add this to your pyproject.toml file:
 
 ```toml
-[optional.dependencies]
+[project.optional-dependencies]
 feature = [
     "pandas>=2.3.3",
 ]
@@ -202,7 +202,7 @@ Similar to optional-dependencies, you can create separate subgroups or arrays wi
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
 :start-at: [development-group]
-:end-before: [optional.dependencies]
+:end-before: [project.optional-dependencies]
 :::
 
 
@@ -355,7 +355,7 @@ You can also create combined groups that reference other groups:
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:start-at: [optional.dependencies]
+:start-at: [project.optional-dependencies]
 :end-before: [tool.ruff]
 :::
 

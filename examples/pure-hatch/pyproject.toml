@@ -28,12 +28,13 @@ classifiers = [
 ]
 dependencies = [
     "pandas",
+    "xarray",
     "geopandas",
     "matplotlib"
 ]
 
-[development-group]
-tests = [
+[dependency-groups]
+test = [
   "pytest",
   "pytest-cov"
 ]
@@ -48,11 +49,15 @@ docs = [
     "pydata-sphinx-theme"
 ]
 
-[optional.dependencies]
+dev = [
+    {include-group = "test"},
+    {include-group = "lint"}
+]
+
+[project.optional-dependencies]
 plot = ["bokeh"]
 test = ["pytest", "pytest-cov"]
 docs = ["sphinx", "pydata-sphinx-theme"]
-dev = ["examplePy[test,docs,plot]", "build", "twine"]  # "examplePy" is the name of the package in [project]
 
 [tool.ruff]
 select = [
@@ -71,3 +76,14 @@ pythonpath = "src"
 # Example hatch vcs setup in the pyproject.toml file
 [tool.hatch.build.hooks.vcs]
 version-file = "_version.py"
+
+[tool.hatch.envs.test]
+development-group= [
+     "tests",
+]
+
+[tool.hatch.envs.test.scripts]
+run = "pytest {args:--cov=test --cov-report=term-missing --cov-report=xml}"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.10", "3.11", "3.12"]
