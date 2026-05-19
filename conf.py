@@ -42,7 +42,7 @@ author = "pyOpenSci Community"
 language = language_env
 # all languages that have .po files generated for them
 # (excluding english)
-languages = ["es", "ja"]
+languages = ["es", "ja", "pt"]
 # the languages that will be included in a production build
 # (also excluding english)
 release_languages = ["ja"]
