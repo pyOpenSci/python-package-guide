@@ -16,7 +16,7 @@ So, what is happening here? `conda` manages the environment: the Python runtime,
 
 In editable mode, the `-e` flag, `pip` connects the active environment to the source files you are editing. And... why exactly is that useful?
 
-It's useful because it gives you pretty quick and simple development loop:
+It's useful because it gives you a pretty quick development loop:
 
 1. Edit your code in your editor.
 2. Run it from a terminal, test suite, or Jupyter notebook.
