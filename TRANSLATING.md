@@ -57,7 +57,7 @@ If you plan to work on an existing translation, you can skip this step and go di
 If you would like to start the translation of the guide into a new language, start by [creating an issue](https://github.com/pyOpenSci/python-package-guide/issues) in the repository.
 ```
 
-To generate the translation files for a new language, add the language to the `LANGUAGES` list in the `noxfile.py` configuration file. [Nox](https://nox.thea.codes/en/stable/index.html) is the tool we use to manage the building of the guide and its translations.
+To generate the translation files for a new language, add the language to the `LANGUAGES` list in the `conf.py` configuration file. [Nox](https://nox.thea.codes/en/stable/index.html) is the tool we use to manage the building of the guide and its translations.
 
 Inside `noxfile.py`, find the `LANGUAGES` list and add the corresponding two-letter code. For example, if you want to start the translation of the guide into French, you would add `'fr'`:
 
