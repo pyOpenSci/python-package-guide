@@ -181,12 +181,12 @@ using Hatch for packaging workflows.
 
 ### Setting up Hatch environments
 
-Hatch environments can be defined in `pyproject.toml`. These environments can be used to specify what Hatch needs to run the 
-tests for the package. Test dependencies can be listed individually under `[tool.hatch.envs.test]`, 
+Hatch environments can be defined in `pyproject.toml`. These environments can be used to specify what Hatch needs to run the
+tests for the package. Test dependencies can be listed individually under `[tool.hatch.envs.test]`,
 but if packages have already been grouped together under a name, those groups can be listed here instead.
-Using named groups keeps the dependencies in one place and avoids duplication. 
+Using named groups keeps the dependencies in one place and avoids duplication.
 
-The additional tools or options to run with the tests is specified under `[tool.hatch.envs.test.scripts]`. 
+The additional tools or options to run with the tests is specified under `[tool.hatch.envs.test.scripts]`.
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml

@@ -174,7 +174,7 @@ in the `pyproject.toml` file. Required dependencies are specified under the `[pr
 
 ### Optional dependencies
 Optional dependencies are specified under the `[project.optional-dependencies]` section and are intended to give users
-options for including additional dependencies with their installation. Optional dependencies are collected together 
+options for including additional dependencies with their installation. Optional dependencies are collected together
 as a list of strings and assigned to a name:
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
@@ -183,16 +183,16 @@ as a list of strings and assigned to a name:
 :end-at: docs
 :::
 
-Named dependency lists can be invoked by users on installation to include those specific dependencies on installation. 
-Here is an example installing the test and docs dependencies using pip: 
+Named dependency lists can be invoked by users on installation to include those specific dependencies on installation.
+Here is an example installing the test and docs dependencies using pip:
 
 - `python -m pip install examplePy[test,docs]`
 
-Other installation tools tend to follow a similar pattern where optional dependencies are concatenated as 
+Other installation tools tend to follow a similar pattern where optional dependencies are concatenated as
 a list to the package name.
 
 ### Dependency Groups
-Dependency groups are a way to group package requirements in the `pyproject.toml` file but exclude them in the 
+Dependency groups are a way to group package requirements in the `pyproject.toml` file but exclude them in the
 project metadata when it is built. Because it is not included in the project metadadata, users will not be able to
 invoke dependency groups when installing from a package index such as PyPI, but they can be accessed by developers
 who have all the project data (e.g. through cloning a repository). Optional dependencies are intended for package
@@ -207,7 +207,7 @@ Then specify dependency groups as follows:
 :end-before: "dev = ["
 :::
 
-One of the capabilities that dependency groups have is the ability to make composition groups. 
+One of the capabilities that dependency groups have is the ability to make composition groups.
 For example, `dev` dependency group could be composed of a `test` dependency group and a `lint` dependency group:
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
