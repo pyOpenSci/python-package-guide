@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-04 09:59+0900\n"
+"POT-Creation-Date: 2026-05-22 12:19-0700\n"
 "PO-Revision-Date: 2025-04-14 18:12+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
@@ -20,7 +20,535 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../documentation/glossary.md:7
+msgid "Python packaging glossary"
+msgstr ""
+
+#: ../../documentation/glossary.md:9
+#, fuzzy
+msgid "Core packaging"
+msgstr "あなたのパッケージ"
+
+#: ../../documentation/glossary.md
+msgid "`__init__.py`"
+msgstr ""
+
+#: ../../documentation/glossary.md:13
+msgid ""
+"A special Python file that marks a directory as a Python package. When "
+"Python sees this file, it knows the folder contains importable code. It "
+"can either be empty or contain code that runs when the package is "
+"imported."
+msgstr ""
+
+#: ../../documentation/glossary.md:6
+msgid "API token"
+msgstr ""
+
+#: ../../documentation/glossary.md:19
+msgid ""
+"A secret key used to authenticate with PyPI or TestPyPI when publishing a"
+" package. You generate one in your account settings and use it in place "
+"of a password. **Treat it like a password and never share it or commit it"
+" to version control**."
+msgstr ""
+
+#: ../../documentation/glossary.md:12
+msgid "Build backend"
+msgstr ""
+
+#: ../../documentation/glossary.md:25
+msgid ""
+"The tool that does the actual work of building your package into "
+"distribution files. In this guide, the build backend is Hatchling. You "
+"specify it in your `pyproject.toml` file under `[build-system]`."
+msgstr ""
+
+#: ../../documentation/glossary.md:29
+msgid ""
+"You execute a build by running `hatch build`. Alternatively, you can run"
+"  `python -m build`. [Reference: official Python Packaging "
+"documentation](https://packaging.python.org/en/latest/tutorials"
+"/packaging-projects/#choosing-a-build-backend)"
+msgstr ""
+
+#: ../../documentation/glossary.md:20
+#, fuzzy
+msgid "Distribution files"
+msgstr "貢献ファイル"
+
+#: ../../documentation/glossary.md:33
+msgid ""
+"The files you upload to PyPI so others can install your package. There "
+"are two common types: a wheel (`.whl`) and a source distribution "
+"(`.tar.gz`). See also `Wheel (.whl)` and `Source distribution (sdist)`."
+msgstr ""
+
+#: ../../documentation/glossary.md:26
+msgid "Module"
+msgstr ""
+
+#: ../../documentation/glossary.md:39
+msgid ""
+"A single Python file (`.py`) containing code such as functions, classes, "
+"or variables that can be imported. A package is made up of one or more "
+"modules."
+msgstr ""
+
+#: ../../documentation/glossary.md:31
+msgid "`pyproject.toml`"
+msgstr ""
+
+#: ../../documentation/glossary.md:44
+msgid ""
+"The configuration file at the root of your Python package. Written in "
+"TOML format, it stores metadata such as name, version, authors, and "
+"license. It can also configure tools such as Hatch, uv, and pytest. See "
+"also [Make your Python package PyPI ready](../tutorials/pyproject-toml)."
+msgstr ""
+
+#: ../../documentation/glossary.md:37
+#, fuzzy
+msgid "Python package"
+msgstr "あなたのパッケージ"
+
+#: ../../documentation/glossary.md:50
+msgid ""
+"A directory of Python code structured so it can be installed, imported, "
+"and shared with others. A package includes at least an `__init__.py` file"
+" and a `pyproject.toml` file. This is sometimes referred to as a "
+"**regular package**."
+msgstr ""
+
+#: ../../documentation/glossary.md:55
+msgid ""
+"Info: You may hear the term **namespaced package** which is not really a "
+"package at all but a container of subpackages. This is out of scope for "
+"this guide. If interested, consult the [Python "
+"documentation](https://docs.python.org/3/glossary.html#term-namespace-"
+"package)."
+msgstr ""
+
+#: ../../documentation/glossary.md:47
+msgid "PyPI / TestPyPI"
+msgstr ""
+
+#: ../../documentation/glossary.md:60
+msgid ""
+"PyPI (the Python Package Index) is the official repository where Python "
+"packages are published and installed from. TestPyPI is a separate "
+"practice environment used for learning and testing publishing workflows. "
+"See [pypi.org](https://pypi.org) and "
+"[test.pypi.org](https://test.pypi.org). See also [Publish your Python "
+"package to PyPI](../tutorials/publish-pypi)."
+msgstr ""
+
+#: ../../documentation/glossary.md:55
+msgid "Source distribution (sdist)"
+msgstr ""
+
+#: ../../documentation/glossary.md:68
+msgid ""
+"One of the two distribution file types for a Python package. The sdist "
+"(`.tar.gz`) contains source code and project files. When someone installs"
+" from an sdist, tools build the package locally first. See also [Publish "
+"your Python package to PyPI](../tutorials/publish-pypi)."
+msgstr ""
+
+#: ../../documentation/glossary.md:61
+msgid "TOML"
+msgstr ""
+
+#: ../../documentation/glossary.md:74
+msgid ""
+"Tom's Obvious Minimal Language, a simple format for configuration files. "
+"TOML organizes data into tables such as `[project]` or `[tool.hatch]` and"
+" arrays. `pyproject.toml` uses TOML."
+msgstr ""
+
+#: ../../documentation/glossary.md:66
+msgid "Trusted publishing"
+msgstr ""
+
+#: ../../documentation/glossary.md:79
+msgid ""
+"A secure way to publish to PyPI using GitHub Actions instead of an API "
+"token. Rather than storing a secret token, you configure PyPI to trust "
+"your repository directly. See also [Setup Trusted Publishing for secure "
+"and automated publishing via GitHub Actions](../tutorials/trusted-"
+"publishing)."
+msgstr ""
+
+#: ../../documentation/glossary.md:72
+msgid "Wheel (.whl)"
+msgstr ""
+
+#: ../../documentation/glossary.md:85
+msgid ""
+"The binary distribution type for a Python package. A wheel is a pre-built"
+" binary format (`.whl`, a ZIP file) that installs directly without a "
+"build step. For many pure Python packages, one wheel can work across "
+"platforms. See also [Publish your Python package to PyPI](../tutorials"
+"/publish-pypi)."
+msgstr ""
+
+#: ../../documentation/glossary.md:92
+#, fuzzy
+msgid "Tools"
+msgstr "Todo"
+
+#: ../../documentation/glossary.md
+#, fuzzy
+msgid "copier"
+msgstr "互換性"
+
+#: ../../documentation/glossary.md:96
+msgid ""
+"A command-line tool for creating new projects from templates. In this "
+"guide, you can use copier with the pyOpenSci package template to set up "
+"structure, configuration, and tooling quickly. See "
+"[copier.readthedocs.io](https://copier.readthedocs.io)."
+msgstr ""
+
+#: ../../documentation/glossary.md:6
+msgid "coverage.py"
+msgstr ""
+
+#: ../../documentation/glossary.md:102
+msgid ""
+"A tool that measures how much of your code is exercised by tests, often "
+"as a percentage. It shows which lines and branches are covered. See "
+"[coverage.readthedocs.io](https://coverage.readthedocs.io)."
+msgstr ""
+
+#: ../../documentation/glossary.md:11
+msgid "Hatch"
+msgstr ""
+
+#: ../../documentation/glossary.md:107
+msgid ""
+"A modern Python packaging and project management tool. In this guide, "
+"Hatch is used to build packages, manage environments, run scripts, and "
+"publish. Configuration lives in `pyproject.toml`. See "
+"[hatch.pypa.io](https://hatch.pypa.io). See also [Get to know "
+"Hatch](../tutorials/get-to-know-hatch)."
+msgstr ""
+
+#: ../../documentation/glossary.md:18
+msgid "Hatchling"
+msgstr ""
+
+#: ../../documentation/glossary.md:114
+msgid ""
+"The build backend used by Hatch. When you run `python -m build` or `hatch"
+" build`, Hatchling reads `pyproject.toml` and creates sdist and wheel "
+"files. See "
+"[hatch.pypa.io/latest/backend](https://hatch.pypa.io/latest/backend/)."
+msgstr ""
+
+#: ../../documentation/glossary.md:24
+msgid "pip"
+msgstr ""
+
+#: ../../documentation/glossary.md:120
+msgid ""
+"Python's default package installer. You can use it to install packages "
+"from PyPI into an environment with commands such as `pip install package-"
+"name`. See [pip.pypa.io](https://pip.pypa.io)."
+msgstr ""
+
+#: ../../documentation/glossary.md:29
+msgid "pytest"
+msgstr ""
+
+#: ../../documentation/glossary.md:125
+msgid ""
+"A widely used Python testing framework for discovering and running tests."
+" In this guide, pytest often runs through Hatch scripts. See "
+"[docs.pytest.org](https://docs.pytest.org)."
+msgstr ""
+
+#: ../../documentation/glossary.md:34
+msgid "Ruff"
+msgstr ""
+
+#: ../../documentation/glossary.md:130
+msgid ""
+"A fast Python linter and formatter. It checks style and can automatically"
+" fix many styling issues. See "
+"[docs.astral.sh/ruff](https://docs.astral.sh/ruff)."
+msgstr ""
+
+#: ../../documentation/glossary.md:39
+msgid "Sphinx"
+msgstr ""
+
+#: ../../documentation/glossary.md:135
+msgid ""
+"A documentation generator for Python projects. Sphinx reads docstrings "
+"and documentation files to build a docs site. See [sphinx-"
+"doc.org](https://www.sphinx-doc.org)."
+msgstr ""
+
+#: ../../documentation/glossary.md:44
+msgid "Twine"
+msgstr ""
+
+#: ../../documentation/glossary.md:140
+msgid ""
+"A tool for securely uploading distribution files to PyPI or TestPyPI. See"
+" [twine.readthedocs.io](https://twine.readthedocs.io)."
+msgstr ""
+
+#: ../../documentation/glossary.md:48
+msgid "uv"
+msgstr ""
+
+#: ../../documentation/glossary.md:144
+msgid ""
+"A fast Python package and environment manager. In this guide, you can use"
+" uv to manage dependencies and run commands in project environments. See "
+"[docs.astral.sh/uv](https://docs.astral.sh/uv)."
+msgstr ""
+
+#: ../../documentation/glossary.md:149
+msgid "Hatch-specific concepts"
+msgstr ""
+
+#: ../../documentation/glossary.md
+msgid "Hatch environment"
+msgstr ""
+
+#: ../../documentation/glossary.md:153
+msgid ""
+"An isolated Python environment managed by Hatch. You can define multiple "
+"environments in `pyproject.toml` for testing, docs, builds, and style "
+"checks, each with its own dependencies and scripts."
+msgstr ""
+
+#: ../../documentation/glossary.md:5
+msgid "Script (Hatch)"
+msgstr ""
+
+#: ../../documentation/glossary.md:158
+msgid ""
+"A named command defined inside a Hatch environment in `pyproject.toml`. "
+"Scripts provide shortcuts such as `hatch run build:check` and `hatch run "
+"test:run`."
+msgstr ""
+
+#: ../../documentation/glossary.md:10
+msgid "Task runner"
+msgstr ""
+
+#: ../../documentation/glossary.md:163
+msgid ""
+"A tool that automates repetitive development workflows. Hatch can "
+"function as a task runner by letting you define scripts that run in "
+"specific environments."
+msgstr ""
+
+#: ../../documentation/glossary.md:168
+#, fuzzy
+msgid "Development concepts"
+msgstr "開発ガイド"
+
+#: ../../documentation/glossary.md
+msgid "Code coverage"
+msgstr ""
+
+#: ../../documentation/glossary.md:172
+msgid ""
+"A measure of how much source code executes during tests, usually as a "
+"percentage. High coverage does not guarantee no bugs, but low coverage "
+"can indicate untested areas."
+msgstr ""
+
+#: ../../documentation/glossary.md:5
+#, fuzzy
+msgid "Dependencies"
+msgstr "参考文献"
+
+#: ../../documentation/glossary.md:177
+msgid ""
+"Other Python packages needed for your package to work. Common classes "
+"include required dependencies, optional dependencies, and development "
+"dependencies."
+msgstr ""
+
+#: ../../documentation/glossary.md:10
+#, fuzzy
+msgid "Docstring"
+msgstr "ドキュメントビルディング"
+
+#: ../../documentation/glossary.md:182
+msgid ""
+"A string at the top of a function, class, or module that describes "
+"behavior, inputs, and outputs. Docstrings can be used by tools such as "
+"Sphinx to generate API documentation."
+msgstr ""
+
+#: ../../documentation/glossary.md:15
+msgid "End-to-end test"
+msgstr ""
+
+#: ../../documentation/glossary.md:187
+msgid ""
+"A test that simulates a complete user workflow from start to finish. In "
+"scientific packages, tutorials executed during docs builds can serve as "
+"end-to-end tests."
+msgstr ""
+
+#: ../../documentation/glossary.md:20
+msgid "Integration test"
+msgstr ""
+
+#: ../../documentation/glossary.md:192
+msgid ""
+"A test that checks how multiple functions or components work together. "
+"Unlike a unit test, it verifies behavior across a broader workflow."
+msgstr ""
+
+#: ../../documentation/glossary.md:24
+msgid "Linting"
+msgstr ""
+
+#: ../../documentation/glossary.md:196
+msgid ""
+"Automatic checks for style issues, formatting problems, and potential "
+"errors in code."
+msgstr ""
+
+#: ../../documentation/glossary.md:28
+msgid "Unit test"
+msgstr ""
+
+#: ../../documentation/glossary.md:200
+msgid ""
+"A test that checks one function or method in isolation. Unit tests are "
+"fast and help pinpoint where failures occur."
+msgstr ""
+
+#: ../../documentation/glossary.md:32
+msgid "Version specifier / lower bound"
+msgstr ""
+
+#: ../../documentation/glossary.md:204
+msgid ""
+"A constraint on which dependency versions are accepted. For example, "
+"`numpy>=1.24` sets a lower bound so versions older than 1.24 are not "
+"used."
+msgstr ""
+
+#: ../../documentation/glossary.md:209
+msgid "Git / GitHub"
+msgstr ""
+
+#: ../../documentation/glossary.md
+msgid "git"
+msgstr ""
+
+#: ../../documentation/glossary.md:213
+msgid "A tool for version control."
+msgstr ""
+
+#: ../../documentation/glossary.md:3
+msgid "GitHub"
+msgstr ""
+
+#: ../../documentation/glossary.md:216
+msgid ""
+"A service providing accounts and organizations to facilitate sharing "
+"repositories."
+msgstr ""
+
+#: ../../documentation/glossary.md:6
+msgid "GitHub Codespace"
+msgstr ""
+
+#: ../../documentation/glossary.md:219
+msgid ""
+"A cloud-based development environment that runs in a browser. See "
+"[github.com/features/codespaces](https://github.com/features/codespaces)."
+msgstr ""
+
+#: ../../documentation/glossary.md:10
+msgid "Scoped commit"
+msgstr ""
+
+#: ../../documentation/glossary.md:223
+msgid ""
+"A git commit that makes one focused change, such as one fix or one "
+"feature update. Scoped commits improve reviewability and history clarity."
+msgstr ""
+
+#: ../../documentation/glossary.md:228
+#, fuzzy
+msgid "Documentation"
+msgstr "ドキュメントの概要"
+
+#: ../../documentation/glossary.md
+#, fuzzy
+msgid "Code of conduct"
+msgstr "あなたの行動規範"
+
+#: ../../documentation/glossary.md:232
+msgid ""
+"A document that sets expectations for how contributors and community "
+"members treat one another in a project."
+msgstr ""
+
+#: ../../documentation/glossary.md:4
+#, fuzzy
+msgid "Contributing guide"
+msgstr "貢献ファイル"
+
+#: ../../documentation/glossary.md:236
+msgid ""
+"A document, often `CONTRIBUTING.md`, that explains how others can "
+"contribute, including setup steps, workflow, and code style."
+msgstr ""
+
+#: ../../documentation/glossary.md:8
+#, fuzzy
+msgid "MyST Markdown"
+msgstr "myST vs Markdown vs rst"
+
+#: ../../documentation/glossary.md:240
+msgid ""
+"Markedly Structured Text, a Markdown flavor that supports Sphinx "
+"directives and roles. It allows Markdown-based docs while keeping Sphinx "
+"features. See [myst-parser.readthedocs.io](https://myst-"
+"parser.readthedocs.io)."
+msgstr ""
+
+#: ../../documentation/glossary.md:14
+#, fuzzy
+msgid "README"
+msgstr "README ファイル"
+
+#: ../../documentation/glossary.md:246
+msgid ""
+"The front page of your package on GitHub and often on PyPI. A good README"
+" explains purpose, installation, usage, and support options."
+msgstr ""
+
+#: ../../documentation/glossary.md:250
+msgid "AI"
+msgstr ""
+
+#: ../../documentation/glossary.md
+msgid "Generative AI / LLM"
+msgstr ""
+
+#: ../../documentation/glossary.md:254
+msgid ""
+"Generative AI systems produce content such as text, code, or images. LLM "
+"stands for Large Language Model, the technology behind tools such as "
+"ChatGPT, GitHub Copilot, and Claude."
+msgstr ""
 
 #: ../../documentation/hosting-tools/intro.md:1
 msgid "Tools to Build and Host your Documentation"
@@ -520,6 +1048,7 @@ msgid "[sphinxext.opengraph](https://github.com/sphinx-doc/sphinxext-opengraph)"
 msgstr "[sphinxext.opengraph](https://github.com/sphinx-doc/sphinxext-opengraph)"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:42
+#, fuzzy
 msgid ""
 "OpenGraph is an extension that allows you to add metadata to your "
 "documentation content pages. [The OpenGraph protocol allows other "
@@ -527,8 +1056,8 @@ msgid ""
 "shared](https://www.freecodecamp.org/news/what-is-open-graph-and-how-"
 "can-i-use-it-for-my-website/#heading-what-is-open-graph). This is "
 "important for when the pages in your documentation are shared on social "
-"media sites like Twitter and Mastodon and even for shares on tools like "
-"Slack and Discourse."
+"media and even for shares on collaboration platforms like Slack and "
+"Discourse."
 msgstr ""
 "OpenGraphは、ドキュメントのコンテンツページにメタデータを追加できる拡張機能です。 "
 "[OpenGraphプロトコルは、共有されたときに他のウェブサイトがあなたのページのコンテンツの有用なプレビューを提供することを可能にします](https://www.freecodecamp.org/news"
@@ -866,8 +1395,9 @@ msgstr ""
 "このドキュメントは、ソフトウェアの各バージョンで何が追加、修正、変更、削除されたかをユーザーが理解するのに役立ちます。"
 
 #: ../../documentation/repository-files/changelog-file.md:11
+#, fuzzy
 msgid ""
-"[Keep a CHAGELOG.md](https://keepachangelog.com/en/1.1.0/) is a great, "
+"[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) is a great, "
 "simple resource for understanding what a changelog is and how to create a"
 " good changelog. It also includes examples of things to avoid."
 msgstr ""
@@ -921,11 +1451,12 @@ msgid "What does it include?"
 msgstr "その内容は？"
 
 #: ../../documentation/repository-files/changelog-file.md:27
+#, fuzzy
 msgid ""
-"The contents of a changelog.md file typically follow a structured format,"
-" detailing the changes introduced in each release. While the exact format"
-" may vary depending on the project's conventions, some common elements "
-"found in changelogs for Python packages include:"
+"The contents of a `CHANGELOG.md` file typically follow a structured "
+"format, detailing the changes introduced in each release. While the exact"
+" format may vary depending on the project's conventions, some common "
+"elements found in changelogs for Python packages include:"
 msgstr ""
 "changelog.md ファイルの内容は一般的に構造化されたフォーマットに従い、各リリースで導入された変更の詳細を記述します。 "
 "正確なフォーマットはプロジェクトの規約によって異なるかもしれませんが、 Python パッケージの changelog "
@@ -1328,10 +1859,11 @@ msgstr ""
 "formatting-and-styling-tools), など。"
 
 #: ../../documentation/repository-files/contributing-file.md:53
+#, fuzzy
 msgid ""
 "This guide should also include information for someone interested in "
 "asking questions. Some projects accept questions as GitHub or GitLab "
-"issues. Others use GitHub discussions, Discourse, or even a Discord "
+"issues. Others use GitHub Discussions, Discourse, or even a Discord "
 "server."
 msgstr ""
 "このガイドには、質問することに興味がある人のための情報も含まれているはずです。 "
@@ -1917,11 +2449,31 @@ msgstr ""
 "repository/about-citation-files) を使うことで、あなたのパッケージの引用方法をユーザに伝えることができます。 "
 "このトピックについては、Zenodoを使ってパッケージのDOIを作成する際に説明します。"
 
-#: ../../documentation/repository-files/license-files.md:135
+#: ../../documentation/repository-files/license-files.md:136
+msgid ""
+"Additional resources on software citation The Turing Way has excellent "
+"guides on this topic:"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:139
+msgid ""
+"[CITATION.cff files](https://book.the-turing-"
+"way.org/communication/citable/citable-cff) — detailed guide on creating "
+"and maintaining citation files"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:140
+msgid ""
+"[Software citation pathways](https://book.the-turing-way.org/pathways"
+"/pathways-software-citation) — overview of how software citation works in"
+" practice"
+msgstr ""
+
+#: ../../documentation/repository-files/license-files.md:142
 msgid "Citation.cff files: Making your software citable"
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:137
+#: ../../documentation/repository-files/license-files.md:144
 msgid ""
 "A `CITATION.cff` file is a machine-readable file that provides citation "
 "information for your software package. The \"cff\" stands for \"Citation "
@@ -1929,11 +2481,11 @@ msgid ""
 "metadata."
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:139
+#: ../../documentation/repository-files/license-files.md:146
 msgid "What citation.cff files add to your repository"
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:141
+#: ../../documentation/repository-files/license-files.md:148
 msgid ""
 "When you add a `CITATION.cff` file to your repository, GitHub "
 "automatically detects it and displays a \"Cite this repository\" button. "
@@ -1943,11 +2495,11 @@ msgid ""
 "citation formats for users."
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:143
+#: ../../documentation/repository-files/license-files.md:150
 msgid "How dates are tracked in citation.cff files"
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:145
+#: ../../documentation/repository-files/license-files.md:152
 msgid ""
 "The citation file tracks important dates for your software. The `date-"
 "released` field shows when the current version was released. The `date-"
@@ -1955,17 +2507,17 @@ msgid ""
 "also include a `version` field with the specific version number."
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:147
+#: ../../documentation/repository-files/license-files.md:154
 msgid ""
 "You should update these dates with each new release so people cite the "
 "correct version of your software."
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:149
+#: ../../documentation/repository-files/license-files.md:156
 msgid "Integration with Zenodo"
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:151
+#: ../../documentation/repository-files/license-files.md:158
 msgid ""
 "Citation.cff files work well with Zenodo, which is a popular place to "
 "store research software and get DOIs. When you create a Zenodo release, "
@@ -1976,11 +2528,11 @@ msgid ""
 "citation information."
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:154
+#: ../../documentation/repository-files/license-files.md:161
 msgid "Here's a basic example of what a `CITATION.cff` file might look like:"
 msgstr ""
 
-#: ../../documentation/repository-files/license-files.md:170
+#: ../../documentation/repository-files/license-files.md:177
 msgid "References"
 msgstr "参考文献"
 
@@ -2384,6 +2936,25 @@ msgid ""
 msgstr ""
 "[Art of README - Kira (@hackergrrl)](https://github.com/hackergrrl/art-"
 "of-readme)"
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:178
+#, python-format
+msgid ""
+"[Standard Readme - Richard Littauer](https://github.com/RichardLitt"
+"/standard-readme) [![standard-readme "
+"compliant](https://img.shields.io/badge/readme%20style-standard-"
+"brightgreen.svg)](https://github.com/RichardLitt/standard-readme)"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:178
+msgid "standard-readme compliant"
+msgstr ""
+
+#: ../../documentation/repository-files/readme-file-best-practices.md:179
+msgid ""
+"[Standard Readme pre-commit hooks](https://github.com/tkoyama010"
+"/standard-readme-pre-commit)"
+msgstr ""
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:1
 msgid "Create tutorials in your Python package documentation"
