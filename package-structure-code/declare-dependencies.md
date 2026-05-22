@@ -506,3 +506,159 @@ Why you specify dependencies
 How to specify dependencies
 When you use different specifiers
 :::
+
+## Dependency Locking
+
+In addition to declaring dependencies in `pyproject.toml`, it is common for
+packages to lock down exact versions of all their dependencies in a separate
+lock file. A lock file provides benefits of reproducibilty, security, and
+potentially faster installs, among other things.
+
+### `pyproject.toml` vs lock file
+* `pyproject.toml`: provides the range of requirements for others to
+use your package in their project.
+* **lock file**: records a fully resolved environment for working with or on
+your package directly
+
+:::{admonition} Official Lock File
+:class: note
+As of March 2025, [PEP 751](https://pep.python.org/pep-0751) defined a standard
+`pylock.toml` format to unify the various lock file formats in use by other
+package managers (e.g. `uv.lock`, `poetry.lock`, `pdm.lock`). Most package
+managers provide ways to generate a PEP 751 compatible file. See [PyPA
+specification](https://packaging.python.org/en/latest/specifications/pylock-toml/)
+for up-to-date formatting info on `pylock.toml`
+:::
+
+### How to work with lock files?
+
+Lock files are not maintained manually. Package managers and IDEs provide tools
+to create, update, and reformat lock files as needed. Below are common package
+manager CLI workflows for lock files:
+
+::::{tab-set}
+
+:::{tab-item} uv (recommended)
+```sh
+# Create a uv.lock file based on pyproject.toml
+> uv lock
+
+# Update uv.lock
+> uv lock --upgrade
+
+# Install packages into environment based on uv.lock
+> uv sync
+
+# PEP 751 pylock.toml support
+> uv export --format pylock.toml -o pylock.toml # export uv.lock -> pylock.toml
+> uv pip sync pylock.toml                       # install from pylock.toml
+```
+See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) for more details
+:::
+
+:::{tab-item} Poetry
+```sh
+# Create a poetry.lock file based on pyproject.toml
+> poetry lock
+
+# Update poetry.lock
+> poetry update
+
+# Install packages into environment based on poetry.lock
+> poetry sync
+
+```
+PEP 751 pylock.toml not yet supported (track progress on [GitHub](https://github.com/python-poetry/poetry/issues/10356))
+
+See [official docs](https://python-poetry.org/docs/basic-usage/#installing-dependencies) for more details
+:::
+
+:::{tab-item} PDM
+```sh
+# Create a pdm.lock file based on pyproject.toml
+> pdm lock
+
+# Update pdm.lock
+> pdm update
+
+# Install packages into environment based on pdm.lock
+> pdm sync
+
+# PEP 751 pylock.toml support
+> pdm export -f pylock -o pylock.toml  # export pdm.lock -> pylock.toml
+> pdm lock --lockfile pylock.toml      # install from pylock.toml
+```
+See [official docs](https://pdm-project.org/latest/usage/lockfile/) for more details
+:::
+
+::::
+
+### Should I use a lock file?
+
+Most package managers will maintain a lock file automatically for you (e.g. uv,
+Poetry, PDM). The real question is when you version control the lock file as
+part of your package.
+
+:::{admonition} Rule of Thumb
+:class: tip
+If your project is an application others use directly, include a lock file as
+the recommended environment.
+
+If your project is a library to be used in other projects and it is mature
+enough to have CI, include a lock file for CI and contributors.
+
+:::
+
+There is some maintenance cost from lock files. Maintainers should aim to update
+the lock file neither too rarely nor too often.
+* Too rarely means you risk missing updates with bugfixes, security patches,
+performance improvements, etc.
+* Too often means you may introduce bugs or even security vulnerablilites before
+maintainers of your dependencies catch them. Package managers are starting to
+support [dependency cooldowns](
+https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/#dependency-cooldowns
+) to mitigate this.
+
+When you decide to update a lock file, consider what changed before committing
+it to the project. Good changes to focus on are
+1) major version updates (e.g.  `pandas 2.X.X` -> `pandas 3.X.X`)
+2) new transitive dependencies (i.e. not part of your `pyproject.toml`)
+
+:::{tip}
+A lock file captures one tested environment, not the full compatibility range
+declared in `pyproject.toml`. Projects that use lock files should still have CI
+test other environments such as
+
+1) the latest packages consistent with your `pyproject.toml`, subject to
+dependency cooldowns. This lets you know if a dependency update breaks your
+package.
+2) older supported versions of Python to let you know if a recent change to your
+package no longer works with an older Python release.
+:::
+
+
+::::{dropdown} What about `requirements.txt`
+:icon: info
+:color: primary
+
+Older approaches to locking used `pip freeze` to generate a `requirements.txt`
+that got used as a lock file. These are minimal lock files that pin a specific
+version for the system on which the command was run. They might look like
+```
+# requirements.txt
+numpy==2.4.6
+plotly==6.7.0
+pyzmq==27.1.0
+```
+
+However, this minimal level of specificity has several downsides making lock
+files the preferred format:
+* The versions satisfying `pyproject.toml` may differ between your MacOS and the
+Linux server your CI runs on. Lock files contain platform-specific resolutions
+* Packages can get updated without a version update for both legitimate and
+malicious reasons. Lock files specify exact hashes to catch this.
+* Other metadata determined during resolution of `pyproject.toml` (e.g. which
+dependencies are transitive, where the packages were downloaded from, etc.) that
+can help speed up future installs is lost.
+
+::::
