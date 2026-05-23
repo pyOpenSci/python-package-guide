@@ -33,7 +33,13 @@ BUILD_PARAMETERS = ["-b", "html"]
 
 # Sphinx parameters used when checking that links work
 # ref: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
-LINKCHECK_PARAMETERS = ["-b", "linkcheck", "-Dlinkcheck_timeout=5", "-Dlinkcheck_rate_limit_timeout=30", "--fail-on-warning"]
+LINKCHECK_PARAMETERS = [
+    "-b",
+    "linkcheck",
+    "-Dlinkcheck_timeout=5",
+    "-Dlinkcheck_rate_limit_timeout=30",
+    "--fail-on-warning",
+]
 LINKCHECK_OUTPUT_DIR = pathlib.Path(BUILD_DIR, "linkcheck_output")
 
 # Sphinx parameters used to test the build of the guide
@@ -384,6 +390,18 @@ def build_all_languages(session):
         session.warn("No languages defined in LANGUAGES")
         return
     session.install("-e", ".")
+    session.log(f"Declared languages: {LANGUAGES}")
+    session.log(f"Release languages: {RELEASE_LANGUAGES}")
+    sphinx_env = _sphinx_env(session)
+    # if running from the docs or docs-test sessions, build only release languages
+    BUILD_LANGUAGES = RELEASE_LANGUAGES if sphinx_env == "production" else LANGUAGES
+    # only build languages that have a locale folder
+    BUILD_LANGUAGES = [
+        lang for lang in BUILD_LANGUAGES if (TRANSLATION_LOCALES_DIR / lang).exists()
+    ]
+    session.log(
+        f"Building languages{' for release' if sphinx_env == 'production' else ''}: {BUILD_LANGUAGES}"
+    )
     for lang in LANGUAGES:
         session.log(f"Building [{lang}] guide")
         session.run(
@@ -396,25 +414,6 @@ def build_all_languages(session):
             *session.posargs,
         )
     session.log(f"Translations built for {LANGUAGES}")
-    sphinx_env = _sphinx_env(session)
-
-    # if running from the docs or docs-test sessions, build only release languages
-    BUILD_LANGUAGES = RELEASE_LANGUAGES if sphinx_env == "production" else LANGUAGES
-    # only build languages that have a locale folder
-    BUILD_LANGUAGES = [
-        lang for lang in BUILD_LANGUAGES if (TRANSLATION_LOCALES_DIR / lang).exists()
-    ]
-    session.log(f"Declared languages: {LANGUAGES}")
-    session.log(f"Release languages: {RELEASE_LANGUAGES}")
-    session.log(
-        f"Building languages{' for release' if sphinx_env == 'production' else ''}: {BUILD_LANGUAGES}"
-    )
-    if not BUILD_LANGUAGES:
-        session.warn("No translations to build")
-    else:
-        session.notify(
-            "build-languages", [sphinx_env, BUILD_LANGUAGES, *session.posargs]
-        )
 
 
 @nox.session(name="build-all-languages-test")
