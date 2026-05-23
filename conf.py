@@ -12,11 +12,13 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
-from datetime import datetime
-import subprocess
+
+sys.path.insert(0, os.path.abspath("."))
 import os
+import subprocess
+from datetime import datetime
 from typing import TYPE_CHECKING
+
 from _ext import rss
 
 if TYPE_CHECKING:
@@ -45,7 +47,7 @@ language = language_env
 languages = ["es", "ja", "pt"]
 # the languages that will be included in a production build
 # (also excluding english)
-release_languages = ["ja"]
+release_languages = ["es", "ja", "pt"]
 
 # languages that will be included in the language dropdown
 # (ie. all that are being built in this nox build session)
@@ -146,7 +148,7 @@ html_theme_options = {
     "github_url": "https://github.com/pyopensci/python-package-guide",
     "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
-    "navbar_persistent": ["language-selector", "search-button"]
+    "navbar_persistent": ["language-selector", "search-button"],
 }
 
 html_context = {
@@ -182,7 +184,7 @@ exclude_patterns = [
     "venv",
     "env",
     "LICENSE.rst",
-    "SECURITY.md"
+    "SECURITY.md",
 ]
 
 # For sitemap generation
@@ -227,6 +229,7 @@ linkcheck_ignore = [
     # this discord link is correct, but unauthenticated it redirects to a sign-up page
     r"https:\/\/discord\.gg/NQtTTqtv",
 ]
+
 
 def _post_build(app: "Sphinx", exception: Exception | None) -> None:
     rss.generate_tutorials_feed(app)
