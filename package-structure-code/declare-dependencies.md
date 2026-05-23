@@ -531,7 +531,7 @@ for up-to-date formatting info on `pylock.toml`
 
 ### How to work with lock files?
 
-Lock files are not maintained manually. Package managers and IDEs provide tools
+Lock files are not written by hand. Package managers and IDEs provide tools
 to create, update, and reformat lock files as needed. Below are common package
 manager CLI workflows for lock files:
 
