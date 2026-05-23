@@ -512,7 +512,11 @@ When you use different specifiers
 In addition to declaring dependencies in `pyproject.toml`, it is common for
 packages to lock down exact versions of all their dependencies in a separate
 lock file. A lock file provides benefits of reproducibilty, security, and
-potentially faster installs, among other things.
+potentially faster installs, among other things. Pinning the exact dependency
+versions used in a project eliminates "works on my machine" bugs and gives CI a
+reproducible baseline. For applications meant to be run rather than imported,
+lock files also ensure anyone installing the project gets a known-good set of
+dependencies — not whatever happens to be latest.
 
 ### `pyproject.toml` vs lock file
 * `pyproject.toml`: defines all supported environments for users importing
