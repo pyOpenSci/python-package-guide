@@ -675,8 +675,12 @@ pyzmq==27.1.0
 
 However, this minimal level of specificity has several downsides making lock
 files the preferred format:
-* The versions satisfying `pyproject.toml` may differ between your MacOS and the
-Linux server your CI runs on. Lock files contain platform-specific resolutions
+* The versions satisfying `pyproject.toml` may differ between your Windows
+laptop and the Linux server your CI runs on. A single lock file contains the
+information needed to build platform specific and Python version specific
+environments. In contrast, a separate `requirements.txt` files is needed to
+store this information (e.g. `requirements.ci.txt`,
+`requirements.py313-macos.txt`)
 * Packages can get updated without a version update for both legitimate and
 malicious reasons. Lock files include package hashes to catch this. A hash
 number is a unique signature computed from the code and any change to the code
