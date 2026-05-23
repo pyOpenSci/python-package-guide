@@ -515,10 +515,9 @@ lock file. A lock file provides benefits of reproducibilty, security, and
 potentially faster installs, among other things.
 
 ### `pyproject.toml` vs lock file
-* `pyproject.toml`: provides the range of requirements for others to
-use your package in their project.
-* **lock file**: records a fully resolved environment for working with or on
-your package directly
+* `pyproject.toml`: defines all supported environments for users importing
+your package into their project.
+* **lock file**: defines a specific environment used for development
 
 :::{admonition} Official Lock File
 :class: note
