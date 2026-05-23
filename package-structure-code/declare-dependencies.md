@@ -532,8 +532,19 @@ for up-to-date formatting info on `pylock.toml`
 ### How to work with lock files?
 
 Lock files are not written by hand. Package managers and IDEs provide tools
-to create, update, and reformat lock files as needed. Below are common package
-manager CLI workflows for lock files:
+to create, update, and reformat lock files as needed.
+
+1) **Create** - Package managers often do this automatically though it can be
+done manually. For example, calling `uv add numpy` will automatically create a
+`uv.lock` file, setup the environment, and install numpy.
+2) **Update** - This is not done automatically by package managers.
+Maintainers can choose to do this manually or setup their own automated
+workflow. Updates can be for specific packages or all dependencies.
+3) **Reformat** - Package managers currently use native formats (e.g.
+uv uses `uv.lock`) and provide tools for converting into `pylock.toml` and other
+formats (e.g. `requirements.txt`) when needed
+
+Below are common package manager CLI workflows for lock files:
 
 ::::{tab-set}
 
@@ -544,6 +555,7 @@ manager CLI workflows for lock files:
 
 # Update uv.lock
 > uv lock --upgrade
+> uv lock --upgrade-package pandas
 
 # Install packages into environment based on uv.lock
 > uv sync
@@ -562,6 +574,7 @@ See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) for more 
 
 # Update poetry.lock
 > poetry update
+> poetry update pandas numpy
 
 # Install packages into environment based on poetry.lock
 > poetry sync
