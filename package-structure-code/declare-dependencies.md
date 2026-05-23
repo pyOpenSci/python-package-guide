@@ -611,7 +611,7 @@ See [official docs](https://pdm-project.org/latest/usage/lockfile/) for more det
 
 ### Should I use a lock file?
 
-Most package managers will maintain a lock file automatically for you (e.g. uv,
+Most package managers will generate a lock file automatically for you (e.g. uv,
 Poetry, PDM). The real question is when you version control the lock file as
 part of your package.
 
