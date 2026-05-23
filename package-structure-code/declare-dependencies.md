@@ -511,21 +511,21 @@ When you use different specifiers
 
 In addition to declaring dependencies in `pyproject.toml`, it is common for
 packages to lock down exact versions of all their dependencies in a separate
-lock file. A lock file provides benefits of reproducibilty, security, and
+lock file. A lock file provides benefits of reproducibility, security, and
 potentially faster installs, among other things. Pinning the exact dependency
 versions used in a project eliminates "works on my machine" bugs and gives CI a
 reproducible baseline. For applications meant to be run rather than imported,
 lock files also ensure anyone installing the project gets a known-good set of
-dependencies — not whatever happens to be latest.
+dependencies instead of whatever happens to be latest.
 
 ### `pyproject.toml` vs lock file
 * `pyproject.toml`: defines all supported environments for users importing
 your package into their project.
 * **lock file**: defines a specific environment used for development
 
-:::{admonition} Official Lock File
+:::{admonition} Standardized Lock File
 :class: note
-As of March 2025, [PEP 751](https://pep.python.org/pep-0751) defined a standard
+As of March 2025, [PEP 751](https://peps.python.org/pep-0751) defined a standard
 `pylock.toml` format to unify the various lock file formats in use by other
 package managers (e.g. `uv.lock`, `poetry.lock`, `pdm.lock`). Most package
 managers provide ways to generate a PEP 751 compatible file. See [PyPA
@@ -602,7 +602,6 @@ See [official docs](https://python-poetry.org/docs/basic-usage/#installing-depen
 
 # PEP 751 pylock.toml support
 > pdm export -f pylock -o pylock.toml  # export pdm.lock -> pylock.toml
-> pdm lock --lockfile pylock.toml      # install from pylock.toml
 ```
 See [official docs](https://pdm-project.org/latest/usage/lockfile/) for more details
 :::
@@ -685,7 +684,7 @@ store this information (e.g. `requirements.ci.txt`,
 malicious reasons. Lock files include package hashes to catch this. A hash
 number is a unique signature computed from the code and any change to the code
 will cause the release to have a different hash even if is given the same
-releaes version number.
+release version number.
 * Other metadata determined during resolution of `pyproject.toml` (e.g. which
 dependencies are transitive, where the packages were downloaded from, etc.) that
 can help speed up future installs is lost.
