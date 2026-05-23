@@ -678,7 +678,10 @@ files the preferred format:
 * The versions satisfying `pyproject.toml` may differ between your MacOS and the
 Linux server your CI runs on. Lock files contain platform-specific resolutions
 * Packages can get updated without a version update for both legitimate and
-malicious reasons. Lock files specify exact hashes to catch this.
+malicious reasons. Lock files include package hashes to catch this. A hash
+number is a unique signature computed from the code and any change to the code
+will cause the release to have a different hash even if is given the same
+releaes version number.
 * Other metadata determined during resolution of `pyproject.toml` (e.g. which
 dependencies are transitive, where the packages were downloaded from, etc.) that
 can help speed up future installs is lost.
