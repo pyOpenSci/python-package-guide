@@ -631,8 +631,13 @@ support [dependency cooldowns](
 https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/#dependency-cooldowns
 ) to mitigate this.
 
-When you decide to update a lock file, consider what changed before committing
-it to the project. Good changes to focus on are
+When you decide to update a lock file, make sure to test that the resulting
+environment works before committing. If it fails because of some dependency
+update, then it may be necessary to update `pyproject.toml` to cap the supported
+versions of that dependency unless/until the code can be updated to support it.
+
+It can also be good, though not necessary, to double check what changed when
+updating a lock file. The diff can be noisy so the main changes to focus on are
 1) major version updates (e.g.  `pandas 2.X.X` -> `pandas 3.X.X`)
 2) new transitive dependencies (i.e. not part of your `pyproject.toml`)
 
@@ -646,6 +651,7 @@ dependency cooldowns. This lets you know if a dependency update breaks your
 package.
 2) older supported versions of Python to let you know if a recent change to your
 package no longer works with an older Python release.
+
 :::
 
 
