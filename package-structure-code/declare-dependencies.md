@@ -725,8 +725,9 @@ environments. In contrast, a separate `requirements.txt` files is needed to
 store this information (e.g. `requirements.ci.txt`,
 `requirements.py313-macos.txt`)
 * Packages can get updated without a version update for both legitimate and
-malicious reasons. Lock files include package hashes to catch this. A hash
-number is a unique signature computed from the code and any change to the code
+malicious reasons. Lock files include package hashes to catch this. A
+[hash](https://en.wikipedia.org/wiki/Hash_function) is a unique signature
+computed from the code and any change to the code
 will cause the release to have a different hash even if is given the same
 release version number.
 * Other metadata determined during resolution of `pyproject.toml` (e.g. which
