@@ -615,7 +615,7 @@ Most package managers will generate a lock file automatically for you (e.g. uv,
 Poetry, PDM). The real question is when you version control the lock file as
 part of your package.
 
-:::{admonition} Rule of Thumb
+:::{admonition} Recommendation: Versioning a lock file
 :class: tip
 If your project is an application others use directly, include a lock file as
 the recommended environment.
@@ -635,6 +635,14 @@ maintainers of your dependencies catch them. Package managers are starting to
 support [dependency cooldowns](
 https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/#dependency-cooldowns
 ) to mitigate this.
+
+:::{admonition} Recommendation: Updating a lock file
+:class: tip
+Update lock files frequently (e.g. weekly) but configure a dependency cooldown
+of several days to avoid automatically installing the latest packages. Only
+override the cooldown if a new package has a needed bug fix or security
+patch.
+:::
 
 When you decide to update a lock file, make sure to test that the resulting
 environment works before committing. If it fails because of some dependency
