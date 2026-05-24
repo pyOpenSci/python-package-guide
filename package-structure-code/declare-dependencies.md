@@ -632,9 +632,7 @@ the lock file neither too rarely nor too often.
 performance improvements, etc.
 * Too often means you may introduce bugs or even security vulnerablilites before
 maintainers of your dependencies catch them. Package managers are starting to
-support [dependency cooldowns](
-https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/#dependency-cooldowns
-) to mitigate this.
+support dependency cooldowns to mitigate this.
 
 :::{admonition} Recommendation: Updating a lock file
 :class: tip
@@ -643,6 +641,42 @@ of several days to avoid automatically installing the latest packages. Only
 override the cooldown if a new package has a needed bug fix or security
 patch.
 :::
+
+::::{dropdown} Dependency cooldowns
+:icon: info
+:color: primary
+[Dependency cooldowns](
+https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/#dependency-cooldowns
+) are strongly encouraged by security experts to avoid automatically downloading
+the latest package updates that may have been compromised with malware. Package
+manager tools are starting to support configurations for cooldowns
+```sh
+> uv lock --exclude-newer "3 days"`
+```
+or in `pyproject.toml`
+```toml
+[tool.uv]
+exclude-newer = "3 days"
+```
+
+Integrating cooldown constrained lock files into CI is important since this is
+where new packages are commonly tested first. Automated testing code that
+resolves `[project.dependencies]` every time
+```sh
+> python -m pip install .
+```
+can be replaced with
+```sh
+> uv lock --exclude-newer "3 days"`
+```
+or can be replaced with lock file based installations
+```sh
+> uv sync --frozen
+```
+Support for this varies across automated testing frameworks (e.g. hatch, nox) so
+consult their documentation for how to install dependencies from lock files with
+dependency cooldowns.
+::::
 
 When you decide to update a lock file, make sure to test that the resulting
 environment works before committing. If it fails because of some dependency
