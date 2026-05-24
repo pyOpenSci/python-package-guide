@@ -596,6 +596,7 @@ See [official docs](https://python-poetry.org/docs/basic-usage/#installing-depen
 
 # Update pdm.lock
 > pdm update
+> pdm update pandas numpy
 
 # Install packages into environment based on pdm.lock
 > pdm sync
