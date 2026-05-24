@@ -621,8 +621,9 @@ If your project is an application others use directly, include a lock file as
 the recommended environment.
 
 If your project is a library to be used in other projects and it is mature
-enough to have CI, include a lock file for CI and contributors.
-
+enough to have CI, include a lock file for CI and contributors. For a small
+library only you maintain that is shared amongst people you know, waiting to add
+a lock file is not an issue.
 :::
 
 There is some maintenance cost from lock files. Maintainers should aim to update
