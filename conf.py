@@ -213,7 +213,15 @@ ogp_social_cards = {
 # Bibliographies
 bibtex_bibfiles = ["bibliography.bib"]
 # myst complains about bibtex footnotes because of render order
-suppress_warnings = ["myst.footnote"]
+suppress_warnings = [
+    "myst.footnote",
+    # Suppress false positives for translated :term: references. When a
+    # translator correctly translates a glossary term in the target language
+    # (e.g. "Code of conduct" to "código de conducta"), Sphinx still warns
+    # because it is different from the English original, despite the fact that
+    # the translated term is properly defined in the glossary.
+    "i18n.inconsistent_references",
+]
 
 # -- Options for linkcheck -------------------------------------------------
 
