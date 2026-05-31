@@ -596,6 +596,11 @@ library only you maintain that is shared amongst people you know, waiting to add
 a lock file is not an issue.
 :::
 
+:::{admonition} Recommendation: Which format to version control
+:class: tip
+Version control the standard `pylock.toml` format.
+:::
+
 There is some maintenance cost from lock files. Maintainers should aim to update
 the lock file neither too rarely nor too often.
 * Too rarely means you risk missing updates with bugfixes, security patches,
