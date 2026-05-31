@@ -557,11 +557,8 @@ workflow. Updates can be for specific packages or all dependencies.
 uv uses `uv.lock`) and provide tools for converting into `pylock.toml` and other
 formats (e.g. `requirements.txt`) when needed
 
-Below are common package manager CLI workflows for lock files:
+Below is the uv CLI workflow for lock files:
 
-::::{tab-set}
-
-:::{tab-item} uv (recommended)
 ```sh
 # Create a uv.lock file based on pyproject.toml
 > uv lock
@@ -577,46 +574,10 @@ Below are common package manager CLI workflows for lock files:
 > uv export --format pylock.toml -o pylock.toml # export uv.lock -> pylock.toml
 > uv pip sync pylock.toml                       # install from pylock.toml
 ```
-See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) for more details
-:::
-
-:::{tab-item} Poetry
-```sh
-# Create a poetry.lock file based on pyproject.toml
-> poetry lock
-
-# Update poetry.lock
-> poetry update
-> poetry update pandas numpy
-
-# Install packages into environment based on poetry.lock
-> poetry sync
-
-```
-PEP 751 pylock.toml not yet supported (track progress on [GitHub](https://github.com/python-poetry/poetry/issues/10356))
-
-See [official docs](https://python-poetry.org/docs/basic-usage/#installing-dependencies) for more details
-:::
-
-:::{tab-item} PDM
-```sh
-# Create a pdm.lock file based on pyproject.toml
-> pdm lock
-
-# Update pdm.lock
-> pdm update
-> pdm update pandas numpy
-
-# Install packages into environment based on pdm.lock
-> pdm sync
-
-# PEP 751 pylock.toml support
-> pdm export -f pylock -o pylock.toml  # export pdm.lock -> pylock.toml
-```
-See [official docs](https://pdm-project.org/latest/usage/lockfile/) for more details
-:::
-
-::::
+See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) for more
+details. If working on a package that uses Poetry or PDM instead of uv, the relevant docs can
+be found [here](https://python-poetry.org/docs/basic-usage/#installing-dependencies)
+and [here](https://pdm-project.org/latest/usage/lockfile/) respectively.
 
 ### Should I use a lock file?
 
