@@ -664,9 +664,9 @@ updating a lock file. The diff can be noisy so the main changes to focus on are
 2) new transitive dependencies (i.e. not part of your `pyproject.toml`)
 
 :::{tip}
-A lock file captures one tested environment, not the full compatibility range
-declared in `pyproject.toml`. Projects that use lock files should still have CI
-test other environments such as
+A lock file captures one environment for CI testing, not the full compatibility
+range declared in `pyproject.toml`. Projects that use lock files should still
+have CI test other environments such as
 
 1) the latest packages consistent with your `pyproject.toml`, subject to
 dependency cooldowns. This lets you know if a dependency update breaks your
