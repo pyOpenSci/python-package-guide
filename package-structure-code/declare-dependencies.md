@@ -621,7 +621,7 @@ https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-cha
 the latest package updates that may have been compromised with malware. Package
 manager tools are starting to support configurations for cooldowns
 ```sh
-> uv lock --exclude-newer "3 days"`
+> uv sync --exclude-newer "3 days"`
 ```
 or in `pyproject.toml`
 ```toml
