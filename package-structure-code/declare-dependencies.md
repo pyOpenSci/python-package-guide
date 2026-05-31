@@ -519,9 +519,18 @@ lock files also ensure anyone installing the project gets a known-good set of
 dependencies instead of whatever happens to be latest.
 
 ### `pyproject.toml` vs lock file
-* `pyproject.toml`: defines all supported environments for users importing
-your package into their project.
+* `pyproject.toml`: defines all environments you intend to support for users
+importing your package into their project.
 * **lock file**: defines a specific environment used for development
+
+`pyproject.toml` should be permissive, erring on the side of allowing too much
+even if it may allow untested environments. In most cases, it is better that
+users install your package but encounter an issue rather than being restricted
+from installing your package by the `pyproject.toml` when it would otherwise
+work.
+
+A lock file is the opposite. If it installs, the resulting environment should
+work even if this means some valid environments are excluded.
 
 :::{admonition} Standardized Lock File
 :class: note
