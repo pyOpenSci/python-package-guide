@@ -61,43 +61,18 @@ For a good introduction to testing, see [this Software Carpentry lesson](https:/
 
 Let's say you have a Python function that adds two numbers together.
 
-```python
-def add_numbers(a: float, b: float) -> float:
-    """
-    Add two numbers together and return the result.
-
-    Parameters
-    ----------
-    a : float
-        The first number to add.
-    b : float
-        The second number to add.
-
-    Returns
-    -------
-    float
-        The sum of the two numbers.
-    """
-    return a + b
-```
+:::{literalinclude} ../examples/pure-hatch/src/examplePy/numbers.py
+:language: python
+:start-at: def add_numbers
+:::
 
 A test to ensure that function runs as you might expect when provided with
 different numbers might look like this:
 
-```python
-def test_add_numbers():
-    result = add_numbers(2, 3)
-    assert result == 5, f"Expected 5, but got {result}"
-
-    result2 = add_numbers(-1, 4)
-    assert result2 == 3, f"Expected 3, but got {result2}"
-
-    result3 = add_numbers(0, 0)
-    assert result3 == 0, f"Expected 0, but got {result3}"
-
-test_add_numbers()
-
-```
+:::{literalinclude} ../examples/pure-hatch/tests/examplePy/test_numbers.py
+:language: python
+:start-at: def test_add_numbers
+:::
 ````
 
 ### 🧩🐍 How do you know what type of tests to write?

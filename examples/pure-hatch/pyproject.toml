@@ -1,3 +1,4 @@
+# pyproject.toml example build setup to use hatchling and hatch_vcs
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
@@ -15,27 +16,48 @@ keywords = ["pyOpenSci", "python packaging"]
 readme = "README.md"
 license = "BSD-3-Clause"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent",
+    # How mature is this project? Common values are
+    "Development Status :: 4 - Beta",
+
+    # Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
-    "dependency-package-name-1",
-    "dependency-package-name-2",
+    "pandas",
+    "xarray",
+    "geopandas",
+    "matplotlib"
 ]
 
-[project.optional-dependencies]
-tests = [
+[dependency-groups]
+test = [
   "pytest",
   "pytest-cov"
 ]
+
 lint = [
   "black",
-  "flake8"
+  "ruff"
 ]
+
 docs = [
     "sphinx",
     "pydata-sphinx-theme"
 ]
+
+dev = [
+    {include-group = "test"},
+    {include-group = "lint"}
+]
+
+[project.optional-dependencies]
+plot = ["bokeh"]
+test = ["pytest", "pytest-cov"]
+docs = ["sphinx", "pydata-sphinx-theme"]
 
 [tool.ruff]
 select = [
@@ -50,3 +72,18 @@ known-first-party = ["examplePy"]
 
 [tool.pytest.ini_options]
 pythonpath = "src"
+
+# Example hatch vcs setup in the pyproject.toml file
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
+
+[tool.hatch.envs.test]
+development-group= [
+     "tests",
+]
+
+[tool.hatch.envs.test.scripts]
+run = "pytest {args:--cov=test --cov-report=term-missing --cov-report=xml}"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.10", "3.11", "3.12"]
