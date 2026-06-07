@@ -1213,155 +1213,205 @@ msgstr "Sobre esta lição"
 
 
 
-#: ../../tutorials/create-python-package.md:13
+##: ../../tutorials/create-python-package.md:13
 #, python-brace-format
 msgid ""
-"This lesson uses the pyOpenSci Python package copier template to create a"
-" {term}`Python package` quickly. Your package will be installable both "
+"This lesson uses the pyOpenSci Python package copier template to create a "
+"{term}`Python package` quickly. Your package will be installable both "
 "locally and remotely from a website such as GitHub (or GitLab) into a "
 "Python environment."
 msgstr ""
+"Esta lição usa o template copier de pacote Python do pyOpenSci para criar "
+"um {term}`pacote Python <Python package>` rapidamente. Seu pacote será "
+"instalável localmente e remotamente a partir de um site como GitHub (ou "
+"GitLab) em um ambiente Python."
 
-#: ../../tutorials/create-python-package.md:18
-#: ../../tutorials/setup-py-to-pyproject-toml.md:23
+#: ../../tutorials/create-python-package.md:18 ../../tutorials/setup-py-to-pyproject-toml.md:23
 msgid "In this lesson, you will learn:"
-msgstr ""
+msgstr "Nesta lição, você aprenderá:"
 
 #: ../../tutorials/create-python-package.md:20
 msgid ""
-"How to make your code installable into any Python environment, both "
-"locally and from GitHub"
+"How to make your code installable into any Python environment, both locally "
+"and from GitHub"
 msgstr ""
+"Como tornar seu código instalável em qualquer ambiente Python, localmente e "
+"a partir do GitHub"
 
 #: ../../tutorials/create-python-package.md:21
 msgid ""
-"How to update a [pyproject.toml file](pyproject-toml), which contains the"
-" metadata needed to build, install, and publish your package."
+"How to update a [pyproject.toml file](pyproject-toml), which contains the "
+"metadata needed to build, install, and publish your package."
 msgstr ""
+"Como atualizar um [arquivo pyproject.toml](pyproject-toml), que contém os "
+"metadata necessários para fazer build, instalar e publicar seu pacote."
 
 #: ../../tutorials/create-python-package.md:23
 #, python-brace-format
 msgid ""
-"How to declare a {term}`Build backend` which will be used to [build"
-"](build-package) and install your package"
+"How to declare a {term}`Build backend` which will be used to "
+"[build](build-package) and install your package"
 msgstr ""
+"Como declarar um {term}`backend de construção <Build backend>` que será "
+"usado para fazer [build](build-package) e instalar seu pacote"
 
 #: ../../tutorials/create-python-package.md:25
 msgid "How to install your package in editable mode for interactive development"
-msgstr ""
+msgstr "Como instalar seu pacote em modo editável para desenvolvimento interativo"
 
 #: ../../tutorials/create-python-package.md:28
 msgid "**What you need to complete this lesson**"
-msgstr ""
+msgstr "**O que você precisa para concluir esta lição**"
 
 #: ../../tutorials/create-python-package.md:30
 msgid ""
-"To complete this lesson, you will need a local Python environment and "
-"shell on your computer.  You will need to have "
-"[Copier](https://copier.readthedocs.io/en/stable/) and  [Hatch installed"
-"](get-to-know-hatch) to complete the lesson successfully."
+"To complete this lesson, you will need a local Python environment and shell "
+"on your computer.  You will need to have "
+"[Copier](https://copier.readthedocs.io/en/stable/) and  [Hatch "
+"installed](get-to-know-hatch) to complete the lesson successfully."
 msgstr ""
+"Para concluir esta lição, você precisará de um ambiente Python local e de um "
+"shell no seu computador. Será necessário ter o "
+"[Copier](https://copier.readthedocs.io/en/stable/) e o [Hatch "
+"instalado](get-to-know-hatch) para concluir a lição com sucesso."
 
 #: ../../tutorials/create-python-package.md:35
 msgid ""
 "If you are using Windows or are not familiar with Shell, you may want to "
-"check out the Carpentries shell lesson[^shell-lesson]. Windows users will"
-" likely need to configure a tool such as "
-"[gitbash](https://gitforwindows.org/) for any Shell and git-related "
-"steps."
+"check out the Carpentries shell lesson[^shell-lesson]. Windows users will "
+"likely need to configure a tool such as "
+"[gitbash](https://gitforwindows.org/) for any Shell and git-related steps."
 msgstr ""
+"Se você usa Windows ou não está familiarizado com Shell, pode querer "
+"conferir a lição de shell da Carpentries[^shell-lesson]. Usuários de "
+"Windows provavelmente precisarão configurar uma ferramenta como "
+"[gitbash](https://gitforwindows.org/) para qualquer etapa relacionada a "
+"Shell e git."
 
 #: ../../tutorials/create-python-package.md:41
 msgid ""
-"This diagram has two smaller boxes with arrows pointing to the right to a"
-" Python environment. The small boxes read your-package and pip install "
-"package. The environment box on the right reads - your Python "
-"environment. It them lists your-package along with a few other core "
-"packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas."
+"This diagram has two smaller boxes with arrows pointing to the right to a "
+"Python environment. The small boxes read your-package and pip install "
+"package. The environment box on the right reads - your Python environment. "
+"It them lists your-package along with a few other core packages such as "
+"Matplotlib, NumPy, Pandas, Xarray and GeoPandas."
 msgstr ""
+"Este diagrama tem duas caixas menores com setas apontando para a direita em "
+"direção a um ambiente Python. As caixas pequenas mostram seu-pacote e pip "
+"install pacote. A caixa do ambiente à direita diz — seu ambiente Python. Em "
+"seguida, lista seu-pacote junto com alguns outros pacotes principais, como "
+"Matplotlib, NumPy, Pandas, Xarray e GeoPandas."
 
 #: ../../tutorials/create-python-package.md:43
 msgid ""
 "In a [previous lesson, you learned what a Python package is](intro). "
-"Creating a Python package allows you to install your code into any Python"
-" environment on your computer. You can then import it into workflows in "
-"the same way that you might import a package such as Pandas or GeoPandas."
-" If you push your code to GitHub or GitLab, you can also install it "
-"directly from there. [Scroll to the bottom of the page to learn more "
-"about the basic elements of a Python package.](package-overview)."
+"Creating a Python package allows you to install your code into any Python "
+"environment on your computer. You can then import it into workflows in the "
+"same way that you might import a package such as Pandas or GeoPandas. If "
+"you push your code to GitHub or GitLab, you can also install it directly "
+"from there. [Scroll to the bottom of the page to learn more about the basic "
+"elements of a Python package.](package-overview)."
 msgstr ""
+"Em uma [lição anterior, você aprendeu o que é um pacote Python](intro). "
+"Criar um pacote Python permite instalar seu código em qualquer ambiente "
+"Python no seu computador. Em seguida, você pode importá-lo em workflows da "
+"mesma forma que importaria um pacote como Pandas ou GeoPandas. Se você "
+"enviar seu código para GitHub ou GitLab, também pode instalá-lo diretamente "
+"de lá. [Role até o final da página para saber mais sobre os elementos "
+"básicos de um pacote Python.](package-overview)."
 
 #: ../../tutorials/create-python-package.md:49
 msgid "Create your Python package"
-msgstr ""
+msgstr "Crie seu pacote Python"
 
 #: ../../tutorials/create-python-package.md:51
 msgid ""
 "Below, you will create a pure Python package using the [pyOpenSci copier "
-"template](https://github.com/pyOpenSci/pyos-package-template). Our "
-"template uses Hatch as the default packaging tool. At the bottom of this "
-"lesson, you'll learn more about the basics of the Python package "
-"directory structure, and associated key files (`__init__.py` and "
-"`pyproject.toml`)."
+"template](https://github.com/pyOpenSci/pyos-package-template). Our template "
+"uses Hatch as the default packaging tool. At the bottom of this lesson, "
+"you'll learn more about the basics of the Python package directory "
+"structure, and associated key files (`__init__.py` and `pyproject.toml`)."
 msgstr ""
+"Abaixo, você criará um pacote Python puro usando o [template copier "
+"dopyOpenSci](https://github.com/pyOpenSci/pyos-package-template). Nosso "
+"template usa Hatch como ferramenta de empacotamento padrão. No final desta "
+"lição, você aprenderá mais sobre o básico da estrutura de diretórios de um "
+"pacote Python e os arquivos principais associados (`__init__.py` e "
+"`pyproject.toml`)."
 
 #: ../../tutorials/create-python-package.md:53
 msgid "Step 1: Set Up the Package Directory Structure"
-msgstr ""
+msgstr "Passo 1: Configure a estrutura de diretórios do pacote"
 
 #: ../../tutorials/create-python-package.md:55
 msgid "Open your shell or preferred terminal."
-msgstr ""
+msgstr "Abra seu shell ou terminal preferido."
 
 #: ../../tutorials/create-python-package.md:56
 msgid ""
-"Use the shell `cd` command to navigate in your shell to the location "
-"where you'd like your package to live. Our template will create the "
-"package directory structure for you"
+"Use the shell `cd` command to navigate in your shell to the location where "
+"you'd like your package to live. Our template will create the package "
+"directory structure for you"
 msgstr ""
+"Use o comando `cd` do shell para navegar até o local onde você quer que seu "
+"pacote fique. Nosso template criará a estrutura de diretórios do pacote para "
+"você"
 
 #: ../../tutorials/create-python-package.md:57
 msgid "Choose a name for your package. The name should:"
-msgstr ""
+msgstr "Escolha um nome para seu pacote. O nome deve:"
 
 #: ../../tutorials/create-python-package.md:58
 msgid "Have no spaces (*Required*)"
-msgstr ""
+msgstr "Não ter espaços (*Obrigatório*)"
 
 #: ../../tutorials/create-python-package.md:59
 msgid ""
 "Use all lowercase characters (*Recommended*). For this tutorial, we will "
 "use `pyospackage`."
 msgstr ""
+"Usar apenas letras minúsculas (*Recomendado*). Para este tutorial, usaremos "
+"`pyospackage`."
 
 #: ../../tutorials/create-python-package.md:60
 msgid ""
-"Only use letters and the characters _ or - in the name. This means that "
-"the name `pyos*package` is not an acceptable name. However, the names "
+"Only use letters and the characters _ or - in the name. This means that the "
+"name `pyos*package` is not an acceptable name. However, the names "
 "`pyos_package` or `pyos-package` are both OK."
 msgstr ""
+"Use apenas letras e os caracteres _ ou - no nome. Isso significa que o nome "
+"`pyos*package` não é aceitável. Porém, os nomes `pyos_package` "
+"ou`pyos-package` estão OK."
 
 #: ../../tutorials/create-python-package.md:62
 msgid ""
 "In your terminal, **run the command below**. This will begin a series of "
-"prompts that will ask you questions and help you to customize your Python"
-" package."
+"prompts that will ask you questions and help you to customize your Python "
+"package."
 msgstr ""
+"No seu terminal, **execute o comando abaixo**. Isso iniciará uma série de "
+"prompts que farão perguntas e ajudarão você a personalizar seu pacote Python."
 
 #: ../../tutorials/create-python-package.md:68
 msgid ""
 "After running the command above, the template will walk you through a "
 "series of questions."
 msgstr ""
+"Depois de executar o comando acima, o template guiará você por uma série de "
+"perguntas."
 
 #: ../../tutorials/create-python-package.md:70
 msgid ""
 "Note that when you reach the prompt \"Do you want to answer one more "
 "question, and skip the rest, using the default values?\" you can choose "
-"<kbd>Yes, but with a minimal setup</kbd> to create the most basic version"
-" of your package that contains documentation, tests and a example module "
-"for you to use."
+"<kbd>Yes, but with a minimal setup</kbd> to create the most basic version "
+"of your package that contains documentation, tests and a example module for "
+"you to use."
 msgstr ""
+"Observe que, quando chegar ao prompt \"Do you want to answer one more "
+"question, and skip the rest, using the default values?\", você pode escolher "
+"<kbd>Yes, but with a minimal setup</kbd> para criar a versão mais básica do "
+"seu pacote, contendo documentação, testes e um example module para você usar."
 
 #: ../../tutorials/create-python-package.md:72
 msgid ""
@@ -1369,502 +1419,615 @@ msgid ""
 "username and will then create a package with basic tests, documentation, "
 "and GitHub configuration setup for you."
 msgstr ""
+"Após essa pergunta, o template pedirá seu nome de usuário do GitHub "
+"preferido e criará um pacote com testes básicos, documentação e "
+"configuração do GitHub para você."
 
 #: ../../tutorials/create-python-package.md:93
 msgid ""
 "The template will then begin to copy files into the directory that used "
 "above. (`.` means current working directory.)"
 msgstr ""
+"O template então começará a copiar arquivos para o diretório usado acima. "
+"(`.` significa diretório de trabalho atual.)"
 
 #: ../../tutorials/create-python-package.md:101
 msgid "The final package structure will look like this:"
-msgstr ""
+msgstr "A estrutura final do pacote ficará assim:"
 
 #: ../../tutorials/create-python-package.md
 msgid "A full package with tests, docs, and GitHub infrastructure"
-msgstr ""
+msgstr "Um pacote completo com testes, docs e infraestrutura do GitHub"
 
 #: ../../tutorials/create-python-package.md:119
 msgid ""
-"If you use the \"bells and whistles\" default option when working through"
-" the template prompts, our template will create a complete package setup "
-"with GitHub CI actions, typing, tests, environments, and more using "
-"Hatch. If you customize the entire package, then you can select what "
-"platform you wish to host it on (GitHub vs GitLab), whether you want "
-"typing, what documentation engine you want to use, and more."
+"If you use the \"bells and whistles\" default option when working through the "
+"template prompts, our template will create a complete package setup with "
+"GitHub CI actions, typing, tests, environments, and more using Hatch. If you "
+"customize the entire package, then you canselect what platform you wish to "
+"host it on (GitHub vs GitLab), whether you want typing, what documentation "
+"engine you want to use, and more."
 msgstr ""
+"Se você usar a opção padrão \"bells and whistles\" ao responder aos prompts "
+"do template, nosso template criará uma configuração completa do pacote com "
+"GitHub CI Actions, typing, testes, ambientes e mais usando o Hatch. Se "
+"você personalizar o pacote inteiro, poderá selecionar em qual plataforma "
+"deseja hospedá-lo (GitHub vs GitLab), caso queira typing, qual engine de "
+"documentação quer usar, e mais."
 
 #: ../../tutorials/create-python-package.md:123
 msgid "The resulting package directory looks like this:"
-msgstr ""
+msgstr "O diretório do pacote resultante fica assim:"
 
 #: ../../tutorials/create-python-package.md:146
 msgid "The default tools that your package uses are:"
-msgstr ""
+msgstr "As ferramentas padrão que seu pacote usa são:"
 
 #: ../../tutorials/create-python-package.md:148
 msgid ""
-"[Sphinx](https://www.pyopensci.org/python-package-guide/documentation"
-"/hosting-tools/sphinx-python-package-documentation-tools.html) with the "
-"PyData Sphinx Theme for documentation"
+"[Sphinx](https://www.pyopensci.org/python-package-guide/documentation/hostin"
+"g-tools/sphinx-python-package-documentation-tools.html)withthePyDataSphinxTh"
+"emefordocumentation"
 msgstr ""
+"[Sphinx](https://www.pyopensci.org/python-package-guide/documentation/hostin"
+"g-tools/sphinx-python-package-documentation-tools.html) com o PyData Sphinx "
+"Theme para documentação"
 
 #: ../../tutorials/create-python-package.md:149
 msgid "pytest for testing"
-msgstr ""
+msgstr "pytest para testes"
 
 #: ../../tutorials/create-python-package.md:150
 msgid "Hatch for environment setup"
-msgstr ""
+msgstr "Hatch para configuração de ambiente"
 
 #: ../../tutorials/create-python-package.md:152
 msgid ""
 "**Full customization** If you want to customize any elements of your "
-"package setup, choose `No, I want to fully customize the template.`.  "
-"This will allow you to select:"
+"package setup, choose `No, I want to fully customize the template.`.  This "
+"will allow you to select:"
 msgstr ""
+"**Personalização completa** Se você quiser personalizar qualquer elemento "
+"da configuração do seu pacote, escolha `No, I want to fully customize the "
+"template.`. Isso permitirá que você selecione:"
 
 #: ../../tutorials/create-python-package.md:155
 msgid "Sphinx vs [MkDocs](https://www.mkdocs.org/) vs no documentation"
-msgstr ""
+msgstr "Sphinx vs [MkDocs](https://www.mkdocs.org/) vs sem documentação"
 
 #: ../../tutorials/create-python-package.md:156
 msgid "GitHub vs GitLab"
-msgstr ""
+msgstr "GitHub vs GitLab"
 
 #: ../../tutorials/create-python-package.md:157
 msgid "VCS versioning"
-msgstr ""
+msgstr "versionamento VCS"
 
 #: ../../tutorials/create-python-package.md:158
 msgid "and more"
-msgstr ""
+msgstr "e mais"
 
 #: ../../tutorials/create-python-package.md:161
 msgid "Step 2: Explore the existing module in your package"
-msgstr ""
+msgstr "Passo 2: Explore o módulo existente no seu pacote"
 
 #: ../../tutorials/create-python-package.md:163
 #, python-brace-format
 msgid ""
-"A {term}`Module` refers to a `.py` file containing the code that you want"
-" your package to access and run. Within the `pyospackage` subdirectory, "
-"you have an `example.py` module that you can use to test out your package"
-" quickly."
+"A {term}`Module` refers to a `.py` file containing the code that you want "
+"your package to access and run. Within the `pyospackage` subdirectory, you "
+"have an `example.py` module that you can use to testout your package "
+"quickly."
 msgstr ""
+"Um {term}`módulo <Module>` refere-se a um arquivo `.py` contendo o código "
+"que você quer que seu pacote acesse e execute. No subdiretório "
+"`pyospackage`, você tem um module `example.py` que pode usar para testar "
+"seu pacote rapidamente."
 
 #: ../../tutorials/create-python-package.md:167
 msgid "Notice that the code in the example.py module, has a few features:"
-msgstr ""
+msgstr "Observe que o código no module example.py tem algumas características:"
 
 #: ../../tutorials/create-python-package.md:169
 msgid "It has a [numpy-style docstring](numpy-docstring)"
-msgstr ""
+msgstr "Ele tem uma [numpy-style docstring](numpy-docstring)"
 
 #: ../../tutorials/create-python-package.md:170
 msgid "It uses [typing](type-hints)"
-msgstr ""
+msgstr "Ele usa [typing](type-hints)"
 
 #: ../../tutorials/create-python-package.md:171
 msgid ""
-"At the top of the module, there is a docstring explaining what the module"
-" does."
-msgstr ""
+"At the top of the module, there is a docstring explaining what the module "
+"does."
+msgstr "No topo do module, há uma docstring explicando o que o module faz."
 
 #: ../../tutorials/create-python-package.md:173
 msgid ""
-"Python supports different docstring formats. The most popular formats for"
-" documenting Python objects are NumPy Style Docstring[^numpydoc], Google "
-"Style Docstring[^googledoc], and the Epytext Style "
-"Docstrings[^epytextdoc]."
+"Python supports different docstring formats. The most popular formats for "
+"documenting Python objects are NumPy Style Docstring[^numpydoc], Google "
+"Style Docstring[^googledoc], and the Epytext Style Docstrings[^epytextdoc]."
 msgstr ""
+"Python suporta diferentes formatos de docstring. Os formatos mais populares "
+"para documentar objetos Python são NumPy Style Docstring[^numpydoc], Google "
+"Style Docstring[^googledoc] e Epytext Style Docstrings[^epytextdoc]."
 
 #: ../../tutorials/create-python-package.md:175
 msgid "**pyOpenSci recommends using the NumPy Docstring convention.**"
-msgstr ""
+msgstr "**A pyOpenSci recomenda usar a convenção NumPy Docstring.**"
 
 #: ../../tutorials/create-python-package.md:177
 msgid ""
-"[Learn more about docstrings here](api-docstrings) for an overview of "
-"both topics."
+"[Learn more about docstrings here](api-docstrings) for an overview of both "
+"topics."
 msgstr ""
+"[Saiba mais sobre docstrings aqui](api-docstrings) para uma visão geral de "
+"ambos os tópicos."
 
 #: ../../tutorials/create-python-package.md:206
 msgid "Python modules and the `__init__.py` file"
-msgstr ""
+msgstr "Módulos Python e o arquivo `__init__.py`"
 
 #: ../../tutorials/create-python-package.md:210
 msgid "The word module refers to a `.py` file containing Python code."
-msgstr ""
+msgstr "A palavra módulo refere-se a um arquivo `.py` contendo código Python."
 
 #: ../../tutorials/create-python-package.md:212
 msgid ""
-"The `__init__.py`  allows Python to recognize that a directory contains "
-"at least one module that may be imported and used in your code. A package"
-" can have multiple modules[^python-modules]."
+"The `__init__.py`  allows Python to recognize that a directory contains at "
+"least one module that may be imported and used in your code. A package can "
+"have multiple modules[^python-modules]."
 msgstr ""
+"O `__init__.py` permite que o Python reconheça que um diretório contém pelo "
+"menos um módulo que pode ser importado e usado no seu código. Um pacote "
+"pode ter vários módulos[^python-modules]."
 
 #: ../../tutorials/create-python-package.md:217
 msgid "Step 3: Optional -- Add code to your module"
-msgstr ""
+msgstr "Passo 3: Opcional -- Adicione código ao seu módulo"
 
 #: ../../tutorials/create-python-package.md:219
 msgid ""
-"If you want, add a second function to the `example.py` module. It can be "
-"a simple function. For example, write a second function that multiplies "
+"If you want, add a second function to the `example.py` module. It can be a "
+"simple function. For example, write a second function that multiplies "
 "numbers."
 msgstr ""
+"Se quiser, adicione uma segunda função ao módulo `example.py`. Pode ser "
+"uma função simples. Por exemplo, escreva uma segunda função que "
+"multiplique números."
 
 #: ../../tutorials/create-python-package.md:222
 msgid "Step 4: Check out the metadata in your `pyproject.toml` file"
-msgstr ""
+msgstr "Passo 4: Confira o metadata no seu arquivo `pyproject.toml`"
 
 #: ../../tutorials/create-python-package.md:224
 msgid ""
 "A [pyproject.toml](pyproject-toml) file stores metadata that provides "
-"instructions to various tools interacting with it, including [Hatch](get-"
-"to-know-hatch), which will build your package. You can also specify "
-"metadata for your package."
+"instructions to various tools interacting with it, including "
+"[Hatch](get-to-know-hatch), which will build your package. You can also "
+"specify metadata for your package."
 msgstr ""
+"Um arquivo [pyproject.toml](pyproject-toml) armazena metadata que fornece "
+"instruções a várias ferramentas que interagem com ele, incluindo "
+"[Hatch](get-to-know-hatch), que fará o build do seu pacote. Você também pode "
+"especificar metadata para o seu pacote."
 
 #: ../../tutorials/create-python-package.md:229
 msgid ""
-"You will learn more about the `pyproject.toml` format in the [next lesson"
-" when you add additional metadata/information to this file.](pyproject-"
-"toml.md)"
+"You will learn more about the `pyproject.toml` format in the [next lesson "
+"when you add additional metadata/information to this "
+"file.](pyproject-toml.md)"
 msgstr ""
+"Você aprenderá mais sobre o formato `pyproject.toml` na [próxima lição, "
+"quando adicionar metadata/informações adicionais a este "
+"arquivo.](pyproject-toml.md)"
 
 #: ../../tutorials/create-python-package.md:232
 msgid ""
 "The metadata in your generated `pyproject.toml` is already setup for you "
 "using the information you provided the copier template above."
 msgstr ""
+"O metadata no seu `pyproject.toml` gerado já está configurado para você com "
+"as informações que você forneceu ao copiar o template acima."
 
 #: ../../tutorials/create-python-package.md:234
 msgid "Brief overview of the TOML file"
-msgstr ""
+msgstr "Visão geral breve do arquivo TOML"
 
 #: ../../tutorials/create-python-package.md:237
 msgid ""
 "[The TOML format](https://toml.io/en/) consists of tables and variables. "
 "Tables are sections of information denoted by square brackets:"
 msgstr ""
+"[O formato TOML](https://toml.io/en/) consiste em tabelas e "
+"variáveis. Tabelas são seções de informação indicadas por colchetes:"
 
 #: ../../tutorials/create-python-package.md:239
 msgid "`[this-is-a-table]`."
-msgstr ""
+msgstr "`[this-is-a-table]`."
 
 #: ../../tutorials/create-python-package.md:241
 msgid ""
-"Tables can contain variables within them defined by a variable name and "
-"an `=` sign. For instance, a `build-system` table most often holds two "
-"(2) variables:"
+"Tables can contain variables within them defined by a variable name and an "
+"`=` sign. For instance, a `build-system` table most often holdstwo (2) "
+"variables:"
 msgstr ""
+"Tabelas podem conter variáveis definidas por um nome de variável e um sinal "
+"de `=`. Por exemplo, uma tabela `build-system` geralmente contém duas (2) "
+"variáveis:"
 
 #: ../../tutorials/create-python-package.md:244
 msgid ""
-"`requires = `, which tells a build tool what tools it needs to install "
-"prior to building your package. In this case "
+"`requires = `, which tells a build tool what tools it needs to installprior "
+"to building your package. In this case "
 "[hatchling](https://pypi.org/project/hatchling/)."
 msgstr ""
+"`requires = `, que informa a uma ferramenta de build quais ferramentas ela "
+"precisa instalar antes de fazer o build do seu pacote. Neste caso, "
+"[hatchling](https://pypi.org/project/hatchling/)."
 
 #: ../../tutorials/create-python-package.md:246
 msgid ""
-"`build-backend = `, which is used to define the specific build-backend "
-"name, (in this example we are using `hatchling.build`)."
+"`build-backend = `, which is used to define the specific build-backendname, "
+"(in this example we are using `hatchling.build`)."
 msgstr ""
+"`build-backend = `, que é usado para definir o nome específico do "
+"build-backend (neste exemplo estamos usando `hatchling.build`)."
 
 #: ../../tutorials/create-python-package.md:255
 msgid ""
 "TOML organizes data structures, defining relationships within a "
 "configuration file."
 msgstr ""
+"TOML organiza estruturas de dados, definindo relacionamentos dentro de um "
+"arquivo de configuração."
 
 #: ../../tutorials/create-python-package.md:258
 msgid "[Learn more about the pyproject.toml format here.](pyprojecttoml-metadata)"
-msgstr ""
+msgstr "[Saiba mais sobre o formato pyproject.toml aqui.](pyprojecttoml-metadata)"
 
 #: ../../tutorials/create-python-package.md:261
 msgid ""
-"Open up the `pyproject.toml` file that Hatch created in your favorite "
-"text editor. It should look something like the example below."
+"Open up the `pyproject.toml` file that Hatch created in your favorite text "
+"editor. It should look something like the example below."
 msgstr ""
+"Abra o arquivo `pyproject.toml` que o Hatch criou no seu editor de texto "
+"favorito. Ele deve parecer algo como o exemplo abaixo."
 
 #: ../../tutorials/create-python-package.md:262
 msgid ""
-"Make sure the package version, package name, and author name look "
-"correct. The email is optional."
+"Make sure the package version, package name, and author name look correct. "
+"The email is optional."
 msgstr ""
+"Verifique se a versão do pacote, o nome do pacote e o nome do autor estão "
+"corretos. O e-mail é opcional."
 
 #: ../../tutorials/create-python-package.md:300
 msgid ""
-"At the bottom of the template-generated `pyproject.toml` file, you will "
-"see a section that defines Hatch environments. We will cover Hatch "
-"environments in a later lesson."
+"At the bottom of the template-generated `pyproject.toml` file, you will see "
+"a section that defines Hatch environments. We will cover Hatch environments "
+"in a later lesson."
 msgstr ""
+"Na parte inferior do arquivo `pyproject.toml` gerado pelo template, você "
+"verá uma seção que define ambientes Hatch. Abordaremos ambientes Hatch "
+"em uma lição posterior."
 
 #: ../../tutorials/create-python-package.md:302
 msgid "The bare minimum needed in a pyproject.toml file"
-msgstr ""
+msgstr "O mínimo necessário em um arquivo pyproject.toml"
 
 #: ../../tutorials/create-python-package.md:305
 msgid ""
-"The core information that you need in a `pyproject.toml` file to publish "
-"on PyPI is your **package's name**  and the **version**. However, we "
-"suggest that you flesh out your metadata early on in the `pyproject.toml`"
-" file."
+"The core information that you need in a `pyproject.toml` file to publish on "
+"PyPI is your **package's name**  and the **version**. However, we suggest "
+"that you flesh out your metadata early on in the `pyproject.toml` file."
 msgstr ""
+"As informações essenciais que você precisa em um arquivo `pyproject.toml` "
+"para publicar no PyPI são o **nome do pacote** e a **versão**. Porém, "
+"sugerimos que você preencha seu metadata logo no início no arquivo "
+"`pyproject.toml`."
 
 #: ../../tutorials/create-python-package.md:307
 msgid ""
-"Once you have your project metadata in the `pyproject.toml` file, you "
-"will rarely update it."
+"Once you have your project metadata in the `pyproject.toml` file, you will "
+"rarely update it."
 msgstr ""
+"Depois que você tiver o metadata do projeto no arquivo `pyproject.toml`, "
+"raramente precisará atualizá-lo."
 
 #: ../../tutorials/create-python-package.md:311
 msgid "Step 5: Install your package locally"
-msgstr ""
+msgstr "Passo 5: Instale seu pacote localmente"
 
 #: ../../tutorials/create-python-package.md:313
 msgid "At this point, you should have:"
-msgstr ""
+msgstr "Neste ponto, você deve ter:"
 
 #: ../../tutorials/create-python-package.md:315
 msgid "A project directory structure with a `pyproject.toml` file at the root"
 msgstr ""
+"Uma estrutura de diretório de projeto com um arquivo `pyproject.toml` na "
+"raiz"
 
 #: ../../tutorials/create-python-package.md:316
 msgid "A package directory containing an empty `__init__.py` file and"
-msgstr ""
+msgstr "Um diretório de pacote contendo um arquivo `__init__.py` vazio e"
 
 #: ../../tutorials/create-python-package.md:317
 msgid "At least one Python module (e.g. `example.py`)"
-msgstr ""
+msgstr "Pelo menos um Python module (por exemplo, `example.py`)"
 
 #: ../../tutorials/create-python-package.md:319
 msgid "You are now ready to install (and build) your Python package!"
-msgstr ""
+msgstr "Agora você está pronto para instalar (e fazer o build) do seu pacote Python!"
 
 #: ../../tutorials/create-python-package.md:321
 msgid ""
-"While you can do this using Hatch, we will use pip for this lesson, so "
-"you can see how to install your tool into your preferred environment."
+"While you can do this using Hatch, we will use pip for this lesson, soyou "
+"can see how to install your tool into your preferred environment."
 msgstr ""
+"Embora você possa fazer isso usando Hatch, usaremos pip nesta lição, para "
+"que você veja como instalar sua ferramenta no ambiente de sua "
+"preferência."
 
 #: ../../tutorials/create-python-package.md:323
 msgid ""
-"First, open your preferred shell (Windows users may use something like "
-"GitBash) and `cd` into your project directory if you are not already "
+"First, open your preferred shell (Windows users may use something "
+"likeGitBash) and `cd` into your project directory if you are not already "
 "there."
 msgstr ""
+"Primeiro, abra seu shell preferido (usuários do Windows podem usar algo "
+"como GitBash) e use `cd` para ir ao diretório do projeto, se ainda não "
+"estiver lá."
 
 #: ../../tutorials/create-python-package.md:324
 msgid "Activate the Python environment that you wish to use."
-msgstr ""
+msgstr "Ative o ambiente Python que deseja usar."
 
 #: ../../tutorials/create-python-package.md:325
 msgid "Run `python -m pip install -e .`"
-msgstr ""
+msgstr "Execute `python -m pip install -e .`"
 
-#: ../../tutorials/create-python-package.md:327
-#: ../../tutorials/create-python-package.md:560
-#: ../../tutorials/create-python-package.md:567
-#: ../../tutorials/get-to-know-hatch.md:199 ../../tutorials/intro.md:246
-#: ../../tutorials/publish-pypi.md:9 ../../tutorials/publish-pypi.md:185
-#: ../../tutorials/publish-pypi.md:358 ../../tutorials/pyproject-toml.md:744
+#: ../../tutorials/create-python-package.md:327 ../../tutorials/create-python-package.md:560 ../../tutorials/create-python-package.md:567 ../../tutorials/get-to-know-hatch.md:199
+#: ../../tutorials/intro.md:246 ../../tutorials/publish-pypi.md:9 ../../tutorials/publish-pypi.md:185 ../../tutorials/publish-pypi.md:358 ../../tutorials/pyproject-toml.md:744
 msgid "Todo"
-msgstr ""
+msgstr "Todo"
 
 #: ../../tutorials/create-python-package.md:328
 msgid "Add this back in when the lesson is published"
-msgstr ""
+msgstr "Adicionar isso de volta quando a lição for publicada"
 
 #: ../../tutorials/create-python-package.md:329
 msgid ""
-"Activate the Python environment that you wish to use. If you need help "
-"with working with virtual environments check out this lesson (add link)."
+"Activate the Python environment that you wish to use. If you need helpwith "
+"working with virtual environments check out this lesson (add link)."
 msgstr ""
+"Ative o ambiente Python que deseja usar. Se precisar de ajuda para "
+"trabalhar com ambiente virtual, confira esta lição (adicionar link)."
 
 #: ../../tutorials/create-python-package.md:355
 msgid "What does `python -m pip install -e .` do?"
-msgstr ""
+msgstr "O que `python -m pip install -e .` faz?"
 
 #: ../../tutorials/create-python-package.md:358
 msgid ""
-"`python -m pip install -e .` installs your package into the current "
-"active Python environment in **editable mode** (`-e`). Installing your "
-"package in editable mode, allows you to work on your code and then test "
-"the updates interactively in your favorite Python interface. One "
-"important caveat of editable mode is that every time you update your "
-"code, you need to restart Python."
+"`python -m pip install -e .` installs your package into the current active "
+"Python environment in **editable mode** (`-e`). Installing yourpackage in "
+"editable mode, allows you to work on your code and thentest the updates "
+"interactively in your favorite Python interface. One important caveat of "
+"editable mode is that every time you update your code, you need to restart "
+"Python."
 msgstr ""
+"`python -m pip install -e .` instala seu pacote no ambiente Python ativo "
+"atual em **modo editável** (`-e`). Instalar seu pacote em modo editável "
+"permite que você trabalhe no seu código e teste as atualizações de forma "
+"interativa na sua interface Python favorita. Uma ressalva importante do modo "
+"editável é que, sempre que atualizar seu código, você precisa reiniciar o "
+"Python."
 
 #: ../../tutorials/create-python-package.md:363
 msgid ""
-"If you wish to install the package regularly (not in editable mode) you "
-"can use:"
+"If you wish to install the package regularly (not in editable mode) you can "
+"use:"
 msgstr ""
+"Se quiser instalar o pacote normalmente (não em modo editável), você pode "
+"usar:"
 
 #: ../../tutorials/create-python-package.md:366
 msgid "`python -m pip install . `"
-msgstr ""
+msgstr "`python -m pip install . `"
 
 #: ../../tutorials/create-python-package.md:368
 msgid "**Using `python -m` when calling `pip`**"
-msgstr ""
+msgstr "**Usando `python -m` ao chamar `pip`**"
 
 #: ../../tutorials/create-python-package.md:370
 msgid ""
 "Above, you use`python -m` to call the version of pip installed into your "
-"current active environment. `python -m` is important to ensure that you "
-"are calling the version of pip installed in your current environment."
+"current active environment. `python -m` is important to ensure that you are "
+"calling the version of pip installed in your current environment."
 msgstr ""
+"Acima, você usa`python -m` para chamar a versão do pip instalada no seu "
+"ambiente ativo atual. `python -m` é importante para garantir que você "
+"está chamando a versão do pip instalada no seu ambiente atual."
 
 #: ../../tutorials/create-python-package.md:374
 msgid ""
-"IMPORTANT: pip can also be used to install packages from PyPI. However, "
-"in this case, you are telling pip to install your package from a local "
-"folder by using the `.`. You could also specify a path to the project "
-"directory on your computer instead of the `.` which tells pip to use the "
-"current working directory."
+"IMPORTANT: pip can also be used to install packages from PyPI. However, in "
+"this case, you are telling pip to install your package from a local folder "
+"by using the `.`. You could also specify a path tothe project directory on "
+"your computer instead of the `.` which tells pip to use the current working "
+"directory."
 msgstr ""
+"IMPORTANTE: pip também pode ser usado para instalar pacotes do PyPI. Porém, "
+"neste caso, você está dizendo ao pip para instalar seu pacote apartir de "
+"uma pasta local usando o `.`. Você também poderia especificar um caminho "
+"para o diretório do projeto no seu computador em vez do `.`, que informa ao "
+"pip para usar o diretório de trabalho atual."
 
 #: ../../tutorials/create-python-package.md:377
 msgid "Look for pyospackage in your environment"
-msgstr ""
+msgstr "Procure pyospackage no seu ambiente"
 
 #: ../../tutorials/create-python-package.md:379
 msgid ""
 "Once you have installed your package, you can view it in your current "
-"environment. If you are using `venv` or `conda`, `pip` list will return a"
-" list of packages in the current active environment."
+"environment. If you are using `venv` or `conda`, `pip` list will return a "
+"list of packages in the current active environment."
 msgstr ""
+"Depois de instalar seu pacote, você pode visualizá-lo no seu ambiente "
+"atual. Se estiver usando `venv` ou `conda`, `pip list` retornará uma lista "
+"de pacotes no ambiente ativo atual."
 
 #: ../../tutorials/create-python-package.md:383
 msgid ""
-"Note that because `pyospackage` is installed in editable mode (`-e`), pip"
-" will show you the directory path to your project's code"
+"Note that because `pyospackage` is installed in editable mode (`-e`), pip "
+"will show you the directory path to your project's code"
 msgstr ""
+"Observe que, como `pyospackage` está instalado em modo editável (`-e`), o "
+"pip mostrará o caminho do diretório para o código do seu projeto"
 
 #: ../../tutorials/create-python-package.md:411
 msgid "Step 6: Test out your new package"
-msgstr ""
+msgstr "Passo 6: Teste seu novo pacote"
 
 #: ../../tutorials/create-python-package.md:413
 msgid ""
-"After installing your package, type “python” at the command prompt in "
-"your chosen terminal to start a Python session in your active Python "
+"After installing your package, type âpythonâ at the command promptin "
+"your chosen terminal to start a Python session in your activePython "
 "environment."
 msgstr ""
+"Depois de instalar seu pacote, digite \"python\" no prompt de comando no "
+"terminal escolhido para iniciar uma sessão Python no seu ambiente Python "
+"ativo."
 
 #: ../../tutorials/create-python-package.md:416
 msgid "You can now import your package and access the `add_numbers` function."
-msgstr ""
+msgstr "Agora você pode importar seu pacote e acessar a função `add_numbers`."
 
 #: ../../tutorials/create-python-package.md:428
 msgid "Installing packages from GitHub"
-msgstr ""
+msgstr "Instalando pacotes do GitHub"
 
 #: ../../tutorials/create-python-package.md:430
 msgid ""
 "If you wish to share your code without publishing to PyPI you can always "
 "install packages directly from GitHub using the syntax:"
 msgstr ""
+"Se quiser compartilhar seu código sem publicar no PyPI, você sempre pode "
+"instalar pacotes diretamente do GitHub usando a sintaxe:"
 
 #: ../../tutorials/create-python-package.md:437
 msgid "To make your package GitHub installable, you can:"
-msgstr ""
+msgstr "Para tornar seu pacote instalável pelo GitHub, você pode:"
 
 #: ../../tutorials/create-python-package.md:439
 msgid "Create a new GitHub repository"
-msgstr ""
+msgstr "Criar um novo repositório do GitHub"
 
 #: ../../tutorials/create-python-package.md:440
-msgid ""
-"Push the contents of the project directory that you created above, to "
-"GitHub"
+msgid "Push the contents of the project directory that you created above, to GitHub"
 msgstr ""
+"Fazer push do conteúdo do diretório do projeto que você criou acima para o "
+"GitHub"
 
 #: ../../tutorials/create-python-package.md:441
 msgid ""
-"Finally install the package from GitHub using the command above. When you"
-" use the command above, don't forget to substitute the user, repo, and "
+"Finally install the package from GitHub using the command above. When you "
+"use the command above, don't forget to substitute the user, repo, and "
 "branch_or_tag with your specific values."
 msgstr ""
+"Por fim, instale o pacote do GitHub usando o comando acima. Ao usar "
+"o comando acima, não se esqueça de substituir user, repo e "
+"branch_or_tag pelos seus valores específicos."
 
 #: ../../tutorials/create-python-package.md:443
 msgid ""
-"For instance below you install the pyospackage from the main branch of "
-"the pyOpenSci repository."
+"For instance below you install the pyospackage from the main branch ofthe "
+"pyOpenSci repository."
 msgstr ""
+"Por exemplo, abaixo você instala o pyospackage da branch main do repositório "
+"da pyOpenSci."
 
 #: ../../tutorials/create-python-package.md:446
 msgid "`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`"
-msgstr ""
+msgstr "`python -m pip install git+https://github.com/user/repo.git@branch_or_tag`"
 
 #: ../../tutorials/create-python-package.md:450
 msgid "Congratulations! You created your first Python package"
-msgstr ""
+msgstr "Parabéns! Você criou seu primeiro pacote Python"
 
 #: ../../tutorials/create-python-package.md:452
 msgid ""
-"You have now created a Python package that you can install into any "
-"Python environment."
+"You have now created a Python package that you can install into any Python "
+"environment."
 msgstr ""
+"Agora você criou um pacote Python que pode instalar em qualquer "
+"ambiente Python."
 
 #: ../../tutorials/create-python-package.md:457
 msgid ""
 "Add a [README file](add-readme.md) and [LICENSE](add-license-coc.md) to "
 "your package"
 msgstr ""
+"Adicione um [README file](add-readme.md) e [LICENSE](add-license-coc.md) ao "
+"seu pacote"
 
 #: ../../tutorials/create-python-package.md:458
 msgid ""
 "[Add more metadata to your `pyproject.toml`](pyproject-toml.md) file to "
 "support PyPI publication."
 msgstr ""
+"[Adicione mais metadata ao seu `pyproject.toml`](pyproject-toml.md) para "
+"suportar a publicação no PyPI."
 
 #: ../../tutorials/create-python-package.md:459
 msgid ""
 "[Learn how to build your package distribution](publish-pypi) files "
 "(**sdist** and **wheel**) and publish to **test PyPI**."
 msgstr ""
+"[Aprenda a fazer o build dos arquivos de distribuição do seu "
+"pacote](publish-pypi) (**sdist** e **wheel**) e publicar no **test PyPI**."
 
 #: ../../tutorials/create-python-package.md:460
 msgid ""
-"Finally you will learn how to [publish to **conda-forge**](publish-conda-"
-"forge) from **PyPI**."
+"Finally you will learn how to [publish to "
+"**conda-forge**](publish-conda-forge) from **PyPI**."
 msgstr ""
+"Por fim, você aprenderá a [publicar no "
+"**conda-forge**](publish-conda-forge) a partir do **PyPI**."
 
 #: ../../tutorials/create-python-package.md:464
 msgid "About the Python package directory structure"
-msgstr ""
+msgstr "Sobre a estrutura de diretório de um pacote Python"
 
 #: ../../tutorials/create-python-package.md:466
 msgid ""
 "To make your Python code installable you need to create a specific "
 "directory structure with the following elements:"
 msgstr ""
+"Para tornar seu código Python instalável, você precisa criar uma estrutura "
+"de diretório específica com os seguintes elementos:"
 
 #: ../../tutorials/create-python-package.md:468
 msgid "A `pyproject.toml` file."
-msgstr ""
+msgstr "Um arquivo `pyproject.toml`."
 
 #: ../../tutorials/create-python-package.md:469
 msgid "A specific directory structure."
-msgstr ""
+msgstr "Uma estrutura de diretório específica."
 
 #: ../../tutorials/create-python-package.md:470
 msgid "Some code."
-msgstr ""
+msgstr "Algum código."
 
 #: ../../tutorials/create-python-package.md:471
 msgid "An `__init__.py` file in your code directory."
-msgstr ""
+msgstr "Um arquivo `__init__.py` no diretório do seu código."
 
 #: ../../tutorials/create-python-package.md:473
 msgid "The directory structure you'll create in this lesson will look like this:"
-msgstr ""
+msgstr "A estrutura de diretório que você criará nesta lição ficará assim:"
 
 #: ../../tutorials/create-python-package.md:488
 msgid ""
