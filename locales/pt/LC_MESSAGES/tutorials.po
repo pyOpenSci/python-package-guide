@@ -438,14 +438,9 @@ msgid ""
 "A `CODE_OF_CONDUCT` file is a {term}`Code of conduct` used to establish "
 "guidelines for how people in your community interact."
 msgstr ""
-<<<<<<< HEAD
-"Um arquivo CODE_OF_CONDUCT é um {term}`código de conduta` usado para estabelecer"
-"diretrizes sobre como as pessoas em sua comunidade interagem."
-=======
 "Um arquivo `CODE_OF_CONDUCT` é um {term}`Código de conduta` usado "
 "para estabelecer diretrizes sobre como as pessoas da sua comunidade "
 "interagem."
->>>>>>> 6913c90 (docs: Portuguese translation for the first 1,000 lines in tutorials.po)
 
 #: ../../tutorials/add-license-coc.md:152
 msgid ""
@@ -2031,11 +2026,15 @@ msgstr "A estrutura de diretório que você criará nesta lição ficará assim:
 
 #: ../../tutorials/create-python-package.md:488
 msgid ""
-"Diagram showing the basic steps to creating an installable package. There"
-" are 4 boxes with arrows pointing towards the right. The boxes read, your"
-" code, create package structure, add metadata to pyproject.toml and pip "
+"Diagram showing the basic steps to creating an installable package. There "
+"are 4 boxes with arrows pointing towards the right. The boxes read, your "
+"code, create package structure, add metadata to pyproject.toml and pip "
 "install package."
 msgstr ""
+"Diagrama mostrando os passos básicos para criar um pacote instalável. Há 4 "
+"caixas com setas apontando para a direita. As caixas dizem: seu código, "
+"criar estrutura do pacote, adicionar metadata ao pyproject.toml e pip "
+"install pacote."
 
 #: ../../tutorials/create-python-package.md:490
 msgid ""
@@ -2043,152 +2042,201 @@ msgid ""
 "file structure), you can `pip install` your package into any Python "
 "environment on your computer."
 msgstr ""
+"Depois que você tiver os itens básicos de um pacote Python (código, "
+"metadata e uma estrutura de arquivos), você pode `pip install` seu pacote "
+"em qualquer Python environment no seu computador."
 
 #: ../../tutorials/create-python-package.md:493
 msgid "About the basic package directory structure"
-msgstr ""
+msgstr "Sobre a estrutura básica de diretório do pacote"
 
 #: ../../tutorials/create-python-package.md:495
 msgid "Notice a few things about the above layout:"
-msgstr ""
+msgstr "Observe algumas coisas sobre o layout acima:"
 
 #: ../../tutorials/create-python-package.md:497
 msgid ""
 "Your package code lives within a `src/packagename` directory. We suggest "
-"that you use `src` (short for **source code**) directory as it [ensures "
-"that you are running tests on the installed version of your "
-"code](https://www.pyopensci.org/python-package-guide/package-structure-"
-"code/python-package-structure.html#the-src-layout-and-testing)."
+"that you use `src` (short for **source code**) directory as it[ensures that "
+"you are running tests on the installed version of "
+"yourcode](https://www.pyopensci.org/python-package-guide/package-structure-c"
+"ode/python-package-structure.html#the-src-layout-and-testing)."
 msgstr ""
+"O código do seu pacote fica dentro de um diretório "
+"`src/packagename`. Sugerimos que você use o diretório `src` (abreviação de "
+"**source code**) porque [garante que você está executando testes na versão "
+"instalada do seu "
+"código](https://www.pyopensci.org/python-package-guide/package-structure-cod"
+"e/python-package-structure.html#the-src-layout-and-testing)."
 
 #: ../../tutorials/create-python-package.md:498
 msgid ""
 "Within the `src` directory you have a package directory called "
-"`pyospackage`. Use the name of your package for that directory name. This"
-" will be the name for importing your package in Python code once "
-"installed."
+"`pyospackage`. Use the name of your package for that directory name. This "
+"will be the name for importing your package in Python code once installed."
 msgstr ""
+"Dentro do diretório `src`, você tem um diretório de pacote chamado "
+"`pyospackage`. Use o nome do seu pacote para esse diretório. Este será o "
+"nome para importar seu pacote no código Python depois de instalado."
 
 #: ../../tutorials/create-python-package.md:499
 msgid ""
-"In your package directory, you have an `__init__.py` file and all of your"
-" Python modules. You will learn more about the `__init__.py` file below."
+"In your package directory, you have an `__init__.py` file and all of your "
+"Python modules. You will learn more about the `__init__.py` file below."
 msgstr ""
+"No diretório do seu pacote, você tem um arquivo `__init__.py` e todos os "
+"seus Python modules. Você aprenderá mais sobre o arquivo `__init__.py` "
+"abaixo."
 
 #: ../../tutorials/create-python-package.md:500
 msgid "The `pyproject.toml` file lives at the root directory of your package."
-msgstr ""
+msgstr "O arquivo `pyproject.toml` fica no diretório raiz do seu pacote."
 
 #: ../../tutorials/create-python-package.md:501
 msgid ""
-"The name of the root directory for the package is **pyospackage** which "
-"is the name of the package. This is not a requirement but you will often "
-"see that the GitHub / GitLab repository and the root directory name are "
-"the same as the package name."
+"The name of the root directory for the package is **pyospackage** which is "
+"the name of the package. This is not a requirement but you will often see "
+"that the GitHub / GitLab repository and the root directory name are the "
+"same as the package name."
 msgstr ""
+"O nome do diretório raiz do pacote é **pyospackage**, que é o nome "
+"do pacote. Isso não é obrigatório, mas você verá com frequência que o "
+"repositório do GitHub / GitLab e o nome do diretório raiz são os mesmos que o "
+"nome do pacote."
 
 #: ../../tutorials/create-python-package.md:503
 msgid "What is an `__init__.py` file?"
-msgstr ""
+msgstr "O que é um arquivo `__init__.py`?"
 
 #: ../../tutorials/create-python-package.md:505
 msgid ""
-"The `__init__.py` file tells Python that a directory should be treated as"
-" a Python package. As such, a directory with an `__init__.py` file can be"
-" imported directly into Python. The `__init__.py` file does not need to "
+"The `__init__.py` file tells Python that a directory should be treatedas a "
+"Python package. As such, a directory with an `__init__.py`file can be "
+"imported directly into Python. The `__init__.py` file doesnot need to "
 "contain any code in order for Python to recognize it; it can be empty."
 msgstr ""
+"O arquivo `__init__.py` informa ao Python que um diretório deve ser tratado "
+"como um pacote Python. Assim, um diretório com um arquivo `__init__.py` "
+"pode ser importado diretamente no Python. O arquivo `__init__.py` não "
+"precisa conter nenhum código para o Python reconhecê-lo; ele pode estar "
+"vazio."
 
 #: ../../tutorials/create-python-package.md:509
 msgid ""
 "For example, following the file structure example above which has an "
 "`__init__.py` file within it, you can run:"
 msgstr ""
+"Por exemplo, seguindo o exemplo de estrutura de arquivos acima, que tem um "
+"arquivo `__init__.py` dentro dele, você pode executar:"
 
-#: ../../tutorials/create-python-package.md:515
-#: ../../tutorials/pyproject-toml.md:56
+#: ../../tutorials/create-python-package.md:515 ../../tutorials/pyproject-toml.md:56
 msgid "What is a pyproject.toml file?"
-msgstr ""
+msgstr "O que é um arquivo pyproject.toml?"
 
 #: ../../tutorials/create-python-package.md:517
 msgid "The **pyproject.toml** file is:"
-msgstr ""
+msgstr "O arquivo **pyproject.toml** é:"
 
 #: ../../tutorials/create-python-package.md:519
 msgid ""
-"Where you define your project's metadata (including its name, authors, "
-"license, etc)"
+"Where you define your project's metadata (including its name, "
+"authors,license, etc)"
 msgstr ""
+"Onde você define o metadata do seu projeto (incluindo nome, autores, "
+"license, etc.)"
 
 #: ../../tutorials/create-python-package.md:520
 msgid "Where you define dependencies (the packages that it depends on)"
-msgstr ""
+msgstr "Onde você define dependências (os pacotes dos quais ele depende)"
 
 #: ../../tutorials/create-python-package.md:521
 msgid ""
-"Used to specify and configure what build backend you want to use to "
-"[build your package](../package-structure-code/python-package-"
-"distribution-files-sdist-wheel)."
+"Used to specify and configure what build backend you want to use to [build "
+"your "
+"package](../package-structure-code/python-package-distribution-files-sdist-w"
+"heel)."
 msgstr ""
+"Usado para especificar e configurar qual build backend você quer usar para "
+"[fazer o build do seu "
+"pacote](../package-structure-code/python-package-distribution-files-sdist-wh"
+"eel)."
 
 #: ../../tutorials/create-python-package.md:523
 msgid ""
 "After the `__init__.py` and `pyproject.toml` files have been added, your "
-"package can be built and distributed as an installable Python package "
-"using tools such as pip. Note that the `pyproject.toml` file needs to "
-"have a few basic items defined for the package to be installable "
-"including:"
+"package can be built and distributed as an installable Python package using "
+"tools such as pip. Note that the `pyproject.toml` file needs to have a few "
+"basic items defined for the package to be installable including:"
 msgstr ""
+"Depois que os arquivos `__init__.py` e `pyproject.toml` forem adicionados, "
+"seu pacote pode ser construído e distribuído como um pacote Python "
+"instalável usando ferramentas como pip. Observe que o arquivo "
+"`pyproject.toml` precisa ter alguns itens básicos definidos para o pacote "
+"ser instalável, incluindo:"
 
 #: ../../tutorials/create-python-package.md:529
 msgid "The `build-backend` that you want to use,"
-msgstr ""
+msgstr "O `build-backend` que você quer usar,"
 
 #: ../../tutorials/create-python-package.md:530
 msgid "The project `name` and `version`."
-msgstr ""
+msgstr "O `name` e a `version` do projeto."
 
 #: ../../tutorials/create-python-package.md:532
 msgid "Why the pyproject.toml file is important"
-msgstr ""
+msgstr "Por que o arquivo pyproject.toml é importante"
 
 #: ../../tutorials/create-python-package.md:535
 msgid ""
 "The `pyproject.toml` file replaces some of the functionality of both the "
-"`setup.py` file and `setup.cfg` files. If you try to pip install a "
-"package with no `pyproject.toml`, you will get the following error:"
+"`setup.py` file and `setup.cfg` files. If you try to pip install apackage "
+"with no `pyproject.toml`, you will get the following error:"
 msgstr ""
+"O arquivo `pyproject.toml` substitui parte da funcionalidade dos arquivos "
+"`setup.py` e `setup.cfg`. Se você tentar pip install um pacote sem "
+"`pyproject.toml`, receberá o seguinte erro:"
 
 #: ../../tutorials/create-python-package.md:545
 msgid ""
 "If your project already has a `setup.py` file, Hatch can be used to "
 "automatically create a `pyproject.toml`."
 msgstr ""
+"Se o seu projeto já tiver um arquivo `setup.py`, o Hatch pode ser usado "
+"para criar automaticamente um `pyproject.toml`."
 
 #: ../../tutorials/create-python-package.md:546
 msgid ""
-"See [Using Hatch to Migrate setup.py to a pyproject.toml](setup-py-to-"
-"pyproject-toml.md)"
+"See [Using Hatch to Migrate setup.py to a "
+"pyproject.toml](setup-py-to-pyproject-toml.md)"
 msgstr ""
+"Veja [Using Hatch to Migrate setup.py to a "
+"pyproject.toml](setup-py-to-pyproject-toml.md)"
 
 #: ../../tutorials/create-python-package.md:561
 msgid ""
-"Is it clear where to add commands? Bash vs. Python console Bash vs. Zsh "
-"is different"
+"Is it clear where to add commands? Bash vs. Python console Bash vs. Zsh is "
+"different"
 msgstr ""
+"Está claro onde adicionar comandos? Bash vs. console Python Bash vs. Zsh é "
+"diferente"
 
 #: ../../tutorials/create-python-package.md:563
 msgid ""
-"ADD: note about what makes something \"package worthy\", with a common "
-"misconception being that a package should be production-ready code that's"
-" valuable to a broad audience. This may not be a pervasive misconception "
-"in Python, but a quick break-out with an explanation of what a package "
-"can consist of would be helpful."
+"ADD: note about what makes something \"package worthy\", with a "
+"commonmisconception being that a package should be production-ready code "
+"that's valuable to a broad audience. This may not be a pervasive "
+"misconception in Python, but a quick break-out with an explanation of what "
+"a package can consist of would be helpful."
 msgstr ""
+"ADICIONAR: nota sobre o que torna algo \"package worthy\", com um equívoco "
+"comum de que um pacote deve ser código pronto para produção valioso para um "
+"público amplo. Isso pode não ser um equívoco generalizado em Python, mas um "
+"break-out rápido com uma explicação do que um pacote pode consistir seria "
+"útil."
 
 #: ../../tutorials/create-python-package.md:564
 msgid "They can use a codespace to complete this lesson too."
-msgstr ""
+msgstr "Eles também podem usar um codespace para completar esta lição."
 
 #: ../../tutorials/create-python-package.md:568
 msgid ""
@@ -2196,192 +2244,250 @@ msgid ""
 "automate defining a package version using git tags in the version and "
 "release your package lesson."
 msgstr ""
+"Quando esta lição existir, descomente esta admonition. Você aprenderá "
+"a automatizar a definição da versão de um pacote usando git tags na lição de "
+"versionar e lançar seu pacote."
 
 #: ../../tutorials/create-python-package.md:552
 msgid "[Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)"
-msgstr ""
+msgstr "[Carpentries shell lesson](https://swcarpentry.github.io/shell-novice/)"
 
 #: ../../tutorials/create-python-package.md:556
 msgid "[Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)"
-msgstr ""
+msgstr "[Numpy style docs](https://numpydoc.readthedocs.io/en/latest/format.html)"
 
 #: ../../tutorials/create-python-package.md:555
 msgid "[Google docstring style](https://google.github.io/styleguide/pyguide.html)"
-msgstr ""
+msgstr "[Google docstring style](https://google.github.io/styleguide/pyguide.html)"
 
 #: ../../tutorials/create-python-package.md:557
 msgid "[epydoc](https://epydoc.sourceforge.net/epytext.html)"
-msgstr ""
+msgstr "[epydoc](https://epydoc.sourceforge.net/epytext.html)"
 
 #: ../../tutorials/create-python-package.md:554
 msgid ""
 "[Python module "
 "docs](https://docs.python.org/3/tutorial/modules.html#packages)"
 msgstr ""
+"[Python module "
+"docs](https://docs.python.org/3/tutorial/modules.html#packages)"
 
 #: ../../tutorials/develop-python-package-hatch.md:7
 msgid "Use Hatch environments with your pure Python package"
-msgstr ""
+msgstr "Use ambientes Hatch com seu pacote puro Python"
 
 #: ../../tutorials/develop-python-package-hatch.md:13
 msgid ""
-"[In a previous lesson](create-pure-python-package), you learned how to "
-"create a Python package using the pyOpenSci copier template. In this "
-"lesson, you'll learn how to manage and use the Hatch environments set up "
-"by de **What you need to complete this lesson**"
+"[In a previous lesson](create-pure-python-package), you learned how "
+"tocreate a Python package using the pyOpenSci copier template. In "
+"thislesson, you'll learn how to manage and use the Hatch environments set "
+"up by de **What you need to complete this lesson**"
 msgstr ""
+"[Em uma lição anterior](create-pure-python-package), você aprendeu a criar "
+"um pacote Python usando o copier template da pyOpenSci. Nesta lição, você "
+"aprenderá a gerenciar e usar os ambientes Hatch configurados no **O que "
+"você precisa para completar esta lição**"
 
 #: ../../tutorials/develop-python-package-hatch.md:16
 msgid ""
-"To complete this lesson, you will need a local Python environment and "
-"shell on your computer.  You will need to have created a package using "
-"our pyOpenSci copier template. You should also have [Hatch installed"
-"](get-to-know-hatch)."
+"To complete this lesson, you will need a local Python environment and shell "
+"on your computer.  You will need to have created a package usingour "
+"pyOpenSci copier template. You should also have [Hatch "
+"installed](get-to-know-hatch)."
 msgstr ""
+"Para completar esta lição, você precisará de um Python environment local e "
+"shell no seu computador. Você precisará ter criado um pacote usando nosso "
+"copier template da pyOpenSci. Você também deve ter "
+"[Hatch instalado](get-to-know-hatch)."
 
 #: ../../tutorials/develop-python-package-hatch.md:20
 msgid ""
 "If you are using Windows or are not familiar with Shell, you may want to "
-"check out the [Carpentries shell lesson](https://swcarpentry.github.io"
-"/shell-novice/). Windows users will likely need to configure a tool such "
-"as [GitBash](https://gitforwindows.org/) for any Shell and git-related "
-"steps."
+"check out the [Carpentries shell "
+"lesson](https://swcarpentry.github.io/shell-novice/). Windows users will "
+"likely need to configure a tool such as "
+"[GitBash](https://gitforwindows.org/) for any Shell and git-related steps."
 msgstr ""
+"Se estiver usando Windows ou não estiver familiarizado com Shell, "
+"pode querer conferir a [Carpentries shell "
+"lesson](https://swcarpentry.github.io/shell-novice/). Usuários do Windows "
+"provavelmente precisarão configurar uma ferramenta como "
+"[GitBash](https://gitforwindows.org/) para qualquer passo relacionado a "
+"Shell e git."
 
 #: ../../tutorials/develop-python-package-hatch.md:23
 msgid ""
-"Welcome to your shiny new package! This page will help you get started "
-"with using [Hatch](get-to-know-hatch) to run tests, build and check your "
+"Welcome to your shiny new package! This page will help you get startedwith "
+"using [Hatch](get-to-know-hatch) to run tests, build and check your "
 "package, and build your documentation."
 msgstr ""
+"Boas-vindas ao seu novo pacote! Esta página ajudará você a começar a usar "
+"[Hatch](get-to-know-hatch) para executar testes, fazer o build e verificar "
+"seu pacote e construir sua documentação."
 
 #: ../../tutorials/develop-python-package-hatch.md:27
 #, python-brace-format
 msgid ""
-"To begin, have a look at the [pyproject.toml](pyproject-toml) file in "
-"your package directory. This file contains the configuration for your "
-"package and is written using {term}`TOML` format. Here's the TL&DR:"
+"To begin, have a look at the [pyproject.toml](pyproject-toml) file in your "
+"package directory. This file contains the configuration for your package "
+"and is written using {term}`TOML` format. Here's the TL&DR:"
 msgstr ""
+"Para começar, dê uma olhada no arquivo [pyproject.toml](pyproject-toml) no "
+"diretório do seu pacote. Este arquivo contém a configuração do seu pacote e "
+"é escrito no formato {term}`TOML`. Aqui vai o TL&DR:"
 
 #: ../../tutorials/develop-python-package-hatch.md:31
 msgid "Each `[]` section in the toml file is called a table."
-msgstr ""
+msgstr "Cada seção `[]` no arquivo toml é chamada de tabela."
 
 #: ../../tutorials/develop-python-package-hatch.md:32
 msgid "You can nest tables with double brackets like this`[[]]`"
-msgstr ""
+msgstr "Você pode aninhar tabelas com colchetes duplos assim`[[]]`"
 
 #: ../../tutorials/develop-python-package-hatch.md:33
-msgid ""
-"Tables contain information about a certain thing that you want to "
-"configure."
-msgstr ""
+msgid "Tables contain information about a certain thing that you want to configure."
+msgstr "Tabelas contêm informações sobre algo que você quer configurar."
 
 #: ../../tutorials/develop-python-package-hatch.md:36
 msgid ""
-"You can configure Hatch to use UV by default for environment management. "
-"UV is a package manager built in Rust. It is fast and will significantly "
-"speed up environment creation."
+"You can configure Hatch to use UV by default for environment management. UV "
+"is a package manager built in Rust. It is fast and willsignificantly speed "
+"up environment creation."
 msgstr ""
+"Você pode configurar o Hatch para usar UV por padrão para gerenciamento de "
+"ambiente. UV é um gerenciador de pacotes construído em Rust. É rápido e "
+"acelerará significativamente a criação de ambientes."
 
 #: ../../tutorials/develop-python-package-hatch.md:38
 msgid ""
-"To use UV with Hatch, configure Hatch in the \"tools\" section of your "
-"`pyproject.toml` file."
+"To use UV with Hatch, configure Hatch in the \"tools\" section of "
+"your`pyproject.toml` file."
 msgstr ""
+"Para usar UV com Hatch, configure o Hatch na seção \"tools\" do seu arquivo "
+"`pyproject.toml`."
 
 #: ../../tutorials/develop-python-package-hatch.md:46
 msgid ""
-"Using Hatch for developing, building, and maintaining your pure Python "
-"package"
-msgstr ""
+"Using Hatch for developing, building, and maintaining your pure "
+"Pythonpackage"
+msgstr "Usando Hatch para desenvolver, fazer o build, e manter seu pacote Python puro"
 
 #: ../../tutorials/develop-python-package-hatch.md:48
 #, python-brace-format
 msgid ""
 "In the pyOpenSci Python package template, we have set up {term}`Hatch "
-"environment` definitions. You will notice at the bottom of the file, a "
-"[hatch environment](https://hatch.pypa.io/1.13/environment/) section, "
-"that looks like this:"
+"environment` definitions. You will notice at the bottom of the file, "
+"a[hatch environment](https://hatch.pypa.io/1.13/environment/) section,that "
+"looks like this:"
 msgstr ""
+"No template de pacote Python da pyOpenSci, configuramos definições "
+"de{term}`Hatch environment`. Você notará na parte inferior do arquivo uma "
+"seção [hatch environment](https://hatch.pypa.io/1.13/environment/), que se "
+"parece com isto:"
 
 #: ../../tutorials/develop-python-package-hatch.md:59
 msgid ""
-"Hatch allows you to configure and run environments and scripts similar to"
-" a workflow tool like tox or nox."
+"Hatch allows you to configure and run environments and scripts similarto a "
+"workflow tool like tox or nox."
 msgstr ""
+"Hatch permite que você configure e execute ambientes e scripts de forma "
+"semelhante a uma ferramenta de workflow como tox ou nox."
 
 #: ../../tutorials/develop-python-package-hatch.md:62
 msgid ""
 "Hatch defaults to using `venv` to manage environments. However, you can "
 "configure it to use other environment tools, such as conda or mamba."
 msgstr ""
+"Hatch usa `venv` por padrão para gerenciar ambientes. Porém, você pode "
+"configurá-lo para usar outras ferramentas de ambiente, como conda ou "
+"mamba."
 
 #: ../../tutorials/develop-python-package-hatch.md:64
 msgid ""
 "[Read the hatch documentation to learn more about environments. "
 "](https://hatch.pypa.io/1.13/tutorials/environment/basic-usage/)"
 msgstr ""
+"[Leia a documentação do Hatch para saber mais sobre ambientes. "
+"](https://hatch.pypa.io/1.13/tutorials/environment/basic-usage/)"
 
 #: ../../tutorials/develop-python-package-hatch.md:68
 msgid ""
-"Below is the Hatch environment used to build and test your package. "
-"Anytime you see: `tool.hatch.envs.test`, it tells Hatch:"
+"Below is the Hatch environment used to build and test your package. Anytime "
+"you see: `tool.hatch.envs.test`, it tells Hatch:"
 msgstr ""
+"Abaixo está o ambiente Hatch usado para fazer o build e testar seu "
+"pacote. Sempre que você vir: `tool.hatch.envs.test`, isso informa ao Hatch:"
 
 #: ../../tutorials/develop-python-package-hatch.md:71
 msgid ""
-"\"Hey, Hatch, this is the definition for an environment.`test` is the "
-"name of the environment that I want you to create.\""
+"\"Hey, Hatch, this is the definition for an environment.`test` is the name "
+"of the environment that I want you to create.\""
 msgstr ""
+"\"Ei, Hatch, esta é a definição de um ambiente. `test` é o nome do "
+"ambiente que quero que você crie.\""
 
 #: ../../tutorials/develop-python-package-hatch.md:73
 msgid "So `tool.hatch.envs.build` will create an environment called `build`."
-msgstr ""
+msgstr "Então `tool.hatch.envs.build` criará um ambiente chamado `build`."
 
 #: ../../tutorials/develop-python-package-hatch.md:75
 msgid ""
-"Below the environment \"declaration,\" you can see the definition of what"
-" should be in that environment."
+"Below the environment \"declaration,\" you can see the definition of what "
+"should be in that environment."
 msgstr ""
+"Abaixo da \"declaração\" do ambiente, você pode ver a definição do que "
+"deve estar nesse ambiente."
 
 #: ../../tutorials/develop-python-package-hatch.md:77
 msgid "A Hatch environment to build your package"
-msgstr ""
+msgstr "Um ambiente Hatch para fazer o build do seu pacote"
 
 #: ../../tutorials/develop-python-package-hatch.md:79
 #, python-brace-format
 msgid ""
-"Below is a Hatch environment definition that you will find in your new "
-"project's [pyproject.toml](pyproject-toml) file. It is set up to build "
-"your package's {term}`Distribution files` ({term}`Source distribution "
+"Below is a Hatch environment definition that you will find in your "
+"newproject's [pyproject.toml](pyproject-toml) file. It is set up to "
+"buildyour package's {term}`Distribution files` ({term}`Source distribution "
 "(sdist)` and {term}`Wheel (.whl)`)."
 msgstr ""
+"Abaixo está uma definição de ambiente Hatch que você encontrará no "
+"arquivo [pyproject.toml](pyproject-toml) do seu novo projeto. Ela "
+"está configurada para fazer o build dos {term}`arquivos de "
+"distribuição<Distribution files>` do seu pacote ({term}`distribuição fonte "
+"(sdist)<Source distribution (sdist)>` e {term}`Wheel (.whl)`)."
 
 #: ../../tutorials/develop-python-package-hatch.md:84
 #, python-brace-format
 msgid ""
-"Notice that the environment definition declares two {term}`Dependencies`:"
-" `pip` and `twine`, which the environment needs to run successfully. This"
-" declaration is similar to declaring dependencies for your package at the"
-" top of your [pyproject.toml](pyproject-toml)."
+"Notice that the environment definition declares two {term}`Dependencies`: "
+"`pip` and `twine`, which the environment needs to run successfully. This "
+"declaration is similar to declaring dependencies for your package at the "
+"top of your [pyproject.toml](pyproject-toml)."
 msgstr ""
+"Observe que a definição do ambiente declara duas {term}`dependências "
+"<Dependencies>`: `pip` e `twine`, que o ambiente precisa para executar "
+"com sucesso. Esta declaração é semelhante a declarar dependencies para o "
+"seu pacote no topo do seu [pyproject.toml](pyproject-toml)."
 
 #: ../../tutorials/develop-python-package-hatch.md:99
 msgid "Hatch will install your package in editable mode by default"
-msgstr ""
+msgstr "Hatch instalará seu pacote em modo editável por padrão"
 
 #: ../../tutorials/develop-python-package-hatch.md:100
 msgid ""
-"Notice the `detached = True` flag at the bottom of the environment. By "
-"default, hatch will install your package in editable mode into any "
+"Notice the `detached = True` flag at the bottom of the environment. "
+"Bydefault, hatch will install your package in editable mode into any "
 "environment it creates. `detached=True` tells it not to install your "
 "package into the environment."
 msgstr ""
+"Observe a flag `detached = True` na parte inferior do ambiente. "
+"Por padrão, o Hatch instalará seu pacote em modo editável em qualquer "
+"ambiente que criar. `detached=True` informa para não instalar seu pacote "
+"no ambiente."
 
 #: ../../tutorials/develop-python-package-hatch.md:104
 msgid "Hatch scripts"
-msgstr ""
+msgstr "Hatch scripts"
 
 #: ../../tutorials/develop-python-package-hatch.md:106
 #, python-brace-format
@@ -2389,103 +2495,121 @@ msgid ""
 "Hatch supports defining {term}`Script (Hatch)` commands that run in "
 "specific Hatch environments."
 msgstr ""
+"Hatch suporta a definição de comandos {term}`Script (Hatch)` que executam "
+"em ambientes Hatch específicos."
 
 #: ../../tutorials/develop-python-package-hatch.md:109
 msgid ""
 "Above, you have defined a new environment called 'build' that Hatch will "
-"create as a virtual environment (venv). Because `detached = True` in that"
-" environment, Hatch won't install your package into it."
+"create as a virtual environment (venv). Because `detached = True`in that "
+"environment, Hatch won't install your package into it."
 msgstr ""
+"Acima, você definiu um novo ambiente chamado 'build' que o Hatch criará "
+"como um ambiente virtual (venv). Como `detached = True` nesse "
+"ambiente, o Hatch não instalará seu pacote nele."
 
 #: ../../tutorials/develop-python-package-hatch.md:111
 msgid ""
-"You can then use that environment to run \"scripts\". The definition "
-"below tells Hatch to run the following scripts in the build environment."
+"You can then use that environment to run \"scripts\". The definition below "
+"tells Hatch to run the following scripts in the build environment."
 msgstr ""
+"Você pode então usar esse ambiente para executar \"scripts\". A definição "
+"abaixo informa ao Hatch para executar os seguintes scripts no ambiente "
+"build."
 
 #: ../../tutorials/develop-python-package-hatch.md:113
 msgid "`[tool.hatch.envs.build.scripts]`"
-msgstr ""
+msgstr "`[tool.hatch.envs.build.scripts]`"
 
 #: ../../tutorials/develop-python-package-hatch.md:115
 msgid "You define this `scripts` to run using the following syntax, where:"
-msgstr ""
+msgstr "Você define este `scripts` para executar usando a seguinte sintaxe, onde:"
 
 #: ../../tutorials/develop-python-package-hatch.md:117
 msgid "`tool.hatch`: Alerts Hatch that this table is for Hatch to use"
-msgstr ""
+msgstr "`tool.hatch`: Alerta o Hatch de que esta tabela é para o Hatch usar"
 
 #: ../../tutorials/develop-python-package-hatch.md:118
 msgid "`envs.build`: Use the defined build environment."
-msgstr ""
+msgstr "`envs.build`: Use o ambiente build definido."
 
 #: ../../tutorials/develop-python-package-hatch.md:119
 msgid ""
-"`scripts`: Define what scripts to run. In this case, Hatch will run shell"
-" scripts."
+"`scripts`: Define what scripts to run. In this case, Hatch will run shell "
+"scripts."
 msgstr ""
+"`scripts`: Defina quais scripts executar. Neste caso, o Hatch executará "
+"shell scripts."
 
 #: ../../tutorials/develop-python-package-hatch.md:122
-msgid ""
-"Below is the `build.scripts` table that defines 3 shell commands to be "
-"run:"
+msgid "Below is the `build.scripts` table that defines 3 shell commands to berun:"
 msgstr ""
+"Abaixo está a tabela `build.scripts` que define 3 comandos shell a serem "
+"executados:"
 
 #: ../../tutorials/develop-python-package-hatch.md:124
 msgid "`pip check` # verifies your dependencies"
-msgstr ""
+msgstr "`pip check` # verifica suas dependencies"
 
 #: ../../tutorials/develop-python-package-hatch.md:125
 msgid "`hatch build --clean` # build your packages distribution files."
 msgstr ""
+"`hatch build --clean` # faz o build dos arquivos de distribuição do seu "
+"pacote."
 
 #: ../../tutorials/develop-python-package-hatch.md:126
 msgid ""
-"`twine check dist/*` # use twine to check that your package's sdist "
-"(source distribution) is ok."
+"`twine check dist/*` # use twine to check that your package's sdist (source "
+"distribution) is ok."
 msgstr ""
+"`twine check dist/*` # usa twine para verificar se o sdist (source "
+"distribution) do seu pacote está ok."
 
 #: ../../tutorials/develop-python-package-hatch.md:140
 msgid ""
-"Hatch, by default, will install your package in editable mode into any "
-"virtual environment (venv) that it creates. If `detached=True` is set, "
-"then it will skip that step."
+"Hatch, by default, will install your package in editable mode into "
+"anyvirtual environment (venv) that it creates. If `detached=True` is "
+"set,then it will skip that step."
 msgstr ""
+"Hatch, por padrão, instalará seu pacote em modo editável em qualquer "
+"ambiente virtual (venv) que criar. Se `detached=True` estiver definido, "
+"ele pulará essa etapa."
 
 #: ../../tutorials/develop-python-package-hatch.md:143
 msgid "Running the build script"
-msgstr ""
+msgstr "Executando o build script"
 
 #: ../../tutorials/develop-python-package-hatch.md:145
 msgid "You can run the build script and build your package like this:"
-msgstr ""
+msgstr "Você pode executar o build script e fazer o build do seu pacote assim:"
 
 #: ../../tutorials/develop-python-package-hatch.md:147
 msgid "`hatch run build:check`"
-msgstr ""
+msgstr "`hatch run build:check`"
 
 #: ../../tutorials/develop-python-package-hatch.md:149
 msgid ""
-"This step updates the build environment and then builds and checks the "
-"output distributions of your package."
+"This step updates the build environment and then builds and checks "
+"theoutput distributions of your package."
 msgstr ""
+"Esta etapa atualiza o ambiente build e então faz o build e verifica as "
+"distribuições de saída do seu pacote."
 
 #: ../../tutorials/develop-python-package-hatch.md:151
 msgid "You can enter the build environment in your shell to check it out:"
-msgstr ""
+msgstr "Você pode entrar no ambiente build no seu shell para conferir:"
 
 #: ../../tutorials/develop-python-package-hatch.md:157
 msgid "If you run `pip list` in the environment, twine will be there:"
-msgstr ""
+msgstr "Se executar `pip list` no ambiente, o twine estará lá:"
 
-#: ../../tutorials/develop-python-package-hatch.md:163
-#: ../../tutorials/develop-python-package-hatch.md:221
+#: ../../tutorials/develop-python-package-hatch.md:163 ../../tutorials/develop-python-package-hatch.md:221
 msgid "To leave the environment use:"
-msgstr ""
+msgstr "Para sair do ambiente, use:"
 
 #: ../../tutorials/develop-python-package-hatch.md:169
 msgid "Hatch, testing, and matrix environments"
-msgstr ""
+msgstr "Hatch, testes, e ambientes matriz"
 
 #: ../../tutorials/develop-python-package-hatch.md:171
 msgid ""
@@ -2493,136 +2617,167 @@ msgid ""
 "expect your users to be using. In this section, you'll explore the test "
 "environment setup in the pyOpenSci template package."
 msgstr ""
+"É sempre útil executar seus testes nas versões do Python que você espera "
+"que seus usuários estejam usando. Nesta seção, você explorará a configuração "
+"do ambiente de teste no pacote template da pyOpenSci."
 
 #: ../../tutorials/develop-python-package-hatch.md:173
 msgid "Below, you see the Hatch environment test table."
-msgstr ""
+msgstr "Abaixo, você vê a tabela do ambiente Hatch test."
 
 #: ../../tutorials/develop-python-package-hatch.md:175
 msgid ""
-"Similar to the above build environment, the environment below defines the"
-" dependencies that Hatch needs to install into the test environment "
-"(required to run your tests)."
+"Similar to the above build environment, the environment below defines the "
+"dependencies that Hatch needs to install into the test environment(required "
+"to run your tests)."
 msgstr ""
+"Semelhante ao ambiente build acima, o ambiente abaixo define as "
+"dependencies que o Hatch precisa instalar no ambiente de teste "
+"(necessárias para executar seus testes)."
 
 #: ../../tutorials/develop-python-package-hatch.md:189
 msgid "Your test environment has a matrix associated with it"
-msgstr ""
+msgstr "Seu ambiente de teste tem uma matriz associada a ele"
 
 #: ../../tutorials/develop-python-package-hatch.md:191
 msgid ""
-"If the environment has a matrix associated with it, that tells Hatch to "
-"run the tests across different Python versions. Below, you are running "
-"tests on versions 3.10 through 3.13."
+"If the environment has a matrix associated with it, that tells Hatch to run "
+"the tests across different Python versions. Below, you are running tests on "
+"versions 3.10 through 3.13."
 msgstr ""
+"Se o ambiente tiver uma matriz associada, isso informa ao Hatch para "
+"executar os testes em diferentes versões do Python. Abaixo, você está "
+"executando testes nas versões 3.10 a 3.13."
 
 #: ../../tutorials/develop-python-package-hatch.md:194
 msgid ""
 "Hatch by default will install Python [using "
-"UV](https://docs.astral.sh/uv/guides/install-python/) both when you "
-"install Hatch and also when you declare a matrix environment like the one"
-" below"
+"UV](https://docs.astral.sh/uv/guides/install-python/) both when you install "
+"Hatch and also when you declare a matrix environment like the one below"
 msgstr ""
+"Hatch, por padrão, instalará Python [usando "
+"UV](https://docs.astral.sh/uv/guides/install-python/) tanto quando você "
+"instala o Hatch quanto quando declara um ambiente matriz como o abaixo"
 
 #: ../../tutorials/develop-python-package-hatch.md:202
 msgid ""
 "In your project, if you run `hatch shell test`, you will see the output "
 "below. This means that because there is a matrix of Python versions to "
-"choose from, you need to select the environment with the Python version "
-"you want to use."
+"choose from, you need to select the environment with the Python version you "
+"want to use."
 msgstr ""
+"No seu projeto, se executar `hatch shell test`, verá a saída abaixo. Isso "
+"significa que, como há uma matriz de versões do Python para escolher, você "
+"precisa selecionar o ambiente com a versão do Python que deseja usar."
 
 #: ../../tutorials/develop-python-package-hatch.md:215
 msgid ""
 "Pick the Python test environment that you want to use and enter it, like "
 "this (this will open Python 3.13):"
 msgstr ""
+"Escolha o ambiente de teste Python que deseja usar e entre nele, assim "
+"(isso abrirá o Python 3.13):"
 
 #: ../../tutorials/develop-python-package-hatch.md:227
 msgid "Hatch scripts for tests"
-msgstr ""
+msgstr "Hatch scripts para testes"
 
 #: ../../tutorials/develop-python-package-hatch.md:229
 msgid ""
-"In that same tests section, you will see a `tool.hatch.envs.test.scripts`"
-" section. Similar to what you saw above with the build steps, this is "
-"where the \"script\" to run your tests is defined."
+"In that same tests section, you will see a `tool.hatch.envs.test.scripts` "
+"section. Similar to what you saw above with the build steps, this is where "
+"the \"script\" to run your tests is defined."
 msgstr ""
+"Na mesma seção de testes, você verá uma seção "
+"`tool.hatch.envs.test.scripts`. Semelhante ao que você viu acima com as "
+"etapas de build, é aqui que o \"script\" para executar seus testes é definido."
 
 #: ../../tutorials/develop-python-package-hatch.md:232
 msgid ""
 "Notice that below, the script has a script called `run`. And that script "
 "runs pytest with a set of arguments, including generating code coverage."
 msgstr ""
+"Observe que abaixo o script tem um script chamado `run`. E esse "
+"scriptexecuta pytest com um conjunto de argumentos, incluindo geração de "
+"code coverage."
 
 #: ../../tutorials/develop-python-package-hatch.md:239
 msgid "To run this script in your terminal, use the syntax:"
-msgstr ""
+msgstr "Para executar este script no seu terminal, use a sintaxe:"
 
 #: ../../tutorials/develop-python-package-hatch.md:241
 msgid "`hatch run test:run`"
-msgstr ""
+msgstr "`hatch run test:run`"
 
 #: ../../tutorials/develop-python-package-hatch.md:243
 msgid "Reminder"
-msgstr ""
+msgstr "Lembrete"
 
 #: ../../tutorials/develop-python-package-hatch.md:246
-msgid ""
-"`hatch run`: this calls hatch and tells it that it will be running a "
-"command"
-msgstr ""
+msgid "`hatch run`: this calls hatch and tells it that it will be running a command"
+msgstr "`hatch run`: isso chama o Hatch e informa que ele executará um comando"
 
 #: ../../tutorials/develop-python-package-hatch.md:247
 msgid ""
-"`test:run` defines the environment you want it to run (`test`) in this "
-"case, and the script is defined as `run`"
+"`test:run` defines the environment you want it to run (`test`) in thiscase, "
+"and the script is defined as `run`"
 msgstr ""
+"`test:run` define o ambiente em que você quer que execute (`test`) neste "
+"caso, e o script é definido como `run`"
 
 #: ../../tutorials/develop-python-package-hatch.md:250
 msgid ""
-"If you have a matrix setup for tests, then it will both install the "
-"needed Python version using UV and run your tests in each version of the "
-"Python environment. In this case, since there are four Python versions in"
-" the environment, your tests will be run four times, once in each Python "
-"version listed in the matrix table."
+"If you have a matrix setup for tests, then it will both install the needed "
+"Python version using UV and run your tests in each version of the Python "
+"environment. In this case, since there are four Python versions in the "
+"environment, your tests will be run four times, once in each Python version "
+"listed in the matrix table."
 msgstr ""
+"Se você tiver uma matriz configurada para testes, ela instalará a versão "
+"necessária do Python usando UV e executará seus testes em cada versão do "
+"ambiente Python. Neste caso, como há quatro versões do Python no "
+"ambiente, seus testes serão executados quatro vezes, uma em cada versão "
+"do Python listada na tabela matrix."
 
 #: ../../tutorials/develop-python-package-hatch.md:280
 msgid "Build your documentation with Hatch environments"
-msgstr ""
+msgstr "Construa sua documentação com um ambiente Hatch"
 
 #: ../../tutorials/develop-python-package-hatch.md:282
 msgid ""
-"Finally, you can build and serve your documentation using hatch. To build"
-" a static HTML version of the docs run:"
+"Finally, you can build and serve your documentation using hatch. To build a "
+"static HTML version of the docs run:"
 msgstr ""
+"Por fim, você pode fazer o build e servir sua documentação usando o Hatch. "
+"Para gerar uma versão HTML estática da documentação, execute:"
 
 #: ../../tutorials/develop-python-package-hatch.md:285
 msgid "`hatch run docs:build`"
-msgstr ""
+msgstr "`hatch run docs:build`"
 
 #: ../../tutorials/develop-python-package-hatch.md:287
 msgid ""
 "To run a local server with your docs updated as you update your markdown "
 "files, run:"
 msgstr ""
+"Para executar um servidor local com a documentação atualizada conforme você "
+"modifica seus arquivos markdown, execute:"
 
 #: ../../tutorials/develop-python-package-hatch.md:289
 msgid "`hatch run docs:serve`"
-msgstr ""
+msgstr "`hatch run docs:serve`"
 
 #: ../../tutorials/develop-python-package-hatch.md:291
 msgid "To stop serving the docs use:"
-msgstr ""
+msgstr "Para parar de servir a documentação, use:"
 
 #: ../../tutorials/develop-python-package-hatch.md:293
 msgid "mac: <kbd>ctrl + c</kbd> windows:"
-msgstr ""
+msgstr "mac: <kbd>ctrl + c</kbd> windows:"
 
 #: ../../tutorials/get-to-know-hatch.md:6
 msgid "Get to Know Hatch"
-msgstr ""
+msgstr "Conheça o Hatch"
 
 #: ../../tutorials/get-to-know-hatch.md:8
 msgid ""
@@ -2630,13 +2785,20 @@ msgid ""
 "packaging tools](/package-structure-code/python-package-build-tools) out "
 "there, we have selected Hatch because:"
 msgstr ""
+"Nossos tutoriais de empacotamento Python usam o Hatch. Embora existam "
+"[muitas ferramentas excelentes de "
+"empacotamento](/package-structure-code/python-package-build-tools), "
+"escolhemos o Hatch porque:"
 
 #: ../../tutorials/get-to-know-hatch.md:13
 msgid ""
-"It is an end-to-end tool that supports most of the steps required to "
-"create a quality Python package. Beginners will have fewer tools to learn"
-" if they use Hatch."
+"It is an end-to-end tool that supports most of the steps required to create "
+"a quality Python package. Beginners will have fewer tools to learn if they "
+"use Hatch."
 msgstr ""
+"É uma ferramenta ponta a ponta que suporta a maioria das etapas necessárias "
+"para criar um pacote Python de qualidade. Iniciantes terão menos ferramentas "
+"para aprender se usarem o Hatch."
 
 #: ../../tutorials/get-to-know-hatch.md:16
 #, python-brace-format
@@ -2644,326 +2806,400 @@ msgid ""
 "It supports different {term}`Build backend` options if you ever need to "
 "compile code in other languages."
 msgstr ""
+"Ele suporta diferentes opções de {term}`backend de construção <Build "
+"backend>` caso você precise compilar código em outras linguagens."
 
 #: ../../tutorials/get-to-know-hatch.md:18
 msgid ""
 "As a community, pyOpenSci has decided that Hatch is a user-friendly tool "
 "that supports many different scientific Python use cases."
 msgstr ""
+"Como comunidade, a pyOpenSci decidiu que o Hatch é uma ferramenta amigável "
+"que suporta muitos casos de uso diferentes do Python científico."
 
 #: ../../tutorials/get-to-know-hatch.md:21
 msgid ""
-"In this tutorial, you will install and get to know Hatch a bit more "
-"before starting to use it."
+"In this tutorial, you will install and get to know Hatch a bit more before "
+"starting to use it."
 msgstr ""
+"Neste tutorial, você instalará e conhecerá um pouco mais o Hatch antes de "
+"começar a usá-lo."
 
 #: ../../tutorials/get-to-know-hatch.md:24
 msgid "You need two things to successfully complete this tutorial:"
-msgstr ""
+msgstr "Você precisa de duas coisas para concluir este tutorial com sucesso:"
 
 #: ../../tutorials/get-to-know-hatch.md:26
 msgid "You need Python installed."
-msgstr ""
+msgstr "Você precisa ter o Python instalado."
 
 #: ../../tutorials/get-to-know-hatch.md:27
 msgid "You need Hatch installed."
-msgstr ""
+msgstr "Você precisa ter o Hatch instalado."
 
 #: ../../tutorials/get-to-know-hatch.md:30
 msgid ""
-"If you don't already have Python installed on your computer, Hatch will "
-"do it for you when you install Hatch."
+"If you don't already have Python installed on your computer, Hatch will do "
+"it for you when you install Hatch."
 msgstr ""
+"Se você ainda não tiver o Python instalado no seu computador, o Hatch fará "
+"isso por você quando você instalar o Hatch."
 
 #: ../../tutorials/get-to-know-hatch.md:34
 msgid "Install Hatch"
-msgstr ""
+msgstr "Instalar o Hatch"
 
 #: ../../tutorials/get-to-know-hatch.md:36
 msgid ""
 "To begin, follow the operating-system-specific instructions below to "
 "install Hatch."
 msgstr ""
+"Para começar, siga as instruções específicas do seu sistema operacional "
+"abaixo para instalar o Hatch."
 
 #: ../../tutorials/get-to-know-hatch.md
 msgid "MAC"
-msgstr ""
+msgstr "MAC"
 
 #: ../../tutorials/get-to-know-hatch.md:43
 msgid ""
 "Follow the instructions "
 "[here](https://hatch.pypa.io/latest/install/#installers)."
-msgstr ""
+msgstr "Siga as instruções [aqui](https://hatch.pypa.io/latest/install/#installers)."
 
 #: ../../tutorials/get-to-know-hatch.md:45
 msgid ""
-"Download the latest GUI installer for MAC [hatch-"
-"universal.pkg](https://github.com/pypa/hatch/releases/latest/download"
+"Download the latest GUI installer for MAC "
+"[hatch-universal.pkg](https://github.com/pypa/hatch/releases/latest/download"
 "/hatch-universal.pkg)."
 msgstr ""
+"Baixe o instalador GUI mais recente para MAC "
+"[hatch-universal.pkg](https://github.com/pypa/hatch/releases/latest/download"
+"/hatch-universal.pkg)."
 
 #: ../../tutorials/get-to-know-hatch.md:46
 msgid "Run the installer and follow the setup instructions."
-msgstr ""
+msgstr "Execute o instalador e siga as instruções de instalação."
 
 #: ../../tutorials/get-to-know-hatch.md:47
 msgid "If your terminal is open, then restart it."
-msgstr ""
+msgstr "Se o seu terminal estiver aberto, reinicie-o."
 
 #: ../../tutorials/get-to-know-hatch.md
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../tutorials/get-to-know-hatch.md:53
 msgid ""
 "In your browser, download the correct `.msi` file for your system: "
-"[hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch-x64.msi)"
+"[hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch"
+"-x64.msi)"
 msgstr ""
+"No seu navegador, baixe o arquivo `.msi` correto para o seu sistema: "
+"[hatch-x64.msi](https://github.com/pypa/hatch/releases/latest/download/hatch"
+"-x64.msi)"
 
 #: ../../tutorials/get-to-know-hatch.md:55
 msgid "Run your downloaded installer file and follow the on-screen instructions."
-msgstr ""
+msgstr "Execute o arquivo instalador baixado e siga as instruções na tela."
 
 #: ../../tutorials/get-to-know-hatch.md
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../tutorials/get-to-know-hatch.md:61
 msgid ""
-"We suggest that you install Hatch using pipx on Linux. however, if you "
-"prefer another method, check out the [Hatch installation "
+"We suggest that you install Hatch using pipx on Linux. however, if "
+"youprefer another method, check out the [Hatch installation "
 "documentation](https://hatch.pypa.io/latest/install/) for other methods."
 msgstr ""
+"Sugerimos que você instale o Hatch usando pipx no Linux. No entanto, se "
+"preferir outro método, consulte a [documentação de instalação do "
+"Hatch](https://hatch.pypa.io/latest/install/) para outras opções."
 
 #: ../../tutorials/get-to-know-hatch.md:75
 #, python-brace-format
 msgid ""
 "Hatch can also be installed directly using {term}`pip` or "
-"[conda](https://hatch.pypa.io/latest/install/#conda). We encourage you to"
-" follow the instructions above because we have found that the Hatch "
+"[conda](https://hatch.pypa.io/latest/install/#conda). We encourage youto "
+"follow the instructions above because we have found that the Hatch "
 "installers for Windows and Mac are the easiest and most efficient."
 msgstr ""
+"O Hatch também pode ser instalado diretamente usando {term}`pip` ou "
+"[conda](https://hatch.pypa.io/latest/install/#conda). Recomendamos que você "
+"siga as instruções acima, pois descobrimos que os instaladores do Hatch para "
+"Windows e Mac são os mais fáceis e eficientes."
 
 #: ../../tutorials/get-to-know-hatch.md:80
 msgid ""
 "Our Linux users have found success installing Hatch with pipx if they "
 "already use apt install."
 msgstr ""
+"Nossos usuários Linux tiveram sucesso instalando o Hatch com pipx se já "
+"usam apt install."
 
 #: ../../tutorials/get-to-know-hatch.md:83
 msgid ""
 "Both approaches (using a graphical installer on Windows/Mac and pipx) "
-"ensure that you have Hatch installed globally. A global install means "
-"that Hatch is available across all of your Python environments on your "
-"computer."
+"ensure that you have Hatch installed globally. A global install means that "
+"Hatch is available across all of your Python environments on yourcomputer."
 msgstr ""
+"Ambas as abordagens (usar um instalador gráfico no Windows/Mac e "
+"pipx) garantem que você tenha o Hatch instalado globalmente. Uma instalação "
+"global significa que o Hatch fica disponível em todos os seus ambientes "
+"Python no computador."
 
 #: ../../tutorials/get-to-know-hatch.md:88
 msgid "Check that hatch installed correctly"
-msgstr ""
+msgstr "Verifique se o Hatch foi instalado corretamente"
 
 #: ../../tutorials/get-to-know-hatch.md:90
 msgid ""
-"Once you have completed the installation instructions above, you can open"
-" your terminal, and make sure that Hatch installed correctly using the "
+"Once you have completed the installation instructions above, you can open "
+"your terminal, and make sure that Hatch installed correctly usingthe "
 "command below:"
 msgstr ""
+"Depois de concluir as instruções de instalação acima, abra o terminal e "
+"verifique se o Hatch foi instalado corretamente usando o comando abaixo:"
 
 #: ../../tutorials/get-to-know-hatch.md:98
 msgid ""
 "*Note the version number output of `hatch --version` will likely  be "
 "different from the output above in this tutorial.*"
 msgstr ""
+"*Observe que o número de versão exibido por `hatch --version` provavelmente "
+"será diferente do mostrado acima neste tutorial.*"
 
 #: ../../tutorials/get-to-know-hatch.md:101
 msgid "Configure Hatch"
-msgstr ""
+msgstr "Configurar o Hatch"
 
 #: ../../tutorials/get-to-know-hatch.md:103
 msgid ""
 "Once you have installed Hatch, you can customize its configuration. This "
-"includes setting the default name and setup for every package you create."
-" While this step is not required, we suggest that you do it."
+"includes setting the default name and setup for every package youcreate. "
+"While this step is not required, we suggest that you do it."
 msgstr ""
+"Depois de instalar o Hatch, você pode personalizar sua configuração. Isso "
+"inclui definir o nome padrão e a configuração de cada pacote que você criar. "
+"Embora esta etapa não seja obrigatória, recomendamos que você a faça."
 
 #: ../../tutorials/get-to-know-hatch.md:107
 msgid ""
 "Hatch stores your configuration in a [`config.toml` "
 "file](https://hatch.pypa.io/latest/config/project-templates/)."
 msgstr ""
+"O Hatch armazena sua configuração em um [arquivo "
+"`config.toml`](https://hatch.pypa.io/latest/config/project-templates/)."
 
 #: ../../tutorials/get-to-know-hatch.md:109
 msgid ""
 "While you can update the `config.toml` file through the command line, it "
-"might be easier to look at and update it in a text editor if you are "
-"using it for the first time."
+"might be easier to look at and update it in a text editor if you are using "
+"it for the first time."
 msgstr ""
+"Embora você possa atualizar o arquivo `config.toml` pela linha de comando, "
+"pode ser mais fácil visualizá-lo e editá-lo em um editor de texto se for a "
+"primeira vez que o usa."
 
 #: ../../tutorials/get-to-know-hatch.md:113
 msgid "Step 1: Open and Edit Your `config.toml` File"
-msgstr ""
+msgstr "Etapa 1: Abrir e editar seu arquivo `config.toml`"
 
 #: ../../tutorials/get-to-know-hatch.md:115
 msgid ""
-"To open the config file in your file browser, run the following command "
-"in your shell:"
+"To open the config file in your file browser, run the following command in "
+"your shell:"
 msgstr ""
+"Para abrir o arquivo de configuração no explorador de arquivos, execute o "
+"seguinte comando no shell:"
 
 #: ../../tutorials/get-to-know-hatch.md:118
 msgid "`hatch config explore`"
-msgstr ""
+msgstr "`hatch config explore`"
 
 #: ../../tutorials/get-to-know-hatch.md:120
 msgid ""
-"This will open up a directory window that allows you to double-click on "
-"the file and open it in your favorite text editor."
+"This will open up a directory window that allows you to double-click on the "
+"file and open it in your favorite text editor."
 msgstr ""
+"Isso abrirá uma janela de diretório que permite clicar duas vezes no "
+"arquivo e abri-lo no seu editor de texto favorito."
 
 #: ../../tutorials/get-to-know-hatch.md:123
 msgid ""
-"You can also retrieve the location of the Hatch config file by running "
-"the following command in your shell:"
+"You can also retrieve the location of the Hatch config file by runningthe "
+"following command in your shell:"
 msgstr ""
+"Você também pode obter a localização do arquivo de configuração do Hatch "
+"executando o seguinte comando no shell:"
 
 #: ../../tutorials/get-to-know-hatch.md:131
 msgid "Step 2 - update your email and name"
-msgstr ""
+msgstr "Etapa 2 - atualize seu e-mail e nome"
 
 #: ../../tutorials/get-to-know-hatch.md:133
 msgid ""
 "Once the file is open, update the [template] table of the `config.toml` "
 "file with your name and email. This information will be used in any "
-"[pyproject.toml](pyproject-toml) metadata files that you create using "
-"Hatch."
+"[pyproject.toml](pyproject-toml) metadata files that you create using Hatch."
 msgstr ""
+"Com o arquivo aberto, atualize a tabela [template] do arquivo `config.toml` "
+"com seu nome e e-mail. Essas informações serão usadas em quaisquer arquivos "
+"de metadata [pyproject.toml](pyproject-toml) que você criar usando o Hatch."
 
 #: ../../tutorials/get-to-know-hatch.md:144
 msgid "Step 3"
-msgstr ""
+msgstr "Etapa 3"
 
 #: ../../tutorials/get-to-know-hatch.md:146
 msgid "Next, set tests to false in the `[template.plugins.default]` table."
-msgstr ""
+msgstr "Em seguida, defina `tests` como `false` na tabela `[template.plugins.default]`."
 
 #: ../../tutorials/get-to-know-hatch.md:148
 msgid ""
-"While tests are important, setting the tests configuration in Hatch to "
-"`true` will create a more complex `pyproject.toml` file. You won't need "
-"to use this feature in this beginner friendly tutorial series but we will"
-" introduce it in later tutorials."
+"While tests are important, setting the tests configuration in Hatch "
+"to`true` will create a more complex `pyproject.toml` file. You won't need "
+"to use this feature in this beginner friendly tutorial series butwe will "
+"introduce it in later tutorials."
 msgstr ""
+"Embora testes sejam importantes, definir a configuração de `tests` no Hatch "
+"como `true` criará um arquivo `pyproject.toml` mais complexo. Você não "
+"precisará usar esse recurso nesta série de tutoriais para iniciantes, mas o "
+"apresentaremos em tutoriais posteriores."
 
 #: ../../tutorials/get-to-know-hatch.md:153
 msgid "Your `config.toml` file should look something like the one below."
-msgstr ""
+msgstr "Seu arquivo `config.toml` deve ficar parecido com o exemplo abaixo."
 
 #: ../../tutorials/get-to-know-hatch.md:191
 msgid ""
-"Also notice that the default license option is MIT. While we will discuss"
-" license in more detail in a later lesson, the MIT license is the "
+"Also notice that the default license option is MIT. While we will discuss "
+"license in more detail in a later lesson, the MIT license is the "
 "recommended permissive license from "
-"[choosealicense.com](https://choosealicense.com/) and as such we will use"
-" it for this tutorial series."
+"[choosealicense.com](https://choosealicense.com/) and as such we will use "
+"it for this tutorial series."
 msgstr ""
+"Observe também que a opção de `license` padrão é MIT. Embora abordemos "
+"`license` com mais detalhes em uma lição posterior, a `license` MIT é a "
+"`permissive license` recomendada por "
+"[choosealicense.com](https://choosealicense.com/) e, por isso, a usaremos "
+"nesta série de tutoriais."
 
 #: ../../tutorials/get-to-know-hatch.md:197
 msgid "You are of course welcome to select another license."
-msgstr ""
+msgstr "Você pode, claro, escolher outra `license`."
 
 #: ../../tutorials/get-to-know-hatch.md:200
 msgid ""
-"I think we'd need the SPDX license options here if they want to chose "
-"bsd-3 for instance"
+"I think we'd need the SPDX license options here if they want to chose bsd-3 "
+"for instance"
 msgstr ""
+"Acho que precisaríamos das opções de `license` SPDX aqui se quisessem "
+"escolher bsd-3, por exemplo"
 
 #: ../../tutorials/get-to-know-hatch.md:203
 msgid "Step 4: Close the config file and run `hatch config show`"
-msgstr ""
+msgstr "Etapa 4: Feche o arquivo de configuração e execute `hatch config show`"
 
 #: ../../tutorials/get-to-know-hatch.md:205
 msgid ""
-"Once you have completed the steps above run the following command in your"
-" shell."
-msgstr ""
+"Once you have completed the steps above run the following command in your "
+"shell."
+msgstr "Depois de concluir as etapas acima, execute o seguinte comando no shell."
 
 #: ../../tutorials/get-to-know-hatch.md:207
 msgid "`hatch config show`"
-msgstr ""
+msgstr "`hatch config show`"
 
 #: ../../tutorials/get-to-know-hatch.md:209
 msgid ""
-"`hatch config show` will print out the contents of your `config.toml` "
-"file in your shell. Look at the values and ensure that your name, email "
-"is set. Also make sure that `tests=false`."
+"`hatch config show` will print out the contents of your `config.toml` file "
+"in your shell. Look at the values and ensure that your name, email is set. "
+"Also make sure that `tests=false`."
 msgstr ""
+"`hatch config show` exibirá o conteúdo do seu arquivo `config.toml` "
+"no shell. Verifique os valores e confirme que seu nome e e-mail estão "
+"definidos. Certifique-se também de que `tests=false`."
 
 #: ../../tutorials/get-to-know-hatch.md:213
 msgid "Hatch features"
-msgstr ""
+msgstr "Recursos do Hatch"
 
 #: ../../tutorials/get-to-know-hatch.md:215
 msgid ""
 "Hatch offers a suite of features that will make creating, publishing and "
 "maintaining your Python package easier."
 msgstr ""
+"O Hatch oferece um conjunto de recursos que facilitam a criação, publicação "
+"e manutenção do seu pacote Python."
 
 #: ../../tutorials/get-to-know-hatch.md:218
 msgid "Comparison to other tools"
-msgstr ""
+msgstr "Comparação com outras ferramentas"
 
 #: ../../tutorials/get-to-know-hatch.md:220
 msgid ""
-"[We compared Hatch to several of the other popular packaging tools in the"
-" ecosystem including flit, pdm and poetry. Learn more here](package-"
-"features)"
+"[We compared Hatch to several of the other popular packaging tools in the "
+"ecosystem including flit, pdm and poetry. Learn more here](package-features)"
 msgstr ""
+"[Comparamos o Hatch a várias outras ferramentas populares de empacotamento "
+"do ecossistema, incluindo flit, pdm e poetry. Saiba "
+"mais aqui](package-features)"
 
 #: ../../tutorials/get-to-know-hatch.md:223
 msgid "[More on Hatch here](hatch)"
-msgstr ""
+msgstr "[Mais sobre o Hatch aqui](hatch)"
 
 #: ../../tutorials/get-to-know-hatch.md:225
 msgid "A few features that Hatch offers"
-msgstr ""
+msgstr "Alguns recursos que o Hatch oferece"
 
 #: ../../tutorials/get-to-know-hatch.md:227
 msgid ""
-"It will convert metadata stored in a `setup.py` or `setup.cfg` file to a "
+"It will convert metadata stored in a `setup.py` or `setup.cfg` file toa "
 "pyproject.toml file for you (see [Migrating setup.py to pyproject.toml "
 "using Hatch](setup-py-to-pyproject-toml.md ))"
 msgstr ""
+"Ele converterá metadata armazenada em um arquivo `setup.py` ou `setup.cfg` "
+"para um arquivo pyproject.toml para você (consulte [Migrating setup.py to "
+"pyproject.toml using Hatch](setup-py-to-pyproject-toml.md ))"
 
 #: ../../tutorials/get-to-know-hatch.md:229
 msgid ""
 "It will help you by storing configuration information for publishing to "
 "PyPI after you've entered it once."
 msgstr ""
+"Ele ajudará armazenando informações de configuração para publicação no PyPI "
+"depois que você as informar uma vez."
 
 #: ../../tutorials/get-to-know-hatch.md:231
 msgid "Use `hatch -h` to see all of the available commands."
-msgstr ""
+msgstr "Use `hatch -h` para ver todos os comandos disponíveis."
 
 #: ../../tutorials/get-to-know-hatch.md:233
 msgid "What's next"
-msgstr ""
+msgstr "Próximos passos"
 
 #: ../../tutorials/get-to-know-hatch.md:235
 msgid ""
 "In the next lesson you'll learn how to package and make your code "
 "installable using Hatch."
 msgstr ""
+"Na próxima lição você aprenderá como empacotar e tornar seu código "
+"instalável usando o Hatch."
 
 #: ../../tutorials/intro.md:34 ../../tutorials/setup-py-to-pyproject-toml.md:36
 msgid "Get to know Hatch"
-msgstr ""
+msgstr "Conheça o Hatch"
 
 #: ../../tutorials/intro.md:34 ../../tutorials/run-python-scripts-hatch.md:8
 msgid "Run standalone Python scripts with Hatch"
-msgstr ""
+msgstr "Execute scripts Python independentes com o Hatch"
 
 #: ../../tutorials/intro.md:34
 msgid "Python Packaging Tutorial Setup"
-msgstr ""
+msgstr "Configuração do tutorial de empacotamento Python"
 
 #: ../../tutorials/intro.md:42 ../../tutorials/intro.md:89
 msgid "What is a Python package?"
@@ -2979,47 +3215,47 @@ msgstr "Publique no PyPI"
 
 #: ../../tutorials/intro.md:42
 msgid "Publish to conda-forge"
-msgstr ""
+msgstr "Publicar no conda-forge"
 
 #: ../../tutorials/intro.md:42
 msgid "Publish using GitHub Actions and Trusted Publishing"
-msgstr ""
+msgstr "Publicar usando GitHub Actions e Trusted Publishing"
 
 #: ../../tutorials/intro.md:42
 msgid "Create and publish a Python Package"
-msgstr ""
+msgstr "Criar e publicar um pacote Python"
 
 #: ../../tutorials/intro.md:53
 msgid "Develop package (Hatch environments)"
-msgstr ""
+msgstr "Desenvolver pacote (ambientes Hatch)"
 
 #: ../../tutorials/intro.md:53
 msgid "Add README file"
-msgstr ""
+msgstr "Adicionar arquivo README"
 
 #: ../../tutorials/intro.md:53
 msgid "Add a license & code of conduct"
-msgstr "Adicionar uma licença e um código de conduta"
+msgstr "Adicionar uma license e code of conduct"
 
 #: ../../tutorials/intro.md:53
 msgid "Update metadata in pyproject.toml"
-msgstr ""
+msgstr "Atualizar metadata no pyproject.toml"
 
 #: ../../tutorials/intro.md:53
 msgid "Project information files & metadata"
-msgstr ""
+msgstr "Arquivos de informação do projeto e metadata"
 
 #: ../../tutorials/intro.md:63
 msgid "Reference Guides"
-msgstr ""
+msgstr "Guias de referência"
 
 #: ../../tutorials/intro.md:70
 msgid "Migrate setup.py to a pyproject.toml using Hatch"
-msgstr ""
+msgstr "Migrar setup.py para pyproject.toml usando o Hatch"
 
 #: ../../tutorials/intro.md:70
 msgid "Hatch for Existing Packages"
-msgstr ""
+msgstr "Hatch para pacotes existentes"
 
 #: ../../tutorials/intro.md:7
 msgid "Python packaging 101"
@@ -3032,32 +3268,33 @@ msgstr "_Um tutorial para iniciantes, do começo ao fim_"
 #: ../../tutorials/intro.md:11
 #, python-brace-format
 msgid ""
-"Welcome to the pyOpenSci Python packaging tutorial se ries. The lessons on"
-" the upcoming pages walk you through the core steps needed to create a "
+"Welcome to the pyOpenSci Python packaging tutorial se ries. The lessons on "
+"the upcoming pages walk you through the core steps needed to create a "
 "{term}`Python package`."
 msgstr ""
-"Bem-vindo à série de tutoriais de packaging em Python "
-"da pyOpenSci. As lições nas próximas páginas vão guiá‑lo(a) pelos "
-"passos essenciais para criar um {term}`pacote Python`.
+"Boas-vindas à série de tutoriais de empacotamento Python da pyOpenSci. As "
+"lições nas próximas páginas vão orientar pelos passos essenciais para criar "
+"um {term}`pacote Python <Python package>`."
 
 #: ../../tutorials/intro.md:17
 msgid ""
-"Diagram showing the lessons in our packaging tutorial. There are 6 total "
-"- what is a Python package, make code pip installable, publish your "
-"package to PyPI, add a README and LICENSE file, add metadata for PyPI and"
-" finally publish to conda forge."
+"Diagram showing the lessons in our packaging tutorial. There are 6 total - "
+"what is a Python package, make code pip installable, publish your package "
+"to PyPI, add a README and LICENSE file, add metadata for PyPI and finally "
+"publish to conda forge."
 msgstr ""
-"Diagrama mostrando as lições do nosso tutorial de empacotamento. "
-Existem 6 ao todo: o que é um pacote Python, tornar o código instalável com pip, "
-publicar seu pacote no PyPI, adicionar arquivos README e LICENSE, adicionar "
-"metadados para o PyPI e, por fim, publicar no conda‑forge. [pyopensci](https://www.pyopensci.org/learn.html)"
+"Diagrama mostrando as lições do nosso tutorial de empacotamento. São 6 ao "
+"todo: o que é um pacote Python, tornar o código instalável com pip, publicar "
+"seu pacote no PyPI, adicionar arquivos README e LICENSE, adicionar metadata "
+"para o PyPI e, por fim, publicar no conda-forge."
 
 #: ../../tutorials/intro.md:19 ../../tutorials/trusted-publishing.md:258
 msgid ""
 "This lesson is the first in a series of lessons to help you get started "
 "with Python packaging."
-msgstr "Esta lição é a primeira de uma série de lições para ajudar você a "
-"começar com o empacotamento em Python."
+msgstr ""
+"Esta lição é a primeira de uma série de lições para ajudar você a começar "
+"com o empacotamento em Python."
 
 #: ../../tutorials/intro.md:22
 msgid "Who are these tutorials for?"
@@ -3065,43 +3302,44 @@ msgstr "Para quem são estes tutoriais?"
 
 #: ../../tutorials/intro.md:24
 msgid ""
-"The content in this tutorial series is beginner friendly and assumes that"
-" you have not created a Python package before. However, the content will "
-"still be valuable if you are interested in better understanding the steps"
-" involved in creating a Python package."
+"The content in this tutorial series is beginner friendly and assumes that "
+"you have not created a Python package before. However, the content will "
+"still be valuable if you are interested in better understanding the steps "
+"involved in creating a Python package."
 msgstr ""
-"O conteúdo desta série de tutoriais é adequado para iniciantes e "
-"parte do pressuposto de que você ainda não criou um pacote Python antes. "
-"No entanto, o conteúdo ainda será útil se você estiver interessado em entender "
-"melhor as etapas envolvidas na criação de um pacote Python."
+"O conteúdo desta série de tutoriais é adequado para iniciantes e parte do "
+"pressuposto de que você ainda não criou um pacote Python. No entanto, o "
+"conteúdo ainda será útil se você estiver interessado(a) em entender melhor "
+"as etapas envolvidas na criação de um pacote Python."
 
 #: ../../tutorials/intro.md:29
 msgid ""
-"In this series you will learn about the core elements that you need to "
-"publish your package to [PyPI](publish-pypi)."
-msgstr "Nesta série, você aprenderá sobre os elementos essenciais "
-"de que precisa para publicar seu pacote no [PyPI](publish-pypi)."
+"In this series you will learn about the core elements that you need "
+"topublish your package to [PyPI](publish-pypi)."
+msgstr ""
+"Nesta série, você aprenderá sobre os elementos essenciais de que precisa "
+"para publicar seu pacote no [PyPI](publish-pypi)."
 
 #: ../../tutorials/intro.md:32
 msgid ""
-"In the second series, you will learn about infrastructure and "
-"documentation needed to support package maintenance."
-msgstr "Na segunda série, você aprenderá sobre a infraestrutura e a "
-"documentação necessárias para dar suporte à manutenção do pacote."
+"In the second series, you will learn about infrastructure and documentation "
+"needed to support package maintenance."
+msgstr ""
+"Na segunda série, você aprenderá sobre a infraestrutura e a documentação "
+"necessárias para dar suporte à manutenção do pacote."
 
-#: ../../tutorials/intro.md:77 ../../tutorials/publish-conda-forge.md:22
-#: ../../tutorials/publish-pypi.md:20 ../../tutorials/pyproject-toml.md:27
-#: ../../tutorials/setup-py-to-pyproject-toml.md:20
-#: ../../tutorials/trusted-publishing.md:13
+#: ../../tutorials/intro.md:77 ../../tutorials/publish-conda-forge.md:22 ../../tutorials/publish-pypi.md:20 ../../tutorials/pyproject-toml.md:27
+#: ../../tutorials/setup-py-to-pyproject-toml.md:20 ../../tutorials/trusted-publishing.md:13
 msgid "Learning Objectives"
-msgstr "Objetivos de aprendizagem"
+msgstr "Objetivos de Aprendizagem"
 
 #: ../../tutorials/intro.md:79
 msgid ""
 "This lesson introduces you to the basic components of a Python package. "
 "After reading this lesson you will:"
-msgstr "Esta lição apresenta os componentes básicos de um pacote Python. "
-"Depois de ler esta lição, você será capaz de:"
+msgstr ""
+"Esta lição apresenta os componentes básicos de um pacote Python. Depois de "
+"ler esta lição, você será capaz de:"
 
 #: ../../tutorials/intro.md:82
 msgid "Understand what a Python package is"
@@ -3113,49 +3351,49 @@ msgstr "Ser capaz de listar os 5 componentes centrais de um pacote Python"
 
 #: ../../tutorials/intro.md:84
 msgid ""
-"Be able to explain the difference between generalizable code and code "
-"that supports a specific scientific application"
+"Be able to explain the difference between generalizable code and code that "
+"supports a specific scientific application"
 msgstr ""
-"Ser capaz de explicar a diferença entre código generalizável e "
-"código que dá suporte a uma aplicação científica específica"
+"Ser capaz de explicar a diferença entre código generalizável e código que "
+"dá suporte a uma aplicação científica específica"
 
 #: ../../tutorials/intro.md:91
 msgid ""
-"At a high level, you can think about a Python package as a toolbox that "
-"you can use to perform various tasks."
+"At a high level, you can think about a Python package as a toolbox that you "
+"can use to perform various tasks."
 msgstr ""
-"Em um nível geral, você pode pensar em um pacote Python como uma "
-"caixa de ferramentas que pode ser usada para realizar diversas tarefas."
+"Em um nível geral, você pode pensar em um pacote Python como uma caixa de "
+"ferramentas que pode ser usada para realizar diversas tarefas."
 
 #: ../../tutorials/intro.md:94
 #, python-brace-format
 msgid ""
-"A Python package is basically a directory with a specific file structure."
-" Within the package directory structure, there are {term}`Module` objects"
-" which are files that end in `.py` (the same extension you'd see in a "
-"Python script). These modules allow you to group and structure your "
-"Python code. Each module contains functions and classes, that you can "
-"think about as the tools in your toolbox."
+"A Python package is basically a directory with a specific file structure. "
+"Within the package directory structure, there are {term}`Module` objects "
+"which are files that end in `.py` (the same extension you'd see in a Python "
+"script). These modules allow you to group and structure your Python code. "
+"Each module contains functions and classes, that you can think about as the "
+"tools in your toolbox."
 msgstr ""
-"Um pacote Python é basicamente um diretório com uma estrutura de arquivos específica. "
-"Dentro da estrutura de diretórios do pacote, há objetos {term}`Module`, "
-que são arquivos que terminam em `.py` (a mesma extensão que você vê em um script Python). "
-"Esses módulos permitem agrupar e organizar o seu código Python. "
-"Cada módulo contém funções e classes, que você pode imaginar como as "
-"ferramentas dentro da sua caixa de ferramentas."
+"Um pacote Python é basicamente um diretório com uma estrutura de arquivos "
+"específica. Dentro da estrutura de diretórios do pacote, há objetos "
+"{term}`módulo <Module>`, que são arquivos que terminam em `.py` (a mesma "
+"extensão que você vê em um script Python). Esses módulos permitem agrupar e "
+"organizar o seu código Python. Cada módulo contém funções e classes, que "
+"você pode imaginar como as ferramentas dentro da sua caixa de ferramentas."
 
 #: ../../tutorials/intro.md:103
 msgid ""
-"Diagram showing a sketch of a toolbox filled with different tools "
-"including a hammer and a saw."
+"Diagram showing a sketch of a toolbox filled with different tools including "
+"a hammer and a saw."
 msgstr ""
-"Diagrama mostrando um esboço de uma caixa de ferramentas "
-"cheia de diferentes ferramentas, incluindo um martelo e um serrote."
+"Diagrama mostrando um esboço de uma caixa de ferramentas cheia de "
+"diferentes ferramentas, incluindo um martelo e um serrote."
 
 #: ../../tutorials/intro.md:105
 msgid ""
-"You can think about a package as a toolbox filled with coding tools. A "
-"tool may be a function or a class. Each tool does a specific thing well."
+"You can think about a package as a toolbox filled with coding tools. Atool "
+"may be a function or a class. Each tool does a specific thing well."
 msgstr ""
 "Você pode pensar em um pacote como uma caixa de ferramentas cheia de "
 "ferramentas de código. Cada ferramenta pode ser uma função ou uma classe. "
@@ -3169,147 +3407,197 @@ msgstr "Pacotes Python são instaláveis"
 msgid ""
 "A package is installable, which means that you can add the functionality "
 "within the package's code to any Python environment and import that "
-"functionality like you would import core scientific Python packages such "
-"as NumPy or Matplotlib."
+"functionality like you would import core scientific Pythonpackages such as "
+"NumPy or Matplotlib."
 msgstr ""
+"Um pacote é instalável, o que significa que você pode adicionar a "
+"funcionalidade do código do pacote a qualquer ambiente Python e importar "
+"essa funcionalidade como faria com pacotes científicos centrais do Python, "
+"como NumPy ou Matplotlib."
 
 #: ../../tutorials/intro.md:121
 msgid ""
-"Installing a package into an environment makes it easier to manage and "
-"reuse your code across different projects. Structuring your code as a "
-"package is the first step you need to take so you can share the tools in "
-"the toolbox you've created and let others build with it."
+"Installing a package into an environment makes it easier to manage andreuse "
+"your code across different projects. Structuring your code asa package is "
+"the first step you need to take so you can share the tools in the toolbox "
+"you've created and let others build with it."
 msgstr ""
+"Instalar um pacote em um ambiente facilita gerenciar e reutilizar seu código "
+"em projetos diferentes. Estruturar seu código como um pacote é o primeiro "
+"passo que você precisa dar para compartilhar as ferramentas da caixa de "
+"ferramentas que criou e permitir que outras pessoas construam com elas."
 
 #: ../../tutorials/intro.md:126
 msgid "Why create a Python package?"
-msgstr ""
+msgstr "Por que criar um pacote Python?"
 
 #: ../../tutorials/intro.md:128
 msgid "You might create a Python package because you want to:"
-msgstr ""
+msgstr "Você pode criar um pacote Python porque deseja:"
 
 #: ../../tutorials/intro.md:130
 msgid ""
 "**Use your code across different projects:** At its most basic level, "
 "creating a package allows you to install your code into a Python "
-"environment. This allows you to then import functions and classes into "
-"any workflows both locally and in the cloud."
+"environment. This allows you to then import functions and classes intoany "
+"workflows both locally and in the cloud."
 msgstr ""
+"**Usar seu código em projetos diferentes:** No nível mais básico, criar um "
+"pacote permite instalar seu código em um ambiente Python. Isso permite "
+"importar funções e classes em quaisquer workflows, tanto localmente "
+"quanto na nuvem."
 
 #: ../../tutorials/intro.md:131
 #, python-brace-format
 msgid ""
-"**Share your code:** If you publish a package on a public repository such"
-" as PyPI or conda-forge, your package can be installed on any machine "
-"using {term}`pip` or conda with a single command."
+"**Share your code:** If you publish a package on a public repository such "
+"as PyPI or conda-forge, your package can be installed on any machine using "
+"{term}`pip` or conda with a single command."
 msgstr ""
+"**Compartilhar seu código:** Se você publicar um pacote em um repositório "
+"público como PyPI ou conda-forge, seu pacote pode ser instalado em qualquer "
+"máquina usando {term}`pip` ou conda com um único comando."
 
 #: ../../tutorials/intro.md:134
 msgid ""
-"**Build community around your code:** Packages make it easier for "
-"multiple people to work on the same project (particularly when published "
-"on GitHub). A version control system such as git (the system used by "
-"GitHub), further makes it easier to track changes to the codebase over "
-"time. Tools such as issues and pull requests make it easier for outside "
-"users to contribute bug fixes and to establish review processes for "
-"accepting changes to the code base."
+"**Build community around your code:** Packages make it easier for multiple "
+"people to work on the same project (particularly when published on GitHub). "
+"A version control system such as git (the systemused by GitHub), further "
+"makes it easier to track changes to thecodebase over time. Tools such as "
+"issues and pull requests make it easier for outside users to contribute bug "
+"fixes and to establish review processes for accepting changes to the code "
+"base."
 msgstr ""
+"**Construir comunidade em torno do seu código:** pacotes facilitam "
+"que várias pessoas trabalhem no mesmo projeto (especialmente quando "
+"publicado no GitHub). Um sistema de controle de versão como git (o sistema "
+"usado pelo GitHub) também facilita acompanhar mudanças na base de código ao "
+"longo do tempo. Ferramentas como `issues` e `pull requests` facilitam que "
+"usuários externos contribuam com correções de bugs e estabeleçam processos "
+"de revisão para aceitar mudanças na base de código."
 
 #: ../../tutorials/intro.md:135
 msgid ""
 "**Organize your code:** Packages can be used to organize large code "
-"projects, dividing them into smaller, more manageable components. This "
-"structure can help with both maintaining the codebase and with making it "
-"easier to understand."
+"projects, dividing them into smaller, more manageable components. "
+"Thisstructure can help with both maintaining the codebase and with making "
+"it easier to understand."
 msgstr ""
+"**Organizar seu código:** pacotes podem ser usados para organizar grandes "
+"projetos de código, dividindo-os em componentes menores e mais gerenciáveis. "
+"Essa estrutura ajuda tanto na manutenção da base de código quanto na "
+"compreensão dela."
 
 #: ../../tutorials/intro.md:137
 msgid "What to consider before you create a package"
-msgstr ""
+msgstr "O que considerar antes de criar um pacote"
 
 #: ../../tutorials/intro.md:139
 msgid ""
 "Creating a Python package that others use takes considerable time and "
 "effort. Before you begin, think about your goals including:"
 msgstr ""
+"Criar um pacote Python que outras pessoas usem exige tempo e esforço "
+"consideráveis. Antes de começar, pense nos seus objetivos, incluindo:"
 
 #: ../../tutorials/intro.md:142
 msgid "Who you think will use your package"
-msgstr ""
+msgstr "Quem você acha que usará seu pacote"
 
 #: ../../tutorials/intro.md:143
 msgid "How people might use your package and on what data (if data are relevant)"
 msgstr ""
+"Como as pessoas podem usar seu pacote e com quais dados (se dados forem "
+"relevantes)"
 
 #: ../../tutorials/intro.md:144
 msgid "Whether you have time to add things such as documentation and tests"
-msgstr ""
+msgstr "Se você tem tempo para adicionar coisas como documentação e testes"
 
 #: ../../tutorials/intro.md:145
 msgid ""
-"How long you might be able to maintain it: remember that once people "
-"begin using your package they will depend on your maintainer team to "
-"update it, fix bugs and answer questions."
+"How long you might be able to maintain it: remember that once people begin "
+"using your package they will depend on your maintainer team to update it, "
+"fix bugs and answer questions."
 msgstr ""
+"Por quanto tempo você poderá mantê-lo: lembre-se de que, quando as pessoas "
+"começarem a usar seu pacote, elas dependerão da sua equipe de mantenedores "
+"para atualizá-lo, corrigir bugs e responder perguntas."
 
 #: ../../tutorials/intro.md:147
 msgid ""
 "Before creating a user-facing package, it's important to consider all of "
 "the above."
 msgstr ""
+"Antes de criar um pacote voltado para usuários, é importante considerar "
+"tudo acima."
 
 #: ../../tutorials/intro.md:149
 msgid "The elements of a Python package"
-msgstr ""
+msgstr "Os elementos de um pacote Python"
 
 #: ../../tutorials/intro.md:153 ../../tutorials/intro.md:231
 msgid "Diagram showing .. more here if this stays."
-msgstr ""
+msgstr "Diagrama mostrando .. mais aqui se isto permanecer."
 
 #: ../../tutorials/intro.md:155
 msgid ""
 "The elements of a Python package include code, documentation, tests, an "
-"OSI-approved license and infrastructure. Maintainers are at the core "
-"making sure everything works and is up to date while fixing bugs and "
-"addressing user concerns."
+"OSI-approved license and infrastructure. Maintainers are at the core making "
+"sure everything works and is up to date while fixing bugs and addressing "
+"user concerns."
 msgstr ""
+"Os elementos de um pacote Python incluem código, documentação, testes,uma "
+"`license` aprovada pela OSI e infraestrutura. Os mantenedores estão no centro, "
+"garantindo que tudo funcione e esteja atualizado, corrigindo bugs e "
+"atendendo preocupações dos usuários."
 
 #: ../../tutorials/intro.md:161
 msgid "The core elements of Python package include:"
-msgstr ""
+msgstr "Os elementos centrais de um pacote Python incluem:"
 
 #: ../../tutorials/intro.md:163
 msgid ""
 "**Code:** Functions and classes that provide functionality for a user of "
 "your package"
 msgstr ""
+"**Code:** Funções e classes que fornecem funcionalidade para um usuário "
+"do seu pacote"
 
 #: ../../tutorials/intro.md:164
 msgid ""
-"**Documentation:** Installation instructions, tutorials, and examples "
-"that both help users get started using your package and contributors and "
+"**Documentation:** Installation instructions, tutorials, and examples that "
+"both help users get started using your package and contributors and "
 "maintainers fix bugs and maintain the package."
 msgstr ""
+"**Documentation:** Instruções de instalação, tutoriais e exemplos que "
+"ajudam usuários a começar a usar seu pacote e contributors e mantenedores a "
+"corrigir bugs e manter o pacote."
 
 #: ../../tutorials/intro.md:165
 msgid ""
-"Contributor Documentation in the form of a **CONTRIBUTING.md** file is "
-"useful to help people to contribute to your package."
+"Contributor Documentation in the form of a **CONTRIBUTING.md** file "
+"isuseful to help people to contribute to your package."
 msgstr ""
+"Documentação para contributors na forma de um arquivo **CONTRIBUTING.md** é "
+"útil para ajudar pessoas a contribuir com seu pacote."
 
 #: ../../tutorials/intro.md:166
 msgid ""
 "Development Documentation helps both maintainers and contributors "
 "understand how to maintain a package's infrastructure."
 msgstr ""
+"Documentação de desenvolvimento ajuda mantenedores e contribuidores a entender "
+"como manter a infraestrutura de um pacote."
 
 #: ../../tutorials/intro.md:167
 msgid ""
-"**Tests:** that make sure your code works as it should and makes it "
-"easier for you and others to contribute to, modify and update the code in"
-" the future"
+"**Tests:** that make sure your code works as it should and makes it easier "
+"for you and others to contribute to, modify and update the codein the future"
 msgstr ""
+"**Tests:** que garantem que seu código funciona como deveria e facilitam "
+"que você e outras pessoas contribuam, modifiquem e atualizemo código no "
+"futuro"
 
 #: ../../tutorials/intro.md:168
 msgid ""
@@ -3318,278 +3606,398 @@ msgid ""
 "allows others to use your package. It also provides legal direction "
 "regarding how elements of the package can and can't be reused."
 msgstr ""
+"**License:** Uma open source `license`, ou `license` [aprovada pela "
+"OSI](https://opensource.org/license/), permite que outras pessoas usem seu "
+"pacote. Ela também fornece orientação legal sobre como os elementos do "
+"pacote podem ou não ser reutilizados."
 
 #: ../../tutorials/intro.md:169
 msgid ""
-"**Infrastructure** that automates updates, publication workflows and runs"
-" test suites. Infrastructure includes a suite of things such as platforms"
-" like GitHub and GitLab, tools to run tests and tools locally such as nox"
-" and tox and continuous integration that automates package maintenance "
-"steps."
+"**Infrastructure** that automates updates, publication workflows and runs "
+"test suites. Infrastructure includes a suite of things such as platforms "
+"like GitHub and GitLab, tools to run tests and tools locallysuch as nox and "
+"tox and continuous integration that automates package maintenance steps."
 msgstr ""
+"**Infrastructure** que automatiza atualizações, workflows de publicação e "
+"executa suites de testes. A infraestrutura inclui um conjunto de coisas, "
+"como plataformas como GitHub e GitLab, ferramentas para executar testes e "
+"ferramentas locais como nox e tox, e integração contínua que automatiza "
+"etapas de manutenção do pacote."
 
 #: ../../tutorials/intro.md:171
 msgid "What pyOpenSci looks for in a package"
-msgstr ""
+msgstr "O que a pyOpenSci busca em um pacote"
 
 #: ../../tutorials/intro.md:174
 msgid ""
 "pyOpenSci performs an [initial set of editor "
-"checks](https://www.pyopensci.org/software-peer-review/how-to/editor-in-"
-"chief-guide.html#editor-checklist-template) for any package submitted to "
-"us for peer review. You may find these checks useful as you create your "
-"package as a baseline for things that you package should have."
+"checks](https://www.pyopensci.org/software-peer-review/how-to/editor-in-chie"
+"f-guide.html#editor-checklist-template)foranypackagesubmittedtousforpeerrevi"
+"ew. You may find these checksuseful as you create yourpackageas a baseline "
+"for things thatyou package should have."
 msgstr ""
+"A pyOpenSci realiza um [conjunto inicial de verificações do "
+"editor](https://www.pyopensci.org/software-peer-review/how-to/editor-in-chie"
+"f-guide.html#editor-checklist-template) para qualquer pacote enviado para "
+"revisão por pares. Você pode achar essas verificações úteis ao criar seu "
+"pacote como linha de base do que seu pacote deve ter."
 
 #: ../../tutorials/intro.md:180
 msgid "Packages are more than just code - Infrastructure"
-msgstr ""
+msgstr "Pacotes são mais do que apenas código - Infraestrutura"
 
 #: ../../tutorials/intro.md:182
 msgid ""
 "A package in any language is more than just code. If you expect other "
-"people to use your package, besides yourself, you should consider not "
-"only writing high quality code, but also the various elements of a "
-"package that make it a useful community resource."
+"people to use your package, besides yourself, you should consider not only "
+"writing high quality code, but also the various elements of a package that "
+"make it a useful community resource."
 msgstr ""
+"Um pacote em qualquer linguagem é mais do que apenas código. Se você espera "
+"que outras pessoas usem seu pacote, além de você mesmo, considere não "
+"apenas escrever código de alta qualidade, mas também os diversos elementos "
+"de um pacote que o tornam um recurso útil para a comunidade."
 
 #: ../../tutorials/intro.md:187
 msgid "Version control and storing your package on GitHub or GitLab"
-msgstr ""
+msgstr "Controle de versão e armazenamento do seu pacote no GitHub ou GitLab"
 
 #: ../../tutorials/intro.md:189
 msgid ""
 "Most Python packages live in an online version control platform such as "
 "GitHub or GitLab. GitHub and GitLab both run [git](https://git-scm.com/) "
 "for version control. Having your software under version control is "
-"important because it allows you to both track changes over time while "
-"also going back in history and undoing changes in the case that a change "
-"to the code base unexpectedly breaks something."
+"important because it allows you to both trackchanges over time while also "
+"going back in history and undoing changesin the case that a change to the "
+"code base unexpectedly breaks something."
 msgstr ""
+"A maioria dos pacotes Python fica em uma plataforma online de controle de "
+"versão como GitHub ou GitLab. GitHub e GitLab executam "
+"[git](https://git-scm.com/) para controle de versão. Ter seu software sob "
+"controle de versão é importante porque permite acompanhar mudanças ao longo "
+"do tempo e também voltar no histórico e desfazer mudanças caso uma "
+"alteração na base de código quebre algo inesperadamente."
 
 #: ../../tutorials/intro.md:194
 msgid ""
 "By publishing your package on GitHub or GitLab, you are making your code "
-"public facing. This means that others can both see your code and also "
-"make contributions using a pull request (GitHub) / merge request (GitLab)"
-" / code review workflow."
+"public facing. This means that others can both see your code and also make "
+"contributions using a pull request (GitHub) / merge request (GitLab) / code "
+"review workflow."
 msgstr ""
+"Ao publicar seu pacote no GitHub ou GitLab, você o torna público. "
+"Isso significa que outras pessoas podem ver seu código e também contribuir "
+"usando um pull request (GitHub) / merge request (GitLab) / workflow decode "
+"review."
 
 #: ../../tutorials/intro.md:196
 msgid "GitHub & GitLab vs. Git"
-msgstr ""
+msgstr "GitHub e GitLab vs. Git"
 
 #: ../../tutorials/intro.md:199
 msgid ""
-"GitHub and GitLab are online (cloud) platforms that run `git` (version "
-"control software) on the backend. Running git locally on your computer "
-"allows you to upload (`git push`) and download (`git pull`) files to "
-"GitHub and GitLab."
+"GitHub and GitLab are online (cloud) platforms that run `git` "
+"(versioncontrol software) on the backend. Running git locally on your "
+"computerallows you to upload (`git push`) and download (`git pull`) files "
+"to GitHub and GitLab."
 msgstr ""
+"GitHub e GitLab são plataformas online (na nuvem) que executam `git` "
+"(software de controle de versão) no backend. Executar git localmente no seu "
+"computador permite enviar (`git push`) e baixar (`git pull`) arquivos para "
+"GitHub e GitLab."
 
 #: ../../tutorials/intro.md:204
 msgid "Issues or Ticket Trackers"
-msgstr ""
+msgstr "Issues ou rastreadores de tickets"
 
 #: ../../tutorials/intro.md:206
 msgid ""
 "GitHub and GitLab also both offer community features such as issues that "
 "allow:"
 msgstr ""
+"GitHub e GitLab também oferecem recursos de comunidade, como issues, que "
+"permitem:"
 
 #: ../../tutorials/intro.md:208
 msgid "you to communicate with your maintainers and contributor community"
 msgstr ""
+"que você se comunique com sua equipe de mantenedores e a comunidade de "
+"contribuidores"
 
 #: ../../tutorials/intro.md:209
 msgid "users to report bugs, ask questions and request new features"
-msgstr ""
+msgstr "que usuários reportem bugs, façam perguntas e solicitem novos recursos"
 
 #: ../../tutorials/intro.md:210
 msgid ""
-"you to publicly keep track of enhancements and features you want to work "
-"on for your package."
+"you to publicly keep track of enhancements and features you want to work on "
+"for your package."
 msgstr ""
+"que você acompanhe publicamente melhorias e recursos que deseja desenvolver "
+"para seu pacote."
 
 #: ../../tutorials/intro.md:212
 msgid "Continuous integration and continuous deployment"
-msgstr ""
+msgstr "Integração contínua e implantação contínua"
 
 #: ../../tutorials/intro.md:214
 msgid ""
 "GitHub and GitLab also provide continuous integration and continuous "
-"deployment (CI/CD). Continuous integration (CI) refers to a platform that"
-" automatically runs a specific job when a certain event occurs, whereas "
+"deployment (CI/CD). Continuous integration (CI) refers to a platform that "
+"automatically runs a specific job when a certain event occurs, whereas "
 "continuous deployment (CD) is an extension of CI that refers to not only "
 "running or building but also to publishing the final outputs somewhere."
 msgstr ""
+"GitHub e GitLab também fornecem integração contínua e implantação contínua "
+"(CI/CD). Integração contínua (CI) refere-se a uma plataforma que executa "
+"automaticamente um job específico quando um determinado evento ocorre, "
+"enquanto implantação contínua (CD) é uma extensão da CI que se refere não "
+"apenas a executar ou fazer build, mas também a publicar os outputs finais "
+"em algum lugar."
 
 #: ../../tutorials/intro.md:216
 msgid "**An example of Continuous integration:**"
-msgstr ""
+msgstr "**Um exemplo de integração contínua:**"
 
 #: ../../tutorials/intro.md:218
 msgid ""
-"When someone submits a change to your code, your tests will run across "
-"different operating systems and the code will be checked for format "
+"When someone submits a change to your code, your tests will run "
+"acrossdifferent operating systems and the code will be checked for format "
 "issues."
 msgstr ""
+"Quando alguém envia uma mudança no seu código, seus testes serão executados "
+"em diferentes sistemas operacionais e o código será verificado quanto a "
+"problemas de formatação."
 
 #: ../../tutorials/intro.md:220
 msgid "**An example of Continuous deployment:**"
-msgstr ""
+msgstr "**Um exemplo de implantação contínua:**"
 
 #: ../../tutorials/intro.md:222
 msgid ""
-"When you are ready to release your package to PyPI, a continuous "
-"deployment operation might be triggered on release to publish your "
-"package to PyPI."
+"When you are ready to release your package to PyPI, a continuous deployment "
+"operation might be triggered on release to publish your package to PyPI."
 msgstr ""
+"Quando você estiver pronto para fazer release do seu pacote no PyPI, uma "
+"operação de implantação contínua pode ser acionada no release para publicar "
+"seu pacote no PyPI."
 
 #: ../../tutorials/intro.md:224
 msgid ""
 "Integrated CI/CD will help you maintain your software, ensuring that "
-"changes to the code don't break things unexpectedly. They can also help "
-"you maintain code style and format consistency for every new change to "
-"your code."
+"changes to the code don't break things unexpectedly. They can also help you "
+"maintain code style and format consistency for every new change to your "
+"code."
 msgstr ""
+"CI/CD integrado ajudará você a manter seu software, garantindo que mudanças "
+"no código não quebrem coisas inesperadamente. Também pode ajudar a manter "
+"consistência de estilo e formatação do código a cada nova mudança."
 
 #: ../../tutorials/intro.md:233
 msgid "The lifecycle of a scientific Python package."
-msgstr ""
+msgstr "O ciclo de vida de um pacote Python científico."
 
 #: ../../tutorials/intro.md:236
 msgid "When should you turn your code into a Python package?"
-msgstr ""
+msgstr "Quando você deve transformar seu código em um pacote Python?"
 
 #: ../../tutorials/intro.md:238
 msgid ""
 "You may be wondering, what types of code should become a Python package "
 "that is both on GitHub and published to PyPI and/or conda-forge."
 msgstr ""
+"Você pode estar se perguntando quais tipos de código devem se tornar um "
+"pacote Python que esteja tanto no GitHub quanto publicado no PyPI e/ou "
+"conda-forge."
 
 #: ../../tutorials/intro.md:240
 msgid "There are a few use cases to consider:"
-msgstr ""
+msgstr "Há alguns casos de uso a considerar:"
 
 #: ../../tutorials/intro.md:242
 msgid ""
-"**Creating a basic package for yourself:** Sometimes you want create a "
-"package for your own personal use. This might mean making your code "
-"locally pip installable and you may also want to publish it to GitHub. In"
-" that case you don't expect others to use your code, and as such you may "
-"only have documentation for you and your future self if you need to "
-"update the package."
+"**Creating a basic package for yourself:** Sometimes you want create "
+"apackage for your own personal use. This might mean making your code "
+"locally pip installable and you may also want to publish it to GitHub.In "
+"that case you don't expect others to use your code, and as such youmay only "
+"have documentation for you and your future self if you need to update the "
+"package."
 msgstr ""
+"**Criar um pacote básico para você mesmo:** Às vezes você quer criar um "
+"pacote para uso pessoal. Isso pode significar tornar seu código instalável "
+"localmente com pip e também publicá-lo no GitHub. Nesse caso, você não "
+"espera que outras pessoas usem seu código e, portanto, pode ter "
+"documentação apenas para você e seu eu futuro, caso precise atualizar o "
+"pacote."
 
 #: ../../tutorials/intro.md:244
 msgid ""
 "An example of this type of package might be a set of functions that you "
-"write that are useful across several of your projects. It could be useful"
-" to have those functions available to all of your projects."
+"write that are useful across several of your projects. It could beuseful to "
+"have those functions available to all of your projects."
 msgstr ""
+"Um exemplo desse tipo de pacote pode ser um conjunto de funções que você "
+"escreveu e que são úteis em vários dos seus projetos. Pode ser útil ter "
+"essas funções disponíveis para todos os seus projetos."
 
 #: ../../tutorials/intro.md:247
 msgid "LINK to pip installable lesson when it's published - it's in review now"
 msgstr ""
+"LINK para a lição sobre pip installable quando for publicada - está "
+"em revisão agora"
 
 #: ../../tutorials/intro.md:250
 msgid ""
 "**Creating a package for the community:** In other cases, you may create "
-"some code that you soon realize might also be useful to not just you, but"
-" to other people as well. In that case, you might consider both creating "
-"the package, publishing it on GitHub, and because other users may be "
-"using it, you may make use of GitHub's infrastructure including CI/CD "
-"pipelines and issue trackers. Because you want other people to use your "
-"package, you will want to also include LICENSE information, documentation"
-" for users and contributors and tests. This type of package is most often"
-" published to PyPI."
+"some code that you soon realize might also be useful to not just you, but "
+"to other people as well. In that case, you might consider both creating the "
+"package, publishing it on GitHub, and because other users may be using it, "
+"you may make use of GitHub's infrastructure including CI/CD pipelines and "
+"issue trackers. Because you want other people to use your package, you will "
+"want to also include LICENSE information, documentation for users and "
+"contributors and tests. This type of package is most often published to "
+"PyPI."
 msgstr ""
+"**Criar um pacote para a comunidade:** Em outros casos, você pode criar "
+"código que logo percebe ser útil não só para você, mas também para outras "
+"pessoas. Nesse caso, pode considerar criar o pacote, publicá-lo no GitHub "
+"e, como outros usuários podem usá-lo, aproveitar a infraestrutura do "
+"GitHub, incluindo pipelines de CI/CD e rastreadores de issues. Como você "
+"quer que outras pessoas usem seu pacote, também incluirá informações de "
+"LICENSE, documentação para usuários e contributors e testes. Esse tipo de "
+"pacote costuma ser publicado no PyPI."
 
 #: ../../tutorials/intro.md:253
 msgid ""
-"For example, all of the [pyOpenSci packages](https://www.pyopensci.org"
-"/python-packages.html) are public facing with an intended audience beyond"
-" just the maintainers."
+"For example, all of the [pyOpenSci "
+"packages](https://www.pyopensci.org/python-packages.html) are public facing "
+"with an intended audience beyond just the maintainers."
 msgstr ""
+"Por exemplo, todos os [pacotes da "
+"pyOpenSci](https://www.pyopensci.org/python-packages.html) são voltados "
+"para o público, com audiência além dos mantenedores."
 
 #: ../../tutorials/intro.md:255
 msgid "Packages that you expect others to use should be well-scoped"
 msgstr ""
+"Pacotes que você espera que outras pessoas usem devem ter escopo bem "
+"definido"
 
 #: ../../tutorials/intro.md:257
 msgid ""
-"Ideally the code in your Python package is focused on a specific theme or"
-" use case. This theme is important as it's a way to scope the content of "
+"Ideally the code in your Python package is focused on a specific themeor "
+"use case. This theme is important as it's a way to scope the content of "
 "your package."
 msgstr ""
+"Idealmente, o código do seu pacote Python está focado em um tema ou caso de "
+"uso específico. Esse tema é importante, pois é uma forma de delimitar o "
+"conteúdo do seu pacote."
 
 #: ../../tutorials/intro.md:259
 msgid ""
-"It can be tricky to decide when your code becomes something that might be"
-" more broadly useful to others. But one question you can ask yourself is "
-"- is your code written specifically for a single research project? Or "
-"could it have a broader application across multiple projects in your "
-"domain?"
+"It can be tricky to decide when your code becomes something that mightbe "
+"more broadly useful to others. But one question you can ask yourself is - "
+"is your code written specifically for a single research project? Or could "
+"it have a broader application across multiple projects in your domain?"
 msgstr ""
+"Pode ser difícil decidir quando seu código se torna algo que pode ser mais "
+"amplamente útil para outras pessoas. Mas uma pergunta que você pode fazer "
+"é: seu código foi escrito especificamente para um único projeto de "
+"pesquisa? Ou poderia ter aplicação mais ampla em vários projetos do seu "
+"domínio?"
 
 #: ../../tutorials/intro.md:261
 msgid "How does this relate to code for a research project?"
-msgstr ""
+msgstr "Como isso se relaciona com código de um projeto de pesquisa?"
 
 #: ../../tutorials/intro.md:264
 msgid ""
-"A [Research Compendium](https://book.the-turing-way.org/reproducible-"
-"research/compendia.html) is an organized set of code, data and "
-"documentation that supports a specific research project. It aims to "
-"enhance the reproducibility and transparency of research by providing a "
-"comprehensive record of the methods, data, and analyses used in a study."
+"A [Research "
+"Compendium](https://book.the-turing-way.org/reproducible-research/compendia."
+"html)isanorganizedsetofcode,dataanddocumentation that supports a "
+"specificresearch project.It aims to enhance the reproducibility and "
+"transparency of research byproviding acomprehensive record of the methods, "
+"data, andanalyses used in a study."
 msgstr ""
+"Um [Research "
+"Compendium](https://book.the-turing-way.org/reproducible-research/compendia."
+"html)é um conjunto organizado de código, dados e documentação que sustenta "
+"um projeto de pesquisa específico. Ele visa aumentar a reprodutibilidade e a "
+"transparência da pesquisa, fornecendo um registro abrangente dos métodos, "
+"dados e análises usados em um estudo."
 
 #: ../../tutorials/intro.md:269
 msgid ""
-"A Python package is a collection of modules that can be used to perform a"
-" specific set of tasks. These tasks should be applicable to numerous "
-"workflows. As such a Python package is more generalizable than a Research"
-" Compendium which supports a specific project."
+"A Python package is a collection of modules that can be used to perform a "
+"specific set of tasks. These tasks should be applicable to numerous "
+"workflows. As such a Python package is more generalizable than a Research "
+"Compendium which supports a specific project."
 msgstr ""
+"Um pacote Python é uma coleção de modules que podem ser usados para "
+"executar um conjunto específico de tarefas. Essas tarefas devem ser "
+"aplicáveis a muitos workflows. Assim, um pacote Python é mais "
+"generalizável do que um Research Compendium, que sustenta um projeto "
+"específico."
 
 #: ../../tutorials/intro.md:274
 msgid ""
 "[Read about `Good enough practices in scientific "
-"computing`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)"
+"computing`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journa"
+"l.pcbi.1005510)"
 msgstr ""
+"[Leia sobre `Good enough practices in scientific "
+"computing`](https://journals.plos.org/ploscompbiol/article?id=10.1371/journa"
+"l.pcbi.1005510)"
 
 #: ../../tutorials/intro.md:275
 msgid ""
-"[Learn more about research compendia (also called repo-packs) in this "
-"blog post.](https://lorenabarba.com/blog/how-repro-packs-can-save-your-"
-"future-self/)"
+"[Learn more about research compendia (also called repo-packs) in this blog "
+"post.](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-sel"
+"f/)"
 msgstr ""
+"[Saiba mais sobre research compendia (também chamados de repo-packs) neste "
+"post de "
+"blog.](https://lorenabarba.com/blog/how-repro-packs-can-save-your-future-sel"
+"f/)"
 
 #: ../../tutorials/intro.md:278
 msgid "Below are a few examples well scoped pyOpenSci packages:"
 msgstr ""
+"Abaixo estão alguns exemplos de pacotes da pyOpenSci com escopo bem "
+"definido:"
 
 #: ../../tutorials/intro.md:280
 msgid ""
-"[Crowsetta](https://crowsetta.readthedocs.io/en/latest/): is a package "
-"designed to work with annotating animal vocalizations and bioacoustics "
-"data. This package helps scientists process different types of "
+"[Crowsetta](https://crowsetta.readthedocs.io/en/latest/): is a "
+"packagedesigned to work with annotating animal vocalizations and "
+"bioacousticsdata. This package helps scientists process different types of "
 "bioacoustic data rather than focusing on a specific individual research "
 "application associated with a user-specific research workflow."
 msgstr ""
+"[Crowsetta](https://crowsetta.readthedocs.io/en/latest/): é um "
+"pacote projetado para trabalhar com anotação de vocalizações animais e dados "
+"de bioacústica. Este pacote ajuda cientistas a processar diferentes tipos "
+"de dados bioacústicos, em vez de focar em uma aplicação de pesquisa "
+"específica associada a um workflow de pesquisa de um usuário."
 
 #: ../../tutorials/intro.md:281
 msgid ""
-"[Pandera](https://www.union.ai/pandera) is another more broadly used "
-"Python package. Pandera supports data testing and thus also has a broader"
-" research application."
+"[Pandera](https://www.union.ai/pandera) is another more broadly used Python "
+"package. Pandera supports data testing and thus also has a broader research "
+"application."
 msgstr ""
+"[Pandera](https://www.union.ai/pandera) é outro pacote Python de uso mais "
+"amplo. Pandera suporta testes de dados e, portanto, também tem aplicação de "
+"pesquisa mais ampla."
 
 #: ../../tutorials/intro.md:283
 msgid "Matplotlib as an example"
-msgstr ""
+msgstr "Matplotlib como exemplo"
+
+
+
+
+
 
 #: ../../tutorials/intro.md:285
 msgid ""
