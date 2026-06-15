@@ -575,10 +575,8 @@ Below is the uv CLI workflow for lock files:
 > uv pip sync pylock.toml                       # install from pylock.toml
 ```
 See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) for more
-details. If working on a package that uses Poetry or PDM instead of uv, the relevant docs can
-be found [here](https://python-poetry.org/docs/basic-usage/#installing-dependencies)
-and [here](https://pdm-project.org/latest/usage/lockfile/) respectively.
-
+details. See also the relevant docs for [Poetry](https://python-poetry.org/docs/basic-usage/#installing-dependencies) 
+and [PDM](https://pdm-project.org/latest/usage/lockfile/).
 ### Should I use a lock file?
 
 Most package managers will generate a lock file automatically for you (e.g. uv,
