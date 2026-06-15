@@ -626,7 +626,7 @@ https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-cha
 the latest package updates that may have been compromised with malware. Package
 manager tools are starting to support configurations for cooldowns
 ```sh
-> uv sync --exclude-newer "3 days"`
+> uv lock --exclude-newer "3 days"`
 ```
 or in `pyproject.toml`
 ```toml
@@ -640,13 +640,14 @@ resolves `[project.dependencies]` every time
 ```sh
 > python -m pip install .
 ```
-can be replaced with
+can be replaced with lock file based installations
+```sh
+> uv pip sync pylock.toml
+```
+after pylock.toml has been added to the project.
 ```sh
 > uv lock --exclude-newer "3 days"`
-```
-or can be replaced with lock file based installations
-```sh
-> uv sync --frozen
+> uv export --format pylock.toml -o pylock.toml
 ```
 Support for this varies across automated testing frameworks (e.g. hatch, nox) so
 consult their documentation for how to install dependencies from lock files with
