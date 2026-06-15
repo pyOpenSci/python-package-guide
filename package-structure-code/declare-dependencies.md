@@ -575,8 +575,9 @@ Below is the uv CLI workflow for lock files:
 > uv pip sync pylock.toml                       # install from pylock.toml
 ```
 See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) for more
-details. See also the relevant docs for [Poetry](https://python-poetry.org/docs/basic-usage/#installing-dependencies) 
-and [PDM](https://pdm-project.org/latest/usage/lockfile/).
+details. See also the relevant docs for [Poetry](
+https://python-poetry.org/docs/basic-usage/#installing-dependencies) and
+[PDM](https://pdm-project.org/latest/usage/lockfile/).
 ### Should I use a lock file?
 
 Most package managers will generate a lock file automatically for you (e.g. uv,
@@ -592,6 +593,13 @@ If your project is a library to be used in other projects and it is mature
 enough to have CI, include a lock file for CI and contributors. For a small
 library only you maintain that is shared amongst people you know, waiting to add
 a lock file is not an issue.
+In general, you should version the lock file.
+
+For private libraries shared within a team, a lock file is less important. But
+if the project is an application or tool that others run directly, instead of
+importing into their code, committing the lock file is generally the most
+convenient choice. It gives users a reproducible set of dependencies instead of
+having each user resolve from pyproject.toml.
 :::
 
 :::{admonition} Recommendation: Which format to version control
