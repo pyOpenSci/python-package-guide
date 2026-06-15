@@ -664,7 +664,7 @@ updating a lock file. The diff can be noisy so the main changes to focus on are
 
 :::{tip}
 A lock file captures one environment for CI testing, not the full compatibility
-range declared in `pyproject.toml`. Projects that use lock files should still
+range declared in `pyproject.toml`. Projects that use lock files may want to
 have CI test other environments such as
 
 1) the latest packages consistent with your `pyproject.toml`, subject to
