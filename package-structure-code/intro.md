@@ -14,7 +14,7 @@ This section covers everything you need to structure your Python package, config
 - Learn by doing with guided examples
 - Perfect for your first package
 
-```{button-link} tutorials/intro
+```{button-link} ../tutorials/intro
 :color: success
 :class: sd-rounded-pill
 
