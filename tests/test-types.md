@@ -30,48 +30,17 @@ numbers together. A unit test for that function ensures that when
 provided with two numbers, it returns the correct sum. This is a unit
 test because it checks a single unit (function) in isolation.
 
-```python
-# src/mypackage/math_utils.py
-def add_numbers(a, b):
-    """
-    Add two numbers together.
-
-    Parameters
-    ----------
-    a : float
-        First number.
-    b : float
-        Second number.
-
-    Returns
-    -------
-    float
-        Sum of a and b.
-    """
-    return a + b
-```
+:::{literalinclude} ../examples/pure-hatch/src/examplePy/numbers.py
+:language: python
+:::
 
 Example unit test for the above function. You'd run this test using
 the `pytest` command in your **tests/** directory.
 
-```python
-# tests/test_math_utils.py
-from mypackage.math_utils import add_numbers
 
-
-def test_add_numbers():
-    """
-    Test the add_numbers function.
-    """
-    # Test with positive numbers
-    assert add_numbers(2, 3) == 5
-
-    # Test with negative numbers
-    assert add_numbers(-1, 4) == 3
-
-    # Test with zero
-    assert add_numbers(0, 5) == 5
-```
+:::{literalinclude} ../examples/pure-hatch/tests/examplePy/test_numbers.py
+:language: python
+:::
 
 Notice that the tests above don't just test one case where numbers are
 added together. Instead, they test multiple scenarios: adding positive
@@ -102,104 +71,19 @@ calculate statistics. An integration test would ensure that these
 functions work together correctly in a workflow where you convert
 temperatures and then analyze them.
 
-```python
-# src/mypackage/temperature_utils.py
-def celsius_to_fahrenheit(celsius):
-    """
-    Convert temperature from Celsius to Fahrenheit.
-
-    Parameters
-    ----------
-    celsius : float
-        Temperature in Celsius.
-
-    Returns
-    -------
-    float
-        Temperature in Fahrenheit.
-    """
-    return (celsius * 9 / 5) + 32
-
-
-def fahrenheit_to_celsius(fahrenheit):
-    """
-    Convert temperature from Fahrenheit to Celsius.
-
-    Parameters
-    ----------
-    fahrenheit : float
-        Temperature in Fahrenheit.
-
-    Returns
-    -------
-    float
-        Temperature in Celsius.
-    """
-    return (fahrenheit - 32) * 5 / 9
-
-
-def average_temperature(temps):
-    """
-    Calculate average temperature from a list.
-
-    Parameters
-    ----------
-    temps : list
-        List of temperatures.
-
-    Returns
-    -------
-    float
-        Average temperature.
-    """
-    return sum(temps) / len(temps)
-
-
-def convert_and_average(temps_celsius):
-    """
-    Convert list of Celsius temps to Fahrenheit and
-    calculate the average.
-
-    Parameters
-    ----------
-    temps_celsius : list
-        List of Celsius temperatures.
-
-    Returns
-    -------
-    float
-        Average temperature in Fahrenheit.
-    """
-    temps_fahrenheit = [celsius_to_fahrenheit(t)
-                        for t in temps_celsius]
-    return average_temperature(temps_fahrenheit)
-```
+:::{literalinclude} ../examples/pure-hatch/src/examplePy/temperature.py
+:language: python
+:::
 
 Here's an integration test that checks how the conversion and
 statistics functions work together:
 
-```python
-# tests/test_temperature_integration.py
-from mypackage.temperature_utils import convert_and_average
-
-
-def test_convert_and_average():
-    """
-    Test that convert_and_average correctly combines conversion
-    and averaging.
-    """
-    # Test with known values: [0, 10, 20] Celsius
-    # Should average to 10 Celsius = 50 Fahrenheit
-    temps_celsius = [0, 10, 20]
-    result = convert_and_average(temps_celsius)
-    assert abs(result - 50.0) < 0.01
-
-    # Test with different values
-    temps_celsius = [0, 100]
-    result = convert_and_average(temps_celsius)
-    # Average of 32 and 212 Fahrenheit = 122
-    assert abs(result - 122.0) < 0.01
-```
+:::{literalinclude} ../examples/pure-hatch/tests/examplePy/test_temperature.py
+:language: python
+:prepend: "# tests/examplePy/test_temperature.py"
+:start-at: "from examplePy"
+:end-at: "assert abs(result - 122.0) < 0.01"
+:::
 
 This integration test verifies that the conversion and averaging
 functions work together as expected in a real workflow.
@@ -246,30 +130,12 @@ temperature data and returns a summary average value. An end-to-end
 test would provide sample data, run the entire workflow, and verify
 that the final output is correct.
 
-```python
-# tests/test_temperature_e2e.py
-from mypackage.temperature_utils import convert_and_average
-
-
-def test_temperature_workflow():
-    """
-    Test the complete temperature processing workflow.
-
-    This end-to-end test provides sample temperature data in
-    Celsius, processes it through the full workflow
-    (conversion and averaging), and verifies the output is
-    correct.
-    """
-    # Sample temperature data in Celsius
-    temps_celsius = [0, 10, 20]
-
-    # Run the complete workflow
-    result = convert_and_average(temps_celsius)
-
-    # Verify the output
-    # Average of 32, 50, and 68 Fahrenheit = 50 Fahrenheit
-    assert abs(result - 50.0) < 0.01
-```
+:::{literalinclude} ../examples/pure-hatch/tests/examplePy/test_temperature.py
+:language: python
+:prepend: "# tests/examplePy/test_temperature.py"
+:start-at: "def test_temperature_workflow"
+:end-at: assert
+:::
 
 This end-to-end test exercises the entire user workflow: providing
 sample data, converting and averaging it, and verifying the output

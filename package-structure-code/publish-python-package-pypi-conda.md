@@ -28,7 +28,7 @@ Once you have published both package distributions (the source distribution and 
 (publish-pypi-conda)=
 ## What is PyPI
 
-[PyPI](https://pypi.org/) is an online Python package repository that
+[PyPI](https://pypi.org/) (p/aɪ/.pi/aɪ/ or p/aɪ/p/aɪ/) is an online Python package repository that
 you can use to both find and install and publish your Python package. There is
 also a test PyPI repository where you can test publishing your package
 prior to the final publication on PyPI.
