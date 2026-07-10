@@ -32,22 +32,29 @@ Here is a quick overview of how the translation process works:
 You don't need to understand the technical details to contribute, but if you are interested in learning how Sphinx handles internationalization and localization, you can find more information [here](https://www.sphinx-doc.org/en/master/usage/advanced/intl.html).
 ```
 
-## Setting up Your Local Environment
+## Two Ways to Contribute a Translation
 
-Before you start, you will need to set up your local work environment.
+There are two ways to contribute a translation, and the first one does not require you to install anything on your computer.
 
-First, fork the guide repository into your personal GitHub account and clone the forked repository to your local computer.
+**From the GitHub website.** Translation files are plain text, so you can edit them right in your browser. Fork the repository, edit a `.po` file in your fork, and open a pull request. This is the best place to start if this is your first open source contribution. The contributing guide walks through the browser workflow in [Contributing via the GitHub website](CONTRIBUTING.md#contributing-via-the-github-website). Once you have a fork, you can skip ahead to [Editing the Translation Files](#editing-the-translation-files).
 
-To create a virtual environment and install the development dependencies for the guide, run the following commands:
+**From a local copy on your computer.** This takes more setup, but it lets you check how much of a file is translated with `sphinx-intl stat` and preview the translated guide in your browser before you open a pull request. Choose this if you plan to translate a lot of strings or want to see your work in context.
 
-```shell
-$ cd ./python-package-guide
-$ python -m venv .venv
-$ source .venv/bin/activate
-$ pip install '.[dev]'
+### Setting up Your Local Environment
+
+You only need this if you chose the second approach above.
+
+Setting up to translate is no different from setting up to contribute anything else to the guide, so rather than repeat the steps here, follow these sections of the contributing guide in order:
+
+1. [Forking the repository](CONTRIBUTING.md#forking-the-repository)
+2. [Clone your forked repository](CONTRIBUTING.md#clone-your-forked-repository)
+3. [Create a new branch](CONTRIBUTING.md#create-a-new-branch)
+4. [Create a virtual environment](CONTRIBUTING.md#create-a-virtual-environment), which gives the commands for both Windows and macOS/Linux
+5. [Install the development dependencies](CONTRIBUTING.md#install-the-development-dependencies)
+
+```{note}
+Installing the development dependencies is what makes `sphinx-intl` and `nox` available in your environment. Both are used later in this guide: `sphinx-intl` reports how much of each file has been translated, and `nox` builds the guide so you can preview your work.
 ```
-
-TODO: This section needs more work or to be replaced with a reference to the CONTRIBUTING guide.
 
 ## Starting a New Language Translation
 
@@ -57,16 +64,14 @@ If you plan to work on an existing translation, you can skip this step and go di
 If you would like to start the translation of the guide into a new language, start by [creating an issue](https://github.com/pyOpenSci/python-package-guide/issues) in the repository.
 ```
 
-To generate the translation files for a new language, add the language to the `LANGUAGES` list in the `conf.py` configuration file. [Nox](https://nox.thea.codes/en/stable/index.html) is the tool we use to manage the building of the guide and its translations.
+To generate the translation files for a new language, add the language to the `languages` list in the `conf.py` configuration file. [Nox](https://nox.thea.codes/en/stable/index.html) is the tool we use to manage the building of the guide and its translations, and it reads this list from `conf.py`.
 
-Inside `noxfile.py`, find the `LANGUAGES` list and add the corresponding two-letter code. For example, if you want to start the translation of the guide into French, you would add `'fr'`:
+Inside `conf.py`, find the `languages` list and add the corresponding two-letter code. For example, if you want to start the translation of the guide into French, you would add `'fr'`:
 
 ```python
-## Localization options (translations)
-
-# List of languages for which locales will be generated in (/locales/<lang>)
-LANGUAGES = ["es", "fr"]
-
+# all languages that have .po files generated for them
+# (excluding english)
+languages = ["es", "ja", "pt", "fr"]
 ```
 
 ```{note}
@@ -85,7 +90,7 @@ $ nox -s update-language -- LANG
 
 This command will create the translation files if they don't exist yet, or update them with the latest changes if they already exist.
 
-The translation files are text files with the `.po` extension stored in the `./locales`, in folders corresponding to each language. For example, the translation files for Spanish are stored in the `locale/es/LC_MESSAGES` directory.
+The translation files are text files with the `.po` extension stored in `./locales`, in folders corresponding to each language. For example, the translation files for Spanish are stored in the `locales/es/LC_MESSAGES` directory.
 
 Because the translation files map the original English text to translated text, they are sometimes referred to as "catalog" files or "portable object" files.
 
@@ -95,7 +100,7 @@ You don't need to know all the details about the PO format in order to translate
 
 ## Working on a Translation
 
-In order to start translating, go to the folder inside `./locales` corresponding to the target language you want to translate to (for example, `./locale/es/LC_MESSAGES/` for the Spanish translation).
+In order to start translating, go to the folder inside `./locales` corresponding to the target language you want to translate to (for example, `./locales/es/LC_MESSAGES/` for the Spanish translation).
 
 In this folder you will find a set of `.po` files, corresponding to the different sections of the guide:
 
@@ -103,13 +108,15 @@ In this folder you will find a set of `.po` files, corresponding to the differen
 $ cd ./locales/es/LC_MESSAGES/
 $ ls *.po
 
-./locales/es/LC_MESSAGES/CONTRIBUTING.po
-./locales/es/LC_MESSAGES/index.po
-./locales/es/LC_MESSAGES/tests.po
-./locales/es/LC_MESSAGES/tutorials.po
-./locales/es/LC_MESSAGES/documentation.po
-./locales/es/LC_MESSAGES/package-structure-code.po
-./locales/es/LC_MESSAGES/TRANSLATING.po
+continuous-integration.po
+CONTRIBUTING.po
+documentation.po
+index.po
+maintain-automate.po
+package-structure-code.po
+tests.po
+TRANSLATING.po
+tutorials.po
 ```
 
 ```{note}
@@ -231,7 +238,7 @@ Once you finished translating or when you want to check the translation in conte
 nox -s build-language -- LANG
 ```
 
-This command will build all the translated versions of the guide defined in the `LANGUAGES` list in `noxfile.py`. These translations will be stored in the `_build/html`, in folders named after the language code (e.g., `es`, `fr`, etc.).
+This command builds a single translated version of the guide: the one for LANG. The result is stored in `_build/html`, in a folder named after the language code (e.g., `es`). If you want to build every language at once instead, use `nox -s build-all-languages`.
 
 To view the translated version of the guide in your browser, open the corresponding `index.html` file. For example, to view the Spanish translation, you would open `_build/html/es/index.html`.
 
@@ -288,9 +295,9 @@ When the editor is satisfied with the translation, they will merge the PR. The t
 
 ## The Release Process
 
-If a language is ready to go live, the maintainers will add the language code to the `RELEASE_LANGUAGES` list in the `noxfile.py` configuration file.
+If a language is ready to go live, the maintainers will add the language code to the `release_languages` list in the `conf.py` configuration file.
 
-When the guide is built for release in CI, Sphinx will also generate the translated versions of the guide for the languages in the `RELEASE_LANGUAGES` list.
+When the guide is built for release in CI, Sphinx will also generate the translated versions of the guide for the languages in the `release_languages` list.
 
 Translations are released in the same way as the English version of the guide, and the translated versions will be available in folders named after the language code. For example, the Spanish translation will be available at: `https://www.pyopensci.org/python-package-guide/es/` when it is published online.
 
@@ -302,7 +309,7 @@ When you run the `sphinx-intl stat` command, you will see a list of `.po` files 
 
 ### What happens when a string has changed in the original English text?
 
-If a string has changed in the original English version, it will be marked as `fuzzy` in the translation file the next time it is updated (`update-language`, `update-all-languages`, or `update-all-release-languages`). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the `fuzzy` tag.
+If a string has changed in the original English version, it will be marked as `fuzzy` in the translation file the next time it is updated (`update-language` or `update-release-languages`). Contributors working on the translation can then review the fuzzy entries and make the necessary changes to ensure it is accurate, before removing the `fuzzy` tag.
 
 ### How do I handle links in the translated text?
 
@@ -339,7 +346,7 @@ If you want to start a new translation of the guide into a language that is not 
 
 ### How do I know when a translation is ready to be released?
 
-When a translation is ready to be included in the next release of the guide, the maintainers will add the language code to the `RELEASE_LANGUAGES` list in the `noxfile.py` configuration file. This will trigger the build of the translation during the release process, and the translated version of the guide will be available on the pyOpenSci website.
+When a translation is ready to be included in the next release of the guide, the maintainers will add the language code to the `release_languages` list in the `conf.py` configuration file. This will trigger the build of the translation during the release process, and the translated version of the guide will be available on the pyOpenSci website.
 
 TODO: There are many approaches here, some projects release a translation as soon as some strings are translated, others wait until a certain percentage of the content is translated.
 
