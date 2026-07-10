@@ -62,7 +62,7 @@ class TranslationGraph(Directive):
             module: ModuleStats(
                 total=stats["total"],
                 translated=stats["total"],
-                fuzzy=stats["total"],
+                fuzzy=0,
                 untranslated=0,
                 percentage=100,
             )
@@ -202,7 +202,7 @@ def calculate_translation_percentage(po_path: Path, locale: str) -> ModuleStats:
             # Fuzzy messages are not considered translated
             if message.fuzzy:
                 fuzzy += 1
-                break
+                continue
             # Check if the message is translated
             if message.string:
                 translated += 1
