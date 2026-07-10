@@ -49,6 +49,13 @@ class TranslationGraph(Directive):
     """
 
     def run(self):
+        # Declare the dependency on .po files explicitly so incremental
+        # builds (nox -s docs, docs-live) do not use the cached
+        # doctree with stale numbers in it.
+        env = self.state.document.settings.env
+        for po_file in get_po_files():
+            env.note_dependency(str(po_file))
+
         data = get_translation_stats()
 
         # Sort data by locale and module
@@ -218,9 +225,16 @@ def calculate_translation_percentage(po_path: Path, locale: str) -> ModuleStats:
     }
 
 
+def get_po_files() -> list[Path]:
+    """
+    Find every .po file across all locales, in a stable order.
+    """
+    return sorted(LOCALES_DIR.rglob("*.po"))
+
+
 def get_translation_stats() -> TranslationStats:
     # Get all .po files in the locales directory
-    po_files = list(LOCALES_DIR.rglob("*.po"))
+    po_files = get_po_files()
 
     # Let's use a dictionary to store the results
     #
