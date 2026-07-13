@@ -42,10 +42,10 @@ dependencies = [
 ]
 ```
 
-Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a `[development-group]` table.
+Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a `[dependency-groups]` table.
 
 ```toml
-[development-group]
+[dependency-groups]
 tests = [
     "pytest",
     "pytest-cov"
@@ -58,7 +58,7 @@ There are three different types of dependencies that you will learn about on thi
 
 1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `[project.dependencies]` table in your pyproject.toml file.
 2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional.dependencies]` table or your pyproject.toml file.
-3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[project.dependency.groups]` table or your pyproject.toml file.
+3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[dependency-groups]` table of your pyproject.toml file.
 
 :::{tip}
 A dependency is not part of your project's codebase. It is a package or software called
@@ -193,35 +193,34 @@ to install and use your package. However, they will make it easier for
 contributors to your project to setup development environments
 locally.
 
-:::{admonition} New: PEP 735 development dependency groups
+:::{admonition} New: PEP 735 dependency groups
 :class: note
 
-`[development-groups]` is a newer specification introduced by PEP 735.
-They are intended to organize development dependencies and are intentionally separate from  `[project.optional-dependencies]`, which can be installed into a user's
-environment.
+`[dependency-groups]` is a newer specification introduced by PEP 735.
+They are intended to organize development dependencies and are intentionally separate from  `[project.optional-dependencies]`, which can be installed into a user's environment.
 :::
 
 ### How to declare dependency groups
 
 You declare development dependencies in your **pyproject.toml** file
-within a `[development-groups]` table.
+within a `[dependency-groups]` table.
 
 Similar to optional-dependencies, you can create separate subgroups or arrays with names using the syntax: `group-name = ["dep1", "dep2"]`
 
 ```toml
-[development-groups]
+[dependency-groups]
 tests = ["pytest", "pytest-cov"]
 docs = ["sphinx", "pydata-sphinx-theme"]
 lint = ["ruff", "black"]
 ```
 
-:::{dropdown} How to Add [development.group] using UV
+:::{dropdown} How to Add [dependency-groups] using UV
 :icon: eye
 :color: primary
 
 You can use uv to add dependencies to your pyproject.toml file:
 
-**Add a development group dependency:**
+**Add a development dependency group:**
 
 ```bash
 uv add --group tests pytest
@@ -296,7 +295,7 @@ You can also use pip and install dependencies into the environment of your choic
 We shouldn't show UV pip install, so how do you add optional feature deps with UV??
 :::
 
-**Install development groups:**
+**Install dependency groups:**
 
 :::::{tab-set}
 
@@ -306,7 +305,7 @@ You can use uv sync to sync dependency groups in your uv-managed venv
 ```console
 uv sync --group docs                     # Single group
 uv sync --group docs --group test        # Multiple groups
-uv sync --all-groups                     # All development groups
+uv sync --all-groups                     # All dependency groups
 ```
 
 **Install optional dependencies:**

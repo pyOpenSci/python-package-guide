@@ -989,7 +989,7 @@ msgid ""
 "package. You can set up instructions for running specific workflows, such"
 " as tests, linting, and even typing, that automatically install groups of"
 " development dependencies. These dependencies can be stored in arrays "
-"(lists of dependencies) within a `[development-group]` table."
+"(lists of dependencies) within a `[dependency-groups]` table."
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:55
@@ -1024,7 +1024,7 @@ msgid ""
 "**Development Dependencies:** These dependencies are required if someone "
 "wants to develop or work on your package. These include instance linters,"
 " testing tools like pytest and mypy are examples of development "
-"dependencies. Store these in the `[project.dependency.groups]` table or "
+"dependencies. Store these in the `[dependency-groups]` table of "
 "your pyproject.toml file."
 msgstr ""
 
@@ -1191,7 +1191,7 @@ msgstr "オプションの依存グループを作成する"
 
 #: ../../package-structure-code/declare-dependencies.md:199
 msgid ""
-"`[development-groups]` is a newer specification introduced by PEP 735. "
+"`[dependency-groups]` is a newer specification introduced by PEP 735. "
 "They are intended to organize development dependencies and are "
 "intentionally separate from  `[project.optional-dependencies]`, which can"
 " be installed into a user's environment."
@@ -1206,7 +1206,7 @@ msgstr "依存関係はどのように宣言するのか？"
 #, fuzzy
 msgid ""
 "You declare development dependencies in your **pyproject.toml** file "
-"within a `[development-groups]` table."
+"within a `[dependency-groups]` table."
 msgstr "**pyproject.toml** ファイルでオプションの依存関係を宣言します:"
 
 #: ../../package-structure-code/declare-dependencies.md:209
@@ -1216,11 +1216,11 @@ msgid ""
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md
-msgid "How to Add [development.group] using UV"
+msgid "How to Add [dependency-groups] using UV"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:225
-msgid "**Add a development group dependency:**"
+msgid "**Add a development dependency group:**"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:232
@@ -1371,7 +1371,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:299
 #, fuzzy
-msgid "**Install development groups:**"
+msgid "**Install dependency groups:**"
 msgstr "依存グループをインストールする"
 
 #: ../../package-structure-code/declare-dependencies.md

@@ -1139,14 +1139,14 @@ msgid ""
 "package. You can set up instructions for running specific workflows, such"
 " as tests, linting, and even typing, that automatically install groups of"
 " development dependencies. These dependencies can be stored in arrays "
-"(lists of dependencies) within a `[development-group]` table."
+"(lists of dependencies) within a `[dependency-groups]` table."
 msgstr ""
 "Dependências de desenvolvimento facilitam o trabalho dos contribuidores "
 "no seu pacote. Você pode configurar instruções para executar workflows "
 "específicos, como testes, linting e até tipagem, que instalam "
 "automaticamente grupos de dependências de desenvolvimento. Essas "
 "dependências podem ser armazenadas em arrays (listas de dependências) "
-"dentro de uma tabela `[development-group]`."
+"dentro de uma tabela `[dependency-groups]`."
 
 #: ../../package-structure-code/declare-dependencies.md:55
 msgid "Types of dependencies"
@@ -1189,14 +1189,14 @@ msgid ""
 "**Development Dependencies:** These dependencies are required if someone "
 "wants to develop or work on your package. These include instance linters,"
 " testing tools like pytest and mypy are examples of development "
-"dependencies. Store these in the `[project.dependency.groups]` table or "
+"dependencies. Store these in the `[dependency-groups]` table of "
 "your pyproject.toml file."
 msgstr ""
 "**Dependências de desenvolvimento:** Essas dependências são necessárias "
 "caso alguém queira desenvolver ou trabalhar no seu pacote. Isso inclui, "
 "por exemplo, linters e ferramentas de teste como pytest e mypy. "
 "Armazene essas dependências na tabela "
-"`[project.dependency.groups]` do seu arquivo pyproject.toml."
+"`[dependency-groups]` do seu arquivo pyproject.toml."
 
 #: ../../package-structure-code/declare-dependencies.md:64
 msgid ""
@@ -1382,12 +1382,12 @@ msgstr "Novo: grupos de dependências de desenvolvimento PEP 735"
 
 #: ../../package-structure-code/declare-dependencies.md:199
 msgid ""
-"`[development-groups]` is a newer specification introduced by PEP 735. "
+"`[dependency-groups]` is a newer specification introduced by PEP 735. "
 "They are intended to organize development dependencies and are "
 "intentionally separate from  `[project.optional-dependencies]`, which can"
 " be installed into a user's environment."
 msgstr ""
-"`[development-groups]` é uma especificação mais nova introduzida pela "
+"`[dependency-groups]` é uma especificação mais nova introduzida pela "
 "PEP 735. Ela foi criada para organizar dependências de desenvolvimento e "
 "é intencionalmente separada de `[project.optional-dependencies]`, que "
 "podem ser instaladas no ambiente do usuário."
@@ -1399,10 +1399,10 @@ msgstr "Como declarar grupos de dependências"
 #: ../../package-structure-code/declare-dependencies.md:206
 msgid ""
 "You declare development dependencies in your **pyproject.toml** file "
-"within a `[development-groups]` table."
+"within a `[dependency-groups]` table."
 msgstr ""
 "Você declara dependências de desenvolvimento no seu arquivo "
-"**pyproject.toml** dentro de uma tabela `[development-groups]`."
+"**pyproject.toml** dentro de uma tabela `[dependency-groups]`."
 
 #: ../../package-structure-code/declare-dependencies.md:209
 msgid ""
@@ -1414,11 +1414,11 @@ msgstr ""
 "`group-name = [\"dep1\", \"dep2\"]`"
 
 #: ../../package-structure-code/declare-dependencies.md
-msgid "How to Add [development.group] using UV"
-msgstr "Como adicionar [development.group] usando UV"
+msgid "How to Add [dependency-groups] using UV"
+msgstr "Como adicionar [dependency-groups] usando UV"
 
 #: ../../package-structure-code/declare-dependencies.md:225
-msgid "**Add a development group dependency:**"
+msgid "**Add a development dependency group:**"
 msgstr "**Adicionar uma dependência de grupo de desenvolvimento:**"
 
 #: ../../package-structure-code/declare-dependencies.md:232
@@ -1600,7 +1600,7 @@ msgstr ""
 "opcionais de feature com UV??"
 
 #: ../../package-structure-code/declare-dependencies.md:299
-msgid "**Install development groups:**"
+msgid "**Install dependency groups:**"
 msgstr "**Instalar grupos de desenvolvimento:**"
 
 #: ../../package-structure-code/declare-dependencies.md
