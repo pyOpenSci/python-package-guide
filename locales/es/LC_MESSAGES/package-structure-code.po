@@ -1147,11 +1147,11 @@ msgstr "Dependencias recursivas"
 
 #: ../../package-structure-code/declare-dependencies.md:32
 msgid ""
-"Specifying dependencies in the [project.dependency] array of your "
+"Specifying dependencies in the `project.dependencies` array of your "
 "`pyproject.toml` file ensures that libraries needed to run your package "
 "are correctly installed into a user's environment. For instance, if your "
 "package requires Pandas to run properly, and you add Pandas to the "
-"`project.dependency` array, Pandas will be installed into the users' "
+"`project.dependencies` array, Pandas will be installed into the users' "
 "environment when they install your package using uv, pip, or conda."
 msgstr ""
 
@@ -1179,7 +1179,7 @@ msgstr ""
 msgid ""
 "**Required dependencies:** These are dependencies that need to be "
 "installed for your package to work correctly in a user's environment. You"
-" add these dependencies to the `[project.dependencies]` table in your "
+" add these dependencies to the `project.dependencies` table in your "
 "pyproject.toml file."
 msgstr ""
 
@@ -1187,7 +1187,7 @@ msgstr ""
 msgid ""
 "**Feature Dependencies:** These are dependencies that are required if a "
 "user wants to access additional functionality (that is not core) to your "
-"package. Store these in the `[project.optional.dependencies]` table or "
+"package. Store these in the `[project.optional-dependencies]` table of "
 "your pyproject.toml file."
 msgstr ""
 
@@ -1257,7 +1257,7 @@ msgid "**Add a required dependency:**"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:110
-msgid "Will add numpy as a dependency to your `project.dependency` array:"
+msgid "Will add numpy as a dependency to your `project.dependencies` array:"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:121
@@ -1298,7 +1298,7 @@ msgid ""
 "users as needed. Optional dependencies add specific features to your "
 "package that not all users need. For example, if your package has an "
 "optional interactive plotting feature that uses Bokeh, you would list "
-"Bokeh as an `[optional.dependency]`. Users who want interactive plotting "
+"Bokeh under `[project.optional-dependencies]`. Users who want interactive plotting "
 "will install it. Users who don't need plotting don't have to install it."
 msgstr ""
 
@@ -1318,7 +1318,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md
 #, fuzzy
-msgid "How to Add optional.dependencies using UV"
+msgid "How to add optional dependencies using UV"
 msgstr "Dependencias opcionales"
 
 #: ../../package-structure-code/declare-dependencies.md:164
@@ -7501,7 +7501,7 @@ msgstr ""
 #~ "the `project` table of your "
 #~ "`pyproject.toml` file. If they are "
 #~ "optional, they will be listed in "
-#~ "the `[optional.dependencies]` table of your"
+#~ "the `[project.optional-dependencies]` table of your"
 #~ " `pyproject.toml`."
 #~ msgstr ""
 #~ "Puede pensar en las dependencias como"
@@ -7510,7 +7510,7 @@ msgstr ""
 #~ "`dependency` en la tabla `project` de"
 #~ " su archivo `pyproject.toml`. Si son "
 #~ "opcionales, se listarán en la tabla "
-#~ "`[optional.dependencies]` de su `pyproject.toml`."
+#~ "`[project.optional-dependencies]` de su `pyproject.toml`."
 
 #~ msgid "You will learn about both below."
 #~ msgstr "Aprenderá sobre ambos tipos a continuación."
@@ -7819,7 +7819,7 @@ msgstr ""
 #~ "instalar y usar su paquete. Las "
 #~ "dependencias de funcionalidades se consideran"
 #~ " opcionales y también deben colocarse "
-#~ "en la tabla `[optional.dependencies]`."
+#~ "en la tabla `[project.optional-dependencies]`."
 
 #~ msgid ""
 #~ "Optional dependencies can be stored in"
