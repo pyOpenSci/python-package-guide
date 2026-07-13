@@ -7,7 +7,7 @@
 2. There are two _required_ fields in the **[project]** table: **name=** and **version=**.
 3. Add metadata to the classifiers section of your `pyproject.toml` file to make it easier for users to find your project on PyPI.
 4. When you are adding classifiers to the [project] table, only use valid values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build your package or publish to PyPI.
-5. There is no specific order for tables in the `pyproject.toml` file. However fields need to be placed within the correct table sections. For example `requires =` always need to be associated with the **[build-system]** table.
+5. There is no specific order for tables in the `pyproject.toml` file. However, fields need to be placed within the correct table sections. For example `requires =` always needs to be associated with the **[build-system]** table.
 
 :::
 
@@ -161,29 +161,65 @@ what dependencies your package requires.
 
 ## Add dependencies to your pyproject.toml file
 
-The `pyproject.toml` file is a modern replacement for the `requirements.txt` file, which has been traditionally used to store development dependencies and also configuration for tools such as pytest, black, and others.
+### Required dependencies
+A `requirements.txt` file has been traditionally used to specify dependencies, but modern practice puts these
+in the `pyproject.toml` file. Required dependencies are specified under the `[project]` section as a list of strings:
+
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[project]\n...\n...\n...\n"
+:start-at: "dependencies = ["
+:end-at: ]
+:::
+
+### Optional dependencies
+Optional dependencies are specified under the `[project.optional-dependencies]` section and are intended to give users
+options for including additional dependencies with their installation. Optional dependencies are collected together
+as a list of strings and assigned to a name:
+
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: "[project.optional-dependencies]"
+:end-at: docs
+:::
+
+Named dependency lists can be invoked by users on installation to include those specific dependencies on installation.
+Here is an example installing the test and docs dependencies using pip:
+
+- `python -m pip install examplePy[test,docs]`
+
+Other installation tools tend to follow a similar pattern where optional dependencies are concatenated as
+a list to the package name.
+
+### Dependency Groups
+Dependency groups are a way to group package requirements in the `pyproject.toml` file but exclude them in the
+project metadata when it is built. Because it is not included in the project metadadata, users will not be able to
+invoke dependency groups when installing from a package index such as PyPI, but they can be accessed by developers
+who have all the project data (e.g. through cloning a repository). Optional dependencies are intended for package
+consumers and dependency groups are intended for package maintainers and contributors.
 
 To add development dependencies to your build, add a `[dependency-groups]` array to your pyproject.toml file.
-
 Then specify dependency groups as follows:
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:start-at: [project.optional-dependencies]
-:end-before: [tool.ruff]
+:start-at: [dependency-groups]
+:end-before: "dev = ["
 :::
 
-Following the above example, you install dependencies like this:
+One of the capabilities that dependency groups have is the ability to make composition groups.
+For example, `dev` dependency group could be composed of a `test` dependency group and a `lint` dependency group:
 
-- `python -m pip install -e .[tests]`
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[dependency-groups]\n...\n...\n...\n"
+:start-at: "dev = ["
+:end-at: ]
+:::
 
-- pip install --group test _# requires pip 25.1 or greater_
+To access groups using pip (requires pip 25.1 or higher), you can invoke them during installation like this:
 
-The above will install both your package in editable mode and all of the dependencies declared in the tests section of your `[project.optional-dependencies]` table.
-
-To install all dependencies and also your package, you'd use:
-
-`python -m pip install -e .[tests,lint,docs]`
+- `python -m pip install --group dev`
 
 :::{admonition} Recursive dependencies
 :class: tip
