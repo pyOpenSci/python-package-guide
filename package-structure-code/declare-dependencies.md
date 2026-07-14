@@ -29,8 +29,8 @@ While `pyproject.toml` is now the standard, you may sometimes encounter older ap
 
 ### Why specify dependencies
 
-Specifying dependencies in the [project.dependency] array of your `pyproject.toml` file ensures that libraries needed to run your package are correctly installed into a user's environment.
-For instance, if your package requires Pandas to run properly, and you add Pandas to the `project.dependency` array, Pandas will be installed into the users' environment when they install your package using uv, pip, or conda.
+Specifying dependencies in the `project.dependencies` array of your `pyproject.toml` file ensures that libraries needed to run your package are correctly installed into a user's environment.
+For instance, if your package requires Pandas to run properly, and you add Pandas to the `project.dependencies` array, Pandas will be installed into the users' environment when they install your package using uv, pip, or conda.
 
 ```toml
 [project]
@@ -42,10 +42,10 @@ dependencies = [
 ]
 ```
 
-Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a `[development-group]` table.
+Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a `[dependency-groups]` table.
 
 ```toml
-[development-group]
+[dependency-groups]
 tests = [
     "pytest",
     "pytest-cov"
@@ -56,9 +56,9 @@ tests = [
 
 There are three different types of dependencies that you will learn about on this page:
 
-1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `[project.dependencies]` table in your pyproject.toml file.
-2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional.dependencies]` table or your pyproject.toml file.
-3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[project.dependency.groups]` table or your pyproject.toml file.
+1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `project.dependencies` table in your pyproject.toml file.
+2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional-dependencies]` table or your pyproject.toml file.
+3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[dependency-groups]` table of your pyproject.toml file.
 
 :::{tip}
 A dependency is not part of your project's codebase. It is a package or software called
@@ -106,7 +106,7 @@ You can use uv to add dependencies to your pyproject.toml file:
 uv add numpy
 ```
 
-Will add numpy as a dependency to your `project.dependency` array:
+Will add numpy as a dependency to your `project.dependencies` array:
 
 ```toml
 [project]
@@ -139,7 +139,7 @@ are more reliable as they can't be changed
 (optional-dependencies)=
 ## 2. Optional dependencies
 
-Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh as an `[optional.dependency]`. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.
+Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh under `[project.optional-dependencies]`. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.
 
 Place these dependencies in the `[project.optional-dependencies]` table.
 
@@ -148,13 +148,13 @@ Place these dependencies in the `[project.optional-dependencies]` table.
 ...
 ...
 ...
-[optional.dependencies]
+[project.optional-dependencies]
 plot = ["bokeh"]
 ```
 
 When a user installs your package, uv, pip, or conda automatically installs all required dependencies. Optional dependencies are only installed if the user explicitly requests them.
 
-:::{dropdown} How to Add optional.dependencies using UV
+:::{dropdown} How to Add optional dependencies using UV
 :icon: eye
 :color: primary
 
@@ -169,7 +169,7 @@ uv add --optional feature pandas
 Will add this to your pyproject.toml file:
 
 ```toml
-[optional.dependencies]
+[project.optional-dependencies]
 feature = [
     "pandas>=2.3.3",
 ]
@@ -193,35 +193,34 @@ to install and use your package. However, they will make it easier for
 contributors to your project to setup development environments
 locally.
 
-:::{admonition} New: PEP 735 development dependency groups
+:::{admonition} New: PEP 735 dependency groups
 :class: note
 
-`[development-groups]` is a newer specification introduced by PEP 735.
-They are intended to organize development dependencies and are intentionally separate from  `[project.optional-dependencies]`, which can be installed into a user's
-environment.
+`[dependency-groups]` is a newer specification introduced by PEP 735.
+They are intended to organize development dependencies and are intentionally separate from  `[project.optional-dependencies]`, which can be installed into a user's environment.
 :::
 
 ### How to declare dependency groups
 
 You declare development dependencies in your **pyproject.toml** file
-within a `[development-groups]` table.
+within a `[dependency-groups]` table.
 
 Similar to optional-dependencies, you can create separate subgroups or arrays with names using the syntax: `group-name = ["dep1", "dep2"]`
 
 ```toml
-[development-groups]
+[dependency-groups]
 tests = ["pytest", "pytest-cov"]
 docs = ["sphinx", "pydata-sphinx-theme"]
 lint = ["ruff", "black"]
 ```
 
-:::{dropdown} How to Add [development.group] using UV
+:::{dropdown} How to Add [dependency-groups] using UV
 :icon: eye
 :color: primary
 
 You can use uv to add dependencies to your pyproject.toml file:
 
-**Add a development group dependency:**
+**Add a development dependency group:**
 
 ```bash
 uv add --group tests pytest
@@ -296,7 +295,7 @@ You can also use pip and install dependencies into the environment of your choic
 We shouldn't show UV pip install, so how do you add optional feature deps with UV??
 :::
 
-**Install development groups:**
+**Install dependency groups:**
 
 :::::{tab-set}
 
@@ -306,7 +305,7 @@ You can use uv sync to sync dependency groups in your uv-managed venv
 ```console
 uv sync --group docs                     # Single group
 uv sync --group docs --group test        # Multiple groups
-uv sync --all-groups                     # All development groups
+uv sync --all-groups                     # All dependency groups
 ```
 
 **Install optional dependencies:**
