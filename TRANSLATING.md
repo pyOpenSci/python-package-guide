@@ -13,6 +13,8 @@ The process of contributing to the translation of the guide is similar to the pr
 ```{translation-graph}
 ```
 
+The translation status graph updates every time the book is build with translations. You can see the status of the translations by going to [this link](https://www.pyopensci.org/python-package-guide/TRANSLATING)
+
 ## Overview of the Translation Process
 
 The process of adapting software to different languages is called internationalization, or i18n for short. Internationalization makes sure that translation can happen without having to modify the source code, or in our case, the original English source files of the guide.
@@ -85,7 +87,7 @@ The translation files contain the original English text and a space for you to e
 You can do this by running the following command, replacing LANG by the language code you plan to work on (e.g., `es` for Spanish):
 
 ```shell
-$ nox -s update-language -- LANG
+nox -s update-language -- LANG
 ```
 
 This command will create the translation files if they don't exist yet, or update them with the latest changes if they already exist.
@@ -266,8 +268,8 @@ You can follow these steps:
 nox -s build-all-languages-test
 ```
 
-2. Make sure there are no warnings or errors in the output. If there are, you will need to fix them before submitting the PR.
-3. Make sure the translated version of the guide looks good in the browser by opening the `_build/html/<lang>/index.html` file, where `<lang>` is the language you have been working on.
+1. Make sure there are no warnings or errors in the output. If there are, you will need to fix them before submitting the PR.
+2. Make sure the translated version of the guide looks good in the browser by opening the `_build/html/<lang>/index.html` file, where `<lang>` is the language you have been working on.
 
 If everything looks good, you can submit a PR with your changes.
 
