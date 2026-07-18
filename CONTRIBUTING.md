@@ -150,8 +150,12 @@ To build the guide locally, you need to create a virtual environment and install
 To install the development dependencies, run the following command in your terminal:
 
 ```bash
-python -m pip install -e .[dev]
+python -m pip install -e '.[dev]'
 ```
+
+The quotes around `'.[dev]'` matter if you use zsh, the default shell on macOS. Without them, zsh treats the square brackets as a filename pattern and fails with `no matches found`.
+
+On Windows they are harmless in PowerShell, but if you use the older `cmd.exe` prompt you need to remove them and run `python -m pip install -e .[dev]` instead, because `cmd.exe` does not strip single quotes.
 
 ### Commit your changes
 
