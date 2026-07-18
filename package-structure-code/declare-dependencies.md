@@ -311,7 +311,7 @@ uv sync --all-groups                     # All dependency groups
 use ``--active`` with ``uv sync`` to prefer the currently active virtual environment over the project's own managed environment:
 
 ```console
-$ uv sync --active --group docs            # Sync into the currently active virtual environment
+$ uv sync --active --group docs
 ```
 :::
 
