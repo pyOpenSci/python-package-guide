@@ -975,11 +975,11 @@ msgstr "再帰的依存関係"
 
 #: ../../package-structure-code/declare-dependencies.md:32
 msgid ""
-"Specifying dependencies in the [project.dependency] array of your "
+"Specifying dependencies in the `project.dependencies` array of your "
 "`pyproject.toml` file ensures that libraries needed to run your package "
 "are correctly installed into a user's environment. For instance, if your "
 "package requires Pandas to run properly, and you add Pandas to the "
-"`project.dependency` array, Pandas will be installed into the users' "
+"`project.dependencies` array, Pandas will be installed into the users' "
 "environment when they install your package using uv, pip, or conda."
 msgstr ""
 
@@ -989,7 +989,7 @@ msgid ""
 "package. You can set up instructions for running specific workflows, such"
 " as tests, linting, and even typing, that automatically install groups of"
 " development dependencies. These dependencies can be stored in arrays "
-"(lists of dependencies) within a `[development-group]` table."
+"(lists of dependencies) within a `[dependency-groups]` table."
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:55
@@ -1007,7 +1007,7 @@ msgstr ""
 msgid ""
 "**Required dependencies:** These are dependencies that need to be "
 "installed for your package to work correctly in a user's environment. You"
-" add these dependencies to the `[project.dependencies]` table in your "
+" add these dependencies to the `project.dependencies` table in your "
 "pyproject.toml file."
 msgstr ""
 
@@ -1015,7 +1015,7 @@ msgstr ""
 msgid ""
 "**Feature Dependencies:** These are dependencies that are required if a "
 "user wants to access additional functionality (that is not core) to your "
-"package. Store these in the `[project.optional.dependencies]` table or "
+"package. Store these in the `[project.optional-dependencies]` table of "
 "your pyproject.toml file."
 msgstr ""
 
@@ -1024,7 +1024,7 @@ msgid ""
 "**Development Dependencies:** These dependencies are required if someone "
 "wants to develop or work on your package. These include instance linters,"
 " testing tools like pytest and mypy are examples of development "
-"dependencies. Store these in the `[project.dependency.groups]` table or "
+"dependencies. Store these in the `[dependency-groups]` table of "
 "your pyproject.toml file."
 msgstr ""
 
@@ -1080,7 +1080,7 @@ msgid "**Add a required dependency:**"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:110
-msgid "Will add numpy as a dependency to your `project.dependency` array:"
+msgid "Will add numpy as a dependency to your `project.dependencies` array:"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:121
@@ -1117,7 +1117,7 @@ msgid ""
 "users as needed. Optional dependencies add specific features to your "
 "package that not all users need. For example, if your package has an "
 "optional interactive plotting feature that uses Bokeh, you would list "
-"Bokeh as an `[optional.dependency]`. Users who want interactive plotting "
+"Bokeh under `[project.optional-dependencies]`. Users who want interactive plotting "
 "will install it. Users who don't need plotting don't have to install it."
 msgstr ""
 
@@ -1135,7 +1135,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md
 #, fuzzy
-msgid "How to Add optional.dependencies using UV"
+msgid "How to add optional dependencies using UV"
 msgstr "オプションの依存関係"
 
 #: ../../package-structure-code/declare-dependencies.md:164
@@ -1191,7 +1191,7 @@ msgstr "オプションの依存グループを作成する"
 
 #: ../../package-structure-code/declare-dependencies.md:199
 msgid ""
-"`[development-groups]` is a newer specification introduced by PEP 735. "
+"`[dependency-groups]` is a newer specification introduced by PEP 735. "
 "They are intended to organize development dependencies and are "
 "intentionally separate from  `[project.optional-dependencies]`, which can"
 " be installed into a user's environment."
@@ -1206,7 +1206,7 @@ msgstr "依存関係はどのように宣言するのか？"
 #, fuzzy
 msgid ""
 "You declare development dependencies in your **pyproject.toml** file "
-"within a `[development-groups]` table."
+"within a `[dependency-groups]` table."
 msgstr "**pyproject.toml** ファイルでオプションの依存関係を宣言します:"
 
 #: ../../package-structure-code/declare-dependencies.md:209
@@ -1216,11 +1216,11 @@ msgid ""
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md
-msgid "How to Add [development.group] using UV"
+msgid "How to Add [dependency-groups] using UV"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:225
-msgid "**Add a development group dependency:**"
+msgid "**Add a development dependency group:**"
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:232
@@ -1371,7 +1371,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:299
 #, fuzzy
-msgid "**Install development groups:**"
+msgid "**Install dependency groups:**"
 msgstr "依存グループをインストールする"
 
 #: ../../package-structure-code/declare-dependencies.md
@@ -6451,12 +6451,12 @@ msgstr ""
 #~ "the `project` table of your "
 #~ "`pyproject.toml` file. If they are "
 #~ "optional, they will be listed in "
-#~ "the `[optional.dependencies]` table of your"
+#~ "the `[project.optional-dependencies]` table of your"
 #~ " `pyproject.toml`."
 #~ msgstr ""
 #~ "依存関係はオプションか必須であると考えることができます。 必須であれば、 `pyproject` "
 #~ "テーブルの `dependencies` キーにリストされます。 オプションの場合は、 "
-#~ "`pyproject.toml` の `[optional.dependencies]` "
+#~ "`pyproject.toml` の `[project.optional-dependencies]` "
 #~ "テーブルにリストされます。"
 
 #~ msgid "You will learn about both below."
