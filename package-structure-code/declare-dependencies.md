@@ -307,6 +307,13 @@ uv sync --group docs                     # Single group
 uv sync --group docs --group test        # Multiple groups
 uv sync --all-groups                     # All dependency groups
 ```
+:::{tip}
+use ``--active`` with ``uv sync`` to prefer the currently active virtual environment over the project's own managed environment:
+
+```console
+$ uv sync --active --group docs            # Sync into the currently active virtual environment
+```
+:::
 
 **Install optional dependencies:**
 
@@ -323,6 +330,7 @@ virtual environment over the project's own managed environment:
 ```console
 $ uv run --active pip install -e ".[docs]"
 ```
+:::
 
 This is useful when you have activated a virtual environment and want
 `uv run` to use it instead of automatically creating or selecting the
