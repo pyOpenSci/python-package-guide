@@ -1,0 +1,49 @@
+name: Label translation PRs
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "locales/**/*.po"
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply translation labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              per_page: 100,
+            });
+
+            const languages = new Set();
+            for (const file of files) {
+              const match = file.filename.match(/^locales\/([^/]+)\/.*\.po$/);
+              if (match) {
+                languages.add(match[1].toUpperCase());
+              }
+            }
+
+            if (languages.size === 0) {
+              core.info('No .po files under locales/ changed; nothing to label.');
+              return;
+            }
+
+            const labels = ['translations', ...[...languages].map(l => `lang-${l}`)];
+            core.info(`Applying labels: ${labels.join(', ')}`);
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels,
+            });
