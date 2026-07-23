@@ -85,8 +85,8 @@ An image showing how to preview changes in GitHub. The file content is displayed
 
 ### How to commit your changes
 
-When you are done editing the file, scroll down to the bottom of the page. You will see a section called "Commit changes".
-Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made.
+When you are done editing the file, click the "Commit changes..." button in the top-right corner of the editor.
+A "Commit changes" dialog will open where you can write a title and an optional description for your changes. Make sure to write a clear and concise title that describes the changes you made.
 
 ```{figure} images/contributing/commit-changes.png
 ---
