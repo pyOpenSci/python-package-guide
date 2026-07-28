@@ -1,0 +1,99 @@
+# Registry of the GitHub issues that track translation of the Python Package Guide.
+#
+# Each language has one parent issue plus one sub-issue per active .po file.
+# This file is the register for those issue numbers.
+#
+# Keep it in sync whenever issues are created, a language is added, or a file is
+# added/removed. Files are listed in the same order for every language so they are
+# easy to compare.
+
+repo: pyOpenSci/python-package-guide
+updated: "2026-07-20"
+
+languages:
+  es:
+    name: Spanish
+    label: lang-ES
+    parent: 686
+    # File shown in the parent's "See an example" section.
+    example:
+      locale: es
+      file: index.po
+    subissues:
+      index.po: 687
+      package-structure-code.po: 688
+      documentation.po: 690
+      tests.po: 689
+      tutorials.po: 691
+      TRANSLATING.po: 692
+      maintain-automate.po: 693
+      CONTRIBUTING.po: 694
+
+  pt:
+    name: Portuguese
+    label: lang-PT
+    parent: 699
+    example:
+      locale: pt
+      file: index.po
+    subissues:
+      index.po: 713
+      package-structure-code.po: 712
+      documentation.po: 706
+      tests.po: 708
+      tutorials.po: 711
+      TRANSLATING.po: 710
+      maintain-automate.po: 707
+      CONTRIBUTING.po: 709
+
+  el:
+    name: Greek
+    label: lang-EL
+    parent: 715
+    # Greek has no complete file yet, so the example falls back to Spanish index.po.
+    example:
+      locale: es
+      file: index.po
+    subissues:
+      index.po: 752
+      package-structure-code.po: 757
+      documentation.po: 756
+      tests.po: 750
+      tutorials.po: 751
+      TRANSLATING.po: 753
+      maintain-automate.po: 755
+      CONTRIBUTING.po: 754
+
+  bg:
+    name: Bulgarian
+    label: lang-BG
+    parent: 716
+    example:
+      locale: bg
+      file: CONTRIBUTING.po
+    subissues:
+      index.po: 759
+      package-structure-code.po: 764
+      documentation.po: 763
+      tests.po: 761
+      tutorials.po: 765
+      TRANSLATING.po: 760
+      maintain-automate.po: 762
+      CONTRIBUTING.po: 758
+
+  it:
+    name: Italian
+    label: lang-IT
+    parent: 717
+    example:
+      locale: it
+      file: index.po
+    subissues:
+      index.po: 766
+      package-structure-code.po: 773
+      documentation.po: 772
+      tests.po: 770
+      tutorials.po: 768
+      TRANSLATING.po: 769
+      maintain-automate.po: 771
+      CONTRIBUTING.po: 767
