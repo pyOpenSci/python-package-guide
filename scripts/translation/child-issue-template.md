@@ -31,7 +31,7 @@ When you link this issue from your Pull Request, please write `Part of #{{ISSUE_
   complete) file, so contributors can see a reference for style and formatting.
   OMIT this bullet in the sub-issue whose own file IS the example file.
 
-  (a) Same language, a substantially/fully complete file:
+  (a/a-index) Same language, a substantially/fully complete file:
       - [`FILE.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/FILE.po) — one of the most complete files; a useful reference for style and formatting
 
   (b/c) `index.po` that is furthest along, or the Spanish fallback:

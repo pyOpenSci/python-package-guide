@@ -34,6 +34,9 @@ Look at the untranslated column — a file with a smaller number there is an eas
   (a) Same language, a substantially/fully complete file:
       Want to see what a translated file looks like? Look at [`FILE.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/FILE.po). It is one of the most complete files, so it is a good model for what a finished translation looks like.
 
+  (a-index) Same language, `index.po` — complete:
+      Want to see what a translated file looks like? Look at [`index.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/index.po). It holds the strings for the guide's landing page and is one of the most complete files, so it is a good model for what a finished translation looks like.
+
   (b) Same language, `index.po` — furthest along but not finished:
       Want to see what a translated file looks like? Look at [`index.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/index.po). It holds the strings for the guide's landing page, and it is the file that is furthest along. It is not done yet, so you will still find untranslated and fuzzy strings in it.
 
