@@ -3,31 +3,44 @@
 # Each language has one parent issue plus one sub-issue per active .po file.
 # This file is the register for those issue numbers.
 #
-# Keep it in sync whenever issues are created, a language is added, or a file is
-# added/removed. Files are listed in the same order for every language so they are
-# easy to compare.
+# It is written by scripts/translation/update_translation_issues.py, which rebuilds
+# it in full on every run, so keep any edit here to the values themselves. Files
+# are listed alphabetically, the same way for every language, so they are easy to
+# compare. `example` is the file shown in the parent's "See an example" section.
 
 repo: pyOpenSci/python-package-guide
 updated: "2026-07-20"
+
+# Labels applied when an issue is created, on top of the language's own `label`.
+# Changing these does not relabel issues that already exist.
+labels:
+  parent:
+    - help wanted
+    - sprintable
+    - translations
+    - beginner-friendly
+  subissue:
+    - good first issue
+    - translations
+    - beginner-friendly
 
 languages:
   es:
     name: Spanish
     label: lang-ES
     parent: 686
-    # File shown in the parent's "See an example" section.
     example:
       locale: es
       file: index.po
     subissues:
-      index.po: 687
-      package-structure-code.po: 688
+      CONTRIBUTING.po: 694
+      TRANSLATING.po: 692
       documentation.po: 690
+      index.po: 687
+      maintain-automate.po: 693
+      package-structure-code.po: 688
       tests.po: 689
       tutorials.po: 691
-      TRANSLATING.po: 692
-      maintain-automate.po: 693
-      CONTRIBUTING.po: 694
 
   pt:
     name: Portuguese
@@ -37,32 +50,33 @@ languages:
       locale: pt
       file: index.po
     subissues:
-      index.po: 713
-      package-structure-code.po: 712
+      CONTRIBUTING.po: 709
+      TRANSLATING.po: 710
       documentation.po: 706
+      index.po: 713
+      maintain-automate.po: 707
+      package-structure-code.po: 712
       tests.po: 708
       tutorials.po: 711
-      TRANSLATING.po: 710
-      maintain-automate.po: 707
-      CONTRIBUTING.po: 709
 
   el:
     name: Greek
     label: lang-EL
     parent: 715
-    # Greek has no complete file yet, so the example falls back to Spanish index.po.
+    # No file in this language is complete enough to be
+    # a model yet, so the example falls back to Spanish.
     example:
       locale: es
       file: index.po
     subissues:
-      index.po: 752
-      package-structure-code.po: 757
+      CONTRIBUTING.po: 754
+      TRANSLATING.po: 753
       documentation.po: 756
+      index.po: 752
+      maintain-automate.po: 755
+      package-structure-code.po: 757
       tests.po: 750
       tutorials.po: 751
-      TRANSLATING.po: 753
-      maintain-automate.po: 755
-      CONTRIBUTING.po: 754
 
   bg:
     name: Bulgarian
@@ -72,14 +86,14 @@ languages:
       locale: bg
       file: CONTRIBUTING.po
     subissues:
-      index.po: 759
-      package-structure-code.po: 764
+      CONTRIBUTING.po: 758
+      TRANSLATING.po: 760
       documentation.po: 763
+      index.po: 759
+      maintain-automate.po: 762
+      package-structure-code.po: 764
       tests.po: 761
       tutorials.po: 765
-      TRANSLATING.po: 760
-      maintain-automate.po: 762
-      CONTRIBUTING.po: 758
 
   it:
     name: Italian
@@ -89,11 +103,11 @@ languages:
       locale: it
       file: index.po
     subissues:
-      index.po: 766
-      package-structure-code.po: 773
+      CONTRIBUTING.po: 767
+      TRANSLATING.po: 769
       documentation.po: 772
+      index.po: 766
+      maintain-automate.po: 771
+      package-structure-code.po: 773
       tests.po: 770
       tutorials.po: 768
-      TRANSLATING.po: 769
-      maintain-automate.po: 771
-      CONTRIBUTING.po: 767
