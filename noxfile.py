@@ -269,6 +269,7 @@ def update_release_languages(session):
     if RELEASE_LANGUAGES:
         session.install("-e", ".")
         session.install("sphinx-intl")
+        _clean_translation_templates(session)
         session.log("Updating templates (.pot)")
         session.run(
             SPHINX_BUILD,
@@ -298,6 +299,7 @@ def update_language(session):
         if lang in LANGUAGES:
             session.install("-e", ".")
             session.install("sphinx-intl")
+            _clean_translation_templates(session)
             session.log("Updating templates (.pot)")
             session.run(
                 SPHINX_BUILD,
@@ -425,6 +427,20 @@ def build_all_languages_test(session):
     in the same way docs-test does for the English version.
     """
     session.notify("build-all-languages", [*TEST_PARAMETERS])
+
+
+def _clean_translation_templates(session) -> None:
+    """
+    Remove the gettext output directory before regenerating the templates (.pot).
+
+    The gettext build is incremental and never deletes a .pot whose source page is
+    gone, while `sphinx-intl update` creates a .po for every .pot it finds. Without
+    this, a page that briefly existed in the source tree leaves an orphan .pot
+    behind, and every later update spawns a matching .po in each locale.
+    """
+    if TRANSLATION_TEMPLATE_DIR.exists():
+        session.log(f"Cleaning out {TRANSLATION_TEMPLATE_DIR}")
+        shutil.rmtree(TRANSLATION_TEMPLATE_DIR)
 
 
 def _sphinx_env(session) -> str:
