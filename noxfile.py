@@ -48,6 +48,9 @@ TEST_PARAMETERS = ["--keep-going", "-E", "-a"]
 # Sphinx parameters to generate translation templates
 TRANSLATION_TEMPLATE_PARAMETERS = ["-b", "gettext"]
 
+# Scripts that maintain the translation stats and the translation issues
+TRANSLATION_SCRIPTS_DIR = pathlib.Path("scripts", "translation")
+
 # Sphinx-autobuild ignore and include parameters
 AUTOBUILD_IGNORE = [
     "_build",
@@ -425,6 +428,39 @@ def build_all_languages_test(session):
     in the same way docs-test does for the English version.
     """
     session.notify("build-all-languages", [*TEST_PARAMETERS])
+
+
+@nox.session(name="update-translation-issues")
+def update_translation_issues(session):
+    """
+    Create or update the GitHub issues that track a language's translation.
+
+    For example: nox -s update-translation-issues -- update es.
+
+    This is interactive: it shows every issue body it would write and asks for
+    confirmation before anything on GitHub changes. It needs the `gh` CLI.
+    """
+    if len(session.posargs) != 2 or session.posargs[0] not in ("create", "update"):
+        session.error(
+            "Please provide a mode and a language using:\n\n      "
+            "nox -s update-translation-issues -- [create|update] LANG\n\n     "
+            f" where LANG is one of: {LANGUAGES}"
+        )
+    session.install("-e", ".")
+    session.run(
+        "python", str(TRANSLATION_SCRIPTS_DIR / "update_translation_issues.py"),
+        *session.posargs,
+    )
+
+
+@nox.session(name="test-translation-scripts")
+def test_translation_scripts(session):
+    """
+    Run the unit tests for the translation helper scripts.
+    """
+    session.install("-e", ".")
+    session.install("pytest")
+    session.run("pytest", str(TRANSLATION_SCRIPTS_DIR), *session.posargs)
 
 
 def _sphinx_env(session) -> str:
