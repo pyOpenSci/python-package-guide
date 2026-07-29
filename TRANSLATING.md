@@ -127,6 +127,12 @@ You may also see some `.mo` files in the same folder. These are compiled version
 
 If you are working on a new translation, choose one of the `.po` files to start with. If you are working on an existing translation, you can start with the `.po` files that need the most work.
 
+```{tip}
+**Not sure which file to pick? Start with `index.po`.** It holds the strings for the guide's landing page, and a language can be published on the website once its landing page is translated. Finishing `index.po` is therefore what makes a new translation visible to readers, which makes it the most useful file to work on.
+
+This is a great place for a first contribution, and you do not have to translate the whole file on your own. Each language has a translation issue on the [issue tracker](https://github.com/pyOpenSci/python-package-guide/issues?q=is%3Aissue+is%3Aopen+label%3Atranslations) with one sub-issue per `.po` file, where you can claim a range of lines and work alongside other contributors.
+```
+
 To see how much of each file has been translated, use the `sphinx-intl stat`. You will be able to see the number of translated, fuzzy, and untranslated strings in each `.po` file.
 
 For example, to see the statistics for the Spanish translation, you would run:
@@ -350,7 +356,7 @@ If you want to start a new translation of the guide into a language that is not 
 
 When a translation is ready to be included in the next release of the guide, the maintainers will add the language code to the `release_languages` list in the `conf.py` configuration file. This will trigger the build of the translation during the release process, and the translated version of the guide will be available on the pyOpenSci website.
 
-TODO: There are many approaches here, some projects release a translation as soon as some strings are translated, others wait until a certain percentage of the content is translated.
+A translation becomes a candidate for release once `index.po` is fully translated. With the landing page in place, a reader arriving in that language lands on a page in their own language rather than an English one. The remaining files can keep improving after that, because Sphinx falls back to the English text for any string that has not been translated yet.
 
 ### How can I get help with my translation?
 
