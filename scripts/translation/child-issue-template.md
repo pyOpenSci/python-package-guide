@@ -4,6 +4,17 @@ This issue is for translating **[`{{FILENAME}}`]({{FILE_URL}})** into {{LANGUAGE
 
 Thank you for helping! If this is your first open source contribution, you are in the right place.
 
+{{PRIORITY_NOTE}}
+
+<!--
+  {{PRIORITY_NOTE}} — a note about `index.po` being the file that lets us
+  publish the language on the site. It is worded one way in `index.po`'s own
+  sub-issue and another way everywhere else, and disappears once `index.po` is
+  finished. All of that is decided by priority_note() in
+  update_translation_issues.py. Edit the wording there: a copy kept here would
+  have no effect and would quietly go stale.
+-->
+
 If you are working in one of our development sprints at a conference, someone from the pyOpenSci team will be available to help you get set up.
 
 ### Claim your lines
@@ -27,15 +38,11 @@ When you link this issue from your Pull Request, please write `Part of #{{ISSUE_
 {{EXAMPLE_BULLET}}
 
 <!--
-  {{EXAMPLE_BULLET}} — a Resources bullet pointing to this language's best (most
-  complete) file, so contributors can see a reference for style and formatting.
-  OMIT this bullet in the sub-issue whose own file IS the example file.
-
-  (a/a-index) Same language, a substantially/fully complete file:
-      - [`FILE.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/FILE.po) — one of the most complete files; a useful reference for style and formatting
-
-  (b/c) `index.po` that is furthest along, or the Spanish fallback:
-      - [`index.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/index.po) — the file that is furthest along; a useful reference for style and formatting
+  {{EXAMPLE_BULLET}} — a Resources bullet pointing at the example file, so
+  contributors have a reference for style and formatting. It is empty in the
+  sub-issue whose own file IS the example. Both the choice and the wording are
+  decided by example_bullet() in update_translation_issues.py. Edit the wording
+  there: a copy kept here would have no effect and would quietly go stale.
 -->
 
 ### This file, as of {{STATS_DATE}}

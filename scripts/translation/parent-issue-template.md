@@ -27,21 +27,10 @@ Look at the untranslated column — a file with a smaller number there is an eas
 {{EXAMPLE_SECTION}}
 
 <!--
-  {{EXAMPLE_SECTION}} — pick the phrasing that fits this language's best (most
-  complete) file. The link should point to that file on `main`. Use variant (c)
-  when no file in this language is complete enough to be a good model yet.
-
-  (a) Same language, a substantially/fully complete file:
-      Want to see what a translated file looks like? Look at [`FILE.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/FILE.po). It is one of the most complete files, so it is a good model for what a finished translation looks like.
-
-  (a-index) Same language, `index.po` — complete:
-      Want to see what a translated file looks like? Look at [`index.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/index.po). It holds the strings for the guide's landing page and is one of the most complete files, so it is a good model for what a finished translation looks like.
-
-  (b) Same language, `index.po` — furthest along but not finished:
-      Want to see what a translated file looks like? Look at [`index.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/{{LOCALE}}/LC_MESSAGES/index.po). It holds the strings for the guide's landing page, and it is the file that is furthest along. It is not done yet, so you will still find untranslated and fuzzy strings in it.
-
-  (c) No file in this language is complete yet — fall back to Spanish:
-      Want to see what a translated file looks like? Here is an example from the Spanish translation. Look at [`index.po`](https://github.com/pyOpenSci/python-package-guide/blob/main/locales/es/LC_MESSAGES/index.po). It holds the strings for the guide's landing page, and it is the file that is furthest along. It is not done yet, so you will still find untranslated and fuzzy strings in it.
+  {{EXAMPLE_SECTION}} — the "See an example" paragraph. Which file it points at,
+  and how it describes that file, are both decided by example_section() in
+  update_translation_issues.py. Edit the wording there: a copy kept here would
+  have no effect and would quietly go stale.
 -->
 
 ### Translation status as of {{STATS_DATE}}
