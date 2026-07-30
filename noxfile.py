@@ -48,6 +48,9 @@ TEST_PARAMETERS = ["--keep-going", "-E", "-a"]
 # Sphinx parameters to generate translation templates
 TRANSLATION_TEMPLATE_PARAMETERS = ["-b", "gettext"]
 
+# Scripts that maintain the translation stats and the translation issues
+TRANSLATION_SCRIPTS_DIR = pathlib.Path("scripts", "translation")
+
 # Sphinx-autobuild ignore and include parameters
 AUTOBUILD_IGNORE = [
     "_build",
@@ -425,6 +428,17 @@ def build_all_languages_test(session):
     in the same way docs-test does for the English version.
     """
     session.notify("build-all-languages", [*TEST_PARAMETERS])
+
+
+@nox.session(name="test-translation-scripts")
+def test_translation_scripts(session):
+    """
+    Run the unit tests for the translation helper scripts.
+
+    Only pytest is installed since it's the only thing the scripts under test need.
+    """
+    session.install("pytest")
+    session.run("pytest", str(TRANSLATION_SCRIPTS_DIR), *session.posargs)
 
 
 def _sphinx_env(session) -> str:
