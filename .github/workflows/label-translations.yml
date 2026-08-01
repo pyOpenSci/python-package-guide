@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Apply translation labels
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const files = await github.paginate(github.rest.pulls.listFiles, {
