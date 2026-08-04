@@ -1,35 +1,22 @@
 import json
 from pathlib import Path
-from typing import TYPE_CHECKING, TypeAlias, TypedDict
-from typing import Annotated as A
+from typing import TYPE_CHECKING
 
 import numpy as np
 import plotly.graph_objects as go
-from babel.messages import pofile
 from docutils import nodes
 from docutils.parsers.rst import Directive
 from plotly.offline import plot
 
+# Note: this import relies on the fact that conf.py puts the repository root on sys.path,
+# so this resolves as a namespace package needing any __init__.py.
+from scripts.translation.stats import (
+    get_po_files,
+    get_translation_stats,
+)
+
 if TYPE_CHECKING:
     from sphinx.application import Sphinx
-
-
-BASE_DIR = Path(__file__).resolve().parent.parent  # Repository base directory
-LOCALES_DIR = BASE_DIR / "locales"  # Locales directory
-STATIC_DIR = BASE_DIR / "_static"  # Static directory
-
-
-class ModuleStats(TypedDict):
-    total: int
-    translated: int
-    fuzzy: int
-    untranslated: int
-    percentage: float
-
-
-TranslationStats: TypeAlias = dict[
-    A[str, "locale"], dict[A[str, "module"], ModuleStats]
-]
 
 
 class TranslationGraph(Directive):
@@ -56,26 +43,14 @@ class TranslationGraph(Directive):
         for po_file in get_po_files():
             env.note_dependency(str(po_file))
 
-        data = get_translation_stats()
+        # English is the reference row (100% by definition); the script adds it.
+        data = get_translation_stats(include_english=True)
 
         # Sort data by locale and module
         data = {
             locale: dict(sorted(loc_stats.items()))
             for locale, loc_stats in sorted(data.items())
         }
-
-        # prepend english, everything set to 100%
-        en = {
-            module: ModuleStats(
-                total=stats["total"],
-                translated=stats["total"],
-                fuzzy=0,
-                untranslated=0,
-                percentage=100,
-            )
-            for module, stats in next(iter(data.values())).items()
-        }
-        data = {"en": en} | data
 
         # Calculate average completion percentage for each locale and sort locales
         locale_completion = {
@@ -176,105 +151,6 @@ class TranslationGraph(Directive):
             config={"displayModeBar": False},
         )
         return [nodes.raw("", div, format="html")]
-
-
-def calculate_translation_percentage(po_path: Path, locale: str) -> ModuleStats:
-    """
-    Calculate the translation percentage for a given .po file.
-
-    Parameters
-    ----------
-    po_path : Path
-        Path to the .po file.
-    locale : str
-        Locale code (e.g., 'es', 'fr').
-
-    Returns
-    -------
-    dict
-        A dictionary containing the total number of strings, translated strings,
-        fuzzy strings, untranslated strings, and the translation percentage.
-    """
-    with open(po_path, "r", encoding="utf-8") as f:
-        catalog = pofile.read_po(f, locale=locale)
-
-    total = 0
-    translated = 0
-    fuzzy = 0
-
-    for message in catalog:
-        if message.id:
-            total += 1
-            # Check if the message is fuzzy
-            # Fuzzy messages are not considered translated
-            if message.fuzzy:
-                fuzzy += 1
-                continue
-            # Check if the message is translated
-            if message.string:
-                translated += 1
-
-    percentage = (translated / total * 100) if total > 0 else 0
-
-    return {
-        "total": total,
-        "translated": translated,
-        "fuzzy": fuzzy,
-        "untranslated": total - translated - fuzzy,
-        "percentage": round(percentage, 2),
-    }
-
-
-def get_po_files() -> list[Path]:
-    """
-    Find every .po file across all locales, in a stable order.
-    """
-    return sorted(LOCALES_DIR.rglob("*.po"))
-
-
-def get_translation_stats() -> TranslationStats:
-    # Get all .po files in the locales directory
-    po_files = get_po_files()
-
-    # Let's use a dictionary to store the results
-    #
-    # We will store the info as
-    # {
-    #    "es": {
-    #        "file1": {
-    #            "total": 100,
-    #            "translated": 50,
-    #            "fuzzy": 0,
-    #            "untranslated": 50,
-    #            "percentage": 50.0
-    #        },
-    #        ...
-    #    },
-    #    "fr": {
-    #        "file1": {
-    #            "total": 100,
-    #            "translated": 50,
-    #            "fuzzy": 0,
-    #            "untranslated": 50,
-    #            "percentage": 50.0
-    #        },
-    #        ...
-    # }
-    results = {}
-
-    # Calculate translation percentages for each file
-    for po_file in po_files:
-        # Get the locale from the file path
-        locale = po_file.parent.parent.name
-        stats = calculate_translation_percentage(po_file, locale)
-
-        # Store the results in the dictionary
-        if locale not in results:
-            results[locale] = {}
-
-        results[locale][po_file.stem] = stats
-
-    return results
 
 
 def write_translation_stats(app: "Sphinx", exception: Exception | None) -> None:
