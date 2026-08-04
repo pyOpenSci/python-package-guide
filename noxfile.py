@@ -441,8 +441,8 @@ def test_translation_scripts(session):
     """
     session.install("pytest")
     session.run("pytest", str(TRANSLATION_SCRIPTS_DIR), *session.posargs)
-    
-    
+
+
 def _clean_translation_templates(session) -> None:
     """
     Remove the gettext output directory before regenerating the templates (.pot).
