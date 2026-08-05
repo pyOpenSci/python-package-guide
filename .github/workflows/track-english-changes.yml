@@ -1,0 +1,121 @@
+name: Track English text changes for translators
+
+# The `.po` catalogs are generated from the English pages, so changes to the guide
+# on `main` can leave every locale short of strings. This posts to the translation
+# maintenance issue to inform maintainers that updates are needed, rather than to
+# the pull request to avoid putting the burden on a beginner contributor.
+#
+# `push` rather than a pull-request trigger because that way it cannot be bypassed by
+# an admin pushing straight to `main`, or an edit made in the web editor.
+on:
+  push:
+    branches: [main]
+    # Broad on purpose: a filter that misses a source change loses the
+    # notification, one that is too wide costs a run that posts nothing.
+    paths-ignore:
+      - "locales/**"
+      - "scripts/**"
+      - ".github/**"
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  # The tracking issue is found by this label, not by number, so it can be closed
+  # and replaced without editing this file. Apply it to exactly one issue.
+  TRACKER_LABEL: po-refresh-tracker
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The whole push, not just its last commit. This repository merges by
+      # rebasing, so one pull request lands as several commits in a single push,
+      # and `HEAD^..HEAD` would see only the last of them.
+      - name: List the files this push touched
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.event.after }}
+        run: |
+          # A branch creation or a force push reports an all-zero `before`, which
+          # the compare endpoint cannot use. There is nothing to diff against.
+          if [ -z "${BEFORE//0/}" ]; then
+            echo "No usable base for the comparison; nothing to report."
+            : > changed.txt
+          else
+            gh api "repos/${{ github.repository }}/compare/${BEFORE}...${AFTER}" \
+              --jq '.files[].filename' > changed.txt
+          fi
+          echo "Files this push touched:"
+          cat changed.txt
+
+      - name: Work out which catalogs could be affected
+        id: report
+        run: |
+          : > report.md
+          if [ -s changed.txt ]; then
+            python scripts/translation/check_source_changes.py changed.txt > report.md
+          fi
+          if [ -s report.md ]; then
+            echo "affected=true" >> "$GITHUB_OUTPUT"
+            cat report.md
+          else
+            echo "affected=false" >> "$GITHUB_OUTPUT"
+            echo "No English source that the guide translates was changed."
+          fi
+
+      - name: Tell the tracking issue
+        if: steps.report.outputs.affected == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const label = process.env.TRACKER_LABEL;
+            const { owner, repo } = context.repo;
+
+            const found = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, labels: label, state: 'all', per_page: 100,
+            });
+            // This endpoint counts pull requests as issues, so they are dropped.
+            const issues = found.filter(i => !i.pull_request);
+
+            if (issues.length === 0) {
+              // If no issue with the correct label is found, fail.
+              core.setFailed(
+                `No issue with the \`${label}\` label, so there is nowhere to ` +
+                `report this. Create the tracking issue and apply that label.`,
+              );
+              return;
+            }
+            // If multiple issues with the correct label are found, warn and use the
+            // lowest-numbered one.
+            if (issues.length > 1) {
+              core.warning(
+                `${issues.length} issues carry \`${label}\`: ` +
+                `${issues.map(i => '#' + i.number).join(', ')}. ` +
+                `Using the lowest-numbered one.`,
+              );
+            }
+            const issue = issues.sort((a, b) => a.number - b.number)[0];
+
+            if (issue.state === 'closed') {
+              core.info(`Reopening #${issue.number}: the English text has changed again.`);
+              await github.rest.issues.update(
+                { owner, repo, issue_number: issue.number, state: 'open' },
+              );
+            }
+
+            const body = fs.readFileSync('report.md', 'utf8')
+              + `\nChanged on \`main\`: ${context.payload.compare}\n`;
+            await github.rest.issues.createComment(
+              { owner, repo, issue_number: issue.number, body },
+            );
+            core.info(`Commented on #${issue.number}.`);
