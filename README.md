@@ -261,4 +261,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=pyOpenSci/python-package-guide&type=Date)](https://star-history.com/#pyOpenSci/python-package-guide&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=pyOpenSci/python-package-guide&type=Date)](https://star-history.dera.page/#pyOpenSci/python-package-guide&Date)
