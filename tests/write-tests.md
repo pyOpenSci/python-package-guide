@@ -100,6 +100,29 @@ test_add_numbers()
 ```
 ````
 
+### Write tests that are easy to review
+
+Clear tests help reviewers and future contributors understand what behavior is
+being checked and why that behavior matters. As you write tests, try to make the
+main idea of each test visible without requiring readers to reverse-engineer the
+setup.
+
+- **Use descriptive test names:** Name each test after the behavior, condition,
+  or edge case it checks. For example, `test_add_numbers_accepts_negative_values`
+  tells readers more than `test_add_numbers_2`.
+- **Keep one main behavior in focus:** A test can contain several assertions, but
+  they should support one clear idea. If a test starts checking several unrelated
+  behaviors, split it into smaller tests.
+- **Add comments only where they help:** A short comment is useful when a
+  fixture, regression, or unusual edge case is not obvious from the assertion.
+  Avoid comments that repeat the code.
+- **Keep setup, action, and assertion easy to scan:** Arrange the test so readers
+  can quickly see what input is prepared, what code is run, and what result is
+  expected.
+
+For maintained testing references, see the [pytest documentation](https://docs.pytest.org/)
+and the Python documentation for [`unittest`](https://docs.python.org/3/library/unittest.html).
+
 ### 🧩🐍 How do you know what type of tests to write?
 
 As you begin to write tests for your package, you should consider:
