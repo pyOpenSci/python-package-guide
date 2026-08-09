@@ -437,9 +437,11 @@ def test_translation_scripts(session):
     """
     Run the unit tests for the translation helper scripts.
 
-    Only pytest is installed since it's the only thing the scripts under test need.
+    Only pytest and babel are installed: babel because stats.py reads the catalogs
+    with it. Installing the project would pull in sphinx and plotly to run tests
+    that never build anything.
     """
-    session.install("pytest")
+    session.install("pytest", "babel")
     session.run("pytest", str(TRANSLATION_SCRIPTS_DIR), *session.posargs)
 
 
