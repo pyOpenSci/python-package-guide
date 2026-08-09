@@ -4,9 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "python-package-guide"
-dynamic = [
-    "version"
-]
+dynamic = ["version"]
 dependencies = [
     "pydata-sphinx-theme==0.20.0",
     "myst-nb",
@@ -49,3 +47,4 @@ version.source = "vcs"
 [tool.codespell]
 ignore-words = "codespell-ignore.txt"
 skip = "./.git,./.nox,./_static,./_build,codespell-ignore.txt,*.svg"
+ignore-sic = true
