@@ -256,7 +256,8 @@ def test_the_templates_carry_the_placeholders_the_script_fills():
     """A template edit that renames a placeholder has to fail a test.
 
     Nothing else reads these files, so a typo would otherwise reach GitHub as a
-    literal `{{LANGAUGE}}` in forty issues.
+    literal `{{LANGAUGE [sic]}}` in forty issues.
+    Note: the [sic] is required to avoid triggering a codespell failure in CI.
     """
     parent = refresh.PARENT_TEMPLATE_PATH.read_text(encoding="utf-8")
     child = refresh.CHILD_TEMPLATE_PATH.read_text(encoding="utf-8")
