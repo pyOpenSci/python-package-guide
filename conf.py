@@ -44,10 +44,10 @@ author = "pyOpenSci Community"
 language = language_env
 # all languages that have .po files generated for them
 # (excluding english)
-languages = ["es", "ja", "pt"]
+languages = ["es", "ja", "pt", "el", "bg", "it", "de"]
 # the languages that will be included in a production build
 # (also excluding english)
-release_languages = ["es", "ja", "pt"]
+release_languages = ["es", "ja", "pt", "it"]
 
 # languages that will be included in the language dropdown
 # (ie. all that are being built in this nox build session)
@@ -167,6 +167,7 @@ templates_path = ["_templates"]
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
+    "scripts",
     "_build",
     "Thumbs.db",
     ".DS_Store",

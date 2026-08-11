@@ -48,6 +48,9 @@ TEST_PARAMETERS = ["--keep-going", "-E", "-a"]
 # Sphinx parameters to generate translation templates
 TRANSLATION_TEMPLATE_PARAMETERS = ["-b", "gettext"]
 
+# Scripts that maintain the translation stats and the translation issues
+TRANSLATION_SCRIPTS_DIR = pathlib.Path("scripts", "translation")
+
 # Sphinx-autobuild ignore and include parameters
 AUTOBUILD_IGNORE = [
     "_build",
@@ -269,6 +272,7 @@ def update_release_languages(session):
     if RELEASE_LANGUAGES:
         session.install("-e", ".")
         session.install("sphinx-intl")
+        _clean_translation_templates(session)
         session.log("Updating templates (.pot)")
         session.run(
             SPHINX_BUILD,
@@ -298,6 +302,7 @@ def update_language(session):
         if lang in LANGUAGES:
             session.install("-e", ".")
             session.install("sphinx-intl")
+            _clean_translation_templates(session)
             session.log("Updating templates (.pot)")
             session.run(
                 SPHINX_BUILD,
@@ -425,6 +430,30 @@ def build_all_languages_test(session):
     in the same way docs-test does for the English version.
     """
     session.notify("build-all-languages", [*TEST_PARAMETERS])
+
+
+@nox.session(name="test-translation-scripts")
+def test_translation_scripts(session):
+    """
+    Run the unit tests for the translation helper scripts.
+
+    Only pytest is installed since it's the only thing the scripts under test need.
+    """
+    session.install("pytest")
+    session.run("pytest", str(TRANSLATION_SCRIPTS_DIR), *session.posargs)
+
+
+def _clean_translation_templates(session) -> None:
+    """
+    Remove the gettext output directory before regenerating the templates (.pot).
+
+    The gettext build is incremental and never deletes .pot files whose source page is
+    gone. `sphinx-intl update` creates a .po for every .pot it finds. We need to clean
+    so orphan .pot files don't continue to create orphan .po files in each locale.
+    """
+    if TRANSLATION_TEMPLATE_DIR.exists():
+        session.log(f"Cleaning out {TRANSLATION_TEMPLATE_DIR}")
+        shutil.rmtree(TRANSLATION_TEMPLATE_DIR)
 
 
 def _sphinx_env(session) -> str:
