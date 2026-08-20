@@ -319,8 +319,9 @@ If you want to distribute license files, or other files containing legal informa
 Good question. The Python developer guide provides a [status page](https://devguide.python.org/versions/) (and a handy visualization) that explains the status of each Python release. Python releases go through several different phases that are explained in [PEP 602](https://peps.python.org/pep-0602/).
 
 We recommend that you use the latest Python release in the **bugfix** phase. If your Python release is in the **security** phase, we recommend migrating to a newer version of Python.
+:::
 
-:::{admonition} When to use `requires-python`
+:::{admonition} When should I use `requires-python`?
 :class: tip
 You do not need to specify `requires-python` for every package. However, if you
 know that your package will not work with older versions of Python, use `requires-python`
