@@ -17,7 +17,7 @@ Following that you learned how to add a:
 
 to the root of your project directory.
 
-To enhance the visibility of your package on PyPI and provide more information
+To enhance the visibility of your package on PyPI and provide information
 about its development status and maintainers, you should add additional
 metadata to your `pyproject.toml` file. This lesson will guide you through
 the process.
@@ -322,8 +322,10 @@ We recommend that you use the latest Python release in the **bugfix** phase. If 
 
 :::{admonition} When to use `requires-python`
 :class: tip
-You do not need to specify `requires-python` for every package. However, if you know that your package will not work with older versions of Python, use `requires-python` to prevent installers from installing it with those versions.
-For example, if your package requires features introduced in Python 3.10:
+You do not need to specify `requires-python` for every package. However, if you
+know that your package will not work with older versions of Python, use `requires-python`
+to prevent installers from installing it with those versions. For example, if your package
+requires features introduced in Python 3.10:
 
 ```toml
 [project]
@@ -336,7 +338,10 @@ This helps `pip` select a compatible release of your package for the Python vers
 ### Step 3: Specify dependencies
 
 Next add your dependencies table to the project table.
-The `dependencies =` section contains a list (or array in the toml language) of the Python packages that your package requires to run properly in a Python environment. Similar to the requirements listed in the  `[build-system]` table above:
+The `dependencies =` section contains a list (or array in the toml language) of
+the Python packages that your package requires to run properly in a Python
+environment. Similar to the requirements listed in the `[build-system]`
+table above:
 
 ```toml
 [build-system] # <- this is a table
