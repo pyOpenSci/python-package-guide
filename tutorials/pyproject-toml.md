@@ -18,10 +18,9 @@ Following that you learned how to add a:
 to the root of your project directory.
 
 To enhance the visibility of your package on PyPI and provide more information
-about its compatibility with Python versions, project development status, and
-project maintainers, you should add additional metadata to your `pyproject.toml`
-file. This
-lesson will guide you through the process.
+about its development status and maintainers, you should add additional
+metadata to your `pyproject.toml` file. This lesson will guide you through
+the process.
 
 
 :::{admonition} Learning Objectives
@@ -88,14 +87,14 @@ build-backend = "hatchling.build"
 
 The pyproject.toml file tells your build tool:
 
-- What {term}`Build backend` to use to build your package (we are using
+- what {term}`Build backend` to use to build your package (we are using
   {term}`Hatchling` in this tutorial but there are
   [many others to choose from](/package-structure-code/python-package-build-tools)).
-- How and where to retrieve your package's version:
+- how and where to retrieve your package's version:
     - **statically** where you declare the version `version = "0.1.0"` or
     - **dynamically** where the tool looks to the most recent tag in your history to determine the current version.
-- What {term}`Dependencies` your package needs
-- What versions of Python your package supports (important for your users).
+- what {term}`Dependencies` your package needs,
+- it can also declare Python-version requirements if your package has them.
 
 The `pyproject.toml` file also makes it easy for anyone browsing your GitHub
 repository to quickly understand your package's structure such as:
@@ -315,49 +314,26 @@ If you have multiple licenses, or a custom license, you can also express these u
 
 If you want to distribute license files, or other files containing legal information, with your package, you can include these using the [`license-files`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license-files) entry, but this is not required.
 
-### Step 3: Specify Python version with `requires-python`
-
-Add the `requires-python` field to your `pyproject.toml` `[project]` table.
-The `requires-python` field helps pip identify which Python versions that your package supports.
-It is set to a single value.
-The [packaging specification](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python) defines`requires-python` as a string that uses version specifiers. Most projects will specify the oldest Python version supported by the package. In some advanced cases, an upper bound is set to indicate which future Python versions, if any, will be supported.
-
 :::{admonition} But how do I figure out which Python versions I should support?
 :class: tip
 Good question. The Python developer guide provides a [status page](https://devguide.python.org/versions/) (and a handy visualization) that explains the status of each Python release. Python releases go through several different phases that are explained in [PEP 602](https://peps.python.org/pep-0602/).
 
 We recommend that you use the latest Python release in the **bugfix** phase. If your Python release is in the **security** phase, we recommend migrating to a newer version of Python.
 
-[SPEC 0](https://scientific-python.org/specs/spec-0000/) of the Scientific Python project suggests a common schedule for dependencies, including Python release versions, and is also worth considering for your project.
-:::
+:::{admonition} When to use `requires-python`
+:class: tip
+You do not need to specify `requires-python` for every package. However, if you know that your package will not work with older versions of Python, use `requires-python` to prevent installers from installing it with those versions.
+For example, if your package requires features introduced in Python 3.10:
 
-{emphasize-lines="22"}
 ```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
-name = "pyospackage"
-version = "0.1.0"
-description = """
-Tools that update the pyOpenSci contributor and review metadata
-that is posted on our website
-"""
-authors = [
-  { name = "Firstname Lastname", email = "email@pyopensci.org"},
-  { name = "Secondperson Fullname", email = "email2@pyopensci.org" }
-]
-maintainers = [
-  { name = "Secondperson Fullname", email = "email2@pyopensci.org" },
-  { name = "New Friend", email = "newbie@pyopensci.org" }
-]
-readme = "README.md"
-license = "MIT"
 requires-python = ">=3.10"
 ```
 
-### Step 4: Specify Dependencies
+This helps `pip` select a compatible release of your package for the Python version a user is running.
+:::
+
+### Step 3: Specify dependencies
 
 Next add your dependencies table to the project table.
 The `dependencies =` section contains a list (or array in the toml language) of the Python packages that your package requires to run properly in a Python environment. Similar to the requirements listed in the  `[build-system]` table above:
@@ -426,7 +402,6 @@ maintainers = [
 ]
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 ```
@@ -455,7 +430,7 @@ pydantic^1.10
 One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](challenges-with-poetry)
 :::
 
-### Step 5: Add PyPI classifiers
+### Step 4: Add PyPI classifiers
 
 Next you will add classifiers to your `pyproject.toml` file. The value for each classifier that you add to your `pyproject.toml` file must come from the list of [PyPI accepted classifier values found here](https://PyPI.org/classifiers/). Any deviations in spelling and format will cause issues when you publish to PyPI.
 
@@ -500,7 +475,6 @@ maintainers = [
 ]
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
@@ -516,7 +490,7 @@ classifiers = [
 
 Note that while classifiers are not required in your `pyproject.toml` file, they will help users find your package. As such we strongly recommend that you add them.
 
-### Step 6: Add the `[project.urls]` table
+### Step 5: Add the `[project.urls]` table
 
 Finally, add the project.urls table to your pyproject.toml file.
 
@@ -549,7 +523,6 @@ maintainers = [
 ]
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
@@ -599,7 +572,6 @@ maintainers = [
 ]
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
@@ -672,7 +644,6 @@ classifiers = [
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 # This is the metadata that pip reads to understand what versions your package supports
-requires-python = ">=3.10"
 readme = "README.md"
 
 # Pick your license using the license expression syntax specified here:
