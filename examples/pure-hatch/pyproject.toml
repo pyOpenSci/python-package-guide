@@ -27,6 +27,8 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
+    "dependency-package-name-1",
+    "dependency-package-name-2",
     "pandas",
     "xarray",
     "geopandas",
@@ -35,13 +37,14 @@ dependencies = [
 
 [dependency-groups]
 test = [
-  "pytest",
-  "pytest-cov"
+    "pytest",
+    "pytest-cov"
 ]
 
 lint = [
-  "black",
-  "ruff"
+    "black",
+    "flake8",
+    "ruff"
 ]
 
 docs = [
@@ -78,8 +81,8 @@ pythonpath = "src"
 version-file = "_version.py"
 
 [tool.hatch.envs.test]
-development-group= [
-     "tests",
+dependency-groups = [
+    "test",
 ]
 
 [tool.hatch.envs.test.scripts]
