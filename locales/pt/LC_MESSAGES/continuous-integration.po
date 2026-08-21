@@ -24,7 +24,7 @@ msgstr ""
 msgid ""
 "Continuous Integration and Continuous Deployment (CI/CD) For Python "
 "Packages"
-msgstr ""
+msgstr "Integração Contínua e Implantação Contínua (CI/CD) para Pacotes Python"
 
 #: ../../continuous-integration/ci.md:4
 msgid ""
@@ -35,18 +35,32 @@ msgid ""
 "Deployment (CD)** to run tests and checks on your code every time someone"
 " suggests a change online in a platform like GitHub or GitLab."
 msgstr ""
+"Quando você desenvolve, trabalha e contribui para software, há mais coisas "
+"a considerar do que apenas escrever código. Ter testes e verificações "
+"garante que seu código funcione de forma confiável e siga um formato "
+"consistente também é importante. Você pode usar Integração Contínua "
+"(CI) e Implantação Contínua (CD) para executar testes e verificações "
+"no seu código sempre que alguém sugerir uma alteração online em uma "
+"plataforma como GitHub ou GitLab."
 
 #: ../../continuous-integration/ci.md:11
 msgid ""
 "**Continuous Integration (CI):** Automates the process of running tests, "
 "code checks, and other workflows each time code is updated."
 msgstr ""
+"**Integração Contínua (CI):** Automatiza o processo de execução de testes, "
+"verificações de código e outros fluxos de trabalho sempre que o código é "
+"atualizado."
 
 #: ../../continuous-integration/ci.md:13
 msgid ""
 "**Continuous Deployment (CD):** Extends CI by allowing you to automate "
 "publishing your package to PyPI, publishing your documentation, and more."
 msgstr ""
+"**Implantação Contínua (CD):** Estende a CI ao permitir automatizar a "
+"publicação do seu pacote no PyPI, a publicação da sua documentação e muito "
+"mais.
+"
 
 #: ../../continuous-integration/ci.md:15
 msgid ""
@@ -55,10 +69,15 @@ msgid ""
 "easier for new contributors to contribute to your code base without "
 "setting up all your test suites and other local checks."
 msgstr ""
+"A CI e CD simplificam o desenvolvimento de software ao automatizar tarefas "
+"repetitivas e garantir a qualidade e consistência do código. Ter CI "
+"configurada também facilita a contribuição de novos colaboradores para sua "
+"base de código sem precisar configurar localmente todas as suítes de "
+"testes e outras verificações."
 
 #: ../../continuous-integration/ci.md:20
 msgid "What is continuous integration?"
-msgstr ""
+msgstr "O que é integração contínua?"
 
 #: ../../continuous-integration/ci.md:22
 msgid ""
@@ -66,36 +85,42 @@ msgid ""
 "Integration (CI). CI is a platform that allows you to specify and run "
 "jobs or workflows you define. These workflows include:"
 msgstr ""
+"Quando você estiver pronto para publicar seu código online, poderá configurar "
+"a Integração Contínua (CI). A CI é uma plataforma que permite definir e "
+"executar tarefas ou fluxos de trabalho personalizados. Esses fluxos de "
+"trabalho incluem:"
 
 #: ../../continuous-integration/ci.md:25
 msgid "Running your test suite"
-msgstr ""
+msgstr "Executar sua suíte de testes"
 
 #: ../../continuous-integration/ci.md:26
 msgid "Running code checkers / linters / spellcheck"
-msgstr ""
+msgstr "Executar verificadores de código / linters / corretores ortográficos"
 
 #: ../../continuous-integration/ci.md:27
 msgid "Building your documentation"
-msgstr ""
+msgstr "Construa sua documentação"
 
 #: ../../continuous-integration/ci.md:29
 msgid ""
 "CI allows you to automate running workflows across a suite of "
 "environments, including:"
 msgstr ""
+"A CI permite automatizar a execução de fluxos de trabalho em um conjunto "
+"de ambientes, incluindo:"
 
 #: ../../continuous-integration/ci.md:31
 msgid "environments containing different Python versions and"
-msgstr ""
+msgstr "ambientes com diferentes versões do Python e"
 
 #: ../../continuous-integration/ci.md:32
 msgid "different operating systems (Mac, Linux, Windows)."
-msgstr ""
+msgstr "diferentes sistemas operacionais (Mac, Linux e Windows)"
 
 #: ../../continuous-integration/ci.md:34
 msgid "What is Continuous Deployment (CD)?"
-msgstr ""
+msgstr "O que é Implantação Contínua (CD)?"
 
 #: ../../continuous-integration/ci.md:36
 msgid ""
@@ -103,24 +128,29 @@ msgid ""
 "deployment of code changes to production or staging environments. In the "
 "case of your open source tool, CD can be used to:"
 msgstr ""
+"A implantação contínua (CD) estende o processo de CI ao automatizar a "
+"implantação de alterações de código em ambientes de produção ou staging. "
+"No caso da sua ferramenta open source, a CD pode ser usada para:"
 
 #: ../../continuous-integration/ci.md:38
 msgid "Automate publishing to PyPI"
-msgstr ""
+msgstr "Automatizar a publicação no PyPI"
 
 #: ../../continuous-integration/ci.md:39
 msgid "Automate publishing your documentation to GitHub Pages or Read the Docs."
-msgstr ""
+msgstr "Automatizar a publicação da sua documentação no GitHub Pages ou no Read the Docs."
 
 #: ../../continuous-integration/ci.md:41
 msgid ""
 "It is also used once your conda-forge recipe is set up to keep your "
 "package up to date on conda-forge."
 msgstr ""
+"Ela também é usada, depois que sua receita do conda-forge estiver "
+"configurada, para manter seu pacote atualizado no conda-forge."
 
 #: ../../continuous-integration/ci.md:43
 msgid "Why use CI"
-msgstr ""
+msgstr "Por que usar CI"
 
 #: ../../continuous-integration/ci.md:45
 msgid ""
@@ -129,6 +159,10 @@ msgid ""
 " package are tested across environments before merging into the main "
 "branch of your code."
 msgstr ""
+"A CI pode ser configurada para executar um fluxo de trabalho a cada commit "
+"enviado para o GitHub e a cada pull request aberto. Isso garante que "
+"quaisquer alterações feitas no seu pacote sejam testadas em diferentes "
+"ambientes antes de serem mescladas à branch principal do seu código."
 
 #: ../../continuous-integration/ci.md:47
 msgid ""
@@ -136,6 +170,9 @@ msgid ""
 "your code. Every contributor's change will be tested when pushed to your "
 "code repository."
 msgstr ""
+"Essas verificações são especialmente úteis quando alguém novo está "
+"contribuindo para o seu código. As alterações de cada colaborador serão "
+"testadas quando forem enviadas para o repositório do seu código."
 
 #: ../../continuous-integration/ci.md:49
 msgid ""
@@ -143,6 +180,9 @@ msgid ""
 "deploying code. They aim to improve software development and publication "
 "efficiency, quality, and reliability."
 msgstr ""
+"Juntas, CI e CD simplificam o processo de desenvolvimento, teste e "
+"implantação de código. Elas ajudam a melhorar a eficiência, a qualidade e "
+"a confiabilidade do desenvolvimento e da publicação de software."
 
 #: ../../continuous-integration/ci.md:52
 msgid ""
@@ -150,16 +190,21 @@ msgid ""
 " if you are not planning to go through peer review, we strongly recommend"
 " that you use continuous integration, too!"
 msgstr ""
+"Todos os pacotes da pyOpenSci devem usar algum tipo de integração "
+"contínua. Mesmo que você não esteja planejando passar por revisão por "
+"pares, recomendamos fortemente que você também use integração contínua!"
 
 #: ../../continuous-integration/ci.md:55
 msgid ""
 "In the case of GitHub actions (which we will focus on here), CI workflows"
 " are running on online servers that support GitHub."
 msgstr ""
+"No caso do GitHub Actions (que será o foco aqui), os fluxos de trabalho de "
+"CI são executados em servidores online que dão suporte ao GitHub."
 
 #: ../../continuous-integration/ci.md:57
 msgid "CI / CD platforms"
-msgstr ""
+msgstr "Plataformas de CI/CD"
 
 #: ../../continuous-integration/ci.md:59
 msgid ""
@@ -167,6 +212,9 @@ msgid ""
 "GitHub Actions (GHA), built into GitHub. GitHub is the most commonly used"
 " platform to store scientific open-source software."
 msgstr ""
+"Existem diversas plataformas disponíveis para CI/CD. Aqui, vamos focar no "
+"GitHub Actions (GHA), integrado ao GitHub. O GitHub é a plataforma mais "
+"utilizada para armazenar software científico open source."
 
 #: ../../continuous-integration/ci.md:62
 msgid ""
@@ -174,10 +222,13 @@ msgid ""
 "principles described here will apply. However, the workflow files may "
 "look different."
 msgstr ""
+"Se você usa o CI/CD do GitLab, muitos dos princípios descritos aqui também "
+"se aplicam. No entanto, os arquivos de workflow podem ter uma aparência "
+"diferente."
 
 #: ../../continuous-integration/ci.md:65
 msgid "If you aren't sure, use GitHub Actions"
-msgstr ""
+msgstr "Se você não tiver certeza, use o GitHub Actions"
 
 #: ../../continuous-integration/ci.md:67
 msgid ""
@@ -187,10 +238,15 @@ msgid ""
 "entire store of GitHub action templates that you can easily use and adapt"
 " to your own needs."
 msgstr ""
+"Embora você possa usar a plataforma de integração contínua de sua escolha, "
+"recomendamos o GitHub Actions porque ele é gratuito e totalmente "
+"integrado à interface do GitHub. Também existe uma ampla biblioteca de "
+"templates de GitHub Actions que você pode usar e adaptar facilmente às "
+"suas necessidades."
 
 #: ../../continuous-integration/ci.md:72
 msgid "Other platforms that you may run into"
-msgstr ""
+msgstr "Outras plataformas que você pode encontrar"
 
 #: ../../continuous-integration/ci.md:75
 msgid ""
@@ -198,6 +254,10 @@ msgid ""
 " operating systems and predated the release of GitHub Actions. Today, "
 "AppVeyor supports operating systems beyond Windows."
 msgstr ""
+"[Appveyor:](https://www.appveyor.com/): Suporta a execução de testes em "
+"sistemas operacionais Windows e surgiu antes do lançamento do GitHub "
+"Actions. Atualmente, o AppVeyor oferece suporte a sistemas operacionais "
+"além do Windows."
 
 #: ../../continuous-integration/ci.md:76
 msgid ""
@@ -205,6 +265,9 @@ msgid ""
 "choice in our ecosystem. Usage dropped after Travis CI ended free support"
 " for open-source projects."
 msgstr ""
+"[Travis CI:](https://www.travis-ci.com/) já foi uma plataforma de CI muito "
+"utilizada no nosso ecossistema. Seu uso diminuiu depois que o Travis CI "
+"encerrou o suporte gratuito para projetos open source."
 
 #: ../../continuous-integration/ci.md:77
 msgid ""
@@ -212,10 +275,13 @@ msgid ""
 "builds of websites and documentation since it offers a preview of the PR "
 "changes."
 msgstr ""
+"[CircleCI:](https://circleci.com/) O CircleCI pode ser útil para builds "
+"automatizadas de sites e documentação, pois oferece uma prévia das "
+"alterações feitas no PR."
 
 #: ../../continuous-integration/ci.md:80
 msgid "Embrace automation"
-msgstr ""
+msgstr "Adote a automação"
 
 #: ../../continuous-integration/ci.md:82
 msgid ""
@@ -225,17 +291,23 @@ msgid ""
 "linting and code style. You can even automate spell-checking your "
 "documentation and docstrings!"
 msgstr ""
+"Ao adotar CI/CD, você pode garantir que seu código funcione como esperado "
+"nos mais diversos ambientes de usuários. Além disso, é possível "
+"automatizar certas verificações (e, em alguns casos, correções de código), "
+"incluindo linting e padronização de estilo de código. Você pode até "
+"automatizar a verificação ortográfica da sua documentação e das docstrings!"
 
 #: ../../continuous-integration/index.md:5
 msgid "What is CI?"
-msgstr ""
+msgstr "O que é CI?"
 
 #: ../../continuous-integration/index.md:5
 msgid "Continuous Integration"
-msgstr ""
+msgstr "Integração Contínua"
 
 #: ../../continuous-integration/index.md:2
 msgid ""
 "Continuous Integration (CI) and Continuous Deployment (CD) for your "
 "Python package"
 msgstr ""
+"Integração Contínua (CI) e Implantação Contínua (CD) para seu pacote Python"

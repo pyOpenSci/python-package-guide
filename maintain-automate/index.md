@@ -43,6 +43,11 @@ Together, task runners and CI/CD create a robust development workflow
 that makes your package easier to maintain and more welcoming to
 contributors.
 
+[**Development installs in conda environments**](dev-installs) help
+you connect conda-based scientific development environments with local
+Python package development. This is especially useful when your package
+depends on compiled or system-level dependencies that conda manages well.
+
 :::{toctree}
 :caption: Maintain & Automate
 :hidden: true
@@ -50,4 +55,5 @@ contributors.
 What is CI?  <ci.md>
 Task runners  <task-runners.md>
 Environment Managers <environment-managers.md>
+Development installs with conda <dev-installs.md>
 :::

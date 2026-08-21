@@ -29,8 +29,8 @@ While `pyproject.toml` is now the standard, you may sometimes encounter older ap
 
 ### Why specify dependencies
 
-Specifying dependencies in the [project.dependency] array of your `pyproject.toml` file ensures that libraries needed to run your package are correctly installed into a user's environment.
-For instance, if your package requires Pandas to run properly, and you add Pandas to the `project.dependency` array, Pandas will be installed into the users' environment when they install your package using uv, pip, or conda.
+Specifying dependencies in the `project.dependencies` array of your `pyproject.toml` file ensures that libraries needed to run your package are correctly installed into a user's environment.
+For instance, if your package requires Pandas to run properly, and you add Pandas to the `project.dependencies` array, Pandas will be installed into the users' environment when they install your package using uv, pip, or conda.
 
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
@@ -40,7 +40,7 @@ For instance, if your package requires Pandas to run properly, and you add Panda
 :end-at: ]
 :::
 
-Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a `[development-group]` table.
+Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a `[dependency-groups]` table.
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
@@ -52,6 +52,9 @@ Development dependencies make it easier for contributors to work on your package
 
 There are three different types of dependencies that you will learn about on this page:
 
+1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `project.dependencies` table in your pyproject.toml file.
+2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional-dependencies]` table or your pyproject.toml file.
+3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[dependency-groups]` table of your pyproject.toml file.
 1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `[project.dependencies]` table in your pyproject.toml file.
 2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional-dependencies]` table or your pyproject.toml file.
 3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[project.dependency.groups]` table or your pyproject.toml file.
@@ -98,7 +101,7 @@ You can use uv to add dependencies to your pyproject.toml file:
 uv add numpy
 ```
 
-Will add numpy as a dependency to your `project.dependency` array:
+Will add numpy as a dependency to your `project.dependencies` array:
 
 ```toml
 [project]
@@ -131,7 +134,7 @@ are more reliable as they can't be changed
 (optional-dependencies)=
 ## 2. Optional dependencies
 
-Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh as an `[optional.dependency]`. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.
+Optional (also referred to as feature) dependencies can be installed by users as needed. Optional dependencies add specific features to your package that not all users need. For example, if your package has an optional interactive plotting feature that uses Bokeh, you would list Bokeh under `[project.optional-dependencies]`. Users who want interactive plotting will install it. Users who don't need plotting don't have to install it.
 
 Place these dependencies in the `[project.optional-dependencies]` table.
 
@@ -161,6 +164,7 @@ Will add this to your pyproject.toml file:
 
 ```toml
 [project.optional-dependencies]
+[project.optional-dependencies]
 feature = [
     "pandas>=2.3.3",
 ]
@@ -184,18 +188,17 @@ to install and use your package. However, they will make it easier for
 contributors to your project to setup development environments
 locally.
 
-:::{admonition} New: PEP 735 development dependency groups
+:::{admonition} New: PEP 735 dependency groups
 :class: note
 
-`[development-groups]` is a newer specification introduced by PEP 735.
-They are intended to organize development dependencies and are intentionally separate from  `[project.optional-dependencies]`, which can be installed into a user's
-environment.
+`[dependency-groups]` is a newer specification introduced by PEP 735.
+They are intended to organize development dependencies and are intentionally separate from  `[project.optional-dependencies]`, which can be installed into a user's environment.
 :::
 
 ### How to declare dependency groups
 
 You declare development dependencies in your **pyproject.toml** file
-within a `[development-groups]` table.
+within a `[dependency-groups]` table.
 
 Similar to optional-dependencies, you can create separate subgroups or arrays with names using the syntax: `group-name = ["dep1", "dep2"]`
 
@@ -206,13 +209,13 @@ Similar to optional-dependencies, you can create separate subgroups or arrays wi
 :::
 
 
-:::{dropdown} How to Add [development.group] using UV
+:::{dropdown} How to Add [dependency-groups] using UV
 :icon: eye
 :color: primary
 
 You can use uv to add dependencies to your pyproject.toml file:
 
-**Add a development group dependency:**
+**Add a development dependency group:**
 
 ```bash
 uv add --group tests pytest
@@ -287,7 +290,7 @@ You can also use pip and install dependencies into the environment of your choic
 We shouldn't show UV pip install, so how do you add optional feature deps with UV??
 :::
 
-**Install development groups:**
+**Install dependency groups:**
 
 :::::{tab-set}
 
@@ -297,8 +300,15 @@ You can use uv sync to sync dependency groups in your uv-managed venv
 ```console
 uv sync --group docs                     # Single group
 uv sync --group docs --group test        # Multiple groups
-uv sync --all-groups                     # All development groups
+uv sync --all-groups                     # All dependency groups
 ```
+:::{tip}
+use ``--active`` with ``uv sync`` to prefer the currently active virtual environment over the project's own managed environment:
+
+```console
+$ uv sync --active --group docs
+```
+:::
 
 **Install optional dependencies:**
 
@@ -307,6 +317,20 @@ uv sync --all-groups                     # All development groups
 $ uv pip install -e ".[docs]"              # Single group
 $ uv pip install -e ".[docs,tests,lint]"   # Multiple groups
 ```
+
+:::{tip}
+Use the `--active` flag with `uv run` to prefer the currently active
+virtual environment over the project's own managed environment:
+
+```console
+$ uv run --active pip install -e ".[docs]"
+```
+:::
+
+This is useful when you have activated a virtual environment and want
+`uv run` to use it instead of automatically creating or selecting the
+project's environment.
+:::
 
 **Install everything (package + all dependencies):**
 
@@ -497,3 +521,214 @@ Why you specify dependencies
 How to specify dependencies
 When you use different specifiers
 :::
+
+## Dependency Locking
+
+In addition to declaring dependencies in `pyproject.toml`, it is common for
+packages to lock down exact versions of all their dependencies in a separate
+lock file. A lock file provides benefits of reproducibility, security, and
+potentially faster installs, among other things. Pinning the exact dependency
+versions used in a project eliminates "works on my machine" bugs and gives CI a
+reproducible baseline. For applications meant to be run rather than imported,
+lock files also ensure anyone installing the project gets a known-good set of
+dependencies instead of whatever happens to be latest.
+
+### `pyproject.toml` vs lock file
+* `pyproject.toml`: defines all environments you intend to support for users
+importing your package into their project.
+* **lock file**: defines a specific environment used for development
+
+`pyproject.toml` should be permissive, erring on the side of allowing too much
+even if it may allow untested environments. In most cases, it is better that
+users install your package but encounter an issue rather than being restricted
+from installing your package by the `pyproject.toml` when it would otherwise
+work.
+
+A lock file is the opposite. If it installs, the resulting environment should
+work even if this means some valid environments are excluded.
+
+:::{admonition} Standardized Lock File
+:class: note
+As of March 2025, [PEP 751](https://peps.python.org/pep-0751) defined a standard
+`pylock.toml` format to unify the various lock file formats in use by other
+package managers (e.g. `uv.lock`, `poetry.lock`, `pdm.lock`). Most package
+managers provide ways to generate a PEP 751 compatible file. See [PyPA
+specification](https://packaging.python.org/en/latest/specifications/pylock-toml/)
+for up-to-date formatting info on `pylock.toml`
+:::
+
+### How to work with lock files?
+
+Lock files are not written by hand. Package managers and IDEs provide tools
+to create, update, and reformat lock files as needed.
+
+1) **Create** - Package managers often do this automatically though it can be
+done manually. For example, calling `uv add numpy` will automatically create a
+`uv.lock` file, setup the environment, and install numpy.
+2) **Update** - This is not done automatically by package managers.
+Maintainers can choose to do this manually or setup their own automated
+workflow. Updates can be for specific packages or all dependencies.
+3) **Reformat** - Package managers currently use native formats (e.g.
+uv uses `uv.lock`) and provide tools for converting into `pylock.toml` and other
+formats (e.g. `requirements.txt`) when needed
+
+Below is the uv CLI workflow for lock files:
+
+```sh
+# Create a uv.lock file based on pyproject.toml
+> uv lock
+
+# Update uv.lock
+> uv lock --upgrade
+> uv lock --upgrade-package pandas
+
+# Install packages into environment based on uv.lock
+> uv sync
+
+# PEP 751 pylock.toml support
+> uv export --format pylock.toml -o pylock.toml # export uv.lock -> pylock.toml
+> uv pip sync pylock.toml                       # install from pylock.toml
+```
+See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) for more
+details. See also the relevant docs for [Poetry](
+https://python-poetry.org/docs/basic-usage/#installing-dependencies) and
+[PDM](https://pdm-project.org/latest/usage/lockfile/).
+### Should I use a lock file?
+
+Most package managers will generate a lock file automatically for you (e.g. uv,
+Poetry, PDM). The real question is when you version control the lock file as
+part of your package.
+
+:::{admonition} Recommendation: Versioning a lock file
+:class: tip
+If your project is an application others use directly, include a lock file as
+the recommended environment.
+
+If your project is a library to be used in other projects and it is mature
+enough to have CI, include a lock file for CI and contributors. For a small
+library only you maintain that is shared amongst people you know, waiting to add
+a lock file is not an issue.
+In general, you should version the lock file.
+
+For private libraries shared within a team, a lock file is less important. But
+if the project is an application or tool that others run directly, instead of
+importing into their code, committing the lock file is generally the most
+convenient choice. It gives users a reproducible set of dependencies instead of
+having each user resolve from pyproject.toml.
+:::
+
+:::{admonition} Recommendation: Which format to version control
+:class: tip
+Version control the standard `pylock.toml` format.
+:::
+
+There is some maintenance cost from lock files. Maintainers should aim to update
+the lock file neither too rarely nor too often.
+* Too rarely means you risk missing updates with bugfixes, security patches,
+performance improvements, etc.
+* Too often means you may introduce bugs or even security vulnerablilites before
+maintainers of your dependencies catch them. Package managers are starting to
+support dependency cooldowns to mitigate this.
+
+:::{admonition} Recommendation: Updating a lock file
+:class: tip
+Update lock files frequently (e.g. weekly) but configure a dependency cooldown
+of several days to avoid automatically installing the latest packages. Only
+override the cooldown if a new package has a needed bug fix or security
+patch.
+:::
+
+::::{dropdown} Dependency cooldowns
+:icon: info
+:color: primary
+[Dependency cooldowns](
+https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/#dependency-cooldowns
+) are strongly encouraged by security experts to avoid automatically downloading
+the latest package updates that may have been compromised with malware. Package
+manager tools are starting to support configurations for cooldowns
+```sh
+> uv lock --exclude-newer "3 days"`
+```
+or in `pyproject.toml`
+```toml
+[tool.uv]
+exclude-newer = "3 days"
+```
+
+Integrating cooldown constrained lock files into CI is important since this is
+where new packages are commonly tested first. Automated testing code that
+resolves `[project.dependencies]` every time
+```sh
+> python -m pip install .
+```
+can be replaced with lock file based installations
+```sh
+> uv pip sync pylock.toml
+```
+after pylock.toml has been added to the project.
+```sh
+> uv lock --exclude-newer "3 days"`
+> uv export --format pylock.toml -o pylock.toml
+```
+Support for this varies across automated testing frameworks (e.g. hatch, nox) so
+consult their documentation for how to install dependencies from lock files with
+dependency cooldowns.
+::::
+
+When you decide to update a lock file, make sure to test that the resulting
+environment works before committing. If it fails because of some dependency
+update, then it may be necessary to update `pyproject.toml` to cap the supported
+versions of that dependency unless/until the code can be updated to support it.
+
+It can also be good, though not necessary, to double check what changed when
+updating a lock file. The diff can be noisy so the main changes to focus on are
+1) major version updates (e.g.  `pandas 2.X.X` -> `pandas 3.X.X`)
+2) new transitive dependencies (i.e. not part of your `pyproject.toml`)
+
+:::{tip}
+A lock file captures one environment for CI testing, not the full compatibility
+range declared in `pyproject.toml`. Projects that use lock files may want to
+have CI test other environments such as
+
+1) the latest packages consistent with your `pyproject.toml`, subject to
+dependency cooldowns. This lets you know if a dependency update breaks your
+package.
+2) older supported versions of Python to let you know if a recent change to your
+package no longer works with an older Python release.
+
+:::
+
+
+::::{dropdown} What about `requirements.txt`
+:icon: info
+:color: primary
+
+Older approaches to locking used `pip freeze` to generate a `requirements.txt`
+that got used as a lock file. These are minimal lock files that pin a specific
+version for the system on which the command was run. They might look like
+```
+# requirements.txt
+numpy==2.4.6
+plotly==6.7.0
+pyzmq==27.1.0
+```
+
+However, this minimal level of specificity has several downsides making lock
+files the preferred format:
+* The versions satisfying `pyproject.toml` may differ between your Windows
+laptop and the Linux server your CI runs on. A single lock file contains the
+information needed to build platform specific and Python version specific
+environments. In contrast, a separate `requirements.txt` files is needed to
+store this information (e.g. `requirements.ci.txt`,
+`requirements.py313-macos.txt`)
+* Packages can get updated without a version update for both legitimate and
+malicious reasons. Lock files include package hashes to catch this. A
+[hash](https://en.wikipedia.org/wiki/Hash_function) is a unique signature
+computed from the code and any change to the code
+will cause the release to have a different hash even if is given the same
+release version number.
+* Other metadata determined during resolution of `pyproject.toml` (e.g. which
+dependencies are transitive, where the packages were downloaded from, etc.) that
+can help speed up future installs is lost.
+
+::::
