@@ -36,38 +36,30 @@ The metadata that both build tools and PyPI uses to describe and understand your
 
 - The `[build-system]` table in your pyproject.toml file tells pip what [build backend tool](build_backends) you wish to use for creating your sdist and wheel distributions.
 
-```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [build-system]
+:end-before: [project]
+:::
 
 - And the dependencies section of your project table tells the build tool and PyPI what dependencies your project requires.
 
-```
-dependencies = [
-    "numpy",
-    "geopandas",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: dependencies = [
+:end-before: [development-group]
+:::
 
 2. When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:
 
 - The `classifiers = ` section of your `[project]` table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that address different topics or that support specific versions of python.
 
-```toml
-classifiers = [
-    # How mature is this project? Common values are
-    "Development Status :: 4 - Beta",
 
-    # Indicate who your project is intended for
-    "Intended Audience :: Developers",
-    "Topic :: Software Development :: Build Tools",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: classifiers = [
+:end-before: dependencies = [
+:::
 
 :::{admonition} What happened to setup.py and setup.cfg for metadata?
 :class: note

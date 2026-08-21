@@ -188,21 +188,20 @@ day workflow.
 
 #### Hatch example setup in your pyproject.toml
 
-```toml
-# pyproject.toml example build setup to use hatchling and hatch_vcs
-[build-system]
-requires = ["hatchling", "hatch-vcs"]
-build-backend = "hatchling.build"
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: "# pyproject.toml example build setup to use hatchling and hatch_vcs"
+:end-before: [project]
+:::
 
 **Hatch_vcs** supports a fully automated package release and build, and
 push to PyPI workflow on GitHub.
 
-```toml
-# Example hatch vcs setup in the pyproject.toml file
-[tool.hatch.build.hooks.vcs]
-version-file = "_version.py"
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: "# Example hatch vcs setup in the pyproject.toml file"
+:end-at: version-file = "_version.py"
+:::
 
 :::{tip}
 If you use **setuptools_scm**, then you might find **hatch_vcs** and **hatchling** to be the modern equivalent to your current setuptools / build workflow.

@@ -32,33 +32,28 @@ While `pyproject.toml` is now the standard, you may sometimes encounter older ap
 Specifying dependencies in the `project.dependencies` array of your `pyproject.toml` file ensures that libraries needed to run your package are correctly installed into a user's environment.
 For instance, if your package requires Pandas to run properly, and you add Pandas to the `project.dependencies` array, Pandas will be installed into the users' environment when they install your package using uv, pip, or conda.
 
-```toml
-[project]
-...
-...
-...
-dependencies = [
-    "pandas",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[project]\n...\n...\n..."
+:start-at: dependencies = [
+:end-at: ]
+:::
 
 Development dependencies make it easier for contributors to work on your package. You can set up instructions for running specific workflows, such as tests, linting, and even typing, that automatically install groups of development dependencies. These dependencies can be stored in arrays (lists of dependencies) within a `[dependency-groups]` table.
 
-```toml
-[dependency-groups]
-tests = [
-    "pytest",
-    "pytest-cov"
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [dependency-groups]
+:end-before: lint
+:::
 
 ### Types of dependencies
 
 There are three different types of dependencies that you will learn about on this page:
 
 1. **Required dependencies:** These are dependencies that need to be installed for your package to work correctly in a user's environment. You add these dependencies to the `project.dependencies` table in your pyproject.toml file.
-2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional-dependencies]` table or your pyproject.toml file.
-3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. These include instance linters, testing tools like pytest and mypy are examples of development dependencies. Store these in the `[dependency-groups]` table of your pyproject.toml file.
+2. **Feature Dependencies:** These are dependencies that are required if a user wants to access additional functionality (that is not core) to your package. Store these in the `[project.optional-dependencies]` of your pyproject.toml file.
+3. **Development Dependencies:** These dependencies are required if someone wants to develop or work on your package. Linters and testing tools such as pytest and mypy are examples of development dependencies. Store these in the `[dependency-groups]` table of your pyproject.toml file.
 
 :::{tip}
 A dependency is not part of your project's codebase. It is a package or software called
@@ -76,17 +71,12 @@ You can add your required dependencies to the `dependencies` array in the
 your package with uv, pip, or conda, these dependencies will be
 automatically installed alongside your package in their environment.
 
-```toml
-[project]
-name = "examplePy"
-authors = [
-    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
-]
-dependencies = [
-    "pandas",
-    "matplotlib",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[project]\n...\n...\n..."
+:start-at: dependencies = [
+:end-at: ]
+:::
 
 :::{tip}
 Try your best to minimize dependencies whenever possible. Remember that
@@ -143,18 +133,16 @@ Optional (also referred to as feature) dependencies can be installed by users as
 
 Place these dependencies in the `[project.optional-dependencies]` table.
 
-```toml
-[project]
-...
-...
-...
-[project.optional-dependencies]
-plot = ["bokeh"]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[project]\n...\n...\n..."
+:start-at: [project.optional-dependencies]
+:end-at: plot = ["bokeh"]
+:::
 
 When a user installs your package, uv, pip, or conda automatically installs all required dependencies. Optional dependencies are only installed if the user explicitly requests them.
 
-:::{dropdown} How to Add optional dependencies using UV
+:::{dropdown} How to Add Optional Dependencies Using UV
 :icon: eye
 :color: primary
 
@@ -188,10 +176,9 @@ locally. They are used to perform tasks such as:
 - linting and formatting code (ruff, black)
 - building package distribution files (build, twine)
 
-Dependency groups are optional because they are not required for users
-to install and use your package. However, they will make it easier for
-contributors to your project to setup development environments
-locally.
+Dependency groups are not required for users to install and use your
+package. However, they make it easier for contributors to set up
+development environments locally.
 
 :::{admonition} New: PEP 735 dependency groups
 :class: note
@@ -207,12 +194,11 @@ within a `[dependency-groups]` table.
 
 Similar to optional-dependencies, you can create separate subgroups or arrays with names using the syntax: `group-name = ["dep1", "dep2"]`
 
-```toml
-[dependency-groups]
-tests = ["pytest", "pytest-cov"]
-docs = ["sphinx", "pydata-sphinx-theme"]
-lint = ["ruff", "black"]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [dependency-groups]
+:end-before: [project.optional-dependencies]
+:::
 
 :::{dropdown} How to Add [dependency-groups] using UV
 :icon: eye
@@ -282,7 +268,7 @@ When a user installs your package using `pip install your-package`, only
 your package and its core dependencies get installed. When they install
 with `pip install your-package[tests]`, pip will install your package,
 core dependencies, and the test dependencies from the
-`[project.optional-dependencies]` table.
+`[project.optional-dependencies]` field.
 :::
 
 ### Using uv or pip for installation
@@ -381,12 +367,11 @@ installation conflicts.
 
 You can also create combined groups that reference other groups:
 
-```toml
-[project.optional-dependencies]
-test = ["pytest", "pytest-cov"]
-docs = ["sphinx", "pydata-sphinx-theme"]
-dev = ["your-package[test,docs]", "build", "twine"]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [project.optional-dependencies]
+:end-before: [tool.ruff]
+:::
 
 Then install everything with pip install or uv sync as needed:
 
@@ -702,7 +687,6 @@ package.
 package no longer works with an older Python release.
 
 :::
-
 
 ::::{dropdown} What about `requirements.txt`
 :icon: info
