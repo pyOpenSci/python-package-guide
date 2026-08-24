@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-22 12:19-0700\n"
+"POT-Creation-Date: 2026-08-25 07:47+0900\n"
 "PO-Revision-Date: 2025-04-14 18:12+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
 "Language: ja\n"
@@ -1015,7 +1015,7 @@ msgstr ""
 msgid ""
 "**Feature Dependencies:** These are dependencies that are required if a "
 "user wants to access additional functionality (that is not core) to your "
-"package. Store these in the `[project.optional-dependencies]` table of "
+"package. Store these in the `[project.optional-dependencies]` table or "
 "your pyproject.toml file."
 msgstr ""
 
@@ -1024,8 +1024,8 @@ msgid ""
 "**Development Dependencies:** These dependencies are required if someone "
 "wants to develop or work on your package. These include instance linters,"
 " testing tools like pytest and mypy are examples of development "
-"dependencies. Store these in the `[dependency-groups]` table of "
-"your pyproject.toml file."
+"dependencies. Store these in the `[dependency-groups]` table of your "
+"pyproject.toml file."
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:64
@@ -1070,7 +1070,7 @@ msgstr "必要な依存関係をpyproject.tomlファイルに追加"
 
 #: ../../package-structure-code/declare-dependencies.md:102
 #: ../../package-structure-code/declare-dependencies.md:162
-#: ../../package-structure-code/declare-dependencies.md:223
+#: ../../package-structure-code/declare-dependencies.md:222
 #, fuzzy
 msgid "You can use uv to add dependencies to your pyproject.toml file:"
 msgstr "pyproject.tomlファイルに依存関係を追加"
@@ -1117,8 +1117,9 @@ msgid ""
 "users as needed. Optional dependencies add specific features to your "
 "package that not all users need. For example, if your package has an "
 "optional interactive plotting feature that uses Bokeh, you would list "
-"Bokeh under `[project.optional-dependencies]`. Users who want interactive plotting "
-"will install it. Users who don't need plotting don't have to install it."
+"Bokeh under `[project.optional-dependencies]`. Users who want interactive"
+" plotting will install it. Users who don't need plotting don't have to "
+"install it."
 msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:144
@@ -1135,7 +1136,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md
 #, fuzzy
-msgid "How to add optional dependencies using UV"
+msgid "How to Add optional dependencies using UV"
 msgstr "オプションの依存関係"
 
 #: ../../package-structure-code/declare-dependencies.md:164
@@ -1186,7 +1187,7 @@ msgstr ""
 
 #: ../../package-structure-code/declare-dependencies.md:196
 #, fuzzy
-msgid "New: PEP 735 development dependency groups"
+msgid "New: PEP 735 dependency groups"
 msgstr "オプションの依存グループを作成する"
 
 #: ../../package-structure-code/declare-dependencies.md:199
@@ -1197,19 +1198,19 @@ msgid ""
 " be installed into a user's environment."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:204
+#: ../../package-structure-code/declare-dependencies.md:203
 #, fuzzy
 msgid "How to declare dependency groups"
 msgstr "依存関係はどのように宣言するのか？"
 
-#: ../../package-structure-code/declare-dependencies.md:206
+#: ../../package-structure-code/declare-dependencies.md:205
 #, fuzzy
 msgid ""
 "You declare development dependencies in your **pyproject.toml** file "
 "within a `[dependency-groups]` table."
 msgstr "**pyproject.toml** ファイルでオプションの依存関係を宣言します:"
 
-#: ../../package-structure-code/declare-dependencies.md:209
+#: ../../package-structure-code/declare-dependencies.md:208
 msgid ""
 "Similar to optional-dependencies, you can create separate subgroups or "
 "arrays with names using the syntax: `group-name = [\"dep1\", \"dep2\"]`"
@@ -1219,37 +1220,37 @@ msgstr ""
 msgid "How to Add [dependency-groups] using UV"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:225
+#: ../../package-structure-code/declare-dependencies.md:224
 msgid "**Add a development dependency group:**"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:232
+#: ../../package-structure-code/declare-dependencies.md:231
 #, fuzzy
 msgid "Will add the following to your pyproject.toml file:"
 msgstr "pyproject.tomlファイルに依存関係を追加"
 
-#: ../../package-structure-code/declare-dependencies.md:245
-#: ../../package-structure-code/declare-dependencies.md:251
-#: ../../package-structure-code/declare-dependencies.md:295
-#: ../../package-structure-code/declare-dependencies.md:414
-#: ../../package-structure-code/declare-dependencies.md:496
+#: ../../package-structure-code/declare-dependencies.md:244
+#: ../../package-structure-code/declare-dependencies.md:250
+#: ../../package-structure-code/declare-dependencies.md:294
+#: ../../package-structure-code/declare-dependencies.md:434
+#: ../../package-structure-code/declare-dependencies.md:516
 #: ../../package-structure-code/pyproject-toml-python-package-metadata.md:14
 msgid "Todo"
 msgstr "Todo"
 
-#: ../../package-structure-code/declare-dependencies.md:246
+#: ../../package-structure-code/declare-dependencies.md:245
 msgid ""
 "i'll pick back up here tomorrow - this section is all about how things "
 "install and what \"ships\" with your package vs what just gets installed "
 "via commands (ie development)"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:249
+#: ../../package-structure-code/declare-dependencies.md:248
 #, fuzzy
 msgid "Understanding required vs. optional dependencies"
 msgstr "オプションと必須の依存関係を理解する"
 
-#: ../../package-structure-code/declare-dependencies.md:252
+#: ../../package-structure-code/declare-dependencies.md:251
 msgid ""
 "The purpose of this section is to help users understand how dependencies "
 "relate to what is installed in their environment. We have two graphics on"
@@ -1260,14 +1261,14 @@ msgid ""
 " were using optional dependencies for dev groups."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:254
+#: ../../package-structure-code/declare-dependencies.md:253
 msgid ""
 "The graphic below is two circles representing optional vs regular / "
 "required deps - created before development groups existed... there is "
 "another graphi that shows what gets installed into a uses envt."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:258
+#: ../../package-structure-code/declare-dependencies.md:257
 msgid ""
 "Diagram showing two main groups of Python package dependencies: required "
 "and optional. Required dependencies include core packages needed to use "
@@ -1276,18 +1277,18 @@ msgid ""
 "functionality."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:260
+#: ../../package-structure-code/declare-dependencies.md:259
 msgid ""
 "Python package dependencies fall into two categories: **required** "
 "dependencies that users need to run your package, and **optional** "
 "dependencies for development work or additional features."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:265
+#: ../../package-structure-code/declare-dependencies.md:264
 msgid "Additional dependency resources"
 msgstr "その他の依存リソース"
 
-#: ../../package-structure-code/declare-dependencies.md:267
+#: ../../package-structure-code/declare-dependencies.md:266
 msgid ""
 "[Learn more: View PyPA's overview of declaring optional "
 "dependencies](https://packaging.python.org/en/latest/specifications"
@@ -1297,7 +1298,7 @@ msgstr ""
 "PyPAのオプション依存関係の宣言の概要を見る](https://packaging.python.org/en/latest/specifications"
 "/declaring-project-metadata/#dependencies-optional-dependencies)"
 
-#: ../../package-structure-code/declare-dependencies.md:268
+#: ../../package-structure-code/declare-dependencies.md:267
 msgid ""
 "[Dependency "
 "specifiers](https://packaging.python.org/en/latest/specifications"
@@ -1307,18 +1308,18 @@ msgstr ""
 "specifiers](https://packaging.python.org/en/latest/specifications"
 "/dependency-specifiers/)"
 
-#: ../../package-structure-code/declare-dependencies.md:272
+#: ../../package-structure-code/declare-dependencies.md:271
 msgid "Install dependency groups"
 msgstr "依存グループをインストールする"
 
-#: ../../package-structure-code/declare-dependencies.md:274
+#: ../../package-structure-code/declare-dependencies.md:273
 msgid ""
 "When someone installs your package, only core dependencies are installed "
 "by default. To install optional dependencies, you need to specify which "
 "groups to include when installing the package."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:280
+#: ../../package-structure-code/declare-dependencies.md:279
 #, fuzzy
 msgid ""
 "Diagram showing a Venn diagram with three sections representing "
@@ -1336,7 +1337,7 @@ msgstr ""
 " python -m pip install youPackage[tests] とあります。これにより、パッケージ依存関係 - your-"
 "package、seaborn、numpy とテスト依存関係 pytest、pytest-cov の両方を含む環境が構築されます。"
 
-#: ../../package-structure-code/declare-dependencies.md:282
+#: ../../package-structure-code/declare-dependencies.md:281
 #, fuzzy
 msgid ""
 "When a user installs your package using `pip install your-package`, only "
@@ -1351,11 +1352,11 @@ msgstr ""
 "はあなたのパッケージとそのコア依存パッケージの両方をインストールし、さらに `[project.optional-dependencies]` "
 "テーブルの tests 配列にリストされている依存パッケージをインストールします。"
 
-#: ../../package-structure-code/declare-dependencies.md:289
+#: ../../package-structure-code/declare-dependencies.md:288
 msgid "Using uv or pip for installation"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:291
+#: ../../package-structure-code/declare-dependencies.md:290
 msgid ""
 "UV streamlines this process, allowing you to sync a venv in your project "
 "directory with both an editable install of your package and its "
@@ -1363,13 +1364,14 @@ msgid ""
 " into the environment of your choice."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:296
+#: ../../package-structure-code/declare-dependencies.md:295
 msgid ""
 "We shouldn't show UV pip install, so how do you add optional feature deps"
 " with UV??"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:299
+#: ../../package-structure-code/declare-dependencies.md:298
+#: ../../package-structure-code/declare-dependencies.md:361
 #, fuzzy
 msgid "**Install dependency groups:**"
 msgstr "依存グループをインストールする"
@@ -1378,22 +1380,41 @@ msgstr "依存グループをインストールする"
 msgid "Use UV"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:305
+#: ../../package-structure-code/declare-dependencies.md:304
 msgid "You can use uv sync to sync dependency groups in your uv-managed venv"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:313
-#: ../../package-structure-code/declare-dependencies.md:334
+#: ../../package-structure-code/declare-dependencies.md:312
+msgid ""
+"use ``--active`` with ``uv sync`` to prefer the currently active virtual "
+"environment over the project's own managed environment:"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:319
+#: ../../package-structure-code/declare-dependencies.md:354
 #, fuzzy
 msgid "**Install optional dependencies:**"
 msgstr "オプションの依存関係"
 
-#: ../../package-structure-code/declare-dependencies.md:321
+#: ../../package-structure-code/declare-dependencies.md:328
+msgid ""
+"Use the `--active` flag with `uv run` to prefer the currently active "
+"virtual environment over the project's own managed environment:"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:336
+msgid ""
+"This is useful when you have activated a virtual environment and want `uv"
+" run` to use it instead of automatically creating or selecting the "
+"project's environment."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:341
 #, fuzzy
 msgid "**Install everything (package + all dependencies):**"
 msgstr "Pythonパッケージの依存関係"
 
-#: ../../package-structure-code/declare-dependencies.md:327
+#: ../../package-structure-code/declare-dependencies.md:347
 msgid ""
 "`uv sync` is the recommended command for development workflows. It "
 "manages your virtual environment and keeps your lockfile up to date. Use "
@@ -1404,12 +1425,7 @@ msgstr ""
 msgid "Use pip (version >=25.1)"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:341
-#, fuzzy
-msgid "**Install dependency groups:**"
-msgstr "依存グループをインストールする"
-
-#: ../../package-structure-code/declare-dependencies.md:348
+#: ../../package-structure-code/declare-dependencies.md:368
 #, fuzzy
 msgid ""
 "Always call pip using `python -m pip` to ensure you're using the pip from"
@@ -1420,81 +1436,81 @@ msgstr ""
 "Python 環境のものであることが保証されます。インストールの衝突を避けるために、 `pip` "
 "を呼び出すときは常にこの方法を使うことを強く推奨します。"
 
-#: ../../package-structure-code/declare-dependencies.md:352
+#: ../../package-structure-code/declare-dependencies.md:372
 msgid ""
 "**Note:** Some shells (like zsh on Mac) require quotes around brackets to"
 " run successfully:"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:354
+#: ../../package-structure-code/declare-dependencies.md:374
 msgid "`python -m pip install \".[tests]\"`"
 msgstr "`python -m pip install \".[tests]\"`"
 
-#: ../../package-structure-code/declare-dependencies.md:360
+#: ../../package-structure-code/declare-dependencies.md:380
 #, fuzzy
 msgid "Combining dependency groups"
 msgstr "依存グループをインストールする"
 
-#: ../../package-structure-code/declare-dependencies.md:362
+#: ../../package-structure-code/declare-dependencies.md:382
 msgid "You can also create combined groups that reference other groups:"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:371
+#: ../../package-structure-code/declare-dependencies.md:391
 msgid "Then install everything with pip install or uv sync as needed:"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:380
+#: ../../package-structure-code/declare-dependencies.md:400
 #, fuzzy
 msgid ""
 "When you install optional dependencies, pip and uv  install your package "
 "and its core dependencies automatically."
 msgstr "`pip` はあなたのパッケージとそのコアの依存関係もインストールします。"
 
-#: ../../package-structure-code/declare-dependencies.md:384
+#: ../../package-structure-code/declare-dependencies.md:404
 #, fuzzy
 msgid "Version specifiers for dependencies"
 msgstr "依存関係のセットを組み合わせる"
 
-#: ../../package-structure-code/declare-dependencies.md:386
+#: ../../package-structure-code/declare-dependencies.md:406
 msgid ""
 "Version specifiers control which versions of a dependency work with your "
 "package. Use them to specify minimum versions, exclude buggy releases, or"
 " set version ranges."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:390
+#: ../../package-structure-code/declare-dependencies.md:410
 msgid "Common operators"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:392
+#: ../../package-structure-code/declare-dependencies.md:412
 msgid ""
 "**`>=`** Minimum version set: `numpy>=1.20` (This is the most common "
 "approach and is recommended)"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:393
+#: ../../package-structure-code/declare-dependencies.md:413
 msgid ""
 "**`==`** Exact version: `requests==2.28.0` (Avoid pinning dependencies "
 "like this unless necessary)"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:394
+#: ../../package-structure-code/declare-dependencies.md:414
 msgid ""
 "**`~=`** Compatible release: `django~=4.2.0` (Allows patches: "
 ">=4.2.0,<4.3.0)"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:395
+#: ../../package-structure-code/declare-dependencies.md:415
 msgid "**`<` or `>`** - Upper/lower bounds: `pandas>=1.0,<3.0`"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:396
+#: ../../package-structure-code/declare-dependencies.md:416
 msgid ""
 "**`!=`** Exclude version: `scipy>=1.7,!=1.8.0` (Rare but allows you to "
 "skip a buggy release version)"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:399
+#: ../../package-structure-code/declare-dependencies.md:419
 msgid ""
 "**Best practice:** Use `>=` to specify your minimum tested version and "
 "avoid upper bounds unless you know at what version that dependency is no "
@@ -1503,11 +1519,11 @@ msgid ""
 " dependency conflicts."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:415
+#: ../../package-structure-code/declare-dependencies.md:435
 msgid "Using conda and Pixi"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:419
+#: ../../package-structure-code/declare-dependencies.md:439
 #, fuzzy
 msgid ""
 "The `pyproject.toml` file works great for pure-Python packages. However, "
@@ -1519,23 +1535,23 @@ msgstr ""
 "いくつかのパッケージ、特に科学的なPythonエコシステムでは、Pythonで書かれていない依存関係を必要とします。 "
 "Condaは、PythonとPython以外の言語の両方で書かれたコードを持つツールの配布をサポートするために作られました。"
 
-#: ../../package-structure-code/declare-dependencies.md:424
+#: ../../package-structure-code/declare-dependencies.md:444
 #, fuzzy
 msgid "**For conda users:**"
 msgstr "condaユーザーへのメモ"
 
-#: ../../package-structure-code/declare-dependencies.md:426
+#: ../../package-structure-code/declare-dependencies.md:446
 msgid ""
 "You can maintain an `environment.yml` file to help users and contributors"
 " set up conda environments. This is especially useful for packages with "
 "system-level dependencies like GDAL."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:430
+#: ../../package-structure-code/declare-dependencies.md:450
 msgid "**Consider Pixi for conda package focused workflows:**"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:432
+#: ../../package-structure-code/declare-dependencies.md:452
 msgid ""
 "[Pixi](https://pixi.sh) is a modern package manager built on top of both "
 "the conda and Python package ecosystems. Pixi is able to treat conda and "
@@ -1553,11 +1569,11 @@ msgid ""
 "workspace with"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:450
+#: ../../package-structure-code/declare-dependencies.md:470
 msgid "A note for conda users"
 msgstr "condaユーザーへのメモ"
 
-#: ../../package-structure-code/declare-dependencies.md:453
+#: ../../package-structure-code/declare-dependencies.md:473
 msgid ""
 "If you use a conda environment for development and install your package "
 "with `python -m pip install -e .` dependencies will be installed from "
@@ -1566,28 +1582,28 @@ msgid ""
 "dependencies."
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:458
+#: ../../package-structure-code/declare-dependencies.md:478
 #, fuzzy
 msgid "To avoid this, install your package without dependencies:"
 msgstr "`pip` はあなたのパッケージとそのコアの依存関係もインストールします。"
 
-#: ../../package-structure-code/declare-dependencies.md:464
+#: ../../package-structure-code/declare-dependencies.md:484
 #, fuzzy
 msgid "Then install dependencies through your conda `environment.yml` file."
 msgstr "pyproject.tomlファイルに依存関係を追加"
 
-#: ../../package-structure-code/declare-dependencies.md:467
+#: ../../package-structure-code/declare-dependencies.md:487
 msgid "Dependencies in Read the Docs"
 msgstr "Read the Docs の依存関係"
 
-#: ../../package-structure-code/declare-dependencies.md:469
+#: ../../package-structure-code/declare-dependencies.md:489
 #, fuzzy
 msgid ""
 "Once you've specified dependencies in your `pyproject.toml`, you can use "
 "them in other workflows like building documentation on Read the Docs."
 msgstr "プロジェクトで依存関係を指定できたので、Read the Docsへのパブリッシュなど、他のワークフローをサポートするためにそれらを使用できます。"
 
-#: ../../package-structure-code/declare-dependencies.md:472
+#: ../../package-structure-code/declare-dependencies.md:492
 #, fuzzy
 msgid ""
 "[Read the Docs](https://readthedocs.org) is a documentation platform that"
@@ -1598,16 +1614,16 @@ msgstr ""
 "[Read the Docs](https://readthedocs.org) "
 "は、継続的インテグレーション/継続的デプロイメントサービスを備えたドキュメントプラットフォームで、あなたのドキュメントを自動的にビルドして公開します。"
 
-#: ../../package-structure-code/declare-dependencies.md:477
+#: ../../package-structure-code/declare-dependencies.md:497
 msgid "Here's an example that installs your `docs` optional dependencies:"
 msgstr ""
 
-#: ../../package-structure-code/declare-dependencies.md:488
+#: ../../package-structure-code/declare-dependencies.md:508
 #, fuzzy
 msgid "Learn more about Read the Docs"
 msgstr "flitについてもっと知る"
 
-#: ../../package-structure-code/declare-dependencies.md:491
+#: ../../package-structure-code/declare-dependencies.md:511
 #, fuzzy
 msgid ""
 "[Creating a readthedocs.yaml file](https://docs.readthedocs.io/en/stable"
@@ -1617,7 +1633,7 @@ msgstr ""
 "ファイルの作成方法についてはこちらをご覧ください。](https://docs.readthedocs.io/en/stable/config-"
 "file/index.html)"
 
-#: ../../package-structure-code/declare-dependencies.md:492
+#: ../../package-structure-code/declare-dependencies.md:512
 #, fuzzy
 msgid ""
 "[Using uv with Read the Docs](https://docs.readthedocs.io/en/stable"
@@ -1627,7 +1643,7 @@ msgstr ""
 "ファイルの作成方法についてはこちらをご覧ください。](https://docs.readthedocs.io/en/stable/config-"
 "file/index.html)"
 
-#: ../../package-structure-code/declare-dependencies.md:493
+#: ../../package-structure-code/declare-dependencies.md:513
 #, fuzzy
 msgid ""
 "[Using Poetry with Read the Docs](https://docs.readthedocs.io/en/stable"
@@ -1637,7 +1653,7 @@ msgstr ""
 "[こちらで詳しく説明されています。](https://docs.readthedocs.io/en/stable/build-"
 "customization.html#install-dependencies-with-poetry)"
 
-#: ../../package-structure-code/declare-dependencies.md:498
+#: ../../package-structure-code/declare-dependencies.md:518
 #, fuzzy
 msgid ""
 "Keep this comment - <https://github.com/pyOpenSci/python-package-"
@@ -1650,7 +1666,7 @@ msgstr ""
 "guide/pull/106#issuecomment-1844278487 - "
 "今のところはこのファイルに。jeremiahは一般的なシェルについて、引用符が必要かどうかという点も含めて、素晴らしいリストを作成しました。本当に包括的です。しかし、ガイドに必要でしょうか？上級ユーザーにとっては本当に役立つと思います。"
 
-#: ../../package-structure-code/declare-dependencies.md:500
+#: ../../package-structure-code/declare-dependencies.md:520
 #, fuzzy
 msgid ""
 "Following this comment: <https://github.com/pyOpenSci/python-package-"
@@ -1659,15 +1675,332 @@ msgstr ""
 "このコメントによります: https://github.com/pyOpenSci/python-package-"
 "guide/pull/106#pullrequestreview-1766663571"
 
-#: ../../package-structure-code/declare-dependencies.md:503
+#: ../../package-structure-code/declare-dependencies.md:523
 msgid "Jonny will add a section that talks about:"
 msgstr "Jonny はそのセクションを追加する予定です:"
 
-#: ../../package-structure-code/declare-dependencies.md:505
+#: ../../package-structure-code/declare-dependencies.md:525
 msgid ""
 "Why you specify dependencies How to specify dependencies When you use "
 "different specifiers"
 msgstr "依存関係を指定する理由 依存関係を指定する方法 異なる指定子を使用する場合"
+
+#: ../../package-structure-code/declare-dependencies.md:530
+#, fuzzy
+msgid "Dependency Locking"
+msgstr "依存仕様"
+
+#: ../../package-structure-code/declare-dependencies.md:532
+msgid ""
+"In addition to declaring dependencies in `pyproject.toml`, it is common "
+"for packages to lock down exact versions of all their dependencies in a "
+"separate lock file. A lock file provides benefits of reproducibility, "
+"security, and potentially faster installs, among other things. Pinning "
+"the exact dependency versions used in a project eliminates \"works on my "
+"machine\" bugs and gives CI a reproducible baseline. For applications "
+"meant to be run rather than imported, lock files also ensure anyone "
+"installing the project gets a known-good set of dependencies instead of "
+"whatever happens to be latest."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:541
+#, fuzzy
+msgid "`pyproject.toml` vs lock file"
+msgstr "pyproject.tomlファイルについて"
+
+#: ../../package-structure-code/declare-dependencies.md:542
+msgid ""
+"`pyproject.toml`: defines all environments you intend to support for "
+"users importing your package into their project."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:544
+msgid "**lock file**: defines a specific environment used for development"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:546
+msgid ""
+"`pyproject.toml` should be permissive, erring on the side of allowing too"
+" much even if it may allow untested environments. In most cases, it is "
+"better that users install your package but encounter an issue rather than"
+" being restricted from installing your package by the `pyproject.toml` "
+"when it would otherwise work."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:552
+msgid ""
+"A lock file is the opposite. If it installs, the resulting environment "
+"should work even if this means some valid environments are excluded."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:555
+msgid "Standardized Lock File"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:557
+msgid ""
+"As of March 2025, [PEP 751](https://peps.python.org/pep-0751) defined a "
+"standard `pylock.toml` format to unify the various lock file formats in "
+"use by other package managers (e.g. `uv.lock`, `poetry.lock`, "
+"`pdm.lock`). Most package managers provide ways to generate a PEP 751 "
+"compatible file. See [PyPA "
+"specification](https://packaging.python.org/en/latest/specifications"
+"/pylock-toml/) for up-to-date formatting info on `pylock.toml`"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:565
+msgid "How to work with lock files?"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:567
+msgid ""
+"Lock files are not written by hand. Package managers and IDEs provide "
+"tools to create, update, and reformat lock files as needed."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:570
+msgid ""
+"**Create** - Package managers often do this automatically though it can "
+"be done manually. For example, calling `uv add numpy` will automatically "
+"create a `uv.lock` file, setup the environment, and install numpy."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:573
+msgid ""
+"**Update** - This is not done automatically by package managers. "
+"Maintainers can choose to do this manually or setup their own automated "
+"workflow. Updates can be for specific packages or all dependencies."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:576
+msgid ""
+"**Reformat** - Package managers currently use native formats (e.g. uv "
+"uses `uv.lock`) and provide tools for converting into `pylock.toml` and "
+"other formats (e.g. `requirements.txt`) when needed"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:580
+msgid "Below is the uv CLI workflow for lock files:"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:597
+msgid ""
+"See [official docs](https://docs.astral.sh/uv/concepts/projects/sync/) "
+"for more details. See also the relevant docs for [Poetry]( https"
+"://python-poetry.org/docs/basic-usage/#installing-dependencies) and "
+"[PDM](https://pdm-project.org/latest/usage/lockfile/)."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:601
+msgid "Should I use a lock file?"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:603
+msgid ""
+"Most package managers will generate a lock file automatically for you "
+"(e.g. uv, Poetry, PDM). The real question is when you version control the"
+" lock file as part of your package."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:607
+msgid "Recommendation: Versioning a lock file"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:609
+msgid ""
+"If your project is an application others use directly, include a lock "
+"file as the recommended environment."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:612
+msgid ""
+"If your project is a library to be used in other projects and it is "
+"mature enough to have CI, include a lock file for CI and contributors. "
+"For a small library only you maintain that is shared amongst people you "
+"know, waiting to add a lock file is not an issue. In general, you should "
+"version the lock file."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:618
+msgid ""
+"For private libraries shared within a team, a lock file is less "
+"important. But if the project is an application or tool that others run "
+"directly, instead of importing into their code, committing the lock file "
+"is generally the most convenient choice. It gives users a reproducible "
+"set of dependencies instead of having each user resolve from "
+"pyproject.toml."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:625
+msgid "Recommendation: Which format to version control"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:627
+msgid "Version control the standard `pylock.toml` format."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:630
+msgid ""
+"There is some maintenance cost from lock files. Maintainers should aim to"
+" update the lock file neither too rarely nor too often."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:632
+msgid ""
+"Too rarely means you risk missing updates with bugfixes, security "
+"patches, performance improvements, etc."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:634
+msgid ""
+"Too often means you may introduce bugs or even security vulnerablilites "
+"before maintainers of your dependencies catch them. Package managers are "
+"starting to support dependency cooldowns to mitigate this."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:638
+msgid "Recommendation: Updating a lock file"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:640
+msgid ""
+"Update lock files frequently (e.g. weekly) but configure a dependency "
+"cooldown of several days to avoid automatically installing the latest "
+"packages. Only override the cooldown if a new package has a needed bug "
+"fix or security patch."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md
+#, fuzzy
+msgid "Dependency cooldowns"
+msgstr "依存仕様"
+
+#: ../../package-structure-code/declare-dependencies.md:649
+msgid ""
+"[Dependency cooldowns]( https://blog.pypi.org/posts/2026-04-02-incident-"
+"report-litellm-telnyx-supply-chain-attack/#dependency-cooldowns ) are "
+"strongly encouraged by security experts to avoid automatically "
+"downloading the latest package updates that may have been compromised "
+"with malware. Package manager tools are starting to support "
+"configurations for cooldowns"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:657
+#, fuzzy
+msgid "or in `pyproject.toml`"
+msgstr "`pyproject.toml` のリンター設定"
+
+#: ../../package-structure-code/declare-dependencies.md:663
+msgid ""
+"Integrating cooldown constrained lock files into CI is important since "
+"this is where new packages are commonly tested first. Automated testing "
+"code that resolves `[project.dependencies]` every time"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:669
+msgid "can be replaced with lock file based installations"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:673
+msgid "after pylock.toml has been added to the project."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:678
+msgid ""
+"Support for this varies across automated testing frameworks (e.g. hatch, "
+"nox) so consult their documentation for how to install dependencies from "
+"lock files with dependency cooldowns."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:683
+msgid ""
+"When you decide to update a lock file, make sure to test that the "
+"resulting environment works before committing. If it fails because of "
+"some dependency update, then it may be necessary to update "
+"`pyproject.toml` to cap the supported versions of that dependency "
+"unless/until the code can be updated to support it."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:688
+msgid ""
+"It can also be good, though not necessary, to double check what changed "
+"when updating a lock file. The diff can be noisy so the main changes to "
+"focus on are"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:690
+msgid "major version updates (e.g.  `pandas 2.X.X` -> `pandas 3.X.X`)"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:691
+#, fuzzy
+msgid "new transitive dependencies (i.e. not part of your `pyproject.toml`)"
+msgstr "pyproject.tomlファイルに依存関係を追加"
+
+#: ../../package-structure-code/declare-dependencies.md:694
+msgid ""
+"A lock file captures one environment for CI testing, not the full "
+"compatibility range declared in `pyproject.toml`. Projects that use lock "
+"files may want to have CI test other environments such as"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:698
+msgid ""
+"the latest packages consistent with your `pyproject.toml`, subject to "
+"dependency cooldowns. This lets you know if a dependency update breaks "
+"your package."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:701
+msgid ""
+"older supported versions of Python to let you know if a recent change to "
+"your package no longer works with an older Python release."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md
+msgid "What about `requirements.txt`"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:712
+msgid ""
+"Older approaches to locking used `pip freeze` to generate a "
+"`requirements.txt` that got used as a lock file. These are minimal lock "
+"files that pin a specific version for the system on which the command was"
+" run. They might look like"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:722
+msgid ""
+"However, this minimal level of specificity has several downsides making "
+"lock files the preferred format:"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:724
+msgid ""
+"The versions satisfying `pyproject.toml` may differ between your Windows "
+"laptop and the Linux server your CI runs on. A single lock file contains "
+"the information needed to build platform specific and Python version "
+"specific environments. In contrast, a separate `requirements.txt` files "
+"is needed to store this information (e.g. `requirements.ci.txt`, "
+"`requirements.py313-macos.txt`)"
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:730
+msgid ""
+"Packages can get updated without a version update for both legitimate and"
+" malicious reasons. Lock files include package hashes to catch this. A "
+"[hash](https://en.wikipedia.org/wiki/Hash_function) is a unique signature"
+" computed from the code and any change to the code will cause the release"
+" to have a different hash even if is given the same release version "
+"number."
+msgstr ""
+
+#: ../../package-structure-code/declare-dependencies.md:736
+msgid ""
+"Other metadata determined during resolution of `pyproject.toml` (e.g. "
+"which dependencies are transitive, where the packages were downloaded "
+"from, etc.) that can help speed up future installs is lost."
+msgstr ""
 
 #: ../../package-structure-code/intro.md:163
 msgid "Intro"
@@ -6451,13 +6784,13 @@ msgstr ""
 #~ "the `project` table of your "
 #~ "`pyproject.toml` file. If they are "
 #~ "optional, they will be listed in "
-#~ "the `[project.optional-dependencies]` table of your"
-#~ " `pyproject.toml`."
+#~ "the `[project.optional-dependencies]` table of"
+#~ " your `pyproject.toml`."
 #~ msgstr ""
 #~ "依存関係はオプションか必須であると考えることができます。 必須であれば、 `pyproject` "
 #~ "テーブルの `dependencies` キーにリストされます。 オプションの場合は、 "
-#~ "`pyproject.toml` の `[project.optional-dependencies]` "
-#~ "テーブルにリストされます。"
+#~ "`pyproject.toml` の `[project.optional-dependencies]`"
+#~ " テーブルにリストされます。"
 
 #~ msgid "You will learn about both below."
 #~ msgstr "両者については後述します。"
@@ -7506,3 +7839,14 @@ msgstr ""
 #~ " src/package directory (see example below)."
 #~ "  ```bash src/ package/ tests/ docs/"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "**Feature Dependencies:** These are "
+#~ "dependencies that are required if a "
+#~ "user wants to access additional "
+#~ "functionality (that is not core) to "
+#~ "your package. Store these in the "
+#~ "`[project.optional-dependencies]` table of "
+#~ "your pyproject.toml file."
+#~ msgstr ""
+
