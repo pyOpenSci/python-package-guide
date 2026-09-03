@@ -13,8 +13,10 @@ dependencies in your `pyproject.toml`.
 (package-dependencies)=
 ## What is a package dependency?
 
-A Python package dependency refers to an external package or
-A tool that is needed when using or working on your Python project. Declare your dependencies in your `pyproject.toml` file. This keeps all package metadata in one place, making it simpler for users and contributors to understand your package.
+A Python package dependency refers to an external package or a tool that is needed
+when using or working on your Python project. Declare your dependencies in
+your `pyproject.toml` file. This keeps all package metadata in one place, making
+it simpler for users and contributors to understand your package.
 
 :::{admonition} Older ways to declare dependencies
 :class: tip
@@ -30,7 +32,7 @@ While `pyproject.toml` is now the standard, you may sometimes encounter older ap
 ### Why specify dependencies
 
 Specifying dependencies in the `project.dependencies` array of your `pyproject.toml` file ensures that libraries needed to run your package are correctly installed into a user's environment.
-For instance, if your package requires Pandas to run properly, and you add Pandas to the `project.dependencies` array, Pandas will be installed into the users' environment when they install your package using uv, pip, or conda.
+For instance, if your package requires pandas to run properly, and you add pandas to the `project.dependencies` array, pandas will be installed into the user's environment when they install your package using uv, pip, or conda.
 
 ```toml
 [project]
@@ -190,7 +192,7 @@ locally. They are used to perform tasks such as:
 
 Dependency groups are optional because they are not required for users
 to install and use your package. However, they will make it easier for
-contributors to your project to setup development environments
+contributors to your project to set up development environments
 locally.
 
 :::{admonition} New: PEP 735 dependency groups
@@ -318,7 +320,7 @@ $ uv sync --active --group docs
 **Install optional dependencies:**
 
 ```console
-# uv pip install is not idea if you are using uv supported venvs for your project
+# uv pip install is not ideal if you are using uv supported venvs for your project
 $ uv pip install -e ".[docs]"              # Single group
 $ uv pip install -e ".[docs,tests,lint]"   # Multiple groups
 ```
@@ -397,7 +399,7 @@ python -m pip install ".[dev]"
 ```
 
 :::{tip}
-When you install optional dependencies, pip and uv  install your
+When you install optional dependencies, pip and uv install your
 package and its core dependencies automatically.
 :::
 
@@ -631,7 +633,7 @@ There is some maintenance cost from lock files. Maintainers should aim to update
 the lock file neither too rarely nor too often.
 * Too rarely means you risk missing updates with bugfixes, security patches,
 performance improvements, etc.
-* Too often means you may introduce bugs or even security vulnerablilites before
+* Too often means you may introduce bugs or even security vulnerabilities before
 maintainers of your dependencies catch them. Package managers are starting to
 support dependency cooldowns to mitigate this.
 
