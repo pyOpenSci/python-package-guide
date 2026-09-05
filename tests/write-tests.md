@@ -82,21 +82,30 @@ def add_numbers(a: float, b: float) -> float:
 ```
 
 A test to ensure that function runs as you might expect when provided with
-different numbers might look like this:
+different numbers might look like this. Each set of inputs gets its own
+readable ID, so a failing case is easy to spot in the pytest output
+(for example, `test_add_numbers_returns_sum[negative]`):
 
 ```python
-def test_add_numbers():
-    result = add_numbers(2, 3)
-    assert result == 5, f"Expected 5, but got {result}"
+import pytest
 
-    result2 = add_numbers(-1, 4)
-    assert result2 == 3, f"Expected 3, but got {result2}"
 
-    result3 = add_numbers(0, 0)
-    assert result3 == 0, f"Expected 0, but got {result3}"
+@pytest.mark.parametrize(
+    "first_number, second_number, expected_sum",
+    [
+        (2, 3, 5),
+        (-1, 4, 3),
+        (0, 0, 0),
+    ],
+    ids=["positive", "negative", "zero"],
+)
+def test_add_numbers_returns_sum(first_number, second_number, expected_sum):
+    """Test that add_numbers returns the sum of two numbers."""
+    actual_sum = add_numbers(first_number, second_number)
 
-test_add_numbers()
-
+    assert actual_sum == expected_sum, (
+        f"Expected {expected_sum}, but got {actual_sum}"
+    )
 ```
 ````
 
