@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-18 10:26-0700\n"
+"POT-Creation-Date: 2026-07-18 04:18-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -224,6 +224,186 @@ msgid ""
 "automate certain checks (and, in some cases, code fixes), including "
 "linting and code style. You can even automate spell-checking your "
 "documentation and docstrings!"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:1
+msgid "Installing your own code"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:3
+msgid ""
+"You have a conda environment. It works. Maybe it has packages that were "
+"hard to install, like GDAL, HDF5, or other compiled scientific "
+"dependencies."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:5
+msgid ""
+"You also have code that you are writing locally. Maybe it started as a "
+"script, or maybe it is already organized as a Python package. You want to"
+" use that code inside the same environment with GDAL, HDF5, and the other"
+" tools you already installed."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:7
+msgid ""
+"The instructions to install your code into a conda environment is to "
+"first activate your conda environment `conda activate your_env_name` and "
+"then run this: `python -m pip install -e . --no-deps`. You may also see "
+"this written as `pip install -e .`. See [The Full Command](the-full-"
+"command) section below for more info as to the details of this command."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:9
+msgid ""
+"If this is the first time you're seeing pip install commands, you may not"
+" be totally sure what is going on here. Conda created the environment, "
+"why am I using `pip` to install things now? You may have heard guidance "
+"to generally try and avoid mixing conda and pip? You may already be "
+"mixing conda and pip and things are totally fine. You may also not care "
+"at all because `pip install -e .` seems to work fine and you can get back"
+" to what you're actually trying to do. (If that last one is you, you're "
+"also probably not reading this page). In any event, all of these "
+"situations are perfectly understandable and totally okay for you to be "
+"going through."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:11
+msgid ""
+"So... why pip? The short answer is that conda and pip are doing different"
+" jobs here."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:13
+msgid ""
+"The slightly longer, mostly apologetic, answer is this is just sort of "
+"the current ergonomics of how python packaging works and, honestly? Most "
+"of us have turned this confusing pain point into muscle memory. But not "
+"you. You're new here. And you're like... wat? And you're totally "
+"justified to feel this way."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:15
+msgid ""
+"So, what is happening here? `conda` manages the environment: the Python "
+"runtime, compiled libraries, command line tools, and the packages your "
+"project depends on. This is stuff that you've already been doing and "
+"you're comfortable with (or at least familiar with). `pip` is doing one "
+"Python-packaging-specific job: installing your local package into the "
+"active environment."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:17
+msgid ""
+"In editable mode, the `-e` flag, `pip` connects the active environment to"
+" the source files you are editing. And... why exactly is that useful?"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:19
+msgid "It's useful because it gives you a pretty quick development loop:"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:21
+msgid "Edit your code in your editor."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:22
+msgid "Run it from a terminal, test suite, or Jupyter notebook."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:23
+msgid "Edit the code again."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:24
+msgid "Run it again without reinstalling your package."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:26
+msgid ""
+"So the goal is not to switch from conda to pip. The goal is to keep using"
+" your conda environment while making your local package importable inside"
+" that environment."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:28
+msgid "Should I use pip for everything now?"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:30
+msgid "Probably not?"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:32
+msgid ""
+"If conda is already working well for your project, keep using conda to "
+"manage the environment. Use pip only for this one task: installing your "
+"local package in editable mode."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:34
+msgid ""
+"If you are curious about other tools like uv, pixi, Hatch, or pip-only "
+"workflows, see [Environment Managers](environment-managers.md). Those "
+"tools can be great choices. But you do not need to switch tools just to "
+"develop your local package inside a conda environment."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:36
+msgid ""
+"As a final note, people in the conda ecosystem are actively working on "
+"better conda/pip interoperability. In the future, this workflow may "
+"become less awkward. For now, `python -m pip install -e . --no-deps` is "
+"the standard bridge."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:39
+msgid "The full command"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:41
+msgid ""
+"`python -m pip install -e . --no-deps` is a mouthful. I know it. You know"
+" it. Why do we do these things?"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:43
+msgid "The simplest version of this is:"
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:48
+msgid "But we recommend the longer version in conda environments for two reasons."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:50
+msgid ""
+"The `python -m pip` part ensures that you're using pip from the active "
+"conda environment. Sometimes this results in `pip not found`, which is "
+"actually a good error to get because it means you prevented an annoying-"
+"to-debug failure mode. If this happens just `conda install pip` and try "
+"again. So, why? Sometimes `pip` from a different python environment can "
+"be on your PATH which means that you'll accidentally install your code "
+"into an unrelated python environment. This can be confusing to debug. "
+"This has happened to most (all?) of us. It usually hits when you're least"
+" prepared to debug and fix it. So we recommend the `python -m` in front "
+"to prevent this from happening. But it does add to the length of the "
+"command."
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:52
+msgid ""
+"The `--no-deps` flag tells pip not to install your package's "
+"dependencies, if you have any listed in your project. If you do have them"
+" listed, probably in your `pyproject.toml` file, then `pip install -e .` "
+"will try to install the dependencies that are listed in that file. In a "
+"conda environment, that can range from \"mostly fine\" to \"now my "
+"environment is broken and I am not sure how to recover.\""
+msgstr ""
+
+#: ../../maintain-automate/dev-installs.md:54
+msgid ""
+"With `--no-deps`, pip installs only your local package. You remain "
+"responsible for managing the environment dependencies with conda."
 msgstr ""
 
 #: ../../maintain-automate/environment-managers.md:2
@@ -599,7 +779,7 @@ msgid "Conda and mamba also function as environment managers - see below!"
 msgstr ""
 
 #: ../../maintain-automate/environment-managers.md:112
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
 msgid "Environment Managers"
 msgstr ""
 
@@ -750,15 +930,19 @@ msgid ""
 " your team gets identical environments."
 msgstr ""
 
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
 msgid "What is CI?"
 msgstr ""
 
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
 msgid "Task runners"
 msgstr ""
 
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
+msgid "Development installs with conda"
+msgstr ""
+
+#: ../../maintain-automate/index.md:51
 msgid "Maintain & Automate"
 msgstr ""
 
@@ -829,6 +1013,14 @@ msgid ""
 "Together, task runners and CI/CD create a robust development workflow "
 "that makes your package easier to maintain and more welcoming to "
 "contributors."
+msgstr ""
+
+#: ../../maintain-automate/index.md:46
+msgid ""
+"[**Development installs in conda environments**](dev-installs) help you "
+"connect conda-based scientific development environments with local Python"
+" package development. This is especially useful when your package depends"
+" on compiled or system-level dependencies that conda manages well."
 msgstr ""
 
 #: ../../maintain-automate/task-runners.md:2

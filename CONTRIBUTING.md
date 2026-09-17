@@ -85,19 +85,20 @@ An image showing how to preview changes in GitHub. The file content is displayed
 
 ### How to commit your changes
 
-When you are done editing the file, scroll down to the bottom of the page. You will see a section called "Commit changes".
-Here you can write a title and a description for your changes. Make sure to write a clear and concise title that describes the changes you made.
+When you are done editing the file, click the green "Commit changes..." button in the top-right corner of the editor.
+GitHub will open a "Propose changes" dialog where you can write a commit message and an optional extended description.
+Make sure the commit message clearly and concisely describes the changes you made.
 
 ```{figure} images/contributing/commit-changes.png
 ---
 name: commit-changes in GitHub
 width: 80%
-alt: Commit changes in GitHub
+alt: Propose changes dialog in GitHub
 ---
-An image showing how to commit changes in GitHub. The commit message is displayed in a text editor. The commit changes section is highlighted with a red rectangle.
+The GitHub "Propose changes" dialog with the commit message field highlighted.
 ```
 
-After writing your commit message, click the "Commit changes" button to save your changes.
+After writing your commit message, click the "Propose changes" button to save the commit to your fork.
 
 ## Contributing locally on your computer
 
@@ -150,8 +151,12 @@ To build the guide locally, you need to create a virtual environment and install
 To install the development dependencies, run the following command in your terminal:
 
 ```bash
-python -m pip install -e .[dev]
+python -m pip install -e '.[dev]'
 ```
+
+The quotes around `'.[dev]'` matter if you use zsh, the default shell on macOS. Without them, zsh treats the square brackets as a filename pattern and fails with `no matches found`.
+
+On Windows they are harmless in PowerShell, but if you use the older `cmd.exe` prompt you need to remove them and run `python -m pip install -e .[dev]` instead, because `cmd.exe` does not strip single quotes.
 
 ### Commit your changes
 

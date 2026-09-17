@@ -33,7 +33,13 @@ BUILD_PARAMETERS = ["-b", "html"]
 
 # Sphinx parameters used when checking that links work
 # ref: https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
-LINKCHECK_PARAMETERS = ["-b", "linkcheck", "-Dlinkcheck_timeout=5", "-Dlinkcheck_rate_limit_timeout=30", "--fail-on-warning"]
+LINKCHECK_PARAMETERS = [
+    "-b",
+    "linkcheck",
+    "-Dlinkcheck_timeout=5",
+    "-Dlinkcheck_rate_limit_timeout=30",
+    "--fail-on-warning",
+]
 LINKCHECK_OUTPUT_DIR = pathlib.Path(BUILD_DIR, "linkcheck_output")
 
 # Sphinx parameters used to test the build of the guide
@@ -41,6 +47,9 @@ TEST_PARAMETERS = ["--keep-going", "-E", "-a"]
 
 # Sphinx parameters to generate translation templates
 TRANSLATION_TEMPLATE_PARAMETERS = ["-b", "gettext"]
+
+# Scripts that maintain the translation stats and the translation issues
+TRANSLATION_SCRIPTS_DIR = pathlib.Path("scripts", "translation")
 
 # Sphinx-autobuild ignore and include parameters
 AUTOBUILD_IGNORE = [
@@ -263,6 +272,7 @@ def update_release_languages(session):
     if RELEASE_LANGUAGES:
         session.install("-e", ".")
         session.install("sphinx-intl")
+        _clean_translation_templates(session)
         session.log("Updating templates (.pot)")
         session.run(
             SPHINX_BUILD,
@@ -292,6 +302,7 @@ def update_language(session):
         if lang in LANGUAGES:
             session.install("-e", ".")
             session.install("sphinx-intl")
+            _clean_translation_templates(session)
             session.log("Updating templates (.pot)")
             session.run(
                 SPHINX_BUILD,
@@ -384,6 +395,18 @@ def build_all_languages(session):
         session.warn("No languages defined in LANGUAGES")
         return
     session.install("-e", ".")
+    session.log(f"Declared languages: {LANGUAGES}")
+    session.log(f"Release languages: {RELEASE_LANGUAGES}")
+    sphinx_env = _sphinx_env(session)
+    # if running from the docs or docs-test sessions, build only release languages
+    BUILD_LANGUAGES = RELEASE_LANGUAGES if sphinx_env == "production" else LANGUAGES
+    # only build languages that have a locale folder
+    BUILD_LANGUAGES = [
+        lang for lang in BUILD_LANGUAGES if (TRANSLATION_LOCALES_DIR / lang).exists()
+    ]
+    session.log(
+        f"Building languages{' for release' if sphinx_env == 'production' else ''}: {BUILD_LANGUAGES}"
+    )
     for lang in LANGUAGES:
         session.log(f"Building [{lang}] guide")
         session.run(
@@ -396,25 +419,6 @@ def build_all_languages(session):
             *session.posargs,
         )
     session.log(f"Translations built for {LANGUAGES}")
-    sphinx_env = _sphinx_env(session)
-
-    # if running from the docs or docs-test sessions, build only release languages
-    BUILD_LANGUAGES = RELEASE_LANGUAGES if sphinx_env == "production" else LANGUAGES
-    # only build languages that have a locale folder
-    BUILD_LANGUAGES = [
-        lang for lang in BUILD_LANGUAGES if (TRANSLATION_LOCALES_DIR / lang).exists()
-    ]
-    session.log(f"Declared languages: {LANGUAGES}")
-    session.log(f"Release languages: {RELEASE_LANGUAGES}")
-    session.log(
-        f"Building languages{' for release' if sphinx_env == 'production' else ''}: {BUILD_LANGUAGES}"
-    )
-    if not BUILD_LANGUAGES:
-        session.warn("No translations to build")
-    else:
-        session.notify(
-            "build-languages", [sphinx_env, BUILD_LANGUAGES, *session.posargs]
-        )
 
 
 @nox.session(name="build-all-languages-test")
@@ -426,6 +430,30 @@ def build_all_languages_test(session):
     in the same way docs-test does for the English version.
     """
     session.notify("build-all-languages", [*TEST_PARAMETERS])
+
+
+@nox.session(name="test-translation-scripts")
+def test_translation_scripts(session):
+    """
+    Run the unit tests for the translation helper scripts.
+
+    Only pytest is installed since it's the only thing the scripts under test need.
+    """
+    session.install("pytest")
+    session.run("pytest", str(TRANSLATION_SCRIPTS_DIR), *session.posargs)
+
+
+def _clean_translation_templates(session) -> None:
+    """
+    Remove the gettext output directory before regenerating the templates (.pot).
+
+    The gettext build is incremental and never deletes .pot files whose source page is
+    gone. `sphinx-intl update` creates a .po for every .pot it finds. We need to clean
+    so orphan .pot files don't continue to create orphan .po files in each locale.
+    """
+    if TRANSLATION_TEMPLATE_DIR.exists():
+        session.log(f"Cleaning out {TRANSLATION_TEMPLATE_DIR}")
+        shutil.rmtree(TRANSLATION_TEMPLATE_DIR)
 
 
 def _sphinx_env(session) -> str:
