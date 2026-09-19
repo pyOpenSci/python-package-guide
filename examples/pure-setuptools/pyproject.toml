@@ -24,13 +24,17 @@ dynamic = [
 [build-system]
 requires = [
     "setuptools>=61",
+    "setuptools-scm",
     "wheel",
 ]
 build-backend = "setuptools.build_meta"
 
 
 [tool.setuptools]
+# Allow the package to be used directly from a zip archive.
 zip-safe = true
+
+# Do not automatically include non-Python package data in the wheel.
 include-package-data = false
 
 [tool.setuptools_scm]
