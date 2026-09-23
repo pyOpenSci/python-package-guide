@@ -67,12 +67,31 @@ Let's say you have a Python function that adds two numbers together.
 :::
 
 A test to ensure that function runs as you might expect when provided with
-different numbers might look like this:
+different numbers might look like this. Each set of inputs gets its own
+readable ID, so a failing case is easy to spot in the pytest output
+(for example, `test_add_numbers_returns_sum[negative]`):
 
-:::{literalinclude} ../examples/pure-hatch/tests/examplePy/test_numbers.py
-:language: python
-:start-at: def test_add_numbers
-:::
+```python
+import pytest
+
+
+@pytest.mark.parametrize(
+    "first_number, second_number, expected_sum",
+    [
+        (2, 3, 5),
+        (-1, 4, 3),
+        (0, 0, 0),
+    ],
+    ids=["positive", "negative", "zero"],
+)
+def test_add_numbers_returns_sum(first_number, second_number, expected_sum):
+    """Test that add_numbers returns the sum of two numbers."""
+    actual_sum = add_numbers(first_number, second_number)
+
+    assert actual_sum == expected_sum, (
+        f"Expected {expected_sum}, but got {actual_sum}"
+    )
+```
 ````
 
 ### 🧩🐍 How do you know what type of tests to write?
@@ -107,6 +126,49 @@ package? Below are a few examples:
   the function fails gracefully when given unexpected values and that the
   user can easily understand why it failed by providing a useful error
   message.
+
+### Write tests that are easy to review
+
+Clear tests help reviewers and future contributors understand what behavior is
+being checked and why that behavior matters. As you write tests, try to make the
+main idea of each test visible without requiring readers to reverse-engineer the
+setup.
+
+- **Use descriptive test names:** Name each test after the behavior, condition,
+  or edge case it checks. For example, `test_add_numbers_accepts_negative_values`
+  tells readers more than `test_add_numbers_2`.
+- **Keep one main behavior in focus:** A test can contain several assertions, but
+  they should support one clear idea. If a test starts checking several unrelated
+  behaviors, split it into smaller tests.
+- **Add comments only where they help:** A short comment is useful when a
+  fixture, regression, or unusual edge case is not obvious from the assertion.
+  Avoid comments that repeat the code.
+- **Keep setup, action, and assertion easy to scan:** Arrange the test so readers
+  can quickly see what input is prepared, what code is run, and what result is
+  expected.
+
+For example, a test based on the `add_numbers` function in the
+[pyOpenSci Python package template](https://github.com/pyOpenSci/pyos-package-template)
+can make its inputs, action, and expected result visible at a glance:
+
+```python
+from my_package.example import add_numbers
+
+
+def test_add_numbers_returns_sum():
+    first_number = 1
+    second_number = 2
+    expected_sum = 3
+
+    actual_sum = add_numbers(first_number, second_number)
+
+    assert actual_sum == expected_sum
+```
+
+For more guidance on structuring readable tests, see pytest's
+[anatomy of a test](https://docs.pytest.org/en/stable/explanation/anatomy.html),
+which explains the arrange, act, assert, and cleanup phases, and the package
+template's [example unit test](https://github.com/pyOpenSci/pyos-package-template/blob/main/template/%7B%25%20if%20use_test%20%25%7Dtests%7B%25%20endif%20%25%7D/unit/test_example.py.jinja).
 
 ## Next steps
 

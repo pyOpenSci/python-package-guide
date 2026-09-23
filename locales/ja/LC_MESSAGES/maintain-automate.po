@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pyOpenSci Python Package Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-18 12:56-0700\n"
+"POT-Creation-Date: 2026-08-25 07:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -21,81 +21,87 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../maintain-automate/ci.md:2
-msgid ""
-"Continuous Integration and Continuous Deployment (CI/CD) For Python "
-"Packages"
-msgstr ""
+msgid "Continuous Integration and Continuous Deployment (CI/CD) For Python Packages"
+msgstr "Python パッケージの継続的インテグレーションと継続的デプロイ (CI/CD)"
 
 #: ../../maintain-automate/ci.md:4
 msgid ""
 "When you develop, work on, and contribute to software, there is more to "
-"consider than just writing code. Having tests and checks ensures that "
-"your code runs reliably and follows a consistent format is also "
-"important. You can use **Continuous Integration (CI)** and **Continuous "
-"Deployment (CD)** to run tests and checks on your code every time someone"
-" suggests a change online in a platform like GitHub or GitLab."
+"consider than just writing code. Having tests and checks ensures that your "
+"code runs reliably and follows a consistent format is also important. You "
+"can use **Continuous Integration (CI)** and **Continuous Deployment (CD)** "
+"to run tests and checks on your code every time someone suggests a change "
+"online in a platform like GitHub or GitLab."
 msgstr ""
+"ソフトウェアを開発し、取り組み、貢献するときは、コードを書くこと以外にも考慮すべきことがあります。テストとチェックを行うことで、コードが確実に実行され、一貫した形式に従っていることを確認することも重要です。"
+" **継続的インテグレーション (CI)** と **継続的デプロイ (CD)** を使用すると、GitHub や GitLab "
+"などのプラットフォームで誰かがオンラインで変更を提案するたびに、コードのテストとチェックを実行できます。"
 
 #: ../../maintain-automate/ci.md:12
 msgid ""
 "**Continuous Integration (CI):** Automates the process of running tests, "
 "code checks, and other workflows each time code is updated."
-msgstr ""
+msgstr "**継続的インテグレーション (CI):** コードが更新されるたびに、テスト、コード チェック、その他のワークフローを実行するプロセスを自動化します。"
 
 #: ../../maintain-automate/ci.md:14
 msgid ""
 "**Continuous Deployment (CD):** Extends CI by allowing you to automate "
 "publishing your package to PyPI, publishing your documentation, and more."
-msgstr ""
+msgstr "**継続的デプロイメント (CD):** PyPI へのパッケージの公開、ドキュメントの公開などを自動化できるようにすることで、CI を拡張します。"
 
 #: ../../maintain-automate/ci.md:18
 msgid ""
 "CI and CD streamline software development by automating repetitive tasks "
 "and ensuring code quality and consistency. Having CI setup also makes it "
-"easier for new contributors to contribute to your code base without "
-"setting up all your test suites and other local checks."
+"easier for new contributors to contribute to your code base without setting"
+" up all your test suites and other local checks."
 msgstr ""
+"CI と CD は、反復的なタスクを自動化し、コードの品質と一貫性を確保することにより、ソフトウェア開発を合理化します。 CI "
+"をセットアップすると、すべてのテスト スイートやその他のローカル チェックをセットアップしなくても、新しいコントリビューターがコード "
+"ベースに簡単にコントリビュートできるようになります。"
 
 #: ../../maintain-automate/ci.md:23
 msgid "What is continuous integration?"
-msgstr ""
+msgstr "継続的インテグレーションとは何ですか?"
 
 #: ../../maintain-automate/ci.md:25
 msgid ""
 "When you're ready to publish your code online, you can set up Continuous "
-"Integration (CI). CI is a platform that allows you to specify and run "
-"jobs or workflows you define. These workflows include:"
+"Integration (CI). CI is a platform that allows you to specify and run jobs "
+"or workflows you define. These workflows include:"
 msgstr ""
+"コードをオンラインで公開する準備ができたら、継続的インテグレーション (CI) をセットアップできます。 CI "
+"は、定義したジョブやワークフローを指定して実行できるプラットフォームです。これらのワークフローには次のものが含まれます。"
 
 #: ../../maintain-automate/ci.md:28
 msgid "Running your test suite"
-msgstr ""
+msgstr "テストスイートを実行する"
 
 #: ../../maintain-automate/ci.md:29
 msgid "Running code checkers / linters / spellcheck"
-msgstr ""
+msgstr "コードチェッカー/リンター/スペルチェックの実行"
 
 #: ../../maintain-automate/ci.md:30
 msgid "Building your documentation"
-msgstr ""
+msgstr "ドキュメントを作成する"
 
 #: ../../maintain-automate/ci.md:32
 msgid ""
-"CI allows you to automate running workflows across a suite of "
-"environments, including:"
-msgstr ""
+"CI allows you to automate running workflows across a suite of environments,"
+" including:"
+msgstr "CI を使用すると、次のような一連の環境全体で実行中のワークフローを自動化できます。"
 
 #: ../../maintain-automate/ci.md:34
 msgid "environments containing different Python versions and"
-msgstr ""
+msgstr "異なる Python バージョンが含まれる環境と、"
 
 #: ../../maintain-automate/ci.md:35
 msgid "different operating systems (Mac, Linux, Windows)."
-msgstr ""
+msgstr "さまざまなオペレーティング システム (Mac、Linux、Windows)。"
 
 #: ../../maintain-automate/ci.md:37
 msgid "What is continuous deployment (CD)?"
-msgstr ""
+msgstr "継続的展開 (CD) とは何ですか?"
 
 #: ../../maintain-automate/ci.md:39
 msgid ""
@@ -103,39 +109,43 @@ msgid ""
 "deployment of code changes to production or staging environments. In the "
 "case of your open source tool, CD can be used to:"
 msgstr ""
+"継続的デプロイメント (CD) は、実稼働環境またはステージング環境へのコード変更のデプロイメントを自動化することで、CI "
+"プロセスを拡張します。オープンソース ツールの場合、CD は次の目的で使用できます。"
 
 #: ../../maintain-automate/ci.md:41
 msgid "Automate publishing to PyPI"
-msgstr ""
+msgstr "PyPI へのパブリッシュを自動化する"
 
 #: ../../maintain-automate/ci.md:42
 msgid "Automate publishing your documentation to GitHub Pages or Read the Docs."
-msgstr ""
+msgstr "GitHub Pages へのドキュメントの公開を自動化するか、ドキュメントを読んでください。"
 
 #: ../../maintain-automate/ci.md:44
 msgid ""
-"It is also used once your conda-forge recipe is set up to keep your "
-"package up to date on conda-forge."
-msgstr ""
+"It is also used once your conda-forge recipe is set up to keep your package"
+" up to date on conda-forge."
+msgstr "これは、conda-forge レシピが設定された後、conda-forge 上でパッケージを最新の状態に保つためにも使用されます。"
 
 #: ../../maintain-automate/ci.md:47
 msgid "Why use CI?"
-msgstr ""
+msgstr "CI を使用する理由"
 
 #: ../../maintain-automate/ci.md:49
 msgid ""
-"CI can be configured to run a workflow on every commit pushed to GitHub "
-"and every pull request opened. This ensures that any changes made to your"
-" package are tested across environments before merging into the main "
-"branch of your code."
+"CI can be configured to run a workflow on every commit pushed to GitHub and"
+" every pull request opened. This ensures that any changes made to your "
+"package are tested across environments before merging into the main branch "
+"of your code."
 msgstr ""
+"GitHub にプッシュされたすべてのコミットと開かれたすべてのプル リクエストでワークフローを実行するように CI "
+"を構成できます。これにより、コードのメイン ブランチにマージする前に、パッケージに加えられた変更が環境全体でテストされるようになります。"
 
 #: ../../maintain-automate/ci.md:54
 msgid ""
-"These checks are particularly useful if someone new is contributing to "
-"your code. Every contributor's change will be tested when pushed to your "
-"code repository."
-msgstr ""
+"These checks are particularly useful if someone new is contributing to your"
+" code. Every contributor's change will be tested when pushed to your code "
+"repository."
+msgstr "これらのチェックは、新しい人がコードに貢献している場合に特に役立ちます。すべての投稿者の変更は、コード リポジトリにプッシュされるときにテストされます。"
 
 #: ../../maintain-automate/ci.md:58
 msgid ""
@@ -143,68 +153,86 @@ msgid ""
 "deploying code. They aim to improve software development and publication "
 "efficiency, quality, and reliability."
 msgstr ""
+"CI と CD "
+"を併用すると、コードの構築、テスト、デプロイのプロセスが合理化されます。ソフトウェア開発と公開の効率、品質、信頼性を向上させることを目指しています。"
 
 #: ../../maintain-automate/ci.md:63
 msgid ""
-"All pyOpenSci packages must use some form of continuous integration. Even"
-" if you are not planning to go through peer review, we strongly recommend"
-" that you use continuous integration, too!"
+"All pyOpenSci packages must use some form of continuous integration. Even "
+"if you are not planning to go through peer review, we strongly recommend "
+"that you use continuous integration, too!"
 msgstr ""
+"すべての pyOpenSci "
+"パッケージは、何らかの形式の継続的統合を使用する必要があります。ピアレビューを受ける予定がない場合でも、継続的インテグレーションを使用することを強くお勧めします。"
 
 #: ../../maintain-automate/ci.md:68
 msgid ""
-"In the case of GitHub actions (which we will focus on here), CI workflows"
-" are running on online servers that support GitHub."
+"In the case of GitHub actions (which we will focus on here), CI workflows "
+"are running on online servers that support GitHub."
 msgstr ""
+"GitHub アクション (ここではこれに焦点を当てます) の場合、CI ワークフローは GitHub をサポートするオンライン "
+"サーバー上で実行されます。"
 
 #: ../../maintain-automate/ci.md:71
 msgid "CI/CD platforms"
-msgstr ""
+msgstr "CI/CD プラットフォーム"
 
 #: ../../maintain-automate/ci.md:73
 msgid ""
 "There are numerous platforms available for CI/CD. Here, we will focus on "
-"GitHub Actions (GHA), built into GitHub. GitHub is the most commonly used"
-" platform to store scientific open-source software."
+"GitHub Actions (GHA), built into GitHub. GitHub is the most commonly used "
+"platform to store scientific open-source software."
 msgstr ""
+"CI/CD に利用できるプラットフォームは多数あります。ここでは、GitHub に組み込まれている GitHub Actions (GHA) "
+"に焦点を当てます。 GitHub は、科学的なオープンソース ソフトウェアを保存するために最も一般的に使用されているプラットフォームです。"
 
 #: ../../maintain-automate/ci.md:78
 msgid ""
 "If you use [GitLab](https://about.gitlab.com/) CI/CD, many of the "
-"principles described here will apply. However, the workflow files may "
-"look different."
+"principles described here will apply. However, the workflow files may look "
+"different."
 msgstr ""
+"[GitLab](https://about.gitlab.com/) CI/CD "
+"を使用する場合、ここで説明されている原則の多くが適用されます。ただし、ワークフロー ファイルは異なる場合があります。"
 
 #: ../../maintain-automate/ci.md:83
 msgid "If you aren't sure, use GitHub Actions"
-msgstr ""
+msgstr "よくわからない場合は、GitHub Actions を使用してください"
 
 #: ../../maintain-automate/ci.md:85
 msgid ""
 "While you are welcome to use the continuous integration platform of your "
 "choice, we recommend GitHub Actions because it is free-to-use and "
-"integrated tightly into the GitHub user interface. There is also an "
-"entire store of GitHub action templates that you can easily use and adapt"
-" to your own needs."
+"integrated tightly into the GitHub user interface. There is also an entire "
+"store of GitHub action templates that you can easily use and adapt to your "
+"own needs."
 msgstr ""
+"お好みの継続的統合プラットフォームを使用することは歓迎ですが、無料で使用でき、GitHub ユーザー インターフェイスに緊密に統合されている "
+"GitHub Actions をお勧めします。また、簡単に使用して独自のニーズに適応できる GitHub アクション "
+"テンプレートのストア全体もあります。"
 
 #: ../../maintain-automate/ci.md:91
 msgid "Other platforms that you may run into"
-msgstr ""
+msgstr "遭遇する可能性のあるその他のプラットフォーム"
 
 #: ../../maintain-automate/ci.md:94
 msgid ""
-"[Appveyor:](https://www.appveyor.com/): Supports running tests on Windows"
-" operating systems and predated the release of GitHub Actions. Today, "
+"[Appveyor:](https://www.appveyor.com/): Supports running tests on Windows "
+"operating systems and predated the release of GitHub Actions. Today, "
 "AppVeyor supports operating systems beyond Windows."
 msgstr ""
+"[Appveyor:](https://www.appveyor.com/): Windows オペレーティング "
+"システムでのテストの実行をサポートしており、GitHub Actions のリリースより前から提供されていました。現在、AppVeyor は "
+"Windows 以外のオペレーティング システムもサポートしています。"
 
 #: ../../maintain-automate/ci.md:97
 msgid ""
 "[Travis CI:](https://www.travis-ci.com/) had been a common CI platform "
-"choice in our ecosystem. Usage dropped after Travis CI ended free support"
-" for open-source projects."
+"choice in our ecosystem. Usage dropped after Travis CI ended free support "
+"for open-source projects."
 msgstr ""
+"[Travis CI:](https://www.travis-ci.com/) は、私たちのエコシステムでは一般的な CI "
+"プラットフォームの選択肢でした。 Travis CI がオープンソース プロジェクトの無料サポートを終了した後、使用量は減少しました。"
 
 #: ../../maintain-automate/ci.md:100
 msgid ""
@@ -212,62 +240,293 @@ msgid ""
 "builds of websites and documentation since it offers a preview of the PR "
 "changes."
 msgstr ""
+"[CircleCI:](https://circleci.com/) CircleCI は PR 変更のプレビューを提供するため、Web "
+"サイトやドキュメントの自動構築に役立ちます。"
 
 #: ../../maintain-automate/ci.md:105
 msgid "Embrace automation"
-msgstr ""
+msgstr "自動化を採用する"
 
 #: ../../maintain-automate/ci.md:107
 msgid ""
-"By embracing CI/CD, you can ensure that your code runs as you expect it "
-"to across the diverse landscapes of user environments. Further, you can "
-"automate certain checks (and, in some cases, code fixes), including "
-"linting and code style. You can even automate spell-checking your "
-"documentation and docstrings!"
+"By embracing CI/CD, you can ensure that your code runs as you expect it to "
+"across the diverse landscapes of user environments. Further, you can "
+"automate certain checks (and, in some cases, code fixes), including linting"
+" and code style. You can even automate spell-checking your documentation "
+"and docstrings!"
 msgstr ""
+"CI/CD を採用することで、ユーザー環境の多様な環境にわたってコードが期待どおりに実行されることを保証できます。さらに、リンティングやコード "
+"スタイルなどの特定のチェック (場合によってはコード修正) を自動化できます。ドキュメントや docstring "
+"のスペルチェックを自動化することもできます。"
+
+#: ../../maintain-automate/dev-installs.md:1
+msgid "Installing your own code"
+msgstr "独自のコードをインストールする"
+
+#: ../../maintain-automate/dev-installs.md:3
+msgid ""
+"You have a conda environment. It works. Maybe it has packages that were "
+"hard to install, like GDAL, HDF5, or other compiled scientific "
+"dependencies."
+msgstr ""
+"conda "
+"環境があります。それは動作します。おそらく、GDAL、HDF5、またはその他のコンパイルされた科学的依存関係など、インストールが困難なパッケージが含まれている可能性があります。"
+
+#: ../../maintain-automate/dev-installs.md:5
+msgid ""
+"You also have code that you are writing locally. Maybe it started as a "
+"script, or maybe it is already organized as a Python package. You want to "
+"use that code inside the same environment with GDAL, HDF5, and the other "
+"tools you already installed."
+msgstr ""
+"ローカルで記述しているコードもあります。おそらくスクリプトとして始まったか、すでに Python "
+"パッケージとして編成されているのかもしれません。そのコードを、GDAL、HDF5、およびすでにインストールされている他のツールと同じ環境内で使用したいと考えています。"
+
+#: ../../maintain-automate/dev-installs.md:7
+msgid ""
+"The instructions to install your code into a conda environment is to first "
+"activate your conda environment `conda activate your_env_name` and then run"
+" this: `python -m pip install -e . --no-deps`. You may also see this "
+"written as `pip install -e .`. See [The Full Command](the-full-command) "
+"section below for more info as to the details of this command."
+msgstr ""
+"コードを conda 環境にインストールする手順は、まず conda 環境をアクティブ化して「conda activate "
+"your_env_name」、次にこれを実行します: `python -m pip install -e 。 --no-deps`。これが「pip "
+"install -e .」と書かれていることもあります。このコマンドの詳細については、以下の [完全なコマンド](the-full-command) "
+"セクションを参照してください。"
+
+#: ../../maintain-automate/dev-installs.md:9
+msgid ""
+"If this is the first time you're seeing pip install commands, you may not "
+"be totally sure what is going on here. Conda created the environment, why "
+"am I using `pip` to install things now? You may have heard guidance to "
+"generally try and avoid mixing conda and pip? You may already be mixing "
+"conda and pip and things are totally fine. You may also not care at all "
+"because `pip install -e .` seems to work fine and you can get back to what "
+"you're actually trying to do. (If that last one is you, you're also "
+"probably not reading this page). In any event, all of these situations are "
+"perfectly understandable and totally okay for you to be going through."
+msgstr ""
+"pip install コマンドを初めて見る場合は、ここで何が起こっているのかよくわからないかもしれません。 Conda "
+"が環境を作成したのに、なぜ今インストールに `pip` を使用しているのでしょうか?一般的に conda と pip "
+"を混合しないようにするというガイダンスを聞いたことがあるかもしれません。すでに conda と pip "
+"を混合しているかもしれませんが、まったく問題ありません。また、`pip install -e .` "
+"は問題なく動作しているようで、実際にやろうとしていることに戻ることができるので、まったく気にしないかもしれません。 "
+"(最後の人があなたなら、おそらくこのページも読んでいないでしょう)。いずれにせよ、これらの状況はすべて完全に理解できるものであり、あなたが経験してもまったく問題ありません。"
+
+#: ../../maintain-automate/dev-installs.md:11
+msgid ""
+"So... why pip? The short answer is that conda and pip are doing different "
+"jobs here."
+msgstr "それで...なぜピップ?簡単に言うと、ここでは conda と pip が異なる仕事をしているということです。"
+
+#: ../../maintain-automate/dev-installs.md:13
+msgid ""
+"The slightly longer, mostly apologetic, answer is this is just sort of the "
+"current ergonomics of how python packaging works and, honestly? Most of us "
+"have turned this confusing pain point into muscle memory. But not you. "
+"You're new here. And you're like... wat? And you're totally justified to "
+"feel this way."
+msgstr ""
+"少し長く、ほとんど謝罪的な答えですが、これは Python "
+"のパッケージ化がどのように機能するかについての現在の人間工学のようなもので、正直に言って?私たちのほとんどは、このわかりにくい痛みのポイントを筋肉の記憶に変えています。しかし、あなたはそうではありません。あなたはここに来たのは初めてです。そしてあなたは...何ですか？そして、あなたがそのように感じるのも当然です。"
+
+#: ../../maintain-automate/dev-installs.md:15
+msgid ""
+"So, what is happening here? `conda` manages the environment: the Python "
+"runtime, compiled libraries, command line tools, and the packages your "
+"project depends on. This is stuff that you've already been doing and you're"
+" comfortable with (or at least familiar with). `pip` is doing one Python-"
+"packaging-specific job: installing your local package into the active "
+"environment."
+msgstr ""
+"それで、ここで何が起こっているのでしょうか？ `conda` は、Python ランタイム、コンパイルされたライブラリ、コマンド ライン "
+"ツール、プロジェクトが依存するパッケージなどの環境を管理します。これはあなたがすでに行っており、慣れている（または少なくとも慣れている）ことです。 "
+"`pip` は、ローカル パッケージをアクティブな環境にインストールするという、Python パッケージング固有のジョブを 1 つ実行します。"
+
+#: ../../maintain-automate/dev-installs.md:17
+msgid ""
+"In editable mode, the `-e` flag, `pip` connects the active environment to "
+"the source files you are editing. And... why exactly is that useful?"
+msgstr ""
+"編集可能モードでは、「-e」フラグ、「pip」により、アクティブな環境が編集中のソース "
+"ファイルに接続されます。そして...なぜそれが役立つのでしょうか?"
+
+#: ../../maintain-automate/dev-installs.md:19
+msgid "It's useful because it gives you a pretty quick development loop:"
+msgstr "これは非常に迅速な開発ループを提供するので便利です。"
+
+#: ../../maintain-automate/dev-installs.md:21
+msgid "Edit your code in your editor."
+msgstr "エディターでコードを編集します。"
+
+#: ../../maintain-automate/dev-installs.md:22
+msgid "Run it from a terminal, test suite, or Jupyter notebook."
+msgstr "ターミナル、テスト スイート、または Jupyter ノートブックから実行します。"
+
+#: ../../maintain-automate/dev-installs.md:23
+msgid "Edit the code again."
+msgstr "コードを再度編集します。"
+
+#: ../../maintain-automate/dev-installs.md:24
+msgid "Run it again without reinstalling your package."
+msgstr "パッケージを再インストールせずに再度実行します。"
+
+#: ../../maintain-automate/dev-installs.md:26
+msgid ""
+"So the goal is not to switch from conda to pip. The goal is to keep using "
+"your conda environment while making your local package importable inside "
+"that environment."
+msgstr ""
+"したがって、目標は conda から pip に切り替えることではありません。目標は、conda 環境を使用し続けながら、その環境内でローカル "
+"パッケージをインポートできるようにすることです。"
+
+#: ../../maintain-automate/dev-installs.md:28
+msgid "Should I use pip for everything now?"
+msgstr "今度はすべてに pip を使用する必要がありますか?"
+
+#: ../../maintain-automate/dev-installs.md:30
+msgid "Probably not?"
+msgstr "おそらくそうではないでしょうか？"
+
+#: ../../maintain-automate/dev-installs.md:32
+msgid ""
+"If conda is already working well for your project, keep using conda to "
+"manage the environment. Use pip only for this one task: installing your "
+"local package in editable mode."
+msgstr ""
+"conda がすでにプロジェクトでうまく機能している場合は、引き続き conda を使用して環境を管理してください。 pip は、ローカル "
+"パッケージを編集可能モードでインストールするというこの 1 つのタスクにのみ使用してください。"
+
+#: ../../maintain-automate/dev-installs.md:34
+msgid ""
+"If you are curious about other tools like uv, pixi, Hatch, or pip-only "
+"workflows, see [Environment Managers](environment-managers.md). Those tools"
+" can be great choices. But you do not need to switch tools just to develop "
+"your local package inside a conda environment."
+msgstr ""
+"uv、pixi、Hatch、pip のみのワークフローなどの他のツールに興味がある場合は、[環境マネージャー](environment-"
+"managers.md) を参照してください。これらのツールは素晴らしい選択肢になる可能性があります。ただし、conda 環境内でローカル "
+"パッケージを開発するためだけにツールを切り替える必要はありません。"
+
+#: ../../maintain-automate/dev-installs.md:36
+msgid ""
+"As a final note, people in the conda ecosystem are actively working on "
+"better conda/pip interoperability. In the future, this workflow may become "
+"less awkward. For now, `python -m pip install -e . --no-deps` is the "
+"standard bridge."
+msgstr ""
+"最後になりますが、conda エコシステムの人々は conda/pip "
+"の相互運用性の向上に積極的に取り組んでいます。将来的には、このワークフローはそれほど面倒ではなくなるかもしれません。現時点では、 `python -m"
+" pip install -e です。 --no-deps` は標準のブリッジです。"
+
+#: ../../maintain-automate/dev-installs.md:39
+msgid "The full command"
+msgstr "完全なコマンド"
+
+#: ../../maintain-automate/dev-installs.md:41
+msgid ""
+"`python -m pip install -e . --no-deps` is a mouthful. I know it. You know "
+"it. Why do we do these things?"
+msgstr ""
+"`python -m pip install -e 。 --no-deps` "
+"は一口です。私はそれを知っている。あなたはそれを知っています。なぜこのようなことをするのでしょうか?"
+
+#: ../../maintain-automate/dev-installs.md:43
+msgid "The simplest version of this is:"
+msgstr "これの最も単純なバージョンは次のとおりです。"
+
+#: ../../maintain-automate/dev-installs.md:48
+msgid "But we recommend the longer version in conda environments for two reasons."
+msgstr "ただし、conda 環境では 2 つの理由から長いバージョンをお勧めします。"
+
+#: ../../maintain-automate/dev-installs.md:50
+msgid ""
+"The `python -m pip` part ensures that you're using pip from the active "
+"conda environment. Sometimes this results in `pip not found`, which is "
+"actually a good error to get because it means you prevented an annoying-to-"
+"debug failure mode. If this happens just `conda install pip` and try again."
+" So, why? Sometimes `pip` from a different python environment can be on "
+"your PATH which means that you'll accidentally install your code into an "
+"unrelated python environment. This can be confusing to debug. This has "
+"happened to most (all?) of us. It usually hits when you're least prepared "
+"to debug and fix it. So we recommend the `python -m` in front to prevent "
+"this from happening. But it does add to the length of the command."
+msgstr ""
+"`python -m pip` 部分は、アクティブな conda 環境から pip を使用していることを保証します。場合によっては、これにより「pip"
+" not "
+"found」というエラーが発生することがありますが、これはデバッグに煩わしい障害モードを回避したことを意味するため、実際には発生しても良いエラーです。この問題が発生した場合は、「conda"
+" install pip」を実行して再試行してください。それで、なぜですか？場合によっては、別の Python 環境の `pip` が PATH "
+"上に存在することがあります。これは、コードを誤って無関係な Python "
+"環境にインストールしてしまうことを意味します。これはデバッグが混乱する可能性があります。これは私たちのほとんど（全員？）に起こったことです。通常、デバッグと修正の準備が整っていないときに発生します。したがって、これが起こらないようにするために、先頭に「python"
+" -m」を付けることをお勧めします。ただし、コマンドの長さは長くなります。"
+
+#: ../../maintain-automate/dev-installs.md:52
+msgid ""
+"The `--no-deps` flag tells pip not to install your package's dependencies, "
+"if you have any listed in your project. If you do have them listed, "
+"probably in your `pyproject.toml` file, then `pip install -e .` will try to"
+" install the dependencies that are listed in that file. In a conda "
+"environment, that can range from \"mostly fine\" to \"now my environment is"
+" broken and I am not sure how to recover.\""
+msgstr ""
+"`--no-deps` フラグは、プロジェクトにパッケージの依存関係がリストされている場合に、パッケージの依存関係をインストールしないように pip "
+"に指示します。おそらく `pyproject.toml` ファイルにそれらがリストされている場合、`pip install -e .` "
+"はそのファイルにリストされている依存関係をインストールしようとします。 conda "
+"環境では、「ほとんど問題ありません」から「環境が壊れており、回復方法がわかりません」までさまざまです。"
+
+#: ../../maintain-automate/dev-installs.md:54
+msgid ""
+"With `--no-deps`, pip installs only your local package. You remain "
+"responsible for managing the environment dependencies with conda."
+msgstr ""
+"`--no-deps` を指定すると、pip はローカル パッケージのみをインストールします。 conda "
+"を使用して環境の依存関係を管理するのは引き続きお客様の責任です。"
 
 #: ../../maintain-automate/environment-managers.md:2
 msgid "Environment Managers for Python Packaging"
-msgstr ""
+msgstr "Python パッケージングの環境マネージャー"
 
 #: ../../maintain-automate/environment-managers.md:4
 msgid "Quick Decision Guide"
-msgstr ""
+msgstr "クイック意思決定ガイド"
 
 #: ../../maintain-automate/environment-managers.md:6
 msgid "**Python-only project, want simplicity?** → venv + pip"
-msgstr ""
+msgstr "**Python のみのプロジェクト、シンプルさが必要ですか?** → venv + pip"
 
 #: ../../maintain-automate/environment-managers.md:7
 msgid "**Python-only, want speed?** → **uv** (recommended)"
-msgstr ""
+msgstr "**Python のみ、速度が必要ですか?** → **uv** (推奨)"
 
 #: ../../maintain-automate/environment-managers.md:8
 msgid "**Installing CLI tools globally?** → pipx"
-msgstr ""
+msgstr "**CLI ツールをグローバルにインストールしますか?** → pipx"
 
 #: ../../maintain-automate/environment-managers.md:9
 msgid ""
 "**Need conda packages or cross-language dependencies?** → **pixi** "
 "(recommended) or conda/mamba"
-msgstr ""
+msgstr "**conda パッケージまたは言語間の依存関係が必要ですか?** → **pixi** (推奨) または conda/mamba"
 
 #: ../../maintain-automate/environment-managers.md:10
 msgid ""
 "**Creating a Python package?** → Use Hatch -- with UV as a dependency "
 "manager"
-msgstr ""
+msgstr "**Python パッケージを作成しますか?** → Hatch を使用します -- 依存関係マネージャーとして UV を使用します"
 
 #: ../../maintain-automate/environment-managers.md:12
 msgid ""
-"You can mix tools! For example, use **pipx** to install tools you use "
-"often (at the command line) like Hatch, ruff or pre-commit, then use "
-"**uv** within your projects for package and environment management."
+"You can mix tools! For example, use **pipx** to install tools you use often"
+" (at the command line) like Hatch, ruff or pre-commit, then use **uv** "
+"within your projects for package and environment management."
 msgstr ""
+"ツールを組み合わせることができます!たとえば、**pipx** を使用して、Hatch、ruff、または pre-commit "
+"などのよく使用するツール (コマンド ラインで) をインストールし、プロジェクト内で **uv** を使用してパッケージと環境を管理します。"
 
 #: ../../maintain-automate/environment-managers.md:15
 msgid "Environment and package managers"
-msgstr ""
+msgstr "環境およびパッケージマネージャー"
 
 #: ../../maintain-automate/environment-managers.md:17
 msgid ""
@@ -275,15 +534,20 @@ msgid ""
 "packaging workflows. To make Your packaging experience when selecting a "
 "tool will be easier if you understand the difference between the two."
 msgstr ""
+"パッケージおよび環境マネージャーは、Python パッケージ化ワークフローにおける重要なツールです。 2 "
+"つの違いを理解すると、ツールを選択する際のパッケージング エクスペリエンスが容易になります。"
 
 #: ../../maintain-automate/environment-managers.md:20
 msgid ""
 "A **package manager** is used to install, update, and remove Python "
-"packages (libraries and tools) and their dependencies in your "
-"environment. When you use a package manager, you are often downloading "
-"packages from a repository like PyPI (Python Package Index) or a local "
-"repository like GitHub / GitLab."
+"packages (libraries and tools) and their dependencies in your environment. "
+"When you use a package manager, you are often downloading packages from a "
+"repository like PyPI (Python Package Index) or a local repository like "
+"GitHub / GitLab."
 msgstr ""
+"**パッケージ マネージャー**は、環境内の Python パッケージ (ライブラリとツール) "
+"とその依存関係をインストール、更新、削除するために使用されます。パッケージ マネージャーを使用する場合、多くの場合、PyPI (Python "
+"Package Index) などのリポジトリ、または GitHub / GitLab などのローカル リポジトリからパッケージをダウンロードします。"
 
 #: ../../maintain-automate/environment-managers.md:23
 msgid ""
@@ -292,57 +556,67 @@ msgid ""
 "package is PyPI, but it can be used to install packages from other "
 "repositories such as GitHub."
 msgstr ""
+"`pip install numpy` を実行すると、pip はパッケージ マネージャーとして機能し、PyPI から numpy "
+"をインストールします。パッケージをインストールするときの Pip のデフォルトのリポジトリは PyPI ですが、GitHub "
+"などの他のリポジトリからパッケージをインストールするために使用できます。"
 
 #: ../../maintain-automate/environment-managers.md:26
 msgid ""
-"An **environment manager** creates isolated spaces (environments) for "
-"your Python projects. Each environment has its own Python installation "
-"and its own installed packages. Using isolated environments for different"
-" projects reduces the change of environment conflicts when using the same"
-" environment across different projects with different dependencies."
+"An **environment manager** creates isolated spaces (environments) for your "
+"Python projects. Each environment has its own Python installation and its "
+"own installed packages. Using isolated environments for different projects "
+"reduces the change of environment conflicts when using the same environment"
+" across different projects with different dependencies."
 msgstr ""
+"**環境マネージャー**は、Python プロジェクト用に隔離されたスペース (環境) を作成します。各環境には独自の Python "
+"インストールと独自のインストール済みパッケージがあります。異なるプロジェクトに分離された環境を使用すると、異なる依存関係を持つ異なるプロジェクト間で同じ環境を使用する場合に、環境変更の競合が軽減されます。"
 
 #: ../../maintain-automate/environment-managers.md:28
 msgid ""
 "There are many tools listed below, but if you're short on time, you may "
 "want to consider"
-msgstr ""
+msgstr "以下にリストされているツールはたくさんありますが、時間がない場合は、次のツールを検討するとよいでしょう。"
 
 #: ../../maintain-automate/environment-managers.md:30
 msgid ""
-"Hatch combined with UV if you are managing a Python package. [Check out "
-"our tutorials for more on this workflow.](create-pure-python-package)"
+"Hatch combined with UV if you are managing a Python package. [Check out our"
+" tutorials for more on this workflow.](create-pure-python-package)"
 msgstr ""
+"Python パッケージを管理している場合は、ハッチングを UV と組み合わせます。 "
+"[このワークフローの詳細については、チュートリアルを確認してください。](create-pure-python-package)"
 
 #: ../../maintain-automate/environment-managers.md:31
 msgid ""
 "Pixi or mamba as faster alternatives to conda if you are working in the "
 "non-Pure Python packaging space."
-msgstr ""
+msgstr "非 Pure Python パッケージング領域で作業している場合は、conda のより高速な代替手段として Pixi または mamba を使用します。"
 
 #: ../../maintain-automate/environment-managers.md:33
 msgid "Where environment managers save your environment"
-msgstr ""
+msgstr "環境マネージャーが環境を保存する場所"
 
 #: ../../maintain-automate/environment-managers.md:35
 msgid ""
-"Environment managers save environments in different locations by default."
-" For instance, `venv`, an environment manager that ships with Python, "
-"saves an environment by default in your current working directory. UV has"
-" the same native behavior. In contrast, conda and mamba save environments"
-" in a global location, allowing you to access them easily across "
-"projects."
+"Environment managers save environments in different locations by default. "
+"For instance, `venv`, an environment manager that ships with Python, saves "
+"an environment by default in your current working directory. UV has the "
+"same native behavior. In contrast, conda and mamba save environments in a "
+"global location, allowing you to access them easily across projects."
 msgstr ""
+"環境マネージャーは、デフォルトで環境を別の場所に保存します。たとえば、Python "
+"に同梱されている環境マネージャーである「venv」は、デフォルトで現在の作業ディレクトリに環境を保存します。 UV "
+"にも同じネイティブ動作があります。対照的に、conda と mamba "
+"は環境をグローバルな場所に保存するため、プロジェクト間で簡単にアクセスできます。"
 
 #: ../../maintain-automate/environment-managers.md:38
 msgid ""
-"UV does have a global cache even tho its default behavior is to create an"
-" environment in your current working directory."
-msgstr ""
+"UV does have a global cache even tho its default behavior is to create an "
+"environment in your current working directory."
+msgstr "UV には、デフォルトの動作が現在の作業ディレクトリに環境を作成することであっても、グローバル キャッシュがあります。"
 
 #: ../../maintain-automate/environment-managers.md:42
 msgid "Some tools do everything"
-msgstr ""
+msgstr "一部のツールはすべてを実行します"
 
 #: ../../maintain-automate/environment-managers.md:44
 msgid ""
@@ -350,203 +624,208 @@ msgid ""
 "management. For instance, UV, conda and mamba can be used to both create "
 "environments, add dependencies, and build and install tools."
 msgstr ""
+"最新のツールの中には、パッケージのインストールと環境管理の両方を処理するものもあります。たとえば、UV、conda、mamba "
+"は、環境の作成、依存関係の追加、ツールの構築とインストールの両方に使用できます。"
 
 #: ../../maintain-automate/environment-managers.md:46
 msgid "Comparison Table: pip ecosystem"
-msgstr ""
+msgstr "比較表: pip エコシステム"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Tool"
-msgstr ""
+msgstr "道具"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Language"
-msgstr ""
+msgstr "言語"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Speed"
-msgstr ""
+msgstr "スピード"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Default Environment Location"
-msgstr ""
+msgstr "デフォルトの環境の場所"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**pip**"
-msgstr ""
+msgstr "**ピッ**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Package manager"
-msgstr ""
+msgstr "パッケージマネージャー"
 
 #: ../../maintain-automate/environment-managers.md:37
 #: ../../maintain-automate/task-runners.md
 msgid "Python"
-msgstr ""
+msgstr "パイソン"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Slower"
-msgstr ""
+msgstr "もっとゆっくり"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "N/A (uses existing environment)"
-msgstr ""
+msgstr "該当なし (既存の環境を使用)"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Python's standard package installer. pip also builds packages"
-msgstr ""
+msgstr "Pythonの標準パッケージインストーラー。 pip はパッケージもビルドします"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**pipx**"
-msgstr ""
+msgstr "**pipx**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Global (isolated per tool)"
-msgstr ""
+msgstr "グローバル (ツールごとに分離)"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid ""
-"Installs tools that you need to regularly use across projects such as "
-"nox, pytest or ruff in a global location"
-msgstr ""
+"Installs tools that you need to regularly use across projects such as nox, "
+"pytest or ruff in a global location"
+msgstr "nox、pytest、ruff などのプロジェクト間で定期的に使用する必要があるツールをグローバルな場所にインストールします"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**uv**"
-msgstr ""
+msgstr "**紫外線**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Both"
-msgstr ""
+msgstr "両方"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Rust"
-msgstr ""
+msgstr "さび"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Fastest"
-msgstr ""
+msgstr "最速"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Current working directory"
-msgstr ""
+msgstr "現在の作業ディレクトリ"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Fast package installer and environment creator"
-msgstr ""
+msgstr "高速パッケージインストーラーおよび環境クリエーター"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**venv**"
-msgstr ""
+msgstr "**ヴェンヴ**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Environment manager"
-msgstr ""
+msgstr "環境管理者"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Python's built-in environment creator"
-msgstr ""
+msgstr "Pythonの組み込み環境作成者"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**virtualenv**"
-msgstr ""
+msgstr "**仮想環境**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Moderate"
-msgstr ""
+msgstr "適度"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Feature-rich alternative to venv"
-msgstr ""
+msgstr "venv に代わる機能が豊富な代替ツール"
 
 #: ../../maintain-automate/environment-managers.md:56
 msgid "Comparison Table: conda ecosystem"
-msgstr ""
+msgstr "比較表: conda エコシステム"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**conda**"
-msgstr ""
+msgstr "**コンダ**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Python/C++"
-msgstr ""
+msgstr "Python/C++"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Global (`~/anaconda3/envs/`)"
-msgstr ""
+msgstr "グローバル (`~/anaconda3/envs/`)"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Cross-language package and environment manager"
-msgstr ""
+msgstr "クロス言語パッケージおよび環境マネージャー"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**mamba**"
-msgstr ""
+msgstr "**マンバ**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "C++"
-msgstr ""
+msgstr "C++"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Faster"
-msgstr ""
+msgstr "もっと早く"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Faster drop-in replacement for conda"
-msgstr ""
+msgstr "conda のより迅速なドロップイン置換"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "**pixi**"
-msgstr ""
+msgstr "**ピクシー**"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Current working directory (`.pixi/`)"
-msgstr ""
+msgstr "現在の作業ディレクトリ (`.pixi/`)"
 
 #: ../../maintain-automate/environment-managers.md:37
 msgid "Modern conda-based tool with lock files"
-msgstr ""
+msgstr "ロックファイルを備えた最新の conda ベースのツール"
 
 #: ../../maintain-automate/environment-managers.md:64
 msgid ""
-"**Speed comparison:** Rust-based tools (uv, pixi) are significantly "
-"faster when installing packages and resolving complex environments than "
-"Python-based tools. Mamba is faster than conda but might be slower than "
-"Rust-based alternatives such as Pixi."
+"**Speed comparison:** Rust-based tools (uv, pixi) are significantly faster "
+"when installing packages and resolving complex environments than Python-"
+"based tools. Mamba is faster than conda but might be slower than Rust-based"
+" alternatives such as Pixi."
 msgstr ""
+"**速度の比較:** Rust ベースのツール (uv、pixi) は、パッケージのインストールや複雑な環境の解決において、Python "
+"ベースのツールよりも大幅に高速です。 Mamba は conda より高速ですが、Pixi などの Rust "
+"ベースの代替手段よりは遅い可能性があります。"
 
 #: ../../maintain-automate/environment-managers.md:67
 msgid "Package Managers"
-msgstr ""
+msgstr "パッケージマネージャー"
 
 #: ../../maintain-automate/environment-managers.md:69
 msgid "pip"
-msgstr ""
+msgstr "ピップ"
 
 #: ../../maintain-automate/environment-managers.md:71
 msgid ""
-"Pip is Python's standard package installer. It is included with Python by"
-" default."
-msgstr ""
+"Pip is Python's standard package installer. It is included with Python by "
+"default."
+msgstr "Pip は Python の標準パッケージ インストーラーです。 Python にはデフォルトで含まれています。"
 
 #: ../../maintain-automate/environment-managers.md:72
 msgid ""
 "Pip is great for installing packages from PyPI and GitHub / GitLab into "
 "existing environments."
-msgstr ""
+msgstr "Pip は、PyPI および GitHub / GitLab から既存の環境にパッケージをインストールするのに最適です。"
 
 #: ../../maintain-automate/environment-managers.md:73
 msgid ""
 "It is also great for development if you want to install your package "
 "locally in editable mode."
-msgstr ""
+msgstr "パッケージを編集可能モードでローカルにインストールする場合の開発にも最適です。"
 
 #: ../../maintain-automate/environment-managers.md:75
 #: ../../maintain-automate/environment-managers.md:87
@@ -557,61 +836,67 @@ msgstr ""
 #: ../../maintain-automate/environment-managers.md:261
 #: ../../maintain-automate/environment-managers.md:280
 msgid "**Basic usage:**"
-msgstr ""
+msgstr "**基本的な使用方法:**"
 
 #: ../../maintain-automate/environment-managers.md:81
 msgid "pipx"
-msgstr ""
+msgstr "pipx"
 
 #: ../../maintain-automate/environment-managers.md:83
 msgid ""
-"Pipx is can be used to install a tool that you need to use across "
-"projects (like `riff`, `pytest`, `sphinx`, `nox`), globally."
+"Pipx is can be used to install a tool that you need to use across projects "
+"(like `riff`, `pytest`, `sphinx`, `nox`), globally."
 msgstr ""
+"Pipx を使用すると、プロジェクト間で使用する必要があるツール (`riff`、`pytest`、`sphinx`、`nox` など) "
+"をグローバルにインストールできます。"
 
 #: ../../maintain-automate/environment-managers.md:85
 msgid ""
-"Why use it: You might use it to avoid reinstalling the same tool over and"
-" over on your machine."
-msgstr ""
+"Why use it: You might use it to avoid reinstalling the same tool over and "
+"over on your machine."
+msgstr "使用する理由: マシンに同じツールを何度も再インストールすることを避けるために使用できます。"
 
 #: ../../maintain-automate/environment-managers.md:93
 msgid "conda / mamba"
-msgstr ""
+msgstr "コンダ / マンバ"
 
 #: ../../maintain-automate/environment-managers.md:95
 msgid ""
-"Conda is a cross-language package manager that installs Python packages, "
-"R packages, system libraries, and more. Mamba is a faster, drop-in "
-"replacement for conda and we highly recommend mamba over conda if you are"
-" still using conda."
+"Conda is a cross-language package manager that installs Python packages, R "
+"packages, system libraries, and more. Mamba is a faster, drop-in "
+"replacement for conda and we highly recommend mamba over conda if you are "
+"still using conda."
 msgstr ""
+"Conda は、Python パッケージ、R パッケージ、システム ライブラリなどをインストールするクロス言語パッケージ マネージャーです。 "
+"Mamba は、conda のより高速なドロップイン代替品であり、まだ conda を使用している場合は、conda よりも mamba "
+"を強くお勧めします。"
 
 #: ../../maintain-automate/environment-managers.md:97
 msgid ""
 "These tools are best for scientific computing projects and environments "
-"that need non-Python dependencies (like C libraries, GDAL, or R "
-"packages)."
+"that need non-Python dependencies (like C libraries, GDAL, or R packages)."
 msgstr ""
+"これらのツールは、Python 以外の依存関係 (C ライブラリ、GDAL、R パッケージなど) を必要とする科学技術コンピューティング "
+"プロジェクトや環境に最適です。"
 
 #: ../../maintain-automate/environment-managers.md:109
 msgid "Conda and mamba also function as environment managers - see below!"
-msgstr ""
+msgstr "Conda と mamba は環境マネージャーとしても機能します - 以下を参照してください。"
 
 #: ../../maintain-automate/environment-managers.md:112
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
 msgid "Environment Managers"
-msgstr ""
+msgstr "環境管理者"
 
 #: ../../maintain-automate/environment-managers.md:114
 msgid "hatch for pure Python packaging"
-msgstr ""
+msgstr "純粋な Python パッケージング用のハッチ"
 
 #: ../../maintain-automate/environment-managers.md:116
 #: ../../maintain-automate/environment-managers.md:204
 #: ../../maintain-automate/environment-managers.md:273
 msgid "pyOpenSci Recommends"
-msgstr ""
+msgstr "pyOpenSci の推奨事項"
 
 #: ../../maintain-automate/environment-managers.md:118
 msgid ""
@@ -620,62 +905,72 @@ msgid ""
 "handles publishing—all in one tool. It can use **uv** as its backend for "
 "even faster operations."
 msgstr ""
+"Python パッケージ化のための完全なプロジェクト管理ツールとして **hatch** をお勧めします。 Hatch "
+"は、環境の管理、パッケージの構築、テストの実行、公開の処理をすべて 1 つのツールで行います。 **uv** "
+"をバックエンドとして使用して、さらに高速な操作を実現できます。"
 
 #: ../../maintain-automate/environment-managers.md:121
 msgid ""
 "Hatch is a comprehensive modern Python project manager that handles "
 "environments, package building, testing, and publishing. Hatch creates "
 "isolated environments for different tasks (testing, docs, development). "
-"Hatch uses UV under the hood to install Python, and can be set to use UV "
-"to manage environment installations too."
+"Hatch uses UV under the hood to install Python, and can be set to use UV to"
+" manage environment installations too."
 msgstr ""
+"Hatch は、環境、パッケージの構築、テスト、公開を処理する包括的な最新の Python プロジェクト マネージャーです。 Hatch "
+"は、さまざまなタスク (テスト、ドキュメント、開発) 用に分離された環境を作成します。 Hatch は内部で UV を使用して Python "
+"をインストールし、UV を使用して環境のインストールを管理するように設定することもできます。"
 
 #: ../../maintain-automate/environment-managers.md:123
 msgid ""
 "Hatch is best for Python package developers who want an all-in-one tool "
-"that handles the entire packaging workflow from development to "
-"publication."
-msgstr ""
+"that handles the entire packaging workflow from development to publication."
+msgstr "Hatch は、開発から公開までのパッケージ化ワークフロー全体を処理するオールインワン ツールを必要とする Python パッケージ開発者に最適です。"
 
 #: ../../maintain-automate/environment-managers.md:125
 msgid "[Check out our tutorial](create-pure-python-package)"
-msgstr ""
+msgstr "[チュートリアルをチェックしてください](create-pure-python-package)"
 
 #: ../../maintain-automate/environment-managers.md
 msgid "hatch (recommended)"
-msgstr ""
+msgstr "ハッチ (推奨)"
 
 #: ../../maintain-automate/environment-managers.md
 msgid "hatch with uv backend"
-msgstr ""
+msgstr "UV バックエンドを使用したハッチング"
 
 #: ../../maintain-automate/environment-managers.md:160
 msgid ""
-"Hatch acts as a task runner and can manage multiple environments that you"
-" define. It also handles project and dependency installation, making it "
+"Hatch acts as a task runner and can manage multiple environments that you "
+"define. It also handles project and dependency installation, making it "
 "ideal for package maintainers who want consistency across development "
 "tasks."
 msgstr ""
+"Hatch はタスク "
+"ランナーとして機能し、定義した複数の環境を管理できます。また、プロジェクトと依存関係のインストールも処理するため、開発タスク間で一貫性を求めるパッケージ管理者にとって理想的です。"
 
 #: ../../maintain-automate/environment-managers.md:163
 msgid "venv"
-msgstr ""
+msgstr "ベンヴ"
 
 #: ../../maintain-automate/environment-managers.md:165
 msgid ""
-"venv is Python's built-in environment creator (included with Python "
-"3.3+). It is best for simple pure Python projects. Because venv ships "
-"with Python, and it is used by Hatch, UV and other tools under the hood, "
-"it is the most widely used tool."
+"venv is Python's built-in environment creator (included with Python 3.3+). "
+"It is best for simple pure Python projects. Because venv ships with Python,"
+" and it is used by Hatch, UV and other tools under the hood, it is the most"
+" widely used tool."
 msgstr ""
+"venv は、Python の組み込み環境作成ツールです (Python 3.3 以降に含まれています)。これは、単純な純粋な Python "
+"プロジェクトに最適です。 venv は Python "
+"に同梱されており、Hatch、UV、その他のツールによって内部的に使用されるため、最も広く使用されているツールです。"
 
 #: ../../maintain-automate/environment-managers.md:168
 msgid "Basic usage:"
-msgstr ""
+msgstr "基本的な使い方:"
 
 #: ../../maintain-automate/environment-managers.md:184
 msgid "virtualenv"
-msgstr ""
+msgstr "仮想環境"
 
 #: ../../maintain-automate/environment-managers.md:186
 msgid ""
@@ -683,10 +978,12 @@ msgid ""
 "performance and additional options. It's best for you if you need more "
 "control over your environments."
 msgstr ""
+"virtualenv は、より優れたパフォーマンスと追加のオプションを備えた、venv "
+"のより機能豊富な代替品です。環境をより詳細に制御する必要がある場合に最適です。"
 
 #: ../../maintain-automate/environment-managers.md:202
 msgid "uv"
-msgstr ""
+msgstr "紫外線"
 
 #: ../../maintain-automate/environment-managers.md:206
 msgid ""
@@ -694,39 +991,45 @@ msgid ""
 "management. It's significantly faster than pip and easily handles both "
 "installing packages and creating environments."
 msgstr ""
+"高速で信頼性の高い Python パッケージと環境管理には **uv** をお勧めします。 pip "
+"よりも大幅に高速で、パッケージのインストールと環境の作成の両方を簡単に処理できます。"
 
 #: ../../maintain-automate/environment-managers.md:209
 msgid ""
-"UV is a fast, Rust-based tool that replaces both pip and venv. It "
-"installs packages and creates virtual environments at lightning speed. UV"
-" is best for any pure Python project. Pixi is better if are working in "
-"the non-pure Python packaging space."
+"UV is a fast, Rust-based tool that replaces both pip and venv. It installs "
+"packages and creates virtual environments at lightning speed. UV is best "
+"for any pure Python project. Pixi is better if are working in the non-pure "
+"Python packaging space."
 msgstr ""
+"UV は、pip と venv の両方を置き換える高速な Rust ベースのツールです。パッケージをインストールし、仮想環境を超高速で作成します。 "
+"UV は純粋な Python プロジェクトに最適です。非純粋な Python パッケージング領域で作業する場合は、Pixi の方が適しています。"
 
 #: ../../maintain-automate/environment-managers.md
 msgid "uv (recommended)"
-msgstr ""
+msgstr "紫外線（推奨）"
 
 #: ../../maintain-automate/environment-managers.md
 msgid "venv + pip"
-msgstr ""
+msgstr "ヴェンブ + ピップ"
 
 #: ../../maintain-automate/environment-managers.md
 #: ../../maintain-automate/environment-managers.md:272
 msgid "pixi"
-msgstr ""
+msgstr "ピクシー"
 
 #: ../../maintain-automate/environment-managers.md:256
 msgid "conda / mamba (as environment managers)"
-msgstr ""
+msgstr "conda / mamba (環境マネージャーとして)"
 
 #: ../../maintain-automate/environment-managers.md:258
 msgid ""
 "Conda and mamba create isolated environments that can contain Python, R, "
-"system libraries, and more. The conda ecosystem tools are best for "
-"managing complex dependencies across languages or when you need specific "
-"system libraries."
+"system libraries, and more. The conda ecosystem tools are best for managing"
+" complex dependencies across languages or when you need specific system "
+"libraries."
 msgstr ""
+"Conda と mamba は、Python、R、システム ライブラリなどを含めることができる分離環境を作成します。 conda エコシステム "
+"ツールは、言語間の複雑な依存関係を管理する場合、または特定のシステム ライブラリが必要な場合に最適です。"
 
 #: ../../maintain-automate/environment-managers.md:275
 msgid ""
@@ -734,85 +1037,103 @@ msgid ""
 "conda/mamba. It's faster, uses lock files for reproducibility, and works "
 "cross-platform."
 msgstr ""
+"conda パッケージが必要なプロジェクトの場合は、conda/mamba ではなく **pixi** "
+"をお勧めします。より高速で、再現性のためにロック ファイルを使用し、クロスプラットフォームで動作します。"
 
 #: ../../maintain-automate/environment-managers.md:278
 msgid ""
 "Pixi is a modern, fast package and environment manager built on conda "
 "ecosystems. Similar to UV, Pixi uses lock files for reproducible "
 "environments. Pixi is best suited for scientific projects that require "
-"conda packages, teams that require exact reproducibility, or cross-"
-"platform development."
+"conda packages, teams that require exact reproducibility, or cross-platform"
+" development."
 msgstr ""
+"Pixi は、conda エコシステム上に構築された最新の高速パッケージおよび環境マネージャーです。 UV と同様に、Pixi "
+"は再現可能な環境にロック ファイルを使用します。 Pixi は、conda "
+"パッケージを必要とする科学プロジェクト、正確な再現性を必要とするチーム、またはクロスプラットフォーム開発に最適です。"
 
 #: ../../maintain-automate/environment-managers.md:299
 msgid ""
-"Pixi automatically creates a lock file (`pixi.lock`) ensuring everyone on"
-" your team gets identical environments."
-msgstr ""
+"Pixi automatically creates a lock file (`pixi.lock`) ensuring everyone on "
+"your team gets identical environments."
+msgstr "Pixi はロック ファイル (`pixi.lock`) を自動的に作成し、チームの全員が同一の環境を利用できるようにします。"
 
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
 msgid "What is CI?"
-msgstr ""
+msgstr "CIとは何ですか?"
 
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
 msgid "Task runners"
-msgstr ""
+msgstr "タスクランナー"
 
-#: ../../maintain-automate/index.md:46
+#: ../../maintain-automate/index.md:51
+msgid "Development installs with conda"
+msgstr "開発は conda でインストールします"
+
+#: ../../maintain-automate/index.md:51
 msgid "Maintain & Automate"
-msgstr ""
+msgstr "保守と自動化"
 
 #: ../../maintain-automate/index.md:2
 msgid "Automate Workflows and Maintain Your Package"
-msgstr ""
+msgstr "ワークフローを自動化し、パッケージを保守する"
 
 #: ../../maintain-automate/index.md:4
 msgid ""
-"Once you've [created your package](create-pure-python-package), "
-"[published it](publish-pypi-tutorial), and set up a repository for it, "
-"the next step is to automate development and maintenance workflows. "
-"Automation makes maintaining your package easier, more robust, and more "
-"secure. It also helps new contributors get started quickly without having"
-" to manually set up complex development environments and testing "
-"workflows."
+"Once you've [created your package](create-pure-python-package), [published "
+"it](publish-pypi-tutorial), and set up a repository for it, the next step "
+"is to automate development and maintenance workflows. Automation makes "
+"maintaining your package easier, more robust, and more secure. It also "
+"helps new contributors get started quickly without having to manually set "
+"up complex development environments and testing workflows."
 msgstr ""
+"[パッケージを作成](create-pure-python-package)、[公開](publish-pypi-"
+"tutorial)してリポジトリを設定したら、次のステップは開発とメンテナンスのワークフローを自動化することです。自動化により、パッケージの保守がより簡単、より堅牢、より安全になります。また、新しいコントリビューターが複雑な開発環境やテスト"
+" ワークフローを手動でセットアップする必要がなく、すぐに作業を開始できるようになります。"
 
 #: ../../maintain-automate/index.md:11
 msgid "Why automate?"
-msgstr ""
+msgstr "なぜ自動化するのか?"
 
 #: ../../maintain-automate/index.md:13
 msgid ""
-"When you automate repetitive tasks like running tests, checking code "
-"style, and building documentation, you ensure that these important steps "
-"happen consistently every time. This consistency helps you catch bugs "
-"early, maintain code quality, and make it easier for others to contribute"
-" to your package. Automation also saves you time—instead of remembering "
-"and typing long command sequences, you can run everything with simple "
-"commands or have workflows run automatically when you push code to "
-"GitHub."
+"When you automate repetitive tasks like running tests, checking code style,"
+" and building documentation, you ensure that these important steps happen "
+"consistently every time. This consistency helps you catch bugs early, "
+"maintain code quality, and make it easier for others to contribute to your "
+"package. Automation also saves you time—instead of remembering and typing "
+"long command sequences, you can run everything with simple commands or have"
+" workflows run automatically when you push code to GitHub."
 msgstr ""
+"テストの実行、コード "
+"スタイルのチェック、ドキュメントの作成などの反復的なタスクを自動化すると、これらの重要な手順が毎回一貫して実行されるようになります。この一貫性により、バグを早期に発見し、コードの品質を維持し、他の人がパッケージに貢献しやすくなります。自動化により時間も節約できます。長いコマンド"
+" シーケンスを覚えて入力する代わりに、単純なコマンドですべてを実行したり、コードを GitHub "
+"にプッシュするときにワークフローを自動的に実行したりできます。"
 
 #: ../../maintain-automate/index.md:22
 msgid "What you'll learn"
-msgstr ""
+msgstr "学べること"
 
 #: ../../maintain-automate/index.md:24
 msgid ""
-"This section will walk you through two key automation strategies for "
-"Python packages:"
-msgstr ""
+"This section will walk you through two key automation strategies for Python"
+" packages:"
+msgstr "このセクションでは、Python パッケージの 2 つの主要な自動化戦略について説明します。"
 
 #: ../../maintain-automate/index.md:27
 msgid ""
-"[**Task runners**](task-runners-intro) help you automate common "
-"development tasks locally— things like running tests, building "
-"documentation, formatting code, and checking for errors. Instead of "
-"typing out long command sequences every time, you define tasks once and "
-"run them with simple commands. Task runners like Hatch and Nox also "
-"manage isolated environments for different workflows, ensuring you have "
-"the right dependencies for each task."
+"[**Task runners**](task-runners-intro) help you automate common development"
+" tasks locally— things like running tests, building documentation, "
+"formatting code, and checking for errors. Instead of typing out long "
+"command sequences every time, you define tasks once and run them with "
+"simple commands. Task runners like Hatch and Nox also manage isolated "
+"environments for different workflows, ensuring you have the right "
+"dependencies for each task."
 msgstr ""
+"[**タスク ランナー**](task-runners-intro) "
+"は、テストの実行、ドキュメントの構築、コードのフォーマット、エラーのチェックなど、一般的な開発タスクをローカルで自動化するのに役立ちます。毎回長いコマンド"
+" シーケンスを入力する代わりに、タスクを一度定義し、単純なコマンドで実行します。 Hatch や Nox などのタスク "
+"ランナーは、さまざまなワークフローの分離環境も管理し、各タスクに適切な依存関係を確保します。"
 
 #: ../../maintain-automate/index.md:35
 msgid ""
@@ -823,21 +1144,37 @@ msgid ""
 "they're merged. You can also use Continuous Deployment (CD) to automate "
 "publishing your package to PyPI and deploying your documentation."
 msgstr ""
+"[**継続的インテグレーション (CI)**](ci-cd) は、コードが GitHub にプッシュされるたび、または誰かがプル "
+"リクエストを開くたびにテストとチェックを自動的に実行することで、自動化をさらに進めます。 CI では、すべての変更がマージされる前に、異なる "
+"Python バージョンおよびオペレーティング システム間でテストされることが保証されます。継続的デプロイメント (CD) を使用して、PyPI "
+"へのパッケージの公開とドキュメントのデプロイを自動化することもできます。"
 
 #: ../../maintain-automate/index.md:42
 msgid ""
-"Together, task runners and CI/CD create a robust development workflow "
-"that makes your package easier to maintain and more welcoming to "
-"contributors."
+"Together, task runners and CI/CD create a robust development workflow that "
+"makes your package easier to maintain and more welcoming to contributors."
 msgstr ""
+"タスク ランナーと CI/CD "
+"を組み合わせることで、パッケージの保守が容易になり、コントリビューターにとってより歓迎される堅牢な開発ワークフローが作成されます。"
+
+#: ../../maintain-automate/index.md:46
+msgid ""
+"[**Development installs in conda environments**](dev-installs) help you "
+"connect conda-based scientific development environments with local Python "
+"package development. This is especially useful when your package depends on"
+" compiled or system-level dependencies that conda manages well."
+msgstr ""
+"[**conda 環境での開発インストール**](dev-installs) は、conda ベースの科学開発環境をローカルの Python "
+"パッケージ開発と接続するのに役立ちます。これは、conda が適切に管理するコンパイル済み依存関係またはシステム "
+"レベルの依存関係にパッケージが依存している場合に特に便利です。"
 
 #: ../../maintain-automate/task-runners.md:2
 msgid "Task Runners for Python Packaging"
-msgstr ""
+msgstr "Python パッケージ化のタスク ランナー"
 
 #: ../../maintain-automate/task-runners.md:4
 msgid "What is a Task Runner?"
-msgstr ""
+msgstr "タスクランナーとは何ですか?"
 
 #: ../../maintain-automate/task-runners.md:6
 msgid ""
@@ -846,37 +1183,44 @@ msgid ""
 "your code, build documentation, or check your package, you define these "
 "tasks once and run them with simple commands."
 msgstr ""
+"タスク "
+"ランナーは、反復的な開発ワークフローを自動化するツールです。コードのテスト、ドキュメントの構築、パッケージのチェックが必要になるたびに長いコマンド "
+"シーケンスを入力する代わりに、これらのタスクを一度定義し、単純なコマンドで実行します。"
 
 #: ../../maintain-automate/task-runners.md:11
 msgid "For example, rather than running:"
-msgstr ""
+msgstr "たとえば、次のように実行するのではなく、"
 
 #: ../../maintain-automate/task-runners.md:19
 msgid "You can define a task and run:"
-msgstr ""
+msgstr "タスクを定義して実行できます。"
 
 #: ../../maintain-automate/task-runners.md:25
 msgid ""
-"Most modern task runners also include environment management features "
-"that make it quick and easy to run tasks. Task runners ensure that "
-"workflows are executed consistently every time, whether you're running "
-"them on your laptop or in continuous integration, and they also make it "
-"easier for contributors to recreate the same workflows in their local "
-"environments."
+"Most modern task runners also include environment management features that "
+"make it quick and easy to run tasks. Task runners ensure that workflows are"
+" executed consistently every time, whether you're running them on your "
+"laptop or in continuous integration, and they also make it easier for "
+"contributors to recreate the same workflows in their local environments."
 msgstr ""
+"最新のタスク ランナーのほとんどには、タスクを迅速かつ簡単に実行できる環境管理機能も含まれています。タスク "
+"ランナーを使用すると、ラップトップで実行している場合でも、継続的統合で実行している場合でも、ワークフローが常に一貫して実行されることが保証され、また、コントリビューターがローカル環境で同じワークフローを簡単に再作成できるようになります。"
 
 #: ../../maintain-automate/task-runners.md:32
 msgid "Benefits of task runners"
-msgstr ""
+msgstr "タスクランナーのメリット"
 
 #: ../../maintain-automate/task-runners.md:34
 msgid ""
-"Task runners provide several benefits for package development. When you "
-"use a task runner, everyone on your team runs tasks the same way, "
-"reducing environment-specific issues and \"works on my machine\" "
-"problems. Complex multi-step processes become single commands, so "
-"contributors don't need to memorize or look up lengthy command sequences."
+"Task runners provide several benefits for package development. When you use"
+" a task runner, everyone on your team runs tasks the same way, reducing "
+"environment-specific issues and \"works on my machine\" problems. Complex "
+"multi-step processes become single commands, so contributors don't need to "
+"memorize or look up lengthy command sequences."
 msgstr ""
+"タスク ランナーは、パッケージ開発にいくつかの利点をもたらします。タスク "
+"ランナーを使用すると、チームの全員が同じ方法でタスクを実行するため、環境固有の問題や「自分のマシンで動作する」問題が軽減されます。複雑な複数ステップのプロセスが単一のコマンドになるため、投稿者は長いコマンド"
+" シーケンスを記憶したり調べたりする必要がありません。"
 
 #: ../../maintain-automate/task-runners.md:41
 msgid ""
@@ -885,92 +1229,113 @@ msgid ""
 "without conflicts. This means your tasks run the same way locally and in "
 "continuous integration, making debugging easier and builds more reliable."
 msgstr ""
+"多くのタスク "
+"ランナーは、さまざまなワークフロー用に分離された環境も作成し、競合することなく各タスクで適切な依存関係が利用できるようにします。これは、タスクがローカルでも継続的統合でも同じように実行されることを意味し、デバッグが容易になり、ビルドの信頼性が高まります。"
 
 #: ../../maintain-automate/task-runners.md:47
 msgid "Two types of task runners"
-msgstr ""
+msgstr "2種類のタスクランナー"
 
 #: ../../maintain-automate/task-runners.md:49
 msgid ""
 "The most common task runners used in the Python ecosystem fall into two "
 "categories:"
-msgstr ""
+msgstr "Python エコシステムで使用される最も一般的なタスク ランナーは、次の 2 つのカテゴリに分類されます。"
 
 #: ../../maintain-automate/task-runners.md:51
 msgid "Environment + command managers"
-msgstr ""
+msgstr "環境 + コマンドマネージャー"
 
 #: ../../maintain-automate/task-runners.md:53
 msgid ""
-"You can use these to both create custom isolated environments and also to"
-" run your tasks."
-msgstr ""
+"You can use these to both create custom isolated environments and also to "
+"run your tasks."
+msgstr "これらを使用して、カスタムの分離環境を作成したり、タスクを実行したりできます。"
 
 #: ../../maintain-automate/task-runners.md:55
 msgid ""
 "**[Hatch](https://hatch.pypa.io/):** Hatch is an all-in-one package "
-"management tool that includes a built-in task runner. It uses a "
-"declarative TOML configuration in your `pyproject.toml` file, which means"
-" everything related to your package—metadata, dependencies, and "
-"tasks—lives in one place. Hatch also integrates with UV for fast "
-"environment creation."
+"management tool that includes a built-in task runner. It uses a declarative"
+" TOML configuration in your `pyproject.toml` file, which means everything "
+"related to your package—metadata, dependencies, and tasks—lives in one "
+"place. Hatch also integrates with UV for fast environment creation."
 msgstr ""
+"**[Hatch](https://hatch.pypa.io/):** Hatch は、組み込みのタスク "
+"ランナーを含むオールインワンのパッケージ管理ツールです。これは、`pyproject.toml` ファイル内で宣言型 TOML "
+"構成を使用します。これは、パッケージに関連するすべてのもの (メタデータ、依存関係、タスク) が 1 か所に存在することを意味します。 Hatch は"
+" UV とも統合して、環境を迅速に作成します。"
 
 #: ../../maintain-automate/task-runners.md:56
 msgid ""
 "**[Nox](https://nox.thea.codes/):** Nox is a flexible Python-based task "
 "runner that uses a code-based (imperative) configuration approach. You "
-"write Python functions to define your tasks in a `noxfile.py`, which "
-"gives you maximum flexibility for complex testing scenarios and "
-"conditional logic. It's especially popular in the Scientific Python "
-"ecosystem."
+"write Python functions to define your tasks in a `noxfile.py`, which gives "
+"you maximum flexibility for complex testing scenarios and conditional "
+"logic. It's especially popular in the Scientific Python ecosystem."
 msgstr ""
+"**[Nox](https://nox.thea.codes/):** Nox は、コードベース (命令型) 構成アプローチを使用する、柔軟な "
+"Python ベースのタスク ランナーです。 Python 関数を作成して `noxfile.py` でタスクを定義すると、複雑なテスト "
+"シナリオや条件付きロジックに対して最大限の柔軟性が得られます。これは、Scientific Python エコシステムで特に人気があります。"
 
 #: ../../maintain-automate/task-runners.md:57
 msgid ""
 "**[Tox](https://tox.wiki/):** Tox is a mature declarative tool that uses "
-"INI or TOML configuration files. It's particularly well-suited for "
-"testing across multiple Python versions and dependency combinations, and "
-"has been a standard in the Python community for years."
+"INI or TOML configuration files. It's particularly well-suited for testing "
+"across multiple Python versions and dependency combinations, and has been a"
+" standard in the Python community for years."
 msgstr ""
+"**[Tox](https://tox.wiki/):** Tox は、INI または TOML "
+"構成ファイルを使用する成熟した宣言型ツールです。これは、複数の Python "
+"バージョンおよび依存関係の組み合わせにわたるテストに特に適しており、Python コミュニティでは長年にわたり標準となっています。"
 
 #: ../../maintain-automate/task-runners.md:59
 msgid "Command-only tools"
-msgstr ""
+msgstr "コマンド専用ツール"
 
 #: ../../maintain-automate/task-runners.md:61
 msgid "These tools execute your commands but don't manage environments."
-msgstr ""
+msgstr "これらのツールはコマンドを実行しますが、環境は管理しません。"
 
 #: ../../maintain-automate/task-runners.md:63
 msgid ""
-"**[Make](https://www.gnu.org/software/make/):** Make is a traditional "
-"build automation tool that uses Makefiles. It's widely known and "
-"available on most systems, making it a good choice for simple task "
-"automation when you don't need Python-specific features. However, it can "
-"have cross-platform compatibility issues, especially on Windows."
+"**[Make](https://www.gnu.org/software/make/):** Make is a traditional build"
+" automation tool that uses Makefiles. It's widely known and available on "
+"most systems, making it a good choice for simple task automation when you "
+"don't need Python-specific features. However, it can have cross-platform "
+"compatibility issues, especially on Windows."
 msgstr ""
+"**[Make](https://www.gnu.org/software/make/):** Make は、Makefile "
+"を使用する従来のビルド自動化ツールです。これは広く知られており、ほとんどのシステムで利用できるため、Python "
+"固有の機能が必要ない場合の単純なタスクの自動化に適しています。ただし、特に Windows "
+"では、クロスプラットフォームの互換性の問題が発生する可能性があります。"
 
 #: ../../maintain-automate/task-runners.md:64
 msgid ""
-"**[Just](https://just.systems/):** Just is a modern command runner "
-"written in Rust with simple, Make-like syntax. It's fast, cross-platform,"
-" and easy to learn, making it a good lightweight alternative when you "
-"need basic task running without environment management."
+"**[Just](https://just.systems/):** Just is a modern command runner written "
+"in Rust with simple, Make-like syntax. It's fast, cross-platform, and easy "
+"to learn, making it a good lightweight alternative when you need basic task"
+" running without environment management."
 msgstr ""
+"**[Just](https://just.systems/):** Just は、シンプルな Make のような構文を使用して Rust "
+"で書かれた最新のコマンド "
+"ランナーです。これは高速でクロスプラットフォームであり、習得が簡単であるため、環境管理なしで基本的なタスクを実行する必要がある場合の軽量な代替手段として適しています。"
 
 #: ../../maintain-automate/task-runners.md:66
 msgid ""
 "Generally the two task runners that pyOpenSci suggests and uses are "
 "[Nox](https://nox.thea.codes/en/stable/) and [Hatch (also a package "
 "management tool)](https://hatch.pypa.io/latest/). Below, you will learn "
-"about the differences between all of the tools and can make a decision "
-"for yourself depending on your needs."
+"about the differences between all of the tools and can make a decision for "
+"yourself depending on your needs."
 msgstr ""
+"一般に、pyOpenSci が提案および使用する 2 つのタスク "
+"ランナーは、[Nox](https://nox.thea.codes/en/stable/) と [Hatch "
+"(これもパッケージ管理ツール)](https://hatch.pypa.io/latest/) "
+"です。以下では、すべてのツールの違いについて説明し、ニーズに応じて自分で決定できます。"
 
 #: ../../maintain-automate/task-runners.md:71
 msgid "pyOpenSci recommends: Hatch and Nox"
-msgstr ""
+msgstr "pyOpenSci が推奨する: Hatch と Nox"
 
 #: ../../maintain-automate/task-runners.md:73
 msgid ""
@@ -978,292 +1343,320 @@ msgid ""
 "development. Hatch also includes a task and environment system feature. "
 "Using Hatch means you don't need to setup another tool like Nox."
 msgstr ""
+"pyOpenSci では、Python パッケージ開発には **Hatch** "
+"を推奨しています。ハッチには、タスクおよび環境システム機能も含まれています。 Hatch を使用すると、Nox "
+"などの別のツールをセットアップする必要がなくなります。"
 
 #: ../../maintain-automate/task-runners.md:77
 msgid ""
 "However, **Nox** is also an excellent choice, particularly if you need "
 "complex testing, build or workflow logic."
-msgstr ""
+msgstr "ただし、**Nox** も、特に複雑なテスト、ビルド、またはワークフロー ロジックが必要な場合には優れた選択肢です。"
 
 #: ../../maintain-automate/task-runners.md:80
 msgid ""
 "You'll find many of the pyOpenSci documentation repositories use Nox to "
 "automate workflows such as building and testing documentation."
 msgstr ""
+"pyOpenSci ドキュメント リポジトリの多くは、ドキュメントの構築やテストなどのワークフローを自動化するために Nox "
+"を使用していることがわかります。"
 
 #: ../../maintain-automate/task-runners.md:83
 msgid "Why use Hatch?"
-msgstr ""
+msgstr "ハッチを使用する理由"
 
 #: ../../maintain-automate/task-runners.md:85
 msgid ""
-"Hatch is an all-in-one tool that helps you manage metadata, dependencies,"
-" build configuration, and tasks together in `pyproject.toml`. Using "
-"Hatch, everything related to your package lives in one place. It combines"
-" packaging (building and publishing) with everyday development tasks like"
-" testing, docs, and formatting, making workflows easier to run and share."
-" Hatch also integrates with UV making it extremely fast. Finally, Hatch "
-"follows modern packaging practices (for example, PEP 621), so your "
-"project stays aligned with community standards."
+"Hatch is an all-in-one tool that helps you manage metadata, dependencies, "
+"build configuration, and tasks together in `pyproject.toml`. Using Hatch, "
+"everything related to your package lives in one place. It combines "
+"packaging (building and publishing) with everyday development tasks like "
+"testing, docs, and formatting, making workflows easier to run and share. "
+"Hatch also integrates with UV making it extremely fast. Finally, Hatch "
+"follows modern packaging practices (for example, PEP 621), so your project "
+"stays aligned with community standards."
 msgstr ""
+"Hatch は、メタデータ、依存関係、ビルド構成、およびタスクを `pyproject.toml` でまとめて管理するのに役立つオールインワン "
+"ツールです。 Hatch を使用すると、パッケージに関連するすべてが 1 か所にまとめられます。パッケージ化 (ビルドと公開) "
+"とテスト、ドキュメント、フォーマットなどの日常的な開発タスクを組み合わせて、ワークフローの実行と共有を容易にします。 Hatch は UV "
+"とも統合されており、非常に高速です。最後に、Hatch は最新のパッケージ化慣行 (PEP 621 など) "
+"に従っているため、プロジェクトはコミュニティ標準に準拠した状態を維持できます。"
 
 #: ../../maintain-automate/task-runners.md:95
 msgid "Why use Nox?"
-msgstr ""
+msgstr "Nox を使用する理由"
 
 #: ../../maintain-automate/task-runners.md:97
 msgid ""
-"Python-based configuration gives Nox maximum flexibility, making it easy "
-"to express complex logic and conditionals directly. Because sessions are "
-"written in Python, they are explicit and easy to inspect and debug. Nox "
-"is particularly powerful for handling complex test and build scenarios "
-"that some packages require."
+"Python-based configuration gives Nox maximum flexibility, making it easy to"
+" express complex logic and conditionals directly. Because sessions are "
+"written in Python, they are explicit and easy to inspect and debug. Nox is "
+"particularly powerful for handling complex test and build scenarios that "
+"some packages require."
 msgstr ""
+"Python ベースの構成により Nox に最大限の柔軟性が与えられ、複雑なロジックや条件を直接簡単に表現できるようになります。セッションは "
+"Python で記述されているため、明示的であり、検査とデバッグが簡単です。 Nox "
+"は、一部のパッケージに必要な複雑なテストとビルドのシナリオを処理するのに特に強力です。"
 
 #: ../../maintain-automate/task-runners.md:103
 msgid "Declarative vs. imperative configuration"
-msgstr ""
+msgstr "宣言型構成と命令型構成"
 
 #: ../../maintain-automate/task-runners.md:105
 msgid "An important distinction between these tools is how you configure them:"
-msgstr ""
+msgstr "これらのツールの重要な違いは、その構成方法です。"
 
 #: ../../maintain-automate/task-runners.md:107
 msgid ""
 "Hatch is a **Declarative tool**. This means it uses a configuration file "
 "where you specify *what* you want. See the example below:"
-msgstr ""
+msgstr "ハッチングは **宣言型ツール** です。これは、必要な「内容」を指定する構成ファイルを使用することを意味します。以下の例を参照してください。"
 
 #: ../../maintain-automate/task-runners.md:119
 msgid ""
 "Nox uses an **Imperative** approach to defining workflows. With Nox, you "
-"write Python code that defines how to perform a task. An example of a Nox"
-" function (which would live in a separate noxfile.py file) is shown "
-"below:"
+"write Python code that defines how to perform a task. An example of a Nox "
+"function (which would live in a separate noxfile.py file) is shown below:"
 msgstr ""
+"Nox は、**命令的** アプローチを使用してワークフローを定義します。 Nox では、タスクの実行方法を定義する Python "
+"コードを作成します。 Nox 関数の例 (別の noxfile.py ファイルに存在します) を以下に示します。"
 
 #: ../../maintain-automate/task-runners.md:132
 msgid "Trade-offs: declarative vs. imperative"
-msgstr ""
+msgstr "トレードオフ: 宣言型と命令型"
 
 #: ../../maintain-automate/task-runners.md:134
 msgid ""
-"**Declarative (Hatch, Tox):** Simpler syntax, easier to read and "
-"maintain. Might be slightly less flexible for complex logic (this is user"
-" dependent)."
+"**Declarative (Hatch, Tox):** Simpler syntax, easier to read and maintain. "
+"Might be slightly less flexible for complex logic (this is user dependent)."
 msgstr ""
+"**宣言型 (Hatch、Tox):** 構文が単純になり、読みやすく、保守しやすくなります。複雑なロジックの場合は柔軟性が若干劣る可能性があります "
+"(これはユーザーに依存します)。"
 
 #: ../../maintain-automate/task-runners.md:137
 msgid ""
 "**Imperative (Nox):** You can easily include complex logic and "
 "conditionals. Because it uses Python, it might be more familiar to you!"
-msgstr ""
+msgstr "**命令型 (Nox):** 複雑なロジックや条件を簡単に含めることができます。 Pythonを使っているので、より馴染みがあるかもしれません！"
 
 #: ../../maintain-automate/task-runners.md:141
 msgid ""
 "Neither approach is inherently better—it depends on your needs and "
-"preferences. Projects with complex testing scenarios may benefit from "
-"Nox's flexibility, while projects wanting simple, standardized workflows "
-"may prefer the clarity of declarative configuration."
+"preferences. Projects with complex testing scenarios may benefit from Nox's"
+" flexibility, while projects wanting simple, standardized workflows may "
+"prefer the clarity of declarative configuration."
 msgstr ""
+"どちらのアプローチが本質的に優れているというわけではなく、ニーズや好みによって異なります。複雑なテストシナリオを伴うプロジェクトは Nox "
+"の柔軟性の恩恵を受ける可能性がありますが、シンプルで標準化されたワークフローを必要とするプロジェクトは宣言型構成の明確さを好む場合があります。"
 
 #: ../../maintain-automate/task-runners.md:146
 msgid "An overview of the core task runners tools that you will find in"
-msgstr ""
+msgstr "にあるコア タスク ランナー ツールの概要"
 
 #: ../../maintain-automate/task-runners.md:147
 msgid "the Python ecosystem"
-msgstr ""
+msgstr "Python エコシステム"
 
 #: ../../maintain-automate/task-runners.md:149
 msgid "Comparison table"
-msgstr ""
+msgstr "比較表"
 
 #: ../../maintain-automate/task-runners.md:151
 msgid ""
-"Below you will see a comparison of features associated with each tool. "
-"Each tool is then described in a bit more detail just in case you want a "
-"better lay of the land."
-msgstr ""
+"Below you will see a comparison of features associated with each tool. Each"
+" tool is then described in a bit more detail just in case you want a better"
+" lay of the land."
+msgstr "以下に、各ツールに関連する機能の比較を示します。次に、より詳しく知りたい場合に備えて、各ツールについてもう少し詳しく説明します。"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Feature"
-msgstr ""
+msgstr "特徴"
 
 #: ../../maintain-automate/task-runners.md
 #: ../../maintain-automate/task-runners.md:167
 msgid "Hatch"
-msgstr ""
+msgstr "ハッチ"
 
 #: ../../maintain-automate/task-runners.md
 #: ../../maintain-automate/task-runners.md:223
 msgid "Nox"
-msgstr ""
+msgstr "ノックス"
 
 #: ../../maintain-automate/task-runners.md
 #: ../../maintain-automate/task-runners.md:275
 msgid "Tox"
-msgstr ""
+msgstr "トックス"
 
 #: ../../maintain-automate/task-runners.md
 #: ../../maintain-automate/task-runners.md:321
 msgid "Make"
-msgstr ""
+msgstr "作る"
 
 #: ../../maintain-automate/task-runners.md
 #: ../../maintain-automate/task-runners.md:360
 msgid "Just"
-msgstr ""
+msgstr "ただ"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Configuration**"
-msgstr ""
+msgstr "**構成**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "pyproject.toml"
-msgstr ""
+msgstr "pyproject.toml"
 
 #: ../../maintain-automate/task-runners.md
 msgid "noxfile.py"
-msgstr ""
+msgstr "noxfile.py"
 
 #: ../../maintain-automate/task-runners.md
 msgid "tox.ini"
-msgstr ""
+msgstr "tox.ini"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Makefile"
-msgstr ""
+msgstr "メイクファイル"
 
 #: ../../maintain-automate/task-runners.md
 msgid "justfile"
-msgstr ""
+msgstr "ジャストファイル"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Configuration Style**"
-msgstr ""
+msgstr "**構成スタイル**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Declarative"
-msgstr ""
+msgstr "宣言的"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Imperative"
-msgstr ""
+msgstr "命令的"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Language**"
-msgstr ""
+msgstr "**言語**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "TOML"
-msgstr ""
+msgstr "TOML"
 
 #: ../../maintain-automate/task-runners.md
 msgid "INI/TOML"
-msgstr ""
+msgstr "INI/TOML"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Make syntax"
-msgstr ""
+msgstr "構文を作成する"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Just syntax"
-msgstr ""
+msgstr "構文だけ"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Python-specific**"
-msgstr ""
+msgstr "**Python 固有**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Yes"
-msgstr ""
+msgstr "はい"
 
 #: ../../maintain-automate/task-runners.md
 msgid "No"
-msgstr ""
+msgstr "いいえ"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Environment Management**"
-msgstr ""
+msgstr "**環境管理**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Matrix Testing**"
-msgstr ""
+msgstr "**マトリックス テスト**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Packaging Integration**"
-msgstr ""
+msgstr "**パッケージの統合**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Cross-platform**"
-msgstr ""
+msgstr "**クロスプラットフォーム**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Limited"
-msgstr ""
+msgstr "限定"
 
 #: ../../maintain-automate/task-runners.md
 msgid "**Best For**"
-msgstr ""
+msgstr "**こんな用途に最適**"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Complete package development"
-msgstr ""
+msgstr "パッケージ開発を完了する"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Complex testing workflows and other builds"
-msgstr ""
+msgstr "複雑なテストワークフローとその他のビルド"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Legacy projects, standard testing"
-msgstr ""
+msgstr "レガシープロジェクト、標準テスト"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Simple tasks"
-msgstr ""
+msgstr "単純なタスク"
 
 #: ../../maintain-automate/task-runners.md
 msgid "Simple commands"
-msgstr ""
+msgstr "簡単なコマンド"
 
 #: ../../maintain-automate/task-runners.md:169
 msgid ""
-"[Hatch](https://hatch.pypa.io/) is a modern, all-in-one packaging and "
-"task automation tool that simplifies Python package development by "
-"handling everything from building and publishing to running tests and "
-"formatting code. Hatch is what we use [in our packaging tutorials found "
-"in this guidebook](packaging-101)."
+"[Hatch](https://hatch.pypa.io/) is a modern, all-in-one packaging and task "
+"automation tool that simplifies Python package development by handling "
+"everything from building and publishing to running tests and formatting "
+"code. Hatch is what we use [in our packaging tutorials found in this "
+"guidebook](packaging-101)."
 msgstr ""
+"[Hatch](https://hatch.pypa.io/) は、最新のオールインワン "
+"パッケージ化およびタスク自動化ツールで、ビルドと公開からテストの実行とコードのフォーマットまですべてを処理することで、Python "
+"パッケージ開発を簡素化します。ハッチは、[このガイドブックにあるパッケージング チュートリアルで]使用するものです(packaging-101)。"
 
 #: ../../maintain-automate/task-runners.md:174
 msgid "Why we like Hatch"
-msgstr ""
+msgstr "ハッチが好きな理由"
 
 #: ../../maintain-automate/task-runners.md:176
 msgid ""
-"Hatch stands out because it's a single tool that handles both packaging "
-"AND task running. Instead of juggling multiple tools, you configure "
-"everything in your `pyproject.toml` file—no extra configuration files "
-"needed. Hatch creates isolated environments for different tasks (like "
-"testing or building docs) and integrates with UV for extremely fast "
-"environment setup. It uses a declarative, clean syntax that's easy to "
-"read and maintain, and it supports matrix testing so you can easily test "
-"your package across multiple Python versions."
+"Hatch stands out because it's a single tool that handles both packaging AND"
+" task running. Instead of juggling multiple tools, you configure everything"
+" in your `pyproject.toml` file—no extra configuration files needed. Hatch "
+"creates isolated environments for different tasks (like testing or building"
+" docs) and integrates with UV for extremely fast environment setup. It uses"
+" a declarative, clean syntax that's easy to read and maintain, and it "
+"supports matrix testing so you can easily test your package across multiple"
+" Python versions."
 msgstr ""
+"Hatch "
+"が際立っているのは、パッケージ化とタスクの実行の両方を単一のツールで処理できるためです。複数のツールを使いこなす代わりに、「pyproject.toml」ファイルですべてを設定します。追加の設定ファイルは必要ありません。"
+" Hatch は、さまざまなタスク (ドキュメントのテストや構築など) 用に分離された環境を作成し、UV "
+"と統合して非常に高速な環境セットアップを実現します。読みやすく保守しやすい宣言的でクリーンな構文を使用しており、マトリックス "
+"テストをサポートしているため、複数の Python バージョンにわたってパッケージを簡単にテストできます。"
 
 #: ../../maintain-automate/task-runners.md:185
 msgid "When to use Hatch"
-msgstr ""
+msgstr "ハッチを使用する場合"
 
 #: ../../maintain-automate/task-runners.md:187
 msgid ""
-"Hatch is ideal for complete package development workflows. You can use it"
-" for testing across Python versions, building documentation, running code"
-" formatters and linters, and building and publishing your package to "
-"PyPI. If you want a modern, all-in-one solution that follows current "
-"Python packaging standards (like PEP 621), Hatch is an excellent choice."
+"Hatch is ideal for complete package development workflows. You can use it "
+"for testing across Python versions, building documentation, running code "
+"formatters and linters, and building and publishing your package to PyPI. "
+"If you want a modern, all-in-one solution that follows current Python "
+"packaging standards (like PEP 621), Hatch is an excellent choice."
 msgstr ""
+"Hatch は、完全なパッケージ開発ワークフローに最適です。これは、Python バージョン間でのテスト、ドキュメントの構築、コード "
+"フォーマッタとリンターの実行、パッケージの構築と PyPI への公開に使用できます。現在の Python パッケージ標準 (PEP 621 など) "
+"に準拠した最新のオールインワン ソリューションが必要な場合、Hatch は優れた選択肢です。"
 
 #: ../../maintain-automate/task-runners.md:194
 #: ../../maintain-automate/task-runners.md:251
@@ -1271,15 +1664,18 @@ msgstr ""
 #: ../../maintain-automate/task-runners.md:344
 #: ../../maintain-automate/task-runners.md:383
 msgid "Example configuration"
-msgstr ""
+msgstr "構成例"
 
 #: ../../maintain-automate/task-runners.md:196
 msgid ""
-"Below is an example of how you'd set up a test environment in Hatch. This"
-" configuration creates a `test` environment with pytest and pytest-cov "
-"installed, defines a `run` script to execute your tests, and sets up "
-"matrix testing to run tests on Python 3.10, 3.11, and 3.12:"
+"Below is an example of how you'd set up a test environment in Hatch. This "
+"configuration creates a `test` environment with pytest and pytest-cov "
+"installed, defines a `run` script to execute your tests, and sets up matrix"
+" testing to run tests on Python 3.10, 3.11, and 3.12:"
 msgstr ""
+"以下は、Hatch でテスト環境をセットアップする方法の例です。この構成では、pytest と pytest-cov "
+"がインストールされた「test」環境を作成し、テストを実行する「run」スクリプトを定義し、Python 3.10、3.11、および 3.12 "
+"でテストを実行するためのマトリックス テストを設定します。"
 
 #: ../../maintain-automate/task-runners.md:217
 #: ../../maintain-automate/task-runners.md:269
@@ -1287,27 +1683,29 @@ msgstr ""
 #: ../../maintain-automate/task-runners.md:356
 #: ../../maintain-automate/task-runners.md:396
 msgid "You would run the above in your terminal using:"
-msgstr ""
+msgstr "以下を使用してターミナルで上記を実行します。"
 
 #: ../../maintain-automate/task-runners.md:219
 msgid "`hatch run test:run`"
-msgstr ""
+msgstr "`ハッチ実行テスト:実行`"
 
 #: ../../maintain-automate/task-runners.md:221
 msgid "**Learn more:** [Hatch documentation](https://hatch.pypa.io/)"
-msgstr ""
+msgstr "**詳細:** [Hatch ドキュメント](https://hatch.pypa.io/)"
 
 #: ../../maintain-automate/task-runners.md:225
 msgid ""
-"[Nox](https://nox.thea.codes/) is a Python-based automation toolkit "
-"focused on testing across environments. It uses a code-based (imperative)"
-" configuration approach that gives you maximum flexibility for complex "
+"[Nox](https://nox.thea.codes/) is a Python-based automation toolkit focused"
+" on testing across environments. It uses a code-based (imperative) "
+"configuration approach that gives you maximum flexibility for complex "
 "testing workflows."
 msgstr ""
+"[Nox](https://nox.thea.codes/) は、複数の環境にわたるテストに焦点を当てた Python "
+"ベースの自動化ツールキットです。コードベースの (命令型) 構成アプローチを使用しており、複雑なテスト ワークフローに最大限の柔軟性をもたらします。"
 
 #: ../../maintain-automate/task-runners.md:230
 msgid "Why we like Nox"
-msgstr ""
+msgstr "Nox が好きな理由"
 
 #: ../../maintain-automate/task-runners.md:232
 msgid ""
@@ -1316,39 +1714,51 @@ msgid ""
 "automation workflows. Because sessions are written in Python, they're "
 "explicit, easy to inspect, and straightforward to debug. Nox is "
 "particularly powerful for handling complex test and build scenarios that "
-"some packages require, and it's especially popular in the Scientific "
-"Python ecosystem. You'll find many pyOpenSci documentation repositories "
-"use Nox to automate workflows such as building and testing documentation."
+"some packages require, and it's especially popular in the Scientific Python"
+" ecosystem. You'll find many pyOpenSci documentation repositories use Nox "
+"to automate workflows such as building and testing documentation."
 msgstr ""
+"Nox が際立っているのは、Python "
+"コードを使用してタスクを定義しているためです。つまり、複雑なロジックや条件を自動化ワークフローに直接組み込むことができます。セッションは Python"
+" で記述されているため、明示的であり、検査が簡単で、デバッグも簡単です。 Nox は、一部のパッケージで必要とされる複雑なテストおよびビルド "
+"シナリオの処理に特に強力であり、Scientific Python エコシステムで特に人気があります。多くの pyOpenSci ドキュメント "
+"リポジトリが Nox を使用してドキュメントの構築やテストなどのワークフローを自動化していることがわかります。"
 
 #: ../../maintain-automate/task-runners.md:242
 msgid "When to use Nox"
-msgstr ""
+msgstr "Nox を使用する場合"
 
 #: ../../maintain-automate/task-runners.md:244
 msgid ""
-"Nox is ideal when you need complex testing scenarios with conditional "
-"logic or when you prefer Python-based configuration over declarative "
-"formats. It's excellent for testing across Python versions and managing "
-"multiple testing environments. If packaging is handled separately and you"
-" want maximum flexibility in your task automation, Nox is a great choice."
+"Nox is ideal when you need complex testing scenarios with conditional logic"
+" or when you prefer Python-based configuration over declarative formats. "
+"It's excellent for testing across Python versions and managing multiple "
+"testing environments. If packaging is handled separately and you want "
+"maximum flexibility in your task automation, Nox is a great choice."
 msgstr ""
+"Nox は、条件付きロジックを使用した複雑なテスト シナリオが必要な場合、または宣言形式よりも Python ベースの構成を好む場合に最適です。 "
+"Python "
+"のバージョン間でのテストや、複数のテスト環境の管理に最適です。パッケージ化が個別に処理され、タスクの自動化に最大限の柔軟性が必要な場合は、Nox "
+"が最適な選択肢です。"
 
 #: ../../maintain-automate/task-runners.md:253
 msgid ""
-"Below is an example of a Nox session that runs tests across multiple "
-"Python versions. The `@nox.session` decorator defines a session (similar "
-"to a task), and you specify which Python versions to test with. Nox will "
-"create isolated environments for each version and run your tests:"
+"Below is an example of a Nox session that runs tests across multiple Python"
+" versions. The `@nox.session` decorator defines a session (similar to a "
+"task), and you specify which Python versions to test with. Nox will create "
+"isolated environments for each version and run your tests:"
 msgstr ""
+"以下は、複数の Python バージョンにわたってテストを実行する Nox セッションの例です。 `@nox.session` "
+"デコレーターはセッション (タスクと同様) を定義し、テストに使用する Python バージョンを指定します。 Nox "
+"はバージョンごとに隔離された環境を作成し、テストを実行します。"
 
 #: ../../maintain-automate/task-runners.md:271
 msgid "`nox -s tests`"
-msgstr ""
+msgstr "「nox -s テスト」"
 
 #: ../../maintain-automate/task-runners.md:273
 msgid "**Learn more:** [Nox documentation](https://nox.thea.codes/)"
-msgstr ""
+msgstr "**詳細:** [Nox ドキュメント](https://nox.thea.codes/)"
 
 #: ../../maintain-automate/task-runners.md:277
 msgid ""
@@ -1356,235 +1766,263 @@ msgid ""
 "multiple environments. It uses declarative configuration and has been a "
 "standard in the Python community for years."
 msgstr ""
+"[Tox](https://tox.wiki/) "
+"は、複数の環境でテストするための成熟した自動化ツールです。これは宣言型構成を使用しており、Python "
+"コミュニティでは長年にわたり標準となっています。"
 
 #: ../../maintain-automate/task-runners.md:281
 msgid "Why people use Tox"
-msgstr ""
+msgstr "なぜ人々はToxを使用するのか"
 
 #: ../../maintain-automate/task-runners.md:283
 msgid ""
-"Tox is mature and stable, with a long history in the Python ecosystem. It"
-" uses declarative configuration (traditionally INI format, though TOML "
+"Tox is mature and stable, with a long history in the Python ecosystem. It "
+"uses declarative configuration (traditionally INI format, though TOML "
 "support was added recently) and is particularly good for testing across "
 "Python versions and dependency sets. Many projects use Tox because it "
 "integrates well with CI/CD systems and has a robust plugin ecosystem."
 msgstr ""
+"Tox は成熟していて安定しており、Python エコシステム内で長い歴史があります。宣言型構成 (最近 TOML "
+"サポートが追加されましたが、伝統的に INI 形式) を使用しており、Python のバージョンと依存関係セットにわたるテストに特に適しています。 "
+"Tox は CI/CD システムとうまく統合され、堅牢なプラグイン エコシステムを備えているため、多くのプロジェクトで Tox が使用されています。"
 
 #: ../../maintain-automate/task-runners.md:290
 msgid "When to use Tox"
-msgstr ""
+msgstr "トックスをいつ使用するか"
 
 #: ../../maintain-automate/task-runners.md:292
 msgid ""
-"Tox is ideal if you're maintaining a legacy project that already uses it,"
-" or if you have existing `tox.ini` configuration you want to preserve. "
-"It's also a good choice if you need specific Tox plugins or prefer "
-"declarative configuration separate from your packaging tools. However, "
-"keep in mind that Tox can be slower than modern alternatives like Hatch."
+"Tox is ideal if you're maintaining a legacy project that already uses it, "
+"or if you have existing `tox.ini` configuration you want to preserve. It's "
+"also a good choice if you need specific Tox plugins or prefer declarative "
+"configuration separate from your packaging tools. However, keep in mind "
+"that Tox can be slower than modern alternatives like Hatch."
 msgstr ""
+"Tox は、既に使用しているレガシー プロジェクトを維持している場合、または保存したい既存の `tox.ini` 設定がある場合に最適です。特定の "
+"Tox プラグインが必要な場合や、パッケージ化ツールとは別の宣言型構成を希望する場合にも、これは良い選択です。ただし、Tox は Hatch "
+"などの最新の代替手段よりも遅い可能性があることに注意してください。"
 
 #: ../../maintain-automate/task-runners.md:301
 msgid ""
-"Below is an example of a Tox configuration that runs tests across "
-"multiple Python versions. The `envlist` specifies which Python versions "
-"to test, and the `testenv` section defines what to install and run:"
+"Below is an example of a Tox configuration that runs tests across multiple "
+"Python versions. The `envlist` specifies which Python versions to test, and"
+" the `testenv` section defines what to install and run:"
 msgstr ""
+"以下は、複数の Python バージョンにわたってテストを実行する Tox 構成の例です。 「envlist」はテストする Python "
+"バージョンを指定し、「testenv」セクションは何をインストールして実行するかを定義します。"
 
 #: ../../maintain-automate/task-runners.md:317
 msgid ""
 "`tox` (runs all environments) or `tox -e py310` (runs a specific "
 "environment)"
-msgstr ""
+msgstr "`tox` (すべての環境を実行) または `tox -e py310` (特定の環境を実行)"
 
 #: ../../maintain-automate/task-runners.md:319
 msgid "**Learn more:** [Tox documentation](https://tox.wiki/)"
-msgstr ""
+msgstr "**さらに詳しく:** [Tox ドキュメント](https://tox.wiki/)"
 
 #: ../../maintain-automate/task-runners.md:323
 msgid ""
 "[Make](https://www.gnu.org/software/make/) is a traditional build "
-"automation tool that uses Makefiles. It's been around since the 1970s and"
-" is widely used across many programming languages."
+"automation tool that uses Makefiles. It's been around since the 1970s and "
+"is widely used across many programming languages."
 msgstr ""
+"[Make](https://www.gnu.org/software/make/) は、Makefile を使用する従来のビルド自動化ツールです。 "
+"1970 年代から存在し、多くのプログラミング言語で広く使用されています。"
 
 #: ../../maintain-automate/task-runners.md:327
 msgid "Why people use Make"
-msgstr ""
+msgstr "Make を使用する理由"
 
 #: ../../maintain-automate/task-runners.md:329
 msgid ""
 "Make is widely known and available on most systems, making it a familiar "
 "choice for many developers. It has simple syntax for basic tasks and "
-"executes very quickly. Because it's not Python-specific, you can use it "
-"to coordinate tasks across different languages in the same project."
+"executes very quickly. Because it's not Python-specific, you can use it to "
+"coordinate tasks across different languages in the same project."
 msgstr ""
+"Make "
+"は広く知られており、ほとんどのシステムで利用できるため、多くの開発者にとって馴染みのある選択肢となっています。基本的なタスク用の単純な構文を備えており、非常に高速に実行されます。これは"
+" Python 固有ではないため、同じプロジェクト内の異なる言語間でタスクを調整するために使用できます。"
 
 #: ../../maintain-automate/task-runners.md:335
 msgid "When to use Make"
-msgstr ""
+msgstr "Make を使用する場合"
 
 #: ../../maintain-automate/task-runners.md:337
 msgid ""
-"Make is best for simple task automation when you don't need Python-"
-"specific features or environment management. It's a good lightweight "
-"option if you want something fast and universally available. However, be "
-"aware that Make can have cross-platform compatibility issues, especially "
-"on Windows, and you'll need to handle Python environment management "
-"separately."
+"Make is best for simple task automation when you don't need Python-specific"
+" features or environment management. It's a good lightweight option if you "
+"want something fast and universally available. However, be aware that Make "
+"can have cross-platform compatibility issues, especially on Windows, and "
+"you'll need to handle Python environment management separately."
 msgstr ""
+"Make は、Python "
+"固有の機能や環境管理が必要ない場合の単純なタスクの自動化に最適です。高速で誰でも利用できるものが必要な場合には、これは優れた軽量オプションです。ただし、Make"
+" には、特に Windows 上でクロスプラットフォーム互換性の問題が発生する可能性があり、Python "
+"環境の管理を個別に処理する必要があることに注意してください。"
 
 #: ../../maintain-automate/task-runners.md:346
 msgid ""
 "Below is an example of a simple Makefile with tasks for testing and "
 "building documentation:"
-msgstr ""
+msgstr "以下は、ドキュメントのテストと構築のためのタスクを含む単純な Makefile の例です。"
 
 #: ../../maintain-automate/task-runners.md:358
 msgid "`make test` or `make docs`"
-msgstr ""
+msgstr "`make test` または `make docs`"
 
 #: ../../maintain-automate/task-runners.md:362
 msgid ""
 "[Just](https://just.systems/) is a modern command runner written in Rust "
 "that offers a simpler, more user-friendly alternative to Make."
 msgstr ""
+"[Just](https://just.systems/) は、Rust で書かれた最新のコマンド ランナーで、Make "
+"のよりシンプルでユーザーフレンドリーな代替手段を提供します。"
 
 #: ../../maintain-automate/task-runners.md:365
 msgid "Why people use Just"
-msgstr ""
+msgstr "Just を使用する理由"
 
 #: ../../maintain-automate/task-runners.md:367
 msgid ""
-"Just has simple, Make-like syntax but with better error messages and more"
-" intuitive behavior. It's fast, truly cross-platform (unlike Make), and "
-"easy to learn. The tool is written in Rust, which makes it very "
-"performant, and it avoids many of the quirks and gotchas that Make has "
-"accumulated over decades."
+"Just has simple, Make-like syntax but with better error messages and more "
+"intuitive behavior. It's fast, truly cross-platform (unlike Make), and easy"
+" to learn. The tool is written in Rust, which makes it very performant, and"
+" it avoids many of the quirks and gotchas that Make has accumulated over "
+"decades."
 msgstr ""
+"シンプルで Make に似た構文を持ちますが、エラー メッセージが改善され、動作がより直感的になります。これは高速で、真にクロスプラットフォームで "
+"(Make とは異なり)、習得が簡単です。このツールは Rust で書かれているため、非常にパフォーマンスが高く、Make "
+"が数十年にわたって蓄積してきた癖や注意点の多くが回避されています。"
 
 #: ../../maintain-automate/task-runners.md:373
 msgid "When to use Just"
-msgstr ""
+msgstr "「ジャスト」を使用する場合"
 
 #: ../../maintain-automate/task-runners.md:375
 msgid ""
-"Just is ideal when you need a lightweight command runner for simple tasks"
-" and don't require Python-specific features or environment management. "
-"It's a great choice if you want something faster and more modern than "
-"Make, with better cross-platform support. However, keep in mind that Just"
-" requires separate installation and has less integration with the Python "
-"packaging ecosystem compared to tools like Hatch or Nox."
+"Just is ideal when you need a lightweight command runner for simple tasks "
+"and don't require Python-specific features or environment management. It's "
+"a great choice if you want something faster and more modern than Make, with"
+" better cross-platform support. However, keep in mind that Just requires "
+"separate installation and has less integration with the Python packaging "
+"ecosystem compared to tools like Hatch or Nox."
 msgstr ""
+"Just は、単純なタスク用の軽量のコマンド ランナーが必要で、Python 固有の機能や環境管理を必要としない場合に最適です。 Make "
+"よりも高速で最新の、より優れたクロスプラットフォーム サポートが必要な場合は、これが最適な選択です。ただし、Just "
+"は個別のインストールが必要であり、Hatch や Nox などのツールと比べて Python "
+"パッケージ化エコシステムとの統合が少ないことに注意してください。"
 
 #: ../../maintain-automate/task-runners.md:385
 msgid ""
 "Below is an example of a justfile with tasks for testing and building "
 "documentation:"
-msgstr ""
+msgstr "以下は、ドキュメントのテストと構築のためのタスクを含む justfile の例です。"
 
 #: ../../maintain-automate/task-runners.md:398
 msgid "`just test` or `just docs`"
-msgstr ""
+msgstr "「テストだけ」または「ドキュメントだけ」"
 
 #: ../../maintain-automate/task-runners.md:400
 msgid "**Learn more:** [Just documentation](https://just.systems/)"
-msgstr ""
+msgstr "**詳細:** [Just ドキュメント](https://just.systems/)"
 
 #: ../../maintain-automate/task-runners.md:402
 msgid "Choosing the right task runner"
-msgstr ""
+msgstr "適切なタスク ランナーの選択"
 
 #: ../../maintain-automate/task-runners.md:404
 msgid "**Choose Hatch if:**"
-msgstr ""
+msgstr "**次の場合はハッチングを選択してください:**"
 
 #: ../../maintain-automate/task-runners.md:406
 msgid "You're building a Python package"
-msgstr ""
+msgstr "Python パッケージを構築しています"
 
 #: ../../maintain-automate/task-runners.md:407
 msgid "You want an all-in-one tool"
-msgstr ""
+msgstr "オールインワンツールが欲しい"
 
 #: ../../maintain-automate/task-runners.md:408
 msgid "You prefer configuration in pyproject.toml"
-msgstr ""
+msgstr "pyproject.toml での設定を希望する場合"
 
 #: ../../maintain-automate/task-runners.md:409
 msgid "You want fast environment management"
-msgstr ""
+msgstr "迅速な環境管理が必要な場合"
 
 #: ../../maintain-automate/task-runners.md:410
 msgid "You prefer declarative configuration"
-msgstr ""
+msgstr "宣言型構成を好む場合"
 
 #: ../../maintain-automate/task-runners.md:412
 msgid "**Choose Nox if:**"
-msgstr ""
+msgstr "**次の場合は Nox を選択してください:**"
 
 #: ../../maintain-automate/task-runners.md:414
 msgid "You need complex testing scenarios with conditional logic"
-msgstr ""
+msgstr "条件付きロジックを使用した複雑なテスト シナリオが必要な場合"
 
 #: ../../maintain-automate/task-runners.md:415
 msgid "You prefer Python-based, imperative configuration"
-msgstr ""
+msgstr "Python ベースの命令型構成を好む場合"
 
 #: ../../maintain-automate/task-runners.md:416
 msgid "You're working in the Scientific Python ecosystem"
-msgstr ""
+msgstr "あなたは Scientific Python エコシステムで働いています"
 
 #: ../../maintain-automate/task-runners.md:417
 msgid "Packaging is handled separately"
-msgstr ""
+msgstr "梱包は別途対応させていただきます"
 
 #: ../../maintain-automate/task-runners.md:418
 msgid "You want maximum flexibility"
-msgstr ""
+msgstr "最大限の柔軟性が必要な場合"
 
 #: ../../maintain-automate/task-runners.md:420
 msgid "**Choose Tox if:**"
-msgstr ""
+msgstr "**次の場合は Tox を選択してください:**"
 
 #: ../../maintain-automate/task-runners.md:422
 msgid "You're maintaining a legacy project already using it"
-msgstr ""
+msgstr "すでに使用しているレガシー プロジェクトを維持している"
 
 #: ../../maintain-automate/task-runners.md:423
 msgid "You have existing tox.ini configuration"
-msgstr ""
+msgstr "既存の tox.ini 設定がある"
 
 #: ../../maintain-automate/task-runners.md:424
 msgid "You need specific tox plugins"
-msgstr ""
+msgstr "特定の有害なプラグインが必要です"
 
 #: ../../maintain-automate/task-runners.md:425
 msgid "You prefer declarative configuration separate from packaging"
-msgstr ""
+msgstr "パッケージ化とは別に宣言的な構成を好む場合"
 
 #: ../../maintain-automate/task-runners.md:427
 msgid "**Choose Make or Just if:**"
-msgstr ""
+msgstr "**Make または Just if を選択してください:**"
 
 #: ../../maintain-automate/task-runners.md:429
 msgid "You need a lightweight command runner"
-msgstr ""
+msgstr "軽量のコマンドランナーが必要です"
 
 #: ../../maintain-automate/task-runners.md:430
 msgid "You're not doing Python-specific workflows"
-msgstr ""
+msgstr "Python 固有のワークフローを実行していない"
 
 #: ../../maintain-automate/task-runners.md:431
 msgid "You want something simple and fast"
-msgstr ""
+msgstr "シンプルで速いものが欲しい"
 
 #: ../../maintain-automate/task-runners.md:432
 msgid "You don't need environment management"
-msgstr ""
+msgstr "環境管理は必要ありません"
 
 #: ../../maintain-automate/task-runners.md:434
 msgid "Next steps"
-msgstr ""
+msgstr "次のステップ"
 
 #: ../../maintain-automate/task-runners.md:436
 msgid ""
@@ -1592,12 +2030,14 @@ msgid ""
 "environments](https://hatch.pypa.io/latest/tutorials/environment/basic-"
 "usage/)"
 msgstr ""
+"[ハッチ環境](https://hatch.pypa.io/latest/tutorials/environment/basic-usage/) "
+"の使用方法を学ぶ"
 
 #: ../../maintain-automate/task-runners.md:437
 msgid ""
 "[Create a package using the Python package tutorial.](create-pure-python-"
 "package)"
-msgstr ""
+msgstr "[Python パッケージ チュートリアルを使用してパッケージを作成します。](create-pure-python-package)"
 
 #: ../../maintain-automate/task-runners.md:438
 msgid ""
@@ -1605,6 +2045,8 @@ msgid ""
 "template](https://github.com/pyOpenSci/pyos-package-template) with pre-"
 "configured Hatch tasks"
 msgstr ""
+"[pyOpenSci パッケージ テンプレート](https://github.com/pyOpenSci/pyos-package-"
+"template) を調べて、事前構成された Hatch タスクとともに使用します"
 
 #: ../../maintain-automate/task-runners.md:441
 msgid ""
@@ -1613,3 +2055,6 @@ msgid ""
 "This guide is excellent if you plan to use nox as your task runner as it "
 "has lots of examples that you can follow."
 msgstr ""
+"[タスク ランナーに関する Scientific Python 開発ガイド](https://learn.scientific-"
+"python.org/development/guides/tasks/) を読んでください。このガイドには、従うべき例がたくさんあるため、nox "
+"をタスクランナーとして使用する予定がある場合に最適です。"
