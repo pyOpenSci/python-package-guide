@@ -202,7 +202,7 @@ The additional tools or options to run with the tests is specified under `[tool.
 
 
 For a complete example, see our
-[packaging template tutorial](https://www.pyopensci.org/tutorials/create-python-package.html)
+[packaging template tutorial](../tutorials/create-python-package)
 which shows a full `pyproject.toml` configuration.
 
 ### Running tests with Hatch
@@ -316,7 +316,7 @@ and understand, and you can always switch to Nox later if you need to.
 
 **Both tools are good choices.** For a more comprehensive  guide to using Nox, see [Run tests with
 Nox](run-tests-nox.md) and the [Scientific Python testing
-guide](https://scientific-python.org/tools/testing).
+guide](https://learn.scientific-python.org/development/principles/testing/).
 
 ## Next steps
 
