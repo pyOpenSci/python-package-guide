@@ -114,7 +114,7 @@ Hatchling
   The build backend used by Hatch. When you run `python -m build` or
   `hatch build`, Hatchling reads `pyproject.toml` and creates sdist
   and wheel files.
-  See [hatch.pypa.io/latest/backend](https://hatch.pypa.io/latest/backend/).
+  See [hatch.pypa.io/latest/config/build](https://hatch.pypa.io/latest/config/build/).
 
 pip
   Python's default package installer. You can use it to install packages

@@ -13,7 +13,7 @@ Nox is an excellent choice.
 
 For more information about Nox, see the
 [official Nox documentation](https://nox.thea.codes/) or the
-[Scientific Python guide to testing](https://scientific-python.org/tools/testing).
+[Scientific Python guide to testing](https://learn.scientific-python.org/development/principles/testing/).
 
 ## Why Nox?
 
