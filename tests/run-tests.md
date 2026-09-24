@@ -181,29 +181,27 @@ using Hatch for packaging workflows.
 
 ### Setting up Hatch environments
 
-Hatch environments are defined in your `pyproject.toml`. Rather than
-duplicating dependencies, use `dependency-groups` to reference your test
-dependencies:
+Hatch environments can be defined in `pyproject.toml`. These environments can be used to specify what Hatch needs to run the
+tests for the package. Test dependencies can be listed individually under `[tool.hatch.envs.test]`,
+but if packages have already been grouped together under a name, those groups can be listed here instead.
+Using named groups keeps the dependencies in one place and avoids duplication.
 
-```toml
-[dependency-groups]
-tests = [
-    "pytest>=7.0",
-    "pytest-cov",
-]
+The additional tools or options to run with the tests is specified under `[tool.hatch.envs.test.scripts]`.
 
-[tool.hatch.envs.test]
-dependency-groups = [
-     "tests",
-]
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [development-group]
+:end-before: lint
+:::
 
-[tool.hatch.envs.test.scripts]
-run = "pytest {args:--cov=test --cov-report=term-missing --cov-report=xml}"
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [tool.hatch.envs.test]
+:end-at: run
+:::
 
-```
 
-This approach keeps your test dependencies in one place and avoids
-duplication. For a complete example, see our
+For a complete example, see our
 [packaging template tutorial](https://www.pyopensci.org/tutorials/create-python-package.html)
 which shows a full `pyproject.toml` configuration.
 
@@ -228,23 +226,14 @@ hatch run test:run
 ### Testing across Python versions
 
 To test across multiple Python versions, define a matrix in your
-`pyproject.toml`:
+`pyproject.toml` under `[[tool.hatch.envs.test.matrix]]`:
 
-```toml
-[dependency-groups]
-tests = [
-    "pytest>=7.0",
-    "pytest-cov",
-]
-
-[tool.hatch.envs.test]
-dependency-groups = [
-     "tests",
-]
-
-[[tool.hatch.envs.test.matrix]]
-python = ["3.10", "3.11", "3.12"]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[tool.hatch.envs.test]\n...\n...\n"
+:start-at: [[tool.hatch.envs.test.matrix]]
+:end-at: python
+:::
 
 Then run all versions with a single command:
 
