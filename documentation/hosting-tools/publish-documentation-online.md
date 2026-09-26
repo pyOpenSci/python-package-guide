@@ -22,7 +22,7 @@ service. Some of its many features include:
 
 
 ## What is GitHub Pages?
-[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) is a free web
+[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) is a free web
 hosting service offered by GitHub. Using GitHub pages, you can build your
 documentation locally or using a Continuous Integration setup, and then push
 to a branch in your GitHub repository that is setup to run the GitHub Pages

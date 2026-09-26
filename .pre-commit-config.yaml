@@ -14,7 +14,7 @@
 repos:
   # Misc commit checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
     # ref: https://github.com/pre-commit/pre-commit-hooks#hooks-available
     hooks:
       # Autoformat: Makes sure files end in a newline and only a newline.
@@ -25,7 +25,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.1
+    rev: 57b21406f092110c18776e39b0bda50d37c945c8 # frozen: v2.4.3
     hooks:
       - id: codespell
         additional_dependencies:
@@ -36,12 +36,12 @@ repos:
           )$
 
   - repo: https://github.com/errata-ai/vale
-    rev: v3.11.2
+    rev: fdc4cc754f58d953f668586dc1891064a746e0a2 # frozen: v3.20.0
     hooks:
       - id: vale
 
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.5.3
+    rev: 0ee178619d696787ca73d210cc191d720868c631 # frozen: v3.9.6
     hooks:
       - id: prettier
         types_or: [yaml, html, css, scss, javascript, json, toml]

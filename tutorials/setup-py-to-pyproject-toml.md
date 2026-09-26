@@ -1,36 +1,42 @@
 ---
 :og:description: If you’re creating a pure Python project, pyproject.toml is preferred over setup.py for packaging and configuration. Learn how to migrate from the older setup.py format to the modern pyproject.toml file. This lesson walks you through updating your package metadata and build settings to align with current Python packaging standards.
 :og:title: Using Hatch to Migrate setup.py to a pyproject.toml
-date: 1970-01-09
 ---
 
+(migrate-pyproj)=
 # Using Hatch to Migrate setup.py to a pyproject.toml
 
-Hatch can be particularly useful to generate your project's `pyproject.toml` if your project already has a `setup.py`.
+[Hatch](get-to-know-hatch) can be useful for generating your project's
+[pyproject.toml](pyproject-toml) file if your project already has a `setup.py`
+file.
 
 :::{admonition} Note
 :class: tip
 
-This step is not necessary and is only useful if your project already has a `setup.py` file defined.
-* If your project does not already define a `setup.py` see [Make your Python code installable](installable-code.md)
+This step is not necessary and is only helpful if your project already has a `setup.py` file defined.
+* If your project does not already define a `setup.py` see [Make your Python code installable](create-python-package)
 :::
 
 :::{admonition} Learning Objectives
 :class: tip
 
-In this lesson you will learn:
+In this lesson, you will learn:
 
 1. The process of using Hatch to transition to using `pyproject.toml` for projects that already have a `setup.py` defined.
 :::
 
 ## What is Hatch?
 
-Hatch is a Python package manager designed to streamline the process of creating, managing, and distributing Python packages. It provides a convenient CLI (Command-Line Interface) for tasks such as creating new projects, managing dependencies, building distributions, and publishing packages to repositories like PyPI.
+Hatch is a Python package manager designed to streamline the process of
+creating, managing, and distributing Python packages. It provides a convenient
+CLI (Command-Line Interface) for tasks such as creating new projects, managing
+{term}`Dependencies`, building distributions, and publishing packages to
+repositories like [PyPI](publish-pypi).
 
 :::{admonition} Get to know Hatch
 :class: tip
 
-See [Get to know Hatch](get-to-know-hatch.md) for more information.
+See [Get to know Hatch](get-to-know-hatch) for more information.
 
 :::
 
@@ -94,9 +100,9 @@ Now, let's walk through the steps to use Hatch to create a `pyproject.toml` file
    hatch new --init
    ```
 
-3. **Review and Customize**: After running the previous command, Hatch will automatically generate a `pyproject.toml` file based on your existing project configuration. Take some time to review the contents of the generated `pyproject.toml` file. You may want to customize certain settings or dependencies based on your project's requirements (see [pyproject.toml tutorial](pyproject-toml.md) for more information about the `pyproject.toml`).
+3. **Review and Customize**: After running the previous command, Hatch will automatically generate a `pyproject.toml` file based on your existing project configuration. Take some time to review the contents of the generated `pyproject.toml` file. You may want to customize certain settings or dependencies based on your project's requirements (see [pyproject.toml tutorial](pyproject-toml) for more information about the `pyproject.toml`).
 
-4. **Verify**: Verify that the `pyproject.toml` file accurately reflects your project configuration and dependencies. You can manually edit the file if needed, but be cautious and ensure that the syntax is correct.
+4. **Verify**: Verify that the `pyproject.toml` file accurately reflects your project configuration and dependencies. You can manually edit the file, but be cautious and ensure that the syntax is correct.
 
 5. **Delete setup.py**: Since we're migrating to using `pyproject.toml` exclusively, the `setup.py` file becomes unnecessary. You can safely delete it from your project directory.
 

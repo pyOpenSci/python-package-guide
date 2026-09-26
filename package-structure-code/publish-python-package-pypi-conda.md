@@ -18,7 +18,6 @@ lead to package conflicts.
 Below you will learn more specifics about the differences between PyPI and conda publishing of your Python package.
 :::
 
-
 :::{figure-md} upload-conda-forge
 
 <img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. Then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
@@ -26,6 +25,7 @@ Below you will learn more specifics about the differences between PyPI and conda
 Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. The conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
 :::
 
+(publish-pypi-conda)=
 ## What is PyPI
 
 [PyPI](https://pypi.org/) is an online Python package repository that
@@ -46,7 +46,6 @@ only install Python packages.
 
 Click here for a tutorial on publishing your package to PyPI.
 :::
-
 
 :::{tip}
 On the package build page, we discussed the [two package distribution
@@ -95,9 +94,9 @@ channels. The conda package manager can install packages from different channels
 There are several core public channels that most people use to install
 packages using conda, including:
 
-- **defaults:** this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda (the company) decides what packages live on the `defaults` channel.
-- [**conda-forge:**](https://conda-forge.org/) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
-- [**bioconda**](https://bioconda.github.io/): this channel focuses on biomedical tools.
+* **defaults:** this is a channel managed by Anaconda. It is the version of the Python packages that you will install if you install the Anaconda Distribution. Anaconda (the company) decides what packages live on the `defaults` channel.
+* [**conda-forge:**](https://conda-forge.org/) this is a community-driven channel that focuses on scientific packages. This channel is ideal for tools that support geospatial data. Anyone can publish a package to this channel.
+* [**bioconda**](https://bioconda.github.io/): this channel focuses on biomedical tools.
 
 **conda-forge** emerged as many of the scientific packages did not
 exist in the `defaults` Anaconda channel.
@@ -108,7 +107,6 @@ exist in the `defaults` Anaconda channel.
 
 Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.
 :::
-
 
 ## conda channels, PyPI, conda, pip - Where to publish your package
 
@@ -155,6 +153,7 @@ consider publishing to both PyPI and the conda-forge channel (_more
 on that below_).
 
 :::{admonition} Additional resources
+
 * [learn more about why conda-forge was created, here](https://conda-forge.org/docs/user/introduction.html)
 
 * [To learn more about conda terminology, check out their glossary.](https://docs.conda.io/projects/conda/en/latest/glossary.html )
@@ -162,6 +161,7 @@ on that below_).
 
 <!-- One of our packages on conda-forge https://anaconda.org/conda-forge/pandera -->
 
+(how-to-submit-to-conda-forge)=
 ## How to submit to conda-forge
 
 While pyOpenSci doesn't require you to add your package to conda-forge,
@@ -171,7 +171,6 @@ Once your package is on PyPI, the process to add your package to conda-forge
 is straight forward to do. [You can follow the detailed steps provided
 by the conda-forge maintainer team.](https://conda-forge.org/docs/maintainer/adding_pkgs.html).
 
-
 :::{button-link} ../tutorials/publish-conda-forge.html
 :color: primary
 :class: sd-rounded-pill float-left
@@ -180,7 +179,6 @@ Click here for a tutorial on adding your package to conda-forge.
 :::
 
 If you want a step by step tutorial, click here.
-
 
 Once your package is added, you will have a feedstock repository on GitHub with your packages name
 

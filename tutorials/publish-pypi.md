@@ -1,13 +1,14 @@
 ---
 :og:description: Learn how to publish your Python package on PyPI so others can install it using pip. This lesson covers building your package, creating a PyPI account, and uploading your distribution files.
 :og:title: Publish your Python package to PyPI
-date: 1970-01-07
 ---
 
+(publish-pypi-tutorial)=
 # Publish your Python package to PyPI
 
 :::{todo}
-- Make sure they add /dist to their .gitignore file. We have not discussed GitHub workflows anywhere yet. Where does that fit?
+
+- Make sure they add /dist to their .gitignore file. Where does that fit?
 
 :::
 
@@ -21,11 +22,13 @@ In the previous Python packaging lessons, you've learned:
 
 In this lesson you will learn how to:
 
-- Build your package's source (sdist) and wheel distributions
+- Build your package's {term}`Source distribution (sdist)` and
+  {term}`Wheel (.whl)` {term}`Distribution files`
 - Setup an account on TestPyPI (the process is similar for PyPI)
 - Publish your package to TestPyPI and PyPI
 
-You will do all of your development work in this lesson using [Hatch](https://hatch.pypa.io/latest/).
+You will do all of your development work in this lesson using
+[Hatch](get-to-know-hatch).
 
 Once your package is on PyPI you can publish it to conda-forge (which is a channel on conda)
 using [Grayskull](https://conda.github.io/grayskull/).
@@ -59,13 +62,11 @@ you need to do to publish your Python package:
 to TestPyPI. You need to:
 
 1. **Create a package development environment**
-1. [**Build your package using `hatch build`**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into two types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will `pip install` your package.
-1. **Create an account on TestPyPI (or PyPI)**: You will need to create a TestPyPI account and associated token which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.
+1. [**Build your package using `hatch build`**](../package-structure-code/python-package-distribution-files-sdist-wheel). Building a package is the process of turning your code into two types of distribution files: sdist and wheel. The wheel distribution file is particularly important for users who will use {term}`pip` to install your package.
+1. **Create an account on TestPyPI (or PyPI)**: You will need to create a TestPyPI account and associated {term}`API token` which provides permissions for you to upload your package. When you later publish your package to PyPI, you will need a separate PyPI account and token.
 1. **Publish to TestPyPI using `hatch publish`**
 
-In a future lesson, you will learn how to create an automated
-GitHub Actions workflow that publishes an updated
-version of your package to PyPI every time you create a GitHub release.
+In a [future lesson](trusted-publishing), you will learn how to create an automated GitHub Actions workflow that publishes an updated version of your package to PyPI every time you create a GitHub release.
 
 :::{admonition} Learn more about building Python packages in our guide
 :class: tip
@@ -159,7 +160,7 @@ Once you have your development environment setup, you are ready to build your pa
 
 You will use Hatch as a **Front end** tool that builds
 your package's sdist and wheel using the [hatchling](https://hatch.pypa.io/latest/) build back-end.
-The hatchling build back-end is used because you declared it in your pyproject.toml file in the [previous lesson](installable-code).
+The hatchling build back-end is used because you declared it in your pyproject.toml file in the [previous lesson](create-python-package).
 
 To build your package run `hatch build`:
 
@@ -211,8 +212,9 @@ If you have a package that you are confident belongs on PyPI, all of the steps b
 
 Example: `pyosPackage_yourNameHere`.
 
-:::{dropdown} Renaming your project before publishing
-:color: secondary
+:::{admonition} How to rename your Python package if the name is already taken in (test) PyPI
+:class: tip
+:class: secondary
 
 #### Required
 
@@ -256,7 +258,7 @@ To upload your package to TestPyPI (or PyPI), you will need to create a token fo
 It's ideal to create a package-specific token. When you create an account-wide token this allows anyone with access to the account to then access all of your TestPyPI (or PyPI) projects. By creating a package-specific token, you are limiting the scope of the token to only your specific package. This is just a safe way to set things up for you particularly if you are collaborating with others on package development.
 :::
 
-### Follow the steps below to create your token.
+### Follow the steps below to create your token
 
 - Login to TestPyPI and go to your account settings
 - Scroll down to the **API tokens** section
@@ -368,8 +370,19 @@ related to PyPI publication.
 1. You can create a package-specific token which you will use to publish your package (manually) to PyPI. This is a great option if you don't wish to automate your PyPI publication workflow.
 2. You can also create an automated publication workflow on GitHub using GitHub Actions. This is a great way to make the publication process easier and it also supports a growing maintainer team. In this case we suggest you don't worry about the token and instead setup a specific GitHub Actions that publishes your package when you make a release. You can then create a "trusted publisher" workflow on PyPI.
 
-You will learn how to create the automated trusted publisher workflow in a followup lesson.
+:::{admonition} Trusted Publishing
+:class: tip
 
+While publishing from GitHub Action is possible using tokens, we recommend the _Trusted Publishing_ approach as it also confers significant security and usability benefits.
+
+On the usability front, when Trusted Publishing is enabled, users no longer need to manually create API tokens on PyPI and store them in the GitHub release workflow.
+
+On the security front, Trusted Publishing reduces a risk related to the API token being long lived: with API tokens, as soon as an attacker gets access to it, they can publish many packages and versions in your name (depending on the scope of the token), until you discover the token compromise and rotate the credential. Trusted Publishing avoids this problem by minting very short lived tokens which expire automatically.
+
+For these benefits, it is recommended that users use _only_ the GitHub Actions release workflow to publish packages.
+:::
+
+You will learn how to create the automated trusted publisher workflow in a followup lesson.
 
 ### OPTIONAL: If you want to use a manual token-based publication workflow
 
@@ -386,6 +399,15 @@ To do this:
 
 And you're all done!
 
+:::{admonition} Trusted Publishing instead of token-based publication
+:class: tip
+
+Trusted Publishing will generate short lived tokens, scoped to the project, on
+demand, only when a specific release workflows gets triggered. This solves all
+the security and usability issues associated with storing credentials in
+files/GitHub secrets.
+:::
+
 ## You have published your package to TestPyPI!
 
 Congratulations. You have now successfully published your package to TestPyPI. If you have a package that is ready for real-world use on the real PyPI, then you can follow the same steps (with the differences noted above) to publish it on PyPI.
@@ -394,10 +416,6 @@ Once you publish on PyPI, you can then easily add your package to the conda-forg
 
 You will learn how to do that in the next lesson.
 
-
-
-
 ## Footnotes
 
 [^venv]: https://docs.python.org/3/library/venv.html
-```

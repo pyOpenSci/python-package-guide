@@ -1,7 +1,6 @@
 ---
 :og:description: Learn how to add a LICENSE and CODE_OF_CONDUCT file to your Python package. This lesson covers choosing a permissive license, placing key files for visibility on GitHub and PyPI, and adopting the Contributor Covenant to support an inclusive community.
 :og:title: Add a License and Code of Conduct to your python package
-date: 1970-01-02
 ---
 
 # Add a `LICENSE` & `CODE_OF_CONDUCT` to your Python package
@@ -27,13 +26,16 @@ In this lesson you will learn:
 A license contains legal language about how users can use and reuse your software. To set the `LICENSE` for your project, you:
 
 1. Create a `LICENSE` file in your project directory that specifies the license that you choose for your package.
-2. Reference that file in your `pyproject.toml` data where metadata are set.
+2. Describe your choice of license in your `pyproject.toml` data where metadata are set.
 
-By adding the `LICENSE` file to your `pyproject.toml` file, the `LICENSE` will be included in your package's metadata which is used to populate your package's PyPI landing page. The `LICENSE` is also used in your GitHub repository's landing page interface.
+By adding this metadata to your [pyproject.toml](pyproject-toml) file, the choice of
+license will be included in your package's metadata which is used to populate
+your package's PyPI landing page. The `LICENSE` file is also used in your
+GitHub repository's landing page interface, and makes its way into your distributions.
 
 ### What license should you use?
 
-We suggest that you use a permissive license that accommodates the other most commonly used licenses in the scientific Python ecosystem (MIT[^mit] and BSD-3[^bsd3]). If you are unsure, use MIT given it's the generally recommended
+We suggest that you use a permissive license that accommodates the other most commonly used licenses in the scientific Python ecosystem (MIT[^mit] and BSD-3-Clause[^bsd3]). If you are unsure, use MIT given it's the generally recommended
 license on [choosealicense.com](https://choosealicense.com/).
 
 :::{admonition} Licenses for the scientific Python ecosystem
@@ -68,7 +70,7 @@ There are several ways to add a `LICENSE` file:
 :::{tip}
 If you completed the past lessons including
 
-1. [Making your code installable](installable-code.md) and
+1. [Making your code installable](create-python-package.md) and
 2. [publishing your package to PyPI](publish-pypi.md)
 
 then you already have a `LICENSE` file containing text for the MIT license in your Python package. Thus you can skip to the next section of this tutorial which walks you through adding a `CODE_OF_CONDUCT`.
@@ -144,7 +146,8 @@ package directory.
 (add-coc)=
 ## What is a code of conduct file?
 
-A `CODE_OF_CONDUCT` file is used to establish guidelines for how people in your community interact.
+A `CODE_OF_CONDUCT` file is a {term}`Code of conduct` used to establish
+guidelines for how people in your community interact.
 
 This file is critical to supporting your community as it
 grows. The `CODE_OF_CONDUCT`:

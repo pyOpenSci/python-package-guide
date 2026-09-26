@@ -1,7 +1,6 @@
 ---
 :og:description: This page outlines the key steps to create, document, and share a high-quality scientific Python package. Here you will also get an overview of the pyOpenSci packaging guide and what you’ll learn.
 :og:title: Python packaging 101
-date: 1970-01-05
 ---
 
 (packaging-101)=
@@ -11,7 +10,7 @@ _A start to finish beginner-friendly tutorial_
 
 Welcome to the pyOpenSci Python packaging tutorial series. The lessons
 on the upcoming pages walk you through the core steps needed to
-create a Python package.
+create a {term}`Python package`.
 
 :::{figure-md} packaging-outline
 
@@ -27,7 +26,8 @@ that you have not created a Python package before. However, the
 content will still be valuable if you are interested in better
 understanding the steps involved in creating a Python package.
 
-- In this series you will learn about the core elements that you need to publish your package to the [Python Package Index (PyPI)](https://pypi.org/).
+- In this series you will learn about the core elements that you need to
+  publish your package to [PyPI](publish-pypi).
 
 - In the second series, you will learn about infrastructure and documentation needed to support package maintenance.
 
@@ -36,6 +36,7 @@ understanding the steps involved in creating a Python package.
 :caption: Python Packaging Tutorial Setup
 
 Get to know Hatch <get-to-know-hatch>
+Run standalone Python scripts with Hatch <run-python-scripts-hatch>
 :::
 
 :::{toctree}
@@ -43,15 +44,17 @@ Get to know Hatch <get-to-know-hatch>
 :caption: Create and publish a Python Package
 
 What is a Python package? <self>
-Create a Python package <installable-code>
+Create a Python package <create-python-package>
 Publish to PyPI <publish-pypi>
 Publish to conda-forge <publish-conda-forge>
+Publish using GitHub Actions and Trusted Publishing <trusted-publishing>
 :::
 
 :::{toctree}
 :hidden:
 :caption: Project information files & metadata
 
+Develop package (Hatch environments) <develop-python-package-hatch>
 Add README file <add-readme>
 Add a license & code of conduct <add-license-coc>
 Update metadata in pyproject.toml <pyproject-toml>
@@ -90,7 +93,7 @@ that you can use to perform various tasks.
 
 A Python package is basically a directory with a specific
 file structure. Within the package directory structure, there are
-modules which are files that end in `.py` (the same extension you'd
+{term}`Module` objects which are files that end in `.py` (the same extension you'd
 see in a Python script). These modules allow you to group and
 structure your Python code. Each module contains functions and classes,
 that you can think about as the tools in your toolbox.
@@ -125,7 +128,9 @@ Structuring your code as a package is the first step you need to take so you can
 You might create a Python package because you want to:
 
 - **Use your code across different projects:** At its most basic level, creating a package allows you to install your code into a Python environment. This allows you to then import functions and classes into any workflows both locally and in the cloud.
-- **Share your code:** If you publish a package on a public repository such as PyPI or conda, your package can be installed on any machine using pip or conda with a single command.
+- **Share your code:** If you publish a package on a public repository such as
+  PyPI or conda-forge, your package can be installed on any machine using
+  {term}`pip` or conda with a single command.
 - **Build community around your code:** Packages make it easier for multiple people to work on the same project (particularly when published on GitHub). A version control system such as git (the system used by GitHub), further makes it easier to track changes to the codebase over time. Tools such as issues and pull requests make it easier for outside users to contribute bug fixes and to establish review processes for accepting changes to the code base.
 - **Organize your code:** Packages can be used to organize large code projects, dividing them into smaller, more manageable components. This structure can help with both maintaining the codebase and with making it easier to understand.
 
@@ -160,7 +165,7 @@ The core elements of Python package include:
   - Contributor Documentation in the form of a **CONTRIBUTING.md** file is useful to help people to contribute to your package.
   - Development Documentation helps both maintainers and contributors understand how to maintain a package's infrastructure.
 - **Tests:** that make sure your code works as it should and makes it easier for you and others to contribute to, modify and update the code in the future
-- **License:** An open source license, or license that is [OSI approved](https://opensource.org/licenses/), refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
+- **License:** An open source license, or license that is [OSI approved](https://opensource.org/license/), refers to an license that allows others to use your package. It also provides legal direction regarding how elements of the package can and can't be reused.
 - **Infrastructure** that automates updates, publication workflows and runs test suites. Infrastructure includes a suite of things such as platforms like GitHub and GitLab, tools to run tests and tools locally such as nox and tox and continuous integration that automates package maintenance steps.
 
 :::{admonition} What pyOpenSci looks for in a package
@@ -256,7 +261,7 @@ It can be tricky to decide when your code becomes something that might be more b
 :::{admonition} How does this relate to code for a research project?
 :class: note
 
-A [Research Compendium](https://the-turing-way.netlify.app/reproducible-research/compendia.html) is an organized set of code, data and documentation that
+A [Research Compendium](https://book.the-turing-way.org/reproducible-research/compendia.html) is an organized set of code, data and documentation that
 supports a specific research project. It aims to enhance the reproducibility and
 transparency of research by providing a comprehensive record of the methods,
 data, and analyses used in a study.
@@ -339,7 +344,7 @@ Then you can create a conda-forge recipe using the [Grayskull](https://github.co
 <img src="../images/tutorials/publish-package-pypi-conda.png" alt="Graphic showing the high level packaging workflow. On the left you see a graphic with code, metadata and tests in it. Those items all go into your package. Documentation and data are below that box because they aren't normally published in your packaging wheel distribution. An arrow to the right takes you to a build distribution files box. That box leads you to either publishing to TestPyPI or the real PyPI. From PyPI you can then connect to conda-forge for an automated build that sends distributions from PyPI to conda-forge." width="700px">
 
 In the image above, you can see the steps associated with publishing
-your package on PyPI and conda-forge. Note that the distribution files that PyPI requires are the [sdist](#python-source-distribution) and [wheel](#python-wheel) files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda-forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repository. You will learn more about this process in the [conda-forge lesson](/tutorials/publish-conda-forge).
+your package on PyPI and conda-forge. PyPI supports [sdist](#python-source-distribution) and [wheel](#python-wheel) files. Once you are ready to make your code publicly installable, you can publish it on PyPI. Once your code is on PyPI it is straight forward to then publish to conda-forge. You create a recipe using the Grayskull package and then you open a pr in the conda-forge recipe repository. You will learn more about this process in the [conda-forge lesson](/tutorials/publish-conda-forge).
 :::
 
 ## Yay, your package has users! Now what?
@@ -366,5 +371,5 @@ The elements above are also important for future maintenance of your package. In
 In future lessons you will learn more about the infrastructure around a published Python package that makes it both easier to maintain, easier for others to contribute to and easier for other scientists to use. However, first we want to get you to your initial goal of publishing a Python package.
 
 In this next lesson you will learn how to create a basic installable Python package.
-Make your code pip installable <installable-code>
+Make your code pip installable <create-python-package>
 :::

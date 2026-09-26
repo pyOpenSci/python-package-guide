@@ -12,11 +12,13 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
-from datetime import datetime
-import subprocess
+
+sys.path.insert(0, os.path.abspath("."))
 import os
+import subprocess
+from datetime import datetime
 from typing import TYPE_CHECKING
+
 from _ext import rss
 
 if TYPE_CHECKING:
@@ -42,10 +44,10 @@ author = "pyOpenSci Community"
 language = language_env
 # all languages that have .po files generated for them
 # (excluding english)
-languages = ["es", "ja"]
+languages = ["es", "ja", "pt", "el", "bg", "it", "de"]
 # the languages that will be included in a production build
 # (also excluding english)
-release_languages = ["ja"]
+release_languages = ["es", "ja", "pt", "it"]
 
 # languages that will be included in the language dropdown
 # (ie. all that are being built in this nox build session)
@@ -54,18 +56,18 @@ if sphinx_env == "production":
 else:
     build_languages = ["en"] + languages
 
-# Get the latest Git tag - there might be a prettier way to do this but...
+# Use only the Git SHA for the Sphinx "release" string.
+# (Sphinx doesn't require PEP 440 here, but we keep it well-formed and stable.)
 try:
     release_value = (
-        subprocess.check_output(["git", "describe", "--tags"])
+        subprocess.check_output(["git", "rev-parse", "--short=12", "HEAD"])
         .decode("utf-8")
         .strip()
     )
-    release_value = release_value[:4]
-except subprocess.CalledProcessError:
-    release_value = "0.1"  # Default value in case there's no tag
+except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
+    # Fallback when building from a source archive or without git available
+    release_value = "unknown"
 
-# Update the release value
 release = release_value
 
 # -- General configuration ---------------------------------------------------
@@ -83,6 +85,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx_favicon",
     "sphinxcontrib.bibtex",
+    "_ext.translation_graph",
 ]
 
 # colon fence for card support in md
@@ -145,7 +148,7 @@ html_theme_options = {
     "github_url": "https://github.com/pyopensci/python-package-guide",
     "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
-    "navbar_persistent": ["language-selector", "search-button"]
+    "navbar_persistent": ["language-selector", "search-button"],
 }
 
 html_context = {
@@ -164,6 +167,7 @@ templates_path = ["_templates"]
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
+    "scripts",
     "_build",
     "Thumbs.db",
     ".DS_Store",
@@ -175,6 +179,13 @@ exclude_patterns = [
     ".pytest_cache/README.md",
     "vale-styles/*",
     "CODE_OF_CONDUCT.md",
+    "CLAUDE.md",
+    # Local virtualenv under the doc root; otherwise Sphinx/Myst scans site-packages.
+    ".venv",
+    "venv",
+    "env",
+    "LICENSE.rst",
+    "SECURITY.md",
 ]
 
 # For sitemap generation
@@ -203,7 +214,30 @@ ogp_social_cards = {
 # Bibliographies
 bibtex_bibfiles = ["bibliography.bib"]
 # myst complains about bibtex footnotes because of render order
-suppress_warnings = ["myst.footnote"]
+suppress_warnings = [
+    "myst.footnote",
+    # Suppress false positives for translated :term: references. When a
+    # translator correctly translates a glossary term in the target language
+    # (e.g. "Code of conduct" to "código de conducta"), Sphinx still warns
+    # because it is different from the English original, despite the fact that
+    # the translated term is properly defined in the glossary.
+    "i18n.inconsistent_references",
+]
+
+# -- Options for linkcheck -------------------------------------------------
+
+# config reference: https://www.sphinx-doc.org/en/master/usage/configuration.html
+linkcheck_anchors_ignore_for_url = [
+    # GitHub code links with line-number anchors are reported as "not found"
+    r"https:\/\/.*github\.com.*\/blob\/.*",
+]
+
+linkcheck_ignore = [
+    # gnu.org is so strictly rate-limited that retries to it really slow down link-checking... just assume they're fine
+    r"https:\/\/.*gnu\.org.*",
+    # this discord link is correct, but unauthenticated it redirects to a sign-up page
+    r"https:\/\/discord\.gg/NQtTTqtv",
+]
 
 
 def _post_build(app: "Sphinx", exception: Exception | None) -> None:

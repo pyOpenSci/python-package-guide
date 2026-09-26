@@ -51,7 +51,7 @@ The CONTRIBUTING.md file should include information about:
 If you have a [development guide](development-guide), link to it. This guide should provide clear instructions on how to set up your development environment locally. It also should overview CI tools that you have that could simplify the contribution process (for example, pre-[commit.ci bot](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#pre-commit-ci), and so on), [linters, code formatters](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#code-linting-formatting-and-styling-tools), and so on.
 
 This guide should also include information for someone
-interested in asking questions. Some projects accept questions as GitHub or GitLab issues. Others use GitHub discussions, Discourse, or even a Discord server.
+interested in asking questions. Some projects accept questions as GitHub or GitLab issues. Others use GitHub Discussions, Discourse, or even a Discord server.
 
 The contributing file should also include:
 

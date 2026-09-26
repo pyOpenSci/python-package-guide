@@ -1,12 +1,12 @@
 repos:
   - repo: https://github.com/PyCQA/isort
-    rev: 5.11.4
+    rev: dac090ce4d9ee313d086e2e89ab1acb8c2664fa1 # frozen: 9.0.0a3
     hooks:
       - id: isort
         files: \.py$
   # Misc commit checks using built in pre-commit checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
     # ref: https://github.com/pre-commit/pre-commit-hooks#hooks-available
     hooks:
       # Autoformat: Makes sure files end in a newline and only a newline.
@@ -17,16 +17,16 @@ repos:
       - id: trailing-whitespace
   # Linting: Python code (see the file .flake8)
   - repo: https://github.com/PyCQA/flake8
-    rev: "6.0.0"
+    rev: c48217e1fc006c2dddd14df54e83b67da15de5cd # frozen: 7.3.0
     hooks:
       - id: flake8
   # Black for auto code formatting
   - repo: https://github.com/psf/black
-    rev: 22.12.0
+    rev: c6755bb741b6481d6b3d3bb563c83fa060db96c9 # frozen: 26.3.1
     hooks:
       - id: black
-        language_version: python3.8
-# Tell precommit.ci bot to update codoe format tools listed in the file
+        language_version: python3.10
+# Tell precommit.ci bot to update code format tools listed in the file
 # versions every quarter
 # The default it so update weekly which is too many new pr's for many
 # maintainers (remove these lines if you aren't using the bot!)

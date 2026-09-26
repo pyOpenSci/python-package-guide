@@ -1,17 +1,18 @@
 ---
 :og:description: Learn how to publish your Python package on conda-forge to make it easily installable with conda. This lesson covers the submission process, metadata requirements, and maintaining your feedstock.
 :og:title: Publish your Python package that is on PyPI to conda-forge
-date: 1970-01-06
 ---
 
 # Publish your Python package that is on PyPI to conda-forge
 
 In the previous lessons, you've learned:
 
-1. How to [create the most basic version of a Python package](installable-code.md). This entailed making your code installable.
+1. How to [create the most basic version of a Python package](create-python-package.md). This entailed making your code installable.
 2. [How to publish your Python package to PyPI](publish-pypi)
 3. How to add a `README` and `LICENSE` file to your package
-4. How to setup your `pyproject.toml` file with all of the metadata that PyPI requires and also metadata that will be helpful for users to find your package.
+4. How to setup your [pyproject.toml](pyproject-toml) file with all of the metadata that
+   PyPI requires and also metadata that will be helpful for users to find your
+   package.
 
 If you have gone through all of the above lessons, you are now ready to
 publish your package on conda-forge.
@@ -30,7 +31,8 @@ In this lesson you will learn how to:
 
 Once your package is on PyPI you can then easily publish it to conda-forge
 using the [grayskull](https://conda.github.io/grayskull/) tool. You do not need to build the package specifically
-for conda, conda-forge will build from your PyPI source distribution file (sdist).
+for conda, conda-forge will build from your PyPI
+{term}`Source distribution (sdist)` file.
 
 :::
 
@@ -38,7 +40,11 @@ for conda, conda-forge will build from your PyPI source distribution file (sdist
 
 <img src="../images/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. Then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge. " width="700px">
 
-Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. Conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.
+Once you have published both package distributions (the
+{term}`Source distribution (sdist)` and the {term}`Wheel (.whl)`) to PyPI, you
+can then publish to conda-forge. Conda-forge requires a source distribution on
+PyPI in order to build your package on conda-forge. You do not need to rebuild
+your package to publish to conda-forge.
 :::
 
 ## What is conda-forge?
@@ -471,7 +477,7 @@ Review the pull request. If all tests are passing, you can merge it. Shortly aft
 If you have walked through this entire tutorial series you will now:
 
 1. Understand [what a Python package is ](intro.md)
-2. Know how to [make your code installable](installable-code.md) into Python environments
+2. Know how to [make your code installable](create-python-package.md) into Python environments
 3. Know how to create a `pyproject.toml` file, a `README` file, and a `LICENSE` and code of conduct.
 4. Know how to [publish your package to PyPI](publish-pypi.md) and
 5. Know how to publish your package to conda-forge

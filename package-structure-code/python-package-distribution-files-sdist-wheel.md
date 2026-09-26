@@ -36,45 +36,36 @@ The metadata that both build tools and PyPI uses to describe and understand your
 
 - The `[build-system]` table in your pyproject.toml file tells pip what [build backend tool](build_backends) you wish to use for creating your sdist and wheel distributions.
 
-```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: [build-system]
+:end-before: [project]
+:::
 
 - And the dependencies section of your project table tells the build tool and PyPI what dependencies your project requires.
 
-```
-dependencies = [
-    "numpy",
-    "geopandas",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: dependencies = [
+:end-before: [development-group]
+:::
 
 2. When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:
 
-- The `classifiers = ` section of your `[project]` table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that contain specific licenses or that support specific versions of python.
+- The `classifiers = ` section of your `[project]` table in the pyproject.toml file provides information that users on PyPI can use to filter for packages that address different topics or that support specific versions of python.
 
-```toml
-classifiers = [
-    # How mature is this project? Common values are
-    "Development Status :: 4 - Beta",
 
-    # Indicate who your project is intended for
-    "Intended Audience :: Developers",
-    "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-]
-```
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: classifiers = [
+:end-before: dependencies = [
+:::
 
-```{admonition} What happened to setup.py and setup.cfg for metadata?
+:::{admonition} What happened to setup.py and setup.cfg for metadata?
 :class: note
 
 Project metadata used to be stored in either a setup.py file or a setup.cfg file. The current recommended practice for storing package metadata is to use a pyproject.toml file. [Learn more about the pyproject.toml file here.](pyproject-toml-python-package-metadata)
-```
+:::
 
 ### An example - xclim
 
@@ -116,7 +107,7 @@ Maintainer names and GitHub usernames for the xclim package as they are displaye
 
 You could in theory create your own scripts to organize your code the way PyPI wants it to be. However, just like there are packages that handle known structures such as Pandas for data frames and Numpy for arrays, there are packages and tools that help you create package build distribution files.
 
-```{note}
+:::{note}
 
 There are a suite of packaging tools that can either help you with
 the entire packaging process or just one step of the process. For instance
@@ -128,7 +119,7 @@ While this can cause some confusion and
 complexity in the packaging ecosystem - for the most part, each tool provides
 the same distribution output (with minor differences that most users may not
 care about). Learn more about those tools on this page.
-```
+:::
 
 Below, you will learn about the two distribution files that PyPI expects you to publish: sdist and wheel. You will learn about
 their structure and what files belong in each.
@@ -141,15 +132,15 @@ that can be directly installed onto anyones' computer.
 
 Learn more about both distributions below.
 
-```{note}
+:::{note}
 If your package is a pure python package with no additional
 build / compilation steps then the sdist and wheel distributions will have
 similar content. However if your package has extensions in other languages
 or is more complex in its build, the two distributions will be very different.
 
 Also note that we are not discussing conda build workflows in this section.
-[You can learn more about conda builds here.](https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
-```
+[You can learn more about conda builds here.](https://docs.conda.io/projects/conda-build/en/latest/user-guide/tutorials/index.html)
+:::
 
 (python-source-distribution)=
 ## What is a source distribution (sdist)
@@ -216,14 +207,14 @@ stravalib-1.1.0.post2-SDist.tar.gz file contents
 
 ```
 
-```{admonition} GitHub archive vs sdist
+:::{admonition} GitHub archive vs sdist
 :class: tip
 When you make a release on GitHub, it creates a `git archive` that contains all
 of the files in your GitHub repository. While these files are similar to an
 sdist, these two archives are not the same. The sdist contains a few other
 items including a metadata directory and if you use `setuptools_scm` or `hatch_vcs`
 the sdist may also contain a file that stores the version.
-```
+:::
 
 (python-wheel)=
 ## What is a Python wheel (whl):
@@ -248,13 +239,13 @@ projects and can lead to consistent installs across machines.
 real security issues with this IF the whl is already built and that file isn't
 included what is the issue? i need more input here-->
 
-```{tip}
+:::{tip}
 Wheels are also useful in the case that a package
 needs a **setup.py** file to support a more complex build.
 In this case, because the files in the wheel bundle
 are pre built, the user installing doesn't have to
 worry about malicious code injections when it is installed.
-```
+:::
 
 The filename of a wheel contains important metadata about your package.
 
@@ -300,6 +291,6 @@ stravalib-1.1.0.post2-py3-none.whl file contents:
 
 ```
 
-```{tip}
+:::{tip}
 [Read more about the wheel format here](https://pythonwheels.com/)
-```
+:::

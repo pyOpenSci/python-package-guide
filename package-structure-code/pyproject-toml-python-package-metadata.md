@@ -1,21 +1,13 @@
+(pyprojecttoml-metadata)=
 # Use a pyproject.toml file for your package configuration & metadata
 
-<!-- :::{admonition} TODOs for this page
-:class: important
-
-what's missing
-
-::: -->
-
-:::{admonition} Important pyproject.toml take aways
-:class: todo
+:::{admonition} pyproject.toml takeaways
 
 1. There are only two tables that are required for an installable Python package: **[build-system]** and **[project]**. The **[project]** table stores your package's metadata.
-2. There are only two _required_ fields in the **[project]** table: **name=** and **version=**.
-3. We suggest you add additional metadata to your `pyproject.toml` file as it will make it easier for users to find your project on PyPI.
+2. There are two _required_ fields in the **[project]** table: **name=** and **version=**.
+3. Add metadata to the classifiers section of your `pyproject.toml` file to make it easier for users to find your project on PyPI.
 4. When you are adding classifiers to the [project] table, only use valid values from [PyPI’s classifier page](https://PyPI.org/classifiers/). An invalid value here will raise an error when you build your package or publish to PyPI.
-5. There is no specific order for tables in the `pyproject.toml` file. However fields need to be placed within the correct table sections. For example `requires =` always need to be associated with the **[build-system]** table.
-6. **python-requires**: is important to have in your `pyproject.toml` file as it helps pip install your package.
+5. There is no specific order for tables in the `pyproject.toml` file. However, fields need to be placed within the correct table sections. For example `requires =` always needs to be associated with the **[build-system]** table.
 
 :::
 
@@ -54,38 +46,29 @@ Click here if need help migrating from setup.py/setup.cfg to pyproject.toml
 ::::
 :::::
 
+(pyproject-toml-overview)=
 ## About the pyproject.toml file
 
-Every modern Python package should include a `pyproject.toml` file. If your project is pure Python and you're using a `setup.py` or `setup.cfg` file to describe its metadata, you should consider migrating your metadata and build information to a `pyproject.toml` file.
+Every modern Python package should include a `pyproject.toml` file. For pure Python packages, this file replaces the `setup.py` and/or `setup.cfg` file to describe project metadata.
 
-If your project isn’t pure-python, you might still require a `setup.py` file to build the non Python extensions. However, a `pyproject.toml` file should still be used to store your project’s metadata.
+If your project isn’t pure Python, you might still require a `setup.py` file to build the non-Python extensions. However, a `pyproject.toml` file should still be used to store your project’s metadata.
 
-:::{admonition} What happened to setup.py & how do i migrate to pyproject.toml?
+:::{admonition} Tutorial
 :class: note
-Prior to August 2017, Python package metadata was stored either in the `setup.py` file or a `setup.cfg` file. In recent years, there has been a shift to storing Python package metadata in a much more user-readable `pyproject.toml` format. Having all metadata in a single file:
 
-- simplifies package management,
-- allows you to use a suite of different [build backends](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html#build-back-ends) such as (flit-core, hatchling, pdm-build), and
-- aligns with modern best practices.
-
-<!--Commented until tutorials go live
-
- If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](../tutorials/extras/6-setuppy-to-pyproject-toml.md) -->
+If you are migrating from a **setup.py** or **setup.cfg** file, and want help, [check out this tutorial.](migrate-pyproj)
+[specify build requirements and
+metadata is called a **pyproject.toml**](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/)
 :::
-
-The standard file that Python packages use to [specify build requirements and
-metadata is called a **pyproject.toml**](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/). Adding metadata, build requirements
-and package dependencies to a **pyproject.toml** file replaces storing that
-information in a setup.py or setup.cfg file.
 
 ### About the .toml format
 
-The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is founded on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`.
+The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure based on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`.
 Below that table identifier are key/value pairs that
 support configuration for that particular table.
 
 - Below `[build-system]` is considered a table in the toml language.
-- Within the `build-system` table below `requires =` is a key.
+- Within the `build-system` table, `requires =` is a key.
 - The associated value for `requires` is an array containing the value `"hatchling"`.
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
@@ -115,12 +98,7 @@ represent on your PyPI landing page. These classifiers also allow users to sort 
 Including your package's metadata in a separate human-readable **pyproject.toml**
 format also allows someone to view the project's metadata in a GitHub repository.
 
-<!-- setup.cfg for project metadata is being deprecated - set setuptools guide and
-https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
-pypa -
-https://packaging.python.org/en/latest/specifications/declaring-project-metadata/ -->
-
-```{admonition} Setup.py is still useful for complex package builds
+:::{admonition} Setup.py is still useful for complex package builds
 :class: tip
 
 Using **setup.py** to manage package builds and metadata [can cause problems with package development](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html).
@@ -128,9 +106,9 @@ In some cases where a Python package build is complex, a **setup.py** file may
 be required. While this guide will not cover complex builds, we will provide
 resources working with complex builds in the future.
 
-```
+:::
 
-## Optional vs. Required pyproject.toml file fields
+## Optional vs. required pyproject.toml file fields
 
 When you create your `pyproject.toml` file, there are numerous metadata fields that you can use. Below we suggest specific fields to get you started that support publication on PyPI and users finding your package.
 
@@ -163,49 +141,85 @@ what dependencies your package requires.
 :end-at: ]
 :::
 
-- **dependencies:** dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.
+- **project.dependencies:** The dependency group is optional because not all packages require dependencies. However, if your project has specific dependencies, include this section in your `pyproject.toml`. Dependencies declared in the pyproject.toml file will be installed by uv or pip when your project is installed.
 
-- **`[project.optional-dependencies]`:** the optional or development dependencies will be installed if someone runs `python -m pip install projectname[dev]`. This is a nice way to include your development dependencies for users who may wish to contribute to your project.
-
+- **project.optional-dependencies:** Optional or feature dependencies will be installed if someone runs `python -m pip install projectname[feature]`. Use this array to declare dependencies that add specific features to your package that are not installed by default when a user runs `uv sync` or `python -m pip install packagename`.
+- **dependency-groups:** Dependency groups organize packages and tools that a contributor or developer would need to work on your package. These dependencies may include tools for building and running tests, linters, and code formatters. This is an optional but highly suggested way to organize and install dependencies. This section can replace a requirements.txt file. [Learn more about adding these to your package in the PyPA guide here.](https://packaging.python.org/en/latest/specifications/dependency-groups/)
 - **keywords:** These are the keywords that will appear on your PyPI landing page. Think of them as words that people might use to search for your package.
-- **classifiers:** The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of [all options for classifiers can be found her](https://PyPI.org/classifiers/)e. Some of the classifiers that you should consider including
+- **classifiers:** The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of [all options for classifiers can be found here](https://PyPI.org/classifiers/). Some of the classifiers that you should consider including
   - Development Status
   - Intended Audience
   - Topic
-  - License
   - Programming language
 
 ### Advanced options in the pyproject.toml file
 
-The examples at the bottom of this page contain ...
-
 - **`[project.scripts]` (Entry points):** Entry points are optional. If you have a command line tool that runs a specific script hosted in your package, you may include an entry point to call that script directly at the command line (rather than at the Python shell).
 
   - Here is an example of[a package that has entry point script](https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60)s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.
-- **Dynamic Fields:** if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like `setuptooms_scm`, then you might use the dynamic field, such as version (using scm) **dynamic = ["version"]**
+- Use **Dynamic Fields** If you have fields that are dynamically populated. For example, you may wish to automatically update your package's version using Git tags (SCM/version control-based versioning). Example:  **dynamic = ["version"]**
 
 ## Add dependencies to your pyproject.toml file
 
-The pyproject.toml file can also be used as a replacement for the requirements.txt file which has been traditionally used to store development dependencies such as pytest, code formatters such as Black and documentation tools such as sphinx.
+### Required dependencies
+A `requirements.txt` file has been traditionally used to specify dependencies, but modern practice puts these
+in the `pyproject.toml` file. Required dependencies are specified under the `[project]` section as a list of strings:
 
-To add dependencies to your build, add a `[project.optional-dependencies]` table to your pyproject.toml file.
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[project]\n...\n...\n...\n"
+:start-at: "dependencies = ["
+:end-at: ]
+:::
 
+### Optional dependencies
+Optional dependencies are specified under the `[project.optional-dependencies]` section and are intended to give users
+options for including additional dependencies with their installation. Optional dependencies are collected together
+as a list of strings and assigned to a name:
+
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:start-at: "[project.optional-dependencies]"
+:end-at: docs
+:::
+
+Named dependency lists can be invoked by users on installation to include those specific dependencies on installation.
+Here is an example installing the test and docs dependencies using pip:
+
+- `python -m pip install examplePy[test,docs]`
+
+Other installation tools tend to follow a similar pattern where optional dependencies are concatenated as
+a list to the package name.
+
+### Dependency Groups
+Dependency groups are a way to group package requirements in the `pyproject.toml` file but exclude them in the
+project metadata when it is built. Because it is not included in the project metadadata, users will not be able to
+invoke dependency groups when installing from a package index such as PyPI, but they can be accessed by developers
+who have all the project data (e.g. through cloning a repository). Optional dependencies are intended for package
+consumers and dependency groups are intended for package maintainers and contributors.
+
+To add development dependencies to your build, add a `[dependency-groups]` array to your pyproject.toml file.
 Then specify dependency groups as follows:
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:start-at: [project.optional-dependencies]
+:start-at: [dependency-groups]
+:end-before: "dev = ["
 :::
 
-Following the above example, you install dependencies like this:
+One of the capabilities that dependency groups have is the ability to make composition groups.
+For example, `dev` dependency group could be composed of a `test` dependency group and a `lint` dependency group:
 
-- `python -m pip install -e .[tests]`
+:::{literalinclude} ../examples/pure-hatch/pyproject.toml
+:language: toml
+:prepend: "[dependency-groups]\n...\n...\n...\n"
+:start-at: "dev = ["
+:end-at: ]
+:::
 
-The above will install both your package in editable mode and all of the dependencies declared in the tests section of your `[project.optional-dependencies]` table.
+To access groups using pip (requires pip 25.1 or higher), you can invoke them during installation like this:
 
-To install all dependencies and also your package, you'd use:
-
-`python -m pip install -e .[tests,lint,docs]`
+- `python -m pip install --group dev`
 
 :::{admonition} Recursive dependencies
 :class: tip
@@ -247,6 +261,6 @@ of values. It has two keys that specify the build backend API and containing pac
 :language: toml
 :::
 
-```{note}
+:::{note}
 [Click here to read about our packaging build tools including PDM, setuptools, Poetry and Hatch.](/package-structure-code/python-package-build-tools)
-```
+:::

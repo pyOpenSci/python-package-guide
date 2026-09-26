@@ -1,12 +1,14 @@
 ---
 :og:description: The pyproject.toml file is the central configuration file for building and packaging Python projects. This lesson explains key sections like name, version, dependencies, and how they support packaging and distribution. You’ll learn how to set up this file to ensure your package is ready for publishing.
 :og:title: Make your Python package PyPI ready - pyproject.toml
-date: 1970-01-08
 ---
 
 # Make your Python package PyPI ready - pyproject.toml
 
-In [the installable code lesson](installable-code), you learned how to add the bare minimum information to a `pyproject.toml` file to make it installable. You then learned how to [publish a bare minimum version of your package to PyPI](publish-pypi.md).
+In [the installable code lesson](create-python-package), you learned how to add
+the bare minimum information to a `pyproject.toml` file to make it
+installable. You then learned how to publish a bare minimum version of your
+package to [PyPI](publish-pypi).
 
 Following that you learned how to add a:
 * [README.md](add-readme)
@@ -15,11 +17,10 @@ Following that you learned how to add a:
 
 to the root of your project directory.
 
-To enhance the visibility of your package on PyPI and provide more information
-about its compatibility with Python versions, project development status, and
-project maintainers, you should add additional metadata to your `pyproject.toml`
-file. This
-lesson will guide you through the process.
+To enhance the visibility of your package on PyPI and provide information
+about its development status and maintainers, you should add additional
+metadata to your `pyproject.toml` file. This lesson will guide you through
+the process.
 
 
 :::{admonition} Learning Objectives
@@ -53,7 +54,8 @@ When creating your pyproject.toml file, consider the following:
 
 ## What is a pyproject.toml file?
 
-The `pyproject.toml` file is a human and machine-readable file that serves as the primary configuration file for your Python package.
+The `pyproject.toml` file is a human and machine-readable file that
+serves as the primary configuration file for your Python package.
 
 
 :::{tip}
@@ -63,7 +65,10 @@ The `pyproject.toml` file is a human and machine-readable file that serves as th
 
 ### About the .toml format
 
-The **pyproject.toml** file is written in [TOML (Tom's Obvious, Minimal Language) format](https://toml.io/en/). TOML is an easy-to-read structure that is based on key/value pairs. Each section in the **pyproject.toml** file contains a `[table identifier]`. The TOML format can be compared to other structured formats such as`.json`. However, the TOML format was designed to be easier to read for humans.
+The **pyproject.toml** file is written in {term}`TOML` format. TOML is an
+easy-to-read structure that is based on key/value pairs. Each section in the
+**pyproject.toml** file contains a `[table identifier]`. The TOML format can be
+compared to other structured formats such as `.json`.
 
 Below you can see the `[build-system]` table. Within
 that table there are two required key/value pairs.
@@ -82,12 +87,14 @@ build-backend = "hatchling.build"
 
 The pyproject.toml file tells your build tool:
 
-- What build backend to use to build your package (we are using `hatchling` in this tutorial but there are [many others to choose from](/package-structure-code/python-package-build-tools)).
-- How and where to retrieve your package's version:
+- what {term}`Build backend` to use to build your package (we are using
+  {term}`Hatchling` in this tutorial but there are
+  [many others to choose from](/package-structure-code/python-package-build-tools)).
+- how and where to retrieve your package's version:
     - **statically** where you declare the version `version = "0.1.0"` or
     - **dynamically** where the tool looks to the most recent tag in your history to determine the current version.
-- What dependencies your package needs
-- What versions of Python your package supports (important for your users).
+- what {term}`Dependencies` your package needs,
+- it can also declare Python-version requirements if your package has them.
 
 The `pyproject.toml` file also makes it easy for anyone browsing your GitHub
 repository to quickly understand your package's structure such as:
@@ -162,7 +169,7 @@ The documentation for the hatchling back-end is [here](https://hatch.pypa.io/lat
 
 ### Step 1: Add Author, maintainer and project description
 
-After completing the [installable code tutorial](installable-code), you should have a pyproject.toml file with a project name and a version in the `[project]` table.
+After completing the [installable code tutorial](create-python-package), you should have a pyproject.toml file with a project name and a version in the `[project]` table.
 
 ```toml
 [project]
@@ -273,8 +280,8 @@ you want to have listed as authors and maintainers on your PyPI landing page.
 ### Step 2: Add README and license
 
 In the previous lessons, you added both a [README.md](add-readme) file and a [LICENSE](add-license-coc) to your package repository.
-Once you have those files, you can add them to your pyproject.toml file as
-links following the example below.
+Once you have those files, you can refer to the README from your pyproject.toml file, and add a short code indicating your choice of LICENSE
+following the example below.
 
 {emphasize-lines="20-21"}
 ```toml
@@ -298,46 +305,44 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = "LICENSE"}
+license = "MIT"
 ```
-### Step 3: Specify Python version with `requires-python`
 
-Add the `requires-python` field to your `pyproject.toml` `[project]` table.
-The `requires-python` field helps pip identify which Python versions that your package supports.
-It is set to a single value.
-The [packaging specification](https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python) defines`requires-python` as a string that uses version specifiers. Most projects will specify the oldest Python version supported by the package. In some advanced cases, an upper bound is set to indicate which future Python versions, if any, will be supported.
+The license entry in your pyproject.toml file must use the [license expression syntax](https://packaging.python.org/en/latest/specifications/license-expression/). Often this is a short name (with no spaces) for the license, such as "MIT", "BSD-3-Clause" or "Apache-2.0". More precisely, it must be a valid SPDX license expression, as documented in the [SPDX specification](https://spdx.github.io/spdx-spec/v2.2.2/SPDX-license-expressions/), either version 2.2 or a later compatible version.
 
+If you have multiple licenses, or a custom license, you can also express these using a license expression.
 
-{emphasize-lines="22"}
+If you want to distribute license files, or other files containing legal information, with your package, you can include these using the [`license-files`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license-files) entry, but this is not required.
+
+:::{admonition} But how do I figure out which Python versions I should support?
+:class: tip
+Good question. The Python developer guide provides a [status page](https://devguide.python.org/versions/) (and a handy visualization) that explains the status of each Python release. Python releases go through several different phases that are explained in [PEP 602](https://peps.python.org/pep-0602/).
+
+We recommend that you use the latest Python release in the **bugfix** phase. If your Python release is in the **security** phase, we recommend migrating to a newer version of Python.
+:::
+
+:::{admonition} When should I use `requires-python`?
+:class: tip
+You do not need to specify `requires-python` for every package. However, if you
+know that your package will not work with older versions of Python, use `requires-python`
+to prevent installers from installing it with those versions. For example, if your package
+requires features introduced in Python 3.10:
+
 ```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
-name = "pyospackage"
-version = "0.1.0"
-description = """
-Tools that update the pyOpenSci contributor and review metadata
-that is posted on our website
-"""
-authors = [
-  { name = "Firstname Lastname", email = "email@pyopensci.org"},
-  { name = "Secondperson Fullname", email = "email2@pyopensci.org" }
-]
-maintainers = [
-  { name = "Secondperson Fullname", email = "email2@pyopensci.org" },
-  { name = "New Friend", email = "newbie@pyopensci.org" }
-]
-readme = "README.md"
-license = {file = 'LICENSE'}
 requires-python = ">=3.10"
 ```
 
-### Step 4: Specify Dependencies
+This helps `pip` select a compatible release of your package for the Python version a user is running.
+:::
+
+### Step 3: Specify dependencies
 
 Next add your dependencies table to the project table.
-The `dependencies =` section contains a list (or array in the toml language) of the Python packages that your package requires to run properly in a Python environment. Similar to the requirements listed in the  `[build-system]` table above:
+The `dependencies =` section contains a list (or array in the toml language) of
+the Python packages that your package requires to run properly in a Python
+environment. Similar to the requirements listed in the `[build-system]`
+table above:
 
 ```toml
 [build-system] # <- this is a table
@@ -402,8 +407,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
-requires-python = ">=3.10"
+license = "MIT"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 ```
@@ -432,7 +436,7 @@ pydantic^1.10
 One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. [Read more about how to safely add dependencies with Poetry, here.](challenges-with-poetry)
 :::
 
-### Step 5: Add PyPI classifiers
+### Step 4: Add PyPI classifiers
 
 Next you will add classifiers to your `pyproject.toml` file. The value for each classifier that you add to your `pyproject.toml` file must come from the list of [PyPI accepted classifier values found here](https://PyPI.org/classifiers/). Any deviations in spelling and format will cause issues when you publish to PyPI.
 
@@ -447,15 +451,14 @@ Review that list and add items below to your `pyproject.toml` file:
 - development status
 - intended audiences
 - topic
-- license and
 - programming language support
 
 The classifier key should look something like the example below. A few notes:
 
-- Your classifier values might be different depending upon the license you have selected for your package, your intended audience, development status of your package and the Python versions that you support
+- Your classifier values might be different depending upon your intended audience, development status of your package and the Python versions that you support
 - You can add as many classifiers as you wish as long as you use the [designated PyPI classifier values](https://PyPI.org/classifiers/).
 
-{emphasize-lines="26-34"}
+{emphasize-lines="26-33"}
 ```toml
 [build-system]
 requires = ["hatchling"]
@@ -477,8 +480,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
-requires-python = ">=3.10"
+license = "MIT"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
@@ -486,7 +488,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -495,17 +496,17 @@ classifiers = [
 
 Note that while classifiers are not required in your `pyproject.toml` file, they will help users find your package. As such we strongly recommend that you add them.
 
-### Step 6: Add the `[project.urls]` table
+### Step 5: Add the `[project.urls]` table
 
 Finally, add the project.urls table to your pyproject.toml file.
 
 `project.urls` contains links that are relevant for your project. You might want to include:
 
 - **Homepage:** A link to your published documentation for your project. If you are working through this tutorial, then you may not have this link yet. That's ok, you can skip it for the time being.
-- **Bug reports:** a link to your issues / discussions or wherever you want users to report bugs.
+- **Bug reports:** a link to your issues/discussions or wherever you want users to report bugs.
 - **Source:** the GitHub / GitLab link for your project.
 
-{emphasize-lines="36-39"}
+{emphasize-lines="35-38"}
 ```toml
 [build-system]
 requires = ["hatchling"]
@@ -527,8 +528,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
-requires-python = ">=3.10"
+license = "MIT"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
@@ -536,7 +536,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -578,8 +577,7 @@ maintainers = [
   { name = "New Friend", email = "newbie@pyopensci.org" }
 ]
 readme = "README.md"
-license = {file = 'LICENSE'}
-requires-python = ">=3.10"
+license = "MIT"
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 
@@ -587,7 +585,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -643,9 +640,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Build Tools",
 
-    # Pick your license (using syntax from the classifier page). We suggest MIT, BSD3 or Apache if you are corporate
-    "License :: OSI Approved :: MIT License",
-
     # Specify the Python versions ensuring that you indicate you support Python 3.
     # this is only for PyPI and other metadata associated with your package - for your users to see
     "Programming Language :: Python :: 3 :: Only", # BE sure to specify that you use python 3.x
@@ -656,9 +650,12 @@ classifiers = [
 
 dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
 # This is the metadata that pip reads to understand what versions your package supports
-requires-python = ">=3.10"
 readme = "README.md"
-license = { file = "LICENSE" }
+
+# Pick your license using the license expression syntax specified here:
+# https://packaging.python.org/en/latest/specifications/license-expression/
+# We suggest MIT, BSD-3-Clause or Apache-2.0
+license = "MIT"
 
 # Add urls for your home page, issue tracker and source code
 [project.urls] # Optional

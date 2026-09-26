@@ -1,3 +1,4 @@
+(api-docstrings)=
 # Document the code in your package's API using docstrings
 
 ## What is an API?

@@ -1,15 +1,14 @@
 ---
 :og:description: Learn how to create a clear, effective README file for your Python package. This lesson covers what to include, why each section matters, and how a well-structured README improves usability and discoverability on GitHub and PyPI.
 :og:title: Add a README file to your Python package
-date: 1970-01-03
 ---
 
-# Add a README file to your Python package
+# Add a {term}`README` file to your {term}`Python package`
 
 In the previous lessons you learned:
 
 1. [What a Python package is](intro.md)
-2. [How to make your code installable](installable-code)
+2. [How to make your code installable](create-python-package)
 3. [How to publish your package to (test) PyPI](publish-pypi.md)
 4. [How to publish your package to conda-forge](publish-conda-forge.md)
 
@@ -23,7 +22,8 @@ In this lesson you will learn:
 
 ## What is a README file?
 
-The `README.md` file is a markdown file located at the root of your project directory that helps
+The `README.md` file is the project's {term}`README` and is located at the
+root of your project directory. It helps
 a user understand:
 
 - You package's name
@@ -94,7 +94,7 @@ Remember that the more people understand what your package does, the more people
 
 Next, add instructions that tell users how to install your package.
 
-For example, can they use pip to install your package?
+For example, can they use {term}`pip` to install your package?
 `python -m pip install packagename`
 
 or conda?
@@ -161,7 +161,8 @@ help users understand how to use your package for common workflows.
 The community section of your README file is a place to include information for users who may want to engage with your project. This engagement will likely happen on a platform like GitHub or GitLab.
 
 In the community section, you will add links to your contributing guide
-and `CODE_OF_CONDUCT.md`. You will create a [`CODE_OF_CONDUCT.md` file in the next lesson](add-license-coc).
+and `CODE_OF_CONDUCT.md`. You will create a code of conduct file in the
+[next lesson](add-license-coc).
 
 As your package grows you may also have a link to a development guide that contributors and your maintainer team will follow. The development guide
 outlines how to perform maintenance tasks such as:
@@ -194,7 +195,7 @@ Your finished `README.md` file should look something like this:
 # pyosPackage
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8365068.svg)](https://doi.org/10.5281/zenodo.8365068)
-[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-review/issues/115)
+[![pyOpenSci](https://pyopensci.org/badges/peer-reviewed.svg)](https://github.com/pyOpenSci/software-submission/issues/115)
 
 ## What pyosPackage does
 
