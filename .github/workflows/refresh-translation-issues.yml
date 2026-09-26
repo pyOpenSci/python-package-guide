@@ -1,0 +1,164 @@
+name: Refresh translation issues
+
+# Updates the GitHub issues used to track the work in the translations.
+# Each language has a parent issue with a table with the overall stats, plus
+# one sub-issue per catalog (`.po` file).
+#
+# When `.po` files are merged, the stats are recalculated and the issues are
+# rewritten. It only rewrites the body of the issue if there are changes.
+#
+# It uses labels, titles and a hidden HTML comment in the body to find the
+# right issue to update.
+#
+# It does not open new issues for a new language, this step has to be done
+# manually by a maintainer.
+#
+# In case of issues that need a maintainer to act on, it posts a comment to the issue
+# with the Translation Maintenance Log issue (label `po-refresh-tracker`), which
+# will appear in the `#translations` Slack channel.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "locales/**/*.po"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+# A second push arriving while one is running should cancel the first one.
+concurrency:
+  group: refresh-translation-issues
+  cancel-in-progress: true
+
+env:
+  # Label to look for the Translation Maintenance Log issue (post to `#translations` Slack channel).
+  TRACKER_LABEL: po-refresh-tracker
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # install `babel` to read the catalogs (`.po` files)
+      - name: Install the catalog reader
+        run: python -m pip install babel
+
+      - name: Collect the issues that track each language
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { owner, repo } = context.repo;
+
+            // The locale directories are the list of languages, and `lang-XX`
+            // is the label convention label-translations.yml uses.
+            const locales = fs.readdirSync('locales', { withFileTypes: true })
+              .filter(entry => entry.isDirectory())
+              .map(entry => entry.name)
+              .sort();
+
+            const found = {};
+            for (const locale of locales) {
+              const label = `lang-${locale.toUpperCase()}`;
+              // A label no issue carries comes back empty so a language without issues
+              // needs no special case.
+              const issues = await github.paginate(github.rest.issues.listForRepo, {
+                owner, repo, labels: label, state: 'open', per_page: 100,
+              });
+              // Drops PRs with language labels.
+              found[locale] = issues
+                .filter(issue => !issue.pull_request)
+                .map(issue => ({
+                  number: issue.number,
+                  title: issue.title,
+                  body: issue.body || '',
+                }));
+              core.info(
+                `${locale}: ${found[locale].length} open issue(s) labelled ${label}.`,
+              );
+            }
+            fs.writeFileSync('issues.json', JSON.stringify(found));
+
+      # All checks happen in Python so logic can be tested with pytest.
+      - name: Work out which issues need rewriting
+        id: render
+        run: |
+          python scripts/translation/refresh_translation_issues.py \
+            issues.json bodies.json report.md
+          if [ -s report.md ]; then
+            echo "report=true" >> "$GITHUB_OUTPUT"
+            cat report.md
+          else
+            echo "report=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rewrite them
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { owner, repo } = context.repo;
+            const updates = JSON.parse(fs.readFileSync('bodies.json', 'utf8'));
+
+            if (updates.length === 0) {
+              core.info('Every translation issue is already updated.');
+              return;
+            }
+            for (const { number, body } of updates) {
+              // Only update the body so maintainers can change labels and titles.
+              await github.rest.issues.update(
+                { owner, repo, issue_number: number, body },
+              );
+              core.info(`Rewrote #${number}.`);
+            }
+            await core.summary
+              .addRaw(`Rewrote ${updates.length} translation issue(s).`)
+              .write();
+
+      - name: Report anything that needs a maintainer
+        if: steps.render.outputs.report == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const label = process.env.TRACKER_LABEL;
+            const { owner, repo } = context.repo;
+            const report = fs.readFileSync('report.md', 'utf8');
+
+            const found = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, labels: label, state: 'all', per_page: 100,
+            });
+            // This endpoint counts pull requests as issues, so drop those.
+            const issues = found.filter(i => !i.pull_request);
+
+            if (issues.length === 0) {
+              // If the Translation Maintenance Log issue is not found (nothing with the expected label)
+              // create a warning rather than a failure.
+              core.warning(
+                `No issue carries the \`${label}\` label, so there is nowhere to ` +
+                `report this. Create the translation tracking issue and apply that label.` +
+                `\n\n${report}`,
+              );
+              return;
+            }
+            if (issues.length > 1) {
+              // If there are multiple issues with the translation maintenance label, use the lowest-numbered one and warn.
+              core.warning(
+                `${issues.length} issues carry \`${label}\`: ` +
+                `${issues.map(i => '#' + i.number).join(', ')}. ` +
+                `Using the lowest-numbered one.`,
+              );
+            }
+            const issue = issues.sort((a, b) => a.number - b.number)[0];
+
+            await github.rest.issues.createComment(
+              { owner, repo, issue_number: issue.number, body: report },
+            );
+            core.info(`Commented on #${issue.number}.`);
