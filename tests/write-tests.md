@@ -61,25 +61,10 @@ For a good introduction to testing, see [this Software Carpentry lesson](https:/
 
 Let's say you have a Python function that adds two numbers together.
 
-```python
-def add_numbers(a: float, b: float) -> float:
-    """
-    Add two numbers together and return the result.
-
-    Parameters
-    ----------
-    a : float
-        The first number to add.
-    b : float
-        The second number to add.
-
-    Returns
-    -------
-    float
-        The sum of the two numbers.
-    """
-    return a + b
-```
+:::{literalinclude} ../examples/pure-hatch/src/examplePy/numbers.py
+:language: python
+:start-at: def add_numbers
+:::
 
 A test to ensure that function runs as you might expect when provided with
 different numbers might look like this. Each set of inputs gets its own

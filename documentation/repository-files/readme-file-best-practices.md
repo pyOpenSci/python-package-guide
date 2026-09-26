@@ -173,7 +173,7 @@ Below are some resources on creating great README.md files that you
 might find helpful.
 
 * [How to Write a Great README - Bane Sullivan](https://github.com/banesullivan/README)
-* [Art of README - Kira (@hackergrrl)](https://github.com/hackergrrl/art-of-readme)
+* [Art of README - Kira (@hackergrrl)](https://web.archive.org/web/20231231175007/https://github.com/hackergrrl/art-of-readme)
 * [Standard Readme - Richard Littauer](https://github.com/RichardLitt/standard-readme) [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
   * [Standard Readme pre-commit hooks](https://github.com/tkoyama010/standard-readme-pre-commit)
 
