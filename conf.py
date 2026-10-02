@@ -174,10 +174,7 @@ exclude_patterns = [
     ".github",
     ".nox",
     "README.md",
-    "styles/write-good/README.md",
-    "styles/*",
     ".pytest_cache/README.md",
-    "vale-styles/*",
     "CODE_OF_CONDUCT.md",
     "CLAUDE.md",
     # Local virtualenv under the doc root; otherwise Sphinx/Myst scans site-packages.
