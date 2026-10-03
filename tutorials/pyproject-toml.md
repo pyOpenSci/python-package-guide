@@ -385,7 +385,7 @@ dependencies = [
 
 Your `pyproject.toml` file will now look like this:
 
-{emphasize-lines="24"}
+{emphasize-lines="23"}
 ```toml
 [build-system]
 requires = ["hatchling"]
@@ -458,7 +458,7 @@ The classifier key should look something like the example below. A few notes:
 - Your classifier values might be different depending upon your intended audience, development status of your package and the Python versions that you support
 - You can add as many classifiers as you wish as long as you use the [designated PyPI classifier values](https://PyPI.org/classifiers/).
 
-{emphasize-lines="26-33"}
+{emphasize-lines="25-32"}
 ```toml
 [build-system]
 requires = ["hatchling"]
@@ -506,7 +506,7 @@ Finally, add the project.urls table to your pyproject.toml file.
 - **Bug reports:** a link to your issues/discussions or wherever you want users to report bugs.
 - **Source:** the GitHub / GitLab link for your project.
 
-{emphasize-lines="35-38"}
+{emphasize-lines="34-37"}
 ```toml
 [build-system]
 requires = ["hatchling"]

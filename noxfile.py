@@ -45,6 +45,10 @@ LINKCHECK_OUTPUT_DIR = pathlib.Path(BUILD_DIR, "linkcheck_output")
 # Sphinx parameters used to test the build of the guide
 TEST_PARAMETERS = ["--keep-going", "-E", "-a"]
 
+# Fail the build on warnings (English build in CI).
+# Not yet applied to translations. See follow-up issue.
+STRICT_PARAMETERS = ["--fail-on-warning"]
+
 # Sphinx parameters to generate translation templates
 TRANSLATION_TEMPLATE_PARAMETERS = ["-b", "gettext"]
 
@@ -112,6 +116,7 @@ def docs_test(session):
         SPHINX_BUILD,
         *BUILD_PARAMETERS,
         *TEST_PARAMETERS,
+        *STRICT_PARAMETERS,
         SOURCE_DIR,
         OUTPUT_DIR,
         *session.posargs,
