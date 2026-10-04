@@ -47,7 +47,7 @@ The metadata that both build tools and PyPI uses to describe and understand your
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
 :start-at: dependencies = [
-:end-before: [development-group]
+:end-before: [dependency-groups]
 :::
 
 2. When the build tool creates your package distribution file (the file that you publish on PyPI), it also creates a METADATA file which PyPI can read and use to help users find your package. For example:

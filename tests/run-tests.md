@@ -190,7 +190,7 @@ The additional tools or options to run with the tests is specified under `[tool.
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:start-at: [development-group]
+:start-at: [dependency-groups]
 :end-before: lint
 :::
 
