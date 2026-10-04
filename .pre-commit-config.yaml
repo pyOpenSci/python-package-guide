@@ -32,13 +32,8 @@ repos:
           - tomli
         exclude: >
           (?x)^(
-              (.*vale-styles.*)|(.*\.po)
+              (.*\.po)
           )$
-
-  - repo: https://github.com/errata-ai/vale
-    rev: fdc4cc754f58d953f668586dc1891064a746e0a2 # frozen: v3.20.0
-    hooks:
-      - id: vale
 
   - repo: https://github.com/rbubley/mirrors-prettier
     rev: 0ee178619d696787ca73d210cc191d720868c631 # frozen: v3.9.6
