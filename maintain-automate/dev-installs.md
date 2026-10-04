@@ -1,4 +1,4 @@
-## Installing your own code
+# Installing your own code
 
 You have a conda environment. It works. Maybe it has packages that were hard to install, like GDAL, HDF5, or other compiled scientific dependencies.
 
