@@ -2,7 +2,7 @@
 
 Here, you will learn about working with data for your scientific Python package.
 
-::{admonition} What you will learn
+:::{admonition} What you will learn
 :class: tip
 
 * When and why you might need data,
@@ -41,7 +41,7 @@ We will show you how to implement both, including data in your package or downlo
 
 * **movingpandas** is a pyOpenSci-accepted package that uses data to support some of its tutorials. [Here is an example of a tutorial that shows how to use MovingPandas to process bird migration data.](https://movingpandas.github.io/movingpandas-website/2-analysis-examples/bird-migration.html)
 
-* [scikit-image:](https://github.com/scikit-image/scikit-image/tree/main/skimage/data) stores data within the package itself to be used for package examples. <i made this up>
+* [scikit-image](https://github.com/scikit-image/scikit-image/tree/main/skimage/data)
 * [scikit-learn:](https://github.com/scikit-learn/scikit-learn/tree/main/sklearn/datasets/data)
 
 ### Data for tests
@@ -52,11 +52,9 @@ Including created data in your package allows you to ensure the core logic of yo
 
 However, you should still make sure that your code runs properly using real data formats and structures. This is why you should consider including a small amount of real-world test data. This data should be small enough that it can be included in your package without making the package too large.
 
-<!-- This seems like a really BIG package 500mb?-->
-
-A good rule of thumb is to have a handful of small files,
-say no more than 10 files that are a maximum of 50 MB each.
-Anything more than that, you will probably want to store online and download.
+A good rule of thumb is to keep bundled data to a handful of small files
+totalling no more than about 10 MB. Anything larger than that, you will
+probably want to store online and download on demand.
 
 ## Why you should download data: size limits
 
@@ -84,9 +82,9 @@ More importantly, it slows down the speed at which potential contributors can cl
 The Python Package Index (PyPI) places a limit on the size of individual files uploaded, where a "file" is either
 a sdist or a wheel--and also a limit on the total size of the project (the sum of all the "files").
 
-<!-- Is this true? -->
-While these limits are not clearly documented,
-most estimates are around 100 MB per file and 1 GB for the total project.
+The default limits are 100 MiB per file and 10 GB per project.
+See PyPI's help page on [file size limits](https://pypi.org/help/#file-size-limit)
+and [project size limits](https://pypi.org/help/#project-size-limit).
 Files this large place a real strain on the resources supporting PyPI so you should try your best to minimize the size of your package.
 
 The pyOpenSci community is here to help you do just that!
@@ -135,7 +133,7 @@ You want to avoid adding these files to your version control history (git) and d
   * core scientific-python packages
     * scikit-learn: <https://github.com/scikit-learn/scikit-learn/tree/main/sklearn/datasets/data>
 
-# Store Your Data in a Scientific Repository
+## Store Your Data in a Scientific Repository
 
 Scientific data repositories offer reliable, long-term storage for research datasets. These platforms are typically free and provide essential features like DOIs and version control.
 
@@ -218,8 +216,8 @@ Some tools provide distributed access to larger data.
 
 When creating data for your package, be aware of field-specific standards and formats. For example, in neuroscience, DANDI and NWB are common file formats used in the domain. So consider whether your package can / should support those formats if you expect users in the neuroscience space to use it.
 
-???Many pyOpenSci tools exist to address these standards or to provide interoperability because these standards don't exist ???
-see also: FAIR data
+Many pyOpenSci tools are built to support these field-specific standards, or to provide interoperability between formats where no common standard exists.
+Where possible, follow [FAIR data principles](https://www.go-fair.org/fair-principles/) so your example and test data are findable, accessible, interoperable, and reusable.
 ```
 
 ## How to access your data
@@ -242,7 +240,7 @@ If you have included data files in the source code of your package, then you can
 from importlib import resources
 import my_package
 
-with resources.open_text(my_package.data, 'example.csv') as f:
+with resources.files("my_package.data").joinpath("example.csv").open("r") as f:
  data = f.read()
 ```
 
@@ -279,9 +277,6 @@ Here is an example of using Pooch to download and cache a remote data file:
 TODO: I copied some code online. THIS NEEDS TO BE TESTED // verified
 :::
 
-```python
-import pooch
-
 # Define your data registry
 data_registry = pooch.create(
     path=pooch.os_cache("my_package"),
@@ -294,11 +289,11 @@ data_registry = pooch.create(
 
 # Access files - downloads automatically if not cached
 def load_sample_data():
- file_path = data_registry.fetch("sample_data.csv")
+    file_path = data_registry.fetch("sample_data.csv")
     return pd.read_csv(file_path)
 
 def load_large_dataset():
- file_path = data_registry.fetch("large_dataset.nc")
+    file_path = data_registry.fetch("large_dataset.nc")
     return xr.open_dataset(file_path)
 
 ```
@@ -319,12 +314,12 @@ from pathlib import Path
 @pytest.fixture
 def sample_data():
     """Load sample dataset for testing."""
- data_path = Path(__file__).parent / "data" / "sample.csv"
+    data_path = Path(__file__).parent / "data" / "sample.csv"
     return pd.read_csv(data_path)
 
 def test_data_processing(sample_data):
     """Test uses the fixture automatically."""
- result = my_function(sample_data)
+    result = my_function(sample_data)
     assert len(result) > 0
 ```
 
@@ -339,12 +334,12 @@ from my_package.data import data_registry
 @pytest.fixture(scope="session")
 def remote_dataset():
     """Download and cache remote data once per test session."""
- file_path = data_registry.fetch("sample_data.csv")
+    file_path = data_registry.fetch("sample_data.csv")
     return pd.read_csv(file_path)
 
 def test_remote_data_analysis(remote_dataset):
     """Test using remote dataset."""
- result = analyze_dataset(remote_dataset)
+    result = analyze_dataset(remote_dataset)
     assert result is not None
 
 ```
