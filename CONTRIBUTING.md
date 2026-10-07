@@ -286,7 +286,7 @@ This guide uses [Netlify](https://www.netlify.com/) deploy previews. After
 the Netlify check finishes on a pull request, click **Details** next to the
 deploy-preview status to open a live build with your changes.
 
-Production stays on GitHub Pages:
+The guide is still deployed live using GitHub Pages:
 <https://www.pyopensci.org/python-package-guide/>.
 
 ### What to expect from the review process
