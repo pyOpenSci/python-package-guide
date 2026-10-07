@@ -51,7 +51,11 @@ release_languages = ["es", "ja", "pt", "it"]
 
 # languages that will be included in the language dropdown
 # (ie. all that are being built in this nox build session)
-if sphinx_env == "production":
+# Netlify sets NETLIFY=true. Those builds publish the same languages as
+# production. Link prefixes stay at "/" because SPHINX_ENV is development
+# there (see netlify.toml). Local builds are unchanged.
+on_netlify = os.environ.get("NETLIFY", "").lower() == "true"
+if sphinx_env == "production" or on_netlify:
     build_languages = ["en"] + release_languages
 else:
     build_languages = ["en"] + languages

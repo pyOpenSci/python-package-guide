@@ -10,5 +10,6 @@
   PYTHON_VERSION = "3.13"
   MPLBACKEND = "Agg"
   # Previews are served from the preview URL root, so language-selector
-  # links use "/" (conf.py treats anything other than production that way).
+  # links use "/" (conf.py does that whenever SPHINX_ENV is not production).
+  # Netlify also sets NETLIFY=true, which limits the menu to release languages.
   SPHINX_ENV = "development"
