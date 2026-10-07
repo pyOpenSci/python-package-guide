@@ -280,6 +280,15 @@ An image showing the status of the checks in a pull request in GitHub. The check
 
 To get more information about the errors, you can click on the "Details" link next to the failed check.
 
+### Pull request previews
+
+This guide uses [Netlify](https://www.netlify.com/) deploy previews. After
+the Netlify check finishes on a pull request, click **Details** next to the
+deploy-preview status to open a live build with your changes.
+
+Production stays on GitHub Pages:
+<https://www.pyopensci.org/python-package-guide/>.
+
 ### What to expect from the review process
 
 Once you submit a pull request, a maintainer of the repository will review your changes and provide feedback. The review process may involve:

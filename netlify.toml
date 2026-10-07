@@ -1,0 +1,14 @@
+# Netlify deploy previews for the pyOpenSci Python package guide (Sphinx).
+# Production remains GitHub Pages:
+# https://www.pyopensci.org/python-package-guide/
+
+[build]
+  command = "bash scripts/netlify-build.sh"
+  publish = "_build/html"
+
+[build.environment]
+  PYTHON_VERSION = "3.13"
+  MPLBACKEND = "Agg"
+  # Previews are served from the preview URL root, so language-selector
+  # links use "/" (conf.py treats anything other than production that way).
+  SPHINX_ENV = "development"
