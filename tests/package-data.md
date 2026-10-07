@@ -8,6 +8,7 @@ Here, you will learn about working with data for your scientific Python package.
 * When and why you might need data,
 * Where you can store your package's data,
 * How you can access the data both from within your package and by downloading it as your package is used or as tests are run
+:::
 
 :::{note}
 
@@ -41,7 +42,7 @@ We will show you how to implement both, including data in your package or downlo
 
 * **movingpandas** is a pyOpenSci-accepted package that uses data to support some of its tutorials. [Here is an example of a tutorial that shows how to use MovingPandas to process bird migration data.](https://movingpandas.github.io/movingpandas-website/2-analysis-examples/bird-migration.html)
 
-* [scikit-image](https://github.com/scikit-image/scikit-image/tree/main/skimage/data)
+* [scikit-image](https://github.com/scikit-image/scikit-image/tree/main/src/skimage/data)
 * [scikit-learn:](https://github.com/scikit-learn/scikit-learn/tree/main/sklearn/datasets/data)
 
 ### Data for tests
@@ -125,7 +126,6 @@ The cons include:
 
 You want to avoid adding these files to your version control history (git) and draining the resources of PyPI.
 
-<!-- I'm not sure what the intent of these example packages is - are they examples of packages that do this well? or poorly? -->
 * examples:
   * pyOpenSci:
     * opengenomics: <https://github.com/JonnyTran/OpenOmics/tree/master/tests/data/TCGA_LUAD>
@@ -185,15 +185,12 @@ And also some cons:
 * **[Google Cloud Platform](https://cloud.google.com/storage)** - Cloud Storage with strong AI/ML tool integration
 * **[Linode](https://www.linode.com/products/object-storage/)** - Object Storage with straightforward pricing and developer-friendly tools
 
-<!-- I don't understand how these platforms are different from things like figshare - can we clarify that? and how / why someone would pick these vs figshare / dryad? -->
 ```{admonition} Version control platforms for your data
 :class: tip
 
 Platforms exist that allow you to track changes to datasets in the same way as version control systems like git let you track changes to code.
 
 Such tools are essential if your package primarily focuses on providing data access.
-
-<!-- I am not sure how to fix this section as i don't know much about these tools -->
 
 Some tools provide distributed access to larger data.
 
@@ -204,12 +201,6 @@ Some tools provide distributed access to larger data.
 - **[DVC](https://dvc.org/)** - Data version control for machine learning projects
 - **[Pachyderm](https://www.pachyderm.com/)** - Data pipeline platform with version control
 ```
-
-<!-- I am not sure how this section relates to data stored in a package. I understand it's important, but does it belong in a page focused on how and where to store data for your Python package? It might be that I just don't understand as written!-->
-
-:::{todo}
-<!-- I am not sure about this statement in terms of what it means and whether we have tools that consider standards or not  we might also want to link to FAIR-->
-:::
 
 ```{admonition} Field specific standards + metadata
 :class: tip
@@ -257,7 +248,7 @@ See the [importlib-resources documentation](https://importlib-resources.readthed
 
 * examples:
   * pyOpenSci packages:
-    * crowsetta: <https://github.com/vocalpy/crowsetta/blob/main/src/crowsetta/data/data.py>
+    * crowsetta: <https://github.com/vocalpy/crowsetta/blob/main/src/crowsetta/examples/_examples.py>
   * core scientific Python packages:
     * scikit-learn: <https://github.com/scikit-learn/scikit-learn/blob/f86f41d80bff882689fc16bd7da1fef4a805b464/sklearn/datasets/_base.py#L297>
 
@@ -273,14 +264,16 @@ Pooch features include:
 * **Version management:** Pooch can handle different versions of the same dataset
 
 Here is an example of using Pooch to download and cache a remote data file:
-:::{todo}
-TODO: I copied some code online. THIS NEEDS TO BE TESTED // verified
-:::
+
+```python
+import pandas as pd
+import pooch
+import xarray as xr
 
 # Define your data registry
 data_registry = pooch.create(
     path=pooch.os_cache("my_package"),
-    base_url="https://github.com/my_org/my_data/raw/main/",
+    base_url="https://example.com/my_package/data/",
     registry={
         "sample_data.csv": "sha256:abc123...",  # File hash for verification
         "large_dataset.nc": "sha256:def456...",
