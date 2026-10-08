@@ -6,8 +6,6 @@
 
 [![DOI](https://zenodo.org/badge/556814582.svg)](https://zenodo.org/badge/latestdoi/556814582)
 
-[![CircleCI](https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg)](https://circleci.com/gh/pyOpenSci/python-package-guide)
-
 [![Mentioned in Awesome Scientific Python](https://awesome.re/mentioned-badge.svg)](https://github.com/rossant/awesome-scientific-python)
 
 ## What is pyOpenSci?
