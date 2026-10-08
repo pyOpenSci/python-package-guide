@@ -256,7 +256,7 @@ Once you submit a pull request, a series of checks will be run to ensure that yo
 
 - **Code formatting and styles**: checks that your code is formatted correctly, by `pre-commit.ci - pr check`.
 - **docs build**: checks that the documentation builds correctly, using `circleci`.
-
+- **docs build / preview**: builds the guide and publishes a Netlify deploy preview (see [Pull request previews](#pull-request-previews) below).
 You will see the status of these checks in your pull request.
 
 ```{figure} images/contributing/pull-requests-checks.png
