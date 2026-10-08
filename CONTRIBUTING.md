@@ -256,7 +256,7 @@ Once you submit a pull request, a series of checks will be run to ensure that yo
 
 - **Code formatting and styles**: checks that your code is formatted correctly, by `pre-commit.ci - pr check`.
 - **docs build**: checks that the documentation builds correctly, using `circleci`.
-
+- **docs build / preview**: builds the guide and publishes a Netlify deploy preview (see [Pull request previews](#pull-request-previews) below).
 You will see the status of these checks in your pull request.
 
 ```{figure} images/contributing/pull-requests-checks.png
@@ -279,6 +279,15 @@ An image showing the status of the checks in a pull request in GitHub. The check
 ```
 
 To get more information about the errors, you can click on the "Details" link next to the failed check.
+
+### Pull request previews
+
+This guide uses [Netlify](https://www.netlify.com/) deploy previews. After
+the Netlify check finishes on a pull request, click **Details** next to the
+deploy-preview status to open a live build with your changes.
+
+The guide is still deployed live using GitHub Pages:
+<https://www.pyopensci.org/python-package-guide/>.
 
 ### What to expect from the review process
 
