@@ -318,9 +318,14 @@ At this point, you should have:
 
 You are now ready to install (and build) your Python package!
 
-While you can do this using Hatch, we will use pip for this lesson, so you can see how to install your tool into your preferred environment.
+While Hatch can create an environment and install your package for you
+(you'll learn how in the [Hatch environments lesson](develop-python-package-hatch)),
+this lesson uses `pip` directly so you can see what is happening when a
+package is installed into a Python environment.
 
-First, open your preferred shell (Windows users may use something like GitBash) and `cd` into your project directory if you are not already there.
+First, open your preferred shell (Windows users may use something like GitBash)
+and `cd` into your project directory if you are not already there.
+
 Next, activate the Python environment that you wish to use. We recommend
 installing packages that you are developing into a virtual environment
 rather than your system Python. If you don't have one yet:
