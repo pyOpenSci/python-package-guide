@@ -8,7 +8,6 @@
 - **Installing CLI tools globally?** → pipx
 - **Need conda packages or cross-language dependencies?** → **pixi** (recommended) or conda/mamba
 - **Creating a Python package?** → Use Hatch -- with UV as a dependency manager
-
 You can mix tools! For example, use **pipx** to install tools you use often (at the command line) like Hatch, ruff or pre-commit, then use **uv** within your projects for package and environment management.
 :::
 
@@ -18,18 +17,15 @@ Package and environment managers are important tools in your Python packaging wo
 Your packaging experience when selecting a tool will be easier if you understand the difference between the two.
 
 1. A **package manager** is used to install, update, and remove Python packages (libraries and tools) and their dependencies in your environment. When you use a package manager, you are often downloading packages from a repository like PyPI (Python Package Index) or a local repository like GitHub / GitLab.
-
 :::{note}
 When you run `pip install numpy`, pip acts as a package manager and installs numpy from PyPI. Pip's default repository when you install a package is PyPI, but it can be used to install packages from other repositories such as GitHub.
 :::
 
 2. An **environment manager** creates isolated spaces (environments) for your Python projects. Each environment has its own Python installation and its own installed packages. Using isolated environments for different projects reduces the change of environment conflicts when using the same environment across different projects with different dependencies.
-
 There are many tools listed below, but if you're short on time, you may want to consider
 
 1. Hatch combined with UV if you are managing a Python package. [Check out our tutorials for more on this workflow.](create-pure-python-package)
 2. Pixi or mamba as faster alternatives to conda if you are working in the non-Pure Python packaging space.
-
 ## Where environment managers save your environment
 
 Environment managers save environments in different locations by default. For instance, `venv`, an environment manager that ships with Python, saves an environment by default in your current working directory. UV has the same native behavior. In contrast, conda and mamba save environments in a global location, allowing you to access them easily across projects.
@@ -71,7 +67,6 @@ Some modern tools handle both package installation and environment management. F
 * Pip is Python's standard package installer. It is included with Python by default.
 * Pip is great for installing packages from PyPI and GitHub / GitLab into existing environments.
 * It is also great for development if you want to install your package locally in editable mode.
-
 **Basic usage:**
 ```bash
 pip install numpy
@@ -81,7 +76,6 @@ pip install -e .  # Install your package in editable mode
 ### pipx
 
 * Pipx is can be used to install a tool that you need to use across projects (like `riff`, `pytest`, `sphinx`, `nox`), globally.
-
 Why use it: You might use it to avoid reinstalling the same tool over and over on your machine.
 
 **Basic usage:**
@@ -243,10 +237,10 @@ pip install -e ".[dev]"
 # Initialize project (creates environment automatically)
 pixi init
 
-# Add packages
+# Add packages from conda-forge (pixi's default)
 pixi add numpy
 
-# Install your package in dev mode
+# Install your package in dev mode from PyPI
 pixi add --pypi --editable "package-name[dev] @ file:///absolute/path/to/package"
 ```
 :::
@@ -275,7 +269,11 @@ mamba activate myenv
 For projects needing conda packages, we recommend **pixi** over conda/mamba. It's faster, uses lock files for reproducibility, and works cross-platform.
 ```
 
-Pixi is a modern, fast package and environment manager built on conda ecosystems. Similar to UV, Pixi uses lock files for reproducible environments. Pixi is best suited for scientific projects that require conda packages, teams that require exact reproducibility, or cross-platform development.
+Pixi is a modern, fast package and environment manager built on the conda ecosystem. Similar to uv, Pixi uses lock files for reproducible environments. Pixi is best suited for scientific projects that require conda packages, teams that require exact reproducibility, or projects that need one lock file covering multiple platforms.
+
+**How Pixi resolves packages:**
+
+Pixi is "conda-first." By default, `pixi add` installs packages from conda channels (conda-forge, unless you configure otherwise). If you need a package that is only available on PyPI, use `pixi add --pypi`. Pixi records each dependency in your manifest (`pixi.toml` or `pyproject.toml`) under either `[dependencies]` (conda) or `[pypi-dependencies]` (PyPI), and it resolves everything together into a single `pixi.lock` file. When resolving PyPI dependencies, Pixi [uses the already-resolved conda packages where it can](https://pixi.sh/latest/python/tutorial/#replacing-pypi-packages-with-conda-packages), so a PyPI package's dependencies won't pull in a second copy of something that conda already provides.
 
 **Basic usage:**
 
@@ -283,11 +281,11 @@ Pixi is a modern, fast package and environment manager built on conda ecosystems
 # Initialize new project
 pixi init
 
-# Add Python packages
-pixi add numpy pandas
+# Add packages from conda-forge (the default)
+pixi add numpy gdal
 
-# Add conda packages (like GDAL)
-pixi add gdal
+# Add packages from PyPI (only if a package isn't on conda-forge)
+pixi add --pypi scipy
 
 # Run commands in the environment
 pixi run python script.py
@@ -295,6 +293,27 @@ pixi run python script.py
 # Activate environment in an interactive shell
 pixi shell
 ```
+
+The commands above produce a manifest like this:
+
+```toml
+[workspace]
+channels = ["conda-forge"]
+name = "example"
+platforms = ["linux-64"]
+
+[dependencies]
+numpy = ">=2.3.4,<3"
+gdal = ">=3.11,<4"
+
+[pypi-dependencies]
+scipy = ">=1.16.3, <2"
+```
+
+Here, Pixi installs `numpy` and `gdal` from conda-forge and only `scipy` from PyPI. You can confirm where each package came from with `pixi list`.
+
+This is the same outcome as creating a conda environment, installing `numpy` and `gdal` with conda, and then running `pip install scipy` inside it. The difference is that the conda-vs-PyPI split is declared explicitly in the manifest and captured in the lock file, so there is no ambiguity about how a given dependency will be resolved at install time.
+
 ```{note}
 Pixi automatically creates a lock file (`pixi.lock`) ensuring everyone on your team gets identical environments.
 ```
