@@ -14,12 +14,12 @@ msgstr ""
 "POT-Creation-Date: 2026-05-22 12:19-0700\n"
 "PO-Revision-Date: 2025-04-14 18:12+0000\n"
 "Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2025\n"
-"Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../documentation/glossary.md:7
@@ -27,9 +27,8 @@ msgid "Python packaging glossary"
 msgstr "Python パッケージ化用語集"
 
 #: ../../documentation/glossary.md:9
-#, fuzzy
 msgid "Core packaging"
-msgstr "あなたのパッケージ"
+msgstr "コアパッケージング"
 
 #: ../../documentation/glossary.md
 msgid "`__init__.py`"
@@ -38,8 +37,8 @@ msgstr "`__init__.py`"
 #: ../../documentation/glossary.md:13
 msgid ""
 "A special Python file that marks a directory as a Python package. When "
-"Python sees this file, it knows the folder contains importable code. It can"
-" either be empty or contain code that runs when the package is imported."
+"Python sees this file, it knows the folder contains importable code. It can "
+"either be empty or contain code that runs when the package is imported."
 msgstr ""
 "ディレクトリを Python パッケージとしてマークする特別な Python ファイル。 Python "
 "はこのファイルを参照すると、そのフォルダーにインポート可能なコードが含まれていることを認識します。空にすることも、パッケージのインポート時に実行されるコードを含めることもできます。"
@@ -51,8 +50,8 @@ msgstr "APIトークン"
 #: ../../documentation/glossary.md:19
 msgid ""
 "A secret key used to authenticate with PyPI or TestPyPI when publishing a "
-"package. You generate one in your account settings and use it in place of a"
-" password. **Treat it like a password and never share it or commit it to "
+"package. You generate one in your account settings and use it in place of a "
+"password. **Treat it like a password and never share it or commit it to "
 "version control**."
 msgstr ""
 "パッケージを公開するときに PyPI または TestPyPI "
@@ -79,14 +78,14 @@ msgid ""
 "documentation](https://packaging.python.org/en/latest/tutorials/packaging-"
 "projects/#choosing-a-build-backend)"
 msgstr ""
-"`hatch build` を実行することでビルドを実行します。あるいは、「python -m build」を実行することもできます。 [参照: 公式"
-" Python パッケージ化ドキュメント](https://packaging.python.org/en/latest/tutorials"
-"/packaging-projects/#choosing-a-build-backend)"
+"`hatch build` を実行することでビルドを実行します。あるいは、「python -m build」を実行することもできます。 [参照: 公式 "
+"Python "
+"パッケージ化ドキュメント](https://packaging.python.org/en/latest/tutorials/packaging-"
+"projects/#choosing-a-build-backend)"
 
 #: ../../documentation/glossary.md:20
-#, fuzzy
 msgid "Distribution files"
-msgstr "貢献ファイル"
+msgstr "配布ファイル"
 
 #: ../../documentation/glossary.md:33
 msgid ""
@@ -94,8 +93,8 @@ msgid ""
 "two common types: a wheel (`.whl`) and a source distribution (`.tar.gz`). "
 "See also `Wheel (.whl)` and `Source distribution (sdist)`."
 msgstr ""
-"他の人がパッケージをインストールできるようにするために PyPI にアップロードするファイル。一般的なタイプには、ホイール (`.whl`) とソース"
-" ディストリビューション (`.tar.gz`) の 2 つがあります。 「ホイール (.whl)」および「ソース配布 "
+"他の人がパッケージをインストールできるようにするために PyPI にアップロードするファイル。一般的なタイプには、ホイール (`.whl`) とソース "
+"ディストリビューション (`.tar.gz`) の 2 つがあります。 「ホイール (.whl)」および「ソース配布 "
 "(sdist)」も参照してください。"
 
 #: ../../documentation/glossary.md:26
@@ -104,10 +103,10 @@ msgstr "モジュール"
 
 #: ../../documentation/glossary.md:39
 msgid ""
-"A single Python file (`.py`) containing code such as functions, classes, or"
-" variables that can be imported. A package is made up of one or more "
-"modules."
-msgstr "インポートできる関数、クラス、変数などのコードを含む単一の Python ファイル (`.py`)。パッケージは 1 つ以上のモジュールで構成されます。"
+"A single Python file (`.py`) containing code such as functions, classes, or "
+"variables that can be imported. A package is made up of one or more modules."
+msgstr ""
+"インポートできる関数、クラス、変数などのコードを含む単一の Python ファイル (`.py`)。パッケージは 1 つ以上のモジュールで構成されます。"
 
 #: ../../documentation/glossary.md:31
 msgid "`pyproject.toml`"
@@ -117,23 +116,22 @@ msgstr "`pyproject.toml`"
 msgid ""
 "The configuration file at the root of your Python package. Written in TOML "
 "format, it stores metadata such as name, version, authors, and license. It "
-"can also configure tools such as Hatch, uv, and pytest. See also [Make your"
-" Python package PyPI ready](../tutorials/pyproject-toml)."
+"can also configure tools such as Hatch, uv, and pytest. See also [Make your "
+"Python package PyPI ready](../tutorials/pyproject-toml)."
 msgstr ""
 "Python パッケージのルートにある構成ファイル。 TOML 形式で記述され、名前、バージョン、作成者、ライセンスなどのメタデータが保存されます。 "
-"Hatch、uv、pytest などのツールを構成することもできます。 [Python パッケージ PyPI を準備する](../tutorials"
-"/pyproject-toml) も参照してください。"
+"Hatch、uv、pytest などのツールを構成することもできます。 [Python パッケージ PyPI "
+"を準備する](../tutorials/pyproject-toml) も参照してください。"
 
 #: ../../documentation/glossary.md:37
-#, fuzzy
 msgid "Python package"
-msgstr "あなたのパッケージ"
+msgstr "Python パッケージ"
 
 #: ../../documentation/glossary.md:50
 msgid ""
-"A directory of Python code structured so it can be installed, imported, and"
-" shared with others. A package includes at least an `__init__.py` file and "
-"a `pyproject.toml` file. This is sometimes referred to as a **regular "
+"A directory of Python code structured so it can be installed, imported, and "
+"shared with others. A package includes at least an `__init__.py` file and a "
+"`pyproject.toml` file. This is sometimes referred to as a **regular "
 "package**."
 msgstr ""
 "インストール、インポート、他のユーザーとの共有ができるように構造化された Python コードのディレクトリ。パッケージには少なくとも "
@@ -143,8 +141,8 @@ msgstr ""
 #: ../../documentation/glossary.md:55
 msgid ""
 "Info: You may hear the term **namespaced package** which is not really a "
-"package at all but a container of subpackages. This is out of scope for "
-"this guide. If interested, consult the [Python "
+"package at all but a container of subpackages. This is out of scope for this"
+" guide. If interested, consult the [Python "
 "documentation](https://docs.python.org/3/glossary.html#term-namespace-"
 "package)."
 msgstr ""
@@ -162,12 +160,12 @@ msgid ""
 "PyPI (the Python Package Index) is the official repository where Python "
 "packages are published and installed from. TestPyPI is a separate practice "
 "environment used for learning and testing publishing workflows. See "
-"[pypi.org](https://pypi.org) and [test.pypi.org](https://test.pypi.org). "
-"See also [Publish your Python package to PyPI](../tutorials/publish-pypi)."
+"[pypi.org](https://pypi.org) and [test.pypi.org](https://test.pypi.org). See"
+" also [Publish your Python package to PyPI](../tutorials/publish-pypi)."
 msgstr ""
-"PyPI (Python Package Index) は、Python パッケージが公開およびインストールされる公式リポジトリです。 "
-"TestPyPI は、パブリッシュ ワークフローの学習とテストに使用される別の練習環境です。 [pypi.org](https://pypi.org)"
-" および [test.pypi.org](https://test.pypi.org) を参照してください。 [Python パッケージを PyPI "
+"PyPI (Python Package Index) は、Python パッケージが公開およびインストールされる公式リポジトリです。 TestPyPI"
+" は、パブリッシュ ワークフローの学習とテストに使用される別の練習環境です。 [pypi.org](https://pypi.org) および "
+"[test.pypi.org](https://test.pypi.org) を参照してください。 [Python パッケージを PyPI "
 "に公開する](../tutorials/publish-pypi) も参照してください。"
 
 #: ../../documentation/glossary.md:55
@@ -178,8 +176,8 @@ msgstr "ソース配布 (sdist)"
 msgid ""
 "One of the two distribution file types for a Python package. The sdist "
 "(`.tar.gz`) contains source code and project files. When someone installs "
-"from an sdist, tools build the package locally first. See also [Publish "
-"your Python package to PyPI](../tutorials/publish-pypi)."
+"from an sdist, tools build the package locally first. See also [Publish your"
+" Python package to PyPI](../tutorials/publish-pypi)."
 msgstr ""
 "Python パッケージの 2 つの配布ファイル タイプのうちの 1 つ。 sdist (`.tar.gz`) には、ソース コードとプロジェクト "
 "ファイルが含まれています。誰かが sdist からインストールすると、ツールは最初にパッケージをローカルに構築します。 [Python パッケージを "
@@ -205,8 +203,8 @@ msgstr "信頼できる出版"
 #: ../../documentation/glossary.md:79
 msgid ""
 "A secure way to publish to PyPI using GitHub Actions instead of an API "
-"token. Rather than storing a secret token, you configure PyPI to trust your"
-" repository directly. See also [Setup Trusted Publishing for secure and "
+"token. Rather than storing a secret token, you configure PyPI to trust your "
+"repository directly. See also [Setup Trusted Publishing for secure and "
 "automated publishing via GitHub Actions](../tutorials/trusted-publishing)."
 msgstr ""
 "API トークンの代わりに GitHub Actions を使用して PyPI に公開する安全な方法。シークレット "
@@ -225,24 +223,22 @@ msgid ""
 "See also [Publish your Python package to PyPI](../tutorials/publish-pypi)."
 msgstr ""
 "Python パッケージのバイナリ配布タイプ。ホイールは、ビルドステップなしで直接インストールされる、事前にビルドされたバイナリ形式 "
-"(`.whl`、ZIP ファイル) です。多くの純粋な Python パッケージでは、1 つのホイールがプラットフォーム間で動作します。 "
-"[Python パッケージを PyPI に公開する](../tutorials/publish-pypi) も参照してください。"
+"(`.whl`、ZIP ファイル) です。多くの純粋な Python パッケージでは、1 つのホイールがプラットフォーム間で動作します。 [Python"
+" パッケージを PyPI に公開する](../tutorials/publish-pypi) も参照してください。"
 
 #: ../../documentation/glossary.md:92
-#, fuzzy
 msgid "Tools"
-msgstr "Todo"
+msgstr "ツール"
 
 #: ../../documentation/glossary.md
-#, fuzzy
 msgid "copier"
-msgstr "互換性"
+msgstr "copier"
 
 #: ../../documentation/glossary.md:96
 msgid ""
-"A command-line tool for creating new projects from templates. In this "
-"guide, you can use copier with the pyOpenSci package template to set up "
-"structure, configuration, and tooling quickly. See "
+"A command-line tool for creating new projects from templates. In this guide,"
+" you can use copier with the pyOpenSci package template to set up structure,"
+" configuration, and tooling quickly. See "
 "[copier.readthedocs.io](https://copier.readthedocs.io)."
 msgstr ""
 "テンプレートから新しいプロジェクトを作成するためのコマンドライン ツール。このガイドでは、コピー機と pyOpenSci パッケージ "
@@ -255,8 +251,8 @@ msgstr "coverage.py"
 
 #: ../../documentation/glossary.md:102
 msgid ""
-"A tool that measures how much of your code is exercised by tests, often as "
-"a percentage. It shows which lines and branches are covered. See "
+"A tool that measures how much of your code is exercised by tests, often as a"
+" percentage. It shows which lines and branches are covered. See "
 "[coverage.readthedocs.io](https://coverage.readthedocs.io)."
 msgstr ""
 "テストによって実行されるコードの量を、多くの場合パーセンテージで測定するツール。どのラインとブランチがカバーされているかを示します。 "
@@ -268,8 +264,8 @@ msgstr "ハッチ"
 
 #: ../../documentation/glossary.md:107
 msgid ""
-"A modern Python packaging and project management tool. In this guide, Hatch"
-" is used to build packages, manage environments, run scripts, and publish. "
+"A modern Python packaging and project management tool. In this guide, Hatch "
+"is used to build packages, manage environments, run scripts, and publish. "
 "Configuration lives in `pyproject.toml`. See "
 "[hatch.pypa.io](https://hatch.pypa.io). See also [Get to know "
 "Hatch](../tutorials/get-to-know-hatch)."
@@ -286,8 +282,8 @@ msgstr "孵化したばかりの子"
 #: ../../documentation/glossary.md:114
 msgid ""
 "The build backend used by Hatch. When you run `python -m build` or `hatch "
-"build`, Hatchling reads `pyproject.toml` and creates sdist and wheel files."
-" See [hatch.pypa.io/latest/backend](https://hatch.pypa.io/latest/backend/)."
+"build`, Hatchling reads `pyproject.toml` and creates sdist and wheel files. "
+"See [hatch.pypa.io/latest/backend](https://hatch.pypa.io/latest/backend/)."
 msgstr ""
 "Hatch によって使用されるビルド バックエンド。 `python -m build` または `hatch build` "
 "を実行すると、Hatchling は `pyproject.toml` を読み取り、sdist ファイルと Wheel ファイルを作成します。 "
@@ -300,12 +296,12 @@ msgstr "ピップ"
 
 #: ../../documentation/glossary.md:120
 msgid ""
-"Python's default package installer. You can use it to install packages from"
-" PyPI into an environment with commands such as `pip install package-name`."
-" See [pip.pypa.io](https://pip.pypa.io)."
+"Python's default package installer. You can use it to install packages from "
+"PyPI into an environment with commands such as `pip install package-name`. "
+"See [pip.pypa.io](https://pip.pypa.io)."
 msgstr ""
-"Python のデフォルトのパッケージ インストーラー。これを使用すると、「pip install package-name」などのコマンドで "
-"PyPI から環境にパッケージをインストールできます。 [pip.pypa.io](https://pip.pypa.io) を参照してください。"
+"Python のデフォルトのパッケージ インストーラー。これを使用すると、「pip install package-name」などのコマンドで PyPI"
+" から環境にパッケージをインストールできます。 [pip.pypa.io](https://pip.pypa.io) を参照してください。"
 
 #: ../../documentation/glossary.md:29
 msgid "pytest"
@@ -313,8 +309,8 @@ msgstr "pytest"
 
 #: ../../documentation/glossary.md:125
 msgid ""
-"A widely used Python testing framework for discovering and running tests. "
-"In this guide, pytest often runs through Hatch scripts. See "
+"A widely used Python testing framework for discovering and running tests. In"
+" this guide, pytest often runs through Hatch scripts. See "
 "[docs.pytest.org](https://docs.pytest.org)."
 msgstr ""
 "テストを検出して実行するために広く使用されている Python テスト フレームワーク。このガイドでは、pytest は多くの場合 Hatch "
@@ -340,8 +336,8 @@ msgstr "スフィンクス"
 #: ../../documentation/glossary.md:135
 msgid ""
 "A documentation generator for Python projects. Sphinx reads docstrings and "
-"documentation files to build a docs site. See [sphinx-doc.org](https://www"
-".sphinx-doc.org)."
+"documentation files to build a docs site. See [sphinx-"
+"doc.org](https://www.sphinx-doc.org)."
 msgstr ""
 "Python プロジェクト用のドキュメント ジェネレーター。 Sphinx は docstring とドキュメント ファイルを読み取り、ドキュメント "
 "サイトを構築します。 [sphinx-doc.org](https://www.sphinx-doc.org)を参照してください。"
@@ -364,8 +360,8 @@ msgstr "紫外線"
 
 #: ../../documentation/glossary.md:144
 msgid ""
-"A fast Python package and environment manager. In this guide, you can use "
-"uv to manage dependencies and run commands in project environments. See "
+"A fast Python package and environment manager. In this guide, you can use uv"
+" to manage dependencies and run commands in project environments. See "
 "[docs.astral.sh/uv](https://docs.astral.sh/uv)."
 msgstr ""
 "高速な Python パッケージおよび環境マネージャー。このガイドでは、uv を使用して依存関係を管理し、プロジェクト環境でコマンドを実行できます。 "
@@ -415,9 +411,8 @@ msgstr ""
 "ランナーとして機能できます。"
 
 #: ../../documentation/glossary.md:168
-#, fuzzy
 msgid "Development concepts"
-msgstr "開発ガイド"
+msgstr "開発の概念"
 
 #: ../../documentation/glossary.md
 msgid "Code coverage"
@@ -433,27 +428,26 @@ msgstr ""
 "(通常はパーセンテージ)。カバレッジが高いからといってバグがないことは保証されませんが、カバレッジが低い場合はテストされていない領域があることを示している可能性があります。"
 
 #: ../../documentation/glossary.md:5
-#, fuzzy
 msgid "Dependencies"
-msgstr "参考文献"
+msgstr "依存関係"
 
 #: ../../documentation/glossary.md:177
 msgid ""
 "Other Python packages needed for your package to work. Common classes "
 "include required dependencies, optional dependencies, and development "
 "dependencies."
-msgstr "パッケージが動作するために必要な他の Python パッケージ。共通クラスには、必須の依存関係、オプションの依存関係、および開発の依存関係が含まれます。"
+msgstr ""
+"パッケージが動作するために必要な他の Python パッケージ。共通クラスには、必須の依存関係、オプションの依存関係、および開発の依存関係が含まれます。"
 
 #: ../../documentation/glossary.md:10
-#, fuzzy
 msgid "Docstring"
-msgstr "ドキュメントビルディング"
+msgstr "Docstring"
 
 #: ../../documentation/glossary.md:182
 msgid ""
-"A string at the top of a function, class, or module that describes "
-"behavior, inputs, and outputs. Docstrings can be used by tools such as "
-"Sphinx to generate API documentation."
+"A string at the top of a function, class, or module that describes behavior,"
+" inputs, and outputs. Docstrings can be used by tools such as Sphinx to "
+"generate API documentation."
 msgstr ""
 "動作、入力、出力を説明する関数、クラス、またはモジュールの先頭にある文字列。 docstring は、Sphinx などのツールで API "
 "ドキュメントを生成するために使用できます。"
@@ -465,8 +459,8 @@ msgstr "エンドツーエンドのテスト"
 #: ../../documentation/glossary.md:187
 msgid ""
 "A test that simulates a complete user workflow from start to finish. In "
-"scientific packages, tutorials executed during docs builds can serve as "
-"end-to-end tests."
+"scientific packages, tutorials executed during docs builds can serve as end-"
+"to-end tests."
 msgstr ""
 "最初から最後まで完全なユーザー "
 "ワークフローをシミュレートするテスト。科学的パッケージでは、ドキュメントのビルド中に実行されるチュートリアルがエンドツーエンドのテストとして機能します。"
@@ -479,7 +473,8 @@ msgstr "結合テスト"
 msgid ""
 "A test that checks how multiple functions or components work together. "
 "Unlike a unit test, it verifies behavior across a broader workflow."
-msgstr "複数の機能またはコンポーネントがどのように連携して動作するかをチェックするテスト。単体テストとは異なり、より広範なワークフロー全体の動作を検証します。"
+msgstr ""
+"複数の機能またはコンポーネントがどのように連携して動作するかをチェックするテスト。単体テストとは異なり、より広範なワークフロー全体の動作を検証します。"
 
 #: ../../documentation/glossary.md:24
 msgid "Linting"
@@ -487,8 +482,8 @@ msgstr "糸くず"
 
 #: ../../documentation/glossary.md:196
 msgid ""
-"Automatic checks for style issues, formatting problems, and potential "
-"errors in code."
+"Automatic checks for style issues, formatting problems, and potential errors"
+" in code."
 msgstr "スタイルの問題、書式設定の問題、コード内の潜在的なエラーを自動的にチェックします。"
 
 #: ../../documentation/glossary.md:28
@@ -497,8 +492,8 @@ msgstr "単体テスト"
 
 #: ../../documentation/glossary.md:200
 msgid ""
-"A test that checks one function or method in isolation. Unit tests are fast"
-" and help pinpoint where failures occur."
+"A test that checks one function or method in isolation. Unit tests are fast "
+"and help pinpoint where failures occur."
 msgstr "1 つの関数またはメソッドを単独でチェックするテスト。単体テストは高速であり、障害が発生した場所を特定するのに役立ちます。"
 
 #: ../../documentation/glossary.md:32
@@ -509,7 +504,8 @@ msgstr "バージョン指定子/下限"
 msgid ""
 "A constraint on which dependency versions are accepted. For example, "
 "`numpy>=1.24` sets a lower bound so versions older than 1.24 are not used."
-msgstr "依存関係のバージョンを受け入れる制約。たとえば、`numpy>=1.24` は下限を設定するため、1.24 より古いバージョンは使用されません。"
+msgstr ""
+"依存関係のバージョンを受け入れる制約。たとえば、`numpy>=1.24` は下限を設定するため、1.24 より古いバージョンは使用されません。"
 
 #: ../../documentation/glossary.md:209
 msgid "Git / GitHub"
@@ -559,25 +555,22 @@ msgstr ""
 "コミット。スコープ付きコミットにより、レビュー可能性と履歴の明確さが向上します。"
 
 #: ../../documentation/glossary.md:228
-#, fuzzy
 msgid "Documentation"
-msgstr "ドキュメントの概要"
+msgstr "ドキュメント"
 
 #: ../../documentation/glossary.md
-#, fuzzy
 msgid "Code of conduct"
-msgstr "あなたの行動規範"
+msgstr "行動規範"
 
 #: ../../documentation/glossary.md:232
 msgid ""
-"A document that sets expectations for how contributors and community "
-"members treat one another in a project."
+"A document that sets expectations for how contributors and community members"
+" treat one another in a project."
 msgstr "プロジェクト内で貢献者とコミュニティのメンバーが互いにどのように接するかについての期待を設定する文書。"
 
 #: ../../documentation/glossary.md:4
-#, fuzzy
 msgid "Contributing guide"
-msgstr "貢献ファイル"
+msgstr "貢献ガイド"
 
 #: ../../documentation/glossary.md:236
 msgid ""
@@ -588,24 +581,22 @@ msgstr ""
 "(多くの場合「CONTRIBUTING.md」)。"
 
 #: ../../documentation/glossary.md:8
-#, fuzzy
 msgid "MyST Markdown"
-msgstr "myST vs Markdown vs rst"
+msgstr "MyST Markdown"
 
 #: ../../documentation/glossary.md:240
 msgid ""
-"Markedly Structured Text, a Markdown flavor that supports Sphinx directives"
-" and roles. It allows Markdown-based docs while keeping Sphinx features. "
-"See [myst-parser.readthedocs.io](https://myst-parser.readthedocs.io)."
+"Markedly Structured Text, a Markdown flavor that supports Sphinx directives "
+"and roles. It allows Markdown-based docs while keeping Sphinx features. See "
+"[myst-parser.readthedocs.io](https://myst-parser.readthedocs.io)."
 msgstr ""
 "Markedly Structured Text、Sphinx ディレクティブとロールをサポートする Markdown フレーバー。 Sphinx "
-"の機能を維持しながら、Markdown ベースのドキュメントが可能になります。 [myst-parser.readthedocs.io](https"
-"://myst-parser.readthedocs.io)を参照してください。"
+"の機能を維持しながら、Markdown ベースのドキュメントが可能になります。 [myst-"
+"parser.readthedocs.io](https://myst-parser.readthedocs.io)を参照してください。"
 
 #: ../../documentation/glossary.md:14
-#, fuzzy
 msgid "README"
-msgstr "README ファイル"
+msgstr "README"
 
 #: ../../documentation/glossary.md:246
 msgid ""
@@ -640,8 +631,8 @@ msgstr "ドキュメンテーションの構築とホスティングのための
 msgid ""
 "The most common tool for building documentation in the Python ecosystem "
 "currently is Sphinx. However, some maintainers are using tools like "
-"[mkdocs](https://www.mkdocs.org/) for documentation. It is up to you to use"
-" the platform that you prefer for your documentation!"
+"[mkdocs](https://www.mkdocs.org/) for documentation. It is up to you to use "
+"the platform that you prefer for your documentation!"
 msgstr ""
 "現在、Pythonエコシステムでドキュメントを構築するための最も一般的なツールはSphinxです。 しかし、 "
 "[mkdocs](https://www.mkdocs.org/) のようなツールを使っているメンテナもいます。 "
@@ -663,22 +654,24 @@ msgid ""
 msgstr "また、ドキュメントをオンラインで公開する方法や、ドキュメントのウェブサイトを最適化するためのSphinxツールについてもお話します。"
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:1
-msgid "Documentation syntax: markdown vs. myST vs. rst syntax to create your docs"
+msgid ""
+"Documentation syntax: markdown vs. myST vs. rst syntax to create your docs"
 msgstr "ドキュメントの構文:ドキュメントを作成するためのマークダウン構文とmyST構文とrst構文"
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:3
-msgid "There are three commonly used syntaxes for creating Python documentation:"
+msgid ""
+"There are three commonly used syntaxes for creating Python documentation:"
 msgstr "Pythonのドキュメントを作成するためによく使われる構文は3つあります:"
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:4
 msgid ""
 "[markdown](https://www.markdownguide.org/): Markdown is an easy-to-learn "
 "text syntax. It is the default syntax used in Jupyter Notebooks. There are "
-"tools that you can add to a Sphinx website that allow it to render markdown"
-" as html. However, using markdown to write documentation has limitations. "
-"For instance if you want to add references, colored call out blocks and "
-"other custom elements to your documentation, you will need to use either "
-"**myST** or **rST**."
+"tools that you can add to a Sphinx website that allow it to render markdown "
+"as html. However, using markdown to write documentation has limitations. For"
+" instance if you want to add references, colored call out blocks and other "
+"custom elements to your documentation, you will need to use either **myST** "
+"or **rST**."
 msgstr ""
 "[markdown](https://www.markdownguide.org/): Markdownは習得しやすいテキスト構文です。 "
 "これはJupyter Notebooksで使われるデフォルトの構文です。 "
@@ -690,11 +683,10 @@ msgstr ""
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:8
 msgid ""
 "[rST (ReStructured Text):](https://www.sphinx-"
-"doc.org/en/master/usage/restructuredtext/basics.html). **rST** is the "
-"native syntax that sphinx supports. rST was the default syntax used for "
-"documentation for many years. However, in recent years myST has risen to "
-"the top as a favorite for documentation given the flexibility that it "
-"allows."
+"doc.org/en/master/usage/restructuredtext/basics.html). **rST** is the native"
+" syntax that sphinx supports. rST was the default syntax used for "
+"documentation for many years. However, in recent years myST has risen to the"
+" top as a favorite for documentation given the flexibility that it allows."
 msgstr ""
 "[rST (ReStructured Text):](https://www.sphinx-"
 "doc.org/en/master/usage/restructuredtext/basics.html)。 "
@@ -704,9 +696,9 @@ msgstr ""
 msgid ""
 "[myST:](https://myst-parser.readthedocs.io/en/latest/intro.html) myST is a "
 "combination of `markdown` and `rST` syntax. It is a nice option if you are "
-"comfortable writing markdown. `myst` is preferred by many because it offers"
-" both the rich functionality of rST combined with a simple-to-write "
-"markdown syntax."
+"comfortable writing markdown. `myst` is preferred by many because it offers "
+"both the rich functionality of rST combined with a simple-to-write markdown "
+"syntax."
 msgstr ""
 "[myST:](https://myst-parser.readthedocs.io/en/latest/intro.html) mySTは普通の "
 "`markdown` と `rST` の構文の組み合わせです。 もしあなたがマークダウンを書くのに慣れているのであれば、良いオプションです。 "
@@ -736,9 +728,10 @@ msgstr "README.mdファイルなど、Pythonパッケージのコアとなるテ
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:18
 msgid ""
-"`GitHub` and `Jupyter Notebooks` support markdown thus it's more widely "
-"used in the scientific ecosystem."
-msgstr "`GitHub` と `Jupyter Notebooks` はMarkdownをサポートしており、科学的なエコシステムでより広く使われています。"
+"`GitHub` and `Jupyter Notebooks` support markdown thus it's more widely used"
+" in the scientific ecosystem."
+msgstr ""
+"`GitHub` と `Jupyter Notebooks` はMarkdownをサポートしており、科学的なエコシステムでより広く使われています。"
 
 #: ../../documentation/hosting-tools/myst-markdown-rst-doc-syntax.md:22
 msgid ""
@@ -779,16 +772,16 @@ msgstr "Read the Docsとは？"
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:11
 msgid ""
-"[Read the Docs](https://readthedocs.org/) is a documentation hosting "
-"service that supports publishing your project's documentation."
+"[Read the Docs](https://readthedocs.org/) is a documentation hosting service"
+" that supports publishing your project's documentation."
 msgstr ""
 "[Read the Docs](https://readthedocs.org/) "
 "は、あなたのプロジェクトのドキュメント公開をサポートするドキュメントホスティングサービスです。"
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:13
 msgid ""
-"Read the Docs is a fully featured, free, documentation hosting service. "
-"Some of its many features include:"
+"Read the Docs is a fully featured, free, documentation hosting service. Some"
+" of its many features include:"
 msgstr "Read the Docsは、完全な機能を備えた無料のドキュメントホスティングサービスです。 その多くの機能の一部を紹介します:"
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:16
@@ -812,7 +805,8 @@ msgid ""
 "Supports versioning of your documentation which allows users to refer to "
 "older tagged versions of the docs if they are using older versions of your "
 "package."
-msgstr "ドキュメントのバージョン管理をサポートし、ユーザーが古いバージョンのパッケージを使用している場合、タグ付けされた古いバージョンのドキュメントを参照できるようにします。"
+msgstr ""
+"ドキュメントのバージョン管理をサポートし、ユーザーが古いバージョンのパッケージを使用している場合、タグ付けされた古いバージョンのドキュメントを参照できるようにします。"
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:20
 msgid "Supports downloading of documentation in PDF and other formats."
@@ -820,8 +814,8 @@ msgstr "PDFやその他の形式のドキュメントのダウンロードに対
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:21
 msgid ""
-"You can customize the documentation build using a **.readthedocs.yaml** "
-"file in your GitHub repository."
+"You can customize the documentation build using a **.readthedocs.yaml** file"
+" in your GitHub repository."
 msgstr "ドキュメントのビルドは、GitHubリポジトリの **.readthedocs.yaml** ファイルを使ってカスタマイズできます。"
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:24
@@ -829,18 +823,17 @@ msgid "What is GitHub Pages?"
 msgstr "GitHub Pagesとは？"
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:25
-#, fuzzy
 msgid ""
-"[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-"
-"github-pages/what-is-github-pages) is a free web hosting service offered by"
-" GitHub. Using GitHub pages, you can build your documentation locally or "
-"using a Continuous Integration setup, and then push to a branch in your "
-"GitHub repository that is setup to run the GitHub Pages web build."
+"[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-"
+"pages/what-is-github-pages) is a free web hosting service offered by GitHub."
+" Using GitHub pages, you can build your documentation locally or using a "
+"Continuous Integration setup, and then push to a branch in your GitHub "
+"repository that is setup to run the GitHub Pages web build."
 msgstr ""
-"[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-"
-"github-pages/about-github-pages) は GitHub が提供する無料のウェブホスティングサービスです。 GitHub "
-"Pages を使えば、ローカルあるいは継続的インテグレーションを使ってドキュメントをビルドし、GitHub Pages "
-"のウェブビルドを実行するように設定した GitHub リポジトリのブランチにプッシュすることができます。"
+"[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-"
+"pages/what-is-github-pages) は GitHub が提供する無料のウェブホスティングサービスです。GitHub Pages "
+"を使えば、ローカルあるいは継続的インテグレーションを使ってドキュメントをビルドし、GitHub Pages のウェブビルドを実行するように設定した "
+"GitHub リポジトリのブランチにプッシュできます。"
 
 #: ../../documentation/hosting-tools/publish-documentation-online.md:33
 msgid "Read the Docs vs GitHub Pages"
@@ -875,12 +868,12 @@ msgstr "Sphinxを使ってPythonパッケージのドキュメントを作る"
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:17
 msgid ""
-"On this page we discuss using [Sphinx](https://www.sphinx-doc.org/) to "
-"build your user-facing package documentation. While Sphinx is currently the"
-" most commonly-used tool in the scientific Python ecosystem, you are "
-"welcome to explore other tools to build documentation such as "
-"[mkdocs](https://www.mkdocs.org/) which is gaining popularity in the Python"
-" packaging ecosystem."
+"On this page we discuss using [Sphinx](https://www.sphinx-doc.org/) to build"
+" your user-facing package documentation. While Sphinx is currently the most "
+"commonly-used tool in the scientific Python ecosystem, you are welcome to "
+"explore other tools to build documentation such as "
+"[mkdocs](https://www.mkdocs.org/) which is gaining popularity in the Python "
+"packaging ecosystem."
 msgstr ""
 "このページでは、 [Sphinx](https://www.sphinx-doc.org/) "
 "を使ってユーザー向けのパッケージのドキュメントをビルドする方法について説明します。 "
@@ -899,7 +892,8 @@ msgstr "[GeoPandas](https://geopandas.org/en/stable/)"
 msgid ""
 "[View rst to create landing "
 "page](https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst)"
-msgstr "[ランディングページを作成するために最初にご覧ください](https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst)"
+msgstr ""
+"[ランディングページを作成するために最初にご覧ください](https://raw.githubusercontent.com/geopandas/geopandas/main/doc/source/index.rst)"
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:29
 msgid "[verde](https://www.fatiando.org/verde/latest/)"
@@ -916,11 +910,10 @@ msgstr ""
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:31
 msgid ""
 "[Here is our documentation if you want to see a myST example of a landing "
-"page.](https://github.com/pyOpenSci/python-package-"
-"guide/blob/main/index.md)"
+"page.](https://github.com/pyOpenSci/python-package-guide/blob/main/index.md)"
 msgstr ""
-"[ランディングページのmyST例をご覧になりたい方は、こちらのドキュメントをご覧ください](https://github.com/pyOpenSci"
-"/python-package-guide/blob/main/index.md)"
+"[ランディングページのmyST例をご覧になりたい方は、こちらのドキュメントをご覧ください](https://github.com/pyOpenSci/python-"
+"package-guide/blob/main/index.md)"
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:34
 msgid "Sphinx - a static site generator"
@@ -935,9 +928,9 @@ msgid ""
 "\"Statically\" which means that there is no generation or modification of "
 "the files on the fly."
 msgstr ""
-"Sphinxは [スタティックサイトジェネレーター](https://www.cloudflare.com/learning/performance"
-"/static-site-generator/) です。 "
-"静的サイトジェネレータとは、テンプレートのセットに基づいて、ウェブサイトのhtmlを作成するツールです。 "
+"Sphinxは "
+"[スタティックサイトジェネレーター](https://www.cloudflare.com/learning/performance/static-"
+"site-generator/) です。 静的サイトジェネレータとは、テンプレートのセットに基づいて、ウェブサイトのhtmlを作成するツールです。 "
 "htmlファイルは「静的」に提供されるため、その場でファイルを生成したり変更したりすることはありません。"
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:39
@@ -962,13 +955,13 @@ msgstr "ドキュメントテーマを適用して、美しいドキュメント
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:47
 msgid ""
-"You can [automatically create documentation for your package's functions "
-"and classes (the package's API) from docstrings in your code using the "
-"autodoc extension](https://www.sphinx-"
+"You can [automatically create documentation for your package's functions and"
+" classes (the package's API) from docstrings in your code using the autodoc "
+"extension](https://www.sphinx-"
 "doc.org/en/master/usage/extensions/autodoc.html)"
 msgstr ""
-"[autodocエクステンションを使って、パッケージの関数やクラス(パッケージのAPI)のドキュメントをコードのdocstringから自動的に作成する](https://www"
-".sphinx-doc.org/en/master/usage/extensions/autodoc.html) ことができます。"
+"[autodocエクステンションを使って、パッケージの関数やクラス(パッケージのAPI)のドキュメントをコードのdocstringから自動的に作成する](https://www.sphinx-"
+"doc.org/en/master/usage/extensions/autodoc.html) ことができます。"
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:48
 msgid ""
@@ -986,8 +979,7 @@ msgid ""
 "parser](https://myst-parser.readthedocs.io/)."
 msgstr ""
 "[MySTパーサー](https://myst-parser.readthedocs.io/) "
-"などのツールを使って、書きやすい構文をサポートするカスタム構文パーサーを追加できます。Sphinxはネイティブで `rST` "
-"構文をサポートしています。"
+"などのツールを使って、書きやすい構文をサポートするカスタム構文パーサーを追加できます。Sphinxはネイティブで `rST` 構文をサポートしています。"
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:51
 msgid "Commonly used Sphinx themes"
@@ -995,8 +987,8 @@ msgstr "よく使われるSphinxのテーマ"
 
 #: ../../documentation/hosting-tools/sphinx-python-package-documentation-tools.md:53
 msgid ""
-"You are free to use whatever Sphinx theme that you prefer. However, the "
-"most common Sphinx themes used in the Python scientific community include:"
+"You are free to use whatever Sphinx theme that you prefer. However, the most"
+" common Sphinx themes used in the Python scientific community include:"
 msgstr ""
 "あなたは好きなSphinxテーマを自由に使うことができます。 "
 "しかし、Pythonの科学コミュニティで最もよく使われているSphinxのテーマは次のようなものです:"
@@ -1018,7 +1010,8 @@ msgid "This book is created using Sphinx and the `furo` theme."
 msgstr "この本はSphinxと `furo` というテーマを使って作られています。"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:1
-msgid "Optimizing your documentation so search engines (and other users) find it"
+msgid ""
+"Optimizing your documentation so search engines (and other users) find it"
 msgstr "検索エンジン(および他のユーザー)に見つけてもらえるよう、ドキュメントを最適化する。"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:3
@@ -1026,7 +1019,8 @@ msgid ""
 "If you are interested in more people finding your package, you may want to "
 "add some core Sphinx extensions (and theme settings) that will help search "
 "engines such as Google find your documentation."
-msgstr "もし、より多くの人にあなたのパッケージを見つけてもらいたいのであれば、Sphinxのコアとなる拡張機能(およびテーマの設定)を追加することで、Googleなどの検索エンジンがあなたのドキュメントを見つけやすくすることができます。"
+msgstr ""
+"もし、より多くの人にあなたのパッケージを見つけてもらいたいのであれば、Sphinxのコアとなる拡張機能(およびテーマの設定)を追加することで、Googleなどの検索エンジンがあなたのドキュメントを見つけやすくすることができます。"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:7
 msgid "Google Analytics"
@@ -1034,10 +1028,10 @@ msgstr "Google アナリティクス"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:11
 msgid ""
-"Google analytics [is not compliant with the European General Data "
-"Protection Regulation (GDPR)](https://matomo.org/blog/2022/05/google-"
-"analytics-4-gdpr/). While there are many components to this regulation, one"
-" of the core elements is that you have to let users know on your site that "
+"Google analytics [is not compliant with the European General Data Protection"
+" Regulation (GDPR)](https://matomo.org/blog/2022/05/google-"
+"analytics-4-gdpr/). While there are many components to this regulation, one "
+"of the core elements is that you have to let users know on your site that "
 "you are collecting data and they have to consent. While it is possible to "
 "add infrastructure around Google Analytics to make it close to following "
 "GDPR regulations, the community is slowly shifting away from Google using "
@@ -1045,15 +1039,17 @@ msgid ""
 "Analytics](https://www.cloudflare.com/web-analytics/) and "
 "[Matomo](https://matomo.org) for web analytics."
 msgstr ""
-"Googleアナリティクスは [欧州一般データ保護規則（GDPR）に準拠していません](https://matomo.org/blog/2022/05"
-"/google-analytics-4-gdpr/) "
+"Googleアナリティクスは "
+"[欧州一般データ保護規則（GDPR）に準拠していません](https://matomo.org/blog/2022/05/google-"
+"analytics-4-gdpr/) "
 "。この規制には多くの要素があるが、核となる要素のひとつは、データを収集していることをサイト上でユーザーに知らせ、同意を得なければならないということです。Googleアナリティクスの周辺にインフラを追加してGDPRの規制に沿うようにすることは可能ですが、コミュニティは徐々にGoogleから"
 " [Plausible](https://plausible.io/) 、 [Cloudflare Web "
 "Analytics](https://www.cloudflare.com/web-analytics/) 、 "
 "[Matomo](https://matomo.org) といったオープンツールをウェブ解析に使う方向にシフトしつつあります。"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:13
-msgid "pyOpenSci is currently looking into free options for open source developers."
+msgid ""
+"pyOpenSci is currently looking into free options for open source developers."
 msgstr "pyOpenSci は現在、オープンソース開発者のための無料のオプションを検討しています。"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:16
@@ -1063,8 +1059,8 @@ msgid ""
 "sphinx-theme.readthedocs.io/en/latest/user_guide/analytics.html#google-"
 "analytics). However, if the theme that you chose does not offer Google "
 "Analytics support, you can use the [`sphinxcontrib-gtagjs` "
-"extension](https://github.com/attakei/sphinxcontrib-gtagjs). This extension"
-" will add a Google Analytics site tag to each page of your documentation."
+"extension](https://github.com/attakei/sphinxcontrib-gtagjs). This extension "
+"will add a Google Analytics site tag to each page of your documentation."
 msgstr ""
 "[`pydata-sphinx-theme`や `sphinx-book-theme` のようなsphinxテーマには、Google "
 "Analyticsのサポートが組み込まれています](https://pydata-sphinx-"
@@ -1075,18 +1071,18 @@ msgstr ""
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:22
 msgid ""
-"[sphinx-sitemap](https://sphinx-"
-"sitemap.readthedocs.io/en/latest/index.html) for search engine optimization"
+"[sphinx-sitemap](https://sphinx-sitemap.readthedocs.io/en/latest/index.html)"
+" for search engine optimization"
 msgstr ""
 "検索エンジン最適化のための [sphinx-sitemap](https://sphinx-"
 "sitemap.readthedocs.io/en/latest/index.html)"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:24
 msgid ""
-"While we are trying to move away from Google Analytics do to compliance and"
-" privacy issues, search engine optimization is still important. Google is "
-"the most popular search engine. And if your documentation is search "
-"optimized, users are more likely to find your package!"
+"While we are trying to move away from Google Analytics do to compliance and "
+"privacy issues, search engine optimization is still important. Google is the"
+" most popular search engine. And if your documentation is search optimized, "
+"users are more likely to find your package!"
 msgstr ""
 "コンプライアンスやプライバシーの問題からGoogleアナリティクスから離れようとしていますが、検索エンジン最適化は依然として重要です。 "
 "Googleは最も人気のある検索エンジンです。 "
@@ -1095,9 +1091,9 @@ msgstr ""
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:30
 msgid ""
 "If you are interested in optimizing your documentation for search engines "
-"such as Google, you want a **sitemap.xml** file. You can submit this "
-"sitemap to Google and it will index your entire site. This over time can "
-"make the content on your site more visible to others when they search."
+"such as Google, you want a **sitemap.xml** file. You can submit this sitemap"
+" to Google and it will index your entire site. This over time can make the "
+"content on your site more visible to others when they search."
 msgstr ""
 "Googleのような検索エンジンのために文書を最適化することに興味があるなら、 **sitemap.xml** ファイルが必要です。 "
 "このサイトマップをGoogleに送信すると、Googleはあなたのサイト全体をインデックスします。 "
@@ -1109,33 +1105,35 @@ msgstr "このエクステンションは軽量です。"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:38
 msgid ""
-"It [requires that you to add it to your Sphinx `conf.py` extension list and"
-" site your documentation base url](https://sphinx-"
+"It [requires that you to add it to your Sphinx `conf.py` extension list and "
+"site your documentation base url](https://sphinx-"
 "sitemap.readthedocs.io/en/latest/getting-started.html)."
 msgstr ""
-"これは、 [Sphinxの `conf.py` 拡張機能リストに追加し、ドキュメントのベースURLを指定する必要があります](https"
-"://sphinx-sitemap.readthedocs.io/en/latest/getting-started.html) 。"
+"これは、 [Sphinxの `conf.py` "
+"拡張機能リストに追加し、ドキュメントのベースURLを指定する必要があります](https://sphinx-"
+"sitemap.readthedocs.io/en/latest/getting-started.html) 。"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:40
-msgid "[sphinxext.opengraph](https://github.com/sphinx-doc/sphinxext-opengraph)"
-msgstr "[sphinxext.opengraph](https://github.com/sphinx-doc/sphinxext-opengraph)"
+msgid ""
+"[sphinxext.opengraph](https://github.com/sphinx-doc/sphinxext-opengraph)"
+msgstr ""
+"[sphinxext.opengraph](https://github.com/sphinx-doc/sphinxext-opengraph)"
 
 #: ../../documentation/hosting-tools/website-hosting-optimizing-your-docs.md:42
-#, fuzzy
 msgid ""
 "OpenGraph is an extension that allows you to add metadata to your "
 "documentation content pages. [The OpenGraph protocol allows other websites "
 "to provide a useful preview of the content on your page when "
-"shared](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i"
-"-use-it-for-my-website/#heading-what-is-open-graph). This is important for "
-"when the pages in your documentation are shared on social media and even "
-"for shares on collaboration platforms like Slack and Discourse."
+"shared](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-"
+"use-it-for-my-website/#heading-what-is-open-graph). This is important for "
+"when the pages in your documentation are shared on social media and even for"
+" shares on collaboration platforms like Slack and Discourse."
 msgstr ""
-"OpenGraphは、ドキュメントのコンテンツページにメタデータを追加できる拡張機能です。 "
-"[OpenGraphプロトコルは、共有されたときに他のウェブサイトがあなたのページのコンテンツの有用なプレビューを提供することを可能にします](https://www.freecodecamp.org/news"
-"/what-is-open-graph-and-how-can-i-use-it-for-my-website/#heading-what-is-"
-"open-graph) 。 "
-"これは、あなたのドキュメントのページがTwitterやMastodonのようなソーシャルメディアサイトで共有されるときや、SlackやDiscourseのようなツールで共有されるときにも重要です。"
+"OpenGraph は、ドキュメントのコンテンツページにメタデータを追加できる拡張機能です。[OpenGraph "
+"プロトコルは、共有されたときに他のウェブサイトがあなたのページのコンテンツの有用なプレビューを提供することを可能にします](https://www.freecodecamp.org/news/what-"
+"is-open-graph-and-how-can-i-use-it-for-my-website/#heading-what-is-open-"
+"graph)。これは、ドキュメントのページがソーシャルメディアで共有される際や、Slack や Discourse "
+"のようなコラボレーションプラットフォームで共有される際にも重要です。"
 
 #: ../../documentation/index.md:3
 msgid "Documentation Overview"
@@ -1221,10 +1219,10 @@ msgstr "オープンソースPythonパッケージのドキュメント"
 #: ../../documentation/index.md:55
 msgid ""
 "Please note that the tools discussed here are those that we see commonly "
-"used in the community. As tools evolve we will update this guide. If you "
-"are submitting a package for pyOpenSci peer review and use other tools that"
-" are not listed in our guide to build your package you can still submit for"
-" review! The tools listed here are suggestions, not requirements. Our "
+"used in the community. As tools evolve we will update this guide. If you are"
+" submitting a package for pyOpenSci peer review and use other tools that are"
+" not listed in our guide to build your package you can still submit for "
+"review! The tools listed here are suggestions, not requirements. Our "
 "requirements are focused on the documentation content of your package."
 msgstr ""
 "ここで取り上げているツールは、コミュニティで一般的に使用されているものです。 ツールの進化に伴い、このガイドを更新します。 "
@@ -1262,8 +1260,8 @@ msgstr "Pythonパッケージユーザーの2つのタイプ"
 
 #: ../../documentation/index.md:78
 msgid ""
-"The documentation that you write for your package should target two types "
-"of users:"
+"The documentation that you write for your package should target two types of"
+" users:"
 msgstr "パッケージのために書くドキュメントは、2つのタイプのユーザーをターゲットにすべきです:"
 
 #: ../../documentation/index.md:81
@@ -1295,15 +1293,16 @@ msgstr "コードベースの使い始め方"
 
 #: ../../documentation/index.md:91
 msgid ""
-"Information on how to cite your code / give you credit if they are using it"
-" in a research application."
+"Information on how to cite your code / give you credit if they are using it "
+"in a research application."
 msgstr "研究用アプリケーションでコードを使用する場合、あなたのコードをどのように引用し、クレジットを付与するかについての情報。"
 
 #: ../../documentation/index.md:93
 msgid ""
-"Information on the license that your code uses so they know how they can or"
-" can't use the code in an operational setting."
-msgstr "あなたのコードが使用するライセンスに関する情報を提供することで、運用環境においてコードをどのように使用できるか、または使用できないかを知ってもらいます。"
+"Information on the license that your code uses so they know how they can or "
+"can't use the code in an operational setting."
+msgstr ""
+"あなたのコードが使用するライセンスに関する情報を提供することで、運用環境においてコードをどのように使用できるか、または使用できないかを知ってもらいます。"
 
 #: ../../documentation/index.md:96
 msgid "2. Potential tool contributors"
@@ -1311,9 +1310,10 @@ msgstr "2. ツールコントリビュータ候補"
 
 #: ../../documentation/index.md:98
 msgid ""
-"The other subset of users are more experienced and/or more engaged with "
-"your package. As such they are potential contributors. These users:"
-msgstr "もう一組のユーザは、経験が豊富で、かつ/またはあなたのパッケージにより深く関わっています。 彼らは潜在的な貢献者です。 これらのユーザーは:"
+"The other subset of users are more experienced and/or more engaged with your"
+" package. As such they are potential contributors. These users:"
+msgstr ""
+"もう一組のユーザは、経験が豊富で、かつ/またはあなたのパッケージにより深く関わっています。 彼らは潜在的な貢献者です。 これらのユーザーは:"
 
 #: ../../documentation/index.md:102
 msgid "might have a software development background,"
@@ -1342,8 +1342,8 @@ msgstr ""
 
 #: ../../documentation/index.md:110
 msgid ""
-"A development guide to help them understand the infrastructure used in your"
-" package repository."
+"A development guide to help them understand the infrastructure used in your "
+"package repository."
 msgstr "パッケージリポジトリで使われているインフラを理解するための開発ガイドです。"
 
 #: ../../documentation/index.md:111
@@ -1354,23 +1354,26 @@ msgstr "どのような貢献の投稿を歓迎し、どのように貢献をし
 
 #: ../../documentation/index.md:114
 msgid ""
-"It's important to remember that the definition of what a contribution is "
-"can be broad. A contribution could be something as simple as a bug report. "
-"Or fixing a spelling issue in your documentation. Or it could be a code fix"
-" that includes a new test that covers an edge-case that they discovered."
-msgstr "重要なのは、貢献の定義は幅広いということを覚えておくことです。貢献とは、バグ報告のような単純なものでもよいのです。あるいは、ドキュメントのスペルの問題を修正する。あるいは、彼らが発見したエッジケースをカバーする新しいテストを含むコード修正かもしれません。"
+"It's important to remember that the definition of what a contribution is can"
+" be broad. A contribution could be something as simple as a bug report. Or "
+"fixing a spelling issue in your documentation. Or it could be a code fix "
+"that includes a new test that covers an edge-case that they discovered."
+msgstr ""
+"重要なのは、貢献の定義は幅広いということを覚えておくことです。貢献とは、バグ報告のような単純なものでもよいのです。あるいは、ドキュメントのスペルの問題を修正する。あるいは、彼らが発見したエッジケースをカバーする新しいテストを含むコード修正かもしれません。"
 
 #: ../../documentation/index.md:120
-msgid "Documentation elements that pyOpenSci looks for reviewing a Python package"
+msgid ""
+"Documentation elements that pyOpenSci looks for reviewing a Python package"
 msgstr "pyOpenSciがPythonパッケージをレビューする際に注目するドキュメント要素"
 
 #: ../../documentation/index.md:122
 msgid ""
 "In the pyOpenSci open peer review, we look for a documentation structure "
-"that supports both your tool users and potential contributors. The files "
-"and elements that we look for specifically can be found in our peer review "
+"that supports both your tool users and potential contributors. The files and"
+" elements that we look for specifically can be found in our peer review "
 "check list (see link below)."
-msgstr "pyOpenSciオープンピアレビューでは、あなたのツールのユーザーと潜在的な貢献者の両方をサポートする文書構造を探します。私たちが特にチェックするファイルや要素は、査読チェックリスト（下記リンク参照）に記載されています。"
+msgstr ""
+"pyOpenSciオープンピアレビューでは、あなたのツールのユーザーと潜在的な貢献者の両方をサポートする文書構造を探します。私たちが特にチェックするファイルや要素は、査読チェックリスト（下記リンク参照）に記載されています。"
 
 #: ../../documentation/index.md:127
 msgid ""
@@ -1385,8 +1388,8 @@ msgstr "pyOpenSci査読チェックリストを見る"
 
 #: ../../documentation/index.md:138
 msgid ""
-"Image showing the files in the the MovingPandas GitHub repository. Files in"
-" the image include code of conduct.md contributing.md license.txt and "
+"Image showing the files in the the MovingPandas GitHub repository. Files in "
+"the image include code of conduct.md contributing.md license.txt and "
 "readme.md."
 msgstr ""
 "MovingPandasのGitHubリポジトリにあるファイルを示す画像。画像内のファイルには、code of conduct.md "
@@ -1408,9 +1411,9 @@ msgstr "このPythonパッケージのドキュメントセクションの次は
 #: ../../documentation/index.md:149
 msgid ""
 "In this section of the pyOpenSci package guide, we will walk you through "
-"best practices for setting up documentation for your Python package. We "
-"will also suggest tools that you can use to build your user-facing "
-"documentation website."
+"best practices for setting up documentation for your Python package. We will"
+" also suggest tools that you can use to build your user-facing documentation"
+" website."
 msgstr ""
 "pyOpenSciパッケージガイドのこのセクションでは、Pythonパッケージのドキュメントを設定するためのベストプラクティスを説明します。 "
 "また、ユーザー向けのドキュメントサイトを構築するために使用できるツールも提案します。"
@@ -1421,11 +1424,11 @@ msgstr "Todo"
 
 #: ../../documentation/index.md:156
 msgid ""
-"Python version support You should always be explicit about which versions "
-"of Python your package supports. Keeping compatibility with old Python "
-"versions can be difficult as functionality changes. A good rule of thumb is"
-" that the package should support, at least, the latest three Python "
-"versions (e.g., 3.8, 3.7, 3.6)."
+"Python version support You should always be explicit about which versions of"
+" Python your package supports. Keeping compatibility with old Python "
+"versions can be difficult as functionality changes. A good rule of thumb is "
+"that the package should support, at least, the latest three Python versions "
+"(e.g., 3.8, 3.7, 3.6)."
 msgstr ""
 "Pythonのバージョンサポート あなたのパッケージがどのバージョンのPythonをサポートしているか、常に明示しておくべきです。 "
 "Pythonの古いバージョンとの互換性を保つことは、機能が変わるにつれて難しくなります。 "
@@ -1441,11 +1444,11 @@ msgstr "はじめに"
 
 #: ../../documentation/repository-files/changelog-file.md:5
 msgid ""
-"The `CHANGELOG.md` document serves as a valuable resource for developers "
-"and users alike to track the evolution of a project over time. "
-"Understanding the structure and purpose of a changelog helps users and "
-"contributors stay informed about new features, bug fixes, and other changes"
-" introduced in each release."
+"The `CHANGELOG.md` document serves as a valuable resource for developers and"
+" users alike to track the evolution of a project over time. Understanding "
+"the structure and purpose of a changelog helps users and contributors stay "
+"informed about new features, bug fixes, and other changes introduced in each"
+" release."
 msgstr ""
 "`CHANGELOG.md` ドキュメントは、開発者にとってもユーザーにとっても、プロジェクトの進化を追跡するための貴重なリソースとなります。 "
 "変更履歴の構造と目的を理解することで、ユーザーや貢献者は各リリースで導入された新機能やバグ修正、その他の変更について常に情報を得ることができます。"
@@ -1457,23 +1460,21 @@ msgstr "CHANGELOG.mdとは？"
 #: ../../documentation/repository-files/changelog-file.md:9
 msgid ""
 "The primary purpose of `CHANGELOG.md` is to provide a record of notable "
-"changes made to the project with each new release. This document helps "
-"users understand what has been added, fixed, modified, or removed with each"
-" version of the software."
+"changes made to the project with each new release. This document helps users"
+" understand what has been added, fixed, modified, or removed with each "
+"version of the software."
 msgstr ""
 "`CHANGELOG.md` の主な目的は、新しいリリースごとにプロジェクトに加えられた注目すべき変更の記録を提供することです。 "
 "このドキュメントは、ソフトウェアの各バージョンで何が追加、修正、変更、削除されたかをユーザーが理解するのに役立ちます。"
 
 #: ../../documentation/repository-files/changelog-file.md:11
-#, fuzzy
 msgid ""
-"[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) is a great, simple"
-" resource for understanding what a changelog is and how to create a good "
+"[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) is a great, simple "
+"resource for understanding what a changelog is and how to create a good "
 "changelog. It also includes examples of things to avoid."
 msgstr ""
-"[Keep a "
-"CHAGELOG.md](https://keepachangelog.com/en/1.1.0/)は、変更ログとは何か、どのように良い変更ログを作成するかを理解するための、シンプルで素晴らしいリソースです。"
-" また、避けるべきことの例も含まれています。"
+"[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) "
+"は、変更ログとは何か、どのように良い変更ログを作成するかを理解するための、シンプルで素晴らしいリソースです。また、避けるべきことの例も含まれています。"
 
 #: ../../documentation/repository-files/changelog-file.md:13
 msgid "Versioning your Python package and semantic versioning"
@@ -1490,8 +1491,8 @@ msgstr ""
 
 #: ../../documentation/repository-files/changelog-file.md:17
 msgid ""
-"[Creating New Versions of Your Python Package](../../package-structure-code"
-"/python-package-versions.md)"
+"[Creating New Versions of Your Python Package](../../package-structure-"
+"code/python-package-versions.md)"
 msgstr ""
 "[Python パッケージの新しいバージョンの作成](../../package-structure-code/python-package-"
 "versions.md)"
@@ -1506,11 +1507,11 @@ msgstr "なぜそれが重要なのか？"
 
 #: ../../documentation/repository-files/changelog-file.md:23
 msgid ""
-"A well-maintained changelog is essential for transparent communication with"
-" users and developers. It serves as a centralized hub for documenting "
-"changes and highlights the progress made in each release. By keeping the "
-"changelog up-to-date, project maintainers can build trust with their user "
-"base and demonstrate their commitment to improving the software."
+"A well-maintained changelog is essential for transparent communication with "
+"users and developers. It serves as a centralized hub for documenting changes"
+" and highlights the progress made in each release. By keeping the changelog "
+"up-to-date, project maintainers can build trust with their user base and "
+"demonstrate their commitment to improving the software."
 msgstr ""
 "ユーザーや開発者との透明性のあるコミュニケーションには、よく管理された変更履歴が不可欠です。 "
 "変更ログは、変更点を文書化し、各リリースでの進捗をハイライトするための一元的なハブとして機能します。 "
@@ -1521,21 +1522,20 @@ msgid "What does it include?"
 msgstr "その内容は？"
 
 #: ../../documentation/repository-files/changelog-file.md:27
-#, fuzzy
 msgid ""
-"The contents of a `CHANGELOG.md` file typically follow a structured format,"
-" detailing the changes introduced in each release. While the exact format "
-"may vary depending on the project's conventions, some common elements found"
-" in changelogs for Python packages include:"
+"The contents of a `CHANGELOG.md` file typically follow a structured format, "
+"detailing the changes introduced in each release. While the exact format may"
+" vary depending on the project's conventions, some common elements found in "
+"changelogs for Python packages include:"
 msgstr ""
-"changelog.md ファイルの内容は一般的に構造化されたフォーマットに従い、各リリースで導入された変更の詳細を記述します。 "
-"正確なフォーマットはプロジェクトの規約によって異なるかもしれませんが、 Python パッケージの changelog "
-"でよく見られる要素には以下のようなものがあります："
+"`CHANGELOG.md` "
+"ファイルの内容は一般的に構造化されたフォーマットに従い、各リリースで導入された変更の詳細を記述します。正確なフォーマットはプロジェクトの規約によって異なるかもしれませんが、Python"
+" パッケージの変更ログでよく見られる要素には以下のようなものがあります:"
 
 #: ../../documentation/repository-files/changelog-file.md:29
 msgid ""
-"**Versioning**: Clear identification of each release version using semantic"
-" versioning or another versioning scheme adopted by the project."
+"**Versioning**: Clear identification of each release version using semantic "
+"versioning or another versioning scheme adopted by the project."
 msgstr ""
 "**Versioning**： "
 "セマンティックバージョニング、またはプロジェクトが採用するその他のバージョニングスキームを使って、各リリースのバージョンを明確に識別すること。"
@@ -1548,9 +1548,9 @@ msgstr "**Release Date**: 各バージョンが公開された日付で、変更
 
 #: ../../documentation/repository-files/changelog-file.md:33
 msgid ""
-"**Change Categories**: Organizing changes into categories such as "
-"\"Added,\" \"Changed,\" \"Fixed,\" and \"Removed\" to facilitate navigation"
-" and understanding."
+"**Change Categories**: Organizing changes into categories such as \"Added,\""
+" \"Changed,\" \"Fixed,\" and \"Removed\" to facilitate navigation and "
+"understanding."
 msgstr ""
 "**変更カテゴリー**: 変更を \"Added,\" \"Changed,\" \"Fixed,\" \"Removed\" "
 "などのカテゴリーに整理し、ナビゲーションと理解を容易にします。"
@@ -1565,24 +1565,24 @@ msgstr "**変更の内容**: 新機能、機能強化、バグフィックス、
 #: ../../documentation/repository-files/changelog-file.md:37
 msgid ""
 "**Links to Issues or Pull Requests**: References to relevant issue tracker "
-"items or pull requests associated with each change, enabling users to "
-"access more detailed information if needed."
+"items or pull requests associated with each change, enabling users to access"
+" more detailed information if needed."
 msgstr ""
 "**課題またはプルリクエストへのリンク**: "
 "各変更に関連する課題追跡項目またはプルリクエストへの参照で、ユーザーは必要に応じてより詳細な情報にアクセスできます。"
 
 #: ../../documentation/repository-files/changelog-file.md:39
 msgid ""
-"**Upgrade Instructions**: Guidance for users on how to upgrade to the "
-"latest version, including any breaking changes or migration steps they need"
-" to be aware of."
+"**Upgrade Instructions**: Guidance for users on how to upgrade to the latest"
+" version, including any breaking changes or migration steps they need to be "
+"aware of."
 msgstr "**アップグレード手順**: 最新バージョンへのアップグレード方法に関するガイダンス、注意すべき変更点や移行手順を含みます。"
 
 #: ../../documentation/repository-files/changelog-file.md:41
 msgid ""
 "**Contributor Recognition**: Acknowledgment of contributors who made "
-"significant contributions to the release, fostering a sense of community "
-"and appreciation for their efforts."
+"significant contributions to the release, fostering a sense of community and"
+" appreciation for their efforts."
 msgstr "**コントリビューターの認識**: リリースに多大な貢献をした貢献者を認識し、彼らの努力に対する感謝の気持ちと共同体意識を醸成します。"
 
 #: ../../documentation/repository-files/changelog-file.md:43
@@ -1622,8 +1622,8 @@ msgstr "新しいリリースを作る準備ができたら、要素をその新
 
 #: ../../documentation/repository-files/changelog-file.md:63
 msgid ""
-"This specific release section will sit below the unreleased section and can"
-" include any updates, additions, deprecations and contributors."
+"This specific release section will sit below the unreleased section and can "
+"include any updates, additions, deprecations and contributors."
 msgstr "この特定のリリースセクションは、未リリースセクションの下に位置し、更新、追加、非推奨、貢献者を含むことができます。"
 
 #: ../../documentation/repository-files/changelog-file.md:65
@@ -1667,15 +1667,16 @@ msgstr ""
 msgid ""
 "[fatiando CODE_OF_CONDUCT.md "
 "file](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)"
-msgstr "[fatiandoのCODE_OF_CONDUCT.mdファイル](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)"
+msgstr ""
+"[fatiandoのCODE_OF_CONDUCT.mdファイル](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)"
 
 #: ../../documentation/repository-files/code-of-conduct-file.md:12
 msgid ""
-"Your package should have a `CODE_OF_CONDUCT.md` file located the root of "
-"the repository. Once you have people using your package, you can consider "
-"the package itself as having a community around it. Some of this community "
-"uses your tool. These users may have questions or encounter challenges "
-"using your package."
+"Your package should have a `CODE_OF_CONDUCT.md` file located the root of the"
+" repository. Once you have people using your package, you can consider the "
+"package itself as having a community around it. Some of this community uses "
+"your tool. These users may have questions or encounter challenges using your"
+" package."
 msgstr ""
 "あなたのパッケージには、リポジトリのルートに `CODE_OF_CONDUCT.md` ファイルがあるはずです。 "
 "あなたのパッケージを使っている人がいれば、そのパッケージ自体にコミュニティがあると考えることができます。 "
@@ -1707,9 +1708,8 @@ msgstr ""
 msgid ""
 "The `CODE_OF_CONDUCT` is important as it establishes what you expect in "
 "terms of how users and contributors interact with maintainers and each "
-"other. It also establishes rules and expectations which can then be "
-"enforced if need be to protect others from harmful and/or negative "
-"behaviors."
+"other. It also establishes rules and expectations which can then be enforced"
+" if need be to protect others from harmful and/or negative behaviors."
 msgstr ""
 "`CODE_OF_CONDUCT` "
 "は、利用者や貢献者がメンテナや他の利用者とどのように交流するかという点で、あなたが期待することを定めるものとして重要です。 "
@@ -1717,8 +1717,8 @@ msgstr ""
 
 #: ../../documentation/repository-files/code-of-conduct-file.md:34
 msgid ""
-"If you are not comfortable with creating your own `CODE_OF_CONDUCT` text, "
-"we encourage you to adopt the `CODE_OF_CONDUCT` language used in the "
+"If you are not comfortable with creating your own `CODE_OF_CONDUCT` text, we"
+" encourage you to adopt the `CODE_OF_CONDUCT` language used in the "
 "[Contributor Covenant](https://www.contributor-"
 "covenant.org/version/2/1/code_of_conduct/). [Many other "
 "communities](https://www.contributor-covenant.org/adopters/) have adopted "
@@ -1727,11 +1727,10 @@ msgid ""
 "here.](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)"
 msgstr ""
 "あなた自身の `CODE_OF_CONDUCT` の文章を作成することに抵抗がある場合、 [Contributor "
-"Covenant](https://www.contributor-"
-"covenant.org/version/2/1/code_of_conduct/) で使用されている `CODE_OF_CONDUCT` "
-"の文言を採用することをお勧めします。 [他の多くのコミュニティ](https://www.contributor-"
-"covenant.org/adopters/) はこの `CODE_OF_CONDUCT` を自分たちのものとして採用しています。 [Fatiando"
-" Terra Geoscience "
+"Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)"
+" で使用されている `CODE_OF_CONDUCT` の文言を採用することをお勧めします。 "
+"[他の多くのコミュニティ](https://www.contributor-covenant.org/adopters/) はこの "
+"`CODE_OF_CONDUCT` を自分たちのものとして採用しています。 [Fatiando Terra Geoscience "
 "Pythonコミュニティの例はこちら](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)"
 " を参照してください。"
 
@@ -1743,9 +1742,9 @@ msgstr "あなたのPythonパッケージのCONTRIBUTINGファイル"
 msgid ""
 "The **CONTRIBUTING.md** is the landing page guide for your project's "
 "contributors. It outlines how contributors can get involved, the "
-"contribution types that you welcome, and how contributors should interact "
-"or engage with you and your maintainer team. The contributor guide should "
-"also link to get-started resources that overview how to set up development "
+"contribution types that you welcome, and how contributors should interact or"
+" engage with you and your maintainer team. The contributor guide should also"
+" link to get-started resources that overview how to set up development "
 "environments, what type of workflow you expect on GitHub/GitLab, and "
 "anything else that contributors might need to get started."
 msgstr ""
@@ -1757,8 +1756,8 @@ msgid ""
 "This file benefits maintainers and contributors. For contributors, it "
 "provides a roadmap that helps them get started and makes their first "
 "contribution easier. For maintainers, it answers commonly asked questions "
-"and reduces the burden of explaining your process to every person who wants"
-" to contribute. This document creates a more collaborative and efficient "
+"and reduces the burden of explaining your process to every person who wants "
+"to contribute. This document creates a more collaborative and efficient "
 "development process for everyone."
 msgstr ""
 "このファイルは、メンテナと貢献者に利益をもたらします。コントリビューターにとっては、最初のコントリビューションを容易にするためのロードマップとなります。"
@@ -1792,9 +1791,9 @@ msgstr ""
 
 #: ../../documentation/repository-files/contributing-file.md:15
 msgid ""
-"Including a well-written CONTRIBUTING.md file in your project is one way of"
-" making it more welcoming and open to new and seasoned contributors. It "
-"also helps create a smoother workflow for everyone involved."
+"Including a well-written CONTRIBUTING.md file in your project is one way of "
+"making it more welcoming and open to new and seasoned contributors. It also "
+"helps create a smoother workflow for everyone involved."
 msgstr ""
 "よく書かれた CONTRIBUTING.md "
 "ファイルをプロジェクトに含めることは、新しい貢献者やベテランの貢献者をより歓迎し、オープンにする方法の1つです。また、関係者全員にとって、よりスムーズなワークフローを構築するのにも役立ちます。"
@@ -1805,14 +1804,14 @@ msgstr "歓迎しましょう"
 
 #: ../../documentation/repository-files/contributing-file.md:19
 msgid ""
-"Make the guide welcoming. Use accessible language to encourage "
-"participation from contributors of all experience levels. For example:"
+"Make the guide welcoming. Use accessible language to encourage participation"
+" from contributors of all experience levels. For example:"
 msgstr "歓迎されるガイドにします。あらゆる経験レベルの貢献の参加を促すために、わかりやすい言葉を使います。 例えば:"
 
 #: ../../documentation/repository-files/contributing-file.md:21
 msgid ""
-"Avoid technical jargon or explain terms when necessary (for example, \"fork"
-" the repository\")."
+"Avoid technical jargon or explain terms when necessary (for example, \"fork "
+"the repository\")."
 msgstr "専門用語は避け、必要な場合は用語を説明します (例えば \"リポジトリをフォークする\" など) 。"
 
 #: ../../documentation/repository-files/contributing-file.md:22
@@ -1845,13 +1844,14 @@ msgstr ""
 msgid ""
 "[Verde's contributing "
 "file](https://github.com/fatiando/verde/blob/main/CONTRIBUTING.md)"
-msgstr "[Verdeの貢献ファイル](https://github.com/fatiando/verde/blob/main/CONTRIBUTING.md)"
+msgstr ""
+"[Verdeの貢献ファイル](https://github.com/fatiando/verde/blob/main/CONTRIBUTING.md)"
 
 #: ../../documentation/repository-files/contributing-file.md:34
 msgid ""
-"Your Python package should include a file called **CONTRIBUTING.md** "
-"located in the root of your repository next to [your **README.md** file"
-"](readme-file)."
+"Your Python package should include a file called **CONTRIBUTING.md** located"
+" in the root of your repository next to [your **README.md** file](readme-"
+"file)."
 msgstr ""
 "あなたのPythonパッケージは、リポジトリのルートに [**README.md** ファイル](readme-file) の次に "
 "**CONTRIBUTING.md** というファイルを含むべきです。"
@@ -1897,7 +1897,8 @@ msgstr "貢献者は直接プルリクエスト(PR)を開くべきですか、�
 msgid ""
 "Include instructions for the fork and pull request workflow and link to "
 "resources or guides explaining these steps (if available)."
-msgstr "フォークとプルリクエストのワークフローに関する説明と、 (利用可能な場合は) これらのステップを説明するリソースやガイドへのリンクを含めてください。"
+msgstr ""
+"フォークとプルリクエストのワークフローに関する説明と、 (利用可能な場合は) これらのステップを説明するリソースやガイドへのリンクを含めてください。"
 
 #: ../../documentation/repository-files/contributing-file.md:49
 msgid ""
@@ -1907,33 +1908,33 @@ msgstr "課題、プルリクエスト、質問を提出するユーザーに対
 
 #: ../../documentation/repository-files/contributing-file.md:51
 msgid ""
-"If you have a [development guide](development-guide), link to it. This "
-"guide should provide clear instructions on how to set up your development "
+"If you have a [development guide](development-guide), link to it. This guide"
+" should provide clear instructions on how to set up your development "
 "environment locally. It also should overview CI tools that you have that "
 "could simplify the contribution process (for example, pre-[commit.ci "
-"bot](https://www.pyopensci.org/python-package-guide/package-structure-code"
-"/code-style-linting-format.html#pre-commit-ci), and so on), [linters, code "
-"formatters](https://www.pyopensci.org/python-package-guide/package-"
+"bot](https://www.pyopensci.org/python-package-guide/package-structure-"
+"code/code-style-linting-format.html#pre-commit-ci), and so on), [linters, "
+"code formatters](https://www.pyopensci.org/python-package-guide/package-"
 "structure-code/code-style-linting-format.html#code-linting-formatting-and-"
 "styling-tools), and so on."
 msgstr ""
 "[development guide](development-guide) を持っているなら、リンクしてください。 "
 "このガイドでは、開発環境をローカルにセットアップする方法をわかりやすく説明します。また、貢献のプロセスを簡素化できるようなCIツールについても概説する必要があります"
-" (例えば [commit.ci bot](https://www.pyopensci.org/python-package-guide"
-"/package-structure-code/code-style-linting-format.html#pre-commit-ci) など), "
-"[linters, code formatters](https://www.pyopensci.org/python-package-guide"
-"/package-structure-code/code-style-linting-format.html#code-linting-"
+" (例えば [commit.ci bot](https://www.pyopensci.org/python-package-"
+"guide/package-structure-code/code-style-linting-format.html#pre-commit-ci) "
+"など), [linters, code formatters](https://www.pyopensci.org/python-package-"
+"guide/package-structure-code/code-style-linting-format.html#code-linting-"
 "formatting-and-styling-tools), など。"
 
 #: ../../documentation/repository-files/contributing-file.md:53
-#, fuzzy
 msgid ""
-"This guide should also include information for someone interested in asking"
-" questions. Some projects accept questions as GitHub or GitLab issues. "
-"Others use GitHub Discussions, Discourse, or even a Discord server."
+"This guide should also include information for someone interested in asking "
+"questions. Some projects accept questions as GitHub or GitLab issues. Others"
+" use GitHub Discussions, Discourse, or even a Discord server."
 msgstr ""
-"このガイドには、質問することに興味がある人のための情報も含まれているはずです。 "
-"GitHubやGitLabのissueとして質問を受け付けるプロジェクトもあります。また、GitHubディスカッションやDiscourse、あるいはDiscordサーバーを使う人もいます。"
+"このガイドには、質問することに興味がある人のための情報も含まれているはずです。GitHub や GitLab の issue "
+"として質問を受け付けるプロジェクトもあります。また、GitHub Discussions や Discourse、あるいは Discord "
+"サーバーを使うプロジェクトもあります。"
 
 #: ../../documentation/repository-files/contributing-file.md:56
 msgid "The contributing file should also include:"
@@ -1961,7 +1962,8 @@ msgid ""
 "providing clear instructions, helpful resources, and a welcoming tone, you "
 "make it easier for contributors to get involved and build a stronger, more "
 "collaborative community around your project."
-msgstr "よく練られたCONTRIBUTING.mdファイルは、あなたのプロジェクトのウェルカムマットです！明確な指示、有用なリソース、歓迎ムードを提供することで、貢献者がプロジェクトに参加しやすくなり、より強力で協力的なコミュニティが構築されます。"
+msgstr ""
+"よく練られたCONTRIBUTING.mdファイルは、あなたのプロジェクトのウェルカムマットです！明確な指示、有用なリソース、歓迎ムードを提供することで、貢献者がプロジェクトに参加しやすくなり、より強力で協力的なコミュニティが構築されます。"
 
 #: ../../documentation/repository-files/development-guide.md:2
 msgid "What the development guide for your Python package should contain"
@@ -1975,8 +1977,7 @@ msgid ""
 "show technically proficient users how to:"
 msgstr ""
 "理想的には、あなたのパッケージは開発ガイドを持つべきです。 このファイルはあなたのパッケージのドキュメントにあり、 "
-"CONTRIBUTING.mdファイル(前述)からリンクされるべきです。 "
-"開発ガイドは、技術的に熟達したユーザに対して、以下の方法を明確に示すべきです:"
+"CONTRIBUTING.mdファイル(前述)からリンクされるべきです。 開発ガイドは、技術的に熟達したユーザに対して、以下の方法を明確に示すべきです:"
 
 #: ../../documentation/repository-files/development-guide.md:8
 msgid "Set up a development environment locally to work on your package"
@@ -1996,16 +1997,17 @@ msgstr "開発ガイドには、次のようなガイドラインもあるはず
 
 #: ../../documentation/repository-files/development-guide.md:14
 msgid ""
-"code standards including docstring style, code format and any specific code"
-" approaches that the package follows."
+"code standards including docstring style, code format and any specific code "
+"approaches that the package follows."
 msgstr "docstringスタイルを含むコード標準、コードフォーマットと、パッケージが従う特定のコードアプローチ。"
 
 #: ../../documentation/repository-files/development-guide.md:16
 msgid ""
-"It's also helpful to specify the types of tests you request if a "
-"contributor submits a new feature or a change to an existing feature that "
-"will not be covered by your existing test suite."
-msgstr "また、既存のテストスイートではカバーできないような新機能や既存機能の変更をコントリビューターが提出する場合、要求するテストの種類を指定しておくと便利です。"
+"It's also helpful to specify the types of tests you request if a contributor"
+" submits a new feature or a change to an existing feature that will not be "
+"covered by your existing test suite."
+msgstr ""
+"また、既存のテストスイートではカバーできないような新機能や既存機能の変更をコントリビューターが提出する場合、要求するテストの種類を指定しておくと便利です。"
 
 #: ../../documentation/repository-files/development-guide.md:18
 msgid ""
@@ -2018,7 +2020,8 @@ msgid "Why a development guide is important"
 msgstr "開発ガイドが重要な理由"
 
 #: ../../documentation/repository-files/development-guide.md:22
-msgid "It's valuable to have a development guide, in the case that you wish to:"
+msgid ""
+"It's valuable to have a development guide, in the case that you wish to:"
 msgstr "開発ガイドを持つことは価値があります、もしそうしたいのであれば:"
 
 #: ../../documentation/repository-files/development-guide.md:25
@@ -2036,14 +2039,16 @@ msgid ""
 "It also is important to pyOpenSci that the maintenance workflow is "
 "documented in the case that we need to help you onboard new maintainers in "
 "the future."
-msgstr "また、pyOpenSciにとって、将来新しいメンテナーの参加を支援する必要がある場合に備えて、メンテナンスのワークフローを文書化しておくことも重要です。"
+msgstr ""
+"また、pyOpenSciにとって、将来新しいメンテナーの参加を支援する必要がある場合に備えて、メンテナンスのワークフローを文書化しておくことも重要です。"
 
 #: ../../documentation/repository-files/development-guide.md:33
 msgid ""
-"A well thought out continuous integration setup in your repository can "
-"allow users to skip building the package locally (especially if they are "
-"just updating text)."
-msgstr "リポジトリによく考えられた継続的インテグレーションのセットアップがあれば、ユーザーはローカルでのパッケージのビルドを省略することができる（特にテキストを更新するだけの場合）。"
+"A well thought out continuous integration setup in your repository can allow"
+" users to skip building the package locally (especially if they are just "
+"updating text)."
+msgstr ""
+"リポジトリによく考えられた継続的インテグレーションのセットアップがあれば、ユーザーはローカルでのパッケージのビルドを省略することができる（特にテキストを更新するだけの場合）。"
 
 #: ../../documentation/repository-files/development-guide.md:38
 msgid ""
@@ -2051,17 +2056,18 @@ msgid ""
 "pyOpenSci requires a package to have in order to be eligible for review. "
 "Some maintainers may also opt to include the development information in "
 "their contributing guide."
-msgstr "開発ガイドは強く推奨されますが、pyOpenSciがレビューの対象とするためにパッケージに要求するファイルではありません。メンテナによっては、コントリビューティングガイドに開発情報を含めることもできます。"
+msgstr ""
+"開発ガイドは強く推奨されますが、pyOpenSciがレビューの対象とするためにパッケージに要求するファイルではありません。メンテナによっては、コントリビューティングガイドに開発情報を含めることもできます。"
 
 #: ../../documentation/repository-files/development-guide.md:44
 msgid ""
 "[The Mozilla Science Lab website has a nice outline of things to consider "
-"when creating a contributing guide](https://mozillascience.github.io"
-"/working-open-workshop/contributing/)"
+"when creating a contributing "
+"guide](https://mozillascience.github.io/working-open-workshop/contributing/)"
 msgstr ""
 "[Mozilla Science "
-"Labのウェブサイトには、寄稿ガイドを作成する際に考慮すべきことの素晴らしいアウトラインがあります](https://mozillascience.github.io"
-"/working-open-workshop/contributing/)"
+"Labのウェブサイトには、寄稿ガイドを作成する際に考慮すべきことの素晴らしいアウトラインがあります](https://mozillascience.github.io/working-"
+"open-workshop/contributing/)"
 
 #: ../../documentation/repository-files/intro.md:1
 msgid "Documentation Files That Should be in your Python Package Repository"
@@ -2070,8 +2076,8 @@ msgstr "Pythonパッケージリポジトリにあるべきドキュメントフ
 #: ../../documentation/repository-files/intro.md:3
 msgid ""
 "In this section of the Python packaging guide, we review all of the files "
-"that you should have in your Python package repository. Your Python package"
-" should, at a minimum have the following files:"
+"that you should have in your Python package repository. Your Python package "
+"should, at a minimum have the following files:"
 msgstr ""
 "Python パッケージングガイドのこのセクションでは、Python パッケージリポジトリにあるべきすべてのファイルをレビューします。 Python "
 "パッケージには最低限以下のファイルが必要です:"
@@ -2089,27 +2095,26 @@ msgstr ""
 
 #: ../../documentation/repository-files/intro.md:13
 msgid ""
-"Image showing that the MovingPandas GitHub repository community health page"
-" with green checks next to each file including a description, README, code "
-"of conduct, contributing, license and issue templates. Note that Security "
+"Image showing that the MovingPandas GitHub repository community health page "
+"with green checks next to each file including a description, README, code of"
+" conduct, contributing, license and issue templates. Note that Security "
 "policy has a yellow circle next to it as that is missing from the repo."
 msgstr ""
 "MovingPandasのGitHubリポジトリコミュニティの健全性を示す画像で、説明、README、行動規範、貢献、ライセンス、課題テンプレートを含む各ファイルの横に緑色のチェックが付いています。"
 " セキュリティポリシーは黄色い丸で囲まれています。"
 
 #: ../../documentation/repository-files/intro.md:19
-#, fuzzy
 msgid ""
-"GitHub community health looks for a readme file among other elements when "
-"it evaluates the community level health of your repository. This example is"
-" from the [MovingPandas GitHub "
-"repo](https://github.com/movingpandas/movingpandas/community) *(screen shot"
-" taken Nov 23 2022)*"
+"GitHub community health looks for a readme file among other elements when it"
+" evaluates the community level health of your repository. This example is "
+"from the [MovingPandas GitHub "
+"repo](https://github.com/movingpandas/movingpandas/community) *(screen shot "
+"taken Nov 23 2022)*"
 msgstr ""
 "GitHub community health は、リポジトリのコミュニティレベルの健全性を評価する際に、他の要素の中から readme "
-"ファイルを探します。この例は、 [MovingPandas GitHub "
-"repo](https://github.com/anitagraser/movingpandas/community) "
-"*(2022年11月23日撮影のスクリーンショット)* からのものです。"
+"ファイルを探します。この例は、[MovingPandas GitHub "
+"リポジトリ](https://github.com/movingpandas/movingpandas/community) からのものです "
+"*(2022年11月23日撮影のスクリーンショット)*"
 
 #: ../../documentation/repository-files/intro.md:22
 msgid ""
@@ -2123,12 +2128,12 @@ msgstr ""
 #: ../../documentation/repository-files/intro.md:26
 msgid ""
 "Screenshot of the Snyk page for movingpandas. It shows that the repository "
-"has a README file, contributing file, code of conduct. It also shows that "
-"it has 30 contributors and no funding. The package health score is 78/100."
+"has a README file, contributing file, code of conduct. It also shows that it"
+" has 30 contributors and no funding. The package health score is 78/100."
 msgstr ""
 "movingpandasのSnykページのスクリーンショットです。 "
-"このリポジトリには、READMEファイル、貢献ファイル、行動規範があることがわかります。 また、30人の貢献者がいて、資金提供はないことがわかります。"
-" パッケージのヘルススコアは78/100です。"
+"このリポジトリには、READMEファイル、貢献ファイル、行動規範があることがわかります。 また、30人の貢献者がいて、資金提供はないことがわかります。 "
+"パッケージのヘルススコアは78/100です。"
 
 #: ../../documentation/repository-files/intro.md:32
 msgid ""
@@ -2140,14 +2145,13 @@ msgstr ""
 "両方のプラットフォームがREADMEファイルを探していることに注目してください。 *(スクリーンショットは2022年11月23日撮影)* 。"
 
 #: ../../documentation/repository-files/license-files.md:8
-#, fuzzy
 msgid "License files for Python open source software"
-msgstr "科学的Pythonオープンソースソフトウェアのライセンスファイル"
+msgstr "Python オープンソースソフトウェアのライセンスファイル"
 
 #: ../../documentation/repository-files/license-files.md:10
 msgid ""
-"Want to learn how to add a license file to your GitHub repository? Check "
-"out this lesson."
+"Want to learn how to add a license file to your GitHub repository? Check out"
+" this lesson."
 msgstr "GitHub リポジトリにライセンスファイルを追加する方法を学びたいですか？ このレッスンを見てみましょう。"
 
 #: ../../documentation/repository-files/license-files.md:17
@@ -2156,10 +2160,11 @@ msgstr "オープンソースライセンスファイルとは何ですか？"
 
 #: ../../documentation/repository-files/license-files.md:19
 msgid ""
-"When we talk about LICENSE files, we are referring to a file in your GitHub"
-" or GitLab repository that contains legally binding language that describes"
-" to your users how they can legally use  (and not use) your package."
-msgstr "LICENSEファイルというのは、GitHubやGitLabのリポジトリにあるファイルのことです。このファイルには、あなたのパッケージをユーザーが合法的に使う（あるいは使わない）方法が書かれています。"
+"When we talk about LICENSE files, we are referring to a file in your GitHub "
+"or GitLab repository that contains legally binding language that describes "
+"to your users how they can legally use  (and not use) your package."
+msgstr ""
+"LICENSEファイルというのは、GitHubやGitLabのリポジトリにあるファイルのことです。このファイルには、あなたのパッケージをユーザーが合法的に使う（あるいは使わない）方法が書かれています。"
 
 #: ../../documentation/repository-files/license-files.md:23
 msgid "Why licenses are important"
@@ -2167,9 +2172,9 @@ msgstr "ライセンスが重要な理由"
 
 #: ../../documentation/repository-files/license-files.md:25
 msgid ""
-"A license file is important for all open source projects because it "
-"protects both you as a maintainer and your users. The license file helps "
-"your users and the community understand:"
+"A license file is important for all open source projects because it protects"
+" both you as a maintainer and your users. The license file helps your users "
+"and the community understand:"
 msgstr ""
 "ライセンスファイルは、メンテナであるあなたとユーザの両方を保護するため、すべてのオープンソースプロジェクトにとって重要です。 "
 "ライセンスファイルは、あなたのユーザとコミュニティの理解を助けます:"
@@ -2192,13 +2197,13 @@ msgstr "などなど。"
 
 #: ../../documentation/repository-files/license-files.md:33
 msgid ""
-"[Read more about why license files are critical in protecting both you as a"
-" maintainer and your users of your scientific Python open source "
-"package.](https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i"
-"-need-to-protect-my-project)"
+"[Read more about why license files are critical in protecting both you as a "
+"maintainer and your users of your scientific Python open source "
+"package.](https://opensource.guide/legal/#just-give-me-the-tldr-on-what-i-"
+"need-to-protect-my-project)"
 msgstr ""
-"[科学的なPythonオープンソースパッケージのメンテナであるあなたとユーザの両方を保護するために、ライセンスファイルが重要である理由についてもっと読む](https://opensource.guide/legal"
-"/#just-give-me-the-tldr-on-what-i-need-to-protect-my-project)"
+"[科学的なPythonオープンソースパッケージのメンテナであるあなたとユーザの両方を保護するために、ライセンスファイルが重要である理由についてもっと読む](https://opensource.guide/legal/#just-"
+"give-me-the-tldr-on-what-i-need-to-protect-my-project)"
 
 #: ../../documentation/repository-files/license-files.md:35
 msgid "Where to store your license"
@@ -2212,20 +2217,20 @@ msgstr "`LICENSE` ファイルは GitHub / GitLab リポジトリのルートに
 
 #: ../../documentation/repository-files/license-files.md:39
 msgid ""
-"Some maintainers customize the language in their license files for specific"
-" reasons. However, if you are just getting started, we suggest that you "
+"Some maintainers customize the language in their license files for specific "
+"reasons. However, if you are just getting started, we suggest that you "
 "select a permissive license and then use the legal language templates "
 "provided both by GitHub and/or the "
 "[choosealicense.com](https://choosealicense.com/) website."
 msgstr ""
-"特定の理由からライセンスファイルの言葉をカスタマイズするメンテナもいます。 しかし、これから始めるのであれば、寛容なライセンスを選択し、GitHubや"
-" [choosealicense.com](https://choosealicense.com/) "
+"特定の理由からライセンスファイルの言葉をカスタマイズするメンテナもいます。 しかし、これから始めるのであれば、寛容なライセンスを選択し、GitHubや "
+"[choosealicense.com](https://choosealicense.com/) "
 "のウェブサイトで提供されている法的な言語テンプレートを使うことをお勧めします。"
 
 #: ../../documentation/repository-files/license-files.md:42
 msgid ""
-"Licenses are legally binding, as such you should avoid trying to create "
-"your own license unless you have the guidance of legal council."
+"Licenses are legally binding, as such you should avoid trying to create your"
+" own license unless you have the guidance of legal council."
 msgstr "ライセンスには法的拘束力があるため、法律顧問の指導がない限り、独自のライセンスを作成しようとするのは避けるべきです。"
 
 #: ../../documentation/repository-files/license-files.md:44
@@ -2233,18 +2238,17 @@ msgid "Use open permissive licenses when possible"
 msgstr "可能な限りオープンパーミッシブライセンスを使用する"
 
 #: ../../documentation/repository-files/license-files.md:46
-#, fuzzy
 msgid ""
 "We generally suggest that you use a permissive, license that is [Open "
-"Software Initiative (OSI) approved](https://opensource.org/license). If you"
-" are [submitting your package to pyOpenSci for peer "
+"Software Initiative (OSI) approved](https://opensource.org/license). If you "
+"are [submitting your package to pyOpenSci for peer "
 "review](https://www.pyopensci.org/about-peer-review/index.html), then we "
 "require an OSI approved license."
 msgstr ""
-"一般的に、 [Open Software Initiative (OSI) "
-"approved](https://opensource.org/licenses/)の寛容なライセンスを使用することを推奨します。 "
-"もしあなたが[査読のためにpyOpenSciにパッケージを提出する](https://www.pyopensci.org/about-peer-"
-"review/index.html) のであれば、OSIが承認したライセンスが必要です。"
+"一般的には、[Open Software Initiative (OSI) "
+"承認済み](https://opensource.org/license)のパーミッシブなライセンスを使用することをお勧めします。[pyOpenSci "
+"に査読のためにパッケージを提出する](https://www.pyopensci.org/about-peer-"
+"review/index.html)場合は、OSI 承認済みのライセンスが必要です。"
 
 #: ../../documentation/repository-files/license-files.md:50
 msgid "Copyleft licenses"
@@ -2253,13 +2257,13 @@ msgstr "コピーレフトのライセンス"
 #: ../../documentation/repository-files/license-files.md:51
 msgid ""
 "The other major category of licenses are [\"copyleft\" "
-"licenses](https://en.wikipedia.org/wiki/Copyleft). Copyleft licenses "
-"require people that use your work to redistribute it with the same (or "
-"greater) rights to modify, copy, share, and redistribute it. In other "
-"words, copyleft licenses prohibit someone taking your work, making a "
-"proprietary version of it, and redistributing it without providing the "
-"source code so others can do the same. Copyleft licenses are \"sticky\" in "
-"that they are designed to ensure that more free software is created."
+"licenses](https://en.wikipedia.org/wiki/Copyleft). Copyleft licenses require"
+" people that use your work to redistribute it with the same (or greater) "
+"rights to modify, copy, share, and redistribute it. In other words, copyleft"
+" licenses prohibit someone taking your work, making a proprietary version of"
+" it, and redistributing it without providing the source code so others can "
+"do the same. Copyleft licenses are \"sticky\" in that they are designed to "
+"ensure that more free software is created."
 msgstr ""
 "ライセンスのもう一つの大きなカテゴリーは、 [\"コピーレフト\" "
 "ライセンスです](https://en.wikipedia.org/wiki/Copyleft) "
@@ -2275,8 +2279,8 @@ msgid ""
 "cultural divide in free and open source software (e.g., see "
 "{footcite}`hunterReclaimingComputingCommons2016`, "
 "{footcite}`gnuprojectWhatFreeSoftware2019`, "
-"{footcite}`gnuprojectWhatCopyleft2022`). It is important to understand this"
-" difference when choosing your license. Copyleft licenses represents the "
+"{footcite}`gnuprojectWhatCopyleft2022`). It is important to understand this "
+"difference when choosing your license. Copyleft licenses represents the "
 "\"free\" part of \"free and open source software\". Free and open source "
 "software is intrinsically political, and it is important to be aware of "
 "power dynamics in computing as well as the practical problems of license "
@@ -2306,36 +2310,36 @@ msgstr ""
 msgid ""
 "If you choose your license when creating a new GitHub repository, you can "
 "also automatically get a text copy of the license file to add to your "
-"repository. However in some cases the license that you want is not "
-"available through that online process."
+"repository. However in some cases the license that you want is not available"
+" through that online process."
 msgstr ""
-"GitHub リポジトリの新規作成時にライセンスを選択すると、自動的にライセンスファイルのテキストコピーを取得してリポジトリに追加することもできます。"
-" しかし、オンラインプロセスでは希望のライセンスが取得できないこともあります。"
+"GitHub リポジトリの新規作成時にライセンスを選択すると、自動的にライセンスファイルのテキストコピーを取得してリポジトリに追加することもできます。 "
+"しかし、オンラインプロセスでは希望のライセンスが取得できないこともあります。"
 
 #: ../../documentation/repository-files/license-files.md:71
 msgid "License recommendations from the SciPy package"
 msgstr "SciPyパッケージからのライセンス勧告"
 
 #: ../../documentation/repository-files/license-files.md:72
-#, fuzzy
 msgid ""
 "[The SciPy documentation has an excellent overview of "
 "licenses.](https://docs.scipy.org/doc/scipy/dev/core-"
-"dev/index.html#licensing) One of the key elements that these docs recommend"
-" is ensuring that the license that you select is compatible with licenses "
-"used in many parts of the scientific Python ecosystem. Below is a highlight"
-" of this text which outlines license that are compatible with the modified "
+"dev/index.html#licensing) One of the key elements that these docs recommend "
+"is ensuring that the license that you select is compatible with licenses "
+"used in many parts of the scientific Python ecosystem. Below is a highlight "
+"of this text which outlines license that are compatible with the modified "
 "BSD license that SciPy uses."
 msgstr ""
-"[SciPyのドキュメントには、ライセンスの優れた概要があります](https://docs.scipy.org/doc/scipy/dev"
-"/core-dev/index.html#licensing) 。 "
-"これらのドキュメントが推奨する重要な要素の一つは、選択するライセンスが科学的なPythonのエコシステムのコアで使用されているライセンスと相補的であることを確認することです。"
-" 以下は、SciPyが使用している修正BSDライセンスと互換性のあるライセンスの概要です。"
+"[SciPy "
+"のドキュメントには、ライセンスに関する優れた概要があります。](https://docs.scipy.org/doc/scipy/dev/core-"
+"dev/index.html#licensing) これらのドキュメントが推奨する重要な要素の一つは、選択したライセンスが科学 Python "
+"エコシステムの多くの部分で使用されているライセンスと互換性があることを確認することです。以下は、SciPy が使用している修正 BSD "
+"ライセンスと互換性のあるライセンスを概説したこのテキストの抜粋です。"
 
 #: ../../documentation/repository-files/license-files.md:78
 msgid ""
-"Other licenses that are compatible with the modified BSD license that SciPy"
-" uses are 2-clause BSD, MIT and PSF. Incompatible licenses are GPL, Apache "
+"Other licenses that are compatible with the modified BSD license that SciPy "
+"uses are 2-clause BSD, MIT and PSF. Incompatible licenses are GPL, Apache "
 "and custom licenses that require attribution/citation or prohibit use for "
 "commercial purposes."
 msgstr ""
@@ -2344,40 +2348,42 @@ msgstr ""
 
 #: ../../documentation/repository-files/license-files.md:80
 msgid ""
-"If your primary goal is for your code to be used by other, major packages "
-"in the scientific ecosystem, we also recommend that you consider using "
-"either BSD or MIT as your license. If you are unsure, the MIT license tends"
-" to be a simpler easier-to-understand option."
+"If your primary goal is for your code to be used by other, major packages in"
+" the scientific ecosystem, we also recommend that you consider using either "
+"BSD or MIT as your license. If you are unsure, the MIT license tends to be a"
+" simpler easier-to-understand option."
 msgstr ""
 "もしあなたのコードが、科学的エコシステムの他の主要なパッケージで使われることを第一の目的としているのであれば、BSDかMITのどちらかのライセンスを使うことを検討することも推奨します。"
 " よくわからない場合、MITライセンスはよりシンプルで理解しやすい選択肢となる傾向があります。"
 
 #: ../../documentation/repository-files/license-files.md:85
 msgid ""
-"Important: make sure that you closely follow the guidelines outlines by the"
-" License that you chose"
+"Important: make sure that you closely follow the guidelines outlines by the "
+"License that you chose"
 msgstr "重要：選択したライセンスのガイドラインに忠実に従うこと"
 
 #: ../../documentation/repository-files/license-files.md:87
 msgid ""
-"Every license has different guidelines in terms of what code you can use in"
-" your package and also how others can (or can not) use the code in your "
+"Every license has different guidelines in terms of what code you can use in "
+"your package and also how others can (or can not) use the code in your "
 "package."
-msgstr "どのライセンスも、あなたがパッケージの中でどのようなコードを使うことができるか、また、他の人があなたのパッケージの中のコードをどのように使うことができるか(あるいは使うことができないか)という点で、異なるガイドラインを持っています。"
+msgstr ""
+"どのライセンスも、あなたがパッケージの中でどのようなコードを使うことができるか、また、他の人があなたのパッケージの中のコードをどのように使うことができるか(あるいは使うことができないか)という点で、異なるガイドラインを持っています。"
 
 #: ../../documentation/repository-files/license-files.md:90
 msgid ""
 "If you borrow code from other tools or online sources, make sure that the "
-"license for the code that you are using also complies with the license that"
-" you selected for your package."
-msgstr "他のツールやオンラインソースからコードを借用する場合は、使用するコードのライセンスが、あなたがパッケージに選択したライセンスにも準拠していることを確認してください。"
+"license for the code that you are using also complies with the license that "
+"you selected for your package."
+msgstr ""
+"他のツールやオンラインソースからコードを借用する場合は、使用するコードのライセンスが、あなたがパッケージに選択したライセンスにも準拠していることを確認してください。"
 
 #: ../../documentation/repository-files/license-files.md:94
 msgid ""
-"A useful way to think about license compatibility is the distinction "
-"between **\"inbound\"** and **\"outbound\"** compatibility. \"Inbound\" "
-"licenses are those that cover the software you plan to include in your "
-"package. Your package is protected by an \"outbound\" license."
+"A useful way to think about license compatibility is the distinction between"
+" **\"inbound\"** and **\"outbound\"** compatibility. \"Inbound\" licenses "
+"are those that cover the software you plan to include in your package. Your "
+"package is protected by an \"outbound\" license."
 msgstr ""
 "ライセンスの互換性について考えるのに便利なのは、 **\"inbound\"** と **\"outbound\"** の互換性という区別です。 "
 "\"Inbound\" ライセンスとは、あなたがパッケージに含める予定のソフトウェアをカバーするライセンスです。あなたのパッケージは "
@@ -2385,14 +2391,14 @@ msgstr ""
 
 #: ../../documentation/repository-files/license-files.md:98
 msgid ""
-"**Permissive licenses** like BSD and MIT have few **outbound** restrictions"
-" - they can be used in any way by downstream consumers, including making "
-"them proprietary. This is why they are favored by many businesses and large"
-" packages that want to be adopted by businesses. Permissive licenses have "
+"**Permissive licenses** like BSD and MIT have few **outbound** restrictions "
+"- they can be used in any way by downstream consumers, including making them"
+" proprietary. This is why they are favored by many businesses and large "
+"packages that want to be adopted by businesses. Permissive licenses have "
 "more **inbound** restrictions - they can't use software that requires more "
 "freedoms to be preserved than they do, like copyleft licenses. A package "
-"licensed under MIT needs to take special care when including or modifying a"
-" package licensed under the GPL-3."
+"licensed under MIT needs to take special care when including or modifying a "
+"package licensed under the GPL-3."
 msgstr ""
 "BSDやMITのような **Permissive licenses** は、 **outbound** の制限がほとんどありません - "
 "専有化も含めて、ダウンストリームのカスタマーがどのようにでも使用することができます。 "
@@ -2402,12 +2408,12 @@ msgstr ""
 
 #: ../../documentation/repository-files/license-files.md:103
 msgid ""
-"**Copyleft licenses** like GPL-3 have more **outbound** restrictions - they"
-" require more of packages that include, use, modify, and reproduce them. "
-"This is the purpose of copyleft licenses, to ensure that derivative works "
-"remain free and open source. They have fewer **inbound** restrictions - a "
-"GPL-3 licensed package can include any other permissively licensed and most"
-" copyleft licensed packages."
+"**Copyleft licenses** like GPL-3 have more **outbound** restrictions - they "
+"require more of packages that include, use, modify, and reproduce them. This"
+" is the purpose of copyleft licenses, to ensure that derivative works remain"
+" free and open source. They have fewer **inbound** restrictions - a GPL-3 "
+"licensed package can include any other permissively licensed and most "
+"copyleft licensed packages."
 msgstr ""
 "GPL-3のような **Copyleft licenses** は、より **outbound** の制限があります - "
 "それらは、それらを含み、使用し、変更し、複製するパッケージにより多くを要求します。 "
@@ -2460,9 +2466,9 @@ msgstr "StackOverflowを例に、ライセンスによってコードの使用�
 #: ../../documentation/repository-files/license-files.md:123
 msgid ""
 "[Stack Overflow uses a Creative Commons Share Alike "
-"license.](https://stackoverflow.com/help/licensing). The sharealike license"
-" requires you to use the same sharealike license when you reuse any code "
-"from Stack Overflow."
+"license.](https://stackoverflow.com/help/licensing). The sharealike license "
+"requires you to use the same sharealike license when you reuse any code from"
+" Stack Overflow."
 msgstr ""
 "[Stack OverflowはCreative Commons Share "
 "Alikeライセンスを使用しています。](https://stackoverflow.com/help/licensing) "
@@ -2494,20 +2500,18 @@ msgid "What about software citation?"
 msgstr "ソフトウェアの引用についてはどうだろうか？"
 
 #: ../../documentation/repository-files/license-files.md:133
-#, fuzzy
 msgid ""
 "While many permissive licenses do not require citation, we strongly "
 "encourage that you cite all software that you use in papers, blogs, and "
-"other publications. You tell your users how to cite your package by using a"
-" [citation.cff file](https://docs.github.com/en/repositories/managing-your-"
+"other publications. You tell your users how to cite your package by using a "
+"[citation.cff file](https://docs.github.com/en/repositories/managing-your-"
 "repositorys-settings-and-features/customizing-your-repository/about-"
 "citation-files)."
 msgstr ""
-"多くの寛容なライセンスは引用を必要としませんが、わたしたちは、あなたが論文やブログ、その他の出版物で使用するすべてのソフトウェアを引用することを強く推奨します。"
-" あなたは、 [citation.cff ファイル](https://docs.github.com/en/repositories"
-"/managing-your-repositorys-settings-and-features/customizing-your-"
-"repository/about-citation-files) を使うことで、あなたのパッケージの引用方法をユーザに伝えることができます。 "
-"このトピックについては、Zenodoを使ってパッケージのDOIを作成する際に説明します。"
+"多くのパーミッシブなライセンスは引用を必要としませんが、論文やブログ、その他の出版物で使用するすべてのソフトウェアを引用することを強くお勧めします。[citation.cff"
+" ファイル](https://docs.github.com/en/repositories/managing-your-repositorys-"
+"settings-and-features/customizing-your-repository/about-citation-files) "
+"を使うことで、パッケージの引用方法をユーザーに伝えることができます。"
 
 #: ../../documentation/repository-files/license-files.md:136
 msgid ""
@@ -2517,17 +2521,18 @@ msgstr "ソフトウェアの引用に関する追加リソース The Turing Way
 
 #: ../../documentation/repository-files/license-files.md:139
 msgid ""
-"[CITATION.cff files](https://book.the-turing-way.org/communication/citable"
-"/citable-cff) — detailed guide on creating and maintaining citation files"
+"[CITATION.cff files](https://book.the-turing-"
+"way.org/communication/citable/citable-cff) — detailed guide on creating and "
+"maintaining citation files"
 msgstr ""
-"[CITATION.cff files](https://book.the-turing-way.org/communication/citable"
-"/citable-cff) — 引用ファイルの作成と管理に関する詳細なガイド"
+"[CITATION.cff files](https://book.the-turing-"
+"way.org/communication/citable/citable-cff) — 引用ファイルの作成と管理に関する詳細なガイド"
 
 #: ../../documentation/repository-files/license-files.md:140
 msgid ""
-"[Software citation pathways](https://book.the-turing-way.org/pathways"
-"/pathways-software-citation) — overview of how software citation works in "
-"practice"
+"[Software citation pathways](https://book.the-turing-"
+"way.org/pathways/pathways-software-citation) — overview of how software "
+"citation works in practice"
 msgstr ""
 "[ソフトウェア引用経路](https://book.the-turing-way.org/pathways/pathways-software-"
 "quote) — ソフトウェア引用が実際にどのように機能するかの概要"
@@ -2552,12 +2557,12 @@ msgstr "リポジトリに追加する cycling.cff ファイル"
 
 #: ../../documentation/repository-files/license-files.md:148
 msgid ""
-"When you add a `CITATION.cff` file to your repository, GitHub automatically"
-" detects it and displays a \"Cite this repository\" button. This makes it "
+"When you add a `CITATION.cff` file to your repository, GitHub automatically "
+"detects it and displays a \"Cite this repository\" button. This makes it "
 "easy for users to properly cite your software. The file contains "
-"standardized citation information that tools and services can automatically"
-" read and use. GitHub will generate both APA and BibTeX citation formats "
-"for users."
+"standardized citation information that tools and services can automatically "
+"read and use. GitHub will generate both APA and BibTeX citation formats for "
+"users."
 msgstr ""
 "`CITATION.cff` ファイルをリポジトリに追加すると、GitHub はそれを自動的に検出し、[このリポジトリを引用] "
 "ボタンを表示します。これにより、ユーザーがソフトウェアを適切に引用することが容易になります。このファイルには、ツールやサービスが自動的に読み取って使用できる標準化された引用情報が含まれています。"
@@ -2571,8 +2576,8 @@ msgstr "citation.cff ファイル内での日付の追跡方法"
 msgid ""
 "The citation file tracks important dates for your software. The `date-"
 "released` field shows when the current version was released. The `date-"
-"published` field shows when the software was first made available. You also"
-" include a `version` field with the specific version number."
+"published` field shows when the software was first made available. You also "
+"include a `version` field with the specific version number."
 msgstr ""
 "引用ファイルは、ソフトウェアの重要な日付を追跡します。 「date-"
 "release」フィールドには、現在のバージョンがいつリリースされたかが表示されます。 "
@@ -2590,8 +2595,8 @@ msgstr "Zenodo との統合"
 
 #: ../../documentation/repository-files/license-files.md:158
 msgid ""
-"Citation.cff files work well with Zenodo, which is a popular place to store"
-" research software and get DOIs. When you create a Zenodo release, it can "
+"Citation.cff files work well with Zenodo, which is a popular place to store "
+"research software and get DOIs. When you create a Zenodo release, it can "
 "automatically pull information from your citation file. This keeps your "
 "citation information the same between GitHub and Zenodo. You can also "
 "include your Zenodo DOI in the citation file. Each time you make a new "
@@ -2629,7 +2634,8 @@ msgid "The README.md file is the landing page of:"
 msgstr "README.mdファイルは、そのランディングページです:"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:11
-msgid "Your package as it appears on a repository site such as PyPI or Anaconda.org"
+msgid ""
+"Your package as it appears on a repository site such as PyPI or Anaconda.org"
 msgstr "PyPIやAnaconda.orgのようなリポジトリサイトに表示されているあなたのパッケージ"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:12
@@ -2650,8 +2656,7 @@ msgid ""
 msgstr ""
 "[GitHub community health for MovingPandas (available for all "
 "repositories)](https://github.com/movingpandas/movingpandas/community) と "
-"[Snyk - MovingPandas example](https://snyk.io/advisor/python/movingpandas) "
-"。"
+"[Snyk - MovingPandas example](https://snyk.io/advisor/python/movingpandas) 。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:19
 msgid ""
@@ -2671,14 +2676,14 @@ msgstr ""
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:25
 msgid ""
-"Your GitHub repository landing page highlights the README.md file. Here you"
-" can see the README.md file for the pyOpenSci package "
+"Your GitHub repository landing page highlights the README.md file. Here you "
+"can see the README.md file for the pyOpenSci package "
 "[Pandera](https://github.com/unionai-oss/pandera). *(screen shot taken Nov "
 "23 2022)*"
 msgstr ""
 "GitHub リポジトリのランディングページは README.md ファイルをハイライトします。ここでは、pyOpenSciパッケージ "
-"[Pandera](https://github.com/unionai-oss/pandera) のREADME.mdファイルを見ることができます。"
-" *(スクリーンショットは2022年11月23日撮影)* 。"
+"[Pandera](https://github.com/unionai-oss/pandera) のREADME.mdファイルを見ることができます。 "
+"*(スクリーンショットは2022年11月23日撮影)* 。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:28
 msgid ""
@@ -2693,7 +2698,8 @@ msgid ""
 msgstr "READMEファイルが以下に指定された基準を満たしていない場合、編集者または編集長はレビュー開始前に修正を依頼します。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:35
-msgid "Please go through this list before submitting your package to pyOpenSci"
+msgid ""
+"Please go through this list before submitting your package to pyOpenSci"
 msgstr "あなたのパッケージをpyOpenSciに投稿する前に、このリストに目を通してください。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:52
@@ -2702,8 +2708,8 @@ msgstr "README.mdファイルの内容"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:54
 msgid ""
-"Your **README.md** file should contain the following things (listed from "
-"top to bottom):"
+"Your **README.md** file should contain the following things (listed from top"
+" to bottom):"
 msgstr "**README.md** ファイルには、（上から順番に）以下のことが書かれているはずです："
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:56
@@ -2712,8 +2718,8 @@ msgstr "✔️ パッケージ名"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:58
 msgid ""
-"Ideally your GitHub repository's name is also the name of your package. The"
-" more self explanatory that name is, the better."
+"Ideally your GitHub repository's name is also the name of your package. The "
+"more self explanatory that name is, the better."
 msgstr "GitHub リポジトリの名前がパッケージの名前にもなっているのが理想的です。 説明しやすい名前であればあるほどよいでしょう。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:61
@@ -2744,7 +2750,8 @@ msgid ""
 msgstr "READMEファイルの一番上に、他の人がすぐに閲覧できるようにバッジのコレクションを提供するのが一般的です。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:72
-msgid "Some badges that you might consider adding to your README file include:"
+msgid ""
+"Some badges that you might consider adding to your README file include:"
 msgstr "READMEファイルへの追加を検討すべきバッジには、以下のようなものがあります:"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:74
@@ -2764,16 +2771,15 @@ msgid "PyPI version shields.io"
 msgstr "PyPIバージョン shields.io"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:78
-#, fuzzy
 msgid ""
-"Status of tests (pass or fail) - Example: [![CI Build](https://github.com"
-"/unionai-"
-"oss/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com"
-"/unionai-oss/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)"
+"Status of tests (pass or fail) - Example: [![CI "
+"Build](https://github.com/unionai-"
+"oss/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com/unionai-"
+"oss/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)"
 msgstr ""
-"テストのステータス(合格または不合格) - 例: [![CI Build](https://github.com/pandera-"
-"dev/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com"
-"/pandera-dev/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)"
+"テストのステータス(合格または不合格) - 例: [![CI Build](https://github.com/unionai-"
+"oss/pandera/workflows/CI%20Tests/badge.svg?branch=main)](https://github.com/unionai-"
+"oss/pandera/actions?query=workflow%3A%22CI+Tests%22+branch%3Amain)"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:78
 msgid "CI Build"
@@ -2805,15 +2811,14 @@ msgid "DOI"
 msgstr "DOI"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:85
-#, fuzzy
 msgid ""
-"Once you package is accepted to pyOpenSci, we will provide you with a badge"
-" to add to your repository that shows that it has been reviewed. "
+"Once you package is accepted to pyOpenSci, we will provide you with a badge "
+"to add to your repository that shows that it has been reviewed. "
 "[![pyOpenSci](https://www.pyopensci.org/badges/peer-"
 "reviewed.svg)](https://github.com/pyOpenSci/software-submission/issues/12)"
 msgstr ""
-"あなたのパッケージがpyOpenSciに受理されると、あなたのリポジトリにレビュー済みであることを示すバッジを提供します。 "
-"[![pyOpenSci](https://pyopensci.org/badges/peer-"
+"パッケージが pyOpenSci "
+"に受理されると、レビュー済みであることを示すバッジをリポジトリに追加するように提供します。[![pyOpenSci](https://www.pyopensci.org/badges/peer-"
 "reviewed.svg)](https://github.com/pyOpenSci/software-submission/issues/12)"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:85
@@ -2822,8 +2827,8 @@ msgstr "pyOpenSci"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:92
 msgid ""
-"Beware of the overuse of badges! There is such a thing as too much of a "
-"good thing (which can overload a potential user!)."
+"Beware of the overuse of badges! There is such a thing as too much of a good"
+" thing (which can overload a potential user!)."
 msgstr "バッジの使い過ぎに注意！ 過ぎたるは及ばざるが如し(潜在的なユーザーを過負荷にする可能性があります!)。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:95
@@ -2832,12 +2837,13 @@ msgstr "✔️ あなたのパッケージが何をするのかを短く、わ�
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:97
 msgid ""
-"At the top of your README file you should have a short, easy-to-understand,"
-" 1-3 sentence description of what your package does. This section should "
+"At the top of your README file you should have a short, easy-to-understand, "
+"1-3 sentence description of what your package does. This section should "
 "clearly state your goals for the package. The language in this description "
 "should use less technical terms so that a variety of users with varying "
 "scientific (and development) backgrounds can understand it."
-msgstr "READMEファイルの一番上に、あなたのパッケージが何をするのか、短く、わかりやすく、1-3文の説明を書くべきです。このセクションには、パッケージの目標を明記します。この説明では、科学的（および開発的）背景が異なるさまざまなユーザーが理解できるように、専門用語をあまり使わないようにすべきです。"
+msgstr ""
+"READMEファイルの一番上に、あなたのパッケージが何をするのか、短く、わかりやすく、1-3文の説明を書くべきです。このセクションには、パッケージの目標を明記します。この説明では、科学的（および開発的）背景が異なるさまざまなユーザーが理解できるように、専門用語をあまり使わないようにすべきです。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:103
 msgid ""
@@ -2861,8 +2867,8 @@ msgstr ""
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:112
 msgid ""
-"The goal of this description is to maximize accessibility of your "
-"**README** file."
+"The goal of this description is to maximize accessibility of your **README**"
+" file."
 msgstr "この記述の目的は、 **README** ファイルへのアクセシビリティを最大化することです。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:116
@@ -2871,10 +2877,11 @@ msgstr "✔️ インストール手順"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:118
 msgid ""
-"Include instructions for installing your package. If you have published the"
-" package on both PyPI and Anaconda.org, be sure to include instructions for"
-" both."
-msgstr "パッケージのインストール手順を含めます。 PyPIとAnaconda.orgの両方でパッケージを公開している場合は、必ず両方の説明を含めてください。"
+"Include instructions for installing your package. If you have published the "
+"package on both PyPI and Anaconda.org, be sure to include instructions for "
+"both."
+msgstr ""
+"パッケージのインストール手順を含めます。 PyPIとAnaconda.orgの両方でパッケージを公開している場合は、必ず両方の説明を含めてください。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:121
 msgid "✔️ Document any additional setup required"
@@ -2922,21 +2929,22 @@ msgstr "良いことのあまり"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:143
 msgid ""
-"Try to avoid including several tutorials in the README.md file itself. This"
-" too will overwhelm the user with information."
+"Try to avoid including several tutorials in the README.md file itself. This "
+"too will overwhelm the user with information."
 msgstr "README.mdファイル自体に複数のチュートリアルを含めるのはなるべく避けてください。 これもユーザーを情報で圧倒してしまいます。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:145
 msgid ""
-"A short quick-start code example that shows someone how to use your package"
-" is plenty of content for the README file. All other tutorials and "
+"A short quick-start code example that shows someone how to use your package "
+"is plenty of content for the README file. All other tutorials and "
 "documentation should be presented as descriptive links."
 msgstr ""
 "READMEファイルの内容は、あなたのパッケージの使い方を示す短いクイックスタートのコード例で十分です。 "
 "他のすべてのチュートリアルやドキュメントは、説明的なリンクとして表示されるべきです。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:151
-msgid "✔️ A Community Section with Links to Contributing Guide, Code of Conduct"
+msgid ""
+"✔️ A Community Section with Links to Contributing Guide, Code of Conduct"
 msgstr "✔️ 貢献ガイド、行動規範へのリンクがあるコミュニティセクション"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:153
@@ -2972,10 +2980,10 @@ msgstr "✔️ 引用情報"
 #: ../../documentation/repository-files/readme-file-best-practices.md:165
 msgid ""
 "Finally be sure to include instructions on how to cite your package. "
-"Citation should include the DOI that you want used when citing your "
-"package, and any language that you'd like to see associated with the "
-"citation."
-msgstr "最後に、パッケージの引用方法を必ず明記してください。引用には、パッケージを引用する際に使用してほしいDOIと、引用に関連する言語を含めてください。"
+"Citation should include the DOI that you want used when citing your package,"
+" and any language that you'd like to see associated with the citation."
+msgstr ""
+"最後に、パッケージの引用方法を必ず明記してください。引用には、パッケージを引用する際に使用してほしいDOIと、引用に関連する言語を含めてください。"
 
 #: ../../documentation/repository-files/readme-file-best-practices.md:169
 msgid "README Resources"
@@ -3006,9 +3014,9 @@ msgstr ""
 #: ../../documentation/repository-files/readme-file-best-practices.md:178
 #, python-format
 msgid ""
-"[Standard Readme - Richard Littauer](https://github.com/RichardLitt"
-"/standard-readme) [![standard-readme "
-"compliant](https://img.shields.io/badge/readme%20style-standard-"
+"[Standard Readme - Richard "
+"Littauer](https://github.com/RichardLitt/standard-readme) [![standard-readme"
+" compliant](https://img.shields.io/badge/readme%20style-standard-"
 "brightgreen.svg)](https://github.com/RichardLitt/standard-readme)"
 msgstr ""
 "[標準 Readme - Richard Littauer](https://github.com/RichardLitt/standard-"
@@ -3035,8 +3043,8 @@ msgstr "Pythonパッケージのドキュメントにチュートリアルを作
 msgid ""
 "Your package should have tutorials that make it easy for a user to get "
 "started using your package. Ideally, those tutorials also can be run from "
-"start to finish providing a second set of checks (on top of your test "
-"suite) to your package's code base."
+"start to finish providing a second set of checks (on top of your test suite)"
+" to your package's code base."
 msgstr ""
 "パッケージには、ユーザが簡単にパッケージを使い始められるようなチュートリアルがあるべきです。 "
 "理想的には、チュートリアルは最初から最後まで実行することができ、パッケージのコードベースに対する (テストスイートの上にある) "
@@ -3068,8 +3076,10 @@ msgid ""
 msgstr "チュートリアルを簡単にパッケージに追加できるSphinxのツールが2つあります:"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:22
-msgid "[Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) and"
-msgstr "[Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) と"
+msgid ""
+"[Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) and"
+msgstr ""
+"[Sphinx Gallery](https://sphinx-gallery.github.io/stable/index.html) と"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:23
 msgid "[NbSphinx](https://nbsphinx.readthedocs.io/en/latest/)"
@@ -3087,8 +3097,8 @@ msgstr "ユーザーがチュートリアルをサムネイルで見ることが
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:28
 msgid ""
-"Run the code in your tutorials adding another level of \"testing\" for your"
-" package as used."
+"Run the code in your tutorials adding another level of \"testing\" for your "
+"package as used."
 msgstr "チュートリアルのコードを実行し、使用するパッケージの \"テスト\" をもう一段階追加する。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:29
@@ -3101,10 +3111,10 @@ msgstr "[sphinx gallery:](https://sphinx-gallery.github.io/stable/index.html)"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:33
 msgid ""
-"If you prefer to write your tutorials using Python **.py** scripts, you may"
-" enjoy using Sphinx gallery. Sphinx gallery uses **.py** files with text "
-"and code sections that mimic the Jupyter Notebook format. When you build "
-"your documentation, the gallery extension:"
+"If you prefer to write your tutorials using Python **.py** scripts, you may "
+"enjoy using Sphinx gallery. Sphinx gallery uses **.py** files with text and "
+"code sections that mimic the Jupyter Notebook format. When you build your "
+"documentation, the gallery extension:"
 msgstr ""
 "もしPythonの **.py** スクリプトを使ってチュートリアルを書きたいのであれば、Sphinx galleryを使うと楽しいでしょう。 "
 "Sphinx galleryは、Jupyter Notebookのフォーマットを模倣した、テキストとコードのセクションを持つ **.py** "
@@ -3131,19 +3141,20 @@ msgstr ""
 msgid ""
 "Creates a rendered  **.html** page with the code elements and code outputs "
 "in a user-friendly tutorial gallery."
-msgstr "レンダリングされた **.html** ページを作成し、ユーザーフレンドリーなチュートリアルギャラリーにコード要素とコード出力を表示します。"
+msgstr ""
+"レンダリングされた **.html** ページを作成し、ユーザーフレンドリーなチュートリアルギャラリーにコード要素とコード出力を表示します。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:41
 msgid ""
-"Creates a gallery landing page with visual thumbnails for each tutorial "
-"that you create."
+"Creates a gallery landing page with visual thumbnails for each tutorial that"
+" you create."
 msgstr "作成した各チュートリアルのビジュアルサムネイル付きギャラリーランディングページを作成します。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:44
 msgid ""
 "Image showing the gallery output provided by sphinx-gallery where each "
-"tutorial is in a grid and the tutorial thumbnails are created from a "
-"graphic in the tutorial."
+"tutorial is in a grid and the tutorial thumbnails are created from a graphic"
+" in the tutorial."
 msgstr ""
 "画像はsphinx-"
 "galleryによって提供されるギャラリーの出力を示しており、各チュートリアルはグリッド内にあり、チュートリアルのサムネイルはチュートリアルのグラフィックから作成されます。"
@@ -3151,16 +3162,17 @@ msgstr ""
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:50
 msgid ""
 "`sphinx-gallery` makes it easy to create a user-friendly tutorial gallery. "
-"Each tutorial has a download link where the user can download a **.py** "
-"file or a Jupyter Notebook. And it renders the tutorials in a user-friendly"
-" grid."
+"Each tutorial has a download link where the user can download a **.py** file"
+" or a Jupyter Notebook. And it renders the tutorials in a user-friendly "
+"grid."
 msgstr ""
 "`sphinx-gallery` は、ユーザーフレンドリーなチュートリアルギャラリーを簡単に作成することができます。 "
 "それぞれのチュートリアルにはダウンロードリンクがあり、ユーザーは **.py** ファイルやJupyter "
 "Notebookをダウンロードすることができます。 また、チュートリアルはユーザーフレンドリーなグリッドで表示されます。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:54
-msgid "Below you can see what a tutorial looks like created with sphinx-gallery."
+msgid ""
+"Below you can see what a tutorial looks like created with sphinx-gallery."
 msgstr "下記はsphinx-galleryで作成したチュートリアルの様子です。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:56
@@ -3174,11 +3186,11 @@ msgstr ""
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:62
 msgid ""
 "`sphinx-gallery` tutorials by default include download links for both the "
-"python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at "
-"the bottom."
+"python script (**.py** file) and a Jupyter notebook (**.ipynb** file) at the"
+" bottom."
 msgstr ""
-"`sphinx-gallery` のチュートリアルは、デフォルトでは、Pythonスクリプト (**.py** ファイル)とJupyterノートブック"
-" (**.ipynb** ファイル)のダウンロードリンクが下部に含まれています。"
+"`sphinx-gallery` のチュートリアルは、デフォルトでは、Pythonスクリプト (**.py** ファイル)とJupyterノートブック "
+"(**.ipynb** ファイル)のダウンロードリンクが下部に含まれています。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:66
 msgid "Sphinx Gallery benefits"
@@ -3189,7 +3201,8 @@ msgid "easy-to-download notebook and .py outputs for each tutorials."
 msgstr "簡単にダウンロードできるノートブックと各チュートリアルの .py 出力。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:68
-msgid ".py files are easy to work with in the GitHub pull request environment."
+msgid ""
+".py files are easy to work with in the GitHub pull request environment."
 msgstr ".pyファイルはGitHubのプルリクエスト環境で簡単に扱えます。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:69
@@ -3259,8 +3272,8 @@ msgid ""
 "If you prefer to use Jupyter Notebooks to create tutorials you can use "
 "nbsphinx. nbsphinx operates similarly to Sphinx gallery in that:"
 msgstr ""
-"もしチュートリアルを作成するのにJupyter "
-"Notebooksを使いたい場合は、nbsphinxを使うことができます。nbsphinxはSphinx galleryと同じように動作します:"
+"もしチュートリアルを作成するのにJupyter Notebooksを使いたい場合は、nbsphinxを使うことができます。nbsphinxはSphinx"
+" galleryと同じように動作します:"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:119
 msgid "It runs your notebooks and produces outputs in the rendered tutorials"
@@ -3268,16 +3281,15 @@ msgstr "ノートブックを実行し、レンダリングされたチュート
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:121
 msgid ""
-"Pro/con By default it does not support downloading of **.py** and "
-"**.ipynb** files. However you can add a [link to the notebook at the top of"
-" the page with some additional conf.py settings (see: epilog "
-"settings)](https://nbsphinx.readthedocs.io/en/0.8.10/prolog-and-"
-"epilog.html)"
+"Pro/con By default it does not support downloading of **.py** and **.ipynb**"
+" files. However you can add a [link to the notebook at the top of the page "
+"with some additional conf.py settings (see: epilog "
+"settings)](https://nbsphinx.readthedocs.io/en/0.8.10/prolog-and-epilog.html)"
 msgstr ""
 "Pro/con デフォルトでは **.py** と **.ipynb** ファイルのダウンロードをサポートしていません。 しかし、 "
 "[conf.pyの設定(epilog "
-"settingsを参照)を追加したノートブックへのリンク](https://nbsphinx.readthedocs.io/en/0.8.10"
-"/prolog-and-epilog.html) を追加することができます。"
+"settingsを参照)を追加したノートブックへのリンク](https://nbsphinx.readthedocs.io/en/0.8.10/prolog-"
+"and-epilog.html) を追加することができます。"
 
 #: ../../documentation/write-user-documentation/create-package-tutorials.md:125
 msgid ""
@@ -3304,10 +3316,9 @@ msgstr "APIとは何か？"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:6
 msgid ""
-"API stands for **A**pplied **P**rogramming **I**nterface. When discussed in"
-" the context of a (Python) package, the API refers to the functions, "
-"classes, methods, and attributes that a package maintainer creates for "
-"users."
+"API stands for **A**pplied **P**rogramming **I**nterface. When discussed in "
+"the context of a (Python) package, the API refers to the functions, classes,"
+" methods, and attributes that a package maintainer creates for users."
 msgstr ""
 "API は **A**pplied **P**rogramming **I**nterface の略です。 "
 "(Pythonの)パッケージの文脈で議論される場合、APIはパッケージメンテナがユーザーのために作成する関数、クラス、メソッド、属性を指します。"
@@ -3340,14 +3351,14 @@ msgid ""
 "In Python, a docstring refers to text in a function, method or class that "
 "describes what the function does and its inputs and outputs. Python "
 "programmers usually refer to the inputs to functions as "
-"[\"parameters\"](https://docs.python.org/3/glossary.html#term-parameter) or"
-" [\"arguments\"](https://docs.python.org/3/faq/programming.html#faq-"
-"argument-vs-parameter), and the outputs are often called \"return values\""
+"[\"parameters\"](https://docs.python.org/3/glossary.html#term-parameter) or "
+"[\"arguments\"](https://docs.python.org/3/faq/programming.html#faq-argument-"
+"vs-parameter), and the outputs are often called \"return values\""
 msgstr ""
 "Pythonにおいてdocstringとは、関数、メソッド、クラスにおいて、その関数が何を行うのか、その入出力を記述したテキストを指します。 "
 "Pythonプログラマは通常、関数への入力を "
-"[\"parameters\"](https://docs.python.org/3/glossary.html#term-parameter) "
-"または [\"arguments\"](https://docs.python.org/3/faq/programming.html#faq-"
+"[\"parameters\"](https://docs.python.org/3/glossary.html#term-parameter) または"
+" [\"arguments\"](https://docs.python.org/3/faq/programming.html#faq-"
 "argument-vs-parameter) と呼び、出力を \"return values\" と呼ぶことが多いです。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:23
@@ -3356,8 +3367,8 @@ msgstr "docstringは以下のために重要です:"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:25
 msgid ""
-"When you call `help()` in Python, for example, `help(add_numbers)` will "
-"show the text of the function's docstring. The docstring thus helps a user "
+"When you call `help()` in Python, for example, `help(add_numbers)` will show"
+" the text of the function's docstring. The docstring thus helps a user "
 "better understand how to apply the function more effectively to their "
 "workflow."
 msgstr ""
@@ -3366,10 +3377,11 @@ msgstr ""
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:26
 msgid ""
-"When you build your package's documentation, the docstrings can also be "
-"used to automatically create full API documentation that provides a clean "
-"view of all its functions, classes, methods, and attributes."
-msgstr "パッケージのドキュメントを作成するとき、docstringsを使用して、すべての関数、クラス、メソッド、属性をきれいに表示する完全なAPIドキュメントを自動的に作成することもできます。"
+"When you build your package's documentation, the docstrings can also be used"
+" to automatically create full API documentation that provides a clean view "
+"of all its functions, classes, methods, and attributes."
+msgstr ""
+"パッケージのドキュメントを作成するとき、docstringsを使用して、すべての関数、クラス、メソッド、属性をきれいに表示する完全なAPIドキュメントを自動的に作成することもできます。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:29
 msgid ""
@@ -3379,10 +3391,9 @@ msgstr "パッケージ内のすべての関数、クラス、メソッド、属
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:30
 msgid ""
-"[View example high-level API documentation for the Verde package. This page"
-" lists every function and class in the package along with a brief "
-"explanation of what it "
-"does](https://www.fatiando.org/verde/latest/api/index.html)"
+"[View example high-level API documentation for the Verde package. This page "
+"lists every function and class in the package along with a brief explanation"
+" of what it does](https://www.fatiando.org/verde/latest/api/index.html)"
 msgstr ""
 "[Verdeパッケージの高レベルAPIドキュメントの例をご覧ください。 "
 "このページには、パッケージ内のすべての関数とクラスが、その機能の簡単な説明とともに一覧表示されています](https://www.fatiando.org/verde/latest/api/index.html)"
@@ -3392,7 +3403,8 @@ msgid ""
 "[You can further dig down to see what a specific function does within the "
 "package by clicking on an API "
 "element](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)"
-msgstr "[APIエレメントをクリックすることで、パッケージ内で特定の関数が何を行っているかをさらに掘り下げて確認することができます](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)"
+msgstr ""
+"[APIエレメントをクリックすることで、パッケージ内で特定の関数が何を行っているかをさらに掘り下げて確認することができます](https://www.fatiando.org/verde/latest/api/generated/verde.grid_coordinates.html#verde.grid_coordinates)"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:34
 msgid "Python package API documentation"
@@ -3403,13 +3415,14 @@ msgid ""
 "If you have a descriptive docstring for every user-facing class, method, "
 "attribute and/or function in your package (_within reason_), then your "
 "package's API is considered well-documented."
-msgstr "もし、あなたのパッケージのすべてのユーザー向けクラス、メソッド、属性、関数に説明的なdocstringがあれば（_合理的な範囲内で_）、そのパッケージのAPIは十分に文書化されているとみなされます。"
+msgstr ""
+"もし、あなたのパッケージのすべてのユーザー向けクラス、メソッド、属性、関数に説明的なdocstringがあれば（_合理的な範囲内で_）、そのパッケージのAPIは十分に文書化されているとみなされます。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:39
 msgid ""
-"In Python, this means that you need to add a docstring for every user-"
-"facing class, method, attribute and/or function in your package (_within "
-"reason_) that:"
+"In Python, this means that you need to add a docstring for every user-facing"
+" class, method, attribute and/or function in your package (_within reason_) "
+"that:"
 msgstr ""
 "Pythonの場合、これは、パッケージ内のすべてのユーザー向けのクラス、メソッド、属性、および/または関数について、 (_無理のない範囲で_) "
 "docstringを追加する必要があることを意味します:"
@@ -3419,11 +3432,13 @@ msgid "Explains what the function, method, attribute, or class does"
 msgstr "関数、メソッド、属性、またはクラスが何をするのかを説明します"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:44
-msgid "Defines the `type` inputs and outputs (ie. `string`, `int`, `np.array`)"
+msgid ""
+"Defines the `type` inputs and outputs (ie. `string`, `int`, `np.array`)"
 msgstr "入力と出力の `type` を定義します( `string` 、 `int` 、 `np.array` など)"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:45
-msgid "Explains the expected output `return` of the object, method or function."
+msgid ""
+"Explains the expected output `return` of the object, method or function."
 msgstr "オブジェクト、メソッド、関数の期待される出力 `return` を説明する。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:48
@@ -3438,11 +3453,13 @@ msgstr "Pythonのdocstringフォーマットには、パッケージを文書化
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:53
 msgid ""
-"[NumPy-style](https://numpydoc.readthedocs.io/en/latest/format.html"
-"#docstring-standard)"
+"[NumPy-"
+"style](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-"
+"standard)"
 msgstr ""
-"[NumPy-style](https://numpydoc.readthedocs.io/en/latest/format.html"
-"#docstring-standard)"
+"[NumPy-"
+"style](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-"
+"standard)"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:54
 msgid ""
@@ -3463,19 +3480,19 @@ msgstr ""
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:59
 msgid ""
 "We suggest using [NumPy-style "
-"docstrings](https://numpydoc.readthedocs.io/en/latest/format.html"
-"#docstring-standard) for your Python documentation because:"
+"docstrings](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-"
+"standard) for your Python documentation because:"
 msgstr ""
 "Pythonのドキュメントには [NumPy-style "
-"docstrings](https://numpydoc.readthedocs.io/en/latest/format.html"
-"#docstring-standard) を使うことをお勧めします:"
+"docstrings](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-"
+"standard) を使うことをお勧めします:"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:62
 msgid ""
 "NumPy style docstrings are core to the scientific Python ecosystem and "
 "defined in the [NumPy style "
-"guide](https://numpydoc.readthedocs.io/en/latest/format.html). Thus you "
-"will find them widely used there."
+"guide](https://numpydoc.readthedocs.io/en/latest/format.html). Thus you will"
+" find them widely used there."
 msgstr ""
 "NumPyスタイルのdocstringは、科学的なPythonエコシステムの中核であり、 "
 "[NumPyスタイルガイド](https://numpydoc.readthedocs.io/en/latest/format.html) "
@@ -3483,10 +3500,10 @@ msgstr ""
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:63
 msgid ""
-"The Numpy style docstring is simplified and thus easier to read both in the"
-" code and when calling `help()` in Python. In contrast, some feel that reST"
-" style docstrings are harder to quickly scan, and can take up more lines of"
-" code in modules."
+"The Numpy style docstring is simplified and thus easier to read both in the "
+"code and when calling `help()` in Python. In contrast, some feel that reST "
+"style docstrings are harder to quickly scan, and can take up more lines of "
+"code in modules."
 msgstr ""
 "Numpyスタイルのドキュメントストリングは単純化されているので、コード内でもPythonで `help()` "
 "を呼び出すときでも読みやすくなっています。 "
@@ -3515,8 +3532,8 @@ msgid ""
 "function's docstring describes the function's inputs and the function's "
 "output (or return value). The initial description of the function is short "
 "(one line). Following that single-line description, there is a slightly "
-"longer description of what the function does (2 to 3 sentences). The return"
-" of the function is also specified."
+"longer description of what the function does (2 to 3 sentences). The return "
+"of the function is also specified."
 msgstr ""
 "以下はよく文書化された関数の良い例です。 この関数のdocstringには、関数の入力と出力（または戻り値）が記述されていることに注目してください。 "
 "関数の最初の説明は短いです（1行）。 その1行の説明に続いて、関数が何をするのかについて少し長い説明があります（2～3文）。 "
@@ -3536,10 +3553,10 @@ msgstr ""
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:160
 msgid ""
-"Using the above NumPy format docstring in sphinx, the autodoc extension "
-"will create the about documentation section for the `extent_to_json` "
-"function. The output of the `es.extent_to_json(rmnp)` command can even be "
-"tested using doctest adding another quality check to your package."
+"Using the above NumPy format docstring in sphinx, the autodoc extension will"
+" create the about documentation section for the `extent_to_json` function. "
+"The output of the `es.extent_to_json(rmnp)` command can even be tested using"
+" doctest adding another quality check to your package."
 msgstr ""
 "上記のNumPyフォーマットのdocstringをsphinxで使用すると、autodocエクステンションが `extent_to_json` "
 "関数のabout documentationセクションを作成します。  `es.extent_to_json(rmnp)` "
@@ -3553,29 +3570,29 @@ msgstr "doctestを使って、パッケージのメソッドや関数でdocstrin
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:171
 msgid ""
-"Above, we provided some examples of good, better, best docstring formats. "
-"If you are using Sphinx to create your docs, you can add the "
+"Above, we provided some examples of good, better, best docstring formats. If"
+" you are using Sphinx to create your docs, you can add the "
 "[doctest](https://www.sphinx-"
 "doc.org/en/master/usage/extensions/doctest.html) extension to your Sphinx "
-"build. Doctest provides an additional check for docstrings with example "
-"code in them. Doctest runs the example code in your docstring `Examples` "
+"build. Doctest provides an additional check for docstrings with example code"
+" in them. Doctest runs the example code in your docstring `Examples` "
 "checking that the expected output is correct. Similar to running tutorials "
-"in your documentation, `doctest` can be a useful step that assures that "
-"your package's code (API) runs as you expect it to."
+"in your documentation, `doctest` can be a useful step that assures that your"
+" package's code (API) runs as you expect it to."
 msgstr ""
 "上記では、良いdocstringフォーマット、より良いdocstringフォーマット、ベストなdocstringフォーマットの例をいくつか紹介しました。"
 " もしSphinxを使ってドキュメントを作成しているのであれば、 [doctest](https://www.sphinx-"
 "doc.org/en/master/usage/extensions/doctest.html) "
-"という拡張機能をSphinxビルドに追加することができます。Doctestは、サンプルコードを含むdocstringに対して追加のチェックを行います。"
-" Doctest は、docstring `Examples` 内のサンプルコードを実行し、期待される出力が正しいかどうかをチェックします。 "
+"という拡張機能をSphinxビルドに追加することができます。Doctestは、サンプルコードを含むdocstringに対して追加のチェックを行います。 "
+"Doctest は、docstring `Examples` 内のサンプルコードを実行し、期待される出力が正しいかどうかをチェックします。 "
 "ドキュメントのチュートリアルを実行するのと同様に、 `doctest` はパッケージのコード (API) "
 "が期待通りに動作することを保証する便利なステップになります。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:178
 msgid ""
 "It's important to keep in mind that examples in your docstrings help users "
-"using your package. Running `doctest` on those examples provides a check of"
-" your package's API. The doctest ensures that the functions and methods in "
+"using your package. Running `doctest` on those examples provides a check of "
+"your package's API. The doctest ensures that the functions and methods in "
 "your package run as you expect them to. Neither of these items replace a "
 "separate, stand-alone test suite that is designed to test your package's "
 "core functionality across operating systems and Python versions."
@@ -3588,8 +3605,8 @@ msgstr ""
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:186
 msgid ""
 "Below is an example of a docstring with an example. doctest will run the "
-"example below and test that if you provide `add_me` with the values 1 and 3"
-" it will return 4."
+"example below and test that if you provide `add_me` with the values 1 and 3 "
+"it will return 4."
 msgstr "doctestは以下の例を実行し、 `add_me` に1と3の値を与えると4が返されることをテストします。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:219
@@ -3598,15 +3615,15 @@ msgstr "docstringに型ヒントを追加する"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:221
 msgid ""
-"In the example above, you saw the use of numpy-style docstrings to describe"
-" data types that are passed into functions as parameters or into classes as"
-" attributes. In a numpy-style docstring you add those types in the "
-"Parameters section of the docstring. Below you can see that the parameter "
-"`num1` and `num2` should both be a Python `int` (integer) value."
+"In the example above, you saw the use of numpy-style docstrings to describe "
+"data types that are passed into functions as parameters or into classes as "
+"attributes. In a numpy-style docstring you add those types in the Parameters"
+" section of the docstring. Below you can see that the parameter `num1` and "
+"`num2` should both be a Python `int` (integer) value."
 msgstr ""
 "上の例では、パラメータとして関数に渡されるデータ型や、属性としてクラスに渡されるデータ型を記述するために、numpyスタイルのdocstringを使用することを見ました。"
-" numpyスタイルのdocstringでは、docstringのParametersセクションにそれらのデータ型を追加します。 "
-"下の例では、パラメータ `num1` と `num2` は両方とも Python の `int` (整数) 値であるべきであることがわかります。"
+" numpyスタイルのdocstringでは、docstringのParametersセクションにそれらのデータ型を追加します。 下の例では、パラメータ"
+" `num1` と `num2` は両方とも Python の `int` (整数) 値であるべきであることがわかります。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:236
 msgid ""
@@ -3616,9 +3633,9 @@ msgstr "関数やメソッドが必要とするデータ型を記述すること
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:239
 msgid ""
-"Type-hints add another layer of type documentation to your code. Type-hints"
-" make it easier for new developers, your future self or contributors to get"
-" to know your code base quickly."
+"Type-hints add another layer of type documentation to your code. Type-hints "
+"make it easier for new developers, your future self or contributors to get "
+"to know your code base quickly."
 msgstr ""
 "型ヒントは、あなたのコードに型ドキュメントの別のレイヤーを追加します。 "
 "型ヒントは、新しい開発者や将来の自分、あるいは貢献者が、あなたのコードベースについて素早く知ることを容易にします。"
@@ -3632,8 +3649,8 @@ msgstr "型のヒントは関数の定義に追加されます。 以下の例�
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:250
 msgid ""
-"You can further describe the expected function output using `->`. Below the"
-" output of the function is also an int."
+"You can further describe the expected function output using `->`. Below the "
+"output of the function is also an int."
 msgstr "さらに `->` を使って、期待される関数の出力を記述することができます。以下の関数の出力も int です。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:258
@@ -3676,8 +3693,8 @@ msgstr "複雑な入力を必要とする関数を使用しています"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:270
 msgid ""
-"You want to lower the entrance barrier for new contributors to help you "
-"with your code."
+"You want to lower the entrance barrier for new contributors to help you with"
+" your code."
 msgstr "あなたは、あなたのコードを手助けしてくれる新しい貢献者の入り口の障壁を低くしたいです。"
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:272
@@ -3690,9 +3707,9 @@ msgstr "コードに型ヒントを追加する際には、場合によっては
 
 #: ../../documentation/write-user-documentation/document-your-code-api-docstrings.md:277
 msgid ""
-"If you have a complex code base, type hints may make code more difficult to"
-" read. This is especially true when a parameter’s input takes multiple data"
-" types and you list each one."
+"If you have a complex code base, type hints may make code more difficult to "
+"read. This is especially true when a parameter’s input takes multiple data "
+"types and you list each one."
 msgstr ""
 "複雑なコードベースを持っている場合、型ヒントはコードを読みにくくする可能性がある。 "
 "パラメーターの入力が複数のデータ型を取り、それぞれをリストアップする場合は特にそうだ。"
@@ -3736,15 +3753,15 @@ msgstr "以下では、ドキュメントを2つのタイプに大別します�
 
 #: ../../documentation/write-user-documentation/get-started.md:17
 msgid ""
-"**User-facing documentation** refers to documentation that describes the "
-"way the tools within a package are broadly used in workflows. **API "
-"documentation** refers to documentation of functions, classes, methods, and"
-" attributes in your code and is written at a more granular level. This "
+"**User-facing documentation** refers to documentation that describes the way"
+" the tools within a package are broadly used in workflows. **API "
+"documentation** refers to documentation of functions, classes, methods, and "
+"attributes in your code and is written at a more granular level. This "
 "documentation is what a user sees when they type `help(function-name)`."
 msgstr ""
 "**ユーザー向け文書** は、パッケージ内のツールがワークフローで広く使用される方法を説明する文書を指します。 **APIドキュメント** "
-"は、コード内の関数、クラス、メソッド、属性のドキュメントを指し、より細かいレベルで書かれています。 このドキュメントは、ユーザーが `help"
-"(function-name)` とタイプしたときに表示されるものです。"
+"は、コード内の関数、クラス、メソッド、属性のドキュメントを指し、より細かいレベルで書かれています。 このドキュメントは、ユーザーが "
+"`help(function-name)` とタイプしたときに表示されるものです。"
 
 #: ../../documentation/write-user-documentation/get-started.md:23
 msgid ""
@@ -3784,8 +3801,8 @@ msgstr ""
 "**パッケージコード/APIドキュメント:** パッケージの関数、クラス、メソッド、属性（API）もドキュメント化されるべきです。 "
 "APIドキュメントは、あなたのコードにある "
 "[docstrings](https://pandas.pydata.org/docs/development/contributing_docstring.html)"
-" から生成することができます。 理想的には、Pythonパッケージ内のすべてのユーザー向けの関数、クラス、メソッドのdocstringがあることです。"
-" [コードドキュメンテーションとdocstringについてはこちらで詳しく説明します。](document-your-code-api-"
+" から生成することができます。 理想的には、Pythonパッケージ内のすべてのユーザー向けの関数、クラス、メソッドのdocstringがあることです。 "
+"[コードドキュメンテーションとdocstringについてはこちらで詳しく説明します。](document-your-code-api-"
 "docstrings)"
 
 #: ../../documentation/write-user-documentation/get-started.md:32
@@ -3794,10 +3811,10 @@ msgstr "使いやすい文書を書く"
 
 #: ../../documentation/write-user-documentation/get-started.md:34
 msgid ""
-"User-facing documentation should be published on a easy-to-navigate "
-"website. The documentation should be written keeping in mind that users may"
-" not be developers or expert-level programmers. Rather, the language that "
-"you use in your documentation should not be highly technical."
+"User-facing documentation should be published on a easy-to-navigate website."
+" The documentation should be written keeping in mind that users may not be "
+"developers or expert-level programmers. Rather, the language that you use in"
+" your documentation should not be highly technical."
 msgstr ""
 "ユーザー向けのドキュメントは、閲覧しやすいウェブサイトで公開されるべきである。 "
 "ドキュメントは、ユーザーが開発者や専門家レベルのプログラマーではないことを念頭に置いて書かれるべきです。 "
@@ -3831,28 +3848,30 @@ msgstr "優れたオープンソース・ドキュメントのランディング
 msgid ""
 "To make it easy for users to find what they need quickly, consider adding "
 "quick links on your package's landing page to the following elements:"
-msgstr "ユーザーが必要なものをすぐに見つけられるように、パッケージのランディングページに以下の要素へのクイックリンクを追加することを検討してください:"
+msgstr ""
+"ユーザーが必要なものをすぐに見つけられるように、パッケージのランディングページに以下の要素へのクイックリンクを追加することを検討してください:"
 
 #: ../../documentation/write-user-documentation/get-started.md:52
 msgid ""
-"**Getting started:** This section should provide the user with a quick "
-"start for installing your package. A small example of how to use the "
-"package is good to have here as well. Or you can link to useful tutorials "
-"in the get started section."
+"**Getting started:** This section should provide the user with a quick start"
+" for installing your package. A small example of how to use the package is "
+"good to have here as well. Or you can link to useful tutorials in the get "
+"started section."
 msgstr ""
-"**Getting started:** このセクションは、あなたのパッケージをインストールするためのクイックスタート をユーザーに提供するものです。"
-" パッケージの使い方の小さな例もここにあると良いでしょう。 または、便利なチュートリアルへのリンクを、スタートセクションに置くこともできます。"
+"**Getting started:** このセクションは、あなたのパッケージをインストールするためのクイックスタート をユーザーに提供するものです。 "
+"パッケージの使い方の小さな例もここにあると良いでしょう。 または、便利なチュートリアルへのリンクを、スタートセクションに置くこともできます。"
 
 #: ../../documentation/write-user-documentation/get-started.md:53
-msgid "**About:** Describe your project,  stating its goals and its functionality."
+msgid ""
+"**About:** Describe your project,  stating its goals and its functionality."
 msgstr "**About:** プロジェクトについて、その目標と機能を説明してください。"
 
 #: ../../documentation/write-user-documentation/get-started.md:54
 msgid ""
-"**Community:** Instructions for how to help and/or get involved. This might"
-" include links to your issues (if that is where you let users ask "
-"questions) or the discussion part of your GitHub repo. This section might "
-"include a development guide for those who might contribute to your package."
+"**Community:** Instructions for how to help and/or get involved. This might "
+"include links to your issues (if that is where you let users ask questions) "
+"or the discussion part of your GitHub repo. This section might include a "
+"development guide for those who might contribute to your package."
 msgstr ""
 "**Community:** どのように手伝ったり、参加したりするかについての説明。 このセクションには、issue "
 "(ユーザーに質問できるようにしている場合) や GitHub リポジトリのディスカッションへのリンクが含まれます。 "
@@ -3860,8 +3879,8 @@ msgstr ""
 
 #: ../../documentation/write-user-documentation/get-started.md:55
 msgid ""
-"**API Documentation:** This is the detailed project documentation. Here you"
-" store documentation for your package's API including all user-facing "
+"**API Documentation:** This is the detailed project documentation. Here you "
+"store documentation for your package's API including all user-facing "
 "functions, classes, methods, and attributes as well as any additional high "
 "level discussion that will help people use your package."
 msgstr ""
@@ -3889,8 +3908,8 @@ msgstr ""
 #: ../../documentation/write-user-documentation/get-started.md:67
 msgid ""
 "NOTE: in many cases you can include your **README** file and your "
-"**CONTRIBUTING** files in your documentation given those files may have "
-"some of the components listed above."
+"**CONTRIBUTING** files in your documentation given those files may have some"
+" of the components listed above."
 msgstr ""
 "NOTE: 多くの場合、 **README** ファイルと **CONTRIBUTING** "
 "ファイルをドキュメントに含めることができま、これらのファイルには、上に挙げた構成要素のいくつかが含まれているかもしれません。"
@@ -3907,8 +3926,8 @@ msgstr "Pythonパッケージのユーザー向けドキュメントを書く"
 
 #: ../../documentation/write-user-documentation/intro.md:3
 msgid ""
-"This section walks you through best practices for with writing "
-"documentation for your Python package."
+"This section walks you through best practices for with writing documentation"
+" for your Python package."
 msgstr "このセクションでは、Python パッケージのドキュメント作成のベストプラクティスを説明します。"
 
 #: ../../documentation/write-user-documentation/intro.md:6
@@ -3916,12 +3935,13 @@ msgid ""
 "We talk about the elements that you should consider adding to your "
 "documentation, the different types of users who might read your "
 "documentation and how to create tutorials for your package."
-msgstr "ドキュメントに追加することを検討すべき要素、ドキュメントを読む可能性のあるさまざまなタイプのユーザー、パッケージのチュートリアルを作成する方法について話します。"
+msgstr ""
+"ドキュメントに追加することを検討すべき要素、ドキュメントを読む可能性のあるさまざまなタイプのユーザー、パッケージのチュートリアルを作成する方法について話します。"
 
 #: ../../documentation/write-user-documentation/intro.md:10
 msgid ""
-"Here we also cover sphinx extensions that you can user to make "
-"documentation easier such as:"
+"Here we also cover sphinx extensions that you can user to make documentation"
+" easier such as:"
 msgstr "ここでは、ドキュメンテーションを容易にするために使用できるsphinxの拡張機能についても説明します:"
 
 #: ../../documentation/write-user-documentation/intro.md:13
@@ -3931,6 +3951,5 @@ msgid ""
 msgstr "autodocは、あなたのコードの関数、クラス、メソッド、属性（APIドキュメント）のドキュメントを自動生成します。"
 
 #: ../../documentation/write-user-documentation/intro.md:15
-#, fuzzy
 msgid "sphinx gallery for tutorials."
-msgstr "チュートリアルのためのsphinxギャラリー。"
+msgstr "チュートリアルのための sphinx ギャラリー。"
