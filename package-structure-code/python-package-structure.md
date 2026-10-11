@@ -133,6 +133,8 @@ Including the **tests/** directory in your **src/package** directory ensures tha
 
 Be sure to read the [pytest documentation for more about including tests in your package distribution](https://docs.pytest.org/en/7.2.x/explanation/goodpractices.html#choosing-a-test-layout-import-rules).
 
+If you decide to ship tests with your package, see [shipping tests with your package](in-tree-tests) for how to lay them out and run them with `pytest --pyargs`.
+
 :::{admonition} Challenges with including tests and data in a package wheel
 :class: tip
 
