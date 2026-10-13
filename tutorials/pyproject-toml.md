@@ -502,9 +502,11 @@ Finally, add the project.urls table to your pyproject.toml file.
 
 `project.urls` contains links that are relevant for your project. You might want to include:
 
-- **Homepage:** A link to your published documentation for your project. If you are working through this tutorial, then you may not have this link yet. That's ok, you can skip it for the time being.
-- **Bug reports:** a link to your issues/discussions or wherever you want users to report bugs.
+- **Homepage:** A link to your project’s website. For many packages this is often the documentation site. If you are working through this tutorial, then you may not have this link yet. That's ok, you can skip it for the time being.
+- **Issues:** a link to your issues/discussions or wherever you want users to report bugs.
 - **Source:** the GitHub / GitLab link for your project.
+
+These three names are on the PyPA list of [well-known project URL labels](https://packaging.python.org/en/latest/specifications/well-known-project-urls/#well-known-labels). The list lets package indexes such as PyPI present project URLs in a consistent way, so pick a label from it when one fits.
 
 {emphasize-lines="34-37"}
 ```toml
@@ -543,12 +545,12 @@ classifiers = [
 
 [project.urls] # Optional
 "Homepage" = "https://www.pyopensci.org"
-"Bug Reports" = "https://github.com/pyopensci/pyosmeta/issues"
+"Issues" = "https://github.com/pyopensci/pyosmeta/issues"
 "Source" = "https://github.com/pyopensci/pyosmeta/"
 ```
 
 :::{tip}
-There are many other urls that you can add here. Check out the [README file here for an overview](https://github.com/patrick91/links-demo).
+There are many other urls that you can add here, such as `Documentation`, `Changelog` or `Funding` from the same list. Check out the [README file here for an overview](https://github.com/patrick91/links-demo).
 :::
 
 ## Putting it all together - your completed pyproject.toml file
@@ -592,7 +594,7 @@ classifiers = [
 
 [project.urls] # Optional
 "Homepage" = "https://www.pyopensci.org"
-"Bug Reports" = "https://github.com/pyopensci/pyosmeta/issues"
+"Issues" = "https://github.com/pyopensci/pyosmeta/issues"
 "Source" = "https://github.com/pyopensci/pyosmeta/"
 ```
 
@@ -660,7 +662,7 @@ license = "MIT"
 # Add urls for your home page, issue tracker and source code
 [project.urls] # Optional
 "Homepage" = "https://www.pyopensci.org"
-"Bug Reports" = "https://github.com/pyopensci/pyospackage/issues"
+"Issues" = "https://github.com/pyopensci/pyospackage/issues"
 #"Funding" = ""
 "Source" = "https://github.com/pyopensci/pyospackage"
 ```
