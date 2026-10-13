@@ -502,7 +502,7 @@ Finally, add the project.urls table to your pyproject.toml file.
 
 `project.urls` contains links that are relevant for your project. You might want to include:
 
-- **Homepage:** A link to your published documentation for your project. If you are working through this tutorial, then you may not have this link yet. That's ok, you can skip it for the time being.
+- **Homepage:** A link to your project’s website. For many packages this is often the documentation site. If you are working through this tutorial, then you may not have this link yet. That's ok, you can skip it for the time being.
 - **Issues:** a link to your issues/discussions or wherever you want users to report bugs.
 - **Source:** the GitHub / GitLab link for your project.
 
