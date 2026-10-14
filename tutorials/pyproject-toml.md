@@ -376,10 +376,10 @@ Commas are used to separate individual dependencies, and each package in your `d
 
 ```toml
 dependencies = [
-  "numpy>=1.0",      # Greater than or equal to 1.0
-  "requests==10.1",  # Exactly 10.1
-  "pandas",          # Any version
-  "pydantic>=1.7,<2" # Greater than or equal to 1.7, but less than 2
+  "numpy>=1.0",        # Greater than or equal to 1.0
+  "requests==2.32.3",  # Exactly 2.32.3
+  "pandas",            # Any version
+  "pydantic>=1.7,<2"   # Greater than or equal to 1.7, but less than 2
 ]
 ```
 
@@ -409,7 +409,7 @@ maintainers = [
 readme = "README.md"
 license = "MIT"
 
-dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
+dependencies = ["numpy>=1.0", "requests==2.32.3", "pandas", "pydantic>=1.7,<2"]
 ```
 
 :::{admonition} Pin dependencies with caution
@@ -482,7 +482,7 @@ maintainers = [
 readme = "README.md"
 license = "MIT"
 
-dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
+dependencies = ["numpy>=1.0", "requests==2.32.3", "pandas", "pydantic>=1.7,<2"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -532,7 +532,7 @@ maintainers = [
 readme = "README.md"
 license = "MIT"
 
-dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
+dependencies = ["numpy>=1.0", "requests==2.32.3", "pandas", "pydantic>=1.7,<2"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -581,7 +581,7 @@ maintainers = [
 readme = "README.md"
 license = "MIT"
 
-dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
+dependencies = ["numpy>=1.0", "requests==2.32.3", "pandas", "pydantic>=1.7,<2"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -650,7 +650,7 @@ classifiers = [
 ]
 
 
-dependencies = ["numpy>=1.0", "requests==10.1", "pandas", "pydantic>=1.7,<2"]
+dependencies = ["numpy>=1.0", "requests==2.32.3", "pandas", "pydantic>=1.7,<2"]
 # This is the metadata that pip reads to understand what versions your package supports
 readme = "README.md"
 
