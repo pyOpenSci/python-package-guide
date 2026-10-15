@@ -318,26 +318,56 @@ At this point, you should have:
 
 You are now ready to install (and build) your Python package!
 
-While you can do this using Hatch, we will use pip for this lesson, so you can see how to install your tool into your preferred environment.
+While Hatch can create an environment and install your package for you
+(you'll learn how in the [Hatch environments lesson](develop-python-package-hatch)),
+this lesson uses `pip` directly so you can see what is happening when a
+package is installed into a Python environment.
 
-First, open your preferred shell (Windows users may use something like GitBash) and `cd` into your project directory if you are not already there.
-- Activate the Python environment that you wish to use.
-- Run `python -m pip install -e .`
+First, open your preferred shell (Windows users may use something like GitBash)
+and `cd` into your project directory if you are not already there.
 
-:::{todo}
-Add this back in when the lesson is published
-- Activate the Python environment that you wish to use. If you need help with working with virtual environments check out this lesson (add link).
+Next, activate the Python environment that you wish to use. We recommend
+installing packages that you are developing into a virtual environment
+rather than your system Python. If you don't have one yet:
+
+- **conda:** install [Miniforge](https://conda-forge.org/download/) (or
+  [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)),
+  then run `conda create -n pyosdev python`
+- **venv:** ships with Python; run `python -m venv .venv` in your project
+  directory. See the [venv docs](https://docs.python.org/3/library/venv.html).
+
+Then activate it:
+
+::::{tab-set}
+
+:::{tab-item} conda
+```bash
+> conda activate pyosdev
+(pyosdev) >
+```
 :::
 
+:::{tab-item} venv (macOS / Linux)
 ```bash
-# Activate your environment using conda or venv
-# Below we use conda but you can do the same thing with venv!
-> conda activate pyosdev
-(pyosdev)
-> conda info
-    active environment : pyosdev
-    active env location : /Users/your-path/mambaforge/envs/pyosdev
-# Cd into your project directory
+> source .venv/bin/activate
+(.venv) >
+```
+:::
+
+:::{tab-item} venv (Windows)
+```powershell
+> .venv\Scripts\activate
+(.venv) >
+```
+:::
+
+::::
+
+Your prompt will show the environment name once it is active. Now install
+your package:
+
+```bash
+# Cd into your project directory (if you are not already there)
 > cd pyospackage
 # Install your package
 > python -m pip install -e .
@@ -348,8 +378,7 @@ Obtaining file:///Users/leahawasser/Documents/GitHub/pyos/pyosPackage
   Getting requirements to build editable ... done
 
 # Check to see if the package is installed
-> conda list
-# use pip list instead of conda list here if you are working in an venv environment rather than a conda envt
+> python -m pip list
 ```
 
 :::{admonition}  What does `python -m pip install -e .` do?
