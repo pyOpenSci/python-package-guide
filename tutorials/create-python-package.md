@@ -320,8 +320,8 @@ You are now ready to install (and build) your Python package!
 
 While Hatch can create an environment and install your package for you
 (you'll learn how in the [Hatch environments lesson](develop-python-package-hatch)),
-this lesson uses `pip` directly so you can see what is happening when a
-package is installed into a Python environment.
+this lesson uses `pip` to install your package, so you can see what is happening when a
+package is installed into a Python environment that you create.
 
 First, open your preferred shell (Windows users may use something like GitBash)
 and `cd` into your project directory if you are not already there.
