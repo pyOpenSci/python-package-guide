@@ -281,7 +281,7 @@ Pixi is "conda-first." By default, `pixi add` installs packages from conda chann
 # Initialize new project
 pixi init
 
-# Add packages from conda-forge (the default)
+# Add packages from conda-forge (Pixi's default)
 pixi add numpy gdal
 
 # Add packages from PyPI (only if a package isn't on conda-forge)
