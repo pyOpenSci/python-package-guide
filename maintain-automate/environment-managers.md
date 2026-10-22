@@ -294,7 +294,7 @@ pixi run python script.py
 pixi shell
 ```
 
-The commands above produce a manifest like this:
+The commands above produce output toml file (also known as a manifest) that describes your environment setup like this:
 
 ```toml
 [workspace]
