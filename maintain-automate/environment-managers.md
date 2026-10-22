@@ -310,7 +310,7 @@ gdal = ">=3.11,<4"
 scipy = ">=1.16.3, <2"
 ```
 
-Here, Pixi installs `numpy` and `gdal` from conda-forge and only `scipy` from PyPI. You can confirm where each package came from with `pixi list`.
+Here, Pixi installs `numpy` and `gdal` from conda-forge and `scipy` from PyPI. You can confirm where each package came from with `pixi list`.
 
 This is the same outcome as creating a conda environment, installing `numpy` and `gdal` with conda, and then running `pip install scipy` inside it. The difference is that the conda-vs-PyPI split is declared explicitly in the manifest and captured in the lock file, so there is no ambiguity about how a given dependency will be resolved at install time.
 
