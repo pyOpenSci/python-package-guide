@@ -62,7 +62,7 @@ plot = ["bokeh"]
 test = ["pytest", "pytest-cov"]
 docs = ["sphinx", "pydata-sphinx-theme"]
 
-[tool.ruff]
+[tool.ruff.lint]
 select = [
     "E", # pycodestyle errors
     "W", # pycodestyle warnings
@@ -70,7 +70,7 @@ select = [
     "I", # isort
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["examplePy"]
 
 [tool.pytest.ini_options]
@@ -86,7 +86,7 @@ dependency-groups = [
 ]
 
 [tool.hatch.envs.test.scripts]
-run = "pytest {args:--cov=test --cov-report=term-missing --cov-report=xml}"
+run = "pytest {args:--cov=examplePy --cov-report=term-missing --cov-report=xml}"
 
 [[tool.hatch.envs.test.matrix]]
 python = ["3.10", "3.11", "3.12"]
