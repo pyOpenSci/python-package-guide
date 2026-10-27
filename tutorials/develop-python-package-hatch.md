@@ -97,7 +97,7 @@ detached = true
 ```
 
 :::{admonition} Hatch will install your package in editable mode by default
-Notice the `detached = True` flag at the bottom of the environment. By default, hatch will install your package in editable mode into any environment it creates. `detached=True` tells it not to install your package into the environment.
+Notice the `detached = true` flag at the bottom of the environment. By default, hatch will install your package in editable mode into any environment it creates. `detached = true` tells it not to install your package into the environment.
 :::
 
 
@@ -106,7 +106,7 @@ Notice the `detached = True` flag at the bottom of the environment. By default, 
 Hatch supports defining {term}`Script (Hatch)` commands that run in specific
 Hatch environments.
 
-Above, you have defined a new environment called 'build' that Hatch will create as a virtual environment (venv). Because `detached = True` in that environment, Hatch won't install your package into it.
+Above, you have defined a new environment called 'build' that Hatch will create as a virtual environment (venv). Because `detached = true` in that environment, Hatch won't install your package into it.
 
 You can then use that environment to run "scripts". The definition below tells Hatch to run the following scripts in the build environment.
 
@@ -126,18 +126,17 @@ Below is the `build.scripts` table that defines 3 shell commands to be run:
 * `twine check dist/*` # use twine to check that your package's sdist (source distribution) is ok.
 
 ```toml
-# This table installs the command hatch run install:check, which will build and check your package.
+# This table installs the command hatch run build:check, which will build and check your package.
 [tool.hatch.envs.build.scripts]
 check = [
     "pip check",
     "hatch build {args:--clean}",
     "twine check dist/*",
 ]
-detached = true
 ```
 
 :::{tip}
-Hatch, by default, will install your package in editable mode into any virtual environment (venv) that it creates. If `detached=True` is set, then it will skip that step.
+Hatch, by default, will install your package in editable mode into any virtual environment (venv) that it creates. If `detached = true` is set, then it will skip that step.
 :::
 
 ### Running the build script

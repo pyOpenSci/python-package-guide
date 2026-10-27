@@ -141,8 +141,9 @@ def test_mamba(session):
     """Nox function that installs dev requirements and runs tests on Python
     3.9 through 3.12.
     """
-    # Install dev requirements
-    session.conda_install(".[tests]")
+    # Install test dependencies from conda-forge, then your package with pip
+    session.conda_install("pytest", channel="conda-forge")
+    session.install(".")
     # Run tests using any parameters that you need
     session.run("pytest")
 ```
