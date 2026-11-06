@@ -318,43 +318,40 @@ At this point, you should have:
 
 You are now ready to install (and build) your Python package!
 
+First, open your preferred terminal and `cd` into the directory containing
+your project if you are not already there.
+
+Next, create a virtual environment in your project directory and activate it.
+We recommend installing packages that you are developing into a virtual
+environment rather than directly into your system Python installation.
+
+:::{admonition} Why use `pip` here instead of Hatch?
+:class: note
+
 While Hatch can create an environment and install your package for you
 (you'll learn how in the [Hatch environments lesson](develop-python-package-hatch)),
 this lesson uses `pip` to install your package, so you can see what is happening when a
 package is installed into a Python environment that you create.
+:::
 
-First, open your preferred shell (Windows users may use something like GitBash)
-and `cd` into your project directory if you are not already there.
+Create the environment:
 
-Next, activate the Python environment that you wish to use. We recommend
-installing packages that you are developing into a virtual environment
-rather than your system Python. If you don't have one yet:
-
-- **conda:** install [Miniforge](https://conda-forge.org/download/) (or
-  [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)),
-  then run `conda create -n pyosdev python`
-- **venv:** ships with Python; run `python -m venv .venv` in your project
-  directory. See the [venv docs](https://docs.python.org/3/library/venv.html).
+```bash
+> python -m venv .venv
+```
 
 Then activate it:
 
 ::::{tab-set}
 
-:::{tab-item} conda
-```bash
-> conda activate pyosdev
-(pyosdev) >
-```
-:::
-
-:::{tab-item} venv (macOS / Linux)
+:::{tab-item} macOS / Linux
 ```bash
 > source .venv/bin/activate
 (.venv) >
 ```
 :::
 
-:::{tab-item} venv (Windows)
+:::{tab-item} Windows
 ```powershell
 > .venv\Scripts\activate
 (.venv) >
@@ -363,13 +360,26 @@ Then activate it:
 
 ::::
 
+:::{admonition} Are you using conda?
+:class: dropdown
+
+If you already use conda, you can create and activate a conda environment
+instead of a `venv`:
+
+```bash
+> conda create -n pyosdev python
+> conda activate pyosdev
+(pyosdev) >
+```
+
+The rest of this lesson works the same way in either environment.
+:::
+
 Your prompt will show the environment name once it is active. Now install
 your package:
 
 ```bash
-# Cd into your project directory (if you are not already there)
-> cd pyospackage
-# Install your package
+# Install your package in editable mode (-e)
 > python -m pip install -e .
 
 Obtaining file:///Users/leahawasser/Documents/GitHub/pyos/pyosPackage
