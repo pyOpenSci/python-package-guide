@@ -284,7 +284,7 @@ pixi init
 # Add packages from conda-forge (Pixi's default)
 pixi add numpy gdal
 
-# Add packages from PyPI (only if a package isn't on conda-forge)
+# Add packages from PyPI (only do this if a package isn't on conda-forge)
 pixi add --pypi scipy
 
 # Run commands in the environment
