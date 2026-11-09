@@ -240,7 +240,7 @@ pixi init
 # Add packages from conda-forge (pixi's default)
 pixi add numpy
 
-# Install your package in development (or editable) mode 
+# Install your package in development (or editable) mode
 pixi add --pypi --editable "package-name[dev] @ file:///absolute/path/to/package"
 ```
 :::
@@ -273,7 +273,7 @@ Pixi is a modern, fast package and environment manager built on the conda ecosys
 
 **How Pixi resolves packages:**
 
-Pixi is "conda-first." By default, `pixi add` installs packages from conda channels (conda-forge, unless you configure otherwise). If you need a package that is only available on PyPI, use `pixi add --pypi`. Pixi records each dependency in your manifest (`pixi.toml` or `pyproject.toml`) under either `[dependencies]` (conda) or `[pypi-dependencies]` (PyPI), and it resolves everything together into a single `pixi.lock` file. When resolving PyPI dependencies, Pixi [uses the already-resolved conda packages where it can](https://pixi.sh/latest/python/tutorial/#replacing-pypi-packages-with-conda-packages), so a PyPI package's dependencies won't pull in a second copy of something that conda already provides.
+Pixi is "conda-first." By default, `pixi add` installs packages from conda channels (conda-forge, unless you configure otherwise). If you need a package that is only available on PyPI, use `pixi add --pypi`. (Use PyPI only if a package isn't available on conda-forge. Mixing the two ecosystems can introduce hard-to-debug errors.) Pixi records each dependency in your manifest (`pixi.toml` or `pyproject.toml`) under either `[dependencies]` (conda) or `[pypi-dependencies]` (PyPI), and it resolves everything together into a single `pixi.lock` file. When resolving PyPI dependencies, Pixi [uses the already-resolved conda packages where it can](https://pixi.sh/latest/python/tutorial/#replacing-pypi-packages-with-conda-packages), so a PyPI package's dependencies won't pull in a second copy of something that conda already provides.
 
 **Basic usage:**
 
@@ -284,7 +284,7 @@ pixi init
 # Add packages from conda-forge (Pixi's default)
 pixi add numpy gdal
 
-# Add packages from PyPI (only do this if a package isn't on conda-forge)
+# Add packages from PyPI. (Use PyPI only if a package isn't available on conda-forge.)
 pixi add --pypi scipy
 
 # Run commands in the environment
