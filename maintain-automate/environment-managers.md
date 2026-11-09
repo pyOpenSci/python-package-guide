@@ -240,7 +240,7 @@ pixi init
 # Add packages from conda-forge (pixi's default)
 pixi add numpy
 
-# Install your package in dev mode from PyPI
+# Install your package in development (or editable) mode 
 pixi add --pypi --editable "package-name[dev] @ file:///absolute/path/to/package"
 ```
 :::
