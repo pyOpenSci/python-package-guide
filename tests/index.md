@@ -57,6 +57,15 @@ Set up continuous integration with GitHub Actions to run
 tests across Python versions and operating systems.
 ::::
 
+::::{grid-item-card} ✨ Shipping tests with your package ✨
+:link: in-tree-tests
+:link-type: doc
+:class-card: left-aligned
+
+Learn when it makes sense to ship tests inside your package (for example,
+if it has compiled code) and how users can run them with `pytest --pyargs`.
+::::
+
 ::::{grid-item-card} ✨ Code coverage ✨
 :link: code-cov
 :link-type: doc
@@ -86,6 +95,7 @@ Test types <test-types>
 Run tests locally <run-tests>
 Run tests with Nox <run-tests-nox>
 Run tests online (using CI) <tests-ci>
+Shipping tests with your package <in-tree-tests>
 Code coverage <code-cov>
 ```
 
