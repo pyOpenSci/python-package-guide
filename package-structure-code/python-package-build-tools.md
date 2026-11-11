@@ -480,11 +480,18 @@ Setuptools has a few challenges:
 - The above-mentioned backwards compatibility makes for a more complex code-base.
 - Your experience as a user will be less streamlined and simple using setuptools compared to other tools discussed on this page.
 
-There are also some problematic default settings that users should be aware of
+There are also some default behaviors that users should be aware of
 when using setuptools. For instance:
 
-- setuptools will build a project without a name or version if you are not using a **pyproject.toml** file
-  to store metadata.
-- setuptools also will include all of the files in your package
-  repository if you do not explicitly tell it to exclude files using a
-  **MANIFEST.in** file
+- If you store metadata in a **pyproject.toml** `[project]` table, setuptools
+  requires a `name` and a `version` (or `version` listed in `dynamic`) and
+  raises an error if either is missing. If you have no `[project]` table
+  and no metadata in `setup.py` or `setup.cfg`, setuptools will still build
+  your package. It guesses the name from your package directory and uses the
+  version `0.0.0`. Always set the name and version yourself.
+- By default, setuptools only adds a short list of files to your sdist: your
+  package's Python files, `tests/test*.py`, **pyproject.toml**, `setup.py`,
+  `setup.cfg`, a README, license files and any package data you list.
+  Plugins such as **setuptools_scm** add every file tracked by git, including
+  `docs/` and CI configuration. Check what ended up in your sdist with
+  `tar tzf dist/*.tar.gz`, and use a **MANIFEST.in** file to add or exclude files.
