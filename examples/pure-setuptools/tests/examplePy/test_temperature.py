@@ -1,7 +1,6 @@
 """Parametrized conversion cases for the example temperature module."""
 
 import pytest
-
 from examplePy import temperature
 
 
