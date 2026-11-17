@@ -37,28 +37,23 @@ tests without increasing the size of wheels distributed to end users.
 This supports downstream validation using files from the sdist, but users
 cannot run those tests from an installed wheel alone.
 
-For example, with setuptools, an out-of-tree `tests/` directory can be
-included in the sdist using a `MANIFEST.in` entry:
+If you use Hatchling, the build backend used in this guide's tutorials, you
+don't need to configure anything. By default,
+[the sdist includes all files not ignored by your version control system](https://hatch.pypa.io/latest/plugins/builder/sdist/#default-file-selection),
+which covers a top-level `tests/` directory, while the wheel contains only
+your package.
+
+With setuptools, add a `MANIFEST.in` entry to include an out-of-tree `tests/`
+directory in the sdist:
 
 ```text
 graft tests
 ```
-This does not itself control wheel contents: ensure `tests/` is not selected
-as an installed package or included by other wheel configuration. Different
-build backends provide different controls for source and wheel contents.
-Check both built artifacts to confirm which files are included. For example,
-build into a fresh output directory containing one sdist and one wheel:
 
-```bash
-python -m build --outdir dist-check
-tar -tf dist-check/*.tar.gz | grep '/tests/'
-unzip -Z -1 dist-check/*.whl | grep -E '(^|/)tests/'
-```
-
-For the sdist-only approach, the first command listing files should show the
-tests, while the wheel listing should have no matching files. The final `grep`
-will exit with status 1 when no tests are found; that is expected here.
-See the [setuptools guidance on wheel and sdist contents](https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html#wheel-vs-sdist).
+This only affects the sdist; a `tests/` directory that sits next to your
+package is not included in the wheel. See the
+[setuptools guidance on wheel and sdist contents](https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html#wheel-vs-sdist)
+for more detail.
 
 If users need to run tests against an installed wheel, including tests in the
 importable package as described below may be more appropriate.
