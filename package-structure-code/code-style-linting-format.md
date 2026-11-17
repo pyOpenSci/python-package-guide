@@ -209,15 +209,15 @@ Here is a simple configuration to get started with `ruff`. It would go into your
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:start-at: [tool.ruff]
-:end-before: [tool.ruff.isort]
+:start-at: [tool.ruff.lint]
+:end-before: [tool.ruff.lint.isort]
 :::
 
 Depending on your project, you might want to add the following to sort imports correctly:
 
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
-:start-at: [tool.ruff.isort]
+:start-at: [tool.ruff.lint.isort]
 :end-before: [tool.pytest.ini_options]
 :::
 

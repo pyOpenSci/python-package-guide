@@ -373,7 +373,7 @@ You can also create combined groups that reference other groups:
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
 :start-at: [project.optional-dependencies]
-:end-before: [tool.ruff]
+:end-before: [tool.ruff.lint]
 :::
 
 Then install everything with pip install or uv sync as needed:
