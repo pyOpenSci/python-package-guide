@@ -145,8 +145,8 @@ The `unittest` runner does not collect standalone pytest-style test functions
 and does not provide pytest fixtures. Tests that depend on pytest-specific
 features may require pytest to run successfully.
 
-If distributed tests or a public test helper require third-party dependencies,
-projects may declare those dependencies in a `test` extra to support running
+If distributed tests or a public test helper require additional third-party dependencies,
+projects may declare those dependencies in the same `test` extras group to support running
 the tests after installation.
 
 ## Pitfalls
