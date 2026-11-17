@@ -58,7 +58,7 @@ tests across Python versions and operating systems.
 ::::
 
 ::::{grid-item-card} ✨ Shipping tests with your package ✨
-:link: in-tree-tests
+:link: distributing-tests
 :link-type: doc
 :class-card: left-aligned
 
@@ -95,7 +95,7 @@ Test types <test-types>
 Run tests locally <run-tests>
 Run tests with Nox <run-tests-nox>
 Run tests online (using CI) <tests-ci>
-Shipping tests with your package <in-tree-tests>
+Shipping tests with your package <distributing-tests>
 Code coverage <code-cov>
 ```
 

@@ -1,5 +1,5 @@
-(in-tree-tests)=
-# Shipping tests with your package (in-tree tests)
+(distributing-tests)=
+# Including tests in your package distributions
 
 Throughout this guide we recommend keeping your `tests/` directory **outside**
 of your package directory (an "out-of-tree" layout). This keeps your wheel
