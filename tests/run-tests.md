@@ -266,7 +266,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip

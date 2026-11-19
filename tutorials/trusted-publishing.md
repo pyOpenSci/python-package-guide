@@ -109,19 +109,19 @@ jobs:
     name: Build the package
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v7
     - name: Setup Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12" # Select the version that you want to build your package on
+      uses: actions/setup-python@v7
+      with:
+        python-version: "3.12" # Select the version that you want to build your package on
     - name: Upgrade pip, install Hatch, and check Hatch version
-        run: |
-          pip install --upgrade pip
-          pip install --upgrade hatch
-          hatch --version # Verify that Hatch is installed
+      run: |
+        pip install --upgrade pip
+        pip install --upgrade hatch
+        hatch --version # Verify that Hatch is installed
 ```
 
-Notice that above, you provide a version for each action step. `action/checkout@v5` tells GitHub to use version 5 of the checkout action. The checkout action checks out the code from your repository. In this case, the code will be used to build your package.
+Notice that above, you provide a version for each action step. `actions/checkout@v7` tells GitHub to use version 7 of the checkout action. The checkout action checks out the code from your repository. In this case, the code will be used to build your package.
 
 Next, you will learn about a better way to secure (or "harden") your workflow
 

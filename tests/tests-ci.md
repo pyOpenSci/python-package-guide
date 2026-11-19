@@ -61,9 +61,9 @@ jobs:
         python-version: ["3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
@@ -74,10 +74,12 @@ jobs:
         run: pip list
       - name: Run tests with pytest & nox
         run: |
-          nox -s tests-${{ matrix.python-version }}
+          nox -s test-${{ matrix.python-version }}
       # You only need to upload code coverage once to codecov unless you have a
       # more complex build that you need coverage for.
       - name: Upload coverage to Codecov
         if: ${{ matrix.os == 'ubuntu-latest' &&  matrix.python-version == '3.10'}}
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v7
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 ```
